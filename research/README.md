@@ -8,7 +8,7 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U34_L_arithmetic_and_Sunit_obstruction.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U35_R_norm_resultants.md`.
 
 The surviving Beal-derived equation is
 
@@ -18,9 +18,11 @@ The coefficient `256` is essential and cannot be absorbed into an integral tenth
 
 U33 proves that the auxiliary cubic factor `R(a,b)` is coprime to the rational factors carrying the forced divisibility outside a finite exceptional set, and that `R` and its quadratic conjugate can share prime ideals only above `{2,11,13,17}`. Over `Q(sqrt(17),zeta_5)`, the five factors `gamma-zeta_5^i eta delta` are pairwise coprime away from 5, so every forcing prime outside `{2,5,17,19}` contributes its full tenth-power valuation to exactly one linear factor.
 
-U34 determines the arithmetic of `L=Q(sqrt(17),zeta_5)`: degree 8, discriminant `5^6*17^4`, conductor 85, Galois group `C4 x C2`, class number 1, roots-of-unity group of order 10, and unit rank 3. It also shows that the hoped-for fixed-`S` tenth-power reduction does **not** yet follow: the moving factor `R(a,b)` can introduce primes outside the fixed exceptional set with valuations not known to be multiples of 10. Thus class number one principalizes any later ideal-power relation, but does not itself produce a finite Thue-Mahler system.
+U34 determines the arithmetic of `L=Q(sqrt(17),zeta_5)`: degree 8, discriminant `5^6*17^4`, conductor 85, Galois group `C4 x C2`, class number 1, roots-of-unity group of order 10, and unit rank 3. It also shows that the hoped-for fixed-`S` tenth-power reduction does **not** yet follow because the moving factor `R(a,b)` can introduce primes outside the fixed exceptional set with valuations not known to be multiples of 10.
 
-Current obligation: control the moving prime support of `R(a,b)` or replace the factorization by one where that support disappears. Priority options are an independent power/norm constraint on `R`, a second factorization with strong gcd control, or a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
+U35 computes the exact rational norm polynomial of `R`, its discriminant, and exact resultants against the two rational fifth-power forms `G` and `H`. The resultants sharply restrict primes that can divide both `R` and `G` or `H`, but they do not force a prime divisor of `R` to divide either fifth-power form. U35 also records exact low-degree factorizations of `g-h` and `g+h`, which are the next algebraic objects to exploit.
+
+Current obligation: either use the special tenth-power coset condition on roots of the norm polynomial of `R`, exploit the factorizations of `g-h` and `g+h` to obtain a better-controlled Diophantine equation, or construct a Frey object genuinely adapted to `U^5+8V^5=Z^17`.
 
 ### Auxiliary modular-method study
 
