@@ -8,7 +8,7 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U33_R_factor_coprimality.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U34_L_arithmetic_and_Sunit_obstruction.md`.
 
 The surviving Beal-derived equation is
 
@@ -16,9 +16,11 @@ The surviving Beal-derived equation is
 
 The coefficient `256` is essential and cannot be absorbed into an integral tenth power. U15–U25 give the core valid chain for this weighted equation: Gaussian factorization, reduction to the sole 17-adic Case III, mod-11 elimination of the other structural cases, forcing-prime information, factorization over `Q(sqrt(17))`, unit-class collapse, integral-basis equations, exact 17-adic root locking, and the coprime cyclotomic factorization of `gamma^5-(eta*delta)^5`.
 
-U33 strengthens the active frontier by proving that the auxiliary cubic factor `R(a,b)` is coprime to the rational factors carrying the forced divisibility outside a finite exceptional set, and that `R` and its quadratic conjugate can share prime ideals only above `{2,11,13,17}`. Over `Q(sqrt(17),zeta_5)`, the five factors `gamma-zeta_5^i eta delta` are pairwise coprime away from 5, so every forcing prime outside `{2,5,17,19}` contributes its full tenth-power valuation to exactly one linear factor.
+U33 proves that the auxiliary cubic factor `R(a,b)` is coprime to the rational factors carrying the forced divisibility outside a finite exceptional set, and that `R` and its quadratic conjugate can share prime ideals only above `{2,11,13,17}`. Over `Q(sqrt(17),zeta_5)`, the five factors `gamma-zeta_5^i eta delta` are pairwise coprime away from 5, so every forcing prime outside `{2,5,17,19}` contributes its full tenth-power valuation to exactly one linear factor.
 
-Current obligation: work in `L=Q(sqrt(17),zeta_5)`, determine the class-group/unit data needed to turn those linear-factor assignments into an explicit finite `S`-unit or Thue-Mahler system, with exceptional support above `{2,5,11,13,17,19}`.
+U34 determines the arithmetic of `L=Q(sqrt(17),zeta_5)`: degree 8, discriminant `5^6*17^4`, conductor 85, Galois group `C4 x C2`, class number 1, roots-of-unity group of order 10, and unit rank 3. It also shows that the hoped-for fixed-`S` tenth-power reduction does **not** yet follow: the moving factor `R(a,b)` can introduce primes outside the fixed exceptional set with valuations not known to be multiples of 10. Thus class number one principalizes any later ideal-power relation, but does not itself produce a finite Thue-Mahler system.
+
+Current obligation: control the moving prime support of `R(a,b)` or replace the factorization by one where that support disappears. Priority options are an independent power/norm constraint on `R`, a second factorization with strong gcd control, or a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
 
 ### Auxiliary modular-method study
 
