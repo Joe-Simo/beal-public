@@ -64,6 +64,24 @@ The quartic factor is irreducible over F5. Hence 5 has exactly one ramified resi
 
 This is precisely the coefficient-field ramification feature used in Billerey–Chen–Dembélé–Dieulefait–Freitas, Proposition 3.2, for a reducibility argument.
 
+## Exact certificate that the ramified lambda is a genuine surviving sieve prime
+
+The original Case-2 elimination code uses the rational-prime sieve S=[3,67,101]. For all four obstructing forms r,s,v,w, exact reduction at the ramified degree-1 prime lambda|5 gives
+
+- q=3, the unique prime Q has Norm(Q)=81 and a_Q == 2 == 1+81 (mod lambda),
+- q=67, every Q|67 has a_Q == 3 == 1+67 (mod lambda),
+- q=101, every Q|101 has a_Q == 2 == 1+101 (mod lambda).
+
+For the degree-6 fields the exact reduction was done in an integral basis of O_K6 rather than by naively substituting e=-1 into expressions with denominators divisible by 5. If c1,...,c6 are coordinates in the computed integral basis, reduction at lambda is c1+4*c2+c3 mod 5.
+
+The link to the actual B_S sieve is direct. In the author's Case-2 definitions, choosing (eta,mu)=(0,1) gives u=1, v=-1, w=0, hence the singular branch. Then c4=16, c6=-64, gamma=-c4/c6=1/4 is a square in every odd residue field, so
+
+B_Q(f,0,1)=Norm(Q)+1-a_Q.
+
+The congruences above make this factor divisible by lambda for every Q above each q in S. Therefore lambda divides B_q(f) for q=3,67,101 and consequently divides B_S(f)=B_3(f)+B_67(f)+B_101(f). Thus the ramified degree-1 lambda is not merely a plausible prime above 5: it is provably one of the congruence primes that survives the author's exact sieve for each of the four obstructing forms.
+
+Additional exact reductions at q=89,103,137 give the same Eisenstein pattern a_Q == 1+Norm(Q) (mod lambda) for every displayed Q, but these extra finite checks are evidence only, not a proof of reducibility.
+
 ## Quartic base-field involution
 
 The cyclic quartic base field F has defining polynomial
@@ -84,7 +102,7 @@ f^(sigma^2) = f^tau.
 
 For the degree-6 forms v,w, the tau above likewise sends the q=13 and q=47 Hecke blocks back to themselves after the sigma^2 prime permutation. Exact algebra verifies the required coefficient swaps (for example tau exchanges the relevant q=47 coefficients C<->D and E<->F).
 
-This is strong structural evidence that all four characteristic-zero newforms satisfy f^(sigma^2)=f^tau. It is not yet promoted to a theorem because a finite sample of Hecke coefficients is not by itself a proof of equality of eigenforms; a Sturm/Hecke-algebra certificate or the original Magma space computation is still needed.
+This is strong structural evidence that all four characteristic-zero newforms satisfy f^(sigma^2)=f^tau. It is not yet promoted to a theorem because a finite sample of Hecke coefficients is not by itself a proof of equality of eigenforms; a Sturm/Hecke-algebra certificate or an exhaustive identification among the author's survivor constituents is still needed.
 
 If the identity is certified, reduction modulo the ramified lambda|5 makes tau act trivially and gives residual invariance under Gal(F/Q(sqrt(17))). Under an irreducibility assumption, the Billerey-style descent mechanism would then extend the residual representation at least to G_{Q(sqrt(17))}.
 
@@ -104,5 +122,5 @@ Michaud-Jacobs explicitly points to an extension of this method as a likely rout
 1. Certify f^(sigma^2)=f^tau for each of r,s,v,w, not merely at sampled Hecke primes.
 2. Determine whether the residual forms are invariant under the full cyclic quartic Gal(F/Q), not just the order-2 subgroup. Full invariance would permit descent directly to Q and make Serre modularity/classical newform elimination available.
 3. If only order-2 invariance is available, determine a rigorous descent/elimination over Q(sqrt(17)).
-4. Audit which prime lambda|5 is the actual surviving congruence prime for the degree-6 forms; the ramified degree-1 lambda is the expected one, but this must be tied to the original sieve ideal.
-5. Only after these are closed can this generalized-Fermat subcase be declared eliminated; Beal would still have other uncovered exponent patterns.
+4. CLOSED: the ramified residue-degree-1 lambda|5 has now been tied directly to the original B_S sieve for all four forms by the exact (eta,mu)=(0,1) factor.
+5. Only after the remaining obligations are closed can this generalized-Fermat subcase be declared eliminated; Beal would still have other uncovered exponent patterns.
