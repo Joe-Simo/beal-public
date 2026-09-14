@@ -4,74 +4,103 @@
 
 No complete proof or counterexample for Beal's conjecture has been verified.
 
-## Active frontier
+## Authoritative global coverage state
 
-### Weighted `(10,10,17)` subbranch — candidate elimination completed, verification still open
+The current coverage ledger is `checkpoints/U42_coverage_ledger_rebuild.md`, followed by the partial all-even reconstruction `checkpoints/U43_all_even_chain_reconstruction.md`.
 
-The latest mathematically connected checkpoint is `modular-method/U41_weighted_level2000_q11_elimination.md`.
+These supersede earlier informal claims about how much of Beal's conjecture was covered. In particular, the repository does not contain the former U1-U14 derivations, so claims depending on those missing files are not credited globally unless rebuilt from elementary arguments or primary sources.
 
-The Beal-derived weighted equation is
+### Universally valid reductions now preserved
 
-`X^10 + 256 Y^10 = Z^17`.
+For a primitive counterexample:
 
-Writing `U=X^2`, `V=2Y^2` gives the genuine weighted generalized Fermat equation
+- the three bases are pairwise coprime;
+- a base equal to 1 is impossible by Catalan-Mihailescu;
+- each exponent may be reduced independently to either 4 or an odd prime while preserving a primitive solution;
+- `gcd(x,y,z)` cannot have a divisor at least 3, by Fermat's Last Theorem, so `gcd(x,y,z)` is 1 or 2;
+- if all three exponents are even, writing `x=2r`, `y=2s`, `z=2t` gives the reconstructed primitive Pythagorean system in U42-U43.
 
-`U^5 + 8 V^5 = Z^17`,
+This still leaves infinitely many mixed signatures, including signatures involving exponent 4 and triples of distinct odd primes.
 
-with `gcd(U,V)=1`, `U,Z` odd, and `V` even.
+## All-even branch reconstruction
 
-U40 first identified the applicable 2025 weighted Frey genus-2 framework, but U41 found and corrected two material U40 errors: the source Frey polynomial has `+40UVx^3` rather than `-40UVx^3`, and the correct `(r,r,p)` local parameter gives
+U43 proves directly that any primitive all-even solution can be written
 
-`nu_q = 34 v_q(Z) - v_q(128 U^5 V^5)`.
+`A^r=2mn`, `B^s=m^2-n^2`, `C^t=m^2+n^2`,
 
-U40 is retained only as a superseded historical checkpoint.
+with `m,n` coprime of opposite parity, and then
 
-U41 specializes the corrected Frey construction over `K=Q(sqrt(5))` and obtains:
+`m-n=u^s`, `m+n=v^s`,
 
-- absolute residual irreducibility from Azon Proposition 5.20 at the prime above 2;
-- local conductor exponent `n_2=2`;
-- an exact modulo-125 computation on all 793 square-shaped residue pairs proving the relevant degree-5 polynomial has no `Q_5` root, hence `n_5=3`;
-- good reduction at the residual prime 17;
-- removal of solution-dependent primes after level lowering;
-- corrected target level
+`{m,n}={a^r,2^(r-1)b^r}`.
 
-  `(2)^2 * r_5^3`, of norm `2000`;
+Hence
 
-- an LMFDB inventory of exactly eight parallel-weight-2 newform orbits at level `2000.1`;
-- an independent exact Wolfram computation of all possible Frey RM trace polynomials at `q=11`;
-- elimination of all eight newforms modulo 17 in both the good-reduction and toric `11|Z` cases.
+`C^t=a^(2r)+2^(2r-2)b^(2r)`
 
-The packaged level-lowering theorem in Azon's paper is not invoked outside its stated hypotheses. U41 instead records a theorem-chain adaptation using Azon's unconditional modularity, Proposition 5.20, a direct Clifford/local argument proving irreducibility after restriction to `K(sqrt(17))`, good reduction at 17, Theorem 5.21, and Breuil–Diamond Theorem 3.2.2.
+and
 
-Within those stated dependencies, U41 eliminates the remaining weighted `(10,10,17)` equation arising from the all-even `17|t` branch. This is **not** a solution of Beal's conjecture.
+`2C^t=u^(2s)+v^(2s)`.
+
+Published generalized-Fermat results then give the following conditional step: if `17|t` and every prime divisor of `r` and `s` is at least 5, Michaud-Jacobs Theorem 3 forces one of `r,s` to be a pure power of 5.
+
+The two orientations are reconstructed exactly:
+
+- if `s` is a 5-power, one obtains `X^10+Y^10=2Z^17`;
+- if `r` is a 5-power, one obtains `X^10+256Y^10=Z^17`.
+
+The two remaining obligations in this chain are explicit:
+
+1. prove from preserved evidence/primary sources that `r` and `s` have no prime factors 2 or 3;
+2. eliminate the coefficient-2 orientation `X^10+Y^10=2Z^17` (the previously cited 2011 Q-curve theorem does not automatically cover exponent 17).
+
+## Weighted `(10,10,17)` subbranch — candidate elimination completed, verification still open
+
+The latest mathematically connected modular checkpoint is `modular-method/U41_weighted_level2000_q11_elimination.md`.
+
+For the weighted equation
+
+`X^10 + 256 Y^10 = Z^17`,
+
+writing `U=X^2`, `V=2Y^2` gives
+
+`U^5 + 8 V^5 = Z^17`.
+
+U41 corrects U40's Frey-model sign and local-parameter errors and obtains a candidate elimination via a genus-2 Frey Jacobian over `Q(sqrt(5))`, corrected lowered level norm `2000`, an eight-orbit Hilbert-newform inventory, and a q=11 trace sieve eliminating all eight candidates in both good and toric cases.
 
 Remaining verification obligations for U41:
 
 1. independently reconstruct the full Hilbert newspace at level `(2)^2*r_5^3` with Magma/Sage or another implementation; the present finite-space completeness claim uses LMFDB;
-2. independently audit the Breuil–Diamond level-lowering adaptation replacing Azon's packaged Hypothesis-5 route;
+2. independently audit the Breuil-Diamond level-lowering adaptation replacing Azon's packaged Hypothesis-5 route;
 3. reproduce the q=11 elimination with the authors' Magma package when an appropriate runtime is available.
 
-### Weighted Gaussian / quadratic-field descent
+Until the U43 prerequisites are closed, U41 is not counted as eliminating the entire all-even `17|t` branch.
 
-Preserved as supporting arithmetic for U41. U15–U25 give the core valid chain for `X^10+256Y^10=Z^17`: Gaussian factorization, reduction to the sole 17-adic Case III, mod-11 elimination of the other structural cases, forcing-prime information, factorization over `Q(sqrt(17))`, unit-class collapse, integral-basis equations, exact 17-adic root locking, and the coprime cyclotomic factorization of `gamma^5-(eta*delta)^5`.
+## Weighted Gaussian / quadratic-field descent
 
-U33–U39 further give moving-factor coprimality, exact norm/resultant identities, sharp 5-adic and 17-adic locking, and cyclotomic allocation restrictions. These remain useful independent consistency checks on the weighted branch even though U41 is now the strongest elimination route.
+U15-U25 and U33-U39 remain preserved as independent arithmetic work on `X^10+256Y^10=Z^17`: Gaussian factorization, mod-11 structural elimination, quadratic-field norm reduction, unit-class collapse, integral-basis equations, exact 5- and 17-adic locking, moving-factor coprimality, and cyclotomic allocation restrictions.
 
-### Auxiliary unweighted modular-method study
+These support the weighted branch but do not replace the global coverage obligations in U42-U43.
 
-`modular-method/U26` through `U31` analyze the ell=5 obstruction in Michaud-Jacobs' *unweighted* equation
+## Auxiliary unweighted modular-method study
+
+`modular-method/U26` through `U31` analyze Michaud-Jacobs' unweighted equation
 
 `x^(2l) + y^(2m) = z^17`.
 
-U32 establishes that these do not directly cover the weighted Beal branch. They are retained as method development and are not counted as elimination of the active weighted equation.
+U32 established that those files do not directly cover the weighted Beal equation; they remain method-development artifacts only.
 
-## Next coverage obligation
+## Current research priority
 
-Return to the Beal coverage ledger. U41 concerns only the all-even branch in which `17|t` and the surviving orientation reduces to `X^10+256Y^10=Z^17`. Determine exactly which all-even cases remain when `17` does not divide `t` (recall all prime divisors of `t` are at least 17) and which non-all-even exponent patterns remain from the original Beal statement. Do not infer full coverage from U41.
+1. Close or refute the U43 prerequisite excluding prime factors 2 and 3 from `r,s` in the all-even branch.
+2. Resolve the coefficient-2 orientation `X^10+Y^10=2Z^17`.
+3. Independently certify U41.
+4. Then reassess the remaining all-even cases, especially `17∤t`, before returning to the much larger mixed-parity signature space.
 
 ## Durable checkpoints
 
-- `checkpoints/checkpoint-2026-09-14.md` — earlier modular-method state.
+- `checkpoints/U42_coverage_ledger_rebuild.md` — authoritative global coverage ledger.
+- `checkpoints/U43_all_even_chain_reconstruction.md` — reconstructed all-even/17-divisible chain and explicit remaining gaps.
 - `checkpoints/U32_weighted_branch_scope_correction.md` — correction separating the weighted branch from the unweighted Michaud-Jacobs problem.
 - `modular-method/U40_weighted_frey_genus2_route.md` — superseded route-construction checkpoint; see its correction notice.
 - `modular-method/U41_weighted_level2000_q11_elimination.md` — corrected weighted level and finite newform elimination.
