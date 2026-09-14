@@ -8,7 +8,7 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U37_5adic_forcing_and_root_locking.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U38_rational_norm_two_prime_locking.md`.
 
 The surviving Beal-derived equation is
 
@@ -24,9 +24,33 @@ U35 computes the exact rational norm polynomial of `R`, its discriminant, and ex
 
 U36 exploits the exact factorizations of `G-H` and `G+H`. Writing `U=(G-H)/2` and `V=(G+H)/2` gives `gcd(U,V)=1`, `U+V=C^5`, `V-U=17D^5`, with `U` and `V` factored into eight low-degree odd binary forms. The four factors on the `U` side are pairwise coprime and are coprime to every factor on the `V` side; the only possible overlap among the four `V` factors is an explicitly controlled factor `3` in one of two pairs.
 
-U37 refines the `U`-side further: the apparent degree-4 and degree-8 norm factors split over `Q`, giving six pairwise-coprime odd factors of degrees `2,2,2,2,4,4`, so the 2-power norm tower alone does not create fifth-power ideal exponents. More importantly, an exact modulo-25 computation proves that every global Case-III solution has `5|B` and `5∤A`. Since 5 is inert in `Q(sqrt(17))`, U37 derives sharp 5-adic root locking at precision `5^(10 v5(B)-1)`: `v5(v)=10v5(B)-1`, `v5(r)=1`, `v5(s)=0`, and `v5(gamma-eta*delta)=10v5(B)-1`, with explicit first-order residues. This adds 5 to the globally forced divisor set for `B` and gives a second sharp local locking phenomenon complementary to U22-U24 at 17.
+U37 refines the `U`-side further: the apparent degree-4 and degree-8 norm factors split over `Q`, giving six pairwise-coprime odd factors of degrees `2,2,2,2,4,4`, so the 2-power norm tower alone does not create fifth-power ideal exponents. More importantly, an exact modulo-25 computation proves that every global Case-III solution has `5|B` and `5∤A`. Since 5 is inert in `Q(sqrt(17))`, U37 derives sharp 5-adic root locking at precision `5^(10 v5(B)-1)`.
 
-Current obligation: combine the simultaneous sharp 5-adic and 17-adic locking with the fixed integral-basis fifth-power equations, seeking a two-prime Thue/Mahler, primitive-divisor, or linear-form bound. If no bounded/decreasing quantity emerges, pivot to a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
+U38 moves the two-prime locking back to rational norms. It proves
+
+`Norm(gamma)=C`, `Norm(delta)=-D`,
+
+and the exact asymmetric valuations
+
+`v5(C-A^16)=10v5(B)-1`, `v5(D-A^16)=10v5(B)`,
+
+`v17(C-A^16)=9+10v17(B)`, `v17(D-A^16)=8+10v17(B)`.
+
+Hence
+
+`v5(C-D)=10v5(B)-1`, `v17(C-D)=8+10v17(B)`.
+
+It also gives the classical rational factorization
+
+`(C-D) Phi_5(C,D) = -2^13 * 17^7 * B^10 * J(a,b)`,
+
+with `gcd(C-D,Phi_5)=5`, and an explicit degree-14 rational form `J` satisfying
+
+`Disc(j)=2^74*3^11*17^6`, `Res(j,g)=2^96`, `Res(j,h)=2^96*17^7`.
+
+Thus outside `{2,17}` primes of `J` are disjoint from `CD`, and outside `{3,17}` they are disjoint from `B`. Every prime `q|B`, `q∉{3,5,17}`, contributes its entire exponent `10v_q(B)` to exactly one of `C-D` or `Phi_5(C,D)`. This replaces the degree-8 compositum assignment by a simpler rational / `Q(zeta_5)` formulation, but the moving support of `J` remains unresolved.
+
+Current obligation: analyze the allocation of prime divisors of `J(a,b)` between `C-D` and `Phi_5(C,D)`, preferably in `Q(zeta_5)`, and determine whether the simple discriminant/resultant support forces a fifth/tenth-power ideal relation or an explicit finite Thue-Mahler system. If not, pivot to a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
 
 ### Auxiliary modular-method study
 
