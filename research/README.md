@@ -4,41 +4,39 @@
 
 No complete proof or counterexample for Beal's conjecture has been verified.
 
-## Active routes
+## Active route
 
-### Modular method
+### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest checkpoint is `modular-method/U31_case2_residual_reducibility.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U25_gamma_delta_coprimality.md`.
 
-The modular-method sequence is now:
-
-- `U26_mod5_sigma_pairing_and_level_inventory.md` — reduces full Galois invariance to the paired residual congruences and inventories lower levels over the quartic field.
-- `U27_coefficient_prime_over_5.md` — fixes the ramified residue-degree-one coefficient prime `(5,e+1)` for both survivor pairs.
-- `U28_conditional_Q_descent_level34_contradiction.md` — conditionally eliminates the full-Galois-invariant branch when all three Hilbert-level primes remain ramified.
-- `U29_quadratic_subfield_level_elimination.md` — eliminates every recorded parallel-weight-2 candidate over `Q(sqrt(17))` at level norms `1,2,4,17,34,68` by the forced q=13 trace, conditional on the modular linear-lift/conductor bridge.
-- `U30_quadratic_subfield_conductor_correction.md` — corrects the possible 17-adic conductor exponent to at most two and extends the finite elimination through norms `289,578,1156`.
-- `U31_case2_residual_reducibility.md` — closes the absolutely irreducible branch for the four Case-2 ell=5 survivor forms: the cyclotomic-irreducible case is eliminated by a Snowden minimal-conductor weight-two lift plus automorphy lifting and U29-U30, while the cyclotomic-reducible case is dihedral and contradicted by trace 0 versus the forced trace 4 at the two primes above 13. Therefore the four Case-2 residual representations are reducible.
-
-Current obligation: determine whether the Beal-derived equation `X^10 + 256 Y^10 = Z^17` can enter Michaud-Jacobs' Case 1. The original paper notes additional ell=5 Case-1 obstructions, so U31 does not yet extend Theorem 3 to ell=5 or close the full Beal-derived branch. If Case 1 is needed, eliminate those surviving Case-1 forms; if the branch is provably Case-2-only, record that reduction explicitly.
-
-Key supporting result: `modular-method/lemma-sigma2-conjugation-2026-09-14.md`.
-
-### Gaussian / quadratic-field descent
-
-Preserved in `gaussian-descent/`. U15–U25 progressively reduce and analyze the surviving equation
+The surviving Beal-derived equation is
 
 `X^10 + 256 Y^10 = Z^17`.
 
-The route produced substantial divisibility, 17-adic, and coprimality structure but no contradiction. U24 shows the most obvious `gamma - eta*delta` infinite-descent idea is sharp rather than contradictory; U25 records the resulting cyclotomic factor split.
+The coefficient `256` is essential and cannot be absorbed into an integral tenth power. U15–U25 give the currently valid chain for this weighted equation: Gaussian factorization, reduction to the sole 17-adic Case III, mod-11 elimination of the other structural cases, forcing-prime information, factorization over `Q(sqrt(17))`, unit-class collapse, integral-basis equations, exact 17-adic root locking, and the coprime cyclotomic factorization of `gamma^5-(eta*delta)^5`.
+
+Current obligation: continue globally from U25, preferably through the factorization over `Q(sqrt(17), zeta_5)`, a Thue/Thue-Mahler or superelliptic reduction, or a modular construction genuinely adapted to the coefficient `256` (equivalently `U^5+8V^5=Z^17` with `U=X^2`, `V=2Y^2`).
+
+### Auxiliary modular-method study
+
+`modular-method/U26` through `U31` analyze the ell=5 obstruction in Michaud-Jacobs' *unweighted* equation
+
+`x^(2l) + y^(2m) = z^17`.
+
+Those files contain useful modular-method work, culminating in a reducibility argument for four Case-2 survivor forms, but U32 establishes that no proved reduction currently connects that unweighted Hilbert-newform problem to the weighted Beal branch `X^10+256Y^10=Z^17`. Therefore U26–U31 are retained as auxiliary method development and are **not** counted as elimination of the active Beal-derived branch.
+
+Key correction: the earlier plan to classify the weighted branch as Michaud-Jacobs Case 1 or Case 2 was invalid; those cases belong to a different, unit-coefficient equation.
 
 ## Durable checkpoints
 
-`checkpoints/checkpoint-2026-09-14.md` records the earlier modular-method research state, source dependencies, verified computations, and remaining obligations as of 2026-09-14. U26–U31 and the sigma2 lemma are the newer route-specific state and supersede that checkpoint where they are more precise.
+- `checkpoints/checkpoint-2026-09-14.md` — earlier modular-method state.
+- `checkpoints/U32_weighted_branch_scope_correction.md` — current coverage correction and active-frontier reset.
 
 ## Conventions
 
 - `U##_*` files are chronological research units, not claims of complete solution.
 - A result marked verified means verified within the evidence stated in that artifact; it does not imply independent expert or formal verification of Beal's conjecture.
-- Failed or blocked routes are retained rather than deleted.
+- Failed, blocked, or scope-invalidated routes are retained rather than deleted.
 - Exact computations that materially support a theorem should record the expression, assumptions, arithmetic domain, and tool or code used.
 - New research should be placed in the route-specific directory instead of directly under `research/`.
