@@ -6,54 +6,67 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ## Active route
 
-### Weighted Gaussian / quadratic-field descent
+### Direct weighted Frey genus-2 route
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U39_J_cyclotomic_allocation.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected modular checkpoint is `modular-method/U40_weighted_frey_genus2_route.md`.
 
 The surviving Beal-derived equation is
 
 `X^10 + 256 Y^10 = Z^17`.
 
-The coefficient `256` is essential and cannot be absorbed into an integral tenth power. U15–U25 give the core valid chain for this weighted equation: Gaussian factorization, reduction to the sole 17-adic Case III, mod-11 elimination of the other structural cases, forcing-prime information, factorization over `Q(sqrt(17))`, unit-class collapse, integral-basis equations, exact 17-adic root locking, and the coprime cyclotomic factorization of `gamma^5-(eta*delta)^5`.
+Set `U=X^2`, `V=2Y^2`. Then the active equation is exactly
 
-U33 proves that the auxiliary cubic factor `R(a,b)` is coprime to the rational factors carrying the forced divisibility outside a finite exceptional set, and that `R` and its quadratic conjugate can share prime ideals only above `{2,11,13,17}`. Over `Q(sqrt(17),zeta_5)`, the five factors `gamma-zeta_5^i eta delta` are pairwise coprime away from 5, so every forcing prime outside `{2,5,17,19}` contributes its full tenth-power valuation to exactly one linear factor.
+`U^5 + 8 V^5 = Z^17`,
 
-U34 determines the arithmetic of `L=Q(sqrt(17),zeta_5)`: degree 8, discriminant `5^6*17^4`, conductor 85, Galois group `C4 x C2`, class number 1, roots-of-unity group of order 10, and unit rank 3. It also shows that the hoped-for fixed-`S` tenth-power reduction does **not** yet follow because the moving factor `R(a,b)` can introduce primes outside the fixed exceptional set with valuations not known to be multiples of 10.
+with `gcd(U,V)=1`.
 
-U35 computes the exact rational norm polynomial of `R`, its discriminant, and exact resultants against the rational fifth-power forms `G` and `H`; these restrict simultaneous divisibility but do not force the moving `R`-primes into fifth- or tenth-power valuations.
+U40 identifies a current Frey construction that genuinely allows non-unit fixed coefficients `A,B,C` in equations `A a^5+B b^5=C c^p`. For `(A,B,C,p)=(1,8,1,17)` it gives the genus-2 Frey curve
 
-U36 exploits the exact factorizations of `G-H` and `G+H`. Writing `U=(G-H)/2` and `V=(G+H)/2` gives `gcd(U,V)=1`, `U+V=C^5`, `V-U=17D^5`, with `U` and `V` factored into eight low-degree odd binary forms. The four factors on the `U` side are pairwise coprime and are coprime to every factor on the `V` side; the only possible overlap among the four `V` factors is an explicitly controlled factor `3` in one of two pairs.
+`y^2 = x^5 - 40 U V x^3 + 320 U^2 V^2 x + 64(8 V^5-U^5)`.
 
-U37 refines the `U`-side further: the apparent degree-4 and degree-8 norm factors split over `Q`, giving six pairwise-coprime odd factors of degrees `2,2,2,2,4,4`, so the 2-power norm tower alone does not create fifth-power ideal exponents. More importantly, an exact modulo-25 computation proves that every global Case-III solution has `5|B` and `5∤A`. Since 5 is inert in `Q(sqrt(17))`, U37 derives sharp 5-adic root locking at precision `5^(10 v5(B)-1)`: `v5(v)=10v5(B)-1`, `v5(r)=1`, `v5(s)=0`, and `v5(gamma-eta*delta)=10v5(B)-1`, with explicit first-order residues.
+Its Jacobian has real multiplication by `Q(sqrt(5))`, yielding a 2-dimensional mod-17 representation. The source supplies modularity, irreducibility criteria, and level lowering for this weighted `(5,5,p)` framework. The exact specialized lowered level and complete newform elimination are still unverified obligations.
 
-U38 translates the simultaneous 5-/17-adic locking to rational norms. It obtains exact valuations of `C-A^16`, `D-A^16`, and `C-D`, and the identity
+Exact Wolfram computation gives the specialized hyperelliptic polynomial discriminant
 
-`(C-D) Phi_5(C,D) = -2^13 * 17^7 * B^10 * J(a,b)`
+`2^24 * 5^5 * (U^10 - 48 U^5 V^5 + 64 V^10)^2`.
 
-for an explicit degree-14 form `J`. The discriminant of the dehomogenized J-polynomial is supported only at `{2,3,17}`, and exact resultants show that odd J-primes away from 17 are disjoint from `CD`.
+The naive curve discriminant therefore has moving support, so the source's representation-theoretic conductor and level-lowering analysis must be used; no fixed level is inferred from the raw discriminant.
 
-U39 sharpens the cyclotomic allocation of J-primes. If `q != 5,17` divides `J(a,b)` and `q != 1 (mod 5)`, then necessarily `q | C-D`; only primes `q == 1 (mod 5)` can enter `Phi_5(C,D)`. U39 also proves the exact local facts
+The Beal-derived parity is favorable at 2: `U,Z` are odd and `V` is even, so for `s0=U^5/Z^17`, one has `v2(s0)=0` and `v2(s0-1)=3+5v2(V)>=8`.
 
-- `v2(C-D)=13+10 v2(B)`,
-- `v5(J)=0`,
-- `v17(J)=1`,
+Current obligation: specialize Theorem 5.23 and Tables 2/3 completely for `A=1,B=8,C=1,r=5,p=17`, verify unconditional residual irreducibility in this exact specialization, determine the finite lowered level(s) over `Q(sqrt(5))`, enumerate all parallel-weight-2 Hilbert newforms there, and eliminate them by exact mod-17 trace comparisons.
 
-and confirms by exact finite-field search that the `q == 1 (mod 5)` branch is locally genuine, so it cannot be discarded by a simple congruence argument.
+### Weighted Gaussian / quadratic-field descent
 
-Current obligation: isolate the remaining `q == 1 (mod 5)` prime divisors of `J` that may enter `Phi_5(C,D)`. Priority routes are fifth-power reciprocity/residue-symbol constraints using the special tenth-power parameter `t=2^8*17^8(B/A)^10`, an independent factorization of `J` controlling exactly those primes, or—if this stalls—a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
+Preserved as the strongest auxiliary arithmetic route. U15–U25 give the core valid chain for `X^10+256Y^10=Z^17`: Gaussian factorization, reduction to the sole 17-adic Case III, mod-11 elimination of the other structural cases, forcing-prime information, factorization over `Q(sqrt(17))`, unit-class collapse, integral-basis equations, exact 17-adic root locking, and the coprime cyclotomic factorization of `gamma^5-(eta*delta)^5`.
 
-### Auxiliary modular-method study
+U33–U39 further develop the auxiliary arithmetic: moving-factor coprimality, class-number-one arithmetic of `Q(sqrt(17),zeta_5)`, exact norm/resultant identities, low-degree sum/difference factorizations, sharp 5-adic and 17-adic locking, and the cyclotomic allocation of the degree-14 factor `J(a,b)`.
+
+In particular U39 proves that if `q != 5,17` divides `J(a,b)` and `q != 1 (mod 5)`, then `q | C-D`; only `q == 1 (mod 5)` may enter `Phi_5(C,D)`. It also proves `v2(C-D)=13+10v2(B)`, `v5(J)=0`, and `v17(J)=1`.
+
+An exact differential identity found while transitioning to U40 is
+
+`h(t) = g(t) - (2/17)(1+t)g'(t)`
+
+and hence
+
+`h(t)-17g(t)=32t J(t)`.
+
+This confirms that the J-prime allocation problem is intrinsic to the 17th-power Gaussian structure, but local fifth-power residue conditions alone do not eliminate the `q == 1 (mod 5)` branch.
+
+### Auxiliary unweighted modular-method study
 
 `modular-method/U26` through `U31` analyze the ell=5 obstruction in Michaud-Jacobs' *unweighted* equation
 
 `x^(2l) + y^(2m) = z^17`.
 
-Those files contain useful modular-method work, but U32 establishes that no proved reduction currently connects that unweighted Hilbert-newform problem to the weighted Beal branch `X^10+256Y^10=Z^17`. Therefore U26–U31 are retained as auxiliary method development and are **not** counted as elimination of the active Beal-derived branch.
+Those files contain useful modular-method work, but U32 establishes that no proved reduction connects that unweighted Hilbert-newform problem to the weighted Beal branch. They are retained as method development and are **not** counted as elimination of the active weighted branch.
 
 ## Durable checkpoints
 
 - `checkpoints/checkpoint-2026-09-14.md` — earlier modular-method state.
-- `checkpoints/U32_weighted_branch_scope_correction.md` — current coverage correction and active-frontier reset.
+- `checkpoints/U32_weighted_branch_scope_correction.md` — coverage correction and active-frontier reset.
+- `modular-method/U40_weighted_frey_genus2_route.md` — direct weighted Frey construction and current modular obligations.
 
 ## Conventions
 
