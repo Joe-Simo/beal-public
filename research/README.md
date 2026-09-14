@@ -8,7 +8,7 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U35_R_norm_resultants.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U36_sum_difference_coprime_factorization.md`.
 
 The surviving Beal-derived equation is
 
@@ -20,9 +20,11 @@ U33 proves that the auxiliary cubic factor `R(a,b)` is coprime to the rational f
 
 U34 determines the arithmetic of `L=Q(sqrt(17),zeta_5)`: degree 8, discriminant `5^6*17^4`, conductor 85, Galois group `C4 x C2`, class number 1, roots-of-unity group of order 10, and unit rank 3. It also shows that the hoped-for fixed-`S` tenth-power reduction does **not** yet follow because the moving factor `R(a,b)` can introduce primes outside the fixed exceptional set with valuations not known to be multiples of 10.
 
-U35 computes the exact rational norm polynomial of `R`, its discriminant, and exact resultants against the two rational fifth-power forms `G` and `H`. The resultants sharply restrict primes that can divide both `R` and `G` or `H`, but they do not force a prime divisor of `R` to divide either fifth-power form. U35 also records exact low-degree factorizations of `g-h` and `g+h`, which are the next algebraic objects to exploit.
+U35 computes the exact rational norm polynomial of `R`, its discriminant, and exact resultants against the rational fifth-power forms `G` and `H`; these restrict simultaneous divisibility but do not force the moving `R`-primes into fifth- or tenth-power valuations.
 
-Current obligation: either use the special tenth-power coset condition on roots of the norm polynomial of `R`, exploit the factorizations of `g-h` and `g+h` to obtain a better-controlled Diophantine equation, or construct a Frey object genuinely adapted to `U^5+8V^5=Z^17`.
+U36 exploits the exact factorizations of `G-H` and `G+H`. Writing `U=(G-H)/2` and `V=(G+H)/2` gives `gcd(U,V)=1`, `U+V=C^5`, `V-U=17D^5`, with `U` and `V` factored into eight low-degree odd binary forms. The four factors on the `U` side are pairwise coprime and are coprime to every factor on the `V` side; the only possible overlap among the four `V` factors is an explicitly controlled factor `3` in one of two pairs. This yields a primitive eight-factor decomposition but not yet separate fifth-power equations.
+
+Current obligation: exploit the norm-tower interpretation of the U36 factors, especially `d3` and `d4` over the 2-power cyclotomic tower, to see whether `a=A^5` and `b=16*17^4 B^5` force fifth-power ideal structure; otherwise pivot to a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
 
 ### Auxiliary modular-method study
 
@@ -30,9 +32,7 @@ Current obligation: either use the special tenth-power coset condition on roots 
 
 `x^(2l) + y^(2m) = z^17`.
 
-Those files contain useful modular-method work, culminating in a reducibility argument for four Case-2 survivor forms, but U32 establishes that no proved reduction currently connects that unweighted Hilbert-newform problem to the weighted Beal branch `X^10+256Y^10=Z^17`. Therefore U26–U31 are retained as auxiliary method development and are **not** counted as elimination of the active Beal-derived branch.
-
-Key correction: the earlier plan to classify the weighted branch as Michaud-Jacobs Case 1 or Case 2 was invalid; those cases belong to a different, unit-coefficient equation.
+Those files contain useful modular-method work, but U32 establishes that no proved reduction currently connects that unweighted Hilbert-newform problem to the weighted Beal branch `X^10+256Y^10=Z^17`. Therefore U26–U31 are retained as auxiliary method development and are **not** counted as elimination of the active Beal-derived branch.
 
 ## Durable checkpoints
 
