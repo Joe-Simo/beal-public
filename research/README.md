@@ -8,15 +8,17 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U25_gamma_delta_coprimality.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U33_R_factor_coprimality.md`.
 
 The surviving Beal-derived equation is
 
 `X^10 + 256 Y^10 = Z^17`.
 
-The coefficient `256` is essential and cannot be absorbed into an integral tenth power. U15–U25 give the currently valid chain for this weighted equation: Gaussian factorization, reduction to the sole 17-adic Case III, mod-11 elimination of the other structural cases, forcing-prime information, factorization over `Q(sqrt(17))`, unit-class collapse, integral-basis equations, exact 17-adic root locking, and the coprime cyclotomic factorization of `gamma^5-(eta*delta)^5`.
+The coefficient `256` is essential and cannot be absorbed into an integral tenth power. U15–U25 give the core valid chain for this weighted equation: Gaussian factorization, reduction to the sole 17-adic Case III, mod-11 elimination of the other structural cases, forcing-prime information, factorization over `Q(sqrt(17))`, unit-class collapse, integral-basis equations, exact 17-adic root locking, and the coprime cyclotomic factorization of `gamma^5-(eta*delta)^5`.
 
-Current obligation: continue globally from U25, preferably through the factorization over `Q(sqrt(17), zeta_5)`, a Thue/Thue-Mahler or superelliptic reduction, or a modular construction genuinely adapted to the coefficient `256` (equivalently `U^5+8V^5=Z^17` with `U=X^2`, `V=2Y^2`).
+U33 strengthens the active frontier by proving that the auxiliary cubic factor `R(a,b)` is coprime to the rational factors carrying the forced divisibility outside a finite exceptional set, and that `R` and its quadratic conjugate can share prime ideals only above `{2,11,13,17}`. Over `Q(sqrt(17),zeta_5)`, the five factors `gamma-zeta_5^i eta delta` are pairwise coprime away from 5, so every forcing prime outside `{2,5,17,19}` contributes its full tenth-power valuation to exactly one linear factor.
+
+Current obligation: work in `L=Q(sqrt(17),zeta_5)`, determine the class-group/unit data needed to turn those linear-factor assignments into an explicit finite `S`-unit or Thue-Mahler system, with exceptional support above `{2,5,11,13,17,19}`.
 
 ### Auxiliary modular-method study
 
