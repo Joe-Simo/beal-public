@@ -8,7 +8,7 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U38_rational_norm_two_prime_locking.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U39_J_cyclotomic_allocation.md`.
 
 The surviving Beal-derived equation is
 
@@ -24,33 +24,23 @@ U35 computes the exact rational norm polynomial of `R`, its discriminant, and ex
 
 U36 exploits the exact factorizations of `G-H` and `G+H`. Writing `U=(G-H)/2` and `V=(G+H)/2` gives `gcd(U,V)=1`, `U+V=C^5`, `V-U=17D^5`, with `U` and `V` factored into eight low-degree odd binary forms. The four factors on the `U` side are pairwise coprime and are coprime to every factor on the `V` side; the only possible overlap among the four `V` factors is an explicitly controlled factor `3` in one of two pairs.
 
-U37 refines the `U`-side further: the apparent degree-4 and degree-8 norm factors split over `Q`, giving six pairwise-coprime odd factors of degrees `2,2,2,2,4,4`, so the 2-power norm tower alone does not create fifth-power ideal exponents. More importantly, an exact modulo-25 computation proves that every global Case-III solution has `5|B` and `5∤A`. Since 5 is inert in `Q(sqrt(17))`, U37 derives sharp 5-adic root locking at precision `5^(10 v5(B)-1)`.
+U37 refines the `U`-side further: the apparent degree-4 and degree-8 norm factors split over `Q`, giving six pairwise-coprime odd factors of degrees `2,2,2,2,4,4`, so the 2-power norm tower alone does not create fifth-power ideal exponents. More importantly, an exact modulo-25 computation proves that every global Case-III solution has `5|B` and `5∤A`. Since 5 is inert in `Q(sqrt(17))`, U37 derives sharp 5-adic root locking at precision `5^(10 v5(B)-1)`: `v5(v)=10v5(B)-1`, `v5(r)=1`, `v5(s)=0`, and `v5(gamma-eta*delta)=10v5(B)-1`, with explicit first-order residues.
 
-U38 moves the two-prime locking back to rational norms. It proves
+U38 translates the simultaneous 5-/17-adic locking to rational norms. It obtains exact valuations of `C-A^16`, `D-A^16`, and `C-D`, and the identity
 
-`Norm(gamma)=C`, `Norm(delta)=-D`,
+`(C-D) Phi_5(C,D) = -2^13 * 17^7 * B^10 * J(a,b)`
 
-and the exact asymmetric valuations
+for an explicit degree-14 form `J`. The discriminant of the dehomogenized J-polynomial is supported only at `{2,3,17}`, and exact resultants show that odd J-primes away from 17 are disjoint from `CD`.
 
-`v5(C-A^16)=10v5(B)-1`, `v5(D-A^16)=10v5(B)`,
+U39 sharpens the cyclotomic allocation of J-primes. If `q != 5,17` divides `J(a,b)` and `q != 1 (mod 5)`, then necessarily `q | C-D`; only primes `q == 1 (mod 5)` can enter `Phi_5(C,D)`. U39 also proves the exact local facts
 
-`v17(C-A^16)=9+10v17(B)`, `v17(D-A^16)=8+10v17(B)`.
+- `v2(C-D)=13+10 v2(B)`,
+- `v5(J)=0`,
+- `v17(J)=1`,
 
-Hence
+and confirms by exact finite-field search that the `q == 1 (mod 5)` branch is locally genuine, so it cannot be discarded by a simple congruence argument.
 
-`v5(C-D)=10v5(B)-1`, `v17(C-D)=8+10v17(B)`.
-
-It also gives the classical rational factorization
-
-`(C-D) Phi_5(C,D) = -2^13 * 17^7 * B^10 * J(a,b)`,
-
-with `gcd(C-D,Phi_5)=5`, and an explicit degree-14 rational form `J` satisfying
-
-`Disc(j)=2^74*3^11*17^6`, `Res(j,g)=2^96`, `Res(j,h)=2^96*17^7`.
-
-Thus outside `{2,17}` primes of `J` are disjoint from `CD`, and outside `{3,17}` they are disjoint from `B`. Every prime `q|B`, `q∉{3,5,17}`, contributes its entire exponent `10v_q(B)` to exactly one of `C-D` or `Phi_5(C,D)`. This replaces the degree-8 compositum assignment by a simpler rational / `Q(zeta_5)` formulation, but the moving support of `J` remains unresolved.
-
-Current obligation: analyze the allocation of prime divisors of `J(a,b)` between `C-D` and `Phi_5(C,D)`, preferably in `Q(zeta_5)`, and determine whether the simple discriminant/resultant support forces a fifth/tenth-power ideal relation or an explicit finite Thue-Mahler system. If not, pivot to a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
+Current obligation: isolate the remaining `q == 1 (mod 5)` prime divisors of `J` that may enter `Phi_5(C,D)`. Priority routes are fifth-power reciprocity/residue-symbol constraints using the special tenth-power parameter `t=2^8*17^8(B/A)^10`, an independent factorization of `J` controlling exactly those primes, or—if this stalls—a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
 
 ### Auxiliary modular-method study
 
