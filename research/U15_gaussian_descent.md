@@ -27,27 +27,50 @@ Thus
 a G = X^5,
 b H = 16 Y^5.
 
-Because gcd(a,b)=1, reducing G modulo a and H modulo b gives
+Because gcd(a,b)=1,
 
-G ≡ 17 b^16 (mod a),
-H ≡ 17 a^16 (mod b),
+gcd(a,G) | 17,  gcd(b,H) | 17.
 
-so gcd(a,G) | 17 and gcd(b,H) | 17.
+Also H is odd because a is odd and b is even, so v2(b)=4 mod 5.
 
-Also H is odd because a is odd and b is even, so v2(b)=4 mod 5. More precisely v2(b)=4+5k.
+Exact 17-adic analysis gives three cases only:
 
-If 17 | b, then v17(H)=1 (the first term 17a^16 has valuation 1 and every other term has valuation at least 2), hence v17(b) ≡ 4 (mod 5). If 17 ∤ b then every prime valuation in b except the forced 2-adic residue is a multiple of 5. Therefore
+Case I: a=A^5, b=16 B^5, G=C^5, H=D^5.
 
-b = 16 B^5   or   b = 16*17^4 B^5
+Case II: a=17^4 A^5, b=16 B^5, G=17 C^5, H=D^5.
 
-for some integer B (with extra 17^5 factors absorbed into B^5).
+Case III: a=A^5, b=16*17^4 B^5, G=C^5, H=17 D^5.
 
-The identical argument on aG=X^5 gives
+The two exceptional 17^4 factors cannot occur simultaneously because gcd(a,b)=1. Exact symbolic reduction modulo 17 gives G(a,b) ≡ a^16 and H(a,b) ≡ b^16, and substituting a=17u or b=17v shows G(17u,b)/17 ≡ b^16 and H(a,17v)/17 ≡ a^16 (mod 17), so the exceptional factor has exact 17-adic valuation 1 in G or H.
 
-a = A^5   or   a = 17^4 A^5,
+A separate exact resultant computation gives
 
-with gcd(a,b)=1 preventing both a and b from carrying the 17^4 exceptional factor simultaneously.
+Res_a(G(a,1),H(a,1)) = 2^272,
 
-This produces a finite 17-adic case split for the remaining equation. It does not yet eliminate those cases. A bounded modular search over primes q ≡ 1 (mod 170) below 20000 found local nonzero solutions at every tested prime, so no one-prime congruence obstruction was found in that range.
+so G and H have no common odd prime divisor when gcd(a,b)=1; since both are odd here, gcd(G,H)=1.
 
-Next: derive the corresponding degree-16 fifth-power equations G(a,b)=5th power or 17 times a fifth power and H(a,b)=5th power or 17 times a fifth power for the three 17-adic cases, then test whether any known Thue/Thue-Mahler or modular result applies uniformly.
+## New modulo-11 elimination
+
+The fifth-power residues modulo 11 are exactly {0,1,-1}. Exhaustive exact enumeration of the 120 nonzero pairs (A,B) modulo 11 gives:
+
+- Case I: no pair satisfies both required fifth-power conditions.
+- Case II: no pair satisfies both required fifth-power conditions.
+- Case III: the only surviving projective class has B ≡ 0 (mod 11).
+
+Therefore Cases I and II are impossible. Any remaining solution to this branch must be in Case III and must satisfy 11 | B.
+
+Equivalently the sole surviving structure is
+
+a=A^5,
+b=16*17^4 B^5,
+G=C^5,
+H=17D^5,
+11 | B,
+
+with gcd(A,B)=1. Consequently 11 does not divide A.
+
+A bounded exact finite-field scan of Case III for primes q ≡ 1 (mod 5), q<20000, found no prime giving a complete local contradiction. For several small primes (including 11,31,41,61,71,101,151,191,211,281,331,431,461,631) the only local projective solution similarly has B ≡ 0 (mod q), forcing divisibility by each such prime, but this finite list alone is not an infinite descent or a proof of impossibility.
+
+Relevant published context: Michaud-Jacobs, Mathematika 68 (2022), proves x^(2l)+y^(2m)=z^17 for primes l,m != 5 and explicitly leaves exponent 5 outside that theorem; its Corollary 4 separately handles equal unweighted exponents x^(2n)+y^(2n)=z^17 using the known x^5+y^5=z^17 result. Our weighted equation X^10+256Y^10=Z^17 is not covered by that corollary because 256 is not a tenth power (nor can it be absorbed into Y over the integers).
+
+Next: attack Case III only, preferably through the superelliptic equation H(A^5,16*17^4 B^5)=17D^5 together with G(A^5,16*17^4 B^5)=C^5, using the forced small-prime divisibility as auxiliary local information.
