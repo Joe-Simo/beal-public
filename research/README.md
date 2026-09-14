@@ -8,7 +8,7 @@ No complete proof or counterexample for Beal's conjecture has been verified.
 
 ### Weighted Gaussian / quadratic-field descent
 
-Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U36_sum_difference_coprime_factorization.md`.
+Primary current route. The latest scope checkpoint is `checkpoints/U32_weighted_branch_scope_correction.md`; the latest mathematically connected derivation is `gaussian-descent/U37_5adic_forcing_and_root_locking.md`.
 
 The surviving Beal-derived equation is
 
@@ -22,9 +22,11 @@ U34 determines the arithmetic of `L=Q(sqrt(17),zeta_5)`: degree 8, discriminant 
 
 U35 computes the exact rational norm polynomial of `R`, its discriminant, and exact resultants against the rational fifth-power forms `G` and `H`; these restrict simultaneous divisibility but do not force the moving `R`-primes into fifth- or tenth-power valuations.
 
-U36 exploits the exact factorizations of `G-H` and `G+H`. Writing `U=(G-H)/2` and `V=(G+H)/2` gives `gcd(U,V)=1`, `U+V=C^5`, `V-U=17D^5`, with `U` and `V` factored into eight low-degree odd binary forms. The four factors on the `U` side are pairwise coprime and are coprime to every factor on the `V` side; the only possible overlap among the four `V` factors is an explicitly controlled factor `3` in one of two pairs. This yields a primitive eight-factor decomposition but not yet separate fifth-power equations.
+U36 exploits the exact factorizations of `G-H` and `G+H`. Writing `U=(G-H)/2` and `V=(G+H)/2` gives `gcd(U,V)=1`, `U+V=C^5`, `V-U=17D^5`, with `U` and `V` factored into eight low-degree odd binary forms. The four factors on the `U` side are pairwise coprime and are coprime to every factor on the `V` side; the only possible overlap among the four `V` factors is an explicitly controlled factor `3` in one of two pairs.
 
-Current obligation: exploit the norm-tower interpretation of the U36 factors, especially `d3` and `d4` over the 2-power cyclotomic tower, to see whether `a=A^5` and `b=16*17^4 B^5` force fifth-power ideal structure; otherwise pivot to a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
+U37 refines the `U`-side further: the apparent degree-4 and degree-8 norm factors split over `Q`, giving six pairwise-coprime odd factors of degrees `2,2,2,2,4,4`, so the 2-power norm tower alone does not create fifth-power ideal exponents. More importantly, an exact modulo-25 computation proves that every global Case-III solution has `5|B` and `5∤A`. Since 5 is inert in `Q(sqrt(17))`, U37 derives sharp 5-adic root locking at precision `5^(10 v5(B)-1)`: `v5(v)=10v5(B)-1`, `v5(r)=1`, `v5(s)=0`, and `v5(gamma-eta*delta)=10v5(B)-1`, with explicit first-order residues. This adds 5 to the globally forced divisor set for `B` and gives a second sharp local locking phenomenon complementary to U22-U24 at 17.
+
+Current obligation: combine the simultaneous sharp 5-adic and 17-adic locking with the fixed integral-basis fifth-power equations, seeking a two-prime Thue/Mahler, primitive-divisor, or linear-form bound. If no bounded/decreasing quantity emerges, pivot to a Frey construction genuinely adapted to `U^5+8V^5=Z^17`.
 
 ### Auxiliary modular-method study
 
