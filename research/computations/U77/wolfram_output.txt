@@ -1,0 +1,2 @@
+Actual Wolfram evaluator return, timeConstraint=60:
+Out[1]= <|"field_identities" -> {0, 0, 0, 0}, "curve_identity" -> 0, "distinct_u_identity" -> 0, "distinct_divisor_polynomials" -> 0, "reduction_rows_q_phi_delta_character_order_points" -> {{1021, 458, 566, 1, 1262503088987509144646987, 1091}, {1361, 83, 1281, 1, 10650026769976589503484113, 1227}, {1531, 1444, 90, -1, 29460018462198273206381591, 1497}}, "gcd_orders" -> 1, "cross_characteristic" -> {{239, 494}, {626, 1162}, {499, 1516}}|>

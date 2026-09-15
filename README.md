@@ -2,28 +2,28 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U75 explicit Jacobian factors and positive rank
+## Latest checkpoint: U77 missing quadratic-twist component
 
-[U75](research/checkpoints/U75_jacobian_decomposition_and_infinite_order_classes.md) gives B-defined maps that decompose the genus-120 curve's Jacobian, up to isogeny, into fifteen genus-eight Jacobians, where B=Q(i,zeta_5). Both compositions of the displayed isogenies are multiplication by seventeen.
+[U77](research/checkpoints/U77_anti_invariant_twist_reduction.md) proves that a positive primitive weighted solution would give an infinite-order class on the Jacobian of
 
-For every factor it proves that the full B-rational torsion is cyclic of order seventeen and constructs an explicit infinite-order class. Their pullbacks yield **fifteen independent classes modulo torsion**, so the original Jacobian has rank at least fifteen over B. This is a lower bound, not an exact rank or a finite-index basis. The original B-rational torsion is killed by 289; its full structure is not claimed.
+    (3-phi)w^2=phi^2-4u^17, phi^2-phi-1=0,
 
-The source-checked Jacobi-sum formula is evaluated exactly at three good primes. Python and TypeScript agree on all 45 character vectors and group orders and all 15 jet matrices. Wolfram corroborates the orders and determinants after a rejected preliminary expression was corrected. A direct count over F_(1021^2) separately checks the Frobenius sign. The common degree-five coordinate polynomial and norm-one conditions are retained across all factors.
+now over the real quadratic field Q(sqrt(5)). This is the opposite quadratic twist to the earlier U73 model, not an interchangeable sign. The new Jacobian has trivial rational torsion. A weighted solution would therefore require positive rank of this one explicit genus-eight Jacobian.
 
-**No relevant degree-five points or weighted solutions are excluded by U75.** The result supplies smaller arithmetic components and excludes a torsion-only shortcut. Certified rank upper bounds, finite-index/saturation data, and the simultaneous effective-divisor conditions are still missing. The weighted equation `X^10+256Y^10=Z^17` and the complete Beal conjecture remain unresolved.
+The construction proves that the required degree-five orbit class is outside the entire smaller-field subgroup J_F(Q(zeta_5)), even after saturation and addition of torsion. In particular the fifteen known U75 generators and U76's index-17 enlargement, all defined over that smaller field, cannot alone capture a weighted solution. This does not invalidate their rank lower bound or index calculation; it identifies the missing extension component.
 
-Verification is a complete written argument and same-model review, with distinct exact computations, not independent expert or proof-assistant certification. The proof, three checkers, reproduction script, order table and core records are preserved in the repository. The delivered U75 archive also contains complete outputs/logs and the unchanged U74 archive; U74's previously local files are not silently claimed as pushed.
+**No rank-zero result is established.** The attempted unconditional Magma calculation returned a browser-tool timeout with no calculation output. A bounded affine search is retained only as exploration. The new nonvanishing proof, torsion calculation, and subgroup exclusion are written/self-reviewed partial theorems, not a proof that the weighted equation has no solutions.
+
+Python and TypeScript agree on their entire exact output, including three twist-specific reduction orders and both complete finite cyclic-orbit examples. Wolfram corroborates the key identities and all three orders. Independent expert or proof-assistant verification remains outstanding. The remaining task is a certified rank upper bound, or another global exclusion for the relevant infinite-order class; no effective upper height bound or full point classification is supplied.
 
 ## Continuity and retained work
 
-U74's local manuscript defines the genus-120 diagonal plane curve and its cyclic degree-five target, classifies a boundary line, and retains an unenumerated finite point problem. Its unchanged manuscript and archive are included in the delivered U75 evidence package. U75's explicitly defined curve theorems do not assume that point set has been classified; their weighted application retains the earlier common-root hypotheses.
+U76's unchanged local proof and archive are retained in the delivered U77 evidence package. Its full Python output was replayed exactly. The historical remote index is preserved in [README before U77](references/U77/README_before_remote_U75.md); the prior local index is also retained. Files not explicitly present in a remote commit are not silently represented as pushed.
 
-[U73](research/checkpoints/U73_genus_eight_reduction.md), the remote predecessor, concerns the fixed genus-eight target and its field and quotient limitations. [U71](research/checkpoints/U71_common_decic_seventeenth_root.md) supplies the written common global root and `289|Y`. U72's separate full-support result remains a necessary lower-bound theorem, not an impossibility proof.
+[U75](research/checkpoints/U75_jacobian_decomposition_and_infinite_order_classes.md) supplies the genus-eight factor decomposition, exact factor torsion and fifteen independent classes. [U71](research/checkpoints/U71_common_decic_seventeenth_root.md) supplies the common-root theorem used for the weighted application. These remain inherited written/self-reviewed results, not independent certifications. U77's rank condition does not imply that rank zero has been proved.
 
-U61/U62 retain their separate coefficient-two scope and outstanding independent-verification obligations. **U41 remains invalidated by U63.** No boundary congruence or unresolved modular prerequisite is reinstated, and no new complete Beal signature is marked solved.
-
-The previous remote index is retained in [README before U75](references/U75/README_before_remote_U73.md). No older remote checkpoint was replaced.
+U68-U72 contain necessary height and support bounds, not upper bounds or impossibility statements. U61/U62 retain their separate coefficient-two scope and outstanding verification requirements. **U41 remains invalidated by U63.** No unproved boundary congruence or global modular prerequisite is reinstated, and no new complete Beal signature is marked solved.
 
 ## Original target
 
-For positive integers A,B,C,x,y,z satisfying `A^x+B^y=C^z` with `x,y,z>=3`, prove `gcd(A,B,C)>1` or produce an independently verified exact counterexample. All bases and exponents remain unbounded. None of the partial results here resolves that statement.
+For positive integers A,B,C,x,y,z with A^x+B^y=C^z and x,y,z>=3, prove gcd(A,B,C)>1 or produce an independently verified counterexample. All bases and exponents remain unbounded. The weighted equation X^10+256Y^10=Z^17 and the full Beal conjecture remain unresolved.

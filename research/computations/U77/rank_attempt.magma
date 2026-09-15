@@ -1,0 +1,12 @@
+// No GRH or smaller class-group bounds are enabled.
+// Submitted through a browser tool; it returned a timeout without computation output.
+Q<t> := PolynomialRing(Rationals());
+K<phi> := NumberField(t^2-t-1);
+R<x> := PolynomialRing(K);
+f := phi+2-4*(3-phi)*x^17;
+C := HyperellipticCurve(f);
+J := Jacobian(C);
+print "U77_TWIST", Genus(C);
+print "TWO_TORSION", Invariants(TwoTorsionSubgroup(J));
+SetVerbose("Selmer", 1);
+print "UNCONDITIONAL_RANK_BOUND", RankBound(J);
