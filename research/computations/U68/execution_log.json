@@ -1,0 +1,82 @@
+[
+  {
+    "name": "python_version",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "node_version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "tsc_version",
+    "command": [
+      "tsc",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "python_compile",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "py_compile",
+      "code/U68_coefficient_height.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "python_whitespace",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "tabnanny",
+      "code/U68_coefficient_height.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "strict_typecheck",
+    "command": [
+      "tsc",
+      "code/U68_coefficient_height.ts",
+      "--target",
+      "ES2022",
+      "--module",
+      "commonjs",
+      "--strict",
+      "--noUnusedLocals",
+      "--noUnusedParameters",
+      "--noUncheckedIndexedAccess",
+      "--exactOptionalPropertyTypes",
+      "--noEmitOnError",
+      "--outDir",
+      "/mnt/data/beal/research/computations/U68/build"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "python",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "code/U68_coefficient_height.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "typescript",
+    "command": [
+      "node",
+      "/mnt/data/beal/research/computations/U68/build/U68_coefficient_height.js"
+    ],
+    "exit_code": 0
+  }
+]

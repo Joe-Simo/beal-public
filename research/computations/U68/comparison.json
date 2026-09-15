@@ -1,0 +1,9 @@
+{
+  "all_shared_fields_equal": true,
+  "all_commands_completed": true,
+  "python_domain": "all projective A:B classes at each listed prime",
+  "typescript_domain": "all fifth-power image pairs at each listed prime",
+  "bun_available": false,
+  "standalone_linter_available": false,
+  "independent_expert_or_kernel_verification": false
+}

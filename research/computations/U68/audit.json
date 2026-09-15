@@ -1,0 +1,30 @@
+{
+  "status": "same-model adversarial review; no independent expert or proof assistant",
+  "checked_points": [
+    "finite rings at 2 and 5 retain nilpotents",
+    "loss of one 17-adic digit retained",
+    "all exceptional residue classes derived uniformly",
+    "explicit q13 kernel refutes overbroad injectivity",
+    "Fourier bound uses all actual conjugates without branch choices",
+    "X=1 and Y=1 not discarded",
+    "all projective axes and full fifth-power scales included",
+    "height threshold decided by exact integer comparison",
+    "exceptional product not confused with largest prime",
+    "lower bound not treated as impossibility"
+  ],
+  "mathematical_results": {
+    "sparse_root_theorem": "proved as written/self-reviewed under explicit Q hypotheses",
+    "weighted_corollaries": "inherit Q65 necessary-condition argument",
+    "largest_left_base_lower_bound": "strictly greater than 10^514",
+    "exceptional_prime_power_product_lower_bound": "strictly greater than 10^483",
+    "full_Beal_solved": false
+  },
+  "limitations": [
+    "No upper bound on T or exceptional part E",
+    "No independent verification of Q65 or this proof",
+    "No Bun or standalone linter installed",
+    "SymPy internal modular-integer ordering deprecation warning retained in stderr"
+  ],
+  "discarded_route": "Do not apply good-prime coefficient divisibility at q=13: explicit nonscalar eta with eta^17=1 exists.",
+  "next_question": "Control exceptional-prime choices globally using the simultaneous Gaussian/quintic system, rather than extend finite local prime lists."
+}

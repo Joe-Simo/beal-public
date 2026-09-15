@@ -2,7 +2,17 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U67 boundary-independent Kummer obstructions
+## Latest checkpoint: U68 global coefficient-height obstruction
+
+[U68](research/checkpoints/U68_global_coefficient_height_obstruction.md) combines divisibility of three coefficients of the common integral quintic root with bounds from all five complex embeddings. It proves `S^34 < 17^17 max(X,Y)^2`, where S is the part of XY outside eleven explicitly listed prime-residue classes. A binomial identity excludes simultaneous vanishing of those three coefficients.
+
+Using the preserved U65 pure-power descent and fourteen rechecked Gaussian forcing primes, any putative positive primitive solution of `X^10+256Y^10=Z^17` must satisfy `max(X,Y)>10^514`; its exceptional prime-power part must exceed `10^483`. These are global lower bounds, not an unbounded search or an impossibility theorem. The size claim concerns this weighted auxiliary equation, not every possible Beal counterexample.
+
+An explicit nonscalar seventeenth root of unity at 13 shows why the coefficient-divisibility argument cannot be extended to all primes. The exceptional prime-power part remains uncontrolled. The new theorem is written/self-reviewed and inherits U65 for its weighted corollaries; Python, TypeScript and Wolfram exact checks are not independent expert or proof-assistant verification.
+
+The proof, both checkers, reproduction commands and compact certificates are preserved with this checkpoint. The evidence archive additionally retains complete finite outputs and execution logs. The next mathematical question is a global restriction on the exceptional-prime part, or an effective upper bound for the common sparse root; neither is supplied here. U41 remains invalidated, the boundary congruence remains unproved, and no new complete Beal signature is marked solved.
+
+## Retained checkpoint: U67 boundary-independent Kummer obstructions
 
 [U67](research/checkpoints/U67_unconditional_Kummer_obstructions.md) combines the remote quintic U65 descent with the Gaussian power equation to construct explicit seventeenth roots of `5/32` modulo `Z^17` and of `phi=(1+sqrt(5))/2` in the quadratic residue algebra. These are necessary conditions for every putative weighted solution, without the unproved boundary congruence (BC). Their weighted application inherits U65's written/self-reviewed proof status.
 

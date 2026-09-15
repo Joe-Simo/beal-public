@@ -1,0 +1,44 @@
+{
+  "checked_date": "2026-09-15",
+  "base_remote_revision": "78255c2e82c19670b9cd5a2b7c44c4cbdca82783",
+  "Q65": {
+    "path": "research/checkpoints/U65_weighted_quintic_unit_elimination.md",
+    "revision": "a15e419765463f68a641ed71fd549aafae2cc95d",
+    "blob": "c3b180d626e6434116cc9aed54a6e585b5e0ac28",
+    "used_implication": "W implies beta^17=X^2+2rho^3Y^2 in Z[rho] and 17|XY",
+    "status": "inherited written/self-reviewed, not independent certification; not replayed this run"
+  },
+  "U67": {
+    "path": "research/checkpoints/U67_unconditional_Kummer_obstructions.md",
+    "blob": "ae9b53ae03a1dee3f9eccee002831e8255d7a04c",
+    "status": "read actual attached manuscript and matching pinned remote; no boundary hypothesis adopted"
+  },
+  "gaussian_forcers": {
+    "status": "historical input fully reconstructed/retested for the new height application",
+    "primes": [
+      11,
+      31,
+      41,
+      61,
+      71,
+      101,
+      151,
+      191,
+      211,
+      281,
+      331,
+      431,
+      461,
+      631
+    ]
+  },
+  "external_search": {
+    "queries": [
+      "\"x^10\" \"256\" \"z^17\"",
+      "seventeenth powers pure quintic field sparse coefficients Fermat (5,5,17)"
+    ],
+    "result": "no directly applicable result recovered; no literature-completeness or novelty claim"
+  },
+  "new_uniform_arguments": "finite-unit-group power map, affine Frobenius cycles, binomial valuation and sparsity, Fourier embedding bound are proved in U68",
+  "full_Beal_solved": false
+}
