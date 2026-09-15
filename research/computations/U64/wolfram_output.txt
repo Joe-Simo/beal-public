@@ -1,0 +1,7 @@
+WolframLanguageEvaluator, stateless call 1, timeConstraint 45:
+Out[1]= <|"lower_coefficients_divisible_by_5" -> True, "constant_quotient_congruence" -> 0, "pairs_mod25" -> 500, "pairs_with_root_mod25" -> 0, "discriminant_identity" -> True, "b_Hecke_sum_product" -> {9, 19}|>
+
+WolframLanguageEvaluator, stateless call 2, timeConstraint 45:
+Out[1]= <|"boundary_q_Nq_Nq2_S_P_HeckeSum_HeckeProduct" -> {{11, 3, 123, 9, 19, 9, 19}, {19, 20, 438, 0, 0, 0, 0}, {31, 43, 1023, -11, 29, -11, 29}, {41, 43, 1543, -1, -151, -1, -151}}, "all_boundary_pairs_match" -> True|>
+
+These are arithmetic checks, not a Wolfram certificate for the entire written argument. No unevaluated expression or warning was returned in these two calls.

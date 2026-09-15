@@ -1,0 +1,101 @@
+{
+  "status": "completed",
+  "finished_UTC": "2026-09-15T04:29:56.382883+00:00",
+  "versions": {
+    "python": "3.13.5",
+    "node": "v22.16.0",
+    "typescript": "Version 5.8.3",
+    "sympy": "1.14.0"
+  },
+  "commands": [
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "code/U64_weighted_local.py"
+      ],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stdout_file": "python_output.json",
+      "stderr": "",
+      "elapsed_seconds": 3.318152156999986
+    },
+    {
+      "command": [
+        "tsc",
+        "--target",
+        "ES2022",
+        "--module",
+        "commonjs",
+        "--strict",
+        "--noUncheckedIndexedAccess",
+        "--noUnusedLocals",
+        "--noUnusedParameters",
+        "--outDir",
+        "/mnt/data/beal/research/computations/U64/build",
+        "code/U64_weighted_local.ts"
+      ],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stdout_file": "typecheck.txt",
+      "stderr": "",
+      "elapsed_seconds": 2.5600605529998575
+    },
+    {
+      "command": [
+        "node",
+        "/mnt/data/beal/research/computations/U64/build/U64_weighted_local.js"
+      ],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stdout_file": "typescript_output.json",
+      "stderr": "",
+      "elapsed_seconds": 0.5450149250000322
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "py_compile",
+        "code/U64_weighted_local.py",
+        "research/computations/U64/reproduce.py"
+      ],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stdout_file": "compile.txt",
+      "stderr": "",
+      "elapsed_seconds": 1.6487170860000333
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "tabnanny",
+        "code/U64_weighted_local.py"
+      ],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stdout_file": "tabnanny.txt",
+      "stderr": "",
+      "elapsed_seconds": 1.7852517670000907
+    }
+  ],
+  "capabilities": {
+    "bun": null,
+    "ruff": null,
+    "eslint": null,
+    "lean": null,
+    "magma": null,
+    "sage": null,
+    "gp": null
+  },
+  "source_sha256": {
+    "code/U64_weighted_local.py": "e2d7060eeb92c10dde93f4eda7375b168ea71d7906833451f7ff6064040134ab",
+    "code/U64_weighted_local.ts": "5747e424667d2f2b1333232736741c114613c2b3dcca7e0728502ef4193b76cd",
+    "references/U64/hecke_records.json": "6e355a00bf436208dde54bd5db7d1b228908cb5bc35553408f106615f7ae54dc",
+    "references/U64/sources.json": "b4510a65810002136fc045f19568e41bc05bfa094bf568aa24d29e7672cac556",
+    "research/computations/U64/reproduce.py": "39091121698c729b802ba40d086d19866bf75c88cf0b0163d90603ab0a8f8f33",
+    "research/computations/U64/wolfram_checks.wl": "1e041f4875775d3068184c798581578e99d493ec444ec89c6553058f8d415615",
+    "research/computations/U64/wolfram_output.txt": "d78e2edc3584fdbacf86ccd888a8e5628b054cd611aea072b0bcf22ae6e105cc"
+  },
+  "verification": "Exact bounded computations and self-review, not independent expert or kernel certification"
+}

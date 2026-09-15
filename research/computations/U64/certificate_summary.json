@@ -1,0 +1,180 @@
+{
+  "checkpoint": "U64",
+  "status": "completed",
+  "full_Beal_solved": false,
+  "arithmetic": "Exact Python integers and SymPy",
+  "eisenstein": {
+    "shift_coefficients_ascending": [
+      "-65*u**5 - 50*u**4*v - 600*u**3*v**2 - 1200*u**2*v**3 - 400*u*v**4 + 480*v**5",
+      "5*u**4 + 160*u**3*v + 920*u**2*v**2 + 640*u*v**3 + 80*v**4",
+      "-10*u**3 - 180*u**2*v - 360*u*v**2 - 80*v**3",
+      "10*u**2 + 80*u*v + 40*v**2",
+      "-5*u - 10*v",
+      "1"
+    ],
+    "constant_quotient_mod5": "2*(U^5+8*V^5)",
+    "all_lower_coefficients_divisible_by5": true,
+    "mod25_parameter_pairs": 500,
+    "roots_mod25": []
+  },
+  "cyclotomic_quadratic_certificate": {
+    "gauss_sum_squared_mod_Phi17": 17,
+    "automorphisms_checked": 16,
+    "quadratic_subfield": "Q(sqrt(17))"
+  },
+  "prime11_recovered_forms": [
+    {
+      "suffix": "a",
+      "sum": -1,
+      "product": -1,
+      "compatible_parameter_pairs": 0
+    },
+    {
+      "suffix": "b",
+      "sum": 9,
+      "product": 19,
+      "compatible_parameter_pairs": 5
+    },
+    {
+      "suffix": "c",
+      "sum": -5,
+      "product": -5,
+      "compatible_parameter_pairs": 0
+    },
+    {
+      "suffix": "d",
+      "sum": -1,
+      "product": -1,
+      "compatible_parameter_pairs": 0
+    },
+    {
+      "suffix": "e",
+      "sum": -11,
+      "product": 29,
+      "compatible_parameter_pairs": 0
+    },
+    {
+      "suffix": "f",
+      "sum": -5,
+      "product": -5,
+      "compatible_parameter_pairs": 0
+    },
+    {
+      "suffix": "g",
+      "sum": -1,
+      "product": -1,
+      "compatible_parameter_pairs": 0
+    }
+  ],
+  "unchecked_orbits": [
+    "h"
+  ],
+  "form_b_diagnostics": [
+    {
+      "prime": 11,
+      "form_b_sum_product": [
+        9,
+        19
+      ],
+      "good_pairs": 35,
+      "toric_nonzero_pairs": 0,
+      "compatible_good_pairs": 5,
+      "boundary": {
+        "U": 1,
+        "V": 0,
+        "Np": 3,
+        "Np2": 123,
+        "S": 9,
+        "P": 19
+      },
+      "compatible_V_over_U": [
+        0
+      ],
+      "compatible_U_zero": 0,
+      "toric_norm_mod17": 13
+    },
+    {
+      "prime": 19,
+      "form_b_sum_product": [
+        0,
+        0
+      ],
+      "good_pairs": 99,
+      "toric_nonzero_pairs": 0,
+      "compatible_good_pairs": 27,
+      "boundary": {
+        "U": 1,
+        "V": 0,
+        "Np": 20,
+        "Np2": 438,
+        "S": 0,
+        "P": 0
+      },
+      "compatible_V_over_U": [
+        0,
+        8
+      ],
+      "compatible_U_zero": 9,
+      "toric_norm_mod17": 13
+    },
+    {
+      "prime": 31,
+      "form_b_sum_product": [
+        -11,
+        29
+      ],
+      "good_pairs": 255,
+      "toric_nonzero_pairs": 0,
+      "compatible_good_pairs": 15,
+      "boundary": {
+        "U": 1,
+        "V": 0,
+        "Np": 43,
+        "Np2": 1023,
+        "S": -11,
+        "P": 29
+      },
+      "compatible_V_over_U": [
+        0
+      ],
+      "compatible_U_zero": 0,
+      "toric_norm_mod17": 10
+    },
+    {
+      "prime": 41,
+      "form_b_sum_product": [
+        -1,
+        -151
+      ],
+      "good_pairs": 440,
+      "toric_nonzero_pairs": 0,
+      "compatible_good_pairs": 20,
+      "boundary": {
+        "U": 1,
+        "V": 0,
+        "Np": 43,
+        "Np2": 1543,
+        "S": -1,
+        "P": -151
+      },
+      "compatible_V_over_U": [
+        0
+      ],
+      "compatible_U_zero": 0,
+      "toric_norm_mod17": 8
+    }
+  ],
+  "row_comparison": {
+    "status": "passed",
+    "arithmetic_rows_compared": 829,
+    "comparisons": [
+      "all seven recovered prime11 forms",
+      "every bounded row at 11,19,31,41",
+      "boundary fibers and ratio sets",
+      "toric norm residues",
+      "mod25 root domain"
+    ],
+    "normalization": "JSON decimal bigint strings matched to exact Python integers; no floating conversion"
+  },
+  "scope": "No global weighted-equation exclusion; h unverified; full Beal unresolved"
+}

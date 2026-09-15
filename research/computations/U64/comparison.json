@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "arithmetic_rows_compared": 829,
+  "comparisons": [
+    "all seven recovered prime11 forms",
+    "every bounded row at 11,19,31,41",
+    "boundary fibers and ratio sets",
+    "toric norm residues",
+    "mod25 root domain"
+  ],
+  "normalization": "JSON decimal bigint strings matched to exact Python integers; no floating conversion"
+}

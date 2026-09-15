@@ -1,0 +1,202 @@
+{
+  "status": "Selected exact entries read from primary LMFDB records; not a reconstruction of the newspace",
+  "field": "2.2.5.1",
+  "prime_index_basis": "The field-wide ordering used by LMFDB's download_hmf_magma and download_hmf_sage functions was inspected at source revision fea1c3dffe05b3ac2df3d5953885db035d9096b4. The displayed form-a table in U63 supplies the initial order. The current direct hmf_fields request failed JSON parsing; it is not counted as a successful source.",
+  "first_prime_norms": [
+    4,
+    5,
+    9,
+    11,
+    11,
+    19,
+    19,
+    29,
+    29,
+    31,
+    31,
+    41,
+    41,
+    49
+  ],
+  "prime11_ideals": [
+    "[11,11,-3*w+2]",
+    "[11,11,-3*w+1]"
+  ],
+  "recovery": "b,c,d,e,g were parsed with Python json.loads from live HTTPS API responses in the read-only Firecrawl runtime. f was inspected from a complete API markdown response. a is retained from U63's actual page. h is not recovered. No session tokens or browser connection URLs are retained.",
+  "records": {
+    "a": {
+      "minpoly_ascending": [
+        -1,
+        1,
+        1
+      ],
+      "prime11_linear_pairs": [
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "source": "U63 sources.json S2: original form-a page"
+    },
+    "b": {
+      "minpoly_ascending": [
+        19,
+        -9,
+        1
+      ],
+      "prime11_linear_pairs": [
+        [
+          9,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "first14": [
+        0,
+        0,
+        0,
+        "-e+9",
+        "e",
+        0,
+        0,
+        0,
+        0,
+        "-e-1",
+        "e-10",
+        "11*e-50",
+        "-11*e+49",
+        0
+      ],
+      "api_timestamp": "2026-09-15T04:11:34.605085",
+      "raw_sha256_observed": "fa7aaaf0521ac1d98ed4bdbaf4bf54edddece0afc24d19bbdd3d8c100baa3aa1"
+    },
+    "c": {
+      "minpoly_ascending": [
+        -5,
+        5,
+        1
+      ],
+      "prime11_linear_pairs": [
+        [
+          -5,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "api_timestamp": "2026-09-15T04:11:34.782622",
+      "raw_sha256_observed": "f51ddeed4cc46af3acf4b9b30c8f3e78db65e50166c5f1be1645248fc8e2398a"
+    },
+    "d": {
+      "minpoly_ascending": [
+        -1,
+        1,
+        1
+      ],
+      "prime11_linear_pairs": [
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "api_timestamp": "2026-09-15T04:11:35.042569",
+      "raw_sha256_observed": "8be011ba6ec806fd5e15c265d18d18ae1579b57b5c4af95ae6459159f09c1e72"
+    },
+    "e": {
+      "minpoly_ascending": [
+        29,
+        11,
+        1
+      ],
+      "prime11_linear_pairs": [
+        [
+          -11,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "api_timestamp": "2026-09-15T04:11:35.211810",
+      "raw_sha256_observed": "d570b27945454d7dee434422acbdc1eb32562f693021d7fee6cad8c02714c1bf"
+    },
+    "f": {
+      "minpoly_ascending": [
+        -5,
+        5,
+        1
+      ],
+      "prime11_linear_pairs": [
+        [
+          -5,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "api_timestamp": "2026-09-14T23:11:17.009990",
+      "cache": "Complete API response, cached 2026-09-14T23:11:17.569Z, Firecrawl scrape 01a0a341-5175-759b-be58-3fd827b18c4b"
+    },
+    "g": {
+      "minpoly_ascending": [
+        -1,
+        1,
+        1
+      ],
+      "prime11_linear_pairs": [
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "api_timestamp": "2026-09-15T04:11:35.357055",
+      "raw_sha256_observed": "9c0105aedc7be8dc14cd45bf200079cae3dba147027955accfb5f4076c48ed4d"
+    }
+  },
+  "unknown": [
+    "h"
+  ],
+  "raw_files_note": "Hashes were returned by the deterministic remote reader for the complete API bodies. Those complete bodies were not downloaded into this container, so only the selected exact entries are archived here; hashes alone are not proof evidence.",
+  "query_extraction_rejected": "An earlier Firecrawl query-mode extraction for d returned an incomplete fragment; it was not used. The subsequent deterministic JSON reader supplies d's entries.",
+  "URLs": {
+    "api_pattern": "https://www.lmfdb.org/api/hmf_hecke/?label=2.2.5.1-2000.1-{suffix}&_format=json",
+    "rendering_source": "https://github.com/LMFDB/lmfdb/blob/fea1c3dffe05b3ac2df3d5953885db035d9096b4/lmfdb/hilbert_modular_forms/hilbert_modular_form.py"
+  },
+  "first_prime_ideals": [
+    "[4,2,2]",
+    "[5,5,-2*w+1]",
+    "[9,3,3]",
+    "[11,11,-3*w+2]",
+    "[11,11,-3*w+1]",
+    "[19,19,-4*w+3]",
+    "[19,19,-4*w+1]",
+    "[29,29,w+5]",
+    "[29,29,-w+6]",
+    "[31,31,-5*w+2]",
+    "[31,31,-5*w+3]",
+    "[41,41,-6*w+5]",
+    "[41,41,w-7]",
+    "[49,7,-7]"
+  ],
+  "prime_order_observation": "Transcribed from the full primary form-a page returned in U63 (Firecrawl scrape 01a0a325-42d8-73cf-836f-2a7fd179de44); its original tool response included this extended table. This is not the failed U64 hmf_fields request."
+}

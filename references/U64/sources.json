@@ -1,0 +1,58 @@
+{
+  "checkpoint": "U64",
+  "checked_date_UTC": "2026-09-15",
+  "research_status": "Written partial results and exact checks only; full Beal and weighted equation unresolved",
+  "source_vs_derivation": "External theorem statements and database entries are identified below. The Eisenstein shift, cyclic-restriction lemma and boundary analysis are this checkpoint's self-reviewed reasoning.",
+  "S1": {
+    "author": "Martin Azon",
+    "title": "Effective Darmon's program for the generalised Fermat equation",
+    "identifier": "arXiv:2504.01967v2",
+    "version_date": "2025-07-03",
+    "status": "Preprint; unconditional statements as used, not independently formalized here",
+    "urls": ["https://arxiv.org/html/2504.01967v2", "https://arxiv.org/pdf/2504.01967v2"],
+    "locations": ["Proposition 3.22: model translation", "Hypothesis 4 and Theorem 5.5: modularity", "Theorem 5.11 Table 2, printed p.48: conductor", "Theorem 5.21: residual unramifiedness and finite flatness", "Hypothesis 5 and Theorem 5.23: packaged lowering conditions not automatically applicable"],
+    "table_inspection": "PDF page index 47 visually inspected; the nu_r<=0, nu_r=0 mod r, irreducible g_r^- row has conductor 3",
+    "scope_check": "The weighted positive solution has Z>1 and gcd(Z,10)=1, so Hypothesis 4 holds. The negative twist does not meet Hypothesis 5 through a negative non-r-divisible valuation at an odd prime; no literal application of Theorem 5.23 is claimed."
+  },
+  "S2": {
+    "authors": ["Christophe Breuil", "Fred Diamond"],
+    "title": "Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caracteres galoisiens",
+    "publication": "Ann. Sci. ENS 47 (2014), 905-974",
+    "doi": "10.24033/asens.2230",
+    "url": "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/extensions.pdf",
+    "location": "Theorem 3.2.2, author PDF printed pp.36-37; screenshot page indices 35-36",
+    "correction_to_U63_source_record": "The irreducibility hypothesis is over F(mu_p), not merely its quadratic subfield. U64 proves the needed implication for the cyclic degree-16 extension using local irreducibility at 2.",
+    "still_outstanding": "An explicit check of all prescribed local lifts, determinant compatibility and types; finite flatness is not reported as completion of those choices."
+  },
+  "S3": {
+    "database": "LMFDB",
+    "field": "2.2.5.1",
+    "level": "2000.1",
+    "record_file": "hecke_records.json",
+    "API_pattern": "https://www.lmfdb.org/api/hmf_hecke/?label=2.2.5.1-2000.1-{suffix}&_format=json",
+    "data_preservation": "Selected exact entries and safe deterministic reader outputs only; complete API body files not archived. The hashes in hecke_records.json were computed by the remote reader and are not numerical certificates by themselves.",
+    "failed_access": ["h API: deterministic JSON parser returned JSONDecodeError", "hmf_fields API: JSONDecodeError", "several rendered form pages: browser challenge; no challenge solved or bypassed", "d query-mode extraction: incomplete; discarded in favor of deterministic JSON result"],
+    "newspace_status": "No independent newspace reconstruction and no corrected all-eight-orbit elimination"
+  },
+  "S4": {
+    "repository": "LMFDB/lmfdb",
+    "revision": "fea1c3dffe05b3ac2df3d5953885db035d9096b4",
+    "path": "lmfdb/hilbert_modular_forms/hilbert_modular_form.py",
+    "url": "https://github.com/LMFDB/lmfdb/blob/fea1c3dffe05b3ac2df3d5953885db035d9096b4/lmfdb/hilbert_modular_forms/hilbert_modular_form.py",
+    "locations": ["get_hmf", "get_hmf_field", "download_hmf_magma", "download_hmf_sage"],
+    "observation": "Eigenvalue arrays are paired by index with the same field-wide prime list. The actual initial order is also preserved in the previous retrieved form-a table."
+  },
+  "official_status": {
+    "UNT": "https://sites.math.unt.edu/~mauldin/beal.html",
+    "UNT_access": "Primary statement and standing prize page accessible",
+    "AMS": "https://www.ams.org/beal-prize",
+    "AMS_access": "403; full current rules and any award not verified from that endpoint",
+    "claim": "No accepted complete solution or award is claimed"
+  },
+  "execution_boundaries": {
+    "container_network": "Direct HTTPS attempt failed DNS; no successful local network download claimed",
+    "public_API_reader": "Read-only remote Python with urllib.request and json.loads; no proxy escalation or challenge solving. The browser session was explicitly stopped.",
+    "secrets": "No browser/CDP connection token or credential-bearing URL retained",
+    "external_actions": "No author contact, public repository write, paper publication, submission or purchase"
+  }
+}

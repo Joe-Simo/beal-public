@@ -2,7 +2,15 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U63 audit and local repair
+## Latest checkpoint: U64 uniform local proofs and corrected comparisons
+
+[U64](research/checkpoints/U64_weighted_eisenstein_and_Hecke_rebuild.md) proves that a single integral translation makes the weighted Frey quintic Eisenstein at 5 for every admissible solution. It supplies the prime-5 conductor input without the old divisibility assumptions and completes the irreducibility argument for the full cyclotomic extension required by Breuil-Diamond.
+
+The correctly keyed prime-11 comparison excludes six of the seven recovered quadratic orbits; **b survives and h's data are not yet checked**. Additional exact tests at 19,31,41 confirm that b agrees with the boundary curve y^2=64-x^5 at those primes. U64 proves this boundary Jacobian has CM by Q(zeta_5), but does not claim a global identification with b. A finite list of matches is not a complete representation comparison.
+
+**The weighted equation remains unresolved.** The prescribed local-lift application and newspace reconstruction are outstanding. Next: identify or distinguish the boundary representation globally and investigate a genuinely global obstruction, rather than simply accumulating forced divisors. Code and proof-relevant certificates are preserved in the repository; the delivered U64 archive includes every finite row and the full execution evidence. Verification remains self-review plus distinct arithmetic checks, not an expert or kernel certificate.
+
+## U63 correction retained
 
 **U41's claimed elimination of `X^10+256Y^10=Z^17` is invalidated.** [U63](research/checkpoints/U63_weighted_audit_and_twist_repair.md) exhibits a permitted prime-11 trace match against the correctly keyed LMFDB entries, corrects a nonunit square test in the local twist argument, and reproduces the modulo-125 obstruction with its actual domain size.
 
@@ -29,7 +37,7 @@ The second statement is parity-specific. It does not settle the reversed parity 
 
 Exact source code is under `code/`, computation records under `research/computations/`, and checked source information under `references/`. The local evidence archive also retains historical outputs and the old U61 patch. `U62_preservation.json` records which files were actually copied to the remote; an old checkpoint's then-current write limitation is historical, not a current capability claim.
 
-Next mathematical task: rebuild the weighted comparison for the corrected negative twist using actual prime-ideal keys, not array offsets, and audit the other prescribed local lifts. The first form-a comparison is complete; do not repeat it as new progress. Independent verification of U61 remains a separate priority.
+Independent verification of U61 remains a separate priority. The current next-action queue is in U64; the old finite tests must not be rerun and relabeled as new progress without a changed mathematical question or input.
 
 ## Original target
 
