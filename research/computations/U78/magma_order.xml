@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<calculator><headers><max_time>60</max_time><max_input>50000</max_input><seed>3760400944</seed><version>2.29-10</version><time>0.050</time><memory>32.09MB</memory></headers><results><line>Time: 0.030</line><line>U78_EXPLICIT_ORDER_DISCRIMINANT [ &lt;2, 32&gt;, &lt;5, 17&gt;, &lt;17, 34&gt; ]</line><line>U78_EQUATION_ORDER_INDEX 131072</line><line>U78_SIGNATURE 2 16</line><line>U78_ORDER_CONSTRUCTION_DONE</line><line></line></results></calculator>

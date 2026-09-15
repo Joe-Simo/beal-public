@@ -1,0 +1,6 @@
+Actual corrected evaluator return, timeConstraint=60:
+Out[1]= <|"discriminant" -> {{2, 32}, {5, 17}, {17, 34}}, "index" -> 131072, "eisenstein17" -> 11 + 8*p$83832, "norms" -> {-4, -5, 152587890625}, "factor16_irreducible_mod5" -> True, "monic_constant_norm" -> {{2, 64}, {5, 17}}, "curve_scaling_identity" -> 0, "root_identity" -> 0, "recovery_identity" -> 0, "local5_image" -> {{0, 0, 0, 0}, {0, 1, 1, 1}}, "local5_nonsquare" -> -1|>
+
+A previous call returned the same field/norm identities and printed local dimensions, but emitted:
+Symbol::undefined2: Warning: Global symbols "A, B, A, B, A, A, B, A, A, B" are undefined.
+It is not used as separate corroboration of the scaling identity. The corrected call above uses lowercase local symbols and returned without the warning. No class-group or rank result was returned by either call.

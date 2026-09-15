@@ -1,0 +1,6 @@
+Q<t> := PolynomialRing(Rationals());
+K<phi> := NumberField(t^2-t-1);
+R<x> := PolynomialRing(K);
+C := HyperellipticCurve(phi+2-4*(3-phi)*x^17);
+print "U78 genus", Genus(C);
+print "U78 quick setup complete";

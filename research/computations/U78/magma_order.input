@@ -1,0 +1,8 @@
+Q<t> := PolynomialRing(Rationals());
+F<s> := NumberField(t^34+2*t^17-4);
+ph := (s^17+2)/2; assert ph^2-ph-1 eq 0;
+time O := Order([s, ph]);
+print "U78_EXPLICIT_ORDER_DISCRIMINANT", Factorization(Discriminant(O));
+print "U78_EQUATION_ORDER_INDEX", Index(O,EquationOrder(F));
+print "U78_SIGNATURE", Signature(F);
+print "U78_ORDER_CONSTRUCTION_DONE";

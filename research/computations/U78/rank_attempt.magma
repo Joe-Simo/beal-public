@@ -1,0 +1,13 @@
+// This actual request returned a gateway timeout, not a rank result.
+// No GRH class-group settings were enabled in this request.
+Q<t> := PolynomialRing(Rationals());
+K<phi> := NumberField(t^2-t-1);
+R<x> := PolynomialRing(K);
+f := phi+2-4*(3-phi)*x^17;
+C := HyperellipticCurve(f);
+J := Jacobian(C);
+print "U78_GENUS", Genus(C);
+print "U78_TWO_TORSION", Invariants(TwoTorsionSubgroup(J));
+SetVerbose("Selmer",1);
+time bound := RankBound(J);
+print "U78_UNCONDITIONAL_RANK_BOUND", bound;
