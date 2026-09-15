@@ -1,0 +1,39 @@
+[
+  {
+    "stage": "Wolfram h resultants",
+    "error": "Table::write: Tag List in {s,p} is Protected",
+    "invalid_fragment": "Table[..., {{s,p},{{-3,-9},{1,-1},{9,19}}}]",
+    "consequence": "The resultants portion remained unevaluated and was not used. Corrected Map/Function call returned -44,-4,-4 and gcd 1 for all three."
+  },
+  {
+    "stage": "TypeScript execution",
+    "command": "/usr/local/bin/tsc --strict --noUncheckedIndexedAccess --target ES2022 --module commonjs ...",
+    "error": "No such file or directory; subsequent node invocation could not find generated file",
+    "consequence": "No successful compilation/execution credited. PATH-resolved tsc at /opt/nvm/versions/node/v22.16.0/bin/tsc subsequently passed; full successful rerun in execution_log.json."
+  },
+  {
+    "stage": "Wolfram final Frobenius check",
+    "invalid_fragment": "PowerMod[t,17^4,t^5-2,Modulus->17]",
+    "error": "PowerMod::argrx: PowerMod called with 4 arguments; 3 arguments are expected",
+    "consequence": "Unevaluated expression not used. Replaced by exact reduction 83521=5*16704+1, PowerMod[2,16704,17]=1; verified True. Other factorization results from that call were valid."
+  },
+  {
+    "stage": "Source retrieval via container",
+    "error": "DNS name resolution failed",
+    "consequence": "No source values credited to that attempt; successful cached primary response came through Firecrawl."
+  },
+  {
+    "stage": "GitHub source serialization",
+    "error": "First TypeScript blob did not match the tested local Git blob hash: a redundant conditional expression appeared in place of the literal modulus.",
+    "discarded_blob": "a622ffc47e8893a6fabb2995a437d2749cb03445",
+    "corrected_blob": "7fd24619add5400f49e94679cc337631d1be664f",
+    "consequence": "The discarded blob was not linked to a tree, commit or branch; the corrected upload matched the tested local file exactly. Local source and completed tests were unchanged."
+  },
+  {
+    "stage": "GitHub compressed output serialization",
+    "error": "The returned blob hash did not match the local compressed output hash.",
+    "discarded_blob": "0d991d1a7c7a6df5a441b16462670ce89e6cc494",
+    "expected_local_blob": "d837b3fe88ab4b6ef30fd93567cb994fa533e281",
+    "consequence": "The mismatching blob was never linked to a tree or branch. Full outputs are retained in the local evidence package; remote preservation is explicitly limited to the exact source, manuscript, compact certificates and logs."
+  }
+]

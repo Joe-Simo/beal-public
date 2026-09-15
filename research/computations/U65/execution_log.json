@@ -1,0 +1,97 @@
+{
+  "started_utc": "2026-09-15T05:14:57.640554+00:00",
+  "full_Beal_solved": false,
+  "scope": "U65 finite certificate and polynomial-identity replay; not formal proof verification",
+  "commands": [
+    {
+      "command": ["/opt/pyvenv/bin/python", "--version"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Python 3.13.5\n"
+    },
+    {
+      "command": ["/opt/nvm/versions/node/v22.16.0/bin/tsc", "--version"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "Version 5.8.3\n"
+    },
+    {
+      "command": ["/opt/nvm/versions/node/v22.16.0/bin/node", "--version"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "v22.16.0\n"
+    },
+    {
+      "command": ["/opt/pyvenv/bin/python", "-c", "import sympy; print(sympy.__version__)"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "1.14.0\n"
+    },
+    {
+      "command": ["/opt/pyvenv/bin/python", "-m", "py_compile", "code/U65_quintic_descent.py", "research/computations/U65/reproduce.py"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": ["/opt/pyvenv/bin/python", "-m", "tabnanny", "code/U65_quintic_descent.py"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": ["/opt/nvm/versions/node/v22.16.0/bin/tsc", "--strict", "--noUncheckedIndexedAccess", "--noUnusedLocals", "--noUnusedParameters", "--target", "ES2022", "--module", "commonjs", "--outDir", "/mnt/data/beal/research/computations/U65/build", "code/U65_quintic_descent.ts"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": ["/opt/pyvenv/bin/python", "code/U65_quintic_descent.py"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout_file": "research/computations/U65/python_output.json",
+      "stdout_sha256": "f3d2d19cc1ccfbc1a2ac1b0bbec7af61e10b67c51788aa35fdb0388b7c99163d"
+    },
+    {
+      "command": ["/opt/nvm/versions/node/v22.16.0/bin/node", "/mnt/data/beal/research/computations/U65/build/U65_quintic_descent.js"],
+      "cwd": "/mnt/data/beal",
+      "returncode": 0,
+      "stderr": "",
+      "stdout_file": "research/computations/U65/typescript_output.json",
+      "stdout_sha256": "074a0dd46ece8a8cd26b6c212677abdd95999125fb3c50e94b839d2692a1fae6"
+    }
+  ],
+  "capabilities": {
+    "tsc": "/opt/nvm/versions/node/v22.16.0/bin/tsc",
+    "node": "/opt/nvm/versions/node/v22.16.0/bin/node",
+    "bun": null,
+    "ruff": null,
+    "eslint": null,
+    "lean": null,
+    "lake": null,
+    "sage": null,
+    "magma": null
+  },
+  "completed_utc": "2026-09-15T05:15:01.864621+00:00",
+  "status": "completed",
+  "lint_note": "No configured standalone linter found; strict/no-unused TypeScript, py_compile and tabnanny executed.",
+  "comparison": {
+    "status": "all compared mathematical values agree",
+    "full_Beal_solved": false,
+    "full_rows_compared": 24,
+    "square_root_witness_pairs_compared": 544,
+    "different_methods": [
+      "Python split linear/quartic Fermat quotients and split Gaussian test",
+      "TypeScript unsplit degree-five Frobenius equation and unsplit Gaussian test"
+    ],
+    "not_established": ["global Diophantine impossibility", "independent expert verification", "proof-assistant verification", "newspace completeness"]
+  }
+}

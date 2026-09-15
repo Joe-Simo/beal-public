@@ -1,0 +1,46 @@
+{
+  "checkpoint": "U65",
+  "date_checked_utc": "2026-09-15",
+  "full_Beal_solved": false,
+  "h_record": {
+    "url": "https://www.lmfdb.org/api/hmf_hecke/?label=2.2.5.1-2000.1-h&_format=json",
+    "label": "2.2.5.1-2000.1-h",
+    "record_id": 126931,
+    "api_timestamp": "2026-09-14T23:11:48.936324",
+    "cache_timestamp": "2026-09-14T23:11:49.255Z",
+    "retrieval": "Successful Firecrawl markdown scrape of a cached primary JSON response; not an inferred value from U41.",
+    "scrape_id": "01a0a366-2cbb-77d0-a6ab-578fb30c2419",
+    "http_status": 200,
+    "coefficient_polynomial": "e^4-10e^3-13e^2+190e+241",
+    "first_five_eigenvalues": ["0", "0", "(2e^3-15e^2-109e+335)/91", "(-2e^3+15e^2+18e+120)/91", "(2e^3-15e^2-18e+335)/91"],
+    "first_five_prime_keys": ["[4,2,2]", "[5,5,-2*w+1]", "[9,3,3]", "[11,11,-3*w+2]", "[11,11,-3*w+1]"],
+    "key_provenance": "The field-wide ordering is the official LMFDB exporter and explicit form-a table preserved in U63/U64; it was not guessed from U41's offsets.",
+    "raw_body_preservation": "The full API response was observed in the tool, not downloaded as a raw file to this container. These exact selected entries are preserved; no raw-body hash is invented.",
+    "direct_container_attempt": "requests.get failed with DNS name resolution; no data from that failed request were used."
+  },
+  "standard_theorems": {
+    "author": "J.S. Milne",
+    "title": "Algebraic Number Theory",
+    "version": "3.08",
+    "version_date": "2020-07-19",
+    "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+    "inspection": "Original parsed PDF and screenshots of PDF indices 67,71,86 inspected; full PDF is not redistributed.",
+    "locators": ["Proposition 3.53, printed page 66: Eisenstein ramification", "Theorem 4.3, printed page 70: ideal-class norm bound", "Theorem 5.1, printed page 85: unit rank"],
+    "application": "Degree 5, signature (1,2), discriminant 50000; derive class number one and a two-dimensional norm-one unit quotient modulo seventeenth powers. The explicit representatives are certified independently in U65."
+  },
+  "upstream_Frey_source": {
+    "author": "Martin Azon",
+    "title": "Effective Darmon's program for the generalised Fermat equation",
+    "identifier": "arXiv:2504.01967v2",
+    "version_date": "2025-07-03",
+    "url": "https://arxiv.org/html/2504.01967v2",
+    "status": "Preprint; upstream Frey/RM definitions inspected. No claim that U65 completes its global level-lowering application."
+  },
+  "literature_search_scope": "Exact weighted-polynomial and related Kummer/2-torsion searches were attempted; no directly applicable global elimination was established by those results. No novelty claim follows from that limited search.",
+  "official_status_access": {
+    "sponsor": "https://www.bealconjecture.com/",
+    "mathematical_statement": "https://sites.math.unt.edu/~mauldin/beal.html",
+    "ams": "https://www.ams.org/beal-prize",
+    "observation": "Sponsor and Mauldin pages were reachable this session; AMS returned 403. No official award or accepted full solution was established by these checks. Inaccessible rules were not reconstructed or asserted."
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "checkpoint": "U65",
+  "full_Beal_solved": false,
+  "weighted_equation_solved": false,
+  "status": "Written partial theorem with self-review and exact finite certificates; no expert/kernel verification",
+  "base_remote": "43e60e0480485cb3c4f003f6ec8232674083848d",
+  "h_resultants": [
+    -44,
+    -4,
+    -4
+  ],
+  "h_common_roots_mod17_squared": [
+    0,
+    0,
+    0
+  ],
+  "only_remaining_recorded_orbit": "b",
+  "modular_qualification": "Conditional on obtaining the intended level; database completeness is not independently reconstructed",
+  "quintic_discriminant": "50000",
+  "class_number": 1,
+  "norm_generator_norms": [
+    2,
+    3,
+    5,
+    7,
+    13
+  ],
+  "index_identity": "[O_F:Z[2rhoU-2rho^4V]]=2^10*|U^5+8V^5|^2",
+  "unit_basis_characters": [
+    {
+      "p": 103,
+      "root": 17,
+      "generator": 64,
+      "values": [
+        61,
+        23
+      ],
+      "logs": [
+        4,
+        14
+      ]
+    },
+    {
+      "p": 137,
+      "root": 9,
+      "generator": 119,
+      "values": [
+        59,
+        59
+      ],
+      "logs": [
+        3,
+        3
+      ]
+    }
+  ],
+  "unit_basis_determinant_mod17": 4,
+  "mod289": {
+    "modulus": 289,
+    "linear_root": 49,
+    "quartic": [
+      118,
+      26,
+      89,
+      49,
+      1
+    ],
+    "quartic_unit_logs": [
+      [
+        12,
+        4,
+        7,
+        10
+      ],
+      [
+        6,
+        11,
+        6,
+        2
+      ]
+    ],
+    "linear_unit_logs": [
+      11,
+      13
+    ],
+    "unit_log_image_size": 289,
+    "square_parameter_pairs": 18768,
+    "norm_17th_power_pairs": 1104,
+    "quartic_log_pairs": 24,
+    "two_component_pairs": 24,
+    "classes_before_gaussian": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        14
+      ]
+    ],
+    "classes_after_gaussian": [
+      [
+        0,
+        0
+      ]
+    ],
+    "gaussian_parameter_pairs": 16,
+    "gaussian_root_pairs": 544
+  },
+  "compact_rows": [
+    [0,0,0,18,34],
+    [0,0,0,43,34],
+    [0,0,0,100,34],
+    [0,0,0,106,34],
+    [0,0,0,183,34],
+    [0,0,0,189,34],
+    [0,0,0,246,34],
+    [0,0,0,271,34],
+    [0,0,1,0,34],
+    [0,14,2,1,0],
+    [0,14,21,155,0],
+    [0,0,38,0,34],
+    [0,14,69,179,0],
+    [0,14,76,38,0],
+    [0,0,110,0,34],
+    [0,0,134,0,34],
+    [0,0,155,0,34],
+    [0,0,179,0,34],
+    [0,14,213,251,0],
+    [0,14,220,110,0],
+    [0,0,251,0,34],
+    [0,14,268,134,0],
+    [0,14,287,288,0],
+    [0,0,288,0,34]
+  ],
+  "proved_necessary_condition": "X^2+2rho^3Y^2=beta^17 in Z[rho], rho^5=2, Norm(beta)=Z; 17 divides exactly one of X,Y",
+  "unresolved": "Global exclusion of this integral power equation; no complete Beal solution",
+  "complete_outputs": "python_output.json and typescript_output.json contain all 24 rows and all 544 root-pair witnesses",
+  "next_action": "Analyze the three vanishing non-target coefficients of beta^17, while retaining the Gaussian equation; do not assume that coefficient vanishing forces beta rational."
+}

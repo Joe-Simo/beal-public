@@ -1,0 +1,21 @@
+{
+  "checkpoint": "U65",
+  "repository": "Joe-Simo/beal",
+  "visibility_checked": "private",
+  "base_commit": "43e60e0480485cb3c4f003f6ec8232674083848d",
+  "base_tree": "89e50feb6cacb2365a2532b2943b80a5d8b4a955",
+  "full_Beal_solved": false,
+  "weighted_equation_solved": false,
+  "verification": "Written proof and same-model review with distinct exact arithmetic checks; no expert or proof-assistant certificate.",
+  "exact_tested_source_blobs": {
+    "code/U65_quintic_descent.py": "2b9fc4550cc31e2b691f840b903518ac80309ad6",
+    "code/U65_quintic_descent.ts": "7fd24619add5400f49e94679cc337631d1be664f",
+    "research/checkpoints/U65_weighted_quintic_unit_elimination.md": "c3b180d626e6434116cc9aed54a6e585b5e0ac28"
+  },
+  "remote_scope": "Complete manuscript, both exact checkers, replay harness, source records, compact certificate, comparison, execution log, failed attempts, actual successful Wolfram calls and outputs, and updated README.",
+  "archive_additions": "Both full output JSON files, all 24 residue rows and all 544 square-root witnesses, their compressed copy, retained local exploration, manifest and remote readback confirmation, plus prior U64 evidence.",
+  "json_formatting": "The remote execution log and compact certificate use compact array formatting; values are unchanged from the original local JSON retained in the archive.",
+  "rejected_unlinked_blobs": ["a622ffc47e8893a6fabb2995a437d2749cb03445", "0d991d1a7c7a6df5a441b16462670ce89e6cc494"],
+  "history_preserved": "No prior mathematical file was deleted or silently rewritten; README is an updated index.",
+  "commit_confirmation": "This is not a self-referential commit record; the final branch readback is recorded separately after the ref update."
+}
