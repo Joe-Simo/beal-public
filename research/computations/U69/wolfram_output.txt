@@ -1,0 +1,7 @@
+Call 1, timeConstraint=60:
+Symbol::undefined2: Warning: Global symbols "X, Y, X, Y, X, Y, X, Y, X, Y" are undefined.
+General::messages: Messages were generated which may indicate errors.
+Out[1]= <|"jointClasses" -> {1, 67, 69, 137, 203, 273, 339}, "quinticExamples" -> {{1021, True, 589, {5}}, {1361, True, 211, {5}}, {2381, True, 1, {1, 1, 1, 1, 1}}, {3061, True, 1, {1, 1, 1, 1, 1}}}, "etaPower" -> 1, "etaNorm" -> 1, "gaussianInitialPower" -> 1, "quinticLiftResidual" -> 0, "gaussianLiftResidual" -> 0, "quinticNormResidual" -> 0, "gaussianNormResidual" -> 0, "weightedResidual" -> 0, "modulus" -> 43716643078717303412870881, "boundConstantLessThanOne" -> True, "jointProductBound" -> True, "jointSquaredBoundDigits" -> 908|>
+
+Call 2, timeConstraint=30:
+Out[1]= <|"quinticResidual" -> 0, "gaussianResidual" -> 0, "normResiduals" -> {0, 0}, "weightedResidual" -> 0, "GaussianConstantComparison" -> True, "JointSupportComparison" -> True|>

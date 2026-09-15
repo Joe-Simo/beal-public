@@ -1,0 +1,27 @@
+{
+  "status": "same-model self-review, no expert or kernel verification",
+  "checked": [
+    "scalar quotient, not full-unit injectivity",
+    "irreducible degree-five exception in class 1",
+    "Gaussian split/inert criterion",
+    "valuation loss of one digit at 17",
+    "extra 16 at 2",
+    "gcd overlap of prime supports",
+    "full prime multiplicities",
+    "nonzero signed Gaussian coordinates",
+    "prime-power product versus individual prime",
+    "finite local congruence versus integer solution",
+    "norm-compatible lifting at every precision"
+  ],
+  "limitations": [
+    "No upper bound on jointly exceptional part J",
+    "Inherited Q65 implication is not independently certified",
+    "No complete new Beal exponent family eliminated",
+    "No Lean/Magma/Sage runtime, Bun or standalone linter used"
+  ],
+  "retained_warnings": [
+    "SymPy modular-integer ordering deprecation warning",
+    "First Wolfram call included a global X,Y advisory despite evaluated outputs; clean numeric rerun agreed"
+  ],
+  "U68_replay": "Complete Python JSON equals the archived mathematical output."
+}

@@ -1,0 +1,8 @@
+{
+  "all_shared_mathematical_fields_equal": true,
+  "all_recorded_commands_passed": true,
+  "bun_available": false,
+  "standalone_linter_available": false,
+  "formal_or_independent_expert_verification": false,
+  "full_Beal_solved": false
+}

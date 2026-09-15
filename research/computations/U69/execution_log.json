@@ -1,0 +1,84 @@
+[
+  {
+    "label": "python_version",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "node_version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "typescript_version",
+    "command": [
+      "tsc",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "python_compile",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "py_compile",
+      "code/U69_joint_support.py",
+      "/mnt/data/beal/research/computations/U69/reproduce.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "python_whitespace",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "tabnanny",
+      "code/U69_joint_support.py",
+      "/mnt/data/beal/research/computations/U69/reproduce.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "strict_typecheck",
+    "command": [
+      "tsc",
+      "code/U69_joint_support.ts",
+      "--strict",
+      "--noUnusedLocals",
+      "--noUnusedParameters",
+      "--noUncheckedIndexedAccess",
+      "--exactOptionalPropertyTypes",
+      "--target",
+      "ES2022",
+      "--module",
+      "commonjs",
+      "--noEmitOnError",
+      "--outDir",
+      "/mnt/data/beal/research/computations/U69/build"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "python",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "code/U69_joint_support.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "typescript",
+    "command": [
+      "node",
+      "/mnt/data/beal/research/computations/U69/build/U69_joint_support.js"
+    ],
+    "exit_code": 0
+  }
+]

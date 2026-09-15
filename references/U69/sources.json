@@ -1,0 +1,40 @@
+{
+  "date_checked": "2026-09-15",
+  "base_revision": "9ed3f2c0b04b59222516183b62282c13ea2c58c8",
+  "repository": "Joe-Simo/beal",
+  "U68": {
+    "path": "research/checkpoints/U68_global_coefficient_height_obstruction.md",
+    "blob": "7511e54529b8648f2ce2e9fa0f6b2c7156ed954f",
+    "used_sections": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "review": "Actual manuscript inspected; exact Python output replayed and equal to prior artifact."
+  },
+  "Q65": {
+    "path": "research/checkpoints/U65_weighted_quintic_unit_elimination.md",
+    "revision": "a15e419765463f68a641ed71fd549aafae2cc95d",
+    "used_implication": "W => beta^17=X^2+2rho^3Y^2 in Z[rho].",
+    "status": "Inherited written/self-reviewed dependency, not independently verified and not newly replayed here."
+  },
+  "new_arguments": "Scalar-unit quotients; refined quintic criterion; Gaussian relative criterion and size bound; joint prime-support inequality; norm-compatible nonscalar Hensel lifting at 137.",
+  "web_queries": [
+    "\"X^10\" \"256\" \"Z^17\"",
+    "\"x^2\" \"y^10\" \"17\" \"Fermat\"",
+    "perfect powers binary forms pure quintic fields lacunary coefficients",
+    "\"x^5+8\" \"Fermat\"",
+    "\"x^{5}+8\" \"17\"",
+    "\"Effective Darmon\" \"8\""
+  ],
+  "web_research_result": "No new externally sourced theorem is used in U69. Retrieved Michaud-Jacobs abstract concerns different unweighted hypotheses. The search is not evidence of novelty or literature completeness.",
+  "primary_status_sources": {
+    "sponsor": "https://www.bealconjecture.com/",
+    "mauldin": "https://sites.math.unt.edu/~mauldin/beal.html",
+    "AMS": "https://www.ams.org/beal-prize",
+    "AMS_access": "web open returned an internal error; no claim to have read current AMS rules."
+  },
+  "full_Beal_solved": false
+}

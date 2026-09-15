@@ -1,0 +1,97 @@
+{
+  "joint_classes_mod340": [
+    1,
+    67,
+    69,
+    137,
+    203,
+    273,
+    339
+  ],
+  "extra_fifth_residue_test_in_class1": true,
+  "gaussian_norm_one_kernel_counts": [
+    [
+      13,
+      1
+    ],
+    [
+      19,
+      1
+    ],
+    [
+      67,
+      17
+    ],
+    [
+      101,
+      1
+    ],
+    [
+      103,
+      1
+    ],
+    [
+      137,
+      17
+    ]
+  ],
+  "fifth_residue_examples": [
+    [
+      1021,
+      589,
+      false
+    ],
+    [
+      1361,
+      211,
+      false
+    ],
+    [
+      2381,
+      1,
+      true
+    ],
+    [
+      3061,
+      1,
+      true
+    ]
+  ],
+  "forcing_product": "433992707035920672833426144791",
+  "gaussian_bound_numerator": "212600747304788548393489",
+  "gaussian_bound_denominator": "38685626227668133590597632",
+  "joint_exceptional_product_gt_10_to_453": true,
+  "joint_bound_squared_decimal_digits": 908,
+  "initial_quintic_root": [
+    67,
+    116,
+    89,
+    86,
+    40
+  ],
+  "initial_gaussian_root": [
+    10,
+    77
+  ],
+  "local_witness": {
+    "q": 137,
+    "precision": 12,
+    "modulus": "43716643078717303412870881",
+    "X": "1",
+    "Y": "137",
+    "Z_modulus": "41180150760920769584930321",
+    "beta_coefficients": [
+      "10015920750107013562871112",
+      "24794841884633640233756143",
+      "9106325005694403265315192",
+      "22706439472730929815456926",
+      "20459596619051085091252827"
+    ],
+    "gaussian_coefficients": [
+      "30606004157999575294300177",
+      "8471691513514663024426057"
+    ],
+    "all_equations_and_norms_verified_modulo_modulus": true,
+    "global_integer_solution_claimed": false
+  }
+}
