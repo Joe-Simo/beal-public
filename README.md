@@ -2,30 +2,28 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U73 fixed curve and verified limitations
+## Latest checkpoint: U75 explicit Jacobian factors and positive rank
 
-[U73](research/checkpoints/U73_genus_eight_reduction.md) maps the common seventeenth root to the fixed genus-eight curve
+[U75](research/checkpoints/U75_jacobian_decomposition_and_infinite_order_classes.md) gives B-defined maps that decompose the genus-120 curve's Jacobian, up to isogeny, into fifteen genus-eight Jacobians, where B=Q(i,zeta_5). Both compositions of the displayed isogenies are multiplication by seventeen.
 
-    (3-phi)V^2=4U^17-phi^2, phi=(1+sqrt(5))/2.
+For every factor it proves that the full B-rational torsion is cyclic of order seventeen and constructs an explicit infinite-order class. Their pullbacks yield **fifteen independent classes modulo torsion**, so the original Jacobian has rank at least fifteen over B. This is a lower bound, not an exact rank or a finite-index basis. The original B-rational torsion is killed by 289; its full structure is not claimed.
 
-The resulting point has coordinate field exactly `Q(2^(1/5),i,sqrt(5))`, degree twenty over Q and degree ten over `Q(sqrt(5))`. Searching only points rational over the latter field cannot cover positive weighted solutions. A source-checked CM argument proves the Jacobian absolutely simple, so this curve has no elliptic quotient or quotient of genus two through seven, even over an algebraic closure in characteristic zero.
+The source-checked Jacobi-sum formula is evaluated exactly at three good primes. Python and TypeScript agree on all 45 character vectors and group orders and all 15 jet matrices. Wolfram corroborates the orders and determinants after a rejected preliminary expression was corrected. A direct count over F_(1021^2) separately checks the Frobenius sign. The common degree-five coordinate polynomial and norm-one conditions are retained across all factors.
 
-The extra condition `V=R^17`, with R in the degree-ten common field and relative norm one, is retained explicitly. It gives a genus-256 cover; arbitrary points on either curve are not automatically weighted solutions. Local common-root examples continue to satisfy the new identities.
+**No relevant degree-five points or weighted solutions are excluded by U75.** The result supplies smaller arithmetic components and excludes a torsion-only shortcut. Certified rank upper bounds, finite-index/saturation data, and the simultaneous effective-divisor conditions are still missing. The weighted equation `X^10+256Y^10=Z^17` and the complete Beal conjecture remain unresolved.
 
-**No new integer range, prime class, or complete Beal signature is eliminated in U73.** This is a written/self-reviewed global reduction and a rigorous rejection of two shortcuts, not an impossibility theorem. The required global points, ranks, and upper bounds remain unclassified. Independent expert or proof-assistant verification is outstanding.
+Verification is a complete written argument and same-model review, with distinct exact computations, not independent expert or proof-assistant certification. The proof, three checkers, reproduction script, order table and core records are preserved in the repository. The delivered U75 archive also contains complete outputs/logs and the unchanged U74 archive; U74's previously local files are not silently claimed as pushed.
 
-The proof, both exact verifiers, reproduction commands, source mapping and core certificates are preserved. Python and TypeScript agree on every tested local vector; Wolfram corroborates the algebra and corrected subgroup inventory. The evidence package retains full outputs and logs, including a rejected preliminary Wolfram expression and the unchanged local constants-U72 archive.
+## Continuity and retained work
 
-## Two distinct continuations numbered U72
+U74's local manuscript defines the genus-120 diagonal plane curve and its cyclic degree-five target, classifies a boundary line, and retains an unenumerated finite point problem. Its unchanged manuscript and archive are included in the delivered U75 evidence package. U75's explicitly defined curve theorems do not assume that point set has been classified; their weighted application retains the earlier common-root hypotheses.
 
-The remote [full-support U72](research/checkpoints/U72_root_closed_order_and_full_support.md) is distinct from the locally delivered `U72_common_root_constant_obstructions.md`. Neither was silently replaced or treated as an alternate filename. Their exact identifiers are in [U73 sources](references/U73/sources.json). The constants-U72 archive is preserved in the delivered U73 package; its old relative source paths are not claimed as newly uploaded to this repository.
+[U73](research/checkpoints/U73_genus_eight_reduction.md), the remote predecessor, concerns the fixed genus-eight target and its field and quotient limitations. [U71](research/checkpoints/U71_common_decic_seventeenth_root.md) supplies the written common global root and `289|Y`. U72's separate full-support result remains a necessary lower-bound theorem, not an impossibility proof.
 
-The remote full-support U72 retains its written/self-reviewed coefficient profiles and weighted lower bound `max(X,Y)>10^4810`. U73 neither increases that bound nor relies on it. The new reduction uses [U71](research/checkpoints/U71_common_decic_seventeenth_root.md), whose arithmetic was replayed, as the explicit source of the common root and `289|Y`.
+U61/U62 retain their separate coefficient-two scope and outstanding independent-verification obligations. **U41 remains invalidated by U63.** No boundary congruence or unresolved modular prerequisite is reinstated, and no new complete Beal signature is marked solved.
 
-## Retained work and original target
+The previous remote index is retained in [README before U75](references/U75/README_before_remote_U73.md). No older remote checkpoint was replaced.
 
-U68–U70 contain earlier necessary height and support restrictions, not impossibility theorems. U61/U62 concern the separate coefficient-two equation and retain their prior limited status. **U41 remains invalidated by U63.** The unproved boundary congruence and global modular prerequisites are not reinstated.
+## Original target
 
-The preceding remote index is preserved unchanged in [README before U73](references/U73/README_before.md). No earlier mathematical checkpoint was overwritten.
-
-For positive integers A,B,C,x,y,z with `A^x+B^y=C^z` and `x,y,z>=3`, the original goal is to prove `gcd(A,B,C)>1` or exhibit an independently verified counterexample. All bases and exponents remain unbounded. The weighted equation and full conjecture remain unresolved.
+For positive integers A,B,C,x,y,z satisfying `A^x+B^y=C^z` with `x,y,z>=3`, prove `gcd(A,B,C)>1` or produce an independently verified exact counterexample. All bases and exponents remain unbounded. None of the partial results here resolves that statement.
