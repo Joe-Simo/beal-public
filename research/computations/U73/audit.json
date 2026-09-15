@@ -1,0 +1,10 @@
+{
+  "status": "Same-model adversarial mathematical review, not independent expert or kernel certification",
+  "new_results": ["Fixed genus-eight necessary curve", "Coordinate field exactly degree twenty over Q and ten over F", "Absolutely simple Jacobian, hence no quotient of genus one through seven", "Genus-256 cover retaining the seventeenth-power coordinate"],
+  "not_new": ["No higher base-height bound", "No new impossible prime class", "No complete weighted or original-Beal family eliminated"],
+  "checked_risks": ["Do not replace K-points with F-points", "Distinguish zeta5 inversion from c conjugation", "Distinguish CM fields Q(zeta17) and the old Q(zeta5) boundary", "Do not infer that no elliptic quotient means no possible elliptic method on any cover", "Retain the condition V=R^17 and relative norm one", "Local example is not a global integer solution", "All root vectors compared at honestly determined precision"],
+  "failed_computation": "Initial Wolfram subgroup expression omitted its mapped variable; rejected subgroup output and dependent vacuous True, then corrected and checked complete subgroup inventory.",
+  "warnings": "Pre-existing SymPy deprecation warning in U71 replay retained in stderr; no new verifier stderr warning. No package changes.",
+  "quality": "Strict TypeScript checking, Python compilation/tabnanny and all mathematical tests passed. Bun and standalone linter unavailable.",
+  "full_Beal_solved": false
+}

@@ -1,0 +1,10 @@
+{
+  "fresh_extraction": true,
+  "all_manifest_hashes_match": true,
+  "reproduction_returncode": 0,
+  "complete_outputs_identical": true,
+  "tested_manifest_sha256": "8808e362145be88697027c50e03943a37eb38570dac64f8edb2adb703881be51",
+  "manifest_entries": 43,
+  "stdout": "{\"checkpoint\": \"U73\", \"exact_checks\": \"PASS\", \"full_Beal_solved\": false}\n",
+  "independent_expert_or_kernel_verification": false
+}

@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "entire_math_output_equal": true,
+  "reference": "research/computations/U72/logs/U71_python.stdout",
+  "scope": "arithmetic replay, not independent mathematical review"
+}

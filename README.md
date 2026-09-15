@@ -2,28 +2,30 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U72 full coefficient support
+## Latest checkpoint: U73 fixed curve and verified limitations
 
-[U72](research/checkpoints/U72_root_closed_order_and_full_support.md) refines U71's common integral seventeenth root for the primitive positive weighted equation `X^10+256Y^10=Z^17`.
+[U73](research/checkpoints/U73_genus_eight_reduction.md) maps the common seventeenth root to the fixed genus-eight curve
 
-With `c=i*2^(4/5)`, it proves that this root belongs to the smaller order `Z[c]`, not only the full integer ring. All ten coefficients in the fixed basis `1,c,...,c^9` are nonzero. If `e=v17(Y)>=2`, their valuations are exactly `j(e-1)` for `j=0,...,9`. Exact profiles at the fourteen inherited forcing primes give additional divisibility of the same coefficients.
+    (3-phi)V^2=4U^17-phi^2, phi=(1+sqrt(5))/2.
 
-Using these divisibilities and all ten complex embeddings, a putative weighted solution must satisfy **`max(X,Y)>10^4810`**, so one left-hand base has at least 4811 decimal digits. This replaces the earlier necessary 515-digit threshold for this auxiliary equation; it does not apply to every possible Beal counterexample.
+The resulting point has coordinate field exactly `Q(2^(1/5),i,sqrt(5))`, degree twenty over Q and degree ten over `Q(sqrt(5))`. Searching only points rational over the latter field cannot cover positive weighted solutions. A source-checked CM argument proves the Jacobian absolutely simple, so this curve has no elliptic quotient or quotient of genus two through seven, even over an algebraic closure in characteristic zero.
 
-**This remains a necessary-condition theorem, not an impossibility proof.** The common-root local disk at 17 survives with all ten coefficients nonzero. There is no upper bound or global integral-point exclusion. The priority is to resolve the remaining global coefficient equations, not merely lengthen a finite forcing-prime list.
+The extra condition `V=R^17`, with R in the degree-ten common field and relative norm one, is retained explicitly. It gives a genus-256 cover; arbitrary points on either curve are not automatically weighted solutions. Local common-root examples continue to satisfy the new identities.
 
-Verification is written self-review with distinct Python and TypeScript methods and separate Wolfram corroboration, not independent expert or proof-assistant certification. U71's complete Python output was replayed unchanged. The new proof, exact checkers, reproduction commands and compact certificates are preserved; the evidence archive additionally contains the full outputs, logs and unchanged U71 archive.
+**No new integer range, prime class, or complete Beal signature is eliminated in U73.** This is a written/self-reviewed global reduction and a rigorous rejection of two shortcuts, not an impossibility theorem. The required global points, ranks, and upper bounds remain unclassified. Independent expert or proof-assistant verification is outstanding.
 
-## Retained research and corrections
+The proof, both exact verifiers, reproduction commands, source mapping and core certificates are preserved. Python and TypeScript agree on every tested local vector; Wolfram corroborates the algebra and corrected subgroup inventory. The evidence package retains full outputs and logs, including a rejected preliminary Wolfram expression and the unchanged local constants-U72 archive.
 
-[U71](research/checkpoints/U71_common_decic_seventeenth_root.md) supplies the common root and `289|Y`. The weighted application of U72 inherits that self-reviewed proof; it does not invoke the earlier Q65 unit elimination or a boundary-curve congruence.
+## Two distinct continuations numbered U72
 
-U68–U70 contain earlier height and prime-support restrictions. Their historical lower bounds are not impossibility statements. U61/U62 retain their separate, limited coefficient-two claims and outstanding independent-verification obligations.
+The remote [full-support U72](research/checkpoints/U72_root_closed_order_and_full_support.md) is distinct from the locally delivered `U72_common_root_constant_obstructions.md`. Neither was silently replaced or treated as an alternate filename. Their exact identifiers are in [U73 sources](references/U73/sources.json). The constants-U72 archive is preserved in the delivered U73 package; its old relative source paths are not claimed as newly uploaded to this repository.
 
-**U41 remains invalidated by U63.** The boundary congruence and unresolved global modular prerequisites are not reinstated. No new complete Beal exponent family is marked solved.
+The remote full-support U72 retains its written/self-reviewed coefficient profiles and weighted lower bound `max(X,Y)>10^4810`. U73 neither increases that bound nor relies on it. The new reduction uses [U71](research/checkpoints/U71_common_decic_seventeenth_root.md), whose arithmetic was replayed, as the explicit source of the common root and `289|Y`.
 
-The previous index is retained unchanged in [README before U72](references/U72/README_before.md). No prior mathematical checkpoint was overwritten.
+## Retained work and original target
 
-## Original target
+U68–U70 contain earlier necessary height and support restrictions, not impossibility theorems. U61/U62 concern the separate coefficient-two equation and retain their prior limited status. **U41 remains invalidated by U63.** The unproved boundary congruence and global modular prerequisites are not reinstated.
 
-For positive integers A,B,C,x,y,z with `A^x+B^y=C^z` and `x,y,z>=3`, prove `gcd(A,B,C)>1` or exhibit an independently verified counterexample. All bases and exponents remain unbounded. None of the partial results here resolves that statement.
+The preceding remote index is preserved unchanged in [README before U73](references/U73/README_before.md). No earlier mathematical checkpoint was overwritten.
+
+For positive integers A,B,C,x,y,z with `A^x+B^y=C^z` and `x,y,z>=3`, the original goal is to prove `gcd(A,B,C)>1` or exhibit an independently verified counterexample. All bases and exponents remain unbounded. The weighted equation and full conjecture remain unresolved.

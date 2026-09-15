@@ -1,0 +1,9 @@
+{
+  "entire_mathematical_outputs_equal": true,
+  "local_vectors_compared": 3,
+  "all_commands_pass": true,
+  "bun_available": false,
+  "standalone_linter_available": false,
+  "independent_expert_or_kernel_verification": false,
+  "global_point_classification_performed": false
+}

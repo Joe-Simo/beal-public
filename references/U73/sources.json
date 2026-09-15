@@ -1,0 +1,49 @@
+{
+  "checked_date": "2026-09-15",
+  "remote_base_revision": "79b63d464ce5fbd1295d5c65d931a6beb46920db",
+  "dependency": {
+    "checkpoint": "U71",
+    "path": "research/checkpoints/U71_common_decic_seventeenth_root.md",
+    "revision": "229aba18da05b84501e9de3377b992e8013320c6",
+    "blob": "72f0941699d331450f2c17e818b79cc36747339e",
+    "used": "Common integral seventeenth root and 289|Y",
+    "verification": "written/self-reviewed; Python arithmetic replay agrees with archived output"
+  },
+  "remote_U72": {
+    "path": "research/checkpoints/U72_root_closed_order_and_full_support.md",
+    "blob": "ff805ca9fee05f3e28ac8fad8f6fb748a58a721c",
+    "revision": "79b63d464ce5fbd1295d5c65d931a6beb46920db",
+    "topic": "Root-closed order and all ten coefficients",
+    "status": "Inspected, not replayed; not a premise of U73"
+  },
+  "local_U72": {
+    "path": "research/checkpoints/U72_common_root_constant_obstructions.md",
+    "sha256": "0d0cddc95a24409714610adae4da9d9c57d07158ba82a383f511fe75d7558092",
+    "archive": "Beal_U72_evidence.zip",
+    "archive_sha256": "cadc7752a95c5a8c4e83adaccfdadb9f2379b834434ac0a1ae0ae403f8221db6",
+    "topic": "Constant root obstructions modulo Z^17",
+    "status": "Read and restored additively; retained as distinct upstream archive, not replaced by remote U72"
+  },
+  "primary_source": {
+    "author": "J.S. Milne",
+    "title": "Complex Multiplication",
+    "version": "0.10",
+    "date": "2020-07-14",
+    "url": "https://www.jmilne.org/math/CourseNotes/CM.pdf",
+    "used_results": [
+      "Primitive CM-pair definition (printed p.11)",
+      "Proposition 3.3 (p.27)",
+      "Propositions 3.12 and 3.13 (p.30)"
+    ],
+    "inspection": "Primary PDF text read; screenshots of PDF indices 10 and 29 inspected",
+    "application": "Primitive CM type implies simple complex abelian variety; specific action and primitivity proved in U73"
+  },
+  "not_established": [
+    "Mordell-Weil rank over K",
+    "Complete H(K) or C(K) point set",
+    "An effective upper bound",
+    "An integer-solution exclusion from this new reduction",
+    "Novelty or independent expert verification"
+  ],
+  "full_Beal_solved": false
+}

@@ -1,0 +1,5 @@
+First call, timeConstraint=60. The subgroup_orders={16} output and its dependent vacuous boolean are NOT accepted as evidence. Other entries were cross-checked in Python and TypeScript.
+Out[1]= <|"phi_identity" -> 0, "quotient_identity" -> 0, "field_recovery_identity" -> 0, "phi_recovery_identity" -> 0, "mobius_identity" -> 0, "mobius_degree" -> 10, "type_stabilizer" -> {1}, "subgroup_orders" -> {16}, "all_nontrivial_contain_conjugation" -> True, "phi17_irreducible_eisenstein" -> {17, True}, "genus" -> 8, "cover_genus_both_computations" -> {256, 256}, "local_curve_residual_mod17cubed" -> 0, "quadratic_difference_leading" -> -17*c$83832 + 34*c$83832*p$83832, "boundary_residual" -> 0|>
+
+Corrected subgroup call, timeConstraint=30.
+Out[1]= <|"groups" -> {{1}, {1, 16}, {1, 4, 13, 16}, {1, 2, 4, 8, 9, 13, 15, 16}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}}, "orders" -> {1, 2, 4, 8, 16}, "inventory_complete_for_cyclic_order16" -> True, "all_nontrivial_groups_contain16" -> True, "generator3_order" -> 16, "cm_stabilizer" -> {1}|>

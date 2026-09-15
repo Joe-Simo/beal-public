@@ -1,0 +1,10 @@
+[
+  {"name":"python_version","command":["python","--version"],"returncode":0},
+  {"name":"node_version","command":["node","--version"],"returncode":0},
+  {"name":"tsc_version","command":["tsc","--version"],"returncode":0},
+  {"name":"python_compile","command":["python","-m","py_compile","code/U73_genus_eight.py","research/computations/U73/reproduce.py"],"returncode":0},
+  {"name":"python_whitespace","command":["python","-m","tabnanny","code/U73_genus_eight.py"],"returncode":0},
+  {"name":"strict_typecheck","command":["tsc","code/U73_genus_eight.ts","--target","ES2022","--module","commonjs","--strict","--noUnusedLocals","--noUnusedParameters","--noUncheckedIndexedAccess","--exactOptionalPropertyTypes","--noEmitOnError","--outDir","/mnt/data/beal/research/computations/U73/build"],"returncode":0},
+  {"name":"python","command":["python","code/U73_genus_eight.py"],"returncode":0},
+  {"name":"typescript","command":["node","/mnt/data/beal/research/computations/U73/build/U73_genus_eight.js"],"returncode":0}
+]
