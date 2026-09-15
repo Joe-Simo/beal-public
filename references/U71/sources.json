@@ -1,0 +1,49 @@
+{
+  "checked_date": "2026-09-15",
+  "remote_base_commit": "517ecd362bc1a735eb3059501c6b4b3c189752a9",
+  "primary_source": {
+    "author": "J.S. Milne",
+    "title": "Algebraic Number Theory",
+    "version": "3.08",
+    "date": "2020-07-19",
+    "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+    "inspected": [
+      {
+        "result": "Proposition 3.53",
+        "printed_page": 66,
+        "pdf_page_index": 67
+      },
+      {
+        "result": "Theorem 4.3",
+        "printed_page": 70,
+        "pdf_page_index": 71
+      },
+      {
+        "result": "Theorem 5.1",
+        "printed_page": 85,
+        "pdf_page_index": 86
+      }
+    ],
+    "inspection": "Original parsed PDF and all three page images inspected. No large text passage reproduced."
+  },
+  "inherited_theorems_used": [],
+  "starting_hypothesis": "X^10+256Y^10=Z^17, positive integers, gcd(X,Y)=1",
+  "U70": {
+    "path": "research/checkpoints/U70_power_basis_index_obstruction.md",
+    "purpose": "Motivated this continuation; not a premise of the new theorem",
+    "archive": "Beal_U70_evidence.zip",
+    "archive_sha256": "9ee010d5d603b903ffcc00c6bfd8e326c0ed67398dd365e6a856d38e6aa87f95",
+    "restoration_record": "research/computations/U71/restoration.json",
+    "remote_status_at_start": "Local only; remote head was U69"
+  },
+  "not_used": [
+    "U41 invalidated elimination",
+    "Q65 pure quintic root theorem",
+    "U61/U62 coefficient-two proof",
+    "Boundary congruence",
+    "Numerical regulator",
+    "Software class-group or fundamental-unit output"
+  ],
+  "external_discovery": "Searches and Wolfram number-field queries were exploratory. The exact field-specific statements are established by the supplied certificates, not by a discovery response.",
+  "full_Beal_solved": false
+}

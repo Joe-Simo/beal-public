@@ -1,0 +1,85 @@
+[
+  {
+    "name": "python_version",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "--version"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "node_version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "tsc_version",
+    "command": [
+      "tsc",
+      "--version"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "compile",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "py_compile",
+      "code/U71_common_root.py",
+      "research/computations/U71/reproduce.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "whitespace",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "tabnanny",
+      "code/U71_common_root.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "strict_typecheck",
+    "command": [
+      "tsc",
+      "code/U71_common_root.ts",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--noUnusedLocals",
+      "--noUnusedParameters",
+      "--exactOptionalPropertyTypes",
+      "--target",
+      "ES2022",
+      "--module",
+      "commonjs",
+      "--resolveJsonModule",
+      "--esModuleInterop",
+      "--noEmitOnError",
+      "--outDir",
+      "/mnt/data/beal/research/computations/U71/build"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "python",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "code/U71_common_root.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "typescript",
+    "command": [
+      "node",
+      "/mnt/data/beal/research/computations/U71/build/code/U71_common_root.js"
+    ],
+    "returncode": 0
+  }
+]

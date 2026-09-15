@@ -2,26 +2,32 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U69
+## Latest checkpoint: U71 common global root
 
-[U69: joint scalar-quotient obstruction](research/checkpoints/U69_joint_scalar_quotient_obstruction.md) combines restrictions on the same quintic and Gaussian roots. Through U65's preserved pure-root implication, any positive primitive solution of `X^10+256Y^10=Z^17` requires a prime-power product exceeding `10^453` supported on seven classes modulo 340, with an additional fifth-residue condition for 2 in class 1.
+[U71](research/checkpoints/U71_common_decic_seventeenth_root.md) gives a written necessary-condition theorem for a primitive positive solution of `X^10+256Y^10=Z^17`. With `rho^5=2`, there must be one algebraic integer `theta` in `Q(rho,i)` such that
 
-This narrows the unavoidable exceptional support. It does not forbid every other prime divisor, give that lower bound for a single prime, or increase U68's base-height threshold. The bounds are `S_Q<sqrt(17) T^(1/17)` and `S_G<T^(2/17)`, with shared support retained when combining them.
+    theta^17=X+i*rho^4*Y,
+    Norm(theta)=Z,
+    289 divides Y.
 
-U69 also proves compatible nonscalar roots with the same norm exist at every 137-adic precision. The example modulo `137^12` is checked in Python, TypeScript and Wolfram. These are local solutions, not integer solutions or Beal counterexamples; simultaneous norms alone do not force scalar roots.
+Both the quintic and Gaussian roots are exact relative norms of this common global element. The argument starts from the weighted equation, reconstructs the Gaussian input, proves class number one with explicit norm certificates for all 92 prime ideals needed by the Minkowski bound, and eliminates units with a complete four-dimensional quotient and one nonsingular minor. It does not invoke the earlier Q65 unit elimination, a boundary congruence, or the invalidated U41 argument.
 
-The proof, exact checkers, reproduction commands, source mapping and compact certificates are preserved. **Verification is same-model review plus distinct arithmetic checks, not independent expert or proof-assistant certification.** The weighted equation remains unresolved. The next obligation is global control of the jointly exceptional choices for one integral root, or an effective upper bound; neither is supplied here.
+**This is not an impossibility theorem.** Common local roots still exist in both previously remaining prime classes, and valuation exactly two for Y at 17 also survives locally. Excluding a global integral theta with the required sparse seventeenth power is the remaining task. The weighted equation and the full Beal conjecture remain unresolved.
 
-## Retained results and corrections
+Verification is a complete written argument with same-model audit and distinct Python, TypeScript and Wolfram arithmetic checks. Independent expert or proof-assistant certification remains outstanding. The manuscript, exact certificate, both verifiers, reproduction commands and compact computation records are preserved here; the delivered U71 evidence archive also retains complete logs, candidate-discovery records and the unchanged upstream U70 archive.
 
-[U68](research/checkpoints/U68_global_coefficient_height_obstruction.md) gives `max(X,Y)>10^514` and a broader exceptional prime-power product exceeding `10^483`, under the preserved quintic descent. These are lower bounds for the weighted equation, not for every possible Beal counterexample.
+## Continuity and retained work
 
-[Quintic U65](research/checkpoints/U65_weighted_quintic_unit_elimination.md) supplies the pure seventeenth-power equation and removes its unit ambiguity. [U67](research/checkpoints/U67_unconditional_Kummer_obstructions.md) supplies boundary-independent Kummer restrictions. These are written/self-reviewed partial results. The boundary congruence and outstanding global modular prerequisites remain unproved; only one candidate survives in the recorded eight-orbit modular list.
+U70 was available as an attached local manuscript and evidence archive; it had not been pushed when U71 began. It is retained in the delivered evidence package and is not a hypothesis of U71. Remote preservation details are recorded explicitly rather than silently claiming all old archives were uploaded.
 
-U61/U62 retain their separate written partial coefficient-two result and precisely parity-scoped Beal corollary, with independent verification outstanding. **U41's weighted elimination remains invalidated by U63.** U60 corrects historical U57-U59 computations; their restricted projective tables must not be reused as complete pruning rules.
+[U69](research/checkpoints/U69_joint_scalar_quotient_obstruction.md) restricts the jointly exceptional prime-power support. [U68](research/checkpoints/U68_global_coefficient_height_obstruction.md) gives the earlier weighted base-height bound `max(X,Y)>10^514`. These are necessary conditions, not bounds for every possible Beal counterexample.
 
-The previous full research index is retained unchanged in [README before U69](references/U69/README_before.md). No older mathematical checkpoint was overwritten.
+[Quintic U65](research/checkpoints/U65_weighted_quintic_unit_elimination.md) and [U67](research/checkpoints/U67_unconditional_Kummer_obstructions.md) retain their previous written/self-reviewed status. U71 provides a separate derivation of their underlying pure quintic equation; it is not independent expert verification of every downstream argument.
+
+U61/U62 concern the separate coefficient-two equation and retain their prior limited status. **U41's weighted elimination remains invalidated by U63.** The unproved global modular prerequisites and boundary congruence are not reinstated. Historical success labels are not certification.
+
+The previous remote index is preserved in [README before U71](references/U71/README_before.md). No earlier mathematical checkpoint was replaced.
 
 ## Original target
 
-For positive integers A,B,C,x,y,z with `A^x+B^y=C^z` and `x,y,z>=3`, prove `gcd(A,B,C)>1` or produce an independently verified exact counterexample. All bases and exponents remain unbounded; no partial result here resolves that statement.
+For positive integers A,B,C,x,y,z satisfying `A^x+B^y=C^z` with `x,y,z>=3`, prove `gcd(A,B,C)>1` or produce an independently verified counterexample. All bases and exponents remain unbounded. No partial result here resolves that statement.

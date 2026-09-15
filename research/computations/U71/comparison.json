@@ -1,0 +1,8 @@
+{
+  "all_shared_fields_equal": true,
+  "local_17_root_equal": true,
+  "all_commands_pass": true,
+  "standalone_linter_available": false,
+  "bun_available": false,
+  "independent_expert_or_kernel_verification": false
+}

@@ -1,0 +1,72 @@
+{
+  "order_discriminant": -160000000000,
+  "minkowski_upper": "14863564800/28629151",
+  "unramified_prime_ideals_certified": 89,
+  "ramified_prime_ideals_certified": 3,
+  "unit_norms": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "unit_logs": [
+    [
+      0,
+      10,
+      2,
+      2,
+      3,
+      0,
+      5,
+      14,
+      6,
+      2
+    ],
+    [
+      0,
+      14,
+      2,
+      13,
+      11,
+      0,
+      11,
+      3,
+      12,
+      13
+    ],
+    [
+      0,
+      10,
+      15,
+      2,
+      14,
+      0,
+      12,
+      14,
+      11,
+      2
+    ],
+    [
+      0,
+      3,
+      2,
+      4,
+      11,
+      0,
+      11,
+      14,
+      12,
+      4
+    ]
+  ],
+  "minor_determinant": -28765,
+  "minor_mod17": 16,
+  "gaussian_case_counts": [
+    0,
+    0,
+    10
+  ],
+  "common_norm_identities": true,
+  "local_e17_equals2_survives": true,
+  "full_Beal_solved": false
+}

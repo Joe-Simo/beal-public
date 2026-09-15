@@ -1,0 +1,5 @@
+First exact certificate call returned:
+Out[1]= <|"orderDiscriminant" -> -160000000000, "all48NormsCertified" -> True, "all48IntegralCoordinates" -> True, "unitNorms" -> {1, 1, 1, 1}, "unitLogs" -> {{0, 10, 2, 2, 3, 0, 5, 14, 6, 2}, {0, 14, 2, 13, 11, 0, 11, 3, 12, 13}, {0, 10, 15, 2, 14, 0, 12, 14, 11, 2}, {0, 3, 2, 4, 11, 0, 11, 14, 12, 4}}, "sixBySixMinorDeterminant" -> -28765, "minorMod17" -> 16, "frobeniusResidual" -> 0, "masterNorm" -> x$83491^10 + 256*y$83491^10, "quadraticRelativeNormResidual" -> 0, "quinticRelativeNorm" -> x$83491^5 + (16*I)*y$83491^5, "ramifiedIntegralIdentities" -> {0, 0}, "minkowskiRationalBoundBelow520" -> True|>
+
+Follow-up exact certificate call returned:
+Out[1]= <|"GaussianCaseCounts" -> {0, 0, 10}, "rhoPlusI_Norm" -> 5, "rhoMinusI_Norm" -> 5, "Y17_example_log" -> {0, 0, 0, 0, 0, 0, 0, 0, 0, 8}, "Y17_expected_log" -> {0, 0, 0, 0, 0, 0, 0, 0, 0, 8}, "fifth_shift_constant" -> 30|>

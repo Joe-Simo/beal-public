@@ -1,0 +1,34 @@
+{
+  "status": "Written proof and same-model adversarial review; no independent expert or proof assistant",
+  "proved_as_written": [
+    "Degree-ten common field has class number one, by all 92 Minkowski prime-ideal certificates",
+    "Four explicit units form a complete quotient basis modulo seventeenth powers",
+    "Every weighted solution has a unique integral common seventeenth root",
+    "The weighted solution must satisfy 289 divides Y",
+    "Both previous norm roots are relative norms of that common root"
+  ],
+  "checks": [
+    "89 unramified ideal rows, including non-linear factors and all ten primes over 241",
+    "Three ramified prime ideals, including distinct primes over 5",
+    "Integral lattice discriminant bounds the true field discriminant; maximality not assumed",
+    "Full unit quotient certified by log independence, not a fundamental-unit guess",
+    "Scalar log term retained when eliminating units",
+    "Gaussian sign and all nonzero residue pairs retained",
+    "One common global root distinguished from separate local roots",
+    "Local common roots at 1019 and 2381, and local v17(Y)=2 survival"
+  ],
+  "implementation_scope": {
+    "Python": "Symbolic resultants, exact factorization and lattice arithmetic",
+    "TypeScript": "Bigint fraction-free determinants, Frobenius gcd completeness, strict typechecking",
+    "Wolfram": "48 generator representatives, unit and norm identities, rank minor and full mod11 counts"
+  },
+  "negative_results": [
+    "ClassNumber request remained unevaluated; not proof evidence",
+    "FundamentalUnits request emitted a precision warning; not proof evidence",
+    "PARI download attempts failed; no PARI run occurred",
+    "Compatible local common roots survive, so no local or global impossibility conclusion"
+  ],
+  "quality_checks": "See execution_log.json and complete stdout/stderr; strict compiler, both verifiers, Python compilation/tabnanny passed. Bun and standalone linter unavailable.",
+  "remaining_gap": "Exclude an integral theta in the specified number field whose seventeenth power has only the two required rational coefficients; no effective upper bound or point classification is supplied.",
+  "full_Beal_solved": false
+}
