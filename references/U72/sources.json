@@ -1,0 +1,37 @@
+{
+  "checked_date": "2026-09-15",
+  "remote_base": "229aba18da05b84501e9de3377b992e8013320c6",
+  "U71": {
+    "path": "research/checkpoints/U71_common_decic_seventeenth_root.md",
+    "blob": "72f0941699d331450f2c17e818b79cc36747339e",
+    "archive_sha256": "1b93db5bb1bf9be24c82aead3dfcb052fe732029496d7046b677e029886632d2",
+    "used": "Integral common root, norm Z, X/Z odd, and 289 divides Y",
+    "replay": "Entire Python mathematical output identical; see U71_replay_comparison.json",
+    "verification_status": "Inherited written/self-reviewed theorem, not independent expert or kernel certification"
+  },
+  "U68": {
+    "commit": "9ed3f2c0b04b59222516183b62282c13ea2c58c8",
+    "path": "research/checkpoints/U68_global_coefficient_height_obstruction.md",
+    "used": "Historical fourteen forcing primes; necessary Gaussian domains rerun in both new verifiers"
+  },
+  "primary_source": {
+    "author": "J.S. Milne",
+    "title": "Algebraic Number Theory",
+    "version": "3.08, 2020-07-19",
+    "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+    "printed_pages": [66,119],
+    "pdf_page_indices": [67,120],
+    "inspection": "Parsed PDF and page images",
+    "scope": "Eisenstein ramification, complete local rings, factorial valuations; specialized assertions proved in manuscript"
+  },
+  "discovery": {
+    "web_queries_included": [
+      "\"X^10\" \"256\" \"17\" diophantine",
+      "generalized Fermat signature \"(2,5,17)\"",
+      "polynomial composition binomial irreducibility powers pure number fields"
+    ],
+    "outcome": "No directly applicable external solution used; no completeness or novelty claim",
+    "Consensus": "Search returned monthly quota exhausted, no paper results"
+  },
+  "full_Beal_solved": false
+}

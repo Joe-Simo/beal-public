@@ -2,32 +2,28 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U71 common global root
+## Latest checkpoint: U72 full coefficient support
 
-[U71](research/checkpoints/U71_common_decic_seventeenth_root.md) gives a written necessary-condition theorem for a primitive positive solution of `X^10+256Y^10=Z^17`. With `rho^5=2`, there must be one algebraic integer `theta` in `Q(rho,i)` such that
+[U72](research/checkpoints/U72_root_closed_order_and_full_support.md) refines U71's common integral seventeenth root for the primitive positive weighted equation `X^10+256Y^10=Z^17`.
 
-    theta^17=X+i*rho^4*Y,
-    Norm(theta)=Z,
-    289 divides Y.
+With `c=i*2^(4/5)`, it proves that this root belongs to the smaller order `Z[c]`, not only the full integer ring. All ten coefficients in the fixed basis `1,c,...,c^9` are nonzero. If `e=v17(Y)>=2`, their valuations are exactly `j(e-1)` for `j=0,...,9`. Exact profiles at the fourteen inherited forcing primes give additional divisibility of the same coefficients.
 
-Both the quintic and Gaussian roots are exact relative norms of this common global element. The argument starts from the weighted equation, reconstructs the Gaussian input, proves class number one with explicit norm certificates for all 92 prime ideals needed by the Minkowski bound, and eliminates units with a complete four-dimensional quotient and one nonsingular minor. It does not invoke the earlier Q65 unit elimination, a boundary congruence, or the invalidated U41 argument.
+Using these divisibilities and all ten complex embeddings, a putative weighted solution must satisfy **`max(X,Y)>10^4810`**, so one left-hand base has at least 4811 decimal digits. This replaces the earlier necessary 515-digit threshold for this auxiliary equation; it does not apply to every possible Beal counterexample.
 
-**This is not an impossibility theorem.** Common local roots still exist in both previously remaining prime classes, and valuation exactly two for Y at 17 also survives locally. Excluding a global integral theta with the required sparse seventeenth power is the remaining task. The weighted equation and the full Beal conjecture remain unresolved.
+**This remains a necessary-condition theorem, not an impossibility proof.** The common-root local disk at 17 survives with all ten coefficients nonzero. There is no upper bound or global integral-point exclusion. The priority is to resolve the remaining global coefficient equations, not merely lengthen a finite forcing-prime list.
 
-Verification is a complete written argument with same-model audit and distinct Python, TypeScript and Wolfram arithmetic checks. Independent expert or proof-assistant certification remains outstanding. The manuscript, exact certificate, both verifiers, reproduction commands and compact computation records are preserved here; the delivered U71 evidence archive also retains complete logs, candidate-discovery records and the unchanged upstream U70 archive.
+Verification is written self-review with distinct Python and TypeScript methods and separate Wolfram corroboration, not independent expert or proof-assistant certification. U71's complete Python output was replayed unchanged. The new proof, exact checkers, reproduction commands and compact certificates are preserved; the evidence archive additionally contains the full outputs, logs and unchanged U71 archive.
 
-## Continuity and retained work
+## Retained research and corrections
 
-U70 was available as an attached local manuscript and evidence archive; it had not been pushed when U71 began. It is retained in the delivered evidence package and is not a hypothesis of U71. Remote preservation details are recorded explicitly rather than silently claiming all old archives were uploaded.
+[U71](research/checkpoints/U71_common_decic_seventeenth_root.md) supplies the common root and `289|Y`. The weighted application of U72 inherits that self-reviewed proof; it does not invoke the earlier Q65 unit elimination or a boundary-curve congruence.
 
-[U69](research/checkpoints/U69_joint_scalar_quotient_obstruction.md) restricts the jointly exceptional prime-power support. [U68](research/checkpoints/U68_global_coefficient_height_obstruction.md) gives the earlier weighted base-height bound `max(X,Y)>10^514`. These are necessary conditions, not bounds for every possible Beal counterexample.
+U68–U70 contain earlier height and prime-support restrictions. Their historical lower bounds are not impossibility statements. U61/U62 retain their separate, limited coefficient-two claims and outstanding independent-verification obligations.
 
-[Quintic U65](research/checkpoints/U65_weighted_quintic_unit_elimination.md) and [U67](research/checkpoints/U67_unconditional_Kummer_obstructions.md) retain their previous written/self-reviewed status. U71 provides a separate derivation of their underlying pure quintic equation; it is not independent expert verification of every downstream argument.
+**U41 remains invalidated by U63.** The boundary congruence and unresolved global modular prerequisites are not reinstated. No new complete Beal exponent family is marked solved.
 
-U61/U62 concern the separate coefficient-two equation and retain their prior limited status. **U41's weighted elimination remains invalidated by U63.** The unproved global modular prerequisites and boundary congruence are not reinstated. Historical success labels are not certification.
-
-The previous remote index is preserved in [README before U71](references/U71/README_before.md). No earlier mathematical checkpoint was replaced.
+The previous index is retained unchanged in [README before U72](references/U72/README_before.md). No prior mathematical checkpoint was overwritten.
 
 ## Original target
 
-For positive integers A,B,C,x,y,z satisfying `A^x+B^y=C^z` with `x,y,z>=3`, prove `gcd(A,B,C)>1` or produce an independently verified counterexample. All bases and exponents remain unbounded. No partial result here resolves that statement.
+For positive integers A,B,C,x,y,z with `A^x+B^y=C^z` and `x,y,z>=3`, prove `gcd(A,B,C)>1` or exhibit an independently verified counterexample. All bases and exponents remain unbounded. None of the partial results here resolves that statement.

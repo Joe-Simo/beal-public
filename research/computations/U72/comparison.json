@@ -1,0 +1,9 @@
+{
+  "shared_blocks_equal": ["summary","examples17","examples_good","examples2"],
+  "all_commands_pass": true,
+  "forcing_domains": "Python: projective pairs; TypeScript: all fifth-power image pairs",
+  "independent_local_methods": "Python binomial series; TypeScript digit lifts",
+  "bun_available": false,
+  "standalone_linter_available": false,
+  "independent_expert_or_kernel_verification": false
+}

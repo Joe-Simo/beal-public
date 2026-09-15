@@ -1,0 +1,28 @@
+{
+  "status": "Written argument with same-model adversarial review; independent verification outstanding",
+  "new_results": [
+    "O_L=Z[u] with u^10+2u^5+2=0, and index of Z[c] is 2^34",
+    "The odd-norm seventeenth root remains in Z[c]",
+    "All ten coefficients in the fixed c basis are nonzero, with exact 17-adic profiles",
+    "Exact profiles at fourteen inherited forcing primes, including extra factors 11 and 101",
+    "Weighted necessary height bound max(X,Y)>10^4810"
+  ],
+  "checked_failure_modes": [
+    "Maximality at both 2 and 5",
+    "Nonunit roots not included in order-closure lemma",
+    "Full rank-ten product algebra, not an assumed field at 17",
+    "Existence of the scalar root of X",
+    "Infinite-tail valuations strictly above the leading term",
+    "One digit of root precision lost at 17",
+    "Individual zero residues and all fifth-power scales retained",
+    "Same global coefficient used in divisibility and embedding bound",
+    "Lower bounds not interpreted as impossibility"
+  ],
+  "computations": "Python symbolic/determinant and binomial-series methods; TypeScript exact determinants and digit lifts; Wolfram separate corroboration",
+  "actual_failed_attempts": [
+    "Python large-integer string conversion hit the default 4300-digit limit during exploration. No bound was inferred. Final code uses direct comparisons and leaves the limit unchanged.",
+    "Consensus search returned a monthly-quota error. No result was used."
+  ],
+  "remaining_gap": "No global integral-point exclusion or effective upper bound; the full-support local disk at 17 survives",
+  "full_Beal_solved": false
+}

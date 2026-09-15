@@ -1,0 +1,15 @@
+{
+  "fresh_extraction": true,
+  "input_manifest_verified": true,
+  "reproduction_exit_code": 0,
+  "same_full_mathematical_outputs": {
+    "python_output.json": true,
+    "typescript_output.json": true,
+    "certificate_summary.json": true,
+    "comparison.json": true
+  },
+  "tested_archive_sha256": "8b56f473d95bd26858c651777c86aecf7e712e96f7cb28cdc75d565807ad7b50",
+  "note": "This record is added after the checked archive; mathematical inputs remain unchanged.",
+  "independent_expert_or_kernel_verification": false,
+  "full_Beal_solved": false
+}

@@ -1,0 +1,10 @@
+[
+ {"name":"python_version","command":["/opt/pyvenv/bin/python","--version"],"started_utc":"2026-09-15T13:27:08.051048+00:00","returncode":0},
+ {"name":"node_version","command":["node","--version"],"started_utc":"2026-09-15T13:27:08.052787+00:00","returncode":0},
+ {"name":"tsc_version","command":["tsc","--version"],"started_utc":"2026-09-15T13:27:08.057636+00:00","returncode":0},
+ {"name":"python_compile","command":["/opt/pyvenv/bin/python","-m","py_compile","code/U72_full_support.py","research/computations/U72/reproduce.py"],"started_utc":"2026-09-15T13:27:08.117053+00:00","returncode":0},
+ {"name":"python_whitespace","command":["/opt/pyvenv/bin/python","-m","tabnanny","code/U72_full_support.py"],"started_utc":"2026-09-15T13:27:08.922867+00:00","returncode":0},
+ {"name":"strict_typecheck","command":["tsc","code/U72_full_support.ts","--target","ES2022","--module","commonjs","--strict","--noUncheckedIndexedAccess","--noUnusedLocals","--noUnusedParameters","--exactOptionalPropertyTypes","--noEmitOnError","--outDir","/mnt/data/beal/research/computations/U72/build"],"started_utc":"2026-09-15T13:27:09.656005+00:00","returncode":0},
+ {"name":"python","command":["/opt/pyvenv/bin/python","code/U72_full_support.py"],"started_utc":"2026-09-15T13:27:10.759130+00:00","returncode":0},
+ {"name":"typescript","command":["node","/mnt/data/beal/research/computations/U72/build/U72_full_support.js"],"started_utc":"2026-09-15T13:27:11.856678+00:00","returncode":0}
+]

@@ -1,0 +1,5 @@
+Exploratory digit-count conversion failed before returning a bound:
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit
+Final checkers do not change that limit and instead use exact integer inequalities.
+
+Consensus search returned a monthly search-quota error; no academic results were obtained from that call.
