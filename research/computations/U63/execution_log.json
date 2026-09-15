@@ -1,0 +1,146 @@
+{
+  "completed_utc": "2026-09-15T03:55:01.946619+00:00",
+  "commands": [
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "--version"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.005388856999843483,
+      "stderr": "",
+      "stdout": "Python 3.13.5\n"
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.010486161000017091,
+      "stderr": "",
+      "stdout": "v22.16.0\n"
+    },
+    {
+      "command": [
+        "tsc",
+        "--version"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.14173735999997916,
+      "stderr": "",
+      "stdout": "Version 5.8.3\n"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-c",
+        "import sympy; print(sympy.__version__)"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 1.3196594419998746,
+      "stderr": "",
+      "stdout": "1.14.0\n"
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "py_compile",
+        "code/U63_weighted_audit.py",
+        "research/computations/U63/reproduce.py"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.9049222020000798,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "tabnanny",
+        "code/U63_weighted_audit.py"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.899248666999938,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "tsc",
+        "--target",
+        "ES2022",
+        "--module",
+        "commonjs",
+        "--strict",
+        "--noUncheckedIndexedAccess",
+        "--noUnusedLocals",
+        "--noUnusedParameters",
+        "--outDir",
+        "/mnt/data/beal/research/computations/U63/build",
+        "code/U63_weighted_audit.ts",
+        "code/U60_audit.ts"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 1.553798616999984,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "code/U63_weighted_audit.py"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 1.441459517000112,
+      "stderr": "",
+      "stdout_file": "python_output.json",
+      "stdout_sha256": "efd4263c8b654206fc823c739dc383b822bbf18b85aff14d684ff3de3a87c4fa"
+    },
+    {
+      "command": [
+        "node",
+        "/mnt/data/beal/research/computations/U63/build/U63_weighted_audit.js"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.1786072959998819,
+      "stderr": "",
+      "stdout_file": "typescript_output.json",
+      "stdout_sha256": "8fff829074424b25e71b4d0a9f86eb2418f74a59eb10b1ec46341f4b47e82ede"
+    },
+    {
+      "command": [
+        "node",
+        "/mnt/data/beal/research/computations/U63/build/U60_audit.js"
+      ],
+      "cwd": "/mnt/data/beal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.04358686599994144,
+      "stderr": "",
+      "stdout_file": "U60_checker_replay.json",
+      "stdout_sha256": "f950d7c948ec554d294860f88938e108f6e7be299ac589bb58a48c7f86d9ff73"
+    }
+  ],
+  "comparison": "All shared exact outputs agree after converting decimal strings to integers.",
+  "tools_present": {
+    "bun": null,
+    "lean": null,
+    "sage": null,
+    "magma": null,
+    "ruff": null,
+    "tsc": "/opt/nvm/versions/node/v22.16.0/bin/tsc",
+    "node": "/opt/nvm/versions/node/v22.16.0/bin/node"
+  },
+  "lint_qualification": "No repository lint command found. Strict unused-variable/type checks and Python compilation/tabnanny ran; tabnanny is not a full style linter."
+}

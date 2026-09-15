@@ -1,0 +1,124 @@
+{
+  "checkpoint": "U63",
+  "checked_date_UTC": "2026-09-15",
+  "research_local_date": "2026-09-14",
+  "source_versus_derivation": "Entries below record external source material. Model changes, point counts, conductor derivation and error conclusions are U63 self-reviewed reasoning, not claims made by these sources.",
+  "S1": {
+    "authors": "Martin Azon",
+    "repository": "martin-azon/effective_Darmon",
+    "path": "Frey_cvs.m",
+    "blob_sha": "381f9b8635df091f7cb64809ed4783614366b03d",
+    "url": "https://github.com/martin-azon/effective_Darmon/blob/main/Frey_cvs.m",
+    "retrieval": "GitHub connector fetch_file succeeded",
+    "locator": "DefiningPolynomial, SQ, TwistAt_2",
+    "observed_predicate": "x=0 OR (v2(x) even AND x mod4 in {0,1})",
+    "qualification": "The source is retained as a source, not edited or treated as an instruction. No author contact occurred."
+  },
+  "S2": {
+    "database": "LMFDB",
+    "label": "2.2.5.1-2000.1-a",
+    "url": "https://www.lmfdb.org/ModularForm/GL2/TotallyReal/2.2.5.1/holomorphic/2.2.5.1-2000.1-a",
+    "retrieval": "Firecrawl scrape succeeded with substantive page content; relevant exact fields transcribed from its returned markdown, not a raw API export of all eigenvalues.",
+    "scrape_id": "01a0a325-42d8-73cf-836f-2a7fd179de44",
+    "http_status": 200,
+    "field_generator": "w^2-w-1=0",
+    "coefficient_generator": "e^2+e-1=0",
+    "newspace_dimension_displayed": 18,
+    "entries": [
+      {
+        "norm": 4,
+        "ideal": "[4,2,2]",
+        "eigenvalue": "0"
+      },
+      {
+        "norm": 5,
+        "ideal": "[5,5,-2*w+1]",
+        "eigenvalue": "0"
+      },
+      {
+        "norm": 9,
+        "ideal": "[9,3,3]",
+        "eigenvalue": "-5"
+      },
+      {
+        "norm": 11,
+        "ideal": "[11,11,-3*w+2]",
+        "eigenvalue": "-e-1"
+      },
+      {
+        "norm": 11,
+        "ideal": "[11,11,-3*w+1]",
+        "eigenvalue": "e"
+      },
+      {
+        "norm": 19,
+        "ideal": "[19,19,-4*w+3]",
+        "eigenvalue": "-5"
+      }
+    ],
+    "inventory": {
+      "url": "https://www.lmfdb.org/api/hmf_forms/?field_label=2.2.5.1&level_norm=i2000&_format=json",
+      "scrape_id": "01a0a324-f12d-7730-a23f-40c308b5c4d1",
+      "database_timestamp": "2026-09-15T03:38:22.779409",
+      "retrieved_suffixes": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4
+      ],
+      "start": 0,
+      "offset": 8,
+      "independent_newspace_reconstruction": false
+    },
+    "limits": "The Sage download and a subsequent form-f page returned a browser challenge. No challenge was solved or bypassed. Corrected eigenvalues for the other seven orbits were not obtained in this run."
+  },
+  "S3": {
+    "author": "Martin Azon",
+    "title": "Effective Darmon's program for the generalised Fermat equation",
+    "identifier": "arXiv:2504.01967v2",
+    "version_date": "2025-07-03",
+    "url": "https://arxiv.org/pdf/2504.01967v2",
+    "locators": [
+      "Definition 4.25 and Proposition 4.28, printed pp.35-36",
+      "Table 2, printed p.48",
+      "Proposition 5.20 and Theorem 5.23, printed p.53"
+    ],
+    "retrieval": "Original PDF inspected using parsed text and screenshots; no full copyrighted paper included in the archive.",
+    "application_status": "The normalized-unit application in U41 was rejected. U63 proves its replacement local model directly. The complete global lowering package is not verified here."
+  },
+  "S4": {
+    "authors": [
+      "Christophe Breuil",
+      "Fred Diamond"
+    ],
+    "title": "Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caracteres galoisiens",
+    "publication": "Annales scientifiques de l Ecole normale superieure 47 (2014), 905-974",
+    "doi": "10.24033/asens.2230",
+    "url": "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/extensions.pdf",
+    "locator": "Theorem 3.2.2, author-PDF pp.36-37",
+    "retrieval": "Original author PDF and theorem screenshots inspected.",
+    "needed_hypothesis": "Irreducibility on the quadratic 17-cyclotomic subfield.",
+    "application_status": "U63 supplies a written argument for this one hypothesis. All local-lift and determinant/type hypotheses must still be checked."
+  },
+  "official_status": {
+    "UNT_url": "https://sites.math.unt.edu/~mauldin/beal.html",
+    "UNT_observation": "Primary statement and standing million-dollar offer accessible in this session.",
+    "AMS_url": "https://www.ams.org/beal-prize",
+    "AMS_observation": "Direct fetch failed; current full AMS rules or an award were not verified.",
+    "claim": "No complete solution, publication, acceptance or prize award is claimed."
+  }
+}

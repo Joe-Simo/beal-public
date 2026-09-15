@@ -1,0 +1,7 @@
+These are actual successful WolframLanguageEvaluator outputs for the two separately executed calls in wolfram_checks.wl. They are computational corroboration, not a proof-assistant certificate. Kernel version was not returned; it is not invented here.
+
+Call 1:
+Out[1]= <|"full_q11" -> {{{-9, 19, 5}, 5}, {{-7, 11, 5}, 25}, {{-3, -9, 45}, 25}, {{-1, -1, 5}, 5}, {{1, -1, 5}, 5}, {{3, -9, 45}, 25}, {{7, 11, 5}, 25}, {{9, 19, 5}, 5}}, "square_q11" -> {{{-9, 19, 5}, 5}, {{-1, -1, 5}, 5}, {{3, -9, 45}, 25}}, "sample_1_0" -> {21, 123, 3}, "twisted_model_identity" -> True, "mod125_pairs" -> 1550, "mod125_pairs_with_root" -> 0, "quadratic_algebra_squares_mod4" -> {{0, 0}, {1, 0}, {1, 1}, {2, 3}}|>
+
+Call 2:
+Out[1]= <|"witness_U_V" -> {0, 2}, "witness_N11_N121" -> {13, 163}, "weighted_congruence_X_Y_Z" -> 0, "Hecke_sum_product" -> {-1, -1}, "negative_twist_model_remainder" -> 0, "infinity_derivative" -> 1, "negative_twist_trace_sums_mod17" -> {14, 1, 9}, "actual_form_a_sum_mod17" -> 16|>

@@ -2,7 +2,15 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest mathematical checkpoint
+## Latest checkpoint: U63 audit and local repair
+
+**U41's claimed elimination of `X^10+256Y^10=Z^17` is invalidated.** [U63](research/checkpoints/U63_weighted_audit_and_twist_repair.md) exhibits a permitted prime-11 trace match against the correctly keyed LMFDB entries, corrects a nonunit square test in the local twist argument, and reproduces the modulo-125 obstruction with its actual domain size.
+
+U63 supplies a written corrected local model for `y^2=-f(x)`, its conductor and residual-irreducibility arguments, and a valid form-a exclusion in the square-structured prime-11 domain. This is not a replacement proof of the whole weighted equation. The other eigenvalue comparisons and the remaining global level-lowering hypotheses are open. The historical U41 file is retained as evidence, but its success label must not be used.
+
+Exact U63 code, source records, computation certificates and execution logs are preserved with the checkpoint. These are self-reviewed mathematics and distinct arithmetic checks, not independent expert or proof-assistant verification. U61/U62 are not downstream of U41 and retain their prior, limited status.
+
+## Retained U62 partial proof
 
 [U62: coefficient-two theorem and exact Beal coverage](research/checkpoints/U62_coefficient_two_coverage.md) supplies the complete upstream implication into [U61's auxiliary exclusion](research/checkpoints/U61_elliptic_chabauty_auxiliary_exclusion.md).
 
@@ -21,7 +29,7 @@ The second statement is parity-specific. It does not settle the reversed parity 
 
 Exact source code is under `code/`, computation records under `research/computations/`, and checked source information under `references/`. The local evidence archive also retains historical outputs and the old U61 patch. `U62_preservation.json` records which files were actually copied to the remote; an old checkpoint's then-current write limitation is historical, not a current capability claim.
 
-Next mathematical task: audit the weighted orientation from its actual preserved Frey-curve and level-lowering assumptions. Do not repeat a completed finite sieve as though it were new progress. Independent verification of U61 remains a separate priority.
+Next mathematical task: rebuild the weighted comparison for the corrected negative twist using actual prime-ideal keys, not array offsets, and audit the other prescribed local lifts. The first form-a comparison is complete; do not repeat it as new progress. Independent verification of U61 remains a separate priority.
 
 ## Original target
 

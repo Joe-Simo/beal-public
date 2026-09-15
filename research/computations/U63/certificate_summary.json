@@ -1,0 +1,176 @@
+{
+  "checkpoint": "U63",
+  "arithmetic": "Exact Python, TypeScript bigint, and recorded Wolfram checks",
+  "status": "completed",
+  "full_Beal_solved": false,
+  "prime11": {
+    "all_pairs": 120,
+    "structured_pairs": 35,
+    "all_trace_distribution": [
+      [
+        -9,
+        19,
+        5,
+        5
+      ],
+      [
+        -7,
+        11,
+        5,
+        25
+      ],
+      [
+        -3,
+        -9,
+        45,
+        25
+      ],
+      [
+        -1,
+        -1,
+        5,
+        5
+      ],
+      [
+        1,
+        -1,
+        5,
+        5
+      ],
+      [
+        3,
+        -9,
+        45,
+        25
+      ],
+      [
+        7,
+        11,
+        5,
+        25
+      ],
+      [
+        9,
+        19,
+        5,
+        5
+      ]
+    ],
+    "structured_plus_f": [
+      [
+        -9,
+        19,
+        5,
+        5
+      ],
+      [
+        -1,
+        -1,
+        5,
+        5
+      ],
+      [
+        3,
+        -9,
+        45,
+        25
+      ]
+    ],
+    "structured_minus_f": [
+      [
+        -3,
+        -9,
+        45,
+        25
+      ],
+      [
+        1,
+        -1,
+        5,
+        5
+      ],
+      [
+        9,
+        19,
+        5,
+        5
+      ]
+    ],
+    "U41_nonmatching_counterexample": {
+      "U": 0,
+      "V": 2,
+      "N11": 13,
+      "N121": 163,
+      "N11_negative_twist": 11,
+      "S": -1,
+      "P": -1,
+      "D": 5
+    },
+    "local_weighted_base_residues_X_Y_Z": [
+      0,
+      1,
+      5
+    ],
+    "correct_form_a_sum_product": [
+      -1,
+      -1
+    ],
+    "form_a_excluded_after_repair_in_square_domain": true
+  },
+  "mod125": {
+    "square_residues": 53,
+    "pairs": 1550,
+    "tested_x_per_pair": 125,
+    "root_triples": [],
+    "subdomain_5_divides_V_pairs": 150
+  },
+  "mod4_quadratic_squares": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "source_SQ_counterexample": {
+    "X": 1,
+    "Y": 1,
+    "constant": 16320,
+    "valuation2": 6,
+    "normalized_unit": 255
+  },
+  "negative_twist_model_identity": true,
+  "infinity_smoothness_identity": true,
+  "inertia_cyclotomic_identity": true,
+  "discriminant_identity": true,
+  "comparison": {
+    "all_120_rows_equal": true,
+    "mod125_equal": true,
+    "mod4_equal": true,
+    "no_mathematical_output_mismatch": true
+  },
+  "source_hashes": {
+    "code/U63_weighted_audit.py": "26564c746a8462b7c0584312d0da604030f056a52e9b3e5efc80bb409b8b66a6",
+    "code/U63_weighted_audit.ts": "79793e8e232f8d9b52423db233f794ccfb30bc444b75410429a3dbe3b5c35356",
+    "code/U60_audit.ts": "1a3f4dc957ea4d4c4aa5b39eb6949d1dae56e9587246600fbac393d0aee9871e",
+    "research/computations/U63/wolfram_checks.wl": "be3f1927e0b1cc77a782cea31be10defd754093755a9c367344e51dc9d4375cd"
+  },
+  "mathematical_status": {
+    "U41_weighted_elimination": "invalidated",
+    "local_model_and_conductor": "written self-reviewed proof; not kernel checked",
+    "U62": "unchanged written self-reviewed status; not re-certified here",
+    "weighted_equation_solved": false,
+    "independent_expert_review": false,
+    "proof_assistant_verification": false
+  }
+}
