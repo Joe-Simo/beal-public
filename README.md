@@ -1,34 +1,28 @@
 # Beal Conjecture Research
 
-Private working repository for a rigorous attempt to resolve the Beal conjecture.
+Private research workspace. **Beal's conjecture is not solved.**
 
-## Status
+## Latest mathematical checkpoint
 
-**The Beal conjecture is not solved.** This repository contains partial arguments, failed routes, computational certificates, literature checkpoints, and open proof obligations; historical “verified” labels are not independent certification.
+[U62: coefficient-two theorem and exact Beal coverage](research/checkpoints/U62_coefficient_two_coverage.md) supplies the complete upstream implication into [U61's auxiliary exclusion](research/checkpoints/U61_elliptic_chabauty_auxiliary_exclusion.md).
 
-**Latest checkpoint: [U60 — audit and modulo-289 reduction](research/checkpoints/U60_audit_and_mod289_reduction.md).**
+At the complete-written-proof level, the resulting partial claims are:
 
-U60 corrects the invalid square-residue normalization in U57/U58, recovers U57's 103-divisibility conclusion with a complete residue check, and corrects U59's projective-kernel and q^2-precision statements. Do not reuse U58's restricted root lists as complete pruning rules.
+- The only positive solution of `X^10+Y^10=2Z^17` with `gcd(X,Y)=1` is `(1,1,1)`.
+- There is no primitive positive solution of `E^(2r)+O^(10k)=C^(34l)` with `r>=2`, `k,l>=1`, **E even and O odd**.
 
-A new algebraic certificate eliminates B=-b^2 in the explicitly stated auxiliary simultaneous system, leaving B=-17b^2 with 17|b. Compatible local solutions persist at all powers of the five primes examined. The next global target is the explicit genus-three quotient in U60; no rational-point classification or complete Beal solution is claimed.
+The second statement is parity-specific. It does not settle the reversed parity orientation, the weighted equation `X^10+256Y^10=Z^17`, all all-even signatures, or the complete conjecture.
 
-## Repository structure
+**Verification:** same-model written proof and adversarial self-review, established-source checking, and distinct exact arithmetic implementations. U61 computations were replayed in U62. Independent expert and proof-assistant verification remain outstanding. The precise dependencies are in the manuscripts; successful code execution does not replace them. No novelty, publication, acceptance or prize award is claimed.
 
-- `research/checkpoints/` — durable research-state snapshots and coverage records.
-- `research/gaussian-descent/` — U15–U25, the Gaussian/quadratic-field descent route for the surviving `X^10 + 256Y^10 = Z^17` branch.
-- `research/modular-method/` — Hilbert modular-form work, including the sigma-conjugation lemma and U26.
-- `research/README.md` — historical research index and conventions; read the latest checkpoint above first.
-- `code/U60_audit.ts` and `code/U60_symbolic.py` — executable exact checks.
-- `research/computations/U60_*` — full outputs, Wolfram expressions and verification records.
+## Evidence and continuity
 
-Formal proofs should go under `formal/` and source records under `references/` when those artifacts exist. Empty directories are intentionally not created.
+[U60](research/checkpoints/U60_audit_and_mod289_reduction.md) records corrections to U57-U59; their historical restricted square-residue tables must not be reused as complete pruning rules. U61 establishes the auxiliary exclusion. U62 checks all upstream hypotheses, including the boundary `(1,1,1)`, the ramified prime over 5, coordinate coprimality, units, signs, and full-scale split-algebra images.
 
-## Mathematical target
+Exact source code is under `code/`, computation records under `research/computations/`, and checked source information under `references/`. The local evidence archive also retains historical outputs and the old U61 patch. `U62_preservation.json` records which files were actually copied to the remote; an old checkpoint's then-current write limitation is historical, not a current capability claim.
 
-For positive integers `A, B, C, x, y, z` satisfying
+Next mathematical task: audit the weighted orientation from its actual preserved Frey-curve and level-lowering assumptions. Do not repeat a completed finite sieve as though it were new progress. Independent verification of U61 remains a separate priority.
 
-`A^x + B^y = C^z`, with `x,y,z >= 3`,
+## Original target
 
-the Beal conjecture asserts that `gcd(A,B,C) > 1`.
-
-A complete resolution requires either an unconditional proof of this full statement or an exact counterexample satisfying all hypotheses. No partial generalized-Fermat result in this repository is presented as a complete resolution.
+For positive integers A,B,C,x,y,z satisfying `A^x+B^y=C^z` with `x,y,z>=3`, prove `gcd(A,B,C)>1`, or exhibit and independently verify a counterexample. No partial result here is a complete resolution of that target.

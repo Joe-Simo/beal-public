@@ -1,0 +1,2 @@
+Actual WolframLanguageEvaluator return; timeConstraint=20 seconds; execution completed.
+Out[1]= <|"q" -> 409, "roots_i" -> {143, 266}, "roots_omega" -> {130, 280}, "scalar_17th_power_values_including_zero" -> {0, 1, 7, 31, 38, 49, 53, 54, 66, 117, 143, 183, 192, 217, 226, 266, 292, 343, 355, 356, 360, 371, 378, 402, 408}, "nonzero_Gaussian_outputs" -> 624, "zero_norm_outputs_included" -> 48, "rows_k_survivors_axes_zeroNorm" -> {{0, 48, 48, 0}, {15, 0, 0, 0}}|>

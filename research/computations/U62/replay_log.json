@@ -1,0 +1,115 @@
+[
+  {
+    "command": [
+      "python",
+      "code/U61_global_reduction.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 17.474,
+    "stderr": "",
+    "output": "replay_U61_global.json"
+  },
+  {
+    "command": [
+      "python",
+      "code/U61_elliptic.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.65,
+    "stderr": "",
+    "output": "replay_U61_elliptic.json"
+  },
+  {
+    "command": [
+      "python",
+      "code/U61_scale_audit.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.617,
+    "stderr": "",
+    "output": "replay_U61_scale.json"
+  },
+  {
+    "command": [
+      "python",
+      "code/U61_finite_fields.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.791,
+    "stderr": "",
+    "output": "replay_U61_fields.json"
+  },
+  {
+    "command": [
+      "tsc",
+      "code/U61_audit.ts",
+      "--target",
+      "ES2022",
+      "--module",
+      "commonjs",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--noUnusedLocals",
+      "--noUnusedParameters",
+      "--outDir",
+      "research/computations/U62/build"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.87,
+    "stderr": "",
+    "output": null
+  },
+  {
+    "command": [
+      "node",
+      "research/computations/U62/build/U61_audit.js"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.054,
+    "stderr": "",
+    "output": "replay_U61_typescript.json"
+  },
+  {
+    "command": [
+      "tsc",
+      "code/U62_coverage.ts",
+      "--target",
+      "ES2022",
+      "--module",
+      "commonjs",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--noUnusedLocals",
+      "--noUnusedParameters",
+      "--noEmit"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.821,
+    "stderr": "",
+    "output": null
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "py_compile",
+      "code/U62_coverage.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.549,
+    "stderr": "",
+    "output": null
+  },
+  {
+    "command": [
+      "python",
+      "-m",
+      "tabnanny",
+      "code/U62_coverage.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.584,
+    "stderr": "",
+    "output": null
+  }
+]

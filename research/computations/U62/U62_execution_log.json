@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "python",
+      "code/U62_coverage.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.054,
+    "stderr": "",
+    "output_matches": "research/computations/U62/coverage_python.json"
+  },
+  {
+    "command": [
+      "tsc",
+      "code/U62_coverage.ts",
+      "--target",
+      "ES2022",
+      "--module",
+      "commonjs",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--noUnusedLocals",
+      "--noUnusedParameters",
+      "--outDir",
+      "research/computations/U62/build"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.838,
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "research/computations/U62/build/U62_coverage.js"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04,
+    "stderr": "",
+    "output_matches": "research/computations/U62/coverage_typescript.json"
+  }
+]

@@ -1,0 +1,81 @@
+U61 executed reproduction log
+Repository root: /mnt/data/beal
+Starting remote revision: f772322044f1ce18cc2aa6c4876d07f0fe88f3ec
+Arithmetic: Python integers/Fraction, SymPy exact algebra, TypeScript bigint.
+
+$ node --version
+exit=0; elapsed_seconds=0.006
+v22.16.0
+
+$ tsc --version
+exit=0; elapsed_seconds=0.051
+Version 5.8.3
+
+$ python --version
+exit=0; elapsed_seconds=0.003
+Python 3.13.5
+
+$ python -c 'import sympy; print(sympy.__version__)'
+exit=0; elapsed_seconds=0.886
+1.14.0
+
+$ tsc code/U61_audit.ts --target ES2022 --module commonjs --strict --noUncheckedIndexedAccess --noUnusedLocals --noUnusedParameters --noEmit
+exit=0; elapsed_seconds=0.938
+
+$ tsc code/U61_audit.ts --target ES2022 --module commonjs --strict --noUncheckedIndexedAccess --noUnusedLocals --noUnusedParameters --outDir research/computations/.build
+exit=0; elapsed_seconds=0.901
+
+$ node research/computations/.build/U61_audit.js
+exit=0; elapsed_seconds=0.057
+stdout saved: research/computations/U61_typescript_output.json
+
+$ python -m py_compile code/U61_global_reduction.py code/U61_elliptic.py code/U61_finite_fields.py code/U61_scale_audit.py
+exit=0; elapsed_seconds=0.695
+
+$ python -m tabnanny code/U61_global_reduction.py code/U61_elliptic.py code/U61_finite_fields.py code/U61_scale_audit.py
+exit=0; elapsed_seconds=0.651
+
+$ python code/U61_global_reduction.py
+exit=0; elapsed_seconds=17.077
+stdout saved: research/computations/U61_global_reduction_output.json
+
+$ python code/U61_elliptic.py
+exit=0; elapsed_seconds=0.650
+stdout saved: research/computations/U61_elliptic_output.json
+
+$ python code/U61_scale_audit.py
+exit=0; elapsed_seconds=0.631
+stdout saved: research/computations/U61_scale_audit_output.json
+
+$ python code/U61_finite_fields.py
+exit=0; elapsed_seconds=0.814
+stdout saved: research/computations/U61_finite_fields_output.json
+
+$ tsc code/U60_audit.ts --target ES2022 --module commonjs --strict --noUncheckedIndexedAccess --noUnusedLocals --noUnusedParameters --outDir research/computations/.build-u60
+exit=0; elapsed_seconds=0.893
+
+$ node research/computations/.build-u60/U60_audit.js
+exit=0; elapsed_seconds=0.038
+stdout saved: research/computations/U61_U60_checker_replay.json
+
+Capabilities: {"eslint": null, "ruff": null, "biome": null, "bun": null, "sage": null, "magma": null, "lean": null, "lake": null, "gp": null}
+Lint limitation: no installed standalone linter; no linter success claimed. Strict compiler/unused checks, Python syntax and indentation checks passed.
+Audit provenance: same-model mathematical review, separate exact TypeScript/Python/Wolfram calculations; no expert review, proof kernel, Magma or Sage run.
+Implementation corrections retained: symbolic-expression equality required coefficient normalization over Q(sqrt(17)); corrected before reliance. An early Wolfram conjugation replacement missed inverse sqrt terms, so those norm fields were discarded and explicit conjugate products re-evaluated. Clean outputs are preserved.
+
+Final cross-implementation reconciliation (Python stdlib, executed):
+- Every new symbolic boolean true, including both coordinates of the dual-isogeny composition and the Kummer preimage.
+- Exact primitive-pair counts for every class at both 2-adic embeddings match Python and TypeScript.
+- Elliptic field counts/orders match (8,8),(22,22),(60,20).
+- Full Fraction tau(8P) coefficients match the raw final Wolfram output, not only residues.
+- U60 TypeScript checker replay equals its historical JSON output exactly.
+- Every U60 manifest file matched its original SHA-256 before the root README update.
+No contradictions were hidden as approximate comparisons.
+
+GitHub preservation attempt:
+- list_resources GitHub query=create_tree returned no action.
+- list_resources GitHub query=create returned no action.
+- Full discovery exposed 48 read actions and no create/update/commit/ref mutation actions.
+- get_repo still reports private visibility and account push permission; account permission is NOT an exposed execution action.
+- Actual final read of main returned f772322044f1ce18cc2aa6c4876d07f0fe88f3ec.
+- No U61 remote write was possible or claimed. Local evidence and an applicable patch are supplied.

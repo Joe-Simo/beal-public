@@ -1,0 +1,18 @@
+Clean final independent Wolfram evaluations. Exact expressions are in
+U61_wolfram_checks.wl, one stateless evaluator call per Module.
+Both completed within their 60-second bounds; no messages accompanied these outputs.
+
+Module 1:
+Out[1]= <|"g_factorization" -> True, "resultant" -> -289, "disc_g" -> 410338673, "norm_a4" -> 1/17, "norm_bE" -> -1/17, "P_on_E" -> True, "U_at_P" -> 2, "D_U_at_P" -> 2, "tau_8P" -> {-639193092246937911110706655509459346638757713813141683148725161053036569601213510650409378319219329237005964317865992448/251533549589694990755412797909914798290556526372205249835969273182066718633732080198509707360289139644440169191670585857, -135934684981191030194812637339056116237966860351943283869142096357668404083524397721846723011671264793284743347933295856/251533549589694990755412797909914798290556526372205249835969273182066718633732080198509707360289139644440169191670585857}, "tau_8P_mod9" -> {6, 6}, "tau_8P_over3_mod3" -> {2, 2}, "local_class_counts_sign_eps_pi_count" -> {{16, 7, 6, 13, {{1, 0, 0, 128}, {1, 0, 1, 0}, {1, 1, 0, 0}, {1, 1, 1, 128}, {-1, 0, 0, 0}, {-1, 0, 1, 128}, {-1, 1, 0, 128}, {-1, 1, 1, 0}}}, {64, 41, 42, 53, {{1, 0, 0, 1536}, {1, 0, 1, 1536}, {1, 1, 0, 1536}, {1, 1, 1, 1536}, {-1, 0, 0, 0}, {-1, 0, 1, 0}, {-1, 1, 0, 0}, {-1, 1, 1, 0}}}}|>
+
+Module 2:
+Out[1]= {<|"p" -> 3, "points" -> 8, "orderP" -> 8, "P" -> {{2, 2}, {2, 2}}, "rational_U_residues_tested_at_3_only" -> {{Null, {2, 0}}, {{{2, 2}, {2, 2}}, {2, 0}}}|>, <|"p" -> 5, "points" -> 22, "orderP" -> 22, "P" -> {{3, 4}, {4, 2}}, "rational_U_residues_tested_at_3_only" -> {}|>, <|"p" -> 7, "points" -> 60, "orderP" -> 20, "P" -> {{6, 6}, {5, 3}}, "rational_U_residues_tested_at_3_only" -> {}|>}
+
+Interpretation: the empty lists at 5 and 7 mean the rational-U filter was not
+requested there in this Wolfram call. They do NOT assert no rational-U residues.
+TypeScript also checks the rational-U filter at 5.
+
+Earlier exploratory norm fields produced incorrect unevaluated expressions
+because a syntactic sqrt(17) replacement did not conjugate inverse powers.
+Those fields were discarded; Module 1 above uses explicit conjugate products.
+No earlier discarded output is used as a certificate.
