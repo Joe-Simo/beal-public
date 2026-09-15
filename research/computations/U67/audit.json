@@ -1,0 +1,37 @@
+{
+  "full_Beal_solved": false,
+  "weighted_equation_solved": false,
+  "new_claims": [
+    "explicit rational and quadratic seventeenth-root congruences modulo Z^17",
+    "exact residue-fiber equivalence and q-adic lifting",
+    "two independent Kummer classes, extension degree9248",
+    "linear disjointness from boundary torsion compositum over Q(sqrt5,zeta17)"
+  ],
+  "review": "Same-model proof and adversarial self-audit; distinct arithmetic implementations are not independent mathematical reviewers.",
+  "checked_risks": [
+    "CRT comaximality over composite N",
+    "no inversion of vanishing component",
+    "both embeddings of quadratic unit",
+    "Gaussian scale and all zero-divisor cases",
+    "actual residue-field orbit lengths in converse",
+    "nonunit component in q-adic lift",
+    "rank2 upstream unit equation fails closed",
+    "field degree proved rather than inferred from arithmetic products",
+    "no assumption torsion image is maximal",
+    "no deduction that splitting conditions contradict each other"
+  ],
+  "exploration": {
+    "purpose": "find nonredundancy witnesses, not a Diophantine height bound",
+    "reported_prime_candidates": 229,
+    "upper_q": 2000000,
+    "constraints": "prime q=1 mod340 with2 a fifth power",
+    "exhaustive_search_claim": "Only discovery process; no no-solution or density conclusion is used. Named primes are independently retested."
+  },
+  "actual_failures": [
+    "Initial TS17006 compile error corrected before clean run; recorded in logs.",
+    "Initial 101,1361 comparison domains empty; not used as exclusions.",
+    "First Wolfram Y1 points were toric only; correctly scaled Gaussian points separately checked.",
+    "Source-byte downloads failed; source read via connector."
+  ],
+  "next_question": "Global integral beta and simultaneous coefficient vanishing, not another prime-power refinement at a passing prime."
+}

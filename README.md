@@ -2,7 +2,17 @@
 
 Private research workspace. **Beal's conjecture is not solved.**
 
-## Latest checkpoint: U65
+## Latest checkpoint: U67 boundary-independent Kummer obstructions
+
+[U67](research/checkpoints/U67_unconditional_Kummer_obstructions.md) combines the remote quintic U65 descent with the Gaussian power equation to construct explicit seventeenth roots of `5/32` modulo `Z^17` and of `phi=(1+sqrt(5))/2` in the quadratic residue algebra. These are necessary conditions for every putative weighted solution, without the unproved boundary congruence (BC). Their weighted application inherits U65's written/self-reviewed proof status.
+
+The two classes are independent in `Q(sqrt(5),zeta_17)` and generate a relative degree-289 Kummer extension, of total degree 9248 over Q. U67 proves an exact equivalence on the toric residue fiber and explains why passing solutions lift q-adically; no global contradiction follows from increasing precision alone. Exact named witnesses show that the two constant tests exclude different primes, while an explicit passing q=13 example prevents an emptiness claim.
+
+The new manuscript, Python/TypeScript checkers, Wolfram expressions/outputs, source mapping, and compact replay certificates are preserved with this checkpoint. The delivered archive additionally contains every upstream replay row, complete outputs/logs, and the earlier local U66 archive. Two different manuscripts were previously numbered U65: the remote quintic proof below and an archived local CM-boundary proof. U67 identifies both explicitly instead of overwriting either. U66's (BC) is not promoted to a proved hypothesis.
+
+**The weighted equation and the complete Beal conjecture remain unresolved.** Verification is written self-review plus distinct exact arithmetic implementations, not independent expert or kernel certification. The next global question is simultaneous integral coefficient vanishing for one common beta, together with the Gaussian equation; seven-of-eight modular elimination remains unchanged and U41 remains invalidated.
+
+## Retained checkpoint: U65
 
 [U65: the last Hecke check and an untwisted quintic descent](research/checkpoints/U65_weighted_quintic_unit_elimination.md) excludes the previously unexamined orbit h at 11, leaving only b in the recorded eight-orbit modular list. The global level-lowering and independent newspace-completeness obligations remain open.
 

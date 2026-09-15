@@ -1,0 +1,44 @@
+{
+  "checked_date": "2026-09-15",
+  "remote_revision": "a15e419765463f68a641ed71fd549aafae2cc95d",
+  "number_collision": "The remote U65 quintic manuscript and the earlier local U65 CM-boundary manuscript are different research branches sharing a number. Neither supersedes the other silently.",
+  "quintic_dependency": {
+    "path": "research/checkpoints/U65_weighted_quintic_unit_elimination.md",
+    "git_blob": "c3b180d626e6434116cc9aed54a6e585b5e0ac28",
+    "url": "https://github.com/Joe-Simo/beal/blob/a15e419765463f68a641ed71fd549aafae2cc95d/research/checkpoints/U65_weighted_quintic_unit_elimination.md",
+    "read": "Complete text via GitHub connector, initial content and ending lines200-410; Python source also inspected.",
+    "status": "same-model written partial theorem, not external expert/kernel certification",
+    "new_reproduction": "Full five-coordinate mod289 unit certificate and Gaussian filter in a newly written unsplit Python implementation; exact logs separately checked by Wolfram."
+  },
+  "local_predecessor": {
+    "path": "research/checkpoints/U66_nonsplit_Cartan_toric_obstruction.md",
+    "sha256": "bf831439fed19039c264195f7efde5db5d04c0c757dc28afad40db778b5e362e",
+    "actual_archive": "Beal_U66_evidence.zip",
+    "scope": "Only the direct semilinear torsion-field argument is used. BC is NOT used."
+  },
+  "external_sources": [
+    {
+      "url": "https://stacks.math.columbia.edu/tag/09I6",
+      "title": "The Stacks Project, Section9.24: Kummer extensions",
+      "inspected": "HTML lines18-25; extension is cyclic of degree dividing n when roots of unity are present.",
+      "usage": "Elementary radical extension step; U67 supplies its own two-class independence argument."
+    },
+    {
+      "url": "https://stacks.math.columbia.edu/tag/09DX",
+      "title": "The Stacks Project, Lemma9.24.1",
+      "inspected": "HTML lines22-24; linear eigenvector description of a cyclic radical extension.",
+      "usage": "Supports the eigenvector argument; no reliance on the separate subextension lemma."
+    }
+  ],
+  "non_dependencies": [
+    "unproved boundary congruence BC",
+    "invalidated U41",
+    "database-completeness claim",
+    "BSD",
+    "GRH",
+    "novelty assumption",
+    "finite upper bound on solution size"
+  ],
+  "source_download_failures": "A connector-returned raw download was rejected by the download tool; a direct request also failed. Private URLs were not sent to web. No inaccessible source is claimed downloaded. Tokens are deliberately not stored.",
+  "privacy": "Private research was read/preserved only through the authorized GitHub connection; external queries were mathematical source lookups."
+}

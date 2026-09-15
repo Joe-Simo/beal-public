@@ -1,0 +1,82 @@
+[
+  {
+    "name": "python_version",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "node_version",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "tsc_version",
+    "command": [
+      "tsc",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "python_compile",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "py_compile",
+      "code/U67_kummer.py",
+      "research/computations/U67/reproduce.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "python_whitespace",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "-m",
+      "tabnanny",
+      "code/U67_kummer.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "strict_typecheck",
+    "command": [
+      "tsc",
+      "code/U67_kummer.ts",
+      "--strict",
+      "--noUncheckedIndexedAccess",
+      "--noUnusedLocals",
+      "--noUnusedParameters",
+      "--noEmitOnError",
+      "--target",
+      "ES2022",
+      "--module",
+      "commonjs",
+      "--outDir",
+      "research/computations/U67/build"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "python",
+    "command": [
+      "/opt/pyvenv/bin/python",
+      "code/U67_kummer.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "typescript",
+    "command": [
+      "node",
+      "research/computations/U67/build/U67_kummer.js"
+    ],
+    "exit_code": 0
+  }
+]

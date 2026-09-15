@@ -1,0 +1,9 @@
+Actual tool-returned outputs, separate stateless kernel calls.
+
+CALL 1
+Out[1]= <|"quartic_norm" -> 5*a$83832^12*v$83832^4, "unit_polynomial_remainder" -> 0, "unit_root_formula_remainder" -> 0, "cyclotomic_product" -> 5, "rational_root_identity" -> 5/32, "quintic_unit_logs" -> {{0, 10, 4, 3, 12}, {0, 14, 13, 7, 6}}, "named_rows_q_prime_phi_poly_c_char_phi_char_toric_gaussian" -> {{2381, True, 0, 1787, 477, 0, 875}, {17681, True, 0, 1, 1219, 0, 757}, {610301, True, 0, 54536, 1, 0, 242510}}, "c_mod289_and_sixteenth_power" -> {244, 256}, "field_degree_arithmetic" -> {32, 289, 9248, 1}|>
+
+CALL 2
+Out[1]= <|"rows_q_prime_toric_gaussian_c_phi" -> {{2381, True, 0, 1, 1787, 477}, {17681, True, 0, 1, 1, 1219}, {610301, True, 0, 1, 54536, 1}}, "q13_quintic_root_power" -> 10 + 2*z$83489^3, "q13_gaussian_root_power" -> 2 + 3*z$83489, "q13_c_root_power" -> 3, "q13_phi_root" -> 3 + 5*z$83489, "q13_phi_root_power" -> z$83489, "q13_toric_equation" -> 0|>
+
+Call 1's Y=1 points were only toric witnesses; their Gaussian characters were NOT one. Call 2 supplies the correctly scaled joint witnesses. No complete upstream sieve or field-degree calculation was executed by Wolfram in these two calls. The new Python replay exhausts the upstream sieve; Section 5 of the manuscript proves the number-field degree.

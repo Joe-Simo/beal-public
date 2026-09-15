@@ -1,0 +1,112 @@
+{
+  "all_named_residue_values_match": true,
+  "all_toric_equivalence_counts_match": true,
+  "all_toric_root_lists_match": true,
+  "all_gaussian_witnesses_match": true,
+  "c_mod_289_check_matches": true,
+  "full_Beal_solved": false,
+  "surviving_local_witness": {
+    "q": 13,
+    "X_Y_Z_residues": [
+      6,
+      1,
+      0
+    ],
+    "beta": [
+      1,
+      6,
+      3,
+      0,
+      7
+    ],
+    "beta_power": [
+      10,
+      0,
+      0,
+      2,
+      0
+    ],
+    "gaussian_root": [
+      5,
+      1
+    ],
+    "gaussian_power": [
+      2,
+      3
+    ],
+    "c_root": 9,
+    "c_root_power": 3,
+    "phi_root": [
+      3,
+      5
+    ],
+    "phi_root_power": [
+      0,
+      1
+    ]
+  },
+  "new_equivalence_domains": [
+    {
+      "q": 241,
+      "toric_pairs": 2400,
+      "gaussian_pairs": 2400,
+      "joint_pairs": 2400,
+      "constant_tests": true
+    },
+    {
+      "q": 2381,
+      "toric_pairs": 23800,
+      "gaussian_pairs": 1400,
+      "joint_pairs": 0,
+      "constant_tests": false
+    },
+    {
+      "q": 17681,
+      "toric_pairs": 176800,
+      "gaussian_pairs": 10400,
+      "joint_pairs": 0,
+      "constant_tests": false
+    }
+  ],
+  "upstream_rebuild_summary": {
+    "source_revision": "a15e419765463f68a641ed71fd549aafae2cc95d",
+    "domain_square_pairs": 18768,
+    "norm_survivors": 1104,
+    "full_algebra_unit_logs": [
+      [
+        0,
+        10,
+        4,
+        3,
+        12
+      ],
+      [
+        0,
+        14,
+        13,
+        7,
+        6
+      ]
+    ],
+    "classes_before_gaussian": [
+      {
+        "class": [
+          0,
+          0
+        ],
+        "count": 16
+      },
+      {
+        "class": [
+          0,
+          14
+        ],
+        "count": 8
+      }
+    ],
+    "gaussian_survivor_pairs": 16,
+    "gaussian_witnesses": 544
+  },
+  "formal_or_expert_verification": false,
+  "standalone_linter": "Not installed; strict tsc, Python compilation and tabnanny ran."
+}
