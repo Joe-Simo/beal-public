@@ -30,9 +30,13 @@ if(JSON.stringify(summary)!==expected) throw new Error(`orbit summary ${JSON.str
 const chosen=orbits.find((o)=>o.length===20 && new Set(o.map(distance)).has(1));
 if(!chosen || chosen.length!==20) throw new Error('missing odd-distance orbit');
 if(chosen.length<=17) throw new Error('pigeonhole needs >17 pair products');
+const minimumCoincidentPairs=chosen.length-17;
+if(minimumCoincidentPairs!==3) throw new Error('collision lower bound');
+const minimumDiscriminantValuationMultiplier=2*minimumCoincidentPairs;
+if(minimumDiscriminantValuationMultiplier!==6) throw new Error('valuation multiplier');
 const discriminantDifferencePairs=chosen.length*(chosen.length-1)/2;
 if(discriminantDifferencePairs!==190) throw new Error('discriminant pair count');
 const squaredDifferenceFactors=2*discriminantDifferencePairs;
 const thetaMagnitudeExponent=2*squaredDifferenceFactors;
 if(squaredDifferenceFactors!==380 || thetaMagnitudeExponent!==760) throw new Error('height exponents');
-console.log(JSON.stringify({checkpoint:'U84',pairOrbits:summary,chosenOrbitSize:chosen.length,seventeenthPowerValues:17,pigeonhole:true,discriminantDifferencePairs,squaredDifferenceFactors,thetaMagnitudeExponent,fullBealSolved:false},null,2));
+console.log(JSON.stringify({checkpoint:'U84',pairOrbits:summary,chosenOrbitSize:chosen.length,seventeenthPowerValues:17,pigeonhole:true,minimumCoincidentPairs,minimumDiscriminantValuationMultiplier,discriminantDifferencePairs,squaredDifferenceFactors,thetaMagnitudeExponent,fullBealSolved:false},null,2));
