@@ -1,8 +1,10 @@
 # U56: coefficient-2 branch — audited direct Q(zeta_20) descent
 
-Status: verified partial result within the evidence recorded here. This does not resolve Beal's conjecture.
+Status: verified partial arithmetic result within the evidence recorded here; **the branch-level frontier in this file is superseded by U57**. This does not resolve Beal's conjecture.
 
 Date: 2026-09-16.
+
+> **Correction notice (2026-09-16):** After this checkpoint was written, a stronger primary source was recovered. Freitas' 2012 thesis, Theorem 2.0.3, uses the condition `p ≡ 1 (mod 4) OR p ≡ ±1 (mod 5)` and therefore directly eliminates the non-trivial primitive equation `x^5+y^5=2z^17`. U57 records the complete source audit and the pullback to U43. Sections 1–7 below remain preserved as independent arithmetic work, but Section 8's old literature conclusion and Section 9's designation of this route as the active frontier are superseded.
 
 This checkpoint re-audits a mathematically useful route that existed in an older off-main research commit and places only the rechecked conclusions onto the current `main` chain.
 
@@ -169,17 +171,23 @@ The class group of Q(sqrt(-5)) has order 2. Since gcd(17,2)=1, the coprime conju
 
 These are simultaneous exact descents, not heuristic congruences.
 
-## 8. Literature check for the exact target
+## 8. Literature status — corrected by U57
 
-A fresh search of the 2024 survey `Generalised Fermat equation: a survey of solved cases` (arXiv:2412.11933) found no direct theorem or table entry resolving signature (10,10,17) or the exact equation
+The literature conclusion originally recorded here was based on the early arXiv:1103.5388v1 statement and is superseded.
 
-    X^10+Y^10=2Z^17.
+U57 verifies the stronger primary source:
 
-The older Dieulefait-Freitas Q-curve theorem for x^5+y^5=2z^p has congruence hypotheses that do not include p=17, and the Billerey-Chen-Dieulefait-Freitas multi-Frey results used in U46 eliminate several local cases but not this surviving odd-square orientation. Therefore no published complete resolution is being imported here.
+- Nuno Freitas, `Some Generalized Fermat-type Equations via Q-Curves and Modularity`, Universitat de Barcelona doctoral thesis (2012), Theorem 2.0.3;
+- for beta supported on primes not congruent to 1 mod 5, `x^5+y^5=2 beta z^p` has no non-trivial primitive solutions for `p>13` whenever `p ≡ 1 (mod 4) OR p ≡ ±1 (mod 5)`;
+- beta=1 and p=17 satisfy these hypotheses.
 
-## 9. Current frontier
+The later joint Dieulefait-Freitas article is `The Fermat-type equations x^5+y^5=2z^p or 3z^p solved through Q-curves`, Mathematics of Computation 83 (2014), 917–933, DOI 10.1090/S0025-5718-2013-02731-7. Its final publication abstract reports a density-3/4 solved set, consistent with the strengthened OR condition and not the old preprint's density-1/4 intersection.
 
-The coefficient-2 branch now satisfies simultaneously
+Therefore the coefficient-2 orientation is closed by U57; this checkpoint remains only an independent arithmetic archive.
+
+## 9. Historical frontier (superseded)
+
+Before U57, this route had reduced the coefficient-2 branch to simultaneous equations
 
     m+i n = rho^17,
     m+mu n = Gamma^17,
@@ -190,8 +198,8 @@ with explicit definitions above and, in the chosen orientation,
 
     228392811525274638941 | n.
 
-Merely adding more forcing primes is not the next proof step. The narrow global target is the Kummer ratio
+The former next target was the Kummer ratio
 
-    (m+mu n)/(m+i n) = (Gamma/rho)^17                (11)
+    (m+mu n)/(m+i n) = (Gamma/rho)^17.                (11)
 
-inside Q(zeta_20), together with the requirement t=n/m in Q. The next useful investigation is to exploit the Galois/rationality constraints on this fixed Kummer equation, or the genus-three quotient from the audited older local route, rather than increasing local precision at already compatible primes.
+U57 supersedes that target for branch elimination. It remains mathematically valid independent structure that may be useful if the published-theorem application is ever re-audited or in related equations.
