@@ -33,18 +33,20 @@ function f(j:number,m:number):Rat {
   const b=B[j+10*m]; if(!b) throw new Error(`missing B ${j+10*m}`);
   return scale(b,powBig(-256n,m));
 }
-function p(j:number,n:number):Rat {
+const pairs=[[1,9],[2,8],[3,7],[4,6],[5,5]] as const;
+function productSeriesCoefficient(pairIndex:number,n:number):Rat {
+  const pair=pairs[pairIndex]; if(!pair) throw new Error('missing pair');
   let out=rat(0n);
-  for(let k=0;k<=n;k++) out=add(out,mul(f(j,k),f(9-j,n-k)));
+  for(let k=0;k<=n;k++) out=add(out,mul(f(pair[0],k),f(pair[1],n-k)));
   return out;
 }
 
 const lambda=[
- -391297461914300582187021086407205172878178454196n,
- -45543393576002299013194949131204923972748847296580n,
- 263003783011157522723347342656612893143239370625476n,
- -515316029541067322730336733534880098514360212425548n,
- 298239740356053050930242237285506272580149235212283n,
+ 15798242183726487723872974980213975697091265396056n,
+ -249202890961784236021683574474477003603265904312448n,
+ 1216292797751835710390793468584676049161821798713448n,
+ -2877403423806299594932394239043237544733898769276736n,
+ 1894513509087467786381667797189625338402082189240825n,
 ] as const;
 let lambdaGcd=0n;
 for(const x of lambda) lambdaGcd=gcd(lambdaGcd,x);
@@ -53,7 +55,7 @@ if(lambdaGcd!==1n) throw new Error('lambda not primitive');
 const combo:Rat[]=[];
 for(let n=0;n<=4;n++){
   let s=rat(0n);
-  for(let j=0;j<5;j++) s=add(s,scale(p(j,n),lambda[j]!));
+  for(let j=0;j<5;j++) s=add(s,scale(productSeriesCoefficient(j,n),lambda[j]!));
   combo.push(s);
 }
 for(let n=0;n<4;n++){
@@ -63,26 +65,27 @@ const lead=combo[4]; if(!lead || lead.n===0n) throw new Error('S^4 coefficient v
 if(lead.n%31n===0n || lead.d%31n===0n) throw new Error('leading coefficient not a 31-adic unit');
 
 const L=lambda.reduce((s,x)=>s+abs(x),0n);
-if(L!==1122494243946194495979308283694611393383375844014083n) throw new Error('L mismatch');
+if(L!==6253210863791113815450412054272229911598159926939513n) throw new Error('L mismatch');
 const forcedProduct=433992707035920672833426144791n;
-const lhs=powBig(forcedProduct,49*17);
-const rhs11909=9n*powBig(L,17)*powBig(10n,2*11909);
-const rhs11910=9n*powBig(L,17)*powBig(10n,2*11910);
-if(!(lhs>rhs11909)) throw new Error('11909 lower bound failed');
-if(!(lhs<rhs11910)) throw new Error('11910 threshold check failed');
+const lhs=powBig(forcedProduct,50*17);
+const rhs12155=9n*powBig(L,17)*powBig(10n,2*12155);
+const rhs12156=9n*powBig(L,17)*powBig(10n,2*12156);
+if(!(lhs>rhs12155)) throw new Error('12155 lower bound failed');
+if(!(lhs<rhs12156)) throw new Error('12156 threshold check failed');
 
 console.log(JSON.stringify({
   checkpoint:'U87',
+  coefficientPairs:pairs,
   lambda:lambda.map(String),
   lambdaL1:String(L),
   cancelledSCoefficients:[0,1,2,3],
   firstNonzeroSCoefficient:4,
-  localYOrder:49,
+  localYOrder:50,
   leadNumeratorDigits:lead.n.toString().replace('-','').length,
   leadDenominatorDigits:lead.d.toString().length,
   lead31AdicUnit:true,
   forcedProduct:String(forcedProduct),
-  forcedProductPowerDividingInvariant:49,
-  maxBaseStrictlyGreaterThanPowerOf10:11909,
+  forcedProductPowerDividingInvariant:50,
+  maxBaseStrictlyGreaterThanPowerOf10:12155,
   fullBealSolved:false,
 },null,2));
