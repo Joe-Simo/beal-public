@@ -2,7 +2,7 @@
 
 Status: verified coverage checkpoint only. This does not resolve Beal's conjecture.
 
-Date: 2026-09-14; updated 2026-09-16 after U56.
+Date: 2026-09-14; updated 2026-09-16 after U57.
 
 ## 1. Setup
 
@@ -58,7 +58,7 @@ or
 
 ### Branch (A) is now closed
 
-U56 corrects the project's earlier literature record. Freitas' 2012 doctoral thesis, Theorem 2.0.3, proves for beta supported only on primes not congruent to 1 mod 5 that
+U57 corrects the project's earlier literature record. Freitas' 2012 doctoral thesis, Theorem 2.0.3, proves for beta supported only on primes not congruent to 1 mod 5 that
 
     x^5+y^5=2 beta z^p
 
@@ -66,7 +66,7 @@ has no non-trivial primitive solutions for p>13 whenever
 
     p == 1 (mod 4) OR p == +/-1 (mod 5).
 
-This is the strengthened multi-Frey/Q-curve result associated with the later Dieulefait-Freitas Mathematics of Computation article; the old arXiv:1103.5388v1 statement used the narrower AND condition and is not the final result for this application.
+This is the strengthened multi-Frey/Q-curve result associated with the later Dieulefait-Freitas Mathematics of Computation article; the old arXiv:1103.5388v1 statement used the narrower AND condition and is stale for this application.
 
 In (A), put x=X^2, y=Y^2, beta=1 and p=17. Since 17>13 and 17==1 mod4, the theorem applies. The only positive trivial solution would have X=Y=Z=1, but U43 has X<Y in this orientation. Hence (A) is impossible.
 
@@ -110,7 +110,7 @@ The same caution applies a fortiori to the full family of right primes >=19.
 The all-even branch is now partitioned rigorously as follows:
 
 1. t has no prime divisor below 17;
-2. if 17|t, orientation (A) is closed by U56 and only the weighted orientation (B) remains, with U41 a serious but not independently certified candidate elimination;
+2. if 17|t, orientation (A) is closed by U57 and only the weighted orientation (B) remains, with U41 a serious but not independently certified candidate elimination;
 3. if 17 does not divide t, every prime divisor of t is >=19 and the problem enters an unresolved large-right-prime generalized-Fermat family, though modern results give effective asymptotic control for each fixed right prime under explicit conditions.
 
 No statement that `17 must divide t` is currently proved.
@@ -121,4 +121,4 @@ Highest-value immediate actions:
 
 1. independently certify U41 so the entire `17|t` all-even branch can be closed;
 2. inspect the r=19 effective bounds/S-unit computations to determine whether the residual finite range is computationally tractable;
-3. keep U48-U55 as independent arithmetic work but do not spend further effort on the coefficient-2 orientation unless auditing U56 reveals a source/application flaw.
+3. keep U48-U56 as independent arithmetic work but do not spend further effort on the coefficient-2 orientation unless auditing U57 reveals a source/application flaw.
