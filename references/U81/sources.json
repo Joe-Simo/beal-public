@@ -1,0 +1,63 @@
+{
+  "checkpoint": "U81_clean_prime_density_and_coefficient_support",
+  "research_date": "2026-09-16",
+  "external_sources": [
+    {
+      "id": "S1",
+      "author": "J. S. Milne",
+      "title": "Algebraic Number Theory",
+      "url": "https://www.jmilne.org/math/CourseNotes/ANT300.pdf",
+      "locator": "Theorem 8.31 (Chebotarev density theorem)",
+      "used_for": "Natural density of the union of Frobenius conjugacy classes satisfying the clean-prime condition",
+      "verification": "The theorem statement was checked during this research continuation."
+    }
+  ],
+  "project_dependencies": [
+    {
+      "path": "research/checkpoints/U71_common_decic_seventeenth_root.md",
+      "used_for": "Existence of the common integral seventeenth root theta for a hypothetical weighted solution",
+      "status": "written/self-reviewed with distinct exact arithmetic; independent verification outstanding"
+    },
+    {
+      "path": "research/checkpoints/U72_root_closed_order_and_full_support.md",
+      "used_for": "theta in Z[c], a9 nonzero, exact B9 value and fourteen forced divisors",
+      "status": "written/self-reviewed with distinct exact arithmetic; independent verification outstanding"
+    },
+    {
+      "path": "research/checkpoints/U65_weighted_quintic_unit_elimination.md",
+      "used_for": "weighted-branch quintic descent context",
+      "status": "written/self-reviewed partial theorem; weighted equation unresolved"
+    },
+    {
+      "path": "research/checkpoints/U80_norm_redundancy_hecke_audit.md",
+      "used_for": "parallel research-state context only; its unresolved degree-34 class-group bottleneck is unchanged",
+      "status": "written/self-reviewed reduction/audit"
+    }
+  ],
+  "exact_computation": {
+    "typescript": "code/U81_clean_prime_density.ts",
+    "checks": [
+      "all 40 affine permutations on Z/10Z",
+      "complete cycle-type histogram",
+      "clean counts for cyclotomic orders 1,2,4,8,16",
+      "density 105/128",
+      "fourteen inherited sufficient clean-prime tests",
+      "forced-prime product",
+      "B9 numerator factorization"
+    ],
+    "execution": "Strict TypeScript compile and Node execution succeeded before preservation.",
+    "wolfram": "Independent exact cycle traversal returned the same histogram, clean counts and density; an earlier malformed Wolfram permutation expression was rejected."
+  },
+  "unavailable_or_failed": [
+    "Consensus monthly search quota was exhausted; no Consensus result is used here.",
+    "The degree-34 class number remained unavailable in Wolfram and is not used here.",
+    "The earlier PARI GitHub Actions probe failed before observable computation and supplies no class-group evidence."
+  ],
+  "claims_not_made": [
+    "No proof of the weighted equation's impossibility",
+    "No proof of Beal's conjecture",
+    "No claim that every hypothetical Y has an additional clean prime divisor",
+    "No global novelty claim",
+    "No independent expert or proof-assistant verification"
+  ]
+}
