@@ -1,0 +1,40 @@
+{
+  "research_date": "2026-09-16",
+  "upstream_U72": {
+    "path": "research/checkpoints/U72_root_closed_order_and_full_support.md",
+    "code": "code/U72_full_support.py",
+    "used_for": "The exact Gaussian case-III finite-field criterion, its projective A:B domain including the A=0 axis, and the previously verified fourteen forcing primes."
+  },
+  "riemann_hurwitz": {
+    "source": "The Stacks Project",
+    "section": "Section 53.12, Riemann-Hurwitz",
+    "tag": "0C1B",
+    "url": "https://stacks.math.columbia.edu/tag/0C1B",
+    "used_for": "The tame degree-125 Kummer cover genus computation from its 34 branch points and inertia order 5."
+  },
+  "hasse_weil": {
+    "source": "The Stacks Project",
+    "section": "Section 64.32, Counting points",
+    "tag": "03W2",
+    "url": "https://stacks.math.columbia.edu/tag/03W2",
+    "used_for": "For a smooth geometrically irreducible projective genus-g curve over F_q, the Frobenius eigenvalues have absolute value sqrt(q), yielding |#C(F_q)-(q+1)| <= 2g sqrt(q)."
+  },
+  "milne_crosscheck": {
+    "author": "J. S. Milne",
+    "title": "Algebraic Geometry",
+    "section": "Chapter 11, proof of the Riemann hypothesis for curves",
+    "url": "https://www.jmilne.org/math/CourseNotes/AG11.pdf",
+    "used_for": "Independent source for the same point-count inequality."
+  },
+  "wolfram": {
+    "used_for": "Independent exact factorization of Res(G,H), Disc(G), Disc(H), Riemann-Hurwitz arithmetic, and the exact threshold 9,936,802.",
+    "returned": {
+      "resultant": "2^136",
+      "disc_G": "2^112*17^7",
+      "disc_H": "2^112*17^7",
+      "riemann_hurwitz_rhs": 3150,
+      "genus": 1576,
+      "threshold": 9936802
+    }
+  }
+}
