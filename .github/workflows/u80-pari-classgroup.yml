@@ -1,0 +1,40 @@
+name: U80 PARI class-group audit
+
+on:
+  push:
+    paths:
+      - '.github/workflows/u80-pari-classgroup.yml'
+  workflow_dispatch:
+
+jobs:
+  classgroup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Install PARI/GP
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y pari-gp
+          gp --version
+
+      - name: Compute and quotient-certify the class group
+        shell: bash
+        run: |
+          cat > /tmp/u80.gp <<'GP'
+          default(parisizemax, 4000000000);
+          P = x^34 + 2*x^17 - 4;
+          print("POLY=", P);
+          print("POL_DISC_FACTOR=", factor(poldisc(P)));
+          B = bnfinit(P, 0);
+          print("FIELD_DISC=", B.disc);
+          print("CLASS_GROUP=", B.clgp);
+          print("CLASS_NUMBER=", B.no);
+          print("CLASS_CYCLIC_FACTORS=", B.cyc);
+          print("QUOTIENT_CERTIFICATE=", bnfcertify(B, 1));
+          quit;
+          GP
+          set +e
+          timeout --signal=TERM 600s gp -fq /tmp/u80.gp
+          rc=$?
+          echo "GP_EXIT=$rc"
+          exit "$rc"
