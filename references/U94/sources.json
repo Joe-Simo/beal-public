@@ -1,0 +1,23 @@
+{
+  "research_date": "2026-09-16",
+  "breuil_diamond": {
+    "authors": ["Christophe Breuil", "Fred Diamond"],
+    "title": "Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caracteres galoisiens",
+    "publication": "Ann. Sci. ENS 47 (2014), 905-974",
+    "doi": "10.24033/asens.2230",
+    "url": "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/extensions.pdf",
+    "locator": "Theorem 3.2.2, author PDF printed pp.36-37",
+    "used_for": "Exact list of prescribed local-lift hypotheses: determinant lift psi, finite sets S/T, local Weil-Deligne types, potentially semistable Hodge-Tate (0,1) lifts at p, ordinarity choice, one-dimensional subrepresentation condition where required, and inertial determinant compatibility."
+  },
+  "azon": {
+    "author": "Martin Azon",
+    "title": "Effective Darmon's program for the generalised Fermat equation",
+    "identifier": "arXiv:2504.01967v2",
+    "url": "https://arxiv.org/abs/2504.01967",
+    "used_for": "Upstream U64 modularity, conductor, residual unramifiedness/finite-flatness inputs at their recorded status. U94 does not infer local lift existence from those conductor statements."
+  },
+  "upstream": {
+    "U64": "research/checkpoints/U64_weighted_eisenstein_and_Hecke_rebuild.md",
+    "U93": "research/checkpoints/U93_route_selection_after_exhaustion.md"
+  }
+}
