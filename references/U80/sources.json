@@ -1,0 +1,33 @@
+{
+  "research_date": "2026-09-16",
+  "milne_hasse_norm": {
+    "author": "J. S. Milne",
+    "title": "Class Field Theory",
+    "url": "https://www.jmilne.org/math/CourseNotes/CFT.pdf",
+    "locator": "Chapter VIII, Section 3, Theorem 3.1 (Hasse norm theorem)",
+    "used_for": "For a cyclic number-field extension, an element that is a norm at every completion is a global norm. Applied only to the quadratic extension F(i)/F."
+  },
+  "shnidman_siad": {
+    "authors": "Ari Shnidman and Artane Siad",
+    "title": "Hecke reciprocity and class groups",
+    "identifier": "arXiv:2506.13749v2",
+    "url": "https://arxiv.org/abs/2506.13749",
+    "locators": ["Definition 3.7", "Theorem 3.8", "Theorem 3.9", "Corollary 3.10"],
+    "status": "preprint",
+    "used_for": "Checked whether Hecke reciprocity can constrain Cl(O_F)[2]. It does not in this field because the Hecke ideal has no odd-valuation prime."
+  },
+  "pari": {
+    "project": "PARI/GP",
+    "url": "https://pari.math.u-bordeaux.fr/dochtml/ref-stable/General_number_fields.html",
+    "locator": "bnfcertify",
+    "used_for": "A future bnfcertify(B,1)=1 proves the true class group is a quotient of the computed class group. Thus, if the computed class group has odd order, this weaker unconditional certificate is already enough to prove d=dim_F2 Cl(O_F)[2]=0. No successful PARI class-group run was obtained in U80."
+  },
+  "upstream_U78": {
+    "path": "research/checkpoints/U78_explicit_descent_field_and_two_prime_criterion.md",
+    "used_for": "Integral basis/discriminant, prime decomposition, V=ker norm, local dimensions, W_17=0, real H_v=0, and good-place unramified local conditions."
+  },
+  "upstream_U79": {
+    "path": "research/checkpoints/U79_complete_dyadic_Kummer_image.md",
+    "used_for": "Exact basis of W_2 by 1+s^n and 1+phi*s^n for odd n=19,...,33 and the s^35 squareclass cutoff."
+  }
+}
