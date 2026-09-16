@@ -84,7 +84,7 @@ is a fixed nonzero rational integer attached to the hypothetical solution.
 
 This nonvanishing matters: using a discriminant that vanished identically would give no arithmetic information.
 
-## 4. Every q-adic factor of Y outside 2,5,17 enters Delta_O twice
+## 4. Every q-adic factor of Y outside 2,5,17 enters Delta_O at least sixfold
 
 Let q be a rational prime outside {2,5,17} and let
 
@@ -96,17 +96,23 @@ For every p={j,k} in O,
 
     beta_p^17=(X+c_jY)(X+c_kY) = X^2 mod Q.          (4.1)
 
-The residue field contains at most seventeen roots of T^17-X^2, but O contains twenty beta_p. Hence two distinct p,r in O satisfy
+Thus the twenty residues beta_p occupy at most seventeen roots of T^17-X^2. If their nonempty residue classes have multiplicities m_1,...,m_s, then
 
-    beta_p=beta_r mod Q.                              (4.2)
+    s<=17,  sum m_i=20,
 
-Put u=beta_p and v=beta_r. Their seventeenth-power difference is
+and
+
+    sum binomial(m_i,2) >= sum(m_i-1)=20-s>=3.       (4.2)
+
+So at least three distinct unordered pairs of the beta_p coincide modulo Q.
+
+Take one such collision u=beta_p, v=beta_r. Their seventeenth-power difference is
 
     u^17-v^17
       =Y * [ X(c_i+c_j-c_k-c_l)
               +Y(c_i c_j-c_k c_l) ],                 (4.3)
 
-for the corresponding pairs. The bracket is integral, so
+for the corresponding label pairs. The bracket is integral, so
 
     v_Q(u^17-v^17) >= e.
 
@@ -118,21 +124,21 @@ reduces to 17u^16 and is a Q-adic unit. Therefore
 
     v_Q(u-v) >= e.                                    (4.4)
 
-The discriminant contains (u-v)^2, hence
+Each of the at least three colliding unordered pairs contributes a distinct squared difference to the discriminant. Hence
 
-    v_Q(Delta_O) >= 2e.
+    v_Q(Delta_O) >= 6e.                               (4.5)
 
 Since q is unramified and Delta_O is a rational integer, its Q-adic and q-adic valuations agree. Consequently
 
-    q^(2e) | Delta_O.                                 (4.5)
+    q^(6e) | Delta_O.                                 (4.6)
 
 Let
 
     Y_* = product_(q notin {2,5,17}) q^v_q(Y).
 
-Applying (4.5) prime by prime gives the global divisibility theorem
+Applying (4.6) prime by prime gives the global divisibility theorem
 
-    Y_*^2 | Delta_O.                                  (4.6)
+    Y_*^6 | Delta_O.                                  (4.7)
 
 This is an all-primes statement, not a density assertion and not a bounded search.
 
@@ -157,13 +163,13 @@ A degree-twenty discriminant has C(20,2)=190 squared differences. Therefore
     |Delta_O| <= (2 H^(2/17))^380
               = 2^380 H^(760/17).                   (5.1)
 
-Combining with (4.6),
+Combining with (4.7),
 
-    Y_*^2 <= 2^380 H^(760/17),                       (5.2)
+    Y_*^6 <= 2^380 H^(760/17),                       (5.2)
 
 or equivalently
 
-    Y_*^34 <= 2^6460 H^760.                          (5.3)
+    Y_*^102 <= 2^6460 H^760.                         (5.3)
 
 This is much weaker metrically than U83's high-power coefficient restrictions. Its value is structural: the previous density complement no longer represents primes that escape every fixed global invariant. All prime-to-170 support of Y is forced into one explicitly defined nonzero integer discriminant.
 
@@ -180,6 +186,8 @@ and Node 22.16.0 execution returned
     pair orbit sizes: 5,20,20,
     distance classes: {5}, {1,3}, {2,4},
     chosen orbit size: 20 > 17,
+    minimum coincident residue pairs: 3,
+    minimum discriminant valuation multiplier: 6,
     discriminant pair count: 190,
     squared difference count: 380,
     theta-magnitude exponent: 760.
@@ -188,6 +196,6 @@ An independently written Wolfram enumeration returned the same orbit sizes and d
 
 ## 7. Research consequence
 
-The density approach has reached a natural stopping point. U83 gives much sharper valuations on a density-553/640 set through the fixed coefficients a9 and a5, while U84 shows that every remaining prime divisor of Y outside 2,5,17 is still captured by a fixed nonzero degree-twenty pair-product discriminant.
+The density approach has reached a natural stopping point. U83 gives much sharper valuations on a density-553/640 set through the fixed coefficients a9 and a5, while U84 shows that every remaining prime divisor of Y outside 2,5,17 is still captured, to at least the sixth power of its Y-valuation, by a fixed nonzero degree-twenty pair-product discriminant.
 
 The next high-value question is whether the two size-twenty pair-product orbits produce discriminants whose common arithmetic factor can be bounded or identified more sharply than the individual height estimate (5.1). A second route is to return to U80's exact class-group bottleneck if a reliable class-group engine becomes available. Neither route currently yields an elimination of the weighted equation.
