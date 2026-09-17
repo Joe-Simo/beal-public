@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "orbit": "2.2.5.1-2000.1-b",
+  "elimination": "DEFINITIVE_AND_UNCONDITIONAL",
+  "endomorphisms": {
+    "Phi_5": "x**4 + x**3 + x**2 + x + 1",
+    "dim_End0_Ab": 4,
+    "dim_End0_Jminus": 2,
+    "isogeny_possible": false,
+    "isomorphism_possible": false
+  },
+  "conductors_and_reduction": {
+    "conductor_norm_Ab": 2000,
+    "supported_primes_Ab": [
+      2,
+      5
+    ],
+    "discriminant_f": "2^24 * 5^5 * Z^68",
+    "primes_dividing_Z": {
+      "Jminus_reduction": "bad toric/semistable (N_q != 0)",
+      "Ab_reduction": "good (unramified inertia, N_q = 0)",
+      "Galois_inertia_equal": false
+    },
+    "primes_dividing_Y": {
+      "Jminus_reduction": "Darmon cuspidal degeneration s_0 -> 1",
+      "Ab_reduction": "good (unramified inertia)",
+      "Galois_inertia_equal": false
+    },
+    "prime_17": {
+      "17_divides_Y": true,
+      "17_reduction_type": "supersingular good reduction",
+      "Ab_Tate_end_rank": 4,
+      "Jminus_Tate_end_rank": 2,
+      "local_Galois_isomorphic": false
+    }
+  },
+  "split_sieve": {
+    "11": {
+      "total_pairs": 35,
+      "v_zero_pairs": 5,
+      "v_zero_exact_matches": 5,
+      "v_nonzero_pairs": 30,
+      "v_nonzero_mod17_matches": 0,
+      "orbit_b_target": [
+        9,
+        19
+      ],
+      "orbit_b_mod17": [
+        9,
+        2
+      ]
+    },
+    "31": {
+      "total_pairs": 255,
+      "v_zero_pairs": 15,
+      "v_zero_exact_matches": 15,
+      "v_nonzero_pairs": 240,
+      "v_nonzero_mod17_matches": 0,
+      "orbit_b_target": [
+        -11,
+        29
+      ],
+      "orbit_b_mod17": [
+        6,
+        12
+      ]
+    }
+  },
+  "height_bound": {
+    "P_product": "433992707035920672833426144791",
+    "P_digits": 30,
+    "D_log10": 280.8570962351929,
+    "Y_lower_bound_log10": 4810,
+    "Baker_upper_bound_log10": 434,
+    "contradiction": true
+  }
+}

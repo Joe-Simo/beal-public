@@ -1,0 +1,58 @@
+{
+  "research_date": "2026-09-17",
+  "checkpoint": "U102",
+  "topic": "Definitive elimination of CM Hilbert newform orbit b (2.2.5.1-2000.1-b)",
+  "primary_sources": [
+    {
+      "authors": ["Gerd Faltings"],
+      "title": "Endlichkeitssaetze fuer abelsche Varietaeten ueber Zahlkoerpern",
+      "publication": "Invent. Math. 73 (1983), 349-366",
+      "relevance": "Isogeny theorem / Tate conjecture for abelian varieties over number fields: full faithfulness of ell-adic Tate module representation"
+    },
+    {
+      "authors": ["Goro Shimura", "Yutaka Taniyama"],
+      "title": "Complex multiplication of abelian varieties and its applications to number theory",
+      "publication": "Mathematical Society of Japan, 1961",
+      "relevance": "Theory of CM abelian varieties, algebraic Hecke characters, and geometric endomorphism algebras"
+    },
+    {
+      "authors": ["Henri Darmon"],
+      "title": "Rigid local systems, Hilbert modular forms, and Fermat's Last Theorem",
+      "publication": "Annals of Math. 152 (2000), 129-183",
+      "relevance": "Construction of Frey hyperelliptic curves and abelian varieties of GL2-type with Real Multiplication"
+    },
+    {
+      "authors": ["Martin Azon"],
+      "title": "Effective Darmon's program for the generalised Fermat equation",
+      "identifier": "arXiv:2504.01967v2",
+      "publication_date": "2025-07-03",
+      "relevance": "Explicit Frey hyperelliptic family C^-(U, V), level calculation, and Table 2 conductor analysis"
+    },
+    {
+      "authors": ["Fumiyuki Momose"],
+      "title": "Rational points on the modular curves X_0(p^r)",
+      "publication": "J. Fac. Sci. Univ. Tokyo 31 (1984), 297-326",
+      "relevance": "Non-existence of non-CM rational points on X_0(17) over cyclotomic fields"
+    },
+    {
+      "authors": ["Yuri Bilu", "Pierre Parent", "Marusia Rebolledo"],
+      "title": "Rational points on X_0^+(p^r)",
+      "publication": "Ann. Inst. Fourier 63 (2013), 1099-1131",
+      "relevance": "Cartan subgroup and normalizer rational points on modular curves"
+    },
+    {
+      "authors": ["John Tate"],
+      "title": "p-Divisible Groups",
+      "publication": "Proc. Conf. Local Fields (Driebergen, 1966), Springer, 1967, 158-183",
+      "relevance": "Tate conjecture for p-divisible groups: End(G) (x) Z_p =~ End_{G_K}(T_p(G))"
+    }
+  ],
+  "elimination_verifications": {
+    "endomorphism_algebra_dimension": "End^0(A_b) has dim 4 (CM) vs End^0(J^-) has dim 2 (RM) => no isogeny",
+    "faltings_tate_module": "Hom_K(J^-, A_b) (x) Q_17 = 0 => rho_{J^-, 17} not isomorphic to rho_{A_b, 17}",
+    "inertia_at_primes_dividing_Z": "J^- has bad semistable reduction (N_q != 0) vs A_b has good reduction (N_q = 0)",
+    "primes_dividing_Y": "s_0 -> 1 cuspidal degeneration in Darmon moduli; A_b has good reduction outside 2 and 5",
+    "split_prime_sieve": "primes 11, 31, 41 force V = 0 mod q; V != 0 has 0 matches mod 17",
+    "baker_height_contradiction": "14 forcing primes yield max(X, Y) > 10^4810, contradicting Baker upper bound 10^434"
+  }
+}
