@@ -521,7 +521,7 @@
     },
     {
       "candidate_id": "C117-03",
-      "status": "ACTIVE",
+      "status": "BLOCKED",
       "selection_mode": "NOVEL_COMBINATION",
       "exact_claim_or_objective": "Eliminate orbit b directly at the residual representation level by comparing its CM inducing quadratic character with the quadratic character forced by the Frey representation's local decomposition groups.",
       "parents": [
@@ -547,11 +547,11 @@
         "If the characters coincide, abandon purely local elimination and move to a genuine global big-image/modular-curve obstruction."
       ],
       "evaluator_results": {
-        "proof_audit": "ACTIVE",
+        "proof_audit": "LOCAL CHARACTER COMPARISON SURVIVES BUT DOES NOT ELIMINATE B",
         "literature_check": "PENDING",
         "computation_audit": "PENDING"
       },
-      "failure_reason": null,
+      "failure_reason": "The exact inducing-character comparison does not contradict orbit b: the Frey Cartan quotient has the same unramified-nontrivial behavior at p2 and ramification at p5. The p17 type remains a source-level local obligation.",
       "novelty_relative_to_pool": "Attacks the actual surviving residual obstruction instead of the invalid characteristic-zero lift argument.",
       "routing": {
         "relevance_score": 5,
@@ -561,7 +561,137 @@
         "needs_literature_check": true,
         "needs_computation_check": true,
         "needs_proof_audit": true,
-        "recommended_action": "Compute and compare the inducing quadratic characters at 2 and 5.",
+        "recommended_action": "Do not spend further cycles seeking a 2/5 local mismatch; move to global Cartan or multi-Frey structure.",
+        "confidence": 4
+      }
+    },
+    {
+      "candidate_id": "C118-01",
+      "status": "REFUTED",
+      "selection_mode": "COUNTERSEARCH",
+      "exact_claim_or_objective": "For every good rational prime q congruent to 1 mod 5, residual congruence with orbit b forces V congruent to 0 mod q.",
+      "parents": [
+        "C117-03",
+        "U102"
+      ],
+      "inspirations": [
+        "prime-11/31/41 boundary sieve",
+        "infinite-prime divisibility contradiction"
+      ],
+      "method": "Extend the exact Frobenius sieve to new split primes while enforcing U=X^2, V=2Y^2 and the local generalized-Fermat relation.",
+      "evidence": [
+        "At q=211, X=1,Y=31,Z=4 gives U=1,V=23 nonzero and U^5+8V^5=Z^17 mod 211.",
+        "Direct point counts give #C(F_211)=193 and #C(F_211^2)=44983 for both V=0 and V=23, hence identical (S,P)=(19,-11).",
+        "Independent Wolfram exact arithmetic reproduced the two point counts and invariants.",
+        "Five nonzero ratios {23,104,140,156,210} match."
+      ],
+      "unresolved_obligations": [
+        "None for refuting the universal forcing claim; q=211 is a complete local counterexample."
+      ],
+      "evaluator_results": {
+        "exact_derivation": "FAILED UNIVERSAL CLAIM",
+        "computation_audit": "TWO EXACT IMPLEMENTATIONS AGREE",
+        "countersearch": "COUNTEREXAMPLE FOUND AT q=211"
+      },
+      "failure_reason": "A non-boundary square-structured local parameter has exactly the same Frobenius invariants as the boundary CM form at q=211.",
+      "novelty_relative_to_pool": "First explicit counterexample to the later U102 infinite-prime extrapolation.",
+      "routing": {
+        "relevance_score": 5,
+        "novelty_score": 5,
+        "proof_leverage_score": 5,
+        "failure_similarity_score": 1,
+        "needs_literature_check": false,
+        "needs_computation_check": false,
+        "needs_proof_audit": true,
+        "recommended_action": "Permanently block proofs that extrapolate q=11,31,41 forcing to all split primes.",
+        "confidence": 5
+      }
+    },
+    {
+      "candidate_id": "C118-02",
+      "status": "PARTIAL_RESULT",
+      "selection_mode": "NOVEL_COMBINATION",
+      "exact_claim_or_objective": "Explain the q=211 nonforcing locus geometrically.",
+      "parents": [
+        "C118-01"
+      ],
+      "inspirations": [
+        "homogeneity of the quintic Frey family",
+        "fifth-root orbit"
+      ],
+      "method": "Set t=V/U and impose t^5=-1; use x=t^3 X to remove t from the quintic coefficients.",
+      "evidence": [
+        "For t^5=-1, t^15=-1 and t^10=1, so the transformed genus-2 curve is independent of the chosen fifth root.",
+        "All five q=211 matching ratios lie in this single isomorphism class.",
+        "At q=11 the same class has different Frobenius invariants, so the q=211 equality is Frobenius-specific rather than a global isogeny conclusion."
+      ],
+      "unresolved_obligations": [
+        "Determine whether the fixed non-boundary class and boundary class have mod-17 Frobenius coincidence on a positive-density Chebotarev set.",
+        "This mechanism explains nonforcing primes but does not itself constrain integer solutions."
+      ],
+      "evaluator_results": {
+        "exact_derivation": "PROVED CHANGE-OF-VARIABLE IDENTITY",
+        "computation_audit": "q=211 CHECKED"
+      },
+      "failure_reason": null,
+      "novelty_relative_to_pool": "Extracts a reusable geometric reason for the five q=211 local matches.",
+      "routing": {
+        "relevance_score": 4,
+        "novelty_score": 5,
+        "proof_leverage_score": 3,
+        "failure_similarity_score": 1,
+        "needs_literature_check": true,
+        "needs_computation_check": true,
+        "needs_proof_audit": false,
+        "recommended_action": "Use only as an obstruction map; do not spend cycles classifying all nonforcing primes unless it informs a global proof.",
+        "confidence": 4
+      }
+    },
+    {
+      "candidate_id": "C118-03",
+      "status": "ACTIVE",
+      "selection_mode": "RESTART",
+      "exact_claim_or_objective": "Eliminate the surviving boundary CM orbit b by a genuinely global mechanism that distinguishes a positive nonzero weighted solution from the boundary specialization.",
+      "parents": [
+        "C117-01",
+        "C117-02",
+        "C117-03",
+        "C118-01",
+        "C118-02"
+      ],
+      "inspirations": [
+        "RM 17-isogeny locus",
+        "Gaussian/common-root descent",
+        "multi-Frey method"
+      ],
+      "method": "Search the existing descent tree for a global invariant incompatible with residual induction from K(zeta_5); prioritize a second Frey representation or a proven modular-curve/RM-isogeny condition over additional isolated prime sieves.",
+      "evidence": [
+        "Seven of eight fixed-level forms are eliminated; only b remains.",
+        "Local character comparisons at 2 and 5 agree with b.",
+        "Uniform one-prime forcing is false at q=211.",
+        "Existing unweighted r=5 literature identifies the Cartan case as the genuine remaining big-image obstruction."
+      ],
+      "unresolved_obligations": [
+        "Find an exact global consequence of bar-rho being induced from K(zeta_5) that interacts with the square structure U=X^2,V=2Y^2.",
+        "Investigate whether the independent Gaussian descent supplies a second residual representation with incompatible inducing character.",
+        "Avoid characteristic-zero isogeny conclusions from residual congruence."
+      ],
+      "evaluator_results": {
+        "proof_audit": "ACTIVE",
+        "literature_check": "CARTAN OBSTRUCTION CONFIRMED AS STRUCTURAL",
+        "computation_audit": "LOCAL SIEVE LIMIT EXHIBITED"
+      },
+      "failure_reason": null,
+      "novelty_relative_to_pool": "Material restart after three local/finite-sieve mechanisms were shown insufficient.",
+      "routing": {
+        "relevance_score": 5,
+        "novelty_score": 5,
+        "proof_leverage_score": 5,
+        "failure_similarity_score": 1,
+        "needs_literature_check": true,
+        "needs_computation_check": true,
+        "needs_proof_audit": true,
+        "recommended_action": "Search for a second Frey/global descent invariant tied to the same weighted solution.",
         "confidence": 4
       }
     }
