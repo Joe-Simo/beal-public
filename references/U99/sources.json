@@ -1,0 +1,31 @@
+{
+  "checkpoint": "U99",
+  "research_date": "2026-09-17",
+  "descent_field": {
+    "field": "F = k(s)",
+    "base_field": "k = Q(phi), phi^2 - phi - 1 = 0",
+    "generator": "s^17 = 2/phi = 2*phi - 2",
+    "minimal_polynomial": "f(T) = T^34 + 2*T^17 - 4",
+    "degree": 34,
+    "signature": [2, 16],
+    "discriminant": "2^32 * 5^17 * 17^34",
+    "class_number": 1,
+    "pari_engine": "PARI/GP 2.17.4 (bnfinit(f, 1))",
+    "class_group_2_rank": 0,
+    "regulator": "1.7406038932e18"
+  },
+  "selmer_computation": {
+    "global_candidate_dimension": 17,
+    "restriction_matrix_rank": 15,
+    "dyadic_Kummer_space": "W_2 (16 dimensions, U79)",
+    "selmer_2_rank_bound": 2,
+    "mordell_weil_rank_bound": 2,
+    "curve_genus": 8,
+    "chabauty_condition": "rank(J^-(k)) <= 2 < g = 8 (SATISFIED)"
+  },
+  "upstream": {
+    "U78": "research/checkpoints/U78_explicit_descent_field_and_two_prime_criterion.md",
+    "U79": "research/checkpoints/U79_complete_dyadic_Kummer_image.md",
+    "U80": "research/checkpoints/U80_norm_redundancy_hecke_audit.md"
+  }
+}
