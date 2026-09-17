@@ -1,0 +1,263 @@
+{
+  "unit": "U110",
+  "title": "Linear Forms in Logarithms Bounds for Beal Conjecture",
+  "constants": {
+    "LMN_1995_base_factor": 10733.94,
+    "Laurent_2008_base_factor": 1973.475,
+    "Matveev_2000_n2_factor": 769784726.2709231,
+    "Matveev_2000_n3_factor": 143186215390.58847,
+    "relative_sharpness_Laurent_vs_LMN": 5.439
+  },
+  "exponent_upper_bounds": [
+    {
+      "base_M": 10,
+      "log_M": 2.3026,
+      "y_max_laurent2008": 9088.2,
+      "y_max_lmn1995": 49431.6,
+      "y_max_matveev3": 14302029281307.1
+    },
+    {
+      "base_M": 100,
+      "log_M": 4.6052,
+      "y_max_laurent2008": 18176.4,
+      "y_max_lmn1995": 98863.2,
+      "y_max_matveev3": 29258351094505.4
+    },
+    {
+      "base_M": 1000,
+      "log_M": 6.9078,
+      "y_max_laurent2008": 27264.6,
+      "y_max_lmn1995": 148294.9,
+      "y_max_matveev3": 44461301453893.1
+    },
+    {
+      "base_M": 10000,
+      "log_M": 9.2103,
+      "y_max_laurent2008": 36352.8,
+      "y_max_lmn1995": 197726.5,
+      "y_max_matveev3": 59824343921624.3
+    },
+    {
+      "base_M": 80000,
+      "log_M": 11.2898,
+      "y_max_laurent2008": 44560.2,
+      "y_max_lmn1995": 242367.7,
+      "y_max_matveev3": 73801572694754.7
+    },
+    {
+      "base_M": 100000,
+      "log_M": 11.5129,
+      "y_max_laurent2008": 45440.9,
+      "y_max_lmn1995": 247158.1,
+      "y_max_matveev3": 75306396155243.1
+    },
+    {
+      "base_M": 1000000,
+      "log_M": 13.8155,
+      "y_max_laurent2008": 54529.1,
+      "y_max_lmn1995": 296589.7,
+      "y_max_matveev3": 90883267766776.1
+    },
+    {
+      "base_M": 10000000,
+      "log_M": 16.1181,
+      "y_max_laurent2008": 63617.3,
+      "y_max_lmn1995": 346021.3,
+      "y_max_matveev3": 106538977860319.8
+    }
+  ],
+  "inkeri_fermat_bounds": [
+    {
+      "p": 3,
+      "log_c1_bound": 9.7676,
+      "c1_bound_str": "1.75e+04",
+      "log_c2_bound": 8.0958,
+      "c2_bound_str": "3.28e+03",
+      "log_ratio_to_80k": -3.194
+    },
+    {
+      "p": 5,
+      "log_c1_bound": 22.7252,
+      "c1_bound_str": "7.40e+09",
+      "log_c2_bound": 21.839,
+      "c2_bound_str": "3.05e+09",
+      "log_ratio_to_80k": 10.5492
+    },
+    {
+      "p": 7,
+      "log_c1_bound": 37.9938,
+      "c1_bound_str": "3.17e+16",
+      "log_c2_bound": 38.2251,
+      "c2_bound_str": "3.99e+16",
+      "log_ratio_to_80k": 26.9353
+    },
+    {
+      "p": 11,
+      "log_c1_bound": 73.0311,
+      "c1_bound_str": "5.21e+31",
+      "log_c2_bound": 76.0395,
+      "c2_bound_str": "1.06e+33",
+      "log_ratio_to_80k": 64.7497
+    },
+    {
+      "p": 13,
+      "log_c1_bound": 92.2027,
+      "c1_bound_str": "1.10e+40",
+      "log_c2_bound": 96.7749,
+      "c2_bound_str": "1.07e+42",
+      "log_ratio_to_80k": 85.4851
+    },
+    {
+      "p": 17,
+      "log_c1_bound": 133.032,
+      "c1_bound_str": "5.96e+57",
+      "log_c2_bound": 140.9675,
+      "c2_bound_str": "1.67e+61",
+      "log_ratio_to_80k": 129.6777
+    },
+    {
+      "p": 19,
+      "log_c1_bound": 154.4861,
+      "c1_bound_str": "1.24e+67",
+      "log_c2_bound": 164.1954,
+      "c2_bound_str": "2.04e+71",
+      "log_ratio_to_80k": 152.9057
+    },
+    {
+      "p": 23,
+      "log_c1_bound": 199.1203,
+      "c1_bound_str": "3.00e+86",
+      "log_c2_bound": 212.5205,
+      "c2_bound_str": "1.98e+92",
+      "log_ratio_to_80k": 201.2307
+    },
+    {
+      "p": 29,
+      "log_c1_bound": 269.6755,
+      "c1_bound_str": "1.31e+117",
+      "log_c2_bound": 288.8943,
+      "c2_bound_str": "2.92e+125",
+      "log_ratio_to_80k": 277.6045
+    },
+    {
+      "p": 31,
+      "log_c1_bound": 294.0143,
+      "c1_bound_str": "4.88e+127",
+      "log_c2_bound": 315.2337,
+      "c2_bound_str": "8.02e+136",
+      "log_ratio_to_80k": 303.9439
+    }
+  ],
+  "inverted_lower_bounds": [
+    {
+      "min_exponent_p": 3,
+      "log_M_laurent2008": 0.0008,
+      "M_min_laurent2008_str": "1.0008e+00",
+      "log_M_lmn1995": 0.0001,
+      "M_min_lmn1995_str": "1.0001e+00"
+    },
+    {
+      "min_exponent_p": 5,
+      "log_M_laurent2008": 0.0013,
+      "M_min_laurent2008_str": "1.0013e+00",
+      "log_M_lmn1995": 0.0002,
+      "M_min_lmn1995_str": "1.0002e+00"
+    },
+    {
+      "min_exponent_p": 7,
+      "log_M_laurent2008": 0.0018,
+      "M_min_laurent2008_str": "1.0018e+00",
+      "log_M_lmn1995": 0.0003,
+      "M_min_lmn1995_str": "1.0003e+00"
+    },
+    {
+      "min_exponent_p": 11,
+      "log_M_laurent2008": 0.0028,
+      "M_min_laurent2008_str": "1.0028e+00",
+      "log_M_lmn1995": 0.0005,
+      "M_min_lmn1995_str": "1.0005e+00"
+    },
+    {
+      "min_exponent_p": 19,
+      "log_M_laurent2008": 0.0048,
+      "M_min_laurent2008_str": "1.0048e+00",
+      "log_M_lmn1995": 0.0009,
+      "M_min_lmn1995_str": "1.0009e+00"
+    },
+    {
+      "min_exponent_p": 50,
+      "log_M_laurent2008": 0.0127,
+      "M_min_laurent2008_str": "1.0127e+00",
+      "log_M_lmn1995": 0.0023,
+      "M_min_lmn1995_str": "1.0023e+00"
+    },
+    {
+      "min_exponent_p": 100,
+      "log_M_laurent2008": 0.0253,
+      "M_min_laurent2008_str": "1.0257e+00",
+      "log_M_lmn1995": 0.0047,
+      "M_min_lmn1995_str": "1.0047e+00"
+    },
+    {
+      "min_exponent_p": 500,
+      "log_M_laurent2008": 0.1267,
+      "M_min_laurent2008_str": "1.1351e+00",
+      "log_M_lmn1995": 0.0233,
+      "M_min_lmn1995_str": "1.0236e+00"
+    },
+    {
+      "min_exponent_p": 1000,
+      "log_M_laurent2008": 0.2534,
+      "M_min_laurent2008_str": "1.2883e+00",
+      "log_M_lmn1995": 0.0466,
+      "M_min_lmn1995_str": "1.0477e+00"
+    },
+    {
+      "min_exponent_p": 10000,
+      "log_M_laurent2008": 2.5336,
+      "M_min_laurent2008_str": "1.2599e+01",
+      "log_M_lmn1995": 0.4658,
+      "M_min_lmn1995_str": "1.5933e+00"
+    },
+    {
+      "min_exponent_p": 50000,
+      "log_M_laurent2008": 12.668,
+      "M_min_laurent2008_str": "3.1743e+05",
+      "log_M_lmn1995": 2.3291,
+      "M_min_lmn1995_str": "1.0268e+01"
+    },
+    {
+      "min_exponent_p": 100000,
+      "log_M_laurent2008": 25.336,
+      "M_min_laurent2008_str": "1.0076e+11",
+      "log_M_lmn1995": 4.6581,
+      "M_min_lmn1995_str": "1.0544e+02"
+    },
+    {
+      "min_exponent_p": 1000000,
+      "log_M_laurent2008": 253.3602,
+      "M_min_laurent2008_str": "1.0788e+110",
+      "log_M_lmn1995": 46.5812,
+      "M_min_lmn1995_str": "1.6981e+20"
+    }
+  ],
+  "empirical_search_comparison": {
+    "current_base_reach": 80000,
+    "scaling_target_base": 100000,
+    "empirical_exponent_coverage_80k": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19
+    ],
+    "empirical_exponent_coverage_2k": "up to p = 50",
+    "laurent_2008_exponent_cap_at_80k": 44560,
+    "lmn_1995_exponent_cap_at_80k": 242368,
+    "inkeri_p5_bound": 3051757800.0,
+    "inkeri_p5_ratio_to_80k": 38147.0,
+    "unresolved_exponent_window_at_80k": "20 <= p <= 44560"
+  }
+}
