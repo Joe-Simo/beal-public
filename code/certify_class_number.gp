@@ -1,6 +1,7 @@
 default(parisize, "512M");
 default(realprecision, 50);
 
+{
 print("================================================================================");
 print("  CERTIFICATION SCRIPT FOR DEGREE-34 DESCENT FIELD F = k(s)");
 print("  Minimal Polynomial: f(T) = T^34 + 2*T^17 - 4");
@@ -146,10 +147,8 @@ print("[+] Including S-generator h(s), candidate space V has dimension = 16 + 1 
 \\ STEP 6: Representation-Theoretic Rigidity of Cl(O_F)[2]
 \\ -----------------------------------------------------------------------------
 print("\n--- STEP 6: Galois Representation Rigidity of Cl(O_F)[2] ---");
-\\ Order of 2 mod 17
 ord2_17 = znorder(Mod(2, 17));
 print("[+] Order of 2 mod 17: ord_{17}(2) = ", ord2_17);
-\\ Factorization of Phi_17(T) over F_2
 phi17 = (x^17 - 1) / (x - 1);
 F2_factors = factormod(phi17, 2);
 print("[+] Factorization of Phi_17(X) over F_2:");
@@ -163,4 +162,5 @@ print("[+] Together with bnfinit(f, 1) h=1, Cl(O_F)[2] is rigorously trivial: d 
 print("\n================================================================================");
 print("  CERTIFICATION COMPLETED IN ", gettime() - t_start, " ms");
 print("================================================================================");
+}
 quit;

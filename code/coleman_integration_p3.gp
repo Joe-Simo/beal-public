@@ -38,11 +38,24 @@ val3_kp(x) = {
   if(x == 0, return(999999));
   my(pol = lift(x));
   if(type(pol) == "t_POL",
-    my(v0 = valuation(polcoeff(pol, 0), 3));
-    my(v1 = valuation(polcoeff(pol, 1), 3));
+    my(c0 = polcoeff(pol, 0, y));
+    my(c1 = polcoeff(pol, 1, y));
+    my(v0 = if(c0 == 0, 999999, valuation(c0, 3)));
+    my(v1 = if(c1 == 0, 999999, valuation(c1, 3)));
     return(min(v0, v1));
   ,
     return(valuation(pol, 3));
+  );
+};
+
+lift_F9_to_padic(elt, phi_p) = {
+  my(p = lift(elt));
+  if(type(p) == "t_POL",
+    my(c0 = lift(polcoeff(p, 0, 'w)));
+    my(c1 = lift(polcoeff(p, 1, 'w)));
+    return(c0 + c1*phi_p);
+  ,
+    return(lift(p) + 0*phi_p);
   );
 };
 
@@ -83,17 +96,20 @@ val3_kp(x) = {
 
   for(j=0, 7,
     om_j = u_inf^j * du_inf / v_inf;
-    ord_om = valuation(om_j, t);
-    c_lead = polcoeff(lift(om_j), ord_om, t);
-    expected_c = 2 * (-1)^(8-j) * B^(7-j);
+    pol_om = lift(om_j);
+    ord_t0 = valuation(polcoeff(pol_om, 0, y), t);
+    ord_t1 = valuation(polcoeff(pol_om, 1, y), t);
+    ord_om = min(ord_t0, ord_t1);
+    
+    c_lead = polcoeff(pol_om, 14 - 2*j, t);
     int_om = intformal(om_j, t);
-    ord_int = valuation(int_om, t);
-    c_int = polcoeff(lift(int_om), ord_int, t);
+    pol_int = lift(int_om);
+    c_int = polcoeff(pol_int, 15 - 2*j, t);
     
     print("omega_", j, ": ord_inf = ", ord_om, 
-          " (expected ", 14 - 2*j, "), c_lead = ", Mod(c_lead, y^2 - y - 1));
-    print("          int_lead_power = ", ord_int, 
-          " (expected ", 15 - 2*j, ")");
+          " (expected ", 14 - 2*j, ")");
+    print("          lead coeff of omega_", j, " = ", Mod(c_lead, y^2 - y - 1));
+    print("          lead coeff of I_omega_", j, " = ", Mod(c_int, y^2 - y - 1));
   );
 }
 
@@ -210,15 +226,9 @@ val3_kp(x) = {
     pt = list_affine[i];
     if(pt[2] != 0,
       disc_count++;
-      u_lift = lift(pt[1]);
-      u0_ord = if(type(u_lift) == "t_POL", 
-                  polcoeff(u_lift,0) + polcoeff(u_lift,1)*phi_p, 
-                  u_lift);
+      u0_ord = lift_F9_to_padic(pt[1], phi_p);
+      v_init = lift_F9_to_padic(pt[2], phi_p);
       f0_val = A_p - B_p * u0_ord^17;
-      v_lift = lift(pt[2]);
-      v_init = if(type(v_lift) == "t_POL", 
-                  polcoeff(v_lift,0) + polcoeff(v_lift,1)*phi_p, 
-                  v_lift);
       v0_ord = padic_sqrt(f0_val, v_init, 8);
       
       u_ord = u0_ord + t + O(t^8);
