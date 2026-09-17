@@ -1,0 +1,478 @@
+{
+  "checkpoint": "U110",
+  "primes_audited": 21,
+  "p1_unconditional": [
+    101,
+    103,
+    107,
+    131,
+    139,
+    149
+  ],
+  "p1_grh": [
+    167,
+    173,
+    179,
+    181,
+    197,
+    199
+  ],
+  "non_p1_class_number_anomaly": [
+    163,
+    191
+  ],
+  "non_p1_mod8": [
+    113,
+    137,
+    193
+  ],
+  "non_p1_split2": [
+    109,
+    127,
+    151,
+    157
+  ],
+  "details": [
+    {
+      "p": 101,
+      "pmod8": 5,
+      "d": 50,
+      "ord2": 100,
+      "has_neg1": true,
+      "f_plus": 50,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        50
+      ],
+      "t_pari": 0.026595115661621094,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (UNCOND ELIM)"
+    },
+    {
+      "p": 103,
+      "pmod8": 7,
+      "d": 51,
+      "ord2": 51,
+      "has_neg1": false,
+      "f_plus": 51,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        51
+      ],
+      "t_pari": 0.024834156036376953,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (UNCOND ELIM)"
+    },
+    {
+      "p": 107,
+      "pmod8": 3,
+      "d": 53,
+      "ord2": 106,
+      "has_neg1": true,
+      "f_plus": 53,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        53
+      ],
+      "t_pari": 0.03101801872253418,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (UNCOND ELIM)"
+    },
+    {
+      "p": 109,
+      "pmod8": 5,
+      "d": 54,
+      "ord2": 36,
+      "has_neg1": true,
+      "f_plus": 18,
+      "g_plus": 3,
+      "is_inert": false,
+      "pari_factors": [
+        18,
+        18,
+        18
+      ],
+      "t_pari": 0.026017189025878906,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: Split-2 (g^+=3)"
+    },
+    {
+      "p": 113,
+      "pmod8": 1,
+      "d": 56,
+      "ord2": 28,
+      "has_neg1": true,
+      "f_plus": 14,
+      "g_plus": 4,
+      "is_inert": false,
+      "pari_factors": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "t_pari": 0.0267641544342041,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 127,
+      "pmod8": 7,
+      "d": 63,
+      "ord2": 7,
+      "has_neg1": false,
+      "f_plus": 7,
+      "g_plus": 9,
+      "is_inert": false,
+      "pari_factors": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "t_pari": 0.028195858001708984,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: Split-2 (g^+=9)"
+    },
+    {
+      "p": 131,
+      "pmod8": 3,
+      "d": 65,
+      "ord2": 130,
+      "has_neg1": true,
+      "f_plus": 65,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        65
+      ],
+      "t_pari": 0.027595043182373047,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (UNCOND ELIM)"
+    },
+    {
+      "p": 137,
+      "pmod8": 1,
+      "d": 68,
+      "ord2": 68,
+      "has_neg1": true,
+      "f_plus": 34,
+      "g_plus": 2,
+      "is_inert": false,
+      "pari_factors": [
+        34,
+        34
+      ],
+      "t_pari": 0.07420587539672852,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 139,
+      "pmod8": 3,
+      "d": 69,
+      "ord2": 138,
+      "has_neg1": true,
+      "f_plus": 69,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        69
+      ],
+      "t_pari": 0.032884836196899414,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (UNCOND ELIM)"
+    },
+    {
+      "p": 149,
+      "pmod8": 5,
+      "d": 74,
+      "ord2": 148,
+      "has_neg1": true,
+      "f_plus": 74,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        74
+      ],
+      "t_pari": 0.02795124053955078,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (UNCOND ELIM)"
+    },
+    {
+      "p": 151,
+      "pmod8": 7,
+      "d": 75,
+      "ord2": 15,
+      "has_neg1": false,
+      "f_plus": 15,
+      "g_plus": 5,
+      "is_inert": false,
+      "pari_factors": [
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "t_pari": 0.027091026306152344,
+      "h_plus": 1,
+      "h_status": "Unconditional",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: Split-2 (g^+=5)"
+    },
+    {
+      "p": 157,
+      "pmod8": 5,
+      "d": 78,
+      "ord2": 52,
+      "has_neg1": true,
+      "f_plus": 26,
+      "g_plus": 3,
+      "is_inert": false,
+      "pari_factors": [
+        26,
+        26,
+        26
+      ],
+      "t_pari": 0.02733588218688965,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "van der Linden 1982 / Miller 2014",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: Split-2 (g^+=3)"
+    },
+    {
+      "p": 163,
+      "pmod8": 3,
+      "d": 81,
+      "ord2": 162,
+      "has_neg1": true,
+      "f_plus": 81,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        81
+      ],
+      "t_pari": 0.026942014694213867,
+      "h_plus": 4,
+      "h_status": "Under GRH",
+      "h_source": "van der Linden 1982 / Miller 2014 (Thm 1.1)",
+      "h_is_one": false,
+      "two_div_h": true,
+      "classification": "Non-P_1: Even h^+ (4)"
+    },
+    {
+      "p": 167,
+      "pmod8": 7,
+      "d": 83,
+      "ord2": 83,
+      "has_neg1": false,
+      "f_plus": 83,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        83
+      ],
+      "t_pari": 0.030143022537231445,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 / Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 173,
+      "pmod8": 5,
+      "d": 86,
+      "ord2": 172,
+      "has_neg1": true,
+      "f_plus": 86,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        86
+      ],
+      "t_pari": 0.029432058334350586,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 179,
+      "pmod8": 3,
+      "d": 89,
+      "ord2": 178,
+      "has_neg1": true,
+      "f_plus": 89,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        89
+      ],
+      "t_pari": 0.03173398971557617,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 181,
+      "pmod8": 5,
+      "d": 90,
+      "ord2": 180,
+      "has_neg1": true,
+      "f_plus": 90,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        90
+      ],
+      "t_pari": 0.04251909255981445,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 191,
+      "pmod8": 7,
+      "d": 95,
+      "ord2": 95,
+      "has_neg1": false,
+      "f_plus": 95,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        95
+      ],
+      "t_pari": 0.034898996353149414,
+      "h_plus": 11,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 / Miller 2014 (Thm 1.1)",
+      "h_is_one": false,
+      "two_div_h": false,
+      "classification": "Non-P_1: Odd h^+ > 1 (11)"
+    },
+    {
+      "p": 193,
+      "pmod8": 1,
+      "d": 96,
+      "ord2": 96,
+      "has_neg1": true,
+      "f_plus": 48,
+      "g_plus": 2,
+      "is_inert": false,
+      "pari_factors": [
+        48,
+        48
+      ],
+      "t_pari": 0.0329132080078125,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 197,
+      "pmod8": 5,
+      "d": 98,
+      "ord2": 196,
+      "has_neg1": true,
+      "f_plus": 98,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        98
+      ],
+      "t_pari": 0.03422212600708008,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 199,
+      "pmod8": 7,
+      "d": 99,
+      "ord2": 99,
+      "has_neg1": false,
+      "f_plus": 99,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        99
+      ],
+      "t_pari": 0.03316926956176758,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Miller 2014 (Thm 1.1)",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    }
+  ]
+}
