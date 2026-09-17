@@ -1,37 +1,39 @@
 {
   "checkpoint": "U99",
   "research_date": "2026-09-17",
-  "descent_field": {
-    "field": "F = k(s)",
-    "base_field": "k = Q(phi), phi^2 - phi - 1 = 0",
-    "generator": "s^17 = 2/phi = 2*phi - 2",
-    "minimal_polynomial": "f(T) = T^34 + 2*T^17 - 4",
-    "degree": 34,
-    "signature": [2, 16],
-    "discriminant": "2^32 * 5^17 * 17^34",
-    "class_number": 1,
-    "pari_engine": "PARI/GP 2.17.4 (bnfinit(f, 1))",
-    "class_group_2_rank": 0,
-    "regulator": "1.7406038932e18"
-  },
-  "selmer_computation": {
-    "global_candidate_dimension": 17,
-    "restriction_matrix_rank": 15,
-    "dyadic_Kummer_space": "W_2 (16 dimensions, U79)",
-    "selmer_2_rank_bound": 2,
-    "mordell_weil_rank_bound": 2,
-    "curve_genus": 8,
-    "chabauty_condition": "rank(J^-(k)) <= 2 < g = 8 (SATISFIED)"
-  },
-  "upstream": {
-    "U78": "research/checkpoints/U78_explicit_descent_field_and_two_prime_criterion.md",
-    "U79": "research/checkpoints/U79_complete_dyadic_Kummer_image.md",
-    "U80": "research/checkpoints/U80_norm_redundancy_hecke_audit.md"
-  },
-  "certificate": {
-    "script": "code/certify_class_number.gp",
-    "verification_script": "code/verify_regulator.gp",
-    "unit_norms_script": "code/check_unit_norms.gp",
-    "documentation": "research/checkpoints/U99_class_number_one_mathematical_certificate.md"
+  "target_question": "Exact modular newform inventory for Signature (2, 3, p) across all Serre levels N_p in {27, 54, 96, 288, 864}, dimensions, solution correspondence for Catalan and trivial solutions, and Hecke eigenvalues at primes q in {5, 7, 11, 13, 17, 19, 23}.",
+  "primary_sources": [
+    {
+      "authors": ["Nuno Freitas", "Bartosz Naskrecki", "Michael Stoll"],
+      "title": "The generalized Fermat equation with exponents 2, 3, n",
+      "publication": "Compositio Mathematica 156 (2020), 77-113",
+      "identifier": "arXiv:1703.05058v2",
+      "locator": "Lemma 2.3 & Tables 1-3: Seven reference elliptic curves 27a1, 54a1, 96a1, 288a1, 864a1, 864b1, 864c1 and elimination of Q(sqrt(13)) newforms via Loeffler-Weinstein"
+    },
+    {
+      "authors": ["The LMFDB Collaboration"],
+      "title": "The L-functions and Modular Forms Database",
+      "locator": "Classical modular forms of weight 2 and levels 27, 54, 96, 288, 864; elliptic curves 27.a1, 54.a1, 96.a1, 288.a1, 864.a1, 864.b1, 864.c1"
+    },
+    {
+      "authors": ["David Loeffler", "Jared Weinstein"],
+      "title": "On the computation of local components of a newform",
+      "publication": "Mathematics of Computation 81 (2012), 1179-1188",
+      "locator": "Local inertia type computation at 3 showing rho(I_3) = S_3 for level 864 Q(sqrt(13)) forms"
+    }
+  ],
+  "verified_inventory": {
+    "dimensions": {
+      "27": {"dim_S2": 1, "dim_S2_new": 1, "eigenforms": 1},
+      "54": {"dim_S2": 4, "dim_S2_new": 2, "eigenforms": 2},
+      "96": {"dim_S2": 9, "dim_S2_new": 2, "eigenforms": 2},
+      "288": {"dim_S2": 33, "dim_S2_new": 5, "eigenforms": 5},
+      "864": {"dim_S2": 121, "dim_S2_new": 16, "eigenforms": 14}
+    },
+    "solution_correspondence": {
+      "trivial_101": "27a1 (CM by Q(sqrt(-3)), j=0, twist of Y^2 = X^3 + 2 by -3)",
+      "trivial_011": "288a1 (CM by Q(i), j=1728, identically Y^2 = X^3 + 3X)",
+      "catalan": "864b1 (j=-13824, twist of Catalan Frey curve Y^2 = X^3 - 6X + 6 by 2; a_q(864b1) = (2/q) * a_q(E_Cat))"
+    }
   }
 }

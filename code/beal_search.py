@@ -206,10 +206,16 @@ def search_gmp(
     max_base: int = 1000,
     min_exp: int = 3,
     max_exp: int = 10,
+    base_a_start: Optional[int] = None,
+    base_a_end: Optional[int] = None,
+    base_b_start: Optional[int] = None,
+    base_b_end: Optional[int] = None,
     threads: int = 8,
     prime_exponents_only: bool = False,
+    pure_primes_only: bool = False,
     allow_non_coprime: bool = False,
     verbose: bool = False,
+    log_file: Optional[str] = None,
 ) -> SearchResult:
     """Run search using compiled high-performance C + GMP engine."""
     gmp_binary = CURRENT_DIR / "beal_search_gmp"
@@ -232,7 +238,7 @@ def search_gmp(
         if res.returncode != 0:
             raise RuntimeError(f"Failed to compile C+GMP binary:\n{res.stderr}")
 
-    log_path = CURRENT_DIR / f"search_log_{int(time.time())}.json"
+    log_path = Path(log_file) if log_file else CURRENT_DIR / f"search_log_{int(time.time()*1000)}.json"
     cmd = [
         str(gmp_binary),
         "--min-base",
@@ -248,8 +254,18 @@ def search_gmp(
         "--log-file",
         str(log_path),
     ]
+    if base_a_start is not None:
+        cmd.extend(["--base-a-start", str(base_a_start)])
+    if base_a_end is not None:
+        cmd.extend(["--base-a-end", str(base_a_end)])
+    if base_b_start is not None:
+        cmd.extend(["--base-b-start", str(base_b_start)])
+    if base_b_end is not None:
+        cmd.extend(["--base-b-end", str(base_b_end)])
     if prime_exponents_only:
         cmd.append("--prime-exponents")
+    if pure_primes_only:
+        cmd.append("--pure-primes")
     if allow_non_coprime:
         cmd.append("--allow-non-coprime")
     if verbose:
@@ -454,9 +470,14 @@ def main() -> None:
     parser.add_argument("--max-base", type=int, default=1000, help="Maximum base (default: 1000)")
     parser.add_argument("--min-exp", type=int, default=3, help="Minimum exponent (default: 3, Section 8 enforced)")
     parser.add_argument("--max-exp", type=int, default=10, help="Maximum exponent (default: 10)")
+    parser.add_argument("--base-a-start", type=int, default=None, help="Start index for base A")
+    parser.add_argument("--base-a-end", type=int, default=None, help="End index for base A")
+    parser.add_argument("--base-b-start", type=int, default=None, help="Start index for base B")
+    parser.add_argument("--base-b-end", type=int, default=None, help="End index for base B")
     parser.add_argument("--threads", type=int, default=8, help="Number of worker threads / processes")
     parser.add_argument("--engine", choices=["auto", "gmp", "python"], default="auto", help="Search engine to use")
     parser.add_argument("--prime-exponents", action="store_true", help="Restrict exponents to primes and 4 (canonical Beal reduction)")
+    parser.add_argument("--pure-primes", action="store_true", help="Restrict exponents strictly to odd primes (3, 5, 7, 11, 13, 17, 19...)")
     parser.add_argument("--allow-non-coprime", action="store_true", help="Check non-coprime bases (to detect 3^3+6^3=3^5 etc.)")
     parser.add_argument("--test-near-misses", action="store_true", help="Run Section 8 test suite on edge cases and near misses")
     parser.add_argument("--benchmark", action="store_true", help="Run benchmark suite across scales")
@@ -496,10 +517,16 @@ def main() -> None:
             max_base=args.max_base,
             min_exp=args.min_exp,
             max_exp=args.max_exp,
+            base_a_start=args.base_a_start,
+            base_a_end=args.base_a_end,
+            base_b_start=args.base_b_start,
+            base_b_end=args.base_b_end,
             threads=args.threads,
             prime_exponents_only=args.prime_exponents,
+            pure_primes_only=args.pure_primes,
             allow_non_coprime=args.allow_non_coprime,
             verbose=args.verbose,
+            log_file=args.log_file,
         )
     else:
         result = search_python(

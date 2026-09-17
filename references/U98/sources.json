@@ -1,48 +1,45 @@
 {
   "checkpoint": "U98",
   "research_date": "2026-09-17",
-  "target_question": "Deep local Galois investigation at p_5 = (sqrt(5)) in K = Q(sqrt(5)), Galois group of the Eisenstein quintic, inertial Weil-Deligne type, Artin conductor exponent 3, and existence of the Breuil-Diamond local lift.",
+  "target_question": "Applicability of modularity lifting theorems (Kisin, Gee-Kisin, Thorne, Allen-Khare-Thorne) to signature (2, 3, p) for p in {11, 13, 17}, residual representations, ramification, Hodge-Tate weights, and exact technical obstacles to full resolution.",
   "primary_sources": [
     {
-      "authors": ["Christophe Breuil", "Fred Diamond"],
-      "title": "Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caracteres galoisiens",
-      "publication": "Ann. Sci. ENS 47 (2014), 905-974",
-      "doi": "10.24033/asens.2230",
-      "locator": "Theoreme 3.2.2 (pp. 36-37) and Corollaries 3.2.3, 3.2.4",
-      "status": "Local lift conditions at v not|p with N_v = 0: only (iii) prescribed WD type and (v) determinant compatibility on inertia are required. Conditions (i), (ii), (iv) are vacuously satisfied at p_5 away from 17."
+      "authors": ["Nuno Freitas", "Bartosz Naskrecki", "Michael Stoll"],
+      "title": "The generalized Fermat equation with exponents 2, 3, n",
+      "publication": "Compositio Mathematica 156 (2020), 77-113",
+      "identifier": "arXiv:1703.05058v2",
+      "locator": "Sections 2, 3, 4, 5, 8: Frey curve, symplectic criteria, twists of X(p), and Selmer Chabauty on X_0(11)"
     },
     {
-      "author": "Martin Azon",
-      "title": "Effective Darmon's program for the generalised Fermat equation",
-      "identifier": "arXiv:2504.01967v2",
-      "version_date": "2025-07-03",
-      "locations": [
-        "Proposition 2.23: WD-representation is principal series iff M/K^unr is abelian",
-        "Theorem 4.36 & Theorem 4.48: Splitting field and ramification of g_r^-",
-        "Theorem 5.11 & Table 2: Conductor exponent n_5^- = 3 when nu_5 = 0 mod 5 and g_5^- irreducible over Q_5",
-        "Proposition 5.18 (2): Rectified from 'principal series' to 'dihedral supercuspidal' due to non-abelian inertia Gal(M/K_p5) = D_5"
-      ]
+      "authors": ["Mark Kisin"],
+      "title": "Moduli of finite flat group schemes and modularity",
+      "publication": "Annals of Mathematics 170 (2009), 1085-1180",
+      "locator": "Modularity lifting for 2-dimensional Barsotti-Tate representations over totally real fields"
     },
     {
-      "author": "Jean-Pierre Serre",
-      "title": "Corps Locaux",
-      "publication": "Hermann, Paris, 1968",
-      "locator": "Chapter IV: Lower ramification filtration and Artin conductor formula"
+      "authors": ["Toby Gee", "Mark Kisin"],
+      "title": "The Breuil-Mezard conjecture for two-dimensional representations of Gal(Q_p_bar/Q_p)",
+      "publication": "Annals of Mathematics 180 (2014), 257-366",
+      "locator": "Potentially Barsotti-Tate modularity lifting theorems allowing arbitrary ramification at p"
     },
     {
-      "author": "Pierre Deligne",
-      "title": "Les constantes des equations fonctionnelles des fonctions L",
-      "publication": "Modular Functions of One Variable II, Lecture Notes in Math. 349, Springer, 1973, pp. 501-597",
-      "locator": "Section 8: Weil-Deligne representations and lifting away from the residue characteristic"
+      "authors": ["Patrick Allen", "Chandrashekhar Khare", "Jack Thorne"],
+      "title": "Modularity of elliptic curves over imaginary quadratic fields",
+      "publication": "Inventiones Mathematicae 234 (2023), 107-200",
+      "locator": "Modularity of elliptic curves and 2-dimensional representations over imaginary quadratic fields"
+    },
+    {
+      "authors": ["Michael Stoll"],
+      "title": "Selmer group Chabauty",
+      "publication": "Contemporary Mathematics 736 (2019), AMS",
+      "locator": "Chabauty on elliptic curves over number fields when rank equals or exceeds the degree"
     }
   ],
-  "conclusions": {
-    "galois_over_Q5": "F_20 (order 20, totally ramified)",
-    "galois_over_Kp5": "D_5 (order 10, totally ramified)",
-    "inertia_action": "Dihedral group D_5 = C_5 semidirect C_2 (non-abelian)",
-    "monodromy_operator": "N_p5 = 0 (potential good reduction over splitting field M)",
-    "weil_deligne_type": "Dihedral supercuspidal (irreducible on inertia)",
-    "artin_conductor": "n_tame = 2, n_wild = 1, total n = 3",
-    "breuil_diamond_lift": "Explicity given by the 17-adic representation rho_{J^-, 17}|_{G_{K_p5}}; also unobstructed and canonical by Maschke lifting since 17 does not divide |D_5| = 10."
+  "findings": {
+    "modularity_lifting_applicability": "Applies unconditionally. The Frey curves are elliptic curves over Q (or base-changed), hence their l-adic representations are already modular (BCDT 2001, Kisin 2009).",
+    "residual_representations": "rho_p: Gal(Q_bar/Q) -> GL_2(F_p), det = chi_p. Absolutely irreducible for all p >= 11 (FNS 2020 Prop 2.4).",
+    "ramification": "Unramified outside {2, 3, p}. Unramified at all primes l | c (l != p). Crystalline/ordinary at p.",
+    "hodge_tate_weights": "HT = {0, 1} at all places v | p.",
+    "core_obstruction": "Modularity lifting only confirms modularity, but does not provide non-existence. The candidate newform space is non-empty for every p due to the permanent Catalan solution (3, -2, 1) and CM trivial solutions. The problem reduces to rational points on twisted modular curves X_E(p), where Chabauty breaks down for p=13 (g(X_0(13))=0) and p=17 ([K_E:Q]=18, [L_E:Q]=54 exceeds class group capacity)."
   }
 }

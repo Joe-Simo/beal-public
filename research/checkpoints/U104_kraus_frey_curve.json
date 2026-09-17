@@ -1,0 +1,90 @@
+{
+  "checkpoint": "U104",
+  "factorization": {
+    "degenerate_form": "-2*A**3 - 3*A**2*x + x**3",
+    "rational_root": "A - B",
+    "quadratic_factor": "A**2 + A*B + B**2 + x**2 + x*(A - B)",
+    "quadratic_discriminant": "-3*(A + B)^2",
+    "splitting_field_of_2_torsion": "Q(sqrt(-3))"
+  },
+  "invariants": {
+    "cubic_discriminant": "-27*(A^3 + B^3)^2",
+    "weierstrass_delta": "-432*(A^3 + B^3)^2",
+    "c4": "-144*A*B",
+    "c6": "864*A**3 - 864*B**3",
+    "j_invariant": "6912*A^3*B^3 / (A^3 + B^3)^2"
+  },
+  "modular_curves_survey": {
+    "5": {
+      "genus_X0_p": 0,
+      "index_p": 6,
+      "cusps_p": 2,
+      "non_cuspidal_points": "infinitely many (genus 0)",
+      "cm_type": "both CM and non-CM",
+      "genus_X0_2p": 0,
+      "index_2p": 18,
+      "cusps_2p": 4
+    },
+    "7": {
+      "genus_X0_p": 0,
+      "index_p": 8,
+      "cusps_p": 2,
+      "non_cuspidal_points": "infinitely many (genus 0)",
+      "cm_type": "both CM and non-CM",
+      "genus_X0_2p": 1,
+      "index_2p": 24,
+      "cusps_2p": 4
+    },
+    "11": {
+      "genus_X0_p": 1,
+      "index_p": 12,
+      "cusps_p": 2,
+      "non_cuspidal_points": "exactly 3 non-cuspidal points (Z/5Z torsion on 11a1)",
+      "cm_type": "all 3 are strictly non-CM",
+      "genus_X0_2p": 2,
+      "index_2p": 36,
+      "cusps_2p": 4
+    },
+    "13": {
+      "genus_X0_p": 0,
+      "index_p": 14,
+      "cusps_p": 2,
+      "non_cuspidal_points": "infinitely many (genus 0)",
+      "cm_type": "both CM and non-CM",
+      "genus_X0_2p": 2,
+      "index_2p": 42,
+      "cusps_2p": 4
+    },
+    "17": {
+      "genus_X0_p": 1,
+      "index_p": 18,
+      "cusps_p": 2,
+      "non_cuspidal_points": "exactly 2 non-cuspidal points (Z/4Z torsion on 17a1)",
+      "cm_type": "both are CM points",
+      "genus_X0_2p": 3,
+      "index_2p": 54,
+      "cusps_2p": 4
+    },
+    "19": {
+      "genus_X0_p": 1,
+      "index_p": 20,
+      "cusps_p": 2,
+      "non_cuspidal_points": "0 non-cuspidal points (Mazur 1977)",
+      "cm_type": "none",
+      "genus_X0_2p": 4,
+      "index_2p": 60,
+      "cusps_2p": 4
+    }
+  },
+  "irreducibility": {
+    "2_torsion_rational": true,
+    "rational_2p_isogenies_kenku": [
+      10,
+      14
+    ],
+    "p_ge_11_irreducible_by_2p_bound": true,
+    "p_11_valuation_obstruction": true,
+    "p_17_cm_obstruction": true,
+    "p_19_mazur_cuspidal_obstruction": true
+  }
+}

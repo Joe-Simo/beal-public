@@ -1,7 +1,7 @@
 # Formalization Roadmap: Lean 4 Blueprint and Mathlib Architecture for the Beal Conjecture Program
 
 **Date**: 2026-09-17  
-**Status**: Environment audited; formal verification package designed and implemented in `formal/`; kernel-verified test suite and algebraic identities formalized; full multi-stage formalization roadmap established.  
+**Status**: Environment audited; formal verification package designed and implemented in `formal/`; kernel-verified test suite, algebraic identities, signature taxonomy, Fermat $n=4$ descent theorems, and catalogue of classical near-misses formalized; full multi-stage formalization roadmap established.  
 **Target Systems**: Lean 4 (toolchain `v4.14.0`), Mathlib 4, Lake package manager.  
 
 ---
@@ -46,7 +46,7 @@ lake build
 
 ## 2. Formalization Architecture and Blueprint
 
-To provide immediate, turn-key formalization, a complete Lake package was structured in `formal/` targeting Lean 4 `v4.14.0` with `Mathlib4`.
+A modular Lake package is structured in `formal/` targeting Lean 4 `v4.14.0` with `Mathlib4`.
 
 ```
 formal/
@@ -56,7 +56,10 @@ formal/
 └── Beal/
     ├── Conjecture.lean                # Formal statement, equivalent forms, and FLT corollary
     ├── CounterexampleChecker.lean     # Section 8 algorithmic checker, proofs of soundness & completeness
-    └── AlgebraicIdentities.lean       # Factorization over Q(phi) and Checkpoint U73 geometric reductions
+    ├── AlgebraicIdentities.lean       # Factorization over Q(phi) and Checkpoint U73 geometric reductions
+    ├── Taxonomy.lean                  # Signature curvature taxonomy & Beal domain hyperbolicity
+    ├── Signature4.lean                # FLT for n=4, signature (4, 4, 2), infinite descent, parity lemmas
+    └── KnownSolutions.lean            # Catalogue of classical near-misses and exponent-2 exclusions
 ```
 
 ### Dependency Graph
@@ -65,9 +68,17 @@ graph TD
     Mathlib["Mathlib 4 (v4.14.0)"] --> BealConjecture["Beal.Conjecture"]
     Mathlib --> BealIdentities["Beal.AlgebraicIdentities"]
     BealConjecture --> BealChecker["Beal.CounterexampleChecker"]
+    BealConjecture --> BealTaxonomy["Beal.Taxonomy"]
+    BealTaxonomy --> BealSignature4["Beal.Signature4"]
+    BealConjecture --> BealSignature4
+    BealConjecture --> BealKnown["Beal.KnownSolutions"]
+    BealChecker --> BealKnown
     BealConjecture --> BealRoot["Beal (Umbrella Root)"]
     BealChecker --> BealRoot
     BealIdentities --> BealRoot
+    BealTaxonomy --> BealRoot
+    BealSignature4 --> BealRoot
+    BealKnown --> BealRoot
 ```
 
 ---
@@ -275,7 +286,169 @@ theorem u73_mobius_vanishing (X Y c : R) (hc : c^10 = -256) :
 
 ---
 
-## 6. Multi-Stage Formalization Roadmap for the Beal Program
+## 6. Signature Taxonomy and Curvature Classification (`Beal.Taxonomy`)
+
+In `formal/Beal/Taxonomy.lean`, we formalize the geometric classification of Generalized Fermat Equations $A^p + B^q = C^r$.
+
+### 6.1 Curvature Invariant $E(p, q, r)$
+The orbifold Euler characteristic is:
+$$\chi(p, q, r) = \frac{1}{p} + \frac{1}{q} + \frac{1}{r} - 1 = \frac{E(p, q, r)}{p q r}$$
+where the integer numerator invariant is:
+$$E(p, q, r) = q r + p r + p q - p q r.$$
+
+```lean
+def curvatureNumerator (p q r : ℕ) : ℤ :=
+  (q * r : ℤ) + (p * r : ℤ) + (p * q : ℤ) - (p * q * r : ℤ)
+
+inductive SignatureCurvature where
+  | Spherical   -- χ > 0 (E > 0)
+  | Parabolic   -- χ = 0 (E = 0)
+  | Hyperbolic  -- χ < 0 (E < 0)
+  deriving DecidableEq, Repr
+```
+
+### 6.2 Key Proven Classification Theorems
+1. **Parabolic Signatures ($\chi = 0$)**:
+   - `curvature_3_3_3`: $E(3, 3, 3) = 0$.
+   - `curvature_2_4_4`: $E(2, 4, 4) = 0$.
+   - `curvature_2_3_6`: $E(2, 3, 6) = 0$.
+   - Verified via compile-time reflection (`by decide`).
+
+2. **Uniqueness of Parabolic Signature in Beal Domain**:
+   For all sorted exponents $3 \le p \le q \le r$:
+   $$E(p, q, r) = 0 \iff (p, q, r) = (3, 3, 3).$$
+   ```lean
+   theorem beal_parabolic_unique (p q r : ℕ) (hp : p ≥ 3) (hq : q ≥ 3) (hr : r ≥ 3)
+       (h_ord : p ≤ q ∧ q ≤ r) :
+       curvatureNumerator p q r = 0 ↔ (p = 3 ∧ q = 3 ∧ r = 3)
+   ```
+
+3. **Strict Hyperbolicity of All Non-Cubic Beal Signatures**:
+   Every signature in the Beal domain other than $(3, 3, 3)$ has $E(p, q, r) < 0$:
+   ```lean
+   theorem beal_non_cubic_is_hyperbolic (p q r : ℕ)
+       (h_beal : IsBealSignature p q r)
+       (h_not_all_3 : ¬(p = 3 ∧ q = 3 ∧ r = 3))
+       (h_ord : p ≤ q ∧ q ≤ r) :
+       IsHyperbolicSignature p q r
+   ```
+
+4. **Curvature Upper Bound in the Beal Domain**:
+   The maximal curvature among non-cubic Beal signatures occurs at $(3, 3, 4)$ where $E(3, 3, 4) = -3$ ($\chi = -1/12$). For all sorted non-cubic triples:
+   $$E(p, q, r) \le -3.$$
+   ```lean
+   theorem curvature_upper_bound_beal (p q r : ℕ)
+       (h_beal : IsBealSignature p q r)
+       (h_not_all_3 : ¬(p = 3 ∧ q = 3 ∧ r = 3))
+       (h_ord : p ≤ q ∧ q ≤ r) :
+       curvatureNumerator p q r ≤ -3
+   ```
+
+5. **Darmon–Granville Finiteness Framework**:
+   By Darmon and Granville (1995), hyperbolicity ($\chi < 0$) guarantees that each non-cubic signature admits at most finitely many primitive integer solutions. The Beal Conjecture makes the stronger assertion that the solution set is *empty* for all $p, q, r \ge 3$.
+
+---
+
+## 7. Fermat's Last Theorem for Exponent 4 and Infinite Descent (`Beal.Signature4`)
+
+In `formal/Beal/Signature4.lean`, we formalize the nonexistence of positive integer solutions to signatures $(4, 4, 2)$ and $(4, 4, 4)$.
+
+### 7.1 Fermat's Principle of Infinite Descent
+A constructive meta-theorem in Lean 4 based on the well-ordering of $\mathbb{N}$:
+```lean
+theorem infinite_descent {P : ℕ → Prop} (h_step : ∀ c, P c → ∃ c', c' < c ∧ P c') :
+    ∀ c, ¬ P c
+```
+*Proof*: If $P$ had a witness, the well-ordering principle (`Nat.find`) yields a minimal witness $m$. Applying `h_step` produces $c' < m$ with $P c'$, contradicting the minimality of $m$.
+
+### 7.2 Mod-4 Quadratic Residue and Parity Obstruction
+- `sq_mod_four`: Squares in $\mathbb{N}$ are congruent to $0$ or $1 \pmod 4$.
+- `odd_pow_four_mod_four`: Odd integers have 4th power $\equiv 1 \pmod 4$.
+- `sum_odd_pow_four_mod_four`: If $A, B$ are odd, $A^4 + B^4 \equiv 2 \pmod 4$.
+- `fermat42_not_both_odd`: In any solution to $A^4 + B^4 = C^2$, $A$ and $B$ cannot both be odd.
+
+### 7.3 Reduction from $(4, 4, 4)$ to $(4, 4, 2)$
+Any solution to $A^4 + B^4 = C^4$ produces a solution $A^4 + B^4 = (C^2)^2$ to $(4, 4, 2)$:
+```lean
+theorem flt4_of_fermat42
+    (h_no42 : ¬ ∃ (A B C : ℕ), A > 0 ∧ B > 0 ∧ C > 0 ∧ A ^ 4 + B ^ 4 = C ^ 2) :
+    ¬ ∃ (A B C : ℕ), A > 0 ∧ B > 0 ∧ C > 0 ∧ A ^ 4 + B ^ 4 = C ^ 4
+```
+
+### 7.4 Nonexistence Theorems and Beal Counterexample Eliminations
+- **Fermat $(4, 4, 2)$ Theorem**:
+  `theorem fermat_4_2 : ¬ ∃ (A B C : ℕ), A > 0 ∧ B > 0 ∧ C > 0 ∧ A ^ 4 + B ^ 4 = C ^ 2`
+- **Fermat's Last Theorem for Exponent 4**:
+  `theorem fermat_4_4 : ¬ ∃ (A B C : ℕ), A > 0 ∧ B > 0 ∧ C > 0 ∧ A ^ 4 + B ^ 4 = C ^ 4`
+- **Beal Counterexample Elimination for $(4, 4, 4)$**:
+  `theorem no_beal_counterexample_4_4_4 : ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 4 4 4`
+- **Beal Counterexample Elimination for all $(4, 4, 2k)$ ($k \ge 2$)**:
+  `theorem no_beal_counterexample_4_4_even (k : ℕ) (hk : k ≥ 2) : ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 4 4 (2 * k)`
+  - Subcase $k = 3$: `no_beal_counterexample_4_4_6` (signature $(4, 4, 6)$).
+  - Subcase $k = 4$: `no_beal_counterexample_4_4_8` (signature $(4, 4, 8)$).
+
+---
+
+## 8. Catalogue of Classical Near-Misses and Small-Exponent Solutions (`Beal.KnownSolutions`)
+
+In `formal/Beal/KnownSolutions.lean`, we formalize the catalogue of known primitive integer solutions to Generalized Fermat Equations $A^x + B^y = C^z$ with $\chi = 1/x + 1/y + 1/z < 1$, often termed "near-misses" to the Beal Conjecture.
+
+### 8.1 The Exponent-2 Structural Theorem
+A central fact of Diophantine arithmetic is that **every known non-trivial primitive solution to a Generalized Fermat equation has at least one exponent equal to 2**.
+
+```lean
+structure GeneralizedFermatSolution where
+  A : ℕ; B : ℕ; C : ℕ
+  x : ℕ; y : ℕ; z : ℕ
+  posA : A > 0; posB : B > 0; posC : C > 0
+  posx : x > 0; posy : y > 0; posz : z > 0
+  prim : gcd3 A B C = 1
+  eq : A ^ x + B ^ y = C ^ z
+
+def HasExponentTwo (s : GeneralizedFermatSolution) : Prop :=
+  s.x = 2 ∨ s.y = 2 ∨ s.z = 2
+
+theorem not_beal_counterexample_of_exponent_two (s : GeneralizedFermatSolution)
+    (h2 : HasExponentTwo s) :
+    ¬ IsBealCounterexample s.A s.B s.C s.x s.y s.z
+```
+*Proof*: If $s$ were a Beal counterexample, then $x \ge 3$, $y \ge 3$, and $z \ge 3$. But $h2$ provides that at least one exponent is 2, creating an immediate contradiction ($2 \ge 3$).
+
+### 8.2 Formalized Classical Solutions
+Five canonical primitive solutions were formalized, bundled, and certified:
+
+1. **Catalan Family ($1^m + 2^3 = 3^2$, signature $(m, 3, 2)$)**:
+   - Equality holds for all $m \ge 1$: `catalan_eq`.
+   - Primitivity: `catalan_prim : gcd3 1 2 3 = 1`.
+   - Exponent $z = 2 < 3 \implies$ `catalan_not_beal`.
+
+2. **$2^5 + 7^2 = 3^4$ ($32 + 49 = 81$, signature $(5, 2, 4)$)**:
+   - Certified identity: `sol_2_7_3_eq : 2^5 + 7^2 = 3^4`.
+   - Primitivity: `sol_2_7_3_prim : gcd3 2 7 3 = 1`.
+   - Exponent $y = 2 < 3 \implies$ `sol_2_7_3_not_beal`.
+   - Section 8 Checker Rejection: `sol_2_7_3_checker` proves `admissible = false, counterexample = false, equality = true`.
+
+3. **$13^2 + 7^3 = 2^9$ ($169 + 343 = 512$, signature $(2, 3, 9)$)**:
+   - Certified identity: `sol_13_7_2_eq : 13^2 + 7^3 = 2^9`.
+   - Primitivity: `sol_13_7_2_prim : gcd3 13 7 2 = 1`.
+   - Exponent $x = 2 < 3 \implies$ `sol_13_7_2_not_beal`.
+   - Section 8 Checker Rejection: `sol_13_7_2_checker` proves `admissible = false, counterexample = false, equality = true`.
+
+4. **$3^5 + 10^2 = 7^3$ ($243 + 100 = 343$, signature $(5, 2, 3)$)**:
+   - Certified identity: `sol_3_10_7_eq : 3^5 + 10^2 = 7^3`.
+   - Primitivity: `sol_3_10_7_prim : gcd3 3 10 7 = 1`.
+   - Exponent $y = 2 < 3 \implies$ `sol_3_10_7_not_beal`.
+   - Section 8 Checker Rejection: `sol_3_10_7_checker` proves `admissible = false, counterexample = false, equality = true`.
+
+5. **$43^8 + 96222^3 = 30042907^2$ ($902576261010649$, signature $(8, 3, 2)$)**:
+   - Certified identity: `sol_43_96222_30042907_eq : 43^8 + 96222^3 = 30042907^2`.
+   - Primitivity: `sol_43_96222_30042907_prim : gcd3 43 96222 30042907 = 1`.
+   - Exponent $z = 2 < 3 \implies$ `sol_43_96222_30042907_not_beal`.
+   - Section 8 Checker Rejection: `sol_43_96222_30042907_checker` proves `admissible = false, counterexample = false, equality = true`.
+
+---
+
+## 9. Multi-Stage Formalization Roadmap for the Beal Program
 
 The broader Beal research program spans algebraic geometry, modular forms, Galois representations, and class field theory across several hundred checkpoints. The formalization roadmap is divided into four progressive tiers:
 
@@ -283,25 +456,39 @@ The broader Beal research program spans algebraic geometry, modular forms, Galoi
 gantt
     title Formalization Roadmap Tiers
     dateFormat  YYYY-MM-DD
-    section Tier 1: Arithmetic & Checker
+    section Tier 1: Arithmetic & Foundations
     Beal Statement & Equivalence        :done, des1, 2026-09-01, 2026-09-17
     Section 8 Checker & Test Suite      :done, des2, 2026-09-01, 2026-09-17
     Decic Factorization & U73 Identities:done, des3, 2026-09-01, 2026-09-17
+    Signature Taxonomy & Curvature      :done, des4, 2026-09-01, 2026-09-17
+    FLT4 & Signature (4, 4, 2) Descent   :done, des5, 2026-09-01, 2026-09-17
+    Known Near-Misses Exponent-2 Catalog:done, des6, 2026-09-01, 2026-09-17
     section Tier 2: Curves & Arithmetic
-    Frey Model Construction (U63)       :active, des4, 2026-09-18, 2026-10-15
-    Minimal Model & Discriminants (U64) :des5, 2026-10-16, 2026-11-15
+    Frey Model Construction (U63)       :active, des7, 2026-09-18, 2026-10-15
+    Minimal Model & Discriminants (U64) :des8, 2026-10-16, 2026-11-15
     section Tier 3: Local Deformation
-    Inertia at Prime 2 & 17 (U98, U101) :des6, 2026-11-16, 2026-12-31
-    Fontaine-Laffaille Range (U101)     :des7, 2027-01-01, 2027-02-15
+    Inertia at Prime 2 & 17 (U98, U101) :des9, 2026-11-16, 2026-12-31
+    Fontaine-Laffaille Range (U101)     :des10, 2027-01-01, 2027-02-15
     section Tier 4: Modular Elimination
-    Level-2000 Hilbert Orbits (U100)    :des8, 2027-02-16, 2027-03-31
-    Orbit h Hecke Certificate (U100)    :des9, 2027-04-01, 2027-04-30
+    Level-2000 Hilbert Orbits (U100)    :des11, 2027-02-16, 2027-03-31
+    Orbit h Hecke Certificate (U100)    :des12, 2027-04-01, 2027-04-30
 ```
 
-### Tier 1: Pure Arithmetic & Algorithmic Foundations (**COMPLETED**)
-- **Files**: `formal/Beal/Conjecture.lean`, `formal/Beal/CounterexampleChecker.lean`, `formal/Beal/AlgebraicIdentities.lean`.
-- **Scope**: Statement of conjecture, equivalence of primitive and prime formulations, algorithmic counterexample validator, verified test suite, cyclotomic splitting over $\mathbb{Q}(\phi)$, decic $X^{10} + 256Y^{10}$ factorization, and U73 genus-eight reduction.
-- **Proof methods**: Ring tactics (`ring`, `linear_combination`), arithmetic decision (`decide`, `omega`), and structural induction.
+### Tier 1: Pure Arithmetic & Foundations (**COMPLETED**)
+- **Files**:
+  - `formal/Beal/Conjecture.lean`
+  - `formal/Beal/CounterexampleChecker.lean`
+  - `formal/Beal/AlgebraicIdentities.lean`
+  - `formal/Beal/Taxonomy.lean`
+  - `formal/Beal/Signature4.lean`
+  - `formal/Beal/KnownSolutions.lean`
+- **Scope**:
+  - Statement of conjecture, equivalence of primitive and prime formulations.
+  - Algorithmic counterexample validator with soundness, completeness, and 6 kernel-certified test cases.
+  - Cyclotomic splitting over $\mathbb{Q}(\phi)$, decic $X^{10} + 256Y^{10}$ factorization, U73 genus-eight reduction and Möbius vanishing.
+  - Signature taxonomy, curvature invariant $E(p, q, r)$, parabolic uniqueness of $(3, 3, 3)$, universal strict hyperbolicity $\chi \le -1/12$.
+  - Constructive Principle of Infinite Descent, mod-4 parity obstruction, FLT4 reduction, and elimination of $(4, 4, 4)$ and $(4, 4, 2k)$.
+  - Exact integer certificates and proofs for all 5 classical near-misses, exponent-2 structural exclusion theorem, and Section 8 checker integration.
 
 ### Tier 2: Curves, Minimal Models, and Local Invariants
 - **Target Checkpoints**: U63 (Frey hyperelliptic curve $C^-$), U64 (Eisenstein and Hecke structure), U73 (Genus-8 curve $H$).
@@ -329,7 +516,7 @@ gantt
 
 ---
 
-## 7. Traceability Matrix
+## 10. Traceability Matrix
 
 | Research Milestone | Source Checkpoint | Python/TS Reference | Formal Lean 4 Module | Verification Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -340,6 +527,18 @@ gantt
 | **$X^{10}+256Y^{10}$ Decic Factorization** | U71 §2, U73 §1 | `research/computations/U71/wolfram_checks.wl` | `formal/Beal/AlgebraicIdentities.lean` | Complete (`ring`) |
 | **U73 Genus-8 Algebraic Identity** | U73 §3 (Eq 3.2) | `research/computations/U73/wolfram_checks.wl` | `formal/Beal/AlgebraicIdentities.lean` | Complete (`linear_combination`, `ring`) |
 | **U73 Mobius Vanishing Identity** | U73 §4 (Eq 4.2) | `research/computations/U73/wolfram_checks.wl` | `formal/Beal/AlgebraicIdentities.lean` | Complete (`ring`) |
+| **Signature Curvature Invariant $E$** | U101, U104 | Literature (Darmon–Granville) | `formal/Beal/Taxonomy.lean` | Complete (`decide`, `omega`) |
+| **Beal Parabolic Uniqueness (3, 3, 3)** | Literature / U104 | U104 §1 | `formal/Beal/Taxonomy.lean` | Complete (`nlinarith`, `omega`) |
+| **Non-Cubic Strict Hyperbolicity** | Literature / U104 | U104 §1 | `formal/Beal/Taxonomy.lean` | Complete (`nlinarith`, `omega`) |
+| **Fermat Infinite Descent Principle** | Classical / Fermat | Elementary Number Theory | `formal/Beal/Signature4.lean` | Complete (`Nat.find`) |
+| **Mod-4 Parity Obstruction** | Classical / Fermat | Elementary Number Theory | `formal/Beal/Signature4.lean` | Complete (`interval_cases`, `omega`)|
+| **FLT4 Reduction Theorem** | Classical / Fermat | Elementary Number Theory | `formal/Beal/Signature4.lean` | Complete (`ring`, `positivity`) |
+| **Beal Elimination for $(4, 4, 2k)$** | Literature | Elementary Number Theory | `formal/Beal/Signature4.lean` | Complete (`ring`, `decide`) |
+| **Near-Misses Exponent-2 Exclusion** | Classical / Darmon–Granville | Literature / Section 8 Test Suite | `formal/Beal/KnownSolutions.lean` | Complete (`omega`, `decide`) |
+| **$2^5+7^2=3^4$ Certified Identity** | Literature | `code/test_section8_counterexample_checker.py` | `formal/Beal/KnownSolutions.lean` | Complete (`decide`) |
+| **$13^2+7^3=2^9$ Certified Identity** | Literature | `code/test_section8_counterexample_checker.py` | `formal/Beal/KnownSolutions.lean` | Complete (`decide`) |
+| **$3^5+10^2=7^3$ Certified Identity** | Literature | `code/test_section8_counterexample_checker.py` | `formal/Beal/KnownSolutions.lean` | Complete (`decide`) |
+| **$43^8+96222^3=30042907^2$ Certified Identity** | Literature | `code/test_section8_counterexample_checker.py` | `formal/Beal/KnownSolutions.lean` | Complete (`decide`) |
 | **Frey Hyperelliptic Minimal Model** | U63, U64 | `code/U63_weighted_audit.py` | *Tier 2 Roadmap Target* | Specification Documented |
 | **Breuil--Diamond Local Lift Bridge** | U101 | `code/U101_local_lift_bridge_certificate.py` | *Tier 3 Roadmap Target* | Specification Documented |
 | **Orbit $h$ Hecke Elimination Certificate**| U100 | `code/U100_orbit_h_hecke_elimination.py` | *Tier 4 Roadmap Target* | Specification Documented |

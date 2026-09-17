@@ -1,0 +1,45 @@
+{
+  "research_date": "2026-09-17",
+  "checkpoint": "U103",
+  "topic": "Modular newform elimination at levels dividing 576 for Kraus Frey curve attached to A^3 + B^3 = C^p",
+  "primary_sources": [
+    {
+      "authors": ["Alain Kraus"],
+      "title": "Sur l'equation a^3 + b^3 = c^p",
+      "publication": "Experimental Mathematics 7 (1998), no. 1, 1-13",
+      "relevance": "Construction of Frey curve E_{A, B}, level lowering to levels dividing 72/576, and introduction of the Kraus sieve method with auxiliary primes q = 2kp + 1"
+    },
+    {
+      "authors": ["Sander R. Dahmen"],
+      "title": "Classical and modular methods for exponential Diophantine equations",
+      "publication": "PhD thesis, Universiteit Utrecht, 2008",
+      "relevance": "Detailed treatment of Kraus method (Section 2.2), Example 53 (CM elimination of 36a1), and Table 3.3 verification for small primes"
+    },
+    {
+      "authors": ["Michael A. Bennett", "Carmen Bruni", "Nuno Freitas"],
+      "title": "Sums of two cubes as twisted perfect powers, revisited",
+      "publication": "Algebra & Number Theory 12 (2018), no. 4, 959-999",
+      "relevance": "Minimal Weierstrass models F^(0) and F^(1), conductor classification Lemma 2.1, and 2-torsion classification at levels dividing 72q"
+    },
+    {
+      "authors": ["Nuno Freitas"],
+      "title": "Recipes for Fermat-type equations of the form x^r + y^r = C z^p",
+      "publication": "Math. Z. 279 (2015), 605-639",
+      "relevance": "The Symplectic Method: unconditional elimination of 72a1 for all p = 2 mod 3"
+    },
+    {
+      "authors": ["Nils Bruin"],
+      "title": "Chabauty methods and covering techniques applied to generalized Fermat equations",
+      "publication": "PhD thesis, Universiteit Leiden, 1999",
+      "relevance": "Resolution of A^3 + B^3 = C^p for p in {4, 5, 7} via genus-2 and genus-3 descent and Chabauty-Coleman"
+    }
+  ],
+  "audit_results": {
+    "levels_checked": [36, 72, 144, 288, 576],
+    "total_rational_newforms": 18,
+    "cm_newforms": ["36_1", "144_2", "576_5", "576_6"],
+    "p_13_status": "100% eliminated (14 by trace sieve at q=53,79, 4 by CM/Cartan normalizer)",
+    "p_7_status": "6 forms eliminated by q=29; surviving 72a1 closed by Bruin Chabauty",
+    "p_19_31_status": "No auxiliary primes q = 2kp + 1 below 100 exist (minimal q is 191 for p=19 and 311 for p=31)"
+  }
+}

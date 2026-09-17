@@ -1,0 +1,66 @@
+{
+  "research_date": "2026-09-17",
+  "checkpoint": "U106",
+  "topic": "Serre weights, inertia weights, and Fontaine--Laffaille conditions for signature (2, 3, p)",
+  "primary_sources": [
+    {
+      "authors": ["Jean-Pierre Serre"],
+      "title": "Proprietes galoisiennes des points d'ordre fini des courbes elliptiques",
+      "publication": "Invent. Math. 15 (1972), 259-331",
+      "locator": "Section 1.11, Proposition 8",
+      "relevance": "Inertia action on p-torsion of elliptic curves with supersingular and ordinary reduction"
+    },
+    {
+      "authors": ["Jean-Pierre Serre"],
+      "title": "Sur les representations modulaires de degre 2 de Gal(Q_bar/Q)",
+      "publication": "Duke Math. J. 54 (1987), 179-230",
+      "relevance": "Serre weight recipe and conductor definitions"
+    },
+    {
+      "authors": ["Bas Edixhoven"],
+      "title": "The weight in Serre's conjectures on modular forms",
+      "publication": "Invent. Math. 109 (1992), 563-594",
+      "locator": "Theorem 1.1",
+      "relevance": "Equivalence between finite flatness at p and Serre weight k = 2"
+    },
+    {
+      "authors": ["Kevin Buzzard", "Fred Diamond", "Frazer Jarvis"],
+      "title": "On Serre's conjecture for mod l Galois representations over totally real fields",
+      "publication": "Duke Math. J. 155 (2010), 105-161",
+      "relevance": "Formulation of the BDJ Serre weight conjecture for Hilbert modular forms"
+    },
+    {
+      "authors": ["Toby Gee"],
+      "title": "A modularity lifting theorem for weight two Hilbert modular forms",
+      "publication": "Invent. Math. 186 (2011), 1-57",
+      "relevance": "Proof of BDJ conjecture and weight optimization to parallel weight 2 for crystalline representations in the Fontaine--Laffaille range"
+    },
+    {
+      "authors": ["Jean-Marc Fontaine", "Guy Laffaille"],
+      "title": "Construction de representations p-adiques",
+      "publication": "Ann. Sci. ENS 15 (1982), 547-608",
+      "relevance": "Fontaine--Laffaille range e < p - 1 and filtered Dieudonne modules"
+    },
+    {
+      "authors": ["Nuno Freitas", "Bartosz Naskrecki", "Michael Stoll"],
+      "title": "The generalized Fermat equation with exponents 2, 3, n",
+      "publication": "Compositio Math. 156 (2020), 77-113",
+      "relevance": "Modular framework, symplectic criteria, and Serre levels for signature (2, 3, p)"
+    }
+  ],
+  "evaluated_primes": [11, 13, 17],
+  "fontaine_laffaille_condition": "e = 1 < p - 1 unconditionally over Q, e <= 2 < p - 1 over quadratic fields",
+  "serre_weights": {
+    "minimal_weight": 2,
+    "companion_ordinary": {
+      "11": 11,
+      "13": 13,
+      "17": 17
+    },
+    "companion_supersingular": {
+      "11": 12,
+      "13": 14,
+      "17": 18
+    }
+  }
+}

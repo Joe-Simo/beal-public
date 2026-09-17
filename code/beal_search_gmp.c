@@ -85,8 +85,11 @@ typedef struct {
     uint32_t max_exp;
     uint32_t base_a_start;
     uint32_t base_a_end;
+    uint32_t base_b_start;
+    uint32_t base_b_end;
     int num_threads;
     bool prime_exponents_only;
+    bool pure_primes_only;
     bool allow_non_coprime;
     bool check_all_roots;
     bool verbose;
@@ -179,14 +182,26 @@ static int32_t hash_table_lookup(const PowerHashTable *ht, const PowerEntry *pow
     return -1;
 }
 
-/* Is exponent prime or 4 */
-static bool is_prime_or_4(uint32_t e) {
-    if (e == 4) return true;
+/* Is exponent a pure odd prime >= 3 */
+static bool is_pure_prime(uint32_t e) {
     if (e < 3) return false;
     if (e % 2 == 0) return false;
     for (uint32_t d = 3; d * d <= e; d += 2) {
         if (e % d == 0) return false;
     }
+    return true;
+}
+
+/* Is exponent prime or 4 */
+static bool is_prime_or_4(uint32_t e) {
+    if (e == 4) return true;
+    return is_pure_prime(e);
+}
+
+/* Check if exponent matches search config */
+static inline bool is_allowed_exp(const SearchConfig *cfg, uint32_t e) {
+    if (cfg->pure_primes_only) return is_pure_prime(e);
+    if (cfg->prime_exponents_only) return is_prime_or_4(e);
     return true;
 }
 
@@ -295,18 +310,20 @@ static void* search_worker(void *arg) {
         pthread_mutex_unlock(&state->work_mutex);
 
         for (uint32_t A = a_start; A <= a_end; A++) {
-            for (uint32_t B = A; B <= cfg->max_base; B++) {
+            uint32_t b_min = (cfg->base_b_start > A) ? cfg->base_b_start : A;
+            uint32_t b_max = cfg->base_b_end ? cfg->base_b_end : cfg->max_base;
+            for (uint32_t B = b_min; B <= b_max; B++) {
                 /* If allow_non_coprime is false, skip gcd(A, B) > 1 immediately */
                 if (!cfg->allow_non_coprime && gcd32(A, B) > 1) {
                     continue;
                 }
 
                 for (uint32_t x = cfg->min_exp; x <= cfg->max_exp; x++) {
-                    if (cfg->prime_exponents_only && !is_prime_or_4(x)) continue;
+                    if (!is_allowed_exp(cfg, x)) continue;
                     mpz_ui_pow_ui(Ax, A, x);
 
                     for (uint32_t y = cfg->min_exp; y <= cfg->max_exp; y++) {
-                        if (cfg->prime_exponents_only && !is_prime_or_4(y)) continue;
+                        if (!is_allowed_exp(cfg, y)) continue;
                         mpz_ui_pow_ui(By, B, y);
 
                         /* Symmetry: enforce Ax <= By to avoid duplicate testing */
@@ -438,7 +455,10 @@ int run_search(const SearchConfig *cfg) {
     printf("Configuration:\n");
     printf("  Bases range:      [%u, %u]\n", cfg->min_base, cfg->max_base);
     printf("  Exponents range:  [%u, %u] (min >= 3 strictly enforced)\n", cfg->min_exp, cfg->max_exp);
-    printf("  Exponent mode:    %s\n", cfg->prime_exponents_only ? "Primes & 4 (canonical)" : "All integers");
+    const char *exp_mode = "All integers";
+    if (cfg->pure_primes_only) exp_mode = "Pure odd primes (3, 5, 7, 11, ...)";
+    else if (cfg->prime_exponents_only) exp_mode = "Primes & 4 (canonical)";
+    printf("  Exponent mode:    %s\n", exp_mode);
     printf("  Worker threads:   %d\n", cfg->num_threads);
     printf("=================================================================\n");
 
@@ -453,7 +473,7 @@ int run_search(const SearchConfig *cfg) {
     size_t p_count = 0;
     for (uint32_t b = cfg->min_base; b <= cfg->max_base; b++) {
         for (uint32_t e = cfg->min_exp; e <= cfg->max_exp; e++) {
-            if (cfg->prime_exponents_only && !is_prime_or_4(e)) continue;
+            if (!is_allowed_exp(cfg, e)) continue;
 
             powers[p_count].base = b;
             powers[p_count].exp = e;
@@ -535,9 +555,13 @@ int run_search(const SearchConfig *cfg) {
             fprintf(fp, "  \"max_base\": %u,\n", cfg->max_base);
             fprintf(fp, "  \"min_exp\": %u,\n", cfg->min_exp);
             fprintf(fp, "  \"max_exp\": %u,\n", cfg->max_exp);
-            fprintf(fp, "  \"base_a_start\": %u,\n", state.next_base_A);
+            uint32_t a_s = cfg->base_a_start ? cfg->base_a_start : cfg->min_base;
+            fprintf(fp, "  \"base_a_start\": %u,\n", a_s);
             fprintf(fp, "  \"base_a_end\": %u,\n", max_a);
+            fprintf(fp, "  \"base_b_start\": %u,\n", cfg->base_b_start);
+            fprintf(fp, "  \"base_b_end\": %u,\n", cfg->base_b_end);
             fprintf(fp, "  \"prime_exponents_only\": %s,\n", cfg->prime_exponents_only ? "true" : "false");
+            fprintf(fp, "  \"pure_primes_only\": %s,\n", cfg->pure_primes_only ? "true" : "false");
             fprintf(fp, "  \"allow_non_coprime\": %s,\n", cfg->allow_non_coprime ? "true" : "false");
             fprintf(fp, "  \"threads\": %d,\n", cfg->num_threads);
             fprintf(fp, "  \"elapsed_seconds\": %.4f,\n", elapsed);
@@ -684,8 +708,11 @@ static void print_usage(const char *prog) {
     printf("  --min-exp <int>         Minimum exponent value (default: %d, min 3)\n", DEFAULT_MIN_EXP);
     printf("  --base-a-start <int>    Start index for base A (for range partitioning)\n");
     printf("  --base-a-end <int>      End index for base A (for range partitioning)\n");
+    printf("  --base-b-start <int>    Start index for base B (for rectangular range partitioning)\n");
+    printf("  --base-b-end <int>      End index for base B (for rectangular range partitioning)\n");
     printf("  --threads <int>         Number of worker threads (default: %d)\n", DEFAULT_THREADS);
     printf("  --prime-exponents       Restrict exponents to primes and 4 (canonical Beal reduction)\n");
+    printf("  --pure-primes           Restrict exponents strictly to odd primes (3, 5, 7, 11, 13, 17, 19...)\n");
     printf("  --allow-non-coprime     Allow non-coprime bases (to detect 3^3+6^3=3^5 etc.)\n");
     printf("  --test-near-misses      Run Section 8 test suite on known near-misses and edge cases\n");
     printf("  --benchmark             Run automated performance benchmark suite across scales\n");
@@ -702,8 +729,11 @@ int main(int argc, char *argv[]) {
     config.max_exp = DEFAULT_MAX_EXP;
     config.base_a_start = 0;
     config.base_a_end = 0;
+    config.base_b_start = 0;
+    config.base_b_end = 0;
     config.num_threads = DEFAULT_THREADS;
     config.prime_exponents_only = false;
+    config.pure_primes_only = false;
     config.allow_non_coprime = false;
     config.check_all_roots = false;
     config.verbose = false;
@@ -730,11 +760,17 @@ int main(int argc, char *argv[]) {
             config.base_a_start = (uint32_t)atoi(argv[++i]);
         } else if (strcmp(argv[i], "--base-a-end") == 0 && i + 1 < argc) {
             config.base_a_end = (uint32_t)atoi(argv[++i]);
+        } else if (strcmp(argv[i], "--base-b-start") == 0 && i + 1 < argc) {
+            config.base_b_start = (uint32_t)atoi(argv[++i]);
+        } else if (strcmp(argv[i], "--base-b-end") == 0 && i + 1 < argc) {
+            config.base_b_end = (uint32_t)atoi(argv[++i]);
         } else if (strcmp(argv[i], "--threads") == 0 && i + 1 < argc) {
             config.num_threads = atoi(argv[++i]);
             if (config.num_threads <= 0) config.num_threads = 1;
         } else if (strcmp(argv[i], "--prime-exponents") == 0) {
             config.prime_exponents_only = true;
+        } else if (strcmp(argv[i], "--pure-primes") == 0) {
+            config.pure_primes_only = true;
         } else if (strcmp(argv[i], "--allow-non-coprime") == 0) {
             config.allow_non_coprime = true;
         } else if (strcmp(argv[i], "--test-near-misses") == 0) {

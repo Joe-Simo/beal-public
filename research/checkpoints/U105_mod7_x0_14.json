@@ -1,0 +1,102 @@
+{
+  "checkpoint": "U105",
+  "x0_14_geometry": {
+    "level": 14,
+    "genus": 1,
+    "index": 24,
+    "cusps": 4,
+    "cremona_label": "14a1",
+    "weierstrass_model": "y^2 + xy + y = x^3 + 4x - 6",
+    "discriminant": -21952,
+    "mordell_weil_rank": 0,
+    "rational_torsion_group": "Z/6Z",
+    "total_rational_points": 6
+  },
+  "rational_points": {
+    "total_points": 6,
+    "cusps_count": 4,
+    "cm_points_count": 2,
+    "non_cm_points_count": 0,
+    "cm_points": [
+      {
+        "disc": -7,
+        "order": "maximal order of Q(sqrt(-7))",
+        "j_invariant": -3375,
+        "prime_factors": {
+          "3": 3,
+          "5": 3
+        }
+      },
+      {
+        "disc": -28,
+        "order": "order of conductor 2 in Q(sqrt(-7))",
+        "j_invariant": 16581375,
+        "prime_factors": {
+          "3": 3,
+          "5": 3,
+          "17": 3
+        }
+      }
+    ]
+  },
+  "valuation_obstructions": {
+    "valuation_contradictions_verified": true,
+    "test_cases": [
+      {
+        "q": 2,
+        "v_C": 1,
+        "v_num": 8,
+        "v_den": 14,
+        "v_j": -6,
+        "v_j1": 0,
+        "v_j2": 0
+      },
+      {
+        "q": 3,
+        "v_C": 1,
+        "v_num": 3,
+        "v_den": 14,
+        "v_j": -11,
+        "v_j1": 3,
+        "v_j2": 3
+      },
+      {
+        "q": 5,
+        "v_C": 1,
+        "v_num": 0,
+        "v_den": 14,
+        "v_j": -14,
+        "v_j1": 3,
+        "v_j2": 3
+      },
+      {
+        "q": 7,
+        "v_C": 1,
+        "v_num": 0,
+        "v_den": 14,
+        "v_j": -14,
+        "v_j1": 0,
+        "v_j2": 0
+      },
+      {
+        "q": 17,
+        "v_C": 1,
+        "v_num": 0,
+        "v_den": 14,
+        "v_j": -14,
+        "v_j1": 0,
+        "v_j2": 3
+      }
+    ],
+    "c_equals_1_case": "j(E) = 0 not in {-3375, 16581375}",
+    "c_equals_0_case": "degenerate cusp (B = -A)"
+  },
+  "irreducibility": {
+    "2_torsion_rational": true,
+    "isogeny_lift_7_to_14": true,
+    "x0_14_non_cm_points": 0,
+    "valuation_obstruction_cm": true,
+    "cusp_obstruction": true,
+    "rho_E_7_absolutely_irreducible": true
+  }
+}

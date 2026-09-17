@@ -1,0 +1,208 @@
+{
+  "checkpoint": "U106",
+  "signature": "(3, 3, p)",
+  "base_ring": "Z[omega], omega = (-1 + sqrt(-3))/2",
+  "class_number": 1,
+  "unit_group": "mu_6 = {+/- 1, +/- omega, +/- omega^2}",
+  "units_absorbed": "All units in mu_6 are exact p-th powers since gcd(p, 6) = 1",
+  "case_3_not_divides_C": {
+    "parametrization": "A + omega*B = (alpha + beta*omega)^p",
+    "norm_identity": "(F + G)^2 + 3(F - G)^2 = 4(alpha^2 - alpha*beta + beta^2)^p",
+    "linear_factor_theorem": {
+      "p_equiv_5_mod_6": "L_p = alpha - 2*beta divides F_p + G_p",
+      "p_equiv_1_mod_6": "L_p = alpha + beta divides F_p + G_p"
+    },
+    "resultant_formula": "Res(L_p, Q_{p-1}) = +/- 3^((p-1)/2) * p * beta^(p-1)",
+    "c1_equals_1_status": "For A+B = 1, only trivial solutions (1,0,1) and (0,1,1) exist for all p in {5, 7, 11, 13, 17, 19}",
+    "curve_type": "Superelliptic curve of genus g = (p-1)(p-2)/2"
+  },
+  "case_3_divides_C": {
+    "parametrization": "A + omega*B = (1 - omega)*(alpha + beta*omega)^p",
+    "A_plus_B_formula": "A + B = 3 * beta * (gamma^p - bar(gamma)^p)/(gamma - bar(gamma))",
+    "gcd_result": "gcd(beta, quotient) divides p*alpha^(p-1)"
+  },
+  "chabauty_applicability": {
+    "small_primes_p_4_5": "Applicable via covers mapping to genus-2 Jacobians with rank <= 1 < g (Bruin 2000, 2004)",
+    "large_primes_p_ge_7": "Inapplicable directly: genus g = (p-1)(p-2)/2 grows quadratically (g=15 for p=7, g=45 for p=11), rank exceeds genus or cannot be bounded"
+  },
+  "baker_applicability": {
+    "fixed_c1": "Solves Thue equation H_p(alpha, beta) = c1^p for fixed c1 effectively (Baker 1968, Bilu-Hanrot 1996)",
+    "general_variable_c1": "Inapplicable: c1 is unbounded, and Baker bounds on (alpha, beta) in terms of c1 grow exponentially with p without bounding c1 itself"
+  },
+  "results_by_prime": [
+    {
+      "p": 5,
+      "p_mod_6": 5,
+      "linear_factor": "alpha - 2*beta",
+      "quotient_degree": 4,
+      "resultant_formula": "+/- 3^2 * 5 * beta^4",
+      "resultant_evaluated": "45*beta**4",
+      "c1_equals_1_integer_roots_beta": [
+        -1,
+        0
+      ],
+      "solutions_for_c1_1": [
+        {
+          "alpha": -1,
+          "beta": -1,
+          "A": 0,
+          "B": 1,
+          "A3_plus_B3": 1
+        },
+        {
+          "alpha": 1,
+          "beta": 0,
+          "A": 1,
+          "B": 0,
+          "A3_plus_B3": 1
+        }
+      ],
+      "all_solutions_trivial": true
+    },
+    {
+      "p": 7,
+      "p_mod_6": 1,
+      "linear_factor": "alpha + beta",
+      "quotient_degree": 6,
+      "resultant_formula": "+/- 3^3 * 7 * beta^6",
+      "resultant_evaluated": "-189*beta**6",
+      "c1_equals_1_integer_roots_beta": [
+        1,
+        0
+      ],
+      "solutions_for_c1_1": [
+        {
+          "alpha": 0,
+          "beta": 1,
+          "A": 0,
+          "B": 1,
+          "A3_plus_B3": 1
+        },
+        {
+          "alpha": 1,
+          "beta": 0,
+          "A": 1,
+          "B": 0,
+          "A3_plus_B3": 1
+        }
+      ],
+      "all_solutions_trivial": true
+    },
+    {
+      "p": 11,
+      "p_mod_6": 5,
+      "linear_factor": "alpha - 2*beta",
+      "quotient_degree": 10,
+      "resultant_formula": "+/- 3^5 * 11 * beta^10",
+      "resultant_evaluated": "-2673*beta**10",
+      "c1_equals_1_integer_roots_beta": [
+        -1,
+        0
+      ],
+      "solutions_for_c1_1": [
+        {
+          "alpha": -1,
+          "beta": -1,
+          "A": 0,
+          "B": 1,
+          "A3_plus_B3": 1
+        },
+        {
+          "alpha": 1,
+          "beta": 0,
+          "A": 1,
+          "B": 0,
+          "A3_plus_B3": 1
+        }
+      ],
+      "all_solutions_trivial": true
+    },
+    {
+      "p": 13,
+      "p_mod_6": 1,
+      "linear_factor": "alpha + beta",
+      "quotient_degree": 12,
+      "resultant_formula": "+/- 3^6 * 13 * beta^12",
+      "resultant_evaluated": "9477*beta**12",
+      "c1_equals_1_integer_roots_beta": [
+        1,
+        0
+      ],
+      "solutions_for_c1_1": [
+        {
+          "alpha": 0,
+          "beta": 1,
+          "A": 0,
+          "B": 1,
+          "A3_plus_B3": 1
+        },
+        {
+          "alpha": 1,
+          "beta": 0,
+          "A": 1,
+          "B": 0,
+          "A3_plus_B3": 1
+        }
+      ],
+      "all_solutions_trivial": true
+    },
+    {
+      "p": 17,
+      "p_mod_6": 5,
+      "linear_factor": "alpha - 2*beta",
+      "quotient_degree": 16,
+      "resultant_formula": "+/- 3^8 * 17 * beta^16",
+      "resultant_evaluated": "111537*beta**16",
+      "c1_equals_1_integer_roots_beta": [
+        -1,
+        0
+      ],
+      "solutions_for_c1_1": [
+        {
+          "alpha": -1,
+          "beta": -1,
+          "A": 0,
+          "B": 1,
+          "A3_plus_B3": 1
+        },
+        {
+          "alpha": 1,
+          "beta": 0,
+          "A": 1,
+          "B": 0,
+          "A3_plus_B3": 1
+        }
+      ],
+      "all_solutions_trivial": true
+    },
+    {
+      "p": 19,
+      "p_mod_6": 1,
+      "linear_factor": "alpha + beta",
+      "quotient_degree": 18,
+      "resultant_formula": "+/- 3^9 * 19 * beta^18",
+      "resultant_evaluated": "-373977*beta**18",
+      "c1_equals_1_integer_roots_beta": [
+        1,
+        0
+      ],
+      "solutions_for_c1_1": [
+        {
+          "alpha": 0,
+          "beta": 1,
+          "A": 0,
+          "B": 1,
+          "A3_plus_B3": 1
+        },
+        {
+          "alpha": 1,
+          "beta": 0,
+          "A": 1,
+          "B": 0,
+          "A3_plus_B3": 1
+        }
+      ],
+      "all_solutions_trivial": true
+    }
+  ]
+}
