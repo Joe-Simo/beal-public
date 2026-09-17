@@ -334,7 +334,7 @@
     },
     {
       "candidate_id": "C115-02",
-      "status": "PROMISING",
+      "status": "PARTIAL_RESULT",
       "selection_mode": "NOVEL_COMBINATION",
       "exact_claim_or_objective": "Repair the weighted-equation modular route using only the genus-2 negative Frey Jacobian, Azon Theorem 5.4 for modularity, a direct Breuil-Diamond level-lowering application, and authenticated level-2000 newform elimination.",
       "parents": [
@@ -357,12 +357,13 @@
         "Local characteristic-zero lift constructions have been proposed in U98/U101 but require adversarial source-level validation."
       ],
       "unresolved_obligations": [
-        "Verify every hypothesis of Breuil-Diamond Theorem 3.2.2 for the exact representation.",
-        "Authenticate the level and complete Hilbert-newform inventory independently.",
-        "Re-audit the surviving CM orbit elimination after the level-lowering bridge is secure."
+        "Re-authenticate the exact level-2000 Hilbert newform inventory.",
+        "Eliminate each non-CM constituent using correctly labelled prime-ideal Hecke data.",
+        "Handle any surviving CM constituent without genus-8 Chabauty or deformation-ring uniqueness.",
+        "Retain U71's 17∤Z input only at its current same-model/source-audited verification level until independently checked."
       ],
       "evaluator_results": {
-        "proof_audit": "ACTIVE",
+        "proof_audit": "BREUIL-DIAMOND BRIDGE REPAIRED IN U116; ELIMINATION STEP NOT RE-AUTHENTICATED",
         "literature_check": "PARTIAL",
         "computation_audit": "PENDING"
       },
@@ -376,7 +377,57 @@
         "needs_literature_check": true,
         "needs_computation_check": true,
         "needs_proof_audit": true,
-        "recommended_action": "Audit Breuil-Diamond Theorem 3.2.2 hypothesis-by-hypothesis next.",
+        "recommended_action": "Audit level-2000 newform inventory and elimination from scratch.",
+        "confidence": 4
+      }
+    },
+    {
+      "candidate_id": "C116-01",
+      "status": "PARTIAL_RESULT",
+      "selection_mode": "NOVEL_COMBINATION",
+      "exact_claim_or_objective": "Reconstruct the fixed norm-2000 Breuil-Diamond lift for the weighted equation using only the correct genus-2 negative Frey Jacobian, Azon modularity, direct cyclotomic irreducibility, and geometric local lifts.",
+      "parents": [
+        "C115-02",
+        "U63",
+        "U64",
+        "U71",
+        "U94",
+        "U98"
+      ],
+      "inspirations": [
+        "Azon Theorem 5.5",
+        "Breuil-Diamond Theorem 3.2.2",
+        "Clifford theory at K(zeta_17)"
+      ],
+      "method": "Remove the false AKT citation and mixed genus-8 dependencies, match the exact Frey object, use geometric local lifts, and compute the fixed conductor ideal from the verified local types.",
+      "evidence": [
+        "Azon's (5,5,p) coefficient-dependent quintic matches the repository polynomial exactly after A=1,B=8,a=U,b=V.",
+        "U63 gives a direct smooth local model for the negative twist at 2, conductor exponent 2, and local residual irreducibility.",
+        "Clifford theory plus splitting of 2 in K(sqrt(17)) proves irreducibility after adjoining zeta_17.",
+        "Breuil-Diamond Theorem 3.2.2 requires actual local lifts, not deformation-ring uniqueness.",
+        "The fixed local conductor exponents 2 at p2 and 3 at p5 give norm 2000."
+      ],
+      "unresolved_obligations": [
+        "Authenticate the level-2000 Hilbert newspace inventory and elimination.",
+        "Independently strengthen the U71 17∤Z dependency if possible.",
+        "Do not import any genus-8 representation/image facts."
+      ],
+      "evaluator_results": {
+        "proof_audit": "SURVIVES CURRENT SOURCE-LEVEL AUDIT AS A LEVEL-LOWERING BRIDGE",
+        "literature_check": "PRIMARY BREUIL-DIAMOND AND AZON SOURCES MATCHED",
+        "computation_audit": "WOLFRAM REPLAY CONFIRMS U71 MOD-11 FINITE DISCRIMINATOR ONLY"
+      },
+      "failure_reason": null,
+      "novelty_relative_to_pool": "Repairs the modular bridge after U115 by removing three invalid dependencies rather than replacing them with a new black box.",
+      "routing": {
+        "relevance_score": 5,
+        "novelty_score": 4,
+        "proof_leverage_score": 5,
+        "failure_similarity_score": 2,
+        "needs_literature_check": false,
+        "needs_computation_check": true,
+        "needs_proof_audit": true,
+        "recommended_action": "Audit the level-2000 newform inventory and orbit eliminations next.",
         "confidence": 4
       }
     }
