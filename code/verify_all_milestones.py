@@ -46,6 +46,13 @@ MILESTONES = [
     ("U100/U102: PARI/GP 3-Adic Coleman Integration on C^-", ["/opt/homebrew/bin/gp", "-q", "code/coleman_integration_p3.gp"]),
     ("U109: PARI/GP Descent & Chabauty Verification for (2, 3, 8) & (2, 3, 9)", ["/opt/homebrew/bin/gp", "-q", "code/verify_238_239_descent.gp"]),
     ("U109: Signature (2, 3, 7) & (2, 3, 11) Modular Forms & LMFDB Audit", ["python3", "code/U109_signature_2_3_7_and_2_3_11_verification.py"]),
+    ("U110: Kraus Sieve Elimination for Signature (3, 3, p) [p in 43..100]", ["python3", "code/U110_kraus_sieve_p43_p100.py"]),
+    ("U110: Serre Uniformity & Cartan Bound Certification", ["python3", "code/U110_serre_uniformity_cartan_bounds.py"]),
+    ("U110: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 100..200)", ["python3", "code/U110_cyclotomic_p100_p200.py"]),
+    ("U110: PARI/GP 3-Adic Coleman & Strassman Zero Bounds on C^-", ["/opt/homebrew/bin/gp", "-q", "code/U110_coleman_strassman_genus8.gp"]),
+    ("U110: Frey Conductor 72 & 144 Newform Inventory Audit", ["python3", "code/U110_frey_conductor_72_newform_inventory.py"]),
+    ("U110: Signature (2, 3, 11) Higher Prime Trace Rigidity", ["python3", "code/U110_signature_2_3_11_higher_traces.py"]),
+    ("U110: Signature (2, 3, 13) Twisted Modular Curve Geometry Audit", ["python3", "code/U110_verify_twisted_modular_curve_geometry.py"]),
 ]
 
 def main():
