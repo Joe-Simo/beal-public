@@ -57,6 +57,7 @@ MILESTONES = [
     ("U110: Linear Forms in Logarithms Bounds & Exponent Envelope", ["python3", "code/U110_linear_forms_logarithms_bounds.py"]),
     ("U110: Signature (2, 4, n) Serre Weight & Modular Verification", ["python3", "code/U110_signature_2_4_n_modular_verification.py"]),
     ("U110: PARI/GP Hilbert Newform Norm 4000 Non-Existence Certificate", ["/opt/homebrew/bin/gp", "-q", "code/U110_hilbert_forms_norm4000.gp"]),
+    ("U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 101..200]", ["python3", "code/U111_kraus_sieve_p101_p200.py"]),
 ]
 
 def main():
