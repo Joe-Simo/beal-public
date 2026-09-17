@@ -44,6 +44,8 @@ MILESTONES = [
     ("U108: PARI/GP Subfield Decomposition for Split-2 Primes (p=31, 43)", ["/opt/homebrew/bin/gp", "-q", "code/decompose_split2_subfields.gp"]),
     ("U99/U102: PARI/GP Degree-34 Class Number & Regulator Certificate", ["/opt/homebrew/bin/gp", "-q", "code/certify_class_number.gp"]),
     ("U100/U102: PARI/GP 3-Adic Coleman Integration on C^-", ["/opt/homebrew/bin/gp", "-q", "code/coleman_integration_p3.gp"]),
+    ("U109: PARI/GP Descent & Chabauty Verification for (2, 3, 8) & (2, 3, 9)", ["/opt/homebrew/bin/gp", "-q", "code/verify_238_239_descent.gp"]),
+    ("U109: Signature (2, 3, 7) & (2, 3, 11) Modular Forms & LMFDB Audit", ["python3", "code/U109_signature_2_3_7_and_2_3_11_verification.py"]),
 ]
 
 def main():

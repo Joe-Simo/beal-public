@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "signature_7": {
+    "known_solutions": 16,
+    "sporadic_bases": [
+      2,
+      17,
+      65,
+      113
+    ],
+    "isogenous_newforms": {
+      "Sporadic_1": "54a1 (LMFDB 54.a1 / 54.2.a.a)",
+      "Catalan": "432b1 / 864b1 (LMFDB 432.b1 / 864.b1)",
+      "Trivial_1": "27a1 (LMFDB 27.a1, CM by Q(sqrt(-3)))",
+      "Trivial_2": "288a1 (LMFDB 288.a1, CM by Q(i))"
+    },
+    "discarded_hecke_fields": [
+      "Q(sqrt(13)) at level 864 (inert at 7)"
+    ]
+  },
+  "signature_11": {
+    "framework": "Dahmen (2008) GL_2(F_11) & Freitas--Naskrecki--Stoll (2020)",
+    "surviving_candidates": [
+      "27a1",
+      "54a1",
+      "96a1",
+      "288a1",
+      "864a1",
+      "864b1",
+      "864c1"
+    ],
+    "integer_trace_rigidity": {
+      "q=5": "4*sqrt(5) = 8.94 < 11 => a_5(E) = a_5(f) over Z; 5 does not divide C unconditionally",
+      "q=7": "4*sqrt(7) = 10.58 < 11 => a_7(E) = a_7(f) over Z if 7 does not divide C"
+    },
+    "permanent_modular_barrier": "864b1 (Catalan), 27a1 (trivial), 288a1 (trivial) cannot be eliminated by Kraus sieve"
+  },
+  "pari_gp_newspace": {
+    "14": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "21": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "24": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "27": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "28": {
+      "newspace_dim": 0,
+      "orbits": 0,
+      "orbit_dims": "[]",
+      "hecke_polys": "[]"
+    },
+    "32": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "36": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "42": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "54": {
+      "newspace_dim": 2,
+      "orbits": 2,
+      "orbit_dims": "[1, 1]",
+      "hecke_polys": "[y, y]"
+    },
+    "56": {
+      "newspace_dim": 2,
+      "orbits": 2,
+      "orbit_dims": "[1, 1]",
+      "hecke_polys": "[y, y]"
+    },
+    "84": {
+      "newspace_dim": 2,
+      "orbits": 2,
+      "orbit_dims": "[1, 1]",
+      "hecke_polys": "[y, y]"
+    },
+    "96": {
+      "newspace_dim": 2,
+      "orbits": 2,
+      "orbit_dims": "[1, 1]",
+      "hecke_polys": "[y, y]"
+    },
+    "108": {
+      "newspace_dim": 1,
+      "orbits": 1,
+      "orbit_dims": "[1]",
+      "hecke_polys": "[y]"
+    },
+    "126": {
+      "newspace_dim": 2,
+      "orbits": 2,
+      "orbit_dims": "[1, 1]",
+      "hecke_polys": "[y, y]"
+    },
+    "144": {
+      "newspace_dim": 2,
+      "orbits": 2,
+      "orbit_dims": "[1, 1]",
+      "hecke_polys": "[y, y]"
+    },
+    "168": {
+      "newspace_dim": 2,
+      "orbits": 2,
+      "orbit_dims": "[1, 1]",
+      "hecke_polys": "[y, y]"
+    },
+    "216": {
+      "newspace_dim": 4,
+      "orbits": 4,
+      "orbit_dims": "[1, 1, 1, 1]",
+      "hecke_polys": "[y, y, y, y]"
+    },
+    "288": {
+      "newspace_dim": 5,
+      "orbits": 5,
+      "orbit_dims": "[1, 1, 1, 1, 1]",
+      "hecke_polys": "[y, y, y, y, y]"
+    },
+    "432": {
+      "newspace_dim": 8,
+      "orbits": 8,
+      "orbit_dims": "[1, 1, 1, 1, 1, 1, 1, 1]",
+      "hecke_polys": "[y, y, y, y, y, y, y, y]"
+    },
+    "864": {
+      "newspace_dim": 16,
+      "orbits": 14,
+      "orbit_dims": "[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2]",
+      "hecke_polys": "[y, y, y, y, y, y, y, y, y, y, y, y, y^2 - y - 3, y^2 - y - 3]"
+    }
+  }
+}
