@@ -53,6 +53,7 @@ MILESTONES = [
     ("U110: Frey Conductor 72 & 144 Newform Inventory Audit", ["python3", "code/U110_frey_conductor_72_newform_inventory.py"]),
     ("U110: Signature (2, 3, 11) Higher Prime Trace Rigidity", ["python3", "code/U110_signature_2_3_11_higher_traces.py"]),
     ("U110: Signature (2, 3, 13) Twisted Modular Curve Geometry Audit", ["python3", "code/U110_verify_twisted_modular_curve_geometry.py"]),
+    ("U110: PARI/GP Elliptic Chabauty & 2-Descent for (2, 3, 8)", ["/opt/homebrew/bin/gp", "-q", "code/U110_elliptic_chabauty_2_3_8.gp"]),
 ]
 
 def main():

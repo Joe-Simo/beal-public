@@ -27,9 +27,9 @@
       "72_1"
     ],
     "elimination_details": {
-      "576_8": {
+      "288_3": {
         "prime_q": 29,
-        "aq": -10,
+        "aq": 4,
         "aq_mod_p": 4,
         "admissible_mod_p": [
           0,
@@ -39,9 +39,21 @@
           6
         ]
       },
-      "288_3": {
+      "576_2": {
         "prime_q": 29,
         "aq": 4,
+        "aq_mod_p": 4,
+        "admissible_mod_p": [
+          0,
+          1,
+          2,
+          5,
+          6
+        ]
+      },
+      "576_8": {
+        "prime_q": 29,
+        "aq": -10,
         "aq_mod_p": 4,
         "admissible_mod_p": [
           0,
@@ -63,18 +75,6 @@
           6
         ]
       },
-      "288_1": {
-        "prime_q": 29,
-        "aq": -4,
-        "aq_mod_p": 3,
-        "admissible_mod_p": [
-          0,
-          1,
-          2,
-          5,
-          6
-        ]
-      },
       "576_1": {
         "prime_q": 29,
         "aq": -4,
@@ -87,10 +87,10 @@
           6
         ]
       },
-      "576_2": {
+      "288_1": {
         "prime_q": 29,
-        "aq": 4,
-        "aq_mod_p": 4,
+        "aq": -4,
+        "aq_mod_p": 3,
         "admissible_mod_p": [
           0,
           1,
@@ -112,6 +112,34 @@
     ],
     "surviving_non_cm": [],
     "elimination_details": {
+      "576_3": {
+        "prime_q": 53,
+        "aq": 10,
+        "aq_mod_p": 10,
+        "admissible_mod_p": [
+          0,
+          1,
+          2,
+          4,
+          9,
+          11,
+          12
+        ]
+      },
+      "576_4": {
+        "prime_q": 53,
+        "aq": 10,
+        "aq_mod_p": 10,
+        "admissible_mod_p": [
+          0,
+          1,
+          2,
+          4,
+          9,
+          11,
+          12
+        ]
+      },
       "288_5": {
         "prime_q": 53,
         "aq": -10,
@@ -140,79 +168,7 @@
           12
         ]
       },
-      "576_4": {
-        "prime_q": 53,
-        "aq": 10,
-        "aq_mod_p": 10,
-        "admissible_mod_p": [
-          0,
-          1,
-          2,
-          4,
-          9,
-          11,
-          12
-        ]
-      },
-      "576_3": {
-        "prime_q": 53,
-        "aq": 10,
-        "aq_mod_p": 10,
-        "admissible_mod_p": [
-          0,
-          1,
-          2,
-          4,
-          9,
-          11,
-          12
-        ]
-      },
-      "576_8": {
-        "prime_q": 79,
-        "aq": 0,
-        "aq_mod_p": 0,
-        "admissible_mod_p": [
-          2,
-          4,
-          9,
-          11
-        ]
-      },
-      "576_7": {
-        "prime_q": 79,
-        "aq": -8,
-        "aq_mod_p": 5,
-        "admissible_mod_p": [
-          2,
-          4,
-          9,
-          11
-        ]
-      },
-      "144_1": {
-        "prime_q": 79,
-        "aq": 8,
-        "aq_mod_p": 8,
-        "admissible_mod_p": [
-          2,
-          4,
-          9,
-          11
-        ]
-      },
       "288_3": {
-        "prime_q": 79,
-        "aq": 0,
-        "aq_mod_p": 0,
-        "admissible_mod_p": [
-          2,
-          4,
-          9,
-          11
-        ]
-      },
-      "288_2": {
         "prime_q": 79,
         "aq": 0,
         "aq_mod_p": 0,
@@ -234,10 +190,10 @@
           11
         ]
       },
-      "576_9": {
+      "576_2": {
         "prime_q": 79,
-        "aq": 8,
-        "aq_mod_p": 8,
+        "aq": 0,
+        "aq_mod_p": 0,
         "admissible_mod_p": [
           2,
           4,
@@ -245,7 +201,29 @@
           11
         ]
       },
-      "288_1": {
+      "576_7": {
+        "prime_q": 79,
+        "aq": -8,
+        "aq_mod_p": 5,
+        "admissible_mod_p": [
+          2,
+          4,
+          9,
+          11
+        ]
+      },
+      "576_8": {
+        "prime_q": 79,
+        "aq": 0,
+        "aq_mod_p": 0,
+        "admissible_mod_p": [
+          2,
+          4,
+          9,
+          11
+        ]
+      },
+      "288_2": {
         "prime_q": 79,
         "aq": 0,
         "aq_mod_p": 0,
@@ -267,7 +245,29 @@
           11
         ]
       },
-      "576_2": {
+      "576_9": {
+        "prime_q": 79,
+        "aq": 8,
+        "aq_mod_p": 8,
+        "admissible_mod_p": [
+          2,
+          4,
+          9,
+          11
+        ]
+      },
+      "144_1": {
+        "prime_q": 79,
+        "aq": 8,
+        "aq_mod_p": 8,
+        "admissible_mod_p": [
+          2,
+          4,
+          9,
+          11
+        ]
+      },
+      "288_1": {
         "prime_q": 79,
         "aq": 0,
         "aq_mod_p": 0,
