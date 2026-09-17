@@ -113,5 +113,7 @@ Every primitive integer solution to $X^{10} + 256Y^{10} = Z^{17}$ produces an ef
 ## 5. Summary of Checkpoint Dependencies and Executable Code
 
 - `code/test_descent.gp`: PARI/GP script certifying $h(F) = 1$, $R_F$, and relative norms of the fundamental units.
+- `code/certify_class_number.gp`: Comprehensive standalone PARI/GP 2.17.4 verification script (reconstructs regulator from scratch and evaluates norm representations).
 - `code/full_selmer_rank.py`: Exact Python/SymPy script evaluating the 17 global candidates against $W_2$ and computing $\operatorname{rank}(\Psi) = 15$.
+- `research/checkpoints/U99_class_number_one_mathematical_certificate.md`: Full mathematical certificate and Galois module analysis.
 - `references/U99/sources.json`: Provenance metadata for PARI/GP output and field invariants.

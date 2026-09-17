@@ -27,5 +27,11 @@
     "U78": "research/checkpoints/U78_explicit_descent_field_and_two_prime_criterion.md",
     "U79": "research/checkpoints/U79_complete_dyadic_Kummer_image.md",
     "U80": "research/checkpoints/U80_norm_redundancy_hecke_audit.md"
+  },
+  "certificate": {
+    "script": "code/certify_class_number.gp",
+    "verification_script": "code/verify_regulator.gp",
+    "unit_norms_script": "code/check_unit_norms.gp",
+    "documentation": "research/checkpoints/U99_class_number_one_mathematical_certificate.md"
   }
 }

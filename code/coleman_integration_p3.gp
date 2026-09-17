@@ -18,9 +18,9 @@ default(realprecision, 38);
 
 /* --- Helper functions --- */
 
-padic_sqrt(c, init, steps=8) = {
+padic_sqrt(c, init) = {
   my(z = init);
-  for(i=1, steps,
+  for(i=1, 8,
     z = (z + c/z) / 2;
   );
   z;
@@ -45,17 +45,6 @@ val3_kp(x) = {
     return(min(v0, v1));
   ,
     return(valuation(pol, 3));
-  );
-};
-
-lift_F9_to_padic(elt, phi_p) = {
-  my(p = lift(elt));
-  if(type(p) == "t_POL",
-    my(c0 = lift(polcoeff(p, 0, 'w)));
-    my(c1 = lift(polcoeff(p, 1, 'w)));
-    return(c0 + c1*phi_p);
-  ,
-    return(lift(p) + 0*phi_p);
   );
 };
 
@@ -121,36 +110,42 @@ lift_F9_to_padic(elt, phi_p) = {
   print("3. RESIDUE FIELD F_9 AND RESIDUE DISCS AT INERT PRIME p = 3");
   print("===================================================================");
 
-  P_F9 = Mod(1,3)*w^2 - Mod(1,3)*w - Mod(1,3);
-  phi_F9 = ffgen(P_F9, 'w);
-  A_F9 = phi_F9 + 2;
-  B_F9 = 4*(3 - phi_F9);
+  /* F_9 coordinates: u = a + b*phi, v = c + d*phi with a,b,c,d in {0, 1, 2} */
+  /* Relation: phi^2 = phi + 1 mod 3 */
+  /* (c + d*phi)^2 = c^2 + d^2 + (2*c*d + d^2)*phi mod 3 */
+  /* A mod 3 = phi + 2 = 2 + phi */
+  /* B mod 3 = 4*(3 - phi) = -phi = 2*phi */
+  /* Since u^17 = u in F_9, f(u) mod 3 = (2 + phi) - 2*phi*u = 2 + phi + phi*u */
 
-  list_affine = List();
+  list_quads = List();
   for(a=0, 2,
     for(b=0, 2,
-      u_val = a + b*phi_F9;
-      f_val = A_F9 - B_F9 * u_val^17;
+      /* u = a + b*phi */
+      /* u*phi = a*phi + b*phi^2 = b + (a+b)*phi */
+      /* f(u) = (2 + b) + (1 + a + b)*phi */
+      f_c0 = (2 + b) % 3;
+      f_c1 = (1 + a + b) % 3;
       for(c=0, 2,
         for(d=0, 2,
-          v_val = c + d*phi_F9;
-          if(v_val^2 == f_val,
-            listput(list_affine, [u_val, v_val]);
+          v2_c0 = (c^2 + d^2) % 3;
+          v2_c1 = (2*c*d + d^2) % 3;
+          if(v2_c0 == f_c0 && v2_c1 == f_c1,
+            listput(list_quads, [a, b, c, d]);
           );
         );
       );
     );
   );
 
-  n_affine = #list_affine;
+  n_affine = #list_quads;
   print("Number of affine F_9 points: ", n_affine);
   print("Number of points at infinity: 1");
   print("Total residue discs on C^-(F_9): ", n_affine + 1);
 
   for(i=1, n_affine,
-    pt = list_affine[i];
-    pt_type = if(pt[2] == 0, "WEIERSTRASS", "ORDINARY AFFINE");
-    print("Disc ", i, " [", pt_type, "]: u = ", pt[1], ", v = ", pt[2]);
+    q = list_quads[i];
+    pt_type = if(q[3] == 0 && q[4] == 0, "WEIERSTRASS", "ORDINARY AFFINE");
+    print("Disc ", i, " [", pt_type, "]: u = ", q[1], " + ", q[2], "*phi, v = ", q[3], " + ", q[4], "*phi");
   );
   print("Disc 10 [INFINITY]: Point at infinity");
 }
@@ -223,27 +218,27 @@ lift_F9_to_padic(elt, phi_p) = {
   print("\n--- 4.3 Ordinary Affine Discs: Uniformizer t = u - u0 ---");
   disc_count = 0;
   for(i=1, n_affine,
-    pt = list_affine[i];
-    if(pt[2] != 0,
+    q = list_quads[i];
+    if(q[3] != 0 || q[4] != 0,
       disc_count++;
-      u0_ord = lift_F9_to_padic(pt[1], phi_p);
-      v_init = lift_F9_to_padic(pt[2], phi_p);
+      u0_ord = q[1] + q[2]*phi_p;
+      v_init = q[3] + q[4]*phi_p;
       f0_val = A_p - B_p * u0_ord^17;
-      v0_ord = padic_sqrt(f0_val, v_init, 8);
+      v0_ord = padic_sqrt(f0_val, v_init);
       
       u_ord = u0_ord + t + O(t^8);
       f_ord = A_p - B_p * u_ord^17;
       v_ord = v0_ord * ps_sqrt(f_ord / (v0_ord^2), 8);
       
-      lead_vals = vector(8);
+      print("Ordinary disc ", disc_count, " (u0 = ", q[1], "+", q[2], "*phi, v0 = ", q[3], "+", q[4], "*phi):");
       for(j=0, 7,
         om_ord = (u_ord^j) / v_ord;
         int_ord = intformal(om_ord, t);
         c1 = polcoeff(lift(int_ord), 1, t);
-        lead_vals[j+1] = val3_kp(c1);
+        c2 = polcoeff(lift(int_ord), 2, t);
+        print("    j=", j, ": val3(c1)=", val3_kp(c1), " (term=", val3_kp(c1)+1, 
+              "), val3(c2)=", val3_kp(c2), " (term=", val3_kp(c2)+2, ")");
       );
-      print("Ordinary disc ", disc_count, " (u0 mod 3 = ", pt[1], ", v0 mod 3 = ", pt[2], "):");
-      print("  val3(linear coeff c1) for j=0..7: ", lead_vals);
     );
   );
 }

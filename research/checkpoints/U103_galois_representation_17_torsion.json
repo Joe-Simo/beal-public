@@ -1,0 +1,136 @@
+{
+  "checkpoint": "U103",
+  "invariants": {
+    "genus": 8,
+    "degree": 17,
+    "branch_points": 18,
+    "discriminant_factors": {
+      "2": 64,
+      "5": 32,
+      "17": 34
+    },
+    "bad_reduction_primes": [
+      2,
+      5,
+      17
+    ]
+  },
+  "ray_class_group": {
+    "ord_cyc": "[10]",
+    "nar_cyc": "[10, 2, 2]",
+    "exponent_of_2_part": 2,
+    "chi_1_is_quadratic": true
+  },
+  "reducibility_elimination": {
+    "num_checked_primes": 13,
+    "all_contradictions_verified": true,
+    "sample_records": [
+      {
+        "type": "inert",
+        "p": 3,
+        "norm_q": 9,
+        "actual_trace": 0,
+        "pred_plus": 10,
+        "pred_minus": 7,
+        "contradiction": true
+      },
+      {
+        "type": "inert",
+        "p": 7,
+        "norm_q": 49,
+        "actual_trace": 0,
+        "pred_plus": 16,
+        "pred_minus": 1,
+        "contradiction": true
+      },
+      {
+        "type": "split",
+        "p": 11,
+        "phi": 8,
+        "norm_q": 11,
+        "actual_trace": 0,
+        "pred_plus": 12,
+        "pred_minus": 5,
+        "contradiction": true
+      },
+      {
+        "type": "split",
+        "p": 11,
+        "phi": 4,
+        "norm_q": 11,
+        "actual_trace": 0,
+        "pred_plus": 12,
+        "pred_minus": 5,
+        "contradiction": true
+      },
+      {
+        "type": "split",
+        "p": 19,
+        "phi": 5,
+        "norm_q": 19,
+        "actual_trace": 0,
+        "pred_plus": 3,
+        "pred_minus": 14,
+        "contradiction": true
+      },
+      {
+        "type": "split",
+        "p": 19,
+        "phi": 15,
+        "norm_q": 19,
+        "actual_trace": 0,
+        "pred_plus": 3,
+        "pred_minus": 14,
+        "contradiction": true
+      }
+    ]
+  },
+  "primes_1_mod_17": {
+    "primes_checked": [
+      239,
+      409,
+      919,
+      1021,
+      1259,
+      1361,
+      1429,
+      1531
+    ],
+    "traces_mod_17": [
+      16,
+      16,
+      1,
+      1,
+      16,
+      16,
+      16,
+      16
+    ],
+    "eigenvalues_are_scalar_plus_minus_one": true,
+    "projective_image_is_identity": true
+  },
+  "modular_curve_x0_17": {
+    "weierstrass_model": "y^2 + xy + y = x^3 - x^2 - x - 14",
+    "discriminant": -83521,
+    "conductor": 17,
+    "rational_torsion": "Z/4Z",
+    "cusps_count": 2,
+    "cm_points_count": 2,
+    "non_cm_rational_points": 0,
+    "isogeny_class_curves": 4,
+    "jacobian_is_strictly_non_cm": true
+  },
+  "dickson_classification": {
+    "order_gl2": 78336,
+    "order_pgl2": 4896,
+    "order_psl2": 2448,
+    "density_trace0_gl2": 0.059,
+    "chebotarev_trace0_density": 0.9375,
+    "sl2_excluded": true,
+    "exceptional_excluded": true,
+    "borel_excluded": true,
+    "surviving_class": "imprimitive_cartan_normalizer",
+    "cartan_type": "non_split_cartan",
+    "projective_image": "V_4 = Z/2Z x Z/2Z"
+  }
+}
