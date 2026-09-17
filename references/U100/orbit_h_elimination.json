@@ -1,0 +1,153 @@
+{
+  "checkpoint": "U100",
+  "date": "2026-09-17",
+  "level": {
+    "lmfdb_label": "2.2.5.1-2000.1",
+    "base_field": "2.2.5.1 (Q(sqrt(5)))",
+    "level_ideal": "[2000, 100, -40*w + 20]",
+    "level_norm": 2000,
+    "level_factorization": "(2)^2 * p5^3"
+  },
+  "orbit_h": {
+    "label": "2.2.5.1-2000.1-h",
+    "hecke_polynomial": "x^4 - 10*x^3 - 13*x^2 + 190*x + 241",
+    "hecke_field_degree": 4,
+    "hecke_field_discriminant": 1907942400,
+    "prime11_ideals": [
+      "[11, 11, -3*w + 2]",
+      "[11, 11, -3*w + 1]"
+    ],
+    "hecke_eigenvalues_at_11": {
+      "q11_1": "-2/91*e^3 + 15/91*e^2 + 18/91*e + 120/91",
+      "q11_2": "2/91*e^3 - 15/91*e^2 - 18/91*e + 335/91"
+    },
+    "subfield_decomposition": {
+      "sum_S": 5,
+      "product_P": 5,
+      "diff_squared": 5,
+      "minimal_polynomial_over_Q": "(x^2 - 5*x + 5)^2",
+      "eigenvalues_explicit": "(5 +- sqrt(5))/2",
+      "contained_in_subfield": "Q(sqrt(5))"
+    },
+    "mod17_invariants": {
+      "S_mod17": 5,
+      "P_mod17": 5
+    }
+  },
+  "u64_admissible_traces_at_11": {
+    "frey_curve": "C^-: y^2 = -f(x), f(x) = x^5 + 40*U*V*x^3 + 320*U^2*V^2*x + 64*(8*V^5 - U^5)",
+    "allowed_pairs": [
+      {
+        "pair": [-3, -9],
+        "multiplicity": 25,
+        "mod17": [14, 8],
+        "delta_from_h": [8, 14],
+        "compatible_with_h": false
+      },
+      {
+        "pair": [1, -1],
+        "multiplicity": 5,
+        "mod17": [1, 16],
+        "delta_from_h": [4, 6],
+        "compatible_with_h": false
+      },
+      {
+        "pair": [9, 19],
+        "multiplicity": 5,
+        "mod17": [9, 2],
+        "delta_from_h": [13, 3],
+        "compatible_with_h": false
+      }
+    ],
+    "orbit_h_compatible_pairs": 0
+  },
+  "level_2000_newspace_complete_elimination": {
+    "total_orbits": 8,
+    "table": [
+      {
+        "orbit": "a",
+        "dim": 2,
+        "S": -1,
+        "P": -1,
+        "S_mod17": 16,
+        "P_mod17": 16,
+        "compatible_at_11": 0,
+        "elimination_locus": "Prime 11 (U64)"
+      },
+      {
+        "orbit": "b",
+        "dim": 2,
+        "S": 9,
+        "P": 19,
+        "S_mod17": 9,
+        "P_mod17": 2,
+        "compatible_at_11": 5,
+        "cm_type": "CM by Q(zeta_5)",
+        "elimination_locus": "Global CM boundary obstruction / prime-5 Galois certificate (U97)"
+      },
+      {
+        "orbit": "c",
+        "dim": 2,
+        "S": -5,
+        "P": -5,
+        "S_mod17": 12,
+        "P_mod17": 12,
+        "compatible_at_11": 0,
+        "elimination_locus": "Prime 11 (U64)"
+      },
+      {
+        "orbit": "d",
+        "dim": 2,
+        "S": -1,
+        "P": -1,
+        "S_mod17": 16,
+        "P_mod17": 16,
+        "compatible_at_11": 0,
+        "elimination_locus": "Prime 11 (U64)"
+      },
+      {
+        "orbit": "e",
+        "dim": 2,
+        "S": -11,
+        "P": 29,
+        "S_mod17": 6,
+        "P_mod17": 12,
+        "compatible_at_11": 0,
+        "elimination_locus": "Prime 11 (U64)"
+      },
+      {
+        "orbit": "f",
+        "dim": 2,
+        "S": -5,
+        "P": -5,
+        "S_mod17": 12,
+        "P_mod17": 12,
+        "compatible_at_11": 0,
+        "elimination_locus": "Prime 11 (U64)"
+      },
+      {
+        "orbit": "g",
+        "dim": 2,
+        "S": -1,
+        "P": -1,
+        "S_mod17": 16,
+        "P_mod17": 16,
+        "compatible_at_11": 0,
+        "elimination_locus": "Prime 11 (U64)"
+      },
+      {
+        "orbit": "h",
+        "dim": 4,
+        "S": 5,
+        "P": 5,
+        "S_mod17": 5,
+        "P_mod17": 5,
+        "compatible_at_11": 0,
+        "elimination_locus": "Prime 11 (U100)"
+      }
+    ],
+    "non_cm_elimination_rate": "100% (7 of 7 orbits eliminated at prime 11)",
+    "cm_elimination_rate": "100% (1 of 1 orbit eliminated in U97)",
+    "overall_elimination_rate": "100% (8 of 8 orbits eliminated)"
+  }
+}
