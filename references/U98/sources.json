@@ -1,0 +1,48 @@
+{
+  "checkpoint": "U98",
+  "research_date": "2026-09-17",
+  "target_question": "Deep local Galois investigation at p_5 = (sqrt(5)) in K = Q(sqrt(5)), Galois group of the Eisenstein quintic, inertial Weil-Deligne type, Artin conductor exponent 3, and existence of the Breuil-Diamond local lift.",
+  "primary_sources": [
+    {
+      "authors": ["Christophe Breuil", "Fred Diamond"],
+      "title": "Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caracteres galoisiens",
+      "publication": "Ann. Sci. ENS 47 (2014), 905-974",
+      "doi": "10.24033/asens.2230",
+      "locator": "Theoreme 3.2.2 (pp. 36-37) and Corollaries 3.2.3, 3.2.4",
+      "status": "Local lift conditions at v not|p with N_v = 0: only (iii) prescribed WD type and (v) determinant compatibility on inertia are required. Conditions (i), (ii), (iv) are vacuously satisfied at p_5 away from 17."
+    },
+    {
+      "author": "Martin Azon",
+      "title": "Effective Darmon's program for the generalised Fermat equation",
+      "identifier": "arXiv:2504.01967v2",
+      "version_date": "2025-07-03",
+      "locations": [
+        "Proposition 2.23: WD-representation is principal series iff M/K^unr is abelian",
+        "Theorem 4.36 & Theorem 4.48: Splitting field and ramification of g_r^-",
+        "Theorem 5.11 & Table 2: Conductor exponent n_5^- = 3 when nu_5 = 0 mod 5 and g_5^- irreducible over Q_5",
+        "Proposition 5.18 (2): Rectified from 'principal series' to 'dihedral supercuspidal' due to non-abelian inertia Gal(M/K_p5) = D_5"
+      ]
+    },
+    {
+      "author": "Jean-Pierre Serre",
+      "title": "Corps Locaux",
+      "publication": "Hermann, Paris, 1968",
+      "locator": "Chapter IV: Lower ramification filtration and Artin conductor formula"
+    },
+    {
+      "author": "Pierre Deligne",
+      "title": "Les constantes des equations fonctionnelles des fonctions L",
+      "publication": "Modular Functions of One Variable II, Lecture Notes in Math. 349, Springer, 1973, pp. 501-597",
+      "locator": "Section 8: Weil-Deligne representations and lifting away from the residue characteristic"
+    }
+  ],
+  "conclusions": {
+    "galois_over_Q5": "F_20 (order 20, totally ramified)",
+    "galois_over_Kp5": "D_5 (order 10, totally ramified)",
+    "inertia_action": "Dihedral group D_5 = C_5 semidirect C_2 (non-abelian)",
+    "monodromy_operator": "N_p5 = 0 (potential good reduction over splitting field M)",
+    "weil_deligne_type": "Dihedral supercuspidal (irreducible on inertia)",
+    "artin_conductor": "n_tame = 2, n_wild = 1, total n = 3",
+    "breuil_diamond_lift": "Explicity given by the 17-adic representation rho_{J^-, 17}|_{G_{K_p5}}; also unobstructed and canonical by Maschke lifting since 17 does not divide |D_5| = 10."
+  }
+}
