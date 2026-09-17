@@ -2,7 +2,9 @@ import Beal.Conjecture
 import Beal.CounterexampleChecker
 import Beal.AlgebraicIdentities
 import Beal.Taxonomy
+import Beal.TaxonomyExtensions
 import Beal.Signature4
 import Beal.Signature3
 import Beal.Signature238
 import Beal.KnownSolutions
+import Beal.Mihailescu

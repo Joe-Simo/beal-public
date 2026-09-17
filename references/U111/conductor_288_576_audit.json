@@ -1,0 +1,1570 @@
+{
+  "metadata": {
+    "description": "Atkin-Lehner eigenvalues, Fourier coefficients q<=100, and Kraus sieve certificates for levels 288 and 576",
+    "levels": [
+      288,
+      576
+    ],
+    "exponents": [
+      17,
+      19,
+      23,
+      29,
+      31,
+      37
+    ],
+    "total_newforms": 14
+  },
+  "atkin_lehner_eigenvalues": {
+    "288_1": {
+      "w2": -1,
+      "w3": 1
+    },
+    "288_2": {
+      "w2": 1,
+      "w3": -1
+    },
+    "288_3": {
+      "w2": 1,
+      "w3": 1
+    },
+    "288_4": {
+      "w2": 1,
+      "w3": -1
+    },
+    "288_5": {
+      "w2": -1,
+      "w3": -1
+    },
+    "576_1": {
+      "w2": -1,
+      "w3": 1
+    },
+    "576_2": {
+      "w2": -1,
+      "w3": 1
+    },
+    "576_3": {
+      "w2": 1,
+      "w3": -1
+    },
+    "576_4": {
+      "w2": 1,
+      "w3": -1
+    },
+    "576_5": {
+      "w2": -1,
+      "w3": 1
+    },
+    "576_6": {
+      "w2": 1,
+      "w3": 1
+    },
+    "576_7": {
+      "w2": 1,
+      "w3": -1
+    },
+    "576_8": {
+      "w2": -1,
+      "w3": -1
+    },
+    "576_9": {
+      "w2": -1,
+      "w3": -1
+    }
+  },
+  "fourier_coefficients_q100": {
+    "288_1": {
+      "2": 0,
+      "3": 0,
+      "5": 4,
+      "7": 0,
+      "11": 0,
+      "13": -6,
+      "17": 8,
+      "19": 0,
+      "23": 0,
+      "29": -4,
+      "31": 0,
+      "37": -2,
+      "41": -8,
+      "43": 0,
+      "47": 0,
+      "53": -4,
+      "59": 0,
+      "61": -10,
+      "67": 0,
+      "71": 0,
+      "73": 6,
+      "79": 0,
+      "83": 0,
+      "89": 16,
+      "97": -18
+    },
+    "288_2": {
+      "2": 0,
+      "3": 0,
+      "5": 2,
+      "7": 0,
+      "11": 0,
+      "13": 6,
+      "17": -2,
+      "19": 0,
+      "23": 0,
+      "29": 10,
+      "31": 0,
+      "37": -2,
+      "41": -10,
+      "43": 0,
+      "47": 0,
+      "53": -14,
+      "59": 0,
+      "61": -10,
+      "67": 0,
+      "71": 0,
+      "73": -6,
+      "79": 0,
+      "83": 0,
+      "89": -10,
+      "97": 18
+    },
+    "288_3": {
+      "2": 0,
+      "3": 0,
+      "5": -4,
+      "7": 0,
+      "11": 0,
+      "13": -6,
+      "17": -8,
+      "19": 0,
+      "23": 0,
+      "29": 4,
+      "31": 0,
+      "37": -2,
+      "41": 8,
+      "43": 0,
+      "47": 0,
+      "53": 4,
+      "59": 0,
+      "61": -10,
+      "67": 0,
+      "71": 0,
+      "73": 6,
+      "79": 0,
+      "83": 0,
+      "89": -16,
+      "97": -18
+    },
+    "288_4": {
+      "2": 0,
+      "3": 0,
+      "5": -2,
+      "7": 4,
+      "11": 4,
+      "13": -2,
+      "17": 6,
+      "19": 4,
+      "23": 0,
+      "29": -2,
+      "31": -4,
+      "37": -2,
+      "41": -2,
+      "43": -4,
+      "47": 8,
+      "53": -10,
+      "59": -4,
+      "61": 6,
+      "67": -4,
+      "71": -16,
+      "73": -6,
+      "79": -4,
+      "83": 12,
+      "89": -10,
+      "97": -14
+    },
+    "288_5": {
+      "2": 0,
+      "3": 0,
+      "5": -2,
+      "7": -4,
+      "11": -4,
+      "13": -2,
+      "17": 6,
+      "19": -4,
+      "23": 0,
+      "29": -2,
+      "31": 4,
+      "37": -2,
+      "41": -2,
+      "43": 4,
+      "47": -8,
+      "53": -10,
+      "59": 4,
+      "61": 6,
+      "67": 4,
+      "71": 16,
+      "73": -6,
+      "79": 4,
+      "83": -12,
+      "89": -10,
+      "97": -14
+    },
+    "576_1": {
+      "2": 0,
+      "3": 0,
+      "5": 4,
+      "7": 0,
+      "11": 0,
+      "13": 6,
+      "17": -8,
+      "19": 0,
+      "23": 0,
+      "29": -4,
+      "31": 0,
+      "37": 2,
+      "41": 8,
+      "43": 0,
+      "47": 0,
+      "53": -4,
+      "59": 0,
+      "61": 10,
+      "67": 0,
+      "71": 0,
+      "73": 6,
+      "79": 0,
+      "83": 0,
+      "89": -16,
+      "97": -18
+    },
+    "576_2": {
+      "2": 0,
+      "3": 0,
+      "5": -4,
+      "7": 0,
+      "11": 0,
+      "13": 6,
+      "17": 8,
+      "19": 0,
+      "23": 0,
+      "29": 4,
+      "31": 0,
+      "37": 2,
+      "41": -8,
+      "43": 0,
+      "47": 0,
+      "53": 4,
+      "59": 0,
+      "61": 10,
+      "67": 0,
+      "71": 0,
+      "73": 6,
+      "79": 0,
+      "83": 0,
+      "89": 16,
+      "97": -18
+    },
+    "576_3": {
+      "2": 0,
+      "3": 0,
+      "5": 2,
+      "7": 4,
+      "11": -4,
+      "13": 2,
+      "17": 6,
+      "19": -4,
+      "23": 0,
+      "29": 2,
+      "31": -4,
+      "37": 2,
+      "41": -2,
+      "43": 4,
+      "47": 8,
+      "53": 10,
+      "59": 4,
+      "61": -6,
+      "67": 4,
+      "71": -16,
+      "73": -6,
+      "79": -4,
+      "83": -12,
+      "89": -10,
+      "97": -14
+    },
+    "576_4": {
+      "2": 0,
+      "3": 0,
+      "5": 2,
+      "7": -4,
+      "11": 4,
+      "13": 2,
+      "17": 6,
+      "19": 4,
+      "23": 0,
+      "29": 2,
+      "31": 4,
+      "37": 2,
+      "41": -2,
+      "43": -4,
+      "47": -8,
+      "53": 10,
+      "59": -4,
+      "61": -6,
+      "67": -4,
+      "71": 16,
+      "73": -6,
+      "79": 4,
+      "83": 12,
+      "89": -10,
+      "97": -14
+    },
+    "576_5": {
+      "2": 0,
+      "3": 0,
+      "5": 0,
+      "7": 4,
+      "11": 0,
+      "13": -2,
+      "17": 0,
+      "19": 8,
+      "23": 0,
+      "29": 0,
+      "31": 4,
+      "37": 10,
+      "41": 0,
+      "43": 8,
+      "47": 0,
+      "53": 0,
+      "59": 0,
+      "61": -14,
+      "67": -16,
+      "71": 0,
+      "73": -10,
+      "79": 4,
+      "83": 0,
+      "89": 0,
+      "97": 14
+    },
+    "576_6": {
+      "2": 0,
+      "3": 0,
+      "5": 0,
+      "7": -4,
+      "11": 0,
+      "13": -2,
+      "17": 0,
+      "19": -8,
+      "23": 0,
+      "29": 0,
+      "31": -4,
+      "37": 10,
+      "41": 0,
+      "43": -8,
+      "47": 0,
+      "53": 0,
+      "59": 0,
+      "61": -14,
+      "67": 16,
+      "71": 0,
+      "73": -10,
+      "79": -4,
+      "83": 0,
+      "89": 0,
+      "97": 14
+    },
+    "576_7": {
+      "2": 0,
+      "3": 0,
+      "5": -2,
+      "7": 0,
+      "11": 4,
+      "13": 2,
+      "17": -2,
+      "19": 4,
+      "23": 8,
+      "29": 6,
+      "31": 8,
+      "37": -6,
+      "41": 6,
+      "43": -4,
+      "47": 0,
+      "53": -2,
+      "59": 4,
+      "61": 2,
+      "67": 4,
+      "71": -8,
+      "73": 10,
+      "79": -8,
+      "83": -4,
+      "89": 6,
+      "97": 2
+    },
+    "576_8": {
+      "2": 0,
+      "3": 0,
+      "5": -2,
+      "7": 0,
+      "11": 0,
+      "13": -6,
+      "17": -2,
+      "19": 0,
+      "23": 0,
+      "29": -10,
+      "31": 0,
+      "37": 2,
+      "41": -10,
+      "43": 0,
+      "47": 0,
+      "53": 14,
+      "59": 0,
+      "61": 10,
+      "67": 0,
+      "71": 0,
+      "73": -6,
+      "79": 0,
+      "83": 0,
+      "89": -10,
+      "97": 18
+    },
+    "576_9": {
+      "2": 0,
+      "3": 0,
+      "5": -2,
+      "7": 0,
+      "11": -4,
+      "13": 2,
+      "17": -2,
+      "19": -4,
+      "23": -8,
+      "29": 6,
+      "31": -8,
+      "37": -6,
+      "41": 6,
+      "43": 4,
+      "47": 0,
+      "53": -2,
+      "59": -4,
+      "61": 2,
+      "67": -4,
+      "71": 8,
+      "73": 10,
+      "79": 8,
+      "83": 4,
+      "89": 6,
+      "97": 2
+    }
+  },
+  "elimination_results": {
+    "17": {
+      "exponent": 17,
+      "total_newforms": 14,
+      "eliminated_count": 14,
+      "surviving_count": 0,
+      "elimination_certificates": {
+        "576_5": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "576_6": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 12,
+          "aq_mod_p": 12,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": -12,
+          "aq_mod_p": 5,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "288_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "288_5": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": -12,
+          "aq_mod_p": 5,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 12,
+          "aq_mod_p": 12,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 16,
+          "aq_mod_p": 16,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": -16,
+          "aq_mod_p": 1,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        }
+      }
+    },
+    "19": {
+      "exponent": 19,
+      "total_newforms": 14,
+      "eliminated_count": 14,
+      "surviving_count": 0,
+      "elimination_certificates": {
+        "576_5": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "576_6": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": -30,
+          "aq_mod_p": 8,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
+        "576_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": 30,
+          "aq_mod_p": 11,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": -30,
+          "aq_mod_p": 8,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
+        "288_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": -30,
+          "aq_mod_p": 8,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": 30,
+          "aq_mod_p": 11,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": 30,
+          "aq_mod_p": 11,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 419,
+          "k": 11,
+          "aq": 12,
+          "aq_mod_p": 12,
+          "admissible_traces": [
+            0,
+            1,
+            2,
+            3,
+            16,
+            17,
+            18
+          ],
+          "valid_t_count": 3
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 419,
+          "k": 11,
+          "aq": -12,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            0,
+            1,
+            2,
+            3,
+            16,
+            17,
+            18
+          ],
+          "valid_t_count": 3
+        },
+        "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 457,
+          "k": 12,
+          "aq": 26,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            1,
+            2,
+            4,
+            8,
+            9,
+            10,
+            11,
+            15,
+            17,
+            18
+          ],
+          "valid_t_count": 6
+        },
+        "576_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 457,
+          "k": 12,
+          "aq": 26,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            1,
+            2,
+            4,
+            8,
+            9,
+            10,
+            11,
+            15,
+            17,
+            18
+          ],
+          "valid_t_count": 6
+        },
+        "288_5": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 457,
+          "k": 12,
+          "aq": 26,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            1,
+            2,
+            4,
+            8,
+            9,
+            10,
+            11,
+            15,
+            17,
+            18
+          ],
+          "valid_t_count": 6
+        },
+        "576_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 457,
+          "k": 12,
+          "aq": 26,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            1,
+            2,
+            4,
+            8,
+            9,
+            10,
+            11,
+            15,
+            17,
+            18
+          ],
+          "valid_t_count": 6
+        }
+      }
+    },
+    "23": {
+      "exponent": 23,
+      "total_newforms": 14,
+      "eliminated_count": 14,
+      "surviving_count": 0,
+      "elimination_certificates": {
+        "576_5": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "576_6": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 47,
+          "k": 1,
+          "aq": 8,
+          "aq_mod_p": 8,
+          "admissible_traces": [
+            0,
+            2,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 47,
+          "k": 1,
+          "aq": -8,
+          "aq_mod_p": 15,
+          "admissible_traces": [
+            0,
+            2,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "288_5": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 47,
+          "k": 1,
+          "aq": -8,
+          "aq_mod_p": 15,
+          "admissible_traces": [
+            0,
+            2,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 47,
+          "k": 1,
+          "aq": 8,
+          "aq_mod_p": 8,
+          "admissible_traces": [
+            0,
+            2,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "288_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 12,
+          "aq_mod_p": 12,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": -12,
+          "aq_mod_p": 11,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        }
+      }
+    },
+    "29": {
+      "exponent": 29,
+      "total_newforms": 14,
+      "eliminated_count": 14,
+      "surviving_count": 0,
+      "elimination_certificates": {
+        "576_5": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "576_6": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": -4,
+          "aq_mod_p": 25,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": -4,
+          "aq_mod_p": 25,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "288_5": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": 4,
+          "aq_mod_p": 4,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": 4,
+          "aq_mod_p": 4,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": 4,
+          "aq_mod_p": 4,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": -4,
+          "aq_mod_p": 25,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 233,
+          "k": 4,
+          "aq": -16,
+          "aq_mod_p": 13,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 233,
+          "k": 4,
+          "aq": 16,
+          "aq_mod_p": 16,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 233,
+          "k": 4,
+          "aq": -26,
+          "aq_mod_p": 3,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "288_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 233,
+          "k": 4,
+          "aq": 16,
+          "aq_mod_p": 16,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 233,
+          "k": 4,
+          "aq": -16,
+          "aq_mod_p": 13,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 233,
+          "k": 4,
+          "aq": -26,
+          "aq_mod_p": 3,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        }
+      }
+    },
+    "31": {
+      "exponent": 31,
+      "total_newforms": 14,
+      "eliminated_count": 14,
+      "surviving_count": 0,
+      "elimination_certificates": {
+        "576_5": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "576_6": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 311,
+          "k": 5,
+          "aq": -24,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            0,
+            2,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "576_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 311,
+          "k": 5,
+          "aq": 24,
+          "aq_mod_p": 24,
+          "admissible_traces": [
+            0,
+            2,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "288_5": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 311,
+          "k": 5,
+          "aq": 24,
+          "aq_mod_p": 24,
+          "admissible_traces": [
+            0,
+            2,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "576_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 311,
+          "k": 5,
+          "aq": -24,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            0,
+            2,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 311,
+          "k": 5,
+          "aq": 24,
+          "aq_mod_p": 24,
+          "admissible_traces": [
+            0,
+            2,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 311,
+          "k": 5,
+          "aq": -24,
+          "aq_mod_p": 7,
+          "admissible_traces": [
+            0,
+            2,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 373,
+          "k": 6,
+          "aq": 14,
+          "aq_mod_p": 14,
+          "admissible_traces": [
+            2,
+            7,
+            24,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "576_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 373,
+          "k": 6,
+          "aq": -14,
+          "aq_mod_p": 17,
+          "admissible_traces": [
+            2,
+            7,
+            24,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 373,
+          "k": 6,
+          "aq": -14,
+          "aq_mod_p": 17,
+          "admissible_traces": [
+            2,
+            7,
+            24,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "288_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 373,
+          "k": 6,
+          "aq": 14,
+          "aq_mod_p": 14,
+          "admissible_traces": [
+            2,
+            7,
+            24,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 373,
+          "k": 6,
+          "aq": -14,
+          "aq_mod_p": 17,
+          "admissible_traces": [
+            2,
+            7,
+            24,
+            29
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 373,
+          "k": 6,
+          "aq": 14,
+          "aq_mod_p": 14,
+          "admissible_traces": [
+            2,
+            7,
+            24,
+            29
+          ],
+          "valid_t_count": 1
+        }
+      }
+    },
+    "37": {
+      "exponent": 37,
+      "total_newforms": 14,
+      "eliminated_count": 14,
+      "surviving_count": 0,
+      "elimination_certificates": {
+        "576_5": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "576_6": {
+          "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
+          "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
+        },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 20,
+          "aq_mod_p": 20,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -18,
+          "aq_mod_p": 19,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 20,
+          "aq_mod_p": 20,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 18,
+          "aq_mod_p": 18,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 14,
+          "aq_mod_p": 14,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "288_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -20,
+          "aq_mod_p": 17,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "288_5": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -18,
+          "aq_mod_p": 19,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 18,
+          "aq_mod_p": 18,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -20,
+          "aq_mod_p": 17,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 14,
+          "aq_mod_p": 14,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -14,
+          "aq_mod_p": 23,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 14,
+          "aq_mod_p": 14,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        }
+      }
+    }
+  }
+}

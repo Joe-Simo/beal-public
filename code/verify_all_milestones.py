@@ -58,6 +58,20 @@ MILESTONES = [
     ("U110: Signature (2, 4, n) Serre Weight & Modular Verification", ["python3", "code/U110_signature_2_4_n_modular_verification.py"]),
     ("U110: PARI/GP Hilbert Newform Norm 4000 Non-Existence Certificate", ["/opt/homebrew/bin/gp", "-q", "code/U110_hilbert_forms_norm4000.gp"]),
     ("U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 101..200]", ["python3", "code/U111_kraus_sieve_p101_p200.py"]),
+    ("U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 201..300]", ["python3", "code/U111_kraus_sieve_p201_p300.py"]),
+    ("U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 200..300)", ["python3", "code/U111_cyclotomic_p200_p300.py"]),
+    ("U111: Universal Serre Uniformity & Cartan Elimination for All Signatures", ["python3", "code/U111_general_cartan_elimination.py"]),
+    ("U111: Multi-Prime Simultaneous Sieve for Signature (2, 3, 11)", ["python3", "code/U111_signature_2_3_11_simultaneous_sieve.py"]),
+    ("U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 301..400]", ["python3", "code/U111_kraus_sieve_p301_p400.py"]),
+    ("U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 300..400)", ["python3", "code/U111_cyclotomic_p300_p400.py"]),
+    ("U111: Signature (2, 4, n) Full Resolution for all n >= 4", ["python3", "code/U111_signature_2_4_n_lucas_lehmer.py"]),
+    ("U111: Universal Borel Subgroup Elimination & Full Galois Surjectivity", ["python3", "code/U111_universal_borel_elimination.py"]),
+    ("U111: Frey Conductor 288 & 576 Elimination for p in [17..37]", ["python3", "code/U111_conductor_288_576_audit.py"]),
+    ("U111: Formal Immersion Order-16 Obstruction at Infinity for (2, 3, 13)", ["python3", "code/U111_formal_immersion_13.py"]),
+    ("U111: Matveev 3-Variable Linear Forms in Logarithms Bounds", ["python3", "code/U111_matveev_3variable_logarithms.py"]),
+    ("U111: Modular Curve X_{E_0}(17) Genus 133 & Automorphism Audit", ["python3", "code/U111_automorphism_twisted_17.py"]),
+    ("U111: Signature (2, 3, 11) Deep Sieve & Diophantine Search", ["python3", "code/U111_signature_2_3_11_deep_search.py"]),
+    ("U111: PARI/GP X_0(17) Selmer & 2-Descent Field of Degree 36", ["/opt/homebrew/bin/gp", "-q", "code/U111_x0_17_selmer_degree36.gp"]),
 ]
 
 def main():

@@ -1,0 +1,416 @@
+{
+  "unit": "U111",
+  "title": "Matveev (2000) 3-Variable Linear Forms in Logarithms Bounds",
+  "constants": {
+    "Matveev_2000_C3_1": 143186215390.58847,
+    "Matveev_algebraic_closed_form": "82668600000 * sqrt(3)",
+    "Mignotte_2008_effective_C": 477287.3846352949,
+    "Bugeaud_2014_effective_C": 190914.95385411795,
+    "Laurent_2008_base_factor": 1973.475,
+    "sharpening_ratio_Mignotte_vs_Matveev": 300000.0,
+    "sharpening_ratio_Laurent_vs_Matveev": 72555373.33
+  },
+  "candidate_evaluations": [
+    {
+      "label": "Canonical Near-Miss 1 (13, 7, 2)",
+      "A": 13,
+      "B": 7,
+      "C": 2,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 3248115632191.7,
+        "y_max": 4281416645982.1,
+        "z_max": 12019456094477.1,
+        "min_exp": 3248115632191.7,
+        "max_exp": 12019456094477.1
+      },
+      "mignotte_2008": {
+        "y_max": 8235209.1,
+        "max_exp": 23119154.8
+      },
+      "bugeaud_2014": {
+        "y_max": 3115780.1,
+        "max_exp": 8747100.6
+      },
+      "laurent_2008": {
+        "y_max": 2735.8,
+        "max_exp": 7680.4
+      }
+    },
+    {
+      "label": "Canonical Near-Miss 2 (3, 10, 7)",
+      "A": 3,
+      "B": 10,
+      "C": 7,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 25810324255345.9,
+        "y_max": 12314654293432.0,
+        "z_max": 14571864695395.9,
+        "min_exp": 12314654293432.0,
+        "max_exp": 25810324255345.9
+      },
+      "mignotte_2008": {
+        "y_max": 24126839.6,
+        "max_exp": 50567522.1
+      },
+      "bugeaud_2014": {
+        "y_max": 9151477.3,
+        "max_exp": 19180611.2
+      },
+      "laurent_2008": {
+        "y_max": 7680.4,
+        "max_exp": 16097.4
+      }
+    },
+    {
+      "label": "Canonical Near-Miss 3 (2, 7, 3)",
+      "A": 2,
+      "B": 7,
+      "C": 3,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 19341634561862.0,
+        "y_max": 6889629241352.2,
+        "z_max": 12203212727784.8,
+        "min_exp": 6889629241352.2,
+        "max_exp": 19341634561862.0
+      },
+      "mignotte_2008": {
+        "y_max": 13406748.9,
+        "max_exp": 37637502.6
+      },
+      "bugeaud_2014": {
+        "y_max": 5080561.1,
+        "max_exp": 14262938.3
+      },
+      "laurent_2008": {
+        "y_max": 4336.2,
+        "max_exp": 12173.2
+      }
+    },
+    {
+      "label": "Canonical Near-Miss 4 (17, 2, 71)",
+      "A": 17,
+      "B": 2,
+      "C": 71,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 6609205318968.1,
+        "y_max": 27014881151476.2,
+        "z_max": 4392844230260.3,
+        "min_exp": 4392844230260.3,
+        "max_exp": 27014881151476.2
+      },
+      "mignotte_2008": {
+        "y_max": 52983505.2,
+        "max_exp": 52983505.2
+      },
+      "bugeaud_2014": {
+        "y_max": 20099896.3,
+        "max_exp": 20099896.3
+      },
+      "laurent_2008": {
+        "y_max": 16824.6,
+        "max_exp": 16824.6
+      }
+    },
+    {
+      "label": "Catalan Boundary (3, 2, 1)",
+      "A": 3,
+      "B": 2,
+      "C": 2,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 2608636281914.8,
+        "y_max": 4134590684855.7,
+        "z_max": 4134590684855.7,
+        "min_exp": 2608636281914.8,
+        "max_exp": 4134590684855.7
+      },
+      "mignotte_2008": {
+        "y_max": 7732931.5,
+        "max_exp": 7732931.5
+      },
+      "bugeaud_2014": {
+        "y_max": 2914140.0,
+        "max_exp": 2914140.0
+      },
+      "laurent_2008": {
+        "y_max": 2735.8,
+        "max_exp": 2735.8
+      }
+    },
+    {
+      "label": "Small Coprime (2, 3, 5)",
+      "A": 2,
+      "B": 3,
+      "C": 5,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 15897943751871.8,
+        "y_max": 10030485733661.4,
+        "z_max": 6846871695500.6,
+        "min_exp": 6846871695500.6,
+        "max_exp": 15897943751871.8
+      },
+      "mignotte_2008": {
+        "y_max": 19426709.1,
+        "max_exp": 30790605.4
+      },
+      "bugeaud_2014": {
+        "y_max": 7357081.9,
+        "max_exp": 11660698.9
+      },
+      "laurent_2008": {
+        "y_max": 6352.4,
+        "max_exp": 10068.3
+      }
+    },
+    {
+      "label": "Small Coprime (3, 5, 7)",
+      "A": 3,
+      "B": 5,
+      "C": 7,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 17831378937629.3,
+        "y_max": 12171809719052.7,
+        "z_max": 10067151370934.3,
+        "min_exp": 10067151370934.3,
+        "max_exp": 17831378937629.3
+      },
+      "mignotte_2008": {
+        "y_max": 23639436.4,
+        "max_exp": 34631148.4
+      },
+      "bugeaud_2014": {
+        "y_max": 8955901.1,
+        "max_exp": 13120157.9
+      },
+      "laurent_2008": {
+        "y_max": 7680.4,
+        "max_exp": 11251.6
+      }
+    },
+    {
+      "label": "Small Coprime (5, 7, 12)",
+      "A": 5,
+      "B": 7,
+      "C": 12,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 18825121520017.9,
+        "y_max": 15570022231090.5,
+        "z_max": 12192757536014.7,
+        "min_exp": 12192757536014.7,
+        "max_exp": 18825121520017.9
+      },
+      "mignotte_2008": {
+        "y_max": 30278615.4,
+        "max_exp": 36608721.9
+      },
+      "bugeaud_2014": {
+        "y_max": 11473230.4,
+        "max_exp": 13871846.3
+      },
+      "laurent_2008": {
+        "y_max": 9807.8,
+        "max_exp": 11858.2
+      }
+    },
+    {
+      "label": "Small Coprime (7, 11, 13)",
+      "A": 7,
+      "B": 11,
+      "C": 13,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 19837430230254.2,
+        "y_max": 16098224661488.1,
+        "z_max": 15049753985954.6,
+        "min_exp": 15049753985954.6,
+        "max_exp": 19837430230254.2
+      },
+      "mignotte_2008": {
+        "y_max": 31344950.6,
+        "max_exp": 38625580.4
+      },
+      "bugeaud_2014": {
+        "y_max": 11879322.8,
+        "max_exp": 14638585.5
+      },
+      "laurent_2008": {
+        "y_max": 10123.7,
+        "max_exp": 12475.2
+      }
+    },
+    {
+      "label": "Small Coprime (11, 13, 17)",
+      "A": 11,
+      "B": 13,
+      "C": 17,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 18994606969920.5,
+        "y_max": 17757496119499.2,
+        "z_max": 16076120196662.3,
+        "min_exp": 16076120196662.3,
+        "max_exp": 18994606969920.5
+      },
+      "mignotte_2008": {
+        "y_max": 34539940.1,
+        "max_exp": 36946232.9
+      },
+      "bugeaud_2014": {
+        "y_max": 13088324.3,
+        "max_exp": 14000148.1
+      },
+      "laurent_2008": {
+        "y_max": 11182.6,
+        "max_exp": 11961.6
+      }
+    },
+    {
+      "label": "Boundary Horizon M = 1,000",
+      "A": 1000,
+      "B": 1000,
+      "C": 1000,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 44461301453893.1,
+        "y_max": 44461301453893.1,
+        "z_max": 44461301453893.1,
+        "min_exp": 44461301453893.1,
+        "max_exp": 44461301453893.1
+      },
+      "mignotte_2008": {
+        "y_max": 88189547.9,
+        "max_exp": 88189547.9
+      },
+      "bugeaud_2014": {
+        "y_max": 33506547.8,
+        "max_exp": 33506547.8
+      },
+      "laurent_2008": {
+        "y_max": 27264.6,
+        "max_exp": 27264.6
+      }
+    },
+    {
+      "label": "Boundary Horizon M = 10,000",
+      "A": 10000,
+      "B": 10000,
+      "C": 10000,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 59824343921624.3,
+        "y_max": 59824343921624.3,
+        "z_max": 59824343921624.3,
+        "min_exp": 59824343921624.3,
+        "max_exp": 59824343921624.3
+      },
+      "mignotte_2008": {
+        "y_max": 119434275.4,
+        "max_exp": 119434275.4
+      },
+      "bugeaud_2014": {
+        "y_max": 45416785.7,
+        "max_exp": 45416785.7
+      },
+      "laurent_2008": {
+        "y_max": 36352.8,
+        "max_exp": 36352.8
+      }
+    },
+    {
+      "label": "HPC Search Limit M = 80,000",
+      "A": 80000,
+      "B": 80000,
+      "C": 80000,
+      "empirical_tested": true,
+      "matveev_2000": {
+        "x_max": 73801572694754.7,
+        "y_max": 73801572694754.7,
+        "z_max": 73801572694754.7,
+        "min_exp": 73801572694754.7,
+        "max_exp": 73801572694754.7
+      },
+      "mignotte_2008": {
+        "y_max": 148001225.1,
+        "max_exp": 148001225.1
+      },
+      "bugeaud_2014": {
+        "y_max": 56313208.8,
+        "max_exp": 56313208.8
+      },
+      "laurent_2008": {
+        "y_max": 44560.2,
+        "max_exp": 44560.2
+      }
+    },
+    {
+      "label": "Scaling Target M = 100,000",
+      "A": 100000,
+      "B": 100000,
+      "C": 100000,
+      "empirical_tested": false,
+      "matveev_2000": {
+        "x_max": 75306396155243.1,
+        "y_max": 75306396155243.1,
+        "z_max": 75306396155243.1,
+        "min_exp": 75306396155243.1,
+        "max_exp": 75306396155243.1
+      },
+      "mignotte_2008": {
+        "y_max": 151083498.4,
+        "max_exp": 151083498.4
+      },
+      "bugeaud_2014": {
+        "y_max": 57489222.2,
+        "max_exp": 57489222.2
+      },
+      "laurent_2008": {
+        "y_max": 45440.9,
+        "max_exp": 45440.9
+      }
+    },
+    {
+      "label": "Megabase Horizon M = 1,000,000",
+      "A": 1000000,
+      "B": 1000000,
+      "C": 1000000,
+      "empirical_tested": false,
+      "matveev_2000": {
+        "x_max": 90883267766776.1,
+        "y_max": 90883267766776.0,
+        "z_max": 90883267766776.1,
+        "min_exp": 90883267766776.0,
+        "max_exp": 90883267766776.1
+      },
+      "mignotte_2008": {
+        "y_max": 183054878.5,
+        "max_exp": 183054878.5
+      },
+      "bugeaud_2014": {
+        "y_max": 69690832.7,
+        "max_exp": 69690832.7
+      },
+      "laurent_2008": {
+        "y_max": 54529.1,
+        "max_exp": 54529.1
+      }
+    }
+  ],
+  "empirical_search_calibration": {
+    "current_base_reach": 80000,
+    "scaling_target_base": 100000,
+    "empirical_min_exp_lower_bound": 20,
+    "matveev_max_exp_at_80k": 73802000000000.0,
+    "mignotte_max_exp_at_80k": 148000000.0,
+    "laurent_max_exp_at_80k": 44560.2,
+    "unresolved_window_laurent": "20 <= p <= 44560",
+    "unresolved_window_mignotte": "20 <= p <= 1.48e8",
+    "unresolved_window_matveev": "20 <= p <= 7.38e13"
+  }
+}

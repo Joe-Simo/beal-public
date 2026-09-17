@@ -1,0 +1,342 @@
+{
+  "status": "PASS",
+  "description": "Deep sieve search for signature (2, 3, 11) in box |A|<=100k, |B|<=5k",
+  "a_bound": 100000,
+  "b_bound": 5000,
+  "total_pairs_tested": 2000210001,
+  "primes": [
+    5,
+    7,
+    13,
+    17,
+    19,
+    23
+  ],
+  "modulus_M": 3380195,
+  "all_box_solutions": [
+    [
+      -3,
+      -2,
+      1
+    ],
+    [
+      -1,
+      -1,
+      0
+    ],
+    [
+      -1,
+      0,
+      1
+    ],
+    [
+      0,
+      -1,
+      -1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      3,
+      -2,
+      1
+    ]
+  ],
+  "sieve_form_results": {
+    "E_cat (Catalan)": {
+      "surviving_b_count": 122,
+      "surviving_pairs_count": 166,
+      "solutions": [
+        [
+          3,
+          -2,
+          1
+        ]
+      ],
+      "first_few_pairs": [
+        [
+          81882,
+          -4957
+        ],
+        [
+          24198,
+          -4957
+        ],
+        [
+          -60390,
+          -4937
+        ],
+        [
+          6908,
+          -4937
+        ],
+        [
+          43473,
+          -4832
+        ]
+      ]
+    },
+    "288a1 (Trivial 0, 1)": {
+      "surviving_b_count": 109,
+      "surviving_pairs_count": 79,
+      "solutions": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "first_few_pairs": [
+        [
+          -17290,
+          -4939
+        ],
+        [
+          17290,
+          -4939
+        ],
+        [
+          28245,
+          -4439
+        ],
+        [
+          -28245,
+          -4439
+        ],
+        [
+          -84595,
+          -4209
+        ]
+      ]
+    },
+    "27a1 (Trivial 1, 0)": {
+      "surviving_b_count": 56,
+      "surviving_pairs_count": 259,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          -20999,
+          -4760
+        ],
+        [
+          -6509,
+          -4760
+        ],
+        [
+          77211,
+          -4760
+        ],
+        [
+          -27439,
+          -4760
+        ],
+        [
+          45977,
+          -4760
+        ]
+      ]
+    },
+    "864a1": {
+      "surviving_b_count": 61,
+      "surviving_pairs_count": 204,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          98603,
+          -4911
+        ],
+        [
+          59503,
+          -4911
+        ],
+        [
+          -40363,
+          -4796
+        ],
+        [
+          36688,
+          -4671
+        ],
+        [
+          -20122,
+          -4671
+        ]
+      ]
+    },
+    "864b1 (Catalan twist)": {
+      "surviving_b_count": 120,
+      "surviving_pairs_count": 153,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          99501,
+          -4993
+        ],
+        [
+          -78415,
+          -4988
+        ],
+        [
+          50480,
+          -4923
+        ],
+        [
+          -10700,
+          -4923
+        ],
+        [
+          -16381,
+          -4923
+        ]
+      ]
+    },
+    "864c1": {
+      "surviving_b_count": 75,
+      "surviving_pairs_count": 85,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          -20623,
+          -4942
+        ],
+        [
+          73835,
+          -4877
+        ],
+        [
+          -49330,
+          -4877
+        ],
+        [
+          21832,
+          -4877
+        ],
+        [
+          2673,
+          -4877
+        ]
+      ]
+    },
+    "432_1": {
+      "surviving_b_count": 29,
+      "surviving_pairs_count": 45,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          -27940,
+          -4911
+        ],
+        [
+          -89305,
+          -4776
+        ],
+        [
+          59275,
+          -4776
+        ],
+        [
+          54335,
+          -4656
+        ],
+        [
+          -23535,
+          -3256
+        ]
+      ]
+    },
+    "432_2": {
+      "surviving_b_count": 97,
+      "surviving_pairs_count": 117,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          -7064,
+          -4947
+        ],
+        [
+          -90784,
+          -4947
+        ],
+        [
+          58141,
+          -4947
+        ],
+        [
+          -98834,
+          -4947
+        ],
+        [
+          -36044,
+          -4947
+        ]
+      ]
+    },
+    "432_7 (CM)": {
+      "surviving_b_count": 56,
+      "surviving_pairs_count": 259,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          14881,
+          -4760
+        ],
+        [
+          92161,
+          -4760
+        ],
+        [
+          8441,
+          -4760
+        ],
+        [
+          81857,
+          -4760
+        ],
+        [
+          -64653,
+          -4760
+        ]
+      ]
+    },
+    "432_8 (CM)": {
+      "surviving_b_count": 11,
+      "surviving_pairs_count": 19,
+      "solutions": [],
+      "first_few_pairs": [
+        [
+          95541,
+          -3220
+        ],
+        [
+          -34407,
+          -3220
+        ],
+        [
+          24379,
+          -3220
+        ],
+        [
+          93133,
+          -2800
+        ],
+        [
+          31953,
+          -2800
+        ]
+      ]
+    }
+  }
+}

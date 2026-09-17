@@ -169,6 +169,8 @@ The exact CLI command executed to produce the $A \in [80001, 100000]$ certificat
 1. **Conclusion**:
    - The milestone of scanning up to base $A = 100,000$ is completed with 100% mathematical integrity and arbitrary-precision certainty.
    - Exact zero counterexamples exist for $A \le 100,000$ and $x, y, z \in \{3, 5, 7, 11, 13, 17, 19\}$.
-2. **Next Recommended Horizons**:
-   - **Scale Expansion**: Partition and distribute base range $A \in [100001, 250000]$.
+2. **Subsequent Extensions**:
+   - See [`research/checkpoints/U111_empirical_search_milestone_120k.md`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U111_empirical_search_milestone_120k.md) for extension through $A \le 120,000$ ($13,651,983,773$ candidate pairs, 0 counterexamples).
+3. **Next Recommended Horizons**:
+   - **Scale Expansion**: Partition and distribute base range $A \in [120001, 250000]$.
    - **Exponent Depth**: Extend exponent search to $p \le 50$ (covering primes $23, 29, 31, 37, 41, 43, 47$) on partitioned base windows.
