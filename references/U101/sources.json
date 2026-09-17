@@ -1,0 +1,89 @@
+{
+  "research_date": "2026-09-17",
+  "checkpoint": "U101",
+  "topic": "Breuil--Diamond (2014) Theorem 3.2.2 local lift bridge completion",
+  "primary_sources": [
+    {
+      "authors": ["Christophe Breuil", "Fred Diamond"],
+      "title": "Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caracteres galoisiens",
+      "publication": "Ann. Sci. ENS 47 (2014), 905-974",
+      "doi": "10.24033/asens.2230",
+      "locator": "Theoreme 3.2.2, pp. 36-37",
+      "relevance": "Existence of global Hilbert modular lift given local characteristic-zero lifts satisfying conditions (i)-(v) on finite set S"
+    },
+    {
+      "authors": ["Martin Azon"],
+      "title": "Effective Darmon's program for the generalised Fermat equation",
+      "identifier": "arXiv:2504.01967v2",
+      "publication_date": "2025-07-03",
+      "locator": "Proposition 3.22, Theorem 5.11 (Table 2), Theorem 5.21",
+      "relevance": "Frey curve model, valuation formulas, residual unramifiedness away from level, and finite flatness at p=17"
+    },
+    {
+      "authors": ["Jean-Marc Fontaine", "Guy Laffaille"],
+      "title": "Construction de representations p-adiques",
+      "publication": "Ann. Sci. ENS 15 (1982), 547-608",
+      "relevance": "Equivalence between finite flat group schemes and filtered Dieudonne modules in the range e < p - 1"
+    },
+    {
+      "authors": ["Mark Kisin"],
+      "title": "Potentially semi-stable deformation rings",
+      "publication": "J. Amer. Math. Soc. 21 (2008), 513-546",
+      "relevance": "Formal smoothness and non-emptiness of crystalline deformation rings with Hodge--Tate weights {0, 1}"
+    },
+    {
+      "authors": ["Pierre Deligne"],
+      "title": "Les constantes des equations fonctionnelles des fonctions L",
+      "publication": "LNM 349, Springer, 1973",
+      "locator": "Section 8",
+      "relevance": "Weil--Deligne representations away from residue characteristic and Maschke lifting"
+    }
+  ],
+  "local_places_certified": {
+    "p_2": {
+      "ideal": "(2)",
+      "base_field_completion": "Q_2(sqrt(5)), unramified quadratic over Q_2 (e=1, f=2)",
+      "inertia_group": "C_5 (tame, order 5)",
+      "local_galois_group": "D_5 (order 10)",
+      "monodromy": "N = 0",
+      "artin_conductor_exponent": 2,
+      "determinant_on_inertia": 1,
+      "deformation_ring": "R_p2^{tau, psi} isomorphic to O (smooth, relative dim 0)",
+      "status": "UNCONDITIONALLY DISCHARGED"
+    },
+    "p_5": {
+      "ideal": "(sqrt(5))",
+      "base_field_completion": "Q_5(sqrt(5)), ramified quadratic over Q_5 (e=2, f=1)",
+      "inertia_group": "D_5 (order 10, wild C_5, tame C_2)",
+      "local_galois_group": "D_5 (order 10, totally ramified e=10, f=1)",
+      "monodromy": "N = 0",
+      "artin_conductor_exponent": 3,
+      "determinant_on_inertia": 1,
+      "deformation_ring": "R_p5^{tau, psi} isomorphic to O (smooth, relative dim 0)",
+      "status": "UNCONDITIONALLY DISCHARGED (in U98)"
+    },
+    "p_17": {
+      "ideal": "(17)",
+      "base_field_completion": "Q_17(sqrt(5)), unramified quadratic over Q_17 (e=1, f=2)",
+      "fontaine_laffaille_condition": "e = 1 < p - 1 = 16 (satisfied)",
+      "reduction_type": "good supersingular reduction (charpoly T^4 + 289, slope 1/2)",
+      "potential_ordinarity_set": "T = empty_set (strictly non-ordinary)",
+      "hodge_tate_weights": "{0, 1} for every embedding",
+      "monodromy": "N = 0",
+      "deformation_ring": "R_p17^{cris, {0,1}, psi} non-empty and formally smooth",
+      "status": "UNCONDITIONALLY DISCHARGED"
+    }
+  },
+  "ramification_audit": {
+    "discriminant": "Delta(f) = 2^24 * 5^5 * Z^68",
+    "primes_dividing_Z_away_from_17": "nu_q = 34 v_q(Z) = 0 mod 17 => Tate extension splits, inertia unramified",
+    "primes_dividing_UV_away_from_10": "v_q(Delta(f)) = 0 => good reduction, strictly unramified",
+    "all_other_primes": "v_q(Delta(f)) = 0 => good reduction, strictly unramified",
+    "ramified_set_S": ["p_2", "p_5", "p_17"]
+  },
+  "level_ideal": {
+    "formula": "p_2^2 * p_5^3 = (2)^2 * (sqrt(5))^3 = (20*sqrt(5))",
+    "norm": 2000,
+    "lmfdb_label": "2.2.5.1-2000.1"
+  }
+}

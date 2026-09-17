@@ -114,6 +114,7 @@ U32 established that those files do not directly cover the weighted Beal equatio
 - `modular-method/U41_weighted_level2000_q11_elimination.md`
 - `checkpoints/U48...` through `U56...` — independent coefficient-2 descent archive, now superseded for branch elimination
 - `checkpoints/U57_coefficient2_closed_by_freitas_dieulefait.md` — authoritative coefficient-2 closure and literature correction
+- `checkpoints/U100_all_even_17_does_not_divide_t_boundary_p19.md` — boundary case p=19, Frey representations, effective bounds, and coverage ledger for 17 ∤ t
 
 ## Conventions
 
