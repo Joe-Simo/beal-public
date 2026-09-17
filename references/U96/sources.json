@@ -1,0 +1,30 @@
+{
+  "checkpoint": "U96",
+  "research_date": "2026-09-17",
+  "target_question": "Does Azon's preprint provide an independent level-lowering theorem that bypasses Breuil-Diamond local-lift verification?",
+  "azon_paper": {
+    "author": "Martin Azon",
+    "title": "Effective Darmon's program for the generalised Fermat equation",
+    "identifier": "arXiv:2504.01967v2",
+    "version_date": "2025-07-03",
+    "locations_audited": [
+      "Definition 5.22: definition of n_{tor, not= 0 (p)}",
+      "Hypothesis 5: prime q' with nu_{q'} < 0, nu_{q'} not= 0 mod r, and even order mod r",
+      "Theorem 5.23: level-lowering theorem under Hypothesis 5",
+      "Proof of Theorem 5.23: directly invokes Breuil-Diamond [BD14] Theorem 3.2.2 and BCDF25 Theorem 7.5"
+    ],
+    "findings": [
+      "Theorem 5.22 referenced in the paper overview corresponds to Definition 5.22 / Theorem 5.23 in the text.",
+      "Theorem 5.23 explicitly assumes Hypothesis 5.",
+      "For the weighted equation X^10 + 256Y^10 = Z^17, nu_q = 34*v_q(Z) - 5*v_q(UV). For every q dividing UV away from 10, nu_q is a negative multiple of 5, so nu_q mod 5 is identically 0.",
+      "Hence Hypothesis 5 fails identically for the weighted equation.",
+      "The proof of Theorem 5.23 does not develop an internal level-lowering mechanism; it cites Breuil-Diamond Theorem 3.2.2 directly.",
+      "Conclusion: Azon's work does not provide a shortcut around Breuil-Diamond Theorem 3.2.2 local-lift requirements."
+    ]
+  },
+  "upstream": {
+    "U64": "research/checkpoints/U64_weighted_eisenstein_and_Hecke_rebuild.md",
+    "U94": "research/checkpoints/U94_Breuil_Diamond_local_lift_obligations.md",
+    "U95": "research/checkpoints/U95_prime5_lift_route_audit.md"
+  }
+}
