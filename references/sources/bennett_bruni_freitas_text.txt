@@ -1,0 +1,2630 @@
+=== PAGE 1 ===
+arXiv:1702.07827v1  [math.NT]  25 Feb 2017
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS,
+REVISITED
+MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+Abstract. In this paper, we sharpen earlier work of the ﬁrst author, Luc a
+and Mulholland [4], showing that the Diophantine equation
+A3 + B3 = qα Cp, ABC ⁄= 0, gcd(A, B) = 1 ,
+has, for “most” primes q and suitably large prime exponents p, no solutions. W e
+handle a number of (presumably inﬁnite) families where no su ch conclusion was
+hitherto known. Through further application of certain symplectic criteria, we
+are able to make some conditional statements about still mor e values of q; a
+sample such result is that, for all but O(√x/ log x) primes q up to x, the
+equation
+A3 + B3 = qC p.
+has no solutions in coprime, nonzero integers A, B and C, for a positive pro-
+portion of prime exponents p.
+1. Introduction
+The problem of classifying perfect powers that are represen table as a sum of two
+coprime integer cubes has a long history. The nonexistence o f cubes C3 > 1 with
+this property, a special case of Fermat’s Last Theorem, was e ssentially proven by
+Euler. For higher powers, we have a substantial amount of rec ent work; at the time
+of writing, this can be summarized in the following theorem.
+Theorem 1.1 (Bruin [6], Chen-Siksek [8], Dahmen [10], Freitas [12], Kra us [19]) .
+There are no solutions in relatively prime nonzero integers A, B and C to the equa-
+tion
+(1.1) A3 + B3 = Cn
+with exponent n satisfying one of
+3 ≤ n ≤ 109, n ≡ 2 (mod 3), n ≡ 2, 3 (mod 5),
+n ≡ 61 (mod 78), n ≡ 51, 103, 105 (mod 106), or
+n ≡ 43, 49, 61, 79, 97, 151, 157, 169, 187, 205, 259, 265, 277,
+295, 313, 367, 373, 385, 403, 421, 475, 481, 493, 511, 529,
+583, 601, 619, 637, 691, 697, 709, 727, 745, 799, 805, 817, 835,
+853, 907, 913, 925, 943, 961, 1015, 1021, 1033, 1051, 1069, 1123,
+1129, 1141, 1159, 1177, 1231, 1237, 1249, 1267, 1285 (mod 1296).
+The ﬁrst author was supported in part by a grant from NSERC.
+The third author was supported in part by the grant Proyecto RSME-FBBV A 2015 José Luis
+Rubio de Francia .
+1
+=== PAGE 2 ===
+2 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+Underlying each of these results is an appeal to a particular Frey-Hellegouarch
+elliptic curve, deﬁned over Q. Just as in the case of Fermat’s Last Theorem, with
+analogous equation An + Bn = Cn, this curve corresponds to a particular weight
+2, cuspidal newform f . In the latter case, Wiles [27] showed that f necessarily has
+level 2 (whereby the absence of such newforms implies an immediate c ontradiction).
+In the case of equation (1.1), however, one ﬁnds a correspond ing f at one of levels
+18, 36 or 72. The ﬁrst two of these are readily handled, but the last is not . The
+obstruction to completely resolving equation (1.1) is the e xistence of a particular
+elliptic curve over Q with conductor 72 which, on some level, “mimics” a solution
+to (1.1) (the curve in question is labelled 72A1 in Cremona’s tables [9])
+In an earlier paper [4], the ﬁrst author, joint with Luca and M ulholland, con-
+sidered a modiﬁcation of equation (1.1), where the right-ha nd-side is replaced by a
+“twisted” version of the shape qαCp, for q prime (the replacement of the exponent
+n with a prime one p is without loss of generality). The question the authors of
+[4] wished to answer was whether or not a similar obstruction exists in this new
+situation. Here and henceforth, let us assume that we have a p roper, nontrivial
+solution (a, b, c) of the equation
+(1.2) A3 + B3 = qαCp,
+i.e. a solution with A, B and C nonzero, coprime integers and α a positive integer.
+Write S for the set of primes q ≥ 5 for which there exists an elliptic curve E/Q
+with conductor N (E) ∈ {18q, 36q, 72q} and at least one nontrivial rational 2-torsion
+point. The two main results of [4] are the following :
+Theorem 1.2 (B., Luca, Mulholland [4]) . If p and q ≥ 5 are primes with p ≥ q2q
+such that there exist coprime, nonzero integers A, B and C, and a positive integer
+α, satisfying equation (1.2), then q ∈ S.
+Theorem 1.3 (B., Luca, Mulholland [4]) . Let πS(x) = # {q ≤ x : q ∈ S}. Then
+(1.3) πS(x) ≪ √x log2(x).
+This latter result may be reasonably easily sharpened, thro ugh sieve methods,
+but, even as stated, demonstrates that πS(x) = o(π(x)) and hence that we may
+“solve” equation (1.2) for “almost all” primes q (i.e. for almost all primes, there is
+no analogous obstruction to that provided by the curve 72A1 for equation (1.1)).
+Our goal in the paper at hand is to improve this result by treat ing equation
+(1.2) for a signiﬁcant number of the primes in S. We begin by deﬁning S0 to be
+the subset of S consisting of those primes q ≥ 5 for which there exists an elliptic
+curve E/Q with conductor N (E) ∈ { 18q, 36q, 72q}, nontrivial rational 2-torsion
+and the additional property that discriminant ∆( E) = T 2 or ∆( E) = −3T 2 for
+some integer T . The ﬁrst main result of this paper is the following sharpeni ng of
+Theorem 1.2.
+Theorem 1.4. If p and q ≥ 5 are primes with p ≥ q2q such that there exist
+coprime, nonzero integers A, B and C, and a positive integer α, satisfying equation
+(1.2), then q ∈ S0.
+It is by no means clear that the set S0 is appreciably “smaller” than S. In fact,
+our expectation is that their counting functions satisfy
+πS(x) ∼ c1
+√x log x and πS0(x) ∼ c2
+√x log x,
+=== PAGE 3 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 3
+for positive constants c1 and c2, where c2 < c 1. A cursory check of Cremona’s
+elliptic curve database [9] reveals that the primes 5 ≤ q < 1000 lying outside S are
+precisely
+q = 197 , 317, 439, 557, 653, 677, 701, 773, 797 and 821,
+while, in the same range, the primes in S but not S0 are
+q = 53, 83, 149, 167, 173, 199, 223, 227, 233, 263, 281, 293, 311, 347, 353, 359, 389,
+401, 419, 443, 449, 461, 467, 479, 487, 491, 563, 569, 571, 587, 599, 617, 641, 643,
+659, 719, 727, 739, 743, 751, 809, 811, 823, 827, 829, 839, 859, 881, 887, 907, 911,
+929, 941, 947, 953, 977 and 983.
+It is, in fact, possible to give a much more concrete characte rization of S0. Let us
+deﬁne sets
+S1 =
+{
+q prime : q = 2 a3b ± 1, a ∈ {2, 3} or a ≥ 5, b ≥ 0
+}
+,
+S2 =
+{
+q prime : q =
+⏐⏐2a ± 3b⏐⏐, a ∈ {2, 3} or a ≥ 5, b ≥ 1
+}
+,
+S3 =
+{
+q prime : q = 2a + 1
+3 , a ≥ 5 odd
+}
+,
+S4 =
+{
+q prime : q = d2 + 2a3b, a ∈ {2, 4} or a ≥ 8 even, b odd
+}
+,
+S5 =
+{
+q prime : q = 3d2 + 2a, a ∈ {2, 4} or a ≥ 8 even
+}
+,
+S6 =
+{
+q prime : q = d2 + 3b
+4 , d and b odd
+}
+,
+S7 =
+{
+q prime : q = 3d2 + 1
+4 , d odd
+}
+and
+S8 =
+{
+q prime : q = 3v2 − 1
+2 , u 2 − 3v2 = −2
+}
+.
+Here, a, b, u, v and d are integers.
+Proposition 1.5. We have
+S0 = S1 ∪ S2 ∪ S3 ∪ S4 ∪ S5 ∪ S6 ∪ S7 ∪ S8.
+An advantage of this characterization is that it makes it a ro utine matter to
+check if a given prime is in S0 (something that is far from being true for S). It
+also allows one to rather easily ﬁnd, via local conditions, s ets of primes outside S0;
+simply checking that S0 contains no primes which are simultaneously 5 (mod 8),
+2 (mod 3) and 3 (mod 5), yields that if q ≡ 53 (mod 120), then q ⁄∈S0. More
+generally, from Theorem 1.4, we deduce the following.
+Corollary 1.6. If p and q are primes with either q ≡ 53 (mod D1) for D1 ∈
+{96, 120, 144} or q ≡ 65 (mod D2) for D2 ∈ { 81, 84}, and p ≥ q2q, then there
+are no coprime, nonzero integers A, B and C, and positive integers α, satisfying
+equation (1.2).
+=== PAGE 4 ===
+4 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+For primes in S0, we are often still able to say something about solutions to ( 1.2),
+in many cases eliminating a positive proportion of the possi ble prime exponents p.
+Indeed, let us deﬁne
+T = S7 ∪
+{
+q prime : q = 3d2 + 16, d ∈ Z
+}
+,
+and, to simplify matters, suppose that α = 1 in (1.2), focussing our attention on
+the equation
+(1.4) A3 + B3 = q C p.
+We have the following.
+Theorem 1.7. If q is a prime with q ⁄∈T , then, for a positive proportion of primes
+p, there are no solutions to equation (1.4) in coprime nonzero integers A, B and C.
+We note that, deﬁning πT (x) to be the counting function for primes in T , it is
+not diﬃcult to show that
+πT (x) ≪
+√x
+log x ,
+whereby standard heuristics suggest that the set T is genuinely of smaller order
+than S0 (though, in point of fact, it would be remarkably diﬃcult to p rove that
+either set is even inﬁnite).
+As a sampling of more explicit work along these lines, we ment ion the following
+results for certain primes in S0 (see also Theorem 7.1 in Section 7).
+Theorem 1.8. Suppose that q = 2 a3b − 1 is prime, where a ≥ 5 and b ≥ 1
+integers. If p > q 2q is prime and there exists a positive integer α and coprime,
+nonzero integers A, B and C satisfying equation (1.2), then
+(α
+p
+)
+=
+(4 − a
+p
+)
+=
+(−6b
+p
+)
+.
+Theorem 1.9. If p is prime with p ≡ 13, 19 or 23 (mod 24), then there are no
+coprime, nonzero integers A, B and C satisfying
+(1.5) A3 + B3 = 5Cp.
+These results all follow from applying the modular method, t ogether with a
+somewhat elaborate blend of techniques from algebraic and a nalytic number theory,
+and Diophantine approximation, with a variety of symplectic criteria (see Section
+6) to equation (1.2). This last approach was developed initi ally by Halberstadt and
+Kraus [16] and has recently been reﬁned and generalized in th e work of the third
+author [12], jointly with Naskręcki and Stoll [15] and with K raus [13]. One of the
+justiﬁcations for the current paper is to provide a number of examples which, on
+some level, utilize the full power of these recently develop ed symplectic tools.
+As a ﬁnal comment, we note that it should be possible to apply t echniques based
+upon quadratic reciprocity, as in, say, work of Chen and Siks ek [8], to say something
+further about equation (1.2) for certain primes q and certain exponents. We will
+not undertake this here.
+The outline of this paper is as follows. In Section 2, we resta te a number of
+results from [4] pertaining to Frey-Hellegouarch curves th at we require in the sequel.
+In Section 3, we characterize isomorphism classes of ellipt ic curves over Q with
+nontrivial rational 2-torsion and conductor 18q, 36q or 72q, for q prime. Section 4
+contains the proof of Theorem 1.4. In Section 5, we make a numb er of remarks
+=== PAGE 5 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 5
+about the sets Si comprising S0. In Section 6, we apply several symplectic criteria
+to the Frey-Hellegouarch curve and the elliptic curves corr esponding to the primes
+in S0. In Section 7, we prove Theorems 1.7, 1.8 and 1.9 (and somewha t more
+besides). Section 8 is an appendix containing information o n the invariants c4(E)
+and c6(E) for elliptic curves of conductor 18q, 36q and 72q, corresponding to the
+primes in S.
+2. Frey-Hellegouarch cur ves
+Let us suppose that q ≥ 5 is prime, α is a positive integer, and that we have a
+solution to equation (1.2) in coprime nonzero integers A, B and C where, without
+loss of generality, AC is even and B ≡ (−1)C+1 (mod 4). Following Darmon and
+Granville [11], we associate to such a solution a Frey-Hellegouarch elliptic curve
+F = F (i)
+A,B of the shape
+F (0)
+A,B : y2 + xy = x3 + 3(B − A) + 2
+8 x2 + 3(A + B)2
+64 x + 9(B − A)(A + B)2
+512
+or
+F (1)
+A,B : y2 = x3 + 3ABx + B3 − A3,
+depending on whether C is even or odd, respectively. For future reference, we note
+that these are minimal models. The standard invariants c4(F ), c6(F ) and ∆( F )
+attached to F = F (i)
+A,B are
+(2.1)
+
+
+
+c4(F ) = −24i32AB,
+c6(F ) = 2 6i− 133(A3 − B3),
+∆( F ) = −212i− 833q2αC2p.
+Let R denote the product of the primes ℓ satisfying ℓ | C and ℓ ∤ 6q. A standard
+application of Tate’s algorithm leads to the following.
+Lemma 2.1. If F = F (i)
+A,B, then the conductor NF satisﬁes
+NF =
+
+
+
+18 q R if C even, B ≡ −1 (mod 4), or
+36 q R if C odd, v2(A) ≥ 2 and B ≡ 1 (mod 4), or
+72 q R if C odd, v2(A) = 1 and B ≡ 1 (mod 4).
+In particular, F has multiplicative reduction at the prime q.
+Arguing as in [4] and [19] we ﬁnd that, for p ≥ 17, there necessarily exists a new-
+form f ∈ S+
+2 (NF /R) (the space of weight 2 cuspidal newforms for the congruence
+subgroup Γ 0(NF /R)), whose Taylor expansion is
+f = q +
+∑
+m≥ 2
+am(f )qm where q = e2πit,
+and a place p of Q lying above p, such that
+(2.2) ρF,p ∼ ρf,p,
+where ρF,p and ρf,p denote, respectively, the mod p Galois representations attached
+to F and f . In particular, for all prime numbers ℓ ∤ pNF , we have
+aℓ(f ) ≡ aℓ(F ) (mod p),
+=== PAGE 6 ===
+6 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+where aℓ(F ) denotes the trace of Frobenius of F at the prime ℓ. Therefore,
+p | NormKf /Q(aℓ(f ) − aℓ(F )),(2.3)
+for Kf the ﬁeld of deﬁnition of the coeﬃcients of f . Furthermore, the level lowering
+condition implies
+(2.4) p | NormKf /Q(aℓ(f ) ± (ℓ + 1)),
+for each prime ℓ ⁄= p dividing R.
+From the arguments of [4], under the assumption that p > q 2p, we may con-
+clude that the form f has rational integer Fourier coeﬃcients am(f ) for all m ≥ 1,
+whereby f corresponds to an isogeny class of elliptic curves over Q with conductor
+N = 18 q, 36q or 72q, and further that the corresponding elliptic curve E has a
+rational 2-torsion point. This, in essence, is Theorem 1.2. To complet e the proof of
+Theorem 1.4, it remains to eliminate the possibility of the F rey-Hellegouarch curve
+F “arising mod p” from an elliptic curve E that fails to be isogenous to a curve with
+discriminant of the shape T 2 or −3T 2. To do this, we ﬁrst require a very precise
+characterization of elliptic curves of conductor N = 18q, 36q or 72q, with nontrivial
+rational 2-torsion.
+3. Classification results for primes of conductor 18q, 36q and 72q
+In this section, we will state theorems that provide an expli cit classiﬁcation
+for primes q of the corresponding isomorphism classes of elliptic curve s E/Q with
+conductor 18q, 36q or 72q and nontrivial rational 2-torsion. The following results
+are mild sharpenings and simpliﬁcations of special cases of Theorems 3.13, 3.14
+and 3.15 of Mulholland [21] (see also Theorems 4.0.8, 4.0.10 and 4.0.12 of [7]),
+where analogous results are derived more generally for elli ptic curves with nontrivial
+rational 2-torsion and conductor of the shape 2α3βqγ.
+Theorem 3.1. If q > 3 is prime, then there exists an elliptic curve E/Q of con-
+ductor 18q with at least one rational 2-torsion point precisely when either E is
+isogenous to one of (in Cremona’s notation)
+90a, 90b, 90c, 126a, 126b, 198b, 198c, 198d, 198e, 306a,
+306b, 306c, 342c, 342f, 414a, 1314a or 1314f,
+or E is Q-isomorphic to
+˜E : y2 + xy = x3 + a2x2 + a4x + a6
+and at least one of the following occurs:
+(1) There exist integers a ≥ 5 and b ≥ 0 such that
+q = 2 a3b + (−1)δ, for δ ∈ {0, 1},
+=== PAGE 7 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 7
+and ˜E is one of the following :
+curve a2 a4
+18q.1.a1 (−1)δ+12a− 13b+1 − 1 2a− 43b+2q
+18q.1.a2 (−1)δ+12a− 13b+1 − 1 −2a− 23b+2q
+18q.1.a3 (−1)δ+12a− 33b+1 − 1 22a− 832b+2
+18q.1.a4 (−1)δ2a− 23b+1 − 1 (−1)δ2a− 23b+2
+curve a6 ∆
+18q.1.a1 0 22a− 832b+6q2
+18q.1.a2 (−1)δ2a− 43b+3(
+2q − (−1)δ)
+q 2a− 43b+6q
+18q.1.a3 0 (−1)δ24a− 1634b+6q
+18q.1.a4 2a− 43b+3(q − 2(−1)δ) (−1)δ+12a− 43b+6q4
+(2) There exists an odd integer a ≥ 5 such that
+q = 2a + 1
+3
+and ˜E is one of the following :
+curve a2 a4
+18q.2.a1 −3 · 2a− 1 − 1 2a− 433q
+18q.2.a2 −3 · 2a− 1 − 1 −2a− 233q
+18q.2.a3 −3 · 2a− 3 − 1 22a− 832
+18q.2.a4 3 · 2a− 2 − 1 2a− 232
+curve a6 ∆
+18q.2.a1 0 22a− 838q2
+18q.2.a2 2a− 434(
+2a+1 + 1
+)
+q 2a− 437q
+18q.2.a3 0 24a− 1637q
+18q.2.a4 2a− 433 (2a − 1) −2a− 4310q4
+(3) There exist integers a ≥ 5 and b ≥ 1, and δ1, δ2 ∈ {0, 1} such that
+q = (−1)δ12a + (−1)δ23b
+and, writing δ = b + δ1 + δ2 + 1, ˜E is one of the following :
+curve a2 a4
+18q.3.a1 − 1
+4 + (−1)δ(
+3 · 2a− 2 + (−1)δ1 3q
+4 )
+)
+(−1)δ1 2a− 432q
+18q.3.a2 − 1
+4 + (−1)δ(
+3 · 2a− 2 + (−1)δ1 3q
+4 )
+)
+(−1)δ1+12a− 232q
+18q.3.a3 − 1
+4 + (−1)δ3 · 2a− 3 − (−1)b 3b+1
+4 22a− 832
+18q.3.a4 − 1
+4 + (−1)δ+1(
+3 · 2a− 1 + (−1)δ1+1 3q
+4 )
+)
+(−1)δ1+δ2 2a− 23b+2
+curve a6 ∆
+18q.3.a1 0 22a− 832b+6q2
+18q.3.a2 (−1)δ+δ1+133 · 2a− 4(2a+1 + (−1)δ1+δ2 3b)q 2a− 434b+6q
+18q.3.a3 0 (−1)δ2 24a− 163b+6q
+18q.3.a4 (−1)δ3b+3 · 2a− 4(3b + (−1)1+δ1+δ2 2a) (−1)b+δ2a− 43b+6q4
+=== PAGE 8 ===
+8 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+(4) There exist integers a ≥ 7, b ≥ 0, δ1, δ2 ∈ { 0, 1} and d ≡ 1 (mod 4) , such
+that (δ1, δ2) ⁄= (1 , 1) and, if we have a ≡ b ≡ 0 (mod 2) , then (δ1, δ2) =
+(0, 0), with
+q = (−1)δ1 d2 + (−1)δ22a3b,
+and ˜E is one of the following :
+curve a2 a4
+18q.4.a1 −
+(3d+1
+4
+)
+(−1)δ1+δ2+12a− 63b+2
+18q.4.a2 −
+(3d+1
+4
+)
+(−1)δ1+δ2 2a− 43b+2
+curve a6 ∆
+18q.4.a1 0 (−1)δ122a− 1232b+6q
+18q.4.a2 (−1)δ1+δ2+12a− 63b+3d (−1)δ1+δ2+12a− 63b+6q2
+(5) There exist integers a ≥ 7, δ1, δ2 ∈ { 0, 1} and d ≡ 1 (mod 4) , such that
+(δ1, δ2) ⁄= (1, 1),
+q = (−1)δ13d2 + (−1)δ22a,
+and ˜E is one of the following :
+curve a2 a4
+18q.5.a1 −
+(3d+1
+4
+)
+(−1)δ1+δ2+12a− 63
+18q.5.a2 −
+(3d+1
+4
+)
+(−1)δ1+δ22a− 43
+18q.5.b1 9d− 1
+4 (−1)δ1+δ2+12a− 633
+18q.5.b2 9d− 1
+4 (−1)δ1+δ2 2a− 433
+curve a6 ∆
+18q.5.a1 0 (−1)δ1 22a− 1233q
+18q.5.a2 (−1)δ1+δ2+12a− 632d (−1)δ1+δ2+12a− 633q2
+18q.5.b1 0 (−1)δ1 22a− 1239q
+18q.5.b2 (−1)δ1+δ22a− 635d (−1)δ1+δ2+12a− 639q2
+(6) There exist integers a ≥ 7, b ≥ 1 and d ≡ 1 (mod 4) , with a odd, such that
+q = d2 + 2a
+3b ,
+and ˜E is one of the following :
+curve a2 a4 a6 ∆
+18q. 6.a 1 −
+( 3d+1
+4
+)
+− 2a− 632 0 22a− 123b+6q
+18q. 6.a 2 −
+( 3d+1
+4
+)
+2a− 432 − 2a− 633d − 2a− 632b+6q2
+Theorem 3.2. If q > 3 is prime, then there exists an elliptic curve E/Q of con-
+ductor 36q with at least one rational 2-torsion point precisely when either E is
+isogenous to one of (in Cremona’s notation)
+180a, 252a or 468d,
+or E is Q-isomorphic to
+˜E : y2 = x3 + a2x2 + a4x
+=== PAGE 9 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 9
+and at least one of the following occurs:
+(1) There exist integers u and v with u ≡ v ≡ 1 (mod 4) and u2 − 3v2 = −2,
+such that
+q = 3v2 − 1
+2
+and ˜E is one of the following :
+curve a2 a4 ∆
+36q.1.a1 −3uv 3q2 −2433q4
+36q.1.a2 6uv −3 2833q2
+36q.1.b1 9uv 33q2 −2439q4
+36q.1.b2 −18uv −33 2839q2
+(2) There exists an integer d ≡ 1 (mod 8), such that
+q = 3d2 + 1
+4
+and ˜E is one of the following :
+curve a2 a4 ∆
+36q.2.a1 −3d 3q −2433q2
+36q.2.a2 6d −3 2833q
+36q.2.b1 9d 33q −2439q2
+36q.2.b2 −18d −33 2839q
+(3) There exists an odd integer b ≥ 1 and an integer d ≡ 1 (mod 4) such that
+q = d2 + 3b
+4 ≡ 3 (mod 4)
+and ˜E is one of the following :
+curve a2 a4 ∆
+36q.3.a1 −3d 32q −243b+6q2
+36q.3.a2 6d −3b+2 2832b+6q
+(4) There exist integers b ≥ 1, δ ∈ { 0, 1} and d ≡ 1 (mod 4) , such that b is
+odd, d ≡ 1 (mod 4),
+q = (−1)δ(
+d2 − 4 · 3b)
+and ˜E is one of the following :
+curve a2 a4 ∆
+36q.4.a1 −3d 3b+2 (−1)δ2432b+6q
+36q.4.a2 6d (−1)δ32q 283b+6q2
+(5) There exist integers b ≥ 1, δ ∈ {0, 1}, n ≥ 7 and d ≡ 1 (mod 4) , such that
+b is odd, every prime factor of n is at least 7,
+qn = (−1)δ(
+d2 − 4 · 3b)
+=== PAGE 10 ===
+10 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+and ˜E is one of the following :
+curve a2 a4 ∆
+36q.5.a1 −3d 3b+2 (−1)δ2432b+6qn
+36q.5.a2 6d (−1)δ32qn 283b+6q2n
+(6) There exists an integer d ≡ 1 (mod 4), such that
+q = 3d2 − 4
+and ˜E is one of the following :
+curve a2 a4 ∆
+36q.6.a1 −3d 3 2433q
+36q.6.a2 6d 3q 2833q2
+36q.6.b1 9d 33 2439q
+36q.6.b2 −18d 33q 2839q2
+(7) There exists an integer d ≡ 1 (mod 4), and an even integer b ≥ 0 such that
+q = d2 + 4 · 3b,
+and ˜E is one of the following :
+curve a2 a4 ∆
+36q.7.a1 −3d −3b+2 2432b+6q
+36q.7.a2 6d 32q −283b+6q2
+Theorem 3.3. If q > 3 is prime, then there exists an elliptic curve E/Q of con-
+ductor 72q with at least one rational 2-torsion point precisely when either E is
+isogenous to one of (in Cremona’s notation)
+360a, 360b, 360c, 360d, 936a, 936d, 936f, 2088b,
+2088h, 3384a, 5256e, 13896f or 83016c,
+or E is Q-isomorphic to
+˜E : y2 = x3 + a2x2 + a4x
+and at least one of the following occurs:
+(1) There exists an odd integer b ≥ 1 such that
+q = 3b + 1
+4
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.1.a1 24q − 3 223b+2q 2832b+6q2
+72q.1.a2 −48q + 6 32 2103b+6q
+72q.1.a3 24q + 6 32b+2 21034b+6q
+72q.1.a4 6q − 3 32q2 −243b+6q4
+=== PAGE 11 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 11
+(2) There exist integers a ∈ {2, 3}, b ≥ 0 and δ ∈ {0, 1} such that
+q = 2 a · 3b + (−1)δ
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.2.a1 (−1)δ+12a+13b+1 − 3 2a3b+2q 22a+432b+6q2
+72q.2.a2 (−1)δ2a+23b+1 + 6 32 2a+83b+6q
+72q.2.a3 (−1)δ+12a− 13b+1 − 3 22a− 432b+2 (−1)δ24a− 434b+6q
+72q.2.a4 (−1)δ+12a+13b+1 + 6 32q2 (−1)δ+12a+83b+6q4
+(3) There exist integers a ∈ {2, 3}, b ≥ 0 and δ ∈ {0, 1} such that
+q = 3 b + (−1)δ2a
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.3.a1 (−1)b+13
+(
+3b − (−1)δ2a)
+(−1)δ+12a3b+2 22a+432b+6q2
+72q.3.a2 (−1)b6
+(
+3b − (−1)δ2a)
+32q2 (−1)δ+12a+83b+6q4
+72q.3.a3 (−1)b6
+(
+3b + (−1)δ2a+1)
+32b+2 (−1)δ2a+834b+6q
+72q.3.a4 (−1)b+13
+(
+3b + (−1)δ2a− 1)
+22a− 432 24a− 43b+6q
+(4) There exists an integer d ≡ 1 (mod 4) such that
+q = 3d2 + 4
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.4.a1 3d −3 2433q
+72q.4.a2 −6d 3q −2833q2
+72q.4.b1 −9d −33 2439q
+72q.4.b2 18d 33q −2839q2
+(5) There exist integers a ∈ {4, 5}, δ ∈ {0, 1} and d ≡ 1 (mod 4) , such that
+q = 3d2 + (−1)δ2a
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.5.a1 −3d (−1)δ+12a− 23 22a33q
+72q.5.a2 6d 3q (−1)δ+12a+633q2
+72q.5.b1 9d (−1)δ+12a− 233 22a39q
+72q.5.b2 −18d 33q (−1)δ+12a+639q2
+(6) There exist an integer d ≡ 5 (mod 8) such that
+q = 3d2 + 1
+4
+=== PAGE 12 ===
+12 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.6.a1 3d 3q −2433q2
+72q.6.a2 −6d −3 2833q
+72q.6.b1 −9d 33q −2439q2
+72q.6.b2 18d −33 2839q
+(7) There exist odd integers b ≥ 1 and d ≡ 1 (mod 4) such that
+q = d2 + 3b
+4 ≡ 1 (mod 4)
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.7.a1 3d 32q −243b+6q2
+72q.7.a2 −6d −3b+2 2832b+6q
+(8) There exist odd integers b ≥ 1 and d ≡ 1 (mod 4) such that
+q = d2 + 4 · 3b
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.8.a1 3d −3b+2 2432b+6q
+72q.8.a2 −6d 32q −283b+6q2
+(9) There exist integers a ∈ { 4, 5}, b ≥ 0, δ1, δ2 ∈ { 0, 1} and d ≡ 1 (mod 4) ,
+such that (δ1, δ2) ⁄= (1, 1), b is odd if a = 4 and δ1 ⁄= δ2,
+q = (−1)δ1 d2 + (−1)δ22a3b,
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.9.a1 −3d (−1)δ1+δ2+12a− 23b+2 (−1)δ1 22a32b+6q
+72q.9.a2 6d (−1)δ132q (−1)δ1+δ2+12a+63b+6q2
+(10) There exist integers a ∈ { 4, 5}, b ≥ 0, δ ∈ { 0, 1}, d ≡ 1 (mod 4) and n,
+such that the least prime divisor of n is at least 7, b is odd if a = 4,
+qn = (−1)δ(
+d2 − 2a3b)
+,
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.10.a1 −3d 2a− 23b+2 (−1)δ22a32b+6qn
+72q.10.a2 6d (−1)δ32qn 2a+63b+6q2n
+(11) There exist integers b ≥ 0 and d ≡ 1 (mod 4) such that
+q = d2 + 32
+3b
+=== PAGE 13 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 13
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.11.a1 −3d −2332 2103b+6q
+72q.11.a2 6d 3b+2q −21132b+6q2
+(12) There exist integers b ≥ 0, d ≡ 1 (mod 4) and n, such that the least prime
+divisor of n is at least 7,
+qn = d2 + 32
+3b
+and ˜E is one of the following :
+curve a2 a4 ∆
+72q.12.a1 −3d −2332 2103b+6qn
+72q.12.a2 6d 3b+2qn −21132b+6q2n
+We should mention that while we are currently unable to rule o ut the existence
+of primes in families (10) and (12) in Theorem 3.3, we strongl y suspect that there
+are no such primes. Further, we must confess that our notatio n can admit a certain
+amount of ambiguity as, for a given prime q, we could have multiple representations
+of q giving rise to non-isogenous curves with the same labels. By way of example,
+(3.1) q = 10369 = 1 2 + 27 · 34 = 65 2 + 211 · 3
+and the curves denoted 18q.4.a corresponding to these two representations are non-
+isogenous. For q ∈ Si for a ﬁxed 1 ≤ i ≤ 8, however, it is straightforward to show
+that there are at most ﬁnitely many such distinct such repres entations – for all
+except i = 2 , the parametrization monotonically increasing in the vari ables a, b, v
+and d. For q ∈ S2, the same is easily seen to be true except, possibly, for the c ases
+with q = |2a − 3b|. In this last situation, via a result of Tijdeman [24], we hav e
+⏐⏐2a − 3b⏐⏐ ≥ 3bb− κ,
+for some eﬀectively computable absolute positive constant κ, at least provided b > 2,
+and hence, again, q has only ﬁnitely many such representations (at most 3, in fact,
+by a result of the ﬁrst author [2]).
+Combining Theorems 3.1, 3.2 and 3.3, together with the deﬁni tion of S0, yields
+the following.
+Corollary 3.4. An elliptic curve E/Q is in S0 precisely if E is either in one of
+the isogeny classes (in Cremona’s notation)
+90c, 126b, 252a, 306c, 342f, 360a, 360d, 936d or 5256e,
+or E is isogenous to one of
+18q.1.a, 18q.2.a, 18q.3.a, 18q.4.a (with δ1 = δ2 = 0, a even, b odd), 18.q.5.a and
+18q.5.b (with, in both cases, δ1 = δ2 = 0 and a even), 36q.1.a, 36q.1.b, 36q.2.a,
+36q.2.b, 36q.3.a, 72q.1.a, 72q.2.a, 72q.3.a, 72q.4.a, 72q.4.b, 72.q.5.a and 72q.5.b
+(with, in both cases, δ = 0 and a = 4), 72q.6.a, 72q.6.b, 72q.7.a, 72q.8.a
+and 72q.9.a (with δ1 = δ2 = 0, a = 4, b odd).
+=== PAGE 14 ===
+14 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+4. Finishing the proof of Theorem 1.4
+From the classiﬁcation results of the preceding section, we need to show only
+that, for suitably large primes p, equation (1.2) has no solutions in coprime nonzero
+integers, with Frey-Hellegouarch curve F corresponding (in the sense of Section 2)
+to an elliptic curve E in one of the isogeny classes
+(4.1)
+90a, 90b, 126a, 180a, 198b, 198c, 198d, 198e, 306a, 306b,
+342b, 342c, 360b, 360c, 414a, 468d, 936a, 936f, 1314a,
+1314f, 2088b, 2088h, 3384a, 13896f or 83016c,
+or
+(4.2)
+18q.4.a (with δ1 ⁄= δ2, or δ1 = δ2 = 0 and either a odd, or b even),
+18.q.5.a and 18q.5.b (with, in both cases, δ1 ⁄= δ2, or δ1 = δ2 = 0 and
+a odd), 18q.6.a, 36q.4.a 36q.5.a, 36q.6.a, 36q.6.b, 36q.7.a, 72.q.5.a
+and 72q.5.b (with, in both cases, δ = 1 or a = 5), 72q.9.a
+(with δ1 ⁄= δ2, or δ1 = δ2 = 0 and either a = 5, or a = 4 and b even),
+72q.10.a, 72q.11.a or 72q.12.a.
+Our key observation to start is that, from (2.1), the Frey-He llegouarch curve F =
+F (i)
+A,B has minimal discriminant of the shape −3T 2 for T = 2 6i− 43qαCp. It follows
+that E(Fℓ) contains a subgroup isomorphic to Z2 × Z2 for every prime ℓ ∤ 6q for
+which
+(− 3
+ℓ
+)
+= 1; i.e. for ℓ ≡ 1 (mod 6). We thus have that
+(4.3) aℓ(F ) ≡ ℓ + 1 (mod 4)
+for every such prime ℓ. If, for each curve E in the isogeny classes (4.1) and (4.2), we
+are able to ﬁnd a prime ℓ ≡ 1 (mod 6) with ℓ ∤ 6q, for which aℓ(E) ⁄≡ℓ + 1 (mod 4),
+it follows from (2.3), (2.4), (4.3) and the Hasse bounds that
+(4.4) p ≤ ℓ + 1 + 2
+√
+ℓ.
+For curves E in the isogeny classes (4.1), we may check that it suﬃces to ch oose,
+in all cases,
+ℓ ∈ {7, 13, 19, 31, 37}.
+To show that we can always ﬁnd a suitable prime ℓ for E in the isogeny classes
+(4.2), let us suppose that, more generally, we have an ellipt ic curve E over Q, with
+a rational 2-torsion point at, say, (0, 0), given by the model
+(4.5) E : y2 = x3 + ux2 + vx.
+For a prime of good reduction ℓ ≥ 5 for E, it follows that the Fourier coeﬃcient
+aℓ(E) satisﬁes aℓ(E) ≡ ℓ + 1 (mod 4) precisely when E(Fℓ) contains a subgroup
+isomorphic to either Z2 × Z2 or to Z4. The ﬁrst case occurs exactly when the cubic
+x3 + ux2 + vx splits completely modulo ℓ, i.e. when
+(∆( E)
+ℓ
+)
+=
+(u2 − 4v
+ℓ
+)
+= 1.
+To have the second case, there must exist a point P in E(Fℓ) with the property
+that P ⁄= (0 , 0) but 2P = (0 , 0). From the standard duplication formula, the
+x-coordinate of the point 2P on E satisﬁes
+x(2P ) = x4 − 2vx2 + v2
+4y2 = (x2 − v)2
+4y2
+=== PAGE 15 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 15
+and hence there can exist a point P with x(2P ) = 0 precisely when v is a square
+modulo ℓ. In summary, we have that aℓ(E) ≡ ℓ + 1 (mod 4) exactly when either
+(∆( E)
+ℓ
+)
+= 1 or
+(v
+ℓ
+)
+= 1.
+For the curves of conductor 36q and 72q (36q.4.a, 36q.5.a, 36q.6.a, 36q.6.b,
+72.q.4.a, 72q.4.b, 72q.8.a, 72q.9.a, 72q.10.a and 72q.11.a.), our given models are
+already of the form y2 = x3 + ux2 + vx, with u = a2(E) and v = a4(E). For
+our families of conductor 18q (18q.4.a, 18q.5.a, 18q.5.b and 18q.6.a), we need to
+move our nontrivial rational 2-torsion point to (0, 0) to obtain a (non-minimal)
+model of the shape (4.5) (the discriminant remaining invari ant modulo squares).
+We summarize our results in the following table.
+E Additional conditions
+{(v
+ℓ
+)
+,
+(∆( E)
+ℓ
+) }
+18q.4.a unless δ1 = δ2 = 0, a even and b odd
+{((− 1)δ1 q
+ℓ
+)
+,
+((− 1)δ1+δ2+12a3b
+ℓ
+) }
+18q.5.a and b unless δ1 = δ2 = 0, a even
+{((− 1)δ1 3q
+ℓ
+)
+,
+((− 1)δ1 +δ2+12a3
+ℓ
+) }
+18q.6.a none
+{(3bq
+ℓ
+)
+,
+(− 2
+ℓ
+) }
+36q.4.a none
+{((− 1)δ1 q
+ℓ
+)
+,
+(3
+ℓ
+) }
+36q.5.a none
+{(3
+ℓ
+)
+,
+((− 1)δq
+ℓ
+) }
+36q.6.a and b none
+{(3q
+ℓ
+)
+,
+(3
+ℓ
+)}
+36q.7.a none
+{(− 1
+ℓ
+)
+,
+(q
+ℓ
+)}
+72q.5.a and b (δ, a) = (0 , 5), (1, 4) or (1, 5)
+{(3q
+ℓ
+)
+,
+((− 1)δ+12a3
+ℓ
+) }
+72q.9.a unless δ1 = δ2 = 0, a = 4 and b odd
+{((− 1)δ1 q
+ℓ
+)
+,
+((− 1)δ1+δ2+12a3b
+ℓ
+) }
+72q.10.a none
+{((− 1)δq
+ℓ
+)
+,
+(2a3b
+ℓ
+) }
+72q.11.a and 12a none
+{(3bq
+ℓ
+)
+,
+(− 2
+ℓ
+) }
+For example, in case E = 72q.12.a1, we have, for ℓ ∤ 6q,
+(∆( E)
+ℓ
+)
+=
+(3bq
+ℓ
+)
+and
+(v
+ℓ
+)
+=
+(a4(E)
+ℓ
+)
+=
+(−2
+ℓ
+)
+.
+In particular, if we assume, say, that b is odd, for any prime ℓ ≡ 7 (mod 24) such
+that q is a quadratic residue modulo ℓ, or prime ℓ ≡ 13 (mod 24) with q a quadratic
+non-residue modulo ℓ, we have
+(4.6)
+(∆( E)
+ℓ
+)
+=
+(v
+ℓ
+)
+= −1
+and hence for such a prime ℓ, both ℓ ≡ 1 (mod 6) and
+(4.7) aℓ(E) ⁄≡ℓ + 1 (mod 4).
+In both cases, we therefore obtain inequality (4.4). For the other isogeny classes in
+the above table, in each case there exists at least one pair of integers (ℓ0, δ), with
+ℓ0 ∈ {1, 7, 13, 19} and δ ∈ {0, 1}, such that if
+(4.8) ℓ ≡ ℓ0 (mod 24) and
+(q
+ℓ
+)
+= (−1)δ,
+=== PAGE 16 ===
+16 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+then (4.6) and (4.7) hold. To complete the proof of Theorem 1. 4, from (4.4), we
+require a suitably strong upper bound for the smallest ℓ satisfying (4.8). Such a
+bound would follow from either a modiﬁed version of the argum ents traditionally
+used to ﬁnd smallest non-residues modulo q (though the additional constraint that
+ℓ ≡ ℓ0 (mod 24) causes some complications), or from an explicit version of Linnik’s
+theorem on the smallest prime in a given arithmetic progress ion (see e.g. [17] for
+an eﬀective but inexplicit result along these lines). For ou r purposes (and since we
+require something completely explicit), we will instead ap peal to a recent result of
+the ﬁrst author, Martin, O’Bryant and Rechnitzer [5]; here, θ(x; k, a) denotes the
+sum of the logarithms of the primes p ≡ a (mod k) with p ≤ x.
+Theorem 4.1 (B., Martin, O’Bryant and Rechnitzer [5]) . Let k and a be integers
+with k ≥ 3 and gcd(a, k) = 1 . Then
+⏐⏐⏐⏐θ(x; k, a) − x
+φ(k)
+⏐⏐⏐⏐ < 0.00164 k
+φ(k)
+x
+log x ,
+for all x ≥ x0(k), where
+(4.9) x0(k) =
+
+
+
+7.5 × 107, if 3 ≤ k ≤ 266,
+2 × 1010/k, if 267 ≤ k ≤ 105,
+exp(0.0442
+√
+k log3 k), if k > 105.
+With this result in hand, we may prove the following
+Proposition 4.2. Let q ≥ 7 be prime and suppose that ℓ0 ∈ { 1, 7, 13, 19} and
+δ ∈ {0, 1}. Then there exists a prime ℓ ⁄= q satisfying (4.8) with ℓ < e q.
+Proof. Given ℓ0 ∈ { 1, 7, 13, 19} and δ ∈ { 0, 1}, conditions (4.8) are equivalent, via
+the Chinese Remainder Theorem, to a congruence of the shape ℓ ≡ a (mod 24q)
+for some integer 7 ≤ a < 24q with gcd(a, 24q) = 1 . For 7 ≤ q ≤ 17 and each of the
+8 pairs (ℓ0, δ), we verify by direct computation that we can always ﬁnd an ℓ < e q
+with (4.8) (this fails to be true for q = 5 and ℓ0 = δ = 1 , which is why we have
+omitted this value). If q ≥ 19, then eq > x0(24q) and hence we may apply Theorem
+4.1 to conclude that ⏐⏐⏐⏐θ(eq; 24q, a) − eq
+4(q − 1)
+⏐⏐⏐⏐ < 0.00984 eq
+q − 1 ,
+whereby
+θ(eq; 24q, a) > 0.24 eq
+q − 1 > log q.
+It follows that there exists a prime ℓ ≡ a (mod 24q) (which necessarily also satisﬁes
+(4.8)) with ℓ ⁄= q and ℓ < e q, as desired. □
+If q = 5, then, for ℓ0 ∈ {1, 7, 13, 19} and δ ∈ {0, 1}, we can always ﬁnd an ℓ with
+(4.8) and ℓ ≤ 241. From (4.4), we thus have
+p ≤ 242 + 2
+√
+241 < 510.
+For q ≥ 7, we apply Proposition 4.2 to (4.4) to conclude that
+p < e q + 1 + 2
+√
+eq = (eq/2 + 1)2 < q 2q.
+This completes the proof of Theorem 1.4.
+=== PAGE 17 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 17
+5. Sets of primes and trivial solutions
+5.1. Intersections of the Si. We would like to make a few remarks on the sets
+Si. Firstly, we note that some of the Si overlap substantially. Obviously, primes of
+the form (3b + 1)/4 belong to both S6 and S7, while many primes in S1 are also in
+S4 (taking d = 1). Additionally, every prime q ∈ S5 of the shape q = 3d2 + 2a with
+a = 2 or a ≥ 8, and d = ±3k for k an integer, is necessarily also in S2.
+For many other i ⁄= j, the intersection Si ∩ Sj is rather small. For future use, it
+will be helpful for us to record an explicit statement along t hese lines.
+Proposition 5.1. We have
+S1 ∩ S2 = {5, 7, 11, 13, 23, 31, 37, 73}, S 1 ∩ S3 = {11} , S 1 ∩ S5 = {7, 31},
+S1 ∩ S7 = {7, 37, 127}, S 1 ∩ S8 = {13}, S 2 ∩ S3 = {11} , S 3 ∩ S4 = ∅,
+S3 ∩ S5 = {43}, S 3 ∩ S7 = S3 ∩ S8 = S4 ∩ S5 = S5 ∩ S8 = S7 ∩ S8 = ∅.
+Proof. The desired conclusions for S1 ∩ S2, S1 ∩ S3 and S2 ∩ S3 all follow from
+combining Theorems 1, 2 and 3 of Tijdeman and Wang [25] with Th eorems 3, 4
+and 5 of Wang [26]. Further, the fact that
+S3 ∩ S4 = S3 ∩ S8 = S4 ∩ S5 = S5 ∩ S8 = ∅
+is immediate from considering the corresponding equations modulo 8.
+If q ∈ S1 ∩ S5, then there exist integers a, b, δ, d and a5 with a ∈ { 2, 3} or
+a ≥ 5, b ≥ 0, δ ∈ { 0, 1}, d ≥ 1 and a5 ∈ { 2, 4} or a5 ≥ 8 even, such that
+2a3b + (−1)δ = 3 d2 + 2a5. Modulo 4, we have that δ = 1 and so, modulo 3, b = 0 .
+It follows, modulo 8, that a5 = 2, so that 2a = 3d2 + 5. We have
+Lemma 5.1. If x and y are positive integers such that 2x = 3y2 + 5, then
+(x, y) ∈ {(3, 1), (5, 3), (9, 13)} .
+Proof. (of Lemma 5.1) Writing x = 3 x1 + x0 for x0 ∈ { 0, 1, 2}, we have that a
+solution to the equation 2x = 3 y2 + 5 necessarily corresponds to an integer point
+on the (Mordell) elliptic curve Y 2 = X 3 − 22x0 · 33 · 5 (with Y = 2 x0 · 32 · y
+and X = 3 · 2x0+x1). We can ﬁnd the integer points for each of these curves at
+http://www.math.ubc.ca/~bennett/BeGa-data.html (see [3] for more details),
+whereby the stated conclusion obtains. □
+From this lemma, we therefore have S1 ∩ S5 = {7, 31}, as desired. If instead
+q ∈ S1 ∩ S7, then we have integers a, b, δ and d, with a ∈ { 2, 3} or a ≥ 5, b ≥ 0,
+δ ∈ {0, 1}, d ≥ 1 and 2a3b + (−1)δ = 3d2+1
+4 . If b = 0, then, modulo 3, δ = 1, whence
+2a+2 = 3 d2 + 5 and so, from Lemma 5.1, a ∈ { 1, 3, 7}, corresponding to q = 7 and
+q = 127 . If b = 1 , then, again modulo 3, δ = 0 and hence d2 = 2 a+23b− 1 + 1. An
+elementary factoring argument implies that (a, b, d) = (1 , 0, 3), (1, 2, 5) or (2, 2, 7),
+corresponding to q = 37.
+Suppose next that we have q ∈ S1 ∩ S8, so that there exist integers a, b, δ, v with
+a ∈ { 2, 3} or a ≥ 5, b ≥ 0, δ ∈ { 0, 1} and 2a3b + (−1)δ = 3v2− 1
+2 . Modulo 4, δ = 0
+and hence 2a+13b− 1 + 1 = v2; again via factoring v2 − 1 we ﬁnd, after a little work,
+that |v| = 3 and q = 13 . If q ∈ S3 ∩ S5, there are integers a, d and a5 with a ≥ 5
+odd, d ≥ 1, a5 ∈ { 2, 4} or a5 ≥ 8 even, and 2a+1
+3 = 3 d2 + 2a5. Modulo 8, we have
+that a5 ≥ 4 and so
+(5.1) 9d2 = 2 a − 3 · 2a5 + 1.
+=== PAGE 18 ===
+18 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+We thus have a ≥ a5 + 3 and there must exist integers δ ∈ { 0, 1} and positive
+d1 ≡ ±1 (mod 6) such that 3d = 2 a5− 1d1 + (−1)δ, whence
+2a5− 2d2
+1 + (−1)δd1 = 2 a− a5 − 3.
+If d1 = 1, then δ = 0 and we have 2a5− 4 + 1 = 2 a− a5− 2, so that a5 = 4, a = 7, d = 3
+and q = 43. If d1 > 1, then d1 ≥ 5 and so 2a5− 252 − 5 ≤ 2a− a5 − 3. It follows that
+a ≥ 2a5 + 2 and hence 2a5− 2 | (−1)δd1 + 3, say (−1)δd1 + 3 = 2 a5− 2d2, for d2 ∈ Z.
+We thus have
+22a5− 4d2
+2 − 3 · 2a5− 1d2 + 9 + d2 = 2 a− 2a5+2.
+Since a5 ≥ 4 and a ≥ 2a5 + 2 , we have that 9 + d2 ≡ 0 (mod 8). If d2 = −1,
+22a5− 7 + 3 · 2a5− 4 + 1 = 2 a− 2a5− 1, contradicting a5 = 4 or a5 ≥ 8. We thus have
+d2 = 7 or |d2| ≥ 9, so that
+2a− 2a5+2 ≥ 22a5− 4 · 72 − 3 · 2a5− 1 · 7 + 16 > 22a5+1,
+and so a ≥ 4a5 + 4. Applying Corollary 1.7 of [1], since a ≥ 4a5 + 4 ≥ 24, we have
+from (5.1) that
+3 · 2a5 − 1 =
+⏐⏐9d2 − 2a⏐⏐ > 20.26a ≥ 21.04a5+1.04,
+whereby a5 ≤ 13. A short check conﬁrms that S3 ∩ S5 = {43}, as stated.
+For q ∈ S3∩S7, q = 2a+1
+3 = 3d2+1
+4 for a ≥ 5 and d odd integers, so that 2a+2+1 =
+9d2 and yet another elementary argument implies that a = 1, a contradiction. Let
+us therefore suppose, ﬁnally, that q ∈ S7 ∩ S8. We thus have
+4q = 3d2 + 1 = 6 v2 − 2 = 2 u2 + 2,
+for integers d, u and v, and so
+(3dv)2 = (2u2 + 1)(u2 + 2) = 2 u4 + 5u2 + 2.
+From Magma’s IntegralQuarticPoints routine, we ﬁnd that the only integer solution
+to the latter equation is with |dv| = |u| = 1. This completes the proof of Proposition
+5.1. □
+It should also be noted that representations within a given s et Si are sometime
+unique, but not always. In particular, it is straightforwar d to show that a given
+prime q ∈ S1 has a single representation of the form q = 2 a3b ± 1, with b ≥ 0
+and a ∈ { 2, 3} or a ≥ 5, while a similar conclusion is immediate for primes q ∈
+Si for i ∈ { 3, 7, 8}. The situation in S2 is slightly more complicated; combining
+work of Pillai [22] with Stroeker and Tijdeman [23], the only primes with multiple
+representations of the form q = |2a ± 3b|, with b ≥ 1 and a ∈ { 2, 3} or a ≥ 5, are
+q ∈ {5, 13, 17, 23, 73}, corresponding to the identities
+5 = 2 3 − 3 = 2 5 − 33 = 3 2 − 22,
+13 = 2 8 − 35 = 2 2 + 32,
+17 = 3 4 − 26 = 2 3 + 32,
+23 = 2 5 − 32 = 3 3 − 22,
+and
+73 = 3 4 − 23 = 2 6 + 32.
+=== PAGE 19 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 19
+5.2. Limitations due to trivial solutions. Notice that we have the identity
+(d + 1
+2
+) 3
++
+(1 − d
+2
+) 3
+= 3d2 + 1
+4
+and hence, for all exponents n, a coprime integer solution with C = 1 to the
+equation
+A3 + B3 = qα · Cn, whenever qα = 3d2 + 1
+4 .
+We expect qα to be of this shape inﬁnitely often for α = 1 and α = 2 (these are
+precisely the primes in S7 and S8, respectively), though both of these results are a
+long way from provable with current technology.
+We will term a solution to (1.2) with C = 1 trivial, whereby, for primes q as
+above, there exists a trivial solution for all prime exponen ts p. In particular, this
+means that one of the newforms f ∈ S+
+2 (NF /R) (see Section 2) will correspond
+(via modularity) to the Frey curve F evaluated at the trivial solution. This is a
+major obstruction to the modular method; the techniques of t his paper are unlikely
+to provide further information about (1.2) with α = 1 for q ∈ S7 and α = 2 for
+q ∈ S8.
+A similar relation is the identity
+(d + 4)3 + (4 − d)3 = 8
+(
+3d2 + 16
+)
+.
+While this does not actually give trivial solutions to (1.2) in case α = 1 and q =
+3d2 + 16 (a subset of the primes in S5), it does appear to provide an obstruction
+to solving (1.4) for such primes, leading to Frey-Hellegoua rch curves that play the
+role of the curve 72A1 for equation (1.1).
+6. Applying the symplectic criteria
+Let E and F be elliptic curves over Q and suppose there exists an isomorphism
+φ : F [p] → E[p] of Gal(Q/Q)-modules. Here, F [p] and E[p] are the p-torsion
+modules attached to F and E, respectively. Write eE,p and eF,p for the Weil
+pairings on E[p] and F [p], respectively. Then there exists an element r(φ) ∈ F×
+p
+such that
+eE,p (φ(P ), φ(Q)) = eF,p (P, Q)r(φ) for all P, Q ∈ F [p].
+If r(φ) is a square in F×
+p , we call the isomorphism φ symplectic; if r(φ) is a non-
+square, we call it anti-symplectic. We say that E[p] and F [p] are symplectically
+(anti-symplectically) isomorphic if there exists a symplectic (anti-symplectic) iso-
+morphism φ between them. It is possible that E[p] and F [p] are both symplectically
+and anti-symplectically isomorphic, but this situation wi ll not occur in the appli-
+cations of these techniques in this paper.
+6.1. The symplectic argument. To treat equation (1.2) for certain primes q ∈ S0
+and exponents p ≥ q2q we need to use a number of local symplectic criteria to
+describe the symplectic type of the isomorphisms between th e p-torsion modules
+E[p] and F [p], where F is our Frey-Hellegouarch curve and E is one of the curves in
+Corollary 3.4 (see Section 2 and Theorem 1.4). The idea is to u se local information
+at diﬀerent primes ℓ to obtain congruence conditions on the exponent p for which
+E[p] and F [p] are symplectically and anti-symplectically isomorphic. T hen, our
+desired contradictions will arise each time we are able to pr ove that these constraints
+=== PAGE 20 ===
+20 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+are incompatible. This is, in essence, what is sometimes cal led the symplectic
+argument. One advantage we have here, working with equation (1.2) as o pposed
+to equation (1.1), is that we will be able to apply the (local) criteria at the primes
+ℓ ∈ {2, 3, q} rather than just ℓ ∈ {2, 3}.
+6.2. Notation. Let ℓ be a prime and, for a nonzero integer t, deﬁne νℓ(t) to be the
+largest nonnegative integer such that ℓνℓ(t) divides t. Let E/Qℓ be an elliptic curve
+and write c4(E), c6(E) and ∆( E) for the usual invariants attached to a minimal
+model of E. Further, deﬁne the quantities c4(E)ℓ, c6(E)ℓ and ∆( E)ℓ by
+c4(E) = ℓνℓ(c4(E))c4(E)ℓ, c 6(E) = ℓνℓ(c6(E))c6(E)ℓ and ∆( E) = ℓνℓ(∆( E))∆( E)ℓ.
+Let Qun
+ℓ to be the maximal unramiﬁed extension of Qℓ. For an elliptic curve
+E/Q with potentially good reduction at ℓ we write e(E, ℓ) to denote the order
+of Gal(Qun
+ℓ (E[p])/Qun
+ℓ ) for p ≥ 3 diﬀerent from ℓ. It is well known that e(E, ℓ) is
+independent of p.
+6.3. The curves. Except for the few isogeny classes given in Corollary 3.4 by
+their Cremona label, from Theorem 1.4, we are primarily inte rested in applying
+symplectic criteria to our Frey-Hellegouarch curve and the isogeny classes of curves
+18q.1.a, 18q.2.a, 18q.3.a, 18q.4.a (with δ1 = δ2 = 0, a even, b odd), 18.q.5.a and
+18q.5.b (with, in both cases, δ1 = δ2 = 0 and a even), 36q.1.a, 36q.1.b, 36q.2.a,
+36q.2.b, 36q.3.a, 72q.1.a, 72q.2.a, 72q.3.a, 72q.4.a, 72q.4.b, 72.q.5.a and 72q.5.b
+(with, in both cases, δ = 0 and a = 4), 72q.6.a, 72q.6.b, 72q.7.a, 72q.8.a
+and 72q.9.a (with δ1 = δ2 = 0, a = 4, b odd).
+The relevant arithmetic data c4(E), c6(E) and ∆( E) is available in our Appendix
+and in the statements of Theorems 3.1, 3.2 and 3.3. In the rema inder of this
+section we will apply the criteria to the curves listed above to obtain congruence
+conditions on p. Then, in Section 7, we complete the symplectic argument by
+deriving contradictions from these conditions, allowing u s to ﬁnish the proofs of
+our main Diophantine statements. We start by proving the fol lowing proposition
+which holds for all our choices of E, independent of whether E has conductor
+NE = 18q, 36q or 72q.
+Proposition 6.1. Let (A, B, C) be a non-trivial primitive solution to (1.2) so that
+there is a Gal(Q/Q)-modules isomorphism φ : F [p] → E[p], where F is the Frey-
+Hellegouarch curve and E is any elliptic curve in one of the isogeny classes above.
+Then
+φ is symplectic ⇐ ⇒ α is a square mod p.
+Proof. We have νq(NF ) = νq(NE) = 1 , so q is a prime of multiplicative reduction
+of both curves. We can always choose E such that νq(∆( E)) = 2 ; moreover, we
+have p ∤ α and νq(∆( F )) = 2 α + 2pνq(C). The conclusion now follows from a direct
+application of [20, Proposition 2] with the prime q. □
+=== PAGE 21 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 21
+6.4. Curves of conductor 18q. We summarize the necessary information about
+the invariants of the relevant elliptic curves.
+Curve ν2(c4) ν2(c6) ν2(∆) ν3(c4) ν3(c6) ν3(∆)
+F (0)
+A,B 0 0 2 pν2(C) − 8 2 + ν3(AB) 3 + ν3(A3 − B3) 2 pν3(C) + 3
+18q. 1.a 1 (b = 0) 0 0 2 a − 8 3 ≥ 7 6
+18q. 1.a 1 (b ≥ 1) 0 0 2 a − 8 2 3 2 b + 6
+18q. 2.a 1 0 0 2 a − 8 2 3 8
+18q. 3.a 1 0 0 2 a − 8 2 3 2 b + 6
+18q. 4.a 2 0 0 a − 6 2 3 b + 6
+18q. 5.a 2 0 0 a − 6 2 3 + ν3(d) 3
+18q. 5.b 2 0 0 a − 6 4 6 + ν3(d) 9
+Suppose (A, B, C) is a non-trivial primitive solution to (1.2) and the Frey-
+Hellegouarch curve F satisﬁes isomorphism (2.2) where f is the newform corre-
+sponding to one of the isogeny classes
+18q.1.a, 18q.2.a, 18q.3.a, 18q.4.a, 18q.5.a or 18q.5.b.
+In particular, F = F (0)
+A,B, C is even and B ≡ − 1 (mod 4). Moreover, there is a
+Gal(Q/Q)-modules isomorphism φ : F [p] → E[p], where E is one of the elliptic
+curves
+18q.1.a1, 18q.2.a1, 18q.3.a1, 18q.4.a2, 18q.5.a2 or 18q.5.b2.
+6.4.1. Applying the criteria at ℓ = 2 . Since ν2(NE) = 1 the prime ℓ = 2 is of
+multiplicative reduction for E. From [20, Proposition 2] and the valuations given
+in the preceding table, it follows that either p ∤ a − 4 and
+φ is symplectic ⇐ ⇒ 4 − a is a square mod p,
+in case E = 18q.1.a1, 18q.2.a1 or 18q.3.a1, or that p ∤ a − 6 and
+φ is symplectic ⇐ ⇒ 12 − 2a is a square mod p,
+in the other cases.
+6.4.2. Applying the criteria at ℓ = 3. We ﬁrst consider E one of 18q.1.a1 with b = 0,
+18q.5.a2 or 18q.5.b2. We have that the corresponding j-invariant satisﬁes ν3(jE) >
+0, and hence E has potentially good reduction at 3. Indeed, for E = 18q.1.a1 (with
+b = 0 ), we have ν3(∆( E)) = 6 and ν3(c6(E)) ≥ 7 so that, from [18, p. 356], we
+conclude that e(E, 3) = 2 .
+For E = 18 q.5.a2 and E = 18 q.5.b2, we have ν3(∆( E)) ∈ { 3, 9} and the results
+of [18, p. 356] imply that e(E, 3) ∈ { 4, 12}; furthermore, since ν3(NE) = 2 we
+are in a case of tame reduction, whence e(E, 3) = 4 . On the other hand, for our
+Frey-Hellegouarch curve F to have potentially good reduction at 3, we require that
+3ν3(c4(F )) ≥ ν3(∆( F )), or, equivalently, ν3(C) = 0 . In this situation, ν3(∆( F )) =
+3 and arguing exactly as for the previous curves we also conclu de that e(F, 3) = 4 .
+This contradicts e(E, 3) = 2 , and hence E ⁄= 18 q.1.a1 (with b = 0 ). We will now
+apply [14, Theorem 1] with F and E = 18 q.5.a2 or 18q.5.b2 (with, in both cases,
+δ1 = δ2 = 0 and a even). Let r and t be the quantities deﬁned in the statement of
+that theorem. We have, since 3 ∤ C,
+ν3(∆( F )) = ν3(∆(18 q.5.a2)) = 3 and ν3(∆(18 q.5.b2)) = 9 ,
+=== PAGE 22 ===
+22 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+whereby r = 0 if E = 18 q.5.a2 and r = 1 if E = 18 q.5.b2. Moreover, since 3 ∤ C
+and a is even, we may check that ∆( F )3 ≡ ∆( E)3 ≡ 2 (mod 3) , i.e. t = 0 for
+both E. Finally, applying [14, Theorem 1], we conclude that φ is symplectic when
+E = 18q.5.a2 and, if E = 18q.5.b2, then φ is symplectic if and only if (3/p) = 1 .
+We now consider the remaining curves E of conductor 18q under consideration.
+We have, in all cases,
+ν3(c4(E)) = 2 , ν 3(c6(E)) = 3 , ν 3(∆( E)) ≥ 7 and ν3(jE) < 0,
+and hence E has potentially multiplicative reduction at 3; after a quadratic twist
+(with corresponding elliptic curve denoted Et) the reduction becomes multiplicative
+and we have
+ν3(∆( Et)) =
+
+
+
+2 if E = 18q.2.a1,
+b if E = 18q.4.a2 ( with b ≥ 1),
+2b if E = 18q.1.a1 (and b ≥ 1) or E = 18q.3.a1.
+Furthermore, 3 must divide C (since otherwise F would have potentially good
+reduction) and twisting the Frey curve F by the same element (to obtain Ft), we
+ﬁnd that ν3(∆( Ft)) = −3 + 2pν3(C).
+If E = 18 q.1.a1 with b ≥ 1 or E = 18 q.3.a1, it follows from [20, Proposition 2]
+applied to Et and Ft that p ∤ b and
+φ is symplectic ⇐ ⇒ − 6b is a square mod p.
+Similarly, if E = 18q.4.a2 then p ∤ b and
+φ is symplectic ⇐ ⇒ − 3b is a square mod p.
+If E = 18q.2.a1, then
+φ is symplectic ⇐ ⇒ − 6 is a square mod p.
+6.4.3. Conclusions for level 18q. From the calculations above and Proposition 6.1
+we can extract the following relations. If E = 18q.1.a1 or 18.3.a1 then b ≥ 1 and
+(6.1)
+(4 − a
+p
+)
+=
+(α
+p
+)
+=
+(−6b
+p
+)
+,
+while if E = 18.4.a2 or E = 18q.2.a1, then, respectively,
+(12 − 2a
+p
+)
+=
+(α
+p
+)
+=
+(−3b
+p
+)
+or
+(4 − a
+p
+)
+=
+(α
+p
+)
+=
+(−6
+p
+)
+.
+If E = 18.5.a2, we have that
+(12 − 2a
+p
+)
+=
+(α
+p
+)
+= 1.
+=== PAGE 23 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 23
+6.5. Curves of conductor 36q. We next proceed with the case of elliptic curves
+of conductor 36q. We encounter the following invariants.
+Curve ν2(c4) ν2(c6) ν2(∆) ν3(c4) ν3(c6) ν3(∆)
+F (1)
+A,B 4 + ν2(A) 5 4 2 + ν3(AB) 3 + ν3(A3 − B3) 2 pν3(C) + 3
+36q.1.a2 (3 | s) 4 6 8 2 4 + ν3(v) 3
+36q.1.a2 (3 ⁄ |s) 4 6 8 2 3 3
+36q.1.b2 (3 | s) 4 6 8 4 7 + ν3(v) 9
+36q.1.b2 (3 ⁄ |s) 4 6 8 4 6 9
+36q.2.a1 (3 | d) ≥ 6 5 4 2 4 + ν3(d) 3
+36q.2.a1 (3 ⁄ |d) ≥ 6 5 4 ≥ 3 3 3
+36q.2.b1 (3 | d) ≥ 6 5 4 4 7 + ν3(d) 9
+36q.2.b1 (3 ⁄ |d) ≥ 6 5 4 ≥ 5 6 9
+36q.3.a1 ≥ 6 5 4 2 3 b + 6
+Suppose (A, B, C) is a non-trivial primitive solution to (1.2) and the Frey-
+Hellegouarch curve F satisﬁes isomorphism (2.2) where f is the newform corre-
+sponding to one of the isogeny classes
+36q.1.a, 36q.1.b, 36q.2.a, 36q.2.b or 36q.3.a.
+In particular, F = F (1)
+A,B, C is odd and B ≡ 1 (mod 4). Moreover, there is a
+Gal(Q/Q)-modules isomorphism φ : F [p] → E[p], where E is one of the elliptic
+curves
+36q.1.a2, 36q.1.b2, 36q.2.a1, 36q.2.b1 or 36q.3.a1.
+6.5.1. Applying the criteria at ℓ = 2. The table shows that ν2(j(E)) > 0 for all E,
+so that the curves have potentially good reduction. Since ν2(NE) = 2 the reduction
+is tame and hence e(E, 2) = 3 for all E.
+We will now apply [13, Theorem 1] at ℓ = 2 with F and E = 36q.1.a2 or 36q.1.b2.
+Let t and r be as in that theorem. Since ν2(∆( F )) = 4 and ν2(∆( E)) = 8 , we have
+r = 1 for both E. Now, to determine the value of t, we must ﬁrst appeal to [13,
+Theorem 3]. Indeed, the curve 36q.1.a2 has
+c4(E)2 = 3
+(
+16
+(3v2 − 1
+2
+) 2
+− 1
+)
+and c6(E)2 = −32uv
+(
+32
+(3v2 − 1
+2
+) 2
++ 1
+)
+,
+while for 36q.1.b2,
+c4(E)2 = 3 3
+(
+16
+(3v2 − 1
+2
+) 2
+− 1
+)
+and c6(E)2 = 3 5uv
+(
+32
+(3v2 − 1
+2
+) 2
++ 1
+)
+.
+We thus have, respectively,
+c4(E)2 ≡ 13 (mod 32) and c6(E)2 ≡ 7uv (mod 16),
+and
+c4(E)2 ≡ 21 (mod 32) and c6(E)2 ≡ 3uv (mod 16).
+Since u2 − 3v2 = −2 with u ≡ v ≡ 1 (mod 4), the u and v are terms in binary
+recurrence sequences and we may readily prove by induction t hat uv ≡ 1 (mod 16),
+=== PAGE 24 ===
+24 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+whereby it follows from [13, Theorem 3] that the curve 36q.1.a2 has a 3-torsion
+point over Q2, while 36q.1.b2 does not. For F = F (1)
+A,B, since ν2(A) ≥ 2, we have
+ν2(c4(F )) ≥ 6 and c6(F )2 = 3 3(A3 − B3) ≡ −3B (mod 8),
+whereby, from part (B2) of [13, Theorem 3], F has a 3-torsion point over Q2 pre-
+cisely when we have B ≡ 1 (mod 8). We thus conclude that, if B ≡ 1 (mod 8) and
+E = 36q.1.a2 or B ≡ 5 (mod 8) and E = 36q.1.b2, then t = 0 and
+φ is symplectic ⇐ ⇒ 2 is a square mod p.
+If B ≡ 5 (mod 8) and E = 36 q.1.a2, or B ≡ 1 (mod 8) and E = 36 q.1.b2, then
+t = r = 1 and so
+φ is symplectic ⇐ ⇒
+(2
+p
+)
+=
+(3
+p
+)
+.
+Next, suppose that E is one of 36q.2.a1, 36q.2.b1 or 36q.3.a1, so that we always
+have r = 0. Then
+c6(E)2 = −33d (d2 + 3)
+4 ≡
+{
+5 (mod 8) if d ≡ 1 (mod 16),
+1 (mod 8) if d ≡ 9 (mod 16),
+c6(E)2 = 3 6d (d2 + 3)
+4 ≡
+{
+5 (mod 8) if d ≡ 9 (mod 16),
+1 (mod 8) if d ≡ 1 (mod 16),
+and
+c6(E)2 = −33d (d2 + 3b+2)
+4 ≡
+{
+5 (mod 8) if q ≡ d + 2 (mod 8),
+1 (mod 8) if q ≡ d − 2 (mod 8),
+respectively. If any of
+B ≡ 1 (mod 8), E = 36q.2.a1 and d ≡ 1 (mod 16), or
+B ≡ 5 (mod 8), E = 36q.2.a1 and d ≡ 9 (mod 16), or
+B ≡ 1 (mod 8), E = 36q.2.b1 and d ≡ 9 (mod 16), or
+B ≡ 5 (mod 8), E = 36q.2.b1 and d ≡ 1 (mod 16), or
+B ≡ 1 (mod 8), E = 36q.3.a1 and q ≡ d + 2 (mod 8), or
+B ≡ 5 (mod 8), E = 36q.3.a1 and q ≡ d − 2 (mod 8),
+we therefore have that φ is always symplectic. If, however,
+B ≡ 1 (mod 8), E = 36q.2.a1 and d ≡ 9 (mod 16), or
+B ≡ 5 (mod 8), E = 36q.2.a1 and d ≡ 1 (mod 16), or
+B ≡ 1 (mod 8), E = 36q.2.b1 and d ≡ 1 (mod 16), or
+B ≡ 5 (mod 8), E = 36q.2.b1 and d ≡ 9 (mod 16), or
+B ≡ 1 (mod 8), E = 36q.3.a1 and q ≡ d − 2 (mod 8), or
+B ≡ 5 (mod 8), E = 36q.3.a1 and q ≡ d + 2 (mod 8),
+then
+φ is symplectic ⇐ ⇒ 3 is a square mod p.
+=== PAGE 25 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 25
+6.5.2. Applying the criteria at ℓ = 3 . For E = 36q.3.a1, we have ν3(j(E)) < 0 and
+so E has potentially multiplicative reduction at 3. After a suitable quadratic twist
+(denoted Et) the reduction becomes multiplicative and ν3(∆( Et)) = b. Therefore,
+the twisted Frey curve Ft must also have multiplicative reduction at 3 (since p ≥ 5)
+and it satisﬁes ν3(∆( Ft)) = 2 pν3(C) − 3. Since p ∤ ν3(∆( Ft)), it follows from [20,
+Proposition 2] that p ∤ b and
+φ is symplectic ⇐ ⇒ − 3b is a square mod p.
+For all other cases of E we have ν3(j(E)) ≥ 0 and ν3(∆( E)) ⁄= 6, whence E has
+potentially good reduction which does not become good after a quadratic twist. As
+before, since ν3(NE) = 2 the reduction is tame, whereby e(E, 3) = 4 . A similar
+argument guarantees that e(F, 3) = 4 when 3 ∤ C, in which case, ν3(∆( F )) = 3
+and ∆( F )3 ≡ 2 (mod 3) . To apply [14, Theorem 1] at ℓ = 3 with F and each
+of the curves E = 36 q.1.a2, 36q.1.b2, 36q.2.a1 or 36q.2.b1, we ﬁrst compute that
+(r, t) = (0 , 1), (1, 1), (0, 0) and (1, 0), respectively. We conclude that if E = 36q.2.a1
+then φ is symplectic, while, if E = 36q.1.a2,
+φ is symplectic ⇐ ⇒ 2 is a square mod p.
+If E = 36q.1.b2, then
+φ is symplectic ⇐ ⇒
+(2
+p
+)
+=
+(3
+p
+)
+and if E = 36q.2.b1, then
+φ is symplectic ⇐ ⇒ 3 is a square mod p.
+6.5.3. Conclusions for level 36q. From the calculations above and Proposition 6.1
+we can extract the following relations. If E = 36 q.1.a2 and B ≡ 1 (mod 8), we
+have (α
+p
+)
+=
+(2
+p
+)
+while E = 36q.1.a2 and B ≡ 5 (mod 8) implies that either
+(α
+p
+)
+=
+(2
+p
+)
+=
+(3
+p
+)
+= 1, or
+(α
+p
+)
+=
+(2
+p
+)
+= −1,
+(3
+p
+)
+= 1.
+If E = 36q.1.b2 and B ≡ 1 (mod 8), we have either
+(α
+p
+)
+= 1,
+(2
+p
+)
+=
+(3
+p
+)
+, or
+(α
+p
+)
+= −1,
+(2
+p
+)
+⁄=
+(3
+p
+)
+.
+If E = 36q.1.b2 and B ≡ 5 (mod 8), we either have
+(α
+p
+)
+=
+(2
+p
+)
+=
+(3
+p
+)
+= 1 or
+(α
+p
+)
+=
+(2
+p
+)
+= −1,
+(3
+p
+)
+= 1.
+If E = 36 q.2.a1 and either B ≡ 1 (mod 8), d ≡ 1 (mod 16), or B ≡ 5 (mod 8),
+d ≡ 9 (mod 16), we have (α
+p
+)
+= 1.
+If E = 36 q.2.a1 and either B ≡ 1 (mod 8), d ≡ 9 (mod 16), or B ≡ 5 (mod 8),
+d ≡ 1 (mod 16), we have (α
+p
+)
+=
+(3
+p
+)
+= 1.
+=== PAGE 26 ===
+26 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+If E = 36 q.2.b1 and either B ≡ 1 (mod 8), d ≡ 9 (mod 16), or B ≡ 5 (mod 8),
+d ≡ 1 (mod 16), we have, again,
+(α
+p
+)
+=
+(3
+p
+)
+= 1,
+while, if E = 36 q.2.b1 and either B ≡ 1 (mod 8), d ≡ 1 (mod 16), or B ≡
+5 (mod 8), d ≡ 9 (mod 16), we have
+(α
+p
+)
+=
+(3
+p
+)
+= 1.
+If E = 36 q.3.a1 and either B ≡ 1 (mod 8), q ≡ d + 2 (mod 8), or B ≡ 5 (mod 8),
+q ≡ d − 2 (mod 8), we have
+(α
+p
+)
+=
+(−3b
+p
+)
+= 1,
+while, if E = 36 q.3.a1 and either B ≡ 1 (mod 8), q ≡ d − 2 (mod 8), or B ≡
+5 (mod 8), q ≡ d + 2 (mod 8), we have that
+(α
+p
+)
+=
+(3
+p
+)
+=
+(−3b
+p
+)
+.
+6.6. Curves of conductor 72q. We have the following data.
+Curve ν2(c4) ν2(c6) ν2(∆) ν3(c4) ν3(c6) ν3(∆)
+F (1)
+A,B 5 5 4 2 + ν3(AB) 3 + ν3(A3 − B3) 2 pν3(C) + 3
+72q.1.a1 4 6 8 2 3 2 b + 6
+72q.2.a1 4 6 8 or 10 2 3 2 b + 6
+72q.3.a1 4 6 8 or 10 2 3 2 b + 6
+72q.4.a2 (3 | d) 4 6 8 2 4 + ν3(d) 3
+72q.4.a2 (3 ⁄ |d) 4 6 8 ≥ 3 3 3
+72q.4.b2 (3 | d) 4 6 8 4 7 + ν3(d) 9
+72q.4.b2 (3 ⁄ |d) 4 6 8 ≥ 5 6 9
+72q.5.a2 (3 | d) 4 6 10 2 4 + ν3(d) 3
+72q.5.a2 (3 ⁄ |d) 4 6 10 ≥ 3 3 3
+72q.5.b2 (3 | d) 4 6 10 4 7 + ν3(d) 9
+72q.5.b2 (3 ⁄ |d) 4 6 10 ≥ 5 6 9
+72q.6.a1 (3 | d) 5 5 4 2 4 + ν3(d) 3
+72q.6.a1 (3 ⁄ |d) 5 5 4 ≥ 3 3 3
+72q.6.b1 (3 | d) 5 5 4 4 7 + ν3(d) 9
+72q.6.b1 (3 ⁄ |d) 5 5 4 ≥ 5 6 9
+72q.7.a1 5 5 4 2 3 b + 6
+72q.8.a2 4 6 8 2 3 b + 6
+72q.9.a2 4 6 10 2 3 b + 6
+=== PAGE 27 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 27
+Suppose (A, B, C) is a non-trivial primitive solution to (1.2) and the Frey-
+Hellegouarch curve F satisﬁes isomorphism (2.2) where f is the newform corre-
+sponding to one of the isogeny classes
+72q.1.a, 72q.2.a, 72q.3.a, 72q.4.a, 72q.4.b, 72q.5.a, 72q.5.b,
+72q.6.a, 72q.6.b, 72q.7.a, 72q.8.a or 72q.9.a.
+In particular, for this case we have F = F (1)
+A,B,
+C is odd , A ≡ 2 (mod 4) and B ≡ 1 (mod 4) ,
+and there is a Gal(Q/Q)-module isomorphism
+φ : F [p] → E[p],
+where E is one of the elliptic curves labelled
+72q.1.a1, 72q.2.a1, 72q.3.a1, 72q.4.a2, 72q.4.b2, 72q.5.a2, 72q.5.b2,
+72q.6.a1, 72q.6.b1, 72q.7.a1, 72q.8.a2 or 72q.9.a2.
+6.6.1. Applying the criteria at ℓ = 2. Note that all the curves in the preceding table
+have potentially good reduction at ℓ = 2 since their j-invariants satisfy ν2(j) ≥ 0.
+We see, from [18, p. 358], that the Frey curve F satisﬁes e(F, 2) = 24 ; the same is
+immediately seen to be true also for E satisfying
+(ν2(c4(E)), ν2(c6(E)), ν2(∆( E))) ∈ {(4, 6, 10), (5, 5, 4)}.
+For the curves E in the table with
+(ν2(c4(E)), ν2(c6(E)), ν2(∆( E))) = (4 , 6, 8),
+we further check that ∆( E)2 ≡ 1 (mod 4) and hence we also have e(E, 2) = 24 . We
+may therefore, in all cases, apply [12, Theorem 4] to ﬁnd that , if ν2(∆( E)) ∈ {4, 10},
+then φ is always symplectic, while, if ν2(∆( E)) = 8 , then
+φ is symplectic ⇐ ⇒ 2 is a square mod p.
+6.6.2. Applying the criteria at ℓ = 3. If E = 72q.1.a1, 72q.2.a1, 72q.3.a1, 72q.7.a1,
+72q.8.a2 or 72q.9.a2, then E has potentially multiplicative reduction at 3 and so,
+after a suitable quadratic twist (denoted Et) the reduction becomes multiplicative
+and ν3(∆( Et)) = b or 2b. Therefore, 3 | C and the twisted Frey curve Ft must
+also have multiplicative reduction at 3 and satisfy ν3(∆( Ft)) = 2 pν3(C) − 3. Since
+p ∤ ν3(∆( Ft)), it follows from [20, Proposition 2] that p ∤ b and
+φ is symplectic ⇐ ⇒ − 3b is a square mod p,
+for E = 72q.7.a1, 72q.8.a2 and 72q.9.a2, while
+φ is symplectic ⇐ ⇒ − 6b is a square mod p,
+for E = 72q.1.a1, 72q.2.a1, and 72q.3.a1.
+For the curves E = 72 q.4.a2, 72q.4.b2, 72q.5.a2, 72q.5.b2, 72q.6.a1 or 72q.6.b1,
+the reduction at ℓ = 3 is potentially good and tame (because ν3(NE) = 2 ) and since
+ν3(∆( E)) ⁄= 6 we have e(E, 3) = 4 . As before, it follows that e(F, 3) = 4 (so that
+3 ∤ C), and we may apply [14, Theorem 1]. Let r and t be as in that theorem. In
+all cases we have t = 0; furthermore, we have r = 0 for E = 72q.4.a2, E = 72q.5.a2
+=== PAGE 28 ===
+28 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+or E = 72 q.6.a1, and r = 1 for E = 72 q.4.b2, E = 72 q.5.b2 or E = 72 q.6.b1. It
+follows that φ is always symplectic in the ﬁrst cases, while
+φ is symplectic ⇐ ⇒ 3 is a square mod p,
+in the latter three.
+6.6.3. Conclusions for level 72q. From the calculations above we extract the fol-
+lowing relations. For E = 72q.1.a1, or either of E = 72q.2.a1 or E = 72q.3.a1 with
+a = 2, it follows that (α
+p
+)
+=
+(2
+p
+)
+=
+(−6b
+p
+)
+,
+while, for E = 72q.2.a1 or E = 72q.3.a1 with a = 3,
+(α
+p
+)
+=
+(−6b
+p
+)
+= 1.
+If E = 72q.4.a2, we have (α
+p
+)
+=
+(2
+p
+)
+= 1,
+while E = 72q.5.a2 or E = 72q.6.a1 give
+(α
+p
+)
+= 1.
+Taking E = 72q.4.b2 yields
+(α
+p
+)
+=
+(2
+p
+)
+=
+(3
+p
+)
+,
+while E = 72q.5.b2 or E = 72q.6.b1 give
+(α
+p
+)
+=
+(3
+p
+)
+= 1.
+If E = 72q.7.a1 or 72q.9.a2, we have
+(α
+p
+)
+=
+(−3b
+p
+)
+= 1.
+Finally, if E = 72q.8.a2,
+(α
+p
+)
+=
+(2
+p
+)
+=
+(−3b
+p
+)
+.
+7. Some applications of symplectic criteria
+As the preceding section reveals, there are many results we c ould state now
+for the various families of primes Si comprising the set S0. For simplicity, we limit
+ourselves to the three statements we have mentioned in our in troduction (Theorems
+1.7, 1.8 and 1.9) and one result valid for small values of q (Theorem 7.1).
+=== PAGE 29 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 29
+7.1. Proof of Theorem 1.7. If q ⁄∈S0, the desired conclusion is immediate from
+Theorem 1.4. Suppose, then, that q ∈ S0 \ T and that there exists a solution to
+(1.4) in coprime nonzero integers A, B and C and prime p ≥ q2q. In particular,
+we note, without further mention, that the primes p under consideration all satisfy
+gcd(p, 6q) = 1 . Also, we have that p ∤ (4−a)b, whenever these parameters appear in
+the sequel. From Section 2 and Theorem 1.4, it follows there e xists an isomorphism
+φ : F [p] → E[p], where F is the Frey-Hellegouarch curve and E is one of the curves
+in Corollary 3.4. Since α = 1 , we see from Proposition 6.1 that φ is symplectic.
+Furthermore, the shape of the primes in S7 implies that 7, 19 ∈ S7 and E does
+not correspond to the isogeny classes 36.q.2.a, 36.q.2.b, 72.q.5.a or 72.q.5.b. In
+conclusion, we need to consider E in the remaining conjugacy classes; in particular,
+we can either take E isogenous to one of
+90c, 306c, 360a, 360d, 936d or 5256e,
+whereby q ∈ {5, 13, 17, 73}, or E isomorphic to one of the following curves:
+18q.1.a1, 18q.2.a1, 18q.3.a1, 18q.4.a2 (with δ1 = δ2 = 0, a even, b odd), 18.q.5.a2 or
+18q.5.b2 (with, in both cases, δ1 = δ2 = 0 and a even), 36q.1.a2, 36q.1.b2, 36q.3.a1,
+72q.1.a1, 72q.2.a1, 72q.3.a1, 72.q.4.a2, 72q.4.b2, 72q.7.a1, 72q.8.a2 or
+72q.9.a2 (with δ1 = δ2 = 0, a = 4).
+For q ≤ 73, the desired conclusion will follow immediately from our Th eorem 7.1,
+which we will prove later in this section. For the remaining p ossible types for q,
+we will place a number of conditions upon p to guarantee that, in each case, φ
+is anti-symplectic, providing the desired contradiction. These conditions will be
+of the form
+(
+κi
+p
+)
+= −1, for, in each case, a ﬁnite collection of integers κi, and
+hence are each equivalent to p lying in certain residue classes modulo 8|κi|. We
+remind the reader that a given prime q has at most ﬁnitely many (isogeny classes
+of) curves E associated to it. This will prove Theorem 1.7 provided we can show
+that these conditions are compatible, i.e. that we do not hav e three distinct indices
+i, say i = 1, 2 and 3, with κ1κ2κ3 an integer square. In particular, compatibility is
+immediate if we have κi negative for each i. Our goal will be to show that, for a
+given prime in q ∈ S0 \ T , we can always ﬁnd a corresponding set of κi with either
+(i) κi negative for all i, or
+(ii) κi either positive and κi ≡ 2 (mod 4), or κi negative and odd, or
+(iii) κi ≡ 2 (mod 4) for all i.
+Combining the conclusions of subsections 6.4.3, 6.5.3 and 6 .6.3, we can choose
+κi for which we require
+(
+κi
+p
+)
+= −1, to contradict the fact that φ is symplectic, as
+=== PAGE 30 ===
+30 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+follows.
+E κ i E κ i
+18q.1.a1 4 − a or − 6b 72q.1.a1 2 or − 6b
+18q.2.a1 4 − a or − 6 72q.2.a1 −6b
+18q.3.a1 4 − a or − 6b 72q.3.a1 −6b
+18q.4.a2 12 − 2a or − 3b 72q.4.a2 2
+18q.5.a2 12 − 2a 72q.4.b2 2 or 3
+18q.5.b2 12 − 2a 72q.7.a1 −3b
+36q.1.a2 2 72q.8.a2 2 or − 3b
+36q.1.b2 6 72q.9.a2 −3b
+36q.3.a1 −3b
+Here, the integers a and b are as given in the deﬁnitions of the curves E in Section
+3. It is important to remember that, for a given q and corresponding type of curve
+E, we have not ruled out the possibility of there being more tha n one non-isogenous
+curve involved. As example (3.1) illustrates, there can cer tainly be non-isogenous
+curves associated to a ﬁxed pair (q, E); in the case of (3.1), neither curve of the
+shape E = 18q.4.a satisﬁes a ≡ 0 (mod 2), b ≡ 1 (mod 2).
+From the preceding table, the only cases where we cannot choo se κi to be negative
+are the primes q corresponding to E = 36q.1.a2, 36q.1.b2, 72q.4.a2 or 72q.4.b2. The
+ﬁrst two of these require q ∈ S8, while the latter two arise from q ∈ S5 of the form
+q = 3 d2 + 4 for integer d. In each of these cases, we can choose κi ≡ 2 (mod 4)
+positive (see the table above).
+To conclude the proof of Theorem 1.7, we need to show that for e ach q which
+can possibly correspond to any of
+E ∈ E0 = {36q.1.a2, 36q.1.b2, 72q.4.a2 72 q.4.b2} ,
+if we have a solution to (1.4) that is associated to some E ⁄∈E0, then we can
+eliminate a positive proportion of prime exponent p by requiring that
+(
+κi
+p
+)
+= −1
+for κi either positive and κi ≡ 2 (mod 4), or κi negative and odd (as in case (ii) of
+the preceding page), or all κi ≡ 2 (mod 4) (as in case (iii)). In particular, we need
+to start by understanding S8 ∩ Si and {q prime : q = 3d2 + 4} ∩ Si; Proposition 5.1
+is a good place to begin.
+Suppose ﬁrst that q ∈ S5 and q = 3 d2 + 4 for an odd integer d. Modulo 8, we
+cannot have q = 3 d2
+1 + 2α for integer d1 and α ≥ 4. Further, applying Proposition
+5.1, we have that q ⁄∈Si for each i ∈ { 1, 3, 4, 8}. Since q ∈ S0 \ T , we have that
+q ⁄∈S7. If q ∈ S2, then q = ( −1)δ1 2a2 + (−1)δ2 3b2, for a2 ∈ { 2, 3} or a2 ≥ 5, and
+b2 ≥ 1. Modulo 3, δ1 ≡ a2 (mod 2), while, modulo 8, either a2 = 2 , δ1 = δ2 = 0 ,
+b2 ≡ 1 (mod 2) and d = 3 (b2− 1)/2, or we have a2 ≥ 3, b2 ≡ 0 (mod 2) and δ2 = 1 .
+In this latter case, we also have δ1 = 0, a2 ≡ 0 (mod 2) and hence
+2a2/2 − 3b2/2 = 1 and 2a2/2 + 3b2/2 = q.
+Since a2 ≥ 6, this ﬁrst equation has no solutions (by an old result of Levi ben
+Gerson), whereby it follows that if q = 3d2 + 4 ∈ S2, then d = 3 (b2− 1)/2. If, further,
+q = 3d2 + 4 ∈ S2 ∩ S6, then
+q = 3 b2 + 4 = d2
+6 + 3b6
+4 ,
+=== PAGE 31 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 31
+for odd positive integers b2, d6 and b6, so that
+(7.1) d2
+6 = 4 · 3b2 − 3b6 + 16.
+In general, this equation has precisely the solutions
+(d6, b2, b6) = (1 , 1, 3), (5, 1, 1), (11, 3, 1) and (31, 5, 3)
+in odd positive integers; none of these correspond to a prime values of q > 73.
+To prove this, note that an elementary argument easily yield s that b2 > b 6 unless
+|d6| ≤ 5. We may thus write d6 = 3 b6 · k1 + ( −1)δ4, for some δ ∈ { 0, 1} and
+k1 ≡ ±1 (mod 6) a positive integer. Substituting into (7.1), we have
+3b6k2
+1 + (−1)δ8 · k1 = 4 · 3b2− b6 − 1.
+If k1 = 1 , then, modulo 3, we have 3b6− 1 + 3 = 4 · 3b2− b6− 1, corresponding to
+(d6, b2, b6) = (31 , 5, 3). If k1 > 1 then k1 ≥ 5 and necessarily b2 > 2b6. It follows
+that we can write (−1)δ8 · k1 + 1 = 3 b6 · k2 for a (nonzero) integer k2 ≡ 3 (mod 8),
+so that
+(7.2)
+(
+3b6 k2 − 1
+) 2
++ 64k2 = 256 · 3b2− 2b6.
+We check that the only solution to this equation with k2 ∈ {− 13, −5, 3, 11} cor-
+responds to (d6, b2, b6) = (11 , 3, 1); otherwise, after a little work, we may suppose
+that b2 > 4b6 and hence that −2k23b6 + 64k2 + 1 is divisible by 32b6 (and hence
+|2k23b6 −64k2−1| ≥ 32b6). It follows that either b6 ≤ 3, or that we have |k2| > 3b6− 1.
+From (7.2), after a little more work, we may thus conclude tha t either b6 ∈ {1, 3},
+or that b2 ≥ 6b6 − 7.
+On the other hand, applying Theorem 1.5 of [1], with (in the no tation of that
+theorem)
+(a, y, x0, m0, ∆ , α, s) = (1 , 3, 3788, 15, −37, 3.1, 2),
+we ﬁnd that ⏐⏐⏐
+√
+3 − p
+2 · 3k
+⏐⏐⏐ > e − 170 3− 1.64281k,
+for p and k positive integers with k ≥ 4775. It follows that
+⏐⏐p2 − 4 · 32k+1⏐⏐ > 4 · e− 170 30.35719k,
+provided k ≥ 4775. Applying this with p = d6 and b2 = 2 k + 1, (7.1) thus implies
+that either b6 ∈ {1, 3} or we have
+3(b2+7)/6 ≥ 3b6 > 4 · e− 170 30.35719(b2− 1)/2,
+whence b2 ≤ 12979. A brute-force search conﬁrms that (7.1) has only the listed
+solutions.
+In conclusion, then, if q = 3 d2 + 4 for integer d, we have one of the following
+situations. Either q ⁄∈Si for i ⁄= 5 and hence corresponds to only E = 72q.4.a2 and
+E = 72q.4.b2, or q ∈ S2 ∩ S5 corresponds to precisely
+E ∈ {72q.3.a1, 72q.4.a2, 72q.4.b2} ,
+or q ∈ S5 ∩ S6, with
+E ∈ {36q.3.a1, 72q.4.a2, 72q.4.b2} ,
+=== PAGE 32 ===
+32 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+for, possibly, several diﬀerent curves of the shape 36q.3.a1, depending on the number
+of distinct ways to represent q =
+d2
+6,i+3bi
+4 , for integers d6,i and bi. In the ﬁrst case,
+we deduce a contradiction for every p with
+(
+2
+p
+)
+= −1. In the second, we require
+(2
+p
+)
+=
+(−6b
+p
+)
+= −1,
+where q = 3 b + 4 (and b is odd). Finally, for the third case, we suppose that
+(2
+p
+)
+=
+(−3b1
+p
+)
+= · · · =
+(−3bt
+p
+)
+= −1,
+where
+q = 3d2 + 4 = d2
+6,i + 3bi
+4 , for i = 1, . . . , t.
+Here, the exponents bi are necessarily odd. In each case, these choices for p contra-
+dict the fact that the p-torsion of our Frey-Hellegouarch curve F is symplectically
+isomorphic to that of E.
+Let us next suppose that q ∈ S8 with q > 73. From Proposition 5.1, it follows
+that q ⁄∈Si, for i ∈ {1, 3, 5, 7}. By deﬁnition, there exist integers u and v such that
+q = (3v2 − 1)/2 where u2 − 3v2 = −2. The positive integers v = vk satisfying this
+latter equation also satisfy the binary recurrence
+(7.3) vk+1 = 4vk − vk− 1, for k ≥ 1, where v0 = 1, v1 = 3.
+In particular, we have that vk ≡ 0 (mod 3) precisely when k ≡ 1 (mod 4). For
+such k, we may readily show via induction that vk ≡ ±3 (mod 13) and hence that
+3v2
+k − 1 ≡ 0 (mod 13). It follows that, in order to have q = (3 v2 − 1)/2 prime
+with u2 − 3v2 = −2 for some integer u, we require that either q = 13 , or that
+v ≡ ± 1 (mod 3) (whereby q ≡ 1 (mod 9)). If, for our q ∈ S8 with q > 73, we have
+q = 2 a+3b for integers a ≥ 2 and b ≥ 1, then, modulo 4, b is necessarily even, so that
+we require 2a ≡ 1 (mod 9), whence a ≡ 0 (mod 6). It follows that 2a + 3b ≡ 2, 3
+or 5 (mod 7). On the other hand, again from considering the recursion (7 .3), we
+ﬁnd that q ≡ ± 1 (mod 7), a contradiction. If, instead, we have q = 2 a − 3b, for
+a ≥ 2 and b ≥ 1, then, modulo 12, a is even and b is odd. If b = 1 , then we
+have 2a+1 = 3 v2 + 5 and so, from Lemma 5.1, since q > 73, a contradiction. If we
+suppose that b ≥ 2, then, modulo 9, we again require that a ≡ 0 (mod 6), so that
+2a − 3b ≡ 0, 3, 5, 9 or 11 (mod 13). On the other hand, from (7.3), we have that
+q ≡ ±1 (mod 13), a contradiction.
+It follows that, if q ∈ S2 ∩ S8 with q > 73, then there exist integers a ≥ 2 and
+b ≥ 1, with q = 3 b − 2a. Arguing as previously, modulo 22 · 33 · 7, we ﬁnd that
+a ≡ 3 (mod 6) and b ≡ 2 (mod 6). Working modulo 73, we ﬁnd from (7.3) that
+q ≡ ±1, ±34, ±35 (mod 73) which shows that, in fact, b ≡ 2 (mod 12).
+We thus have, for q ∈ S8, that E is necessarily one of
+18q.3.a1, 18q.4.a2, 36q.1.a2, 36q.1.b2, 72q.3.a1, 72q.7.a1 or 72q.9.a2,
+where E = 18q.3.a1 and 72q.3.a1 correspond to q ∈ S2, E = 18q.4.a2 and 72q.9.a2
+come from q ∈ S4, E = 72 q.7.a1 arises from q ∈ S6 and both E = 36 q.1.a2 and
+36q.1.b2 occur for every q ∈ S8. From our previous discussion, if E = 18 q.3.a1,
+there exist integers a2 ≥ 5 and b2 ≥ 3 with a2 ≡ 3 (mod 6), b2 ≡ 2 (mod 12) and
+q = 3 b2 − 2a2 . If we choose p such that
+(
+4− a2
+p
+)
+= −1 (where 4 − a2 is negative
+=== PAGE 33 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 33
+and odd), we again contradict the fact that the p-torsion of our Frey-Hellegouarch
+curve F is symplectically isomorphic to that of E. If E = 18 q.4.a2, we have that
+q = d2
+4 + 2a43b4 for integers d4, a4 and b4 (not necessarily unique), with a4 ≥ 8 even
+and b4 odd. In this case, we constrain p to satisfy
+(
+− 3b4
+p
+)
+= −1. Similarly, for
+E = 36q.1.a2 or 36q.1.b2, we impose the conditions
+(2
+p
+)
+=
+(6
+p
+)
+= −1,
+while, for E = 72q.3.a1, we have q = 3 b2 − 8 with b2 ≡ 2 (mod 12), and choose
+(−6b2
+p
+)
+=
+(−3b2/2
+p
+)
+= −1;
+note that, importantly for us, −3b2/2 is odd. If E = 72 q.7.a1, we can write q =
+d2+3b6
+4 with b6 odd and take
+(
+− 3b6
+p
+)
+= −1. Finally, if E = 72 q.9.a2, we have
+q = d2
+4 + 2 43b4 for integers d4 and b4 (not necessarily unique), with b4 odd, and
+can derive a contradiction by choosing p such that
+(
+− 3b4
+p
+)
+= −1. In summary, if
+q ∈ S8, we reach our desired conclusion by choosing our ﬁnite set of κi as in case
+(ii). This completes the proof of Theorem 1.7.
+7.2. Proof of Theorem 1.8. Let q = 2 a3b − 1 with a ≥ 5 and b ≥ 1 be a prime.
+Then q ∈ S1 and hence, from Proposition 5.1, q ⁄∈Si for i ∈ { 2, 3, 5, 7, 8}. On the
+other hand, q ⁄∈Si for i ∈ {4, 6}, since q ≡ 2 (mod 3). It follows that, in this case,
+a solution to (1.2) with p ≥ q2q necessarily corresponds to an elliptic curve in the
+isogeny class 18q.1.a. The result now follows from the equalities in (6.1).
+7.3. Proof of Theorem 1.9. Suppose that A, B and C are coprime, nonzero
+integers satisfying (1.5) with p ≥ 17, and write F for the corresponding Frey-
+Hellegouarch curve. Note that, for q = 5 , we are led to consider levels 90, 180 and
+360. For these levels, each weight 2, cuspidal newform f corresponds to one of the
+9 isogeny classes of elliptic curves E/Q given in Cremona’s notation by
+90a, 90b, 90c, 180a, 360a, 360b, 360c, 360d and 360e.
+For E in the isogeny classes 90a, 90b, 180a, 360b and 360c, we ﬁnd that a7(E) = 2
+and hence, it follows from (4.3), the Hasse bound and the leve l lowering condition
+that
+2 ≡ 0, ±4, ±8 (mod p).
+This gives a contradiction with p ≥ 17.
+Next, we treat the isogeny class 360e. Taking E = 360 e2, we ﬁnd that e(E, 3) =
+2. In the beginning of Section 6.4.2, it is explained that eith er F has potentially
+multiplicative reduction at ℓ = 3 or potentially good reduction with e(F, 3) = 4 , a
+contradiction in either cases.
+Finally, suppose that E is in one of the isogeny classes 90c, 360a and 360d, say,
+E = 90 c2, 360a2 or 360d2. We will apply [12, Theorem 4] and [20, Proposition 2]
+with ℓ ∈ { 2, 3, q}. In all cases, from [20, Proposition 2] with ℓ = q, we have that
+our isomorphism between F [p] and E[p] is necessarily symplectic. If E = 90c2, we
+may thus further appeal to [20, Proposition 2] with ℓ = 2 and ℓ = 3 (after suitable
+=== PAGE 34 ===
+34 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+twist) to conclude that
+(7.4)
+(−1
+p
+)
+=
+(−2
+p
+)
+= 1.
+For E = 360 a2, we apply [12, Theorem 4] and [20, Proposition 2] with ℓ = 3 ,
+whereby
+(7.5)
+(2
+p
+)
+=
+(−3
+p
+)
+= 1.
+If E = 360d2, we apply [20, Proposition 2] with ℓ = 3 to conclude that
+(7.6)
+(−6
+p
+)
+= 1.
+We reach our desired conclusion upon observing that, if p ≡ 13, 19 or 23 (mod 24),
+then each of (7.4), (7.5) and (7.6) fails to hold.
+7.4. F urther results for small primes q. To conclude this paper, we will provide
+some more explicit results for small values of q. We obtain these by proceeding in
+a similar fashion to the proof of Theorem 1.9. Making the furt her assumption that
+p ≥ q2q, we reduce the calculation to consideration of elliptic cur ves E with non-
+trivial rational 2-torsion, conductor in the set {18q, 36q, 72q} and such that ∆( E)
+is of the shape T 2 or −3T 2 for some integer T (i.e. those corresponding to primes
+in S0). We summarize our results as follows.
+Theorem 7.1. If p and q are primes with p ≥ q2q, then there are no coprime,
+nonzero integers A, B and C satisfying equation (1.4) with q in the following table
+and p satisfying the listed conditions.
+q p q p
+5 13 , 19, 23 (mod 24) 47 5 , 11, 13, 17, 19, 23 (mod 24)
+11 13 , 17, 19, 23 (mod 24) 59 5 , 7, 11, 13, 19, 23 (mod 24)
+13 11 (mod 12) 67 7 , 11, 13, 29, 37, 41, 43, 59, 67, 71, 89, 101, 103 (mod 120)
+17 5 , 17, 23 (mod 24) 71 5 (mod 6)
+23 19 , 23 (mod 24) 73 41 , 71, 89 (mod 120)
+29 7 , 11, 13, 17, 19, 23 (mod 24) 79 5 , 7, 11, 13, 19, 23 (mod 24)
+31 5 , 11 (mod 24) 89 13 , 17, 19, 23 (mod 24)
+41 5 , 7, 11, 17, 19, 23 (mod 24) 97 11 (mod 12)
+Here, we have omitted both primes for which Theorem 1.4 appli es directly (i.e.
+q = 53 and 83, according to Corollary 1.6) and also primes for which the sy mplectic
+method fails to eliminate exponents, i.e. q ∈ { 7, 19, 37, 43, 61}. For these latter
+primes, observe that, in each case, q is of the shape (3d2 + 1)/4 or 3d2 + 16 for
+an integer d; as explained in Section 5.2, these are those primes for whic h there
+exists a solution to (1.4) (with C = 1 ) for every exponent p (whereby we expect
+our techniques to fail), together with those for which we hav e a “trivial” solution to
+the related equation A3 + B3 = 8qC p, again for every p.
+=== PAGE 35 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 35
+8. Appendix : c-inv ariants
+8.1. Conductor 18q. We have
+Curve c4 Curve c4
+18q. 1.a 1 3 2 ·
+(
+22a32b + (− 1)δ 2a3b + 1
+)
+18q. 3.a 3 3 2 ·
+(
+22a− 4 + (− 1)δ1+δ2 2a3b + 32b)
+18q. 1.a 2 3 2 ·
+(
+22a+432b + (− 1)δ 2a+43b + 1
+)
+18q. 3.a 4 3 2 ·
+(
+22a + (− 1)1+δ1+δ2 7 ·2a+13b + 32b)
+18q. 1.a 3 3 2 ·
+(
+22a− 432b + (− 1)δ 2a3b + 1
+)
+18q. 4.a 1 ( − 1)δ1 32 (
+q − (− 1)δ2 2a− 23b)
+18q. 1.a 4 3 2 ·
+(
+22a32b + (− 1)δ +17 ·2a+13b + 1
+)
+18q. 4.a 2 ( − 1)δ1 32 (
+q − (− 1)δ2 2a+23b)
+18q. 2.a 1 3 2 ·
+(
+22a + 2a + 1
+)
+18q. 5.a 1 3 2 (
+d2 + (− 1)δ1+δ2 2a− 2)
+18q. 2.a 2 3 2 ·
+(
+22a+4 + 2a+4 + 1
+)
+18q. 5.a 2 3 2 (
+d2 − (− 1)δ1+δ2 2a)
+18q. 2.a 3 3 2 ·
+(
+22a− 4 + 2a + 1
+)
+18q. 5.b 1 3 4 (
+d2 + (− 1)δ1+δ2 2a− 2)
+18q. 2.a 4 3 2 ·
+(
+22a − 7 ·2a+1 + 1
+)
+18q. 5.b 2 3 4 (
+d2 − (− 1)δ1+δ2 2a)
+18q. 3.a 1 3 2 ·
+(
+22a + (− 1)δ1+δ2 2a3b + 32b)
+18q. 6.a 1 3 2 (
+d2 + 3 ·2a− 2)
+18q. 3.a 2 3 2 ·
+(
+22a+4 + (− 1)δ1+δ2 2a+43b + 32b)
+18q. 6.a 2 3 2 (
+d2 − 3 ·2a)
+Curve c6
+18q.1.a1 ( −1)δ+133(
+2a+13b + (−1)δ)(
+2a3b + (−1)δ+1)(
+2a− 13b + (−1)δ)
+18q.1.a2 3 3(
+2a+13b + (−1)δ)(
+22a+532b + (−1)δ2a+53b − 1
+)
+18q.1.a3 ( −1)δ+133(
+2a− 13b + (−1)δ)(
+22a− 532b + (−1)δ+12a3b − 1
+)
+18q.1.a4 ( −1)δ+133(
+2a3b + (−1)δ+1)(
+22a32b + (−1)δ17 · 2a+13b + 1
+)
+18q.2.a1 −33(
+2a+1 + 1
+)
+(2a − 1)
+(
+2a− 1 + 1
+)
+18q.2.a2 −33(
+2a+1 + 1
+)(
+22a+5 + 2a+5 − 1
+)
+18q.2.a3 −33(
+2a− 1 + 1
+)(
+22a− 5 − 2a − 1
+)
+18q.2.a4 −33 (2a − 1)
+(
+22a + 17 · 2a+1 + 1
+)
+18q.3.a1 ( −1)δ33(
+2a+1 + (−1)δ1+δ2 3b)(
+2a − (−1)δ1+δ2 3b)(
+2a− 1 + (−1)δ1+δ2 3b)
+18q.3.a2 ( −1)δ33(
+2a+1 + (−1)δ1+δ2 3b)(
+22a+5 + (−1)δ1+δ2 2a+53b − 32b)
+18q.3.a3 ( −1)b+133(
+(−1)δ1+δ22a− 1 + 3b)(
+22a− 5 − (−1)δ1+δ22a3b − 32b)
+18q.3.a4 ( −1)b33(
+3b + (−1)b+δ2a)(
+22a + (−1)δ1+δ2 17 · 2a+13b + 32b)
+18q.4.a1 3 3d
+(
+d2 + (−1)δ1+δ2 2a− 33b+2)
+18q.4.a2 3 3d
+(
+d2 + (−1)δ1+δ2 2a3b+2)
+18q.5.a1 3 3d
+(
+d2 + (−1)δ1+δ22a− 33
+)
+18q.5.a2 3 3d
+(
+d2 + (−1)δ1+δ2 2a3
+)
+18q.5.b1 −36d
+(
+d2 + (−1)δ1+δ2 2a− 33
+)
+18q.5.b2 −36d
+(
+d2 + (−1)δ1+δ2 2a3
+)
+18q.6.a1 3 3d
+(
+d2 + 2a− 332)
+18q.6.a2 3 3d
+(
+d2 + 2a32)
+8.2. Conductor 36q. We have
+=== PAGE 36 ===
+36 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+Curve c4 Curve c4
+36q.1.a1 2 43
+(
+q2 − 1
+)
+36q.4.a1 2 432(
+d2 − 3b+1)
+36q.1.a2 2 43
+(
+16q2 − 1
+)
+36q.4.a2 2 432(
+d2 + 4 · 3b+1)
+36q.1.b1 2 433(
+q2 − 1
+)
+36q.5.a1 2 432(
+d2 − 3b+1)
+36q.1.b2 2 433(
+16q2 − 1
+)
+36q.5.a2 2 432(
+d2 + 4 · 3b+1)
+36q.2.a1 2 232(
+d2 − 1
+)
+36q.6.a1 2 432(
+d2 − 1
+)
+36q.2.a2 2 432(
+4d2 + 1
+)
+36q.6.a2 2 432(
+d2 + 4
+)
+36q.2.b1 2 234(
+d2 − 1
+)
+36q.6.b1 2 434(
+d2 − 1
+)
+36q.2.b2 2 434(
+4d2 + 1
+)
+36q.6.b2 2 434(
+d2 + 4
+)
+36q.3.a1 2 232(
+d2 − 3b+1)
+36q.7.a1 2 432(
+d2 + 3b+1)
+36q.3.a2 2 432(
+4d2 + 3b+1)
+36q.7.a2 2 432(
+d2 − 4 · 3b+1)
+Curve c6 Curve c6
+36q.1.a1 −2532rs
+(
+q2 + 2
+)
+36q.4.a1 2 533d
+(
+2d2 − 3b+2)
+36q.1.a2 −2632rs
+(
+32q2 + 1
+)
+36q.4.a2 2 633d
+(
+d2 − 4 · 3b+2)
+36q.1.b1 2 535rs
+(
+q2 + 2
+)
+36q.5.a1 2 533d
+(
+2d2 − 3b+2)
+36q.1.b2 2 635rs
+(
+32q2 + 1
+)
+36q.5.a2 2 633d
+(
+d2 − 4 · 3b+2)
+36q.2.a1 −2333d
+(
+d2 + 3
+)
+36q.6.a1 2 533d
+(
+2d2 − 3
+)
+36q.2.a2 −2633d
+(
+8d2 + 3
+)
+36q.6.a2 2 633d
+(
+d2 − 12
+)
+36q.2.b1 2 336d
+(
+d2 + 3
+)
+36q.6.b1 −2536d
+(
+2d2 − 3
+)
+36q.2.b2 2 636d
+(
+8d2 + 3
+)
+36q.6.b2 −2636d
+(
+d2 − 12
+)
+36q.3.a1 −2333d
+(
+d2 + 3b+2)
+36q.7.a1 2 533d
+(
+2d2 + 3b+2)
+36q.3.a2 −2633d
+(
+8d2 + 3b+2)
+36q.7.a2 2 633d
+(
+d2 + 4 · 3b+2)
+=== PAGE 37 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 37
+8.3. Conductor 72q. We have
+Curve c4 Curve c4
+72q.1.a1 2 432(
+32b + 3b + 1
+)
+72q.5.b1 2 434(
+d2 + (−1)δ2a− 2)
+72q.1.a2 2 432(
+16 · 32b + 16 · 3b + 1
+)
+72q.5.b2 2 434(
+d2 − (−1)δ2a)
+72q.1.a3 2 432(
+16 · 32b + 16 · 3b + 1
+)
+72q.6.a1 2 232(
+d2 − 1
+)
+72q.1.a4 2 432(
+16 · 32b + 16 · 3b + 1
+)
+72q.6.a2 2 432(
+4d2 + 1
+)
+72q.2.a1 2 432(
+22a32b + (−1)δ2a3b + 1
+)
+72q.6.b1 2 234(
+d2 − 1
+)
+72q.2.a2 2 432(
+22a+432b + (−1)δ2a+43b + 1
+)
+72q.6.b2 2 434(
+4d2 + 1
+)
+72q.2.a3 2 432(
+22a− 432b + (−1)δ2a3b + 1
+)
+72q.7.a1 2 232(
+d2 − 3b+1)
+72q.2.a4 2 432(
+22a32b + (−1)δ7 · 2a+13b + 1
+)
+72q.7.a2 2 432(
+4d2 − 3b+1)
+72q.3.a1 2 432(
+32b + (−1)δ2a3b + 22a)
+72q.8.a1 2 432(
+d2 + 3b+1)
+72q.3.a2 2 432(
+32b − (−1)δ7 · 2a+13b + 22a)
+72q.8.a2 2 432(
+d2 − 4 · 3b+1)
+72q.3.a3 2 432(
+32b + (−1)δ2a+43b + 22a+4)
+, 72q.9.a1 2 432(
+d2 + (−1)δ1+δ22a− 23b+1)
+72q.3.a4 2 432(
+32b + (−1)δ2a3b + 22a− 4)
+72q.9.a2 2 432(
+d2 + (−1)δ1+δ2+12a · 3b+1)
+72q.4.a1 2 432(
+d2 + 1
+)
+72q.10.a1 2 432(
+d2 − 2a− 23b+1)
+72q.4.a2 2 432(
+d2 − 4
+)
+72q.10.a2 2 432(
+d2 + 2a · 3b+1)
+72q.4.b1 2 434(
+d2 + 1
+)
+72q.11.a1 2 432(
+d2 + 24
+)
+72q.4.b2 2 434(
+d2 − 4
+)
+72q.11.a2 2 432(
+d2 − 96
+)
+72q.5.a1 2 432(
+d2 + (−1)δ2a− 2)
+72q.12.a1 2 432(
+d2 + 24
+)
+72q.5.a2 2 432(
+d2 − (−1)δ2a)
+72q.12.a2 2 432(
+d2 − 96
+)
+=== PAGE 38 ===
+38 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+Curve c6
+72q.1.a1 2 533(3b − 1)(3b + 2)(2 · 3b + 1)
+72q.1.a2 2 633(2 · 3b + 1)
+(
+32 · 32b + 32 · 3b − 1
+)
+72q.1.a3 2 633(2 · 3b + 1)
+(
+32 · 32b + 32 · 3b − 1
+)
+72q.1.a4 2 633(2 · 3b + 1)
+(
+32 · 32b + 32 · 3b − 1
+)
+72q.2.a1 −2633((−1)δ2a+13b + 1)
+(
+22a− 132b + (−1)δ2a− 13b − 1
+)
+72q.2.a2 −2633((−1)δ2a+13b + 1)
+(
+22a+532b + (−1)δ2a+53b − 1
+)
+72q.2.a3 2 533((−1)δ2a− 13b + 1)
+(
+−22a− 432b + (−1)δ2a+13b + 2
+)
+72q.2.a4 −2633((−1)δ2a3b − 1)
+(
+22a32b + (−1)δ17 · 2a+13b + 1
+)
+72q.3.a1 2 633(−1)b(3b − (−1)δ2a)
+(
+22a + (−1)δ5 · 2a− 13b + 32b)
+72q.3.a2 2 633(−1)b(3b − (−1)δ2a)
+(
+22a + (−1)δ17 · 2a+13b + 32b)
+72q.3.a3 −2633(−1)b(3b + (−1)δ2a+1)
+(
+22a+5 + (−1)δ2a+53b − 32b)
+72q.3.a4 2 533(−1)b(3b + (−1)δ2a− 1)
+(
+−22a− 4 + (−1)δ2a+13b + 2 · 32b)
+72q.4.a1 −2533d
+(
+2d2 + 3
+)
+72q.4.a2 −2633d
+(
+d2 + 12
+)
+72q.4.b1 2 536d
+(
+2d2 + 3
+)
+72q.4.b2 2 636d
+(
+d2 + 12
+)
+72q.5.a1 −2533d
+(
+(−1)δ2d2 + 3 · 2a− 2)
+72q.5.a2 −2633d
+(
+(−1)δd2 + 3 · 2a)
+72q.5.b1 2 536d
+(
+(−1)δ2d2 + 3 · 2a− 2)
+72q.5.b2 2 636d
+(
+(−1)δd2 + 3 · 2a)
+72q.6.a1 2 533d
+(
+d2+3
+4
+)
+72q.6.a2 2 633d
+(
+8d2 + 3
+)
+72q.6.b1 −2536d
+(
+d2+3
+4
+)
+72q.6.b2 −2636d
+(
+8d2 + 3
+)
+72q.7.a1 2 533d
+(
+d2+3b+2
+4
+)
+72q.7.a2 2 633d
+(
+8d2 + 3b+2)
+72q.8.a1 −2533d
+(
+2d2 + 3b+2)
+72q.8.a2 −2633d
+(
+d2 + 4 · 3b+2)
+72q.9.a1 2 633d
+(
+d2 + (−1)δ1+δ22a− 33b+2)
+72q.9.a2 2 633d
+(
+d2 + (−1)δ1+δ2 2a · 3b+2)
+72q.10.a1 2 633d
+(
+d2 − 2a− 33b+2)
+72q.10.a2 2 633d
+(
+d2 − 2a · 3b+2)
+72q.11.a1 2 633d
+(
+d2 + 36
+)
+72q.11.a2 2 633d
+(
+d2 + 288
+)
+72q.12.a1 2 633d
+(
+d2 + 36
+)
+72q.12.a2 2 633d
+(
+d2 + 288
+)
+=== PAGE 39 ===
+SUMS OF TWO CUBES AS TWISTED PERFECT POWERS, REVISITED 39
+References
+[1] M. Bauer and M. A. Bennett, Applications of the Hypergeom etric Method to the Generalized
+Ramanujan-Nagell Equation, Ramanujan J. 6 (2002), 209–270.
+[2] M. A. Bennett, Pillai’s conjecture revisited, J. Number Th. 98 (2003), 228–235.
+[3] M. A. Bennett and A. Ghadermarzi, Mordell’s equation : a c lassical approach, LMS J. Comput.
+Math. 18 (2015), 633–646.
+[4] M.A. Bennett, F Luca and J. Mulholland, Twisted extensio ns of the cubic case of Fermat’s
+Last Theorem, Ann. Sci. Math. Québec 35 (2011), 1–15.
+[5] M.A. Bennett, G. Martin, K. O’Bryant and A. Rechnitzer, E xplicit bounds for primes in
+arithmetic progressions, in preparation.
+[6] N. Bruin. On powers as sums of two cubes, In Algorithmic Number Theory (Leiden, 2000),
+Lecture Notes in Comput. Sci., vol 1838, Springer, Berlin, 2 000, pp. 169–184.
+[7] C. Bruni, Twisted Extensions of Fermat’s Last Theorem, P hD Thesis, University of British
+Columbia, 2015, 299 pp.
+[8] I. Chen and S. Siksek, Perfect powers expressible as sums of two cubes, Journal of Algebra
+322 (2009), 638–656.
+[9] J. E. Cremona, Algorithms for Modular Elliptic Curves, 2 nd ed., Cambridge University Press,
+1997.
+[10] S. Dahmen. Classical and modular methods applied to Dio phantine equations, PhD thesis,
+University of Utrecht, 2008. Permanently available at
+http://igitur-archive.library.uu.nl/dissertations/2008-0820-200949/UUindex.html
+[11] H. Darmon and A. Granville, On the equations zm = F (x, y) and Axp + Byq = Cz r, Bull.
+L.M.S. 27 (1995), 513–543.
+[12] N. Freitas, On the Fermat-type equation x3 + y3 = zp, Commentarii Mathematici Helvetici
+91 (2016), 295–304.
+[13] N. Freitas and A. Kraus, On symplectic isomorphisms of t he p-torsion of elliptic curves,
+preprint.
+[14] N. Freitas and A. Kraus, On symplectic isomorphisms of t he p-torsion of elliptic curves II, in
+preparation.
+[15] N. Freitas, B. Naskręcki and M. Stoll, The generalized F ermat equation with exponents 2,3, n.
+preprint available at http://www.math.ubc.ca/~nuno/preprint3.pdf
+[16] E. Halberstadt and A. Kraus, Courbes de Fermat: résulta ts et problèmes, J. Reine Angew.
+Math. 548 (2002), 167–234.
+[17] D. R. Heath-Brown, Siegel zeros and the least prime in an arithmetic progression, Quart. J.
+Math. Oxford Ser. (2) , 41 (1990), 405–418.
+[18] A. Kraus, Sur le défaut de semi-stabilité des courbes el liptiques à réduction additive,
+Manuscripta Math. 69 (1990), no. 4, 353–385.
+[19] A. Kraus, Sur l’équation a3 + b3 = cp, Experiment. Math. 7 (1998), 1–13.
+[20] A. Kraus and J.Oesterle, Sur une question de B. Mazur, Math. Ann. 293 (1992), 259–275.
+[21] J. Mulholland, Elliptic Curves with Rational 2-torsion and Related Ternary Diophantine
+Equations, PhD Thesis, University of British Columbia, 200 6, 340 pp.
+[22] S. S. Pillai, On the equation 2x − 3y = 2 X + 3Y , Bull. Calcutta Math. Soc. 37, (1945). 15–20.
+[23] R. J. Stroeker and R. Tijdeman, Diophantine Equations, In: Computational Methods in
+Number Theory, Math. Centre Tracts 155, Centr. Math. Comp. S ci., Amsterdam, 1982, 321–
+369.
+[24] R. Tijdeman, On integers with many small prime factors, Compositio Math. 26 (1973), 319–
+330
+[25] R. Tijdeman and L. W ang, Sums of products of powers of giv en prime numbers, Paciﬁc J.
+Math. 132 (1988), 177–193.
+[26] L. W ang, Four term equations, Indagationes Math. 92 (1989), 355–361.
+[27] A. Wiles. Modular elliptic curves and Fermat’s Last The orem, Ann. of Math 141 (1995),
+443–551.
+E-mail address : bennett@math.ubc.ca
+=== PAGE 40 ===
+40 MICHAEL A. BENNETT, CARMEN BRUNI, AND NUNO FREITAS
+Department of Mathematics, University of British Columbia , V ancouver, B.C.,
+V6T 1Z2 Canada
+URL: http://www.math.ubc.ca/∼bennett/
+E-mail address : cbruni@uwaterloo.ca
+Centre for Education in Mathematics and Computing, Univers ity of W aterloo,
+W aterloo, Ontario, N2L 3G1 Canada
+URL: http://www.cemc.uwaterloo.ca/∼cbruni/
+E-mail address : nuno@math.ubc.ca
+Department of Mathematics, University of British Columbia , V ancouver, B.C.,
+V6T 1Z2 Canada
+URL: http://www.math.ubc.ca/∼nuno/
