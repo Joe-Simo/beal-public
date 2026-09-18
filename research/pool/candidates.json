@@ -1902,15 +1902,17 @@
         "code/U194_fixed_base_333.gp"
       ],
       "obligations": [
-        "DONE U196: sibling arrangement C^3 - A^3 = n^r checked (mixed-sign torsion points): the same 73 / 80 rank-0 bases have no non-integral torsion point; output references/U130/fixed_base_333_diff.txt.",
-        "DONE U196: LMFDB spot check for n=2, e=1: Y^2=X^3-1728 is isomorphic to y^2=x^3-27 = 36.a3, rank 0, torsion Z/2 \u2014 matches PARI.",
-        "Lean for the difference arrangement (same lemma with a negative coordinate) \u2014 not yet written.",
-        "Not claimed novel."
+        "Independent re-implementation now covers the FULL claimed range, bases 2..150, and agrees exactly (U352).",
+        "CATEGORY: the base range is bounded computation, dead by the survey gate. The EXPONENT is not bounded -- the argument covers all r at once per base -- which is why the candidate was kept.",
+        "Still undone: the Lean formalisation of the difference arrangement.",
+        "The rank-0 determinations rest on PARI's ellrank upper bound; that is sound for concluding rank 0, but it is PARI's computation and has not been cross-checked against a second CAS."
       ],
       "evaluations": {
         "lean4_mathlib_kernel": "VERIFIED: no_counterexample_three_three_fixed_base (sum) and no_counterexample_three_r_three_fixed_base (difference), standard axioms, 0 sorry, under CubicSumXIntegral / CubicSumXIntegralAll (n^e).",
         "pari": "153 (n,e) pairs, both sign patterns; saved.",
-        "lmfdb": "n=2,e=1: 36.a3 rank 0."
+        "lmfdb": "n=2,e=1: 36.a3 rank 0.",
+        "independent_reimpl_U351": "INDEPENDENT RE-IMPLEMENTATION over bases 2..40 AGREES EXACTLY with the recorded run: e=1 clean 21, e=2 clean 22, zero flagged cases, in both. Written from the stated mathematics rather than copied (code/U351_c079_independent.gp). This discharges part of the standing VERIFICATION_REQUIRED -- the first implementation is no longer the only one for this subrange. TWO FLAWS IN MY OWN FIRST ATTEMPT, recorded because both failed in the dangerous direction: (1) I used ellrank(E)[1], the LOWER bound, to test rank = 0 -- unsound, since a lower bound of 0 does not imply rank 0; U194 correctly uses [2], the upper bound. (2) I tested 'torsion point with X != 0', which is the wrong criterion: the curve Y^2 = X^3 - 432 has the torsion point [12,36] with X = 12, so that test would have passed vacuously. The correct criterion maps the point back by x = (36k+Y)/(6X), y = (36k-Y)/(6X) and rejects only positive pairs with a non-integral coordinate. A heredoc parse failure also printed plausible-looking numbers from a broken script; those were discarded, not recorded.",
+        "full_range_independent_U352": "FULL RANGE INDEPENDENTLY RE-VERIFIED. code/U351_c079_independent.gp over bases 2..150 gives e=1 clean 73, e=2 clean 80, zero flagged -- EXACTLY the recorded run's 73 and 80. The candidate is no longer single-implementation, so its VERIFICATION_REQUIRED status is discharged and it moves to PARTIAL_RESULT. A FOURTH FLAW OF MY OWN, caught before recording: my sed edit changed only the print label from 'bases 2..40' to 'bases 2..150' and not the loop bound, because the loop line had different spacing. The run therefore printed 'bases 2..150: 21, 22' -- a correct computation under a false label, which is the most dangerous shape of all. Detected because 21 and 22 contradicted the recorded 73 and 80; had the numbers been closer it might have passed. Fixed and re-run."
       },
       "failure_reason": null,
       "novelty_note": "Fixed-base, all-exponent statements; classical in spirit. Not claimed novel. Value here: first statements in this repo reaching (3,3,r) beyond the 10^9 literature bound.",
@@ -1918,7 +1920,7 @@
       "id": "C079",
       "claim": "FIXED-BASE closure of (3,3,r) for ALL r at once, including r > 10^9 where the literature is open: if A^3+B^3=n^r with r=3j+e (e in {1,2}, j>=1) and gcd(A,n)=1, then (A/n^j, B/n^j) is a rational point on x^3+y^3=n^e, i.e. on Y^2=X^3-432 n^{2e}; when that curve has rank 0 the point is torsion, and for 2<=n<=150 no rank-0 curve has a positive torsion point with a non-trivial denominator, so no solution exists. Rank 0 (PARI 2-descent upper bound, unconditional) AND no admissible torsion point: 73 of 149 bases for r = 1 mod 3, 80 of 149 for r = 2 mod 3. (r = 0 mod 3 is FLT_3, kernel.)",
       "method": "Cell from the 1000-cell Jev ranking (elliptic curve over Q x fixed term); PARI code/U194_fixed_base_333.gp, output references/U130/fixed_base_333.txt. Consistency: 1^3+2^3=3^2 has j=0 and is not excluded.",
-      "status": "VERIFICATION_REQUIRED",
+      "status": "PARTIAL_RESULT",
       "{\"evaluator_results\":\"U219 countersearch: brute force of A^3+B^3": "n^(3j+e), j>=1, n^r<=10^15, gcd(A,n)=1 over all 153 OK (n,e) pairs (346 targets): 0 hits; positive control 1^3+2^3=3^2 found. Consistent with the lemma; bounded check only.\"}"
     },
     {
@@ -4379,6 +4381,86 @@
       "novelty": "Completes the map of the gap. What looked like one opaque classical theorem is three steps, two elementary and one hard, with the hard one precisely located at the index-2 subtlety. That is a materially better starting point than 'needs Z[omega]'.",
       "evaluations": {
         "U346": "Identity and strictness validation of the descent step. Category: bounded computation, used only to de-risk a formalisation."
+      }
+    },
+    {
+      "id": "C202",
+      "status": "PARTIAL_RESULT",
+      "claim": "An ELEMENTARY route to sub-step (1) exists that avoids Z[omega], and the 2-obstruction of U343 reappears in it verbatim -- so that obstruction is intrinsic, not an artefact of the framing. The form x^2+3y^2 is multiplicative: (a^2+3b^2)(c^2+3d^2) = (ac-3bd)^2 + 3(ad+bc)^2, checked exactly over |a|,|b|,|c|,|d| <= 12 with zero mismatches. The divisor lemma the descent needs -- every divisor of p^2+3q^2 with gcd(p,q)=1 is itself u^2+3v^2 -- is FALSE as stated, and true for ODD divisors.",
+      "parents": [
+        "C199",
+        "C177"
+      ],
+      "method": "Tested the lemma directly. It failed immediately with small explicit witnesses, which is why the failure is the useful part: 2 divides 1^2+3*1^2 = 4 and 2 is not of the form; 14 divides 1^2+3*3^2 = 28 and 14 is not of the form. Restricting to odd divisors: 38,368 divisors tested over gcd(p,q)=1 with p,q < 120, zero failures.",
+      "evidence": "Multiplicativity and both counterexamples and the odd-divisor version are asserted in code/U320_regression_checks.py as check_u347_elementary_route.",
+      "obligations": "WHAT THIS CHANGES: the formalisation of sub-step (1) does not have to go through the ring of integers of Q(zeta_3) at all -- a descent on the form x^2+3y^2 itself, using multiplicativity plus the odd-divisor lemma, is enough, and mathlib's lack of a Z[omega] arithmetic layer stops being the blocker. WHAT IT DOES NOT CHANGE: the odd-divisor restriction is the SAME 2-obstruction found in U343 through the index-2 inclusion Z[sqrt(-3)] in Z[omega], so it must still be handled, just in elementary language. The odd-divisor lemma itself is NOT proved here -- a bounded check is not a proof, and its classical proof is a Fermat-style descent on the form.",
+      "novelty": "Finding the same obstruction in two independent framings is evidence that it is real rather than an artefact of how I set the problem up, which is exactly what a countersearch against one's own diagnosis should establish. It also opens a formalisation route that does not depend on machinery mathlib lacks.",
+      "evaluations": {
+        "U347": "Exact multiplicativity check, explicit counterexamples to the naive lemma, bounded verification of the odd-divisor form. Category: bounded computation, used to de-risk and to cross-check a diagnosis."
+      }
+    },
+    {
+      "id": "C203",
+      "status": "PARTIAL_RESULT",
+      "claim": "The last unproved piece of the elementary route now has its descent skeleton validated. The odd-divisor lemma -- every odd m dividing p^2+3q^2 with gcd(p,q)=1 is itself u^2+3v^2 -- is proved classically by Fermat descent: replace p,q by their SYMMETRIC residues P,Q mod m, giving P^2+3Q^2 = m*m' with 0 < m' < m. The descent step holds on all 18,488 triples tested, with maximum ratio m'/m = 0.9336 < 1.",
+      "parents": [
+        "C202",
+        "C199"
+      ],
+      "method": "Tested the only part of the classical argument that could fail numerically: that the symmetric-residue reduction is divisible by m and strictly decreasing. p,q < 150, m odd, m | p^2+3q^2, gcd(p,q) = 1. Zero violations.",
+      "evidence": "18,488 descent steps, 0 violations, max m'/m = 0.9336. Asserted over a smaller box in code/U320_regression_checks.py as check_u348_odd_divisor_descent, with a minimum-count assertion so the guard cannot silently become vacuous.",
+      "obligations": "THE WHOLE EULER GAP IS NOW SKELETONISED with no step left unmapped: (1a) multiplicativity of x^2+3y^2 -- a one-line ring identity; (1b) the odd-divisor lemma by this descent; (1c) the parametrisation p = a(a-3b)(a+3b), q = 3b(a^2-b^2) from (1a)+(1b); (2) pairwise coprimality of the three factors -- Lean drafted, unbuilt; (3) the descent f^3+g^3 = 2e^3 back to Euler's own equation. NONE OF IT IS PROVED. Every validation here is bounded computation, a dead category; what they establish is that no step is numerically false, not that any step is true. The 2-obstruction is now confined to (1b)'s odd-divisor hypothesis, where it is a hypothesis rather than a gap.",
+      "novelty": "Reduces 'the classical part, which needs Z[omega]' to five steps, every one elementary and every one with a numerically validated skeleton, using no machinery mathlib lacks. The session began with this gap described as an unauditable citation to Cohen's book.",
+      "evaluations": {
+        "U348": "Descent-step validation with a minimum-count guard. Category: bounded computation, used only to de-risk a formalisation."
+      }
+    },
+    {
+      "id": "C204",
+      "status": "PARTIAL_RESULT",
+      "claim": "The five-step skeleton is written as Lean source with the classical content ISOLATED IN TWO NAMED PROPS, so every use shows in the type -- the same discipline that made the EulerCubicTwo gap visible. Proved outright: form_mul (multiplicativity of x^2+3y^2), param_factor and param_q (the parametrisation's ring identities), descent_sum and descent_to_euler (the descent lands on f^3+g^3 = 2e^3). Stated not proved: OddDivisorForm (step 1b) and CubeFormParam (step 1c).",
+      "parents": [
+        "C203",
+        "C202",
+        "C201",
+        "C200"
+      ],
+      "method": "Each step that is a ring identity is written as a `ring` call; each step carrying genuine classical content is a `def ... : Prop`. Nothing is hidden in a sorry and nothing is assumed silently.",
+      "evidence": "Source staged at /tmp/euler_steps.lean, 6 theorems and 2 Props. NOT BUILT: mathlib is still recompiling after the package directory was lost mid-session, so none of this is verified and none of it may be cited until lake build succeeds and #print axioms runs.",
+      "obligations": "OddDivisorForm carries the 2-obstruction as an explicit hypothesis -- its statement requires m odd, and the counterexamples 2 | 1^2+3*1^2 and 14 | 1^2+3*3^2 are why. CubeFormParam carries the opposite-parity hypothesis as the condition that p - q is odd. Both are the hypotheses my own tests found by failing when they were omitted, which is the argument for stating them rather than summarising them away.",
+      "novelty": "Converts an unauditable book citation into two precisely stated Props plus five proved identities, with both residual hypotheses carrying the exact side conditions that bounded testing showed to be load-bearing. The residual gap is now two statements a reader can check against the literature, instead of one theorem a reader must take on trust.",
+      "evaluations": {
+        "U349": "Lean source staged, unbuilt. Not verification; the verification is pending the build."
+      }
+    },
+    {
+      "id": "C205",
+      "status": "PARTIAL_RESULT",
+      "claim": "COUNTERSEARCH against my own strongest result. Every step of the three_four_four_same_parity descent was re-derived independently of the Lean proof and checked on 16,182 odd coprime pairs 1 <= B < C < 400: v2(C^2+B^2) = 1; v2(C-B) and v2(C+B) both >= 1 with exactly one equal to 1; the three odd parts pairwise coprime; and (C-B)^2 + (C+B)^2 = 2(C^2+B^2). Zero violations on all four.",
+      "parents": [
+        "C168"
+      ],
+      "method": "Independent re-implementation -- one of the project's allowed verification methods -- rather than re-running the same Lean file. The point is to test whether the Lean proof proves what I describe it as proving: a mismatch between the machine-checked steps and a from-scratch derivation would show up here and nowhere else.",
+      "evidence": "16,182 pairs, four independent checks each, zero violations. Asserted over a smaller box in code/U320_regression_checks.py with a minimum-count guard so it cannot become vacuous.",
+      "obligations": "This does NOT re-prove the theorem -- it is bounded, and the theorem is universally quantified. What it rules out is a specific and serious failure: that the Lean file type-checks while establishing something other than the described descent. Note the Lean proof itself is currently UNVERIFIED in this environment, since mathlib is mid-rebuild; this check is independent of that and is not a substitute for it.",
+      "novelty": "Attacks the session's one unconditional result rather than extending it, which the exploration loop asks for and which is easy to skip when the result is one's own.",
+      "evaluations": {
+        "U350": "Independent re-implementation of the proof's steps. Category: bounded computation; used as a cross-check on a machine-checked proof, not as evidence for Beal."
+      }
+    },
+    {
+      "id": "C206",
+      "status": "PARTIAL_RESULT",
+      "claim": "FOUR DISTINCT FALSE-PASS MODES in verification scripts, all observed in my own work this session, now recorded with the check that catches each: (1) unsound bound direction -- using ellrank[1], the lower bound, to conclude rank 0; (2) wrong criterion, vacuously satisfied -- testing X != 0 on a curve whose torsion point has X = 12; (3) broken parse printing plausible numbers -- a gp heredoc whose loops never parsed still printed counts; (4) CORRECT COMPUTATION UNDER A FALSE LABEL -- a sed edit changed the print string from 'bases 2..40' to 'bases 2..150' but not the loop bound.",
+      "parents": [
+        "C079"
+      ],
+      "method": "Extracted from the C079 independent re-implementation, where all four occurred in sequence. Mode (4) is the most dangerous: nothing errors, nothing looks wrong, and it is caught only when the number contradicts something already on record.",
+      "evidence": "Each mode is documented with its concrete witness. Mitigations applied: code/U351_c079_independent.gp now declares NMAX as a variable, uses it in the loop, and PRINTS IT from the variable rather than from a literal in the format string, so a future edit cannot mislabel the range. Registered in code/verify_all_milestones.py.",
+      "obligations": "The standing rule this yields, now saved to memory as verification-script-failure-modes: every verification script gets (a) a positive control that must fire, (b) an assertion on the count of things tested so it cannot become vacuous, and (c) its actual parameters printed from the variables used. The existing guards in code/U320_regression_checks.py have (a) and (b); (c) is new and only U351 has it so far.",
+      "novelty": "Turns four accidents into a checklist. The project already had the 'empty search needs a positive control' rule; none of these four is caught by that rule, so it was not sufficient.",
+      "evaluations": {
+        "U352": "Failure-mode extraction with mitigations applied to one script. Not routing; this is process."
       }
     }
   ]

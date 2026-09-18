@@ -12,6 +12,8 @@ import subprocess
 import time
 
 MILESTONES = [
+    ("U351: Independent Re-implementation of the C079 Fixed-Base (3,3,r) Closure",
+     ["gp", "-q", "code/U351_c079_independent.gp"]),
     ("U332: Primary-Source Check of the Instance-Closure Rows",
      ["python3", "code/U332_rows_source_check.py"]),
     ("U328: Positive Controls for the Empty Searches (C156, C081, C045)",

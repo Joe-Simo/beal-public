@@ -397,14 +397,16 @@ def check_u334_pss_row():
             k += 1
         return None
 
-    usable = [(x, y, z) for x, y, z in SOLS
-              if x > 0 and y > 0 and z > 0 and perfect_power_ge2(x)]
+    assert len(SOLS) == 16, f"the PSS solution list has {len(SOLS)} entries, not the 16 of Thm 1.1"
+    positive = [(x, y, z) for x, y, z in SOLS if x > 0 and y > 0 and z > 0]
+    usable = [(x, y, z) for x, y, z in positive if perfect_power_ge2(x)]
     assert not usable, f"a (2,3,7) solution would give a Beal instance: {usable}"
     # non-vacuity: the detector must fire on a genuine perfect power
     assert perfect_power_ge2(2213459) is None
     assert perfect_power_ge2(1) == (1, 2) and perfect_power_ge2(64) is not None
-    return ("U334: all 16 PSS solutions verified; none is usable as a Beal instance. "
-            "positivity kills 14, and x is not a perfect power in the other 2")
+    return (f"U334: all {len(SOLS)} PSS solutions verified; none usable as a Beal instance -- "
+            f"positivity kills {len(SOLS) - len(positive)}, and x is not a perfect power in the "
+            f"remaining {len(positive)}")
 
 
 def check_u335_conventions_and_grh():
@@ -524,8 +526,8 @@ def check_u341_nontrivial_solutions():
     assert 2 ** 5 * 17 + 3 ** 4 == 5 ** 4
     assert 2 ** 3 + 3 ** 3 == 35
     assert 14 ** 4 * 9 + 23 ** 3 == 71 ** 3
-    return ("U341: three non-degenerate Beal-shape solutions verified, each a scaling of a small "
-            "identity (2^5*17+3^4=5^4, 2^3+3^3=35, 14^4*9+23^3=71^3)")
+    return (f"U341: {len(sols)} non-degenerate Beal-shape solutions verified, each a scaling of a "
+            f"small identity (2^5*17+3^4=5^4, 2^3+3^3=35, 14^4*9+23^3=71^3)")
 
 
 def check_u342_new_theorem_statements_are_faithful():
@@ -639,6 +641,136 @@ def check_u344_euler_parametrisation():
             "parity hypothesis is load-bearing for pairwise coprimality of a, a-3b, a+3b")
 
 
+def check_u347_elementary_route():
+    """U347/C202: an elementary route to sub-step (1), and where it still meets the 2-obstruction.
+
+    The form x^2+3y^2 is multiplicative:
+        (a^2+3b^2)(c^2+3d^2) = (ac-3bd)^2 + 3(ad+bc)^2.
+    The lemma the descent needs is that every divisor of p^2+3q^2 with gcd(p,q)=1 is itself of that
+    form. AS STATED THAT IS FALSE: 2 divides 1^2+3*1^2 = 4 and 2 is not u^2+3v^2; likewise 14 | 28.
+    Restricted to ODD divisors it holds on every case tested. So the 2-obstruction of U343 is not an
+    artefact of the Z[omega] framing -- it reappears verbatim in the elementary language.
+    """
+    from math import isqrt
+
+    def repr_form(n):
+        v = 0
+        while 3 * v * v <= n:
+            r = n - 3 * v * v
+            u = isqrt(r)
+            if u * u == r:
+                return (u, v)
+            v += 1
+        return None
+
+    # multiplicativity
+    for a in range(-6, 7):
+        for b in range(-6, 7):
+            for c in range(-6, 7):
+                for d in range(-6, 7):
+                    assert ((a * a + 3 * b * b) * (c * c + 3 * d * d)
+                            == (a * c - 3 * b * d) ** 2 + 3 * (a * d + b * c) ** 2)
+
+    # the naive lemma is FALSE at 2 -- these are the witnesses
+    assert (1 ** 2 + 3 * 1 ** 2) % 2 == 0 and repr_form(2) is None
+    assert (1 ** 2 + 3 * 3 ** 2) % 14 == 0 and repr_form(14) is None
+
+    # restricted to odd divisors it survives
+    bad = []
+    for p in range(1, 60):
+        for q in range(1, 60):
+            if gcd(p, q) != 1:
+                continue
+            n = p * p + 3 * q * q
+            d = 1
+            while d * d <= n:
+                if n % d == 0:
+                    for div in (d, n // d):
+                        if div % 2 == 1 and repr_form(div) is None:
+                            bad.append((p, q, div))
+                d += 1
+    assert not bad, f"odd-divisor lemma fails at {bad[:3]}"
+    return ("U347: x^2+3y^2 is multiplicative; the divisor lemma is FALSE at 2 (witnesses 2 | 4, "
+            "14 | 28) and holds for odd divisors -- the U343 2-obstruction in elementary form")
+
+
+def check_u348_odd_divisor_descent():
+    """U348/C203: the Fermat descent skeleton for the odd-divisor lemma.
+
+    The elementary route to sub-step (1) rests on: every ODD divisor m of p^2+3q^2 with
+    gcd(p,q) = 1 is itself u^2+3v^2. The classical proof is a descent: replace p, q by their
+    SYMMETRIC residues P, Q mod m (|P|, |Q| <= m/2); then P^2+3Q^2 = m*m' with 0 < m' < m, so a
+    minimal non-representable m cannot exist. This checks the descent STEP, which is the only part
+    of the argument that could fail numerically.
+    """
+    def sym(a, m):
+        r = a % m
+        return r - m if r > m // 2 else r
+
+    tested = 0
+    for p in range(1, 80):
+        for q in range(1, 80):
+            if gcd(p, q) != 1:
+                continue
+            n = p * p + 3 * q * q
+            d = 3
+            while d * d <= n:
+                if n % d == 0 and d % 2 == 1:
+                    m = d
+                    P, Q = sym(p, m), sym(q, m)
+                    val = P * P + 3 * Q * Q
+                    if val == 0:
+                        d += 2
+                        continue
+                    assert val % m == 0, f"P^2+3Q^2 not divisible by m at {(p, q, m)}"
+                    mprime = val // m
+                    assert 0 < mprime < m, f"descent not strict at {(p, q, m)}: m'={mprime}"
+                    tested += 1
+                d += 2
+    assert tested > 3000, f"only {tested} descent steps tested; too few to be a guard"
+    return (f"U348: descent step strict on all {tested} (p,q,m) triples with m odd dividing "
+            f"p^2+3q^2 and gcd(p,q)=1")
+
+
+def check_u350_same_parity_proof_steps():
+    """U350/C205: independent re-implementation of every step of three_four_four_same_parity.
+
+    The Lean proof is one witness; this is a second, independent one. For odd coprime B < C it
+    re-derives each step of the descent from scratch and checks it holds:
+      (i)   v2(C^2+B^2) = 1
+      (ii)  v2(C-B), v2(C+B) >= 1 and EXACTLY ONE equals 1
+      (iv)  the three odd parts are pairwise coprime
+      (d)   (C-B)^2 + (C+B)^2 = 2(C^2+B^2), the identity the final substitution uses
+    A failure here would mean the Lean proof proves something other than what I describe.
+    """
+    def v2(k):
+        e = 0
+        while k % 2 == 0:
+            k //= 2
+            e += 1
+        return e, k
+
+    n = 0
+    for B in range(1, 240, 2):
+        for C in range(B + 2, 240, 2):
+            if gcd(B, C) != 1:
+                continue
+            n += 1
+            u, v, w = C - B, C + B, C * C + B * B
+            a, uo = v2(u)
+            b, vo = v2(v)
+            c, wo = v2(w)
+            assert c == 1, f"v2(C^2+B^2) = {c} at B={B}, C={C}"
+            assert a >= 1 and b >= 1 and ((a == 1) != (b == 1)), \
+                f"2-adic exponents {(a, b)} at B={B}, C={C}"
+            assert gcd(uo, vo) == 1 and gcd(uo, wo) == 1 and gcd(vo, wo) == 1, \
+                f"odd parts not coprime at B={B}, C={C}"
+            assert u * u + v * v == 2 * w
+    assert n > 5000, f"only {n} pairs tested; too few to be a guard"
+    return (f"U350: all four descent steps re-derived independently on {n} odd coprime pairs, "
+            f"zero violations")
+
+
 CHECKS = [
     check_target_discipline,
     check_u309_rigidity_countersearch,
@@ -656,6 +788,9 @@ CHECKS = [
     check_u341_nontrivial_solutions,
     check_u342_new_theorem_statements_are_faithful,
     check_u344_euler_parametrisation,
+    check_u347_elementary_route,
+    check_u348_odd_divisor_descent,
+    check_u350_same_parity_proof_steps,
 ]
 
 
