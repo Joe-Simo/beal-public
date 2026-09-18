@@ -1,0 +1,194 @@
+[
+ [
+  0.511,
+  "pari",
+  "(3,5,11)",
+  "local-global: show the attached curve has no points over some Q_p (exact enumeration)"
+ ],
+ [
+  0.484,
+  "pari",
+  "(3,4,11) unc",
+  "even hyperelliptic curve with elliptic quotients of rank 0 (PARI)"
+ ],
+ [
+  0.483,
+  "pari",
+  "(3,4,11) unc",
+  "local-global: show the attached curve has no points over some Q_p (exact enumeration)"
+ ],
+ [
+  0.476,
+  "pari",
+  "(3,5,11)",
+  "even hyperelliptic curve with elliptic quotients of rank 0 (PARI)"
+ ],
+ [
+  0.468,
+  "pari",
+  "(3,5,11)",
+  "Frey curve over Q with classical newform elimination (PARI mf) for THIS signature"
+ ],
+ [
+  0.462,
+  "pari",
+  "(3,4,11) unc",
+  "Frey curve over Q with classical newform elimination (PARI mf) for THIS signature"
+ ],
+ [
+  0.447,
+  "pari",
+  "(3,5,11)",
+  "descent via a 2-isogeny or 3-isogeny on an attached elliptic curve"
+ ],
+ [
+  0.445,
+  "lit",
+  "(3,4,11) unc",
+  "descent via a 2-isogeny or 3-isogeny on an attached elliptic curve"
+ ],
+ [
+  0.435,
+  "derive",
+  "(3,4,11) unc",
+  "instance of a closed lower signature after grouping exponents (e.g. 4 = 2*2) and moving odd-exp"
+ ],
+ [
+  0.427,
+  "derive",
+  "(3,5,11)",
+  "reduce to a Thue or Thue-Mahler equation of small degree solvable by PARI thue()"
+ ],
+ [
+  0.42,
+  "derive",
+  "(3,4,11) unc",
+  "reduce to a Thue or Thue-Mahler equation of small degree solvable by PARI thue()"
+ ],
+ [
+  0.415,
+  "derive",
+  "(3,5,11)",
+  "instance of a closed lower signature after grouping exponents (e.g. 4 = 2*2) and moving odd-exp"
+ ],
+ [
+  0.409,
+  "pari",
+  "(4,5,7): A^4",
+  "local-global: show the attached curve has no points over some Q_p (exact enumeration)"
+ ],
+ [
+  0.406,
+  "lit",
+  "(3,4,11) unc",
+  "use the known (2,3,7)/(2,3,n) solution lists through a substitution making one term a square or"
+ ],
+ [
+  0.393,
+  "pari",
+  "(3,5,7): A^3",
+  "even hyperelliptic curve with elliptic quotients of rank 0 (PARI)"
+ ],
+ [
+  0.393,
+  "derive",
+  "(4,5,7): A^4",
+  "even hyperelliptic curve with elliptic quotients of rank 0 (PARI)"
+ ],
+ [
+  0.389,
+  "derive",
+  "(3,5,11)",
+  "factor the difference of the two odd-exponent terms over Z[zeta_p] and use that the third term "
+ ],
+ [
+  0.381,
+  "pari",
+  "(4,5,7): A^4",
+  "Frey curve over Q with classical newform elimination (PARI mf) for THIS signature"
+ ],
+ [
+  0.376,
+  "derive",
+  "(4,5,7): A^4",
+  "instance of a closed lower signature after grouping exponents (e.g. 4 = 2*2) and moving odd-exp"
+ ],
+ [
+  0.368,
+  "pari",
+  "(3,5,7): A^3",
+  "Frey curve over Q with classical newform elimination (PARI mf) for THIS signature"
+ ],
+ [
+  0.367,
+  "derive",
+  "(3,4,11) unc",
+  "factor the difference of the two odd-exponent terms over Z[zeta_p] and use that the third term "
+ ],
+ [
+  0.351,
+  "pari",
+  "(3,5,7): A^3",
+  "local-global: show the attached curve has no points over some Q_p (exact enumeration)"
+ ],
+ [
+  0.348,
+  "lit",
+  "(3,5,11)",
+  "use the known (2,3,7)/(2,3,n) solution lists through a substitution making one term a square or"
+ ],
+ [
+  0.329,
+  "derive",
+  "(3,5,7): A^3",
+  "instance of a closed lower signature after grouping exponents (e.g. 4 = 2*2) and moving odd-exp"
+ ],
+ [
+  0.314,
+  "lit",
+  "(4,5,7): A^4",
+  "descent via a 2-isogeny or 3-isogeny on an attached elliptic curve"
+ ],
+ [
+  0.307,
+  "lit",
+  "(3,5,7): A^3",
+  "use the known (2,3,7)/(2,3,n) solution lists through a substitution making one term a square or"
+ ],
+ [
+  0.304,
+  "lit",
+  "(3,5,7): A^3",
+  "descent via a 2-isogeny or 3-isogeny on an attached elliptic curve"
+ ],
+ [
+  0.297,
+  "lit",
+  "(4,5,7): A^4",
+  "use the known (2,3,7)/(2,3,n) solution lists through a substitution making one term a square or"
+ ],
+ [
+  0.282,
+  "derive",
+  "(4,5,7): A^4",
+  "reduce to a Thue or Thue-Mahler equation of small degree solvable by PARI thue()"
+ ],
+ [
+  0.266,
+  "derive",
+  "(4,5,7): A^4",
+  "factor the difference of the two odd-exponent terms over Z[zeta_p] and use that the third term "
+ ],
+ [
+  0.254,
+  "derive",
+  "(3,5,7): A^3",
+  "reduce to a Thue or Thue-Mahler equation of small degree solvable by PARI thue()"
+ ],
+ [
+  0.248,
+  "derive",
+  "(3,5,7): A^3",
+  "factor the difference of the two odd-exponent terms over Z[zeta_p] and use that the third term "
+ ]
+]

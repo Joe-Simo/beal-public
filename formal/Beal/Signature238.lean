@@ -6,6 +6,7 @@ Authors: Formal Verification Specialist, Arithmetic Number Theory Group
 import Beal.Conjecture
 import Beal.Taxonomy
 import Beal.KnownSolutions
+import Beal.ExponentReduction
 
 /-!
 # Formalization of Signature (2, 3, 8) and Bruin's Classification Theorem
@@ -87,12 +88,22 @@ theorem bruin_x_not_square : ∀ A : ℕ, A^2 ≠ 30042907 := by
     omega
 
 /--
-**Bruin's Classification Theorem (2004, Crelle's Journal)**:
+**Classification for signature {2, 3, 8}** (named hypothesis, not proved here).
 The only primitive integer solutions to x² + y³ = z⁸ with x > 0 and z > 0 are
 (1, 0, 1), (3, -2, 1), and (30042907, -96222, 43).
+
+Source audited U238 against `references/U130/survey.txt` (arXiv:2412.11933): Table 1.1 lists
+`(2, 3, n), 7 ≤ n ≤ 12, n = 15` as solved *up to permutations*, with reference [29] =
+N. Bruin, *The Diophantine equations x² ± y⁴ = ±z⁶ and x² + y⁸ = z³*, Compos. Math. **118**
+(1999), 305–321.  Table 1.2 lists exactly one non-trivial primitive solution in the family,
+`(p,q,r) = (8,3,2)`, `(x,y,z) = (43, 96222, 30042907)`, i.e. `43⁸ + 96222³ = 30042907²`, which is
+the third tuple above after rearrangement.
+
+An earlier version of this docstring cited "Bruin 2004, Crelle's Journal"; that citation is not
+supported by any source held here and has been removed.
 -/
-axiom bruin_classification_signature_238 (x y z : ℤ) :
-  IsPrimitive238Solution x y z ∧ x > 0 ∧ z > 0 →
+def BruinClassification238 : Prop :=
+  ∀ x y z : ℤ, IsPrimitive238Solution x y z ∧ x > 0 ∧ z > 0 →
     (x = 1 ∧ y = 0 ∧ z = 1) ∨
     (x = 3 ∧ y = -2 ∧ z = 1) ∨
     (x = 30042907 ∧ y = -96222 ∧ z = 43)
@@ -101,10 +112,10 @@ axiom bruin_classification_signature_238 (x y z : ℤ) :
 **Main Theorem**: No primitive integer solution to x² + y³ = z⁸ has y > 0 and x a pure power.
 Consequently, no Beal counterexample can arise from signature (2k, 3, 8) with k ≥ 2.
 -/
-theorem no_positive_pure_power_238_solution (x y z : ℤ) :
+theorem no_positive_pure_power_238_solution (hBr : BruinClassification238) (x y z : ℤ) :
   IsPrimitive238Solution x y z ∧ x > 0 ∧ z > 0 ∧ y > 0 → False := by
   intro ⟨h_prim, hx, hz, hy⟩
-  have h_class := bruin_classification_signature_238 x y z ⟨h_prim, hx, hz⟩
+  have h_class := hBr x y z ⟨h_prim, hx, hz⟩
   rcases h_class with (⟨_, hy0, _⟩ | ⟨_, hyneg2, _⟩ | ⟨_, hyneg_sporadic, _⟩)
   · omega
   · omega
@@ -114,7 +125,7 @@ theorem no_positive_pure_power_238_solution (x y z : ℤ) :
 **Corollary**: Signature (4, 3, 8), (6, 3, 8), and in general (2k, 3, 8) with k ≥ 2
 admits strictly zero positive primitive integer solutions.
 -/
-theorem no_beal_counterexample_signature_2k_3_8 (A B C : ℕ) (k : ℕ) (hk : k ≥ 2) :
+theorem no_beal_counterexample_signature_2k_3_8 (hBr : BruinClassification238) (A B C : ℕ) (k : ℕ) (hk : k ≥ 2) :
   A > 0 → B > 0 → C > 0 → Nat.gcd (Nat.gcd A B) C = 1 →
   A^(2*k) + B^3 = C^8 → False := by
   intro hA hB hC h_coprime h_eq
@@ -124,16 +135,24 @@ theorem no_beal_counterexample_signature_2k_3_8 (A B C : ℕ) (k : ℕ) (hk : k 
       rw [← pow_mul]
       ring
     rw [← this]
-    exact congrArg (fun n : ℕ => (n : ℤ)) h_eq
+    exact_mod_cast h_eq
   have h_prim : IsPrimitive238Solution (A^k) B C := by
     refine ⟨h_sq, ?_⟩
     have h_gcd_nat : Nat.gcd (Nat.gcd (A^k) B) C = 1 := by
-      -- Since gcd(A, B, C) = 1 and any prime dividing gcd(A^k, B, C) divides gcd(A, B, C)
-      sorry
+      -- Same argument as the verified `gcd_pow_eq_one`: a prime dividing A^k divides A.
+      rw [Nat.eq_one_iff_not_exists_prime_dvd]
+      rintro q hq hdvd
+      have h1 : q ∣ Nat.gcd (A ^ k) B := hdvd.trans (Nat.gcd_dvd_left _ C)
+      have hqA : q ∣ A := hq.dvd_of_dvd_pow (h1.trans (Nat.gcd_dvd_left _ B))
+      have hqB : q ∣ B := h1.trans (Nat.gcd_dvd_right _ B)
+      have hqC : q ∣ C := hdvd.trans (Nat.gcd_dvd_right _ C)
+      have hg : q ∣ Nat.gcd (Nat.gcd A B) C := Nat.dvd_gcd (Nat.dvd_gcd hqA hqB) hqC
+      rw [h_coprime] at hg
+      exact hq.one_lt.ne' (Nat.dvd_one.mp hg)
     exact_mod_cast h_gcd_nat
   have h_pos_x : (A^k : ℤ) > 0 := by positivity
   have h_pos_y : (B : ℤ) > 0 := by positivity
   have h_pos_z : (C : ℤ) > 0 := by positivity
-  exact no_positive_pure_power_238_solution (A^k) B C ⟨h_prim, h_pos_x, h_pos_z, h_pos_y⟩
+  exact no_positive_pure_power_238_solution hBr (A^k) B C ⟨h_prim, h_pos_x, h_pos_z, h_pos_y⟩
 
 end Beal

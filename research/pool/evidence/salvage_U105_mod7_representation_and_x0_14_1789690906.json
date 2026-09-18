@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U105_mod7_representation_and_x0_14",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U105_mod7_representation_and_x0_14.md",
+    "excerpt": "# U105: Mod-7 Representation $\\rho_{E, 7}$ and the Modular Curve $X_0(14)$ for $A^3 + B^3 = C^7$: Absolute Irreducibility via the 2-Torsion Lift and CM Valuation Obstructions\n\n**Date**: 2026-09-17  \n**Context**: Generalized Fermat equation $A^3 + B^3 = C^7$ with $\\gcd(A, B) = 1$, $A, B \\in \\mathbb{Z}$.  \n**Target**: The Kraus Frey curve $E: y^2 = x^3 + 3AB x + (B^3 - A^3)$ and its mod-7 Galois representation $\\rho_{E, 7}$.  \n**Companion Script**: [`code/U105_mod7_representation_and_x0_14.py`](file://[LOCAL_HOME]/Downloads/beal/code/U105_mod7_representation_and_x0_14.py)  \n**JSON Certificate**: [`research/checkpoints/U105_mod7_x0_14.json`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U105_mod7_x0_14.json)\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U104, we proved that for all primes $p \\ge 11$, the mod-$p$ Galois representation $\\rho_{E, p}$ attached to the Kraus Frey curve\n$$E: y^2 = x^3 + 3AB x + (B^3 - A^3)$$\nis unconditionally and absolutely irreducible, because the rational 2-torsion point $P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$ forces any rational $p$-isogeny to lift to a rational cyclic $2p$-isogeny, and by Kenku's Theorem (1981), no elliptic curve over $\\mathbb{Q}$ can admit a rational cyclic $2p$-isogeny for any $2p \\ge 22$.\n\nFor the exponent $p = 7$, $2p = 14$, which lies inside the classical Kenku list $\\{4, \\dots, 27\\}$, corresponding to the modular curve $X_0(14)$.\n\nThis checkpoint resolves the arithmetic geometry of $X_0(14)$ and establishes the definitive absolute irreducibility of $\\rho_{E, 7}$:\n\n1. **The 7-to-14 Isogeny Lift**:\n   Because $(A - B, 0)$ is a non-trivial rational 2-torsion point on $E$, any rational 7-isogeny on $E$ generates a rational cyclic 14-isogeny $C_{14} = C_2 \\oplus C_7$, defining a $\\mathbb{Q}$-rational point on the modular curve $X_0(14)$.\n\n2. **Arithmetic Geometry of $X_0(14)$**:\n   The modular curve $X_0(14)$ has genus $g = 1$, conductor 14, index $[SL_2 : \\Gamma_0(14)] = 24$, and 4 cusps.\n   It is isomorphic over $\\mathbb{Q}$ to the elliptic curve **14a1** (Cremona label):\n   $$14a1: y^2 + xy + y = x^3 + 4x - 6, \\quad \\Delta = -21952 = -2^6 \\cdot 7^3.$$\n   The Mordell--Weil group is finite of order 6 (rank 0):\n   $$X_0(14)(\\mathbb{Q}) \\cong \\mathbb{Z}/6\\mathbb{Z}.$$\n\n3. **Complete Inventory of Rational Points on $X_0(14)$**:\n   The 6 rational points on $X_0(14)$ partition cleanly into:\n   - **4 cusps**: $\\infty, 0, 1/2, 1/7$ (all $\\mathbb{Q}$-rational, corresponding to degenerate fibers with $j = \\infty$).\n   - **2 CM points**: fixed by the Atkin--Lehner involution $w_7$, with exact integer $j$-invariants:\n     $$j_1 = -15^3 = -3375 \\quad (\\text{CM by maximal order of } \\mathbb{Q}(\\sqrt{-7}), \\text{disc } -7),$$\n     $$j_2 = 255^3 = 16581375 \\quad (\\text{CM by order of conductor 2 in } \\mathbb{Q}(\\sqrt{-7}), \\text{disc } -28).$$\n   - **0 non-CM points**: $X_0(14)$ possesses **NO non-CM rational points**!\n\n4. **Valuation and Multiplicative Reduction Obstruction**:\n   The $j$-invariant of the Kraus curve is $j(E) = \\frac{6912 A^3 B^3}{C^{14}} = \\frac{2^8 \\cdot 3^3 A^3 B^3}{C^{14}}$.\n   For any primitive solution to $A^3 + B^3 = C^7$ with $C > 1$:\n   - $\\gcd(AB, C) = 1$.\n   - At every prime $q \\mid C$, the $q$-adic valuation is strictly negative:\n     * For $q \\ge 5$: $v_q(j(E)) = -14 v_q(C) \\le -14 < 0$.\n     * For $q = 2$: $A, B$ odd $\\implies v_2(AB) = 0 \\implies v_2(j(E)) = 8 - 14 v_2(C) \\le -6 < 0$.\n     * For $q = 3$: $v_3(AB) = 0 \\implies v_3(j(E)) = 3 - 14 v_3(C) \\le -11 < 0$.\n   - In all cases, $j(E)$ has strictly negative valuations, whereas $j_1 = -3375$ and $j_2 = 16581375$ are integers ($v_q(j_i) \\ge 0$ for all $q$).\n   - For $C = 1$, $A^3 + B^3 = 1 \\implies AB = 0 \\implies j(E) = 0 \\notin \\{j_1, j_2\\}$.\n   - For $C = 0$, $B = -A$ is the degenerate boundary cusp.\n\n5. **Conclusion**:\n   $E$ cannot correspond to any rational point on $X_0(14)$.\n   Therefore, $E$ has **NO rational 14-isogeny**, and consequently **NO rational 7-isogeny**.\n   The mod-7 representation $\\rho_{E, 7}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/\\mathbb{Q}) \\to \\mathrm{GL}_2(\\mathbb{F}_7)$ is **ABSOLUTELY IRREDUCIBLE**.\n\n---\n\n## 2. The Rational 2-Torsion Point and the 7-to-14 Isogeny Lift\n\nFrom U104, the 2-torsion polynomial of the Kraus Frey curve\n$$E: y^2 = x^3 + 3AB x + (B^3 - A^3)$$\nfactors completely as:\n$$x^3 + 3AB x + (B^3 - A^3) = (x - (A - B))\\left( x^2 + (A - B)x + (A^2 + AB + B^2) \\right).$$\nThe point:\n$$P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$$\nis a non-trivial rational 2-torsion point on $E$.\nThe subgroup $C_2 = \\langle P_2 \\rangle \\cong \\mathbb{Z}/2\\mathbb{Z}$ is $\\mathbb{Q}$-rational.\n\nNow suppose for contradiction that $\\rho_{E, 7}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/\\mathbb{Q}) \\to \\mathrm{GL}_2(\\mathbb{F}_7)$ is reducible.\nThen $E$ admits a $\\mathbb{Q}$-rational subgroup $C_7 \\subset E[7]$ of order 7, which defines a $\\mathbb{Q}$-rational 7-isogeny:\n$$\\phi_7: E \\longrightarrow E' = E / C_7.$$\n\nBecause $\\gcd(2, 7) = 1$, the direct sum of th"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.9,
+        "confidence": 0.56,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.11,
+          "1": 0.04,
+          "2": 0.67,
+          "3": 0.17
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 2678,
+      "output_tokens": 42
+    }
+  }
+}

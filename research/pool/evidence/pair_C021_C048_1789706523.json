@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C021_C048",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C021",
+      "status": "PARTIAL_RESULT",
+      "claim": "For Azon signature (r,r,p), Hypothesis 5 holds iff AB has a prime factor q not dividing 2r with ord*(q mod r) even. Moreover EVERY (r,r,p)-reduction of the all-even Beal branch arising from the Pythagorean parametrisation has AB = 1 or a power of 2, so Hypothesis 5 fails for all of them and Azon level lowering is structurally inapplicable to that b"
+    },
+    "B": {
+      "id": "C048",
+      "status": "BLOCKED",
+      "claim": "Signature (2m,2n,5): over Z[i], x^2+y^2=z^5 (z odd, forced by kernel theorem) gives (s(Q_s), t(Q_t), s^2+t^2) with Q_s=s^4-10s^2t^2+5t^4; gcd(s,Q_s)|5; on the 5-free side the identity 4s^4+Q_s=5(s^2-t^2)^2 yields the SINGLE-exponent ternary equation 4X^{4m}... precisely 4S^{4m} + eps T^m = 5Z^2 with (S^4, eps T, Z) nonzero pairwise coprime, 5 not d"
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.05,
+        "confidence": 0.03,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.33,
+          "1": 0.3,
+          "2": 0.36,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.17
+      }
+    },
+    "usage": {
+      "input_tokens": 720,
+      "output_tokens": 34
+    }
+  }
+}

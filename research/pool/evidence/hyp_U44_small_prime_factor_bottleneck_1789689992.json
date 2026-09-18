@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U44_small_prime_factor_bottleneck",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U44_small_prime_factor_bottleneck.md",
+    "excerpt": "# U44: small-prime factor bottleneck in the all-even Beal branch\n\nStatus: verified coverage/audit checkpoint only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Context\n\nFor a primitive all-even Beal candidate, write the exponent triple as\n\n    (2r, 2s, 2t)\n\nso that\n\n    (A^r)^2 + (B^s)^2 = (C^t)^2.\n\nAfter choosing the even and odd legs, primitive Pythagorean parametrization gives coprime integers m>n of opposite parity with\n\n    odd leg  = m^2-n^2,\n    even leg = 2mn,\n    C^t      = m^2+n^2.\n\nU43 reconstructed the valid later part of the historical chain: once every prime divisor of r and s is at least 5, published results for x^(2l)+y^(2m)=z^p eliminate p=3,5,7,11,13 and, for p=17, eliminate all cases except those in which at least one of l,m is 5. This explains why the t-divisible-by-17 branch reduces to a 5-power orientation and thence to one of the two equations\n\n    X^10+Y^10=2 Z^17\n\nor\n\n    X^10+256 Y^10=Z^17.\n\nThe second of these is the U41 weighted branch.\n\nThe remaining missing prerequisite in the repository is the exclusion of prime divisors 2 and 3 from r and s. U15 had assumed this earlier reduction rather than preserving its proof.\n\n## 2. Exact consequence of 2 | r on the odd leg\n\nAssume the odd leg is A^r=m^2-n^2 and 2|r. Put A^(r/2)=w. Since m,n have opposite parity,\n\n    gcd(m-n,m+n)=1.\n\nThus\n\n    (m-n)(m+n)=w^2\n\nforces\n\n    m-n=v^2,\n    m+n=u^2\n\nfor coprime odd u>v. Hence\n\n    m=(u^2+v^2)/2,\n    n=(u^2-v^2)/2.\n\nThe hypotenuse identity becomes\n\n    C^t=m^2+n^2=(u^4+v^4)/2,\n\nor equivalently\n\n    u^4+v^4=2 C^t.                (Q1)\n\nSo any proof excluding 2|r in this orientation must, explicitly or implicitly, exclude primitive positive solutions of (Q1) arising with coprime odd u,v.\n\n## 3. Exact consequence of 2 | s on the even leg\n\nAssume the even leg is B^s=2mn and 2|s. Put B^(s/2)=w. Since gcd(m,n)=1 and m,n have opposite parity, take m odd and n even. From\n\n    2mn=w^2\n\nunique factorization of integer valuations forces\n\n    m=u^2,\n    n=2v^2\n\nwith gcd(u,v)=1 and u odd. Then\n\n    C^t=m^2+n^2=u^4+4v^4.          (Q2)\n\nThus exclusion of 2|s requires the special quartic perfect-power equation\n\n    u^4+4v^4=C^t.\n\nBy Sophie Germain,\n\n    u^4+4v^4=(u^2-2uv+2v^2)(u^2+2uv+2v^2).\n\nFor coprime u,v with u odd, the two factors are odd and their gcd divides both 4uv and 2(u^2+2v^2), hence their gcd is 1. Therefore if t has an odd prime divisor p, each Sophie-Germain factor must separately be a p-th power. This is a genuine reduction, but no contradiction has yet been proved from it.\n\n## 4. Literature audit\n\nThe 2025 survey `Generalised Fermat equation: a survey of solved cases` does not list a theorem solving either Q1 or Q2 uniformly for arbitrary t. Searches for the exact equations did not locate a primary-source theorem that would justify a blanket elimination.\n\nIn particular, Darmon-Merel's well-known `x^n+y^n=2z^n` result has equal exponents and does not imply Q1, where the left exponent is 4 and the right exponent is t. Likewise the literature on `x^4+y^4=qz^p` treats selected coefficients q and/or ranges of p; it cannot be silently substituted for Q1 or Q2.\n\nA direct local scan at odd primes also does not give an immediate congruence obstruction for Q1 or Q2 for p in {3,5,7,11,13,17,19,23}; local solutions exist modulo every tested prime below 200. This finite computation is diagnostic only, not a theorem.\n\n## 5. What is now proved\n\nThe missing `2|r` and `2|s` cases have been reduced exactly to Q1 and Q2, respectively. This makes the coverage gap precise rather than implicit.\n\nNo valid theorem currently in the repository excludes Q1 or Q2 for all possible t. Therefore the statement `every prime divisor of r and s is at least 5` must NOT be used as an established fact yet.\n\n## 6. Next obligation\n\nAttack Q1 and Q2 directly. The cheapest mathematically meaningful route is:\n\n1. reduce t to one prime divisor p (or t=power of 2 separately);\n2. exploit the coprime Sophie-Germain factors for Q2;\n3. use Gaussian factorization for Q1;\n4. identify whether the resulting curves/representations fall under an established modular theorem for signatures (4,4,p) or (4,2,p);\n5. only after a rigorous uniform argument may the old all-even coverage chain be restored.\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.03,
+        "confidence": 0.97,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.98,
+          "1": 0.02,
+          "2": 0.0,
+          "3": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2227,
+      "output_tokens": 94
+    }
+  }
+}

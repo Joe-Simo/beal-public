@@ -1,0 +1,87 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C039",
+  "timestamp": "2026-09-17T23:41:58-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal counterexample: A^x+B^y=C^z, A,B,C >= 1, x,y,z >= 3, gcd(gcd(A,B),C)=1. KERNEL-VERIFIED: bases pairwise coprime; A != B; exactly one base even; if A^x <= B^y then B^y < C^z <= 2*B^y. Judge each claim as an exact statement about such a counterexample.",
+    "claim": "If the even base is the largest base then its exponent is at most the max of the other two."
+  },
+  "questions": {
+    "likely_true": {
+      "type": "score",
+      "instructions": "Is this claim TRUE of every Beal counterexample, exactly as written?",
+      "criteria": [
+        "level 0: false or vacuous",
+        "level 1: true only with an unstated extra hypothesis",
+        "level 2: probably true, argument not immediate",
+        "level 3: true and follows directly from the verified facts"
+      ]
+    },
+    "decisive": {
+      "type": "score",
+      "instructions": "If established, how much would this claim constrain a hypothetical counterexample?",
+      "criteria": [
+        "level 0: vacuous or already known",
+        "level 1: mild",
+        "level 2: a genuine new necessary condition on the signature",
+        "level 3: excludes an infinite family of signatures"
+      ]
+    },
+    "formalisable": {
+      "type": "noul",
+      "instructions": "Can this be proved in Lean 4 + mathlib in under fifty lines from the verified facts?",
+      "criteria": {
+        "true": "yes, elementary inequalities on naturals",
+        "false": "no, needs real logarithms or deep results"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "likely_true": {
+        "type": "score",
+        "score": 1.04,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: false or vacuous",
+          "1": "level 1: true only with an unstated extra hypothesis",
+          "2": "level 2: probably true, argument not immediate",
+          "3": "level 3: true and follows directly from the verified facts"
+        },
+        "probabilities": {
+          "0": 0.51,
+          "1": 0.12,
+          "2": 0.2,
+          "3": 0.17
+        }
+      },
+      "decisive": {
+        "type": "score",
+        "score": 1.58,
+        "confidence": 0.12,
+        "legend": {
+          "0": "level 0: vacuous or already known",
+          "1": "level 1: mild",
+          "2": "level 2: a genuine new necessary condition on the signature",
+          "3": "level 3: excludes an infinite family of signatures"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.21,
+          "2": 0.34,
+          "3": 0.23
+        }
+      },
+      "formalisable": {
+        "type": "noul",
+        "noul": 0.56
+      }
+    },
+    "usage": {
+      "input_tokens": 641,
+      "output_tokens": 51
+    }
+  }
+}

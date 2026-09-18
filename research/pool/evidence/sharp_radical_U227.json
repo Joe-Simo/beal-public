@@ -1,0 +1,8 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "answers": {
+  "standard": 0.47,
+  "vacuous": 0.32,
+  "lean": 0.38
+ }
+}

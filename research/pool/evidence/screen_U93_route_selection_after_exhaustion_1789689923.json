@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U93_route_selection_after_exhaustion",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U93_route_selection_after_exhaustion.md",
+      "excerpt": "# U93: route selection after exhausting the Gaussian forcing-prime sieve\n\n**Status: research-route audit. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-16.\n\n## 1. Current strongest facts\n\nFor the active weighted equation\n\n    X^10+256Y^10=Z^17,\n\nU90 proves the explicit conditional lower bound\n\n    max(X,Y)>10^25993.\n\nU91 proves that the full mixed degree-four Pad\u00e9 space has formal local order at most 728, while a substantial exact 58-term relation has coefficient height large enough to give only a much weaker decimal bound. The full 73-term extremal vector remains computationally unresolved, so no theorem says degree four can never beat U90.\n\nU92 proves that the U72 Gaussian finite-field forcing criterion has exactly fourteen forcing primes and no more. Hence the fixed product\n\n    P=433992707035920672833426144791\n\ncannot be enlarged by simply searching farther with that criterion.\n\nU80 independently leaves the genus-eight Selmer route at the exact bottleneck\n\n    d=dim_F2 Cl(O_F)[2]\n\nfor the degree-34 field F, followed (if d=0) by the seventeen-column global restriction matrix.\n\n## 2. Route decision\n\nFurther extensions of the same U72 prime sieve are closed by U92. Pure Pad\u00e9 order maximization is also low priority: U89/U91 show that primitive relation height can erase large gains in local order. Therefore the next high-value work should not be another larger finite prime search or an unqualified higher-degree Pad\u00e9 construction.\n\nThe priority is now:\n\n1. return to the corrected U63-U65 modular route and discharge its explicit global level-lowering hypotheses (prescribed local lifts, determinant compatibility, and retained local types);\n2. in parallel, continue seeking an exact class-group parity computation for U80 when a reliable engine is available;\n3. use Pad\u00e9 constructions only when an order/height calculation is available, with U90's 10^25993 bound as the benchmark.\n\n## 3. Literature-tool status\n\nA new Consensus search for published work specifically covering the signature/weighted equation was attempted on 2026-09-16, but the connected service reported that its monthly search quota was exhausted. No negative literature conclusion is drawn from that tool failure.\n\n## 4. Mathematical status\n\nNo contradiction has been obtained for the weighted equation. No counterexample has been found. Even a future elimination of this weighted branch would not by itself prove the full Beal conjecture because the remaining all-even and mixed-signature coverage is much broader.\n",
+      "length_chars": 2552
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.64,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.75,
+          "1": 0.03,
+          "2": 0.03,
+          "3": 0.19
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.84,
+        "confidence": 0.16,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.69,
+          "1": 0.03,
+          "2": 0.02,
+          "3": 0.26
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.18
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.66,
+        "probabilities": {
+          "verify_computation": 0.08,
+          "audit_later": 0.13,
+          "no_action": 0.72,
+          "verify_literature": 0.01,
+          "audit_now": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1960,
+      "output_tokens": 124
+    }
+  }
+}

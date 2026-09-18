@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U44_small_prime_factor_bottleneck",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U44_small_prime_factor_bottleneck.md",
+    "excerpt": "# U44: small-prime factor bottleneck in the all-even Beal branch\n\nStatus: verified coverage/audit checkpoint only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Context\n\nFor a primitive all-even Beal candidate, write the exponent triple as\n\n    (2r, 2s, 2t)\n\nso that\n\n    (A^r)^2 + (B^s)^2 = (C^t)^2.\n\nAfter choosing the even and odd legs, primitive Pythagorean parametrization gives coprime integers m>n of opposite parity with\n\n    odd leg  = m^2-n^2,\n    even leg = 2mn,\n    C^t      = m^2+n^2.\n\nU43 reconstructed the valid later part of the historical chain: once every prime divisor of r and s is at least 5, published results for x^(2l)+y^(2m)=z^p eliminate p=3,5,7,11,13 and, for p=17, eliminate all cases except those in which at least one of l,m is 5. This explains why the t-divisible-by-17 branch reduces to a 5-power orientation and thence to one of the two equations\n\n    X^10+Y^10=2 Z^17\n\nor\n\n    X^10+256 Y^10=Z^17.\n\nThe second of these is the U41 weighted branch.\n\nThe remaining missing prerequisite in the repository is the exclusion of prime divisors 2 and 3 from r and s. U15 had assumed this earlier reduction rather than preserving its proof.\n\n## 2. Exact consequence of 2 | r on the odd leg\n\nAssume the odd leg is A^r=m^2-n^2 and 2|r. Put A^(r/2)=w. Since m,n have opposite parity,\n\n    gcd(m-n,m+n)=1.\n\nThus\n\n    (m-n)(m+n)=w^2\n\nforces\n\n    m-n=v^2,\n    m+n=u^2\n\nfor coprime odd u>v. Hence\n\n    m=(u^2+v^2)/2,\n    n=(u^2-v^2)/2.\n\nThe hypotenuse identity becomes\n\n    C^t=m^2+n^2=(u^4+v^4)/2,\n\nor equivalently\n\n    u^4+v^4=2 C^t.                (Q1)\n\nSo any proof excluding 2|r in this orientation must, explicitly or implicitly, exclude primitive positive solutions of (Q1) arising with coprime odd u,v.\n\n## 3. Exact consequence of 2 | s on the even leg\n\nAssume the even leg is B^s=2mn and 2|s. Put B^(s/2)=w. Since gcd(m,n)=1 and m,n have opposite parity, take m odd and n even. From\n\n    2mn=w^2\n\nunique factorization of integer valuations forces\n\n    m=u^2,\n    n=2v^2\n\nwith gcd(u,v)=1 and u odd. Then\n\n    C^t=m^2+n^2=u^4+4v^4.          (Q2)\n\nThus exclusion of 2|s requires the special quartic perfect-power equation\n\n    u^4+4v^4=C^t.\n\nBy Sophie Germain,\n\n    u^4+4v^4=(u^2-2uv+2v^2)(u^2+2uv+2v^2).\n\nFor coprime u,v with u odd, the two factors are odd and their gcd divides both 4uv and 2(u^2+2v^2), hence their gcd is 1. Therefore if t has an odd prime divisor p, each Sophie-Germain factor must separately be a p-th power. This is a genuine reduction, but no contradiction has yet been proved from it.\n\n## 4. Literature audit\n\nThe 2025 survey `Generalised Fermat equation: a survey of solved cases` does not list a theorem solving either Q1 or Q2 uniformly for arbitrary t. Searches for the exact equations did not locate a primary-source theorem that would justify a blanket elimination.\n\nIn particular, Darmon-Merel's well-known `x^n+y^n=2z^n` result has equal exponents and does not imply Q1, where the left exponent is 4 and the right exponent is t. Likewise the literature on `x^4+y^4=qz^p` treats selected coefficients q and/or ranges of p; it cannot be silently substituted for Q1 or Q2.\n\nA direct local scan at odd primes also does not give an immediate congruence obstruction for Q1 or Q2 for p in {3,5,7,11,13,17,19,23}; local solutions exist modulo every tested prime below 200. This finite computation is diagnostic only, not a theorem.\n\n## 5. What is now proved\n\nThe missing `2|r` and `2|s` cases have been reduced exactly to Q1 and Q2, respectively. This makes the coverage gap precise rather than implicit.\n\nNo valid theorem currently in the repository excludes Q1 or Q2 for all possible t. Therefore the statement `every prime divisor of r and s is at least 5` must NOT be used as an established fact yet.\n\n## 6. Next obligation\n\nAttack Q1 and Q2 directly. The cheapest mathematically meaningful route is:\n\n1. reduce t to one prime divisor p (or t=power of 2 separately);\n2. exploit the coprime Sophie-Germain factors for Q2;\n3. use Gaussian factorization for Q1;\n4. identify whether the resulting curves/representations fall under an established modular theorem for signatures (4,4,p) or (4,2,p);\n5. only after a rigorous uniform argument may the old all-even coverage chain be restored.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.63,
+        "confidence": 0.63,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.36,
+          "3": 0.64
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 1908,
+      "output_tokens": 42
+    }
+  }
+}

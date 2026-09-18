@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "countersearch_4",
+  "timestamp": "2026-09-18T00:29:34-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "condition": "C_even=>not_both_xy_even"
+  },
+  "questions": {
+    "fails": {
+      "type": "noul",
+      "instructions": "Will this necessary condition (proved for exponents>=3) FAIL on at least one of the ten Fermat-Catalan solutions, which each contain an exponent 2?",
+      "criteria": {
+        "true": "fails on some",
+        "false": "holds on all ten"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fails": {
+        "type": "noul",
+        "noul": 0.68
+      }
+    },
+    "usage": {
+      "input_tokens": 368,
+      "output_tokens": 20
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_checkpoint-2026-09-14",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "checkpoint-2026-09-14.md",
+    "excerpt": "# Beal research checkpoint \u2014 2026-09-14\n\n## Status\n\nNo complete proof or counterexample. This checkpoint concerns only the primitive even-leg exponent-5 generalized-Fermat subcase arising from the Beal program; closing it would not resolve Beal by itself.\n\n## Exact target subproblem\n\nMichaud-Jacobs (Mathematika 68 (2022), 344\u2013361, DOI 10.1112/mtk.12127) proves that primitive nonzero solutions of\n\nx^(2l) + y^(2m) = z^17\n\nare impossible for primes l,m != 5. His remaining l=5 obstruction includes four Case-2 Hilbert newforms over the cyclic quartic field F of conductor 17, LMFDB base-field label 4.4.4913.1, level 272.1. The paper explicitly says the author expects their residual representations at primes lambda|5 to be reducible; proving this would eliminate them because the Frey residual representation is irreducible for l>=5 (Lemma 7.2).\n\nRelevant public code:\n- https://github.com/michaud-jacobs/thesis/blob/main/gen-fermat/cuspforms_17.m\n- https://github.com/michaud-jacobs/thesis/blob/main/gen-fermat/irreducibility_17.m\n\n## Four obstructing Case-2 forms\n\nLMFDB labels:\n- 4.4.4913.1-272.1-r, coefficient degree 2\n- 4.4.4913.1-272.1-s, coefficient degree 2\n- 4.4.4913.1-272.1-v, coefficient degree 6\n- 4.4.4913.1-272.1-w, coefficient degree 6\n\nFor r,s the Hecke coefficient polynomial is\n\nP2(X) = X^2 + 2X - 4.\n\nFor v,w it is\n\nP6(X) = X^6 + 3X^5 - 42X^4 - 104X^3 + 364X^2 + 428X + 104.\n\n## Degree-6 coefficient-field involution and the prime over 5\n\nLet e be a root of P6. Exact computation found the nontrivial field automorphism\n\ntau(e) = e^5/4 - e^4/4 - 17e^3/2 + 5e^2 + 41e + 17.\n\nIndependent Wolfram Language checks returned:\n\n- P6 mod 5 = (X+1)^2 (X^4 + X^3 - 1)\n- remainder P6(tau(X)) modulo P6(X) = 0\n- remainder tau(tau(X)) - X modulo P6(X) = 0\n- tau(-1) mod 5 = 4 = -1 mod 5\n- disc(P6) = 2^20 * 5^3 * 13 * 449^2\n\nWolfram also computed the maximal-field discriminant as\n\nDisc(K6) = 3354640640 = 2^8 * 5 * 13 * 449^2,\n\nso [O_K6 : Z[e]] = 320 = 2^6*5. Because the power basis has 5-index, the naive factorization of P6 mod 5 alone is not a valid Dedekind factorization.\n\nTo repair this, an integral generator beta from a computed integral basis was found with index prime to 5. Its minimal polynomial is\n\nX^6 - 394X^5 + 9946X^4 + 133088X^3 + 296618X^2 - 355700X + 87440,\n\nand its polynomial discriminant divided by Disc(K6) has 5-adic valuation 0. Modulo 5 this minimal polynomial factors as\n\nX^2 (X^4 + X^3 + 3X^2 + 3X + 3).\n\nThe quartic factor is irreducible over F5. Hence 5 has exactly one ramified residue-degree-1 prime lambda in K6, with e(lambda/5)=2, plus one unramified residue-degree-4 prime. Since P6 has only the linear residue root e=-1 modulo 5, the ramified lambda satisfies e == -1 (mod lambda). It is unique of this ramification/residue type, so tau fixes lambda; the induced map on O_K6/lambda = F5 is the identity.\n\nThis is precisely the coefficient-field ramification feature used in Billerey\u2013Chen\u2013Demb\u00e9l\u00e9\u2013Dieulefait\u2013Freitas, Proposition 3.2, for a reducibility argument.\n\n## Exact certificate that the ramified lambda is a genuine surviving sieve prime\n\nThe original Case-2 elimination code uses the rational-prime sieve S=[3,67,101]. For all four obstructing forms r,s,v,w, exact reduction at the ramified degree-1 prime lambda|5 gives\n\n- q=3, the unique prime Q has Norm(Q)=81 and a_Q == 2 == 1+81 (mod lambda),\n- q=67, every Q|67 has a_Q == 3 == 1+67 (mod lambda),\n- q=101, every Q|101 has a_Q == 2 == 1+101 (mod lambda).\n\nFor the degree-6 fields the exact reduction was done in an integral basis of O_K6 rather than by naively substituting e=-1 into expressions with denominators divisible by 5. If c1,...,c6 are coordinates in the computed integral basis, reduction at lambda is c1+4*c2+c3 mod 5.\n\nThe link to the actual B_S sieve is direct. In the author's Case-2 definitions, choosing (eta,mu)=(0,1) gives u=1, v=-1, w=0, hence the singular branch. Then c4=16, c6=-64, gamma=-c4/c6=1/4 is a square in every odd residue field, so\n\nB_Q(f,0,1)=Norm(Q)+1-a_Q.\n\nThe congruences above make this factor divisible by lambda for every Q above each q in S. Therefore lambda divides B_q(f) for q=3,67,101 and consequently divides B_S(f)=B_3(f)+B_67(f)+B_101(f). Thus the ramified degree-1 lambda is not merely a plausible prime above 5: it is provably one of the congruence primes that survives the author's exact sieve for each of the four obstructing forms.\n\nAdditional exact reductions at q=89,103,137 give the same Eisenstein pattern a_Q == 1+Norm(Q) (mod lambda) for every displayed Q, but these extra finite checks are evidence only, not a proof of reducibility.\n\n## Quartic base-field involution\n\nThe cyclic quartic base field F has defining polynomial\n\nf(W) = W^4 - W^3 - 6W^2 + W + 1\n\n(discriminant 17^3). A generator sigma of Gal(F/Q) can be represented by\n\nsigma(W) = -W^3/2 + 3W + 3/2,\n\nwith order 4; sigma^2(W) = W^3 - W^2 - 6W + 1.\n\nUsing the ordered LMFDB prime ideals above q=13 and q=47, sigma^2 swaps the first two primes and swaps the last two"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.25,
+        "confidence": 0.75,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.83,
+          "1": 0.1,
+          "2": 0.06,
+          "3": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2654,
+      "output_tokens": 94
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U53_coefficient2_alpha_coefficient_equations",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U53_coefficient2_alpha_coefficient_equations.md",
+      "excerpt": "# U53: coefficient-2 branch \u2014 coefficient equations for the untwisted 17th power\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input\n\nU52 proves the unit twist is trivial. Hence for O_K=Z[omega], omega=(1+sqrt(5))/2,\n\n    H_-(m,n)=(A+B omega)^17,\n\nwhere\n\n    H_- = m^4+30m^2n^2+n^4 -16m^2n^2 omega.\n\n## Exact expansion\n\nWrite\n\n    (A+B omega)^17 = P0(A,B) + B P16(A,B) omega.\n\nExact Wolfram expansion gives P16 homogeneous of degree 16:\n\n    P16 = 17 A^16 + 136 A^15 B + 1360 A^14 B^2\n          + 7140 A^13 B^3 + 30940 A^12 B^4\n          + 99008 A^11 B^5 + 252824 A^10 B^6\n          + 510510 A^9 B^7 + 826540 A^8 B^8\n          + 1069640 A^7 B^9 + 1101464 A^6 B^10\n          + 891072 A^5 B^11 + 554540 A^4 B^12\n          + 256360 A^3 B^13 + 82960 A^2 B^14\n          + 16779 A B^15 + 1597 B^16.\n\nTherefore the omega coefficient gives the exact Diophantine identity\n\n    B P16(A,B) = -16 m^2 n^2.                    (1)\n\nThe rational coefficient P0 is the corresponding degree-17 form and satisfies\n\n    P0(A,B)=m^4+30m^2n^2+n^4.                    (2)\n\nThe resultant of P0 and P16 (as univariate forms after dehomogenization) has coefficient prime support only at 5; the exact nonzero constant is 5^136 (up to the displayed homogenizing B power in the raw resultant). This matches the earlier exceptional-prime structure.\n\n## Strong 2-adic information\n\nSince m,n are coprime and of opposite parity,\n\n    H_- == 1 (mod 8)\n\nin O_K. Solving\n\n    (A+B omega)^17 == 1 (mod 8)\n\nexactly in O_K/8 gives the unique residue class\n\n    A == 1 (mod 8),\n    B == 0 (mod 8).\n\nIn particular A is odd and 8|B.\n\nFor A odd and 8|B, the form P16 is odd because its leading term 17 A^16 is odd and every remaining term contains B. Taking 2-adic valuations in (1) therefore yields\n\n    v2(B) = 4 + 2 v2(m n).                        (3)\n\nExactly one of m,n is even, so v2(mn)>=1 and consequently\n\n    v2(B)>=6,\n\nwith v2(B) even.\n\n## 17-adic structure\n\nModulo 17,\n\n    P16(A,B) == -B^16 (mod 17).\n\nIf 17|B and gcd(A,B)=1, then substituting B=17B1 shows the leading term 17A^16 has exact valuation 1 while all other terms have larger valuation, hence\n\n    v17(P16)=1.\n\nEquation (1) then forces\n\n    v17(B)+1 = 2 v17(mn),\n\nso whenever 17|B, v17(B) is odd.\n\nIf 17 does not divide B, then P16 is a 17-adic unit and 17 does not divide mn through (1).\n\n## Norm relation\n\nThe norm of A+B omega is\n\n    A^2+A B-B^2.\n\nSince Norm(H_-)=H(m,n)=v^17, one has\n\n    (A^2+A B-B^2)^17=v^17,\n\nso up to the sign fixed by the real embedding,\n\n    A^2+A B-B^2 = v.\n\nThis ties the new variables directly to the original second factor.\n\n## Current state\n\nTogether with U52, every surviving solution must satisfy\n\n    B P16(A,B)=-16m^2n^2,\n    A==1 mod8,\n    v2(B)=4+2v2(mn),\n    67*103*409*883 | mn,\n\nplus the Gaussian 17th-power equation m+i n=epsilon(r+i s)^17.\n\nNo contradiction is claimed yet.\n\n## Next obligation\n\nAnalyze gcd(B,P16). For gcd(A,B)=1, any common prime divisor is forced toward 17 because P16(A,B) == 17 A^16 (mod B). If this yields gcd(B,P16)|17, equation (1) splits the square m^2n^2 between two nearly coprime factors B and P16. That should force each factor to be a square times a controlled power of 2 and 17, producing a new hyperelliptic/Thue equation of substantially lower complexity.\n",
+      "length_chars": 3317
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.45,
+        "confidence": 0.55,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.82,
+          "1": 0.03,
+          "2": 0.03,
+          "3": 0.12
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.22,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.92,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.38,
+        "probabilities": {
+          "verify_computation": 0.51,
+          "verify_literature": 0.0,
+          "audit_later": 0.31,
+          "no_action": 0.12,
+          "audit_now": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2617,
+      "output_tokens": 126
+    }
+  }
+}

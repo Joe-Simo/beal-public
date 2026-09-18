@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C029_C034",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C029",
+      "status": "BLOCKED",
+      "claim": "Classical Fermat descent on the all-even branch sends signature (2r,2s,2t) to signature (2r,2r,t) with coefficient 2 - it diagonalises the left exponents, halves the right one, and introduces a 2. It is therefore NOT a self-map of a single equation, so infinite descent cannot close. The number of available steps is exactly v_2(t)."
+    },
+    "B": {
+      "id": "C034",
+      "status": "BLOCKED",
+      "claim": "Curvature stratification: |chi| < T is a FINITE set of Beal signatures precisely when T < 1/3 (since with x=y=3 the reciprocal sum is 2/3 + 1/z, bounded iff 1-T > 2/3). There are exactly 4 signatures with 1/12 <= |chi| < 1/6, 13 with |chi| < 1/4, and 29 with |chi| < 3/10, over reduced exponents with x <= y."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.88,
+        "confidence": 0.12,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.44,
+          "1": 0.24,
+          "2": 0.31,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.12
+      }
+    },
+    "usage": {
+      "input_tokens": 665,
+      "output_tokens": 34
+    }
+  }
+}

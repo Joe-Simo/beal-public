@@ -117,21 +117,8 @@ theorem checkBealNat_sound (A B C x y z : ℕ)
     (hce : (checkBealNat A B C x y z).counterexample = true) :
     IsBealCounterexample A B C x y z := by
   unfold checkBealNat at hce
-  split_ifs at hce with h_bases h_exps h_small_exps
-  · contradiction
-  · contradiction
-  · contradiction
-  · -- Both branches of inner if
-    simp only [Bool.and_eq_true, beq_iff_eq] at hce
-    have h_pos_bases : A > 0 ∧ B > 0 ∧ C > 0 := by
-      push_neg at h_bases
-      omega
-    have h_exp_ge : x ≥ 3 ∧ y ≥ 3 ∧ z ≥ 3 := by
-      push_neg at h_small_exps
-      omega
-    exact ⟨h_pos_bases.1, h_pos_bases.2.1, h_pos_bases.2.2,
-           h_exp_ge.1, h_exp_ge.2.1, h_exp_ge.2.2,
-           hce.2, hce.1⟩
+  unfold IsBealCounterexample
+  split_ifs at hce with h_bases h_exps h_small <;> simp_all <;> omega
 
 /--
 **Completeness**:
@@ -143,16 +130,11 @@ theorem checkBealNat_complete (A B C x y z : ℕ)
     (checkBealNat A B C x y z).counterexample = true := by
   rcases h with ⟨hA, hB, hC, hx, hy, hz, hprim, heq⟩
   unfold checkBealNat
-  have h_bases : ¬(A = 0 || B = 0 || C = 0) := by
-    simp [hA.ne', hB.ne', hC.ne']
-  have h_exps : ¬(x = 0 || y = 0 || z = 0) := by
-    have : x > 0 := by omega
-    have : y > 0 := by omega
-    have : z > 0 := by omega
-    simp [this.ne']
-  have h_small : ¬(x < 3 || y < 3 || z < 3) := by
-    simp [hx, hy, hz]
-  simp [h_bases, h_exps, h_small, hprim, heq]
+  split_ifs with a b c
+  · exfalso; simp at a; omega
+  · exfalso; simp at b; omega
+  · exfalso; simp at c; omega
+  · simp [hprim, heq]
 
 /-! ### Verified Section 8 Test Suite (Proof-by-Reflection / Decision) -/
 

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_hilbert_forms_q_sqrt2_signature_4_4_p",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_hilbert_forms_q_sqrt2_signature_4_4_p.md",
+      "excerpt": "# U111: Hilbert Modular Forms over $F = \\mathbb{Q}(\\sqrt{2})$ and Complete Resolution of Generalized Fermat Signature $(4, 4, p)$\n\n**Date**: 2026-09-17  \n**Author**: Hilbert Modular Form Cross-Referencer & Diophantine Specialist, Beal Conjecture Project  \n**Target Equation**: $A^4 + B^4 = C^p$ with $\\gcd(A, B) = 1$, $AB \\neq 0$, and prime exponent $p \\geq 3$.  \n**Base Field**: $F = \\mathbb{Q}(\\sqrt{2})$, discriminant $d_F = 8$, $h_F = 1$, $h_F^+ = 1$, fundamental unit $\\epsilon = 1 + \\sqrt{2}$.  \n**Verification Script**: [`code/U111_hilbert_forms_q_sqrt2.gp`](file://[LOCAL_HOME]/Downloads/beal/code/U111_hilbert_forms_q_sqrt2.gp) (exited with code 0).  \n**Status**: Authoritative research checkpoint certifying 100% elimination across all prime exponents $p \\geq 3$ via Hilbert modular newforms over $\\mathbb{Q}(\\sqrt{2})$, local conductor analysis, Tate's algorithm, Ellenberg $\\mathbb{Q}$-curves, and primitive divisor theory.\n\n---\n\n## 1. Executive Summary & Main Result\n\nThe generalized Fermat equation of signature $(4, 4, p)$:\n$$A^4 + B^4 = C^p, \\quad \\gcd(A, B) = 1, \\quad AB \\neq 0, \\quad p \\ge 3 \\text{ prime},$$\nis strictly hyperbolic for all $p \\ge 3$ since its Euler characteristic satisfies:\n$$\\chi = \\frac{1}{4} + \\frac{1}{4} + \\frac{1}{p} - 1 = \\frac{1}{p} - \\frac{1}{2} \\le \\frac{1}{3} - \\frac{1}{2} = -\\frac{1}{6} < 0.$$\nBy the Darmon\u2013Granville theorem (1995), there are at most finitely many primitive integer solutions for each fixed $p \\geq 3$.\n\nIn this checkpoint, we establish:\n\n> ### The Complete Theorem for Signature $(4, 4, p)$\n> The Diophantine equation $A^4 + B^4 = C^p$ has **no non-trivial, pairwise coprime integer solutions** $(A, B, C)$ with $AB \\neq 0$ for any prime $p \\geq 3$.\n\n### 1.1. Strategic Bridges & Architecture\nThe resolution of $A^4 + B^4 = C^p$ operates across three interlocked mathematical frameworks:\n1. **Quartic Sub-Specialization**: $A^4 + B^4 = C^p \\implies (A^2)^2 + B^4 = C^p$, embedding $(4, 4, p)$ directly as the square-branch sub-family of generalized Fermat signature $(2, 4, p)$.\n2. **Algebraic Factorization over $F = \\mathbb{Q}(\\sqrt{2})$**:\n   $$(A^2 + B^2 + \\sqrt{2} AB)(A^2 + B^2 - \\sqrt{2} AB) = (A^2 + B^2)^2 - 2A^2 B^2 = A^4 + B^4 = C^p.$$\n   Because $A$ is odd and $B$ is even, these factors are strictly coprime ideals in $\\mathcal{O}_F = \\mathbb{Z}[\\sqrt{2}]$.\n3. **Hilbert Modular Forms & Frey Curves over $\\mathbb{Q}(\\sqrt{2})$**:\n   Attaching the Frey curve:\n   $$E: y^2 = x^3 + 2(1+\\sqrt{2}) A^2 x^2 - (1+\\sqrt{2})^2 B^4 x$$\n   whose conductor at all primes dividing $C$ is completely eliminated by Ribet level-lowering, leaving a Serre conductor supported entirely at the dyadic prime $\\mathfrak{p}_2 = (\\sqrt{2})$.\n4. **The CM Plateau & Winding Quotient Elimination**:\n   All candidate Hilbert newforms over $\\mathbb{Q}(\\sqrt{2})$ at 2-power levels (norms 32, 64, 256) possess Complex Multiplication (CM by $\\mathbb{Q}(i)$ or $\\mathbb{Q}(\\sqrt{-2})$). Because the Frey curve has strictly non-integral $j$-invariant ($v_q(j) = -p v_q(C) < 0$), $E$ is non-CM. The Galois representation cannot match any CM form by Ellenberg's winding quotient non-vanishing theorem ($p \\ge 211$) and Bilu\u2013Hanrot\u2013Voutier primitive divisors ($3 \\le p < 211$).\n\n---\n\n## 2. Arithmetic of the Base Field $F = \\mathbb{Q}(\\sqrt{2})$\n\nThe real quadratic field $F = \\mathbb{Q}(\\sqrt{2})$ provides the natural geometric ambient space for quartic descent:\n- **Minimal Polynomial**: $P(x) = x^2 - 2$.\n- **Fundamental Discriminant**: $d_F = 8$.\n- **Ring of Integers**: $\\mathcal{O}_F = \\mathbb{Z}[\\sqrt{2}]$, integral basis $\\{1, \\sqrt{2}\\}$.\n- **Class Number**: $h_F = 1$ (Principal Ideal Domain).\n- **Fundamental Unit**: $\\epsilon = 1 + \\sqrt{2}$, with $\\operatorname{Norm}_{F/\\mathbb{Q}}(\\epsilon) = 1^2 - 2(1^2) = -1$.\n- **Narrow Class Number**: $h_F^+ = 1$. Since the fundamental unit has negative norm, every ideal has a totally positive generator, and narrow ray class groups coincide with standard ray class groups.\n- **Dyadic Prime**: The rational prime 2 is totally ramified in $F$:\n  $$(2) = \\mathfrak{p}_2^2, \\quad \\mathfrak{p}_2 = (\\sqrt{2}), \\quad e(\\mathfrak{p}_2/2) = 2, \\quad f(\\mathfrak{p}_2/2) = 1, \\quad \\operatorname{Norm}_{F/\\mathbb{Q}}(\\mathfrak{p}_2) = 2.$$\n\n### 2.1. Census of 2-Power Ideals in $\\mathcal{O}_F$\nThe powers of $\\mathfrak{p}_2$ form the complete sequence of dyadic levels:\n| Exponent $k$ | Ideal $\\mathfrak{p}_2^k$ | Generator in $\\mathcal{O}_F$ | Field Norm $\\operatorname{Norm}(\\mathfrak{p}_2^k)$ |\n|---|---|---|---|\n| $k = 1$ | $\\mathfrak{p}_2$ | $(\\sqrt{2})$ | 2 |\n| $k = 2$ | $\\mathfrak{p}_2^2$ | $(2)$ | 4 |\n| $k = 3$ | $\\mathfrak{p}_2^3$ | $(2\\sqrt{2})$ | 8 |\n| $k = 4$ | $\\mathfrak{p}_2^4$ | $(4)$ | 16 |\n| $k = 5$ | $\\mathfrak{p}_2^5$ | $(4\\sqrt{2})$ | 32 |\n| $k = 6$ | $\\mathfrak{p}_2^6$ | $(8)$ | 64 |\n| $k = 7$ | $\\mathfrak{p}_2^7$ | $(8\\sqrt{2})$ | 128 |\n| $k = 8$ | $\\mathfrak{p}_2^8$ | $(16)$ | 256 |\n\n---\n\n## 3. Diophantine Analysis and Parity Obstruction\n\nLet $(A, B, C)$ be a non-trivi",
+      "length_chars": 24065
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 2.16,
+        "confidence": 0.16,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.18,
+          "2": 0.11,
+          "3": 0.59
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.37,
+        "confidence": 0.63,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.85,
+          "1": 0.03,
+          "2": 0.01,
+          "3": 0.11
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.93
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.61,
+        "probabilities": {
+          "verify_literature": 0.05,
+          "audit_later": 0.11,
+          "no_action": 0.01,
+          "audit_now": 0.7,
+          "verify_computation": 0.13
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3298,
+      "output_tokens": 124
+    }
+  }
+}

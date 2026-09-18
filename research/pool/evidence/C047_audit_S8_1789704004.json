@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C047_audit_S8",
+  "timestamp": "2026-09-18T00:00:04-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "chain": "Beal (2m,2n,3), m,n>=4 via Z[i] + Bennett-Skinner",
+    "step_id": "S8",
+    "step": "Since at most one of u,v is divisible by 3, at least one of S6, S7 applies; therefore no Beal counterexample of signature (2m,2n,3) with m>=4 and n>=4 exists."
+  },
+  "questions": {
+    "hidden": {
+      "type": "score",
+      "instructions": "Does this step contain a hidden assumption, an unproved reduction, or a misapplication of the cited theorem?",
+      "criteria": [
+        "level 0: the step is exactly right as stated",
+        "level 1: a minor gap that is easily filled",
+        "level 2: a real gap needing a new argument",
+        "level 3: the step is wrong or the theorem is misapplied"
+      ]
+    },
+    "check": {
+      "type": "choice",
+      "instructions": "Cheapest way to verify this step independently.",
+      "criteria": {
+        "lean": "Lean 4 + mathlib",
+        "enum": "exact enumeration on a model",
+        "source": "re-read the primary source",
+        "paper": "a written derivation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "hidden": {
+        "type": "score",
+        "score": 2.16,
+        "confidence": 0.16,
+        "legend": {
+          "0": "level 0: the step is exactly right as stated",
+          "1": "level 1: a minor gap that is easily filled",
+          "2": "level 2: a real gap needing a new argument",
+          "3": "level 3: the step is wrong or the theorem is misapplied"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.13,
+          "2": 0.4,
+          "3": 0.41
+        }
+      },
+      "check": {
+        "type": "choice",
+        "choice": "source",
+        "confidence": 0.28,
+        "probabilities": {
+          "source": 0.45,
+          "lean": 0.1,
+          "enum": 0.12,
+          "paper": 0.33
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 557,
+      "output_tokens": 58
+    }
+  }
+}

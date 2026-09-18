@@ -1,0 +1,76 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "batch2_N3",
+  "timestamp": "2026-09-17T23:10:36-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Established here this session: (a) Beal <=> no primitive solution with |chi| >= 1/12, where chi = 1/x+1/y+1/z-1; the Beal region has |chi| >= 1/12 (kernel-verified) and all ten known solutions have |chi| <= 1/18. (b) Positivity forbids cancellation: B^y < C^z <= 2B^y when A^x <= B^y, so C is pinned within a factor 2^(1/z) <= 1.26 of B^(y/z) (kernel-verified). (c) {A^x mod m : x>=3} = <A>, giving a congruence sieve rejecting 77.7% at m=240. (d) Classical descent is not a self-map. (e) Bases pairwise coprime, A != B, bases >= 2. BLOCKED: modular method on the all-even branch, Chabauty over the base field, abc/IUT (finiteness only), Darmon's program, naive search extension, Baker via the size window.",
+    "candidate": {
+      "id": "N3",
+      "mechanism": "Adelic / Brauer-Manin style obstruction. No single modulus obstructs (established). Ask whether the PRODUCT over all places carries an obstruction that no individual place does - the standard modern refinement when local obstructions individually fail.",
+      "why_new": "A genuinely different level of the local-global machinery; its failure mode would be that the Brauer group is trivial, unrelated to any recorded obstruction."
+    }
+  },
+  "questions": {
+    "genuinely_new": {
+      "type": "noul",
+      "instructions": "Is this mechanism materially different from every route already blocked in this project?",
+      "criteria": {
+        "true": "it draws on a different source of constraint and would fail for a different reason",
+        "false": "it is a variant of a blocked route or meets the same obstruction"
+      }
+    },
+    "executable_here": {
+      "type": "noul",
+      "instructions": "Can a discriminating test be run NOW with exact computation, elementary derivation, or Lean - no Magma, no class groups of large fields, no unproved theorem?",
+      "criteria": {
+        "true": "a concrete test can be run immediately with the tools available",
+        "false": "it needs machinery or theorems not available here"
+      }
+    },
+    "payoff": {
+      "type": "score",
+      "instructions": "If the test came out favourably, how much would be learned?",
+      "criteria": [
+        "level 0: nothing new",
+        "level 1: a minor constraint",
+        "level 2: a new necessary condition or a genuine search capability",
+        "level 3: an infinite family excluded, or the open problem genuinely reduced"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "genuinely_new": {
+        "type": "noul",
+        "noul": 0.78
+      },
+      "executable_here": {
+        "type": "noul",
+        "noul": 0.14
+      },
+      "payoff": {
+        "type": "score",
+        "score": 2.04,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: nothing new",
+          "1": "level 1: a minor constraint",
+          "2": "level 2: a new necessary condition or a genuine search capability",
+          "3": "level 3: an infinite family excluded, or the open problem genuinely reduced"
+        },
+        "probabilities": {
+          "0": 0.1,
+          "1": 0.05,
+          "2": 0.55,
+          "3": 0.3
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 870,
+      "output_tokens": 56
+    }
+  }
+}

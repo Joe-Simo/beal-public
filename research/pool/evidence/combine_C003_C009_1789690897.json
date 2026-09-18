@@ -1,0 +1,128 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C003_C009",
+  "timestamp": "2026-09-17T20:21:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [
+        "C002"
+      ],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U97_orbit_b_boundary_CM_obstruction.md",
+        "research/checkpoints/U102_orbit_b_definitive_elimination.md",
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_u97_disc.py",
+        "code/U113_u97_traces.py",
+        "code/U113_u97_strategy3.py",
+        "code/U113_u97_growth.py",
+        "code/U113_residual_vs_isogeny.py"
+      ],
+      "obligations": [
+        "Each of the three obstructions must be independently re-derived from its stated hypotheses alone",
+        "The endomorphism algebra dimensions must be confirmed by exact computation, not by table lookup",
+        "X_0(17) reducibility step must be checked against a primary source"
+      ],
+      "evaluations": {},
+      "failure_reason": "U113 adversarial audit: all three elimination strategies fail. Strategy 3 refuted by exact computation (its set S of forcing primes is FINITE - exactly {11,31,41,71,131} under the trace criterion for q<1600, with match counts tracking q/17 - so the \"positive density / infinitely many\" step is false; Deligne equidistribution argues against the claim, not for it; it also conflates U68/U72 Gaussian-valuation forcing primes with mod-17 Frobenius congruence primes, and misapplies Baker superelliptic bounds to a three-term equation). Strategy 2 is circular: R=T does not turn a residual mod-17 isomorphism into a characteristic-zero isogeny, and if it did the modular method would need no elimination step at all; its endomorphism-dimension contradiction is therefore vacuous. Strategy 1 is a category error: J^- is an abelian surface with RM, so an O_K-linear 17-isogeny is classified by a Hilbert modular variety, not by the elliptic modular curve X_0(17); the cited Momose/Darmon-Merel/Bilu-Parent-Rebolledo statements are not quoted with their actual hypotheses and do not cover M=Q(zeta_5).",
+      "novelty_note": "Claimed unconditional but not yet adversarially audited; status is deliberately VERIFICATION_REQUIRED rather than PROVED.",
+      "extracted": [
+        "disc(f)=2^24*5^5*Z^68 VERIFIED symbolically and at 5 exact specialisations; good reduction at every q|Y stands",
+        "orbit b ~ Jac(C_0)/K VERIFIED by point counting: (S,P)=(9,19),(-11,29),(-1,-151) at q=11,31,41 and a_q=0 for q not=1 mod 5",
+        "the mod-17 split sieve is FINITE with forcing set {11,31,41,71,131} for q<1600 - a genuine finite obstruction, usable but not inflatable to an infinitude argument",
+        "Gaussian-valuation forcing primes (U68/U72) and mod-17 Frobenius forcing primes (U97) are DIFFERENT sets and must not be conflated"
+      ],
+      "id": "C003",
+      "status": "BLOCKED",
+      "claim": "The Hilbert newform orbit b at level 2000 (2.2.5.1-2000.1-b) is eliminated unconditionally, so no surviving newform orbit supports the weighted-equation Frey representation.",
+      "method": "Three independent global obstructions: reducibility over Q(zeta_5) via X_0(17); endomorphism dimension clash dim End^0(J^-) = 2 != 4 = dim End^0(Jac(C_0)); R = T deformation rigidity against the boundary CM curve C_0: y^2 = 64 - x^5."
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U112_empirical_search_milestone_160k.md",
+        "references/search_logs/interval_140001_160000_primes19.json",
+        "code/beal_search_gmp.c"
+      ],
+      "obligations": [
+        "Search range extension tests no mathematical hypothesis and has near-zero proof leverage",
+        "Composite and larger exponents are not covered by the pure-prime exponent set"
+      ],
+      "evaluations": {
+        "independent_reimplementation": "PASSED 2026-09-17: independent checker written from the conjecture statement agrees with code/section8_counterexample_checker.py on all required vectors AND on the discriminating reason; True-branch reachability proven by mutating only the exponent gate to >=2, under which 3^5+10^2=7^3 is correctly reported as a counterexample; exact at 121 digits with no float path"
+      },
+      "failure_reason": null,
+      "novelty_note": "Pure verification, no mechanism; kept to bound where a counterexample could live and to stop further range extension being mistaken for progress.",
+      "extracted": [],
+      "id": "C009",
+      "status": "PARTIAL_RESULT",
+      "claim": "No counterexample to Beal's conjecture exists with A, B <= 160000 and exponents x, y, z in {3,5,7,11,13,17,19}.",
+      "method": "Exhaustive multi-threaded GMP search over coprime base pairs with arbitrary-precision verification."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.6,
+        "confidence": 0.49,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.46,
+          "1": 0.49,
+          "2": 0.04,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 2141,
+      "output_tokens": 53
+    }
+  }
+}

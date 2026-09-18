@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U111_signature_2_3_11_simultaneous_sieve",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_signature_2_3_11_simultaneous_sieve.md",
+    "excerpt": "# U111: Multi-Prime Simultaneous Sieve for Signature (2, 3, 11)\n\n**Date**: 2026-09-17  \n**Status**: Exact multi-prime simultaneous sieve formulation, density analysis, Catalan residue constraints, and bounded integer verification.  \n**Target Equation**: Generalized Fermat equation of signature $(2, 3, 11)$:\n$$A^2 + B^3 = C^{11}, \\quad \\gcd(A, B, C) = 1.$$\n**Primary Sources**:\n- Henri Darmon and Andrew Granville, *On the equations $z^m = F(x, y)$ and $Ax^p + By^q = Cz^r$*, Bull. London Math. Soc. 27 (1995), 513\u2013543.\n- Sander R. Dahmen, *Classical and modular methods applied to Diophantine equations*, PhD Thesis, Universiteit Utrecht (2008).\n- Nuno Freitas, Bartosz Naskr\u0119cki, and Michael Stoll, *The generalized Fermat equation with exponents 2, 3, n*, Compositio Math. 156 (2020), 77\u2013113.\n- Executable Verification Script: [`code/U111_signature_2_3_11_simultaneous_sieve.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_signature_2_3_11_simultaneous_sieve.py)\n- Structured Sieve Ledger: [`references/U111_signature_2_3_11_simultaneous_sieve.json`](file://[LOCAL_HOME]/Downloads/beal/references/U111_signature_2_3_11_simultaneous_sieve.json)\n\n---\n\n## 1. Formulation of the Multi-Prime Simultaneous Sieve\n\n### 1.1 Sieve Primes and Modulus\nWe formulate a simultaneous CRT sieve across the 8 good auxiliary primes:\n$$\\mathcal{Q} = \\{5, 7, 13, 17, 19, 23, 29, 31\\}.$$\nThe global sieve modulus is the squarefree product:\n$$M = \\prod_{q \\in \\mathcal{Q}} q = 5 \\cdot 7 \\cdot 13 \\cdot 17 \\cdot 19 \\cdot 23 \\cdot 29 \\cdot 31 = 3,038,795,305.$$\nThe ambient residue space of non-zero pairs $(A, B) \\pmod M$ with $\\gcd(A, B, M) = 1$ has size:\n$$\\Omega_M = \\prod_{q \\in \\mathcal{Q}} (q^2 - 1) = 24 \\cdot 48 \\cdot 168 \\cdot 288 \\cdot 360 \\cdot 528 \\cdot 840 \\cdot 960 \\approx 8.5436 \\times 10^{18}.$$\n\n### 1.2 Local Admissibility Conditions at $q \\in \\mathcal{Q}$\nFor any primitive integer solution $(A, B, C)$ of $A^2 + B^3 = C^{11}$, its reduction $(a_q, b_q) \\equiv (A, B) \\pmod q$ must satisfy:\n1. **Equation Congruence**:\n   $$a_q^2 + b_q^3 \\equiv c_q^{11} \\pmod q \\quad \\text{for some } c_q \\in \\mathbb{F}_q.$$\n   Thus $a_q^2 + b_q^3 \\in \\mu_{11}(\\mathbb{F}_q) = \\{c^{11} \\pmod q : c \\in \\mathbb{F}_q\\}$.\n2. **Coprimality**: $(a_q, b_q) \\not\\equiv (0, 0) \\pmod q$.\n3. **Trace Compatibility with Newform $f$**:\n   - If $a_q^2 + b_q^3 \\not\\equiv 0 \\pmod q$ ($q \\nmid C$, good reduction):\n     The Kraus Frey curve $E_{(a_q, b_q)}: Y^2 = X^3 + 3b_q X + 2a_q$ has Frobenius trace $a_q(E_{(a_q, b_q)}) = q + 1 - \\#E_{(a_q, b_q)}(\\mathbb{F}_q)$, which must satisfy:\n     $$a_q(E_{(a_q, b_q)}) \\equiv a_q(f) \\pmod{11}.$$\n   - If $a_q^2 + b_q^3 \\equiv 0 \\pmod q$ ($q \\mid C$, multiplicative reduction):\n     The newform eigenvalue must satisfy the Deligne/Tate congruence:\n     $$a_q(f) \\equiv \\pm(q + 1) \\pmod{11}.$$\n\n---\n\n## 2. Simultaneous Sieve Results Across Candidate Newforms\n\n### 2.1 Local Counts and Global Sieve Density\nFor each rational newform $f \\in S_2^{\\mathrm{new}}(432) \\cup S_2^{\\mathrm{new}}(864)$, we compute the number of locally compatible pairs $N_f(q)$ at each prime $q$, and by the Chinese Remainder Theorem, the total number of simultaneous residue classes:\n$$N_f(M) = \\prod_{q \\in \\mathcal{Q}} N_f(q), \\quad \\rho_f = \\frac{N_f(M)}{\\Omega_M}.$$\n\n| Form Label | Level | $N(5)$ | $N(7)$ | $N(13)$ | $N(17)$ | $N(19)$ | $N(23)$ | $N(29)$ | $N(31)$ | Total CRT Classes $N_f(M)$ | Sieve Density $\\rho_f$ | $\\log_{10}(\\rho_f)$ |\n|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **`432_1`** | 432 | 1 | 9 | 12 | 40 | 21 | 5 | 84 | 115 | $4,381,776,000$ | $5.13 \\times 10^{-10}$ | $-9.29$ |\n| **`432_2`** | 432 | 2 | 4 | 17 | 32 | 45 | 5 | 112 | 75 | $8,225,280,000$ | $9.63 \\times 10^{-10}$ | $-9.02$ |\n| **`432_3`** | 432 | 2 | 9 | 17 | 28 | 45 | 25 | 112 | 115 | $124,150,320,000$ | $1.45 \\times 10^{-8}$ | $-7.84$ |\n| **`432_4`** | 432 | 2 | 9 | 17 | 28 | 45 | 25 | 112 | 115 | $124,150,320,000$ | $1.45 \\times 10^{-8}$ | $-7.84$ |\n| **`432_5`** | 432 | 2 | 4 | 17 | 32 | 45 | 5 | 112 | 75 | $8,225,280,000$ | $9.63 \\times 10^{-10}$ | $-9.02$ |\n| **`432_6`** | 432 | 1 | 9 | 12 | 40 | 21 | 5 | 84 | 115 | $4,381,776,000$ | $5.13 \\times 10^{-10}$ | $-9.29$ |\n| **`432_7`** (CM) | 432 | 4 | 4 | 17 | 32 | 48 | 6 | 84 | 115 | $24,215,224,320$ | $2.83 \\times 10^{-9}$ | $-8.55$ |\n| **`432_8`** (CM) | 432 | 4 | 1 | 17 | 32 | 21 | 6 | 84 | 115 | $2,648,540,160$ | $3.10 \\times 10^{-10}$ | $-9.51$ |\n| **`864_1`** | 864 | 3 | 9 | 18 | 28 | 21 | 5 | 98 | 100 | $14,002,632,000$ | $1.64 \\times 10^{-9}$ | $-8.79$ |\n| **`864_2`** | 864 | 3 | 4 | 12 | 32 | 36 | 5 | 98 | 90 | $7,315,660,800$ | $8.56 \\times 10^{-10}$ | $-9.07$ |\n| **`864_3`** | 864 | 3 | 4 | 12 | 32 | 36 | 5 | 98 | 90 | $7,315,660,800$ | $8.56 \\times 10^{-10}$ | $-9.07$ |\n| **`864b1`** (Form 4) | 864 | 3 | 9 | 18 | 28 | 21 | 5 | 98 | 100 | $14,002,632,000$ | $1.64 \\times 10^{-9}$ | $-8.79$ |\n| **`864_5`** | 864 | 2 | 9 | 12 | 40 | 36 | 5 | 84 | 75 | $9,797,760,000$ | $1.15 \\times 1"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.47,
+        "confidence": 0.46,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.3,
+          "2": 0.58,
+          "3": 0.0
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.8
+      }
+    },
+    "usage": {
+      "input_tokens": 3164,
+      "output_tokens": 42
+    }
+  }
+}

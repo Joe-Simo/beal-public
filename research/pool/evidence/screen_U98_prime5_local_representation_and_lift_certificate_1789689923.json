@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U98_prime5_local_representation_and_lift_certificate",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U98_prime5_local_representation_and_lift_certificate.md",
+      "excerpt": "# U98: Local Galois representation at $\\mathfrak{p}_5$, dihedral inertia $D_5$, Artin conductor exponent 3, and unconditional Breuil--Diamond local lift\n\n**Status: source-verified arithmetic proof and local deformation certificate. The prime-5 Breuil--Diamond local lift hypothesis is rigorously discharged. Beal's conjecture and the weighted equation remain open.**\n\nResearch date: 2026-09-17. Primary sources:\n- Christophe Breuil and Fred Diamond, *Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caract\u00e8res galoisiens*, Ann. Sci. ENS 47 (2014), 905\u2013974 (specifically Th\u00e9or\u00e8me 3.2.2, pp. 36\u201337).\n- Martin Azon, *Effective Darmon's program for the generalised Fermat equation*, arXiv:2504.01967v2, 2025-07-03 (Proposition 2.23, Theorem 4.36, Theorem 4.48, Theorem 5.11, Proposition 5.18).\n- Jean-Pierre Serre, *Corps Locaux*, Hermann, 1968 (Chapter IV: Lower ramification filtration and Artin conductor formula).\n- Pierre Deligne, *Les constantes des \u00e9quations fonctionnelles des fonctions L*, LNM 349, Springer, 1973 (Section 8: Weil--Deligne representations away from the residue characteristic).\n\n---\n\n## 1. Executive summary of results\n\nFollowing the isolation of Breuil--Diamond (2014) Theorem 3.2.2 obligations in U94 and the resolution in U96 demonstrating that Azon's Theorem 5.23 does not bypass Breuil--Diamond, this checkpoint provides the complete mathematical analysis and rigorous certification of the local Galois representation at the prime $\\mathfrak{p}_5 = (\\sqrt{5})$ in $K = \\mathbb{Q}(\\sqrt{5})$:\n\n1. **Local Galois group of the Eisenstein quintic**:\n   - Over $\\mathbb{Q}_5$: The Galois group of the splitting field $M$ is the Frobenius group $F_{20} = \\operatorname{AGL}(1, 5) = \\mathbb{F}_5 \\rtimes \\mathbb{F}_5^\\times$ of order 20. The local extension $M / \\mathbb{Q}_5$ is totally ramified ($e = 20, f = 1$).\n   - Over $K_{\\mathfrak{p}_5} = \\mathbb{Q}_5(\\sqrt{5})$: Since the discriminant satisfies $\\Delta(f) \\equiv 5 \\pmod{(\\mathbb{Q}_5^\\times)^2}$, the quadratic subfield $K_{\\mathfrak{p}_5} = \\mathbb{Q}_5(\\sqrt{\\Delta(f)})$ corresponds to the unique index-2 subgroup $F_{20} \\cap A_5 \\cong D_5$. The local Galois group is strictly the **dihedral group $D_5$ of order 10**, totally ramified ($e = 10, f = 1$).\n\n2. **Inertia action and non-abelian dihedral structure**:\n   - The inertia group $I_{K_{\\mathfrak{p}_5}}$ acts on the roots of $f(x)$ through $I(M / K_{\\mathfrak{p}_5}) = \\operatorname{Gal}(M / K_{\\mathfrak{p}_5}) \\cong D_5$.\n   - The wild inertia group is $P_{\\mathfrak{p}_5} = H_1 \\cong C_5$ (cyclic of order 5).\n   - The tame inertia quotient is $I_{K_{\\mathfrak{p}_5}} / P_{\\mathfrak{p}_5} \\cong C_2$, which acts on $C_5$ by inversion ($x \\mapsto -x$).\n   - The image of inertia in $\\operatorname{GL}_2(\\mathbb{C})$ (and $\\operatorname{GL}_2(K_{17})$) is **isomorphic to $D_5$** (the dihedral group of order 10). It is **not cyclic of order 5** (the tame involution acts non-trivially, interchanging eigenspaces), and **not $F_{20}$** (the base field is $K_{\\mathfrak{p}_5}$, not $\\mathbb{Q}_5$).\n\n3. **Inertial Weil--Deligne type and rectification of literature classification**:\n   - Monodromy operator: $N_{\\mathfrak{p}_5} = 0$, because $J^-$ has potential good reduction over $M$.\n   - The 2-dimensional representation $\\rho_1$ of $D_5$ is irreducible on inertia. Consequently, the local Weil--Deligne representation $(r_{\\mathfrak{p}_5}, 0)$ is **dihedral supercuspidal** (induced from a ramified quadratic character).\n   - *Rectification of Azon Proposition 5.18(2)*: Azon mistakenly labeled $\\rho_{\\iota, 5}^-$ as \"principal series\" by applying a tame criterion ($|I_{\\text{tame}}| \\mid |\\mathbb{F}_5^\\times|$) while missing that wild ramification makes the total inertia group non-abelian. By Azon's own Proposition 2.23 (citing Melninkas 2022), potential good reduction yields a principal series if and only if $M / K^{\\text{unr}}$ is abelian. Since $\\operatorname{Gal}(M / K_{\\mathfrak{p}_5}) \\cong D_5$ is non-abelian, the representation is strictly supercuspidal.\n\n4. **Exact Artin conductor exponent $n = 3$**:\n   - Ramification filtration: $H_0 = D_5$ ($|H_0| = 10$), $H_1 = C_5$ ($|H_1| = 5$), $H_i = \\{1\\}$ for $i \\ge 2$.\n   - By Serre's conductor formula:\n     $$n(\\rho_{\\mathfrak{p}_5}) = \\dim(V / V^{H_0}) + \\frac{|H_1|}{|H_0|} \\dim(V / V^{H_1}) = 2 + \\frac{5}{10} \\times 2 = 2 + 1 = 3.$$\n   - Tame conductor exponent: $n_{\\text{tame}} = 2$; wild conductor exponent: $n_{\\text{wild}} = 1$; total conductor: $n = 3$.\n\n5. **Discharge of Breuil--Diamond Theorem 3.2.2 at $\\mathfrak{p}_5$**:\n   - Because $p_0 = 5 \\ne 17 = p$, $\\mathfrak{p}_5$ is a place away from $p$. Conditions (i), (ii), and (iv) of Theorem 3.2.2 are vacuously satisfied ($N_{\\mathfrak{p}_5} = 0$).\n   - The 17-adic representation of the Jacobian itself, $\\rho_{\\mathfrak{p}_5}^{\\text{geom}} = \\rho_{J^-, 17}|_{G_{K_{\\mathfrak{p}_5}}}$, provides an explicit 2-dimensional characteristic-zero lift over $K_{17}$ with the prescribed Weil--Deligne typ",
+      "length_chars": 21368
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.87,
+        "confidence": 0.76,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.19,
+          "1": 0.77,
+          "2": 0.02,
+          "3": 0.02
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.11,
+        "confidence": 0.89,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.97,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.03
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.74
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.22,
+        "probabilities": {
+          "no_action": 0.03,
+          "audit_now": 0.38,
+          "verify_computation": 0.02,
+          "audit_later": 0.36,
+          "verify_literature": 0.21
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3127,
+      "output_tokens": 124
+    }
+  }
+}

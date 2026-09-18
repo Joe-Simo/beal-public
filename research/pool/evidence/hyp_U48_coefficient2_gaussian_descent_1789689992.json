@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U48_coefficient2_gaussian_descent",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U48_coefficient2_gaussian_descent.md",
+    "excerpt": "# U48: coefficient-2 square branch \u2014 Gaussian descent\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Input from the coefficient-2 checkpoint\n\nFor a surviving primitive solution\n\n    X^10 + Y^10 = 2 Z^17,\n\nput a=X^2, b=Y^2. The literature-pruned factorization gives\n\n    a+b = 2 u^17,\n    Phi_5(-a,b) = a^4-a^3b+a^2b^2-ab^3+b^4 = v^17,\n    gcd(u,v)=1.\n\nX and Y are odd and coprime.\n\n## 2. First equation is a Gaussian 17th-power equation\n\nSet\n\n    m=(X+Y)/2,\n    n=(X-Y)/2.\n\nThen m,n are coprime integers of opposite parity and\n\n    X=m+n,\n    Y=m-n.\n\nThe first factor equation becomes\n\n    X^2+Y^2 = 2(m^2+n^2)=2u^17,\n\nhence\n\n    m^2+n^2=u^17.                                      (1)\n\nBecause gcd(m,n)=1 and they have opposite parity, m+in and m-in are coprime in Z[i]. Since Z[i] is a UFD, (1) implies, up to a Gaussian unit and conjugation,\n\n    m+in = epsilon (r+is)^17,\n    u=r^2+s^2,\n\nfor coprime r,s of opposite parity.\n\nThus the coefficient-2 branch has an unconditional Gaussian 17th-power parametrization.\n\n## 3. Second factor in the new coordinates\n\nExact symbolic expansion gives\n\n    a^4-a^3b+a^2b^2-ab^3+b^4\n      = m^8 + 44 m^6 n^2 + 166 m^4 n^4 + 44 m^2 n^6 + n^8.\n\nTherefore every surviving solution satisfies the simultaneous system\n\n    m^2+n^2 = u^17,\n    m^8+44m^6n^2+166m^4n^4+44m^2n^6+n^8 = v^17,       (2)\n\nwith gcd(m,n)=gcd(u,v)=1 and m,n of opposite parity.\n\nSubstituting m+in=epsilon(r+is)^17 converts the remaining branch to one explicit binary-form perfect-17th-power equation in r,s. This is a substantially narrower descent target than the original generalized-Fermat equation.\n\n## 4. Interaction with the certified mod-103 constraint\n\nThe previous exact finite-field calculation proved\n\n    103 | X^2-Y^2,\n    103 does not divide XY.\n\nSince\n\n    X^2-Y^2=(X-Y)(X+Y)=4mn,\n\nwe obtain\n\n    103 | mn.                                          (3)\n\nAs gcd(m,n)=1, exactly one of m,n is divisible by 103. Also 103 does not divide u, because (1) and coprimality imply the other coordinate is nonzero modulo 103.\n\nThis local condition can now be imposed directly on the Gaussian parametrization (r+is)^17.\n\n## 5. Additional local-prime experiment\n\nA direct Wolfram enumeration of the square-factor conditions was repeated at q=137,239,307. Unlike q=103, these primes admit non-diagonal ratios a/b, so the q=103 diagonal phenomenon is special and cannot presently be promoted to an infinite family by the same elementary residue test.\n\nThis negative result prevents an unjustified claim that infinitely many auxiliary primes divide X^2-Y^2.\n\n## 6. Next obligation\n\nExploit (2) after substituting the Gaussian 17th-power parametrization. The concrete questions are:\n\n1. factor the resulting binary form over useful subfields;\n2. determine whether (3) forces r/s into a small residue set modulo 103;\n3. search for a descent, resultant obstruction, or a Frey curve attached to the remaining binary-form equation.\n\nNo complete contradiction is claimed here."
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.58
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.73,
+        "confidence": 0.27,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.62,
+          "1": 0.15,
+          "2": 0.11,
+          "3": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1859,
+      "output_tokens": 94
+    }
+  }
+}

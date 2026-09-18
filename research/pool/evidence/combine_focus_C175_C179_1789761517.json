@@ -1,0 +1,103 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C175_C179",
+  "timestamp": "2026-09-18T15:58:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C175",
+      "status": "PARTIAL_RESULT",
+      "claim": "The regularity obstruction of C174 does NOT depend on rigidity, so C174's first named escape (non-rigid families) closes. Over Q, regular semisimplicity at a puncture of order m forces the rank to satisfy phi(m) <= n <= m, because the eigenvalue multiset is a union of whole Galois orbits taken once and sum over d | m of phi(d) = m. For three pairwise distinct reduced exponents p < q < r the largest must be an odd prime, so phi(r) = r-1 > p >= n, and the three intervals cannot meet.",
+      "parents": [
+        "C174",
+        "C170"
+      ],
+      "method": "Exact enumeration of the rank sets S(m) = {sum of phi(d) over divisor sets containing m}, code/U318_regularity_without_rigidity.py. All 165 pairwise-distinct triples from {3,4,5,7,11,13,17,19,23,29,31} give an empty intersection. CONTROLS: (p,p,p) is non-empty for every p, and the mixed cases (3,3,4) -> ranks {2,3} and (4,4,5) -> rank {4} are non-empty, so the test is not vacuous. No rigidity index appears anywhere in the criterion.",
+      "evidence": "Machine-checked in formal/Beal/Rigidity.lean: regular_rank_upper (Nat.sum_totient), regular_rank_lower (phi(m) <= n whenever the multiplicity at m is at least 1), no_common_regular_rank (for r an odd prime with p + 2 <= r, no n satisfies both n <= p and phi(r) <= n). #print axioms = [propext, Classical.choice, Quot.sound]; full lake build clean.",
+      "obligations": "Same modelling caveat as C174 and NOT formalised: the step from 'local system defined over Q' to the Galois-stable multiplicity model, and the identification of regular Hodge-Tate weights with regular semisimplicity at every puncture. ESCAPES STILL UNTESTED: base fields larger than Q (where the Galois orbits are smaller and the intervals widen), irregular-weight automorphy of Calegari-Geraghty type, and objects that are not local systems on the thrice-punctured line.",
+      "novelty": "Turns C174 from a statement about rigid objects into a statement about ALL local systems on P^1 minus three points over Q. The obstruction is arithmetic (totient intervals), not geometric (rigidity budget) -- which is why dropping rigidity buys nothing. Not progress toward a proof.",
+      "evaluations": {
+        "U318": "Exhaustive exact enumeration with non-vacuity controls plus three machine-checked lemmas. HYPOTHESIS_ONLY for routing.",
+        "escape_2_open_U319": "SCOPE CORRECTION from U319/C176: this obstruction is about Q only. The larger-base-field escape is real and cheap -- a field of degree 2 to 6 already reconciles the ranks for every pairwise distinct triple of reduced exponents up to 19. Do not state the regularity obstruction as field-independent. It still does not give a route, because over K the method needs automorphy in rank > 2 over K (C171), which is harder than over Q."
+      }
+    },
+    "candidate_B": {
+      "id": "C179",
+      "status": "PARTIAL_RESULT",
+      "claim": "The first steps of EulerDescentStep are machine-checked. formal/Beal/Euler.lean now proves coprime_p_norm (if 3 does not divide p and p,q are coprime then p and p^2+3q^2 are coprime), factors_are_cubes (in that branch both factors are cubes, via Int.eq_pow_of_mul_eq_pow_odd), and three_dvd_p_rewrite (the 3 | p branch becomes 9*p'*(3p'^2+q^2) = c^3).",
+      "parents": [
+        "C177"
+      ],
+      "method": "gcd(p, p^2+3q^2) divides 3q^2, and IsCoprime p q gives IsCoprime p (q^2), so the gcd divides 3; with 3 not dividing p the two factors are coprime. Bezout witnesses computed by hand: from u*p + v*3q^2 = 1 one gets (u - v*p)*p + v*(p^2+3q^2) = 1.",
+      "evidence": "#print axioms = [propext, Classical.choice, Quot.sound] for both new theorems; full lake build clean; no sorry, no custom axioms.",
+      "obligations": "THE HEART IS STILL MISSING: from p^2 + 3q^2 = t^3 with p,q coprime, the factorisation in Z[omega] gives p = s(s-3t')(s+3t') with pairwise coprime factors, hence three cubes and a strictly smaller solution. That is the part needing three_pid (Mathlib/NumberTheory/Cyclotomic/PID.lean) plus unit bookkeeping for the order-6 unit group. Also untouched: the 3 | p branch beyond its rewriting.",
+      "novelty": "Incremental but real: two of the descent's four steps are now machine-checked rather than cited. Does not change what is proved about Beal; by C157 the whole (3,4,4) line cannot reach the open core.",
+      "evaluations": {
+        "U324": "Elementary coprimality plus cube extraction, machine-checked. HYPOTHESIS_ONLY for routing."
+      }
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.43,
+        "confidence": 0.57,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.59,
+          "1": 0.4,
+          "2": 0.01,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 2113,
+      "output_tokens": 53
+    }
+  }
+}

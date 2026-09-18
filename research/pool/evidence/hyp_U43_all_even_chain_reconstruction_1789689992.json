@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U43_all_even_chain_reconstruction",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U43_all_even_chain_reconstruction.md",
+    "excerpt": "# U43: reconstruction of the all-even chain through the 17-divisible branch\n\nStatus: verified partial reconstruction only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Elementary Pythagorean reduction\n\nLet a primitive Beal solution have\n\n    x=2r, y=2s, z=2t.\n\nAfter swapping the two left summands if necessary, take A even and B,C odd. Then\n\n    (A^r)^2 + (B^s)^2 = (C^t)^2\n\nis a primitive Pythagorean triple. Hence there are coprime integers m>n>0 of opposite parity with\n\n    A^r=2mn,\n    B^s=m^2-n^2,\n    C^t=m^2+n^2.\n\nSince\n\n    B^s=(m-n)(m+n)\n\nand m-n,m+n are coprime odd integers, there are coprime odd u<v with\n\n    m-n=u^s,\n    m+n=v^s.\n\nTherefore\n\n    m=(v^s+u^s)/2,\n    n=(v^s-u^s)/2.\n\nAlso 2mn=A^r with gcd(m,n)=1. The odd member of {m,n} is an r-th power; the even member is 2^(r-1) times an r-th power after absorbing any extra power 2^r into its base. Thus for coprime positive a,b,\n\n    {m,n}={a^r, 2^(r-1)b^r}.\n\nConsequently\n\n    {v^s+u^s, v^s-u^s}={2a^r, 2^r b^r}\n\nand, independently of the orientation,\n\n    C^t = a^(2r) + 2^(2r-2)b^(2r).          (1)\n\nThere is a second useful identity from the u,v parametrization:\n\n    2 C^t = u^(2s)+v^(2s).                   (2)\n\nThese identities are direct and restore the core of the missing earlier all-even derivation.\n\n## 2. Published generalized-Fermat input\n\nAnni-Siksek, `Modular elliptic curves over real abelian fields and the generalized Fermat equation x^{2l}+y^{2m}=z^p`, Algebra & Number Theory 10 (2016), Theorem 1:\n\nfor primes l,m>=5 and p in {3,5,7,11,13}, with the original p=13 exception l,m !=7, the only primitive solutions are trivial. The remaining p=13 exception was later closed by Billerey-Chen-Dembele-Dieulefait-Freitas; their 2023 paper states that for l,m>=5 the only solutions to x^(2l)+y^(2m)=z^13 are trivial.\n\nMichaud-Jacobs, `On some generalized Fermat equations of the form x^2+y^{2n}=z^p`, Mathematika 68 (2022), Theorem 3:\n\nfor primes l,m !=5, the equation\n\n    X^(2l)+Y^(2m)=Z^17\n\nhas no solutions in nonzero coprime integers.\n\n## 3. Conditional recovery of the \"one side is a 5-power\" step\n\nAssume 17|t and assume every prime divisor of r and s is >=5.\n\nIf neither r nor s is a power of 5, choose prime divisors\n\n    l|r, m|s, l!=5, m!=5.\n\nThen the original all-even equation can be rewritten\n\n    (A^(r/l))^(2l) + (B^(s/m))^(2m)\n      = (C^(2t/17))^17.\n\nThe transformed bases remain nonzero and coprime. Michaud-Jacobs Theorem 3 gives a contradiction.\n\nTherefore, under the stated prerequisite on the prime divisors of r and s,\n\n    17|t  =>  r is a power of 5 OR s is a power of 5.       (3)\n\nThis is now reconstructed from the published theorem rather than inherited from an AI summary.\n\n## 4. The two orientations are exact\n\n### If s=5^b\n\nFrom (2),\n\n    u^(2s)+v^(2s)=2C^t.\n\nFor b>=1 and 17|t set\n\n    X=u^(s/5),\n    Y=v^(s/5),\n    Z=C^(t/17).\n\nThen\n\n    X^10+Y^10=2 Z^17.                         (4)\n\nThe transformation preserves gcd(X,Y)=1 and X,Y are odd.\n\n### If r=5^a\n\nFrom (1),\n\n    C^t=a0^(2r)+2^(2r-2)b0^(2r)\n\n(rename the Pythagorean bases a0,b0 to avoid confusion with the exponent index).\n\nFor a>=1 and 17|t define\n\n    X=a0^(r/5),\n    Y=2^((r-5)/5) b0^(r/5),\n    Z=C^(t/17).\n\nSince r=5^a, r-5 is divisible by 5 and\n\n    2^(2r-2)=2^8 * (2^((r-5)/5))^10.\n\nThus exactly\n\n    X^10+256Y^10=Z^17.                         (5)\n\nThis proves the coefficient 256 and restores the logical link from the r=5^a orientation to U15-U41.\n\n## 5. What remains missing\n\nThe all-even chain is not yet complete. Two prerequisites still need proof from preserved evidence/primary sources:\n\n1. show that the relevant r and s have no prime divisors 2 or 3 (equivalently, every prime divisor is >=5);\n2. eliminate the alternate orientation (4), X^10+Y^10=2Z^17, or verify a published theorem that does so.\n\nThe available 2011 Q-curve theorem for x^5+y^5=2z^p does not automatically cover p=17: its displayed density result requires congruence conditions not satisfied by 17. Therefore the earlier project summary's assertion that (4) has only the trivial primitive positive solution is NOT accepted here without a stronger source.\n\nU41's weighted equation (5) is also still a candidate elimination pending the independent level-lowering/newspace audit recorded there.\n\n## 6. Coverage consequence\n\nWhat is now rigorously connected is:\n\n    all-even primitive Beal solution\n      -> Pythagorean system (1),(2)\n      -> [if 17|t, all prime divisors of r,s >=5]\n      -> one of r,s is a 5-power\n      -> either (4) or (5).\n\nThis is a substantial reconstruction, but the bracketed prerequisite and the coefficient-2 branch remain open obligations. No complete all-even elimination is claimed.\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.03,
+        "confidence": 0.97,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.98,
+          "1": 0.02,
+          "2": 0.0,
+          "3": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2489,
+      "output_tokens": 94
+    }
+  }
+}

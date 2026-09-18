@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_checkpoint-2026-09-14",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "checkpoint-2026-09-14.md",
+      "excerpt": "# Beal research checkpoint \u2014 2026-09-14\n\n## Status\n\nNo complete proof or counterexample. This checkpoint concerns only the primitive even-leg exponent-5 generalized-Fermat subcase arising from the Beal program; closing it would not resolve Beal by itself.\n\n## Exact target subproblem\n\nMichaud-Jacobs (Mathematika 68 (2022), 344\u2013361, DOI 10.1112/mtk.12127) proves that primitive nonzero solutions of\n\nx^(2l) + y^(2m) = z^17\n\nare impossible for primes l,m != 5. His remaining l=5 obstruction includes four Case-2 Hilbert newforms over the cyclic quartic field F of conductor 17, LMFDB base-field label 4.4.4913.1, level 272.1. The paper explicitly says the author expects their residual representations at primes lambda|5 to be reducible; proving this would eliminate them because the Frey residual representation is irreducible for l>=5 (Lemma 7.2).\n\nRelevant public code:\n- https://github.com/michaud-jacobs/thesis/blob/main/gen-fermat/cuspforms_17.m\n- https://github.com/michaud-jacobs/thesis/blob/main/gen-fermat/irreducibility_17.m\n\n## Four obstructing Case-2 forms\n\nLMFDB labels:\n- 4.4.4913.1-272.1-r, coefficient degree 2\n- 4.4.4913.1-272.1-s, coefficient degree 2\n- 4.4.4913.1-272.1-v, coefficient degree 6\n- 4.4.4913.1-272.1-w, coefficient degree 6\n\nFor r,s the Hecke coefficient polynomial is\n\nP2(X) = X^2 + 2X - 4.\n\nFor v,w it is\n\nP6(X) = X^6 + 3X^5 - 42X^4 - 104X^3 + 364X^2 + 428X + 104.\n\n## Degree-6 coefficient-field involution and the prime over 5\n\nLet e be a root of P6. Exact computation found the nontrivial field automorphism\n\ntau(e) = e^5/4 - e^4/4 - 17e^3/2 + 5e^2 + 41e + 17.\n\nIndependent Wolfram Language checks returned:\n\n- P6 mod 5 = (X+1)^2 (X^4 + X^3 - 1)\n- remainder P6(tau(X)) modulo P6(X) = 0\n- remainder tau(tau(X)) - X modulo P6(X) = 0\n- tau(-1) mod 5 = 4 = -1 mod 5\n- disc(P6) = 2^20 * 5^3 * 13 * 449^2\n\nWolfram also computed the maximal-field discriminant as\n\nDisc(K6) = 3354640640 = 2^8 * 5 * 13 * 449^2,\n\nso [O_K6 : Z[e]] = 320 = 2^6*5. Because the power basis has 5-index, the naive factorization of P6 mod 5 alone is not a valid Dedekind factorization.\n\nTo repair this, an integral generator beta from a computed integral basis was found with index prime to 5. Its minimal polynomial is\n\nX^6 - 394X^5 + 9946X^4 + 133088X^3 + 296618X^2 - 355700X + 87440,\n\nand its polynomial discriminant divided by Disc(K6) has 5-adic valuation 0. Modulo 5 this minimal polynomial factors as\n\nX^2 (X^4 + X^3 + 3X^2 + 3X + 3).\n\nThe quartic factor is irreducible over F5. Hence 5 has exactly one ramified residue-degree-1 prime lambda in K6, with e(lambda/5)=2, plus one unramified residue-degree-4 prime. Since P6 has only the linear residue root e=-1 modulo 5, the ramified lambda satisfies e == -1 (mod lambda). It is unique of this ramification/residue type, so tau fixes lambda; the induced map on O_K6/lambda = F5 is the identity.\n\nThis is precisely the coefficient-field ramification feature used in Billerey\u2013Chen\u2013Demb\u00e9l\u00e9\u2013Dieulefait\u2013Freitas, Proposition 3.2, for a reducibility argument.\n\n## Exact certificate that the ramified lambda is a genuine surviving sieve prime\n\nThe original Case-2 elimination code uses the rational-prime sieve S=[3,67,101]. For all four obstructing forms r,s,v,w, exact reduction at the ramified degree-1 prime lambda|5 gives\n\n- q=3, the unique prime Q has Norm(Q)=81 and a_Q == 2 == 1+81 (mod lambda),\n- q=67, every Q|67 has a_Q == 3 == 1+67 (mod lambda),\n- q=101, every Q|101 has a_Q == 2 == 1+101 (mod lambda).\n\nFor the degree-6 fields the exact reduction was done in an integral basis of O_K6 rather than by naively substituting e=-1 into expressions with denominators divisible by 5. If c1,...,c6 are coordinates in the computed integral basis, reduction at lambda is c1+4*c2+c3 mod 5.\n\nThe link to the actual B_S sieve is direct. In the author's Case-2 definitions, choosing (eta,mu)=(0,1) gives u=1, v=-1, w=0, hence the singular branch. Then c4=16, c6=-64, gamma=-c4/c6=1/4 is a square in every odd residue field, so\n\nB_Q(f,0,1)=Norm(Q)+1-a_Q.\n\nThe congruences above make this factor divisible by lambda for every Q above each q in S. Therefore lambda divides B_q(f) for q=3,67,101 and consequently divides B_S(f)=B_3(f)+B_67(f)+B_101(f). Thus the ramified degree-1 lambda is not merely a plausible prime above 5: it is provably one of the congruence primes that survives the author's exact sieve for each of the four obstructing forms.\n\nAdditional exact reductions at q=89,103,137 give the same Eisenstein pattern a_Q == 1+Norm(Q) (mod lambda) for every displayed Q, but these extra finite checks are evidence only, not a proof of reducibility.\n\n## Quartic base-field involution\n\nThe cyclic quartic base field F has defining polynomial\n\nf(W) = W^4 - W^3 - 6W^2 + W + 1\n\n(discriminant 17^3). A generator sigma of Gal(F/Q) can be represented by\n\nsigma(W) = -W^3/2 + 3W + 3/2,\n\nwith order 4; sigma^2(W) = W^3 - W^2 - 6W + 1.\n\nUsing the ordered LMFDB prime ideals above q=13 and q=47, sigma^2 swaps the first two primes and swaps the last two",
+      "length_chars": 7714
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.37,
+        "confidence": 0.18,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.46,
+          "2": 0.04,
+          "3": 0.28
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.82,
+        "confidence": 0.18,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.71,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.27
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.28,
+        "probabilities": {
+          "audit_now": 0.31,
+          "audit_later": 0.19,
+          "no_action": 0.06,
+          "verify_literature": 0.01,
+          "verify_computation": 0.43
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3094,
+      "output_tokens": 126
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U45_small_prime_factors_for_t_ge_3",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U45_small_prime_factors_for_t_ge_3.md",
+      "excerpt": "# U45: small-prime factors of r,s are excluded when t >= 3\n\nStatus: verified partial coverage result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Setup\n\nLet a primitive all-even Beal candidate be\n\n    A^(2r) + B^(2s) = C^(2t),\n\nwith r,s,t >= 2 and pairwise coprime positive bases A,B,C.\n\nU44 reduced the cases 2|r and 2|s to quartic perfect-power equations but did not have a uniform theorem. The literature audit below closes those cases for every t>=3 and also closes 3|r or 3|s for every t>=3.\n\n## 2. Excluding 3 | r or 3 | s for t >= 3\n\nAssume 3|r. Put\n\n    X = A^(r/3),\n    Y = B^s,\n    Z = C^2.\n\nThen\n\n    X^6 + Y^2 = Z^t,\n\nor after swapping the two left terms,\n\n    Y^2 + X^6 = Z^t.\n\nThe transformed bases X,Y,Z remain positive and gcd(X,Y)=1.\n\nMichael A. Bennett and Imin Chen, `Multi-Frey Q-curves and the Diophantine equation a^2+b^6=c^n`, Algebra & Number Theory 6 (2012), 707-730, DOI 10.2140/ant.2012.6.707, Theorem 1, states:\n\n    Let n >= 3 be an integer. Then a^2+b^6=c^n\n    has no solutions in positive integers a,b,c with gcd(a,b)=1.\n\nTaking (a,b,c,n)=(Y,X,Z,t) gives a contradiction for every t>=3.\n\nThe same argument with A and B interchanged excludes 3|s.\n\nTherefore\n\n    t >= 3  =>  3 does not divide r*s.                       (1)\n\n## 3. Excluding 2 | r or 2 | s for t >= 4\n\nAssume 2|r. Put\n\n    X = A^(r/2),\n    Y = B^s,\n    Z = C^2.\n\nThen\n\n    X^4 + Y^2 = Z^t,\n\nwhich is the generalized-Fermat equation a^2+b^4=c^n after swapping X and Y.\n\nThe complete resolution assembled from Ellenberg, Bennett-Ellenberg-Ng, and the remaining n=6 case states that\n\n    a^2+b^4=c^n\n\nhas no solutions in nonzero coprime integers for every n>=4.\n\nHence 2|r is impossible for t>=4. By symmetry 2|s is impossible for t>=4.\n\n## 4. The boundary t=3 is also excluded for 2 | r or 2 | s\n\nThe preceding (2,4,n) theorem starts at n=4, so t=3 must be treated without silently extending it.\n\nIf 2|r, retain the full other exponent rather than collapsing it to a square:\n\n    X=A^(r/2),\n    Z=C^2.\n\nThen\n\n    X^4 + B^(2s) = Z^3.\n\nThis has signature (4,2s,3), with s>=2.\n\nM. A. Bennett, I. Chen, S. R. Dahmen, and S. Yazdani, `Generalized Fermat equations: A miscellany`, International Journal of Number Theory 11 (2015), DOI 10.1142/S179304211530001X, Theorem 1, includes the infinite family\n\n    (4,2n,3), n>=2,\n\namong the signatures for which x^p+y^q=z^r has no nonzero coprime integer solutions.\n\nTaking n=s contradicts the putative solution. The case 2|s follows by symmetry.\n\nThus\n\n    t = 3  =>  2 does not divide r*s.                        (2)\n\nCombining with the t>=4 argument,\n\n    t >= 3  =>  2 does not divide r*s.                       (3)\n\n## 5. Combined result\n\nFrom (1) and (3):\n\n    t >= 3  => every prime divisor of r and s is at least 5. (4)\n\nThis rigorously supplies the missing prerequisite used in U43, but only when t>=3.\n\nConsequently, in the subbranch t>=3 with 17|t, U43's published Michaud-Jacobs step is now fully justified:\n\n    17|t and t>=3\n      => one of r,s is a positive power of 5\n      => either X^10+Y^10=2 Z^17\n         or X^10+256Y^10=Z^17.\n\nThe coefficient-256 branch is the U41 candidate elimination; the coefficient-2 branch remains open in this repository.\n\n## 6. Boundary not covered\n\nThe case\n\n    t=2,\n\ncorresponding to original right exponent z=4, is not covered by the theorems above. For example the reductions become equations of the shape\n\n    X^4+Y^2=Z^2\n\nor\n\n    X^6+Y^2=Z^2,\n\nfor which the cited n>=3/n>=4 generalized-Fermat theorems do not apply.\n\nTherefore this checkpoint does NOT assert that every prime divisor of r and s is >=5 when t=2.\n\n## 7. Next obligation\n\nTreat the all-even t=2 branch directly. The first question is whether the primitive Pythagorean parametrization plus the fact that both legs are perfect powers rules out\n\n    A^(2r)+B^(2s)=C^4\n\nfor all r,s>=2. Only after that boundary case is resolved can the small-prime-factor statement be made unqualified across the full all-even branch.\n",
+      "length_chars": 3987
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.31,
+        "confidence": 0.69,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.87,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.09
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.16,
+        "confidence": 0.84,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.94,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.05
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.26
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_literature",
+        "confidence": 0.24,
+        "probabilities": {
+          "audit_later": 0.28,
+          "audit_now": 0.22,
+          "no_action": 0.09,
+          "verify_computation": 0.01,
+          "verify_literature": 0.4
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2703,
+      "output_tokens": 126
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C043_C047",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C043",
+      "status": "PARTIAL_RESULT",
+      "claim": "COUNTERSEARCH in Z[i]: of the norm analogues of the verified Z-constraints, exactly one fails on the Helenius identity (-2+i)^3+(-2-i)^3=(1+i)^4: the lower half of no_cancellation, that the sum exceeds each summand (N(C^z)=16 < 125 = N(A^x) = N(B^y)). Every other tested analogue (upper half of no_cancellation, C-smallest exponent order, dominant di"
+    },
+    "B": {
+      "id": "C047",
+      "status": "VERIFICATION_REQUIRED",
+      "claim": "No Beal counterexample of signature (2m,2n,3) with m>=4 and n>=4. Even m or even n: signature (4,2n,3) / (2m,4,3), excluded by BCDY 2015 Thm 1. Both odd (>=5): C odd forces a+bi=(u+vi)^3 in Z[i]; on whichever side 3 does not divide the parameter, (s^2)^m+(-eps t)^m=3v^2 with m odd, forbidden by Bennett-Skinner 2004 Thm 1.1 (C=3)."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.45,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.18,
+          "1": 0.24,
+          "2": 0.54,
+          "3": 0.04
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "usage": {
+      "input_tokens": 715,
+      "output_tokens": 34
+    }
+  }
+}

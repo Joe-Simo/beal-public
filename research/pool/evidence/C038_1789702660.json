@@ -1,0 +1,87 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C038",
+  "timestamp": "2026-09-17T23:37:40-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal counterexample: A^x+B^y=C^z, A,B,C >= 1, x,y,z >= 3, gcd(gcd(A,B),C)=1. KERNEL-VERIFIED: bases are PAIRWISE coprime; EXACTLY ONE of A,B,C is even; the full mod-8 picture is settled. Now judging the p = 3 analogue.",
+    "claim": "There is a residue class mod 9 that no Beal counterexample base C can occupy."
+  },
+  "questions": {
+    "likely_true": {
+      "type": "score",
+      "instructions": "Is this claim TRUE of every Beal counterexample? Judge the exact statement as written.",
+      "criteria": [
+        "level 0: false, or an easy counterexample exists",
+        "level 1: true only under an extra hypothesis not stated",
+        "level 2: probably true but the argument is not immediate",
+        "level 3: true and follows directly from elementary residue arithmetic"
+      ]
+    },
+    "decisive": {
+      "type": "score",
+      "instructions": "If established, how much would this claim constrain a hypothetical counterexample?",
+      "criteria": [
+        "level 0: vacuous or already known",
+        "level 1: a mild restriction on residues mod 9",
+        "level 2: a genuine new necessary condition",
+        "level 3: it forces a contradiction or excludes an infinite family of signatures"
+      ]
+    },
+    "exactly_testable": {
+      "type": "noul",
+      "instructions": "Can this claim be settled by exact finite computation over residues?",
+      "criteria": {
+        "true": "a bounded exact enumeration settles it",
+        "false": "it needs a deep theorem or an unbounded search"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "likely_true": {
+        "type": "score",
+        "score": 1.47,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: false, or an easy counterexample exists",
+          "1": "level 1: true only under an extra hypothesis not stated",
+          "2": "level 2: probably true but the argument is not immediate",
+          "3": "level 3: true and follows directly from elementary residue arithmetic"
+        },
+        "probabilities": {
+          "0": 0.31,
+          "1": 0.18,
+          "2": 0.24,
+          "3": 0.27
+        }
+      },
+      "decisive": {
+        "type": "score",
+        "score": 1.6,
+        "confidence": 0.47,
+        "legend": {
+          "0": "level 0: vacuous or already known",
+          "1": "level 1: a mild restriction on residues mod 9",
+          "2": "level 2: a genuine new necessary condition",
+          "3": "level 3: it forces a contradiction or excludes an infinite family of signatures"
+        },
+        "probabilities": {
+          "0": 0.09,
+          "1": 0.29,
+          "2": 0.56,
+          "3": 0.06
+        }
+      },
+      "exactly_testable": {
+        "type": "noul",
+        "noul": 0.51
+      }
+    },
+    "usage": {
+      "input_tokens": 637,
+      "output_tokens": 54
+    }
+  }
+}

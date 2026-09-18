@@ -1,0 +1,87 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "padic_claim",
+  "timestamp": "2026-09-17T23:30:34-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal counterexample: A^x+B^y=C^z, A,B,C >= 1, x,y,z >= 3, gcd(gcd(A,B),C)=1. KERNEL-VERIFIED here: the bases are PAIRWISE coprime; A != B; EXACTLY ONE of A,B,C is even; B^y < C^z <= 2B^y when A^x <= B^y; every signature has |chi| >= 1/12. Judge each claim as a mathematical statement about such a counterexample.",
+    "claim": "At least one of A, B, C is divisible by 3."
+  },
+  "questions": {
+    "likely_true": {
+      "type": "score",
+      "instructions": "Is this claim TRUE of every Beal counterexample? Judge the exact statement. Watch for claims that are true only under an extra hypothesis, that confuse a base with a term, or that are vacuous.",
+      "criteria": [
+        "level 0: the claim is false, or a counterexample to it is easy to construct",
+        "level 1: the claim is true only under an extra hypothesis not stated",
+        "level 2: the claim is probably true but the argument is not immediate",
+        "level 3: the claim is true and follows directly from the verified facts listed"
+      ]
+    },
+    "decisive": {
+      "type": "score",
+      "instructions": "If this claim were established, how much would it constrain a hypothetical counterexample?",
+      "criteria": [
+        "level 0: vacuous, or already implied by the verified facts listed",
+        "level 1: a mild restriction on residues",
+        "level 2: a genuine new necessary condition",
+        "level 3: it would force a contradiction, or exclude an infinite family"
+      ]
+    },
+    "exactly_testable": {
+      "type": "noul",
+      "instructions": "Can this claim be settled by exact finite computation or a short elementary derivation?",
+      "criteria": {
+        "true": "a bounded exact computation or a few lines of elementary number theory settles it",
+        "false": "settling it needs a deep theorem or an unbounded search"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "likely_true": {
+        "type": "score",
+        "score": 0.47,
+        "confidence": 0.53,
+        "legend": {
+          "0": "level 0: the claim is false, or a counterexample to it is easy to construct",
+          "1": "level 1: the claim is true only under an extra hypothesis not stated",
+          "2": "level 2: the claim is probably true but the argument is not immediate",
+          "3": "level 3: the claim is true and follows directly from the verified facts listed"
+        },
+        "probabilities": {
+          "0": 0.76,
+          "1": 0.07,
+          "2": 0.13,
+          "3": 0.04
+        }
+      },
+      "decisive": {
+        "type": "score",
+        "score": 1.62,
+        "confidence": 0.53,
+        "legend": {
+          "0": "level 0: vacuous, or already implied by the verified facts listed",
+          "1": "level 1: a mild restriction on residues",
+          "2": "level 2: a genuine new necessary condition",
+          "3": "level 3: it would force a contradiction, or exclude an infinite family"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.35,
+          "2": 0.57,
+          "3": 0.04
+        }
+      },
+      "exactly_testable": {
+        "type": "noul",
+        "noul": 0.26
+      }
+    },
+    "usage": {
+      "input_tokens": 731,
+      "output_tokens": 54
+    }
+  }
+}

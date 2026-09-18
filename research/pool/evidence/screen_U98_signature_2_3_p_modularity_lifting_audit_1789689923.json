@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U98_signature_2_3_p_modularity_lifting_audit",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U98_signature_2_3_p_modularity_lifting_audit.md",
+      "excerpt": "# U98: Modularity Lifting Theorems for Signature $(2, 3, p)$ ($p \\in \\{11, 13, 17\\}$): Applicability Survey, Galois Representations, and the Arithmetic Chabauty Barrier\n\n**Status: source-verified arithmetic geometry audit and obstruction analysis. Beal's conjecture and generalized Fermat equations of signature $(2, 3, p)$ for $p \\in \\{13, 17\\}$ remain open.**\n\nResearch date: 2026-09-17. Primary sources:\n- Nuno Freitas, Bartosz Naskr\u0119cki, and Michael Stoll, *The generalized Fermat equation with exponents 2, 3, n*, Compositio Math. 156 (2020), 77\u2013113 (arXiv:1703.05058v2).\n- Mark Kisin, *Moduli of finite flat group schemes and modularity*, Ann. of Math. 170 (2009), 1085\u20131180.\n- Toby Gee and Mark Kisin, *The Breuil--M\u00e9zard conjecture for two-dimensional representations of $\\operatorname{Gal}(\\overline{\\mathbb{Q}}_p/\\mathbb{Q}_p)$*, Ann. of Math. 180 (2014), 257\u2013366.\n- Patrick Allen, Chandrashekhar Khare, and Jack Thorne, *Modularity of elliptic curves over imaginary quadratic fields*, Invent. Math. 234 (2023), 107\u2013200.\n- Michael Stoll, *Selmer group Chabauty*, Contemporary Math. 736 (2019), AMS.\n- Bjorn Poonen, Edward F. Schaefer, and Michael Stoll, *Twists of $X(7)$ and primitive solutions to $x^2 + y^3 = z^7$*, Duke Math. J. 137 (2007), 103\u2013158.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint investigates the applicability of modern modularity lifting theorems (MLTs)\u2014including the frameworks of Kisin (2009), Gee--Kisin (2014), Thorne (2012, 2017), and Allen--Khare--Thorne (2023)\u2014to the generalized Fermat equation of signature $(2, 3, p)$\n$$a^2 + b^3 = c^p, \\quad \\gcd(a, b, c) = 1,$$\nspecifically targeting the critical prime exponents $p \\in \\{11, 13, 17\\}$.\n\n### Core Findings\n1. **Unconditional Applicability of Modularity Lifting**:\n   - The mod $p$ residual representations $\\bar\\rho_{E, p}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/\\mathbb{Q}) \\to \\operatorname{GL}_2(\\mathbb{F}_p)$ attached to the Kraus Frey curves are **absolutely irreducible** for all $p \\ge 11$ (FNS 2020 Proposition 2.4).\n   - The representations are ramified only at $\\{2, 3, p\\}$; they are completely unramified at all primes $\\ell \\mid c$ ($\\ell \\ne p$) and finite flat (crystalline or ordinary) at $p$.\n   - The Hodge--Tate weights of the $p$-adic Tate module $V_p(E)$ at all places $v \\mid p$ are uniformly $\\{0, 1\\}$.\n   - Consequently, the modularity lifting theorems of Kisin, Gee--Kisin, and Thorne apply **unconditionally** to these representations. Over imaginary quadratic fields (such as $\\mathbb{Q}(\\sqrt{-3})$ or $\\mathbb{Q}(i)$), Allen--Khare--Thorne (2023) likewise applies to base-changed elliptic curves.\n2. **The Fundamental Modularity Paradox**:\n   - The failure to resolve $p = 13$ and $p = 17$ is **not caused by a breakdown of modularity or modularity lifting**. Modularity of the Frey curves was already established unconditionally in 2001 (Breuil--Conrad--Diamond--Taylor) and level-lowering was proved in 1990 (Ribet).\n   - In Fermat's Last Theorem ($x^p + y^p = z^p$, signature $(p, p, p)$), the lowered Serre level is $N = 2$, where $S_2(\\Gamma_0(2)) = \\{0\\}$, yielding an immediate contradiction.\n   - For signature $(2, 3, p)$, the lowered Serre levels are $N_p \\in \\{27, 54, 96, 288, 864\\}$. These spaces are **never empty**.\n   - The candidate newform spaces unconditionally contain the modular forms attached to:\n     - The **universal Catalan solution** $(\\pm 3, -2, 1)$ ($3^2 + (-2)^3 = 1^p$ for all $p$), yielding $E_{\\text{Cat}}$ (isogenous to Cremona label `54a1`, `288a1`, or `864a1`);\n     - The **trivial CM solutions** $(1, 0, 1)$ ($j = 1728$, CM by $\\mathbb{Q}(i)$) and $(0, 1, 1)$ ($j = 0$, CM by $\\mathbb{Q}(\\sqrt{-3})$).\n   - Because genuine integer solutions exist for every exponent $p$, **no local Hecke trace sieve (Kraus sieve) can ever eliminate these candidate newforms**, because the mod $p$ representations actually match!\n3. **The Exact Technical Obstacles for $p = 13$ and $p = 17$**:\n   - Modularity translates the Diophantine equation into finding rational points on **twisted modular curves $X_{E_0}(p)$**, whose genus explodes cubically ($g(X(11)) = 253$, $g(X(13)) = 592$, $g(X(17)) = 2120$).\n   - Direct Chabauty on $X(p)$ is impossible. Projecting to quotients:\n     - **For $p = 11$**: Solved by FNS (2020) **only under GRH** via Selmer group Chabauty on $X_0(11)$ over degree-12 fields, requiring class group certification of degree-36 fields.\n     - **For $p = 13$**: $X_0(13)$ has **genus 0**, providing zero Mordell--Weil rigidity. Lifts to $X_1(13)$ (genus 2) require degree-14 fields $K_E$ and 2-descent on $\\operatorname{Jac}(X_1(13))$ over degree-84 fields, far exceeding computational and theoretical feasibility.\n     - **For $p = 17$**: $X_0(17)$ is elliptic, but the field of definition has degree $[K_E : \\mathbb{Q}] = 18$. The Mordell--Weil rank $\\operatorname{rank} X_0(17)(K_E) \\ge 18$ violates the classical Chabauty condition ($r < g$), and Selmer group Chabauty requires class group computation in degree-54 field",
+      "length_chars": 21282
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.32,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.62,
+          "2": 0.09,
+          "3": 0.17
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.23,
+        "confidence": 0.15,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.31,
+          "1": 0.37,
+          "2": 0.11,
+          "3": 0.21
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.27,
+        "probabilities": {
+          "audit_now": 0.41,
+          "audit_later": 0.37,
+          "verify_literature": 0.08,
+          "verify_computation": 0.02,
+          "no_action": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3141,
+      "output_tokens": 124
+    }
+  }
+}

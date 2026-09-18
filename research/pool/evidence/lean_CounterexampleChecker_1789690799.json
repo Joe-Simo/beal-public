@@ -1,0 +1,88 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "lean_CounterexampleChecker",
+  "timestamp": "2026-09-17T20:19:59-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "target_statement": "Beal: for positive integers A,B,C,x,y,z with A^x + B^y = C^z and x,y,z >= 3, the bases A,B,C share a common prime factor, i.e. gcd(gcd(A,B),C) > 1. A counterexample needs: all six positive integers, all three exponents at least 3, exact equality, and gcd(gcd(A,B),C) = 1. Bases equal to 1 are allowed. Exponent 2 is NOT allowed. The condition is on the BASES, not the exponents.",
+    "file": "CounterexampleChecker.lean",
+    "source": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\n\n/-!\n# Section 8: Beal Counterexample Checker Logic in Lean 4\n\nThis module formalizes the exact algorithmic verification logic specified in\nSection 8 and implemented in `code/section8_counterexample_checker.py` and\n`code/section8_counterexample_checker.ts`.\n\n## Requirements Verified:\n1. Validates all six inputs: bases (A, B, C) and exponents (x, y, z).\n2. Positivity: all bases and exponents must be strictly positive integers (> 0).\n3. Exponent restrictions: exponents must satisfy x \u2265 3, y \u2265 3, z \u2265 3.\n4. Exact equality: verifies A^x + B^y = C^z over arbitrary-precision integers.\n5. Greatest common divisor: calculates gcd(A, B, C) = gcd(gcd(A, B), C).\n   A counterexample requires gcd(A, B, C) = 1 (primitive).\n   If gcd(A, B, C) > 1, the equality satisfies the Beal conjecture and is NOT a counterexample.\n6. Rejects zero, negative, and out-of-bounds inputs.\n\n## Formal Properties:\n- **Soundness**: Any candidate accepted as a counterexample satisfies `IsBealCounterexample`.\n- **Completeness**: Any mathematical counterexample is classified as a counterexample by the checker.\n- **Decidable Test Suite**: All canonical boundary test cases are proven via `decide` / `rfl`.\n-/\n\nnamespace Beal\n\n/--\nDetailed structured result returned by the Section 8 Beal counterexample checker.\n-/\nstructure BealCheckResult where\n  admissible : Bool\n  equality : Bool\n  primitive : Bool\n  counterexample : Bool\n  reason : String\n  a : Option \u2124 := none\n  b : Option \u2124 := none\n  c : Option \u2124 := none\n  x : Option \u2124 := none\n  y : Option \u2124 := none\n  z : Option \u2124 := none\n  lhs : Option \u2124 := none\n  rhs : Option \u2124 := none\n  gcd : Option \u2115 := none\n  deriving Repr, DecidableEq\n\n/--\nComputable Section 8 counterexample checker taking natural number inputs.\n-/\ndef checkBealNat (A B C x y z : \u2115) : BealCheckResult :=\n  if A = 0 || B = 0 || C = 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: bases must be strictly positive (> 0)\",\n      a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n      x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124) }\n  else if x = 0 || y = 0 || z = 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: exponents must be strictly positive (> 0)\",\n      a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n      x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124) }\n  else\n    let g := gcd3 A B C\n    let isPrim := (g == 1)\n    let lhsVal := A ^ x + B ^ y\n    let rhsVal := C ^ z\n    let isEq := (lhsVal == rhsVal)\n    if x < 3 || y < 3 || z < 3 then\n      { admissible := false, equality := isEq, primitive := isPrim, counterexample := false,\n        reason := \"Exponent restriction violated (x, y, z must all be \u2265 3)\",\n        a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n        x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124),\n        lhs := some (lhsVal : \u2124), rhs := some (rhsVal : \u2124), gcd := some g }\n    else\n      let isCe := isEq && isPrim\n      let msg :=\n        if isCe then\n          \"Genuine Beal counterexample verified\"\n        else if isEq then\n          \"Valid equality, but fails common-factor requirement: gcd > 1 (satisfies Beal conjecture)\"\n        else\n          \"Arithmetic mismatch\"\n      { admissible := true, equality := isEq, primitive := isPrim, counterexample := isCe,\n        reason := msg,\n        a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n        x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124),\n        lhs := some (lhsVal : \u2124), rhs := some (rhsVal : \u2124), gcd := some g }\n\n/--\nSection 8 counterexample checker taking general integer inputs (rejecting negatives and zeros).\n-/\ndef checkBealInt (A B C x y z : \u2124) : BealCheckResult :=\n  if A \u2264 0 || B \u2264 0 || C \u2264 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: bases must be strictly positive integers (> 0)\",\n      a := some A, b := some B, c := some C, x := some x, y := some y, z := some z }\n  else if x \u2264 0 || y \u2264 0 || z \u2264 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: exponents must be strictly positive integers (> 0)\",\n      a := some A, b := some B, c := some C, x := some x, y := some y, z := some z }\n  else\n    checkBealNat A.toNat B.toNat C.toNat x.toNat y.toNat z.toNat\n\n/-! ### Soundness and Completeness Theorems -/\n\n/--\n**Soundness**:\nIf `checkBealNat` accepts `(A, B, C, x, y, z)` as a counterexample,\nthen the tuple is mathematically a genuine `IsBealCounterexample`.\n-/\ntheorem checkBealNat_sound (A B C x y z : \u2115)\n    (hce : (checkBealNat A B C x y z).counterexample = true) :\n    IsBealCounterexample A B C x y z := by\n  unfold checkBealNat at hce\n  split_ifs at hce with h_bases h_exps h_small_exps\n  \u00b7 contradiction\n  \u00b7 contradiction\n  \u00b7 contradiction\n  \u00b7 -- Both branches of inner if\n    simp only [Bool.and_eq_true, beq_iff_eq] at hce\n    have h_pos_bases : A > 0 \u2227 B > 0 \u2227 C > 0 := by\n      push_neg at h_bases\n      omega\n    have h_exp_ge : x \u2265 3 \u2227 y \u2265 3 \u2227 z \u2265 3 := by\n      push_neg at h_small_exps\n      omega\n    exact \u27e8h_pos_bases.1, h_pos_bases.2.1, h_pos_bases.2.2,\n           h_exp_ge.1, h_exp_ge.2.1, h_exp_ge.2.2,\n           hce.2, hce.1\u27e9\n\n/--\n**Completeness**:\nIf `(A, B, C, x, y, z)` is mathematically a genuine `IsBealCounterexample`,\nthen `checkBealNat` returns `counterexample = true`.\n-/\ntheorem checkBealNat_complete (A B C x y z : \u2115)\n    (h : IsBealCounterexample A B C x y z) :\n    (checkBealNat A B C x y z).counterexample = true := by\n  rcases h with \u27e8hA, hB, hC, hx, hy, hz, hprim, heq\u27e9\n  unfold checkBealNat\n  have h_bases : \u00ac(A = 0 || B ="
+  },
+  "questions": {
+    "fidelity": {
+      "type": "score",
+      "instructions": "Does this Lean file's formal definition of a Beal counterexample, or of the statement it proves, faithfully encode the original conjecture as described in the target statement? Check in particular: all six values positive integers; all three exponents at least 3 and not 2; the common-factor condition placed on the BASES rather than the exponents; a base equal to 1 not excluded; the equality exact.",
+      "criteria": [
+        "level 0: the file states no Beal-specific statement, for example it is a helper or arithmetic file",
+        "level 1: it states a Beal-related statement that DEVIATES from the target, for example allowing exponent 2, excluding base 1, or putting the gcd condition on the exponents",
+        "level 2: it states a Beal-related statement that appears faithful but restricts to a sub-case without saying so in the statement itself",
+        "level 3: it states a Beal-related statement that matches the target exactly, or a clearly labelled sub-case of it"
+      ]
+    },
+    "axiom_load": {
+      "type": "score",
+      "instructions": "How much of this file's mathematical content is asserted as a custom axiom or left as sorry, rather than proved from mathlib?",
+      "criteria": [
+        "level 0: no axiom and no sorry; everything is proved or is a definition",
+        "level 1: contains sorry or axioms only for elementary facts that a standard library would already provide",
+        "level 2: contains a small number of axioms asserting named external theorems, clearly labelled as such",
+        "level 3: the file's substantive conclusions rest on custom axioms that assert precisely what would otherwise need proving"
+      ]
+    },
+    "vacuous_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that a theorem in this file is VACUOUS or trivially true - for instance because its hypotheses can never be satisfied, because it is derived from an axiom that already asserts the conclusion, or because the quantifiers make it say less than intended?",
+      "criteria": {
+        "true": "a theorem here is derived almost immediately from an axiom asserting the same thing, or has hypotheses that may be unsatisfiable, so that proving it establishes nothing new",
+        "false": "the theorems here have genuine content derived from definitions and library lemmas"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fidelity": {
+        "type": "score",
+        "score": 2.79,
+        "confidence": 0.79,
+        "legend": {
+          "0": "level 0: the file states no Beal-specific statement, for example it is a helper or arithmetic file",
+          "1": "level 1: it states a Beal-related statement that DEVIATES from the target, for example allowing exponent 2, excluding base 1, or putting the gcd condition on the exponents",
+          "2": "level 2: it states a Beal-related statement that appears faithful but restricts to a sub-case without saying so in the statement itself",
+          "3": "level 3: it states a Beal-related statement that matches the target exactly, or a clearly labelled sub-case of it"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.05,
+          "2": 0.06,
+          "3": 0.87
+        }
+      },
+      "axiom_load": {
+        "type": "score",
+        "score": 0.14,
+        "confidence": 0.86,
+        "legend": {
+          "0": "level 0: no axiom and no sorry; everything is proved or is a definition",
+          "1": "level 1: contains sorry or axioms only for elementary facts that a standard library would already provide",
+          "2": "level 2: contains a small number of axioms asserting named external theorems, clearly labelled as such",
+          "3": "level 3: the file's substantive conclusions rest on custom axioms that assert precisely what would otherwise need proving"
+        },
+        "probabilities": {
+          "0": 0.9,
+          "1": 0.07,
+          "2": 0.01,
+          "3": 0.02
+        }
+      },
+      "vacuous_risk": {
+        "type": "noul",
+        "noul": 0.35
+      }
+    },
+    "usage": {
+      "input_tokens": 2982,
+      "output_tokens": 54
+    }
+  }
+}

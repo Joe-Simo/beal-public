@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U151",
+  "timestamp": "2026-09-18T00:42:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Tools: PARI/GP 2.17 (modular forms over Q: mfinit/mfeigenbasis, elliptic curves, ellrank), Lean 4 + mathlib, Python. No Magma/Sage. Kernel chains stop at: (2m,2n,z odd) both coordinates of (u+vi)^z perfect powers; (p,p,r) Thue equation S=e^r. Literature frontier recorded."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which?",
+      "criteria": {
+        "frey_q_pari": "execute a Frey-curve level-lowering computation over Q with PARI for a family whose Frey curve is over Q and level small, e.g. (p,p,2)-type auxiliaries x^n+y^n=Cz^2 for a NEW coefficient C (not in Bennett-Skinner's list) that arises in one of our reductions, to extend the (2m,2n,3) chain (e.g. the 3|u branch gives 3^{2m-3}s^{2m}-v^2=+-t^m)",
+        "kraus_criterion_pari": "implement Kraus's criterion for (3,3,p) in PARI and re-derive a small range as an independent re-implementation check of a literature theorem used in the pool (C006's finite range)",
+        "chabauty_no": "Chabauty is not available; record as tool gap",
+        "consolidate": "stop new mathematics; write the final residual account and the honest status document for the user"
+      }
+    },
+    "exact": {
+      "type": "noul",
+      "instructions": "Is the chosen option executable at $0 with these tools within a few cycles?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "frey_q_pari",
+        "confidence": 0.22,
+        "probabilities": {
+          "kraus_criterion_pari": 0.07,
+          "chabauty_no": 0.22,
+          "consolidate": 0.3,
+          "frey_q_pari": 0.41
+        }
+      },
+      "exact": {
+        "type": "noul",
+        "noul": 0.38
+      }
+    },
+    "usage": {
+      "input_tokens": 677,
+      "output_tokens": 81
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U147",
+  "timestamp": "2026-09-18T00:37:42-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "C055"
+  },
+  "questions": {
+    "go": {
+      "type": "noul",
+      "instructions": "Is formalising the p-adic branch of (p,p,r) via LTE the right next step versus a literature check of Kraus-type coverage?",
+      "criteria": {
+        "true": "LTE branch now",
+        "false": "literature first"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "go": {
+        "type": "noul",
+        "noul": 0.45
+      }
+    },
+    "usage": {
+      "input_tokens": 333,
+      "output_tokens": 20
+    }
+  }
+}

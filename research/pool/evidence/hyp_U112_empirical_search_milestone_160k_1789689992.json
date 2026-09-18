@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U112_empirical_search_milestone_160k",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U112_empirical_search_milestone_160k.md",
+    "excerpt": "# U112: Empirical Search Milestone $A \\le 160,000$ \u2014 Multi-Threaded GMP Verification and Zero Counterexample Certification\n\n**Status**: Definitive empirical verification milestone. Multi-threaded GNU MP search engine executed over base interval $[140001, 160000]$ and cumulative envelope $[2, 160000]$ for pure odd prime exponents $x, y, z \\in [3, 19]$. **Zero counterexamples exist.**  \n**Date**: 2026-09-17  \n**Author**: GMP Search Scale Engineer (Beal Conjecture Project)  \n**Target Equation**: Generalized Fermat / Beal Conjecture Equation:\n$$A^x + B^y = C^z, \\quad \\gcd(A, B, C) = 1, \\quad x, y, z \\ge 3.$$\n\n**Artifacts & Verification Logs**:\n- Interval $[140001, 160000]$ Log: [`references/search_logs/interval_140001_160000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_140001_160000_primes19.json)\n- Preceding 140k Milestone: [`research/checkpoints/U112_empirical_search_milestone_140k.md`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U112_empirical_search_milestone_140k.md)\n- Preceding 120k Milestone: [`research/checkpoints/U111_empirical_search_milestone_120k.md`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U111_empirical_search_milestone_120k.md)\n- Preceding 100k Milestone: [`research/checkpoints/U110_empirical_search_milestone_100k.md`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U110_empirical_search_milestone_100k.md)\n- Search Engine Source: [`code/beal_search_gmp.c`](file://[LOCAL_HOME]/Downloads/beal/code/beal_search_gmp.c)\n- Executable Binary: `code/beal_search_gmp`\n\n---\n\n## 1. Executive Summary\n\nThis milestone report certifies the expansion of the high-performance computational search envelope past base $140,000$ to base $A = 160,000$:\n\n1. **Interval $[140001, 160000]$ Execution**:\n   - **Search Envelope**: Base $A \\in [140001, 160000]$, base $B \\in [A, 160000]$, pure odd prime exponents $x, y, z \\in \\{3, 5, 7, 11, 13, 17, 19\\}$.\n   - **Candidate Pairs Evaluated**: **3,404,278,500** ($3.404 \\times 10^9$ pairs).\n   - **Wall Time**: $225.655$ seconds ($3.76$ minutes) on 8 worker threads.\n   - **Average Throughput**: $15.09$ Million candidate pairs/second.\n   - **Counterexamples Found**: **EXACT ZERO ($0$)**.\n   - **Non-Primitive Equalities**: **EXACT ZERO ($0$)** in the coprime search space.\n\n2. **Grand Cumulative Verification Envelope ($A \\le 160,000$)**:\n   - Across all 12 partitioned search logs from $A = 2$ through $A = 160,000$, the C + GMP engine has exhaustively evaluated:\n     $$\\mathbf{20,460,680,997 \\quad \\text{coprime candidate pairs}}$$\n     (over **20.460 Billion** candidate pairs) with arbitrary-precision verification.\n   - Cumulative wall-clock search time: **$947.44$ seconds** ($15.79$ minutes).\n   - Cumulative counterexamples detected: **$\\mathbf{0}$**.\n   - **Certification**: The Beal Conjecture is verified to hold unconditionally for all bases $A, B \\le 160,000$ and pure odd prime exponents $x, y, z \\in \\{3, 5, 7, 11, 13, 17, 19\\}$.\n\n---\n\n## 2. Precomputation and Performance Parameters\n\n- **Precomputed Powers**: $1,119,993$ distinct powers for base range $[2, 160000]$ across prime exponents $\\{3, 5, 7, 11, 13, 17, 19\\}$.\n- **Hash Table**: $2^{22} = 4,194,304$ slots with SplitMix64 hashing, load factor $0.27$.\n- **Section 8 Test Suite**: 13/13 (100.0%) pass rate prior to search start.\n\n---\n\n## 3. Comprehensive 12-Interval Ledger: Base $A \\le 160,000$\n\n| Interval | Base $A$ Range | Max Base | Exponents | Pairs Checked | Elapsed (s) | Rate (M pairs/s) | Counterexamples | JSON Certificate |\n|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|\n| 01 | $[2, 10000]$ | 10,000 | Pure primes $\\le 19$ | 885,552,473 | 16.67 | 53.14 | 0 | [`interval_00002_10000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_00002_10000_primes19.json) |\n| 02 | $[10001, 20000]$ | 20,000 | Pure primes $\\le 19$ | 851,135,936 | 24.94 | 34.13 | 0 | [`interval_10001_20000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_10001_20000_primes19.json) |\n| 03 | $[20001, 30000]$ | 30,000 | Pure primes $\\le 19$ | 851,071,368 | 19.60 | 43.42 | 0 | [`interval_20001_30000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_20001_30000_primes19.json) |\n| 04 | $[30001, 40000]$ | 40,000 | Pure primes $\\le 19$ | 851,082,988 | 24.30 | 35.02 | 0 | [`interval_30001_40000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_30001_40000_primes19.json) |\n| 05 | $[40001, 50000]$ | 50,000 | Pure primes $\\le 19$ | 851,156,124 | 33.25 | 25.60 | 0 | [`interval_40001_50000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_40001_50000_primes19.json) |\n| 06 | $[50001, 60000]$ | 60,000 | Pure primes $\\le 19$ | 851,051,796 | 12.46 | 68.31 | 0 | [`interval_50001_60000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_50001_60000_primes"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.97
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.29,
+        "confidence": 0.29,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.1,
+          "1": 0.12,
+          "2": 0.17,
+          "3": 0.61
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3115,
+      "output_tokens": 94
+    }
+  }
+}

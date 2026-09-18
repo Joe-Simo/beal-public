@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U113_corrected_coverage_ledger",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U113_corrected_coverage_ledger.md",
+    "excerpt": "# U113: Corrected Coverage Ledger (post-audit, 2026-09-17)\n\nSupersedes the coverage ledgers in U105 \u00a74 and related checkpoints, which record as\n\"100% Closed\" several families whose supporting arguments did not survive audit\n([U113 audit](U113_orbit_b_elimination_audit.md)).\n\n**Beal's conjecture is not solved.** Nothing below claims otherwise.\n\n## Legend\n\n- **PROVED (ours, verified)** \u2014 established here and independently re-verified by exact computation.\n- **CITED, UNVERIFIED** \u2014 rests on an external theorem not yet checked against its primary source.\n- **CONDITIONAL** \u2014 depends on an unproved hypothesis (GRH, finiteness of Sha, Cohen\u2013Lenstra).\n- **OPEN** \u2014 not established.\n- **WITHDRAWN** \u2014 previously recorded as closed; the supporting argument failed audit.\n\n## Ledger\n\n| Family / claim | Previously recorded | Post-audit status | Basis |\n|---|---|---|---|\n| Counterexample checker (all six conditions, exact) | validated | **PROVED (ours, verified)** | Independent re-implementation agrees on every required vector *and* on the discriminating reason; True-branch reachability proven by mutating only the exponent gate; exact at 121 digits |\n| No counterexample with $A,B \\le 160{,}000$, $x,y,z \\in \\{3,\\dots,19\\}$ prime | 100% closed | **PROVED (ours), low leverage** | Exhaustive GMP search; bounds where a counterexample can live, proves nothing about the conjecture |\n| $\\operatorname{disc}(f) = 2^{24}5^5Z^{68}$; good reduction at $q \\mid Y$ | \u2014 | **PROVED (ours, verified)** | Symbolic + 5 exact specialisations (U113 Part I) |\n| Orbit $b \\sim \\operatorname{Jac}(C_0)_{/K}$ | proved | **PROVED (ours, verified)** | Point counting: $(S,P) = (9,19), (-11,29), (-1,-151)$ at $q=11,31,41$; $a_{\\mathfrak q}=0$ for $q\\not\\equiv1\\bmod5$ |\n| Orbit $b$ **eliminated** (U97, U102) | \"definitive, unconditional\" | **WITHDRAWN** | All three U97 strategies and all four U102 arguments fail; Strategy 3 refuted by computation (U113 Parts I\u2013II) |\n| $X^{10}+256Y^{10}=Z^{17}$ (Orientation B) | closed by two pathways | **WITHDRAWN \u2192 OPEN** | Pathway 1 = the withdrawn orbit-$b$ argument; Pathway 2 bounds $C^-(k)$ while solutions give points of degree 10 over $k$ (U113 Part III) |\n| All-even branch, $17 \\mid t$ | 100% closed | **WITHDRAWN \u2192 OPEN** | Depends entirely on Orientation B; additionally states $r,s\\ge5$ while the ledger drops that hypothesis |\n| All-even branch, $x$ or $y \\in \\{4,6,8\\}$ | implicitly closed | **OPEN** | Never covered by U105 Thm 1.1 ($r,s \\ge 5$); no reduction proved |\n| $x^5+y^5=z^{11}$, $x^5+y^5=z^{13}$ | \"100% unconditionally resolved\" | **CONDITIONAL (GRH)** \u2014 *source confirmed* | Dahmen\u2013Siksek prove these **assuming GRH** (Acta Arith. 164 (2014) 65\u2013100, confirmed at source). The claimed removal uses GRH-conditional Bach bounds + Cohen\u2013Martinet heuristics \u2014 circular (U113 Parts IV, VI) |\n| $\\operatorname{rank}J^-(k) \\le 2 < g=8$ (U99) | unconditional | **CONDITIONAL (GRH + Cohen\u2013Martinet)**, and over the wrong field | $h(F)=1$ not certified: Minkowski bound $5.67\\times10^{19}$, `bnfcertify` fails (U113 Parts III\u2013IV) |\n| $(5,5,p)$, $p=17$ | partially resolved | **CONDITIONAL (finiteness of Sha)** | Cassels\u2013Tate parity step assumes Sha finite; U110 concedes rank 2 defeats one-generator Chabauty |\n| $(3,3,p)$, $p \\le 700$, $p \\equiv 1 \\bmod 3$ | 100% eliminated | **CITATION-VERIFIED**, sieve data sound | 0 Hasse violations, 0 inconsistencies over 88 repeated traces. 144b1 is handled outside the sieve by a split-Cartan argument; the supporting theorem is real (Bilu\u2013Parent 2011 + BPR 2013; $p=13$ by BDMTV 2019) and its hypotheses hold for all 44 exponents. Project misattributes it to Momose/Darmon\u2013Merel (U113 Parts V\u2013VI) |\n| $(3,3,p)$, $p \\equiv 2 \\bmod 3$ | closed (Freitas 2016) | **CITED, UNVERIFIED** | Not checked against primary source |\n| $(3,3,p)$, **all** $p$ | \u2014 | **OPEN** | No uniformity in $p$; the sieve is per-prime |\n| $(2,4,n)$, $n \\ge 4$ | 100% closed | **CITED, UNVERIFIED** | Euler/Bruin/Ellenberg/Bennett\u2013Ellenberg\u2013Ng not checked against primary sources |\n| $(10,10,19)$ | 100% closed | **CITATION-VERIFIED** | $(5,5,19)$ is one of Dahmen\u2013Siksek's **unconditional** cases (confirmed at source). U105 Thm 1.2 step 5 (\"positivity forces $A=B=1$\") is still a non sequitur, though the conclusion survives |\n| Mixed-signature part of Beal | \u2014 | **OPEN**, no mechanism in the pool | The bulk of the conjecture |\n\n## Formal verification\n\n| Claim | Post-audit status | Basis |\n|---|---|---|\n| \"(2,3,8) Lean 4 formalized\", \"Lean 4 + mathlib verification\" | **NOT VERIFIED** | No `lake`/`lean`/`elan` on this machine; **no file in `formal/` has ever been compiled**. 7 `sorry`s and 9 custom `axiom`s, 5 of which assert the substantive theorems. Countersearch over 227,994 pairs found no inconsistency witness, so the axiom set is not shown unsound \u2014 but it is unverified trust, not proof (U113 Part VII) |\n\n## Standing obligations\n\n1. Two primary sources have now been checked (U113 Part VI): Dahmen\u2013Siksek (2014) and the\n   split-C"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.88,
+        "confidence": 0.67,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.14,
+          "2": 0.72,
+          "3": 0.1
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.88
+      }
+    },
+    "usage": {
+      "input_tokens": 2322,
+      "output_tokens": 42
+    }
+  }
+}

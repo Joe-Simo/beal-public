@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C048_audit_Q5",
+  "timestamp": "2026-09-18T00:06:31-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "Q5"
+  },
+  "questions": {
+    "gap": {
+      "type": "score",
+      "instructions": "Does this step hide a gap or a false assumption?",
+      "criteria": [
+        "level 0: exact",
+        "level 1: minor",
+        "level 2: real gap",
+        "level 3: wrong"
+      ]
+    },
+    "verify": {
+      "type": "choice",
+      "instructions": "Cheapest independent check.",
+      "criteria": {
+        "enum": "exact enumeration",
+        "source": "read primary source",
+        "paper": "hand derivation",
+        "lean": "Lean"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "gap": {
+        "type": "score",
+        "score": 2.18,
+        "confidence": 0.75,
+        "legend": {
+          "0": "level 0: exact",
+          "1": "level 1: minor",
+          "2": "level 2: real gap",
+          "3": "level 3: wrong"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.77,
+          "3": 0.21
+        }
+      },
+      "verify": {
+        "type": "choice",
+        "choice": "source",
+        "confidence": 0.47,
+        "probabilities": {
+          "source": 0.6,
+          "enum": 0.18,
+          "paper": 0.2,
+          "lean": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 552,
+      "output_tokens": 58
+    }
+  }
+}

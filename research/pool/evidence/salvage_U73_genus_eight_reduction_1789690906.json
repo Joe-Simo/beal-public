@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U73_genus_eight_reduction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U73_genus_eight_reduction.md",
+    "excerpt": "# U73: a fixed genus-eight reduction, its actual point field, and the absence of an elliptic quotient\n\n**Status: written, self-reviewed reduction and method-obstruction theorems, with distinct exact arithmetic checks. Neither the weighted equation nor the full Beal conjecture is solved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-15. Remote input inspected: `79b63d464ce5fbd1295d5c65d931a6beb46920db` in private `Joe-Simo/beal`. The attached local U72 archive was restored additively and its distinct manuscript was read. No earlier mathematical checkpoint is replaced.\n\n## 1. The result and the two U72 versions\n\nThe current remote U72 is `U72_root_closed_order_and_full_support.md`: its subject is the smaller order, all ten coefficients of the common root, and their exact divisibility profiles. The attached local U72 is `U72_common_root_constant_obstructions.md`: its subject is constant seventeenth-power tests modulo Z^17. They are different research continuations, not interchangeable filenames. Their source identifiers and preservation status are recorded separately in `references/U73/sources.json`.\n\nThe present theorem needs only the common-root conclusion of U71, not either U72 refinement. Starting from a hypothetical primitive positive solution of\n\n    (W) X^10+256Y^10=Z^17,\n\nthat written/self-reviewed result supplies\n\n    L=Q(rho,i), rho^5=2, rho>0,\n    c=i*rho^4, c^10=-256,\n    theta in O_L, theta^17=X+cY, and 289|Y.        (1.1)\n\nU73 constructs a point on the fixed curve\n\n    H: (3-phi)V^2 = 4U^17-phi^2,\n       phi=(1+sqrt(5))/2.                          (1.2)\n\nIt proves three precise statements.\n\n1. H has genus eight. The point forced by (1.1) lies in K=L(phi), and its coordinate field is **exactly K**, of degree twenty over Q and degree ten over Q(phi). In particular, computing only H(Q(phi)) cannot capture any point arising from positive X,Y in W.\n2. The Jacobian of H is absolutely simple. H has no nonconstant map, even after extension to an algebraic closure in characteristic zero, to a smooth projective curve of genus one through seven. In particular H has no elliptic quotient.\n3. The second coordinate has an additional required form V=R^17 with R in L and relative norm one. Retaining this condition gives an explicit degree-seventeen cover of H of genus 256. Arbitrary points on H(K) cannot be treated as weighted solutions.\n\nThese are a global reduction and two exclusions of proposed shortcuts. **No new integer solution range, prime class, or complete Beal signature is eliminated here.** No rank, complete point set, or effective upper height bound is computed. The genus-eight curve is a necessary target, not a certified parametrization equivalent to W.\n\n## 2. The fields, with no hidden descent assumption\n\nLet zeta be a primitive fifth root of unity, chosen so\n\n    phi=1+zeta+zeta^(-1)=-zeta^2-zeta^3.\n\nThe last equality uses Phi_5(zeta)=0. It follows that phi^2=phi+1. Define\n\n    F=Q(phi), K=L(phi), M=L(zeta).\n\nThe field Q(rho) has degree five by Eisenstein at 2. It is contained in R in the specified embedding, so adjoining i doubles its degree. Thus [L:Q]=10. Also\n\n    rho=c^4/8, i=c^5/16,\n\nso Q(c)=L.\n\nThe real quadratic field F cannot be contained in L: otherwise the distinct quadratic fields F and Q(i) would generate a biquadratic subfield of L, whose degree four cannot divide ten. Therefore\n\n    L intersect F=Q, [K:Q]=20, [K:L]=2, [K:F]=10.   (2.1)\n\nThe cyclic quartic field Q(zeta) has unique quadratic subfield F. Its intersection with L is Q: a larger intersection would contain F, just ruled out. Since Q(zeta)/Q is Galois, these fields are linearly disjoint. Consequently\n\n    [M:L]=4, [M:Q]=40, [M:K]=2.                   (2.2)\n\nThe involution of M that fixes L and sends zeta to zeta^(-1) has fixed field K. This involution must not be confused with complex conjugation on L, which sends c to -c.\n\n## 3. The exact map from the common root\n\nWrite theta=p(c), with p a polynomial of degree at most nine over Q. Its coefficients need not be integral for this construction. For j modulo five put\n\n    theta_j=p(c*zeta^j), tau_j=X+c*zeta^j*Y.\n\nThe assignment c -> c*zeta^j is an embedding of L into M: it sends c to another root of its irreducible polynomial. Hence\n\n    theta_j^17=tau_j.\n\nAll theta_j are nonzero. Define\n\n    U=theta_1*theta_(-1)/theta_0^2,\n    V=(X-cY)/(X+cY).                               (3.1)\n\nThe zeta-inversion involution exchanges theta_1 and theta_(-1) and fixes theta_0. Thus U belongs to K; V belongs to L.\n\nThe elementary identity\n\n    4(X+c*zeta*Y)(X+c*zeta^(-1)*Y)\n      =(phi+1)(X+cY)^2+(3-phi)(X-cY)^2             (3.2)\n\nholds identically. To check it, use zeta+zeta^(-1)=phi-1 and expand the three quadratic expressions. Dividing by the nonzero (X+cY)^2 and using phi+1=phi^2 gives exactly (1.2).\n\nThe affine equation is smooth: its defining polynomial has partial derivatives proportional to U^16 and V, and their simultaneous zero U=V=0 does "
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.2,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.01,
+          "2": 0.73,
+          "3": 0.24
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.77
+      }
+    },
+    "usage": {
+      "input_tokens": 2013,
+      "output_tokens": 42
+    }
+  }
+}

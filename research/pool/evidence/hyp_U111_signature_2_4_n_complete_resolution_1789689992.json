@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U111_signature_2_4_n_complete_resolution",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_signature_2_4_n_complete_resolution.md",
+    "excerpt": "# U111: Complete Resolution of Generalized Fermat Signature $(2, 4, n)$ for All Exponents $n \\geq 4$ via Lucas Primitive Divisors and Analytic Non-Vanishing\n\n**Date**: 2026-09-17  \n**Author**: Signature $(2, 4, n)$ Serre Weight Specialist, Beal Conjecture Project  \n**Target Equations**: $A^2 + B^4 = C^n$ and $A^4 + 2^\\delta B^2 = C^n$ ($\\delta \\in \\{0, 1\\}$) with $\\gcd(A, B) = 1$, $AB \\neq 0$, and integer exponent $n \\geq 4$.  \n**Context**: Beal Conjecture Program \u2014 Even-Leg Pythagorean Descent and Quartic Families.  \n**Status**: Authoritative research checkpoint, certifying 100% unconditional elimination across all 208 exponents $n \\in [4, 211]$ and all asymptotic primes $p \\geq 211$, overcoming the CM Plateau via Bilu\u2013Hanrot\u2013Voutier (2001) primitive divisors, Bugeaud\u2013Mignotte\u2013Siksek (2006) square obstructions, and Ellenberg (2004) / Bennett\u2013Ellenberg\u2013Ng (2010) analytic non-vanishing modular winding quotients.\n\n---\n\n## 1. Executive Summary & The Complete Theorem\n\nThe Diophantine equation of generalized Fermat signature $(2, 4, n)$:\n$$A^2 + B^4 = C^n \\quad \\Longleftrightarrow \\quad B^4 + A^2 = C^n,$$\nwith $\\gcd(A, B) = 1$, $AB \\neq 0$, and $n \\geq 4$, is strictly hyperbolic for all $n \\geq 5$ (Euler characteristic $\\chi = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{n} - 1 = \\frac{1}{n} - \\frac{1}{4} \\leq -\\frac{1}{20} < 0$). For $n = 4$, $\\chi = 0$ (parabolic), corresponding to Fermat's right-triangle theorem.\n\nIn Checkpoint U110, we proved that attaching modular forms via Ellenberg's Frey $\\mathbb{Q}$-curve over $\\mathbb{Q}(i)$ produces Serre conductors $N \\in \\{32, 256\\}$, but standard local Frobenius trace sieves ($a_q(E) \\equiv a_q(f) \\pmod n$) **100% fail** because every newform at levels 32 and 256 possesses Complex Multiplication (the *CM Plateau*).\n\nIn this checkpoint, we formalize and certify the **complete resolution** of $A^2 + B^4 = C^n$ (and its quadratic twin $A^4 + 2 B^2 = C^n$) across all exponents $n \\geq 4$, establishing:\n\n> ### The Complete Theorem (Euler, Bruin, Ellenberg, Bennett\u2013Ellenberg\u2013Ng)\n> Let $n \\geq 4$ be an integer. The Diophantine equations:\n> $$A^2 + B^4 = C^n \\quad \\text{and} \\quad A^4 + 2 B^2 = C^n$$\n> have **no solutions in non-zero, pairwise coprime integers** $(A, B, C)$ with $AB \\neq 0$.\n\n### 1.1. Milestone Matrix of Resolution Engines\n\n| Exponent Regime | Primary Method / Engine | Key Literature | Status |\n|---|---|---|---|\n| $n = 4$ | Fermat descent on right triangles with square area | Euler (1738) | **100% Eliminated** |\n| $n = 5$ | Elliptic Chabauty on genus-2 curves over $\\mathbb{Q}$ | Bruin (2003) | **100% Eliminated** |\n| $n = 6$ | 2-coverings and Chabauty on Jacobians | Bruin (1999) | **100% Eliminated** |\n| $n = 7$ | Chabauty on bielliptic genus-2 curve over $\\mathbb{Q}(\\sqrt{2})$ | Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $n = 13$ | Rational points on modular curve $X_0(26)/w_2$ ($\\text{rank} = 0$) | Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $n \\in [7, 30] \\setminus \\{7, 13\\}$ | BHV 0-defective pairs + BMS square obstruction | Bilu\u2013Hanrot\u2013Voutier (2001), BMS (2006) | **100% Eliminated** |\n| $31 \\le n < 211$ | Unconditional primitive divisors + Modular symbols | BHV (2001), Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $p \\ge 211$ (and $p \\ge 61$) | Non-split Cartan winding quotient + Duke $L$-values | Ellenberg (2004), BEN (2010) | **100% Eliminated** |\n| All composites $n \\ge 4$ | Reduction to prime or parabolic sub-exponents | Euler (1738), Darmon\u2013Granville (1995) | **100% Eliminated** |\n\n---\n\n## 2. Mathematical Architecture: The Two Complementary Engines\n\nThe CM Plateau proves that local modular sieving at fixed levels 32 and 256 cannot distinguish the Frey curve from CM newforms. The complete resolution bypasses this barrier by deploying two independent, highly sophisticated mathematical frameworks that overlap over a large intermediate regime:\n\n```mermaid\nflowchart TD\n    Target[\"A^2 + B^4 = C^n (n >= 4)\"] --> Split{\"Exponent Regime\"}\n\n    Split -->|\"Small & Intermediate<br/>4 <= n < 211\"| EngineA[\"Engine 1: Algebraic / Primitive Divisor Theory<br/>(BHV 2001, BMS 2006, BEN 2010)\"]\n    Split -->|\"Large / Asymptotic<br/>p >= 211 (sharpened: p >= 61)\"| EngineB[\"Engine 2: Modular Analytic Geometry<br/>(Ellenberg 2004, Duke 1995, BEN 2010)\"]\n\n    EngineA --> Fact[\"Factorization over Z[i]:<br/>(A + iB^2)(A - iB^2) = C^n\"]\n    Fact --> Lucas[\"Lucas Sequences u_n(alpha, beta) & v_n(alpha, beta)<br/>alpha = u + iv, beta = u - iv\"]\n    Lucas --> BHV[\"Bilu-Hanrot-Voutier Theorem 1.4:<br/>n > 30 ==> u_n has Primitive Divisor p = +-1 (mod n)\"]\n    BHV --> BMS[\"Bugeaud-Mignotte-Siksek (2006):<br/>v_n = 2*square has NO solutions for n >= 7\"]\n    BMS --> Sporadic[\"Sporadic Cases n in {4, 5, 6, 7, 13}:<br/>Euler descent, Bruin Chabauty, BEN bielliptic\"]\n\n    EngineB --> Cartan[\"Normalizer of Cartan Subgroup N(C)<br/>in PGL_2(F_p)\"]\n    Cartan --> SplitCartan[\"Split Cartan:<br/>Ruled out by Mazur Formal Immersion on X_split(p)\"]\n    Cartan --> No"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.96
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.52,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.05,
+          "2": 0.25,
+          "3": 0.66
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2809,
+      "output_tokens": 94
+    }
+  }
+}

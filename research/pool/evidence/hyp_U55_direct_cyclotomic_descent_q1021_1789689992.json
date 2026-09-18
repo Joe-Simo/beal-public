@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U55_direct_cyclotomic_descent_q1021",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U55_direct_cyclotomic_descent_q1021.md",
+    "excerpt": "# U55: coefficient-2 branch \u2014 direct Q(zeta_20) descent and unit-class collapse\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-16.\n\n## 1. Direct cyclotomic norm hidden in the second factor\n\nLet zeta be a primitive 20th root of unity and M=Q(zeta). The second factor in U46 is\n\n    Phi = X^8-X^6Y^2+X^4Y^4-X^2Y^6+Y^8 = v^17.\n\nSince\n\n    Phi_20(T)=T^8-T^6+T^4-T^2+1,\n\nwe have the exact norm identity\n\n    Norm_{M/Q}(Y+X zeta)=Phi=v^17.                 (1)\n\nThe eight conjugate linear factors Y+X zeta^a, a in (Z/20Z)^*, are pairwise coprime as ideals.\nIndeed, a common prime ideal divisor of two distinct factors divides X(zeta^a-zeta^b); it cannot divide X because gcd(X,Y)=1, and root-of-unity differences here are supported only above 2 or 5. But Phi is odd and 5 does not divide Phi by U46, so primes above 2 and 5 do not divide any factor.\n\nThe cyclotomic field Q(zeta_20) has class number 1 (Masley-Montgomery, `Cyclotomic fields with unique factorization`, J. Reine Angew. Math. 286/287 (1976), 248-256; conductor 20 is on their class-number-one list).\n\nTherefore each linear factor is a 17th power ideal and hence\n\n    Y+X zeta = epsilon * Gamma^17                 (2)\n\nfor a unit epsilon of O_M.\n\nRoots of unity cause no ambiguity modulo 17th powers because gcd(17,20)=1.\n\n## 2. Unit classes modulo 17th powers\n\nLet L=M^+=Q(zeta+zeta^{-1})=Q(zeta_20)^+. The full and real unit groups have the same rank 3, and the Hasse unit index [E_M : mu_M E_L] is 1 or 2. Since this index is coprime to 17, real units generate E_M/E_M^17 after roots of unity are ignored.\n\nUse the normalized real generator a=zeta+zeta^{-1}, satisfying\n\n    a^4-5a^2+5=0.\n\nA fundamental-unit basis for L is\n\n    e1=a^2-3,\n    e2=a^3+a^2-3a-3,\n    e3=a^2-a-2.\n\nThus modulo 17th powers we may write\n\n    epsilon == e1^j1 e2^j2 e3^j3,\n    (j1,j2,j3) in F_17^3.\n\n## 3. Exact q=1021 unit sieve\n\nThe first factor descent U48 also gives\n\n    m+i n = Gaussian-unit * (r+i s)^17,\n\nwith\n\n    m=(X+Y)/2,\n    n=(X-Y)/2.\n\nAt q=1021, both -1 and all 20th roots split, and 17 divides q-1. The eight roots of Phi_20 modulo 1021 are exactly\n\n    226, 250, 384, 486, 535, 637, 771, 795.\n\nFor each of these eight residue embeddings, take the 17th-power residue character of e1,e2,e3. Exact Wolfram finite-field arithmetic gives the 8x3 matrix\n\n    [ 5, 6, 0 ]\n    [12, 0,11 ]\n    [ 5,11, 0 ]\n    [12, 0,11 ]\n    [12, 0, 6 ]\n    [ 5, 6, 0 ]\n    [12, 0, 6 ]\n    [ 5,11, 0 ].\n\nIts rank over F_17 is 3, so reduction at this one rational prime detects all three global unit exponents modulo 17.\n\nNext enumerate the Gaussian 17th-power projective possibilities coming from m+i n. There are 62 residue-character vectors for Y+X zeta compatible with that Gaussian condition.\n\nTesting all 17^3 unit exponent triples in (2) leaves exactly\n\n    (j1,j2,j3)=(9,8,9)\n    or\n    (j1,j2,j3)=(9,9,8).                            (3)\n\nThis was reproduced directly in Wolfram; no floating-point arithmetic is involved.\n\n## 4. The two surviving classes are the trivial cyclotomic units\n\nAt the same eight residue embeddings, the character vector of zeta-1 equals the character vector of\n\n    e1^9 e2^8 e3^9,\n\nand the character vector of 1+zeta equals that of\n\n    e1^9 e2^9 e3^8.\n\nBecause the unit-character matrix above has rank 3, these local equalities identify the corresponding global classes in E_M/E_M^17.\n\nHence (2) sharpens globally to exactly one of\n\n    Y+X zeta = (1+zeta) Gamma^17,                  (4+)\n\nor\n\n    Y+X zeta = (zeta-1) Gamma^17.                  (4-)\n\nAll other unit classes are impossible.\n\nThe original Diophantine equation is invariant under X -> -X. Applying the automorphism zeta -> -zeta to (4-) and replacing X by -X converts it to the plus form, with -1 absorbed as a 17th power. Therefore, up to this legitimate sign symmetry, we may work with the single exact equation\n\n    Y+X zeta = (1+zeta) Gamma^17.                  (5)\n\n## 5. A very simple 17th-power equation in m,n\n\nUsing X=m+n and Y=m-n,\n\n    Y+X zeta\n      = m(1+zeta)+n(zeta-1).\n\nSince 1+zeta is a unit,\n\n    (Y+X zeta)/(1+zeta)\n      = m + mu n,\n\nwhere\n\n    mu=(zeta-1)/(zeta+1).\n\nThus the surviving coefficient-2 branch satisfies the exact untwisted cyclotomic equation\n\n    m + mu n = Gamma^17                              (6)\n\nin Q(zeta_20), in addition to\n\n    m+i n=(r+i s)^17\n\nin Z[i].\n\nThe q=1021 sieve shows that in the plus orientation (6),\n\n    1021 | n,\n    1021 does not divide m.\n\nWithout choosing the sign orientation, the invariant statement is 1021|mn.\n\n## 6. Two lower-degree relative norm descents\n\nTaking the relative norm of (1) to Q(i) gives the exact identity\n\n    R+iS = Norm_{M/Q(i)}(Y+X zeta),\n\nwhere\n\n    R = X^4-X^2Y^2+Y^4,\n    S = XY(X^2-Y^2),\n\nand\n\n    R^2+S^2 = Phi = v^17.\n\nSince gcd(R,S)=1, R is odd and S is even, Gaussian UFD gives\n\n    R+iS=(C+iD)^17                                  (7)\n\nwith coprime C,D.\n\nLikewise the subgroup fixing Q(sqrt(-5)) gives\n\n    E + sqrt(-5) S = Norm_{M/Q"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 1.1,
+        "confidence": 0.43,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.23,
+          "1": 0.46,
+          "2": 0.29,
+          "3": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2663,
+      "output_tokens": 94
+    }
+  }
+}

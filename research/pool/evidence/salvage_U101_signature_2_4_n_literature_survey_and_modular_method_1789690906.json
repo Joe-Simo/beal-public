@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U101_signature_2_4_n_literature_survey_and_modular_method",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U101_signature_2_4_n_literature_survey_and_modular_method.md",
+    "excerpt": "# U101: Literature Survey, Modular Method Architecture, and Obstruction Taxonomy for Generalized Fermat Equations of Signature $(2, 4, n)$\n\n**Date**: 2026-09-17  \n**Status**: Comprehensive research survey, exact arithmetic reference, and methodological bridge to the Beal conjecture even-leg program.  \n**Target Equation**: $A^2 + B^4 = C^n$ with $\\gcd(A, B) = 1$, $AB \\neq 0$, and integer exponent $n \\geq 4$.\n\n---\n\n## 1. Executive Summary\n\nGeneralized Fermat equations of signature $(2, 4, n)$, written canonically as\n$$A^2 + B^4 = C^n \\quad \\Longleftrightarrow \\quad B^4 + A^2 = C^n,$$\noccupy a celebrated position in arithmetic number theory. Because the Euler characteristic $\\chi = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{n} - 1 = \\frac{1}{n} - \\frac{1}{4}$ satisfies $\\chi \\leq 0$ for all $n \\geq 4$, the equation is parabolic at $n = 4$ and strictly hyperbolic for all $n \\geq 5$. By the foundational theorem of Darmon and Granville (1995), primitive integer solutions are finite for each fixed $n \\geq 4$.\n\nThis document provides a comprehensive survey and exact arithmetic audit of the literature resolving this equation, with special focus on:\n1. **The Complete Resolution Ledger**: The equation $A^2 + B^4 = C^n$ has **no solutions in coprime nonzero integers for any integer $n \\geq 4$**. The resolution is 100% complete across all exponents $n \\geq 4$, established through the combined work of Euler ($n=4$), Nils Bruin ($n=5, 6$), Jordan Ellenberg ($p \\geq 211$ prime), and Michael Bennett, Jordan Ellenberg, and Nathan Ng ($7 \\leq n < 211$).\n2. **Ellenberg's Exact Modular Method (2004)**: The explicit construction of a Frey $\\mathbb{Q}$-curve $E_{A,B}/\\mathbb{Q}(i)$ with a degree-2 isogeny $\\mu: E \\to E^\\sigma$, its modularity via the Ellenberg--Skinner theorem, Ribet level-lowering to Serre conductors $N \\in \\{32, 256\\}$, and the complete elimination of candidate newforms via Galois image restrictions (Cartan normalizers) combined with Mazur's formal immersion and Duke's analytic central $L$-value averages.\n3. **The Multi-Frey $\\mathbb{Q}$-Curve Innovation of Bennett--Chen (2012)**: How Bennett and Chen overcame the fundamental limitations of single Frey $\\mathbb{Q}$-curves (persistent CM newforms, irrational eigenvalues, and trivial-solution collisions) by pairing multiple $\\mathbb{Q}$-curves over distinct quadratic fields ($\\mathbb{Q}(i)$ and $\\mathbb{Q}(\\sqrt{-3})$) for signature $(2, 6, n)$, providing the methodological blueprint for higher generalized Fermat signatures.\n4. **Obstruction Taxonomy and Open Frontiers**: A rigorous classification of the five core obstruction types in the modular approach (CM plateaus, analytic/computational gaps, trivial-solution traps, small-prime reducibility, and Chabauty rank barriers) and the current status of related equations with coefficients (e.g., $A^4 + 2^\\delta B^2 = C^n$ and the active Beal branch $X^{10} + 256 Y^{10} = Z^{17}$).\n\n---\n\n## 2. Chronological and Methodological Literature Survey\n\nThe resolution of $A^2 + B^4 = C^n$ spanned over 250 years, transitioning from classical infinite descent to modern $p$-adic Chabauty methods, $\\mathbb{Q}$-curve modularity, and multi-Frey architectures.\n\n### 2.1 Classical Foundations: Fermat (1640s) and Euler (1738)\n- **Exponent $n = 4$**: The equation is $A^2 + B^4 = C^4$, which can be rewritten as $A^2 + (B^2)^2 = (C^2)^2$.\n- **Method**: Euler (1738), completing Fermat's program on right triangles with square area, proved that $x^4 + y^4 = z^2$ and $x^4 - y^4 = z^2$ have no non-trivial integer solutions. A primitive solution to $A^2 + B^4 = C^4$ would imply a right triangle with integer legs $A, B^2$ and hypotenuse $C^2$, whose area is $\\frac{1}{2} A B^2$. By classical descent on Pythagorean triples, no such triangle exists with positive area.\n- **Outcome**: Exponent $n = 4$ is completely resolved; only trivial solutions with $AB = 0$ exist: $(\\pm 1, 0, \\pm 1)$ and $(0, \\pm 1, \\pm 1)$.\n\n### 2.2 Nils Bruin: Elliptic Chabauty and Covering Collections (1999, 2003)\nBefore modular methods over number fields could handle small exponents, Nils Bruin resolved the initial hyperbolic exponents using explicit covering techniques and Chabauty--Coleman methods on abelian varieties:\n- **Bruin (1999, *Compositio Mathematica*)**: Solved $x^2 \\pm y^4 = \\pm z^6$ (and $x^2 + y^8 = z^3$).\n  - Factoring over $\\mathbb{Q}$ and quadratic extensions produces collections of genus-2 and genus-3 curves covering the original equation.\n  - Using 2-descent and Chabauty's method on the Jacobians of these covering curves, Bruin proved that $x^2 + y^4 = z^6$ has only trivial solutions.\n- **Bruin (2003, *Journal f\u00fcr die reine und angewandte Mathematik* / Crelle)**: Solved $x^2 \\pm y^4 = z^5$.\n  - Developed **elliptic Chabauty**: determining rational points on higher-genus curves $C$ that admit a non-trivial map $\\phi: C \\to E$ to an elliptic curve $E$ over an extension field $K$.\n  - By computing the Mordell--Weil rank of $E(K)$ and verifying the condition $\\operat"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.96,
+        "confidence": 0.04,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.39,
+          "1": 0.28,
+          "2": 0.32,
+          "3": 0.01
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.71
+      }
+    },
+    "usage": {
+      "input_tokens": 2169,
+      "output_tokens": 42
+    }
+  }
+}

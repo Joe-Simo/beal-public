@@ -12,6 +12,14 @@ import subprocess
 import time
 
 MILESTONES = [
+    ("U332: Primary-Source Check of the Instance-Closure Rows",
+     ["python3", "code/U332_rows_source_check.py"]),
+    ("U328: Positive Controls for the Empty Searches (C156, C081, C045)",
+     ["python3", "code/U328_search_controls.py"]),
+    ("U323: Counterexample Search Against Every Named Hypothesis Prop",
+     ["python3", "code/U323_named_prop_countersearch.py"]),
+    ("U320: Assert-Based Regression Guards for the U309-U319 Obstruction Cycle",
+     ["python3", "code/U320_regression_checks.py"]),
     ("Section 8 TypeScript Checker Suite", ["bun", "code/test_section8_counterexample_checker.ts"]),
     ("Section 8 Python Checker Suite", ["python3", "code/test_section8_counterexample_checker.py"]),
     ("Section 8 C+GMP Standalone Checker Suite", ["python3", "code/test_check_counterexample_gmp.py"]),
@@ -72,6 +80,13 @@ MILESTONES = [
     ("U111: Modular Curve X_{E_0}(17) Genus 133 & Automorphism Audit", ["python3", "code/U111_automorphism_twisted_17.py"]),
     ("U111: Signature (2, 3, 11) Deep Sieve & Diophantine Search", ["python3", "code/U111_signature_2_3_11_deep_search.py"]),
     ("U111: PARI/GP X_0(17) Selmer & 2-Descent Field of Degree 36", ["/opt/homebrew/bin/gp", "-q", "code/U111_x0_17_selmer_degree36.gp"]),
+    ("U111: Modular Curve X_{E_0}(19) Genus 196 & Automorphism Audit", ["python3", "code/U111_automorphism_twisted_19.py"]),
+    ("U111: PARI/GP 5-Adic Coleman & Strassman Zero Bounds on C^-", ["/opt/homebrew/bin/gp", "-q", "code/U111_coleman_5adic_genus8.gp"]),
+    ("U111: Signature (5, 5, p) Modular Level-Lowering & Hilbert Sieve over Q(sqrt(5))", ["python3", "code/U111_signature_5_5_p_hilbert_sieve.py"]),
+    ("U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 400..500)", ["python3", "code/U111_cyclotomic_p400_p500.py"]),
+    ("U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 401..500]", ["python3", "code/U111_kraus_sieve_p401_p500.py"]),
+    ("U111: PARI/GP Hilbert Forms over Q(sqrt(2)) & Resolution of (4, 4, p)", ["/opt/homebrew/bin/gp", "-q", "code/U111_hilbert_forms_q_sqrt2.gp"]),
+    ("U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 500..600)", ["python3", "code/U111_cyclotomic_p500_p600.py"]),
 ]
 
 def main():

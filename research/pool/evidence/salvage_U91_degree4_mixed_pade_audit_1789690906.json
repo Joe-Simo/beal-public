@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U91_degree4_mixed_pade_audit",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U91_degree4_mixed_pade_audit.md",
+    "excerpt": "# U91: mixed degree-four Pad\u00e9 space has maximum formal order 728, but the first exact enlargement weakens the height barrier\n\n**Status: written route audit with exact rational/integer computation and a rigorous finite-field rank certificate. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This continues U90's Pad\u00e9 route for the surviving weighted equation\n\n    X^10+256Y^10=Z^17.                               (W)\n\nThe goal is to determine whether the full degree-four mixed-weight coefficient space can materially improve U90's certified lower bound\n\n    max(X,Y)>10^25993.\n\nThis checkpoint does **not** reconstruct the full 73-term degree-four relation. It proves the exact maximum possible local order in every residue class, reconstructs a substantial 58-term mixed-weight relation exactly, and measures its actual arithmetic-height cost.\n\n## 1. Local series and degree-four monomials\n\nRetain U90's notation at a strong prime `q|Y`:\n\n    T=Y/X,\n    S=T^10,\n    theta=sum_(j=0)^9 a_j c^j,\n    a_j=x*T^j*F_j(S),\n    F_j(S)=sum_(m>=0) B_(j+10m)(-256)^m S^m,\n    B_n=binomial(1/17,n),\n    c^10=-256.                                       (1.1)\n\nThere are\n\n    C(13,4)=715\n\ndegree-four monomials `a_i a_j a_k a_l` with `0<=i<=j<=k<=l<=9`. Group them by the residue of the total coefficient-index weight modulo ten.\n\nThe exact counts are\n\n    residue 0,2,4,6,8: 73 monomials each,\n    residue 1,3,5,7,9: 70 monomials each.            (1.2)\n\nFor a monomial of weight `r+10h`, factor\n\n    x^4*T^r*S^h.\n\nThe remaining factor is a product of four `F_j(S)` series. Thus every residue class is one finite-dimensional Hermite--Pad\u00e9 problem.\n\n## 2. A modular rank certificate gives the exact cancellation ceiling\n\n`code/U91_degree4_mixed_audit.py` forms the series modulo the prime `5003` and, for every residue class, adds coefficient rows successively until full column rank is reached.\n\nFor every residue, the first full-rank row count equals the number of columns:\n\n| residue | monomials | first full row count mod 5003 | largest possible local order |\n|---:|---:|---:|---:|\n| 0 | 73 | 73 | 720 |\n| 1 | 70 | 70 | 691 |\n| 2 | 73 | 73 | 722 |\n| 3 | 70 | 70 | 693 |\n| 4 | 73 | 73 | 724 |\n| 5 | 70 | 70 | 695 |\n| 6 | 73 | 73 | 726 |\n| 7 | 70 | 70 | 697 |\n| 8 | 73 | 73 | **728** |\n| 9 | 70 | 70 | 699 |\n\nA full-rank minor modulo `5003` is a nonzero integer minor. Hence these are rigorous upper bounds over `Q`, not heuristic modular estimates.\n\nIn particular, among **all** degree-four mixed residue spaces, the formal local order cannot exceed\n\n    728,                                               (2.1)\n\nand only residue `8` can attain that ceiling.\n\nThis improves the structural audit over U89: its fixed-weight extremum `438` was not the true degree-four cancellation ceiling.\n\n## 3. Exact 58-term enlargement of the U89 extremal space\n\nThe residue-eight space splits by actual weights as\n\n    weight 8:   15 monomials,\n    weight 18:  43 monomials,\n    weight 28:  15 monomials.                        (3.1)\n\nU89 used only the 43 weight-18 monomials. As the first exact mixed test, take all monomials of weights `8` and `18`, giving 58 columns.\n\nThe exact rational coefficient matrix for `S^0,...,S^56` has rank 57. After primitive integer row scaling, SymPy's `DomainMatrix` over `ZZ` returns a one-dimensional nullspace. Let `lambda` be its primitive integer generator.\n\nThe corresponding degree-four integer invariant `K_8,18` cancels all powers through `S^56`, while the coefficient of `S^57` is nonzero. Therefore its exact local `Y`-order is\n\n    8+10*57=578.                                     (3.2)\n\nAt the already forced prime `31`, its leading rational coefficient satisfies\n\n    numerator = 10 mod 31,\n    denominator = 25 mod 31.                         (3.3)\n\nIt is therefore a 31-adic unit. Since U72 forces `31|Y`, the invariant is nonzero and\n\n    v_31(K_8,18)=578*v_31(Y).                        (3.4)\n\nFor the fourteen-prime product\n\n    P=433992707035920672833426144791,\n\nall of whose primes are strong and divide `Y`, this gives\n\n    P^578 | K_8,18.                                  (3.5)\n\n## 4. The coefficient-height cost is severe\n\nThe primitive 58-term relation has\n\n    max coefficient digit length = 15884,\n    L1 norm digit length = 15884.                    (4.1)\n\nLet `L=sum |lambda_i|`, `kappa=2^(4/5)`, and\n\n    H=X+kappa Y.\n\nEvery degree-four coefficient monomial is bounded by `H^(4/17)` after discarding a favorable power of `kappa>1`. Hence\n\n    0<|K_8,18|<L*H^(4/17).                           (4.2)\n\nCombining (3.5), `H<3M` with `M=max(X,Y)`, and raising to the seventeenth power gives\n\n    P^(578*17) < 81*L^17*M^4.                        (4.3)\n\nExact integer comparison returns\n\n    P^(9826) > 81*L^17*10^(4*5297),\n    P^(9826) < 81*L^17*10^(4*5298).                  (4.4)\n\nThus this exact mixed degree-four invariant proves only\n\n    max(X,Y)>10^5"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.41,
+        "confidence": 0.51,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.53,
+          "3": 0.45
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 2221,
+      "output_tokens": 42
+    }
+  }
+}

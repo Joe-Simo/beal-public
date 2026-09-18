@@ -1,0 +1,110 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "vacuity_C180",
+  "timestamp": "2026-09-18T15:37:13-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C) = 1 has no solutions.",
+    "failure_mode": "U322: the Prop `EulerDescentStep`, recorded one cycle earlier as the residual gap of the (3,4,4) chain, was FALSE as stated -- `IsCoprime p q -> p*(p^2+3q^2) = c^3 -> q = 0` is refuted by p = 0, q = 1, c = 0, since IsCoprime 0 1 holds in Z and 0*(0+3) = 0^3. The Lean build stayed green throughout, because an implication from a false hypothesis is still a theorem and everything downstream compiles. The fix was to add p != 0, which the reduction does supply.",
+    "second_mode": "A bounded search that finds nothing proves nothing unless a control shows the searcher can find a positive instance. U317/U318 and U323 each carry such a control; earlier candidates may not.",
+    "candidate": "{\n \"id\": \"C180\",\n \"status\": \"REFUTED\",\n \"claim\": \"TESTED AND REFUTED: the shortcut round the opposite-parity (3,4,4) branch that would avoid Euler's theorem. Besides mu^6+nu^6 = 2 tau^3, the descent also yields tau^3 + (mu nu)^3 = 2C^2 and tau^3 - (mu nu)^3 = 2B^2, since tau^3 = C^2+B^2 and (mu nu)^3 = C^2-B^2. If either of x^3 +/- y^3 = 2z^2 forced x = y, the branch would close with no Euler input. Neither does.\",\n \"method\": \"Exact search, no floating point. x^3+y^3 = 2z^2 with coprime x > y has at least 10 solutions below 3000, smallest (13,11,42) and (23,1,78); x^3-y^3 = 2z^2 has at least 18, smallest (5,3,7). Verified exactly: 13^3+11^3 = 2*42^2, 23^3+1^3 = 2*78^2, 5^3-3^3 = 2*7^2.\",\n \"evidence\": null,\n \"obligations\": \"Extracted lemma, preserved for reuse: when a descent produces several simultaneous conditions, check each candidate closure separately -- shapes that look equally strong can differ completely in solvability. Recorded as a permanent assertion in code/U320_regression_checks.py (check_u325_square_variants_are_dead) with positive witnesses, so the shortcut cannot be proposed again without the counterexamples surfacing.\",\n \"failure_reason\": \"The square-target variants have abundant coprime solutions with x != y, so they impose no constraint. The cube on the right-hand side of a^3+b^3 = 2c^3 is doing the work, not the factor 2 or the sum-of-cubes shape. Euler's theorem is genuinely the needed input and cannot be traded for a weaker cousin.\"\n}"
+  },
+  "questions": {
+    "degenerate_instance": {
+      "type": "score",
+      "instructions": "Does this candidate state a claim, a named Prop, or a reduction whose hypotheses allow a DEGENERATE instance -- a zero value, a unit, a base equal to 1, an empty index range, or a trivial solution -- that would make the statement false as written? Judge only whether such an instance is admitted by the stated hypotheses, not whether the intended mathematics is correct.",
+      "criteria": [
+        "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+        "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+        "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+        "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+      ]
+    },
+    "vacuous_downstream": {
+      "type": "score",
+      "instructions": "Does this candidate record a conclusion that DEPENDS on an assumed statement, such that if the assumed statement were false the conclusion would be vacuously true rather than wrong? The danger is a chain that still compiles and still looks green while carrying no content.",
+      "criteria": [
+        "level 0: the candidate's conclusion is proved outright with no assumed statement",
+        "level 1: it depends on an assumed statement and explicitly says so, naming it",
+        "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+        "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+      ]
+    },
+    "search_is_vacuous": {
+      "type": "noul",
+      "instructions": "Does this candidate report a finite or bounded search that found NOTHING, without any control demonstrating the search would have found something had it been there?",
+      "criteria": {
+        "true": "it reports an empty search result with no positive control, no witness, and no demonstration that the search space was non-empty",
+        "false": "it reports no search, or it reports one together with a control, a witness, or an explicit non-vacuity check"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "Given the failure mode described, what should be done with this candidate next?",
+      "criteria": {
+        "countersearch_now": "its stated hypotheses plausibly admit a degenerate counterexample and something load-bearing depends on it",
+        "add_control": "its evidence is an empty search that needs a non-vacuity control before it can be relied on",
+        "restate_hypotheses": "its claim is probably true but stated too loosely to be provable as written",
+        "no_action": "it is a log, a refuted entry, or otherwise carries no claim that could exhibit this mode"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "degenerate_instance": {
+        "type": "score",
+        "score": 1.07,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+          "1": "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+          "2": "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+          "3": "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+        },
+        "probabilities": {
+          "0": 0.45,
+          "1": 0.24,
+          "2": 0.1,
+          "3": 0.21
+        }
+      },
+      "vacuous_downstream": {
+        "type": "score",
+        "score": 0.26,
+        "confidence": 0.74,
+        "legend": {
+          "0": "level 0: the candidate's conclusion is proved outright with no assumed statement",
+          "1": "level 1: it depends on an assumed statement and explicitly says so, naming it",
+          "2": "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+          "3": "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+        },
+        "probabilities": {
+          "0": 0.84,
+          "1": 0.1,
+          "2": 0.04,
+          "3": 0.02
+        }
+      },
+      "search_is_vacuous": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.7,
+        "probabilities": {
+          "no_action": 0.77,
+          "countersearch_now": 0.17,
+          "add_control": 0.04,
+          "restate_hypotheses": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1650,
+      "output_tokens": 114
+    }
+  }
+}

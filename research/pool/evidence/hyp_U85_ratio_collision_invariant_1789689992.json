@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U85_ratio_collision_invariant",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U85_ratio_collision_invariant.md",
+    "excerpt": "# U85: ninety conjugate ratios force a 390-fold all-prime support invariant\n\n**Status: written partial theorem with exact combinatorial certificate and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This strengthens U84 by replacing twenty pair products with all ninety ordered ratios of distinct conjugates. The price is clearing denominators by cross multiplication; the benefit is a much larger forced collision multiplicity at every prime dividing Y outside 2,5,17.\n\n## 1. Setup\n\nAssume a primitive positive solution\n\n    X^10+256Y^10=Z^17.\n\nUse U71/U72's integral common root\n\n    c^10=-256, c^5=16i,\n    theta=P(c),\n    theta^17=X+cY,\n    Norm_(L/Q)(theta)=Z,\n\nwhere L=Q(c) has degree ten. Let zeta be a primitive tenth root and put\n\n    c_j=c*zeta^j,\n    theta_j=P(c_j),   j in Z/10Z.\n\nEvery theta_j is nonzero.\n\nFor each ordered pair i!=j define\n\n    r_(i,j)=theta_i/theta_j.                          (1.1)\n\nThere are 10*9=90 such ratios.\n\n## 2. All ninety ratios are globally distinct\n\nSuppose\n\n    theta_i/theta_j = theta_k/theta_l\n\nwith i!=j and k!=l. Cross multiplication gives\n\n    theta_i theta_l = theta_k theta_j.                (2.1)\n\nRaise to the seventeenth power. As in U84,\n\n    X A + cY B=0,                                    (2.2)\n\nwhere\n\n    A=zeta^i+zeta^l-zeta^k-zeta^j,\n    B=zeta^(i+l)-zeta^(k+j)\n\nbelong to Q(zeta_10).\n\nSince c^5=16i and Q(zeta_10)=Q(zeta_5) does not contain i, one has c notin Q(zeta_10). Equation (2.2) therefore forces A=B=0. Equality of the sum and product of the two roots of unity says that the multisets\n\n    {i,l} and {k,j}\n\ncoincide modulo 10. One possibility gives i=k and l=j, hence the original ordered pairs agree. The swapped possibility would give i=j, contradicting i!=j. Thus all ninety r_(i,j) are distinct.\n\n## 3. A nonzero integral cross-difference invariant\n\nLet R be the set of ninety ordered pairs (i,j), i!=j. For two distinct elements alpha=(i,j), beta=(k,l), define\n\n    D_(alpha,beta)=theta_i theta_l-theta_k theta_j.   (3.1)\n\nSection 2 proves every D_(alpha,beta) is nonzero. Define\n\n    C_theta = product_{ {alpha,beta} subset R }\n                D_(alpha,beta)^2,                    (3.2)\n\nwhere the product is over the C(90,2)=4005 unordered pairs of distinct ratio labels.\n\nThe normal-closure Galois group permutes R. Squaring removes the sign from exchanging alpha and beta, so the complete product is Galois invariant. Every factor is an algebraic integer. Hence\n\n    C_theta is a nonzero integer.                    (3.3)\n\nIt is the numerator-cleared analogue of the discriminant of the ninety ratios; no denominator integrality is assumed.\n\n## 4. Every prime-to-170 part of Y enters C_theta to exponent at least 390\n\nLet q notin {2,5,17} and let e=v_q(Y)>0. Primitivity implies q does not divide X or Z: if q divided Y and Z, the weighted equation would force q to divide X.\n\nFix a prime Q of the normal closure above q. Since Norm(theta)=Z and every theta_j is integral, q not dividing Z makes all theta_j Q-adic units. Thus every ratio (1.1) is a Q-adic unit.\n\nMoreover\n\n    r_(i,j)^17=(X+c_iY)/(X+c_jY) = 1 mod Q.          (4.1)\n\nTherefore the ninety ratio residues occupy at most the seventeen roots of T^17-1.\n\nIf the nonempty residue classes have multiplicities m_1,...,m_s, then s<=17 and sum m_i=90. The quantity\n\n    sum binomial(m_i,2)\n\nis minimized by balancing the occupancies as evenly as possible. Since\n\n    90=5*17+5,\n\nfive classes have size six and twelve have size five in the minimizing configuration. Hence there are at least\n\n    5*binomial(6,2)+12*binomial(5,2)\n      =75+120\n      =195                                             (4.2)\n\nunordered pairs of distinct ratio labels that collide modulo Q.\n\nFor one such collision alpha=(i,j), beta=(k,l), put\n\n    u=theta_i theta_l,\n    v=theta_k theta_j.\n\nThen u=v mod Q. Also\n\n    u^17-v^17\n      =Y * [ X(c_i+c_l-c_k-c_j)\n              +Y(c_i c_l-c_k c_j) ].                 (4.3)\n\nThe bracket is integral, so v_Q(u^17-v^17)>=e. Since u is a Q-adic unit and q!=17,\n\n    (u^17-v^17)/(u-v)\n\nreduces to 17u^16 and is a unit. Thus\n\n    v_Q(D_(alpha,beta))=v_Q(u-v)>=e.                 (4.4)\n\nThere are at least 195 distinct colliding unordered ratio pairs, and each corresponding factor is squared in C_theta. Consequently\n\n    v_Q(C_theta)>=390e.                              (4.5)\n\nThe normal closure is unramified at q because its ramification is supported over 2 and 5. Since C_theta is rational, v_Q(C_theta)=v_q(C_theta). Therefore\n\n    q^(390e) | C_theta.                              (4.6)\n\nWriting\n\n    Y_* = product_(q notin {2,5,17}) q^v_q(Y),\n\nwe obtain the all-primes divisibility theorem\n\n    Y_*^390 | C_theta.                               (4.7)\n\nThis is independent of Frobenius density and covers the seven residual classes left outside U83 as well as all previously controlled classes"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.14
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.46,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.68,
+          "1": 0.22,
+          "2": 0.08,
+          "3": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2412,
+      "output_tokens": 94
+    }
+  }
+}

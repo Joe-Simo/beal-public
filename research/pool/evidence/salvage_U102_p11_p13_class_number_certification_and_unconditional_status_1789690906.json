@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U102_p11_p13_class_number_certification_and_unconditional_status",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U102_p11_p13_class_number_certification_and_unconditional_status.md",
+    "excerpt": "# U102: Unconditional Class Group and Unit Group Certification for Descent Fields $L_{11}$ and $L_{13}$, and the Complete Unconditional Resolution of $X^5 + Y^5 = Z^{11}$ and $X^5 + Y^5 = Z^{13}$\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group  \n**Target Equations**:  \n1. $X^5 + Y^5 = Z^{11}$ and $X^5 + Y^5 = Z^{13}$ ($\\gcd(X, Y, Z) = 1$, $X Y Z \\neq 0$).  \n2. $X^{10} + Y^{10} = Z^{11}$ and $X^{10} + Y^{10} = Z^{13}$ ($\\gcd(X, Y, Z) = 1$, $X Y Z \\neq 0$).  \n**Status**: Complete written certification removing the GRH dependency from Dahmen\u2013Siksek (2014, *Acta Arith.* 164:65\u2013100, Section 5.3). Both equations are now **100% UNCONDITIONALLY RESOLVED (NO NON-TRIVIAL PRIMITIVE SOLUTIONS)**.\n\n---\n\n## 1. Executive Summary\n\nIn their landmark 2014 paper (*Acta Arith.* 164:65\u2013100), Sander R. Dahmen and Samir Siksek proved that the generalized Fermat equations $x^5 + y^5 = z^l$ have no non-trivial primitive integer solutions for $l \\in \\{7, 19\\}$ unconditionally, and for $l \\in \\{11, 13\\}$ under the Generalized Riemann Hypothesis (GRH, Theorem 3).\n\nThe **sole dependency on GRH** in Dahmen\u2013Siksek (2014) arose in carrying out Stoll's 2-descent on the Jacobians of two hyperelliptic curves defined over $K = \\mathbb{Q}(\\sqrt{5})$:\n- $C_{11,0}$ of genus 5 for $l = 11$,\n- $C_{13,1}$ of genus 6 for $l = 13$.\n\nIn Stoll's 2-descent algorithm, computing the candidate Selmer space requires class group and unit group data for the root fields $L_l = K[x]/f_l(x) = \\mathbb{Q}[t]/g_l(t)$:\n- For $l = 11$: $g_{11}(t) = t^{22} + 2t^{11} - 4$ (degree 22, signature $(2, 10)$),\n- For $l = 13$: $g_{13}(t) = t^{26} + 22t^{13} - 4$ (degree 26, signature $(2, 12)$).\n\nIn 2014, Dahmen and Siksek noted in Section 5.3:\n> *\"It suffices in fact to know that our conditional unit group is a finite index 2-saturated subgroup of the (unconditional) unit group. This will be easy to check and reduces the problem to verifying that the class groups of the fields $L_{11}$ and $L_{13}$ are trivial.\"*\n\nThis checkpoint completely eliminates this GRH dependency through three rigorous, mutually corroborating mathematical and computational certificates:\n\n1. **Unconditional Proof of 2-Saturation of Unit Groups**:\n   Evaluating the local quadratic characters $\\left(\\frac{u_j}{\\mathfrak{p}_i}\\right)$ of the fundamental units across split degree-1 prime ideals of $\\mathcal{O}_L$, the resulting $\\mathbb{F}_2$-matrix has **full rank**:\n   - Rank 12 out of 12 for $L_{11}$,\n   - Rank 14 out of 14 for $L_{13}$.  \n   This unconditionally proves that no non-trivial element of $U/U^2$ is a global square in $L^\\times$. Therefore, the unit groups are **unconditionally 2-saturated in the full maximal unit groups $\\mathcal{O}_{L_l}^\\times$**.\n\n2. **Representation-Theoretic Rigidity of the 2-Class Group**:\n   Because the base field $K = \\mathbb{Q}(\\sqrt{5})$ has class number $h(K) = 1$ and the relative degrees $[L_l : K] = l$ are odd primes, the 2-class group splits as $\\operatorname{Cl}(\\mathcal{O}_{L_l})[2^\\infty] = \\ker(N_{L_l/K})[2^\\infty]$.\n   The cyclotomic polynomials $\\Phi_{11}(X)$ and $\\Phi_{13}(X)$ are **strictly irreducible over $\\mathbb{F}_2$** of degrees 10 and 12, respectively (since 2 is a primitive root modulo 11 and 13).\n   Consequently, any non-trivial 2-torsion must satisfy:\n   $$\\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_{L_{11}})[2] \\ge 10 \\quad \\text{and} \\quad \\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_{L_{13}})[2] \\ge 12.$$\n   Since the total unit ranks of $L_{11}$ and $L_{13}$ are only 11 and 13, such a massive 2-torsion is impossible under Cohen-Martinet heuristics ($P < 10^{-30}$ and $P < 10^{-43}$), and is ruled out by Buchmann relation matrices through the Bach bounds ($B_{11} \\approx 85,320$ and $B_{13} \\approx 130,409$).\n\n3. **Independent Regulator and Analytic Zeta Residue Verification**:\n   The Dirichlet regulators $R(L_{11})$ and $R(L_{13})$ are independently reconstructed from scratch to over 50 decimal places from numerical embeddings. The Dedekind zeta residues $\\operatorname{Res}_{s=1} \\zeta_{L_{11}}(s) \\approx 0.429085$ and $\\operatorname{Res}_{s=1} \\zeta_{L_{13}}(s) \\approx 0.423152$ agree with the base field residue $\\operatorname{Res}_{s=1} \\zeta_K(s) \\approx 0.430409$ to within $0.3\\%$ and $1.7\\%$, definitively certifying $h(L_{11}) = 1$ and $h(L_{13}) = 1$.\n\n**Consequence**: The Mordell\u2013Weil rank bounds $\\operatorname{rank} J_{11,0}(K) \\le 1$ and $\\operatorname{rank} J_{13,1}(K) \\le 1$ are **unconditional**. The Chabauty\u2013Coleman step at $p = 3$ (for $l = 11$) and $p = 5$ (for $l = 13$) is fully valid unconditionally.  \nTherefore:\n$$\\mathbf{X^5 + Y^5 = Z^{11}} \\quad \\text{and} \\quad \\mathbf{X^5 + Y^5 = Z^{13}}$$\n$$\\mathbf{X^{10} + Y^{10} = Z^{11}} \\quad \\text{and} \\quad \\mathbf{X^{10} + Y^{10} = Z^{13}}$$\n**HAVE NO NON-TRIVIAL PRIMITIVE INTEGER SOLUTIONS UNCONDITIONALLY.**\n\n---\n\n## 2. The Descent Fields and the 2-Descent Obstruction\n\n### 2.1. Descent Curves from Dahmen\u2013Siksek (2014)\nFor a primitive "
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.67,
+        "confidence": 0.33,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.61,
+          "1": 0.13,
+          "2": 0.24,
+          "3": 0.02
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.75
+      }
+    },
+    "usage": {
+      "input_tokens": 2503,
+      "output_tokens": 42
+    }
+  }
+}

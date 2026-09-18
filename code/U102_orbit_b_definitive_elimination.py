@@ -1,4 +1,21 @@
-"""U102 Definitive Elimination of CM Hilbert Newform Orbit b (2.2.5.1-2000.1-b).
+"""⚠ AUDIT WARNING (U247, pool C112) — THIS CERTIFICATE IS NOT VALID AS WRITTEN.
+
+Item 2 below commits the repository's recurring failure mode 1 (`CLAUDE.md`,
+"residual/isogeny conflation"): Faltings gives
+`Hom(J⁻, A_b) ⊗ Q₁₇ ≅ Hom_{Galois}(V₁₇(J⁻), V₁₇(A_b))`, so `Hom = 0` shows the **ℓ-adic**
+representations are non-isomorphic.  The modular method needs the **residual mod-17**
+representations to be non-congruent, and non-isogenous abelian varieties routinely share a
+residual representation.  Items 3–5 (conductor discrepancy, Frobenius trace sieve, Baker height
+contradiction) all rest on that step.
+
+The pool already records this: C003 and C013 are BLOCKED for exactly this reason.  The script is
+retained for its arithmetic (the trace computations and the forcing-prime product are correct as
+computations), but its title "Definitive Elimination" and its closing line
+"ALL MATHEMATICAL AND ARITHMETIC ASSERTIONS PASSED CLEANLY" must not be read as a proof.
+
+Original header follows.
+
+U102 Definitive Elimination of CM Hilbert Newform Orbit b (2.2.5.1-2000.1-b).
 
 Rigorous arithmetic geometry and Galois representation certificates:
 1. Endomorphism algebra dimension check: End^0(A_b) = Q(zeta_5) (dim 4, CM) vs End^0(J^-) = Q(sqrt(5)) (dim 2, RM).

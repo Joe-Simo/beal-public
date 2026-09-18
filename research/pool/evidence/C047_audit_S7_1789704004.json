@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C047_audit_S7",
+  "timestamp": "2026-09-18T00:00:04-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "chain": "Beal (2m,2n,3), m,n>=4 via Z[i] + Bennett-Skinner",
+    "step_id": "S7",
+    "step": "Symmetrically, if 3 does not divide v then (p^2)^n + (-+q)^n = 3u^2 and Bennett-Skinner with n>=4 forbids it."
+  },
+  "questions": {
+    "hidden": {
+      "type": "score",
+      "instructions": "Does this step contain a hidden assumption, an unproved reduction, or a misapplication of the cited theorem?",
+      "criteria": [
+        "level 0: the step is exactly right as stated",
+        "level 1: a minor gap that is easily filled",
+        "level 2: a real gap needing a new argument",
+        "level 3: the step is wrong or the theorem is misapplied"
+      ]
+    },
+    "check": {
+      "type": "choice",
+      "instructions": "Cheapest way to verify this step independently.",
+      "criteria": {
+        "lean": "Lean 4 + mathlib",
+        "enum": "exact enumeration on a model",
+        "source": "re-read the primary source",
+        "paper": "a written derivation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "hidden": {
+        "type": "score",
+        "score": 1.98,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: the step is exactly right as stated",
+          "1": "level 1: a minor gap that is easily filled",
+          "2": "level 2: a real gap needing a new argument",
+          "3": "level 3: the step is wrong or the theorem is misapplied"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.24,
+          "2": 0.39999999999999997,
+          "3": 0.31
+        }
+      },
+      "check": {
+        "type": "choice",
+        "choice": "source",
+        "confidence": 0.43,
+        "probabilities": {
+          "lean": 0.03,
+          "source": 0.57,
+          "paper": 0.29,
+          "enum": 0.11
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 547,
+      "output_tokens": 58
+    }
+  }
+}

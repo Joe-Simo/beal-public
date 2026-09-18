@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U149",
+  "timestamp": "2026-09-18T00:39:41-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "countersearch"
+  },
+  "questions": {
+    "blind": {
+      "type": "noul",
+      "instructions": "Will the (p,p,r) chain statements (factorisation, gcd | p, coprime branch r-th powers, LTE valuations) hold verbatim on 1^3+2^3=3^2 (r=2)?",
+      "criteria": {
+        "true": "yes, all hold (blind)",
+        "false": "some fail"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "blind": {
+        "type": "noul",
+        "noul": 0.38
+      }
+    },
+    "usage": {
+      "input_tokens": 363,
+      "output_tokens": 20
+    }
+  }
+}

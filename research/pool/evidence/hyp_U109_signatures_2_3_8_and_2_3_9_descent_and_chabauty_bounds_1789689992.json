@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U109_signatures_2_3_8_and_2_3_9_descent_and_chabauty_bounds",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U109_signatures_2_3_8_and_2_3_9_descent_and_chabauty_bounds.md",
+    "excerpt": "# Checkpoint U109: Descent Maps, Covering Curves, and Chabauty Bounds for Signatures $(2, 3, 8)$ and $(2, 3, 9)$\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Geometry Research Group  \n**Target Signatures**: $(2, 3, 8)$ ($A^2 + B^3 = C^8$) and $(2, 3, 9)$ ($A^2 + B^3 = C^9$)  \n**Branch**: Generalized Fermat Equations / Beal Conjecture Classification  \n**Supporting Code**: [`code/verify_238_239_descent.gp`](file://[LOCAL_HOME]/Downloads/beal/code/verify_238_239_descent.gp)  \n**Status**: Unconditional resolution via algebraic descent, modular 2-coverings and 3-coverings, Mordell--Weil rank computations, and Elliptic Chabauty bounds over number fields. All PARI/GP checks verified.\n\n---\n\n## 1. Executive Summary\n\nThe generalized Fermat equations $A^p + B^q = C^r$ with hyperbolic signatures $\\chi = \\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} - 1 < 0$ have at most finitely many primitive solutions by the Darmon--Granville theorem (1995). For the families $(2, 3, n)$, resolving the cases $n = 7, 8, 9$ required distinct, highly sophisticated arithmetic-geometric methods beyond the standard Frey--Hellegouarch modular approach:\n- Signature $(2, 3, 7)$ was resolved by Poonen, Schaefer, and Stoll (2007) via Chabauty on the Klein quartic and genus-3 curves.\n- Signature $(2, 3, 8)$ was completely resolved by Nils Bruin (2004) using 2-descent over $\\mathbb{Q}$ and the cubic field $K = \\mathbb{Q}(2^{1/3})$, discovering the large sporadic solution $(\\pm 30042907, -96222, 43)$.\n- Signature $(2, 3, 9)$ was completely resolved by Nils Bruin (2005) using Mordell cubic descent and 3-descent to genus-10 curves, applying elliptic Chabauty over the quartic field $K = \\mathbb{Q}(\\alpha)$, $\\alpha^4 - 2\\alpha^3 - 2\\alpha + 1 = 0$.\n\nThis checkpoint establishes the complete algebraic descent architecture, covering curves, Mordell--Weil ranks, and Chabauty verification for signatures $(2, 3, 8)$ and $(2, 3, 9)$.\n\n### Complete Classification of Primitive Integer Solutions\n\n#### Signature $(2, 3, 8)$: $A^2 + B^3 = C^8$, $\\gcd(A, B, C) = 1$\nAll primitive integer solutions $(A, B, C)$ fall into three classes:\n1. **Trivial Solutions ($ABC = 0$)**:\n   $$(\\pm 1, 0, \\pm 1), \\quad (0, -1, \\pm 1).$$\n2. **Catalan Solution**:\n   $$(\\pm 3, -2, \\pm 1) \\implies 3^2 + (-2)^3 = 9 - 8 = 1 = 1^8.$$\n3. **Sporadic Bruin Solution (2003)**:\n   $$(\\pm 30042907, -96222, \\pm 43),$$\n   $$\\text{where } 30042907^2 + (-96222)^3 = 43^8 = 11,688,200,277,601.$$\n\n#### Signature $(2, 3, 9)$: $A^2 + B^3 = C^9$, $\\gcd(A, B, C) = 1$\nAll primitive integer solutions $(A, B, C)$ fall into three classes:\n1. **Trivial Solutions ($ABC = 0$)**:\n   $$(0, -1, -1), \\quad (\\pm 1, 0, 1), \\quad (\\pm 1, -1, 0).$$\n2. **Catalan Solution**:\n   $$(\\pm 3, -2, 1) \\implies 3^2 + (-2)^3 = 1^9 = 1.$$\n3. **Non-trivial Solution**:\n   $$(\\pm 13, 7, 2) \\implies 13^2 + 7^3 = 169 + 343 = 512 = 2^9.$$\n   In Bruin's standard form $x^3 + y^9 = z^2$ (with $z = A, x = -B, y = C$):\n   $$(-7)^3 + 2^9 = -343 + 512 = 169 = 13^2.$$\n\n---\n\n## 2. Algebraic Descent Architecture for Signature $(2, 3, 8)$\n\nConsider $A^2 + B^3 = C^8$ with $\\gcd(A, B) = 1$. Rewriting:\n$$B^3 = C^8 - A^2 = (C^4 - A)(C^4 + A).$$\n\n### 2.1 GCD Analysis and Partitioning into Cases\nLet $d = \\gcd(C^4 - A, C^4 + A)$.\nThen $d$ divides $(C^4 + A) + (C^4 - A) = 2C^4$ and $(C^4 + A) - (C^4 - A) = 2A$.\nSince $\\gcd(A, C) = 1$, we have $d \\mid 2$. Thus $d \\in \\{1, 2\\}$.\n\n### 2.2 Case 1: $d = 1$ ($A \\not\\equiv C \\pmod 2$)\nSince $C^4 - A$ and $C^4 + A$ are coprime and their product is a cube $B^3$:\n$$C^4 + A = u^3, \\quad C^4 - A = v^3, \\quad uv = B, \\quad \\gcd(u, v) = 1.$$\nSumming both equations gives:\n$$u^3 + v^3 = 2C^4.$$\nSubstitute $u = r + s, v = r - s$ with $\\gcd(r, s) = 1$:\n$$u^3 + v^3 = (r+s)^3 + (r-s)^3 = 2r(r^2 + 3s^2) = 2C^4 \\implies r(r^2 + 3s^2) = C^4.$$\nSince $\\gcd(r, 3s^2)$ divides 3, we analyze two subcases:\n\n#### Subcase 1A: $3 \\nmid r$\nHere $\\gcd(r, r^2 + 3s^2) = 1$. Since their product is a 4th power $C^4$:\n$$r = c_1^4, \\quad r^2 + 3s^2 = c_2^4, \\quad c_1 c_2 = C.$$\nSubstituting $r = c_1^4$ into the second equation yields:\n$$c_2^4 - c_1^8 = 3s^2 \\implies 3s^2 = (c_2^2 - c_1^4)(c_2^2 + c_1^4).$$\nFactoring in $\\mathbb{Z}[\\sqrt{-3}]$ leads directly to the quartic curves:\n$$\\mathcal{C}_1: Y^2 = X^4 - 18X^2 + 9, \\quad \\mathcal{C}_1': Y^2 = -X^4 + 18X^2 - 9.$$\nPutting $\\mathcal{C}_1$ into Weierstrass form gives the elliptic curve:\n$$E_1: y^2 = x^3 - 36x + 648.$$\nPARI/GP verification:\n- Conductor $N = 288 = 2^5 \\cdot 3^2$.\n- Torsion group $E_1(\\mathbb{Q})_{\\text{tors}} \\cong \\mathbb{Z}/2\\mathbb{Z} \\times \\mathbb{Z}/2\\mathbb{Z}$ (order 4).\n- **Mordell--Weil rank $\\operatorname{rank} E_1(\\mathbb{Q}) = 0$**.\n- Torsion points correspond exclusively to $s = 0$ or $C = 0$, giving $u = v \\implies A = 0$ or $B = 0$.\n\n#### Subcase 1B: $3 \\mid r$\nWrite $r = 3r_0$. Then $3r_0(9r_0^2 + 3s^2) = 9r_0(3r_0^2 + s^2) = C^4 \\implies 3 \\mid C$.\nLet $C = 3C_0$. Then $9r_0(3r_0^2 + s^2) = 81 C_0^4 \\implies r_0(3r_0^2 + s^2) = 9 C_0^4$.\nSince $\\gcd(r_0, s) = 1$, w"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.16
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.96
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.36,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.11,
+          "2": 0.31,
+          "3": 0.54
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3179,
+      "output_tokens": 94
+    }
+  }
+}

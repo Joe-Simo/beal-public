@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U105_signature_2_3_13_frey_representation_and_modular_curves",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U105_signature_2_3_13_frey_representation_and_modular_curves.md",
+      "excerpt": "# U105: Arithmetic Analysis of the Boundary Exponent $n = 13$ for $A^2 + B^3 = C^n$: Frey Representations, Modular Curves, and Quadratic Chabauty Assessment\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group  \n**Status**: Authoritative Milestone Checkpoint & Technical Reference  \n**Target Diophantine Equation**: $A^2 + B^3 = C^{13}, \\quad \\gcd(A, B, C) = 1, \\quad ABC \\neq 0, \\quad C \\neq \\pm 1$.\n\n---\n\n## 1. Executive Summary and Theoretical Scope\n\nThe generalized Fermat equation of signature $(2, 3, 13)$,\n$$A^2 + B^3 = C^{13}, \\quad \\gcd(A, B, C) = 1,$$\nconstitutes the unconditional frontier of the Diophantine family $A^2 + B^3 = C^n$. While exponents $n \\in \\{7, 8, 9, 10, 15\\}$ have been unconditionally resolved, and $n = 11$ was resolved conditionally under the Generalized Riemann Hypothesis (GRH) by Freitas, Naskr\u0119cki, and Stoll (2020), the boundary exponent $n = 13$ remains **completely open**.\n\nThis checkpoint establishes an exhaustive, mathematically rigorous analysis of the modular approach to $n = 13$, detailing:\n1. **The Kraus Frey Elliptic Curve**: Construction, invariants, Kodaira types, and local conductor behavior at 2, 3, 13, and $\\ell \\mid C$.\n2. **Modular Lowering and Newform Spectrum**: Determination of Serre levels dividing $2^8 \\cdot 3^5 = 62208$, exact dimensions of $S_2^{\\text{new}}(\\Gamma_0(N))$ across all candidate levels $N \\in \\{27, 32, 54, 96, 144, 288, 864\\}$, and minimal weight $k = 2$.\n3. **Irreducibility of the Mod 13 Galois Representation**: Analysis of FNS (2020) Lemma 8.1, ruling out reducible 13-torsion via non-trivial rational points on genus-2 twists of $X_1(13)$.\n4. **Symplectic Filtering and CM Elimination**: Reduction from 14 candidate twists to 7 via local symplectic criteria at 2 and 3, and complete elimination of all CM newforms ($27a1, 288a1, 288a2$) via Coleman/Chabauty on genus-2 curves over quadratic fields $\\mathbb{Q}(\\omega)$ and $\\mathbb{Q}(i)$.\n5. **The Surviving Candidate Newforms**: Isolation of the exact surviving set of 4 non-CM elliptic curves:\n   $$\\mathcal{S}_{13} = \\{96a2, 864a1, 864b1, 864c1\\}.$$\n6. **The Persistent Catalan Barrier**: Exact identification of candidate curve `864b1` as the quadratic twist by $d = 2$ of the Frey curve evaluated at the universal Catalan solution $(\\pm 3, -2, 1)$, proving that $X_{864b1}(13)(\\mathbb{Q})$ contains genuine non-cuspidal rational points.\n7. **Modular Curve Genera and Geometric Bottleneck**: Exact genus formulas establishing $g(X_0(13)) = 0$, $g(X_1(13)) = 2$, $g(X_{\\text{sp}}^+(13)) = 3$, and $g(X(13)) = g(X_E(13)) = 50$.\n8. **Evaluation of Quadratic Chabauty (BDMTV 2019)**: Detailed assessment of why the landmark method of Balakrishnan, Dogra, M\u00fcller, Tuitman, and Vonk (2019) on $X_{\\text{sp}}^+(13)$ succeeds for CM curves but **fundamentally fails** to resolve the surviving non-CM curves $\\{96a2, 864a1, 864b1, 864c1\\}$.\n\n---\n\n## 2. Explicit Frey Curve Constructions and Local Arithmetic\n\n### 2.1 The Kraus Frey Model\nLet $(a, b, c)$ be a primitive integer solution to $a^2 + b^3 = c^{13}$ with $\\gcd(a, b, c) = 1$, $abc \\neq 0$, and $c \\neq \\pm 1$. Following Alain Kraus (1998, 1999) and Freitas, Naskr\u0119cki, and Stoll (2020), we associate to $(a, b, c)$ the Frey elliptic curve:\n$$E = E_{(a, b, c)}: Y^2 = X^3 + 3bX + 2a.$$\n\nThe standard Weierstrass invariants of $E$ are given by:\n$$\\begin{aligned}\nc_4 &= -2^4 \\cdot 3^2 b = -144 b, \\\\\nc_6 &= -2^5 \\cdot 3^3 a = -864 a, \\\\\n\\Delta &= -2^6 \\cdot 3^3 (a^2 + b^3) = -2^6 \\cdot 3^3 c^{13} = -1728 c^{13}, \\\\\nj &= \\frac{c_4^3}{\\Delta} = \\frac{(-144 b)^3}{-1728 c^{13}} = \\frac{1728 b^3}{c^{13}}, \\\\\n1728 - j &= \\frac{1728 a^2}{c^{13}}.\n\\end{aligned}$$\n\n### 2.2 Local Reduction Types and Serre Conductor Lowering\nThe mod 13 Galois representation $\\bar{\\rho}_{E, 13}: G_\\mathbb{Q} \\to \\operatorname{GL}_2(\\mathbb{F}_{13})$ exhibits precise local behaviors:\n\n1. **At odd primes $\\ell \\mid c$ ($\\ell \\geq 5$)**:\n   - $v_\\ell(\\Delta) = 13 v_\\ell(c) \\equiv 0 \\pmod{13}$.\n   - Because $\\gcd(a, b, c) = 1$, $\\ell \\nmid b$, which implies $v_\\ell(c_4) = v_\\ell(-144 b) = 0$.\n   - By Tate's algorithm, $E$ has multiplicative reduction of Kodaira type $I_{13 v_\\ell(c)}$ at $\\ell$.\n   - By the theory of the Tate curve, the inertia group $I_\\ell$ acts on the 13-torsion $E[13]$ via unramified extensions, so $\\bar{\\rho}_{E, 13}|_{I_\\ell}$ is trivial.\n   - Consequently, the Serre conductor $N_{13}$ is **completely unramified at all primes $\\ell \\mid c$ ($\\ell \\geq 5$)**.\n\n2. **At the exponent prime $\\ell = 13$**:\n   - If $13 \\nmid c$, $E$ has good reduction or multiplicative reduction with minimal valuation.\n   - If $13 \\mid c$, $v_{13}(\\Delta) \\equiv 0 \\pmod{13}$, and $E$ has multiplicative reduction.\n   - In all cases, $\\bar{\\rho}_{E, 13}$ is finite flat (crystalline) at 13 in the sense of Fontaine.\n   - Therefore, by Serre's conjectures (Khare--Wintenberger 2009), the target modular forms have weight $k = 2$ and are unramified at 13.\n\n3. **At bad primes $\\ell \\in \\{2, 3\\}$*",
+      "length_chars": 26122
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.99,
+        "confidence": 0.42,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.3,
+          "1": 0.53,
+          "2": 0.05,
+          "3": 0.12
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.79,
+        "confidence": 0.04,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.08,
+          "1": 0.45,
+          "2": 0.07,
+          "3": 0.4
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.45
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.54,
+        "probabilities": {
+          "verify_computation": 0.05,
+          "audit_later": 0.25,
+          "no_action": 0.05,
+          "verify_literature": 0.01,
+          "audit_now": 0.64
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3306,
+      "output_tokens": 124
+    }
+  }
+}

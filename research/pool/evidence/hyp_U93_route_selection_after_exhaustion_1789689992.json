@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U93_route_selection_after_exhaustion",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U93_route_selection_after_exhaustion.md",
+    "excerpt": "# U93: route selection after exhausting the Gaussian forcing-prime sieve\n\n**Status: research-route audit. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-16.\n\n## 1. Current strongest facts\n\nFor the active weighted equation\n\n    X^10+256Y^10=Z^17,\n\nU90 proves the explicit conditional lower bound\n\n    max(X,Y)>10^25993.\n\nU91 proves that the full mixed degree-four Pad\u00e9 space has formal local order at most 728, while a substantial exact 58-term relation has coefficient height large enough to give only a much weaker decimal bound. The full 73-term extremal vector remains computationally unresolved, so no theorem says degree four can never beat U90.\n\nU92 proves that the U72 Gaussian finite-field forcing criterion has exactly fourteen forcing primes and no more. Hence the fixed product\n\n    P=433992707035920672833426144791\n\ncannot be enlarged by simply searching farther with that criterion.\n\nU80 independently leaves the genus-eight Selmer route at the exact bottleneck\n\n    d=dim_F2 Cl(O_F)[2]\n\nfor the degree-34 field F, followed (if d=0) by the seventeen-column global restriction matrix.\n\n## 2. Route decision\n\nFurther extensions of the same U72 prime sieve are closed by U92. Pure Pad\u00e9 order maximization is also low priority: U89/U91 show that primitive relation height can erase large gains in local order. Therefore the next high-value work should not be another larger finite prime search or an unqualified higher-degree Pad\u00e9 construction.\n\nThe priority is now:\n\n1. return to the corrected U63-U65 modular route and discharge its explicit global level-lowering hypotheses (prescribed local lifts, determinant compatibility, and retained local types);\n2. in parallel, continue seeking an exact class-group parity computation for U80 when a reliable engine is available;\n3. use Pad\u00e9 constructions only when an order/height calculation is available, with U90's 10^25993 bound as the benchmark.\n\n## 3. Literature-tool status\n\nA new Consensus search for published work specifically covering the signature/weighted equation was attempted on 2026-09-16, but the connected service reported that its monthly search quota was exhausted. No negative literature conclusion is drawn from that tool failure.\n\n## 4. Mathematical status\n\nNo contradiction has been obtained for the weighted equation. No counterexample has been found. Even a future elimination of this weighted branch would not by itself prove the full Beal conjecture because the remaining all-even and mixed-signature coverage is much broader.\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.18
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.23,
+        "confidence": 0.77,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.81,
+          "1": 0.16,
+          "2": 0.02,
+          "3": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1520,
+      "output_tokens": 94
+    }
+  }
+}

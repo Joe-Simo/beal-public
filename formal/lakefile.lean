@@ -2,7 +2,7 @@ import Lake
 open Lake DSL
 
 package "beal" where
-  version := "0.1.0"
+  version := v!"0.1.0"
   keywords := #["math", "number-theory", "beal-conjecture", "formal-verification"]
 
 require mathlib from git

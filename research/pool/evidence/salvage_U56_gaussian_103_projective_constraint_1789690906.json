@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U56_gaussian_103_projective_constraint",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U56_gaussian_103_projective_constraint.md",
+    "excerpt": "# U56: coefficient-2 branch \u2014 Gaussian parametrization and the q=103 projective constraint\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Inputs\n\nU48 gives, up to Gaussian unit/conjugation,\n\n    m + i n = epsilon (r+i s)^17,\n\nwith gcd(r,s)=1 and r,s of opposite parity. Earlier exact local work gives\n\n    103 | mn.\n\nU55 leaves only the negative-B square classes in the independent Q(sqrt(5)) descent.\n\n## Exact Gaussian coordinate forms\n\nFor epsilon=1, exact expansion gives\n\n    m = r F(r,s),\n    n = s G(r,s),\n\nwhere\n\n    F = r^16 -136 r^14 s^2 +2380 r^12 s^4 -12376 r^10 s^6\n        +24310 r^8 s^8 -19448 r^6 s^10 +6188 r^4 s^12\n        -680 r^2 s^14 +17 s^16,\n\n    G = 17 r^16 -680 r^14 s^2 +6188 r^12 s^4 -19448 r^10 s^6\n        +24310 r^8 s^8 -12376 r^6 s^10 +2380 r^4 s^12\n        -136 r^2 s^14 +s^16.\n\nMultiplication by a Gaussian unit only swaps/signs the two coordinates, so the divisibility statement 103|mn is invariant.\n\n## Exact q=103 computation\n\nFor every finite projective ratio t=r/s in F_103, exact Wolfram enumeration found\n\n    F(t,1) != 0,\n    G(t,1) != 0.\n\nThe only finite ratio for which m*n=0 mod 103 is t=0, coming from the explicit factor r in m. The projective point at infinity s=0 gives n=0.\n\nTherefore, for primitive (r,s),\n\n    103 | mn   ==>   103 | r s.                    (1)\n\nBecause gcd(r,s)=1, exactly one of r,s is divisible by 103.\n\nThis pushes the earlier local divisor one full step backward through the Gaussian 17th-power map: it cannot arise from either degree-16 cofactor F or G.\n\n## Cross-check / exceptional-prime structure\n\nA fresh exact resultant calculation gives\n\n    Res_x(F(x,1),G(x,1)) = 2^272.\n\nThus F and G have no common root modulo any odd prime, consistent with the q=103 enumeration. This resultant alone does not prove that F or G individually have no roots modulo 103; the explicit root enumeration above supplies that stronger q=103 fact.\n\nFor comparison, F and G do have roots modulo 67, 409, and 883, so the q=103 property is genuinely special and must not be generalized to the other previously forced divisors.\n\n## Consequence for the active branch\n\nEvery surviving coefficient-2 exponent-17 solution now has\n\n    103 | r s,\n    gcd(r,s)=1,\n\nin addition to the U55 negative-B square-class equations. Hence one Gaussian base coordinate is itself divisible by 103, not merely the much larger coordinates m or n.\n\n## Next obligation\n\nUse 103|r or 103|s to substitute into the U55 equations. Since m,n are degree-17 forms in r,s and B is a square-class factor tied to m*n, compare 103-adic valuations on both descents. The target is to determine whether the exact valuation forced by the Gaussian expansion is compatible with B=-b^2 or B=-17b^2, or whether it forces an impossible parity of v_103(B).\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.27,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.67,
+          "3": 0.31
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.88
+      }
+    },
+    "usage": {
+      "input_tokens": 1512,
+      "output_tokens": 42
+    }
+  }
+}

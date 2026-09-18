@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C058_audit_BennettSkinnerThree",
+  "timestamp": "2026-09-18T00:51:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "hyp": "BennettSkinnerThree",
+    "lean": "\u2200 n \u2265 4, \u2200 x y z : \u2124 nonzero, IsCoprime x y \u2192 IsCoprime x (3z) \u2192 IsCoprime y (3z) \u2192 x^n + y^n \u2260 3 z^2",
+    "source": "\n     Theorem 1.1       If n \u2265 4 is an integer and\n\n                                  C \u2208 {1, 2, 3, 5, 6, 10, 11, 13, 17},\n\n     then the equation\n                                            xn + y n = Cz2\n\n     has no solutions in nonzero pairwise coprime integers (x, y, z) with, say, x > y, unless\n     (n, C) = (4, 17) or\n\n             (n, C, x, y, z) \u2208 {(5, 2, 3, \u22121, \u00b111), (5, 11, 3, 2, \u00b15), (4, 2, 1, \u22121, \u00b11)} ."
+  },
+  "questions": {
+    "implied": {
+      "type": "score",
+      "instructions": "As a second reader: is the Lean hypothesis IMPLIED by the quoted source (never stronger than it)?",
+      "criteria": [
+        "0 the Lean statement is stronger than the source",
+        "1 unclear/needs a condition",
+        "2 implied modulo harmless reformulation",
+        "3 clearly implied"
+      ]
+    },
+    "issue": {
+      "type": "choice",
+      "instructions": "If any, the issue.",
+      "criteria": {
+        "none": "none",
+        "coprime": "coprimality convention",
+        "sign": "signs/negatives",
+        "exponent": "exponent range",
+        "permutation": "which term is the sum (permutation of signature)",
+        "rank": "rank 0 depends on 2-descent being unconditional"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "implied": {
+        "type": "score",
+        "score": 2.07,
+        "confidence": 0.07,
+        "legend": {
+          "0": "0 the Lean statement is stronger than the source",
+          "1": "1 unclear/needs a condition",
+          "2": "2 implied modulo harmless reformulation",
+          "3": "3 clearly implied"
+        },
+        "probabilities": {
+          "0": 0.16,
+          "1": 0.09,
+          "2": 0.26,
+          "3": 0.49
+        }
+      },
+      "issue": {
+        "type": "choice",
+        "choice": "coprime",
+        "confidence": 0.66,
+        "probabilities": {
+          "permutation": 0.0,
+          "rank": 0.01,
+          "none": 0.2,
+          "coprime": 0.72,
+          "sign": 0.06,
+          "exponent": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 734,
+      "output_tokens": 81
+    }
+  }
+}

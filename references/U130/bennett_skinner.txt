@@ -1,0 +1,1612 @@
+    Canad. J. Math. Vol. 56 (1), 2004 pp. 23–54
+
+
+
+
+    Ternary Diophantine Equations via Galois
+    Representations and Modular Forms
+    Michael A. Bennett and Chris M. Skinner
+
+    Abstract. In this paper, we develop techniques for solving ternary Diophantine equations of the shape
+    Axn + By n = Cz2 , based upon the theory of Galois representations and modular forms. We subse-
+    quently utilize these methods to completely solve such equations for various choices of the parameters
+    A, B and C. We conclude with an application of our results to certain classical polynomial-exponential
+    equations, such as those of Ramanujan–Nagell type.
+
+
+1 Introduction
+    A recent approach to ternary Diophantine equations, based upon techniques from
+    the theory of Galois representations and modular forms (and motivated by ideas of
+    Frey [23], Hellegouarch [25] and Serre [51]), has achieved spectacular success in the
+    work of Wiles [55], proving Fermat’s Last Theorem. Subsequently, variants of these
+    methods have been applied by Darmon and Merel [19] and Kraus [30], [31] to cases
+    of the generalized Fermat equation
+
+                                                         1 1 1
+                                    x p + y q = zr ,      + + < 1.
+                                                         p q r
+
+    While it does not seem possible to fully deal with this equation by these techniques
+    (but see Darmon [17]), a number of partial (or even complete) results are available
+    in case (p, q, r) = (p, p, 2) (see [19] for p ≥ 5), (p, q, r) = (p, p, 3) (see [19] for
+    p ≥ 5), (3, 3, p) (see [30] for 3 ≤ p < 104 ), (4, p, 4) (see [14] for p ≥ 4), (2, 4, p),
+    (5, 5, p) and (7, 7, p) (see [22], [32] and [32], resp.). Further, this approach makes it
+    feasible to treat more general equations of the shape
+
+    (1.1)                                    Ax p + By q = Czr ,
+
+    with A, B and C fixed nonzero integers. If (p, q, r) = (p, p, p), earlier results along
+    these lines are due to Serre [51] for A = B = 1, C = Lα (α ≥ 1), with
+
+                 L ∈ {3, 5, 7, 11, 13, 17, 19, 23, 29, 53, 59},            L 6= p,    p ≥ 11,
+
+    Kraus [29] for ABC = 15, Darmon and Merel [19] for ABC = 2, and Ribet [49] for
+    ABC = 2α with α ≥ 2.
+        Received by the editors April 30, 2002; revised October 3, 2003.
+        AMS subject classification: 11D41, 11F11, 11G05.
+         c Canadian Mathematical Society 2004.
+
+                                                                                                             23
+24                                                   Michael A. Bennett and Chris M. Skinner
+
+        In this paper, we will restrict our attention to equation (1.1) in the case p = q and
+     r = 2; i.e., to
+
+     (1.2)                                Axn + By n = Cz2 .
+
+
+     Our aims are twofold. Firstly, we wish to develop a catalogue of techniques for solving
+     a (relatively broad) class of ternary Diophantine equations. Secondly, we will apply
+     these methods to explicitly solve certain Fermat-type equations. Such results have
+     immediate applications to a variety of polynomial-exponential equations, such as
+     those of Ramanujan–Nagell type, as well as to other classical Diophantine problems,
+     including the occurence of powers in products of integers in arithmetic progressions.
+        We will suppose, here and henceforth, that A, B and C are nonzero pairwise co-
+     prime integers. As various authors have noted, if n is odd and a, b, c ∈ Z satisfy
+                                      n+1
+     Aan + Bbn = Cc, then (ac, bc, c 2 ) is an integral solution to (1.2). With this in mind,
+     we will consider only primitive solutions (a, b, c) to (1.2), where we suppose that aA,
+     bB and cC are nonzero and pairwise coprime. We may weaken this hypothesis, at the
+     cost of a certain amount of simplicity.
+        Our main results, from the viewpoint of Diophantine equations, are as follows.
+
+     Theorem 1.1       If n ≥ 4 is an integer and
+
+                                  C ∈ {1, 2, 3, 5, 6, 10, 11, 13, 17},
+
+     then the equation
+                                            xn + y n = Cz2
+
+     has no solutions in nonzero pairwise coprime integers (x, y, z) with, say, x > y, unless
+     (n, C) = (4, 17) or
+
+             (n, C, x, y, z) ∈ {(5, 2, 3, −1, ±11), (5, 11, 3, 2, ±5), (4, 2, 1, −1, ±1)} .
+
+        If C = 1 this is a result of Darmon and Merel [19]. Our current methods are
+     unable to resolve the case C = 7. With further computation, we can extend Theorem
+     1.1 to include, for example, C ∈ {14, 15, 19}.
+
+     Theorem 1.2       Suppose that n ≥ 7 is prime. If
+
+             (C, α0 ) ∈ {(1, 2), (3, 2), (5, 6), (7, 4), (11, 2), (13, 2), (15, 6), (17, 6)},
+
+     then the equation
+                                           xn + 2α y n = Cz2
+
+     has no solutions in nonzero pairwise coprime integers (x, y, z) with xy 6= ±1 and inte-
+     gers α ≥ α0 , unless, possibly, n ≤ C or (C, α, n) = (11, 3, 13).
+Ternary Diophantine Equations                                                                         25
+
+          We should mention that the proofs of the above two theorems require combina-
+       tions of every technique we have currently available. It is this application of more
+       traditional results in concert with our Proposition 4.4 that represents the main nov-
+       elty of this paper.
+          When AB is divisible by an odd prime and C = 1 or 2, as it transpires, we are
+       rather limited in the techniques we may apply. In the situation where A = C = 1
+       and B = p m for m ∈ N and p ≡ 3, 5 (mod 8) prime, distinct from 3 or k2 + 1 with
+       k ∈ N, Ivorra [27] has shown that equation (1.2) is insoluble in coprime integers
+       (x, y, z), provided n is a suitably large prime, relative to p. Such a result follows
+       from careful examination of elliptic curves with conductor 2α p possessing at least
+       one rational 2-torsion point. For small p, this is included in the following:
+
+       Theorem 1.3 Suppose that n ≥ 11 is prime, A, B are coprime integers, α, β are non-
+       negative integers with β ≥ 1. If
+
+             AB ∈ {2α 11β , 2α 13β , 2α 19β , 2α 29β , 2α 43β , 2α 53β , 2α 59β , 2α 61β , 2α 67β }
+
+       for α = 0 or α ≥ 3, or if
+
+                   AB ∈ {2 · 19β , 4 · 11β , 4 · 19β , 4 · 43β , 4 · 59β , 4 · 61β , 4 · 67β }
+
+       then the equation
+                                              Axn + By n = z2
+
+       has no solution in nonzero pairwise coprime integers (x, y, z), unless, possibly, n|AB or
+       we have AB, n and α as follows:
+
+                             AB       n      α      AB              n      α
+                            2α 19β    11     1     2α 61β           13    0, 3
+                            2α 43β    11 0, 3, ≥ 7 2α 61β           31    ≥7
+                            2α 53β    11  2, 4, 5  2α 67β           11  0, 3, 6
+                            2α 53β    17    0, 3   2α 67β           13    0, 3
+                            2α 59β    11    ≥7     2α 67β           17 0, 3, ≥ 7
+                            2α 59β    29     6
+
+
+
+       Theorem 1.4 Suppose that n ≥ 11 is prime and α is a nonnegative integer. If B ∈
+       {5α , 11α , 13α }, then the equation
+
+                                               xn + By n = 2z2
+
+       has no solution in nonzero pairwise coprime integers (x, y, z), unless, possibly, n|B.
+
+          For even values of AB, we have:
+26                                                 Michael A. Bennett and Chris M. Skinner
+
+     Theorem 1.5 Suppose that n ≥ 11 is prime, A, B are coprime integers, α, β, γ, δ are
+     nonnegative integers with α ≥ 6 and AB = 2α p β qγ , where
+
+     (p, q) ∈ {(3, 31) (β ≥ 1), (5, 11) (α ≥ 7), (5, 19), (5, 23) (β ≥ 1),
+                (7, 19) (γ ≥ 1), (11, 13), (11, 23) (β ≥ 1), (11, 29), (11, 31) (β ≥ 1),
+                           (13, 31) (β ≥ 1), (19, 23) (β ≥ 1), (19, 29), (29, 31) (β ≥ 1)}.
+
+     Then the equation
+                                         Axn + By n = z2
+     has no solution in nonzero pairwise coprime integers (x, y, z), unless, possibly, n|AB or
+     we have AB, n and α as follows:
+
+                              AB       n   α      AB            n   α
+                          2 5 23γ
+                            α β                α β γ
+                                       11 ≥ 7 2 11 29           13 ≥ 7
+                          2α 7β 19γ    11 ≥ 7 2α 19β 23γ        11 ≥ 7
+                          2α 11β 23γ   11 ≥ 6 2α 19β 29γ        11 ≥ 7
+
+     where β, γ and δ are positive integers.
+
+        Finally, restricting to odd values of the variables x, y:
+
+     Theorem 1.6 Suppose that n ≥ 11 is prime and that α is a nonnegative integer. If
+     B ∈ {23α , 31α , 47α , 71α }, then the equation
+
+                                          xn + By n = z2
+
+     has no solution in nonzero pairwise coprime integers (x, y, z) with xy ≡ 1 mod 2,
+     unless, possibly, n|B.
+
+        We note that in a number of cases, we may extend the above theorems to include
+     analogous results with n = 7. We have, for the most part, omitted these for the sake
+     of concision.
+
+
+2 Some Elliptic Curves
+     We begin by writing down some elliptic curves. We always assume that n is an odd
+     prime, that (a, b, c) is an integral solution to (1.2) with aA, bB and cC pairwise co-
+     prime, and that C is squarefree. Without loss of generality, we may suppose we are in
+     one of the following situations:
+
+     (i) abABC ≡ 1 (mod 2) and b ≡ −BC (mod 4).
+     (ii) ab ≡ 1 (mod 2) and either ord 2 (B) = 1 or ord 2 (C) = 1.
+     (iii) ab ≡ 1 (mod 2), ord 2 (B) = 2 and c ≡ −bB/4 (mod 4).
+     (iv) ab ≡ 1 (mod 2), ord 2 (B) ∈ {3, 4, 5} and c ≡ C (mod 4).
+     (v) ord 2 (Bbn ) ≥ 6 and c ≡ C (mod 4).
+Ternary Diophantine Equations                                                            27
+
+       For instance, let us suppose that abABC is odd. Then we necessarily have c ≡ 0
+       (mod 2) and, since n is odd, aA ≡ ±1 (mod 4) while bB ≡ ∓1 (mod 4). Renam-
+       ing if necessary, we may assume b ≡ −BC (mod 4), whereby we find ourselves in
+       case (i). The other cases are achieved by similar reasoning; note that we are free to
+       replace c by −c, if necessary.
+          In cases (i) and (ii), we will consider the curve
+                               E1 (a, b, c) : Y 2 = X 3 + 2cCX 2 + BCbn X.
+       In cases (iii) and (iv), we will consider
+                                                                    BCbn
+                               E2 (a, b, c) : Y 2 = X 3 + cCX 2 +        X,
+                                                                     4
+       and in case (v),
+                                                            cC − 1 2 BCbn
+                          E3 (a, b, c) : Y 2 + XY = X 3 +         X +     X.
+                                                               4      64
+       These are all elliptic curves defined over Q .
+         The following lemma summarizes some useful facts about these curves.
+
+       Lemma 2.1      Let i = 1, 2 or 3.
+       (a) The discriminant ∆(E) of the curve E = Ei (a, b, c) is given by
+                                       ∆(E) = 2δi C 3 B2 A(ab2 )n ,
+           where                               
+                                               6
+                                                    if i = 1
+                                           δi = 0    if i = 2
+                                               
+                                                 −12 if i = 3.
+                                               
+
+       (b) The conductor N(E) of the curve E = Ei (a, b, c) is given by
+                                                     Y
+                                     N(E) = 2αC 2           p,
+                                                        p|abAB
+
+           where
+                 
+                 
+                  5  if i = 1, case (i)
+                 
+                   6  if i = 1, case (ii)
+                 
+                 
+                 
+                 
+                 
+                   1  if i = 2, case (iii), ord 2 (B) = 2 and b ≡ −BC/4 (mod 4)
+                 
+                 
+                 
+                 
+                 
+                 2   if i = 2, case (iii), ord 2 (B) = 2 and b ≡ BC/4 (mod 4)
+              α=
+                 
+                 
+                  4  if i = 2, case (iv) and ord 2 (B) = 3
+                   2  if i = 2, case (iv) and ord 2 (B) ∈ {4, 5}
+                 
+                 
+                 
+                 
+                 
+                   −1 if i = 3, case (v) and ord 2 (Bbn ) = 6
+                 
+                 
+                 
+                 
+                 
+                   0  if i = 3, case (v) and ord 2 (Bbn ) ≥ 7.
+                 
+
+           In particular, E has multiplicative reduction at each odd prime p dividing abAB.
+           Also, E has multiplicative reduction at 2 if ord 2 (Bbn ) ≥ 7.
+28                                                 Michael A. Bennett and Chris M. Skinner
+
+     (c) The curve Ei (a, b, c) has a Q -rational point of order 2.
+     (d) Suppose√p is an odd prime dividing C. The curve Ei (a, b, c) obtains good reduction
+         over Q ( 4 C) at all primes ideals dividing p. Over any quadratic field K, the curve
+         Ei (a, b, c) has bad reduction at all prime ideals dividing p.
+
+     Proof Part (a) of this lemma is just a straightforward calculation using the well-
+     known formula for the discriminant of an elliptic curve given by a Weierstrass equa-
+     tion [52, III, §7]. Part (b) follows from Tate’s algorithm for computing the reduced
+     fiber of a Neron model of Ei (a, b, c) together with Ogg’s formula for the conductor
+     [53, IV, §9]. The computations are somewhat involved at the prime 2. The stated
+     results follow most easily from combining Propositions 1 to 7 with Tableau IV      of
+     Papadopolous [46]. By way of example, in case (i), we find that ord 2 c4 (E) =
+                                            
+     4, ord 2 c6 (E) ≥ 6 and ord 2 ∆(E) = 6 and so may apply Proposition 1 and
+     Tableau IV of [46] to conclude that α = 5. Part (c) follows from the fact that
+     (X, Y ) = (0, 0) is a Q -rational point of order 2 on Ei (a, b, c) for each choice of i
+     (cf. [52, III, 2.3]).
+         To prove part (d), let p be an odd prime dividing C. Consider the elliptic curves
+                                                    √
+                                E10 : U 2 = V 3 + 2c CV 2 + BbnV,
+
+                                                   √       Bbn
+                                E20 : U 2 = V 3 + c CV 2 +     V,
+                                                            4
+     and                                              √
+                                                  c    C 2 Bbn
+                                E30 : U 2 = V 3 +       V +    V,
+                                                      4     64
+                     √
+     defined over Q ( C). Note that the coefficients of the defining equations are integral
+     except possibly at prime ideals dividing 2 and that the discriminants of these curves
+     are each a power of 2 times AB2 (ab2 )n and hence coprime √ to p. It follows that √   these
+     curves have good reduction at each prime ideal of Q ( C) (and hence of Q ( 4 C))
+     dividing p [52, VII, 5.1].
+              = 1 or 2, the substitution Y = C 3/4U , X = C 1/2V yields an isomorphism
+        For i √
+     over Q ( 4 C) between Ei (a, b, c) and Ei0 . The substitution Y = C 3/4U − 12 C 1/2V ,
+                                                  √
+     X = C 1/2V yields an isomorphism over Q ( 4 C) between E3 (a, b, c) and E30 . Combin-
+     ing this with the preceding observation on the reduction of the Ei0 ’s at a prime ideal
+     dividing p gives the first half of part (d).
+        For the second half
+                        √ of (d), observe that Ei (a, b, c) having good reduction over the
+     quadratic√field Q ( D) (D squarefree) at each prime ideal dividing p is equivalent
+     to the Q ( D)-quadratic twist of Ei (a, b, c) having good reduction  √ at p. The substi-
+     tutions in [52, X, 2.4] yield a Weierstrass model ED for the Q ( D)-quadratic twist
+     having discriminant exactly divisible by either p 3 or by p 9 . In either case, this model
+     is minimal at p and has bad reduction at p (cf. [52, VII, 1.1, 5.1]. This completes the
+     proof of Lemma 2.1.
+
+        We will have recourse to the following.
+Ternary Diophantine Equations                                                                    29
+
+       Corollary 2.2 If n ≥ 7 is prime and abAB is divisible by an odd prime p, then the
+       j-invariant j(E) of the curve E = Ei (a, b, c) satisfies
+                                                       
+                                         ord p j(E) < 0.
+
+       In particular, if ab 6= ±1 then Ei (a, b, c) does not have complex multiplication.
+
+       Proof By part (b) of Lemma 2.1 the curve E = Ei (a, b, c) has multiplicative reduc-
+       tion at each odd prime p dividing abAB. In particular, E does not have potentially
+       good reduction at such a prime p. It then follows that for such a prime p the j-
+       invariant j(E) of E is not a p-adic integer [52, VII, 5.5]. Similarly, if 2|ab then, since
+       n ≥ 7, it follows from Lemma 2.1 that E has multiplicative reduction at 2 and hence
+        j(E) is not a 2-adic integer. In particular, it follows that if ab 6= ±1, then j(E) is not
+       an integer. From the well-known fact that the j-invariant of an elliptic curve with
+       complex multiplication is an algebraic integer [53, II, Theorem 6.1], we see that if
+       ab 6= ±1, then E cannot have complex multiplication.
+
+3 Galois Representations
+       Let E = Ei (a, b, c) for some 1 ≤ i ≤ 3 and some primitive solution (a, b, c) to (1.2).
+       We associate to the elliptic curve E a Galois representation
+
+                                     ρEn : Gal(Q /Q ) → GL 2 (Fn ).
+
+      This is just the representation of Gal(Q /Q ) on the n-torsion points E[n] of the el-
+      liptic curve E, having fixed once and for all an identification of E[n] with F 2n . We
+      continue to make our assumptions that aA, bB and cC are pairwise coprime and that
+      C is squarefree. Without loss of generality we may also suppose that A and B are
+      n-th-power free.
+
+       Corollary 3.1    If n ≥ 7 is a prime and if ab 6= ±1, then ρEn is absolutely irreducible.
+
+       Proof Since the representation ρEn is odd, meaning that the image of any complex
+       conjugation has eigenvalues 1 and −1, and since n is odd, ρEn is absolutely irreducible
+       if and only if it is irreducible. Thus we need only rule out the case that ρ En is reducible.
+           If ρEn is reducible, then E has a Q -rational subgroup of order n. Combining this
+       with part (c) of Lemma 2.1 it follows that E has a Q -rational point of order 2n. By
+       the work of Mazur [39] and Kubert [33] this cannot happen if n ≥ 17. It also follows
+       from their work that if 7 ≤ n ≤ 13 then the only elliptic curves over Q having a
+       Q -rational subgroup of order 2n also have complex multiplication. Our hypothesis
+       that ab 6= ±1 together with Corollary 2.2 implies that E does not have complex
+       multiplication and therefore does not have a Q -rational subgroup of order 2n. It
+       follows that ρEn is irreducible, as claimed.
+
+           We can associate to each representation ρEn a number NnE called the conductor of
+       ρn . It is defined in [51]; an immediate property of this definition is that N nE divides
+        E
+
+       N(E). This can be a strict divisibility, as the following lemma shows.
+30                                                   Michael A. Bennett and Chris M. Skinner
+
+     Lemma 3.2      If n ≥ 3 is a prime and ρEn is associated to a primitive solution (a, b, c) of
+     (1.2), then                                Y                Y
+                                    NnE = 2β              p2               q,
+                                               p|C,p6=n        q|AB,q6=n
+
+     where                 (
+                             1 if ab ≡ 0 (mod 2) and AB ≡ 1 (mod 2)
+                      β=
+                             α otherwise,
+
+     for α as defined in the statement of Lemma 2.1.
+
+     Proof If p 6= n is a prime at which the curve E has multiplicative reduction (i.e.,      
+     p k N(E)), then a result of Serre (cf. [51, (4.1.1.2)]) shows that if also n| ord p ∆(E)
+     then p does not divide NnE ; otherwise p k NnE . ItQ    then Q
+                                                                  follows from this and from
+     parts (a) and (b) of Lemma 2.1 that NnE divides 2β p 2 q, where the first product
+     is over primes p 6= nQ    dividing C and the second product is over primes q 6= n
+     dividing AB, and that q divides NnE . To prove that NnE actually equals the given
+     formula requires an analysis involving the definitions of the p-parts of N(E) and N nE
+     for primes p 6= n dividing 2C.
+         Let Tn be the n-adic Tate module of the curve E. Fix an isomorphism Tn ∼     = Z2n and
+     let ρ : Gal(Q /Q ) → GL 2 (Zn ) be the Galois representation coming from the action of
+     Gal(Q /Q ) on Tn . Let p 6= n be a prime dividing 2C and let D p and I p be, respectively,
+     a decomposition group and inertia subgroup at the prime p.
+         Suppose p r k N(E) and p r0 k NnE . A comparison of the definitions of the p-parts
+     of N(E) and NnE shows that
+
+                                                                                I
+                               r − r0 = dimFn (E[n]I p ) − rank Zn (Tnp )
+
+     where the superscript ‘I p ’ denotes the part fixed under the action of the inertia group
+     I p . Since p|N(E), the curve E does not have good reduction at p, and hence
+                 I
+     rank Zn (Tnp ) ≤ 1 [52, VII, 7.1].
+          If dimFn (E[n]I p ) = 0 then there is nothing to prove. Suppose then that
+     dimFn (E[n]I p ) ≥ 1. Since the determinant of ρEn is unramified away from the prime
+     n, the group ρEn (I p ) is contained in a unipotent subgroup of GL 2 (Fn ) and therefore
+     has order dividing n. Since ρEn is equivalent to the reduction of ρ modulo n and since
+     the kernel of the reduction map GL 2 (Zn ) → GL 2 (Fn ) is a pro-n-group, it follows
+     that ρ(I p ) is a pro-n-group. In particular, ρ|I p factors through the maximal pro-n-
+     quotient of I p , say I (n)
+                             p , which is isomorphic to Zn .
+          Let τ ∈ I p be an element mapping to a topological generator of I p(n) . Let α, β ∈
+         ×
+     Q n be the eigenvalues of ρ(τ ) and let σ ∈ D p be any lift of a Frobenius element.
+     From the well-known action of Frobenii on tame inertia we have that ρ(στ σ −1 ) =
+     ρ(τ p ). It follows that {α, β} = {α p , β p }. In particular, α and β must be primitive
+     nk -th roots
+                 of unity, for some nonnegative     integer k. Note also that β = α −1 since
+     det ρ(τ ) = 1, and hence α + α = trace( ρ(τ ) is in Zn . Since Qn (α + α−1 ) has
+                                            −1
+
+     degree nk−1 (n − 1)/2 over Qn if k ≥ 1, it follows that k = 0. Therefore α = β = 1
+Ternary Diophantine Equations                                                                 31
+                     I
+       and rank Zn (Tnp ) = 1. It then follows from the definition of N(E) that p k N(E) (i.e.,
+       E has multiplicative reduction at p). From part (b) of Lemma 2.1 it follows that this
+       can occur only if p = 2 and we are in case (v) with β = α = 0 and ord 2 (Bbn ) ≥ 7.
+       Suppose then that we are in this case. 
+          If 2-B then 2|b and n| ord 2 ∆(E) , and so it follows from the aforementioned
+       result of Serre that 2-NnE , which agreeswith the given formula. If 2|B then, since
+       n- ord 2 (B) by hypothesis, n- ord 2 ∆(E) whence, again by Serre’s result, 2 k Nn (E),
+       which also agrees with the given formula.
+
+          We now wish to connect the representations ρEn with representations arising from
+       modular forms. We begin by summarizing what it means for ρEn to be modular.
+          Let Fn be an algebraic closure of the finite field Fn . Let ν be any prime of Q
+       extending n. To any holomorphic newform f of weight k ≥ 1 and level M there is
+       associated a continuous, semisimple representation
+
+                                    ρ f ,ν : Gal(Q /Q ) → GL 2 (Fn )
+                                                                                    P∞         n
+       unramified at all primes not dividing Mn and such that if f (z) =               n=1 cn q ,
+       q := e2πiz , then
+
+       (3.1)                      trace ρ f ,ν (Frob p ) ≡ c p (mod ν)
+
+       for all p not dividing Mn. Here Frob p is any Frobenius element at the prime p.
+          If the representation ρEn , with scalars extended to Fn , is equivalent to some ρ f ,ν
+       then we say that ρEn is modular and that it arises from the newform f (or that f gives
+       rise to ρEn ).
+
+       Lemma 3.3 Suppose that n ≥ 7 is a prime and that ρEn is associated to a primitive
+       solution (a, b, c) to (1.2) with ab 6= ±1. Put
+                                                
+                                                     E
+                                                N n
+                                                        n-ABC,
+                                       Nn (E) = nNn    E
+                                                         n|AB,
+                                                
+                                                 2 E
+                                                   n Nn n|C.
+
+       The representation ρEn arises from a cuspidal newform of weight 2, level Nn (E), and
+       trivial Nebentypus character.
+
+       Proof Applying work of Breuil, Conrad, Diamond and Taylor [4] (or even, since,
+       by part (b) of Lemma 2.1, the curve E does not have conductor divisible by 27, ear-
+       lier work of Conrad, Diamond and Taylor [12]) we may conclude that E is modular.
+       In particular this means that the the representation ρEn is modular. We also know
+       by Corollary 3.1 that ρEn is irreducible. It then follows from work of Ribet [21, The-
+       orem 6.4] that ρEn arises from a cuspidal newform with weight 2, level Nn (E), and
+       trivial Nebentypus character. The key point is that if n-ABC then n-Nn (E) by part (b)
+       of Lemma 2.1, and so ρEn |Dn is ‘finite’ in the sense of [21]. Similarly, if n|AB, then E
+       has multiplicative reduction at n by part (b) of Lemma 2.1, and so ρ En |Dn is ‘Selmer’
+       in the sense of [21].
+32                                                    Michael A. Bennett and Chris M. Skinner
+
+          To make use of this lemma we need to carefully analyse the newforms of level
+       Nn (E) from which our representations can arise. We begin this study in the next
+       section.
+
+
+4 Eliminating Newforms
+       We will use a number of different methods to eliminate the possibility of certain new-
+       forms of level Nn (E) giving rise to the representation ρEn . These are collected in the
+       main propositions of the following subsections. Variants upon Propositions 4.3 and
+       4.6 occur, in varying degrees of explicitness, in earlier work of Serre [51] and Kraus
+       [31] (in the first instance) and Darmon and Merel [19] (in the second). Proposi-
+       tion 4.4 appears to be new. As we shall observe in Section 5, many of our Diophantine
+       problems require simultaneous application of Propositions 4.3, 4.4 and 4.6.
+
+
+4.1   An Absence of Newforms
+       Proposition 4.1 Suppose n ≥ 7 is a prime and that E = Ei (a, b, c) is the curve associ-
+       ated to a primitive solution of (1.2). If
+
+                   Nn (E) = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 16, 18, 22, 25, 28, 60
+
+       then ab = ±1.
+
+       Proof This is essentially the same argument by which Fermat’s Last Theorem was
+       reduced to the modularity of semistable elliptic curves.
+          If ab 6= ±1, then, as a consequence of Lemma 3.3, there exists a cuspidal newform
+       of weight 2 and level Nn (E). However, it follows from combining Theorems 2.5.2,
+       4.2.4, 4.2.7 and 4.2.11 of [42] that there are no non-zero cuspforms of weight 2 and
+       level equal to any of the numbers N listed in the statement of the proposition. From
+       this contradiction it follows that ab = ±1 whenever Nn (E) is one of the listed num-
+       bers.
+
+          Of course, this list is quite small and one quickly finds oneself considering N n (E)
+       for which the corresponding space of cuspforms is non-zero (for example if A = B =
+       C = 1 and ab is odd then Nn (E) = 32 and there exists a cuspidal newform of weight
+       2 and level 32). Thus one needs other ways to establish that a given newform of level
+       Nn (E) cannot give rise to ρEn .
+
+
+4.2   Congruences
+       By Lemma 2.1, the curves Ei (a, b, c) all have rational 2-torsion. In consequence, we
+       may restrict the possibilities for the Fourier coefficients of the newforms that can
+       give rise to ρEn . Since our curves need not have full rational 2-torsion, we have more
+       difficulty exploiting such arguments than was the case for equations of the shape
+       xn + y n = Lα zn , investigated by Serre in [51].
+Ternary Diophantine Equations                                                                    33
+
+       Lemma 4.2 Suppose n ≥ 7 is a prime and E = Ei (a, b, c) is a curve associated to a
+       primitive solution of (1.2). Suppose also that p is an odd prime not dividing nN nE . Then
+       either
+                                     trace ρEn (Frob p ) = ±(1 + p)
+       or
+                                           trace ρEn (Frob p ) = ±2r,
+                              √
+       for some integer r ≤       p.
+
+       Proof Suppose first that p|ab. Then E has multiplicative reduction at p. From the
+       well-known theory of Tate-curves [53, V] (see also [52, Appendix C, §15]), it follows
+       that trace ρEn (Frob p ) = ±(1 + p).
+          Suppose then that p-ab. In this case the curve E has good reduction at p since
+       p-Nn (E). From the Weil-bounds we know that the number of points N p on E in the
+       finite field F p is given by
+                                            Np = p + 1 − ap
+                                            √               √
+       for some integer a p satisfying −2 p ≤ a p ≤ 2 p. Since p is odd and E has a
+       Q -rational 2-torsion point, 2 divides N p and hence also a p . Since
+
+                                       trace ρEn (Frob p ) ≡ a p (mod n)
+
+       (cf. [53, II, 10.1]) the lemma follows.
+
+            As an immediate consequence of this lemma we obtain the following.
+
+       Proposition 4.3 Suppose n ≥ 7 is a prime and E = Ei (a, b, c) is a curve associated to
+       a primitive solution of (1.2) with ab 6= ±1. Suppose further that
+
+                                               ∞
+                                               X
+                                         f =         cm q m   (q := e2πiz )
+                                               m=1
+
+
+       is a newform of weight 2 and level Nn (E) giving rise to ρEn and that K f is a number field
+       containing the Fourier coefficients of f . If p is a prime, coprime to nN nE , then n divides
+       one of either                                              
+                                      NormK f /Q c p ± (p + 1)
+       or
+                                            NormK f /Q (c p ± 2r),
+                              √
+       for some integer r ≤       p.
+
+          When applying this proposition to a specific newform we often find it necessary
+       to consider c p for more than one p. The primes p we use vary from form to form.
+       We leave these ad hoc arguments to later sections.
+34                                                   Michael A. Bennett and Chris M. Skinner
+
+4.3   Images of Inertia
+       Very often the spaces of cuspforms of level Nn (E) contain newforms associated to
+       elliptic curves with rational 2-torsion. Consequently, the results of neither of the
+       preceding subsections can be used to show that these curves cannot give rise to the
+       representation ρEn . However, as a consequence of part (d) of Lemma 2.1 we have a
+       good understanding of ρEn (I p ) for an inertia group I p corresponding to an odd prime
+       p dividing C. Often this can be shown to be inconsistent with the properties of the
+       action of inertia on the n-adic Tate-module of the elliptic curves associated to the
+       newforms.
+
+
+       Proposition 4.4 Suppose n ≥ 3 is a prime and E = Ei (a, b, c) is a curve associated to
+       a primitive solution of (1.2). Suppose also that E 0 is another elliptic curve defined over
+       Q such that ρEn ∼
+                            0
+                       = ρEn . Then the denominator of the j-invariant j(E 0 ) is not divisible by
+       any odd prime p 6= n dividing C.
+
+
+       Proof Suppose p 6= n is an odd prime dividing C. As in the proof of Lemma 3.2, let
+       ρ : Gal(Q̄ /Q ) → GL 2 (Zn ) be the Galois representation on the n-adic Tate-module
+                                                                                     √ √
+       of E. Since, by part (d) of Lemma 2.1, E obtains good reduction over Q ( 4 C, −1)
+       at all prime ideals dividing p, we have #ρ(I p )|8 (cf. [52, VII, 7.1]). If #ρ(I p ) = 2,
+       then there exists a quadratic field K such that the restriction of ρ to Gal(K/K) is
+       unramified at all prime ideals dividing p, hence E obtains good reduction over K at
+       all such prime ideals, contradicting the second half of part (d) of Lemma 2.1. Thus
+       4|#ρ(I p ). Since ρEn is equivalent to the reduction of ρ modulo n and since the kernel
+       of this reduction is a pro-n-group, it follows that 4|#ρEn (I p ).
+           On the other hand, if E 0 is another elliptic curve defined over Q such that p divides
+       the denominator of j(E 0 ), then E 0 has potentially multiplicative reduction at p [53,
+       VII, 5.5]. Hence I p acts on E 0 [n] via a quotient of Z/2 × Zn (this follows from the
+       theory of Tate curves [53, V] (but see also [52, Appendix C, §15]). In particular, 4
+                            0                          0
+       fails to divide #ρEn (I p ). It follows that ρEn is not isomorphic to ρEn .
+
+
+4.4   Hecke Characters and Complex Multiplication
+       Unfortunately, we will sometimes encounter elliptic curves of conductor N n (E) hav-
+       ing rational 2-torsion and integral j-invariants. These cannot be excluded by the
+       arguments of the preceding subsections. In cases where these curves have complex
+       multiplication they can be treated by variations on the methods of [19]. Before stat-
+       ing our main result of this subsection, we recall some properties of modular forms
+       having complex multiplication.
+          Let K be an imaginary quadratic field and fix an embedding of K into C (via which
+       we identify K with a subfield of C). Let OK and AK be the integer ring and adele ring of
+       K, respectively. By an algebraic Hecke character of K we will mean a homomorphism
+       χ:QAK× → C× that is the identity on K × and trivial on C× and on an open subgroup
+       of p O×  K,p , where p runs over the prime ideals of K. We define the conductor of χ
+Ternary Diophantine Equations                                                                    35
+
+       (an integral ideal) by                          Y
+                                               nχ :=        p rp ,
+                                                        p
+
+       where
+                                 rp = max{r > 0 : χ(1 + pr−1 ) 6= 1}
+       if χ(OK,p ) 6= 1 and 0 otherwise. To obtain from χ a Hecke character in the usual
+       sense, we associate to each fractional ideal a an adele aa ∈ AK× that is trivial at infinity:
+       at a prime ideal p, aa,p = π r where π is some uniformizer at p and r = ord p (a). The
+       adele aa is not well-defined, but if (a) is coprime to nχ then χ(aa ) is well-defined. We
+                                                                       1
+       write χ(a) for this value. The character a 7→ χ(a) Norm(a)− 2 is a Hecke character on
+       the group of fractional ideals of modulus nχ . The following lemma is a consequence
+       of [42, Theorem 4.8.2].
+
+       Lemma 4.5 LetK be an imaginary quadratic field. Let dK be the discriminant of K
+       and let χK = d·K be the usual Dirichlet character associated to K. If χ is an algebraic
+       Hecke character of K of conductor nχ , then
+                                             ∞ 
+                                             X       X              
+                                  fχ (z) =                      χ(a) e2πinz ,
+                                             n=1    (a,nχ )=1
+                                                   Norm(a)=n
+
+
+       where a runs over integral ideals of K, is a newform of weight 2 and level N χ = |dK | ×
+       Norm nχ with Nebentypus character given by m 7→ χK (m)χ((m))|m|−1 .
+         We will say that a newform f has complex multiplication (or CM) by an imaginary
+       quadratic field K if f = fχ for some algebraic Hecke character χ of K.
+
+       Proposition 4.6 Suppose n ≥ 7 is a prime and E = Ei (a, b, c) is a curve associated
+       to a primitive solution of (1.2) with ab 6= ±1. Suppose that ρEn arises from a newform
+       having CM by an imaginary quadratic field K. Then one of the following holds:
+       (a) ab = ±2r , r > 0, 2-ABC and 2 splits in K.
+       (b) n = 7 or 13, n splits in K and either E(K) has infinite order for all elliptic curves of
+           conductor 2n or ab = ±2r 3s with s > 0 and 3 ramifies in K.
+          Before beginning the proof of this proposition, we recall the Galois representations
+       associated to newforms having CM.
+          Suppose K is an imaginary quadratic field and χ is an algebraic Hecke character
+       of K. Let L ⊆ C be the subfield generated by the values of χ. This is a finite extension
+       of K. Let n be a prime, ν be a prime of L over n and µ be the prime of K under
+       ν. Define αν to be the character AK× → L×        ν obtained by composing the natural
+       projection A × → Kµ× with the inclusion Kµ× ,→ L×        ν . Then αν agrees with χ on
+       K × and χν = χαν−1 defines a continuous character AK× → L×           ν that is trivial on
+       K × . It then follows from class field theory that χν determines a continuous character
+       Gal(K/K) → L×      ν that is unramified away from µ and nχ . We will also denote this
+       character by χν .
+36                                                 Michael A. Bennett and Chris M. Skinner
+
+        Since χν is continuous, it actually takes values in O×  L,ν , where OL,ν is the ring
+     of integers of Lν . Let Fν = OL,ν /ν. Reducing χν modulo ν we obtain a char-
+     acter χν : Gal(K/K) → F×       ν . Let ρχ,ν : Gal(Q /Q ) → GL 2 (Fν ) be the induction
+     to Gal(Q /Q ) of the character χν . It follows easily from the definitions and from
+     the Fourier expansion of fχ that if p-2Nχ then ρχ,ν is unramified at p and that
+     trace ρχ,ν (Frob p ) is the reduction modulo ν of the p-th Fourier coefficient of fχ .
+     Thus ρχ,ν is equivalent to the representation ρ fχ ,ν (upon extending scalars for the
+     former to Fν ).
+
+     Lemma 4.7 Suppose n ≥ 3. Let K, χ, and ν be as in the preceding paragraphs.
+     (a) ρ fχ ,ν |Gal(K/K) is abelian.
+     (b) If n is inert in K then ρ fχ ,ν Gal(K/K) has order divisible by (n2 − 1).
+                                                 
+
+     (c) If n splits in K then ρ fχ ,ν Gal(K/K) has order divisible by (n − 1)2 .
+                                               
+
+
+     Proof As mentioned above, ρ fχ ,ν is equivalent to ρχ,ν , so it suffices to prove the
+     lemma with ρ fχ ,ν replaced by ρχ,ν .
+         Let χν0 be the conjugate character of χν (so if σ ∈ Gal(Q /Q ) acts non-trivially
+     on K, then χν0 (τ ) = χν (στ σ −1 ) for all τ ∈ Gal(K/K)). From the definition of ρχ,ν
+     it follows that ρχ,ν |Gal(K/K) is isomorphic to χν ⊕ χν0 . This is obviously abelian, so
+     part (a) of the lemma is true.
+         Let µ be the prime of K above n in the definition of χν . It follows from class field
+     theory that the image under χν of an inertia group at µ is just χν (O×      µ ). From the
+     definition of χν it follows that this last group is isomorphic to (Oµ /µ)× . Part (b) of
+     the lemma follows from this, for if n is inert in K (so (n) = µ) then |(Oµ /µ)× | =
+     (n2 − 1). Suppose then that n is split in K. Let µ 0 be the conjugate of the prime µ (so
+     (n) = µµ 0 ). Then χν , and hence χν , is unramified at µ 0 , but ramified at µ. Similarly,
+     χν0 is unramified at µ, but ramified at µ 0 , and the image under χν0 of an inertia group
+     at µ 0 is just χν (O×                                   ×
+                         µ ) which is isomorphic to (Oµ /µ) . Part (c) follows easily.
+
+
+        We now prove three lemmata that are key to the proof of Proposition 4.6.
+
+     Lemma 4.8 Suppose that n is a prime and that E = Ei (a, b, c) is a curve associated
+     to a primitive solution of (1.2) with ab 6= ±1. Suppose that ρEn arises from a newform
+     having CM by a field K
+     (a) The image of ρEn is the normalizer of a Cartan subgroup.
+     (b) The image of ρEn is the normalizer of a split Cartan subgroup if and only if n splits
+         in K.
+     (c) If Ea,c has multiplicative reduction at n, then the image of ρEn is the normalizer of a
+         split Cartan subgroup.
+        Recall that a Cartan subgroup of GL 2 (Fn ) is a maximal abelian subgroup. Such a
+     subgroup has order either (n2 − 1) (in which case it is isomorphic to F×n2 ) or (n − 1)
+                                                                                             2
+                                         ×     ×
+     (in which case it is isomorphic to Fn × Fn ). In the first case we say that the Cartan
+     subgroup is non-split and in the second that it is split.
+Ternary Diophantine Equations                                                                   37
+
+       Proof Parts (a) and (b) follow immediately from Lemma 4.7.
+          Let G be a Cartan subgroup such that the image of ρEn is the normalizer of G. If E
+       has multiplicative reduction at n, then the restriction of ρEn to a decomposition group
+       Dn at n is isomorphic to δω ⊕ δ, where ω is the character giving the action of D n on
+       the n-th roots of unity and δ is an unramified character of order at most 2. It follows
+       that n splits in K. From part (b) of the lemma it then follows that G is split. This
+       proves part (c).
+
+       Lemma 4.9 Suppose that n ≥ 7 is a prime and that E = Ei (a, b, c) is associated to a
+       primitive solution of (1.2) with ab 6= ±2r . If ρEn arises from a newform having CM by
+       a field K, then one of the following holds:
+
+       (a) The image of ρEn is the normalizer of a non-split Cartan subgroup.
+       (b) n = 7 or 13, n splits in K and either E 0 (K) has infinite order for all elliptic curves
+           E 0 of conductor 2n or ab = ±2r 3s with s ≥ 0 and 3 ramifies in K.
+
+       Proof By part (a) of Lemma 4.8 the image of ρEn is the normalizer of a Cartan sub-
+       group. Suppose that this image is not the normalizer of a non-split Cartan subgroup.
+       Then E[n] consists of two K-rational subgroups of order n that are either stable or
+       interchanged by the action of any element in Gal(Q /Q ). In particular, the set of
+       these two subgroups is defined over Q . Therefore E defines a Q -rational point on
+       the curve Xsplit (n) defined in [43]. By [43, Proposition 3.1], if n ≥ 11, n 6= 13, then
+       E has potentially good reduction at all primes p 6= 2. This contradicts part (b) of
+       Lemma 2.1 since we have assumed that ab 6= ±2r . It remains to deal with the cases
+       n = 7, 13.
+           Suppose then that n = 7 or 13. By part (b) of Lemma 4.8 it follows that n splits
+       in K. Also, E together with one of its K-rational subgroups of order n defines a K-
+       rational point x on the modular curve X0 (2n) (recall that E has a Q -rational point of
+       order two). If E 0 is an elliptic curve of conductor 2n, then the curve X0 (2n) has as a
+       quotient over Q the curve E 0 . If E 0 (K) has finite order then the image on the curve
+       E 0 of the point x has finite order. It then follows from [39, Corollary 4.3] that E has
+       potentially good reduction at all primes p 6= 2 except possibly at p = 3 if 3 ramifies
+       in K. Since we have assumed ab 6= ±2r , this contradicts part (b) of Lemma 2.1 unless
+       ab = ±2r 3s with s > 0 and 3 ramifies in K.
+
+       Lemma 4.10 Suppose n ≥ 3 is a prime and that E = Ei (a, b, c) is a curve associated
+       to a solution of (1.2). Suppose also that ρEn arises from a newform having CM by a field
+       K. If the image of ρEn is the normalizer of a non-split Cartan then n does not divide ab.
+
+       Proof If n|ab, then by part (b) of Lemma 2.1 the curve E has multiplicative reduc-
+       tion at n. From part (c) of Lemma 4.8 it then follows that the image of ρEn is contained
+       in the normalizer of a split Cartan subgroup.
+
+          We are now in a position to prove Proposition 4.6. Suppose first that ab 6= ±2 r and
+       that ρEn arises from a newform having CM but that conclusion (b) of the proposition
+       does not hold. Then by Lemma 4.9 the image of ρEn is the normalizer of a non-split
+38                                                  Michael A. Bennett and Chris M. Skinner
+
+       Cartan. Also, by part (c) of Lemma 2.1 the curve E has a Q -rational point of order 2.
+       It then follows from [19, Theorem 8.1] that the j-invariant j(E) of the curve E lies
+       in Z[ n1 ]. If p is an odd prime dividing ab, then by Corollary 2.2 a positive power
+       of p divides the denominator of j(E). From these two observations it follows that
+       ab = ±nt for some t > 0 (since we are assuming that ab 6= ±1), but this contradicts
+       Lemma 4.10.
+           Suppose next that ab = ±2r with r > 0. Suppose also that 2|ABC (in which
+       case, 2|B). From Lemma 3.2 it follows that 2 k Nn (E). On the other hand, it is
+       clear from Lemma 4.5 that if χ is an algebraic Hecke character and 2 divides N χ
+       then so does 4. This contradicts the hypothesis that Nn (E) = Nχ for some χ. We
+       may therefore suppose that 2 fails to divide ABC. From part (b) of Lemma 2.1 we
+       know that E has multiplicative reduction at 2, and from Lemma           3.2 we know that
+       2-Nn (E) (i.e., ρEn is unramified at 2). Thus trace ρEn (Frob 2 ) = ±3 (cf. the proof of
+                                                                        
+
+       Lemma 4.2). Since n ≥ 7, this trace is not zero. This, however, is equivalent to the
+       splitting of 2 in K, since, by hypothesis, ρEn is isomorphic to an induced representation
+       of the form ρχ,ν . This completes the proof of Proposition 4.6.
+
+
+5 Theorems 1.1 and 1.2 for n ≥ 7 Prime
+       In general, the major difficulty in applying the results of the previous section lies in
+       actually deriving data for the newforms at a given level, for instance in computing
+       systems of Hecke eigenvalues for a basis of representatives for the Galois conjugacy
+       classes of newforms. Thanks to some remarkable work of William Stein [54], this
+       has recently become realistic, at least provided the desired level is not too large. An
+       invaluable resource in this area is Stein’s Modular Forms Database (see the website
+       http://modular.fas.harvard.edu/Tables/).
+           In what follows we give details of the proof of Theorem 1.1 in the cases C = 2, 5
+       and 17. These examples require application of all the assorted techniques described
+       in the previous section. For other values of C we direct the reader to our Appendix
+       where we provide sufficient data to reconstruct our proofs; further information is
+       available from the authors on request. For our data, we rely extensively on the tables
+       of Stein [54].
+
+
+5.1   xn + y n = 2z2
+       Suppose that (a, b, c) is a primitive solution of x n + y n = 2z2 , where n ≥ 7 is a
+       prime. In this case ab is necessarily odd and we can assume that we are in case (ii).
+       Thus the elliptic curve we consider is just E = E1 (a, b, c) and Nn (E) = NnE = 256
+       by Lemma 3.2. It turns out that there are six newforms of weight 2, level 256, and
+       trivial
+           √ character.√Moreover, these newforms all have complex multiplication by either
+       Q ( −1) or Q ( −2). We give a complete proof of this.
+
+
+       Lemma 5.1 There are six cuspidal newforms of weight 2, level 256, and trivial Neben-
+       typus character.
+Ternary Diophantine Equations                                                                  39
+
+       Proof Let Snewr   be the space of weight 2 cuspforms on the usual congruence sub-
+       group Γ0 (2r ) spanned by the newforms. Similarly, let Soldr be the space of weight 2
+       cuspforms on the congruence subgroup Γ0 (2r ) spanned by oldforms. Let drnew and
+       drold be the respective dimensions over C of the spaces Snew
+                                                                r   and Sold
+                                                                         r . From the theory
+       of newforms we have that
+                                                r−1
+                                                X
+                                      drold =         (r − j + 1)dnew
+                                                                  j .
+                                                j=1
+
+
+       Combining this with the well-known formula for the dimension of the space of all
+       cuspforms of weight 2 on Γ0 (2r ) (see [42, Theorem 4.2.11]) one finds that
+
+               dnew
+                j   = 0,     1 ≤ j ≤ 4;    d5new = d6new = 1,      d7new = 4,   d8new = 6.
+
+          In order to ‘write down’ these newforms we first describe some algebraic Hecke
+       characters.            √             √
+          Let K be either Q ( −1) or Q ( −2). Denote by O and by AK the ring of integers
+       and the adeles of K, respectively. Let w be the unique prime of K above 2 and fix
+       an embedding of K into C. We identify K with a subfield of C via this embedding.
+       Suppose that χ : O×          ×
+                           w → C is a character such that χ is the identity on the units of
+                               r
+       O and trivial on 1 + w for some positive integer r. We extend this to a character of
+       AK× by setting χ to be trivial on C× andQon O×v if v 6= w and to be the identity on K .
+                                                                                               ×
+                                   ×       × ×      ×
+       (Here we have used that AK = K C          v Ov where v runs over the primes of K.) By
+       abuse of notation we will also√denote this character by χ.           √
+          Let r(K) = 6 if K = Q ( −1) and let r(K) = 5 if K = Q ( −2). The tables
+       below give the values on coset representatives of generators of O×    w /(1 + w
+                                                                                        r(K)
+                                                                                             ) of
+       some characters χ : O× w  →   C ×
+                                         .
+                                                 √
+                                          K = Q ( −1)
+                                        χ   i 2i − 1   3
+                                        χ1 i     i    −1
+                                        χ2 i    −i    −1
+
+                                                   √
+                                            K = Q ( −2)
+                                                        √
+                                       χ    −1 3 1 + −2
+                                      χ3    −1 1        1
+                                      χ4    −1 1      −1
+                                      χ5    −1 1        i
+                                      χ6    −1 1       −i
+           From these tables one easily sees that the conductor of each χi is wr(K) . It then
+       follows from these tables and from Lemma 4.5 that each fχi is a newform of weight 2,
+       level 256, and trivial character. Moreover, the fχi are all distinct, hence it follows from
+       Lemma 5.1 that the set { fχi : i = 1, . . . , 6} is the set of all newforms of weight 2,
+       level 256, and trivial character.
+40                                                   Michael A. Bennett and Chris M. Skinner
+
+           We can now apply the results of Subsection 4.4 to prove that ab = ±1. Suppose
+       ab 6= ±1. From Lemma 3.3 it follows that ρEn arises from a newform of weight 2,
+       level 256,√and trivial character.
+                               √         We have just observed
+                                                          √      that such
+                                                                         √ a form has CM by
+       either Q ( −1) or Q ( −2). Let K be either Q ( −1) or Q ( −2) and suppose ρEn
+       arises from a newform of level 256 with CM by K. Then, since ab is odd it follows
+       from Proposition 4.6 that √ n = 7 or 13 and that n splits in K. This can only happen
+       if n = 13 and K = Q ( −1). Suppose then that this is the case. Since 3 does not
+       ramify in K it follows from Proposition 4.6 that E 0 (K) has infinite order for all elliptic
+       curves E 0 of conductor 26. However, both the elliptic curve of conductor 26 denoted
+       26B in Cremona’s tables [13] and its K-quadratic twist, denoted 208D in Cremona’s
+       tables, have rank zero. Thus the curve 26B has rank zero over K, a contradiction.
+       This completes the proof of Theorem 1.1 when C = 2 and n ≥ 7 is prime.
+
+
+5.2   xn + y n = 5z2
+       Suppose now that (a, b, c) is a primitive solution of the equation x n + y n = 5z2 ,
+       for n ≥ 7 prime. We will write N for Nn (E) where E is the corresponding curve
+       Ei (a, b, c). We will also write c p for the p-th Fourier coefficient (equivalently, p-th
+       Hecke eigenvalue) of a newform.
+           We distinguish two cases, according to whether ab is even or odd. In the first
+       instance, it follows from Lemma 3.2 that N = 50. There are just two newforms of
+       this level, corresponding to elliptic curves over Q . Each of these forms has c 3 = ±1,
+       so it follows from Proposition 4.3 that neither can give rise to ρ En . This contradicts
+       Lemma 3.3.
+           If ab is odd, then Lemma 3.2 implies that N = 800. From Stein’s tables [54] we
+       find that there are 14 Galois conjugacy classes of forms at this level; we list some
+       Hecke eigenvalues for a number of these:
+
+                                 newform              cp
+                                 800, 2(B)         c3 = 1
+                                 800, 5(E)         c3 = 1
+                                 800, 6(F)        c3 = −1
+                                 800, 9(I)        c3 = −1
+                                                  √          √
+                                  800, 10 c3 = ± 5, c19 =√ ∓3 5
+                                  800, 11      c3 = 1 ± √ 5
+                                  800, 12       c3√= ±2 2 √
+                                  800, 13 c3 = ± 5, c19 =√±3 5
+                                  800, 14     c3 = −1 ± 5
+
+       Here (and henceforth), we refer to forms via Stein’s numbering system (where the
+       additional letter designation is the isogeny class of the corresponding elliptic curves
+       over Q as tabulated by Cremona [13], provided the form has Q -rational Fourier
+       coefficients).
+          For the forms in the above table, considering c3 and applying Proposition 4.3 en-
+       ables us to eliminate the possibility of our representations arising from all but forms
+Ternary Diophantine Equations                                                                   41
+                                                                        √
+       in the classes 800,10 and 800,13. For such forms c3 = ± 5 and so, by Proposi-
+       tion 4.3, if ρEn did arise from one of these, then n must divide one of −5, −1,√      11.
+       Since n ≥ 7 it must be that n = 11. For these forms we also have c19 = ±3 5,
+       whence, again by Proposition 4.3, 11 must divide one of −45, −41, −29, −9, 36, 355.
+       Since this fails to occur, none of the forms in the classes 800,10 and 800,13 can give
+       rise to ρEn .
+          Next, we observe that the forms 800,3(C) and 800,7(G) correspond to isogeny
+       classes of elliptic curves all having j-invariants with denominators divisible by 5 (this
+       can be observed from Cremona’s tables [13]). Proposition 4.4 implies that these
+       forms cannot give rise to ρEn .
+          Finally, the forms 800,1(A), 800,4(D) and 800,8(H) each correspond
+                                                                           √         to isogeny
+       classes of elliptic curves having complex √  multiplication  by Q (   −1) (hence the cor-
+       responding newforms have CM by Q ( −1)). Invoking Proposition 4.6 and arguing
+       as we did for C = 2 shows that these forms also cannot give rise to ρEn .
+          In conclusion, we have shown that ρEn fails to arise from a newform of weight 2,
+       level N = 800 and trivial character. This contradicts Lemma 3.3 and hence ab cannot
+       be odd if ab 6= ±1. Since ab also cannot be even, it follows that the only primitive
+       solutions (a, b, c) to xn + y n = 5z2 , n ≥ 7 a prime, are given by ab = −1 and c = 0.
+
+
+5.3   xn + y n = 17z2
+       Let us now suppose that (a, b, c) is a primitive solution to the equation x n + y n = 17z2 ,
+       where n > 7 is prime. Again, we write N for Nn (E). If ab is even, it follows that
+       N = 578; at this level, there are 9 classes of newforms to consider. The first of
+       these corresponds to an elliptic curve over Q . Since the strong Weil curve in the
+       isogeny class 578,1(A) has j-invariant with denominator 1088 = 2 6 · 17, we may
+       apply Proposition 4.4 to conclude as desired. The remaining 8 classes of forms of
+       level 578 have Fourier coefficients c p in fields of the shape K = Q (θ) where f (θ) = 0
+       for f as given in the following table (we also list relevant values of c p ).
+
+                    newform          f (θ)                     cp
+                                     2
+                     578, 2         θ −2              c5 = θ, c11 = −4θ
+                     578, 3         θ2 − 8                  c3 = θ
+                     578, 4         θ2 − 2                  c3 = θ
+                     578, 5 θ 3 + 3θ 2 − 6θ − 17     c3 = θ, c11 = θ 2 − 7
+                     578, 6 θ 3 − 3θ 2 − 6θ + 17    c3 = θ, c11 = −θ 2 + 7
+                                  3      2
+                     578, 7     θ − 3θ + 1        c3 = θ, c5 = θ 2 − 3θ + 2
+                                  3      2
+                     578, 8     θ + 3θ − 1       c3 = θ, c5 = −θ 2 − 3θ − 2
+                                  4      2
+                     578, 9     θ − 4θ + 2              c3 = θ, c5 = 2θ
+
+       For each of these and each prime p ∈ {3, 5, 7, 11}, we compute NormK/Q (c p ± 2r),
+                    √
+       where |r| < p or |r| = p+12 . Considering newform 578,2, we find that
+
+                                  | NormK/Q (c5 ± 2r)| ∈ {2, 14, 34}
+       and
+                            | NormK/Q (c11 ± 2r)| ∈ {4, 16, 28, 32, 112}.
+42                                                Michael A. Bennett and Chris M. Skinner
+
+     Applying Proposition 4.3 thus leads to a contradiction since n > 7 is prime. Similarly,
+
+                                  | NormK/Q (c3 ± 2r)| ∈ {4, 8}
+
+     and
+                                 | NormK/Q (c3 ± 2r)| ∈ {2, 14}
+
+     for newforms 578,3 and 578,4, respectively, while, for newforms 578,5 and 578,6, we
+     have
+                           | NormK/Q (c3 ± 2r)| ∈ {1, 9, 17, 71}.
+
+     In this last case, if | NormK/Q (c3 ± 2r)| ∈ {17, 71}, then, necessarily, θ ≡ 0 (mod ν)
+     for ν a prime lying above 17, or θ ≡ ±4 (mod ν) for ν a prime lying above 71. Since
+     c11 = ±(θ 2 − 7), for these forms, it follows that a11 ≡ ±7 (mod 17) or a11 ≡ ±9
+     (mod 71). In either case, this contradicts the Weil-bounds.
+         To this point, we have not had to impose conditions upon the prime n, other than
+     that n > 7. For newforms 578,7 and 578,8, we encounter difficulties regarding the
+     exponent n = 17. Indeed, if θ ≡ 4 (mod ν) or θ ≡ −4 (mod ν), where θ 3 − 3θ 2 +
+     1 = 0 or θ 3 + 3θ 2 − 1 = 0, respectively, and ν is a prime lying above 17, then the
+     Weil-bounds are, in fact, satisfied and we fail to obtain a contradiction through the
+     application of Proposition 4.3. To dispense with the cases n > 7, n 6= 17, we note
+     that, computing NormK/Q (c p ± 2r) for p = 3 and p = 5 and corresponding values
+     of r, we fail to encounter common prime divisors q with q ∈ {11, 13} or q ≥ 19.
+     The same is true for newform 578,9. This completes the proof of Theorem 1.1 for
+     C = 17, xy even and n ∈ {11, 13} or n ≥ 19 prime.
+         If our primitive solution (a, b, c) has ab odd, we are led to consider N = 9248. This
+     is the largest level we treat in proving our theorems. The newforms at this level are
+     listed as 9248,1 through 9248,52 in Stein’s tables [54]. Forms 9248,1, 9248,2, 9248,3,
+     9248,4, 9248,8 and 9248,9 all correspond to isogeny classes of elliptic curves over
+     Q with j-invariants having denominators divisible by 17, enabling the application
+     of Proposition 4.4. Further, the newforms given as 9248,5, 9248,6,      √ 9248,7, 9248,11,
+     9248,12, 9248,28 and 9248,35 have complex  √     multipication   by Q (   −1), while forms
+     9248,25 and 9248,32 have CM by Q ( −17). Again, it is straightforward to            √ show
+     that the elliptic curve denoted 26B in Cremona’s tables  √    has  rank  0 over Q (  −17).
+     We note that curve 14A has in fact rank 1 over Q ( −17); this is not problematic,√
+     however,
+         √       as we have assumed that n > 7. Since 3 fails to ramify in Q ( −1) or
+     Q ( −17), we conclude via Proposition 4.6 that none of these forms can give rise
+     to ρEn .
+         For the remaining Galois conjugacy classes of forms, we appeal to Proposition 4.3.
+     The newforms 9248,10, 9248,13, 9248,14, 9248,15, 9248,16 and 9248,17 have, in
+     each case,
+                              | NormK/Q (c3 ± 2r)| ∈ {2, 4, 6, 8, 10, 14},
+
+     contradicting n > 7 prime. For newforms 9248,18 through 9248,52, we apply Propo-
+     sition 4.3 with p ∈ {3, 5, 7}, except in the cases of newforms 9248,26 and 9248,29.
+     For example, to treat form 9248,50, we begin by noting that the Fourier coefficients
+Ternary Diophantine Equations                                                             43
+
+       lie in the field K = Q (θ) where
+
+        θ 16 − 200 θ 14 + 15408 θ 12 − 606064 θ 10 + 13415544 θ 8
+                 − 172411616 θ 6 + 1260850112 θ 4 − 4778571328 θ 2 + 7056672016 = 0.
+
+       Since we have
+
+        206025387902086071557248 c3
+              = 16482564302003137 θ 15 − 3150534822488198910 θ 13
+                   + 225733574609412418090 θ 11 − 7932867313835453957656 θ 9
+                   + 147269823725942615164172 θ 7 − 1434284473544094023001032 θ 5
+                   + 6665637208828211295207992 θ 3 − 10915582211641463120052640 θ
+
+       and
+
+        412050775804172143114496 c5
+              = 16482564302003137 θ 15 − 3150534822488198910 θ 13
+                   + 225733574609412418090 θ 11 − 7932867313835453957656 θ 9
+                   + 147269823725942615164172 θ 7 − 1434284473544094023001032 θ 5
+                   + 6665637208828211295207992 θ 3 − 11121607599543549191609888 θ
+
+       we may conclude that
+
+                       NormK/Q (c3 ± 2r) ∈ {24 · 232 , 24 · 472 , 24 · 30232 },
+       and
+                   NormK/Q (c5 ± 2r) ∈ {210 , 212 , 212 · 1932 , 210 · 172 · 16632 }.
+
+       It therefore follows from Proposition 4.3 that this form cannot give rise to a repre-
+       sentation ρEn with n ≥ 7 prime. The newforms listed as 9248,26 and 9248,29 may be
+       eliminated through similar arguments, only applied to the Fourier coefficients c 3 and
+       c29 . We note that we are unable to deal with the equation x 11 + y 11 = 17z2 by these
+       techniques since, for example, the newform 9248,30 has coefficients
+
+                       c3              c5                      c7
+                       θ    −2θ 3 + 3θ 2 + 16θ − 12 3θ 3 − 4θ 2 − 23θ + 16
+
+       and
+
+                          c13                    c19                 c23
+               2θ 3 − 3θ 2 − 14θ + 11 2θ 3 − 4θ 2 − 15θ + 14 −θ 3 + 2θ 2 + 7θ − 6
+44                                                   Michael A. Bennett and Chris M. Skinner
+
+     where
+                                  θ 4 − 2θ 3 − 7θ 2 + 10θ − 3 = 0.
+
+     If θ ≡ 2 (mod ν) for ν a prime lying above 11, it follows that a3 ≡ 2 (mod 11),
+     a5 ≡ 5 (mod 11), a7 ≡ 0 (mod 11), a13 ≡ 9 (mod 11), a19 ≡ 6 (mod 11) and
+     a23 ≡ 8 (mod 11). None of these contradict the Weil-bounds. For p ≥ 29, we may
+     possibly have a p = 0, ±2, ±4, ±6, ±8, ±10, a complete residue system modulo 11.
+         To prove the full statements of Theorems 1.1 and 1.2, we are led to consider the
+     following levels N:
+
+
+     N ∈ {1, 2, 4, 8, 9, 18, 25, 32, 36, 49, 50, 72, 98, 121, 169, 225, 242, 256, 288, 289, 338,
+             392, 450, 484, 578, 676, 800, 968, 1352, 2304, 3872, 5408, 6400, 7200, 9248}.
+
+
+     We list relevant data for these levels in our Appendix. As noted in our introduction,
+     we are unable to fully extend Theorem 1.1 to the case C = 7. In fact, the techniques
+     of the preceding sections may be used to deduce the insolubility of the corresponding
+     equation xn + y n = 7z2 in pairwise, coprime, nonzero integers (x, y, z), provided xy
+     is even. If, however, xy is odd, we are led to consider weight 2 newforms of level 1568.
+     Four classes of newforms, namely those denoted 1568,4, 1568,6, 1568,8 and 1568,9
+     in Stein’s tables [54], correspond to elliptic curves over Q with rational 2-torsion, no
+     CM and j = −64. None of our methods suffice to eliminate the possibility of ρ En
+     arising from such a form.
+
+
+6 Theorems 1.3, 1.4, 1.5, 1.6
+     The proofs of the theorems referenced here are intrinsically easier than those for The-
+     orems 1.1 and 1.2. Indeed they essentially amount to observing that there are no
+     elliptic curves over Q with a Q -rational 2-torsion point and conductor N for
+
+
+     N ∈ {1, 2, 3, 5, 6, 10, 11, 13, 19, 22, 26, 29, 32, 38, 43, 44, 53, 58, 59, 61, 67, 76, 86, 88,
+             93, 95, 104, 106, 110, 115, 118, 122, 133, 134, 143, 152, 172, 186, 190, 230, 232,
+             236, 244, 253, 256, 266, 268, 286, 319, 341, 344, 352, 403, 416, 424, 437, 472,
+             488, 506, 536, 551, 608, 638, 682, 736, 806, 874, 899, 928, 992, 1102, 1280,
+             1376, 1504, 1696, 1798, 1888, 1952, 2144, 2185, 2272, 2432, 2816, 3328}.
+
+
+        For example, to prove Theorem 1.3 for AB = 2α 19β , with αβ ≥ 1, we are led
+     to consider N = 19 (for α = 6), N = 38 (for α ≥ 7), N = 76 (for α = 2),
+     N = 152 (for α ∈ {2, 4, 5}), N = 608 (for α = 3) and N = 2432 (for α = 1). For
+     the newforms in the following list, we have one of c3 ∈ {±1, ±3}, c5 ∈ {±1, 3} or
+Ternary Diophantine Equations                                                                 45
+
+       c7 = ±1:
+                            newform newform newform newform
+                              19, 1   608, 2 2432, 3 2432, 13
+                              38, 1   608, 3 2432, 4 2432, 15
+                              38, 2   608, 4 2432, 5 2432, 16
+                              76, 1   608, 5 2432, 6 2432, 17
+                             152, 1   608, 6 2432, 7 2432, 18
+                             152, 2  2432, 1 2432, 8 2432, 19
+                             608, 1  2432, 2 2432, 9 2432, 20
+
+       In each case, we deduce a contradiction for n > 7 from consideration of just a sin-
+       gle Fourier coefficient. For the remaining newforms (17 classes), we combine in-
+       formation from c3 , c5 and c7 as in the preceding section. In each case, we obtain a
+       contradiction for n > 11 prime.
+          Further details for other values of AB are given in our Appendix; in most situa-
+       tions, it proves sufficient to apply Proposition 4.3 with one of p = 3, 5, 7 or 11.
+
+
+7 The Equation xn + y n = 2z2 : Small Values of n
+       To extend the results of the previous sections to all integral values of n ≥ 4, we may
+       appeal to a variety of arguments, well summarized in Poonen [47]. We will provide
+       details in case A = B = 1 and C = 2 and note that other equations of the shape (1.2)
+       may be dealt with in a similar fashion.
+          We begin by noting that if n = 2 or 3, this equation has infinitely many solutions
+       in pairwise coprime integers x, y and z. In this second instance, parametrizations for
+       these may be found in work of Rodeja [50] and provide an alternative approach to
+       dealing with the exponents 6 and 9 than the one we pursue here. In case n = 4, this is
+       a classical result (see e.g. Mordell [44, p. 18]). For n = 5, the fact that the only solu-
+       tions in pairwise coprime integers x, y and z are (x, y, |z|) = (3, −1, 11), (−1, 3, 11)
+       and (1, 1, 1) follows from work of Bruin [5], based on Coleman–Chabauty tech-
+       niques for determining rational points on curves of genus two.
+          We are left to treat n = 6 and 9. In these cases, the desired result follows from
+       arguments of Poonen [47] treating the analogous equation x n + y n = z2 . If n = 6,
+       we have
+                                     (x2 + y 2 )(x4 − x2 y 2 + y 4 ) = 2z2
+
+       and hence
+                                        x4 − x2 y 2 + y 4 = u2 ,
+
+       where  ∈ {±1, ±3}. Since 2z 2 is positive, we may suppose that  ∈ {1, 3}. In each
+       case, the above equation defines an elliptic curve with rank 0 over Q . It is easy to
+       check that the torsion points over Q correspond to solutions (x, y, z) to our original
+       equation with xy = ±1.
+          If n = 9, we may write
+
+                                  (x3 + y 3 )(x6 − x3 y 3 + y 6 ) = 2z2
+46                                                  Michael A. Bennett and Chris M. Skinner
+
+       and hence have
+                                       x6 − x3 y 3 + y 6 = u2 ,
+       where, again,  ∈ {1, 3}. As observed by Poonen [47], the curve V 2 = U 6 −
+       U 3 +1 admits two nonhyperelliptic involutions, with corresponding quotients elliptic
+       curves birational to
+                                     Y 2 = X 3 − 21X + 37
+       and
+                                        Y 2 = X 3 − 9X + 9.
+       If  = 1, the first of these curves has rank 0 over Q and a torsion group of order
+       3, corresponding to the known 6 rational points with U = 0, 1, ∞ on V 2 = U 6 −
+       U 3 + 1. Similarly, if  = 3, the second curve has zero rank over Q and trivial torsion,
+       corresponding to the two rational points with U = −1 on 3V 2 = U 6 − U 3 + 1. Since
+       we assume that x and y are coprime, it follows that xy = ±1. This completes the
+       proof of Theorem 1.1 in case C = 2.
+           For other values of C, we argue similarly, appealing to recent work of Bruin [6],
+       who deduced the conclusion of Theorem 1.1 in cases
+
+                         n ∈ {4, 5, 6, 9} for C ∈ {2, 3, 5, 6, 10, 11, 13, 17},
+               n = 7 for C ∈ {6, 10, 11, 13, 17},     n = 11 for C ∈ {10, 11, 13, 17},
+                          n = 13 for C = 13 and n = 17 for C = 17.
+
+8 Applications to Polynomial-Exponential Equations
+       Through easy specialization, the results of Theorems 1.1 through 1.6 may be applied
+       to a variety of classical problems on polynomial-exponential Diophantine equations.
+       For small values of the exponents (i.e., those not covered by these theorems), we are
+       typically left to determine the set of integral points on certain curves of genus one or
+       two; extensive literature on such problems exists.
+
+8.1   Powers in Recurrence Sequences
+       An immediate application of Theorem 1.1 with C = 2 yields:
+
+       Proposition 8.1 The Diophantine equation 2x 2 − 1 = y n has only the solutions
+       (x, y, n) = (1, 1, n) and (x, y, n) = (78, 23, 3) in positive integers x, y and n with
+       n ≥ 3.
+
+       Proof For n ≥ 4, this follows from Theorem 1.1 with C = 2. The equation
+       2x2 − 1 = y 3 yields an elliptic curve, birational to Y 2 = X 3 + 8, denoted 576A in
+       Cremona’s tables [13], of rank 1. It is easy to show, via, say, lower bounds for lin-
+       ear forms in elliptic logarithms (as implemented, for example, in SIMATH), that the
+       only integral points on this curve are given by
+
+                           (X, Y ) = (−2, 0), (1, ±3), (2, ±4), (46, ±312)
+Ternary Diophantine Equations                                                                  47
+
+       and hence the only solutions to 2x2 − 1 = y 3 are with (x, y) = (0, −1), (±1, 1) and
+       (±78, 23).
+
+          A consequence of this is that any solution in positive integers x and y to an equa-
+       tion of the shape
+                                          x2n − dy 2 = 1,
+       with d a positive nonsquare integer and n > 2, necessarily satisfies either
+
+                                   (x, y, n, d) = (23, 156, 3, 6083)
+       or
+                                          √             √
+                                    xn + y d = (T1 + U 1 d)2k+1
+
+       for k a nonnegative integer. Here, T1 and U 1 are the smallest positive integers for
+       which T12 − dU 12 = 1. To see this, define sequences of integers T j and U j by
+                                            √              √
+                                   T j + U j d = (T1 + U 1 d) j .
+
+       It is easy to show that T2k = 2Tk2 − 1 and so
+                                           √            √
+                                    xn + y d = (T1 + U 1 d)2k
+
+       implies that xn = 2Tk2 − 1, contradicting the above proposition unless Tk ∈ {1, 78}.
+       Since Tk ≥ T1 > 1, it follows that Tk = 78 and hence d = 782 − 1 = 6083 =
+       7 · 11 · 79. Working backwards from the equation 2 · 782 − 1 = 233 implies that
+       (x, y, n, d) = (23, 156, 3, 6083), as claimed. We remark that this result strengthens
+       the main theorem of [9].
+
+8.2   The Ramanujan–Nagell Equation and Generalizations
+       An old question of Ramanujan [48], answered in the affirmative by Nagell [45] is
+       whether all solutions in integers (x, n) of the equation
+
+                                              x 2 + 7 = 2n
+
+       correspond to n = 3, 4, 5, 7 and 15. Subsequently, connections between this result
+       and questions in coding theory and group theory have been noted and various gener-
+       alizations explored. One such approach involves replacing 7 by any fixed odd integer;
+       in this situation, the definitive result is the following, combining theorems of Beukers
+       [2] and Le [34], [35].
+
+       Theorem 8.2 (Beukers, Le)       Let D be an odd, positive integer. Then the equation
+
+                                             x 2 + D = 2n
+
+       has at most one solution in positive integers x and n, unless D = 7, 23 or 2 k − 1 for some
+       k ≥ 4. The solutions in these exceptional cases are given by
+48                                                   Michael A. Bennett and Chris M. Skinner
+
+     (1) D = 7, (x, n) = (1, 3), (3, 4), (5, 5), (11, 7), (181, 15)
+     (2) D = 23, (x, n) = (3, 5), (45, 11)
+     (3) D = 2k − 1 (k ≥ 4), (x, n) = (1, k), (2k−1 − 1, 2k − 2).
+     Further, the equation
+                                             x 2 − D = 2n
+     has at most three solutions in positive integers x and n, unless D = 22m − 3 · 2m+1 + 1
+     for m ≥ 3 an integer. In these cases, this equation has four positive solutions, given by
+
+     (x, n) = (2m − 3, 3), (2m − 1, m + 2), (2m + 1, m + 3) and (3 · 2m − 1, 2m + 3).
+
+        In the case where D > 0, this has been generalized still further, through use of the
+     primitive divisor theorem of Bilu, Hanrot and Voutier [3], culminating in the recent
+     result of Bugeaud [7] (sharpening earlier work of Le [36]).
+
+     Theorem 8.3 (Bugeaud)         Let D be an odd, positive integer. Then the equation
+
+                                            x 2 + Dm = 2 n
+
+     has at most one solution in positive integers x, m and n, unless D = 7, 23 or 2 k − 1 for
+     some k ≥ 4. The solutions in these exceptional cases are given by
+     (1) D = 7, (x, m, n) = (1, 1, 3), (3, 1, 4), (5, 1, 5), (11, 1, 7), (181, 1, 15), (13, 3, 9)
+     (2) D = 23, (x, n) = (3, 5), (45, 11)
+     (3) D = 2k − 1 (k ≥ 4), (x, n) = (1, k), (2k−1 − 1, 2k − 2).
+        Applying Theorem 1.2 and a result from [1], the following result, in conjunction
+     with Theorem 8.2, strengthens and generalizes Bugeaud’s theorem.
+
+     Theorem 8.4      Let D be an odd, positive integer. Then the equation
+
+                                            x 2 + Dm = 2 n
+
+     has no solutions in integers (x, m, n) with m > 1, unless
+
+                                    (|x|, m, n, D) = (13, 3, 9, 7).
+
+     The only integer solution (x, m, n) to the equation
+
+                                            x 2 − Dm = 2n ,
+
+     with D > 1, m > 2 and n > 1, is given by
+
+                                   (|x|, m, n, D) = (71, 3, 7, 17).
+
+     Further, if x2 ± D = 2n has a solution in integers x and n, then
+
+                                          n < 5.55 log(|D|)
+
+     unless (|x|, D, n) = (3, −1, 3) or (181, 7, 15).
+Ternary Diophantine Equations                                                              49
+
+          We note that this result was obtained independently by Ivorra [26] (with the ex-
+       ception of the upper bound for n). The restriction to n > 1 derives from the un-
+       fortunate fact that we are unable to apply the techniques of Theorem 1.2 to resolve
+       the Diophantine equation x2 − 2 = y k in integers x, y and k. The exclusion in case
+       x2 − Dm = 2n of D = 1 is to avoid the (almost) trivial case that 32 − 1m = 23 . We
+       observe that the equation |x2 − y n | = 1 in integers x, y, n > 1 has been completely
+       solved by Chao Ko [28].
+
+       Proof Applying Theorem 1.2, we find that the equation
+
+                                          x m + 2n y m = z 2
+
+       has no solution in odd, paiwise coprime integers x, y and z, with xy 6= ±1, provided
+       m ≥ 7 is prime and n ≥ 2. It follows, if D > 2 is odd, that
+
+                                           x 2 ± Dm = 2n
+
+       is insoluble for all m ≥ 7 prime (provided n ≥ 2). Since xD ≡ 1 (mod 2) and n ≥ 2,
+       if m is even,
+                                       x2 + Dm ≡ 2 (mod 4),
+       a contradiction. If x2 − D2 = 2n has a solution, then, factoring the left hand side, it
+       follows that D = 2k − 1 and |x| = 2k + 1 for some positive integer k. Since an old
+       result of Lebesgue assures us that 2k − 1 is never a perfect power, provided only that
+       k ≥ 2, it follows that x2 − Dm = 2n is insoluble for D > 1 and m > 2 even.
+           It remains to deal with x2 ± Dm = 2n with m ∈ {3, 5}. In the first case, we may
+       apply work of Coghlan [10] to conclude that the only solution to x 2 − D3 = 2n with
+       D > 1 odd and n > 1 is given by (|x|, D, n) = (71, 17, 7), while the sole solution
+       to x2 + D3 = 2n with n, D > 1, D odd, corresponds to (|x|, D, n) = (13, 7, 9). If,
+       on the other hand, m = 5, applying work of Bruin [5], we find that the equation
+       x2 ± D5 = 2n has no solutions whatsoever with n, D > 1 and D odd. This result
+       depends upon explicit determination of the rational points on certain curves of genus
+       2, via an elaboration of the method of Coleman and Chabauty; the reader is directed
+       to [5] for an excellent overview of this subject.
+           Finally, we note that the upper bound upon n is an immediate consequence of
+       Corollary 1.7 of [1]. This completes the proof of Theorem 8.4.
+
+          Examination of the above proof reveals that one may obtain similar results,
+       through application of Theorem 1.3, with 2n replaced by kn for, by way of example,
+       k ∈ {11, 13, 19, 29, 43, 53, 59, 61, 67}.
+          A second generalization of the Ramanujan–Nagell equation involves equations of
+       the form
+
+       (8.1)                                x2 + D = y n
+
+       for fixed integer D 6= 0. A fine summary of the extensive body of work on such
+       equations can be found in Cohn [11]. While these equations are, for each D 6= 0,
+50                                                 Michael A. Bennett and Chris M. Skinner
+
+     effectively solvable via lower bounds for linear forms in (complex or p-adic) loga-
+     rithms of algebraic numbers, it can be an extremely involved computational problem
+     to apply such methods to explicitly find all the solutions to an equation of type (8.1).
+     Techniques to fully solve (8.1), for instance in √  case D = 1, 2, 3, 4, 5, 6, have tradi-
+     tionally instead relied upon factorizations in Q ( −D) and straightforward algebraic
+     arguments; recently, the primitive divisor theorem of Bilu, Hanrot and Voutier [3]
+     has played a prominent role (see e.g. [7] and [8]). If D < 0 or if D > 0 and D ≡ 7
+     (mod 8), however, these methods will in general fail to solve (8.1), due to the pres-
+     ence of infinite units in the quadratic field in question, or to the splitting of the prime
+     2, respectively. Results based upon the techniques of this paper do not, for the most
+     part, encounter these difficulties. In particular, in case D > 0 and D ≡ 7 (mod 8),
+     we may prove the following:
+
+     Proposition 8.5 If n ≥ 3 is an integer and D ∈ {55, 95}, then the only positive
+     integral solutions x, y of the Diophantine equation
+                                           x2 + D = y n
+     are given by (x, y, n, D) = (3, 2, 6, 55), (3, 4, 3, 55), (419, 56, 3, 55), (11, 6, 3, 95),
+     (529, 6, 7, 95).
+
+     Proof We first note that, from work of Ljunggren [38], we may assume, in each case
+     under consideration, that y is even. A solution to x 2 + D = y n with n odd thus cor-
+     responds to a solution in coprime integers (y, −1, x) to an + Dbn = c2 with ab = −y
+     even. By Theorem 1.5, we may therefore suppose, without loss of generality, that
+     n ∈ {3, 4, 5, 11} if D = 55 and n ∈ {3, 4, 5, 7, 19} if D = 95. For n = 4, we may solve
+     (8.1) by writing D as a difference of squares. If, however, n ∈ {3, 5, 7, 11, 19}, we may
+     reduce equation (8.1) to a system of n-th degree Thue equations and solve them us-
+     ing lower bounds for linear forms in logarithms of algebraic numbers, in conjunction
+     with lattice basis reduction techniques. Nowadays, for equations of small degree (say
+     < 30 or so), it is a relatively routine matter (at least generically) to solve such equa-
+     tions (see e.g. Lesage [37] and Mignotte and de Weger [41] for explicit applications
+     of these techniques to equation (8.1)). We suppress the details.
+
+        With some work, we can extend this result to treat equation (8.1) for the following
+     squarefree values of D ≡ 7 (mod 8), D ≤ 400:
+            D = 143, 159, 167, 191, 215, 239, 263, 311, 319, 327, 335, 359, 383, 397.
+     We note that, following arguments of Ivorra [27], it should be possible to characterize
+     those primes D ≡ 7 (mod 8) for which the methods of this paper lead to solution of
+     (8.1).
+
+9 Acknowledgements
+     The authors would like to thank William Stein for his kind help in performing many
+     of the computations cited herein. They also express gratitude to Nils Bruin, Wilfrid
+     Ivorra and Alain Kraus for helpful discussions and for sharing their recent results.
+Ternary Diophantine Equations                                                             51
+
+10 Appendix
+       In what follows, we will tabulate certain data which should enable the reader to re-
+       construct our proofs of particular instances of Theorem 1.1, 1.2, 1.3, 1.4, 1.5 and
+       1.6. As mentioned previously, this is derived principally from Stein’s modular forms
+       database.
+          We begin by listing those newforms to which Propositions 4.4 and 4.6 can be prof-
+       itably applied. For the first two of our theorems, we may utilize Proposition 4.6 to
+       deal with those newforms encountered with complex multiplication by an imaginary
+       quadratic field. We list these forms (and the corresponding fields) in Table 1.
+
+
+             newform      CM field    newform      CM field    newform      CM field
+                             √                        √                        √
+                32, 1    Q (√−1)       2304, 16   Q (√−1)        6400, 7   Q (√−1)
+                36, 1    Q (√−3)       2304, 17   Q (√−3)        6400, 8   Q (√−1)
+                49, 1    Q (√ −7)      2304, 18   Q (√−6)       6400, 13   Q (√−1)
+               121, 1    Q ( √−11)     2304, 22   Q (√−3)       6400, 18   Q (√−2)
+               225, 1    Q (√−3)       2304, 23   Q (√−6)       6400, 19   Q (√−1)
+               225, 2    Q (√ −3)      2304, 24   Q (√−2)       6400, 20   Q (√−1)
+               225, 6    Q ( √−15)     2304, 26   Q (√−6)       6400, 32   Q (√ −2)
+               256, 1    Q (√−1)        3872, 1   Q (√−1)       6400, 40   Q ( √−10)
+               256, 2    Q (√−2)        3872, 2   Q (√−1)       6400, 42   Q (√−2)
+               256, 3    Q (√−1)        3872, 8   Q (√−1)       6400, 44   Q (√−2)
+               256, 4    Q (√−2)       3872, 15   Q (√−1)       6400, 52   Q (√ −2)
+               288, 1    Q (√−1)       3872, 17   Q (√−1)       6400, 60   Q ( √−10)
+               288, 2    Q (√−1)       3872, 20   Q (√−1)       6400, 63   Q (√ −2)
+               288, 4    Q (√ −1)      3872, 22   Q (√−1)       6400, 65   Q ( √−10)
+               484, 2    Q ( √−11)     3872, 26   Q (√−1)       6400, 70   Q (√−2)
+               800, 1    Q (√−1)        5408, 1   Q (√−1)       6400, 71   Q (√−5)
+               800, 4    Q (√−1)        5408, 5   Q (√−1)       6400, 73   Q (√−2)
+               800, 8    Q (√−1)       5408, 11   Q (√−1)        9248, 5   Q (√−1)
+              800, 11    Q (√−5)       5408, 15   Q (√ −1)       9248, 6   Q (√−1)
+              800, 14    Q (√−5)       5408, 20   Q ( √−13)      9248, 7   Q (√−1)
+              2304, 1    Q (√−1)       5408, 23   Q (√−1)       9248, 11   Q (√−1)
+              2304, 2    Q (√−1)       5408, 25   Q (√ −1)      9248, 12   Q (√ −1)
+              2304, 3    Q (√−2)       5408, 29   Q ( √−13)     9248, 25   Q ( √−17)
+              2304, 8    Q (√−1)       5408, 32   Q (√−1)       9248, 28   Q (√ −1)
+              2304, 9    Q (√−1)        6400, 1   Q (√−1)       9248, 32   Q ( √−17)
+             2304, 10    Q (√−1)        6400, 6   Q ( −1)       9248, 35   Q ( −1)
+             2304, 11    Q ( −2)
+
+
+                                              Table 1
+
+
+          Let us note that the elliptic curve denoted 14A in Cremona’s tables has rank 0 over
+52                                               Michael A. Bennett and Chris M. Skinner
+         √               √                                     √          √        √
+     Q (√−3) and Q ( √−7), and rank 1 over the fields Q ( −5), Q ( −6), Q ( −10),
+     Q ( −13) and Q ( −17). It follows, for the forms listed above, that we encounter
+     difficulties with exponent n = 7 only for the newforms with CM by one of these 5
+     fields (e.g. forms 800,11, 800,14, etc.). As noted in Subsection 5.2, we may in fact
+     employ Proposition 4.3 to treat the case n = 7 for forms 800,11 and 800,14 (and, in-
+     deed,
+         √ in several of√the the other remaining cases). Similarly,
+                                                           √        curve
+                                                                      √ 26A has rank
+                                                                                   √0 over
+     Q ( −3) and Q ( −13), and positive rank over Q ( −1), Q ( −10) and Q ( −17).
+     For each of these last five mentioned fields, curve 26B has rank zero. We may thus
+     eliminate the possibility of solutions corresponding to n = 13 for all of the above
+     forms.
+         We are able to apply Proposition 4.4 precisely when we encounter modular forms,
+     of level a multiple of C 2 , corresponding to elliptic curves over Q with j-invariants
+     having denominators divisible by odd primes dividing C. For the values of C occur-
+     ing in Theorems 1.1 and 1.2, these are just the following forms:
+
+                         newform newform newform newform
+                           72, 1  450, 1   800, 7 2304, 15
+                           98, 1  450, 3  2304, 4 9248, 1
+                          225, 3  450, 4  2304, 5 9248, 2
+                          288, 3  450, 5  2304, 6 9248, 3
+                          288, 5  450, 6  2304, 7 9248, 4
+                          289, 1  578, 1 2304, 12 9248, 8
+                          392, 3  676, 1 2304, 13 9248, 9
+                          392, 5  800, 3 2304, 14
+
+          For the remaining forms corresponding to equations covered by Theorems 1.1
+     through 1.6 (the vast majority), we apply Proposition 4.3. In most instances, we are
+     able to conclude as desired through consideration of only the Fourier coefficients c 3 ,
+     c5 , c7 and c11 . For certain newforms, however, we need to compute somewhat futher.
+     Below, we list all the forms for which this is the case:
+
+         newform coefficients newform coefficients newform                  coefficients
+           67, 1       c17        800, 10 c3 , c19   2185, 7                  c3 , c7 , c13
+          133, 1     c3 , c13     800, 13 c3 , c19  3328, 35               c3 , c7 , c19 , c23
+          169, 1  c5 , c17 , c19   806, 9 c3 , c23  3328, 37               c3 , c7 , c19 , c23
+          169, 2     c3 , c23      899, 5 c3 , c19  3328, 39               c3 , c7 , c19 , c23
+          225, 4     c7 , c13     1102, 7 c7 , c31  3328, 40               c3 , c7 , c19 , c23
+          225, 5     c7 , c13     1280, 2 c3 , c13  3872, 35                  c3 , c5 , c17
+          268, 1       c17        1280, 8 c3 , c13  3872, 37                  c3 , c5 , c17
+          344, 1       c13       1280, 13 c3 , c13  9248, 26                    c3 , c29
+          344, 3     c3 , c19    1280, 16 c3 , c13  9248, 29                    c3 , c29
+          424, 1     c3 , c13    1696, 15 c3 , c19
+          488, 3     c3 , c19     2144, 1   c17
+          638, 1     c3 , c13     2144, 2   c17
+          638, 2     c3 , c13     2185, 1 c11 , c19
+          682, 3     c3 , c23     2185, 2 c7 , c17
+Ternary Diophantine Equations                                                                                         53
+
+          Further data is available from the authors on request, including complete lists of
+       the Fourier coefficients employed in the application of Proposition 4.3.
+
+References
+       [1]    M. Bauer and M. A. Bennett, Applications of the hypergeometric method to the generalized
+              Ramanujan–Nagell equation. Ramanujan J. 6(2002), 209–270.
+       [2]    F. Beukers, On the generalized Ramanujan–Nagell equation I. Acta Arith. 38(1980/1), 389–410.
+       [3]    Y. Bilu, G. Hanrot and P. Voutier, Existence of primitive divisors of Lucas and Lehmer numbers.
+              J. Reine Angew. Math. 539(2001), 75–122.
+       [4]    C. Breuil, B. Conrad, F. Diamond and R. Taylor, On the modularity of elliptic curves over Q: wild
+              3-adic exercises. J. Amer. Math. Soc. 14(2001), 843–939.
+       [5]    N. Bruin, Chabauty methods and covering techniques applied to the generalised Fermat equation.
+              Ph.D. Thesis, Leiden Univ. Leiden, Netherlands, 1999.
+       [6]             , Some low degree ternary equations of signature (p, p, 2). Preprint.
+       [7]    Y. Bugeaud, On some exponential Diophantine equations. Monatsh. Math. 132(2001), 193–197.
+       [8]    Y. Bugeaud and T. Shorey, On the number of solutions of the generalized Ramanujan–Nagell
+              equation. J. Reine Angew. Math. 539(2001), 55–74.
+       [9]    Z. Cao, On the Diophantine equation x 2n − Dy 2 = 1. Proc. Amer. Math. Soc. (1) 98(1986), 11–16.
+       [10]   F. Coghlan, Elliptic curves with conductor N = 2a 3b . Ph.D. Thesis, Univ. Manchester, Manchester,
+              1967.
+       [11]   J. H. E. Cohn, The Diophantine equation x 2 + C = y n . Acta Arith. 65(1993), 367–381
+       [12]   B. Conrad, F. Diamond and R. Taylor, Modularity of certain potentially Barsotti–Tate Galois
+              representations. J. Amer. Math. Soc. 12(1999), 521–567.
+       [13]   J. Cremona, Algorithms for Modular Elliptic Curves. Cambridge University Press, 1992.
+       [14]   H. Darmon, On the equations x n + y n = z2 and xn + y n = z3 . Internat. Math. Res. Notices
+              72(1993), 263–274.
+       [15]            , The equation x4 − y 4 = z p . C. R. Math. Rep. Acad. Sci. Canada 15(1993), 286–290.
+       [16]            , Modularity of fibres in rigid local systems. Ann. of Math. 149(1999), 1079–1086.
+       [17]            , Rigid local systems, Hilbert modular forms, and Fermat’s Last Theorem. Duke Math. J.
+              102(2000), 413–449.
+       [18]   H. Darmon and A. Granville, On the equations x p + y q = zr and zm = f (x, y). Bull. London Math.
+              Soc. 27(1995), 513–544.
+       [19]   H. Darmon and L. Merel, Winding quotients and some variants of Fermat’s Last Theorem. J. Reine
+              Angew. Math. 490(1997), 81–100.
+       [20]   F. Diamond, On deformation rings and Hecke rings. Ann. of Math. 144(1996), 137–166.
+       [21]            , The refined conjecture of Serre. In: Elliptic Curves, Modular Forms, and Fermat’s Last
+              Theorem (ed. J. Coates), International Press, Cambridge, MA, 1995, 22–37.
+       [22]   J. Ellenberg, Galois representations attached to Q-curves and the generalized Fermat equation
+              A4 + B2 = C p . Amer. J. Math., to appear.
+       [23]   G. Frey, Links between stable elliptic curves and certain Diophantine equations. Ann. Univ. Sarav. Ser.
+              Math. (1) 1, 1986.
+       [24]   E. Halberstadt and A. Kraus, Courbes de Fermat: résultats et problèmes. J. Reine Angew. Math.
+              548(2002), 167–234.
+                                                                 ph     ph      ph
+       [25] Y. Hellegouarch, Sur l’équation diophantienne x1 + x2 = cx3 . C. R. Acad. Sci. Paris Sér. A–B
+            274(1972), A1385–A1387.
+       [26] W. Ivorra, Sur les équations x p + 2β y p = z2 et x p + 2β y p = 2z2 . Preprint.
+       [27]         , Personal communication.
+       [28] Chao Ko, On the Diophantine equation x 2 = y n + 1, xy 6= 0. Sci. Sinica 14(1965), 457–460.
+       [29] A. Kraus, Sur les équations a p + b p + 15c p = 0 et a p + 3b p + 5c p = 0. C. R. Acad. Sci. Paris Sér. I
+            Math. (9) 322(1996), 809–812.
+       [30]         , Sur l’équation a3 + b3 = c p . Experiment. Math. (1) 7(1998), 1–13.
+       [31]         , Majorations effectives pour l’équation de Fermat généralisée. Canad. J. Math (6) 49(1997),
+            1139–1161.
+       [32]         , On the equation x p + y q = zr : a survey. Ramanujan J. (3) 3(1999), 315–333.
+       [33] D. Kubert, Universal bounds on torsion of elliptic curves. Proc. London Math. Soc. (3) 33(1976),
+            193–237.
+       [34] Maohua Le, On the number of solutions of the generalized Ramanujan–Nagell equation
+            x2 − D = 2n+2 . Acta Arith. 60(1991), 149–167.
+54                                                           Michael A. Bennett and Chris M. Skinner
+
+     [35]             , On the generalized Ramanujan–Nagell equation x 2 − D = 2n+2 . Trans. Amer. Math. Soc.
+            334(1992), 809–825.
+     [36]             , The Diophantine equation x 2 + Dm = 2n+2 . Comment. Math. Univ. St. Paul. 43(1994),
+            127–133.
+     [37]   J.-L. Lesage, Différence entre puissances et carrés d’entiers. J. Number Theory (2) 73(1998), 390–425.
+     [38]   W. Ljunggren, On the Diophantine equation Cx 2 + D = y n . Pacific J. Math. 14(1964), 585–596.
+     [39]   B. Mazur, Rational isogenies of prime degree. Invent. Math. 44(1978), 129–162.
+     [40]   L. Merel, Arithmetic of elliptic curves and Diophantine equations. J. Th éor. Nombres Bordeaux
+            11(1999), 173–200.
+     [41]   M. Mignotte and B. M. M. de Weger, On the Diophantine equations x 2 + 74 = y 5 and x2 + 86 = y 5 .
+            Glasgow Math. J. (1) 38(1996), 77–85.
+     [42]   T. Miyake, Modular Forms. Springer-Verlag, Berlin-New York, 1988.
+     [43]   F. Momose, Rational points on the modular curves XSplit (p). Compositio Math. 52(1984), 115–137.
+     [44]   L. J. Mordell, Diophantine Equations. Academic Press, London, 1969.
+     [45]   T. Nagell, The diophantine equation x 2 + 7 = 2n . Ark. Math. 4(1960), 185–187.
+     [46]   I. Papadopolous, Sur la classification de Neron des courbes elliptiques en caracteristique residuelle 2
+            et 3. J. Number Theory 44(1993), 119–152.
+     [47]   B. Poonen, Some Diophantine equations of the form x n + y n = zm . Acta Arith. 86(1998), 193–205.
+     [48]   S. Ramanujan, Question 464. J. Indian Math. Soc. 5(1913), 120.
+     [49]   K. Ribet, On the equation a p + 2α b p + c p = 0. Acta Arith. 79(1997), 7–16.
+     [50]   F. E. G. Rodeja, On the diophantine equation x 3 + y 3 = 2z2 . (Spanish) Revista Mat. Hisp.-Amer. (4)
+            13(1953), 229–240.
+     [51]   J.-P. Serre, Sur les représentations modulaires de degré 2 de Gal(Q /Q ). Duke Math. J. 54(1987),
+            179–230.
+     [52]   J. Silverman, The Arithmetic of Elliptic Curves. Graduate Texts in Math. 106, Springer-Verlag,
+            Berlin-New York, 1986.
+     [53]             , Advanced Topics in the Arithmetic of Elliptic Curves. Graduate Texts in Math. 151,
+            Springer-Verlag, Berlin-New York, 1994.
+     [54]   W. Stein, Modular forms database. Current web address http://modular.fas.harvard.edu/Tables/
+     [55]   A. Wiles, Modular elliptic curves and Fermat’s last theorem. Ann. of Math. (2) 141(1995), 443–551.
+
+
+     Department of Mathematics                                Department of Mathematics
+     University of British Columbia                           University of Michigan
+     Vancouver, BC                                            Ann Arbor, MI 48109
+     V6T 1Z2                                                  USA
+

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U58_forced_prime_location_tables",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U58_forced_prime_location_tables.md",
+    "excerpt": "# U58: coefficient-2 branch \u2014 exact factor-location tables for q=67,409,883\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input\n\nU57 forces q=103 entirely into the B=-delta b^2 factor. The other previously forced primes q=67,409,883 divide mn, but unlike 103 the Gaussian degree-16 cofactors F and G have roots modulo q.\n\nWe now compute both sides of the location problem exactly.\n\n## Gaussian side\n\nFor m=r F(r,s), n=s G(r,s), normalize s=1 when s is nonzero modulo q. Exact Wolfram enumeration gives 16 roots of F(t,1) and 16 roots of G(t,1) for each q in {67,409,883}. Thus q|mn can arise from four projective locations: r=0, s=0, F=0, or G=0.\n\nThe root sets are:\n\nq=67:\nF roots = {4,5,6,8,13,15,16,22,45,51,52,54,59,61,62,63}\nG roots = {3,9,11,17,21,25,27,31,36,40,42,46,50,56,58,64}\n\nq=409:\nF roots = {13,41,80,81,132,158,180,190,219,229,251,277,328,329,368,396}\nG roots = {10,25,44,46,63,101,127,189,220,282,308,346,363,365,384,399}\n\nq=883:\nF roots = {55,66,98,156,233,238,351,400,483,532,645,650,727,785,817,828}\nG roots = {9,72,117,161,256,289,300,388,495,583,594,627,722,766,811,874}\n\n## Q(sqrt(5)) square-class side\n\nU55 gives\n\n    B=-delta b^2,\n    P16(A,B)=delta c^2,\n\nwith delta in {1,17}. If q does not divide b, normalize A=1 and ask whether q can instead divide P16 through a nonzero square t=b^2/A. Exact enumeration shows that it can: the numbers of admissible nonzero square roots t are\n\nq=67: 8 for delta=1, 8 for delta=17;\nq=409: 7 for delta=1, 7 for delta=17;\nq=883: 7 for delta=1, 7 for delta=17.\n\nHence, unlike q=103, none of these primes is individually forced into b. Each may lie either in b (equivalently B) or in c (equivalently P16).\n\nExact admissible t sets:\n\nq=67:\ndelta=1:  {16,64,14,10,26,39,60,19}\ndelta=17: {9,64,55,56,39,40,22,37}\n\nq=409:\ndelta=1:  {375,45,389,394,229,231,191}\ndelta=17: {324,407,71,147,182,230,360}\n\nq=883:\ndelta=1:  {756,747,550,666,839,408,727}\ndelta=17: {361,875,195,24,718,344,460}\n\n## Interpretation\n\nThe hoped-for one-prime contradiction does not occur at 67,409,883. The local problem is now finite and explicit: for each prime, the Gaussian ratio r/s must occupy one of 32 cofactor roots (or a coordinate axis), while the quadratic-field factor chooses B or P16; if P16, its normalized square parameter must belong to the listed 7/8-element set.\n\nThe useful next step is therefore not another independent prime. We must compute the algebraic map from the Gaussian projective ratio r/s to the normalized U55 square parameter b^2/A (or an equivalent invariant). Once that map is explicit, intersect its images of the Gaussian root sets with the listed P16-admissible sets simultaneously at 67,409,883, with q=103 forcing the B branch. A missing intersection would be a rigorous local contradiction.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.45,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.2,
+          "1": 0.16,
+          "2": 0.63,
+          "3": 0.01
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 1818,
+      "output_tokens": 42
+    }
+  }
+}

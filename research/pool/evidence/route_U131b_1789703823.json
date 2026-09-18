@@ -1,0 +1,55 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U131b",
+  "timestamp": "2026-09-17T23:57:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Class (2m,2n,3): A^m=|u(u^2-3v^2)|, B^n=|v(3u^2-v^2)|, gcd(u,v)=1, u+v odd. Exact data u,v<=2000: Re is a perfect power in 26 of 1.62M pairs, Im in 26, both in 0. When 3 does not divide u: u=s^m and u^2-3v^2=+-t^m, hence s^{2m} -+ t^m = 3 v^2, a ternary equation X^m + Y^m = 3 Z^2 with X a square."
+  },
+  "questions": {
+    "first": {
+      "type": "choice",
+      "instructions": "Which sub-step first?",
+      "criteria": {
+        "BS_3z2": "X^m + Y^m = 3Z^2 for m>=3 prime: literature (Bennett-Skinner style) may already show no nontrivial coprime solutions",
+        "square_X": "exploit that X = s^2 is itself a square: s^{2m} - t^m = 3v^2 is signature (2m, m, 2) with coefficient",
+        "u_div_3": "handle the case 3 | u separately: u=3s'^m ... then 3 | A and a different coupled system",
+        "eight_eq": "use 8 s^{2m} = +-3 q^n -+ t^m obtained by eliminating v between the two equations",
+        "im_side": "work on the Im side v(3u^2-v^2) symmetrically and intersect the two conditions"
+      }
+    },
+    "lit_first": {
+      "type": "noul",
+      "instructions": "Must a primary-source literature check on X^m+Y^m=3Z^2 come BEFORE any derivation?",
+      "criteria": {
+        "true": "yes, it may already be a theorem",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "first": {
+        "type": "choice",
+        "choice": "u_div_3",
+        "confidence": 0.54,
+        "probabilities": {
+          "square_X": 0.27,
+          "BS_3z2": 0.07,
+          "u_div_3": 0.63,
+          "eight_eq": 0.02,
+          "im_side": 0.01
+        }
+      },
+      "lit_first": {
+        "type": "noul",
+        "noul": 0.57
+      }
+    },
+    "usage": {
+      "input_tokens": 727,
+      "output_tokens": 83
+    }
+  }
+}

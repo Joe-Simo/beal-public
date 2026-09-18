@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U132",
+  "timestamp": "2026-09-18T00:01:24-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "C047 chain (2m,2n,3), m,n>=4, VERIFICATION_REQUIRED. Obligations: Lean S4 gcd lemma; Lean Z[i] cube step; Lean assembly with Bennett-Skinner as named hypothesis; literature check of BCDY 2015 ref [9]."
+  },
+  "questions": {
+    "order": {
+      "type": "choice",
+      "instructions": "Which obligation first, to maximise verified content per hour?",
+      "criteria": {
+        "lit9": "fetch BCDY 2015 abstract/theorems for (2m,2n,3)",
+        "lean_s4": "Lean: gcd(u,u^2-3v^2)=gcd(u,3) and the mod-3 facts",
+        "lean_zi": "Lean: a^2+b^2=c^3 coprime, c odd => a+bi is a cube in GaussianInt",
+        "assembly": "Lean: full assembly with BS as hypothesis, leaving Z[i] step as a second hypothesis for now"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "order": {
+        "type": "choice",
+        "choice": "lean_s4",
+        "confidence": 0.51,
+        "probabilities": {
+          "lean_s4": 0.63,
+          "lean_zi": 0.05,
+          "lit9": 0.15,
+          "assembly": 0.17
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 507,
+      "output_tokens": 52
+    }
+  }
+}

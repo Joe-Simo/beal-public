@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U104_kraus_frey_curve_torsion_and_irreducibility",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U104_kraus_frey_curve_torsion_and_irreducibility.md",
+    "excerpt": "# U104: Kraus Frey Curve $E: y^2 = x^3 + 3AB x + (B^3 - A^3)$: Torsion Structure, Discriminant, and Mod-$p$ Galois Irreducibility\n\n**Date**: 2026-09-17  \n**Context**: Generalized Fermat equation $A^3 + B^3 = C^p$ ($p \\ge 5$, $\\gcd(A, B) = 1$, $A, B$ coprime integers).  \n**Target**: The Kraus Frey elliptic curve $E: y^2 = x^3 + 3AB x + (B^3 - A^3)$ introduced by Alain Kraus (1998).  \n**Companion Script**: [`code/U104_kraus_frey_curve_mod_p_irreducibility.py`](file://[LOCAL_HOME]/Downloads/beal/code/U104_kraus_frey_curve_mod_p_irreducibility.py)  \n**JSON Certificate**: [`research/checkpoints/U104_kraus_frey_curve.json`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U104_kraus_frey_curve.json)\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint provides a complete arithmetic geometry investigation of the Kraus Frey curve\n$$E: y^2 = x^3 + 3AB x + (B^3 - A^3)$$\nassociated with hypothetical coprime integer solutions to the Fermat-type equation $A^3 + B^3 = C^p$ with prime exponent $p \\ge 5$.\n\nWe resolve the six specific mathematical questions:\n\n1. **Degeneracy at $B = -A$**:\n   When $B = -A$, $E$ specializes to $y^2 = x^3 - 3A^2 x - 2A^3 = (x + A)^2 (x - 2A)$. The curve develops a nodal singularity at $(-A, 0)$ with discriminant $\\Delta = 0$, corresponding precisely to the trivial Diophantine boundary $A^3 + B^3 = 0 \\iff C = 0$.\n\n2. **Exact 2-Torsion Factorization**:\n   The 2-torsion polynomial factors completely over $\\mathbb{Q}$:\n   $$x^3 + 3AB x + (B^3 - A^3) = (x - (A - B))\\left( x^2 + (A - B)x + (A^2 + AB + B^2) \\right).$$\n   - **Rational root**: $e_1 = A - B \\in \\mathbb{Q}$ is an exact root for all $A, B$.\n   - **Rational 2-torsion point**: $P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$, establishing that $\\mathbb{Z}/2\\mathbb{Z} \\subseteq E(\\mathbb{Q})_{\\mathrm{tors}}$.\n   - **Quadratic quotient discriminant**: $\\Delta_{\\mathrm{quad}} = -3(A + B)^2$.\n   - **2-Torsion field**: $\\mathbb{Q}(E[2]) = \\mathbb{Q}(\\sqrt{-3}) = \\mathbb{Q}(\\zeta_3)$.\n\n3. **Discriminants and Invariants**:\n   - Polynomial cubic discriminant: $\\operatorname{disc}(x^3 + 3AB x + B^3 - A^3) = -27(A^3 + B^3)^2 = -27 C^{2p}$.\n   - Weierstrass discriminant: $\\Delta_E = 16 \\operatorname{disc} = -432 (A^3 + B^3)^2 = -432 C^{2p} = -2^4 \\cdot 3^3 C^{2p}$.\n   - Invariants: $c_4 = -144 AB$, $c_6 = 864 (A^3 - B^3)$.\n   - $j$-invariant: $j(E) = \\frac{6912 A^3 B^3}{C^{2p}} = 1728 \\frac{4A^3 B^3}{(A^3 + B^3)^2}$.\n\n4. **Mazur's Theorem (1977) and Rational $p$-Isogenies**:\n   By Mazur (1977), an elliptic curve over $\\mathbb{Q}$ can have a rational $p$-isogeny for $p \\ge 5$ only if $p \\in \\{5, 7, 11, 13, 17, 37, 43, 67, 163\\}$.\n   Crucially, because $E$ possesses the rational 2-torsion point $(A - B, 0)$, any rational $p$-isogeny on $E$ automatically generates a rational cyclic $2p$-isogeny!\n   By Kenku's theorem (1981) on cyclic isogenies over $\\mathbb{Q}$, the only composite orders of the form $2p$ that can ever occur on an elliptic curve over $\\mathbb{Q}$ are $2p \\in \\{10, 14\\}$ ($p = 5, 7$).\n   For all $p \\ge 11$, $2p \\ge 22$ is **strictly impossible** on any elliptic curve over $\\mathbb{Q}$!\n   Consequently, $\\rho_{E, p}$ is **ABSOLUTELY IRREDUCIBLE for all $p \\ge 11$**!\n\n5. **Complete Survey of $X_0(p)$ for $p \\in \\{5, 7, 11, 13, 17, 19\\}$**:\n   - $p = 5$: Genus 0, $\\infty$-many non-cuspidal rational points (both CM and non-CM).\n   - $p = 7$: Genus 0, $\\infty$-many non-cuspidal rational points (both CM and non-CM).\n   - $p = 11$: Genus 1, exactly 3 non-cuspidal rational points on $X_0(11)(\\mathbb{Q}) \\cong \\mathbb{Z}/5\\mathbb{Z}$ (all 3 are strictly non-CM).\n   - $p = 13$: Genus 0, $\\infty$-many non-cuspidal rational points (both CM and non-CM).\n   - $p = 17$: Genus 1, exactly 2 non-cuspidal rational points on $X_0(17)(\\mathbb{Q}) \\cong \\mathbb{Z}/4\\mathbb{Z}$ (**both are CM points**).\n   - $p = 19$: Genus 1, **0 non-cuspidal rational points** (all rational points are cusps).\n\n---\n\n## 2. Degenerate Fibers and the Boundary $B = -A$\n\nThe curve is given by the Weierstrass equation:\n$$E: y^2 = f(x) = x^3 + 3AB x + (B^3 - A^3).$$\n\nWhen $B = -A$:\n$$3AB = -3A^2, \\quad B^3 - A^3 = (-A)^3 - A^3 = -2A^3.$$\nThe cubic polynomial becomes:\n$$f_{-A}(x) = x^3 - 3A^2 x - 2A^3.$$\nEvaluating at $x = -A$:\n$$f_{-A}(-A) = (-A)^3 - 3A^2(-A) - 2A^3 = -A^3 + 3A^3 - 2A^3 = 0.$$\nEvaluating the derivative $f_{-A}'(x) = 3x^2 - 3A^2$ at $x = -A$:\n$$f_{-A}'(-A) = 3(-A)^2 - 3A^2 = 3A^2 - 3A^2 = 0.$$\nThus $x = -A$ is a root of multiplicity at least 2.\nDividing by $(x + A)^2 = x^2 + 2Ax + A^2$:\n$$x^3 - 3A^2 x - 2A^3 = (x + A)^2 (x - 2A).$$\n\n**Geometric Nature of the Singularity**:\n- At $(x, y) = (-A, 0)$, both partial derivatives vanish: $\\frac{\\partial F}{\\partial x} = 0$, $\\frac{\\partial F}{\\partial y} = -2y = 0$.\n- The second-order Taylor expansion at $(-A, 0)$ with $X = x + A$ is:\n  $$y^2 = X^2 (X - 3A) \\approx -3A X^2.$$\n- When $A \\neq 0$, the tangent cone is given by $y^2 + 3A X^2 = 0$, which factors into two distinct tangent lines $y = \\pm \\sqrt{-3A} X$ over $\\overlin"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 1.63,
+        "confidence": 0.19,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.23,
+          "1": 0.14,
+          "2": 0.41,
+          "3": 0.22
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3071,
+      "output_tokens": 94
+    }
+  }
+}

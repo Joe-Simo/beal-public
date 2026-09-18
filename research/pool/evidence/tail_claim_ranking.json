@@ -1,0 +1,110 @@
+[
+  [
+    1.49,
+    2.07,
+    0.63,
+    "If C is the largest base then z <= max(x,y) and hence the signature is not of the form (x, y, z) with z > x and z > y."
+  ],
+  [
+    1.73,
+    1.54,
+    0.69,
+    "If A^x <= B^y and C <= B then z > y."
+  ],
+  [
+    1.44,
+    1.77,
+    0.56,
+    "If A < B < C then z <= y."
+  ],
+  [
+    2.9,
+    0.52,
+    0.87,
+    "If A^x <= B^y then C^z / B^y lies in the half-open interval (1, 2]."
+  ],
+  [
+    1.11,
+    1.74,
+    0.57,
+    "If C is the largest of the three bases then z <= max(x, y)."
+  ],
+  [
+    1.39,
+    1.32,
+    0.6,
+    "If A < B < C then x >= y and x >= z is impossible unless A^x is the largest term."
+  ],
+  [
+    2.33,
+    0.89,
+    0.5,
+    "If A^x <= B^y and C > B then z < y * log(B) / log(C) + 1."
+  ],
+  [
+    2.64,
+    0.64,
+    0.57,
+    "z * log C - y * log B lies in (0, log 2] whenever A^x <= B^y."
+  ],
+  [
+    1.01,
+    1.66,
+    0.56,
+    "If C is the smallest of the three bases then z > max(x, y)."
+  ],
+  [
+    1.08,
+    1.75,
+    0.49,
+    "If A^x <= B^y, C > B and z >= y, then y <= B."
+  ],
+  [
+    2.59,
+    0.45,
+    0.79,
+    "The two largest of the three terms A^x, B^y, C^z differ by a factor of at most 2."
+  ],
+  [
+    1.04,
+    1.58,
+    0.56,
+    "If the even base is the largest base then its exponent is at most the max of the other two."
+  ],
+  [
+    2.53,
+    0.49,
+    0.59,
+    "If B < C and A^x <= B^y then y < z * log(C)/log(B)."
+  ],
+  [
+    0.78,
+    1.61,
+    0.38,
+    "If A^x <= B^y, C > B and z >= y, then A^x >= y * B^(y-1)."
+  ],
+  [
+    0.51,
+    1.85,
+    0.48,
+    "The largest base carries an exponent no larger than the largest of the other two exponents."
+  ],
+  [
+    0.71,
+    1.67,
+    0.36,
+    "At most one of the three exponents can exceed the logarithm base 2 of the largest base times the largest other exponent."
+  ],
+  [
+    1.66,
+    0.09,
+    0.76,
+    "If C > B then B^y < C^z gives no exponent constraint on its own."
+  ],
+  [
+    2.48,
+    0.0,
+    0.96,
+    "min(x, y) <= max(x, y) is always true and constrains nothing."
+  ]
+]

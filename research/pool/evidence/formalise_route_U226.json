@@ -1,0 +1,59 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.147,
+   "rad3",
+   {
+    "mathlib_ready": 0.58,
+    "nonblind": 0.94,
+    "uses_all_three": 0.27
+   }
+  ],
+  [
+   0.048,
+   "isogeny",
+   {
+    "mathlib_ready": 0.48,
+    "nonblind": 0.59,
+    "uses_all_three": 0.17
+   }
+  ],
+  [
+   0.046,
+   "radc",
+   {
+    "mathlib_ready": 0.36,
+    "nonblind": 0.67,
+    "uses_all_three": 0.19
+   }
+  ],
+  [
+   0.045,
+   "window",
+   {
+    "mathlib_ready": 0.33,
+    "nonblind": 0.81,
+    "uses_all_three": 0.17
+   }
+  ],
+  [
+   0.044,
+   "wronsk",
+   {
+    "mathlib_ready": 0.4,
+    "nonblind": 0.68,
+    "uses_all_three": 0.16
+   }
+  ],
+  [
+   0.023,
+   "trace",
+   {
+    "mathlib_ready": 0.15,
+    "nonblind": 0.7,
+    "uses_all_three": 0.22
+   }
+  ]
+ ]
+}

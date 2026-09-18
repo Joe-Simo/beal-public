@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U54_coefficient2_square_split_and_lucas",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U54_coefficient2_square_split_and_lucas.md",
+    "excerpt": "# U54: coefficient-2 branch \u2014 exact square split and Lucas reformulation\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-16.\n\n## Input\n\nFrom U52-U53, with K=Q(sqrt(5)), omega=(1+sqrt(5))/2,\n\n    H_-(m,n)=(A+B omega)^17,\n\nwhere gcd(m,n)=1, m,n have opposite parity, and\n\n    H_- = m^4+30m^2n^2+n^4 -16m^2n^2 omega.\n\nThe coefficient equation is\n\n    B P16(A,B) = -16 m^2 n^2,                     (1)\n\nwhere P16 is the degree-16 form recorded in U53. Also\n\n    A == 1 (mod 8),\n    B == 0 (mod 8).\n\n## 1. Primitivity of A,B\n\nThe conjugate factors H_- and H_+ are coprime as ideals in O_K (U49). If a rational prime p divided both A and B, then p would divide alpha=A+B omega and also its conjugate, hence p would divide both H_-=alpha^17 and H_+=conjugate(alpha)^17, contradicting that ideal coprimality.\n\nTherefore\n\n    gcd(A,B)=1.                                      (2)\n\n## 2. Exact gcd(B,P16)\n\nModulo B,\n\n    P16(A,B) == 17 A^16 (mod B).\n\nUsing gcd(A,B)=1,\n\n    gcd(B,P16) | 17.\n\nIf 17 does not divide B, then gcd(B,P16)=1.\n\nIf 17|B, write B=17B1. Exact expansion gives\n\n    P16(A,17B1)=17(A^16 + terms divisible by 17),\n\nand 17 does not divide A. Hence\n\n    v17(P16)=1.\n\nThus\n\n    gcd(B,P16) = 1   if 17 does not divide B,\n    gcd(B,P16) = 17  if 17 divides B.                (3)\n\n## 3. Square splitting of the coefficient equation\n\nThe form P16 is odd because B is divisible by 8 and\n\n    P16 == 17 A^16 == 1 (mod 8).\n\nTaking prime valuations in (1):\n\n- every odd prime other than 17 occurs in B or P16 to an even exponent;\n- the full 2-adic exponent lies in B and is even;\n- if 17|B, then v17(P16)=1 and v17(B) is odd.\n\nThe sign is also forced. Since P16 ==1 (mod 8), it cannot be the negative of an odd square (nor the negative of 17 times an odd square). Since BP16<0, B must be negative and P16 positive.\n\nTherefore exactly one of the following two cases holds:\n\nCase I:\n\n    B = -R^2,\n    P16(A,B) = S^2,\n    R S = 4 |mn|.\n\nCase II:\n\n    B = -17 R^2,\n    P16(A,B) = 17 S^2,\n    17 R S = 4 |mn|.\n\nIn both cases gcd(R,S)=1. In Case II, 17 does not divide S.\n\n## 4. Case I is impossible modulo 5\n\nSubstitute B=-R^2 into P16. Exact reduction modulo 5 gives\n\n    P16(A,-R^2) == 2 (A+2R^2)^16 (mod 5).           (4)\n\nSince 2 is a quadratic non-residue modulo 5, the equality\n\n    P16=S^2\n\nforces\n\n    A+2R^2 ==0 (mod 5).                              (5)\n\nNow define the Lucas parameters\n\n    T = 2A+B,\n    Q = A^2+A B-B^2 = Norm(A+B omega).\n\nIn Case I, B=-R^2. Equation (5) implies\n\n    T = 2A-R^2 ==0 (mod 5),\n    Q = A^2-A R^2-R^4 ==0 (mod 5).\n\nBut gcd(T,Q)=1, as proved below. Contradiction.\n\nHence Case I is impossible.\n\nTherefore every surviving coefficient-2 solution is necessarily in Case II:\n\n    B = -17 R^2,\n    P16(A,B)=17 S^2,\n    17 R S =4|mn|.                                  (6)\n\nThis is a new strict restriction.\n\n## 5. Coprime Lucas parameters\n\nLet\n\n    alpha=A+B omega,\n    beta=A+B(1-omega).\n\nThen\n\n    T=alpha+beta=2A+B,\n    Q=alpha beta=A^2+A B-B^2.\n\nSince A is odd and B is divisible by 8, T is even and Q is odd.\n\nAlso\n\n    4Q = T^2 - 5B^2.\n\nAny common divisor d of T and Q is therefore odd and divides 5B^2. But\n\n    gcd(T,B)=gcd(2A+B,B)=2\n\nusing gcd(A,B)=1, so d is coprime to B and hence d|5.\n\nU49 proves 5 does not divide H(m,n). Since\n\n    H(m,n)=Norm(H_-)=Q^17,\n\nwe have 5 does not divide Q. Therefore\n\n    gcd(T,Q)=1.                                      (7)\n\n## 6. Lucas sequence reformulation\n\nBecause\n\n    alpha-beta = B sqrt(5),\n\nwe have\n\n    P16(A,B)\n      = (alpha^17-beta^17)/(alpha-beta)\n      = U_17(T,Q),\n\nwhere U_n(T,Q) is the Lucas sequence\n\n    U_0=0,\n    U_1=1,\n    U_n=T U_{n-1}-Q U_{n-2}.\n\nThus the sole surviving square-split case becomes\n\n    U_17(T,Q)=17 S^2,                                (8)\n\nwith\n\n    gcd(T,Q)=1,\n    T even,\n    Q odd,\n    T^2-4Q = 5*17^2 R^4.                            (9)\n\nThis is a fixed-index Lucas almost-square problem with the additional very restrictive discriminant condition (9).\n\nPublished work of Bremner and Tzanakis on Lucas sequences whose nth term is a square or almost square establishes finiteness for fixed n>=8 and gives effective reductions in many cases, but does not provide a published complete classification for n=17, k=17. Therefore (8)-(9) is a genuine remaining Diophantine problem, not a literature-closed case.\n\n## 7. Positive-coordinate form\n\nSubstituting A=(T-B)/2 into P16 gives the exact identity\n\n    2^16 P16 =\n      17 T^16\n      +3400 B^2 T^14\n      +154700 B^4 T^12\n      +2431000 B^6 T^10\n      +15193750 B^8 T^8\n      +38675000 B^10 T^6\n      +37187500 B^12 T^4\n      +10625000 B^14 T^2\n      +390625 B^16.\n\nAll coefficients are positive. Since alpha and beta are both positive real numbers (H_- and H_+ are positive 17th powers), T>sqrt(5)|B|.\n\nIn the surviving Case II, B=-17R^2, so this is an explicit positive genus-7 hyperelliptic/Thue-type equation for (T,R,S).\n\n## Next obligation\n\nAttack (8)-(9) directly. The most promising options"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.64,
+        "confidence": 0.64,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.0,
+          "2": 0.33,
+          "3": 0.66
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 2412,
+      "output_tokens": 42
+    }
+  }
+}

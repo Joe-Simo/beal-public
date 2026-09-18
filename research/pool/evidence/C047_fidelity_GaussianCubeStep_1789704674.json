@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C047_fidelity_GaussianCubeStep",
+  "timestamp": "2026-09-18T00:11:14-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "hypothesis": "GaussianCubeStep"
+  },
+  "questions": {
+    "faithful": {
+      "type": "score",
+      "instructions": "Does the Lean statement encode EXACTLY the cited mathematical fact, no stronger?",
+      "criteria": [
+        "level 0: it is stronger than the source (over-claims)",
+        "level 1: subtle mismatch in side conditions",
+        "level 2: faithful up to harmless reformulation",
+        "level 3: verbatim faithful"
+      ]
+    },
+    "risk": {
+      "type": "choice",
+      "instructions": "Most likely mismatch, if any.",
+      "criteria": {
+        "none": "none",
+        "coprime": "coprimality convention (pairwise vs gcd of all three, or 3z vs z)",
+        "sign": "signs / negative integers vs positive",
+        "exponent": "exponent range (n>=4 vs prime, composite handling)",
+        "units": "units or associates in Z[i]"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "faithful": {
+        "type": "score",
+        "score": 1.62,
+        "confidence": 0.21,
+        "legend": {
+          "0": "level 0: it is stronger than the source (over-claims)",
+          "1": "level 1: subtle mismatch in side conditions",
+          "2": "level 2: faithful up to harmless reformulation",
+          "3": "level 3: verbatim faithful"
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.24,
+          "2": 0.39,
+          "3": 0.2
+        }
+      },
+      "risk": {
+        "type": "choice",
+        "choice": "units",
+        "confidence": 0.32,
+        "probabilities": {
+          "none": 0.18,
+          "sign": 0.09,
+          "coprime": 0.25,
+          "exponent": 0.02,
+          "units": 0.46
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 598,
+      "output_tokens": 71
+    }
+  }
+}

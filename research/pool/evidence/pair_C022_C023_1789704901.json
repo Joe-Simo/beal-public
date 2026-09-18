@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C022_C023",
+  "timestamp": "2026-09-18T00:15:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C022",
+      "status": "PARTIAL_RESULT",
+      "claim": "ExponentReduction.lean duplicates the definition of IsBealCounterexample already present in Conjecture.lean, with a different gcd association (gcd (gcd A B) C vs gcd3 A B C = gcd A (gcd B C)) and the last two fields in the opposite order."
+    },
+    "B": {
+      "id": "C023",
+      "status": "PARTIAL_RESULT",
+      "claim": "The abc conjecture implies only that there are FINITELY MANY counterexamples to Beal, not that there are none; and the finiteness is ineffective. Therefore no route through abc - including inter-universal Teichmuller theory - can resolve Beal."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.22,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.8200000000000001,
+          "1": 0.15,
+          "2": 0.03,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 583,
+      "output_tokens": 34
+    }
+  }
+}

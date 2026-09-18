@@ -4,7 +4,11 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Formal Verification Specialist
 -/
 import Beal.Conjecture
-import Beal.Taxonomy
+import Mathlib.NumberTheory.FLT.Four
+import Mathlib.Tactic.IntervalCases
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
 
 /-!
 # Formalization of Fermat's Last Theorem for Exponent 4 and Signature (4, 4, 2)
@@ -49,6 +53,7 @@ produces a strictly smaller witness `c' < c` with `P c'`, then `P` has no witnes
 -/
 theorem infinite_descent {P : ℕ → Prop} (h_step : ∀ c, P c → ∃ c', c' < c ∧ P c') :
     ∀ c, ¬ P c := by
+  classical
   intro c hc
   have h_ex : ∃ k, P k := ⟨c, hc⟩
   let m := Nat.find h_ex
@@ -63,16 +68,9 @@ theorem infinite_descent {P : ℕ → Prop} (h_step : ∀ c, P c → ∃ c', c' 
 Every square in $\mathbb{N}$ is congruent to $0$ or $1$ modulo $4$.
 -/
 lemma sq_mod_four (n : ℕ) : n ^ 2 % 4 = 0 ∨ n ^ 2 % 4 = 1 := by
-  have h : n % 4 < 4 := Nat.mod_lt n (by decide)
-  interval_cases n % 4
-  · left
-    omega
-  · right
-    omega
-  · left
-    omega
-  · right
-    omega
+  rw [Nat.pow_mod]
+  have h : n % 4 = 0 ∨ n % 4 = 1 ∨ n % 4 = 2 ∨ n % 4 = 3 := by omega
+  rcases h with h | h | h | h <;> rw [h] <;> norm_num
 
 /--
 Every fourth power in $\mathbb{N}$ is congruent to $0$ or $1$ modulo $4$.
@@ -86,12 +84,9 @@ lemma pow_four_mod_four (n : ℕ) : n ^ 4 % 4 = 0 ∨ n ^ 4 % 4 = 1 := by
 An odd integer has fourth power congruent to $1$ modulo $4$.
 -/
 lemma odd_pow_four_mod_four (n : ℕ) (hn : n % 2 = 1) : n ^ 4 % 4 = 1 := by
-  have h : n % 4 < 4 := Nat.mod_lt n (by decide)
-  have hodd : n % 4 = 1 ∨ n % 4 = 3 := by
-    omega
-  rcases hodd with h1 | h3
-  · omega
-  · omega
+  rw [Nat.pow_mod]
+  have hodd : n % 4 = 1 ∨ n % 4 = 3 := by omega
+  rcases hodd with h | h <;> rw [h] <;> norm_num
 
 /--
 If $A$ and $B$ are both odd, $A^4 + B^4 \equiv 2 \pmod 4$.
@@ -127,7 +122,7 @@ theorem fermat42_of_fermat44 (A B C : ℕ) (hC : C > 0) (heq : A ^ 4 + B ^ 4 = C
   use C ^ 2
   constructor
   · positivity
-  · rw [← heq]
+  · rw [heq]
     ring
 
 /--
@@ -157,10 +152,12 @@ The Diophantine equation $A^4 + B^4 = C^2$ has no solutions in strictly positive
 -/
 theorem fermat_4_2 :
     ¬ ∃ (A B C : ℕ), A > 0 ∧ B > 0 ∧ C > 0 ∧ A ^ 4 + B ^ 4 = C ^ 2 := by
-  -- Follows from Fermat's infinite descent on Pythagorean triples.
-  -- Axiomatized or proven via the descent step on primitive Pythagorean triples.
-  intro ⟨A, B, C, hA, hB, hC, heq⟩
-  sorry
+  -- Discharged by mathlib's `not_fermat_42`, transferred from ℤ.  This replaces a `sorry`.
+  rintro ⟨A, B, C, hA, hB, hC, heq⟩
+  have hA' : (A : ℤ) ≠ 0 := Int.natCast_ne_zero.mpr (by omega)
+  have hB' : (B : ℤ) ≠ 0 := Int.natCast_ne_zero.mpr (by omega)
+  refine not_fermat_42 (c := (C : ℤ)) hA' hB' ?_
+  exact_mod_cast heq
 
 /--
 **Fermat's Last Theorem for Exponent 4**:
@@ -187,7 +184,7 @@ theorem no_beal_counterexample_4_4_even (k : ℕ) (hk : k ≥ 2) :
     ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 4 4 (2 * k) := by
   rintro ⟨A, B, C, hA, hB, hC, _, _, _, _, heq⟩
   have heq2 : A ^ 4 + B ^ 4 = (C ^ k) ^ 2 := by
-    rw [← heq]
+    rw [heq]
     ring
   have hCk : C ^ k > 0 := by positivity
   exact fermat_4_2 ⟨A, B, C ^ k, hA, hB, hCk, heq2⟩

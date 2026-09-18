@@ -1,0 +1,95 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.7,
+   {
+    "family_overclaim": 0.56,
+    "conditional_unmarked": 0.7,
+    "header_build_claim": 0.09
+   },
+   "Signature3"
+  ],
+  [
+   0.51,
+   {
+    "family_overclaim": 0.51,
+    "conditional_unmarked": 0.16,
+    "header_build_claim": 0.65
+   },
+   "ClosedFamilies"
+  ],
+  [
+   0.49,
+   {
+    "family_overclaim": 0.49,
+    "conditional_unmarked": 0.39,
+    "header_build_claim": 0.03
+   },
+   "AlgebraicIdentities"
+  ],
+  [
+   0.42,
+   {
+    "family_overclaim": 0.42,
+    "conditional_unmarked": 0.19,
+    "header_build_claim": 0.99
+   },
+   "FermatCatalan"
+  ],
+  [
+   0.38,
+   {
+    "family_overclaim": 0.38,
+    "conditional_unmarked": 0.28,
+    "header_build_claim": 0.05
+   },
+   "MordellFixedBase"
+  ],
+  [
+   0.32,
+   {
+    "family_overclaim": 0.32,
+    "conditional_unmarked": 0.14,
+    "header_build_claim": 0.04
+   },
+   "FixedBasesExample"
+  ],
+  [
+   0.27,
+   {
+    "family_overclaim": 0.27,
+    "conditional_unmarked": 0.24,
+    "header_build_claim": 0.04
+   },
+   "TaxonomyExtensions"
+  ],
+  [
+   0.24,
+   {
+    "family_overclaim": 0.24,
+    "conditional_unmarked": 0.21,
+    "header_build_claim": 0.04
+   },
+   "KnownSolutions"
+  ],
+  [
+   0.24,
+   {
+    "family_overclaim": 0.24,
+    "conditional_unmarked": 0.17,
+    "header_build_claim": 0.03
+   },
+   "Taxonomy"
+  ],
+  [
+   0.19,
+   {
+    "family_overclaim": 0.19,
+    "conditional_unmarked": 0.06,
+    "header_build_claim": 0.99
+   },
+   "GaussianObstruction"
+  ]
+ ]
+}

@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U110_signature_2_4_n_modular_analysis",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U110_signature_2_4_n_modular_analysis.md",
+    "excerpt": "# U110: Modular Analysis, Frey Curve Architecture, Serre Weights, and Obstruction Theory for Generalized Fermat Signature $(2, 4, n)$\n\n**Date**: 2026-09-17  \n**Author**: Signature $(2, 4, n)$ Serre Weight Specialist, Beal Conjecture Project  \n**Target Equation**: $A^2 + B^4 = C^n$ with $\\gcd(A, B) = 1$, $AB \\neq 0$, and prime exponent $n \\geq 5$.  \n**Context**: Beal Conjecture Program \u2014 Even-Leg Pythagorean Descent and Quartic Families.  \n**Status**: Authoritative research checkpoint, rigorous Frey curve comparison, Serre conductor computation, PARI/GP modular form verification, and proof of the local Frobenius sieve obstruction (the CM Plateau).\n\n---\n\n## 1. Executive Summary & Problem Formulation\n\nThe generalized Fermat equation of signature $(2, 4, n)$, written canonically as:\n$$A^2 + B^4 = C^n \\quad \\Longleftrightarrow \\quad B^4 + A^2 = C^n,$$\nwith $\\gcd(A, B) = 1$, $AB \\neq 0$, and prime exponent $n \\geq 5$, is strictly hyperbolic since the Euler characteristic satisfies:\n$$\\chi = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{n} - 1 = \\frac{1}{n} - \\frac{1}{4} \\leq \\frac{1}{5} - \\frac{1}{4} = -\\frac{1}{20} < 0.$$\nBy the foundational finiteness theorem of Darmon and Granville (1995), there are at most finitely many primitive non-trivial integer solutions $(A, B, C)$ for each fixed $n \\geq 5$.\n\nThe complete resolution of $A^2 + B^4 = C^n$ is one of the celebrated triumphs of modern arithmetic geometry:\n- **Euler (1738)**: Solved $n = 4$ ($A^2 + B^4 = C^4$) via Fermat descent on right triangles with square area.\n- **Bruin (1999, 2003)**: Solved $n = 6$ via 2-coverings and Chabauty on Jacobians, and $n = 5$ via elliptic Chabauty.\n- **Ellenberg (2004)**: Solved all prime exponents $p \\geq 211$ using Frey $\\mathbb{Q}$-curves over $\\mathbb{Q}(i)$ and analytic central $L$-value averages.\n- **Bennett, Ellenberg, and Ng (2010)**: Solved all intermediate exponents $7 \\leq n < 211$ using the Bilu\u2013Hanrot\u2013Voutier Primitive Divisor Theorem on Lucas sequences combined with Baker's logarithmic bounds and Thue equations.\n\nThe equation $A^2 + B^4 = C^n$ has **zero non-trivial coprime integer solutions for all $n \\geq 4$**.\n\n### Core Objectives of This Checkpoint\nThis checkpoint delivers an exhaustive, exact arithmetic audit of the modular machinery governing signature $(2, 4, n)$ for prime $n \\geq 5$:\n1. **Frey Curve Architectures**: A structural contrast between Jordan Ellenberg's (2004) Frey $\\mathbb{Q}$-curve over $K = \\mathbb{Q}(i)$ and Michael Bennett & Chris Skinner's (2004) ternary Frey curves over $\\mathbb{Q}$.\n2. **Serre Invariants & Level Lowering**: Exact computation of the Serre weight ($k = 2$) and Serre conductor exponents at 2 ($N \\in \\{32, 256\\}$) and at $n$ (conductor exponent 0; level lowering eliminates $n$).\n3. **Complete Space Decompositions**: Rigorous PARI/GP computation of the cuspidal newform spaces $S_2^{\\text{new}}(32)$ ($\\dim = 1$) and $S_2^{\\text{new}}(256)$ ($\\dim = 6$, 5 Galois orbits).\n4. **The CM Plateau & Sieve Obstruction**: A mathematical proof of why standard local Frobenius trace sieves ($a_q(E) \\equiv a_q(f) \\pmod n$) **100% fail** to eliminate any candidate newform at levels 32 and 256.\n5. **Methodological Resolution**: How Ellenberg overcame the CM Plateau using global Cartan normalizer images, formal immersion, and Duke's analytic asymptotic non-vanishing theorems.\n\n---\n\n## 2. Comparative Analysis of Frey Curve Constructions\n\nTwo distinct philosophies exist in the literature for attaching modular forms to Diophantine equations of signature $(2, 4, n)$:\n1. Constructing a **$\\mathbb{Q}$-curve over an imaginary quadratic field** (Ellenberg 2004);\n2. Constructing an **elliptic curve over $\\mathbb{Q}$** via ternary Diophantine recipes (Bennett\u2013Skinner 2004).\n\n```mermaid\nflowchart TD\n    Eq[\"A^2 + B^4 = C^n (n >= 5 prime)\"] --> Opt1[\"Ellenberg (2004) Architecture<br/>Frey Q-Curve over Q(i)\"]\n    Eq --> Opt2[\"Bennett-Skinner (2004) Architecture<br/>Ternary Frey Curves over Q\"]\n\n    Opt1 --> E_Ell[\"E: y^2 = x^3 + 2(1+i)Ax^2 + (B + iA^2)x\"]\n    E_Ell --> Res[\"Weil Restriction Res_{Q(i)/Q}(E)<br/>Abelian Surface with RM by Z[sqrt(2)]\"]\n    Res --> Fixed_N[\"Conductor N in {32, 256}<br/>(Completely independent of B!)\"]\n    Fixed_N --> Obst_CM[\"CM Plateau Obstruction:<br/>All newforms have CM (Sieves fail)\"]\n\n    Opt2 --> E_BS[\"C^n - B^4 = A^2 <==> 1*C^n + (-B^4)*1^n = A^2<br/>E_1, E_2, E_3 over Q\"]\n    E_BS --> Var_N[\"Conductor N_n = 2^beta * rad(B)<br/>(Depends heavily on unknown variable B!)\"]\n    Var_N --> Obst_Var[\"Radical Inflation Obstruction:<br/>Cannot bound level a priori for variable B\"]\n```\n\n### 2.1. Ellenberg's Frey $\\mathbb{Q}$-Curve over $\\mathbb{Q}(i)$ (2004)\n\nLet $(A, B, C)$ be a primitive integer solution with $\\gcd(A, B) = 1$ and $AB \\neq 0$:\n$$A^4 + B^2 = C^n \\quad (\\text{equivalently } B^2 + A^4 = C^n), \\quad n \\geq 5 \\text{ prime}.$$\nBecause $(A, -B, C)$ is also a solution, we normalize $B$ such that $B \\not\\equiv 1 \\pmod 4$ (i.e. $B \\equiv 0, 2, 3 \\pmod 4$).\n\nLet $K = \\mathbb{Q}("
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.24
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.83
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.31,
+        "confidence": 0.31,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.07,
+          "2": 0.39,
+          "3": 0.48
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2696,
+      "output_tokens": 94
+    }
+  }
+}

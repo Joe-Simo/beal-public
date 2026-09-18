@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U110_signature_5_5_higher_primes_analysis",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U110_signature_5_5_higher_primes_analysis.md",
+    "excerpt": "# U110: Signature $(5, 5, p)$ for Higher Primes $p \\in \\{17, 19, 23\\}$, Field Invariant Certification for $L_{17}$, and Modular Level-Lowering Evaluation over $\\mathbb{Q}(\\sqrt{5})$\n\n**Date**: 2026-09-17  \n**Author**: Signature $(5, 5, p)$ Higher Prime Specialist  \n**Target Equations**:  \n1. $X^5 + Y^5 = Z^p$ for $p \\in \\{17, 19, 23\\}$, $\\gcd(X, Y, Z) = 1$, $X Y Z \\ne 0$.  \n2. $X^{10} + Y^{10} = Z^p$ for $p \\in \\{17, 19, 23\\}$, $\\gcd(X, Y, Z) = 1$, $X Y Z \\ne 0$.  \n**Target Fields**:  \n- Maximal real cyclotomic subfield $F_{17} = \\mathbb{Q}(\\zeta_{17})^+$ of degree 8.  \n- Stoll 2-descent root fields $L_{17, 0} = \\mathbb{Q}[t]/(t^{34} + 2t^{17} - 4)$ and $L_{17, 1} = \\mathbb{Q}[t]/(t^{34} - 16t^{17} - 16)$ of degree 34 over $\\mathbb{Q}$ ($17$ over $\\mathbb{Q}(\\sqrt{5})$).  \n- Descent fields $L_{19}$ (degree 38) and $L_{23}$ (degree 46).  \n**Status**: Complete written certification, unconditional class group and unit group 2-saturation proofs, Dedekind zeta residue certification, and comprehensive evaluation of Hilbert modular forms / Frey hyperelliptic Jacobians over $\\mathbb{Q}(\\sqrt{5})$.\n\n---\n\n## 1. Executive Summary & Complete Ledger of Higher Primes\n\nFollowing the unconditional certification of class numbers $h = 1$ and 2-saturation for the descent fields $L_{11}$ (degree 22) and $L_{13}$ (degree 26) in checkpoint **U102**, this investigation addresses the next frontier of prime exponents:\n$$p \\in \\{17, 19, 23\\}.$$\n\n### 1.1 Status Ledger for Exponents $p \\in \\{17, 19, 23\\}$\n\n| Exponent $p$ | $X^5 + Y^5 = Z^p$ Status | $X^{10} + Y^{10} = Z^p$ Status | Method & Definitive Citation |\n| :---: | :---: | :---: | :---: |\n| **$p = 17$** | **Partially Resolved**<br>($2 \\mid Z, 5 \\mid Z, 17 \\mid Z$ Closed;<br>$Z$ odd, $\\gcd(Z, 85)=1$ Open) | **Partially Resolved**<br>($2 \\mid Z, 5 \\mid Z, 17 \\mid Z$ Closed;<br>$Z$ odd, $\\gcd(Z, 85)=1$ Open) | - $5 \\mid Z$: Closed (Dahmen\u2013Siksek 2014, Kraus sieve at $q=103$)<br>- $2 \\mid Z$: Closed (BCDF 2019 Theorem 6 via inertia at 2)<br>- $17 \\mid Z$: Closed (BCDF 2019 Theorem 3 via level-raising)<br>- **U110 Unconditional 2-Descent**: $\\operatorname{rank} J_{17,1}(K) \\le 2 < g=8$ |\n| **$p = 19$** | **100% UNCONDITIONALLY CLOSED**<br>(No Non-Trivial Solutions) | **100% UNCONDITIONALLY CLOSED**<br>(No Non-Trivial Solutions) | - Dahmen\u2013Siksek (2014, *Acta Arith.* 164, Theorem 1): $C_{19}/\\mathbb{Q}$ has $\\operatorname{rank} J_{19}(\\mathbb{Q}) = 1 < 9$, Chabauty at $q=3$<br>- U103 Decic Coleman Integration at $q=3$ on genus-18 curve |\n| **$p = 23$** | **Partially Resolved**<br>($2 \\mid Z, 5 \\mid Z, 23 \\mid Z$ Closed;<br>$Z$ odd, $\\gcd(Z, 115)=1$ Open) | **100% UNCONDITIONALLY CLOSED**<br>(No Non-Trivial Solutions) | - General $X^5 + Y^5 = Z^{23}$: $2 \\mid Z, 5 \\mid Z, 23 \\mid Z$ closed via BCDF (2019)<br>- Decic $X^{10} + Y^{10} = Z^{23}$: **100% Closed** via U103 Coleman integration on $C_{23}: Y^2 = 5X^{46} - 4$ (genus 22) |\n\n### 1.2 Core Contributions of This Investigation\n\n1. **Unconditional 2-Saturation and Class Group Certification for $L_{17, 0}$ and $L_{17, 1}$**:\n   - The two degree-34 descent fields arising in Dahmen\u2013Siksek's 2-descent over $K = \\mathbb{Q}(\\sqrt{5})$ are:\n     $$L_{17, 0} = \\mathbb{Q}[t]/(t^{34} + 2t^{17} - 4), \\quad L_{17, 1} = \\mathbb{Q}[t]/(t^{34} - 16t^{17} - 16).$$\n   - Both fields have Dirichlet unit rank $r = 17$ and signature $(2, 16)$.\n   - We prove that their unit groups are **unconditionally 2-saturated** in $\\mathcal{O}_L^\\times$ by evaluating the quadratic character symbols across degree-1 prime ideals:\n     $$\\operatorname{rank}_{\\mathbb{F}_2}(M_0) = 18/18, \\quad \\operatorname{rank}_{\\mathbb{F}_2}(M_1) = 18/18.$$\n   - The cyclotomic polynomial $\\Phi_{17}(X) \\pmod 2$ factors into two irreducible degree-8 polynomials (since $\\operatorname{ord}_{17}(2) = 8$). By representation-theoretic rigidity, any non-trivial 2-torsion must satisfy $\\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_{L_{17}})[2] \\ge 8$. This is ruled out with Cohen-Martinet probability $P < 2^{-64} \\approx 5.4 \\times 10^{-20}$.\n   - Class numbers are certified to be $h(L_{17, 0}) = 1$ and $h(L_{17, 1}) = 1$. Independent Dedekind zeta residues agree with the base field residue $\\operatorname{Res}_{s=1} \\zeta_K(s) \\approx 0.430409$ to within $0.78\\%$ and $3.01\\%$.\n   - **Consequence**: The Dahmen\u2013Siksek 2-Selmer rank bounds $\\operatorname{rank} J_{17, 0}(K) \\le 4$ and $\\operatorname{rank} J_{17, 1}(K) \\le 2$ are now **100% UNCONDITIONAL** (removing the GRH dependency).\n\n2. **Analysis of the Maximal Real Cyclotomic Field $F_{17} = \\mathbb{Q}(\\zeta_{17})^+$**:\n   - Degree 8, totally real signature $(8, 0)$, unit rank 7.\n   - Minimal polynomial: $P_8(w) = w^8 + w^7 - 7w^6 - 6w^5 + 15w^4 + 10w^3 - 10w^2 - 4w + 1$.\n   - Discriminant $\\operatorname{disc}(F_{17}) = 17^7 = 410,338,673$.\n   - Class number $h(F_{17}) = 1$, regulator $R(F_{17}) \\approx 28.4376$.\n   - Unconditional 2-saturation verified across split primes $q \\equiv \\pm 1 \\pmod{17}$ with full rank 8 out of 8.\n\n3. **Evalua"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.67,
+        "confidence": 0.33,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.61,
+          "1": 0.14,
+          "2": 0.23,
+          "3": 0.02
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 2732,
+      "output_tokens": 42
+    }
+  }
+}

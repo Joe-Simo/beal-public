@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U148",
+  "timestamp": "2026-09-18T00:38:45-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "(p,p,r) chain: both branches kernel-checked down to the Thue-type equation cofactor = e^r / p e^r. Residual set unchanged."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which?",
+      "criteria": {
+        "lit_ppr": "literature: exact coverage of (p,p,r) \u2014 Kraus (3,3,p), DM/Poonen (n,n,3), (n,n,n) Wiles, (5,5,7),(5,5,19),(7,7,5) \u2014 and record in Residual as named facts",
+        "residual_extend": "extend ResidualShape with the new kernel facts (Z[i] reduction for even-even-odd, (p,p,r) branch structure)",
+        "pqr": "distinct odd primes (p,q,r): elementary kernel facts available? e.g. from mod-8: which base is even given parities; C^r - A^p = B^q: no factorisation; likely BLOCKED \u2014 record",
+        "countersearch_ppr": "COUNTERSEARCH: test the (p,p,r) chain statements on the r=2 analogue / on any (p,p,2) solution with p odd (e.g. 1^3 + 2^3 = 3^2) to confirm they are exponent-2-blind"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "lit_ppr",
+        "confidence": 0.34,
+        "probabilities": {
+          "countersearch_ppr": 0.05,
+          "residual_extend": 0.43,
+          "lit_ppr": 0.5,
+          "pqr": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 589,
+      "output_tokens": 59
+    }
+  }
+}

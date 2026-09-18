@@ -1,0 +1,397 @@
+{
+  "checkpoint": "U111 (400 < p < 500)",
+  "primes_audited": 17,
+  "p1_grh": [
+    419,
+    421,
+    443,
+    461,
+    463,
+    467,
+    479,
+    487
+  ],
+  "non_p1_class_number_anomaly": [
+    491
+  ],
+  "non_p1_mod8": [
+    401,
+    409,
+    433,
+    449,
+    457
+  ],
+  "non_p1_split2": [
+    431,
+    439,
+    499
+  ],
+  "cumulative_19_500": {
+    "total_primes": 88,
+    "total_p1": 48,
+    "percentage": 54.5
+  },
+  "details": [
+    {
+      "p": 401,
+      "pmod8": 1,
+      "d": 200,
+      "ord2": 200,
+      "has_neg1": true,
+      "f_plus": 100,
+      "g_plus": 2,
+      "is_inert": false,
+      "pari_factors": [
+        100,
+        100
+      ],
+      "t_pari": 0.054718017578125,
+      "h_plus": 45,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 / OEIS A230869 (term 9)",
+      "h_is_one": false,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 409,
+      "pmod8": 1,
+      "d": 204,
+      "ord2": 204,
+      "has_neg1": true,
+      "f_plus": 102,
+      "g_plus": 2,
+      "is_inert": false,
+      "pari_factors": [
+        102,
+        102
+      ],
+      "t_pari": 0.04297924041748047,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 419,
+      "pmod8": 3,
+      "d": 209,
+      "ord2": 418,
+      "has_neg1": true,
+      "f_plus": 209,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        209
+      ],
+      "t_pari": 0.04554176330566406,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 421,
+      "pmod8": 5,
+      "d": 210,
+      "ord2": 420,
+      "has_neg1": true,
+      "f_plus": 210,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        210
+      ],
+      "t_pari": 0.04893088340759277,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 431,
+      "pmod8": 7,
+      "d": 215,
+      "ord2": 43,
+      "has_neg1": false,
+      "f_plus": 43,
+      "g_plus": 5,
+      "is_inert": false,
+      "pari_factors": [
+        43,
+        43,
+        43,
+        43,
+        43
+      ],
+      "t_pari": 0.09546589851379395,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: Split-2 (g^+=5)"
+    },
+    {
+      "p": 433,
+      "pmod8": 1,
+      "d": 216,
+      "ord2": 72,
+      "has_neg1": true,
+      "f_plus": 36,
+      "g_plus": 6,
+      "is_inert": false,
+      "pari_factors": [
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "t_pari": 0.0782928466796875,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 439,
+      "pmod8": 7,
+      "d": 219,
+      "ord2": 73,
+      "has_neg1": false,
+      "f_plus": 73,
+      "g_plus": 3,
+      "is_inert": false,
+      "pari_factors": [
+        73,
+        73,
+        73
+      ],
+      "t_pari": 0.04925084114074707,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: Split-2 (g^+=3)"
+    },
+    {
+      "p": 443,
+      "pmod8": 3,
+      "d": 221,
+      "ord2": 442,
+      "has_neg1": true,
+      "f_plus": 221,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        221
+      ],
+      "t_pari": 0.054059743881225586,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 449,
+      "pmod8": 1,
+      "d": 224,
+      "ord2": 224,
+      "has_neg1": true,
+      "f_plus": 112,
+      "g_plus": 2,
+      "is_inert": false,
+      "pari_factors": [
+        112,
+        112
+      ],
+      "t_pari": 0.09086894989013672,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 457,
+      "pmod8": 1,
+      "d": 228,
+      "ord2": 76,
+      "has_neg1": true,
+      "f_plus": 38,
+      "g_plus": 6,
+      "is_inert": false,
+      "pari_factors": [
+        38,
+        38,
+        38,
+        38,
+        38,
+        38
+      ],
+      "t_pari": 0.05498909950256348,
+      "h_plus": 5,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 / OEIS A230869 (term 10)",
+      "h_is_one": false,
+      "two_div_h": false,
+      "classification": "Non-P_1: p = 1 mod 8"
+    },
+    {
+      "p": 461,
+      "pmod8": 5,
+      "d": 230,
+      "ord2": 460,
+      "has_neg1": true,
+      "f_plus": 230,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        230
+      ],
+      "t_pari": 0.045523881912231445,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 463,
+      "pmod8": 7,
+      "d": 231,
+      "ord2": 231,
+      "has_neg1": false,
+      "f_plus": 231,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        231
+      ],
+      "t_pari": 0.0458378791809082,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 467,
+      "pmod8": 3,
+      "d": 233,
+      "ord2": 466,
+      "has_neg1": true,
+      "f_plus": 233,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        233
+      ],
+      "t_pari": 0.0518183708190918,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 479,
+      "pmod8": 7,
+      "d": 239,
+      "ord2": 239,
+      "has_neg1": false,
+      "f_plus": 239,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        239
+      ],
+      "t_pari": 0.05156397819519043,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 487,
+      "pmod8": 7,
+      "d": 243,
+      "ord2": 243,
+      "has_neg1": false,
+      "f_plus": 243,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        243
+      ],
+      "t_pari": 0.046803951263427734,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Class P_1 (GRH ELIM)"
+    },
+    {
+      "p": 491,
+      "pmod8": 3,
+      "d": 245,
+      "ord2": 490,
+      "has_neg1": true,
+      "f_plus": 245,
+      "g_plus": 1,
+      "is_inert": true,
+      "pari_factors": [
+        245
+      ],
+      "t_pari": 0.05290079116821289,
+      "h_plus": 8,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 / OEIS A230869 (term 11)",
+      "h_is_one": false,
+      "two_div_h": true,
+      "classification": "Non-P_1: Even h^+ (8)"
+    },
+    {
+      "p": 499,
+      "pmod8": 3,
+      "d": 249,
+      "ord2": 166,
+      "has_neg1": true,
+      "f_plus": 83,
+      "g_plus": 3,
+      "is_inert": false,
+      "pari_factors": [
+        83,
+        83,
+        83
+      ],
+      "t_pari": 0.04874587059020996,
+      "h_plus": 1,
+      "h_status": "Under GRH",
+      "h_source": "Schoof 2003 Main Table",
+      "h_is_one": true,
+      "two_div_h": false,
+      "classification": "Non-P_1: Split-2 (g^+=3)"
+    }
+  ]
+}

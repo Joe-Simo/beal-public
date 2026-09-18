@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C002_C008",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C002",
+      "status": "BLOCKED",
+      "claim": "Level lowering in the style of Azon arXiv:2504.01967v2 Theorem 5.23 applies to the weighted equation X^10 + 256 Y^10 = Z^17 and eliminates the surviving Frey representation."
+    },
+    "B": {
+      "id": "C008",
+      "status": "PARTIAL_RESULT",
+      "claim": "The mod-p Galois representation attached to the project's Frey curves is surjective uniformly across the relevant signatures (universal Serre surjectivity)."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.63,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.19,
+          "2": 0.64,
+          "3": 0.05
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.2
+      }
+    },
+    "usage": {
+      "input_tokens": 551,
+      "output_tokens": 34
+    }
+  }
+}

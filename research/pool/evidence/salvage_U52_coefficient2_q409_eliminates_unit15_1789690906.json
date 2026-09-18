@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U52_coefficient2_q409_eliminates_unit15",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U52_coefficient2_q409_eliminates_unit15.md",
+    "excerpt": "# U52: coefficient-2 branch \u2014 q=409 eliminates the omega^15 unit class\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input\n\nU51 reduced the unit exponent in\n\n    H_-(m,n)=omega^k alpha^17\n\nto k in {0,15}, while m+i n is a Gaussian 17th power up to a Gaussian unit.\n\n## Choosing a second discriminating prime\n\nFor a rational prime q, the Gaussian projective 17th-power condition is informative when 17 divides q-chi_{-1}(q), and the Q(sqrt(5)) projective condition is informative when 17 divides q-chi_5(q).\n\nThe next small prime after 67 satisfying both conditions is\n\n    q=409.\n\nAt 409, -1 and 5 are both squares. The Gaussian 17th-power condition leaves 26 projective ratios n/m (including infinity).\n\nThe polynomial T^2-T-1 splits modulo 409 with roots\n\n    omega = 130 or 280.\n\nThus the Q(sqrt5) equation can be tested independently in both F_409 components, avoiding any ambiguity from the split residue algebra.\n\n## Exact combined sieve\n\nFor every Gaussian-compatible projective ratio t=n/m, test whether in both embeddings omega -> 130,280,\n\n    1+30t^2+t^4-16t^2 omega\n\nbelongs to omega^k*(F_409)^17.\n\nResults:\n\n- k=15: no compatible projective ratio.\n- k=0: exactly t=0 and t=infinity survive.\n\nTherefore the omega^15 global unit class is impossible.\n\nEvery surviving coefficient-2 solution must satisfy the untwisted equation\n\n    H_-(m,n)=alpha^17,\n\nand the q=409 local condition\n\n    409 | m*n.\n\nSince gcd(m,n)=1, exactly one of m,n is divisible by 409.\n\nCombining with U48 and U51, a surviving solution now has\n\n    103 | m*n,\n    67  | m*n,\n    409 | m*n,\n\nwith exactly one coordinate divisible by each prime (not necessarily the same coordinate).\n\n## Independent q=883 check\n\nThe next inert/inert discriminating prime q=883 was also tested for the remaining k=0 class. Its Gaussian 17th powers give 52 projective ratios, and after imposing the Q(sqrt5) 17th-power condition only\n\n    t=0, infinity\n\nsurvive. Thus q=883 supplies another forced divisor\n\n    883 | m*n.\n\nThis does not itself contradict primitivity because different large primes may divide one coordinate.\n\n## Current strongest form\n\nThe coefficient-2 branch is now reduced to\n\n    H_-(m,n)=alpha^17\n\nwith no unit twist, together with the Gaussian equation\n\n    m+i n = epsilon*(r+i s)^17,\n\nand the forced divisibility\n\n    67*103*409*883 | m*n.\n\nNo complete contradiction is claimed.\n\n## Next obligation\n\nExploit the untwisted equality itself rather than accumulating divisibility primes indefinitely. Since the omega coefficient of H_- is exactly -16m^2n^2, compare it with the omega coefficient of (A+B omega)^17. This gives an explicit degree-17 binary form equal to -16m^2n^2. Factor/resultant analysis of that coefficient form may force A or B to carry the growing prime divisors and create a descent or valuation contradiction.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.58,
+        "confidence": 0.32,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.1,
+          "2": 0.55,
+          "3": 0.13
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.81
+      }
+    },
+    "usage": {
+      "input_tokens": 1435,
+      "output_tokens": 42
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U72_root_closed_order_and_full_support",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U72_root_closed_order_and_full_support.md",
+      "excerpt": "# U72: a root-closed order, full coefficient support, and exact divisibility profiles\n\n**Status: written, self-reviewed necessary-condition theorems, corroborated by distinct exact arithmetic implementations. The weighted equation and the full Beal conjecture remain unresolved. Independent expert or proof-assistant verification is outstanding.**\n\nResearch date: 2026-09-15. The private remote head was checked at `229aba18da05b84501e9de3377b992e8013320c6` (U71). The attached U71 archive was restored additively; existing files were compared rather than overwritten. Its Python verifier was replayed, and its entire mathematical output agreed with the preserved output. U71's written proof was also read. None of this is independent expert certification.\n\n## 1. Exact result and dependencies\n\nThe active auxiliary problem is\n\n    (W) X^10+256Y^10=Z^17,\n        X,Y,Z positive integers, gcd(X,Y)=1.\n\nWrite rho for the positive fifth root of 2, set L=Q(rho,i), and put\n\n    c=i*rho^4,  c^10=-256.\n\nU71 supplies a unique integral element theta in L with\n\n    theta^17=X+cY,   Norm(theta)=Z,   289|Y.          (1.1)\n\nThe following theorem refines that necessary condition. Its new assertions about coefficients apply to any integral theta satisfying (1.1), with X odd and gcd(X,Y)=1. The application to W inherits U71's written/self-reviewed theorem. It does not invoke Q65, U41, a boundary-curve identification, a modular-form list, or a conjectural rank.\n\n**Theorem.** The element theta lies in the smaller order R=Z[c], whose index in O_L is 2^34. Thus\n\n    theta=a0+a1*c+...+a9*c^9,  a_j in Z.             (1.2)\n\nLet e=v_17(Y), so e>=2. All ten coefficients are nonzero, and\n\n    v_17(a_j)=j(e-1),  j=0,...,9.                    (1.3)\n\nMore precisely, with y=Y/17^e,\n\n    a_j/17^(j(e-1)) = X^(1-j)*y^j/j! modulo 17.      (1.4)\n\nNegative exponents in (1.4) mean inverses of the unit X modulo 17.\n\nFor every prime q in\n\n    Pset={11,31,41,61,71,101,151,191,211,281,331,431,461,631},\n\none has q|Y, and the exact additional profile is\n\n    v_q(a_j)=j*v_q(Y)+epsilon(q,j),                  (1.5)\n\nwhere epsilon is 1 if q=11 and j>=3, or if q=101 and j>=7, and is zero otherwise.\n\n**Weighted corollary.** Put\n\n    P=product(Pset)=433992707035920672833426144791,\n    D=11*101*(17P)^9.\n\nThen D divides the nonzero integer a9. Bounds from all ten complex embeddings give\n\n    max(X,Y)>10^4810.                               (1.6)\n\nAt least one of X,Y therefore has at least 4811 decimal digits. This replaces the earlier 515-digit necessary lower bound for this auxiliary equation. It is not a search through that range, not an upper bound, and not a lower bound for every possible Beal counterexample.\n\nThe structural result is (1.2)\u2013(1.5): the actual common root has no zero coefficient in this fixed power basis, and its coefficients have different, precisely controlled divisibilities. Simply assuming a two-term or three-term root would miss every putative weighted solution. These are still necessary conditions; an integral root with these properties has not been excluded.\n\n## 2. A monogenic maximal order and the index of R\n\nDefine\n\n    u=(1-i)*rho^3/2.\n\nDirect algebra gives\n\n    u^5=-1+i,  u^10+2u^5+2=0,\n    i=u^5+1,  rho=u^7+u^2,\n    c=-u^8-2u^3,  c^4=8rho,  c^5=16i.              (2.1)\n\nThe polynomial h(U)=U^10+2U^5+2 is Eisenstein at 2. Thus u is integral, has degree ten, and generates L. Its polynomial discriminant is\n\n    disc(h)=-160000000000=-2^14*5^10.                (2.2)\n\nOnly 2 and 5 could divide the index of Z[u] in O_L. At 2, the Eisenstein polynomial makes u a uniformizer in a totally ramified degree-ten extension. Such a uniformizer generates its local integer ring: expand any local integer in powers of u with scalar residue representatives; the finite Z_2-module Z_2[u] is complete and contains the limit. Hence Z_2[u]=O_L tensor Z_2.\n\nAt 5, Q_5(rho) is totally ramified of degree five because (U+2)^5-2 is Eisenstein. Its integer ring is Z_5[rho], by the same complete-uniformizer argument. The two simple roots of I^2+1 modulo 5 lift to Q_5, so the local integer algebra of L is Z_5[rho] times itself. It is generated by rho and i. These both belong to Z[u] by (2.1); therefore Z_5[u] is already maximal. Away from 2 and 5, (2.2) excludes any index. This proves\n\n    O_L=Z[u],  disc(L)=-160000000000.                (2.3)\n\nThe local ramification and lifting facts are standard; the cited Milne pages were inspected again [S1]. The generator identities and the specialized maximality argument are given here, not inferred from a numerical discriminant label.\n\nThe polynomial of c is C^10+256, since (2.1) recovers both rho and i from c over Q. Its discriminant is -2^82*5^10. Consequently\n\n    [O_L:R]=sqrt(disc(C^10+256)/disc(L))=2^34.        (2.4)\n\nBoth verifiers also compute (2.4) directly: form the ten columns of 1,c,...,c^9 in the u power basis and take their exact determinant. This provides an integer-lattice check in addition to the discriminant ratio.\n\n## 3",
+      "length_chars": 19018
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.34,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.86,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.1
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.15,
+        "confidence": 0.85,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.05
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.31,
+        "probabilities": {
+          "verify_computation": 0.19,
+          "verify_literature": 0.01,
+          "audit_now": 0.12,
+          "audit_later": 0.45,
+          "no_action": 0.23
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2950,
+      "output_tokens": 125
+    }
+  }
+}

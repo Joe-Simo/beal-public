@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U106_algebraic_descent_signature_3_3_p",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U106_algebraic_descent_signature_3_3_p.md",
+      "excerpt": "# U106: Algebraic Descent for the Generalized Fermat Equation $A^3 + B^3 = C^p$ over Eisenstein Integers $\\mathbb{Z}[\\omega]$\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group  \n**Target Equation**: $A^3 + B^3 = C^p$ with prime $p \\ge 5$, $\\gcd(A, B, C) = 1$, and $A B C \\neq 0$.  \n**Ring of Definition**: $\\mathbb{Z}[\\omega]$ where $\\omega = \\frac{-1 + \\sqrt{-3}}{2}$, $\\omega^2 + \\omega + 1 = 0$, $h(\\mathbb{Q}(\\sqrt{-3})) = 1$.  \n**Supporting Code**: `code/U106_algebraic_descent.py`, `code/U106_case2_three_divides_C.py`, `code/U106_results.json`, `code/U106_case2_results.json`.  \n**Status**: Authoritative research checkpoint; exact algebraic parametrization for both $3 \\nmid C$ and $3 \\mid C$; universal linear factor theorem; exact 3-adic valuation formulas; Thue elimination of $c_1 = 1$; and methodological assessment of Chabauty and Baker.\n\n---\n\n## 1. Introduction and Setup in the Eisenstein Integers\n\nThe generalized Fermat equation of signature $(3, 3, p)$:\n$$A^3 + B^3 = C^p, \\quad \\gcd(A, B, C) = 1, \\quad A B C \\neq 0, \\quad p \\ge 5 \\text{ prime}$$\nadmits a natural algebraic factorization in the ring of Eisenstein integers:\n$$\\mathcal{O}_K = \\mathbb{Z}[\\omega], \\quad K = \\mathbb{Q}(\\sqrt{-3}), \\quad \\omega = e^{2\\pi i / 3} = \\frac{-1 + \\sqrt{-3}}{2}.$$\n\n### Invariants of the Ring $\\mathbb{Z}[\\omega]$\n1. **Euclidean Domain & Class Number**: $\\mathbb{Z}[\\omega]$ is a principal ideal domain and unique factorization domain with class number $h = 1$.\n2. **Unit Group**: $\\mathcal{O}_K^\\times = \\mu_6 = \\{\\pm 1, \\pm \\omega, \\pm \\omega^2\\}$, cyclic of order 6.\n3. **Prime Ramification**: The only ramified rational prime is $3 = -\\omega^2 (1 - \\omega)^2$. The element $\\lambda = 1 - \\omega$ is prime in $\\mathbb{Z}[\\omega]$ with norm $N(\\lambda) = 3$.\n4. **Norm Form**: For $\\gamma = \\alpha + \\beta \\omega \\in \\mathbb{Z}[\\omega]$ with $\\alpha, \\beta \\in \\mathbb{Z}$, the field norm is:\n   $$N(\\gamma) = \\gamma \\bar\\gamma = (\\alpha + \\beta \\omega)(\\alpha + \\beta \\omega^2) = \\alpha^2 - \\alpha \\beta + \\beta^2.$$\n\n---\n\n## 2. Factorization and Greatest Common Divisors in $\\mathbb{Z}[\\omega]$\n\nThe sum of two cubes factors completely into three linear terms in $\\mathbb{Z}[\\omega]$:\n$$A^3 + B^3 = \\Lambda_1 \\Lambda_2 \\Lambda_3 = C^p,$$\nwhere:\n$$\\Lambda_1 = A + B \\in \\mathbb{Z},$$\n$$\\Lambda_2 = A + \\omega B \\in \\mathbb{Z}[\\omega],$$\n$$\\Lambda_3 = A + \\omega^2 B = \\bar{\\Lambda}_2 \\in \\mathbb{Z}[\\omega].$$\n\n### Pairwise Differences and Divisibility\nThe pairwise differences between the factors are:\n$$\\Lambda_1 - \\Lambda_2 = (1 - \\omega) B = \\lambda B,$$\n$$\\Lambda_1 - \\Lambda_3 = (1 - \\omega^2) B = -\\lambda \\omega^2 B,$$\n$$\\Lambda_2 - \\Lambda_3 = (\\omega - \\omega^2) B = \\lambda \\omega B.$$\nSimilarly, multiplying $\\Lambda_1$ by powers of $\\omega$ yields:\n$$\\omega \\Lambda_1 - \\Lambda_2 = (\\omega - 1) A = -\\lambda A,$$\n$$\\omega^2 \\Lambda_1 - \\Lambda_3 = (\\omega^2 - 1) A = -\\lambda (1 + \\omega) A.$$\n\nSince $\\gcd(A, B) = 1$, any common prime divisor $\\delta \\in \\mathbb{Z}[\\omega]$ of any distinct pair $(\\Lambda_i, \\Lambda_j)$ must divide both $\\lambda A$ and $\\lambda B$, hence must divide $\\lambda$.\nSince $\\lambda$ has norm 3, the only possible common prime divisor is $\\lambda = 1 - \\omega$.\n\nIn the integers $\\mathbb{Z}$:\n$$\\gcd(A + B, A^2 - AB + B^2) = \\gcd(A + B, (A + B)^2 - 3AB) = \\gcd(A + B, 3AB) = \\gcd(A + B, 3) \\in \\{1, 3\\}.$$\n\nTherefore, we have two mutually exclusive cases:\n- **Case I ($3 \\nmid C$)**: The factors $\\Lambda_1, \\Lambda_2, \\Lambda_3$ are pairwise coprime in $\\mathbb{Z}[\\omega]$.\n- **Case II ($3 \\mid C$)**: The factors share the prime divisor $\\lambda = 1 - \\omega$ with exact valuations determined by $v_3(C)$.\n\n---\n\n## 3. Case I: $3 \\nmid C$ \u2014 Coprime Factorization and Parametrization\n\nWhen $3 \\nmid C$, $\\gcd(\\Lambda_i, \\Lambda_j) = 1$ for all $i \\neq j$.\nSince $\\mathbb{Z}[\\omega]$ is a UFD with class number 1, every factor in $\\Lambda_1 \\Lambda_2 \\Lambda_3 = C^p$ is an associate of an exact $p$-th power:\n$$A + \\omega B = u \\cdot (\\alpha + \\beta \\omega)^p,$$\nfor some unit $u \\in \\mu_6$ and $\\alpha, \\beta \\in \\mathbb{Z}$.\n\n### Unit Group Absorption Lemma\n**Lemma 1**: *For any prime $p \\ge 5$, every unit $u \\in \\mu_6$ is a $p$-th power in $\\mu_6$. Consequently, $u$ can be absorbed into $(\\alpha + \\beta \\omega)^p$ without loss of generality.*\n\n*Proof*: Since $p \\ge 5$ is prime, $\\gcd(p, |\\mu_6|) = \\gcd(p, 6) = 1$. The power map $x \\mapsto x^p$ on the cyclic group $\\mu_6$ is an automorphism. Thus there exists a unique $u_0 \\in \\mu_6$ such that $u_0^p = u$. Replacing $\\alpha + \\beta \\omega$ by $u_0(\\alpha + \\beta \\omega) = \\alpha' + \\beta' \\omega \\in \\mathbb{Z}[\\omega]$ absorbs the unit. $\\blacksquare$\n\nThus, we obtain the exact parametrization:\n$$\\boxed{A + \\omega B = (\\alpha + \\beta \\omega)^p, \\quad \\alpha, \\beta \\in \\mathbb{Z}, \\quad \\gcd(\\alpha, \\beta) = 1.}$$\nTaking the field norm:\n$$A^2 - AB + B^2 = N(A + \\omega B) = N(\\alpha + \\beta \\omega)^p = (\\alpha^2 - \\alpha \\beta + \\beta^2)^p.$$\nSince $(",
+      "length_chars": 23262
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.3,
+        "confidence": 0.7,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.89,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.08
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.28,
+        "confidence": 0.72,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.89,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.08
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.56
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.45,
+        "probabilities": {
+          "audit_later": 0.56,
+          "audit_now": 0.22,
+          "no_action": 0.16,
+          "verify_literature": 0.01,
+          "verify_computation": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3228,
+      "output_tokens": 125
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "repair_SquarefreeCore",
+  "timestamp": "2026-09-17T21:21:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal project. Already kernel-verified and axiom-free: Beal.Conjecture (the statement), Beal.AlgebraicIdentities, Beal.ExponentReduction (exponent reduction + the diagonal family (n,n,n) with 4|n via mathlib fermatLastTheoremFour), Beal.Structure (pairwise coprimality of the bases, no counterexample with A=B). mathlib v4.14.0 provides fermatLastTheoremFour but NOT a complete FLT for exponent 3, and provides NO Catalan/Mihailescu theorem. Custom axioms are not acceptable in a verified chain.",
+    "module": "SquarefreeCore",
+    "source": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Mathlib.Data.Nat.Defs\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Data.Nat.Prime.Basic\nimport Mathlib.Tactic.Ring\n\n/-!\n# p-Adic Valuation Identities, Power Multiplicities, and Pairwise Coprimality\n\nThis module formalizes the $p$-adic valuation arithmetic for generalized Fermat equations\n$A^x + B^y = C^z$, establishes the valuation identity for powers:\n  $$v_p(A^x) = x \\cdot v_p(A)$$\nand deduces that any primitive solution $(A, B, C)$ to $A^x + B^y = C^z$ with exponents\n$x, y, z \\ge 3$ has **mutually pairwise coprime bases**:\n  $$\\gcd(A, B) = 1, \\quad \\gcd(B, C) = 1, \\quad \\gcd(A, C) = 1.$$\n\n## Main Theorems Formalized:\n\n1. **p-Adic Valuation on Powers**:\n   - $v_p(A^x) = x \\cdot v_p(A)$ for prime $p$ and $A > 0$.\n   - If $p \\mid A$, then $v_p(A) \\ge 1$, so $v_p(A^x) \\ge x \\ge 3$.\n\n2. **Non-Archimedean Addition and Base Disjointness**:\n   - If $\\gcd(A, B) = 1$ and $p \\mid A$, then $p \\nmid B$, so $v_p(B) = 0$ and $v_p(B^y) = 0$.\n   - Strict ultrametric equality: $v_p(A^x + B^y) = \\min(v_p(A^x), v_p(B^y)) = 0$.\n   - Since $A^x + B^y = C^z$, $v_p(C^z) = 0 \\implies v_p(C) = 0 \\implies p \\nmid C$.\n\n3. **Mutual Pairwise Coprimality Theorem**:\n   - For any primitive solution to $A^x + B^y = C^z$ with $x, y, z \\ge 1$:\n       $$\\gcd(A, B) = 1 \\iff \\gcd(B, C) = 1 \\iff \\gcd(A, C) = 1 \\iff \\gcd3(A, B, C) = 1.$$\n   - In particular, in every Beal counterexample, the bases $(A, B, C)$ are unconditionally\n     pairwise coprime.\n-/\n\nnamespace Beal\n\n/-! ### 1. p-Adic Valuation on Natural Numbers -/\n\n/--\nThe p-adic valuation v_p(n) of a natural number n at a prime p:\nthe maximal exponent k such that p^k divides n (with v_p(0) = 0).\n-/\ndef padicValNat (p : \u2115) (n : \u2115) : \u2115 :=\n  if p \u2264 1 \u2228 n = 0 then 0\n  else Nat.factorization n p\n\n/--\n**p-Adic Valuation Power Identity**:\nFor any prime p and positive integers A, x:\n  v_p(A^x) = x * v_p(A).\n-/\naxiom padicValNat_pow (p : \u2115) (hp : Nat.Prime p) (A : \u2115) (hA : A > 0) (x : \u2115) :\n    padicValNat p (A ^ x) = x * padicValNat p A\n\n/--\nA prime p divides A if and only if v_p(A) \u2265 1.\n-/\naxiom padicValNat_pos_iff_dvd (p : \u2115) (hp : Nat.Prime p) (A : \u2115) (hA : A > 0) :\n    padicValNat p A \u2265 1 \u2194 p \u2223 A\n\n/--\nIf p does not divide A, then v_p(A) = 0.\n-/\naxiom padicValNat_eq_zero_of_not_dvd (p : \u2115) (A : \u2115) (hnot : \u00ac p \u2223 A) :\n    padicValNat p A = 0\n\n/--\nStrict ultrametric property: if v_p(X) > v_p(Y), then v_p(X + Y) = v_p(Y).\nIn particular, if v_p(X) \u2265 1 and v_p(Y) = 0, then v_p(X + Y) = 0.\n-/\naxiom padicValNat_add_of_zero_right (p : \u2115) (hp : Nat.Prime p) (X Y : \u2115)\n    (hX : X > 0) (hY : Y > 0)\n    (hX_pos : padicValNat p X \u2265 1) (hY_zero : padicValNat p Y = 0) :\n    padicValNat p (X + Y) = 0\n\n/-! ### 2. Multiplicity Bounds for Beal Bases -/\n\n/--\nFor any prime p dividing A, the valuation of A^x is at least x:\n  v_p(A^x) \u2265 x.\nWhen x \u2265 3, v_p(A^x) \u2265 x \u2265 3.\n-/\ntheorem padicValNat_pow_ge (p A x : \u2115) (hp : Nat.Prime p) (hA : A > 0)\n    (hdiv : p \u2223 A) (hx : x \u2265 3) :\n    padicValNat p (A ^ x) \u2265 x \u2227 padicValNat p (A ^ x) \u2265 3 := by\n  have hpow := padicValNat_pow p hp A hA x\n  have hpos : padicValNat p A \u2265 1 := (padicValNat_pos_iff_dvd p hp A hA).mpr hdiv\n  rw [hpow]\n  constructor\n  \u00b7 nlinarith\n  \u00b7 nlinarith\n\n/-! ### 3. Divisibility and Valuation in A^x + B^y = C^z -/\n\n/--\nIf p is prime, p \u2223 A, and gcd(A, B) = 1, then p does not divide B.\n-/\nlemma not_dvd_of_coprime (p A B : \u2115) (hp : Nat.Prime p)\n    (hdivA : p \u2223 A) (hcop : Nat.Coprime A B) : \u00ac p \u2223 B := by\n  intro hdivB\n  have hdvd_gcd : p \u2223 Nat.gcd A B := Nat.dvd_gcd hdivA hdivB\n  rw [hcop] at hdvd_gcd\n  have hp_gt1 : p > 1 := Nat.Prime.one_lt hp\n  have hp_le1 : p \u2264 1 := Nat.le_of_dvd (by decide) hdvd_gcd\n  omega\n\n/--\nIf p is prime and does not divide B, it does not divide any power B^y.\n-/\nlemma not_dvd_pow_of_not_dvd (p B y : \u2115) (hp : Nat.Prime p) (hnot : \u00ac p \u2223 B) :\n    \u00ac p \u2223 B ^ y := by\n  intro hdvd\n  exact hnot (Nat.Prime.dvd_of_dvd_pow hp hdvd)\n\n/--\nA prime factor divides any positive power: p \u2223 A \u2192 p \u2223 A^x.\n-/\nlemma dvd_pow_of_dvd (p A x : \u2115) (hx : x \u2265 1) (hdvd : p \u2223 A) : p \u2223 A ^ x := by\n  obtain \u27e8k, rfl\u27e9 := Nat.exists_eq_succ_of_ne_zero (by omega : x \u2260 0)\n  rw [pow_succ]\n  exact dvd_trans hdvd (dvd_mul_right A (A ^ k))\n\n/--\nIf gcd(A, B) = 1 and p \u2223 A, then v_p(B^y) = 0.\n-/\ntheorem padicValNat_other_base_pow_zero (p A B y : \u2115) (hp : Nat.Prime p)\n    (hdivA : p \u2223 A) (hcop : Nat.Coprime A B) :\n    padicValNat p (B ^ y) = 0 := by\n  have hnotB : \u00ac p \u2223 B := not_dvd_of_coprime p A B hp hdivA hcop\n  have hnotBy : \u00ac p \u2223 B ^ y := not_dvd_pow_of_not_dvd p B y hp hnotB\n  exact padicValNat_eq_zero_of_not_dvd p (B ^ y) hnotBy\n\n/--\n**Valuation Vanishing on Sum**:\nIf gcd(A, B) = 1 and p \u2223 A, then v_p(A^x + B^y) = 0.\n-/\ntheorem padicValNat_sum_zero (p A B x y : \u2115) (hp : Nat.Prime p)\n    (hA : A > 0) (hB : B > 0) (hx : x \u2265 1)\n    (hdivA : p \u2223 A) (hcop : Nat.Copr",
+    "compiler_errors": "error: ././././Beal/SquarefreeCore.lean:50:7: unknown constant 'Nat.factorization'\nerror: ././././Beal/SquarefreeCore.lean:95:5: unknown tactic\nerror: ././././Beal/SquarefreeCore.lean:95:2: unsolved goals\nerror: ././././Beal/SquarefreeCore.lean:90:61: unsolved goals\nerror: ././././Beal/SquarefreeCore.lean:126:23: application type mismatch\nerror: ././././Beal/SquarefreeCore.lean:169:40: unknown tactic\nerror: ././././Beal/SquarefreeCore.lean:169:36: unsolved goals\nerror: ././././Beal/SquarefreeCore.lean:162:15: unsolved goals\nerror: Lean exited with code 1\nerror: build failed"
+  },
+  "questions": {
+    "repair_value": {
+      "type": "score",
+      "instructions": "If this module were repaired so that it compiles with no sorry and no custom axioms, how much genuine mathematical content would the project gain?",
+      "criteria": [
+        "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+        "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+        "level 2: a self-contained elementary theorem or an executable checker with real content",
+        "level 3: it would close a signature or an infinite family of Beal signatures"
+      ]
+    },
+    "repairable_without_axioms": {
+      "type": "noul",
+      "instructions": "Can this module plausibly be repaired to compile with NO custom axioms and NO sorry, using only mathlib as it actually exists - noting that mathlib has FLT for exponent 4 but not for exponent 3, and has no Catalan/Mihailescu theorem?",
+      "criteria": {
+        "true": "its content is elementary or depends only on results mathlib actually contains",
+        "false": "its substance depends on a deep theorem mathlib does not contain, such as FLT3, Mihailescu, or a modular-method elimination, so it would need a custom axiom"
+      }
+    },
+    "statement_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that this module's THEOREM STATEMENTS misencode the Beal conjecture - for example allowing exponent 2, excluding a base of 1, or putting the coprimality condition on the exponents rather than the bases - so that repairing it would certify the wrong thing?",
+      "criteria": {
+        "true": "its statements look like they may deviate from the exact conjecture, or it restricts to a sub-case without saying so",
+        "false": "its statements appear to encode the conjecture or a clearly labelled sub-case faithfully"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "repair_value": {
+        "type": "score",
+        "score": 1.27,
+        "confidence": 0.25,
+        "legend": {
+          "0": "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+          "1": "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+          "2": "level 2: a self-contained elementary theorem or an executable checker with real content",
+          "3": "level 3: it would close a signature or an infinite family of Beal signatures"
+        },
+        "probabilities": {
+          "0": 0.26,
+          "1": 0.23,
+          "2": 0.5,
+          "3": 0.01
+        }
+      },
+      "repairable_without_axioms": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "statement_risk": {
+        "type": "noul",
+        "noul": 0.67
+      }
+    },
+    "usage": {
+      "input_tokens": 3188,
+      "output_tokens": 57
+    }
+  }
+}

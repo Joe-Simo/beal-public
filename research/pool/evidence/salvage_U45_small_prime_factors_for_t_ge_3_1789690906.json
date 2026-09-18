@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U45_small_prime_factors_for_t_ge_3",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U45_small_prime_factors_for_t_ge_3.md",
+    "excerpt": "# U45: small-prime factors of r,s are excluded when t >= 3\n\nStatus: verified partial coverage result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Setup\n\nLet a primitive all-even Beal candidate be\n\n    A^(2r) + B^(2s) = C^(2t),\n\nwith r,s,t >= 2 and pairwise coprime positive bases A,B,C.\n\nU44 reduced the cases 2|r and 2|s to quartic perfect-power equations but did not have a uniform theorem. The literature audit below closes those cases for every t>=3 and also closes 3|r or 3|s for every t>=3.\n\n## 2. Excluding 3 | r or 3 | s for t >= 3\n\nAssume 3|r. Put\n\n    X = A^(r/3),\n    Y = B^s,\n    Z = C^2.\n\nThen\n\n    X^6 + Y^2 = Z^t,\n\nor after swapping the two left terms,\n\n    Y^2 + X^6 = Z^t.\n\nThe transformed bases X,Y,Z remain positive and gcd(X,Y)=1.\n\nMichael A. Bennett and Imin Chen, `Multi-Frey Q-curves and the Diophantine equation a^2+b^6=c^n`, Algebra & Number Theory 6 (2012), 707-730, DOI 10.2140/ant.2012.6.707, Theorem 1, states:\n\n    Let n >= 3 be an integer. Then a^2+b^6=c^n\n    has no solutions in positive integers a,b,c with gcd(a,b)=1.\n\nTaking (a,b,c,n)=(Y,X,Z,t) gives a contradiction for every t>=3.\n\nThe same argument with A and B interchanged excludes 3|s.\n\nTherefore\n\n    t >= 3  =>  3 does not divide r*s.                       (1)\n\n## 3. Excluding 2 | r or 2 | s for t >= 4\n\nAssume 2|r. Put\n\n    X = A^(r/2),\n    Y = B^s,\n    Z = C^2.\n\nThen\n\n    X^4 + Y^2 = Z^t,\n\nwhich is the generalized-Fermat equation a^2+b^4=c^n after swapping X and Y.\n\nThe complete resolution assembled from Ellenberg, Bennett-Ellenberg-Ng, and the remaining n=6 case states that\n\n    a^2+b^4=c^n\n\nhas no solutions in nonzero coprime integers for every n>=4.\n\nHence 2|r is impossible for t>=4. By symmetry 2|s is impossible for t>=4.\n\n## 4. The boundary t=3 is also excluded for 2 | r or 2 | s\n\nThe preceding (2,4,n) theorem starts at n=4, so t=3 must be treated without silently extending it.\n\nIf 2|r, retain the full other exponent rather than collapsing it to a square:\n\n    X=A^(r/2),\n    Z=C^2.\n\nThen\n\n    X^4 + B^(2s) = Z^3.\n\nThis has signature (4,2s,3), with s>=2.\n\nM. A. Bennett, I. Chen, S. R. Dahmen, and S. Yazdani, `Generalized Fermat equations: A miscellany`, International Journal of Number Theory 11 (2015), DOI 10.1142/S179304211530001X, Theorem 1, includes the infinite family\n\n    (4,2n,3), n>=2,\n\namong the signatures for which x^p+y^q=z^r has no nonzero coprime integer solutions.\n\nTaking n=s contradicts the putative solution. The case 2|s follows by symmetry.\n\nThus\n\n    t = 3  =>  2 does not divide r*s.                        (2)\n\nCombining with the t>=4 argument,\n\n    t >= 3  =>  2 does not divide r*s.                       (3)\n\n## 5. Combined result\n\nFrom (1) and (3):\n\n    t >= 3  => every prime divisor of r and s is at least 5. (4)\n\nThis rigorously supplies the missing prerequisite used in U43, but only when t>=3.\n\nConsequently, in the subbranch t>=3 with 17|t, U43's published Michaud-Jacobs step is now fully justified:\n\n    17|t and t>=3\n      => one of r,s is a positive power of 5\n      => either X^10+Y^10=2 Z^17\n         or X^10+256Y^10=Z^17.\n\nThe coefficient-256 branch is the U41 candidate elimination; the coefficient-2 branch remains open in this repository.\n\n## 6. Boundary not covered\n\nThe case\n\n    t=2,\n\ncorresponding to original right exponent z=4, is not covered by the theorems above. For example the reductions become equations of the shape\n\n    X^4+Y^2=Z^2\n\nor\n\n    X^6+Y^2=Z^2,\n\nfor which the cited n>=3/n>=4 generalized-Fermat theorems do not apply.\n\nTherefore this checkpoint does NOT assert that every prime divisor of r and s is >=5 when t=2.\n\n## 7. Next obligation\n\nTreat the all-even t=2 branch directly. The first question is whether the primitive Pythagorean parametrization plus the fact that both legs are perfect powers rules out\n\n    A^(2r)+B^(2s)=C^4\n\nfor all r,s>=2. Only after that boundary case is resolved can the small-prime-factor statement be made unqualified across the full all-even branch.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.38,
+        "confidence": 0.62,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.7,
+          "1": 0.23,
+          "2": 0.07,
+          "3": 0.0
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.68
+      }
+    },
+    "usage": {
+      "input_tokens": 1944,
+      "output_tokens": 42
+    }
+  }
+}

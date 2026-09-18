@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U55_coefficient2_sign_elimination_mod64",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U55_coefficient2_sign_elimination_mod64.md",
+    "excerpt": "# U55: coefficient-2 branch \u2014 eliminate the positive-B square classes modulo 64\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input from U54\n\nEvery survivor has\n\n    B = sigma delta b^2,\n    P16(A,B) = -sigma delta c^2,\n\nwhere delta is 1 or 17, sigma is +/-1, A is odd, 8|b, and gcd(A,B)=1. Also gcd(B,P16)=delta, hence gcd(b,c)=1.\n\n## Modulo 64 reduction\n\nBecause 8|b, one has 64|B for either delta. Every term of P16 except the leading term contains B, so\n\n    P16(A,B) == 17 A^16 (mod 64).\n\nFor odd A,\n\n    A^16 == 1 (mod 64),\n\nhence\n\n    P16(A,B) == 17 (mod 64).                       (1)\n\nThe U54 square-class equation therefore requires\n\n    -sigma delta c^2 == 17 (mod 64).                (2)\n\nSince P16 is odd, c is odd. The odd square residues modulo 64 are exactly\n\n    {1,9,17,25,33,41,49,57}.\n\n### delta = 1\n\nIf sigma=+1, (2) requires c^2 == -17 == 47 (mod 64), impossible because 47 is not an odd square residue.\n\nThus sigma=-1.\n\n### delta = 17\n\nSince 17 is invertible modulo 64 (17^{-1}=49), sigma=+1 would require\n\n    c^2 == -1 == 63 (mod 64),\n\nagain impossible. Thus sigma=-1.\n\n## Conclusion\n\nThe sign ambiguity in U54 disappears completely. Every surviving solution in this branch must satisfy, for delta in {1,17},\n\n    B = -delta b^2,\n    P16(A,-delta b^2) = delta c^2,\n    delta b c = 4 |mn|,\n    gcd(b,c)=1,\n    gcd(A,b)=1,\n    A odd,\n    8|b.                                            (3)\n\nIn particular B is necessarily negative.\n\nA fresh Wolfram check returned the complete odd-square residue set modulo 64 as\n\n    {1,9,17,25,33,41,49,57},\n\nconfirmed that 17 is present but 47 is absent, and returned 17^{-1} mod 64 = 49.\n\n## Additional local scan\n\nA direct exact finite-field scan of the U54 equations for odd primes below 100 (excluding 5 and 17) found local solutions for all four pre-U55 square classes, so no single small odd-prime obstruction was available at that level. The mod-64 condition is strictly stronger for the sign question and removes both sigma=+1 classes.\n\n## Next obligation\n\nOnly two equations remain:\n\n    P16(A,-b^2) = c^2,\n    P16(A,-17 b^2) = 17 c^2,\n\nwith gcd(A,b)=gcd(b,c)=1, A odd, and 8|b. The next target is to combine these equations with the Gaussian 17th-power parametrization of m,n and delta*b*c=4|mn|, rather than treating the superelliptic equations in isolation. Prime-support separation from gcd(b,c)=1 may force a rigid allocation of the Gaussian factors into b and c."
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.73,
+        "confidence": 0.73,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.02,
+          "2": 0.21,
+          "3": 0.76
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.8
+      }
+    },
+    "usage": {
+      "input_tokens": 1411,
+      "output_tokens": 42
+    }
+  }
+}

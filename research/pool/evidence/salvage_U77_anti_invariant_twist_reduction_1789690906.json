@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U77_anti_invariant_twist_reduction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U77_anti_invariant_twist_reduction.md",
+    "excerpt": "# U77: the missing quadratic-twist component of the degree-five target\n\n**Status: written, self-reviewed reduction and subgroup-exclusion theorems, with distinct exact arithmetic checks. The weighted equation and the full Beal conjecture remain unresolved. No independent expert or proof-assistant certification is claimed.**\n\nResearch date: 2026-09-15. The private remote was inspected at `869b2e349f55d1bb7f9a734e2ecf8d68e43165dd` (U75). The attached U76 archive and full manuscript were read and restored additively: 45 restored entries, three identical entries, no conflicting content overwritten. Every archived manifest hash was checked. The entire U76 Python output was replayed unchanged into a new U77 record. This establishes repeatability, not independent mathematical verification.\n\n## 1. Main result: an infinite-order target outside the known subgroup\n\nLet\n\n    k=Q(phi), phi=(1+sqrt(5))/2,\n    E=Q(zeta), zeta a primitive fifth root of unity,\n    B=E(i), d=1+zeta.\n\nChoose zeta so that phi=1+zeta+zeta^(-1). As before, the genus-120 curve is\n\n    F: A^17+B1^17=d*W^17,\n\nand its first quotient is C_1: y^17=x(d-x), understood as its smooth projective normalization.\n\nDefine the fixed genus-eight curve over the **real quadratic field k**\n\n    Cminus: (3-phi) w^2 = phi^2-4u^17.              (1.1)\n\nEquivalently, setting v=(3-phi)w gives the integral model\n\n    v^2 = phi+2-4(3-phi)u^17.                       (1.2)\n\nWrite Jminus for its Jacobian. This curve is the quadratic twist by -1 of U73's curve; it is not that curve with an interchangeable sign.\n\n**Theorem A.** A primitive positive solution of the weighted equation\n\n    X^10+256Y^10=Z^17                               (W)\n\ntogether with U71's written common-root conclusion produces an explicitly described **infinite-order class in Jminus(k)**. Consequently\n\n    a weighted solution implies rank Jminus(k) >= 1.             (1.3)\n\nHere and below the application to W inherits U71's self-reviewed common-root theorem. The construction uses the actual cyclic orbit from U74, not arbitrary points on a genus-eight quotient.\n\n**Theorem B.** For the degree-five weighted orbit Delta on F, put\n\n    H=[Delta-5Pplus], Pplus=(1:zeta^3:1).\n\nThere is no positive integer n for which\n\n    nH belongs to J_F(E)+J_F(B)_tors.                (1.4)\n\nIn particular H is outside the saturation, even modulo torsion, of the rank-fifteen subgroup and its index-17 enlargement constructed in U75/U76. Those known generators are all defined over E. Merely saturating them cannot enumerate the required weighted target: a solution would require a genuinely additional quadratic-extension component.\n\n**Theorem C.** The rational torsion of the new Jacobian is trivial:\n\n    Jminus(k)_tors=0.                               (1.5)\n\nThis is proved both from the existing factor torsion theorem and by fresh exact good-reduction computations. It does not prove that Jminus(k) is the zero group.\n\nThus one concrete remaining route is to certify `rank Jminus(k)=0`. Such a certificate would exclude the active weighted equation through (1.3), but would not by itself solve all signatures of Beal's conjecture. **No rank upper bound or rank-zero certificate has been obtained in U77.** An attempted unconditional Magma rank calculation returned a tool timeout without calculation output. A bounded affine search also found no points, but neither result is a rank computation. The new theorem identifies the arithmetic component that must be controlled; it does not assume its vanishing.\n\n## 2. The two involutions must be kept separate\n\nPut\n\n    epsilon=zeta^2-zeta^3, Delta0=3-phi.\n\nDirect identities in Q[zeta] are\n\n    epsilon^2=phi-3=-Delta0,\n    d=-zeta^3*phi,\n    Delta0*phi^2=phi+2,\n    Norm_(k/Q)(Delta0)=5.                           (2.1)\n\nIn particular Delta0 and -Delta0 are not squares in k, because their rational norm is not a square. Also -1 is not a square in this real field. Hence\n\n    E=k(epsilon), B=k(epsilon,i)\n\nis a biquadratic extension of k. Its two commuting generators will be denoted\n\n    eta(i)=-i, eta(zeta)=zeta;\n    kappa(zeta)=zeta^(-1), kappa(i)=i.\n\nThus kappa(epsilon)=-epsilon and eta(epsilon)=epsilon. This is not a use of one ambiguous \u201ccomplex conjugation\u201d for both actions.\n\nLet c=i*2^(4/5). Then c^5=16i. In M=B(c), extend eta by eta(c)=-c and extend kappa by kappa(c)=c. These actions commute. The extension M/B has degree five and is cyclic, with sigma(c)=zeta*c. One can see the degree directly at a prime of B over 2: its ramification index over Q is two, so the valuation of 16i is eight, not a multiple of five. A root c has valuation 8/5, forcing a degree divisible by five. Its polynomial has degree five, so that is the degree. The five roots are already c*zeta^j.\n\nIn particular c^2 is not in B. Otherwise c=(c^2)^3/(16i) would be in B. This simple degree observation is used to prove that the projected points have distinct hyperelliptic coordinates.\n\n## 3. A normalized first quotient and its actual orbi"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.18,
+        "confidence": 0.75,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.77,
+          "3": 0.21
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.79
+      }
+    },
+    "usage": {
+      "input_tokens": 1955,
+      "output_tokens": 42
+    }
+  }
+}

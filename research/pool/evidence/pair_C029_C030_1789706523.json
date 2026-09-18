@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C029_C030",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C029",
+      "status": "BLOCKED",
+      "claim": "Classical Fermat descent on the all-even branch sends signature (2r,2s,2t) to signature (2r,2r,t) with coefficient 2 - it diagonalises the left exponents, halves the right one, and introduces a 2. It is therefore NOT a self-map of a single equation, so infinite descent cannot close. The number of available steps is exactly v_2(t)."
+    },
+    "B": {
+      "id": "C030",
+      "status": "PARTIAL_RESULT",
+      "claim": "Of 405 reduced signatures with exponents in {3,4,5,7,11,13,17,19,23} and x<=y, this project can cite a recorded result for only 40. The remaining 365 are signatures THIS PROJECT cannot justify - not signatures that are open in the literature."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.48,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.65,
+          "1": 0.23,
+          "2": 0.12,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.12
+      }
+    },
+    "usage": {
+      "input_tokens": 621,
+      "output_tokens": 34
+    }
+  }
+}

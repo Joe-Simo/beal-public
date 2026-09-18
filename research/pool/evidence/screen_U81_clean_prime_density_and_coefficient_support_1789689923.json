@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U81_clean_prime_density_and_coefficient_support",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U81_clean_prime_density_and_coefficient_support.md",
+      "excerpt": "# U81: a density-105/128 coefficient-support theorem for the weighted branch\n\n**Status: written partial theorem with an exact finite group certificate and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. The repository was resumed through U80. U80's class-group bottleneck and negative shortcut audits remain unchanged. U65/U71/U72 are used only at their stated written/self-reviewed level.\n\n## 1. Scope\n\nAssume a primitive positive solution of\n\n    X^10 + 256 Y^10 = Z^17.                           (W)\n\nU71/U72 give\n\n    L=Q(c), c^10=-256,\n    theta=a0+a1*c+...+a9*c^9 in Z[c],\n    theta^17=X+cY,\n    a9 != 0.                                          (1.1)\n\nU72 established exact coefficient valuations at fourteen already-forced primes. Here we isolate an infinite positive-density set of rational primes for which the same coefficient mechanism works uniformly.\n\n## 2. Clean primes and exact coefficient valuations\n\nFor q not in {2,5,17}, factor\n\n    T^10+256 = product_i f_i(T)  over F_q,\n\nwith irreducible degrees d_i. Call q **clean** if\n\n    17 does not divide q^(d_i)-1 for every i.         (2.1)\n\nEquivalently the finite etale algebra\n\n    A_q=F_q[T]/(T^10+256)\n\nhas no nontrivial seventeenth root of unity, since\n\n    |A_q^*|=product_i(q^(d_i)-1).\n\n**Theorem 1.** If q is clean and q^e exactly divides Y, then\n\n    v_q(a9)=9e+v_q(658767450) >= 9e.                  (2.2)\n\nHence, for\n\n    Y_clean=product_(q clean) q^(v_q(Y)),\n\none has\n\n    Y_clean^9 | a9.                                   (2.3)\n\n### Proof\n\nPrimitivity gives q not dividing X. Reduction of theta^17=X+cY gives\n\n    theta^17=X in A_q.\n\nBy cleanliness the seventeenth-power map on A_q^* is injective. In particular 17 does not divide q-1, so X has a unique scalar seventeenth root x modulo q. Therefore theta is congruent to x modulo q. Since 17*x^16 is a q-adic unit, this root lifts uniquely.\n\nThus the actual local root is the convergent binomial series\n\n    theta=x*sum_(k>=0) B_k(cY/X)^k,\n    B_k=binomial(1/17,k).                             (2.4)\n\nFor q!=17, B_k belongs to Z_q. Grouping exponents modulo ten with c^10=-256 gives\n\n    a9=x*sum_(m>=0) B_(9+10m)(-256)^m(Y/X)^(9+10m). (2.5)\n\nU72's exact value is\n\n    B_9=658767450/17^9,\n    658767450=2*3*5^2*11*59*67*101.                 (2.6)\n\nThe leading term therefore has valuation `9e+v_q(658767450)`, at most `9e+2`. Every tail term has valuation at least `19e`. Since `9e+2<19e` for e>=1, the leading term cannot cancel. This proves (2.2) and (2.3).\n\n## 3. Density of the clean primes\n\nLet S be the splitting field of T^10+256. Put rho^5=2 and c=i*rho^4. Then\n\n    c^4=8rho, c^5=16i,\n\nand the ten roots are c*zeta_10^j. Hence\n\n    S=Q(rho,zeta_5,i), [S:Q]=40.                     (3.1)\n\nThe degree-20 splitting field Q(rho,zeta_5) of T^5-2 has Galois group C5 semidirect C4 and unique quadratic subfield Q(sqrt(5)); adjoining i therefore doubles the degree. On the ten root labels j in Z/10Z the Galois action is the full affine group\n\n    j -> a*j+t,\n    a in {1,3,7,9}, t in Z/10Z.                      (3.2)\n\nExact enumeration of its forty elements gives:\n\n    cycle type                  count\n    1^10                            1\n    10                              4\n    5,5                             4\n    2,2,2,2,2                       6\n    1,1,4,4                        10\n    2,4,4                          10\n    1,1,2,2,2,2                     5.              (3.3)\n\nFor unramified q these are the factor degrees of T^10+256 modulo q.\n\nThe Galois fields S and Q(zeta_17) are linearly disjoint: S is ramified only over 2 and 5, Q(zeta_17) only over 17, and a nontrivial Galois intersection would be unramified at every finite rational prime. Thus the compositum has group\n\n    Gal(S/Q) x (Z/17Z)^*.                            (3.4)\n\nLet r=ord_17(q). A prime is clean precisely when no cycle length in (3.3) is divisible by r. The exact clean counts among the forty affine elements are\n\n    r=1: 0,\n    r=2: 5,\n    r=4: 20,\n    r=8: 40,\n    r=16: 40.                                        (3.5)\n\nThe cyclic group of order sixteen has respectively 1,1,2,4,8 elements of exact orders 1,2,4,8,16. Chebotarev therefore gives natural density\n\n    (1*0+1*5+2*20+4*40+8*40)/(16*40)\n      = 525/640\n      = 105/128.                                     (3.6)\n\nThus clean primes have natural density **105/128**. The Chebotarev theorem used is Milne, *Algebraic Number Theory*, Theorem 8.31; see `references/U81/sources.json`.\n\n## 4. Global support/height consequence\n\nLet kappa=|c|=2^(4/5). The ten embeddings send c to ten equally spaced complex numbers of modulus kappa. Fourier inversion on the ten evaluations of theta gives\n\n    |a9| <= kappa^(-9) max_sigma |sigma(theta)|.      (4.1)\n\nSince theta^17=X+cY,\n\n    max_sigma |sigma(theta)| <= (X+kappa Y)^(1/17).\n\nUsing (2.3),\n\n    (kappa Y_clean)^153 <= ",
+      "length_chars": 7463
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.39,
+        "confidence": 0.61,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.83,
+          "1": 0.04,
+          "2": 0.03,
+          "3": 0.1
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.26,
+        "confidence": 0.74,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.92,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.08
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.43,
+        "probabilities": {
+          "audit_now": 0.11,
+          "audit_later": 0.54,
+          "no_action": 0.08,
+          "verify_literature": 0.02,
+          "verify_computation": 0.25
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3037,
+      "output_tokens": 125
+    }
+  }
+}

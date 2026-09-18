@@ -1,0 +1,44 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_CF_BEN24n",
+  "timestamp": "2026-09-18T07:29:15-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "name": "BEN24n"
+  },
+  "questions": {
+    "target_drift": {
+      "type": "noul",
+      "instructions": "Does this statement silently weaken or change the Beal target (allow exponent 2, drop coprimality, restrict bases/exponents without saying so, or swap which term is the sum)?",
+      "criteria": {
+        "true": "yes, drift",
+        "false": "no drift"
+      }
+    },
+    "overclaim": {
+      "type": "noul",
+      "instructions": "Does the docstring claim MORE than the Lean statement proves (e.g. says unconditional while hypotheses are present)?",
+      "criteria": {
+        "true": "overclaims",
+        "false": "accurate"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "target_drift": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "overclaim": {
+        "type": "noul",
+        "noul": 0.29
+      }
+    },
+    "usage": {
+      "input_tokens": 541,
+      "output_tokens": 40
+    }
+  }
+}

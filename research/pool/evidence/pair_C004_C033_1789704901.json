@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C004_C033",
+  "timestamp": "2026-09-18T00:15:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C004",
+      "status": "PARTIAL_RESULT",
+      "claim": "Mixed-weight cubic Pade approximation forces max(X, Y) > 10^25993 for any solution of the weighted equation."
+    },
+    "B": {
+      "id": "C033",
+      "status": "PARTIAL_RESULT",
+      "claim": "Sharp curvature separation. Every hyperbolic Beal signature has |chi| >= 1/12 with equality exactly at permutations of (3,3,4), while every one of the ten known primitive hyperbolic solutions has |chi| <= 1/18. Hence Beal is equivalent to: no primitive solution has |chi| >= 1/12. This explains the exponent-2 phenomenon quantitatively - an exponent "
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.16,
+        "confidence": 0.14,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.3,
+          "1": 0.25,
+          "2": 0.44,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.28
+      }
+    },
+    "usage": {
+      "input_tokens": 580,
+      "output_tokens": 34
+    }
+  }
+}

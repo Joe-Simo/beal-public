@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U110_real_cyclotomic_audit_p100_p200",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U110_real_cyclotomic_audit_p100_p200.md",
+    "excerpt": "# Checkpoint U110: Real Cyclotomic Class Number and Sahoo Class $\\mathcal{P}_1$ Audit for $100 < p < 200$\n\n**Date**: 2026-09-17  \n**Author**: Real Cyclotomic Class Number Auditor / Arithmetic Geometry Research Group  \n**Target Equation**: $X^{2\\ell} + Y^{2m} = Z^p$, exponents $\\ell, m \\ge 5$ (asymptotic bound $\\ell, m > 10^{60}$), prime $p \\in (100, 200)$  \n**Branch**: All-even Beal candidate $A^{2r} + B^{2s} = C^{2t}$ with $17 \\nmid t$  \n**Supporting Code**: [`code/U110_cyclotomic_p100_p200.py`](file://[LOCAL_HOME]/Downloads/beal/code/U110_cyclotomic_p100_p200.py)  \n**Primary References**:\n- S. Sahoo, *Asymptotic solutions of generalized Fermat equations $x^{2l} + y^{2m} = z^p$*, preprint (2025).\n- F. J. van der Linden, *Class number computations of real abelian number fields*, Math. Comp. 39, no. 160 (1982), 693\u2013707.\n- R. Schoof, *Minus class groups of the fields of the $l$-th roots of unity*, Math. Comp. 67 (1998), 1225\u20131245.\n- R. Schoof, *Class numbers of real cyclotomic fields of prime conductor*, Math. Comp. 72, no. 242 (2003), 913\u2013937.\n- J. C. Miller, *Real cyclotomic fields of prime conductor and their class numbers*, Math. Comp. 84, no. 295 (2015), 2459\u20132469; arXiv:1407.2373 (2014).\n- L. C. Washington, *Introduction to Cyclotomic Fields*, 2nd ed., Graduate Texts in Mathematics 83, Springer-Verlag (1997).\n\n---\n\n## 1. Executive Summary\n\nIn Checkpoints U103, U107, and U108, the asymptotic elimination of primitive integer solutions to the generalized Fermat equation\n$$X^{2\\ell} + Y^{2m} = Z^p, \\quad \\gcd(X, Y, Z) = 1, \\quad \\ell, m > 10^{60}$$\nwas established for prime exponents $p \\in [19, 100)$ belonging to Sahoo's (2025) Class $\\mathcal{P}_1$.\nA prime $p$ belongs to Class $\\mathcal{P}_1$ if:\n1. The prime $2$ is **inert** in the maximal real cyclotomic subfield $K^+ = \\mathbb{Q}(\\zeta_p)^+ = \\mathbb{Q}(2\\cos(2\\pi/p))$;\n2. The plus class number is odd ($2 \\nmid h_p^+$), ensuring trivial 2-torsion in the class group: $\\operatorname{Cl}(\\mathcal{O}_{K^+})[2] = 0$;\n3. $p \\not\\equiv 1 \\pmod 8$ (which is automatically necessary if 2 is inert in $K^+$).\n\nThis checkpoint extends the arithmetic classification and deterministic class number audit to the subsequent range of 21 primes:\n$$p \\in \\{101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199\\}.$$\n\n### Key Results\n\n1. **Decomposition of 2 in $K^+ = \\mathbb{Q}(\\zeta_p)^+$**:\n   - Exactly **14 primes (66.7%)** have $2$ completely inert in $K^+$ ($g^+ = 1$, residue degree $f^+ = \\frac{p-1}{2}$):\n     $$\\{101, 103, 107, 131, 139, 149, 163, 167, 173, 179, 181, 191, 197, 199\\}.$$\n   - Exactly **7 primes (33.3%)** fail inertia ($g^+ \\ge 2$):\n     $$\\{109, 113, 127, 137, 151, 157, 193\\}.$$\n     Every prime $p \\equiv 1 \\pmod 8$ in this range ($p \\in \\{113, 137, 193\\}$) splits unconditionally due to quadratic splitting in $\\mathbb{Q}(\\sqrt{p})$.\n\n2. **Plus Class Numbers $h_p^+ = h(\\mathbb{Q}(\\zeta_p)^+)$ from Literature**:\n   - **Unconditional Triviality for $p \\le 151$ (Miller 2014, Theorem 1.1)**:\n     All 11 primes $p \\in [101, 151]$ have $h_p^+ = 1$ unconditionally.\n   - **Triviality under GRH for $151 < p < 200$ (Miller 2014, Schoof 2003, van der Linden 1982)**:\n     $h_p^+ = 1$ for all primes $p \\in (151, 200)$ **except $p = 163$ and $p = 191$**.\n   - **The Non-Trivial Class Number Anomalies**:\n     - **$p = 163$**: $h_{163}^+ = 4$ (van der Linden 1982, Schoof 2003, Miller 2014). This is the smallest prime conductor with $h_p^+ > 1$. Because $h_{163}^+ = 4$ is **even**, $2 \\mid h_{163}^+$, violating Sahoo's Kummer descent condition!\n     - **$p = 191$**: $h_{191}^+ = 11$ (Schoof 2003, Miller 2014). While $h_{191}^+ \\ne 1$, $11$ is **odd**, meaning the 2-Sylow subgroup $\\operatorname{Cl}(\\mathcal{O}_{K^+})[2] = 0$ remains trivial.\n\n3. **Classification Partition**:\n   - **Class $\\mathcal{P}_1$ (Strict $h_p^+ = 1$, Asymptotically Eliminated)**:\n     $$\\mathbf{\\mathcal{P}_1 \\cap (100, 200) = \\{101, 103, 107, 131, 139, 149, 167, 173, 179, 181, 197, 199\\}} \\quad (12 / 21 = 57.1\\%).$$\n     - 6 primes are **unconditionally certified** ($p \\le 151$): $\\{101, 103, 107, 131, 139, 149\\}$.\n     - 6 primes are **certified under GRH** ($p > 151$): $\\{167, 173, 179, 181, 197, 199\\}$.\n   - **Non-$\\mathcal{P}_1$ Primes (9 Primes, 42.9%)**:\n     - Class number obstructions: $p = 163$ ($h^+=4$, even) and $p = 191$ ($h^+=11 > 1$).\n     - Quadratic reciprocity splitting ($p \\equiv 1 \\pmod 8$): $p \\in \\{113, 137, 193\\}$.\n     - Cyclotomic splitting ($p \\not\\equiv 1 \\pmod 8$, small order): $p \\in \\{109, 127, 151, 157\\}$.\n\n---\n\n## 2. Algebraic Number Theory: Decomposition of 2 in $\\mathbb{Q}(\\zeta_p)^+$\n\n### 2.1 Subgroups and Galois Correspondence\nLet $p$ be an odd prime.\n- The full cyclotomic field $K = \\mathbb{Q}(\\zeta_p)$ has Galois group $G = \\operatorname{Gal}(K/\\mathbb{Q}) \\cong (\\mathbb{Z}/p\\mathbb{Z})^\\times$, cyclic of order $p - 1$.\n- Complex conjugation is the unique involution $\\tau \\in G$ mapping $\\zeta_p \\mapsto \\zet"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.73
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.5,
+        "confidence": 0.5,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.67,
+          "1": 0.19,
+          "2": 0.09,
+          "3": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3193,
+      "output_tokens": 94
+    }
+  }
+}

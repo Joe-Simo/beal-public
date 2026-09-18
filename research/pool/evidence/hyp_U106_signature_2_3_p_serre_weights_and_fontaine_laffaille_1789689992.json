@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U106_signature_2_3_p_serre_weights_and_fontaine_laffaille",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U106_signature_2_3_p_serre_weights_and_fontaine_laffaille.md",
+    "excerpt": "# U106: Local Deformation, Serre Weights, and Fontaine--Laffaille Conditions for Signature $(2, 3, p)$ with $p \\in \\{11, 13, 17\\}$\n\n**Status: Source-verified arithmetic study, representation-theoretic classification, and computational certificate. The Fontaine--Laffaille conditions are unconditionally satisfied, and Serre weights are optimized to weight 2. Beal's conjecture and signature $(2, 3, p)$ remain under active research.**\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Geometry & Modular Deformation Research Group  \n**Target Equation**: Generalized Fermat equation of signature $(2, 3, p)$:\n$$A^2 + B^3 = C^p, \\quad \\gcd(A, B, C) = 1, \\quad p \\in \\{11, 13, 17\\}.$$\n**Primary Sources**:\n- Jean-Pierre Serre, *Propri\u00e9t\u00e9s galoisiennes des points d'ordre fini des courbes elliptiques*, Invent. Math. 15 (1972), 259\u2013331 (\u00a71.11, Proposition 8).\n- Jean-Pierre Serre, *Sur les repr\u00e9sentations modulaires de degr\u00e9 2 de $\\operatorname{Gal}(\\overline{\\mathbb{Q}}/\\mathbb{Q})$*, Duke Math. J. 54 (1987), 179\u2013230.\n- Bas Edixhoven, *The weight in Serre's conjectures on modular forms*, Invent. Math. 109 (1992), 563\u2013594 (Th\u00e9or\u00e8me 1.1).\n- Kevin Buzzard, Fred Diamond, and Frazer Jarvis, *On Serre's conjecture for mod $\\ell$ Galois representations over totally real fields*, Duke Math. J. 155 (2010), 105\u2013161.\n- Toby Gee, *A modularity lifting theorem for weight two Hilbert modular forms*, Invent. Math. 186 (2011), 1\u201357.\n- Jean-Marc Fontaine and Guy Laffaille, *Construction de repr\u00e9sentations $p$-adiques*, Ann. Sci. ENS 15 (1982), 547\u2013608.\n- Nuno Freitas, Bartosz Naskr\u0119cki, and Michael Stoll, *The generalized Fermat equation with exponents 2, 3, n*, Compositio Math. 156 (2020), 77\u2013113.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint investigates the local Galois deformation rings, inertia weights, and Serre weight optimization for generalized Fermat equations of signature $(2, 3, p)$ with prime exponents $p \\in \\{11, 13, 17\\}$, addressing the five core questions formulated in collaboration with the modularity team:\n\n1. **Fontaine--Laffaille Conditions at $p \\in \\{11, 13, 17\\}$**:\n   - **Base field condition**: Over $\\mathbb{Q}$, the absolute ramification index is $e = 1$. Since $p \\ge 11$, $e = 1 < p - 1 \\in \\{10, 12, 16\\}$ is satisfied unconditionally. Over any quadratic field $K$, $e \\le 2 < p - 1$ likewise holds.\n   - **Reduction classification**: For the Kraus Frey curve $E_{(A, B, C)}: Y^2 = X^3 + 3BX + 2A$, the discriminant is $\\Delta = -1728 C^p$. Since $p \\nmid 1728$, $E$ has **good reduction** when $p \\nmid C$, and **multiplicative reduction** when $p \\mid C$. Additive reduction at $p$ is strictly impossible for all $p \\ge 5$.\n   - **Finite flatness**: When $p \\mid C$, $v_p(\\Delta) = p v_p(C) \\equiv 0 \\pmod p$. By Raynaud's criterion, $E[p]$ extends to a finite flat group scheme over $\\mathbb{Z}_p$. When $p \\nmid C$, $E[p]$ is the torsion of an abelian scheme, hence finite flat. Thus, **$\\bar\\rho_{E, p}$ is unconditionally finite flat at $p$ for every primitive solution**.\n\n2. **Inertia Weights for Putative Solutions**:\n   - **Multiplicative ($p \\mid C$)**: $\\bar\\rho|_{I_p} \\sim \\begin{pmatrix} \\chi_p & 0 \\\\ 0 & 1 \\end{pmatrix}$ (level 1, peu ramifi\u00e9e).\n   - **Good Ordinary ($p \\nmid C, a_p \\not\\equiv 0 \\pmod p$)**: $\\bar\\rho|_{I_p} \\sim \\begin{pmatrix} \\chi_p & * \\\\ 0 & 1 \\end{pmatrix}$ (level 1, peu ramifi\u00e9e).\n   - **Good Supersingular ($p \\nmid C, a_p = 0$)**: $\\bar\\rho|_{I_p} \\sim \\psi_2 \\oplus \\psi_2^p$ (fundamental characters of level 2).\n\n3. **Predicted Serre Weights and Weight Optimization**:\n   - **Minimal Serre weight**: By Edixhoven's theorem (1992, Theorem 1.1), $\\bar\\rho_{E, p}$ is finite flat at $p$ if and only if $k(\\bar\\rho) = 2$. Therefore, the minimal Serre weight is **strictly $k = 2$ in all cases**.\n   - **Buzzard--Diamond--Jarvis (BDJ) Weight Sets**:\n     - Ordinary / Multiplicative cases: $W(\\bar\\rho) = \\{2, p\\}$.\n     - Supersingular case: $W(\\bar\\rho) = \\{2, p + 1\\}$.\n   - **Gee's Theorem (2011)**: In the Fontaine--Laffaille range, the trivial weight (weight 2) always belongs to $W(\\bar\\rho)$, and a modular lift of parallel weight 2 exists unconditionally.\n\n4. **Can the Weight be Bounded to Weight 2?**:\n   - **YES**. The modular weight can **always be bounded to weight 2**.\n   - Higher weights appear strictly as **companion/shadow weights** in the representation-theoretic BDJ set:\n     - For $p = 11$: shadow weights $k = 11$ (ordinary) and $k = 12$ (supersingular).\n     - For $p = 13$: shadow weights $k = 13$ (ordinary) and $k = 14$ (supersingular).\n     - For $p = 17$: shadow weights $k = 17$ (ordinary) and $k = 18$ (supersingular).\n   - These higher weights do not obstruct weight-2 modularity; they correspond to non-minimal crystalline lifts with higher Hodge--Tate jumps (such as $\\{0, p-1\\}$ or $\\{0, p\\}$).\n\n5. **Diophantine Consequence**:\n   The Diophantine obstruction to solving $A^2 + B^3 = C^p$ is **not weight growth** (which is tamed to weight 2), but the **permanent presence of the Catalan"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.24,
+        "confidence": 0.24,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.08,
+          "1": 0.08,
+          "2": 0.36,
+          "3": 0.48
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2715,
+      "output_tokens": 94
+    }
+  }
+}

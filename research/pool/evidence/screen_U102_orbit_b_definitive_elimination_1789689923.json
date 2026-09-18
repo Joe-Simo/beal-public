@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U102_orbit_b_definitive_elimination",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U102_orbit_b_definitive_elimination.md",
+      "excerpt": "# U102: Definitive and Unconditional Elimination of the CM Hilbert Newform Orbit b (2.2.5.1-2000.1-b)\n\n**Date**: 2026-09-17  \n**Status**: Exact mathematical proof, geometric endomorphism obstruction, local Galois representation certificate, and closed elimination ledger. Beal's conjecture and the weighted auxiliary equation remain under study.  \n**Context**: Weighted generalized Fermat equation $X^{10} + 256Y^{10} = Z^{17}$ with $U = X^2$, $V = 2Y^2$, and $U^5 + 8V^5 = Z^{17}$, $\\gcd(X, Y) = 1$, $X, Z$ odd.  \n**Target**: Surviving Hilbert newform orbit $b$ (`2.2.5.1-2000.1-b`) over $K = \\mathbb{Q}(\\sqrt{5})$ at level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (norm 2000).\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U100, the last non-CM Hilbert newform orbit $h$ was strictly eliminated at prime 11, completing the 100% elimination of all 7 non-CM orbits at level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (norm 2000). In U101, the Breuil--Diamond (2014) Th\u00e9or\u00e8me 3.2.2 local lift bridge was unconditionally discharged across all places $S = \\{\\mathfrak{p}_2, \\mathfrak{p}_5, \\mathfrak{p}_{17}\\}$, guaranteeing that any non-trivial solution $(X, Y, Z)$ with $Y > 0$ yields a modular mod-17 Galois representation $\\bar\\rho_{J^-, 17}$ at level $\\mathfrak{N}$.\n\nThe sole remaining candidate in the entire newspace $S_2^{\\text{new}}(\\mathfrak{N})$ is **orbit $b$** (`2.2.5.1-2000.1-b`), which corresponds to the boundary CM abelian variety $A_b \\cong \\operatorname{Jac}(C_0)_{/K}$, where $C_0: y^2 = 64 - x^5$.\n\nThis checkpoint establishes the **definitive, unconditional elimination of orbit $b$** through four independent, rigorous geometric and Galois-theoretic proofs:\n1. **Geometric Endomorphism & Isogeny Obstruction**: For any non-trivial candidate solution ($Y > 0$), the Frey Jacobian $J^-$ has strictly Real Multiplication with $\\dim_{\\mathbb{Q}} \\operatorname{End}^0(J^-) = 2$, whereas $A_b$ has Complex Multiplication by $\\mathbb{Q}(\\zeta_5)$ with $\\dim_{\\mathbb{Q}} \\operatorname{End}^0(A_b) = 4$. By the classification of endomorphism algebras, $J^-$ cannot be isogenous to $A_b$ over any field extension of $\\mathbb{Q}$.\n2. **Faltings' Tate Module Full Faithfulness**: By Faltings' Isogeny Theorem (1983), $\\operatorname{Hom}_K(J^-, A_b) \\otimes \\mathbb{Q}_{17} \\cong \\operatorname{Hom}_{G_K}(V_{17}(J^-), V_{17}(A_b)) = 0$. Hence the 17-adic representations $\\rho_{J^-, 17}$ and $\\rho_{A_b, 17}$ cannot be isomorphic.\n3. **Inertia Image and Reduction Type Discrepancy**:\n   - At primes $q \\mid Z$ ($q \\nmid 10$), $J^-$ has bad toric/semistable reduction with non-zero monodromy $N_{\\mathfrak{q}} \\ne 0$, producing an infinite inertia image $\\rho_{J^-, 17}(I_{\\mathfrak{q}})$, whereas $A_b$ has good reduction outside 2 and 5 ($\\rho_{A_b, 17}(I_{\\mathfrak{q}}) = \\{1\\}$).\n   - At primes $q \\mid Y$, Darmon's modular parameterization degenerates to the cusp $\\lambda \\to 1$, while $A_b$ maintains good reduction.\n   - At the residual prime 17 ($17^2 \\mid Y$), the Tate modules have incompatible $\\mathbb{Z}_{17}$-ranks of their Galois endomorphism rings ($2$ for RM vs $4$ for CM).\n4. **Frobenius Sieve and Baker Height Bound Contradiction**: At split primes $p \\equiv 1 \\pmod 5$ coprime to $2YZ$, $C^-(U, V)$ has zero matches modulo 17 with orbit $b$ whenever $V \\not\\equiv 0 \\pmod p$. Matching orbit $b$ forces infinitely many primes to divide $Y$. In particular, the 14 forcing primes from U72 force $\\max(X, Y) > 10^{4810}$, exceeding Baker's effective height upper bound $10^{434}$.\n\n---\n\n## 2. Rigorous Proof: $J^-$ Cannot Be Isogenous to $A_b$\n\n### 2.1 The Abelian Varieties Under Comparison\n1. **The CM Target Abelian Variety $A_b$**:\n   - Let $A_b$ denote the 2-dimensional abelian variety over $K = \\mathbb{Q}(\\sqrt{5})$ associated to the Hilbert newform orbit $b$ (`2.2.5.1-2000.1-b`) in $S_2^{\\text{new}}(\\mathfrak{N})$.\n   - In U97, $A_b$ was proven to be isogenous over $K$ to $\\operatorname{Jac}(C_0)_{/K}$, where $C_0$ is the genus-2 curve:\n     $$C_0: y^2 = 64 - x^5.$$\n   - The curve $C_0$ admits the cyclic automorphism of order 5:\n     $$\\tau: (x, y) \\mapsto (\\zeta_5 x, y), \\quad \\zeta_5 = e^{2\\pi i / 5}.$$\n   - The holomorphic 1-forms $\\omega_1 = \\frac{dx}{y}$ and $\\omega_2 = \\frac{x dx}{y}$ satisfy $\\tau^* \\omega_1 = \\zeta_5 \\omega_1$ and $\\tau^* \\omega_2 = \\zeta_5^2 \\omega_2$.\n   - The endomorphism ring $\\operatorname{End}(\\operatorname{Jac}(C_0))$ contains the maximal order $\\mathbb{Z}[\\zeta_5]$ of the cyclotomic field $M = \\mathbb{Q}(\\zeta_5)$.\n   - Since $[M : \\mathbb{Q}] = 4 = 2 \\dim(\\operatorname{Jac}(C_0))$, the abelian variety $A_b$ is **absolutely simple with Complex Multiplication (CM)** by the quartic CM field $M = \\mathbb{Q}(\\zeta_5)$.\n   - Its geometric endomorphism algebra is:\n     $$\\operatorname{End}_{\\overline{\\mathbb{Q}}}^0(A_b) = \\operatorname{End}^0(\\operatorname{Jac}(C_0)) \\cong \\mathbb{Q}(\\zeta_5), \\quad \\dim_{\\mathbb{Q}} \\operatorname{End}_{\\overline{\\mathbb{Q}}}^0(A_b) = 4.$$\n\n2. **The Frey Jacobian $J^-$ for Non-Trivial",
+      "length_chars": 26289
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 2.54,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.14,
+          "2": 0.18,
+          "3": 0.68
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.29,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.89,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.09
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.99,
+        "probabilities": {
+          "audit_later": 0.01,
+          "audit_now": 0.99,
+          "no_action": 0.0,
+          "verify_literature": 0.0,
+          "verify_computation": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3233,
+      "output_tokens": 124
+    }
+  }
+}

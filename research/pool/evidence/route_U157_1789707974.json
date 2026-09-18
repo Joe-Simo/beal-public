@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U157",
+  "timestamp": "2026-09-18T01:06:14-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "closure"
+  },
+  "questions": {
+    "ok": {
+      "type": "noul",
+      "instructions": "Is it correct that a counterexample with 4|x, 2|y, 5|z yields one of signature (4, 2n, 5) via bases A^{x/4}, B^{y/2}, C^{z/5} (n = y/2 >= 2 since y even and >= 3), preserving gcd = 1?",
+      "criteria": {
+        "true": "correct",
+        "false": "gap"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "ok": {
+        "type": "noul",
+        "noul": 0.56
+      }
+    },
+    "usage": {
+      "input_tokens": 375,
+      "output_tokens": 20
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U78_explicit_descent_field_and_two_prime_criterion",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U78_explicit_descent_field_and_two_prime_criterion.md",
+      "excerpt": "# U78: an explicit descent field and a two-prime Selmer criterion\n\n**Status: written, self-reviewed field and descent-reduction theorems, corroborated by exact arithmetic. No numerical rank upper bound, weighted-equation exclusion, or solution of Beal's conjecture is obtained. Independent expert and proof-assistant verification remain outstanding.**\n\nResearch date: 2026-09-15. The private remote was read at `11becf1c733016efd853d136e2f1e85dab319b13` (U77). Its attached archive was restored additively: 50 files restored, two identical, no conflicts overwritten, and all manifest hashes verified. The full U77 Python output reproduced unchanged into a new record. This is repeatability, not independent mathematical verification.\n\n## 1. What is established and what remains unknown\n\nKeep U77's fixed curve and Jacobian\n\n    k=Q(phi), phi^2-phi-1=0, phi=(1+sqrt(5))/2,\n    C: v^2=phi+2-4(3-phi)u^17, J=Jac(C).             (1.1)\n\nU77's written argument says that a primitive positive solution of `X^10+256Y^10=Z^17` would force an infinite-order class in J(k). Its application still inherits the earlier common-root proof. The present field and descent statements concern the explicitly defined curve (1.1) and do not require a weighted solution as a hypothesis.\n\n**Theorem.** Let\n\n    F=k(s), s^17=2/phi=2phi-2,\n    f(T)=T^34+2T^17-4,\n    d=dim_F2 Cl(O_F)[2].\n\nThen:\n\n* F is the root field for the odd-degree 2-descent, has signature (2,16), and\n\n      O_F=Z[phi,s],\n      basis: s^j, phi*s^j for 0<=j<=16,\n      disc(F)=2^32*5^17*17^34,\n      [O_F:Z[s]]=2^17.                               (1.2)\n\n* There is a finite global candidate space V of dimension **17+d** and a precisely defined linear map\n\n      Psi: V -> (H_2/W_2) direct_sum F_2,\n      dim(H_2/W_2)=16,\n      Sel_2(J/k)=ker(Psi).                           (1.3)\n\n  The final F_2 coordinate is an explicit local square test at the prime above 5. The prime above 17 and both real places have zero local norm-kernel space and impose no further condition. Good places outside 2,5,17 are already accounted for by the definition of V.\n\nConsequently, writing r_Psi for the rank of this particular restriction map,\n\n    dim Sel_2(J/k)=17+d-r_Psi,\n    rank J(k) <= 17+d-r_Psi.                         (1.4)\n\n**Neither d nor r_Psi has been computed.** In particular, (1.4) is not a numerical rank bound. The 16-dimensional local Kummer image W_2 is defined and its dimension proved, but a basis for it is not supplied. The global candidate basis and the entries of Psi also remain to be computed. \u201cSeventeen conditions\u201d denotes the dimension of the target; it does not assert that their restrictions to V are independent.\n\nA sufficient certificate for the rank-zero route would be\n\n    d=0 and r_Psi=17.                               (1.5)\n\nTogether with U77, this would exclude the active weighted equation, not the complete Beal conjecture. U78 proves the reduction to (1.5), **not** either assertion in (1.5). A nonzero Selmer group would not, by itself, prove positive Mordell-Weil rank either.\n\n## 2. Identifying the correct field and proving its integer ring\n\nPut c=2phi-2. The quadratic ring is O_k=Z[phi]. Both 2 and 17 are inert: `T^2-T-1` is irreducible modulo each. At the prime of k above 2, c has valuation one, so `T^17-c` is Eisenstein. Thus [F:k]=17. Also phi=(s^17+2)/2 belongs to Q(s), which proves [F:Q]=34 and proves that f is its minimal polynomial.\n\nThe relative discriminant of the basis 1,s,...,s^16 is\n\n    17^17*c^16.\n\nOnly the base primes above 2 and 17 can divide its relative index. At 2, s is a uniformizer of a totally ramified extension and generates its local integer ring. For the prime above 17, use the integral shift a=-2phi. Exact reduction in Z[phi] gives\n\n    a^17-c = -129368062-209321986phi,\n    (a^17-c)/17 = 11+8phi modulo17,\n    Norm_(k/Q)(11+8phi) = 9 modulo17.                (2.1)\n\nAll intermediate coefficients of `(T+a)^17-c` are divisible by 17, and its constant term has valuation exactly one. The shifted polynomial is therefore Eisenstein at this prime as well. Its root s-a generates the same local order as s and is a uniformizer, proving local maximality. The Eisenstein/uniformizer statement is used over the completion of k, not over Q_17 with a discarded quadratic coefficient field; see [S1, Proposition 7.55 and Remark 7.56].\n\nThere are no remaining possible relative index primes. Hence O_F=O_k[s]. In particular the ramification of k at 5 was already included by working over O_k; it is not a missing exceptional case.\n\nSince Norm(c)=-4 and disc(k)=5, the discriminant tower formula yields\n\n    disc(F)=5^17 * Norm(17^17*c^16)\n           =2^32*5^17*17^34.                        (2.2)\n\nIts sign is positive. For each of the two real embeddings of k, the odd-degree polynomial has one real root and eight pairs of nonreal roots. Thus F has signature (2,16), consistent with (2.2).\n\nReplacing phi*s^j by `s^j+s^(17+j)/2` gives basis determinant 2^(-17) relative to the s power basis",
+      "length_chars": 18880
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.24,
+        "confidence": 0.76,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.89,
+          "1": 0.03,
+          "2": 0.02,
+          "3": 0.06
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.43,
+        "confidence": 0.57,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.73,
+          "1": 0.18,
+          "2": 0.02,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.54,
+        "probabilities": {
+          "audit_later": 0.63,
+          "no_action": 0.12,
+          "verify_literature": 0.01,
+          "audit_now": 0.06,
+          "verify_computation": 0.18
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2847,
+      "output_tokens": 125
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C172_C128",
+  "timestamp": "2026-09-18T15:58:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C172",
+      "status": "PARTIAL_RESULT",
+      "claim": "The opposite-parity branch of (3,4,4) does NOT need elliptic Chabauty. When exactly one of B, C is even, all three factors of A^3 = (C-B)(C+B)(C^2+B^2) are ODD, hence pairwise coprime and each a cube outright. With C-B = mu^3 and C+B = nu^3, the identity (C-B)^2+(C+B)^2 = 2(C^2+B^2) gives (mu^2)^3 + (nu^2)^3 = 2*tau^3, which is Euler's equation a^3+b^3=2c^3; its only coprime solutions have a = b, forcing mu = nu, hence B = 0, excluded.",
+      "parents": [
+        "C155",
+        "C156",
+        "C168",
+        "C151"
+      ],
+      "method": "Observed that the 2-adic difficulty of the same-parity branch is absent here, then reused the already machine-checked coprimality lemmas verbatim. Numerical check in code/U315_opposite_parity.py: 32,335 opposite-parity coprime pairs 1<=B<C<400 with all three factors odd and pairwise coprime; 364 reconstruction identities; no a^3+b^3=2c^3 with coprime a != b below 3,000; no direct solution A^3+B^4=C^4 with C < 200.",
+      "evidence": "The REDUCTION is machine-checked: Beal.opposite_parity_reduction in formal/Beal/ThreeFourFour.lean, with statement 0 < A -> 0 < B -> B < C -> Nat.Coprime B C -> (Odd B and Even C or Even B and Odd C) -> A^3+B^4=C^4 -> exists m n r, 0<m and 0<n and 0<r and C-B = m^3 and C+B = n^3 and (m^2)^3+(n^2)^3 = 2*r^3. #print axioms = [propext, Classical.choice, Quot.sound]; full lake build clean. Also Beal.sq_mod_two and Beal.opposite_parity_factors_odd.",
+      "obligations": "The CLOSURE is not proved. Euler's theorem (a^3+b^3=2c^3 has only a=b in coprime integers) is NOT in mathlib -- checked by grep over Mathlib/, and Mathlib/NumberTheory/FLT/ contains only Basic, Four, MasonStothers, Three. To close the branch either formalise Euler's descent (classical route: a=u+v, b=u-v gives u(u^2+3v^2)=c^3, then descent in Z[omega]) or find the result under another name. The bounded search in step 4 of the script is NOT evidence for it -- bounded computation is a dead category by the survey gate.",
+      "novelty": "Replaces an unavailable computation (elliptic Chabauty on y^2 = x^3 - 972, which PARI cannot do and which cannot be bought at $0) with a classical named theorem that is formalisable. This changes the obstruction from TOOLING to WORK. It says nothing about Beal's open core: the descent still needs gcd(y,z) > 1 (C157).",
+      "evaluations": {
+        "U315": "Exact arithmetic over 32,335 pairs plus a machine-checked reduction. HYPOTHESIS_ONLY for routing."
+      }
+    },
+    "candidate_B": {
+      "parents": [
+        "C127",
+        "C121",
+        "C120"
+      ],
+      "inspirations": [
+        "asking how many of the three exponents a rigid object can carry, rather than what its rank or field must be"
+      ],
+      "evidence": "Two full punctures consume 2n of the 2n+2 budget, leaving at most 2 for the third; three would need 3n, and 3n > 2n+2 exactly when n > 2. Exhaustive enumeration for n = 3..12: the maximum number of full punctures is 2 at every rank, and the third puncture has exactly 2 distinct eigenvalues in every such triple. At n = 2 all three can be full, which is the classical hypergeometric case.",
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "",
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C128",
+      "status": "BLOCKED",
+      "claim": "SHARPEST FORM OF THE OBSTRUCTION: a rigid local system on P^1 minus {0,1,inf} of rank n >= 3 carries AT MOST TWO exponents. Call a puncture FULL when its local monodromy is regular semisimple (n distinct eigenvalues), the state that can carry a whole exponent. Then at most two punctures are full, and when exactly two are, the third has EXACTLY 2 distinct eigenvalues.",
+      "method": "counting proof from the C121 budget plus exhaustive enumeration, code/U261_two_of_three.py; Lean 4 + mathlib theorems three_full_exceeds_budget and two_full_leaves_two, lake build passes, 0 sorry",
+      "open_obligations": "",
+      "novelty": "This is the whole obstruction in one line: TWO EXPONENTS FIT, THE THIRD DOES NOT. It explains the literature s method directly \u2014 every published closure proceeds through a reduction, (p,p,r), (n,n,2), (n,n,3), (2,3,n), each of which leaves at most two independent exponents to carry. Beal needs three, and no rigid object of rank >= 3 has room."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.43,
+        "confidence": 0.57,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.65,
+          "1": 0.28,
+          "2": 0.05,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.16
+      }
+    },
+    "usage": {
+      "input_tokens": 2145,
+      "output_tokens": 53
+    }
+  }
+}

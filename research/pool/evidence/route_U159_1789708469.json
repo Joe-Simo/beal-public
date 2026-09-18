@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U159",
+  "timestamp": "2026-09-18T01:14:29-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "DM"
+  },
+  "questions": {
+    "ok": {
+      "type": "noul",
+      "instructions": "Statement check: Darmon-Merel/Poonen (n,n,2), n>=4 (BCDY Table 1: no solutions in coprime nonzero integers) implies no Beal counterexample of signature (n,n,2k) for n>=4, k>=2, via C^{2k}=(C^k)^2. Correct?",
+      "criteria": {
+        "true": "correct",
+        "false": "gap"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "ok": {
+        "type": "noul",
+        "noul": 0.59
+      }
+    },
+    "usage": {
+      "input_tokens": 377,
+      "output_tokens": 20
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U99_signature_2_3_p_newform_inventory",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U99_signature_2_3_p_newform_inventory.md",
+      "excerpt": "# U99: Exact Modular Newform Inventory for Signature $(2, 3, p)$ Across Serre Levels $\\{27, 54, 96, 288, 864\\}$: Dimensions, Solution Correspondences, and Hecke Eigenvalues\n\n**Status: source-verified modular form inventory and Hecke eigenvalue certificate. Beal's conjecture and generalized Fermat equations of signature $(2, 3, p)$ remain open.**\n\nResearch date: 2026-09-17. Primary sources:\n- Nuno Freitas, Bartosz Naskr\u0119cki, and Michael Stoll, *The generalized Fermat equation with exponents 2, 3, n*, Compositio Math. 156 (2020), 77\u2013113 (specifically Lemma 2.3, Tables 1\u20133, and Section 3).\n- David Loeffler and Jared Weinstein, *On the computation of local components of a newform*, Math. Comp. 81 (2012), 1179\u20131188.\n- The LMFDB Collaboration, *Classical modular forms of weight 2 and levels 27, 54, 96, 288, 864*, https://www.lmfdb.org.\n- PARI/GP version 2.17.4 (`mfinit`, `mfdim`, `mfeigenbasis`, `mfcoefs`, `ellinit`, `ellap`).\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint maps the exact modular newform inventory for the generalized Fermat equation of signature $(2, 3, p)$\n$$a^2 + b^3 = c^p, \\quad \\gcd(a, b, c) = 1, \\quad p \\ge 11,$$\nacross all five candidate Serre conductors\n$$\\mathcal{N} = \\{27, 54, 96, 288, 864\\}$$\nisolated by Kraus (1998, 1999), Poonen--Schaefer--Stoll (2007), and Freitas--Naskr\u0119cki--Stoll (2020).\n\n### Key Results\n1. **Exact Dimensions**:\n   - **$N = 27$**: $\\dim S_2(27) = 1$, $\\dim S_2^{\\text{new}}(27) = 1$ (single rational newform: `27a1`).\n   - **$N = 54$**: $\\dim S_2(54) = 4$, $\\dim S_2^{\\text{new}}(54) = 2$ (two rational newforms: `54a1` and its twist).\n   - **$N = 96$**: $\\dim S_2(96) = 9$, $\\dim S_2^{\\text{new}}(96) = 2$ (two rational newforms: `96a1` and `96b1`).\n   - **$N = 288$**: $\\dim S_2(288) = 33$, $\\dim S_2^{\\text{new}}(288) = 5$ (five rational newforms: `288a1`, `288b1`, `288c1`, `288d1`, `288e1`).\n   - **$N = 864$**: $\\dim S_2(864) = 121$, $\\dim S_2^{\\text{new}}(864) = 16$ (14 eigenforms: 12 rational one-dimensional newforms, and 1 two-dimensional Galois orbit of newforms with coefficient field $\\mathbb{Q}(\\sqrt{13})$).\n2. **Unconditional Elimination of the Non-Rational Newforms at Level 864**:\n   - The two non-rational newforms at level 864 with field of coefficients $\\mathbb{Q}(\\sqrt{13})$ are **eliminated unconditionally for all exponents $p$**.\n   - By the Loeffler--Weinstein algorithm, the local representation at 3 for these forms has inertia image $\\rho_f(I_3) \\cong S_3$.\n   - For an elliptic curve, the inertia image at 3 must be cyclic of order dividing 6 (Kraus 1990). Thus, no Frey elliptic curve can ever be congruent modulo $p$ to these forms.\n3. **Exact Solution Correspondences**:\n   - **Trivial solution $(a, b, c) = (1, 0, 1)$**:\n     The Frey curve $E_{(1, 0, 1)}: Y^2 = X^3 + 2$ has $j = 0$ (CM by $\\mathbb{Q}(\\sqrt{-3})$). Its quadratic twist by $-3$ has conductor 27 and corresponds **identically to newform `27a1`**.\n   - **Trivial solution $(a, b, c) = (0, 1, 1)$**:\n     The Frey curve $E_{(0, 1, 1)}: Y^2 = X^3 + 3X$ has conductor 288, $j = 1728$ (CM by $\\mathbb{Q}(i)$). It corresponds **identically to newform `288a1`**.\n   - **Universal Catalan solution $(a, b, c) = (3, -2, 1)$**:\n     The Catalan Frey curve $E_{\\text{Cat}}: Y^2 = X^3 - 6X + 6$ has $j = -13824$. Its quadratic twist by 2 is $Y^2 = X^3 - 24X + 48$, which has conductor 864 and corresponds **identically to newform `864b1`**.\n     Its Hecke eigenvalues satisfy $a_q(864\\text{b}1) = \\left(\\frac{2}{q}\\right) a_q(E_{\\text{Cat}})$ for all odd primes $q$.\n4. **Permanent Modular Survival**:\n   Because $(1, 0, 1)$, $(0, 1, 1)$, and $(3, -2, 1)$ are genuine solutions for every exponent $p \\ge 2$, their associated newforms `27a1`, `288a1`, and `864b1` **can never be eliminated by any local Hecke sieve**. The modular method over $\\mathbb{Q}$ cannot establish non-existence; it only reduces the equation to finding rational points on twisted modular curves $X_E(p)$.\n\n---\n\n## 2. Space Dimensions and Eigenform Decomposition\n\nUsing PARI/GP's modular forms engine (`mfdim` and `mfeigenbasis`), we compute the exact dimensions of the full cusp space $S_2(\\Gamma_0(N))$, the newspace $S_2^{\\text{new}}(\\Gamma_0(N))$, and the full modular space $M_2(\\Gamma_0(N))$:\n\n| Level $N$ | $\\dim M_2(\\Gamma_0(N))$ | $\\dim S_2(\\Gamma_0(N))$ | $\\dim S_2^{\\text{new}}(\\Gamma_0(N))$ | Number of Hecke Eigenforms | Coefficient Fields of Newforms |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **$N = 27$** | 6 | 1 | **1** | 1 | $\\mathbb{Q}$ (100% rational) |\n| **$N = 54$** | 15 | 4 | **2** | 2 | $\\mathbb{Q}$ (100% rational) |\n| **$N = 96$** | 24 | 9 | **2** | 2 | $\\mathbb{Q}$ (100% rational) |\n| **$N = 288$** | 64 | 33 | **5** | 5 | $\\mathbb{Q}$ (100% rational) |\n| **$N = 864$** | 168 | 121 | **16** | 14 | 12 forms over $\\mathbb{Q}$; 2 forms over $\\mathbb{Q}(\\sqrt{13})$ |\n\n### 2.1 The Newspace $S_2^{\\text{new}}(\\Gamma_0(864))$\nThe newspace at level 864 has dimension 16 and decomposes into 14 Galois orbits of newforms:\n- **12 rational newforms**",
+      "length_chars": 14750
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.33,
+        "confidence": 0.27,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.2,
+          "1": 0.49,
+          "2": 0.09,
+          "3": 0.22
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.33,
+        "confidence": 0.67,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.88,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.1
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.64
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.41,
+        "probabilities": {
+          "audit_later": 0.18,
+          "audit_now": 0.09,
+          "verify_literature": 0.02,
+          "verify_computation": 0.19,
+          "no_action": 0.52
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3390,
+      "output_tokens": 124
+    }
+  }
+}

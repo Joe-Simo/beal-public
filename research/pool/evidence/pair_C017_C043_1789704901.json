@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C017_C043",
+  "timestamp": "2026-09-18T00:15:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C017",
+      "status": "PARTIAL_RESULT",
+      "claim": "Unified: if 3 | gcd(x,y,z) or 4 | gcd(x,y,z), then A^x + B^y = C^z has no positive solutions. Packages the 3|x,3|y,3|z family (FLT3) and the 4|x,4|y,z even family (not_fermat_42)."
+    },
+    "B": {
+      "id": "C043",
+      "status": "PARTIAL_RESULT",
+      "claim": "COUNTERSEARCH in Z[i]: of the norm analogues of the verified Z-constraints, exactly one fails on the Helenius identity (-2+i)^3+(-2-i)^3=(1+i)^4: the lower half of no_cancellation, that the sum exceeds each summand (N(C^z)=16 < 125 = N(A^x) = N(B^y)). Every other tested analogue (upper half of no_cancellation, C-smallest exponent order, dominant di"
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.27,
+        "confidence": 0.25,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.24,
+          "1": 0.26,
+          "2": 0.49,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "usage": {
+      "input_tokens": 648,
+      "output_tokens": 34
+    }
+  }
+}

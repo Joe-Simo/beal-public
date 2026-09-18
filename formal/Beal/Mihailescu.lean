@@ -5,9 +5,11 @@ Authors: Formal Verification Specialist
 -/
 import Beal.Conjecture
 import Beal.KnownSolutions
-import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Defs
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Omega
+import Mathlib.Tactic.IntervalCases
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
 
 /-!
 # Mihăilescu's Theorem (Catalan's Conjecture) and the Beal Base-One Exclusion
@@ -93,10 +95,13 @@ theorem catalan_sol_valid : CatalanEquation 3 2 2 3 := by
 **Mihăilescu's Theorem (Catalan's Conjecture, 2002)**:
 The Diophantine equation $x^p = y^q + 1$ for integers $x, y > 1$ and $p, q > 1$
 has the unique positive integer solution $x = 3, p = 2, y = 2, q = 3$.
+
+Stated as a NAMED HYPOTHESIS (`def ... : Prop`), never as a Lean `axiom`: every theorem
+below that needs it takes it as an explicit argument, so `#print axioms` on those theorems
+reports only the standard `[propext, Classical.choice, Quot.sound]`.
 -/
-axiom mihailescu_theorem (x y p q : ℕ)
-    (hx : x > 1) (hy : y > 1) (hp : p > 1) (hq : q > 1)
-    (heq : CatalanEquation x y p q) :
+def MihailescuTheorem : Prop :=
+  ∀ x y p q : ℕ, x > 1 → y > 1 → p > 1 → q > 1 → CatalanEquation x y p q →
     x = 3 ∧ p = 2 ∧ y = 2 ∧ q = 3
 
 /-! ### 2. Impossibility of Generalized Fermat Equations with C = 1 -/
@@ -128,14 +133,15 @@ No power $C^z$ with $z \ge 2$ can equal 2.
 Proof: If $C \le 1$, $C^z \le 1 \ne 2$. If $C \ge 2$, $C^z \ge 2^2 = 4 > 2$.
 -/
 lemma pow_ne_two_of_exponent_ge_two (C z : ℕ) (hz : z ≥ 2) : C ^ z ≠ 2 := by
-  rcases eq_or_lt_of_le (show C ≤ 1 ∨ C ≥ 2 by omega) with (hC_le | hC_ge)
-  · interval_cases C
-    · rw [zero_pow (by omega : z ≠ 0)]
-      decide
-    · rw [one_pow z]
-      decide
-  · have h2 : C ^ z ≥ 2 ^ 2 := by
-      sorry
+  intro h
+  have hcase : C = 0 ∨ C = 1 ∨ 2 ≤ C := by omega
+  rcases hcase with rfl | rfl | hge
+  · rw [zero_pow (by omega : z ≠ 0)] at h; omega
+  · rw [one_pow] at h; omega
+  · have h4 : (4 : ℕ) ≤ C ^ z := by
+      calc (4 : ℕ) = 2 ^ 2 := by norm_num
+        _ ≤ 2 ^ z := Nat.pow_le_pow_right (by omega) hz
+        _ ≤ C ^ z := Nat.pow_le_pow_left hge z
     omega
 
 /--
@@ -155,7 +161,7 @@ theorem no_solution_two_units (x y z C : ℕ) (hz : z ≥ 2)
 If $1^x + B^y = C^z$ with $B > 1$ and $y, z \ge 2$, then $(C, z, B, y) = (3, 2, 2, 3)$.
 In particular, the exponent $z$ must strictly equal 2.
 -/
-theorem catalan_reduction_left (x B C y z : ℕ)
+theorem catalan_reduction_left (hM : MihailescuTheorem) (x B C y z : ℕ)
     (hB : B > 1) (hy : y ≥ 2) (hz : z ≥ 2)
     (heq : 1 ^ x + B ^ y = C ^ z) :
     C = 3 ∧ z = 2 ∧ B = 2 ∧ y = 3 := by
@@ -173,13 +179,13 @@ theorem catalan_reduction_left (x B C y z : ℕ)
       have : B ^ y = 0 := by omega
       have : B ^ y ≥ 1 := one_le_pow_of_pos B y (by omega)
       omega
-  exact mihailescu_theorem C B z y hC hB hz hy hcat
+  exact hM C B z y hC hB hz hy hcat
 
 /--
 If $A^x + 1^y = C^z$ with $A > 1$ and $x, z \ge 2$, then $(C, z, A, x) = (3, 2, 2, 3)$.
 In particular, the exponent $z$ must strictly equal 2.
 -/
-theorem catalan_reduction_right (A y C x z : ℕ)
+theorem catalan_reduction_right (hM : MihailescuTheorem) (A y C x z : ℕ)
     (hA : A > 1) (hx : x ≥ 2) (hz : z ≥ 2)
     (heq : A ^ x + 1 ^ y = C ^ z) :
     C = 3 ∧ z = 2 ∧ A = 2 ∧ x = 3 := by
@@ -197,7 +203,7 @@ theorem catalan_reduction_right (A y C x z : ℕ)
       have : A ^ x = 0 := by omega
       have : A ^ x ≥ 1 := one_le_pow_of_pos A x (by omega)
       omega
-  exact mihailescu_theorem C A z x hC hA hz hx hcat
+  exact hM C A z x hC hA hz hx hcat
 
 /-! ### 5. The Beal Base-One Exclusion Theorem -/
 
@@ -214,35 +220,35 @@ theorem beal_base_c_ne_one (A B C x y z : ℕ)
 /--
 No Beal counterexample can have base $A = 1$.
 -/
-theorem beal_base_a_ne_one (A B C x y z : ℕ)
+theorem beal_base_a_ne_one (hM : MihailescuTheorem) (A B C x y z : ℕ)
     (h : IsBealCounterexample A B C x y z) :
     A ≠ 1 := by
   rintro rfl
   obtain ⟨_, hB, hC, hx, hy, hz, _, heq⟩ := h
-  rcases eq_or_lt_of_le (show B ≤ 1 ∨ B > 1 by omega) with (hB1 | hB_gt)
+  rcases (show B ≤ 1 ∨ B > 1 by omega) with (hB1 | hB_gt)
   · have hB_eq : B = 1 := by omega
     subst hB_eq
     exact no_solution_two_units x y z C (by omega) heq
-  · have hcat := catalan_reduction_left x B C y z hB_gt (by omega) (by omega) heq
+  · have hcat := catalan_reduction_left hM x B C y z hB_gt (by omega) (by omega) heq
     have hz2 : z = 2 := hcat.2.1
     omega
 
 /--
 No Beal counterexample can have base $B = 1$.
 -/
-theorem beal_base_b_ne_one (A B C x y z : ℕ)
+theorem beal_base_b_ne_one (hM : MihailescuTheorem) (A B C x y z : ℕ)
     (h : IsBealCounterexample A B C x y z) :
     B ≠ 1 := by
   rintro rfl
   obtain ⟨hA, _, hC, hx, hy, hz, _, heq⟩ := h
-  rcases eq_or_lt_of_le (show A ≤ 1 ∨ A > 1 by omega) with (hA1 | hA_gt)
+  rcases (show A ≤ 1 ∨ A > 1 by omega) with (hA1 | hA_gt)
   · have hA_eq : A = 1 := by omega
     subst hA_eq
     have heq_comm : 1 ^ y + 1 ^ x = C ^ z := by
       have : 1 ^ y + 1 ^ x = 1 ^ x + 1 ^ y := by omega
       rw [this, heq]
     exact no_solution_two_units y x z C (by omega) heq_comm
-  · have hcat := catalan_reduction_right A y C x z hA_gt (by omega) (by omega) heq
+  · have hcat := catalan_reduction_right hM A y C x z hA_gt (by omega) (by omega) heq
     have hz2 : z = 2 := hcat.2.1
     omega
 
@@ -250,11 +256,11 @@ theorem beal_base_b_ne_one (A B C x y z : ℕ)
 **The Beal Base-One Exclusion Theorem**:
 No Beal counterexample can ever have any base equal to 1.
 -/
-theorem beal_counterexample_base_ne_one (A B C x y z : ℕ)
+theorem beal_counterexample_base_ne_one (hM : MihailescuTheorem) (A B C x y z : ℕ)
     (h : IsBealCounterexample A B C x y z) :
     A ≠ 1 ∧ B ≠ 1 ∧ C ≠ 1 :=
-  ⟨beal_base_a_ne_one A B C x y z h,
-   beal_base_b_ne_one A B C x y z h,
+  ⟨beal_base_a_ne_one hM A B C x y z h,
+   beal_base_b_ne_one hM A B C x y z h,
    beal_base_c_ne_one A B C x y z h⟩
 
 /--
@@ -263,11 +269,11 @@ In every hypothetical Beal counterexample $(A, B, C, x, y, z)$,
 all three bases must be strictly greater than or equal to 2:
   $$A \ge 2, \quad B \ge 2, \quad C \ge 2.$$
 -/
-theorem beal_counterexample_bases_ge_two (A B C x y z : ℕ)
+theorem beal_counterexample_bases_ge_two (hM : MihailescuTheorem) (A B C x y z : ℕ)
     (h : IsBealCounterexample A B C x y z) :
     A ≥ 2 ∧ B ≥ 2 ∧ C ≥ 2 := by
+  have ⟨hA_ne, hB_ne, hC_ne⟩ := beal_counterexample_base_ne_one hM A B C x y z h
   obtain ⟨hA_pos, hB_pos, hC_pos, _⟩ := h
-  have ⟨hA_ne, hB_ne, hC_ne⟩ := beal_counterexample_base_ne_one A B C x y z h
   refine ⟨by omega, by omega, by omega⟩
 
 end Beal

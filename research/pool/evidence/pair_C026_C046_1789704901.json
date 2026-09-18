@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C026_C046",
+  "timestamp": "2026-09-18T00:15:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C026",
+      "status": "PARTIAL_RESULT",
+      "claim": "Beal is FALSE over the Gaussian integers: (-2+i)^3 + (-2-i)^3 = (1+i)^4, with exponents (3,3,4) all >= 3 and bases sharing no Gaussian prime (norms 5, 5, 2). Therefore Beal cannot be proved from unique factorisation alone; any valid proof must use the total ordering of Z or the ramification of rational primes."
+    },
+    "B": {
+      "id": "C046",
+      "status": "PARTIAL_RESULT",
+      "claim": "Literature state (primary-source, U130): among signatures with all exponents >= 3, the fully solved families are (3,3,n) n<=10^9, (n,n,3) n>=3, (n,n,n). Hence (4,4,3) is solved; (4,4,5), (4,4,7), (4,6,3), every (2m,2n,r odd) with m != n, (3,5,7), (5,5,7) are open. A Jev screen of all 45 pool candidates found NONE subsumed by these (max subsumed 0.2"
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.41,
+        "confidence": 0.39,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.27,
+          "2": 0.55,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.22
+      }
+    },
+    "usage": {
+      "input_tokens": 692,
+      "output_tokens": 34
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C176_C157",
+  "timestamp": "2026-09-18T15:58:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C176",
+      "status": "PARTIAL_RESULT",
+      "claim": "The larger-base-field escape from C174/C175 is REAL and CHEAP, so the regularity obstruction is a statement about Q and not a field-independent fact. Over K the orbits of primitive m-th roots have size |Gal(K(zeta_m)/K)| = phi(m)/[K cap Q(zeta_m):Q], so the minimal rank drops; reconciling the largest exponent's rank with the smallest one's ceiling needs only [K:Q] >= phi(r)/p, which is between 2 and 6 for every pairwise distinct triple of reduced exponents up to 19.",
+      "parents": [
+        "C174",
+        "C175",
+        "C170"
+      ],
+      "method": "Exact computation of both measures in code/U319_base_field_escape.py over all 56 pairwise distinct triples from {3,4,5,7,11,13,17,19}. Measure 1 (K contains all three roots of unity) costs phi(lcm(p,q,r)) = (p-1)(q-1)(r-1), ranging 16 to 3456 -- confirmed equal for all 56 triples. Measure 2 (K only shrinks the largest orbit enough) costs ceil(phi(r)/p), ranging 2 to 6. Measure 2 is the binding one.",
+      "evidence": "Measure 1's quantity is already machine-checked as Beal.minBaseDegree_le_triple and Beal.totient_mul_primes in formal/Beal/Rigidity.lean. Measure 2 is a division bound, computed exactly here and not formalised.",
+      "obligations": "CORRECTION TO MY OWN FRAMING: C174 and C175 must be read as statements about Q. I flagged this escape as 'likely live' in the previous cycle and it is. What the escape does NOT do is remove the obstruction -- over K the modular method still needs automorphy of an n-dimensional motive with n > 2 (C171), now over K rather than Q, which is harder. This is consistent with the literature: the (5,5,p) work uses Q(sqrt 5) at RANK 2 and stops there. Untested: whether a degree 2-6 field can carry a Frey object for three independent exponents with the residual representation the method needs; and whether descent to Q of the resulting statement is possible at all, since the Beal solution itself lives over Q.",
+      "novelty": "Prevents the repeat of the U258 failure mode: reporting only the expensive measure would have overstated the obstruction exactly as U258 did before U309 caught it. Records the escape as open with its cost quantified, rather than claiming a closure that is not there.",
+      "evaluations": {
+        "U319": "Exact computation of both cost measures. HYPOTHESIS_ONLY for routing."
+      }
+    },
+    "candidate_B": {
+      "parents": [
+        "C150",
+        "C107"
+      ],
+      "inspirations": [
+        "asking where the technique that worked on (3,4,4) can apply at all, before reusing it"
+      ],
+      "evidence": "The smallest open signatures all have pairwise gcds (1,1,1): (3,5,7), (4,5,7), (3,4,11), (5,7,11).",
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "The open core is precisely the set of signatures with pairwise DISTINCT reduced exponents \u2014 (4,q,r) with q,r distinct odd primes, and (p,q,r) odd primes not all equal \u2014 so the descent NEVER applies there. This is a structural reason, not a failure of effort.",
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C157",
+      "status": "BLOCKED",
+      "claim": "THE SCOPE OF THE (3,4,4) DESCENT, exactly. That descent needed C^z - B^y to FACTOR, which requires gcd(y,z) > 1. Among reduced exponents \u2014 4 or odd primes \u2014 two of them have gcd exceeding 1 ONLY WHEN THEY ARE EQUAL (verified: no pair (a,b) of distinct reduced exponents has gcd > 1). So the technique applies exactly to signatures with a REPEATED exponent: (3,4,4), (p,p,r), (n,n,n) and the like. Of 219 reduced hyperbolic signatures with exponents in {4} union the odd primes up to 29, 99 admit a factorisation and 120 do not.",
+      "method": "exact enumeration over reduced hyperbolic signatures; gcd computation",
+      "open_obligations": "",
+      "extracted_lemma": "Factorisation-based descent is available exactly when two exponents coincide. That is the same boundary the rest of this session found by other means: C128 (a rigid object carries at most two exponents), C131 and C136 (classical Frey models absorb only the pairs (2,3) and (n,n)), and C157 here. Three independent lines all stop at the same place \u2014 two exponents may be related, the third may not.",
+      "novelty": "This ties the (3,4,4) work back to the general obstruction. The descent was not a new route to Beal: it was available precisely because (3,4,4) has a repeated exponent, which is exactly the configuration the open core excludes."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.57
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 1.08,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.1,
+          "1": 0.73,
+          "2": 0.15,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.19
+      }
+    },
+    "usage": {
+      "input_tokens": 2035,
+      "output_tokens": 53
+    }
+  }
+}

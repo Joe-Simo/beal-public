@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C009_C011",
+  "timestamp": "2026-09-17T20:21:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U112_empirical_search_milestone_160k.md",
+        "references/search_logs/interval_140001_160000_primes19.json",
+        "code/beal_search_gmp.c"
+      ],
+      "obligations": [
+        "Search range extension tests no mathematical hypothesis and has near-zero proof leverage",
+        "Composite and larger exponents are not covered by the pure-prime exponent set"
+      ],
+      "evaluations": {
+        "independent_reimplementation": "PASSED 2026-09-17: independent checker written from the conjecture statement agrees with code/section8_counterexample_checker.py on all required vectors AND on the discriminating reason; True-branch reachability proven by mutating only the exponent gate to >=2, under which 3^5+10^2=7^3 is correctly reported as a counterexample; exact at 121 digits with no float path"
+      },
+      "failure_reason": null,
+      "novelty_note": "Pure verification, no mechanism; kept to bound where a counterexample could live and to stop further range extension being mistaken for progress.",
+      "extracted": [],
+      "id": "C009",
+      "status": "PARTIAL_RESULT",
+      "claim": "No counterexample to Beal's conjecture exists with A, B <= 160000 and exponents x, y, z in {3,5,7,11,13,17,19}.",
+      "method": "Exhaustive multi-threaded GMP search over coprime base pairs with arbitrary-precision verification."
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "README.md",
+        "research/checkpoints/U105_all_even_branch_complete_unconditional_resolution.md",
+        "research/checkpoints/U113_orbit_b_elimination_audit.md"
+      ],
+      "obligations": [
+        "U105 Theorem 1.1 claims this branch closed for 17|t but BOTH its pathways fail (U113 Part III)",
+        "U105 Theorem 1.1 assumes r,s >= 5 (x,y >= 10); the cases x or y in {4,6,8} are not covered and no reduction is proved",
+        "the 17 does-not-divide-t family reduces to X^(2l)+Y^(2m)=Z^p with l,m>=5, p>=19 - only the minimal case (10,10,19) is addressed, via an UNVERIFIED Dahmen-Siksek citation"
+      ],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": "Explicitly an open gap in global coverage, recorded so it is not silently assumed closed.",
+      "extracted": [],
+      "id": "C011",
+      "status": "ACTIVE",
+      "claim": "The all-even branch with 17 not dividing t admits no primitive solutions.",
+      "method": "Not yet selected; the branch is currently uncovered by every closed route."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.38
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.73,
+        "confidence": 0.63,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.32,
+          "1": 0.63,
+          "2": 0.05,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "usage": {
+      "input_tokens": 1506,
+      "output_tokens": 53
+    }
+  }
+}

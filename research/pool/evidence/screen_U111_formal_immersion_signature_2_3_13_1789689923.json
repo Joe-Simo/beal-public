@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_formal_immersion_signature_2_3_13",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_formal_immersion_signature_2_3_13.md",
+      "excerpt": "# U111: Formal Immersion Criterion Analysis for Signature $(2, 3, 13)$ at the Cusp $\\infty$\n\n**Date**: 2026-09-17  \n**Author**: Signature $(2, 3, 13)$ Modular Curve Analyst  \n**Status**: Authoritative Milestone Report & Computational Proof Certificate  \n**Target Diophantine Equation**: $A^2 + B^3 = C^{13}, \\quad \\gcd(A, B, C) = 1, \\quad ABC \\neq 0, \\quad C \\neq \\pm 1$  \n**Core Question**: Can the formal immersion criterion of Mazur (1977) and Merel (1996) at the cusp $\\infty$ be applied to eliminate the surviving newforms $\\mathcal{S}_{13} = \\{96a2, 864a1, 864b1, 864c1\\}$ or resolve the twisted modular curve $X_{E_0}(13)$?  \n**Executable Companion**: [`code/U111_formal_immersion_13.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_formal_immersion_13.py)\n\n---\n\n## 1. Executive Summary\n\nIn checkpoints U104, U105, and U110, we established that the boundary generalized Fermat equation of signature $(2, 3, 13)$ reduces to determining rational points on the twisted modular curve $X_{E_0}(13)$ ($g = 50$), with surviving Serre levels $N \\in \\{96, 864\\}$ and candidate non-CM elliptic curves $\\mathcal{S}_{13} = \\{96a2, 864a1, 864b1, 864c1\\}$.\nA classical strategy in modular Diophantine analysis\u2014dating from Mazur's 1977 Eisenstein ideal paper, Kamienny's 1992 criterion, and Merel's 1996 proof of the uniform boundedness conjecture\u2014is the **formal immersion criterion at the cusp $\\infty$**.\n\nThis checkpoint executes an exhaustive analysis of the formal immersion criterion for the twisted curve $X_{E_0}(13)$ and the candidate newforms in $S_2(\\Gamma_0(864))$.\n\n### Key Mathematical Results:\n1. **Geometric Obstruction: Absence of Rational Cusps on $X_{E_0}(13)$**:  \n   Mazur's formal immersion criterion requires a $\\mathbb{Q}$-rational cusp $\\infty$. On the untwisted curve $X(13)$, the 84 cusps are defined over $\\mathbb{Q}(\\zeta_{13})^+$. On the twisted curve $X_{E_0}(13)$, the Galois action on cusps is given by $\\sigma_{\\text{twist}}(c) = \\bar{\\rho}_{E_0, 13}(\\sigma) \\cdot \\sigma(c)$. A cusp is fixed by $G_\\mathbb{Q}$ if and only if $E_0[13]$ possesses a $G_\\mathbb{Q}$-stable line. Because the mod 13 representation $\\bar{\\rho}_{E_0, 13}$ is **absolutely irreducible** (Freitas, Naskr\u0119cki, and Stoll 2020, Lemma 8.1):\n   $$X_{E_0}(13)(\\mathbb{Q}) \\cap \\operatorname{Cusps} = \\emptyset.$$\n   **$X_{E_0}(13)$ possesses NO $\\mathbb{Q}$-rational cusps.** The cusps are defined over number fields of degree at least 14 (the Borel field $K_B$).\n2. **Wild Ramification Obstacle at Level 13**:  \n   Over the field of definition $K_B$, the cusp on $X(13)$ has width $e = 13$. The local uniformizer is $t = q^{1/13}$. The differential map satisfies $dt = \\frac{1}{13} q^{-12/13} dq \\implies dq = 13 t^{12} dt$. Modulo 13, the differential $dq$ vanishes identically, causing the cotangent map to become totally degenerate in characteristic 13.\n3. **Linear Dependence of Leading Coefficients in $S_2(\\Gamma_0(864))$**:  \n   We analyze the $q$-expansions and their $\\theta$-derivatives $q \\frac{df}{dq} = \\sum_{n=1}^\\infty n a_n q^n$ for the candidate forms $f_{864a1}, f_{864b1}, f_{864c1}$, the Catalan form $f_{\\text{Cat}}$, and $f_{96a2}$.\n   We discover an exact leading algebraic relation among the candidate newforms:\n   $$-4 f_{864a1} + f_{864b1} + 3 f_{\\text{Cat}} = 6 q^{13} - 24 q^{17} + 18 q^{19} + O(q^{25}).$$\n   - Over $\\mathbb{Q}$, this linear combination vanishes for all $n < 13$! Consequently, the $4 \\times K$ leading coefficient matrix has rank strictly less than 4 for all $K \\le 12$.\n   - In the $\\theta$-expansion $q \\frac{df}{dq}$, the $n = 13$ coefficient is $13 \\times 6 = 78 \\equiv 0 \\pmod{13}$.\n   - Because $a_{14} = a_{15} = a_{16} = 0$ (additive reduction), the relation persists modulo 13:\n     $$-4 \\theta(f_{864a1}) + \\theta(f_{864b1}) + 3 \\theta(f_{\\text{Cat}}) \\equiv 0 \\pmod{q^{17}, 13}!$$\n   - Over $\\mathbb{F}_{13}$, the rank of the leading coefficients remains strictly deficient (rank $\\le 3$) for all $K \\le 16$. Full rank 4 is **delayed until $K = 17$**.\n4. **Definitive Conclusion**:  \n   The formal immersion criterion fails to eliminate the candidate newforms or solve signature $(2, 3, 13)$ due to:\n   - The absence of rational cusps on $X_{E_0}(13)$,\n   - The wild ramification at $p = 13$,\n   - The 16-th order jet degeneracy of the candidate forms modulo 13, and\n   - The presence of the genuine Catalan point $P_{\\text{Cat}} \\in X_{864b1}(13)(\\mathbb{Q})$.\n\n---\n\n## 2. Theoretical Framework: Mazur's Formal Immersion and Merel's Winding Method\n\n### 2.1 Mazur's Classical Criterion (1977)\nLet $X/\\mathbb{Q}$ be a modular curve, and let $\\mathcal{X}/\\mathbb{Z}_p$ be its minimal regular model. Let $P \\in \\mathcal{X}(\\mathbb{Z}_p)$ be a section, typically a cusp such as $\\infty$.\nLet $J$ be the Jacobian of $X$, and let $\\pi: J \\to A$ be an abelian variety quotient with $A(\\mathbb{Q})$ finite (such as the Eisenstein quotient or a subvariety of rank 0).\nLet $\\phi: X \\to A$ be the morphism defined by $x \\mapsto \\pi([x - P])$.\nWe say ",
+      "length_chars": 18740
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.67,
+        "confidence": 0.5,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.42,
+          "1": 0.53,
+          "2": 0.02,
+          "3": 0.03
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.12,
+        "confidence": 0.88,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.96,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.03
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.68
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.18,
+        "probabilities": {
+          "audit_later": 0.24,
+          "verify_literature": 0.06,
+          "audit_now": 0.35,
+          "verify_computation": 0.33,
+          "no_action": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3195,
+      "output_tokens": 124
+    }
+  }
+}

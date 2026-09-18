@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U110_linear_forms_logarithms_beal_bounds",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U110_linear_forms_logarithms_beal_bounds.md",
+      "excerpt": "# U110: Sharp Linear Forms in Logarithms Bounds and Empirical Search Horizon for Beal's Conjecture\n\n**Date**: 2026-09-17  \n**Status**: Exact transcendental number-theoretic analysis, explicit lower/upper bounds derivation, and empirical search calibration.  \n**Target Equation**: The Generalized Fermat / Beal Equation:\n$$A^x + B^y = C^z, \\quad \\gcd(A, B, C) = 1, \\quad x, y, z \\ge 3, \\quad A, B, C \\ge 2.$$\n**Primary Sources**:\n- Michel Laurent, Maurice Mignotte, and Yuri Nesterenko, *Formes lin\u00e9aires en deux logarithmes et d\u00e9terminants d'interpolation*, J. Number Theory 55 (1995), no. 2, 285\u2013321.\n- Michel Laurent, *Linear forms in two logarithms and interpolation determinants II*, Acta Arith. 133 (2008), no. 4, 325\u2013348.\n- E. M. Matveev, *An explicit lower bound for a homogeneous rational linear form in the logarithms of algebraic numbers. II*, Izv. Ross. Akad. Nauk Ser. Mat. 64 (2000), no. 6, 125\u2013180; English transl., Izv. Math. 64 (2000), no. 6, 1217\u20131269.\n- Yann Bugeaud and K\u00e1lm\u00e1n Gy\u0151ry, *Bounds for the solutions of Thue-Mahler equations and norm form equations*, Acta Arith. 74 (1996), no. 3, 273\u2013292.\n- Alain Kraus, *Majorations effectives pour l'\u00e9quation de Fermat g\u00e9n\u00e9ralis\u00e9e*, Canad. J. Math. 49 (1997), no. 6, 1139\u20131161.\n- K. Inkeri, *Absch\u00e4tzungen f\u00fcr eventuelle L\u00f6sungen der Fermatschen Gleichung*, Ann. Univ. Turku. Ser. A I 16 (1953), no. 1, 1\u20139.\n- Executable Verification: [`code/U110_linear_forms_logarithms_bounds.py`](file://[LOCAL_HOME]/Downloads/beal/code/U110_linear_forms_logarithms_bounds.py)\n- Reference JSON Ledger: [`references/U110_linear_forms_logarithms_bounds.json`](file://[LOCAL_HOME]/Downloads/beal/references/U110_linear_forms_logarithms_bounds.json)\n\n---\n\n## 1. Executive Summary and Theoretical Architecture\n\nThe Beal conjecture asserts that no positive integer solutions exist for $A^x + B^y = C^z$ with $\\gcd(A, B, C) = 1$ and all exponents $x, y, z \\ge 3$. While algebraic geometry and the modular method (Frey curves, Ribet level lowering, modular curves $X_0(N)$) provide exact obstruction theory for specific low exponents (such as signatures $(2, 3, 7)$, $(2, 3, 11)$, $(3, 3, p)$, $(2, 4, p)$), transcendence theory\u2014specifically **Baker's method of linear forms in logarithms**\u2014governs the global metric behavior of powers.\n\nIn this investigation, we establish:\n1. **The Sharpest Linear Forms Estimates**: We deploy the interpolation determinant theorems of **Laurent-Mignotte-Nesterenko (1995)** and **Laurent (2008)** for two logarithms, alongside **Matveev's (2000)** multi-logarithm bounds. Laurent (2008) achieves a base constant of $1,973.47$, yielding a **$5.44\\times$ sharpening** over LMN (1995) and **$3.9 \\times 10^5\\times$ sharpening** over general Matveev bounds.\n2. **Explicit Exponent Upper Bounds for Fixed Base Envelopes**: For any base horizon $M = \\max(A, B, C)$, we prove that putative counterexamples must have exponents bounded by:\n   $$y \\le Y_{\\max}(M) = 3,946.95 \\cdot \\log M \\quad (\\text{Laurent 2008}).$$\n   At our current empirical search reach $M = 80,000$ ($\\log M \\approx 11.2898$), this rigorously bounds the exponent space to $y \\le 44,560.2$ (and $y \\le 242,367.7$ under LMN 1995).\n3. **Super-Polynomial Lower Bounds on Bases in Terms of Exponents**: Inverting the transcendence bounds shows that as the minimum exponent $p = \\min(x, y, z)$ grows, $\\max(A, B, C)$ must grow super-polynomially:\n   $$\\max(A, B, C) \\ge \\exp\\left(\\frac{p}{3,946.95}\\right) \\quad (\\text{for } p \\le 44,560), \\quad \\text{and} \\quad \\log M = \\Omega\\left(\\frac{p}{(\\log p)^2}\\right) \\quad (\\text{asymptotically}).$$\n   For $p = 100,000$, $\\max(A, B, C) > 1.01 \\times 10^{11}$.\n4. **Symmetric Exponent Elimination (Inkeri 1953)**: For equal exponents $x = y = z = p$, Inkeri's classical lower bound guarantees $\\max(A, B, C) > \\frac{1}{2} p^{3p-1}$. For $p = 5$, $\\max(A, B, C) > 3.05 \\times 10^9$, which is **$38,147\\times$ beyond our 80,000 empirical search reach**. Equal-exponent counterexamples are already mathematically excluded from the entire reachable base search space.\n5. **The Resolved vs. Unresolved Envelope**: Combining our HPC search ($M \\le 80,000$, prime exponents $3 \\le p \\le 19$, 0 counterexamples) with transcendence theory leaves a **strictly bounded, finite unresolved window**:\n   $$\\text{Unresolved Window for } M \\le 80,000: \\quad 20 \\le \\min(x, y, z) \\le 44,560.$$\n\n---\n\n## 2. Mathematical Formulation of Linear Forms on $A^x + B^y = C^z$\n\n### 2.1 The Two-Logarithm Linear Form $\\Lambda$\nLet $(A, B, C, x, y, z)$ be a primitive positive integer solution to $A^x + B^y = C^z$ with $x, y, z \\ge 3$. By Mih\u0103ilescu's theorem (Catalan conjecture), $A, B, C \\ge 2$. Without loss of generality, order the left-hand summands:\n$$A^x \\le B^y < C^z = A^x + B^y \\le 2 B^y.$$\nDividing by $B^y$:\n$$\\frac{C^z}{B^y} - 1 = \\frac{A^x}{B^y} > 0.$$\nDefine the linear form in two logarithms:\n$$\\Lambda = \\log\\left(\\frac{C^z}{B^y}\\right) = z \\log C - y \\log B.$$\nSince $0 < \\frac{A^x}{B^y} \\le 1$, the elementary analy",
+      "length_chars": 17563
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.66,
+        "confidence": 0.34,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.76,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.2
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.45,
+        "confidence": 0.55,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.84,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.15
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.44,
+        "probabilities": {
+          "verify_computation": 0.12,
+          "audit_later": 0.21,
+          "no_action": 0.56,
+          "audit_now": 0.05,
+          "verify_literature": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3217,
+      "output_tokens": 124
+    }
+  }
+}

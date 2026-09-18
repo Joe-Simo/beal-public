@@ -1,0 +1,47 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C078_lean_fidelity",
+  "timestamp": "2026-09-18T07:42:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "s": "def MordellXIntegral (k : \u2124) : Prop := \u2200 X Y : \u211a, Y^2 = X^3 + k \u2192 \u2203 a : \u2124, X = a.  theorem: MordellXIntegral (n^e) \u2192 2 \u2264 n \u2192 1 \u2264 j \u2192 Nat.Coprime A n \u2192 A^3 + B^4 = n^(6*j+e) \u2192 False"
+  },
+  "questions": {
+    "faithful": {
+      "type": "score",
+      "instructions": "Is the named hypothesis a faithful consequence of 'rank 0 + Nagell-Lutz' for y^2=x^3+k, k a nonzero integer, and does the theorem statement match the fixed-base argument?",
+      "criteria": [
+        "0 wrong",
+        "1 gap",
+        "2 faithful modulo detail",
+        "3 faithful"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "faithful": {
+        "type": "score",
+        "score": 1.15,
+        "confidence": 0.3,
+        "legend": {
+          "0": "0 wrong",
+          "1": "1 gap",
+          "2": "2 faithful modulo detail",
+          "3": "3 faithful"
+        },
+        "probabilities": {
+          "0": 0.27,
+          "1": 0.42,
+          "2": 0.2,
+          "3": 0.11
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 446,
+      "output_tokens": 19
+    }
+  }
+}

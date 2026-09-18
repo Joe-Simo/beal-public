@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U98_prime5_local_representation_and_lift_certificate",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U98_prime5_local_representation_and_lift_certificate.md",
+    "excerpt": "# U98: Local Galois representation at $\\mathfrak{p}_5$, dihedral inertia $D_5$, Artin conductor exponent 3, and unconditional Breuil--Diamond local lift\n\n**Status: source-verified arithmetic proof and local deformation certificate. The prime-5 Breuil--Diamond local lift hypothesis is rigorously discharged. Beal's conjecture and the weighted equation remain open.**\n\nResearch date: 2026-09-17. Primary sources:\n- Christophe Breuil and Fred Diamond, *Formes modulaires de Hilbert modulo p et valeurs d'extensions entre caract\u00e8res galoisiens*, Ann. Sci. ENS 47 (2014), 905\u2013974 (specifically Th\u00e9or\u00e8me 3.2.2, pp. 36\u201337).\n- Martin Azon, *Effective Darmon's program for the generalised Fermat equation*, arXiv:2504.01967v2, 2025-07-03 (Proposition 2.23, Theorem 4.36, Theorem 4.48, Theorem 5.11, Proposition 5.18).\n- Jean-Pierre Serre, *Corps Locaux*, Hermann, 1968 (Chapter IV: Lower ramification filtration and Artin conductor formula).\n- Pierre Deligne, *Les constantes des \u00e9quations fonctionnelles des fonctions L*, LNM 349, Springer, 1973 (Section 8: Weil--Deligne representations away from the residue characteristic).\n\n---\n\n## 1. Executive summary of results\n\nFollowing the isolation of Breuil--Diamond (2014) Theorem 3.2.2 obligations in U94 and the resolution in U96 demonstrating that Azon's Theorem 5.23 does not bypass Breuil--Diamond, this checkpoint provides the complete mathematical analysis and rigorous certification of the local Galois representation at the prime $\\mathfrak{p}_5 = (\\sqrt{5})$ in $K = \\mathbb{Q}(\\sqrt{5})$:\n\n1. **Local Galois group of the Eisenstein quintic**:\n   - Over $\\mathbb{Q}_5$: The Galois group of the splitting field $M$ is the Frobenius group $F_{20} = \\operatorname{AGL}(1, 5) = \\mathbb{F}_5 \\rtimes \\mathbb{F}_5^\\times$ of order 20. The local extension $M / \\mathbb{Q}_5$ is totally ramified ($e = 20, f = 1$).\n   - Over $K_{\\mathfrak{p}_5} = \\mathbb{Q}_5(\\sqrt{5})$: Since the discriminant satisfies $\\Delta(f) \\equiv 5 \\pmod{(\\mathbb{Q}_5^\\times)^2}$, the quadratic subfield $K_{\\mathfrak{p}_5} = \\mathbb{Q}_5(\\sqrt{\\Delta(f)})$ corresponds to the unique index-2 subgroup $F_{20} \\cap A_5 \\cong D_5$. The local Galois group is strictly the **dihedral group $D_5$ of order 10**, totally ramified ($e = 10, f = 1$).\n\n2. **Inertia action and non-abelian dihedral structure**:\n   - The inertia group $I_{K_{\\mathfrak{p}_5}}$ acts on the roots of $f(x)$ through $I(M / K_{\\mathfrak{p}_5}) = \\operatorname{Gal}(M / K_{\\mathfrak{p}_5}) \\cong D_5$.\n   - The wild inertia group is $P_{\\mathfrak{p}_5} = H_1 \\cong C_5$ (cyclic of order 5).\n   - The tame inertia quotient is $I_{K_{\\mathfrak{p}_5}} / P_{\\mathfrak{p}_5} \\cong C_2$, which acts on $C_5$ by inversion ($x \\mapsto -x$).\n   - The image of inertia in $\\operatorname{GL}_2(\\mathbb{C})$ (and $\\operatorname{GL}_2(K_{17})$) is **isomorphic to $D_5$** (the dihedral group of order 10). It is **not cyclic of order 5** (the tame involution acts non-trivially, interchanging eigenspaces), and **not $F_{20}$** (the base field is $K_{\\mathfrak{p}_5}$, not $\\mathbb{Q}_5$).\n\n3. **Inertial Weil--Deligne type and rectification of literature classification**:\n   - Monodromy operator: $N_{\\mathfrak{p}_5} = 0$, because $J^-$ has potential good reduction over $M$.\n   - The 2-dimensional representation $\\rho_1$ of $D_5$ is irreducible on inertia. Consequently, the local Weil--Deligne representation $(r_{\\mathfrak{p}_5}, 0)$ is **dihedral supercuspidal** (induced from a ramified quadratic character).\n   - *Rectification of Azon Proposition 5.18(2)*: Azon mistakenly labeled $\\rho_{\\iota, 5}^-$ as \"principal series\" by applying a tame criterion ($|I_{\\text{tame}}| \\mid |\\mathbb{F}_5^\\times|$) while missing that wild ramification makes the total inertia group non-abelian. By Azon's own Proposition 2.23 (citing Melninkas 2022), potential good reduction yields a principal series if and only if $M / K^{\\text{unr}}$ is abelian. Since $\\operatorname{Gal}(M / K_{\\mathfrak{p}_5}) \\cong D_5$ is non-abelian, the representation is strictly supercuspidal.\n\n4. **Exact Artin conductor exponent $n = 3$**:\n   - Ramification filtration: $H_0 = D_5$ ($|H_0| = 10$), $H_1 = C_5$ ($|H_1| = 5$), $H_i = \\{1\\}$ for $i \\ge 2$.\n   - By Serre's conductor formula:\n     $$n(\\rho_{\\mathfrak{p}_5}) = \\dim(V / V^{H_0}) + \\frac{|H_1|}{|H_0|} \\dim(V / V^{H_1}) = 2 + \\frac{5}{10} \\times 2 = 2 + 1 = 3.$$\n   - Tame conductor exponent: $n_{\\text{tame}} = 2$; wild conductor exponent: $n_{\\text{wild}} = 1$; total conductor: $n = 3$.\n\n5. **Discharge of Breuil--Diamond Theorem 3.2.2 at $\\mathfrak{p}_5$**:\n   - Because $p_0 = 5 \\ne 17 = p$, $\\mathfrak{p}_5$ is a place away from $p$. Conditions (i), (ii), and (iv) of Theorem 3.2.2 are vacuously satisfied ($N_{\\mathfrak{p}_5} = 0$).\n   - The 17-adic representation of the Jacobian itself, $\\rho_{\\mathfrak{p}_5}^{\\text{geom}} = \\rho_{J^-, 17}|_{G_{K_{\\mathfrak{p}_5}}}$, provides an explicit 2-dimensional characteristic-zero lift over $K_{17}$ with the prescribed Weil--Deligne typ"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.7,
+        "confidence": 0.37,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.03,
+          "2": 0.59,
+          "3": 0.16
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.83
+      }
+    },
+    "usage": {
+      "input_tokens": 2367,
+      "output_tokens": 42
+    }
+  }
+}

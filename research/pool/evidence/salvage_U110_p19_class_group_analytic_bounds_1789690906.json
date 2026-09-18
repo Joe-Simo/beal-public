@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U110_p19_class_group_analytic_bounds",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U110_p19_class_group_analytic_bounds.md",
+    "excerpt": "# U110: Class Group Bounds, Regulator Verification, and Analytic Invariants for Generalized Fermat Descent Fields $L_{19}$ and $L_{17}$\n\n**Date**: 2026-09-17  \n**Author**: Beal Generalized Fermat Class Group Bound Auditor  \n**Target Equations**:  \n1. $X^5 + Y^5 = Z^{19}$ and $X^{10} + Y^{10} = Z^{19}$ ($\\gcd(X, Y, Z) = 1$, $X Y Z \\neq 0$).  \n2. $X^5 + Y^5 = Z^{17}$ and $X^{10} + Y^{10} = Z^{17}$ ($\\gcd(X, Y, Z) = 1$, $X Y Z \\neq 0$).  \n**Status**: Authoritative research checkpoint, analytic bound audit, unit group 2-saturation certification, and class group rigidity analysis. Complements U102 (which unconditionally resolved $L_{11}$ and $L_{13}$) by analyzing the higher-degree descent fields $L_{19}$ (degree 38) and $L_{17}$ (degree 34).\n\n---\n\n## 1. Executive Summary\n\nIn Dahmen\u2013Siksek (2014, *Acta Arith.* 164:65\u2013100), the generalized Fermat equations of signature $(5, 5, p)$ were investigated using modular methods, classical descent, and the method of Chabauty\u2013Coleman. For prime exponents $p \\in \\{11, 13, 17, 19\\}$, algebraic descent over the real quadratic base field $K = \\mathbb{Q}(\\sqrt{5})$ produces hyperelliptic curves $C_{p,0}$ and $C_{p,1}$ whose Jacobians admit Stoll's 2-descent.\n\nCarrying out 2-descent requires class group and unit group data for the root field $L_p = K[x]/(f_p(x)) = \\mathbb{Q}[t]/(g_p(t))$:\n- For $p = 11$: $g_{11}(t) = t^{22} + 2t^{11} - 4$ (degree 22, certified unconditionally in U102),\n- For $p = 13$: $g_{13}(t) = t^{26} + 22t^{13} - 4$ (degree 26, certified unconditionally in U102),\n- For $p = 17$: $g_{17}(t) = t^{34} + 2t^{17} - 4$ (degree 34, signature $(2, 16)$),\n- For $p = 19$: $g_{19}(t) = t^{38} + 2t^{19} - 4$ (degree 38, signature $(2, 18)$).\n\nThis audit delivers the complete analytic and computational bounds for the degree-38 field $L_{19}$ and the companion degree-34 field $L_{17}$:\n\n1. **Class Number $h(L_{19}) = 1$ under Bach / Poitou Bounds**:\n   Using Buchmann's sub-exponential algorithm under the Bach bound $B_{\\text{Bach}} = 12(\\log |d|)^2 \\approx 336,359$ and the Greni\u00e9\u2013Molteni bound $B_{\\text{GM}} = 4(\\log |d|)^2 \\approx 112,120$, PARI/GP computes in $13.5$ seconds:\n   $$h(L_{19}) = 1, \\quad \\operatorname{Cl}(\\mathcal{O}_{L_{19}}) \\cong \\{0\\}.$$\n   Likewise, for $L_{17}$ (degree 34), PARI/GP computes in $5.8$ seconds:\n   $$h(L_{17}) = 1, \\quad \\operatorname{Cl}(\\mathcal{O}_{L_{17}}) \\cong \\{0\\}.$$\n\n2. **Unconditional 2-Saturation of Unit Groups**:\n   Evaluating local quadratic residue characters $\\left(\\frac{u_j}{\\mathfrak{p}_i}\\right)$ across split degree-1 prime ideals $\\mathfrak{p}_i$ of $\\mathcal{O}_L$, the resulting $\\mathbb{F}_2$-matrix achieves **full rank**:\n   - Rank 20 out of 20 for $L_{19}$ (unit rank 19 plus $\\{\\pm 1\\}$),\n   - Rank 18 out of 18 for $L_{17}$ (unit rank 17 plus $\\{\\pm 1\\}$).  \n   This unconditionally proves that no non-trivial element of $U/U^2$ is a global square in $L^\\times$. Therefore, the unit groups are **unconditionally 2-saturated in the full maximal unit groups $\\mathcal{O}_L^\\times$**.\n\n3. **Representation-Theoretic Rigidity of the 2-Class Group**:\n   Because $h(K) = 1$ for $K = \\mathbb{Q}(\\sqrt{5})$ and $[L_p : K] = p$ is an odd prime, $\\operatorname{Cl}(\\mathcal{O}_{L_p})[2^\\infty] = \\ker(N_{L_p/K})[2^\\infty]$.\n   - For $p = 19$: $\\operatorname{ord}_{19}(2) = 18 = 19 - 1$. The cyclotomic polynomial $\\Phi_{19}(X)$ is **strictly irreducible of degree 18 over $\\mathbb{F}_2$**. Thus:\n     $$\\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_{L_{19}})[2] \\in \\{0\\} \\cup \\{d \\in \\mathbb{Z} : d \\ge 18\\}.$$\n     Under Cohen\u2013Lenstra\u2013Martinet heuristics, $P(d \\ge 18) < 2^{-324} \\approx 4.7 \\times 10^{-98}$.\n   - For $p = 17$: $\\operatorname{ord}_{17}(2) = 8$. The cyclotomic polynomial $\\Phi_{17}(X)$ factors over $\\mathbb{F}_2$ into two irreducible polynomials of degree 8. Thus:\n     $$\\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_{L_{17}})[2] \\in \\{0\\} \\cup \\{d \\in \\mathbb{Z} : d \\ge 8\\}.$$\n     Heuristic probability $P(d \\ge 8) < 2^{-64} \\approx 5.4 \\times 10^{-20}$.\n\n4. **Independent Scratch Regulator and Analytic Dedekind Zeta Residues**:\n   - The Dirichlet regulators are reconstructed from scratch to over 50 decimal digits from numerical embeddings using `polroots`. The relative discrepancy with PARI's `bnf.reg` is less than $1.1 \\times 10^{-53}$ for $L_{19}$ and $3.5 \\times 10^{-54}$ for $L_{17}$.\n   - The analytic Dedekind zeta residues:\n     $$\\operatorname{Res}_{s=1} \\zeta_{L_{19}}(s) \\approx 0.421972 \\quad \\text{vs} \\quad \\operatorname{Res}_{s=1} \\zeta_K(s) \\approx 0.430409 \\quad (\\text{ratio } 0.980399),$$\n     $$\\operatorname{Res}_{s=1} \\zeta_{L_{17}}(s) \\approx 0.433762 \\quad \\text{vs} \\quad \\operatorname{Res}_{s=1} \\zeta_K(s) \\approx 0.430409 \\quad (\\text{ratio } 1.007790).$$\n     Both ratios are extraordinarily close to 1 (differing by $-1.96\\%$ and $+0.78\\%$). Any hypothetical class number $h \\ge 2$ would scale the residue by $h \\ge 2$, forcing the Artin $L$-value $L(1, \\rho_{\\text{Artin}})$ to be distorted far beyo"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.5,
+        "confidence": 0.31,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.15,
+          "2": 0.53,
+          "3": 0.1
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.81
+      }
+    },
+    "usage": {
+      "input_tokens": 2619,
+      "output_tokens": 42
+    }
+  }
+}

@@ -133,6 +133,12 @@ def main():
     print("p <= 37 over Q (p <= 17 for (2,3,p) and (5,5,p)). For all larger primes, the mod-p")
     print("Galois representation is unconditionally irreducible and modular, reducing the Beal")
     print("Conjecture to finite modular level-lowering and Hecke elimination.")
+    print("")
+    print("[AUDIT U250, pool C117] THE LAST CLAUSE IS WITHDRAWN. Reducing Beal to a finite")
+    print("computation requires a Frey curve for EACH signature. For three INDEPENDENT")
+    print("exponents (p,q,r) no such curve is known to exist -- the central obstruction,")
+    print("recorded as C083 and named as the open direction in the 2024 survey. What")
+    print("survives is a bound on the exceptional set FOR A GIVEN Frey family.")
     print("================================================================================")
 
 if __name__ == "__main__":

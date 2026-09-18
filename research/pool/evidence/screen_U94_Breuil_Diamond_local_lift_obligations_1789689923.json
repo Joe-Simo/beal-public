@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U94_Breuil_Diamond_local_lift_obligations",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U94_Breuil_Diamond_local_lift_obligations.md",
+      "excerpt": "# U94: the Breuil--Diamond prescribed-lift theorem is now mapped exactly, but local lift existence is not yet discharged\n\n**Status: source-verified modular-route audit. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-16.\n\n## 1. Why this checkpoint exists\n\nU64 left one explicit gap before its level-2000 Hilbert-form comparison can become unconditional: the global prescribed-lift theorem was cited without writing down every local lift, its determinant, and its Weil--Deligne/ordinary type. U93 therefore returned priority to this point.\n\nThe primary Breuil--Diamond paper was reopened directly and Theorem 3.2.2 was checked at author-PDF printed pp.36--37. The theorem is an existence theorem for a global weight-two Hilbert modular lift **provided suitable local characteristic-zero lifts already exist at every place in a finite set S**.\n\n## 2. Exact theorem obligations\n\nIn the notation of Breuil--Diamond Theorem 3.2.2, one must choose:\n\n- a finite-order-adjusted determinant character `psi` lifting `det(rho)`, with `psi*epsilon^{-1}` finite order;\n- a finite set `S` containing the places above `p=17` and every place where the residual representation or `psi` ramifies;\n- a subset `T` of the places above 17 specifying potential ordinarity;\n- a Weil--Deligne type `[r_v,N_v]` for every `v in S`;\n- and, for every `v in S`, an actual characteristic-zero lift `rho_v` satisfying all five local conditions below.\n\nThe five conditions in the primary source are:\n\n1. at `v|17`, `rho_v` is potentially semistable with Hodge--Tate weights `(0,1)` for every embedding;\n2. at `v|17`, `rho_v` is potentially ordinary exactly when `v in T`;\n3. `rho_v` has the prescribed Weil--Deligne type `[r_v,N_v]`;\n4. at ordinary `v|17` and at `v not|17` with `N_v !=0`, `rho_v` contains a one-dimensional subrepresentation with the specified residual character and finite-order inertial quotient after dividing by cyclotomic;\n5. `det(rho_v)|I_v = psi|I_v`.\n\nOnly after these hypotheses are supplied does the theorem produce a global lift with determinant exactly `psi`, the prescribed local types, and Hilbert modular weight `(2,...,2)`.\n\n## 3. What U64 already supplies\n\nThe following pieces survive the source re-audit:\n\n- modularity of the corrected negative-twist residual system is inherited from the cited Darmon-program result at U64's stated status;\n- the required irreducibility after adjoining the seventeenth roots of unity is supplied by U64's cyclic-restriction argument and the local irreducibility at 2;\n- the residual conductor bookkeeping points to exponent 2 at the prime over 2 and exponent 3 at the prime over 5;\n- at primes dividing `Z` away from 17 the residual representation is unramified after lowering;\n- at 17 the cited source gives residual finite flatness.\n\nThese facts determine the intended residual level, but **they do not themselves construct the local characteristic-zero lifts required by Theorem 3.2.2**.\n\n## 4. The remaining modular obligation is narrower than before\n\nThe theorem statement makes clear that the unresolved issue is not a vague global modularity question. It is the explicit local deformation problem:\n\n- identify `psi` globally and its inertial restrictions;\n- for the prime over 2, exhibit a lift of the required determinant and the retained local type compatible with conductor exponent 2;\n- for the prime over 5, exhibit a lift with the irreducible/Eisenstein local type giving conductor exponent 3 and determinant `psi` on inertia;\n- at the prime(s) over 17, decide the correct potentially Barsotti--Tate/ordinary component and exhibit a fixed-determinant lift;\n- verify that no other residual ramification forces an additional place into `S`.\n\nIf those local lifts are constructed, Breuil--Diamond 3.2.2 supplies the global modular lift needed to justify comparison with the level-2000 Hilbert newspace. U64's finite Hecke comparison would still leave the surviving boundary orbit `b` to be treated globally; completing the lift theorem alone is therefore not yet an elimination of the weighted equation.\n\n## 5. Important correction to route expectations\n\nFinite flatness at 17 is only a property of the residual/local deformation situation; it is **not** interchangeable with an explicit characteristic-zero fixed-determinant lift satisfying all five theorem conditions. Likewise, a conductor exponent from the Darmon-program table does not automatically select a Weil--Deligne type or prove determinant compatibility.\n\nTherefore no level-lowering conclusion is upgraded in U94. The gain is that the missing work is now an explicit finite list of local deformation constructions rather than an unspecified theorem-application gap.\n\n## 6. Next mathematical step\n\nThe next checkpoint should attack the prime over 5 first. U64 already proves the Frey quintic is Eisenstein there uniformly and the twist `-1` is locally a square. This gives the most concrete local representation among the three difficult places. T",
+      "length_chars": 5332
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.93,
+        "confidence": 0.07,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.49,
+          "1": 0.28,
+          "2": 0.03,
+          "3": 0.2
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.49,
+        "confidence": 0.51,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.83,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.16
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.18,
+        "probabilities": {
+          "audit_later": 0.31,
+          "no_action": 0.35000000000000003,
+          "audit_now": 0.1,
+          "verify_literature": 0.22,
+          "verify_computation": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2522,
+      "output_tokens": 124
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U160",
+  "timestamp": "2026-09-18T01:15:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "4pp"
+  },
+  "questions": {
+    "ok": {
+      "type": "noul",
+      "instructions": "Check: A^4 + B^p = C^p with p odd gives C^p + (-B)^p = (A^2)^2, coprime nonzero integers, so Darmon-Merel (n,n,2) for n>=4 (over Z, signs allowed) closes signature (4,p,p) for odd p>=5. Correct?",
+      "criteria": {
+        "true": "correct",
+        "false": "gap"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "ok": {
+        "type": "noul",
+        "noul": 0.65
+      }
+    },
+    "usage": {
+      "input_tokens": 373,
+      "output_tokens": 20
+    }
+  }
+}

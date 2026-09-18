@@ -6,3 +6,11 @@ code/check_counterexample_gmp
 *.pdf
 *.tar.gz
 *.o
+.env.local
+.env
+
+# Lean toolchain build artefacts and vendored packages (mathlib is ~1.1 GB)
+.lake/
+*.olean
+*.ilean
+*.trace

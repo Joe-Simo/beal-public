@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U50_coefficient2_unit_classes",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U50_coefficient2_unit_classes.md",
+      "excerpt": "# U50: coefficient-2 branch \u2014 unit classes over Q(sqrt(5))\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input from U49\n\nFor a surviving solution, with K=Q(sqrt(5)),\n\n    H_- = m^4+(22-8sqrt(5))m^2n^2+n^4\n\nhas principal ideal equal to a 17th power, and the conjugate factor is coprime to it. Since K has class number 1, H_- is a unit times an element 17th power.\n\n## Integral basis and unit ambiguity\n\nLet\n\n    omega=(1+sqrt(5))/2,\n\nso O_K=Z[omega], omega^2=omega+1, and Norm(omega)=-1. The unit group is generated, up to sign, by omega.\n\nIn this basis\n\n    H_- = m^4+30m^2n^2+n^4 - 16m^2n^2 omega.\n\nBecause the exponent 17 is odd, -1 itself is a 17th power (-1)^17, so sign contributes no separate class. Modulo 17th powers of units, the only ambiguity is therefore\n\n    epsilon = omega^k,  k=0,...,16.\n\nThus every surviving solution satisfies\n\n    m^4+30m^2n^2+n^4-16m^2n^2 omega\n       = omega^k (A+B omega)^17                 (1)\n\nfor some integers A,B and one of exactly 17 unit classes k.\n\nWolfram exact arithmetic also verifies\n\n    omega^17 = 987+1597 omega.\n\n## Local unit-class sieve\n\nA finite-field implementation of O_K/q = F_q[omega]/(omega^2-omega-1) was used to test equation (1) modulo auxiliary primes. For q=67, the 17th-power map is nontrivial and the quartic shape eliminates six unit classes outright.\n\nThe surviving classes modulo 17 are\n\n    k in {0,1,2,3,4,6,9,13,14,15,16}.\n\nThe eliminated classes are\n\n    k in {5,7,8,10,11,12}.\n\nChecks at q=101,103,137 did not further reduce the unit classes in the unrestricted quartic equation. Imposing U48's special condition 103|mn also leaves all 17 unit classes locally possible at 103, so no false strengthening is claimed.\n\n## Consequence\n\nThe coefficient-2 branch has now been reduced from an arbitrary algebraic 17th-power relation to eleven explicit unit-twisted equations of the form (1), together with\n\n    gcd(m,n)=1,\n    m,n opposite parity,\n    103|mn,\n    m+i n = Gaussian-unit*(r+i s)^17.\n\nThis is finite in the unit parameter.\n\n## Next obligation\n\nUse several primes q with 17 dividing |(O_K/q)^*| and include the Gaussian-17th-power condition simultaneously, not merely the quartic equation. The q=67 sieve ignored that additional structure. A combined local sieve should classify tuples (m:n,k) compatible with both\n\n    m+i n = (r+i s)^17\n\nand (1), and may eliminate more or all eleven surviving unit classes.\n",
+      "length_chars": 2446
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.36,
+        "confidence": 0.64,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.86,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.1
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.22,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.92,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.51,
+        "probabilities": {
+          "verify_computation": 0.61,
+          "audit_later": 0.2,
+          "no_action": 0.07,
+          "audit_now": 0.12,
+          "verify_literature": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2124,
+      "output_tokens": 126
+    }
+  }
+}

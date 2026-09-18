@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U105_all_even_branch_complete_unconditional_resolution",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U105_all_even_branch_complete_unconditional_resolution.md",
+    "excerpt": "# Checkpoint U105: Unconditional Resolution of the All-Even Branch ($17 \\mid t$) and Boundary Case $X^{10} + Y^{10} = Z^{19}$\n\n**Date**: 2026-09-17  \n**Status**: Authoritative Arithmetic Geometry Research Synthesis Checkpoint.  \n**Primary Result**: Unconditional proof that the all-even Beal branch with $17 \\mid t$ possesses **zero non-trivial primitive positive integer solutions**, accompanied by the peer-reviewed resolution of the boundary equation $X^{10} + Y^{10} = Z^{19}$ for the $17 \\nmid t$ family.\n\n---\n\n## 1. Executive Theorem\n\n### Theorem 1.1 (Unconditional Non-Existence for $17 \\mid t$ All-Even Branch)\n*Let $A, B, C, x, y, z \\in \\mathbb{Z}_{>0}$ with $\\gcd(A, B, C) = 1$ and $x = 2r, y = 2s, z = 2t$ with $r, s \\ge 5$ and $17 \\mid t$. Then:*\n$$A^{2r} + B^{2s} \\neq C^{2t}.$$\n*That is, there are strictly no non-trivial primitive positive integer solutions in the $17 \\mid t$ all-even branch.*\n\n### Theorem 1.2 (Unconditional Elimination of Boundary Decic for $17 \\nmid t$)\n*The minimal boundary Diophantine equation of the $17 \\nmid t$ family,*\n$$X^{10} + Y^{10} = Z^{19}, \\quad \\gcd(X, Y, Z) = 1,$$\n*has strictly no positive integer solutions.*\n\n---\n\n## 2. Structure of the Proof of Theorem 1.1\n\nIn checkpoints U42\u2013U47, any putative counterexample in this branch reduces to one of two Diophantine orientations:\n- **Orientation A**: $X^{10} + Y^{10} = 2 Z^{17}$\n- **Orientation B**: $X^{10} + 256 Y^{10} = Z^{17}$\n\n### 2.1 Elimination of Orientation A: $X^{10} + Y^{10} = 2 Z^{17}$\nIn checkpoint U57 and U62, Orientation A was proved to have no non-trivial primitive solutions by applying the work of **Nuno Freitas and Luis Dieulefait** (Freitas PhD thesis, Univ. of Barcelona 2012; *Math. Comp.* 83 (2014)):\n1. Frey curves over $K = \\mathbb{Q}(\\sqrt{5})$ attached to $x^5 + y^5 = 2 z^p$ have Serre-level norm 64.\n2. For $p = 17$, $17 \\equiv 1 \\pmod 4$ and $17 \\equiv 2 \\pmod 5$, which falls into the density-3/4 prime congruence class where the Frey $\\mathbb{Q}$-curves over $K$ are strictly unramified at $\\sqrt{5}$.\n3. Ribet level-lowering lands on the trivial level with no non-CM newforms.\n4. Hence $X^{10} + Y^{10} = 2 Z^{17}$ has no non-trivial primitive solutions.\n\n---\n\n### 2.2 Dual Elimination of Orientation B: $X^{10} + 256 Y^{10} = Z^{17}$\n\nOrientation B is eliminated through **two completely independent, mutually reinforcing pathways**:\n\n#### Pathway 1: The Modular Pathway (Breuil\u2013Diamond + Level-2000 Hilbert Newspace)\n1. **Frey Representation**:\n   The Jacobian $J^- = \\operatorname{Jac}(C^-(U, V))$ of the genus-8 curve $C^-: y^2 = -f(x)$ over $K = \\mathbb{Q}(\\sqrt{5})$ possesses Real Multiplication by $\\mathcal{O}_K$, giving a 2-dimensional continuous Galois representation:\n   $$\\bar\\rho_{J^-, 17}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/K) \\longrightarrow \\mathrm{GL}_2(\\mathbb{F}_{289}).$$\n2. **Absolute Irreducibility (U64, U101, U103)**:\n   - At $\\mathfrak{p}_2 = (2)$, tame inertia acts via $\\Phi_5(T)$, and Frobenius interchanges the two eigenspaces, proving local absolute irreducibility.\n   - By Clifford theory, $\\bar\\rho_{J^-, 17}|_{G_{K(\\zeta_{17})}}$ is unconditionally absolutely irreducible.\n   - The projective image is the Klein four-group $V_4 \\subset \\mathrm{PGL}_2(\\mathbb{F}_{17})$.\n3. **Breuil\u2013Diamond (2014) Local Lift Bridge (U98, U101)**:\n   All five local hypotheses of Th\u00e9or\u00e8me 3.2.2 are unconditionally discharged:\n   - At $\\mathfrak{p}_5 = (\\sqrt{5})$: Local Galois group $D_5$, conductor exponent 3, Maschke lifting ($17 \\nmid 10$).\n   - At $\\mathfrak{p}_2 = (2)$: Tame order 5, conductor exponent 2, Maschke lifting ($17 \\nmid 10$).\n   - At $\\lambda_{17} = (17)$: Fontaine\u2013Laffaille range $e=1 < 16$, crystalline Barsotti\u2013Tate lift with Hodge\u2013Tate weights $\\{0, 1\\}$, supersingular non-ordinary reduction ($T = \\emptyset$).\n   - Primes $q \\mid Z$: Toric reduction with $17 \\mid v_q(\\Delta(f))$, unramified.\n   - Conductor ideal: $\\mathfrak{N} = \\mathfrak{p}_2^2 \\mathfrak{p}_5^3 = (20\\sqrt{5})$ of norm 2000.\n4. **100% Elimination of Level-2000 Hilbert Newforms (U64, U97, U100, U102)**:\n   In LMFDB label `2.2.5.1-2000.1`, there are **exactly 8 Galois orbits**:\n   - **Orbits $a, c, d, e, f, g$**: Eliminated at prime 11 (U64).\n   - **Orbit $h$** (dimension 4): Traces at 11 are $S = 5, P = 5 \\not\\equiv \\text{allowed pairs} \\pmod{17} \\implies$ **Eliminated at 11** (U100).\n   - **Orbit $b$** (CM abelian surface $A_b = \\operatorname{Jac}(C_0)$):\n     - Endomorphism dimension clash: $\\dim \\operatorname{End}^0(J^-) = 2 \\neq 4 = \\dim \\operatorname{End}^0(A_b)$ rules out isogeny and Galois isomorphism by Faltings' Isogeny Theorem.\n     - Baker height contradiction: Congruence forces $10^{4810} < \\max(X, Y) \\le 10^{434}$, forcing $Y = 0$.\n     - Orbit $b$ is **definitively eliminated** (U97, U102).\n   - **Conclusion**: The space $S_2^{\\text{new}}(\\mathfrak{N})$ contains 0 surviving newforms matching $\\bar\\rho_{J^-, 17}$.\n\n#### Pathway 2: The Geometric Chabauty\u2013Coleman Pathway\n1. **Descent Field Invariants (U78\u2013U80, U9"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.15,
+        "confidence": 0.85,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.9,
+          "1": 0.04,
+          "2": 0.05,
+          "3": 0.01
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 2508,
+      "output_tokens": 42
+    }
+  }
+}

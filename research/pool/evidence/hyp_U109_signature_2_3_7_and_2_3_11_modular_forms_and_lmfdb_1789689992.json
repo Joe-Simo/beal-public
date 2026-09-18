@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U109_signature_2_3_7_and_2_3_11_modular_forms_and_lmfdb",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U109_signature_2_3_7_and_2_3_11_modular_forms_and_lmfdb.md",
+    "excerpt": "# U109: Modular Forms, LMFDB Classification, and Trace Bounds for Signatures (2, 3, 7) and (2, 3, 11)\n\n**Date**: 2026-09-17  \n**Status**: Exact arithmetic classification, PARI/GP newspace decomposition, and representation-theoretic survey.  \n**Target Equations**: Generalized Fermat equations of signature $(2, 3, n)$:\n$$A^2 + B^3 = C^7 \\quad \\text{and} \\quad A^2 + B^3 = C^{11}, \\quad \\gcd(A, B, C) = 1.$$\n**Primary Sources**:\n- Henri Darmon and Andrew Granville, *On the equations $z^m = F(x, y)$ and $Ax^p + By^q = Cz^r$*, Bull. London Math. Soc. 27 (1995), 513\u2013543.\n- Henri Darmon, *Rigid local systems, Hilbert modular forms, and Fermat's Last Theorem*, Duke Math. J. 102 (2000), 411\u2013449.\n- Bjorn Poonen, Edward F. Schaefer, and Michael Stoll, *Twists of $X(7)$ and primitive solutions to $x^2 + y^3 = z^7$*, Duke Math. J. 137 (2007), no. 1, 103\u2013158.\n- Sander R. Dahmen, *Classical and modular methods applied to Diophantine equations*, PhD Thesis, Universiteit Utrecht (2008).\n- Nuno Freitas, Bartosz Naskr\u0119cki, and Michael Stoll, *The generalized Fermat equation with exponents 2, 3, n*, Compositio Math. 156 (2020), 77\u2013113.\n- Executable Verification: [`code/U109_signature_2_3_7_and_2_3_11_verification.py`](file://[LOCAL_HOME]/Downloads/beal/code/U109_signature_2_3_7_and_2_3_11_verification.py)\n\n---\n\n## 1. The Darmon--Granville Geometric Framework\n\n### 1.1 Hyperbolic Orbifolds and Triangle Groups\nThe generalized Fermat equation $A^p + B^q = C^r$ with $(p, q, r) = (2, 3, n)$ has Euler characteristic:\n$$\\chi(2, 3, n) = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{n} - 1 = \\frac{1}{n} - \\frac{1}{6}.$$\nFor all $n \\ge 7$, $\\chi < 0$, placing the equation in the strictly **hyperbolic regime**.\n\nIn the landmark theorem of Henri Darmon and Andrew Granville (1995), the quasi-affine surface $A^2 + B^3 = C^n \\setminus \\{(0, 0, 0)\\}$ with weighted $\\mathbb{G}_m$-action is mapped to the orbifold $[\\mathbb{P}^1 / \\Delta(2, 3, n)]$, where $\\Delta(2, 3, n)$ is the Fuchsian triangle group:\n$$\\Delta(2, 3, n) = \\langle \\sigma_2, \\sigma_3, \\sigma_n \\mid \\sigma_2^2 = \\sigma_3^3 = \\sigma_n^n = \\sigma_2 \\sigma_3 \\sigma_n = 1 \\rangle \\subset \\operatorname{PSL}_2(\\mathbb{R}).$$\n\nBy Darmon--Granville (1995, Theorem 1), every primitive integer solution maps to a rational point on a finite collection of algebraic curves $C_i$ of genus $g \\ge 2$. By Faltings' theorem, $C_i(\\mathbb{Q})$ is finite, establishing that **primitive integer solutions are finite for every hyperbolic signature**.\n\n### 1.2 Modular and Shimura Curves\nIn Darmon's modular program (2000), the covering curves are realized via Galois representations attached to modular curves or Shimura curves:\n1. **For $n = 7$**: The triangle group $\\Delta(2, 3, 7)$ is an **arithmetic Fuchsian group** (Takeuchi 1977). Its quotient by the principal congruence subgroup of level 7 is the **Klein quartic curve** of genus 3:\n   $$X: x^3 y + y^3 z + z^3 x = 0 \\subset \\mathbb{P}^2.$$\n   $X$ is isomorphic over $\\mathbb{Q}(\\zeta_7)$ to the full modular curve $X(7)$, with geometric automorphism group $\\operatorname{PSL}_2(\\mathbb{F}_7)$ of order 168 (the Hurwitz group).\n2. **For $n = 11$**: $\\Delta(2, 3, 11)$ is also an arithmetic group (Takeuchi 1977). Solutions to $A^2 + B^3 = C^{11}$ map to rational points on twisted modular curves $X_E(11)$ of genus 26, or via intermediate projections to $X_0(11)$ over degree-12 number fields $K_E$.\n\n---\n\n## 2. Signature (2, 3, 7): Poonen--Schaefer--Stoll and Newforms at Levels $2^a \\cdot 3^b \\cdot 7^c$\n\n### 2.1 The Kraus Frey Curve and Level Lowering\nTo any primitive solution $(A, B, C)$ of $A^2 + B^3 = C^7$, one associates the Kraus Frey elliptic curve:\n$$E_{(A, B, C)}: Y^2 = X^3 + 3BX + 2A.$$\n- Invariants: $c_4 = -144 B$, $c_6 = -1728 A$, $\\Delta = -2^6 \\cdot 3^3 C^7$.\n- For every prime $p \\mid C$ ($p \\ge 5$), $v_p(\\Delta) = 7 v_p(C) \\equiv 0 \\pmod 7$ and $v_p(c_4) = 0$. Hence $E$ has multiplicative reduction at $p$.\n- By Ribet's level-lowering theorem, the mod-7 representation $\\bar{\\rho}_{E, 7}: G_{\\mathbb{Q}} \\to \\mathrm{GL}_2(\\mathbb{F}_7)$ has Serre conductor dividing $2^r \\cdot 3^s$ with $r \\le 6, s \\le 3$.\n- When the prime 7 is unramified in the Frey representation (e.g. when $7 \\mid C$ and 7 is lowered, or when $E$ has good reduction at 7), the Serre level has $c = 0$, giving levels:\n  $$N \\in \\{24, 27, 32, 36, 54, 96, 108, 144, 216, 288, 432, 864\\}.$$\n- If 7 is retained in the level (e.g., before lowering 7 when $7 \\nmid C$), levels of the form $N = 2^a \\cdot 3^b \\cdot 7$ arise, including $N \\in \\{14, 21, 28, 42, 56, 84, 126, 168\\}$.\n\n### 2.2 Complete Classification of the 13 Elliptic Curves (PSS Section 6)\nIn Section 6 of Poonen, Schaefer, and Stoll (2007), Ribet level lowering classifies the possible representations $\\bar{\\rho}_{E, 7}$ up to quadratic twist into **13 isogeny classes of elliptic curves**:\n\n| Cremona Label | LMFDB EC Label | LMFDB Newform | Level $N$ | Factorization | CM Subfield | Role / Solution Match |\n|:---:|:---:|:---:|:---:|:---:|:---:"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.17
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.8,
+        "confidence": 0.2,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.49,
+          "1": 0.24,
+          "2": 0.23,
+          "3": 0.04
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2878,
+      "output_tokens": 94
+    }
+  }
+}

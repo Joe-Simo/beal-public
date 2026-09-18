@@ -1,0 +1,2224 @@
+                                                    TWISTS OF X(7) AND PRIMITIVE SOLUTIONS TO x2 + y 3 = z 7
+
+                                                             BJORN POONEN, EDWARD F. SCHAEFER, AND MICHAEL STOLL
+
+
+
+
+arXiv:math/0508174v1 [math.NT] 10 Aug 2005
+                                                    Abstract. We find the primitive integer solutions to x2 + y 3 = z 7 . A nonabelian descent
+                                                    argument involving the simple group of order 168 reduces the problem to the determination
+                                                    of the set of rational points on a finite set of twists of the Klein quartic curve X. To restrict
+                                                    the set of relevant twists, we exploit the isomorphism between X and the modular curve
+                                                    X(7), and use modularity of elliptic curves and level lowering. This leaves 10 genus-3 curves,
+                                                    whose rational points are found by a combination of methods.
+
+
+
+                                                                                          1. Introduction
+                                             1.1. Main result. Fix integers p, q, r ≥ 1. An integer solution (x, y, z) to xp + y q = z r is
+                                             called primitive if gcd(x, y, z) = 1. The main goal of this paper is to prove:
+                                             Theorem 1.1. The primitive integer solutions to x2 + y 3 = z 7 are the 16 triples
+                                                          (±1, −1, 0),      (±1, 0, 1),    ±(0, 1, 1),     (±3, −2, 1),      (±71, −17, 2),
+                                                     (±2213459, 1414, 65),        (±15312283, 9262, 113),          (±21063928, −76271, 17) .
+                                             1.2. Previous work on generalized Fermat equations. We temporarily return to the
+                                             discussion of xp + y q = z r for a fixed general triple (p, q, r).
+                                                Let χ = 1p + 1q + 1r − 1. There is a naı̈ve heuristic that for each triple of integers (x, y, z)
+                                             with |x| ≤ B 1/p , |y| ≤ B 1/q , |z| ≤ B 1/r , the probability that xp + y q = z r is 1/B: this leads to
+                                             the guesses that the set of primitive integer solutions is finite when χ < 0 and infinite when
+                                             χ > 0. In fact, these statements are theorems, proved by Darmon and Granville [Darmon-
+                                             Granville1995] and Beukers [Beukers1998], respectively.1
+                                                The method of descent, in one form or another, is the key ingredient used in the proofs of
+                                             these theorems. Descent relates the primitive integer solutions to the rational points (possibly
+                                             over some number field) on one or more auxiliary curves, whose Euler characteristic 2 − 2g
+                                             is a positive integer multiple of χ. This connection is made clear in [Darmon1997Faltings],
+                                             for example. In Section 3, we will explain it in detail in the context of the special case
+                                             (p, q, r) = (2, 3, 7).
+                                                Suppose χ > 0. Then 2 − 2g > 0, so g = 0. Thus the auxiliary curves that have rational
+                                             points are isomorphic to P1 . The conclusion is that the primitive integer solutions fall into a
+                                                Date: July 30, 2005.
+                                                2000 Mathematics Subject Classification. Primary 11D41; Secondary 11G10, 11G18, 11G30, 14G05.
+                                                Key words and phrases. generalized Fermat equation, Jacobian, Mordell-Weil sieve, Chabauty, modular
+                                             curve, Klein quartic, descent.
+                                                1In fact, they prove results more generally for equations Axp + By q = Cz r where A, B, C are nonzero
+
+                                             integer constants.
+                                                                                                   1
+finite number of parametrized families. These parametrizations have been found explicitly for
+every (p, q, r) with χ > 0, as we now indicate. The case where some exponent is 1 is trivial,
+and the case where the multiset {p, q, r} equals {2, 2, n} for some n ≥ 2 is elementary. The
+only remaining possibilities are {2, 3, 3}, {2, 3, 4}, {2, 3, 5}; these were completed by Mordell,
+Zagier, and Edwards, respectively. See [Edwards2004] for details.
+   If χ = 0, then 2 − 2g = 0, so g = 1. There are only the cases {2, 3, 6}, {2, 4, 4}, {3, 3, 3},
+and the auxiliary curves turn out to be elliptic curves E over Q, and descent proves that
+E(Q) is finite in each case. (The finiteness should not be surprising, since these elliptic
+curves have very low conductor.) One then easily finds that the only nontrivial primitive
+solution, up to permutations and sign changes, is 16 + 23 = 32 . Many, if not all, of these cases
+are classical: Fermat invented the method of descent to do (4, 4, 2), and Euler did (3, 3, 3).2
+   If χ < 0, then g > 1. Each auxiliary curve has finitely many rational points, by [Falt-
+ings1983], and hence we get the Darmon-Granville result that for each (p, q, r) there are at
+most finitely many nontrivial primitive solutions. For many (p, q, r) these solutions have
+been determined explicitly. These are summarized in Table 1.
+
+
+1.3. Why x2 + y 3 = z 7 is particularly difficult. We give several answers.
+
+
+1.3.1. It corresponds to the negative value of χ closest to 0. When (p, q, r) is such that χ is
+just barely negative, the naı̈ve heuristic mentioned earlier predicts that the set of primitive
+integer solutions should be “just barely finite” in the sense that it becomes likely that there
+are several even of moderately large size. The existence of solutions, especially large solutions,
+naturally tends to make proving the nonexistence of others a difficult task.
+   From this point of view, the triple {p, q, r} with χ < 0 that should be most difficult is the
+one with χ closest to 0: this is {2, 3, 7}. Indeed the equation x2 +y 3 = z 7 has several solutions,
+and some of them are large. Now that this equation is finished, we know the complete list
+of solutions for every (p, q, r) for which χ < 0 and for which nontrivial primitive solutions
+(excluding 1n + 23 = 32 ) are known to exist.
+
+
+1.3.2. The exponents are prime. The triple {2, 3, 8} analyzed by Bruin has almost the same
+value of χ, and also has large solutions, so it also is difficult. But at least it could be studied
+by using Zagier’s parametrizations for the case {2, 3, 4} (with χ > 0).
+
+
+1.3.3. The exponents are pairwise relatively prime. For descent, one requires finite étale
+covers, and (geometrically) abelian étale covers can be easily constructed in cases where two
+of the exponents share a common factor. In contrast, for {2, 3, 7}, the smallest nontrivial
+Galois étale covering has a nonabelian Galois group of size 168. Before the present work, no
+pairwise coprime (p, q, r) with χ < 0 had been studied successfully.
+
+  2Euler’s argument had a flaw, but it was later fixed by others.
+                                                    2
+ {2, 3, 7}    See Theorem 1.1.
+ {2, 3, 8}    [Bruin1999, Bruin2003]: 15490342 + 338 = 156133, 962223 + 438 = 300429072
+ {2, 3, 9}    [Bruin2004]: 132 + 73 = 29
+ {2, 2ℓ, 3}   [Chen2004preprint], for prime 7 < ℓ < 1000 with ℓ 6= 31
+ {2, 4, 5}    [Bruin2003]: 72 + 25 = 34 , 114 + 35 = 1222
+ {2, 4, 6}    [Bruin1999]
+ (2, 4, 7)    [Ghioca2002]
+ (2, 4, ℓ)    [Ellenberg2004Fermat], for prime ℓ ≥ 211
+ (2, n, 4)    follows easily from [Bennett-Skinner2004];
+              (4, n, 4) was done earlier in [Darmon1993CR]
+ {2, n, n}    [Darmon-Merel1997]; others for small n
+ {3, 3, 4}    [Bruin2000]
+ {3, 3, 5}    [Bruin2000]
+ {3, 3, ℓ}    [Kraus1998], for prime 17 ≤ ℓ ≤ 10000
+ {3, n, n}    [Darmon-Merel1997]; others for small n
+ {2n, 2n, 5} [Bennett2004preprint]
+ {n, n, n}     [Wiles1995, Taylor-Wiles1995], building on work of many others
+       Table 1. We list exponent triples (p, q, r) such that χ < 0 and the primi-
+       tive integer solutions to xp + y q = z r have been determined. The notation
+       {p, q, r} means that the solutions have been determined for every permutation
+       of (p, q, r): this makes a difference only if at least two of p, q, r are even. So-
+       lutions are listed only up to sign changes and permutations. Solutions of the
+       form 1n + 23 = 32 are omitted. Heuristics suggest that probably there are no
+       more solutions for (p, q, r) with χ < 0: in fact a cash prize awaits anyone who
+       finds a new solution [Darmon1997Faltings].
+
+
+
+                                         2. Notation
+  If k is a field, then k denotes an algebraic closure, and Gk = Gal(k/k). Let Q be the
+algebraic closure of Q in C. Let ζ = e2πi/7 ∈ Q.
+  If X is a scheme over a ring R, and R′ is an R-algebra, then XR′ denotes X × Spec R′ .
+                                                                                   Spec R
+If X is a variety over Q, and R is a localization of Z, then XR will denote a smooth model
+of X over R (assuming it exists), and X(R) means XR (R). Conversely, if XR is a scheme
+over such a ring R, then X will denote the generic fiber, a scheme over Q.
+                                                3
+  We say that a k-variety Y is a twist of a k-variety X if Yk ≃ Xk . Twists of morphisms are
+defined similarly.
+  If M is a GQ -module, and k is an extension of Q, then Mk denotes the same group with
+the action of Gk via the restriction map Gk → GQ . In particular, MQ denotes the abelian
+group with no Galois action.
+
+                       3. The theory behind the initial descent
+   This section explains the theory that reduces the original problem to the problem of
+determining the rational points on a finite list of auxiliary curves, which turn out to have
+genus 3.
+   The argument is essentially the same as that in [Darmon-Granville1995] (see also [Dar-
+mon1997Faltings]), though we do have one small theoretical innovation: By working with
+punctured affine surfaces instead of “M-curves” (which are essentially the stack quotients of
+the surfaces by a Gm -action), we can use the standard theory of descent for finite étale covers
+of varieties à la Chevalley-Weil and avoid having to use or develop more general statements
+for ramified coverings or for stacks. Keeping the stacks in the back of one’s mind, however,
+still simplifies the task of finding the étale covers of the punctured surfaces; we will use them
+for this purpose.
+   Another difference in our presentation is that we word the argument so as to obtain a finite
+list of curves over Q instead of a single curve over a larger number field; this is important
+for the practical computations.
+   Equations for the varieties and morphisms of this section will appear in later sections of
+our paper.
+
+3.1. Scheme-theoretic interpretation of the problem. Start with the subscheme x2 +
+y 3 = z 7 in A3Z and let SZ be the (quasi-affine) scheme obtained by deleting the subscheme
+x = y = z = 0. Then S(Z) is the set of primitive integer solutions to x2 + y 3 = z 7 .
+
+3.2. An étale cover of SC . In order to apply the method of descent, we need a finite étale
+cover of SZ , or at least of SZ[1/N ] for some N ≥ 1. We first find a finite étale cover of SC .
+   The multiplicative group Gm acts on SC : namely, λ acts by (x, y, z) 7→ (λ21 x, λ14 y, λ6z).
+The subfield of the function field C(SC ) invariant under Gm is C(j) where j := 1728 y 3/z 7 , so
+the quotient of SC by Gm should be birational to P1 with coordinate j. (The reason for the
+factor 1728 and for the name j will become clear later on.) But Gm does not act freely on
+SC : the points where one of x, y, z vanishes have nontrivial stabilizers. Therefore, it is best
+to consider the stack quotient [SC /Gm ], which looks like P1 except that the points j = 1728,
+j = 0, j = ∞ are replaced by a 21 -point, a 31 -point, and a 17 -point, respectively. (This stack
+is essentially the same as the “M-curve” of [Darmon1997Faltings].) The induced morphism
+           j
+[SC /Gm ] → P1 is a ramified map of degree 1, with ramification indices 2, 3, 7 above 1728, 0,
+∞, respectively.
+   The strategy for constructing a finite étale cover X̃C of SC will be first to construct a finite
+étale cover XC of [SC /Gm ] and then to base extend by SC → [SC /Gm ]. A finite étale cover
+                                                 4
+of [SC /Gm ] is a finite cover of P1 whose ramification is accounted for by the ramification of
+[SC /Gm ] → P1 : in other words, a finite cover of P1 ramified only above 1728, 0, and ∞,
+and with ramification indices 2, 3, 7, respectively. In fact, we will seek such a cover that
+is generically Galois. Such covers can be specified analytically by giving the monodromy
+above the three branch points, and are automatically algebraic, by the Riemann Existence
+Theorem. Specifically, the Galois group should be a Hurwitz group: a finite group generated
+by elements a, b, c of orders 2, 3, 7, respectively, such that abc = 1. In principle we could
+use any Hurwitz group (even the monster group is a possibility [Wilson2001]), but to make
+future computations practical, we choose the smallest Hurwitz group: the simple group
+G := PSL2 (F7 ) of order 168, with generators a = ( 01 −1          0 1           1 1
+                                                        0 ), b = ( −1 1 ), c = ( 0 1 ).
+   We next identify the covering curve XC . Since [SC /Gm ] is obtained from P1 by delet-
+ing three points and reinserting a 12 -point, a 31 -point, and a 71 -point, its topological Euler
+characteristic satisfies
+                                                                           
+                                          1                    1 1 1
+                       χ([SC /Gm ]) = χ(P ) − (1 + 1 + 1) +      + +
+                                                               2 3 7
+                                      1 1 1
+                                    = + + −1
+                                      2 3 7
+                                         1
+                                    =− .
+                                        42
+The genus g of its degree-168 cover XC satisfies
+
+                          2 − 2g = χ(XC ) = 168 χ([SC /Gm ]) = −4.
+
+Hence XC is a curve of genus 3 with 168 automorphisms; the only such curve over C is the
+Klein quartic curve defined in P2 by the homogeneous equation
+
+                                     x3 y + y 3 z + z 3 x = 0.
+
+See [Elkies1999] for many facts about X and G. The base extension of XC by SC → [SC /Gm ]
+is the punctured cone X̃C above XC , obtained by removing the origin from the surface in A3
+defined by the same quartic polynomial.
+
+3.3. An étale cover of SZ[1/42] . Let X and X̃ be the varieties over Q defined by the same
+equations, and let XR and X̃R be the corresponding smooth models over R := Z[1/42]. We
+identify G with Aut(XC ) = Aut(XQ ), so GQ acts on G. The degree-168 étale map X̃C → SC
+arises from an étale map π̃ : X̃R → SR ; the associated morphism X → P1 is given explicitly
+in Section 7.3.
+
+3.4. Descent. Descent theory (cf. [Chevalley-Weil1930] and [Skorobogatov2001, §5.3]) tells
+us the following:
+     • The set of classes in the Galois cohomology set H1 (Q, G) that are unramified outside 2,
+       3, and 7 is finite. (“Unramified outside {2, 3, 7}” means that the image in H1 (Qunr
+                                                                                        p , G)
+       is the neutral element for every finite prime p ∈ / {2, 3, 7}.)
+                                                5
+                 X̃                   /X N
+                                                   NNN          X(7) N
+                   O                   O            NNN π           NNN
+               π̃ O                       O            NNN             NNN
+                                                                            NNN
+                            O                  O          NNN
+                                                             NN&             NN'
+                 S                / [S/Gm ] birational / P1                        X(1)
+
+
+                                                                       3
+             (a, b, c)                             / j := 1728 b           / E(a,b,c) : Y 2 = X 3 + 3b X − 2a
+                                                                  c7
+
+       Figure 1. The squiggly arrows denote étale morphisms. All vertical and
+       diagonal morphisms are finite of degree 168. The schemes may be considered
+       over C or over R = Z[1/42], or anything in between.
+
+
+     • Each such class corresponds to an isomorphism class of twists π̃ ′ : X̃ ′ → S of π̃ : X̃ →
+       S. Choosing a cocycle in the class lets one construct a twist within the isomorphism
+       class.
+     • The set S(R) is the disjoint union of the sets π̃ ′ (X̃ ′ (R)) so obtained.
+In fact, each such cocycle twists the upper half of the square
+                                   X̃ −−−→ X                                  X̃ ′ −−−→ X ′
+                                                                                     
+                                    
+                                 π̃ y
+                                           π
+                                           y             to yield               
+                                                                           π̃ ′ y
+                                                                                         ′
+                                                                                        yπ
+                                        j                                          j
+                                 S −−−→ P1                                  S −−−→ P1 .
+Since Pic R is trivial, each map X̃ ′ (R) → X ′ (R) = X ′ (Q) is surjective. Hence S(Z) ⊆
+S(R) = j −1 (π ′ (X ′ (Q))), where the union is over our finite list of twists X ′ of X. So to
+         S
+
+solve the original equation, it would suffice to:
+   (1) Find equations for each twist X ′ and map π ′ arising from a cocycle unramified outside
+       2, 3, 7.
+   (2) Determine X ′ (Q) for each X ′ . (Since X ′ is a genus-3 curve, X ′ (Q) is finite by [Falt-
+       ings1983].)
+The first task reduces to a finite computation in principle, because Hermite’s theorem on
+number fields with bounded ramification is effective. The second task is not known to reduce
+to a finite computation, and in fact for one of the curves X ′ that arises, we are unable to
+complete this task! (See Section 12.1.)
+   But since we want S(Z) and not all of S(R), we can get by with computing only the
+rational points inside certain “residue classes” on each curve. Say that X ′ passes the local
+test if the subset π ′ (X ′ (Qp )) ∩ j(S(Zp )) of P1 (Qp ) is nonempty for all primes p. We will do
+the following:
+   (1) For each X ′ passing the local test, find an equation for X ′ and π ′ .
+   (2) For each such X ′ , determine {P ∈ X ′ (Q) : π ′ (P ) ∈ j(S(Zp )) for all primes p}.
+                                                              6
+                                4. The modular interpretation
+   In Section 4.3 we observe that the map X → P1 is isomorphic to the map of modular
+curves X(7) → X(1). In later sections this will be used to help catalogue the needed twists
+of X. Indeed, each twist of X(7) is a moduli space classifying elliptic curves with an exotic
+level-7 structure, so we reduce to a problem of enumerating level structures.
+4.1. Definition of X(7). If E is an elliptic curve over a field k of characteristic zero, let
+E[7] be the Gk -module of k-points killed by the multiplication-by-7 map [7] : E → E. The
+Weil pairing gives an isomorphism 2 E[7] ≃ µ7 . Let M be the GQ -module µ7 × Z/7Z.3
+                                       V
+
+There is a canonical isomorphism 2 M ≃ µ7 mapping (ζ 1, 0) ∧ (ζ 0 , 1) to ζ. When we write
+                                     V
+        ∧
+φ : Mk ≃ E[7], we mean that φ is a symplectic isomorphism, that is, an isomorphism of
+Gk -modules such that 2 φ : 2 Mk → 2 E[7] is the identity µ7 → µ7 .
+                        V      V           V
+
+   For a field k of characteristic zero, let Y(7)(k) be the set of isomorphism classes of pairs
+                                                         ∧
+(E, φ) where E is an elliptic curve over k and φ : Mk ≃ E[7]. It is possible to extend Y(7)
+to a functor from Q-schemes to sets, with essentially the same definition. The functor Y(7)
+is representable by a smooth affine curve Y (7) over Q. The curve Y (7) can be completed to
+a smooth projective curve X(7) over Q.
+Remark 4.1. The Q-variety X(7) extends to a smooth projective curve over Z[1/7] with
+geometrically integral fibers. It too is a fine moduli space, representing a certain functor.
+There is even a moduli scheme over Z: see [Katz-Mazur1985].
+Warning 4.2. Some authors use instead the set of isomorphism classes of pairs (E, φ) where
+φ : (Z/7Z)2 ≃ E[7] is an isomorphism of Galois modules not necessarily respecting the
+symplectic structures. This leads to an irreducible scheme over Q that over Q(ζ) decomposes
+into 6 disjoint components, each isomorphic to our X(7)Q(ζ) .
+4.2. Automorphisms of X(7) over Q. Let Y (1) be the (coarse) moduli space of elliptic
+curves over Q. The j-invariant gives an isomorphism Y (1) ≃ A1 . Let X(1) ≃ P1 be the
+usual compactification of Y (1). The forgetful functor mapping a pair (E, φ) to E induces a
+morphism Y (7) → Y (1) and hence also a morphism X(7) → X(1).
+  The isomorphism MQ ≃ (Z/7Z)2 mapping (ζ a, b) to the column vector ( ab ) identifies
+V2                                 det
+    MQ ≃ (µ7 )Q with 2 (Z/7Z)2 ≃ Z/7Z. Therefore the group of symplectic automor-
+                      V
+
+phisms of MQ equals
+                          Aut∧ (MQ ) = Aut∧ ((Z/7Z)2 ) = SL2 (F7 ),
+which we view as acting on the left on column vectors. If g ∈ Aut∧ (MQ ), then g acts on
+the left on Y (7)Q by mapping each pair (E, φ) to (E, φ ◦ g −1 ); this automorphism of Y (7)Q
+extends to an automorphism of X(7)Q . Thus we obtain a homomorphism
+                                         SL2 (F7 ) → Aut X(7)Q .
+  3Writing M = µ
+                   7 × Z/7Z instead of M = Z/7Z × µ7 does not change it (even considering symplectic
+structure). Our reason for this is so that when MQ is identified with column vectors, the action on SL2 (F7 )
+on MQ agrees with its usual action on X(7), as groups equipped with a GQ -action.
+                                                     7
+Since Aut∧ (MQ ) acts transitively on the set of φ corresponding to a given E over Q, the
+covering X(7)Q → X(1)Q is generically Galois, and SL2 (F7 ) surjects onto the Galois group
+of the covering. Pairs (E, φ) and (E, φ′) are isomorphic if and only if φ′ = α ◦ φ for some
+α ∈ Aut(E); but Aut(E) is generated by [−1] for most E, so the kernel of SL2 (F7 ) →
+Gal(X(7)Q /X(1)Q ) is generated by the scalar matrix −1 ∈ SL2 (F7 ). In other words, there
+is an isomorphism PSL2 (F7 ) ≃ Gal(X(7)Q /X(1)Q ).
+
+4.3. The Klein quartic as X(7). There exists an isomorphism of Q-varieties X → X(7)
+[Elkies1999]. The group of automorphisms of X over Q has order 3, so the isomorphism
+X ≃ X(7) is not unique; we will take the the particular isomorphism in [Elkies1999] for
+which the homogeneous coordinates x, y, z correspond on X(7) to cusp forms whose q-
+expansions begin
+
+            x = q 4/7 (−1 + 4q − 3q 2 − 5q 3 + 5q 4 + 8q 6 − 10q 7 + 4q 9 − 6q 10 + . . . ),
+           y = q 2/7 (1 − 3q − q 2 + 8q 3 − 6q 5 − 4q 6 + 2q 8 + 9q 10 + . . . ), and
+            z = q 1/7 (1 − 3q + 4q 3 + 2q 4 + 3q 5 − 12q 6 − 5q 7 + 7q 9 + 16q 10 + . . . ).
+
+Taking the quotient of each curve by its Q-automorphism group, we obtain the commutative
+parallelogram at the right in Figure 1. Comparing the branch points and ramification indices
+of X(7) → X(1) with X → P1 determines the values of the isomorphism X(1) → P1 at 3
+points; it follows that the isomorphism is the standard one given by the j-invariant.
+
+4.4. Twists of X(7). Since GQ acts on MQ , it acts also on Aut∧ (MQ ). The homomorphism
+Aut∧ (MQ ) → Aut(X(7)Q ) is GQ -equivariant, so we obtain a map of cohomology sets
+
+                          H1 (GQ , Aut∧ (MQ )) → H1 (GQ , Aut(X(7)Q )).
+
+This map, which is not a bijection, can be reinterpreted as
+
+(4.3)                    {symplectic twists of M } → {twists of X(7)}.
+
+(A symplectic twist of M is a GQ -module M ′ with an isomorphism 2 M ′ ≃ µ7 such that
+                                                                        V
+
+there is an isomorphism ι : MQ → MQ′ such that 2 ι is the identity µ7 → µ7 over Q.)
+                                                       V
+
+In (4.3), let XM ′ (7) be the image of M ′ . Thus XM ′ (7) is the smooth projective model of
+the smooth affine curve whose points classify pairs (E, φ) where E is an elliptic curve and
+         ∧
+φ : M ′ ≃ E[7].
+   Since Aut(X(7)Q ) acts as automorphisms of X(7)Q over X(1)Q , there is a canonical mor-
+phism XM ′ (7) → X(1). In the moduli interpretation, this is the forgetful functor mapping
+(E, φ) to E.
+   If a ∈ F×   , composing 2 M ′ ≃ µ7 with the ath -power map µ7 → µ7 gives a new isomor-
+                           V
+             7
+phism 2 M ′ ≃ µ7 . Let M ′ a be M ′ with this new symplectic structure. If a = b2 α for some
+         V
+                                              ′a ∧
+b ∈ F× 7 , then multiplication-by-b induces M    ≃ M ′ α . Thus only the image of a in F×   ×2
+                                                                                        7 /F7
+matters: we lose nothing by considering a = ±1 only.
+                                                   8
+  If M ′ is a symplectic twist of M, and M ′′ = M ′ ⊗ χ for some quadratic character χ : GQ →
+{±1}, then the elements of H1 (GQ , Aut∧ (MQ )) corresponding to M ′ and M ′′ have the same
+image in H1 (GQ , Aut(X(7)Q )), because {±1} is in the kernel of Aut∧ (MQ ) → Aut(X(7)Q ).
+
+4.5. Twists of X(7) associated to elliptic curves. Let E be an elliptic curve over Q.
+Define XE (7) := XE[7] (7) and XE− (7) := XE[7]−1 (7).
+  If F is a quadratic twist of E, then XE (7) ≃ XF (7) and XE− (7) ≃ XF− (7).
+
+Lemma 4.4. If F ′ is a quadratic twist of an elliptic curve F such that F [7] ≃ E[7] as
+GQ -modules without symplectic structure, then the point j(F ′ ) ∈ X(1)(Q) is in the image of
+XE (7)(Q) → X(1)(Q) or XE− (7)(Q) → X(1)(Q).
+                                                            ∧                ∧
+Proof. By the discussion above, we need to have F [7] ≃ E[7] or F [7] ≃ E[7]−1 , and so F
+gives rise to a rational point on XE (7) or on XE− (7). Therefore, j(F ′ ) = j(F ) is in the image
+of XE (7)(Q) → X(1)(Q) or of XE− (7)(Q) → X(1)(Q).                                              
+
+Warning 4.5. Not every twist of X(7) can be written as XE (7) or XE− (7) for an elliptic
+curve E over Q. For example, let M ′ := µ⊗2   7 × µ7
+                                                     ⊗−1
+                                                         , equipped with a symplectic structure
+V2 ′
+    M ≃ µ7 , and let X = XM ′ (7). If X were isomorphic to XE− (7), it would also be
+                             ′                  ′
+
+isomorphic to XE (7), since Aut(M ′ ) acts transitively on the symplectic structures on M ′ .
+This is impossible, because X ′ (Q) = ∅: indeed, X ′ (F2 ) = ∅, since there are no elliptic curves
+E over F2 (not even degenerate ones corresponding to cusps) with E[7] ≃ µ⊗2      7 × µ7
+                                                                                        ⊗−1
+                                                                                             , that
+is, with the 2-power Frobenius acting on E[7] as multiplication-by-4.
+   In fact, X(7) itself is another example of a twist that cannot be written as XE (7) or XE− (7)
+(at least if one requires E to be a nondegenerate elliptic curve over Q): again Aut(M) acts
+transitively on the symplectic structures on M, and although this time X(7) has rational
+points, they are all cusps [Elkies1999].
+
+4.6. Primitive solutions and elliptic curves. Suppose (a, b, c) ∈ S(Z) and a, b, c are
+nonzero. Then j := 1728 b3/c7 is not 1728, 0, or ∞. The corresponding point on X(1) is
+represented by the elliptic curve
+
+                              E = E(a,b,c) : Y 2 = X 3 + 3b X − 2a
+
+and its quadratic twists. The twist X ′ of X in Section 3.4 for which j ∈ π ′ (X ′ (Q)) corre-
+sponds to the twist XE (7) of X(7). Therefore to find the relevant twists of X(7), it suffices
+to catalogue the possibilities for the GQ -module E[7], up to quadratic twist. Restrictions on
+E[7] will be deduced from the following.
+
+Lemma 4.6. If (a, b, c) ∈ S(Z) and a, b, c are nonzero, then 1728 b3/c7 is the j-invariant of
+an elliptic curve E over Q such that
+   (a) The conductor N of E is of the form 2r 3s p∈T p where r ≤ 6, s ≤ 3, and T is a
+                                                     Q
+
+        finite set of primes ≥ 5.
+   (b) E[7] is finite at 7 in the sense of [Serre1987, p. 189].
+                                                 9
+Proof.
+  (a) Since gcd(a, b, c) = 1 and a2 + b3 = c7 , the integers a, b, c are pairwise relatively prime.
+We need to bound the p-adic valuation vp (N) for each prime p.
+
+Case 1: p ≥ 5
+  Associated to the Weierstrass equation for E(a,b,c) are the quantities
+
+                         c4 = −122 b ,          c6 = 123 a ,     ∆ = −123 c7 .
+
+(See [SilvermanAEC, III.§1] for definitions.) Suppose p ≥ 5 is a prime dividing N. Then
+p | ∆. But gcd(b, c) = 1, so p ∤ c4 . By [SilvermanAEC, VII.5.1(b)], E has multiplicative
+reduction at p, and vp (N) = 1.
+
+Case 2: p = 3
+  If 3 ∤ c, then v3 (N) ≤ v3 (∆) ≤ 3. Therefore suppose 3 | c. Then 3 ∤ a, b. Let t = a/b ∈ Z3 .
+Then a2 + b3 ≡ 0 (mod 37 ) implies (a, b) ≡ (−t3 , −t2 ) (mod 37 ). The right hand side of
+the Weierstrass equation is now congruent to (X − t)(X − t)(X + 2t) modulo 37 , so the
+substitution X 7→ x + t results in a cubic polynomial congruent to x3 + 3tx2 modulo 37 .
+Hence we can twist by 1/3 to obtain an elliptic curve E ′ such that
+
+              v3 (c′4 ) = v3 (−122 b) − 2 = 0      and    v3 (∆′ ) = v3 (−123 c7 ) − 6 > 0.
+
+Thus E ′ has multiplicative reduction, and v3 (N ′ ) = 1.
+
+Case 3: p = 2
+  If 2 ∤ c, then v2 (N) ≤ v2 (∆) ≤ 6. Therefore suppose 2 | c. Twisting by −1 if necessary,
+we may assume a ≡ 1 (mod 4). As in the previous paragraph, we have (a, b) ≡ (−t3 , −t2 )
+(mod 27 ) for some t ∈ Z2 and we can find a model y 2 = f (x) where f (x) ≡ x3 + 3tx2
+(mod 27 ). Now a ≡ 1 (mod 4) implies t ≡ −1 (mod 4), so the further substitution y 7→ y ′ +x
+shows that the model is not minimal at 2. Thus we arrive at a model E ′ with
+
+             v2 (c′4 ) = v2 (−122 b) − 4 = 0      and     v2 (∆′ ) = v2 (−123 c7 ) − 12 > 0,
+
+and hence v2 (N ′ ) = 1.
+  (b) If 7 ∤ c, then E has good reduction at 7, so E[7] is finite at 7. If 7 | c, then v7 (j) =
+−7v7 (c) is a negative multiple of 7, so by the theory of Tate curves, E[7] is finite at 7. (The
+twists done in part (a) affect the behavior at 2 and 3 independently, and do not interfere
+with the behavior at other primes.)                                                           
+
+
+                                    5. Reducible 7-torsion
+   By Lemma 4.6 we need only catalogue the possibilities for E[7] (up to quadratic twist)
+such that E[7] is unramified outside {2, 3, 7}. In this section we assume moreover that E[7]
+is reducible as a GQ -module.
+                                                     10
+                                                                          
+                                                                        1 0
+                     X(7)                   (E, φ)               {1} =       1
+                                               _
+                                                                        0 1
+
+                      7
+                                                                        
+                                                                   1 ∗
+                    Xµ (7)                 (E, φ|µ7 )            N =         7
+                                               _
+                                                                     0 1
+
+                      3
+                                                                        
+                                                                  ∗ ∗
+                    X0 (7)                (E, φ(µ7 ))            B=          21
+                                               _
+                                                                     0 ∗
+
+                      8
+                                                                       
+                                                                  ∗ ∗
+                     X(1)                     E                  G=          168
+                                                                    ∗ ∗
+
+
+                                      Figure 2. Modular curves of level 7.
+
+
+5.1. Intermediate modular curves. Let Yµ (7) over Q be the affine curve parametrizing
+pairs (E, ψ) where E is an elliptic curve and ψ : µ7 ֒→ E[7] is an injection. Let Xµ (7) be the
+smooth projective curve having Yµ (7) as an affine subset.
+
+Remark 5.1. The curve Xµ (7) is a twist of the classical modular curve X1 (7), the completion
+of the curve Y1 (7) parametrizing (E, P ) where P is a point of exact order 7 on E: giving
+P is equivalent to giving an injection Z/7Z ֒→ E[7]. In a less obvious way, Xµ (7) is also
+isomorphic to X1 (7): if (E, ψ) as above is defined over k, one can map it to the pair (E ′ , P ′)
+where E ′ is the elliptic curve E/ψ(µ7 ) over k and P ′ ∈ E ′ [7](k) is the image of a point
+P ∈ E[7](k) whose Weil pairing with ψ(ζ) gives ζ.
+
+  Define Y0 (7) as the (coarse) moduli space parametrizing pairs (E, C) where C is a (cyclic)
+order-7 subgroup of E, and define X0 (7) as the completed curve.
+  The columns of Figure 2 show
+     • the morphisms relating the modular curves, labelled by their degrees,
+     • the moduli interpretations of these morphisms,
+     • the subgroup Aut(X(7)Q /ZQ ) of Aut(X(7)Q /X(1)Q ) = G corresponding to each in-
+       termediate curve Z, and
+     • the orders of these subgroups.
+                                                            11
+The notation B = ( ∗0 ∗∗ ) means that B equals the image of {( a0 db ) ∈ SL2 (F7 )} in PSL2 (F7 ) ≃
+G.
+
+5.2. The Galois action on G and its subgroups. Since M = µ7 × Z/7Z, we have
+                                                                 
+                         End(µ7 )    Hom(Z/7Z, µ7 )     Z/7Z    µ7
+         End(MQ ) ≃                                ≃             ,
+                                                         ⊗−1
+                      Hom(µ7 , Z/7Z)   End(Z/7Z)        µ7     Z/7Z
+
+which is the matrix ring M2 (F7 ) with a nontrivial GQ -action. This GQ -action induces a GQ -
+action on PSL2 (F7 ) making PSL2 (F7 ) ≃ G an isomorphism of GQ -groups (groups equipped
+with a continuous action of GQ ).
+  In particular, N ≃ µ7 as GQ -groups, and B is a semidirect product of the subgroup
+H := ( ∗0 0∗ ) ≃ F×
+                  7 /{±1} ≃ Z/3Z (with trivial GQ -action) by N. Thus we have a split exact
+sequence of GQ -groups
+(5.2)                              0 → µ7 → B → Z/3Z → 0.
+  The generators g := ( 10 11 ) of N ≃ µ7 and h := ( 20 04 ) of H ≃ Z/3Z satisfy h−1 gh = g 2 .
+Under the isomorphism in Section 4.3, g and h correspond to the automorphisms (x : y :
+z) 7→ (ζ 4x : ζ 2 y : ζz) and (x : y : z) 7→ (y : z : x) of X, according to [Elkies1999].
+
+5.3. Nonabelian cohomology of B. Let E be an elliptic curve over Q such that E[7] is
+reducible as a GQ -module. Thus there is a GQ -stable order-7 subgroup C ⊂ E[7]. Choosing
+        ∧
+φ : MQ ≃ E[7]Q such that φ(µ7 ) = C shows that the twist XE (7) of X(7) arises from a
+cocycle taking values in the subgroup B of G. In this subsection, we calculate H1 (GQ , B); in
+the next subsection, we use the results to write down equations for all XE (7) corresponding
+to E with reducible E[7].
+   From the exact sequence (5.2) of GQ -groups, we obtain the exact sequence of pointed
+sets [SerreGaloisCohomology, Proposition 38, p. 51]
+                                                      s
+                           H1 (GQ , µ7 ) → H1 (GQ , B) → H1 (GQ , Z/3Z).
+Define s as shown. Since the last map in (5.2) admits a section, s admits a section; in
+particular s is surjective.
+  Suppose ξ is a cocycle representing a class [ξ] ∈ H1 (GQ , Z/3Z). Since Z/3Z acts on µ7 ,
+ξ determines a twist ξ µ7 of µ7 . A cohomologous cocycle would determine a (noncanoni-
+cally) isomorphic twist. Via the section of B → Z/3Z, we may view ξ also as a B-valued
+cocycle. By [SerreGaloisCohomology, Corollary 2, p. 52], there is a natural surjective map
+H1 (GQ , ξ µ7 ) → s−1 ([ξ]). We now calculate H1 (GQ , ξ µ7 ).
+
+Case 1: [ξ] = 0.
+  Then H1 (GQ , ξ µ7 ) = H1 (GQ , µ7 ) ≃ Q× /Q×7 .
+
+Case 2: [ξ] 6= 0.
+                                                 12
+  Then [ξ] ∈ H1 (GQ , Z/3Z) = Homconts (GQ , Z/3Z) corresponds to a cyclic cubic extension
+K of Q with a choice of generator τ ∈ Gal(K/Q). From the Hochschild-Serre spectral
+sequence [SerreGaloisCohomology, p. 15] we can extract the exact sequence
+(5.3)           H1 (Gal(K/Q), (ξ µ7 )GK ) → H1 (GQ , ξ µ7 ) → H1 (GK , ξ µ7 )Gal(K/Q)
+                    → H2 (Gal(K/Q), (ξ µ7 )GK ).
+The first and last terms are zero, since Gal(K/Q) and ξ µ7 have relatively prime orders.
+In the third term, H1 (GK , ξ µ7 ) equals K × /K ×7 with a twisted action of Gal(K/Q); thus
+H1 (GK , ξ µ7 )Gal(K/Q) , instead of equalling the subgroup of K × /K ×7 fixed by the usual action
+of τ , equals the subgroup (K × /K ×7 )τ =2 of K × /K ×7 consisting of elements on which τ has
+the same effect as squaring. (The 2 comes from the action of Z/3Z on µ7 , that is, from the
+fact that h−1 gh = g 2 .) Thus (5.3) gives
+                        H1 (GQ , ξ µ7 ) ≃ H1 (GK , ξ µ7 )Gal(K/Q) ≃ (K × /K ×7 )τ =2 .
+
+5.4. Twists of X(7) corresponding to reducible E[7]. We now write down twists of
+X ≃ X(7) whose classes in H1 (GQ , G) represent the image of H1 (GQ , B) → H1 (GQ , G).
+
+Case 1: [ξ] = 0.
+  Given a ∈ Q× , fix α ∈ Q with α7 = a. The substitution (x, y, z) = (α4 x̄, α2 ȳ, αz̄)
+transforms XQ into the plane curve
+                            (α4 x̄)3 (α2 ȳ) + (α2 ȳ)3 (αz̄) + (αz̄)3 (α4 x̄) = 0,
+which, if we divide by a and drop the bars, is the same as
+(5.4)                                  X ′ : ax3 y + y 3 z + z 3 x = 0.
+Let β : XQ → XQ′ be the isomorphism we just described. If we identify the automorphism
+(x : y : z) 7→ (ζ 4 x : ζ 2 y : ζz) of XQ with g := ( 10 11 ) ∈ N and with ζ ∈ µ7 , then the cocycle
+σ 7→ β −1 (σ β) ∈ N is identified with the cocycle σ 7→ σ α−1 /α−1 ∈ µ7 . Thus the image of a−1
+under
+                     Q× → Q× /Q×7 ≃ H1 (GQ , µ7 ) ≃ H1 (GQ , N) → H1 (GQ , G)
+corresponds to the twist X ′ of X. In particular, all twists of X arising in Case 1 have the
+form (5.4), where a runs through positive integers representing the elements of Q× /Q×7 .
+   The same curves can be written in other ways. Suppose that X ′ is a curve given by
+                                        ax3 y + by 3 z + cz 3 x = 0
+for some a, b, c ∈ Z>0 . If p is a prime such that p2 divides a, then multiplying by p and
+substituting x = x̄/p leads to an isomorphic curve of the same type but with a smaller value
+of abc. Similar reductions apply if p2 divides b or c. Hence eventually we can reduce to a
+curve where a, b, and c are squarefree. Moreover we may assume that gcd(a, b, c) = 1 and
+that a ≥ b and a ≥ c.
+
+Case 2: [ξ] 6= 0.
+                                                      13
+    We will write the action of τ on K on the right, so that we can use notation such as
+ 2τ −3
+a      := (aτ )2 /a3 for a ∈ K × . Let ℓ ∈ K x̄ + K ȳ + K z̄ be a linear form such that ℓ, ℓτ , and
+ℓτ τ form a K-basis for K x̄ + K ȳ + K z̄. Let a ∈ K × be such that its image in K × /K ×7 lies
+in (K × /K ×7 )τ =2 . Thus aτ −2 = b7 for some b ∈ K × . Applying τ 2 + 2τ + 4 and using τ 3 = 1
+                   2                                                           2
+yields a−7 = b7τ +14τ +28 . Since µ7 (K) = {1}, it follows that a−1 = bτ +2τ +4 .
+    Choose α ∈ Q such that α7 = a. Define elements ατ := bα2 and ατ τ := bτ +2 α4 of Q.
+(There is no action of τ on α, so we interpret ατ and ατ τ as new labels.) Then ατ7 = aτ and
+ατ7τ = aτ τ .
+    A calculation shows that the substitution (x, y, z) = (ατ τ ℓτ τ , ατ ℓτ , αℓ) transforms XQ into
+the plane curve
+(5.5)                        Xc,ℓ : cτ τ ℓ3τ τ +τ + cτ ℓ3τ +1 + cℓ3+τ τ = 0,
+where c = bτ +2 a ∈ K × . By symmetry, the coefficients of the polynomial in x̄, ȳ, z̄ defining
+Xc,ℓ are fixed by τ , and hence are in Q. A chase through definitions (similar to that in
+Case 1, but more tedious) shows that the B-valued cocycle defined by the constructed
+isomorphism XQ → (Xc,ℓ )Q represents the element of s−1 ([ξ]) coming from the image of a−1
+in (K × /K ×7 )τ =2 .
+   In summary, all twists of X arising in Case 2 have the form Xc,ℓ for some cyclic cubic
+extension K, some choice of τ ∈ Gal(K/Q), some choice of ℓ, and some choice of c ∈ K × .
+Changing ℓ does not change Xc,ℓ .
+   Changing a to ã = d7 a for some d ∈ K × , so that the corresponding values of b and c are
+                        2                                                                      2
+b̃ = dτ −2 b and c̃ = dτ +3 c, does not change Xc,ℓ . Thus multiplying c by an element of K ×(τ +3)
+does not change Xc,ℓ . (This amounts to changing ℓ into dℓ, resulting in a linear substitution
+                                                                                     2
+on (x̄, ȳ, z̄) with rational coefficients.) Multiplying c by an element of K ×(τ +τ +1) ⊆ Q×
+simply multiplies the equation of Xc,ℓ by an element of Q× , so this also does not change
+Xc,ℓ . Since the difference of τ 2 + τ + 1 and τ 2 + 3 equals τ − 2, and since 7 is a multiple of
+τ − 2 in Z[τ ]/(τ 3 − 1), multiplying c by an element of K ×7 or more generally, an element of
+K ×(τ −2) , does not change Xc,ℓ . Since the natural map (K × /K ×7 )τ =2 → K × /K ×(τ −2) is an
+isomorphism, it suffices to let c run through representatives of the elements of (K × /K ×7 )τ =2 .
+5.5. Ramification conditions. In our application, we know by Lemma 4.6 that E[7] is
+                                                                               ∧
+unramified outside {2, 3, 7}, just as M is. Therefore any isomorphism MQ ≃ E[7]Q will be
+unramified outside {2, 3, 7}. The choice of isomorphism gives the cocycle defining the twist
+XE (7) of X(7), so the cocycle will be unramified outside {2, 3, 7}, and then so will be all the
+cocycles in Section 5.3.
+
+Case 1: [ξ] = 0.
+  The twist has the form (5.4) for some a ∈ Z>0 . We need consider only a whose image in
+Q /Q×7 ≃ H1 (GQ , µ7 ) is unramified outside {2, 3, 7}. Equivalently, the field Q(a1/7 ) should
+  ×
+
+be unramified outside {2, 3, 7}. Concretely, this means that the only primes occurring in the
+factorization of a are among 2, 3, and 7.
+
+Case 2: [ξ] 6= 0.
+                                                   14
+   The number field K must be unramified above all finite places outside {2, 3, 7}. By
+the Kronecker-Weber theorem, the only such cyclic cubic extensions are the four degree-3
+subfields of the (Z/3Z)2 -extension Q(ζ + ζ −1, ζ9 + ζ9−1 ), where ζ = e2πi/7 (as usual) and
+ζ9 = e2πi/9 . Let OK be the ring of integers of K. The element a ∈ K × must be such that
+K(a1/7 ) is unramified above finite places outside {2, 3, 7}. Since each K has class number 1,
+it is possible to multiply a by an element of K ×7 to assume that a ∈ OK [1/42]× . Then
+the element c of Case 2 of Section 5.4 lies in OK [1/42]× , and we can finally reduce to the
+finite group (OK [1/42]× /OK [1/42]×7 )τ =2 , generators for which are easily computed for each
+(K, τ ).
+
+                      6. Irreducible 7-torsion: level lowering
+   Now we list the possibilities for irreducible E[7], up to quadratic twist. Let E be the
+following set of 13 elliptic curves over Q in the notation of [Cremona1997]:
+  24A1, 27A1, 32A1, 36A1, 54A1, 96A1, 108A1, 216A1, 216B1, 288A1, 864A1, 864B1, 864C1.
+Lemma 6.1. Suppose that E is as in Lemma 4.6, and that E[7] is an irreducible GQ -module.
+Then there exists a quadratic twist E ′ of some E ′′ ∈ E such that E[7] ≃ E ′ [7] as GQ -modules.
+Proof. By [Breuil2001], there is a weight-2 newform f on Γ0 (N) associated to E, where N is
+the conductor of E. By Lemma 4.6, N = 2r 3s p∈T p for some r ≤ 6, s ≤ 3 and finite set T of
+                                                   Q
+
+primes ≥ 5. Let N ′ = 2r 3s . Since E[7] is irreducible, Theorem 1.1 of [Ribet1990] lets us lower
+the level of f by eliminating 7 (if present) and then the other primes ≥ 5: more precisely,
+there is a weight-2 newform f ′ on Γ0 (N ′ ) such that “f ′ ≡ f (mod 7).” The congruence is
+to be interpreted as follows: “The Z-algebra generated by the Fourier coefficients of f ′ is
+an order Of ′ in some number field, and there is a prime ideal p ⊂ Of ′ of norm 7 such that
+ap (f ′ ) mod p = ap (f ) mod 7 for all but finitely many p.” Replacing f ′ by a quadratic twist
+does not change Of ′ .
+   We now consult William Stein’s Modular Forms Database [SteinTables] (or use Magma
+[Magma]), and get all weight-2 newforms f ′ of level dividing 26 33 . If two of them are
+quadratic twists of each other, we can check this by looking at sufficiently many coefficients,
+because the twisting factor is in {±1, ±2, ±3, ±6}, and the order of vanishing of a difference
+of modular forms at the cusp ∞ can be bounded in terms of its level. We find that each f ′
+is a quadratic twist of one of 14 newforms f ′′ . Now 13 of these 14 newforms have Of ′′ = Z
+and are associated to the elliptic curves E ′′ ∈ E. (Warning: the labelling of isogeny classes
+                                                                                      th
+of [SteinTables] is different  from√that of [Cremona1997] √ at some levels.) The 14 has Of
+                                                                                                ′′
+                         √
+an order containing 13 in Q( 13) (in fact it is Z[ 13]); such an order has no prime of
+norm 7, so we can discard this last newform.
+   Thus f ≡ f ′ (mod 7) where f ′ is associated to an elliptic curve E ′ having a quadratic twist
+E ′′ ∈ E. By the Eichler-Shimura relation (see [Eichler1954] for the relation in the context we
+need), the congruence implies that for all but finitely many p, the traces of the Frobenius au-
+tomorphism at p acting on E[7] and E ′ [7] are equal. By the Chebotarev density theorem, the
+GQ -representations E[7] and E ′ [7] have the same trace. They also have the same determinant,
+                                                15
+namely the cyclotomic character. So the Brauer-Nesbitt theorem [Curtis-Reiner1988, The-
+orem 30.16] implies that the semisimplifications of E[7] and E ′ [7] are isomorphic. But E[7]
+is irreducible and hence semisimple, so E[7] ≃ E ′ [7] as GQ -modules.                     
+
+Corollary 6.2. Suppose (a, b, c) ∈ S(Z) and a, b, c are nonzero. If E(a,b,c) [7] is irreducible,
+then j = 1728 b3 /c7 ∈ X(1)(Q) is the image of a rational point on one of the 26 curves
+XE (7) or XE− (7) with E ∈ E.
+
+Proof. Combine Lemmas 4.4 and 6.1.                                                                       
+
+
+
+                                       7. Explicit equations
+   Each twist of X = X(7) is a nonhyperelliptic curve of genus 3, and hence has a model
+as a smooth plane curve of degree 4. In this section we find equations for the homogeneous
+forms defining the twists that we need, and also the equations for their canonical morphisms
+to P1 = X(1). The strategy is to exploit the 168 symmetries.
+
+
+7.1. Covariants of ternary quartic forms. The standard left action of GLn (C) on V =
+Cn induces a right action of GLn (C) on the C-algebra C[x1 , . . . , xn ] = Sym V ∗ . If g ∈ GLn (C)
+and F ∈ C[x1 , . . . , xn ], let F g be the result of applying g to F , so F g (v) = F (g v) for all v ∈ V .
+Let C[x1 , . . . , xn ]d = Symd V ∗ be the subspace of C[x1 , . . . , xn ] consisting of homogeneous
+polynomials of degree d.
+  Fix n and d. A covariant of order j and degree δ is a function Ψ : C[x1 , . . . , xn ]d →
+C[x1 , . . . , xn ]j such that
+    (1) The coefficient of a fixed monomial xi11 . . . xinn in Ψ(F ) depends polynomially on the
+        coefficients of F , as F varies.
+    (2) For each g ∈ SLn (C), we have Ψ(F g ) = Ψ(F )g .
+    (3) For each t ∈ C× , we have Ψ(tF ) = tδ Ψ(F ).
+   In the same way, a contravariant of order j and degree δ is a polynomial map Ψ : Symd V ∗ →
+Symj V that is equivariant with respect to the right action of SLn (C) on the two spaces and
+is homogeneous of degree δ in the coefficients. (The right action of SLn (C) on V is the
+contragredient of the action on V ∗ .) In other words, for all F ∈ Symd V ∗ and g ∈ SLn (C)
+                          −t
+we have Ψ(F g ) = Ψ(F )g , where g −t is the inverse transpose of g. Our choice of basis for
+V induces an isomorphism V → V ∗ , so we may express each contravariant as a polynomial
+in the same variables x1 , . . . , xn .
+   From now on, we take n = 3 and d = 4, and use x, y, z in place of x1 , x2 , x3 . We will list
+some covariants, which we will call Ψ0 , Ψ4 , Ψ6 , Ψ14 , and Ψ21 , and a contravariant, which
+we will call Ψ−4 . They will be of orders 0, 4, 6, 14, 21, 4 and of degrees 3, 1, 3, 8, 12, 2,
+respectively.
+                                                    16
+  First of all, define Ψ4 (F ) = F . Then Ψ6 (F ) is essentially the Hessian of F :
+                                                      ∂2F        ∂2F       ∂2F
+                                                      ∂x2        ∂x ∂y     ∂x ∂z
+                                               1      ∂2F         ∂2F      ∂2F
+                               Ψ6 (F ) = −                        ∂y 2
+                                              54      ∂y ∂x                ∂y ∂z
+                                                      ∂2F        ∂2F         ∂2F
+                                                      ∂z ∂x      ∂z ∂y       ∂z 2
+
+The constant −1/54 is there so that Ψ6 has integer coefficients with gcd 1. Next, Ψ14 (F ) is
+obtained in a similar way:
+                                          ∂2F           ∂2F          ∂2F            ∂Ψ6 (F )
+                                          ∂x2          ∂x ∂y         ∂x ∂z            ∂x
+                                           ∂2F          ∂2F          ∂2F            ∂Ψ6 (F )
+                                    1     ∂y ∂x         ∂y 2         ∂y ∂z            ∂y
+                         Ψ14 (F ) =
+                                    9     ∂2F          ∂2F           ∂2F            ∂Ψ6 (F )
+                                          ∂z ∂x        ∂z ∂y         ∂z 2             ∂z
+                                         ∂Ψ6 (F )     ∂Ψ6 (F )      ∂Ψ6 (F )
+                                           ∂x           ∂y            ∂z
+                                                                                       0
+
+And Ψ21 (F ) is essentially the Jacobian determinant of the other three:
+                                                ∂F               ∂F            ∂F
+                                                ∂x               ∂y            ∂z
+                                          1   ∂Ψ6 (F )         ∂Ψ6 (F )      ∂Ψ6 (F )
+                            Ψ21 (F ) =
+                                         14     ∂x               ∂y            ∂z
+                                              ∂Ψ14 (F )        ∂Ψ14 (F )     ∂Ψ14 (F )
+                                                ∂x               ∂y            ∂z
+
+The invariant Ψ0 (F ) can be obtained as follows. Consider the following differential operator.
+                                                 ∂          ∂      ∂
+                                                ∂x1        ∂y1    ∂z1
+
+                                         D=      ∂          ∂      ∂
+                                                ∂x2        ∂y2    ∂z2
+                                                 ∂          ∂      ∂
+                                                ∂x3        ∂y3    ∂z3
+
+Then
+                                 1
+                   Ψ0 (F ) =        D 4 (F (x1 , y1 , z1 )F (x2 , y2 , z2 )F (x3 , y3, z3 )) .
+                               5184
+Alternatively, one can find an explicit formula in Salmon’s book [Sal1879, p. 264], where
+he gives also a formula for the contravariant Ψ−4 (F ). We do not reproduce it here, but in
+Section 7.2 we will give the result for the special curves we will have to deal with.
+   (The covariants Ψj do not generate the C-algebra of covariants, but they are all we will
+need. In fact, they do generate the specialization of the algebra of covariants for each ternary
+quartic GL3 (C)-equivalent to x3 y + y 3 z + z 3 x.)
+   Let F0 = x3 y + y 3z + z 3 x be the polynomial defining X. Each g ∈ G ⊂ GL3 (C) must act
+on F0 as multiplication by a scalar, so there is a character χ : G → C× describing the action
+of G on F0 . But G is simple and nonabelian, so χ is trivial. In other words, F0 belongs to
+C[x, y, z]G , the ring of G-invariants. For j ∈ {0, 4, 6, 14, 21}, let Φj = Ψj (F0 ) ∈ C[x, y, z]j .
+Since Ψj is a covariant, Φj ∈ C[x, y, z]G . In fact, the Φj generate C[x, y, z]G as a C-algebra.
+Moreover, Φ0 = 1, the polynomials Φ4 , Φ6 , Φ14 are algebraically independent, and Φ221 can
+                                                      17
+be expressed as a polynomial in the others. We give this relation modulo Φ4 , since this is
+all we need:
+(7.1)                          Φ221 − Φ314 ≡ −1728 Φ0 Φ76      (mod Φ4 ).
+Lemma 7.2. If F = F0g for some g ∈ GL3 (C), then
+                     Ψ21 (F )2 − Ψ14 (F )3 ≡ −1728 Ψ0(F )Ψ6 (F )7       (mod F ).
+Proof. Write g = tg ′ with t ∈ C× and g ′ ∈ SL3 (C), and apply it to (7.1). The result follows,
+since the two sides of (7.2) are covariants of the same degree 24 and order 42. (This was the
+point of including the trivial factor Φ0 in (7.2).)                                          
+Lemma 7.3. Let F = F0g for some g ∈ GL3 (C). No two of Ψ6 (F ), Ψ14 (F ), Ψ21 (F ) vanish
+simultaneously at a point of the curve F = 0 in P2C .
+Proof. We may assume F = F0 , in which case the result is in [Kle1879, §6]: see [Elkies1999,
+p. 66].                                                                                   
+7.2. Equations for XE (7) and XE− (7). In order to use Corollary 6.2, we need explicit
+equations for the 26 curves described there. Halberstadt and Kraus [Halberstadt-Kraus2003]
+find an explicit equation for XE (7) in terms of the coefficients of E. If E is given as Y 2 =
+X 3 + a X + b, the equation is
+(7.4) a x4 +7b x3 z+3 x2 y 2 −3a2 x2 z 2 −6b xyz 2 −5ab xz 3 +2 y 3z+3a y 2 z 2 +2a2 yz 3 −4b2 z 4 = 0 .
+  The following result will let us deduce an equation for XE− (7) from (7.4), using very little
+additional work.
+Proposition 7.5. If F is a ternary quartic form describing XM ′ (7), then Ψ−4 (F ) is a ternary
+                         −
+quartic form describing XM ′ (7).
+
+
+Proof. Given M ′ , the curve XM ′ (7) can be constructed as follows. Fix a symplectic isomor-
+                 ∧
+                 ≃
+phism φ : MQ → MQ′ . Then σ 7→ ξσ = φ−1 ◦ σφ defines a 1-cocycle on GQ with values in
+Aut∧ (MQ ). We have
+                      Aut∧ (MQ ) ։ G = Aut(XQ ) ֒→ GL3 (Q),
+in which the last homomorphism is the 3-dimensional representation (V, ρ) of [Elkies1999,
+p. 54] giving the action of Aut(XQ ) on the dual of the space of holomorphic differentials
+on X, and giving also the automorphisms of P2Q that restrict to the automorphisms of the
+canonically embedded curve XQ . Under this composition, ξ maps to a cocycle ξ¯: GQ →
+GL3 (Q), which can be written as σ 7→ g −1 · σg for some g ∈ GL3 (Q), since H1 (GQ , GL3 ) = 0.
+If ∼ denotes “equal up to scalar multiple”, then
+                            −1 
+                                  = ( σF0 )( g ) = F0ξ̄σ g ∼ F0g
+                                            σ −1       −1 −1     −1
+                         σ
+                            F0g
+                                                          −1
+since ξ¯σ−1 induces an automorphism of XQ . Thus F0g = 0 defines a twist X ′ of X in P2 . The
+cocycle GQ → Aut(XQ ) defining this twist (obtained from the isomorphism XQ → XQ′ given
+                                                   18
+by g) is the same as the cocycle defining XM ′ (7), so X ′ ≃ XM ′ (7). After replacing F by F b
+                                                                                    −1
+for some b ∈ GL3 (Q) (which we may do, without loss of generality), we have F0g ∼ F .
+   The element ι = ( 10 −10
+                            ) defines an anti-symplectic automorphism of M over Q. A
+calculation based on the explicit description of (V, ρ) in [Elkies1999, p. 54] shows that
+Aut MQ → GL3 (Q) is equivariant with respect to conjugation by ι on the left and g 7→ g −t
+on the right. In particular, the image of G in SL3 (Q) is stable under inverse transpose, so
+the contravariance of Ψ−4 implies that Ψ−4 (F0 ) is a G-invariant ternary quartic form. All
+such are multiples of F0 [Elkies1999, pp.55–56], so Ψ−4 (F0 ) ∼ F0 .
+   Now we repeat the first paragraph of this proof using the anti-symplectic isomorphism
+                                            −
+φι : MQ → MQ′ in place of φ, to construct XM   ′ (7). The image of the cocycle
+
+
+
+                                          σ 7→ (φι)−1 ◦ σ(φι) = ι−1 ξσ ι
+
+under Aut MQ → GL3 (Q) is
+                                                                  −t
+                                    σ 7→ ξ¯σ−t = g −1 · σg              = h−1 · σh,
+                                              −
+where h := g −t , so the polynomial defining XM ′ (7) is
+
+
+                                                              t                 −1
+                                                  ∼ Ψ−4 (F0h ) = Ψ−4 (F0g ) ∼ Ψ−4 (F ).
+                         −1                  −1
+                   F0h        ∼ Ψ−4 (F0 )h
+
+                                                                                                        
+
+   A formula for Ψ−4 is given in [Sal1879, p. 264]. Applying it to (7.4), we obtain an equation
+for XE− (7):
+
+(7.6) −a2 x4 + a(3a3 + 19b2 ) y 4 + 3 z 4 + 6a2 y 2z 2 + 6a z 2 x2 − 6(a3 + 6b2 ) x2 y 2 − 12ab y 2zx
+               + 18b z 2 xy + 2ab x3 y − 12b x3 z − 2(4a3 + 21b2 ) y 3z + 2a2 b y 3 x − 8a z 3 y = 0
+
+7.3. Equations for the degree-168 morphism to P1 . Recall that each twist X ′ of X =
+X(7) comes equipped with a canonical degree-168 morphism to P1 = X(1) that is invariant
+under Aut(XQ′ ). The morphism with these properties is unique if we require that its branch
+points (with ramification indices 2, 3, 7) be at 1728, 0, ∞, respectively, on P1 .
+
+Lemma 7.7. Let X ′ be a twist of X defined by a ternary quartic form F . Then the canonical
+morphism is
+
+                                   π′ :             X ′ −→ P1
+                                                                 Ψ14 (F )3
+                                          (x : y : z) 7−→                      ,
+                                                              Ψ0 (F ) Ψ6 (F )7
+
+where as usual we use the parameter j on P1 .
+
+Proof. We need only to check this for X, in which case it is (2.13) in [Elkies1999].                    
+                                                         19
+7.4. The local test. Let X ′ be a twist of the Klein quartic X. Then X ′ is given by an
+equation F = 0, where F = F0g ∈ Q[x, y, z]4 for some g ∈ GL3 (Q). By Lemma 7.7, there is
+a morphism π ′ : X ′ → P1 , given by
+                                                      Ψ14 (F )3
+                                  (x : y : z) 7→                   .
+                                                   Ψ0 (F ) Ψ6(F )7
+   We showed in Section 3.4 that every (a, b, c) ∈ S(Z) maps to a point in π ′ (X ′ (Q)) for some
+twist X ′ whose class in H1 (GQ , G) is unramified outside 2, 3, and 7. Now suppose we have
+such a twist. Then π ′ extends to a morphism XR′ → P1R , so π ′ (X ′ (Q)) = π ′ (X ′ (R)) ⊆ P1R (R),
+and the corresponding solutions to x2 + y 3 = z 7 will have gcd(x, y, z) divisible by at most
+primes in {2, 3, 7}. For each of the remaining primes p = 2, 3, 7, we search for residue classes
+that give rise to p-primitive solutions. (We say that (x, y, z) in Z3 or Z3p is p-primitive if at
+least one of x, y, z is not divisible by p.)
+   Let us define a residue class in P2 (Qp ) to be a subset that, after permuting the homo-
+geneous coordinates, equals {(1 : a + pk u : b + pl v) : u, v ∈ Zp } for some fixed a, b ∈ Zp
+and integers k, l ≥ 0. We have an initial partition of P2 (Qp ) into the three residue classes
+(1 : Zp : Zp ), (pZp : 1 : Zp ) and (pZp : pZp : 1). For each given residue class, we rewrite F in
+terms of u and v. If this expression has the form pe (α + pF1 (u, v)) with α ∈ Z×     p and e ∈ Z,
+                                            ′
+then the residue class does not meet X (Qp ), so we can discard it. Otherwise, we compute
+the covariants Ψ6 (F ), Ψ14 (F ) and Ψ21 (F ) in terms of u and v. The minimum of the p-adic
+valuations of the coefficients gives us a lower bound for the p-adic valuation of the covariants
+on our residue class, and if the constant term has the unique coefficient with minimal val-
+uation, we even know the p-adic valuation of the corresponding covariant exactly. Let W6 ,
+W14 and W21 be these lower bounds for vp (Ψ6 (F )), vp (Ψ14 (F )) and vp (Ψ21 (F )), respectively,
+and let w = vp (1728Ψ0(F )).
+   One of the solutions to a2 + b3 = c7 corresponding to the point (x : y : z) ∈ X ′ (Q) is given
+by
+  a = (1728Ψ0(F ))3 Ψ21 (F ) ,     b = −(1728Ψ0 (F ))2 Ψ14 (F ) ,         c = −1728Ψ0 (F )Ψ6 (F ) ,
+evaluated at (x, y, z). This can be scaled to a p-primitive solution if and only if
+                             min{vp (a)/21, vp (b)/14, vp (c)/6} ∈ Z .
+So we define
+          w6 = (W6 + 3w)/21 ,         w14 = (W14 + 2w)/14 ,            w21 = (W21 + w)/6 .
+If min{w6 , w14 , w21 } is an integer and the minimum comes from a covariant whose valuation
+on the residue class is known exactly, then there will be a p-adic point on X ′ giving rise to a
+p-primitive solution (at least if the given residue class contains a p-adic point on X ′ , which
+we can check using Hensel’s Lemma). In the same way, if min{w6 , w14 , w21 } is not an integer
+and the minimum comes from a covariant whose valuation on the residue class is known
+exactly, then no p-adic point in this residue class can produce a p-primitive solution. If the
+minimum comes only from a lower bound, we split the residue class into p (or p2 ) subclasses
+                                                   20
+and repeat. In this way, we can decide fairly quickly whether any given twist gives rise to
+primitive solutions everywhere locally. If so, we say that “X ′ passes the local test.”
+  This algorithm terminates, since by Lemma 7.3 no two of Ψ6 (F ), Ψ14 (F ) and Ψ21 (F )
+vanish simultaneously on X ′ (Qp ).
+7.5. The list. Putting together the twists coming from the reducible and irreducible cases,
+respectively, we obtained an initial finite list of twists. We then ran the local test on each of
+the curves. There are exactly 10 twists that pass the local test. They are given in Table 2.
+We have put some effort into simplifying these equations (trying to minimize the invariant
+Ψ0 (F ) and to reduce the size of the coefficients); the equations given are usually not those
+coming from formula (7.4) directly.
+
+
+  C1 : 6x3 y + y 3 z + z 3 x = 0
+  C2 : 3x3 y + y 3 z + 2z 3 x = 0
+  C3 : 3x3 y + 2y 3z + z 3 x = 0
+  C4 : 7x3 z + 3x2 y 2 − 3xyz 2 + y 3 z − z 4 = 0
+  C5 : −2x3 y − 2x3 z + 6x2 yz + 3xy 3 − 9xy 2 z + 3xyz 2 − xz 3 + 3y 3z − yz 3 = 0
+  C6 : x4 + 2x3 y + 3x2 y 2 + 2xy 3 + 18xyz 2 + 9y 2z 2 − 9z 4 = 0
+  C7 : −3x4 − 6x3 z + 6x2 y 2 − 6x2 yz + 15x2 z 2 − 4xy 3 − 6xyz 2 − 4xz 3 + 6y 2z 2 − 6yz 3 = 0
+  C8 : 2x4 − x3 y − 12x2 y 2 + 3x2 z 2 − 5xy 3 − 6xy 2 z + 2xz 3 − 2y 4 + 6y 3z + 3y 2z 2 + 2yz 3 = 0
+  C9 : 2x4 + 4x3 y − 4x3 z − 3x2 y 2 − 6x2 yz + 6x2 z 2 − xy 3 − 6xyz 2 − 2y 4 + 2y 3 z
+           − 3y 2 z 2 + 6yz 3 = 0
+ C10 : x3 y − x3 z + 3x2 z 2 + 3xy 2z + 3xyz 2 + 3xz 3 − y 4 + y 3z + 3y 2 z 2 − 12yz 3 + 3z 4 = 0
+
+              Table 2. Equations for the plane quartic curves C1 through C10 .
+
+   Curves C1 , C2 , and C3 come from the case that E[7] is reducible. As it happens, they all
+correspond to twists that involve only the cyclic subgroup of order 7. Curves C4 through C10
+are of the form XE (7) for E = 27A1, 96A1, 288A1, 864A1, 864B1, 864C1, 54A2, respectively.
+(The curve C10 is also XE− (7) for E = 54A1, because 54A1 and 54A2 are 3-isogenous, and 3
+is not a square modulo 7.)
+7.6. Local conditions for C5 . If P1 , P2 ∈ P2 (Qp ) then we write “P1 ≡ P2 (mod p)” to
+mean that the images of P1 and P2 under the reduction map P2 (Qp ) = P2 (Zp ) → P2 (Fp ) are
+equal. Define
+            C5 (Q2 )subset := { P ∈ C5 (Q2 ) : P ≡ (1 : 0 : 0) or (1 : 1 : 1)   (mod 2) }
+            C5 (Q3 )subset := { P ∈ C5 (Q3 ) : P ≡ (0 : 1 : 0)   (mod 3) }
+             C5 (Q)subset := { P ∈ C5 (Q) : P ∈ C5 (Q2 )subset and P ∈ C5 (Q3 )subset }.
+                                                    21
+Lemma 7.8. Let p be 2 or 3. If P ∈ C5 (Qp ) and the image of P in P1 (Qp ) is in j(S(Zp )),
+then P ∈ C5 (Qp )subset .
+Proof. We do the computations for the “local test”, keeping track of the residue classes that
+are not excluded. For example, when p = 3, the reduction mod 3 of the equation F5 = 0
+of C5 is
+                       (x − z)(x2 y + y 2z + xyz + xz 2 + yz 2 ) = 0 ,
+which describes a line and a cuspidal cubic intersecting at the cusp (0 : 1 : 0). The invariant
+Ψ0 (F5 ) equals −24, so in the notation of Section 7.4, w = 4. For all residue classes corre-
+sponding to smooth points on the reduction, we find that the minimum of w6 , w14 and w21 is
+determined and non-integral. So (0 : 1 : 0) is the only residue class that may contain points
+leading to 3-primitive solutions. The argument for p = 2 is similar.                         
+  Because of Lemma 7.8, it will suffice to determine C5 (Q)subset instead of C5 (Q). Eventually
+we will prove C5 (Q)subset = ∅.
+
+                      8. Known rational points on the 10 curves
+   We can forget most of the paper up to now. All we need to keep are the equations for C1
+through C10 , the local conditions for C5 given by Lemma 7.8, and the formula in Lemma 7.7.
+(The latter is needed only to recover the solutions to x2 + y 3 = z 7 from the relevant rational
+points on the 10 curves).
+   Table 3 gives the rank of the Mordell-Weil group of the Jacobian of each curve (these
+numbers will be proved correct in Section 11), and lists rational points on C1 through C10
+discovered by a naı̈ve search. We will prove that the list is complete for each curve except
+possibly C5 .4 For C5 , we will prove instead that C5 (Q)subset = ∅, which will suffice for our
+purposes. If we prove all this, then Theorem 1.1 will be proved.
+   For each rational point, Table 3 next gives the corresponding value of j : Ci → P1 calculated
+by Lemma 7.7. If j ∈  / {1728, 0, ∞}, it gives also the Cremona label for an elliptic curve of
+that j-invariant, and all primitive solutions (a, b, c) to a2 + b3 = c7 with 1728 b3/c7 = j. If
+the conductor N is out of the range of Cremona’s database, we use N∗ as a substitute for
+the Cremona label.
+Remark 8.1. The last two points on C6 are interchanged by the involution z 7→ −z of C6 ,
+and hence map to the same j-invariant.
+
+      9. Overview of the strategy for determining the rational points
+  In order to determine the sets of rational points on C1 , . . . , C10 , we will need to determine
+the Mordell-Weil ranks of their corresponding Jacobians J1 , . . . , J10 over Q. The curves C1 ,
+C2 and C3 are µ7 -twists of X rather than more general twists. So there are more methods
+available for dealing with them than for the other curves.
+  4Almost certainly the list is complete for C
+                                             5 too, since Noam Elkies ran an algorithm based on his
+paper [ElkiesANTS4] to prove that there are no additional points (x : y : z) with integer homogeneous
+coordinates satisfying |x|, |y|, |z| ≤ 107 .
+                                                 22
+       Rank       Points            j-invariant              Cremona    Primitive solutions
+ C1     1       (1 : 0 : 0)                ∞                                (±1, −1, 0)
+                (0 : 1 : 0)                ∞                                (±1, −1, 0)
+                (0 : 0 : 1)                ∞                                (±1, −1, 0)
+                                 3           3 −2 −1      −7
+               (1 : −1 : 2) −13 221173 2 3 43                 258F2             —
+ C2     1       (1 : 0 : 0)                ∞                                (±1, −1, 0)
+                (0 : 1 : 0)                ∞                                (±1, −1, 0)
+                (0 : 0 : 1)                ∞                                (±1, −1, 0)
+                                         4 −1 −1
+               (1 : 1 : −1)         −7 2 3                    294A1             —
+                                 3         3 −2 −1        −7
+              (1 : −2 : −1) −13 26293 2 3 113                 678D2             —
+ C3     1       (1 : 0 : 0)                ∞                                (±1, −1, 0)
+                (0 : 1 : 0)                ∞                                (±1, −1, 0)
+                (0 : 0 : 1)                ∞                                (±1, −1, 0)
+               (1 : 1 : −1)  −73 4464732−1 3−1 29−7           174B2             —
+ C4     2       (1 : 0 : 0)                 0                                (±1, 0, 1)
+                (0 : 1 : 0)                 0                                (±1, 0, 1)
+                                          15       3
+                (0 : 1 : 1)          −2 3 · 5                  27A2             —
+ C5     3       (1 : 0 : 0)           26 133 3−1               96A2             —
+                                       3      3 −4
+                (0 : 1 : 0)           2 23 3                   96A4             —
+                                       3      3 −1
+                (0 : 0 : 1)           2 97 3                   96A3             —
+                                        6 3 −2
+                (1 : 1 : 1)            27 3                    96A1             —
+                                            6 3
+ C6     2       (0 : 1 : 0)              23                                  ±(0, 1, 1)
+                                            6 3
+               (1 : −1 : 0)              23                                  ±(0, 1, 1)
+                                  9 3    3       3    −7
+                (0 : 1 : 1)     2 3 11 421 113                32544*  (±15312283, 9262, 113)
+               (0 : 1 : −1)     29 33 113 4213 113−7          32544*  (±15312283, 9262, 113)
+ C7     2       (0 : 1 : 0)            −23 33                 864A1             —
+                                 9 3 3         3 −7   −7
+                (0 : 0 : 1)    2 3 7 101 5 13                 56160*   (±2213459, 1414, 65)
+                                   6 3     3       3   −7
+                (0 : 1 : 1)   −2 3 13 5867 17                14688D1 (±21063928, −76271, 17)
+                                              9 3
+ C8     2       (0 : 0 : 1)            −2 3                   864B1         (±3, −2, 1)
+                              3          3         3    −7
+               (2 : −1 : 0)  2 3 · 547 66029 977             844128*            —
+                                             9
+ C9     2       (0 : 0 : 1)               2 3                 864C1             —
+                              3 9      3         3 −7    −7
+                (1 : 1 : 0)  2 3 163 8779 7 79               477792*            —
+                                         3      3 −1
+ C10    2       (1 : 0 : 0)         −3 17 2                    54A3        (±71, −17, 2)
+                (1 : 1 : 0)         −3 · 733 2−9               54A2             —
+                    Table 3. Known rational points on C1 through C10 .
+
+
+  First observe that each of these three curves is a Galois cover of P1 , over Q, with Galois
+group µ7 ; in fact, C1 , C2 and C3 are birational to the (singular) projective plane curves
+
+        u7 = v 2 (6 v − w)w 4 ,   u7 = v 2 (18 v − w)w 4   and u7 = v 2 (12 v − w)w 4 ,
+                                              23
+respectively. To see this, rescale and/or permute the variables to obtain an equation of the
+form x3 y + y 3z + A z 3 x = 0 (with A = 6, 18, 12); then (u : v : w) = (xyz : −z 3 : x2 y) does
+the transformation.
+    The curves (and their Jacobians) are therefore amenable to the techniques developed by
+Schaefer [Schaefer1998] and Poonen and Schaefer [Poonen-Schaefer1997]: the Jacobians have
+complex multiplication by Z[ζ]. We will do a 1 − ζ descent for each of these Jacobians.
+    For C4 , . . . , C10 , we need to develop a new method of determining the Mordell-Weil ranks
+of their Jacobians over Q. We do this in Section 11.
+    For the curves C1 , . . . , C10 other than C5 , the rank of Ji (Q) is less than 3, the dimension of
+Ji . In each case, a combination of Chabauty and Mordell-Weil sieve computations determines
+the set of rational points (see Section 12). For C5 , the rank of J5 (Q) is 3, so we will deal
+with that curve separately in Section 13.1.
+
+                            10. (1 − ζ)-descent on J1 , J2 , and J3
+  We now do a descent using the endomorphism 1 − ζ of Ji over L := Q(ζ) for i = 1, 2, 3.
+See [Schaefer1998] and [Poonen-Schaefer1997] for details. The descent map is given by the
+function f = v/w and takes values in
+                                              √
+                                              7
+       H = L({2, 3, 7}, 7) = {θ ∈ L× /L×7 : L( θ)/L is unramified outside {2,3,7}} .
+The group H is an F7 -vector space of dimension 7.
+  For each prime p of L, let ρp be the composition H ֒→ L× /L×7 → L×            ×7
+                                                                            p /Lp . Let π =
+1 − ζ ∈ L. Let q be a prime of L above 2. For each i, we found that
+                                                            
+                −1        Ji (Lπ )        −1        Ji (Lq)
+               ρπ f                    ∩ ρq f                    = h2, 3i ⊂ H;
+                      (1 − ζ)Ji(Lπ )            (1 − ζ)Ji (Lq)
+in particular the intersection is of dimension 2. In addition, we found two independent
+elements in Ji (L)/(1 − ζ)Ji(L). Therefore, the Selmer group S 1−ζ (L, Ji ) and Ji (L)/(1 −
+ζ)Ji(L) are of dimension 2. Since dim Ji (L)[1 − ζ] = 1, the rank of Ji (Q) is 1.
+   For i = 1, 2, 3 and p ∈ {π, q}, we found a basis of Ji (Lp)/(1 − ζ)Ji(Lp) consisting of divisor
+classes of the form [P − ∞] or [P + P − 2∞] where ∞ is the single point with w = 0 and P
+is defined over Lp, or P is defined over a quadratic extension of Lp and P is its conjugate.
+In Table 4 we describe each such divisor class by giving the value of v/w at P . The last
+column of Table 4 does the same for Ji (L)/(1 − ζ)Ji(L).
+   For each i, we have Ji [1 − ζ] ⊆ Ji (Q) and dim J(Q)[7] = 1, so dim Ji (Q)/7Ji (Q) = 2. We
+will use this in Section 11.2.
+
+10.1. Side application to twists of the degree-7 Fermat curve. Our calculation of
+C1 (Q), C2 (Q), C3 (Q) will have consequences for rational points on certain curves c1 X 7 +
+c2 Y 7 + c3 Z 7 = 0 in P2 . These are not needed for the proof of our main theorem, but are of
+interest in their own right.
+   A rational point on a curve
+                                       u7 = v 2 (Av − w)w 4 ,
+                                                  24
+                                 Ji (Lπ )                Ji (Lq)       Ji (L)
+            i
+                            (1 − ζ)Ji(Lπ )           (1 − ζ)Ji(Lq) (1 − ζ)Ji(L)
+            1                        0                   −1/2             0
+                                  3       4   5
+                       (3 + 6π + 2π )/6                                −1/2
+                              3        4    5   5
+                     (3 + π + 5π + π )/6
+                      π 7 (1 + 5π 6 + 5π 7 )/65
+            2                     1/27                    1/27            0
+                            7           7
+                          π (1 + 3π )/864                              1/27
+                                     4
+                            (4 + π )/864
+                        (4 + π 4 + π 5 )/864
+            3                        0                     1/8            0
+                            7         6
+                         √π (1 + π )/1944 √                             1/8
+                                3      4
+                   (3 + 3π + π / 3)/1944
+                (2 + π 3/2 + π 5/2 + 3π 3 + π 7/2
+                  − π 4 + π 9/2 + 2π 5 + 2π 6 )/1944
+              Table 4. Data needed for (1 − ζ)-descents for C1 , C2 and C3 .
+
+
+can be represented by u, v, w ∈ Z with gcd(v, w) = 1. Then gcd(v, Av − w) = 1; therefore
+there exist integers a, b, r, s, t such that
+                             v = r7 ,    Av − w = as7 ,      w = bt7 ,
+and ab4 is a 7th power, and a and b are divisible only by primes dividing A. Therefore, we
+obtain a point on the covering curve
+                                      A r 7 − a s7 − b t7 = 0 .
+Conversely, a rational point on this curve maps down to a rational point on the original
+curve.
+   Section 12 determines the rational points on u7 = v 2 (Av − w)w 4 for A = 6, 12, 18. As-
+suming this, we can list the rational points on the covering curves arising from these. After
+simplifying their equations (by multiplying by constants, and making the coefficients 7th -
+power free), and eliminating those that over some Qp fail to have points, we obtain the
+following:
+Corollary 10.1. The following curves in P2Q have Qp -points for all p ≤ ∞, but the only
+rational points are the ones with X, Y, Z ∈ {−1, 0, 1}:
+          X 7 + Y 7 + 12 Z 7 = 0 ,    X 7 + Y 7 + 18 Z 7 = 0 ,    X 7 + Y 7 + 48 Z 7 = 0 ,
+        X 7 + Y 7 + 144 Z 7 = 0 ,    X 7 + Y 7 + 162 Z 7 = 0 ,    X 7 + Y 7 + 324 Z 7 = 0 ,
+         X7 + 2 Y 7 + 3 Z7 = 0 ,     X 7 + 2 Y 7 + 81 Z 7 = 0 ,   X7 + 3 Y 7 + 4 Z7 = 0 ,
+        X 7 + 3 Y 7 + 16 Z 7 = 0 ,    X7 + 4 Y 7 + 9 Z7 = 0 ,     X 7 + 9 Y 7 + 16 Z 7 = 0 ,
+                                     X 7 + 16 Y 7 + 81 Z 7 = 0.
+                                                 25
+                      11. 2-descent on Jacobians of twists of X
+11.1. Theory. To compute the ranks of J4 (Q), . . . , J10 (Q), we will use the 2-descent de-
+scribed in this section. It is similar to the descent described in [Poonen-Schaefer1997].
+   The Klein quartic X has 24 Weierstrass points, each of weight 1 (ordinary flexes). These
+can be partitioned into eight sets of three with the following property. Choose one set of three
+and denote the points W1 , W2 , W3 . The tangent line at Wi intersects X with multiplicity 3
+at Wi and multiplicity 1 at Wi+1 (with subscripts considered modulo 3). We will call such a
+set of three Weierstrass points a triangle. The set of eight triangles is a Galois-stable set.
+   By abuse of notation, let Ti denote both a triangle and the effective degree-3 divisor that
+is the sum of its points. For 1 ≤ i < j ≤ 8, we can find a function with divisor 2Ti − 2Tj
+whose numerator and denominator are cubics. Therefore the divisor class [Ti − Tj ] is killed
+by 2. Since the points in each Ti are not collinear, an application of the Riemann-Roch
+theorem shows that Ti − Tj is not principal. Thus the order of [Ti − Tj ] is exactly two.
+
+Proposition 11.1. The [Ti − T1 ] for i = 1, . . . , 8 sum to 0, and any six of them with i 6= 1
+form a basis for Jac(X)[2]. Let Q1 = [ 8i=1 ai Ti ] and QP2 = [ 8i=1 bi Ti ] with ai = bi = 0.
+                                      P                        P                 P    P
+                                                           8
+Let e2 be the 2-Weil pairing. Then e2 (Q1 , Q2 ) = (−1) i=1 ai bi .
+
+Proof. Over some finite and totally ramified extension K of Q7 , the Klein quartic X acquires
+good reduction and has all its automorphisms defined. So if OK is the valuation ring of K,
+then X extends to a smooth curve over OK . The special fiber Xs is the hyperelliptic curve
+branched above the eight points in P1 (F7 ). Then Aut(X) injects into Aut(Xs ) and injects
+into the automorphism group of P1F7 , which is isomorphic to PGL2 (F7 ) (see [Elkies1999]). At
+a Weierstrass point Wi of X, there is a regular differential vanishing to order 3 (it corresponds
+to the tangent line in the canonical model). One can scale the differential by an element of K
+so that it extends to a regular differential on the model X over OK , and reduces to a nonzero
+differential on Xs , vanishing at least to order 3 at the reduction of the point. This means
+that Weierstrass points of X reduce to Weierstrass points of the hyperelliptic curve Xs .
+   The differential in characteristic 0 has divisor 3Wi + Wi+1 , where Wi , Wi+1 are two points
+in a triangle. The reduction must be 3Wi′ +Wi+1   ′
+                                                      where Wi′ , Wi+1
+                                                                    ′
+                                                                       are Weierstrass points. But
+                            ′
+the only possibility for Wi+1 that makes this the divisor of a differential on the hyperelliptic
+             ′
+curve is Wi+1   = Wi′ . Repeating this argument shows that the points of a triangle all reduce
+to the same Weierstrass point on Xs . Applying the automorphisms, and using the fact that
+PSL2 (F7 ) acts transitively on the set P1 (F7 ) of hyperelliptic branch points for Xs , shows that
+the eight triangles reduce to the eight Weierstrass points on Xs . Now the 2-torsion point
+[Ti − Tj ] reduces to the 2-torsion point [3Pi − 3Pj ] = [Pi − Pj ] where Pi (for example) is the
+reduction of any point in Ti . The map Jac(X)[2] → Jac(Xs )[2] is an isomorphism of groups
+preserving the Weil pairing, because X has good reduction.
+   The desired statements for X and the Ti now follow from their analogues for the genus-3
+hyperelliptic curve Xs and its Weierstrass points, which are well known (cf. Propositions 6.2
+and 7.1 in [Poonen-Schaefer1997]).                                                               
+                                                26
+   This correspondence between X with its Ti and a genus-3 hyperelliptic curve with its
+Weierstrass points will enable us to translate many of the results in [Poonen-Schaefer1997]
+to our situation. That article involves descent on cyclic covers of the projective line us-
+ing ramification points of the covering. For hyperelliptic curves, these are the Weierstrass
+points. In this section, for brevity, we will sometimes cite an equivalent proof in [Poonen-
+Schaefer1997] which is easily translated. First we need to find a function corresponding to
+the x − T map in [Poonen-Schaefer1997].
+   Let C be a twist of X with a rational point P ∈ C(Q). In addition, assume that for each
+triangle Ti , there is a cubic whose intersection divisor with C is 2Ti + 3P + Ri where Ri is an
+effective divisor of degree 3, defined over Q and supported on three non-collinear Q-points.
+A calculation shows that this holds for C4 , . . . , C10 . Let J be the Jacobian of C.
+   Choose functions f1 , . . . , f8 with div(fi ) = 2Ti + 3P + Ri − 3Ω (where Ω is a canonical
+divisor defined over Q) and such that if σ ∈ GQ , and σ Ti = Tj then σfi = fj . Then
+div(fi /fj ) = 2Ti − 2Tj + Ri − Rj . Since 2Ti − 2Tj is principal, so is Ri − Rj . The Ri are
+effective, of degree 3, and are supported on three non-collinear points. The Riemann-Roch
+theorem then implies that Ri = Rj . Let R be the common value of the Ri .
+   Let T = {Ti }8i=1 . Let K be Q or Qp (we allow p = ∞, in which case Qp := R). Let AK be
+the algebra of maps from T to K. The group GK acts on AK through its action on T and K.
+Let AK be the algebra of GK -invariants in AK ; it is isomorphic as K-algebra to a product
+of finite extensions of K corresponding to the GK -orbits of T . We call D a good divisor if
+it is a divisor of degree 0, defined over K, whose support is disjoint from the support of
+div(fi ) for every i. If D is a good divisor, then we define f (D) = (Ti 7→ fi (D)). Then f is
+a homomorphism from the group of good divisors to A×          K . The divisor of each fi is the sum
+of a double and a Q-rational divisor. So by Weil reciprocity, f sends good principal divisors
+to A×2     ×
+      K K . Since C has a rational point, every element of J(K) is represented by a good
+divisor. Therefore, f induces a well-defined homomorphism f : J(K)/2J(K) → A×                 ×2 ×
+                                                                                         K /AK K .
+In order to determine the kernel and image of this map, it will help to find a cohomological
+interpretation of it.
+                                    ×
+   Let µT2 be the 2-torsion in AK ; it equals the GK -module of maps from T to µ2 . Let µT2 /µ2
+be the quotient by the set of constant maps. Let q be the canonical surjection µT2 → µT2 /µ2 .
+Define ǫ : J[2] → µT2 /µ2 by ǫ(Q) = (Ti 7→ e2 (Q, [Ti −T1 ])). Let N : µT2 → µ2 be the restriction
+of the norm map AK → K. A straightforward computation involving Proposition 11.1 shows
+that the following is a commutative diagram of GK -modules with exact rows and columns.
+
+                                                  µ2
+
+                                                   
+                                                               N   / µ2
+                                                  µT2                     /1
+
+                                                           q
+                                                       
+                                                           T
+                             0      / J[2]   ǫ   / µ2          N   / µ2   /1
+                                                  µ2
+                                                 27
+  We now compute the long exact sequences of GK -cohomology for the rows and columns.
+                ×                ×
+Since H1 (GK , K ) and H1 (GK , AK ) are both 0, we have H1 (GK , µ2 ) ≃ K × /K ×2 and H1 (GK , µT2 ) ≃
+A×    ×2
+  K /AK by Kummer isomorphisms. We obtain the following diagram with exact rows and
+columns.
+                         J(K)/2J(K) W                                           K × /K ×2
+                                       @@       WWWWW
+                                         @@            WWWWW f
+                                           @@                 WWWWW
+                                                                   WWWWW
+                                             @@                         WWWWW
+                                                                             W+       
+                                                                                                N
+                                               @@ ′
+                                                 @@δ
+                                                   @@                           A×
+                                                                                 K /A     ×2
+                                                                                          K
+                                                                                                    / K × /K ×2
+                                                     @@
+                                                       @@
+                                                         @@                             q′
+                                                           @@                       
+              µT        N       / µ2         δ      / H1 (G              ǫ               µT     N
+     H0 (GK , µ22 )                                         K , J[2])
+                                                                             / H1 (G
+                                                                                     K , µ2 )
+                                                                                          2         / K × /K ×2
+
+
+                                                                                       
+                                                                                Br(K)[2]
+                                                                         1
+The map q ′ is the composition of the Kummer isomorphism of A×   ×2              T
+                                                             K /AK with H (GK , µ2 ) and
+the map induced by q. The map δ ′ comes from taking cohomology of
+                                                                2
+                                       0 −→ J[2] −→ J −→ J −→ 0.
+Proposition 11.2. The maps ǫ ◦ δ ′ and q ′ ◦ f are the same as maps from J(K)/2J(K) to
+H1 (GK , µT2 /µ2) (i.e., the diagram above commutes).
+Proof. Pick an element of J(K). Since C has a rational point, that element is represented
+by a good divisor D. Pick D ′ ∈ Div CK whose support is disjoint from the supports of the
+div(fi ) and such that 2[D ′ ] = [D]. Then δ ′ ([D]) is the class of the cocycle σ 7→ [σD ′ − D ′ ] in
+H1 (GK , J[2]). So ǫ ◦ δ ′ ([D]) is the class of the cocycle ξσ := (Ti 7→ e2 ([σD ′ − D ′ ], [Ti − T1 ]))
+in H1 (GK , µT2 /µ2 ). Let g be a function, defined over K(D ′ ), whose divisor is 2D ′ − D. Then
+div( σg/g) = 2(σD ′ − D ′ ). We also have div(fi /f1 ) = 2(Ti − T1 ). By definition,
+                                                                (fi /f1 )( σD ′ − D ′ )
+                            e2 ([σD ′ − D ′ ], [Ti − T1 ]) =                            .
+                                                                 ( σg/g)(Ti − T1 )
+Therefore, we have
+                                                    (fi /f1 )( σD ′ − D ′ )
+                                                                           
+                                   ξσ =        Ti 7→ σ                        .
+                                                     ( g/g)(Ti − T1 )
+                                                                           p
+For each i, the divisor E = 2Ti − div(fi ) is the same. Let l = g(E). By Weil reciprocity,
+the square of ησ := f1 ( σD ′ − D ′ )( σg/g)(−T1) σl/l is 1, so ησ ∈ µ2 . Since ξσ is in the quotient
+µT2 /µ2 , we can multiply the expression for ξσ by the constant map (Ti 7→ ησ ) to get
+                                          fi ( σD ′ − D ′ ) σl/l
+                                                                
+                         ξσ = Ti 7→                                = (Ti 7→ σν/ν)
+                                               ( σg/g)(Ti)
+where ν = fi (D ′ )l/g(Ti). Now
+                                     fi (2D ′)   fi (div(g) + D)
+                            ν2 =               =                 = fi (D)
+                                   g(2Ti − E)        g(div(fi ))
+                                                          28
+by Weil reciprocity. It follows that ξσ is the image of f (D) under q ′ , since q ′ is the composition
+                                    1
+of the Kummer map A×         ×2              T
+                       K /AK → H (GK , µ2 ) and q, the map induced by the quotient map. 
+
+
+Proposition 11.3. We have δ ′ ([R − 3P ]) = δ(−1).
+
+Proof. By definition of R = R1 , 2T1 + 3P + R is the intersection of C with a cubic, and hence
+is linearly equivalent to the intersection of C with any other cubic, which we may take to
+be the union of the tangent lines at the three points of T1 . Thus [2T1 + 3P + R] = [4T1 ], so
+[R−3P ] = [2T1 −6P ]. Therefore δ ′ ([R−3P ]) is the class including the cocycle (σ 7→ [σ T1 −T1 ])
+in H1 (GK , J[2]). From Proposition 11.1, we have ǫ([σ T1 − T1 ]) = σM − M ∈ µT2 where M is
+the map sending T1 to 1 and Ti to −1 for i > 1. Also N(M) = −1. Hence, by definition,
+δ(−1) is the class of the cocycle (σ 7→ [σ T1 − T1 ]) in H1 (GK , J[2]).                        
+
+Proposition 11.4. The kernel of f : J(K)/2J(K) → A×         ×2 ×
+                                                        K /AK K is generated by [R − 3P ].
+This element is trivial in J(K)/2J(K) if and only if the GK -set T has an orbit of odd size.
+
+Proof. The maps δ ′ : J(K)/2J(K) → H1 (GK , J[2]) and q ′ : A×   ×2 ×   1       T
+                                                             K /AK K → H (GK , µ2 /µ2 ) are
+injective. By Propositions 11.2 and 11.3,
+
+         ker f = (δ ′ )−1 (ker ǫ) = (δ ′ )−1 (δ(µ2 )) = (δ ′ )−1 (δ ′ (h[R − 3P ]i)) = h[R − 3P ]i,
+
+  The proof of the second half of the proposition is essentially identical to the proof of
+[Poonen-Schaefer1997, Lemma 11.2].                                                      
+
+   To simplify notation, we let A = AQ and Ap = AQp . In Section 11.2.1 we will show how
+to compute the GQ -orbits of T ; it will turn out that for each of C4 , . . . , C10 , there is no orbit
+of odd size. Therefore, the kernel of the map f from J(Q)/2J(Q) to A× /A×2Q× has size 2
+and is generated by [R − 3P ].
+            Q
+   Let A ≃ Ai where the Ai are number fields. Let p be a prime of Q. Let a be an element
+of A× and ai its image in Ai . We say that a ∈ A× /A×2 is unramified at p if for each i,
+                        √
+the field extension Ai ( ai )/Ai is unramified at primes over p. Let S be a set of places of
+Q including 2, the infinite prime, and all primes at which J has bad reduction excluding
+the odd primes at which the Tamagawa number is odd. Let (A× /A×2Q× )S be the image in
+A× /A×2 Q× of the elements of A× /A×2 that are unramified outside of primes in S.
+   Denote by H the kernel of the norm from (A× /A×2 Q× )S to Q× /Q×2 .
+
+Proposition 11.5. The image of f : J(Q) → A× /A×2 Q× is contained in H.
+
+Proof. The divisor of f is the sum of the double of a divisor and a rational divisor. This
+was the condition necessary for the proofs of the essentially identical results in [Poonen-
+Schaefer1997, Props. 12.1 & 12.4]. The exclusion of primes with odd Tamagawa numbers is
+explained in [Schaefer-Stoll2004, Prop. 3.2].                                            
+                                                    29
+  Let p be a prime of Q, finite or infinite. We have the following commutative diagram
+                                                         f
+                                 J(Q)/ ker(f )                     /H
+
+                                                                           ρp
+                                                   fp
+                                                                       
+                                J(Qp )/ ker(fp )             / A× /A×2 Q×
+                                                               p           p    p
+
+
+where fp is the map f for the case K = Qp , and ρp is the composition H ֒→ A× /A×2 Q× →
+A×    ×2 ×
+  p /Ap Qp .
+   Recall that the 2-Selmer group Sel2 (J, Q) is the set of elements in H1 (GQ , J[2]), unramified
+outside S, which map to the image of J(Qp ) → H1 (GQp , J[2]) for all p ∈ S. Define the fake
+2-Selmer group to be
+
+                   Sel2fake (J, Q) = {θ ∈ H | ρp (θ) ∈ f (J(Qp )) for all p ∈ S} .
+                                            δ                      ǫ
+Proposition 11.6. The sequence µ2 −→ Sel2 (J, Q) −→ Sel2fake (J, Q) → 0 is exact.
+
+Proof. See the proof of [Poonen-Schaefer1997, Thm. 13.2].                                         
+
+   For the curves C4 , . . . , C10 , we find that δ ′ ([R − 3P ]) is nonzero. By Propositions 11.3
+and 11.6, dimF2 Sel2 (J, Q) = 1 + dimF2 Sel2fake (J, Q).
+   To compute Sel2fake (J, Q), we first find A. Let Λ be a subset of {1, . . . , 8} such that the set
+{Tj }j∈Λ contains one representative of each GQ -orbit of T . Let Aj = Q(Tj ). Then we can
+find an isomorphism
+                                                   Y
+                                              A≃        Aj .
+                                                   j∈Λ
+                                                  Q
+The composition of f and this isomorphism is j∈Λ fj .
+   Next we find a basis of (A× /A×2 Q× )S ; an algorithm for doing this is given in [Poonen-
+Schaefer1997, §12]. To find a function fj , we find a cubic form defined over Aj , with the
+property that the curve defined by the cubic meets C at P with multiplicity (at least) 3 and
+at each of the three points of Tj with multiplicity (at least) 2. The jth component of f can
+then be taken to be this cubic divided by any cubic form defined over Q (for example, z 3 ).
+   Then we find a basis for each J(Qp )/ ker(f ). It helps to know the dimension in ad-
+vance. For p odd, we have #J(Qp )/2J(Qp ) = #J(Qp )[2]. We also have #J(Q2 )/2J(Q2 ) =
+23 #J(Q2 )[2] and #J(R)/2J(R) = #J(R)[2]/23 (cf. [Poonen-Schaefer1997, Lemma 12.10]).
+We can use Proposition 11.4 to determine whether J(Qp )/ ker(f ) has the same or half the
+size of J(Qp )/2J(Qp ). Then we determine the intersection of all ρ−1   p (f (J(Qp ))) for p ∈ S.
+That intersection is equal to Selfake (J, Q), which in our cases is half the size of Sel2 (J, Q).
+                                 2
+
+   We have
+                 dim Sel2 (J, Q) = rank J(Q) + dim J(Q)[2] + dim X(J, Q)[2] .
+In each of our cases, the number of independent elements we found so far in J(Q)/2J(Q)
+equals dim Sel2 (J, Q), so X(J, Q)[2] = 0. Subtracting dim J(Q)[2] gives us rank J(Q).
+                                                   30
+11.2. Results. In this section we use the 2-descent developed in the previous section to
+determine the ranks of J4 (Q), . . . , J10 (Q). In each case, we find that ρ−1   2 (f (Ji (Q2 )/ ker f ))
+is the same as the image of the subgroup of Ji (Q) generated by the known rational points.
+Therefore, in each case, Sel2fake (Ji , Q) = ρ−1
+                                              2 (f (Ji (Q2 )/ ker f )). Recall that in each case, the
+GQ -set T has no orbit of odd size, so the dimension of Sel2 (Ji , Q) ≃ Ji (Q)/2Ji (Q) equals
+1 + dim Sel2fake (Ji , Q).
+
+11.2.1. Computing the rank of J4 (Q). In this section, we give a detailed description of the
+computation of the rank of J4 (Q). For the curves C5 , . . . , C10 , we give only the data necessary
+to check the computations in Table 5.
+   Let g(x, y, z) = 0 be the model of C4 given in Table 2. For any smooth plane curve, the
+flex points are the points on the curve where the Hessian vanishes. We dehomogenize both
+g and the Hessian with respect to z and get two polynomials in u = x/z and v = y/z. We
+compute their resultant to eliminate v, and get h6 (u)h18 (u) where
+                                        h6 (u) = 7 u6 − u3 + 1
+and
+       h18 (u) = 343 u18 + 23667 u15 + 127743 u12 + 72128 u9 − 29379 u6 + 2184 u3 + 1
+are irreducible. This tells us that the GQ -orbits of triangles will be of size 2 and 6. To
+determine a polynomial giving us the field of definition of a triangle in the size-2 orbit, we
+begin by taking a zero u1 of h6 , and solve the equations given by g and its Hessian to find
+an explicit v1 ∈ Q(u1 ) such that (u1 , v1 ) is a flex; let T1 be the triangle it belongs to. We
+then construct the tangent line to C4 at this flex to find the next point in T1 and repeat
+once more to find the third point of T1 , expressing all coordinates as rational functions of u1 .
+The sum of the three u-coordinates must lie in the (quadratic) field of definition Q(T1 ) of
+                                           √                       √
+T1 , and this sum is found to generate Q( −3), so Q(T1 ) = Q( −3). A similar computation    √
+                                                                                            6
+with a zero of h18 shows that if T√2 is a triangle in√  the other orbit, then Q(T  2 ) = Q(   189).
+So A ≃ Q(α) × Q(β) where α = −3 and β = 6 189. Let S = {∞, 2, 3, 7}. The subgroup
+of Q(α)× /Q(α)×2 that is unramified outside S has basis {−1, 2, n1 , n2 , n3 } where
+                                                  α+5              −α + 5
+                             n1 = α ,    n2 =           , n3 =            .
+                                                   2                  2
+Their norms are 1, 4, 3, 7, 7, respectively. The subgroup of Q(β)× /Q(β)×2 that is unramified
+outside S has basis {−1, ε2 , ε3 , ε4 , m1 , m2 , m3 , m4 , m5 } where
+      1 5                                           1
+ε2 =    (β − 3β 4 + 3β 3 + 9β 2 − 45β + 27) , ε3 = (β 5 + 3β 4 + 3β 3 − 9β 2 − 45β − 27) ,
+     54                                            54
+                         1 3                  1
+                   ε4 = (β + 15) , m1 = (−β 4 − 6β 2 + 9β − 36) ,
+                         6                   18
+        1                                         1
+  m2 = (−β 5 − 3β 3 + 9β 2 + 18β + 81) , m3 = (β 5 + 3β 4 + 3β 3 + 27β 2 + 9β + 81) ,
+        54                                        54
+                      1 5                                    1
+              m4 = (β + 3β 3 + 9β 2 + 36β − 27) , m5 = (β 4 − 9β) .
+                     54                                     18
+                                                   31
+Their norms are 1, 1, 1, 1, 64, 64, 64, −48, 7, respectively.
+  Now let us find the image of h−1, 2, 3, 7i ⊆ Q× in A× /A×2 . In Q(α) we have
+                                 2 = 2,        3 = −α2 ,         7 = n2 n3 .
+In Q(β) we have
+                                                       −4 6
+                      2 = −m−1
+                            1 m2 m3 ,          3 = ε−1
+                                                    4 m1 m4         and 7 = ε34 m65 .
+So in A× /A×2 Q× we have
+            −1 ≡ (−1, −1) ,       2 ≡ (2, −m1 m2 m3 ) ,       3 ≡ (−1, ε4 ) ,     7 ≡ (n2 n3 , ε4)
+are all trivial. So (A× /A×2Q× )S has basis
+       {(−1, 1), (n1 , 1), (n2, 1), (1, ε2), (1, ε3), (1, m1 ), (1, m2 ), (1, m3), (1, m4 ), (1, m5 )} .
+These have norms 1, 3, 7, 1, 1, 64, 64, 64, −48, 7, respectively. So the kernel H of the norm
+from this group to Q× /Q×2 has basis
+                    {(−1, 1), (n2 , m5 ), (1, ε2), (1, ε3), (1, m1 ), (1, m2 ), (1, m3 )} .
+This group H contains the fake 2-Selmer group.
+   Now we must find the function f . We will √   express f as a pair (f2 , f6 ), where f2 is defined
+          √                                   6
+over Q( −3) and f6 is defined over Q( 189). By linear algebra, we can find a cubic
+f2 (x, y, z), defined over the field Q(u1 ), with the property that the intersection divisor of
+f2 = 0 with g = 0 includes 2T1 +√3(0 : 1 : 1). We can scale the solution in such a way that
+the coefficients lie in the field Q( −3). We get
+f2 (x, y, z) = 238 x3 + 84 x2 y + (9α + 3)xy 2 + (12α + 4)y 3 + (21α − 21)x2 z − (57α + 33)xyz
+              + (−12α + 24)y 2z + (42α − 42)xz 2 + (−6α + 12)yz 2 + (6α − 40)z 3 .
+Doing the same for T2 yields
+f6 (x, y, z) = 2142 x3 + (−51β 4 + 1071β + 756)x2 y + (4β 5 + 42β 4 − 21β 3 − 882β + 189)x2 z
+               + (−8β 5 − 9β 3 + 189)xy 2 + (8β 5 + 6β 4 + 57β 3 − 126β − 1323)xyz
+               + (2β 5 + 6β 4 − 42β 3 − 126β + 378)xz 2 + (−12β 3 + 252)y 3
+               + (2β 5 − 9β 4 + 12β 3 + 189β)y 2z + (−6β 5 + 6β 4 + 6β 3 − 126β)yz 2
+               + (4β 5 + 3β 4 − 6β 3 − 63β − 252)z 3 .
+  To compute Sel2fake (J4 , Q), we first do global computations. Since the GQ -orbits of the
+8 triangles have sizes 2 and 6, we have dim J4 (Q)[2] = 1. Since no orbit has odd size,
+Proposition 11.4 gives
+dim J4 (Q)/ ker(f ) = dim J4 (Q)/2J4 (Q)−1 = dim J4 (Q)/2J4 (Q)−dim J4 (Q)[2] = rank J4 (Q).
+The image in H, under f , of the subgroup of J4 (Q) generated by the three known rational
+points is h(−n2 , m5 ), (1, ε2)i. So rank J4 (Q) ≥ 2.
+    √ eight triangles break into four GQ2 -orbits of size 2. Each pair is conjugate over
+  The
+Q2 ( −3). Therefore, we have dim J4 (Q2 )[2] = 4 and dim J4 (Q2 )/2J4(Q2 ) = 7. Since there
+                                                      32
+is no orbit of odd size, Proposition 11.4 gives dim J4 (Q2 )/ ker f = 6. We need to find a basis.
+Let A2 = A ⊗Q Q2 . The map f induces a map
+                                              √            √      ×2 4
+              J4 (Q2 ) −→ A×    ×2 ×                ×
+                                                                        × ×2
+                            2 /A2 Q2 ≃ (Q2 ( −3) /Q2 ( −3) )             (Q2 /Q2 ) ,
+
+To find a basis of J4 (Q2 )/ ker f , we look for Q2 -rational divisors of degree 0 and determine
+their images under f . It is a straightforward exercise in algebraic number theory to deter-
+                                                         √            √
+mine whether their images are independent in (Q2 ( −3)× /Q2 ( −3)×2 )4 /(Q×             ×2
+                                                                                    2 /Q2 ). The
+following form a basis of J4 (Q2 )/ ker f :
+
+                      [(0 : 1 : 0) − (0 : 1 : 1)] ,        [(1 : 0 : 0) − (0 : 1 : 1)] ,
+               [(2 : −1 : O(2)) − (0 : 1 : 1)] ,       [(1 : 0 : 1 + O(2)) − (0 : 1 : 1)] ,
+               [(4 : −3 : O(2)) − (0 : 1 : 1)] ,
+                                              [(5 : 4 : 1 + O(2)) − (0 : 1 : 1)] .
+                                                 √            √
+We compute the image of J4 (Q2 )/ ker f in (Q2 ( −3)× /Q2 ( −3)×2 )4 /(Q×          ×2
+                                                                             2 /Q2 ), and com-
+pute that its inverse image under ρ2 |H has basis {(−n2 , m5 ), (1, ε2)}. Thus
+
+                 2 ≥ dim Sel2fake (J4 , Q) ≥ dim J4 (Q)/ ker f = rank J4 (Q) ≥ 2,
+
+and equality holds everywhere. (We did not need the conditions on Sel2fake (J4 , Q) coming
+from other primes.)
+
+11.2.2. Table with 2-descent data. We computed the fake 2-Selmer groups for C5 , . . . , C10
+in ways similar to that explained in detail for C4 . Table 5 can be used to check the fake
+2-Selmer group computations for C5 , . . . , C10 . In the column labelled octic, we present the
+coefficients of t8 , . . . , 1 for a polynomial defining the 8-dimensional algebra A. We also give
+the dimensions of J(Q2 )[2] and J(Q)[2]. Basis elements of J(Q2 )/ ker f are represented by
+Q2 -rational degree 0 divisors. Lastly, we give the rank of J(Q).
+   Regarding dim J(Q2 )[2], note that 2-torsion points are represented by a partition of the
+set of 8 flex triangles into two sets of even cardinality. So we have the trivial 2-torsion
+point 0, corresponding to the trivial factorization of the octic polynomial over Q2 , points
+corresponding to factors of degree 2, and finally points corresponding to a factorization of
+the octic polynomial into two factors of degree 4 over Q2 or into two factors of degree 4 that
+are conjugate over some quadratic extension of Q2 . For example, dim J5 (Q2 )[2] = 2, even
+though the octic polynomial is irreducible over Q2 . This phenomenon came up already when
+dealing with C4 above: the fact that the octic polynomial defining the algebra split into four
+                                                                             √
+quadratic factors over Q2 defining the same quadratic extension Q2 ( −3) gives rise to an
+additional independent point in J4 (Q2 )[2].
+
+
+                        12. Chabauty and Mordell-Weil sieve
+  We discuss the Mordell-Weil sieve first since this is often performed before the Chabauty
+computation.
+                                                      33
+                                   dim                                                   dim
+  i             octic          Ji (Q2 )[2]          basis of Ji (Q2 )/ ker(f )        Ji (Q)[2] rank
+  5       1, 2, 0, 0, −21,          2               [(1 : 1 : 1) − (0 : 1 : 0)]           0       3
+         0, 84, −30, −123                      [(1 : 1 : 5 + O(23)) − (0 : 1 : 0)]
+                                               [(2 : 2 : 3 + O(23)) − (0 : 1 : 0)]
+                                              [(−1 : 1 : 3 + O(23)) − (0 : 1 : 0)]
+  6      1, 0, −42, 0, 567,        1                [(0 : 1 : 0) − (0 : 1 : 1)]          1       2
+        0, −1890, 0, −567                          [(−1 : 1 : 0) − (0 : 1 : 1)]
+                                              [(4 : 1 : −1 + O(22)) − (0 : 1 : 1)]
+  7    1, 2, −14, −98, −217,       2                [(0 : 0 : 1) − (0 : 1 : 0)]          0       2
+        −182, 196, 548, 529                   [(2 : 2 : −1 + O(23)) − (0 : 1 : 0)]
+                                              [(2 : −2 : 1 + O(23)) − (0 : 1 : 0)]
+                                              [(2 : −1 : 3 + O(23)) − (0 : 1 : 0)]
+  8      1, 0, 0, 56, −210,        2               [(2 : −1 : 0) − (0 : 0 : 1)]          0       2
+         336, −224, 24, 21                     [(0 : 2 : 1 + O(23)) − (0 : 0 : 1)]
+                                             [(−2 : 1 : 10 + O(24 )) − (0 : 0 : 1)]
+                                              [(1 : −3 : 1 + O(23)) − (0 : 0 : 1)]
+  9    1, −2, −14, 14, 119,        2                [(1 : 1 : 0) − (0 : 0 : 1)]          0       2
+        182, 112, 16, −11                     [(0 : 2 : −3 + O(23)) − (0 : 0 : 1)]
+                                               [(4 : 2 : 1 + O(23)) − (0 : 0 : 1)]
+                                               [(2 : 1 : 6 + O(24)) − (0 : 0 : 1)]
+  10     1, −3, 0, 14, 0,          0          [(−1 : 1 : 2 + O(23)) − (1 : 1 : 0)]       0       2
+       −84, 112, −24, −12                     [(0 : 1 : −1 + O(23)) − (1 : 1 : 0)]
+                                              [(1 : −4 : 4 + O(23)) − (1 : 1 : 0)]
+                    Table 5. Data needed for 2-descents for C5 , . . . , C10 .
+
+
+
+12.1. Mordell-Weil sieve theory. Let C be a curve over Q and J be its Jacobian. (The
+assumption that the ground field is Q is for simplicity only; other global fields would do
+just as well.) Suppose that we know an embedding C → J over Q. What we call the
+Mordell-Weil sieve is a method introduced by Scharaschkin [Scharaschkin2004preprint] that
+uses reduction modulo p for several primes p to show that certain points in J(Q) cannot
+lie on the image of C. Suppose also that we know explicit generators for J(Q). Then the
+desired set C(Q) is the set of points of J(Q) that lie on C. This set is difficult to compute:
+indeed, it is not known whether there exists an algorithm to solve this problem in general.
+   Therefore we pick a prime p of good reduction for C (and J), and we approximate the
+condition that a point P ∈ J(Q) lie on C with the weaker condition that the reduction
+of P in J(Fp ) lie in C(Fp ). For each p, this weaker condition allows us to “sieve out”
+certain cosets of a finite-index subgroup in J(Q). The conditions at different p can interact
+nontrivially, because the orders of J(Fp ) may share prime factors. If we are lucky, after
+using these sieve conditions at a few primes, no points on J(Q) remain; in this case one
+                                                   34
+concludes that C(Q) is empty. In fact, there is a heuristic that predicts that when C(Q) = ∅,
+sieving with a suitable set of p will rule out all points of J(Q) [Poonen-heuristic2005preprint].
+This obstruction to the existence of rational points is closely related to the Brauer-Manin
+obstruction: see [Scharaschkin2004preprint] and in particular [Stoll2005preprint].
+Remarks 12.1.
+   (1) With care, one can obtain sieve conditions also at primes p of bad reduction. Namely,
+       let C be the minimal proper regular model of C over Zp , and let J be the Néron
+       model of J over Zp . Suppose we have an Albanese embedding C ֒→ J associated to
+       a rational point on C. Let C smooth be the smooth locus of the structure morphism
+       C → Spec Zp ; thus C smooth is obtained from C by deleting the singular points on the
+       special fiber CFp . By the Néron property, the morphism C ֒→ J extends to a Zp -
+       morphism C smooth ֒→ J . Points in C(Q) extend to Zp -points of C smooth , so we need
+       only examine the set of points J(Q) whose reduction in J (Fp ) lies in the image of
+       C smooth (Fp ).
+   (2) Sometimes it is more convenient to work in a homomorphic image Φ of J (Fp ) instead
+       of J (Fp ) itself.
+   (3) Working in J (Z/pn Z) for n > 1 also might give more information than J (Fp ) alone.
+   (4) We assumed that we know generators for J(Q), but it may be enough to know
+       generators for a subgroup Q of finite index. For instance, if one can prove that the
+       index (J(Q) : Q) is prime to the order of J(Fp ), then Q and J(Q) will have the same
+       image in J(Fp ).
+   (5) If C(Q) is known a priori to be nonempty, obviously no complete obstruction to
+       rational points can be obtained. In this case, one can try to use the sieve information
+       as input to a Chabauty argument, to restrict the possibilities for residue classes.
+       The Chabauty argument still requires that the p-adic closure of J(Q) be provably of
+       dimension less than dim J, however, and this usually requires rank J(Q) < dim J.
+  The first examples of this method were given in [Scharaschkin2004preprint]. The method
+was refined and implemented for genus 2 curves over Q in [Flynn2004].
+12.2. Chabauty theory. Here we explain Chabauty’s method [Chabauty1941], as made
+explicit by Coleman [Coleman1985chabauty]. Let C be a smooth projective curve. Let J be
+its Jacobian. Assume that C(Q) is nonempty (this is true for all of our Ci ); choose P ∈ C(Q).
+Identify C with a subvariety of J by mapping each T ∈ C to T 7→ [T − P ]. Assume that
+J(Q) has rank r < g, where g = dim J is the genus of C. Let p be a finite prime. If ω is a
+holomorphic 1-form on JQp or its pullback to CQp , then following [Coleman1985torsion] we
+                                                     RQ
+define a homomorphism λω : J(Qp ) → Qp by Q 7→ 0 ω. (This integral can be defined on a
+neighborhood of 0 using the formal group, and then extended linearly to all of J(Qp ).) Say
+that ω kills an element or subset S of J(Qp ) if λω |S = 0. By linear algebra, we can find (to
+any desired p-adic precision) at least g − r > 0 independent forms ω killing J(Q) and hence
+C(Q). The method consists of bounding the number of common zeros of the corresponding
+integrals λω on C(Qp ), and hoping that enough points in C(Q) are found to meet the bound,
+                                               35
+in which case these points are all of them. If the method fails, we can try again with a
+different p, or combine the argument with a Mordell-Weil sieve.
+   Let us explain how to do a Chabauty computation in practice. Let C be the smooth
+projective model of the affine plane quartic curve g(u, v) = 0. For the computation, we need
+G1 , . . . , Gr ∈ J(Q) which generate a subgroup of finite index in J(Q). Usually we obtain
+this information when we determine r. Choose a (small) prime p at which C, and hence J,
+has good reduction. Pick a uniformizing parameter t of C at P that is also a uniformizer
+at P modulo p. For each i, we calculate mi ∈ Z>0 such that mi Gi reduces to 0 mod p, and
+find a divisor of the form Di − 3P linearly equivalent to mi Gi , where Di = Pi,1 + Pi,2 + Pi,3 is
+an effective divisor of degree 3, defined over Q. If P does not reduce to a Weierstrass point
+mod p, then it follows that each Pi,j is congruent to P modulo p.
+   A basis for the space of holomorphic differentials on C is given by
+                                      dv            u dv                   v dv
+                               ω1 =      ,   ω2 =          and ω3 =             .
+                                      gu             gu                     gu
+                                                                                      Rt
+We express ωj as an element of Q[[t]] dt and integrate formally to obtain λj = 0 ωj ∈ t Q[[t]].
+Then for all i and j, we compute
+                        Z mi Gi         Z [Di −3P ]         Z Pi,1      Z Pi,2      Z Pi,3
+         λωj (mi Gi ) =         ι∗ ωj =             ι∗ ωj =        ωj +        ωj +        ωj
+                           0                 0                   P             P      P
+
+                       = λj (t(Pi,1 )) + λj (t(Pi,2 )) + λj (t(Pi,3 )) .
+The series converge, since the t(Pi,k ) are of positive p-adic valuation (this is because Pi,k has
+the same reduction mod p as P ). Computing the kernel of ω 7−→ (λω (m1 G1 ), . . . , λω (mr Gr )),
+we find s = 3−r independent holomorphic differentials η1 , . . . , ηs such that the corresponding
+1-forms on JQp kill J(Q). We rescale each so that it reduces to a nonzero differential η̃i
+modulo p. Let Q ∈ C(Fp ) and let ν = mini vQ (η̃i ). If p > ν + 1, there can be at most ν + 1
+rational points on C reducing to Q mod p: see, e.g., [Stoll2004preprint].
+   For i = 1, 3, 7, 8, 9, 10, we want to do Chabauty arguments using the prime 7, at which Ci
+has bad reduction. However, the given model of Ci in P2Z7 is a minimal proper regular model
+over Z7 , and the special fiber C̃i has just one component, which is of (geometric) genus 0.
+Let Ji be the Néron model of Ji over Z7 . Let J˜i = Ji ×Z7 F7 be the special fiber of Ji. Since
+C̃i has just one component, J˜i is connected. Let C̃ismooth be the smooth part of C̃i . We write
+Ji (F7 ) for J˜i (F7 ), and write Ci (F7 ) for C̃ismooth (F7 ), which is a subset of Ji (F7 ). In all the
+cases we consider, we find that Ji (F7 ) ≃ (Z/7Z)3 . We can proceed as in the case of good
+reduction; the differentials reduce to holomorphic differentials on C̃ismooth in this case.
+
+12.3. Results. For brevity, we give full detail for the Chabauty and Mordell-Weil sieve
+arguments for just one curve. We chose C2 since our argument for C2 involves a shortcut that
+apparently is not described elsewhere in the literature. Afterwards we sketch the Chabauty
+arguments for the remaining curves.
+   Define the known part Ji (Q)known of Ji (Q) as the subgroup generated by the rational points
+in Table 3 and the element [R − 3P ] mentioned in Propositions 11.3 and 11.4.
+                                                      36
+12.3.1. Determining C2 (Q). We will show that
+            C2 (Q) = {(1 : 0 : 0), (0 : 1 : 0), (0 : 0 : 1), (1 : −2 : −1), (1 : 1 : −1)} .
+We work with p = 5; we have J2 (F5 ) ≃ Z/126Z. The reduction of J2 (Q)known is the cyclic
+subgroup of order 63. We use P = (1 : −2 : −1) as a basepoint. The five known rational
+points of C2 reduce to different points in C2 (F5 ), which has size 6.
+  We first have to find the space of 5-adic differentials that vanish on J2 (Q). Dehomogenize
+by setting z = 1; then a basis of the space of holomorphic differentials on C2 is given by
+                                dy                     x dy                        y dy
+                     ω1 =                ,   ω2 =              ,     ω3 =                  .
+                            9 x2 y + 2              9 x2 y + 2                  9 x2 y + 2
+(As line sections, we have ω1 ↔ z, ω2 ↔ x, ω3 ↔ y. This point of view is useful when
+determining the zeros of differentials.) The point G = [(1 : 0 : 0) − (1 : −2 : −1)] ∈ J2 (Q) is
+of infinite order, and 9G is in the kernel of reduction mod 5. We find an effective divisor D
+of degree 3 such that 9G = [D − 3P ]. We choose t = x + 1 as a uniformizer at P ; then we
+can express x, y, and the differentials in terms of t as follows.
+                       x = −1 + t
+                                 20       226        1024       7702
+                       y = 2 − 2 t + 5 t2 + 8 t3 − 10 t4 + . . .
+                                 3         3          3           3
+                             1       53       478 2 6530 3 1135 4                       
+                      ω1 = − 2 − 5 t − 7 t − 10 t − 14 t + . . . dt
+                                3      3        3         3             3
+                            1      26       1 2 6376 3 527795 4                        
+                      ω2 = 2 + 5 t + 7 t − 10 t −                           t  +  . . .   dt
+                             3      3        3         3             314
+                             2       46       122 2 2618 3 107380 4                       
+                      ω3 = − 2 − 5 t − 7 t + 10 t +                              t + . . . dt
+                                3      3        3         3              314
+We obtain the logarithms λωi in terms of t by formal integration of the latter three power
+series:
+                                1          53 2 478 3            3265 4 227 5
+                        λ1 = − 2 t −         5
+                                               t − 8 t −                t − 14 t + . . .
+                                3        2·3          3         2 · 310        3
+                              1       13 2      1 3 1594 4 105559 5
+                        λ2 = 2 t + 5 t + 8 t − 10 t −                          t + ...
+                             3        3        3         3              314
+                                2        23       122        1309 4 21476 5
+                        λ3 = − 2 t − 5 t2 − 8 t3 +                   t + 14 t + . . .
+                                3        3         3        2 · 310          3
+If t1 , t2 , t3 are the values of t at the three points in D, then
+                                                                 ∞
+                                                                 X
+                   λωi (9G) = λi (t1 ) + λi (t2 ) + λi (t3 ) =           λi,j (tj1 + tj2 + tj3 ) ,
+                                                                   j=1
+
+where λi (t) = j≥1 λi,j tj . We obtain the power sums tj1 + tj2 + tj3 from the coefficients of the
+               P
+
+characteristic polynomial (X − t1 )(X − t2 )(X − t3 ) ∈ Q[X]. The 5-adic valuation of each ti
+is positive (at least 1/3), and so the series above converge in Q5 . We obtain
+  λω1 (9G) = −2 · 53 + O(54 ) ,      λω2 (9G) = −16 · 5 + O(54) ,               λω3 (9G) = −27 · 5 + O(54 ) .
+                                                     37
+We see that
+                           dy                                       (x + 2y) dy
+           η˜1 = ω˜1 =            ↔z    and η˜2 = ω˜2 + 2ω˜3 =                  ↔ x + 2y
+                         2 − x2 y                                     2 − x2 y
+are reductions mod 5 of differentials killing J2 (Q). Since the common zero of z and x + 2y
+in P2 (F5 ) is not on C, we have min{vQ (η˜1 ), vQ (η˜2 )} = 0 at all Q ∈ C(F5 ). Thus each of the
+six residue classes contains at most one rational point. Since five of the six do contain a
+rational point, it remains to show that there is no rational point reducing to the sixth, which
+is (2 : 2 : 1) ∈ C2 (F5 ).                                                            √
+    To that end, we pick Q ∈ C2 (Q5 ) reducing to (2 : 2 : 1); we take Q = ( 3+ 6−39 : 2 : 1),
+where we choose the square root that is −1 mod 5. We first need to find λω ([Q − P ]) for
+a basis of differentials ω killing J2 (Q). In principle, we can find this by first computing
+21[Q − P ] = [D ′ − 3P ] in the kernel of reduction as above, but in this case, there is a trick,
+taught to us by Joseph Wetherell, that allows us to simplify the computation.
+    Note that [(2 : 2 : 1) − P̃ ] ∈ J2 (F5 ) is in the reduction of J2 (Q)known ; we find that
+  ′
+G = [(0 : 1 : 0) + (1 : 1 : −1) − (1 : 0 : 0) − P ] ∈ J2 (Q) has this image. If ω kills J2 (Q), then
+λω ([Q − P ]) = λω ([Q − P ] − G′ ), where now [Q − P ] − G′ is in the kernel of reduction, and
+we can compute the logarithm as before. With
+                   η1 = ω1 − 50 ω2 + O(53) and η2 = ω2 − 33 ω3 + O(53 ) ,
+we obtain the values λη1 ([Q − P ]) = −12 · 5 + O(53 ) and λη2 ([Q − P ]) = −14 · 5 + O(53).
+We now compute ληi ([Q′ − Q]) for points Q′ in the residue class of Q. Taking T = y − 2 as
+a uniformizer at Q, we obtain for points Q′ such that T (Q′ ) = 5τ :
+      λη1 ([Q′ − P ]) = λη1 ([Q′ − Q]) + λη1 ([Q − P ]) = −12 · 5 + 4 · 5 τ + 52 τ 2 + O(53)
+      λη2 ([Q′ − P ]) = λη2 ([Q′ − Q]) + λη2 ([Q − P ]) = 11 · 5 + 9 · 5 τ − 3 · 52 τ 2 + O(53 )
+We see that λη1 ([Q′ − P ]) − λη2 ([Q′ − P ]) = 2 · 5 + O(52 ) and so never vanishes. This proves
+that there is no rational point on C2 reducing to (2 : 2 : 1).
+
+12.3.2. Determining C1 (Q). We show that
+                    C1 (Q) = {(0 : 0 : 1), (0 : 1 : 0), (0 : 0 : 1), (1 : −1 : 2)} .
+As described in Section 12.2, we have J1 (F7 ) ≃ (Z/7Z)3 . From Section 10, we see that
+dimF7 J1 (Q)/7J1 (Q) = 2. The reduction of J1 (Q)known has dimension 2, so that is also the
+reduction of the whole J1 (Q).
+   Using (1 : −1 : 2) as a basepoint, we find that there are exactly four points of C1 (F7 ) in
+the reduction of J(Q). They are the reductions of the four known rational points on C1 . So
+it suffices to show that there is only one point of C1 (Q) in each of those residue classes.
+   Proceeding as for C2 , we find reductions of differentials killing J1 (Q):
+                                  η˜1 ↔ x + 2y ,        η˜2 ↔ x − z .
+The common zero of x + 2y and z in P2 (F7 ) is not on C1 , so there is at most one rational
+point per residue class, as desired.
+                                                   38
+12.3.3. Determining C3 (Q). We show that
+                     C3 (Q) = {(1 : 0 : 0), (0 : 1 : 0), (0 : 0 : 1), (1 : 1 : −1)} .
+We have J3 (F7 ) ≃ (Z/7Z)3 . From Section 10 we see that dimF7 J3 (Q)/7J3 (Q) = 2. The
+reduction of J3 (Q)known has dimension 2, so that is also the reduction of the whole J3 (Q).
+   Using (1 : 1 : −1) as a basepoint, we find that there are exactly four points of C3 (F7 ) in
+the reduction of J3 (Q). Again, they are the reductions of the four known rational points
+on C3 . So it suffices to show that there is only one point of C3 (Q) in each of those residue
+classes.
+   Proceeding as before, we find reductions of differentials killing J3 (Q):
+                                  η˜1 ↔ 2x − y ,        η˜2 ↔ x + 2z .
+The common zero of 2x − y and x + 2z in P2 (F7 ) is not on C3 , so we are done.
+
+12.3.4. Determining C4 (Q). We show that
+                            C4 (Q) = {(1 : 0 : 0), (0 : 1 : 0), (0 : 1 : 1)} .
+We have J4 (F5 ) ≃ (Z/6Z)3 . The reduction of J4 (Q)known is isomorphic to (Z/6Z)2 . Since
+J4 (Q) and J4 (Q)known are both isomorphic to Z2 × Z/4Z, and J4 (Q)known has odd index in
+J4 (Q), the whole J4 (Q) must also reduce to the same (Z/6Z)2 subgroup. We use (1 : 0 : 0) as
+a basepoint. Then the only elements in C4 (F5 ) in the reduction of J4 (Q) are the reductions
+of the three known rational points. So it suffices to show that there is only one point of
+C4 (Q) in each of those residue classes.
+   Since the rank is 2, we have only one differential, η̃ ↔ x + y. It does not vanish at any of
+the three relevant points of C4 (F5 ); this proves the claim.
+
+12.3.5. Determining C6 (Q). We show that
+                    C6 (Q) = {(0 : 1 : 0), (1 : −1 : 0), (0 : 1 : 1), (0 : 1 : −1)} .
+We use P = (0 : 1 : −1) as a basepoint. We have an isomorphism Z2 × Z/4Z → J6 (Q)known
+taking the standard generators (1, 0, 0), (0, 1, 0), (0, 0, 1) to [R−3P ], [(0 : 1 : 0)−P ], [(1 : −1 :
+0) − P ], respectively. From the 2-descent, we know that J6 (Q)known has odd index in J6 (Q),
+which also is isomorphic to Z2 ×Z/4Z. We have J6 (F11 ) ≃ (Z/16Z)×(Z/8Z)2 ×(Z/2Z). The
+reduction of J6 (Q)known is isomorphic to (Z/8Z)2 × (Z/4Z), with [R − 3P ], [(0 : 1 : 0) − P ],
+[(1 : −1 : 0) − P ] mapping to the standard generators. By the above, J6 (Q) has the same
+reduction as J6 (Q)known . There are five points in C6 (F11 ) lying in the reduction of J6 (Q);
+four of those are the reductions of the four known rational points. The fifth is the reduction
+of
+                      m [R − 3P ] + n [(0 : 1 : 0) − P ] + p [(1 : −1 : 0) − P ]
+with (m, n, p) = (1, 4, 2).
+   We have J6 (F23 ) ≃ Z/32Z×(Z/16Z)2 ×Z/2Z. The mod 23 reduction of J6 (Q) is isomorphic
+to (Z/16Z)2 ×Z/4Z, with [R−3P ], [(0 : 1 : 0)−P ], [(1 : −1 : 0)−P ] mapping to the standard
+                                                   39
+generators. We find that if (m, n, p) ∈ Z3 satisfy (m mod 8, n mod 8, p mod 4) = (1, 4, 2)
+then the mod 23 reduction of
+                    m [R − 3P ] + n [(0 : 1 : 0) − P ] + p [(1 : −1 : 0) − P ]
+is not in C6 (F23 ). Because J6 (Q)known has odd index in J6 (Q), the points of J6 (Q) reducing
+to the fifth point of C6 (F11 ) of the previous paragraph do not reduce mod 23 to points in
+C6 (F23 ). So it suffices to show that there is only one point of C6 (Q) in each of the four
+residue classes of the four known rational points modulo 11.
+   The differential is η̃ ↔ x + 5y; it does not vanish at the four relevant points of C6 (F11 ).
+This proves the claim.
+
+12.3.6. Determining C7 (Q). We show that
+                          C7 (Q) = {(0 : 1 : 0), (0 : 0 : 1), (0 : 1 : 1)} .
+We have J7 (F7 ) ≃ (Z/7Z)3 . The group J7 (Q) has rank 2 and no 7-torsion. The reduction of
+J7 (Q)known is isomorphic to (Z/7Z)2 , so that is also the reduction of the whole J7 (Q).
+   We use (0 : 1 : 0) as a basepoint. Then the only elements in C7 (F7 ) in the reduction of
+J7 (Q) are the reductions of the three known rational points. So it suffices to show that there
+is only one point of C7 (Q) in each of those residue classes.
+   Our differential mod 7 is η̃ ↔ x − 2z. It does not vanish at (0 : 0 : 1) and at (0 : 1 : 1),
+but it has a simple zero at (0 : 1 : 0). So we see that there is at most one rational point in
+each of the two first residue classes, but there may be two in the third. Since we are using
+(0 : 1 : 0) as a basepoint, the information over Q7 tells us that any point of C7 (Q) in the
+residue class of (0 : 1 : 0) is in 7J7 (Q).
+   We have J7 (F13 ) ≃ (Z/14Z)3 . The reduction of J7 (Q)known is isomorphic to Z/14Z×Z/7Z.
+From the 2-descent, we know that the index of J7 (Q)known in J7 (Q) is odd. Thus, the
+reduction of the whole J7 (Q) is isomorphic to Z/14Z × Z/7Z. Only one point of C7 (F13 ) has
+trivial image in J(F13 ) ⊗ Z/7Z, namely (0 : 1 : 0). A holomorphic differential killing J7 (Q)
+reduces mod 13 to ω̃ ↔ x − 2y, which does not vanish at (0 : 1 : 0). So there is only one
+point of C7 (Q) in this residue class. (Incidentally, ω̃ vanishes at one of the other interesting
+residue classes, namely (0 : 0 : 1). So information obtained from Q13 alone would also not
+be sufficient.)
+
+12.3.7. Determining C8 (Q). We show that
+                              C8 (Q) = {(0 : 0 : 1), (2 : −1 : 0)} .
+We have J8 (F7 ) ≃ (Z/7Z)3 . The group J8 (Q) has rank 2 and no 7-torsion. The reduction of
+J8 (Q)known is isomorphic to (Z/7Z)2 , so that is also the reduction of the whole J8 (Q).
+   We use (0 : 0 : 1) as a basepoint. Then the only elements in C8 (F7 ) in the reduction of
+J8 (Q) are the reductions of the two known rational points. So it suffices to show that there
+is only one point of C8 (Q) in each of those residue classes.
+   Our differential mod 7 is η̃ ↔ x−y −3z. It does not vanish at (0 : 0 : 1) and at (2 : −1 : 0).
+This proves the claim.
+                                                 40
+12.3.8. Determining C9 (Q). We show that
+
+                                C9 (Q) = {(0 : 0 : 1), (1 : 1 : 0)} .
+
+We use P = (0 : 0 : 1) as a basepoint. We have J9 (Q)known ≃ Z2 , generated by [(1 : 1 : 0)−P ]
+and [R − 3P ]. The group J9 (Q) has rank 2 and no 7-torsion.
+   We have J9 (F7 ) ≃ (Z/7Z)3 , with [(1 : 1 : 0) − P ] and [R − 3P ] reducing to F7 -independent
+points, so their reductions form a basis also for the reduction of J9 (Q).
+   There are four points of C9 (F7 ) in the reduction of J9 (Q): the reductions of m[(1 : 1 :
+0) − P ] + n[R − 3P ] with (m, n) = (0, 0), (1, 0), (2, 1), (4, 3). Clearly (m, n) = (0, 0) and
+(1, 0) correspond to the reductions of the two known rational points. So we must eliminate
+the possibilities of (m, n) = (2, 1) and (4, 3). We do this by working over F13 . We have
+J9 (F13 ) ≃ Z/7Z × Z/170Z. The classes (m, n) = (2, 1) and (4, 3) in (Z/7Z)2 map to classes
+in J9 (F13 ) ⊗ Z/7Z. that are not in the image of C9 (F13 ) in J9 (F13 ) ⊗ Z/7Z.
+   Our differential mod 7 is η̃ ↔ x − y − 2z. It does not vanish at (0 : 0 : 1), so there is only
+one rational point in this residue class. But η̃ has a simple zero at the other point, (1 : 1 : 0).
+So we have to do another Chabauty computation to show that (1 : 1 : 0) is the only point of
+C9 (Q) in [(1 : 1 : 0) − P ] + 7J9 (Q).
+   We will use p = 11. We have J9 (F11 ) ≃ Z/10Z×Z/140Z. We know from the 2-descent that
+the index of J9 (Q)known in J9 (Q) is odd. The reduction modulo 11 of J9 (Q)known is isomorphic
+to Z/5Z × Z/70Z and so must be the reduction of the whole J9 (Q). Only three points of
+C9 (F11 ) are in the reduction of J9 (Q). Only one of them the same image in J9 (F11 ) ⊗ Z/7Z
+as [(1 : 1 : 0) − P ] + 7J9 (Q), and that is the reduction of (1 : 1 : 0). So it suffices to show
+that there is only one point of C9 (Q) with reduction equal to (1 : 1 : 0) modulo 11. The
+differential mod 11 is ω̃ ↔ x − 5y + 4z, and it does not vanish at (1 : 1 : 0). So there is only
+one point of C9 (Q) in this mod 11 residue class.
+
+12.3.9. Determining C10 (Q). We show that
+
+                               C10 (Q) = {(1 : 0 : 0), (1 : 1 : 0)} .
+
+We have J10 (F7 ) ≃ (Z/7Z)3 . The group J10 (Q) has rank 2 and no 7-torsion. The reduction
+of J10 (Q)known is isomorphic to (Z/7Z)2 , so that is also the reduction of the whole J10 (Q). We
+use (1 : 0 : 0) as a basepoint. Then the only elements in C10 (F7 ) in the reduction of J10 (Q)
+are the reductions of the two known rational points. So it suffices to show that there is only
+one point of C10 (Q) in each of those residue classes. The differential mod 7 is η̃ ↔ x + y + 3z;
+it does not vanish at either of the two relevant points in C10 (F7 ), proving the claim.
+
+
+                             13. Mordell-Weil sieve for C5
+  In this section we prove that C5 (Q)subset = ∅. The method used is the Mordell-Weil sieve
+described in Section 12.1.
+                                                 41
+                                        A                B             C
+
+
+
+                                                        D
+                                                                             2
+
+                           Figure 3. The special fiber of C5 at 3.
+
+
+
+
+13.1. The strategy for C5 . Because C5 (Q) is nonempty and rank J5 (Q) = dim J5 , we
+cannot expect to determine C5 (Q) using only the methods described in Section 12.1. On
+the other hand, by Lemma 7.8 we need only the subset C5 (Q)subset of rational points lying
+in certain residue classes, so there is hope of proving C5 (Q)subset = ∅.
+   To succeed, we must use the 2-adic and 3-adic conditions defining C5 (Q)subset , since neither
+alone is enough to exclude all the rational points on C5 . This means that we must use the
+sieve information at the bad primes 2 and 3. In fact, we will use only the component groups
+of the Néron models at 2 and 3. We will discover that the only primes dividing the orders of
+these groups are 2 and 7 (respectively), so we will sieve also at primes p of good reduction
+chosen so that J5 (Fp ) has large 2-primary and/or 7-primary parts.
+   Let P0 , P1 , P2 , P3 (in this order) be the four rational points on C5 listed in Table 3. Let
+Qi ∈ J(Q) be the class of the divisor Pi − P0 . Let Q be the subgroup of J(Q) generated by
+the Qi . We will show that (J5 (Q) : Q) is prime to 14, and we will use groups Φ of order
+divisible only by 2 and 7 in the sieve. We will determine the set of (n1 , n2 , n3 ) ∈ Z3 such
+that n1 Q1 + n2 Q2 + n3 Q3 satisfies the sieve conditions.
+
+
+
+13.2. Sieve information at 3. We will compute the minimal proper regular model C of C5
+over Z3 , and then the component group of the Néron model of its Jacobian. Our exposition
+will be terse, since [Flynn-et-al2001] contains a detailed account of the general method. We
+will use the same label for a component and for its strict transform(s) after blowing up.
+Subscripts on components denote multiplicities, and a component without a subscript has
+multiplicity 1.
+   Start with the model in P2Z3 defined by the ternary quartic. Its special fiber has two
+irreducible components A and B, and is regular except at the point s where A intersects B.
+   Blowing up s gives a regular Z3 -scheme C. Its special fiber, shown in Figure 3, has four
+irreducible components, all isomorphic to P1F3 .
+   The intersection matrix is
+                                               42
+                                         A    B     C    D2
+                                    A    −3    1    0    1
+                                    B     1   −5    0    2
+                                    C     0    0    −2   1
+                                    D2    1    2    1    −2
+(The diagonal entries are computed using the condition that the inner product of each row
+with the multiplicity vector (1, 1, 1, 2) is 0.)
+   Let J be the Néron model of J5 over Z3 . Then the component group Φ of JF3 is obtained
+as follows. View the multiplicity vector as a Z-linear map Z4 → Z. Take the quotient of its
+kernel by the span of the rows of the intersection matrix. We get an isomorphism Φ ≃ Z/7Z.
+   We will use the homomorphic image Φ = Z/7Z of J (F3 ) for the sieve. The points
+P0 , P1 , P2 , P3 map to components B, C, B, A respectively. If P ∈ C5 (Q), then the correspond-
+ing point on the special fiber lies on A, B, or C (it must be a component of multiplicity 1),
+and the class of P − P0 in J(Q) maps to the element 3, 0, or 1 in Z/7Z accordingly (for
+a particular choice of isomorphism Φ ≃ Z/7Z). In particular, Q1 , Q2 , Q3 map to 1, 0, 3 in
+Z/7Z.
+   If moreover P ∈ C5 (Q)subset , then the image of P in C(F3 ) is not on Asmooth or B smooth
+in the regular model since smooth points on these components in the regular model map to
+points in the plane quartic model other than s = (0 : 1 : 0). Therefore the image of P lies
+on C, and P − P0 maps to 1 in Z/7Z. Thus if n1 Q1 + n2 Q2 + n3 Q3 = [P − P0 ], then
+
+(13.1)                             n1 + 3n3 ≡ 1     (mod 7).
+
+
+13.3. Sieve information at 2. We repeat the computations of the previous section, but at
+the prime 2.
+   The fiber at 2 of the original plane model consists of a conic A and a line B2 . They are
+tangent at the point s1 := (1 : 0 : 0). Because of the multiplicity, no points on B2 are
+smooth. But the whole Z2 -scheme is regular except at the points s1 and s2 := (1 : 1 : 1) on
+the special fiber.
+   Blowing up s1 yields a model whose special fiber has new components C and D2 , and a
+new non-regular point s3 at the intersection of A, B2 , C, D2 . Blowing up s2 produces new
+components E and F and a new non-regular point s4 at the intersection of B2 , E, F . (For the
+sake of definiteness, label E and F so that P3 ∈ C5 (Q) reduces to a point on F .) Blowing up
+s3 produces new components G2 and H4 , and a new non-regular point s5 at the intersection
+of A, G2 , H4 . Blowing up s4 produces a new component I2 , and no new non-regular points.
+Blowing up s5 produces new components J3 and K4 and a new non-regular point s6 at the
+intersection of A, J3 , K4 . Blowing up s6 produces new components L4 and M4 (let L4 be
+the one that intersects A) and a new non-regular point s7 at the intersection of L4 and M4 .
+Blowing up s7 produces new components N4 and O4 (let N4 be the one that intersects L4 )
+                                               43
+                  2            4                                      4             2
+                                      2                                       3
+            E                         D                                       J
+                   I            H            4           4             L             G
+                                      4                        4
+            F                         K                        N                         C
+                                              M           P
+                         2                         4
+                         B                         O                          A
+
+
+
+                             Figure 4. The special fiber of C5 at 2.
+
+
+and a new non-regular point s8 at the intersection of N4 and O4 . Blowing up s8 produces a
+new component P4 and no new non-regular points.
+   The resulting Z2 -scheme C is regular, and its special fiber has 16 components, all isomor-
+phic to P1F2 : see Figure 4. All the intersection numbers are 0 or 1, except the self-intersection
+numbers, which are −4 for A, −3 for B2 , and −2 for each other component. The points P0 ,
+P1 , P2 , P3 map to components C, A, A, F respectively.
+   Let J be the Néron model of J5 over Z2 . We find that the component group Φ of JF2 is
+isomorphic to Z/4Z × Z/4Z. If P ∈ C5 (Q), then the corresponding point on the special fiber
+lies on one of A, C, E, F , and the class of P − P0 in J(Q) maps to (0, 3), (0, 0), (1, 0), (1, 2)
+in Z/4Z × Z/4Z accordingly (for a particular choice of isomorphism Φ ≃ Z/4Z × Z/4Z). In
+particular, Q1 , Q2 , Q3 map to (0, 3), (0, 3), (1, 2) respectively.
+   If moreover P ∈ C5 (Q)subset , then P does not reduce to a point on A. Thus
+
+(13.2)       n1 (0, 3) + n2 (0, 3) + n3 (1, 2) ≡ (0, 0) or (1, 0) or (1, 2)       (mod 4).
+
+13.4. Sieve information at 23. Using Magma’s ClassGroup function, we find that
+                                              Z   Z   Z   Z
+                               J5 (F23 ) ≃      × 4 × 4 × 5 .
+                                             2Z 2 Z 2 Z 2 Z
+Magma also lists the points of C5 (F23 ) and computes their images in J5 (F23 ). The condition
+that the image of n1 Q1 + n2 Q2 + n3 Q3 in J5 (F23 )/4J5 (F23 ) be in the image of C5 (F23 ) forces
+(n1 , n2 , n3 ) to be congruent to one of
+         000, 001, 002, 010, 011, 021, 030, 100, 101, 102, 110, 113, 220, 303, 312, 322
+modulo 4 (we have omitted parentheses and commas within each triple, for readability).
+Combining this with (13.2), we find that only
+
+                                          000, 001, 021, 220
+
+are possible. In particular n1 and n2 are both even.
+                                                  44
+13.5. Sieve information at 97. We have J5 (F97 ) ≃ (Z/98Z)3 . The condition that the
+image of n1 Q1 + n2 Q2 + n3 Q3 in J5 (F97 ) be in the image of C5 (F97 ) imposes congruence
+conditions on (n1 , n2 , n3 ) modulo 98. Combining these conditions with (13.1) and the con-
+dition that n1 and n2 be even proves that (n1 , n2 , n3 ) is congruent modulo 14 to one of the
+following:
+                           (2, 10, 9), (6, 2, 10), (6, 10, 10), (8, 0, 7).
+13.6. Sieve information at 13. The group J5 (F13 ) is cyclic of order 2 · 7 · 157. The image of
+C5 (F13 ) in J5 (F13 )/14J5(F13 ) has size 6, and the resulting conditions on (n1 , n2 , n3 ) modulo
+14 contradict those in the previous paragraph.
+
+13.7. End of proof. Finally we must verify that (J5 (Q) : Q) is prime to 14. By the results
+in Table 5, J5 (Q) ≃ Z3 . The image of Q under J5 (Q) → J5 (F23 )/2J5 (F23 ) has F2 -dimension
+3, so 2 ∤ (J5 (Q) : Q). The image of Q under
+                                               J5 (F13 )   J5 (F97 )
+                                  J5 (Q) →               ×
+                                              7 J5 (F13 ) 7 J5(F97 )
+has F7 -dimension 3, so 7 ∤ (J5 (Q) : Q). Thus C5 (Q)subset = ∅. This completes the proof of
+Theorem 1.1.
+
+                                       Acknowledgements
+   M.S. thanks the University of California at Berkeley for inviting him to visit the Depart-
+ment of Mathematics for two months in 2002; many of the ideas in this paper evolved during
+this period. Thanks go also to the Deutsche Forschungsgemeinschaft for providing the finan-
+cial means to pay for this visit through a Heisenberg Fellowship. We thank Ken Ribet for
+suggesting some of the references in the proof of Lemma 6.1. B.P. and E.S. thank Nils Bruin
+and the Pacific Institute for the Mathematical Sciences for their hospitality in the summer of
+2004: some calculations were doublechecked and some writing was done there. B.P. thanks
+also the Isaac Newton Institute for a visit in the summer of 2005. B.P. was partially sup-
+ported by NSF grants DMS-9801104 and DMS-0301280, and a Packard Fellowship. E.S. was
+partially supported by the NSA grant MDA904-03-1-0030. Computations were done using
+the software Magma [Magma] and PARI/GP [PARI2].
+
+                                            References
+[Bennett2004preprint] Michael A. Bennett, The equation x2n + y 2n = z 5 (2004), Preprint.
+[Bennett-Skinner2004] Michael A. Bennett and Chris M. Skinner, Ternary Diophantine equations via Galois
+    representations and modular forms, Canad. J. Math. 56 (2004), 23–54. MR2031121
+[Beukers1998] Frits Beukers, The Diophantine equation Axp + By q = Cz r , Duke Math. J. 91 (1998), 61–88.
+    MR1487980 (99f:11039)
+[Breuil2001] Christophe Breuil, Brian Conrad, Fred Diamond, and Richard Taylor, On the modularity of
+    elliptic curves over Q: wild 3-adic exercises, J. Amer. Math. Soc. 14 (2001), 843–939 (electronic).
+    MR1839918 (2002d:11058)
+[Bruin2004] Nils Bruin, Visualising Sha[2] in abelian surfaces, Math. Comp. 73 (2004), 1459–1476 (elec-
+    tronic). MR2047096
+                                                   45
+[Bruin2003]           , Chabauty methods using elliptic curves, J. Reine Angew. Math. 562 (2003), 27–49.
+     MR2011330 (2004j:11051)
+[Bruin2000]           , On powers as sums of two cubes, Algorithmic Number Theory (Leiden, 2000), Lecture
+     Notes in Comput. Sci., vol. 1838, Springer, Berlin, 2000, pp. 169–184. MR1850605 (2002f:11029)
+[Bruin1999]           , The Diophantine equations x2 ± y 4 = ±z 6 and x2 + y 8 = z 3 , Compositio Math. 118
+     (1999), 305–321. MR1711307 (2001d:11035)
+[Chabauty1941] Claude Chabauty, Sur les points rationnels des courbes algébriques de genre supérieur à
+     l’unité, C. R. Acad. Sci. Paris 212 (1941), 882–885. MR0004484 (3,14d) (French)
+[Chen2004preprint] Imin Chen, On the equation s2 + y 2p = α3 (July 1, 2004), Preprint.
+[Chevalley-Weil1930] C. Chevalley and A. Weil, Un théorème d’arithmétiques sur les courbes algébriques,
+     Comptes Rendus Hebdomadaires des Séances de l’Acad. des Sci., Paris 195 (1930), 570–572.
+[Coleman1985torsion] Robert F. Coleman, Torsion points on curves and p-adic abelian integrals, Ann. of
+     Math. (2) 121 (1985), 111–168. MR782557 (86j:14014)
+[Coleman1985chabauty]             , Effective Chabauty, Duke Math. J. 52 (1985), 765–770. MR808103
+     (87f:11043)
+[Cremona1997] J. E. Cremona, Algorithms for modular elliptic curves, 2nd ed., Cambridge University Press,
+     Cambridge, 1997, ISBN 0-521-59820-6. MR1628193 (99e:11068)
+[Curtis-Reiner1988] Charles W. Curtis and Irving Reiner, Representation theory of finite groups and asso-
+     ciative algebras, Wiley Classics Library, John Wiley & Sons Inc., New York, 1988, ISBN 0-471-60845-9,
+     Reprint of the 1962 original; A Wiley-Interscience Publication. MR1013113 (90g:16001)
+[Darmon1997Faltings] H. Darmon, Faltings plus epsilon, Wiles plus epsilon, and the generalized Fermat
+     equation, C. R. Math. Rep. Acad. Sci. Canada 19 (1997), 3–14. MR1479291 (98h:11034a)
+[Darmon-Merel1997] Henri Darmon and Loı̈c Merel, Winding quotients and some variants of Fermat’s last
+     theorem, J. Reine Angew. Math. 490 (1997), 81–100. MR1468926 (98h:11076)
+[Darmon-Granville1995] Henri Darmon and Andrew Granville, On the equations z m = F (x, y) and Axp +
+     By q = Cz r , Bull. London Math. Soc. 27 (1995), 513–543. MR1348707 (96e:11042)
+[Darmon1993CR] Henri Darmon, The equation x4 −y 4 = z p , C. R. Math. Rep. Acad. Sci. Canada 15 (1993),
+     286–290. MR1260076 (94m:11037)
+[Edwards2004] Johnny Edwards, A complete solution to X 2 + Y 3 + Z 5 = 0, J. Reine Angew. Math. 571
+     (2004), 213–236. MR2070150
+[Eichler1954] Martin Eichler, Quaternäre quadratische Formen und die Riemannsche Vermutung für die
+     Kongruenzzetafunktion, Arch. Math. 5 (1954), 355–366. MR0063406 (16,116d) (German)
+[ElkiesANTS4] Noam D. Elkies, Rational points near curves and small nonzero |x3 −y 2 | via lattice reduction,
+     Algorithmic Number Theory (Leiden, 2000), Lecture Notes in Comput. Sci., vol. 1838, Springer, Berlin,
+     2000, pp. 33–63. MR1850598 (2002g:11035)
+[Elkies1999]          , The Klein quartic in number theory, The Eightfold Way, Math. Sci. Res. Inst. Publ.,
+     vol. 35, Cambridge Univ. Press, Cambridge, 1999, pp. 51–101. MR1722413 (2001a:11103)
+[Ellenberg2004Fermat] Jordan S. Ellenberg, Galois representations attached to Q-curves and the generalized
+     Fermat equation A4 + B 2 = C p , Amer. J. Math. 126 (2004), 763–787. MR2075481
+[Faltings1983] G. Faltings, Endlichkeitssätze für abelsche Varietäten über Zahlkörpern, Invent. Math. 73
+     (1983), 349–366. MR718935 (85g:11026a) (German)
+[Flynn2004] E. V. Flynn, The Hasse principle and the Brauer-Manin obstruction for curves, Manuscripta
+     Math. 115 (2004), 437–466. MR2103661
+[Flynn-et-al2001] E. Victor Flynn, Franck Leprévost, Edward F. Schaefer, William A. Stein, Michael Stoll,
+     and Joseph L. Wetherell, Empirical evidence for the Birch and Swinnerton-Dyer conjectures for modular
+     Jacobians of genus 2 curves, Math. Comp. 70 (2001), 1675–1697 (electronic). MR1836926 (2002d:11072)
+[Ghioca2002] Dragos Ghioca, September 1, 2002, e-mail message.
+
+
+                                                     46
+[Halberstadt-Kraus2003] Emmanuel Halberstadt and Alain Kraus, Sur la courbe modulaire XE (7), Experi-
+     ment. Math. 12 (2003), 27–40. MR2002672 (2004m:11090) (French, with French summary)
+[Katz-Mazur1985] Nicholas M. Katz and Barry Mazur, Arithmetic moduli of elliptic curves, Annals of Math-
+     ematics Studies, vol. 108, Princeton University Press, Princeton, NJ, 1985, ISBN 0-691-08349-5, 0-691-
+     08352-5. MR772569 (86i:11024)
+[Kle1879] Felix Klein, Über die Transformationen siebenter Ordnung der elliptischen Funktionen, Math.
+     Annalen 14 (1879), 428–471. (German)
+[Kraus1998] Alain Kraus, Sur l’équation a3 + b3 = cp , Experiment. Math. 7 (1998), 1–13. MR1618290
+     (99f:11040) (French)
+[Magma] Wieb Bosma, John Cannon, and Catherine Playoust, The Magma algebra system. I. The user
+     language, J. Symbolic Comput. 24 (1997), 235–265, Computational algebra and number theory (London,
+     1993). Magma is available at http://magma.maths.usyd.edu.au/magma/ . MR1484478
+[PARI2] The       PARI       group,     PARI/GP,       version    2,    Bordeaux,    2005,    available  from
+     http://pari.math.u-bordeaux.fr.
+[Poonen-heuristic2005preprint] Bjorn Poonen, Heuristics for the Brauer-Manin obstruction for curves, July
+     2005, Preprint.
+[Poonen-Schaefer1997] Bjorn Poonen and Edward F. Schaefer, Explicit descent for Jacobians of cyclic covers
+     of the projective line, J. Reine Angew. Math. 488 (1997), 141–188. MR1465369 (98k:11087)
+[Ribet1990] K. A. Ribet, On modular representations of Gal(Q/Q) arising from modular forms, Invent.
+     Math. 100 (1990), 431–476. MR1047143 (91g:11066)
+[Sal1879] G. Salmon, A treatise on the higher plane curves, 3rd ed., Hodges, Foster, and Figgis, Dublin,
+     1879.
+[Schaefer1998] Edward F. Schaefer, Computing a Selmer group of a Jacobian using functions on the curve,
+     Math. Ann. 310 (1998), 447–471. MR1612262 (99h:11063)
+[Schaefer-Stoll2004] Edward F. Schaefer and Michael Stoll, How to do a p-descent on an elliptic curve, Trans.
+     Amer. Math. Soc. 356 (2004), 1209–1231 (electronic). MR2021618 (2004g:11045)
+[Scharaschkin2004preprint] Victor Scharaschkin, The Brauer-Manin obstruction for curves (December
+     2004), Preprint.
+[SerreGaloisCohomology] Jean-Pierre Serre, Galois cohomology, Corrected reprint of the 1997 English edi-
+     tion, Springer Monographs in Mathematics, Springer-Verlag, Berlin, 2002, ISBN 3-540-42192-0, Trans-
+     lated from the French by Patrick Ion and revised by the author. MR1867431 (2002i:12004)
+[Serre1987]          , Sur les représentations modulaires de degré 2 de Gal(Q/Q), Duke Math. J. 54 (1987),
+     179–230. MR885783 (88g:11022) (French)
+[SilvermanAEC] Joseph H. Silverman, The arithmetic of elliptic curves, Graduate Texts in Mathematics,
+     vol. 106, Springer-Verlag, New York, 1992, ISBN 0-387-96203-4, Corrected reprint of the 1986 original.
+     MR 95m:11054
+[Skorobogatov2001] Alexei Skorobogatov, Torsors and rational points, Cambridge Tracts in Mathematics,
+     vol. 144, Cambridge University Press, Cambridge, 2001, ISBN 0-521-80237-7. MR1845760 (2002d:14032)
+[SteinTables] William           A.       Stein,     Modular        forms      database,       Available     at
+     http://modular.fas.harvard.edu/Tables/index.html .
+[Stoll2004preprint] Michael Stoll, Independence of rational points on twists of a given curve, 2004, Preprint.
+[Stoll2005preprint]           , Finite descent and rational points on curves, 2005, Preprint.
+[Taylor-Wiles1995] Richard Taylor and Andrew Wiles, Ring-theoretic properties of certain Hecke algebras,
+     Ann. of Math. (2) 141 (1995), 553–572. MR1333036 (96d:11072)
+[Wiles1995] Andrew Wiles, Modular elliptic curves and Fermat’s last theorem, Ann. of Math. (2) 141 (1995),
+     443–551. MR1333035 (96d:11071)
+[Wilson2001] Robert A. Wilson, The Monster is a Hurwitz group, J. Group Theory 4 (2001), 367–374.
+     MR1859175 (2002f:20022)
+                                                     47
+  Department of Mathematics, University of California, Berkeley, CA 94720-3840, USA
+  E-mail address: poonen@math.berkeley.edu
+
+  Department of Mathematics and Computer Science, Santa Clara University, Santa Clara,
+CA 95053, USA
+  E-mail address: eschaefe@math.scu.edu
+
+  School of Engineering and Science, International University Bremen, P.O.Box 750561,
+28725 Bremen, Germany.
+  E-mail address: m.stoll@iu-bremen.de
+
+
+
+
+                                          48
+

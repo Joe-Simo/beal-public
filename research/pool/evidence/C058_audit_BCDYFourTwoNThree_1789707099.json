@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C058_audit_BCDYFourTwoNThree",
+  "timestamp": "2026-09-18T00:51:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "hyp": "BCDYFourTwoNThree",
+    "lean": "\u2200 a b c n : \u2115, 2 \u2264 n \u2192 0<a \u2192 0<b \u2192 0<c \u2192 Nat.Coprime a b \u2192 a^4 + b^(2n) = c^3 \u2192 False",
+    "source": "\n       Theorem 1. Suppose that (p, q, r) are positive integers with 1p + 1q + 1r < 1 and\n\n           (p, q, r) \u2208 {(2, n, 6), (2, 2n, 9), (2, 2n, 10), (2, 2n, 15), (3, 3, 2n), (3, 6, n), (4, 2n, 3)}\n"
+  },
+  "questions": {
+    "implied": {
+      "type": "score",
+      "instructions": "As a second reader: is the Lean hypothesis IMPLIED by the quoted source (never stronger than it)?",
+      "criteria": [
+        "0 the Lean statement is stronger than the source",
+        "1 unclear/needs a condition",
+        "2 implied modulo harmless reformulation",
+        "3 clearly implied"
+      ]
+    },
+    "issue": {
+      "type": "choice",
+      "instructions": "If any, the issue.",
+      "criteria": {
+        "none": "none",
+        "coprime": "coprimality convention",
+        "sign": "signs/negatives",
+        "exponent": "exponent range",
+        "permutation": "which term is the sum (permutation of signature)",
+        "rank": "rank 0 depends on 2-descent being unconditional"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "implied": {
+        "type": "score",
+        "score": 1.66,
+        "confidence": 0.0,
+        "legend": {
+          "0": "0 the Lean statement is stronger than the source",
+          "1": "1 unclear/needs a condition",
+          "2": "2 implied modulo harmless reformulation",
+          "3": "3 clearly implied"
+        },
+        "probabilities": {
+          "0": 0.27,
+          "1": 0.13,
+          "2": 0.29,
+          "3": 0.31
+        }
+      },
+      "issue": {
+        "type": "choice",
+        "choice": "exponent",
+        "confidence": 0.12,
+        "probabilities": {
+          "none": 0.22,
+          "rank": 0.03,
+          "sign": 0.01,
+          "permutation": 0.25,
+          "coprime": 0.23,
+          "exponent": 0.26
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 661,
+      "output_tokens": 81
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_SameOddPrime_gcd_add_cofactor_dvd_prime",
+  "timestamp": "2026-09-18T07:30:12-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "name": "gcd_add_cofactor_dvd_prime"
+  },
+  "questions": {
+    "doc_mismatch": {
+      "type": "noul",
+      "instructions": "Does the docstring claim something the Lean STATEMENT (not proof) does not say \u2014 a stronger range, an extra case, or 'unconditional' while hypotheses appear?",
+      "criteria": {
+        "true": "mismatch",
+        "false": "docstring matches statement"
+      }
+    },
+    "target_drift": {
+      "type": "noul",
+      "instructions": "Does the statement silently change the Beal target (exponent 2 allowed for a Beal exponent, coprimality dropped, base restricted)?",
+      "criteria": {
+        "true": "drift",
+        "false": "no drift"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "doc_mismatch": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "target_drift": {
+        "type": "noul",
+        "noul": 0.27
+      }
+    },
+    "usage": {
+      "input_tokens": 718,
+      "output_tokens": 42
+    }
+  }
+}

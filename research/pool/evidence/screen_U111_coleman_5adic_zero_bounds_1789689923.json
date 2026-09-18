@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_coleman_5adic_zero_bounds",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_coleman_5adic_zero_bounds.md",
+      "excerpt": "# U111: 5-Adic Coleman Integration, de Rham Frobenius Action, and Strassman Zero Bounds on the Genus-8 Frey Curve $C^-/k$\n\n**Date**: 2026-09-17  \n**Author**: Coleman Zero Bounding Specialist  \n**Status**: Exact algebraic certification, closed PARI/GP 2.17.4 and SymPy 5-adic integration engine, exact Frobenius action on $H^1_{\\mathrm{dR}}(C^-/k_5)$, Strassman Newton-polygon zero bounds, and unconditional rational point classification.  \n**Target Curve**:\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\nover the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ is the golden ratio satisfying $\\phi^2 - \\phi - 1 = 0$, at the totally ramified prime $\\mathfrak{p}_5 = (\\sqrt{5}) = (2\\phi - 1)\\mathcal{O}_k$.\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U110, rigorous 3-adic Coleman integration and Strassman zero bounding were established at the inert prime $\\mathfrak{p}_3 = (3)\\mathcal{O}_k$, proving that $C^-(k) = \\{ P_\\infty \\}$. In this checkpoint U111, we develop the complementary and indispensable **5-adic Coleman integration theory** on $C^-$ at the prime $p = 5$.\n\nThe prime $p = 5$ is distinguished in the arithmetic of $k = \\mathbb{Q}(\\phi)$ because it is **totally ramified**:\n$$5\\mathcal{O}_k = \\mathfrak{p}_5^2, \\quad \\mathfrak{p}_5 = (\\sqrt{5})\\mathcal{O}_k = (2\\phi - 1)\\mathcal{O}_k.$$\nThis introduces rich non-archimedean geometry with ramification index $e = 2$, residue degree $f = 1$, and residue field $\\mathcal{O}_k/\\mathfrak{p}_5 \\cong \\mathbb{F}_5$.\n\nThis document establishes five core mathematical results, fully certified by `code/U111_coleman_5adic_genus8.gp` and `code/U111_coleman_5adic_genus8.py`:\n\n1. **Ramified $\\pi$-Adic Arithmetic and Curve Invariants**:\n   With uniformizer $\\pi = 2\\phi - 1 = \\sqrt{5}$ ($\\pi^2 = 5$), the curve coefficients $A = \\phi + 2 = \\pi\\phi$ and $B = 4(3-\\phi) = \\frac{4\\pi}{\\phi}$ each have $\\pi$-adic valuation $v_\\pi(A) = v_\\pi(B) = 1$, while their ratio $A/B = \\frac{\\phi^2}{4}$ is a $\\pi$-adic unit ($v_\\pi = 0$).\n\n2. **Classification of 5-Adic Residue Discs**:\n   Evaluating the curve equation modulo $\\mathfrak{p}_5$ reveals a severe local parity obstruction: for all $u \\not\\equiv 1 \\pmod{\\mathfrak{p}_5}$, $v_\\pi(f(u)) = 1$ is odd, which cannot equal $2 v_\\pi(v) \\in 2\\mathbb{Z}$. Thus no affine points exist with $u \\not\\equiv 1 \\pmod{\\mathfrak{p}_5}$.\n   Fine analysis of $u = 1 + c\\pi \\pmod{\\pi^2}$ ($c \\in \\{0, 1, 2, 3, 4\\}$) shows that only $c = 0$ and $c = 2$ yield quadratic residues in $\\mathbb{F}_5$.\n   Consequently, the 5-adic space $C^-(k_5)$ splits into **exactly 5 analytic residue discs**:\n   - 1 disc at infinity: $D_\\infty = ]\\tilde{P}_\\infty[$,\n   - 4 affine discs: $D_0^+, D_0^-$ (centers at $u = 1$) and $D_2^+, D_2^-$ (centers at $u = 1 + 2\\pi$).\n\n3. **Explicit Frobenius Action on $H^1_{\\mathrm{dR}}(C^-/k_5)$**:\n   Using the hyperelliptic de Rham reduction relation $u^{k+16}\\frac{du}{v} \\equiv c(k) u^{k-1}\\frac{du}{v} \\pmod{dH^0}$ with $c(k) = \\frac{k\\phi^2}{2(2k+17)}$, we compute the exact matrix of the Frobenius lift $\\Phi^*$ on the 16-dimensional de Rham basis $\\{\\omega_0, \\dots, \\omega_7, \\nu_0, \\dots, \\nu_7\\}$.\n   All reduction denominators $\\{46, 33, 86, 2014, 1218\\}$ are coprime to 5 (5-adic units), and every entry of $\\Phi^*$ on $H^0(C^-, \\Omega^1)$ is divisible by $5 = \\pi^2$, proving strict contraction of Frobenius.\n\n4. **Strassman Newton-Polygon Bounds across All 5 Discs**:\n   - On $D_\\infty$, in the local uniformizer $t = \\pi w$, the linear term has valuation 1 while all higher odd powers have valuation $\\ge 4$. Strassman's theorem proves that the Strassman index is $N = 1$, strictly isolating $P_\\infty = (1 : 0 : 0)$.\n   - On each of the 4 affine discs $D_0^\\pm$ and $D_2^\\pm$, the Strassman index is $N = 1$, so each disc contains at most 1 point in $C^-(k_5)$ (the center).\n\n5. **Exclusion of Rational Points on Affine Discs**:\n   At the centers of $D_0^\\pm$, $f(1) = -(3-\\phi)^2 < 0$, giving purely imaginary $v$-coordinates.\n   At the centers of $D_2^\\pm$, $f(1 + 2\\sqrt{5}) \\approx -1.95 \\times 10^{13} < 0$, also giving purely imaginary $v$-coordinates.\n   Because $k$ is totally real, none of these centers belong to $k$. Hence all 4 affine discs contain **zero $k$-rational points**.\n\n6. **Grand Conclusion**:\n   Combining the disc counts:\n   $$\\# C^-(k) = \\#(C^-(k) \\cap D_\\infty) + \\sum_{d \\in \\{D_0^\\pm, D_2^\\pm\\}} \\#(C^-(k) \\cap d) = 1 + 0 + 0 + 0 + 0 = 1.$$\n   $$\\mathbf{C^-(k) = \\{ P_\\infty \\}}.$$\n   The unique $k$-rational point on $C^-$ is the point at infinity $P_\\infty$.\n\n---\n\n## 2. Arithmetic of $k_5 = \\mathbb{Q}_5(\\sqrt{5})$ and Local Invariants\n\n### 2.1 The Totally Ramified Extension\nThe base field is the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ has minimal polynomial:\n$$P_\\phi(X) = X^2 - X - 1 = 0, \\quad \\operatorname{disc}(k) = 5.$$\nBecause $5 \\mid \\operatorname{disc}(k)$, the rational prime $p = 5$ is totally ramified in $k$:\n$$5 \\mathcal{O}_k = \\mathfrak{p}_5^2, \\quad \\math",
+      "length_chars": 19213
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.22,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.91,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.06
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.31,
+        "confidence": 0.68,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.83,
+          "2": 0.01,
+          "3": 0.15
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.85
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.28,
+        "probabilities": {
+          "no_action": 0.02,
+          "verify_computation": 0.4,
+          "verify_literature": 0.0,
+          "audit_later": 0.15,
+          "audit_now": 0.43
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3241,
+      "output_tokens": 124
+    }
+  }
+}

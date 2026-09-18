@@ -1,0 +1,124 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C007_C013",
+  "timestamp": "2026-09-17T20:21:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U111_signature_5_5_p_hilbert_sieve.md",
+        "research/checkpoints/U110_signature_5_5_higher_primes_analysis.md",
+        "research/checkpoints/U102_p11_p13_class_number_certification_and_unconditional_status.md",
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_hypothesis_screen.py"
+      ],
+      "obligations": [
+        "U110 p=17 analysis assumes FINITENESS OF SHA for its Cassels-Tate parity step, then reports rank J_{17,1}(K) = 2 exactly; Sha finiteness is open",
+        "U110 concedes rank 2 defeats standard one-generator Chabauty-Coleman, so p=17 is NOT closed",
+        "U102 claim that x^5+y^5=z^11 and z^13 are unconditionally resolved is INVALID (U113 Part IV): it removes GRH using Cohen-Martinet heuristics and GRH-conditional Bach bounds. Those cases remain GRH-conditional as Dahmen-Siksek left them",
+        "Dahmen-Siksek (Acta Arith. 164:65-100, 2014) cited repeatedly across the project and NEVER checked against the primary source",
+        "trivial solution persistence for p in {17,19,23} analysed but not eliminated"
+      ],
+      "evaluations": {
+        "citation_audit_PRIMARY_SOURCE": "CONFIRMED 2026-09-17: Dahmen-Siksek, Acta Arith. 164 (2014) 65-100 (arXiv:1309.4030) prove (5,5,7), (5,5,19), (7,7,5) UNCONDITIONALLY and (5,5,11), (5,5,13), (7,7,11) ASSUMING GRH. This confirms U113 Part IV: U102 claim to have removed GRH for p=11,13 is the sole step between conditional and unconditional, and that removal is circular. Checked against abstract and bibliographic record, NOT full text."
+      },
+      "failure_reason": null,
+      "novelty_note": "Distinct base field and Frey family from the (3,3,p) route; failure mode would be newform persistence rather than sieve exhaustion.",
+      "extracted": [],
+      "id": "C007",
+      "status": "VERIFICATION_REQUIRED",
+      "claim": "A^5 + B^5 = C^p has no primitive nontrivial solutions for primes p >= 5, via Hilbert modular forms over Q(sqrt 5).",
+      "method": "BCDF Frey elliptic curve families E_{a,b}, F_{a,b} over F = Q(sqrt 5) (h_F = h_F^+ = 1), level lowering to Hilbert newforms at levels dividing 40, 64, 80 and p_2^6, with an a_3-dichotomy."
+    },
+    "candidate_B": {
+      "parents": [
+        "C003"
+      ],
+      "inspirations": [
+        "C006"
+      ],
+      "evidence": [
+        "research/checkpoints/U113_orbit_b_elimination_audit.md"
+      ],
+      "obligations": [
+        "Determine the Serre weight and inertial type of rho-bar_{b,17} at 17 (orbit b is CM by Q(zeta_5), 17 inert in M, supersingular reduction: P(T)=T^4+289)",
+        "Determine the same for rho-bar_{J^-,17}; U97 section 2.3 asserts both are supersingular/finite flat at 17, which if correct closes off the 17-adic route and forces the obstruction to live at 2 or 5",
+        "Check whether the Halberstadt-Kraus symplectic criterion at 2 and 3 applies to an RM abelian surface, or only to elliptic curves",
+        "This route is BLOCKED unless C002 level lowering is repaired, since without it there is no congruence to contradict"
+      ],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": "First candidate in the pool that respects the residual/17-adic distinction; every prior orbit-b elimination violated it. Its failure mode would be that rho-bar_{J^-,17} and rho-bar_{b,17} genuinely agree on all local data, which would be informative.",
+      "extracted": [],
+      "id": "C013",
+      "claim": "Orbit b (2.2.5.1-2000.1-b) is incompatible with rho-bar_{J^-,17} by an obstruction that uses ONLY residual mod-17 data: an image-of-inertia, Serre-weight, or Halberstadt-Kraus symplectic incompatibility at 2, 5 or 17.",
+      "method": "Residual-only obstruction. Compare rho-bar_{J^-,17}|_{I_p} against rho-bar_{b,17}|_{I_p} for p in {2,5,17} using Serre weights and the symplectic criterion, avoiding every isogeny-level or 17-adic statement.",
+      "status": "ACTIVE"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.66,
+        "confidence": 0.34,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.53,
+          "1": 0.29,
+          "2": 0.16,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 2054,
+      "output_tokens": 53
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U57_coefficient2_closed_by_freitas_dieulefait",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U57_coefficient2_closed_by_freitas_dieulefait.md",
+    "excerpt": "# U57: coefficient-2 orientation is eliminated by the strengthened Freitas theorem\n\nStatus: verified primary-source theorem application to one Beal subbranch. This does not resolve Beal's conjecture.\n\nDate: 2026-09-16.\n\n## 1. Branch to eliminate\n\nU43 proves that in the all-even `17 | t` branch, if the `s`-orientation is the 5-power orientation, then there are coprime odd positive integers `X<Y` and a positive integer `Z` satisfying\n\n    X^10 + Y^10 = 2 Z^17.                              (1)\n\nThe strict inequality follows directly from U43's Pythagorean parametrization: `m-n=u^s`, `m+n=v^s` with `0<u<v`, and in this orientation\n\n    X=u^(s/5),\n    Y=v^(s/5).\n\nThus `X<Y`.\n\nSet\n\n    x=X^2,\n    y=Y^2,\n    z=Z.\n\nThen (1) becomes\n\n    x^5 + y^5 = 2 z^17,                                (2)\n\nwith `gcd(x,y)=1`.\n\n## 2. Correction to the literature record\n\nThe project previously relied on arXiv:1103.5388v1 (March 2011) by Luis Dieulefait and Nuno Freitas. In that early preprint, Theorem 1.1 used the narrower condition\n\n    p \u2261 1 (mod 4) AND p \u2261 \u00b11 (mod 5),\n\nwhich does not include `p=17` because `17 \u2261 2 (mod 5)`.\n\nThat preprint is not the strongest later source and is superseded for this application.\n\nNuno Freitas' doctoral thesis,\n\n    Some Generalized Fermat-type Equations via Q-Curves and Modularity,\n    Universitat de Barcelona, 2012,\n\nstates and proves the strengthened result as Theorem 2.0.3:\n\nLet `beta` be an integer divisible only by primes `l` with `l != 1 (mod 5)`. Suppose\n\n    p \u2261 1 (mod 4) OR p \u2261 \u00b11 (mod 5).\n\nThen\n\n    x^5+y^5=C z^p\n\nhas no non-trivial primitive solutions if\n\n    C=2 beta and p>13,\n\nwith a parallel coefficient-3 statement under its own bound.\n\nThe same thesis later completes the proof by eliminating the surviving CM pairs whenever\n\n    p \u2261 1 (mod 4) OR p \u2261 \u00b11 (mod 5).\n\nPrimary source item:\n\n    https://diposit.ub.edu/items/c2f22042-c62e-4c2c-8912-1205d382ed2d\n\nDirect thesis text:\n\n    https://diposit.ub.edu/bitstreams/c7eff111-9cde-45e5-8dae-85b503ecaafd/download\n\nThe later joint article is\n\n    Luis Dieulefait and Nuno Freitas,\n    `The Fermat-type equations x^5+y^5=2z^p or 3z^p solved through Q-curves`,\n    Mathematics of Computation 83 (2014), 917\u2013933,\n    DOI 10.1090/S0025-5718-2013-02731-7.\n\nIts final publication metadata/abstract reports a solved prime set of density `3/4`, consistent with the union (`OR`) of the two congruence conditions, whereas the old arXiv v1 abstract reported density `1/4` for the coefficient-2 case. This independently confirms that the old preprint statement is stale for the later result.\n\n## 3. Application to p=17\n\nApply Theorem 2.0.3 with\n\n    beta=1,\n    C=2,\n    p=17.\n\nThe condition on prime divisors of `beta` is vacuous. Also\n\n    17>13,\n    17 \u2261 1 (mod 4).\n\nHence the theorem applies and (2) has no non-trivial primitive solution.\n\nOur `(x,y,z)` is primitive because `gcd(X,Y)=1` implies `gcd(X^2,Y^2)=1`.\n\n## 4. The trivial solution cannot arise from U43\n\nThe thesis calls a primitive solution trivial when `|xyz|<=1`. For positive integers in (2), this forces\n\n    x=y=z=1.\n\nBut U43 gives `X<Y`, hence\n\n    x=X^2<Y^2=y.\n\nTherefore the trivial solution cannot be the image of a Beal-derived solution.\n\nConsequently U43's coefficient-2 orientation is impossible.\n\n## 5. Coverage consequence\n\nThe orientation\n\n    X^10+Y^10=2Z^17\n\nis CLOSED by the primary-source theorem plus the elementary U43 pullback.\n\nThe exploratory arithmetic descent U46 and U48\u2013U56 remains preserved because it contains valid independent structure and may be reusable elsewhere, but it is no longer needed to eliminate this orientation.\n\nThis does NOT close the full all-even `17 | t` branch: the second orientation\n\n    X^10+256Y^10=Z^17\n\nstill depends on U41's candidate modular elimination, whose complete Hilbert-newspace enumeration and level-lowering bridge require independent certification.\n\nThis also does NOT address the all-even `17 \u2224 t` branch (all right prime divisors at least 19), or the much larger mixed-signature part of the original Beal conjecture.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.98,
+        "confidence": 0.34,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.34,
+          "1": 0.37,
+          "2": 0.27,
+          "3": 0.02
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.64
+      }
+    },
+    "usage": {
+      "input_tokens": 1886,
+      "output_tokens": 42
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U47_t_prime_coverage",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U47_t_prime_coverage.md",
+    "excerpt": "# U47: prime-divisor coverage for the all-even right half-exponent t\n\nStatus: verified coverage checkpoint only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14; updated 2026-09-16 after U57.\n\n## 1. Setup\n\nLet a primitive all-even Beal candidate satisfy\n\n    A^(2r)+B^(2s)=C^(2t),\n\nwith r,s,t>=2 and pairwise coprime positive bases.\n\nU46 proves the t=2 boundary impossible and, together with U45, proves that every prime divisor of r and s is at least 5.\n\n## 2. t is odd\n\nIf 2|t, write t=2u. Then\n\n    A^(2r)+B^(2s)=(C^u)^4,\n\nwhich is exactly the t=2 shape eliminated in U46. Therefore\n\n    2 does not divide t.\n\n## 3. Small odd prime divisors of t are impossible\n\nSuppose a prime p in {3,5,7,11,13} divides t. Choose prime divisors\n\n    l|r, m|s.\n\nBy U45-U46, l,m>=5. Write\n\n    X=A^(r/l), Y=B^(s/m), Z=C^(2t/p).\n\nThen\n\n    X^(2l)+Y^(2m)=Z^p.\n\nAnni-Siksek, `Modular elliptic curves over real abelian fields and the generalized Fermat equation x^(2l)+y^(2m)=z^p`, proves no nontrivial primitive solutions for p=3,5,7,11,13 with l,m>=5, with the original p=13 l,m!=7 restriction later completed by Billerey-Chen-Dembele-Dieulefait-Freitas.\n\nHence no prime in {3,5,7,11,13} divides t.\n\nCombining with oddness:\n\n    every prime divisor of t is at least 17.                 (1)\n\n## 4. The 17-divisible branch\n\nIf 17|t, U43 and Michaud-Jacobs imply that at least one of r,s is a positive power of 5. The two Pythagorean orientations reduce exactly to\n\n    X^10+Y^10=2Z^17                                      (A)\n\nor\n\n    X^10+256Y^10=Z^17.                                   (B)\n\n### Branch (A) is now closed\n\nU57 corrects the project's earlier literature record. Freitas' 2012 doctoral thesis, Theorem 2.0.3, proves for beta supported only on primes not congruent to 1 mod 5 that\n\n    x^5+y^5=2 beta z^p\n\nhas no non-trivial primitive solutions for p>13 whenever\n\n    p == 1 (mod 4) OR p == +/-1 (mod 5).\n\nThis is the strengthened multi-Frey/Q-curve result associated with the later Dieulefait-Freitas Mathematics of Computation article; the old arXiv:1103.5388v1 statement used the narrower AND condition and is stale for this application.\n\nIn (A), put x=X^2, y=Y^2, beta=1 and p=17. Since 17>13 and 17==1 mod4, the theorem applies. The only positive trivial solution would have X=Y=Z=1, but U43 has X<Y in this orientation. Hence (A) is impossible.\n\n### Branch (B)\n\nBranch (B) is the U41 weighted Frey candidate elimination. Its finite q=11 trace sieve eliminates the recorded norm-2000 Hilbert-newform candidates, but independent certification of the complete newspace inventory and the adapted level-lowering bridge remains open. Therefore (B) is not yet counted as independently verified closed.\n\n## 5. If 17 does not divide t\n\nBy (1), every prime divisor of t is then at least 19. Taking any prime p|t and any prime divisors l|r,m|s reduces the original all-even candidate to\n\n    X^(2l)+Y^(2m)=Z^p,\n\nwhere\n\n    l,m>=5 primes,\n    p>=19 prime.\n\nThis is a genuine residual generalized-Fermat family. No theorem found in the current literature audit completely resolves all such signatures.\n\n## 6. Current 2025 asymptotic result\n\nSatyabrate Sahoo, `Effective Generalized Fermat equation of signature (2p,2q,r) with odd narrow class number`, arXiv:2509.21083 (2025), studies\n\n    x^(2p)+y^(2q)=z^r\n\nfor fixed prime r>=5 and varying primes p,q>=5.\n\nFor r=19 the paper verifies criteria implying the existence of an effectively computable constant V_19 such that there are no nontrivial primitive solutions when the two varying primes exceed V_19, treating both 19|a and 19 not dividing a through its two main local/S-unit criteria.\n\nCrucially, this is an asymptotic/effective theorem, not a complete solution for r=19:\n\n- the paper does not provide a blanket elimination of all p,q>=5;\n- the finite range p<=V_19 or q<=V_19 still requires explicit treatment;\n- therefore r=19 cannot currently be removed from the Beal coverage ledger by citation alone.\n\nThe same caution applies a fortiori to the full family of right primes >=19.\n\n## 7. Coverage status\n\nThe all-even branch is now partitioned rigorously as follows:\n\n1. t has no prime divisor below 17;\n2. if 17|t, orientation (A) is closed by U57 and only the weighted orientation (B) remains, with U41 a serious but not independently certified candidate elimination;\n3. if 17 does not divide t, every prime divisor of t is >=19 and the problem enters an unresolved large-right-prime generalized-Fermat family, though modern results give effective asymptotic control for each fixed right prime under explicit conditions.\n\nNo statement that `17 must divide t` is currently proved.\n\n## 8. Next actions\n\nHighest-value immediate actions:\n\n1. independently certify U41 so the entire `17|t` all-even branch can be closed;\n2. inspect the r=19 effective bounds/S-unit computations to determine whether the residual finite range is computationally tractable;\n3. keep U48-U56 as independent arithmetic work but do not spend further effort on the coef"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.91,
+        "confidence": 0.09,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.52,
+          "1": 0.17,
+          "2": 0.2,
+          "3": 0.11
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.81
+      }
+    },
+    "usage": {
+      "input_tokens": 2094,
+      "output_tokens": 42
+    }
+  }
+}

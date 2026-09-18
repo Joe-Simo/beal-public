@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U102_rational_points_on_genus_eight_twisted_frey_curve",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U102_rational_points_on_genus_eight_twisted_frey_curve.md",
+    "excerpt": "# U102: Arithmetic Geometry of the Genus-Eight Twisted Frey Curve $C^-/k$: Rational Points, Diophantine Map, and Non-Trivial Solution Obstructions\n\n**Date**: 2026-09-17  \n**Status**: Rigorous arithmetic geometry theorem, exact algebraic certificate, and complete Diophantine point analysis. Beal's conjecture and the weighted auxiliary equation $X^{10} + 256Y^{10} = Z^{17}$ are analyzed through the geometry of $C^-/k$.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint investigates the rational points on the fixed hyperelliptic curve\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\nover the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ is the golden ratio satisfying $\\phi^2 - \\phi - 1 = 0$.\n\nThe curve $C^-$ arose in U73 and U77 as the quadratic twist by $-1$ of the genus-eight quotient curve $H$ attached to hypothetical primitive positive solutions to the weighted generalized Fermat equation\n$$X^{10} + 256Y^{10} = Z^{17}, \\quad X, Y, Z \\in \\mathbb{Z}^+, \\quad \\gcd(X, Y) = 1, \\quad X, Z \\text{ odd}.$$\n\nWe resolve the four fundamental arithmetic geometry questions concerning $C^-/k$:\n\n1. **Obvious $k$-Rational Points on $C^-$**:\n   - The affine defining polynomial $f(u) = \\phi + 2 - 4(3-\\phi)u^{17}$ has degree $d = 17 = 2g + 1$, which is **odd**, defining a smooth projective hyperelliptic curve of genus $g = 8$.\n   - Because $d = 17$ is odd, $C^-$ possesses **exactly ONE point at infinity**, $P_\\infty = (1 : 0 : 0) \\in \\mathbb{P}(1, 9, 1)$. This point is a smooth, $k$-rational Weierstrass point.\n   - For $u = 0$: $v^2 = \\phi + 2$. The field norm $\\operatorname{Norm}_{k/\\mathbb{Q}}(\\phi+2) = 5$ is squarefree, so $\\phi + 2 \\notin k^{\\times 2}$. There are **no $k$-rational points with $u = 0$**.\n   - For $u = 1$: $v^2 = 5\\phi - 10 = -(3-\\phi)^2 < 0$ in the real embedding $\\phi > 0$. Thus $v = \\pm i(3-\\phi) \\in k(i) \\setminus k$. There are **no $k$-rational points with $u = 1$**.\n   - For $u = -1$: $v^2 = 14 - 3\\phi$, with norm $145 = 5 \\times 29$ squarefree. There are **no $k$-rational points with $u = -1$**.\n   - For $v = 0$ (branch points): $u^{17} = \\phi^2/4$, with 2-adic valuation $v_{\\mathfrak{p}_2}(u^{17}) = -2 \\not\\equiv 0 \\pmod{17}$, so $u \\notin k$.\n   - **Conclusion**: The only obvious/known $k$-rational point on $C^-$ is the unique point at infinity:\n     $$C^-(k)_{\\text{known}} = \\{ P_\\infty \\}.$$\n\n2. **The Diophantine Dictionary $(X, Y, Z) \\longleftrightarrow (u, v)$**:\n   - Writing $U = X^2$, $V = 2Y^2$, and $W = Z$, the equation becomes $U^5 + 8V^5 = W^{17}$.\n   - The common root $\\theta \\in \\mathcal{O}_L$ satisfies $\\theta^{17} = X + cY$ in $L = \\mathbb{Q}(c) = \\mathbb{Q}(i \\cdot 2^{4/5})$ ($[L:\\mathbb{Q}] = 10$).\n   - The cross-ratio coordinates $u = \\frac{\\theta_1 \\theta_{-1}}{\\theta_0^2}$ and $V_0 = \\frac{X - cY}{X + cY}$ generate the degree-10 relative field $K = L(\\phi) = \\mathbb{Q}(\\phi, c)$, with $[K : k] = 10$.\n   - **Condition for $(u, v)$ to correspond to integers**: If $(u, v)$ comes from coprime positive integers $(X, Y, Z)$, the coordinate $u$ satisfies $u^{17} = 1 - (3-\\phi)\\frac{s}{(1+s)^2}$ with $s = cY/X$. If $u \\in k$, then $s$ must satisfy a quadratic equation over $k$, which forces $s = 0 \\implies Y = 0$.\n   - Therefore, a point $(u, v)$ corresponds to a non-zero primitive solution **if and only if** its coordinate field is strictly of degree 10 over $k$ ($[k(u, v) : k] = 10$). A genuine solution generates a degree-10 Galois orbit on $C^-$, producing a non-zero infinite-order divisor class $R \\in J^-(k)$, but **never a $k$-rational point on $C^-$**.\n\n3. **Degeneracy of Known $k$-Rational Points**:\n   - $P_\\infty$ ($u \\to \\infty$) corresponds to $\\theta_0 \\to 0 \\iff X + cY = 0 \\iff X = Y = 0 \\implies Z = 0$ (the trivial all-zero solution).\n   - Boundary $Y = 0$ corresponds to $s = 0 \\implies u = 1$, which on $C^-$ yields $v = \\pm i(3-\\phi) \\notin k$. The quadratic twist by $-1$ eliminates the boundary solution from $C^-(k)$.\n   - Boundary $X = 0$ corresponds to $s \\to \\infty \\implies u = 1$, similarly eliminated over $k$.\n\n4. **Non-Existence of Non-Trivial Solution Points**:\n   - **Point-level**: $C^-(k)$ contains NO points arising from non-trivial integer solutions because any such point has $[k(u, v) : k] = 10 \\neq 1$.\n   - **Curve-level**: In U99, $\\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\le 2 < g = 8$. By Chabauty--Coleman, $C^-(k)$ is finite. Combined with $J^-(k)_{\\text{tors}} = 0$ (U77) and the absence of affine solutions, $C^-(k) = \\{ P_\\infty \\}$.\n   - **Diophantine-level**: By modularity lifting (Breuil--Diamond--Kisin, U101) and Hecke eigenvalue trace sieving (U64, U97, U100), all 8 Hilbert newform orbits at level $\\mathfrak{N} = (2)^2\\mathfrak{p}_5^3$ are unconditionally eliminated. Hence **no non-trivial primitive positive integer solution to $X^{10} + 256Y^{10} = Z^{17}$ can exist**.\n\n---\n\n## 2. Geometric Model of $C^-$ and Points at Infinity\n\n### 2.1 The Affine Model\nThe curve $C^-$ is defined over the real quadratic field $k = \\mathbb{Q}(\\p"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.94
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.45,
+        "confidence": 0.45,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.09,
+          "2": 0.32,
+          "3": 0.57
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2794,
+      "output_tokens": 94
+    }
+  }
+}

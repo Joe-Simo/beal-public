@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "repair_Signature238",
+  "timestamp": "2026-09-17T21:21:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal project. Already kernel-verified and axiom-free: Beal.Conjecture (the statement), Beal.AlgebraicIdentities, Beal.ExponentReduction (exponent reduction + the diagonal family (n,n,n) with 4|n via mathlib fermatLastTheoremFour), Beal.Structure (pairwise coprimality of the bases, no counterexample with A=B). mathlib v4.14.0 provides fermatLastTheoremFour but NOT a complete FLT for exponent 3, and provides NO Catalan/Mihailescu theorem. Custom axioms are not acceptable in a verified chain.",
+    "module": "Signature238",
+    "source": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist, Arithmetic Number Theory Group\n-/\nimport Beal.Conjecture\nimport Beal.Taxonomy\nimport Beal.KnownSolutions\n\n/-!\n# Formalization of Signature (2, 3, 8) and Bruin's Classification Theorem\n\nThis module formalizes the resolution of the Generalized Fermat Equation of signature $(2, 3, 8)$:\n  $$x^2 + y^3 = z^8$$\nand its consequences for the Beal Conjecture, following Nils Bruin's landmark theorem (2004):\n\"The Diophantine equations $x^2 + y^3 = z^8$ and $x^2 + y^3 = z^9$\", Crelle's Journal 576, 181-209.\n\n## Mathematical Architecture\n\n1. **Bruin's Classification Theorem (2004)**:\n   All primitive integer solutions to $x^2 + y^3 = z^8$ with $\\gcd(x, y, z) = 1$ and $x, z > 0$ belong to:\n   - Trivial solutions: $(1, 0, 1)$ and $(1, -1, 0)$.\n   - Catalan solution: $(3, -2, 1)$, since $3^2 + (-2)^3 = 9 - 8 = 1 = 1^8$.\n   - Sporadic solution: $(30042907, -96222, 43)$, since:\n       $$30042907^2 + (-96222)^3 = 902576262960649 - 891396860010968 = 11179402949681 = 43^8.$$\n\n2. **Absence of Beal Counterexamples**:\n   - For a solution to $x^2 + y^3 = z^8$ to produce a Beal counterexample, all three bases\n     must be positive integers, mutually coprime, and all exponents $\\ge 3$.\n   - Writing $x = A^k$ with $k \\ge 2$ converts $x^2$ into $A^{2k}$ with exponent $2k \\ge 4 \\ge 3$.\n   - We verify that neither $x = 3$ nor $x = 30042907$ is a higher power:\n     - $3$ is prime, hence not of the form $A^k$ for any $k \\ge 2$.\n     - $30042907 = 109 \\times 275623$ is square-free, hence not of the form $A^k$ for any $k \\ge 2$.\n   - Furthermore, in both non-trivial solutions, $y < 0$ (namely $y = -2$ and $y = -96222$),\n     so they do not provide positive integer solutions to $A^x + B^y = C^z$ in the standard formulation.\n\n3. **Theorem on Exponent Doubling**:\n   There are strictly no positive coprime integer solutions to:\n     $$A^{2k} + B^3 = C^8 \\quad \\text{for any } k \\ge 2.$$\n-/\n\nnamespace Beal\n\n/-- The Diophantine equation of signature (2, 3, 8) over \u2124. -/\ndef Signature238Equation (x y z : \u2124) : Prop :=\n  x^2 + y^3 = z^8\n\n/-- A primitive solution over \u2124 with coprime coordinates. -/\ndef IsPrimitive238Solution (x y z : \u2124) : Prop :=\n  Signature238Equation x y z \u2227 (Int.gcd (Int.gcd x y) z = 1)\n\n/-- Verification of Catalan's equality for signature (2, 3, 8). -/\ntheorem catalan_238_identity : Signature238Equation 3 (-2) 1 := by\n  unfold Signature238Equation\n  decide\n\n/-- Verification of Bruin's sporadic identity for signature (2, 3, 8). -/\ntheorem bruin_sporadic_238_identity : Signature238Equation 30042907 (-96222) 43 := by\n  unfold Signature238Equation\n  decide\n\n/-- Definition of pure power: an integer is a pure power if it equals A^k with k \u2265 2 and A \u2265 2. -/\ndef IsPurePower (n : \u2115) : Prop :=\n  \u2203 (A : \u2115) (k : \u2115), A \u2265 2 \u2227 k \u2265 2 \u2227 n = A^k\n\n/-- 3 is not a pure power. -/\ntheorem three_not_pure_power : \u00ac IsPurePower 3 := by\n  intro \u27e8A, k, hA, hk, h_eq\u27e9\n  have h_bound : A^k \u2265 2^2 := by\n    have h1 : A^k \u2265 2^k := Nat.pow_le_pow_left hA k\n    have h2 : 2^k \u2265 2^2 := Nat.pow_le_pow_right (by omega) hk\n    omega\n  omega\n\n/-- 30042907 is not a pure power (since 109 * 275623 is square-free). -/\ntheorem bruin_x_not_square : \u2200 A : \u2115, A^2 \u2260 30042907 := by\n  intro A\n  intro h\n  have h_lo : 5481^2 = 30041361 := by rfl\n  have h_hi : 5482^2 = 30052324 := by rfl\n  if h1 : A \u2264 5481 then\n    have : A^2 \u2264 5481^2 := Nat.pow_le_pow_left h1 2\n    omega\n  else\n    have h2 : A \u2265 5482 := by omega\n    have : A^2 \u2265 5482^2 := Nat.pow_le_pow_left h2 2\n    omega\n\n/--\n**Bruin's Classification Theorem (2004, Crelle's Journal)**:\nThe only primitive integer solutions to x\u00b2 + y\u00b3 = z\u2078 with x > 0 and z > 0 are\n(1, 0, 1), (3, -2, 1), and (30042907, -96222, 43).\n-/\naxiom bruin_classification_signature_238 (x y z : \u2124) :\n  IsPrimitive238Solution x y z \u2227 x > 0 \u2227 z > 0 \u2192\n    (x = 1 \u2227 y = 0 \u2227 z = 1) \u2228\n    (x = 3 \u2227 y = -2 \u2227 z = 1) \u2228\n    (x = 30042907 \u2227 y = -96222 \u2227 z = 43)\n\n/--\n**Main Theorem**: No primitive integer solution to x\u00b2 + y\u00b3 = z\u2078 has y > 0 and x a pure power.\nConsequently, no Beal counterexample can arise from signature (2k, 3, 8) with k \u2265 2.\n-/\ntheorem no_positive_pure_power_238_solution (x y z : \u2124) :\n  IsPrimitive238Solution x y z \u2227 x > 0 \u2227 z > 0 \u2227 y > 0 \u2192 False := by\n  intro \u27e8h_prim, hx, hz, hy\u27e9\n  have h_class := bruin_classification_signature_238 x y z \u27e8h_prim, hx, hz\u27e9\n  rcases h_class with (\u27e8_, hy0, _\u27e9 | \u27e8_, hyneg2, _\u27e9 | \u27e8_, hyneg_sporadic, _\u27e9)\n  \u00b7 omega\n  \u00b7 omega\n  \u00b7 omega\n\n/--\n**Corollary**: Signature (4, 3, 8), (6, 3, 8), and in general (2k, 3, 8) with k \u2265 2\nadmits strictly zero positive primitive integer solutions.\n-/\ntheorem no_beal_counterexample_signature_2k_3_8 (A B C : \u2115) (k : \u2115) (hk : k \u2265 2) :\n  A > 0 \u2192 B > 0 \u2192 C > 0 \u2192 Nat.gcd (Nat.gcd A B) C = 1 \u2192\n  A^(2*k) + B^3 = C^8 \u2192 False := by\n  intro hA hB hC h_coprime h_eq\n  have h_sq : (A^k : \u2124)^2 + (B : \u2124)^3 = (C : \u2124)^8 := by\n    push_cast\n    ha",
+    "compiler_errors": "error: ././././Beal/Taxonomy.lean:127:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:125:52: unsolved goals\nerror: ././././Beal/Taxonomy.lean:136:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:133:36: unsolved goals\nerror: ././././Beal/Taxonomy.lean:165:11: unknown tactic\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'GE.ge.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'LE.le.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'Nat.le.left'\nerror: ././././Beal/Taxonomy.lean:152:41: tactic 'subst' failed, invalid equality proof, it is not of the form (x = t) or (t = x)\nerror: ././././Beal/Taxonomy.lean:147:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:145:62: unsolved goals\nerror: ././././Beal/Taxonomy.lean:200:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:198:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:186:35: unsolved goals\nerror: ././././Beal/Taxonomy.lean:226:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:220:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:219:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:216:37: unsolved goals\nerror: Lean exited with code 1\nerror: ././././Beal/CounterexampleChecker.lean:121:4: tactic 'contradiction' failed\nerror: ././././Beal/CounterexampleChecker.lean:122:2: no goals to be solved\nerror: ././././Beal/CounterexampleChecker.lean:148:46: uns"
+  },
+  "questions": {
+    "repair_value": {
+      "type": "score",
+      "instructions": "If this module were repaired so that it compiles with no sorry and no custom axioms, how much genuine mathematical content would the project gain?",
+      "criteria": [
+        "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+        "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+        "level 2: a self-contained elementary theorem or an executable checker with real content",
+        "level 3: it would close a signature or an infinite family of Beal signatures"
+      ]
+    },
+    "repairable_without_axioms": {
+      "type": "noul",
+      "instructions": "Can this module plausibly be repaired to compile with NO custom axioms and NO sorry, using only mathlib as it actually exists - noting that mathlib has FLT for exponent 4 but not for exponent 3, and has no Catalan/Mihailescu theorem?",
+      "criteria": {
+        "true": "its content is elementary or depends only on results mathlib actually contains",
+        "false": "its substance depends on a deep theorem mathlib does not contain, such as FLT3, Mihailescu, or a modular-method elimination, so it would need a custom axiom"
+      }
+    },
+    "statement_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that this module's THEOREM STATEMENTS misencode the Beal conjecture - for example allowing exponent 2, excluding a base of 1, or putting the coprimality condition on the exponents rather than the bases - so that repairing it would certify the wrong thing?",
+      "criteria": {
+        "true": "its statements look like they may deviate from the exact conjecture, or it restricts to a sub-case without saying so",
+        "false": "its statements appear to encode the conjecture or a clearly labelled sub-case faithfully"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "repair_value": {
+        "type": "score",
+        "score": 2.07,
+        "confidence": 0.07,
+        "legend": {
+          "0": "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+          "1": "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+          "2": "level 2: a self-contained elementary theorem or an executable checker with real content",
+          "3": "level 3: it would close a signature or an infinite family of Beal signatures"
+        },
+        "probabilities": {
+          "0": 0.14,
+          "1": 0.19,
+          "2": 0.12,
+          "3": 0.55
+        }
+      },
+      "repairable_without_axioms": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "statement_risk": {
+        "type": "noul",
+        "noul": 0.55
+      }
+    },
+    "usage": {
+      "input_tokens": 3581,
+      "output_tokens": 57
+    }
+  }
+}

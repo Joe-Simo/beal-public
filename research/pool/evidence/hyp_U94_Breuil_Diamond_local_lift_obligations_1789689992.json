@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U94_Breuil_Diamond_local_lift_obligations",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U94_Breuil_Diamond_local_lift_obligations.md",
+    "excerpt": "# U94: the Breuil--Diamond prescribed-lift theorem is now mapped exactly, but local lift existence is not yet discharged\n\n**Status: source-verified modular-route audit. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-16.\n\n## 1. Why this checkpoint exists\n\nU64 left one explicit gap before its level-2000 Hilbert-form comparison can become unconditional: the global prescribed-lift theorem was cited without writing down every local lift, its determinant, and its Weil--Deligne/ordinary type. U93 therefore returned priority to this point.\n\nThe primary Breuil--Diamond paper was reopened directly and Theorem 3.2.2 was checked at author-PDF printed pp.36--37. The theorem is an existence theorem for a global weight-two Hilbert modular lift **provided suitable local characteristic-zero lifts already exist at every place in a finite set S**.\n\n## 2. Exact theorem obligations\n\nIn the notation of Breuil--Diamond Theorem 3.2.2, one must choose:\n\n- a finite-order-adjusted determinant character `psi` lifting `det(rho)`, with `psi*epsilon^{-1}` finite order;\n- a finite set `S` containing the places above `p=17` and every place where the residual representation or `psi` ramifies;\n- a subset `T` of the places above 17 specifying potential ordinarity;\n- a Weil--Deligne type `[r_v,N_v]` for every `v in S`;\n- and, for every `v in S`, an actual characteristic-zero lift `rho_v` satisfying all five local conditions below.\n\nThe five conditions in the primary source are:\n\n1. at `v|17`, `rho_v` is potentially semistable with Hodge--Tate weights `(0,1)` for every embedding;\n2. at `v|17`, `rho_v` is potentially ordinary exactly when `v in T`;\n3. `rho_v` has the prescribed Weil--Deligne type `[r_v,N_v]`;\n4. at ordinary `v|17` and at `v not|17` with `N_v !=0`, `rho_v` contains a one-dimensional subrepresentation with the specified residual character and finite-order inertial quotient after dividing by cyclotomic;\n5. `det(rho_v)|I_v = psi|I_v`.\n\nOnly after these hypotheses are supplied does the theorem produce a global lift with determinant exactly `psi`, the prescribed local types, and Hilbert modular weight `(2,...,2)`.\n\n## 3. What U64 already supplies\n\nThe following pieces survive the source re-audit:\n\n- modularity of the corrected negative-twist residual system is inherited from the cited Darmon-program result at U64's stated status;\n- the required irreducibility after adjoining the seventeenth roots of unity is supplied by U64's cyclic-restriction argument and the local irreducibility at 2;\n- the residual conductor bookkeeping points to exponent 2 at the prime over 2 and exponent 3 at the prime over 5;\n- at primes dividing `Z` away from 17 the residual representation is unramified after lowering;\n- at 17 the cited source gives residual finite flatness.\n\nThese facts determine the intended residual level, but **they do not themselves construct the local characteristic-zero lifts required by Theorem 3.2.2**.\n\n## 4. The remaining modular obligation is narrower than before\n\nThe theorem statement makes clear that the unresolved issue is not a vague global modularity question. It is the explicit local deformation problem:\n\n- identify `psi` globally and its inertial restrictions;\n- for the prime over 2, exhibit a lift of the required determinant and the retained local type compatible with conductor exponent 2;\n- for the prime over 5, exhibit a lift with the irreducible/Eisenstein local type giving conductor exponent 3 and determinant `psi` on inertia;\n- at the prime(s) over 17, decide the correct potentially Barsotti--Tate/ordinary component and exhibit a fixed-determinant lift;\n- verify that no other residual ramification forces an additional place into `S`.\n\nIf those local lifts are constructed, Breuil--Diamond 3.2.2 supplies the global modular lift needed to justify comparison with the level-2000 Hilbert newspace. U64's finite Hecke comparison would still leave the surviving boundary orbit `b` to be treated globally; completing the lift theorem alone is therefore not yet an elimination of the weighted equation.\n\n## 5. Important correction to route expectations\n\nFinite flatness at 17 is only a property of the residual/local deformation situation; it is **not** interchangeable with an explicit characteristic-zero fixed-determinant lift satisfying all five theorem conditions. Likewise, a conductor exponent from the Darmon-program table does not automatically select a Weil--Deligne type or prove determinant compatibility.\n\nTherefore no level-lowering conclusion is upgraded in U94. The gain is that the missing work is now an explicit finite list of local deformation constructions rather than an unspecified theorem-application gap.\n\n## 6. Next mathematical step\n\nThe next checkpoint should attack the prime over 5 first. U64 already proves the Frey quintic is Eisenstein there uniformly and the twist `-1` is locally a square. This gives the most concrete local representation among the three difficult places. T"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.21,
+        "confidence": 0.79,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.83,
+          "1": 0.15,
+          "2": 0.02,
+          "3": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2082,
+      "output_tokens": 94
+    }
+  }
+}

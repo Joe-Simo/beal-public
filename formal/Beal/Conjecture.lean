@@ -120,10 +120,9 @@ lemma gcd3_gt_one_iff_exists_prime (A B C : ℕ) (hA : A > 0) :
     have hp_pos : p > 1 := Nat.Prime.one_lt hp
     exact lt_of_lt_of_le hp_pos (Nat.le_of_dvd (by
       unfold gcd3
-      have hBC_pos : Nat.gcd B C > 0 := by
-        obtain ⟨k, rfl⟩ := hdC
-        have : C > 0 := by omega
-        exact Nat.gcd_pos_of_pos_right B (by omega)
+      -- positivity of the three-fold gcd follows from `0 < A` alone; the previous
+      -- argument destructed `hdC` with `rfl`, which substituted `C` away and then
+      -- referred to it, so the file never compiled.
       exact Nat.gcd_pos_of_pos_left (Nat.gcd B C) hA) hdABC)
 
 /--

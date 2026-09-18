@@ -1,0 +1,615 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.95,
+   {
+    "uses_equation": 0.05,
+    "holds_for_any_triple": 0.42,
+    "is_exponent_restated": 0.05
+   },
+   "C024",
+   "Beal Prize status (verified 2026-09-17): US $1,000,000 held by the AMS, donated by D."
+  ],
+  [
+   0.95,
+   {
+    "uses_equation": 0.05,
+    "holds_for_any_triple": 0.49,
+    "is_exponent_restated": 0.87
+   },
+   "C092",
+   "MACHINE-CHECKED, UNCONDITIONAL: every Beal counterexample satisfies rad(A*B*C)^3 <= A"
+  ],
+  [
+   0.93,
+   {
+    "uses_equation": 0.07,
+    "holds_for_any_triple": 0.36,
+    "is_exponent_restated": 0.08
+   },
+   "C022",
+   "ExponentReduction.lean duplicates the definition of IsBealCounterexample already pres"
+  ],
+  [
+   0.89,
+   {
+    "uses_equation": 0.11,
+    "holds_for_any_triple": 0.53,
+    "is_exponent_restated": 0.04
+   },
+   "C089",
+   "INTEGRITY FIX (countersearch on my own formalisation): three theorems in the root bui"
+  ],
+  [
+   0.87,
+   {
+    "uses_equation": 0.13,
+    "holds_for_any_triple": 0.48,
+    "is_exponent_restated": 0.15
+   },
+   "C023",
+   "The abc conjecture implies only that there are FINITELY MANY counterexamples to Beal,"
+  ],
+  [
+   0.86,
+   {
+    "uses_equation": 0.14,
+    "holds_for_any_triple": 0.16,
+    "is_exponent_restated": 0.33
+   },
+   "C033",
+   "Sharp curvature separation. Every hyperbolic Beal signature has |chi| >= 1/12 with eq"
+  ],
+  [
+   0.86,
+   {
+    "uses_equation": 0.14,
+    "holds_for_any_triple": 0.51,
+    "is_exponent_restated": 0.14
+   },
+   "C036",
+   "The congruence conditions at coprime moduli are positively CORRELATED as constraints,"
+  ],
+  [
+   0.86,
+   {
+    "uses_equation": 0.14,
+    "holds_for_any_triple": 0.44,
+    "is_exponent_restated": 0.65
+   },
+   "C094",
+   "COUNTERSEARCH on my own C092: the Fermat-Catalan blindness test is NECESSARY but NOT "
+  ],
+  [
+   0.84,
+   {
+    "uses_equation": 0.16,
+    "holds_for_any_triple": 0.42,
+    "is_exponent_restated": 0.7
+   },
+   "C053",
+   "COUNTERSEARCH RESULT: 14 of the 15 kernel-verified necessary conditions HOLD on all t"
+  ],
+  [
+   0.84,
+   {
+    "uses_equation": 0.16,
+    "holds_for_any_triple": 0.3,
+    "is_exponent_restated": 0.11
+   },
+   "C091",
+   "DOCSTRING OVERCLAIM audit (Jev screen U225 over 10 files). One confirmed defect, now "
+  ],
+  [
+   0.8,
+   {
+    "uses_equation": 0.2,
+    "holds_for_any_triple": 0.4,
+    "is_exponent_restated": 0.15
+   },
+   "C074",
+   "Statement-fidelity screen of formal/Beal/ClosedFamilies.lean (22 declarations, Jev, H"
+  ],
+  [
+   0.76,
+   {
+    "uses_equation": 0.24,
+    "holds_for_any_triple": 0.22,
+    "is_exponent_restated": 0.19
+   },
+   "C030",
+   "Of 405 reduced signatures with exponents in {3,4,5,7,11,13,17,19,23} and x<=y, this p"
+  ],
+  [
+   0.74,
+   {
+    "uses_equation": 0.26,
+    "holds_for_any_triple": 0.22,
+    "is_exponent_restated": 0.13
+   },
+   "C008",
+   "The mod-p Galois representation attached to the project's Frey curves is surjective u"
+  ],
+  [
+   0.71,
+   {
+    "uses_equation": 0.29,
+    "holds_for_any_triple": 0.14,
+    "is_exponent_restated": 0.26
+   },
+   "C004",
+   "Mixed-weight cubic Pade approximation forces max(X, Y) > 10^25993 for any solution of"
+  ],
+  [
+   0.69,
+   {
+    "uses_equation": 0.31,
+    "holds_for_any_triple": 0.44,
+    "is_exponent_restated": 0.63
+   },
+   "C093",
+   "MACHINE-CHECKED, UNCONDITIONAL, sharpened: every Beal counterexample satisfies rad(A*"
+  ],
+  [
+   0.68,
+   {
+    "uses_equation": 0.32,
+    "holds_for_any_triple": 0.22,
+    "is_exponent_restated": 0.11
+   },
+   "C015",
+   "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero cust"
+  ],
+  [
+   0.66,
+   {
+    "uses_equation": 0.54,
+    "holds_for_any_triple": 0.66,
+    "is_exponent_restated": 0.06
+   },
+   "C035",
+   "Exactly one of A, B, C is even in any Beal counterexample. Not two, by pairwise copri"
+  ],
+  [
+   0.65,
+   {
+    "uses_equation": 0.35,
+    "holds_for_any_triple": 0.15,
+    "is_exponent_restated": 0.16
+   },
+   "C046",
+   "Literature state (primary-source, U130): among signatures with all exponents >= 3, th"
+  ],
+  [
+   0.64,
+   {
+    "uses_equation": 0.36,
+    "holds_for_any_triple": 0.3,
+    "is_exponent_restated": 0.09
+   },
+   "C069",
+   "Standalone checker validated (goal COMPUTATION discipline): code/beal_counterexample_"
+  ],
+  [
+   0.59,
+   {
+    "uses_equation": 0.41,
+    "holds_for_any_triple": 0.16,
+    "is_exponent_restated": 0.45
+   },
+   "C027",
+   "Beal is equivalent to: 2 is an obligatory exponent for every non-trivial primitive so"
+  ],
+  [
+   0.58,
+   {
+    "uses_equation": 0.61,
+    "holds_for_any_triple": 0.58,
+    "is_exponent_restated": 0.16
+   },
+   "C040",
+   "Dominant-term dichotomy: if B^y <= A^x then z <= x iff A < C (and symmetrically for B"
+  ],
+  [
+   0.56,
+   {
+    "uses_equation": 0.46,
+    "holds_for_any_triple": 0.15,
+    "is_exponent_restated": 0.56
+   },
+   "C028",
+   "At every modulus m, a Beal counterexample forces a in <A>, b in <B>, c in <C> with a+"
+  ],
+  [
+   0.52,
+   {
+    "uses_equation": 0.48,
+    "holds_for_any_triple": 0.11,
+    "is_exponent_restated": 0.12
+   },
+   "C056",
+   "Literature state for the residual family (p,p,r), p odd prime (primary sources BCDY 2"
+  ],
+  [
+   0.51,
+   {
+    "uses_equation": 0.77,
+    "holds_for_any_triple": 0.51,
+    "is_exponent_restated": 0.21
+   },
+   "C031",
+   "The ordering of Z enters a proof of Beal at exactly one point: positivity forbids can"
+  ],
+  [
+   0.51,
+   {
+    "uses_equation": 0.49,
+    "holds_for_any_triple": 0.31,
+    "is_exponent_restated": 0.11
+   },
+   "C039",
+   "Base order forces exponent order in any Beal counterexample: C largest base implies z"
+  ],
+  [
+   0.51,
+   {
+    "uses_equation": 0.8,
+    "holds_for_any_triple": 0.51,
+    "is_exponent_restated": 0.12
+   },
+   "C055",
+   "Kernel-checked first factorisation step for signature (p,p,r), p odd prime: A^p+B^p ="
+  ],
+  [
+   0.51,
+   {
+    "uses_equation": 0.49,
+    "holds_for_any_triple": 0.13,
+    "is_exponent_restated": 0.13
+   },
+   "C075",
+   "final_residual (formal/Beal/ClosedFamilies.lean): under thirteen named hypotheses (al"
+  ],
+  [
+   0.48,
+   {
+    "uses_equation": 0.52,
+    "holds_for_any_triple": 0.13,
+    "is_exponent_restated": 0.24
+   },
+   "C051",
+   "Kernel-checked account of what remains: residual_of_counterexample \u2014 any Beal counter"
+  ],
+  [
+   0.47,
+   {
+    "uses_equation": 0.53,
+    "holds_for_any_triple": 0.15,
+    "is_exponent_restated": 0.4
+   },
+   "C016",
+   "If a Beal counterexample exists, one exists with all three exponents in {4} union {od"
+  ],
+  [
+   0.45,
+   {
+    "uses_equation": 0.55,
+    "holds_for_any_triple": 0.12,
+    "is_exponent_restated": 0.13
+   },
+   "C021",
+   "For Azon signature (r,r,p), Hypothesis 5 holds iff AB has a prime factor q not dividi"
+  ],
+  [
+   0.44,
+   {
+    "uses_equation": 0.56,
+    "holds_for_any_triple": 0.18,
+    "is_exponent_restated": 0.19
+   },
+   "C066",
+   "Conditional what-remains theorem: conditional_residual_of_counterexample (formal/Beal"
+  ],
+  [
+   0.44,
+   {
+    "uses_equation": 0.56,
+    "holds_for_any_triple": 0.13,
+    "is_exponent_restated": 0.16
+   },
+   "C068",
+   "published_residual (formal/Beal/ClosedFamilies.lean): under eleven named hypotheses ("
+  ],
+  [
+   0.42,
+   {
+    "uses_equation": 0.58,
+    "holds_for_any_triple": 0.18,
+    "is_exponent_restated": 0.19
+   },
+   "C025",
+   "Consolidated necessary conditions on any Beal counterexample, kernel-verified: the ba"
+  ],
+  [
+   0.41,
+   {
+    "uses_equation": 0.59,
+    "holds_for_any_triple": 0.24,
+    "is_exponent_restated": 0.17
+   },
+   "C062",
+   "Ledger theorems (formal/Beal/ClosedFamilies.lean): closed_unconditional (mathlib only"
+  ],
+  [
+   0.41,
+   {
+    "uses_equation": 0.59,
+    "holds_for_any_triple": 0.22,
+    "is_exponent_restated": 0.16
+   },
+   "C067",
+   "Under BCDYThreeThreeTwoN (BCDY 2015 Theorem 1, row (3,3,2n), n>=2, quoted verbatim fr"
+  ],
+  [
+   0.35,
+   {
+    "uses_equation": 0.65,
+    "holds_for_any_triple": 0.22,
+    "is_exponent_restated": 0.1
+   },
+   "C064",
+   "Under DarmonMerelNN2 (BCDY Table 1 row (n,n,2), n>=4: Darmon-Merel 1997, Poonen 1998)"
+  ],
+  [
+   0.35,
+   {
+    "uses_equation": 0.65,
+    "holds_for_any_triple": 0.13,
+    "is_exponent_restated": 0.12
+   },
+   "C077",
+   "Recent-literature read (U183): Darmon program II (arXiv:2308.07062) resolves x^7+y^7="
+  ],
+  [
+   0.34,
+   {
+    "uses_equation": 0.84,
+    "holds_for_any_triple": 0.34,
+    "is_exponent_restated": 0.08
+   },
+   "C018",
+   "The bases of any Beal counterexample are pairwise coprime (gcd A B = gcd A C = gcd B "
+  ],
+  [
+   0.34,
+   {
+    "uses_equation": 0.66,
+    "holds_for_any_triple": 0.14,
+    "is_exponent_restated": 0.1
+   },
+   "C070",
+   "CORRECTED RESIDUAL (U167): under BEN24n (BCDY Table 1 row (2,4,n), n>=4) no Beal coun"
+  ],
+  [
+   0.34,
+   {
+    "uses_equation": 0.66,
+    "holds_for_any_triple": 0.13,
+    "is_exponent_restated": 0.19
+   },
+   "C080",
+   "FIXED THREE BASES, ALL EXPONENTS \u2014 COMPLETE for bases <= 30: for EVERY pairwise-copri"
+  ],
+  [
+   0.29,
+   {
+    "uses_equation": 0.89,
+    "holds_for_any_triple": 0.29,
+    "is_exponent_restated": 0.16
+   },
+   "C037",
+   "Complete mod-8 analysis of a Beal counterexample, covering every parity configuration"
+  ],
+  [
+   0.29,
+   {
+    "uses_equation": 0.71,
+    "holds_for_any_triple": 0.14,
+    "is_exponent_restated": 0.15
+   },
+   "C058",
+   "ALL of (2m,2n,3), m,n>=2: no Beal counterexample, relative to three named hypotheses "
+  ],
+  [
+   0.28,
+   {
+    "uses_equation": 0.72,
+    "holds_for_any_triple": 0.11,
+    "is_exponent_restated": 0.23
+   },
+   "C020",
+   "A Beal counterexample with all three exponents even is exactly a primitive Pythagorea"
+  ],
+  [
+   0.28,
+   {
+    "uses_equation": 0.72,
+    "holds_for_any_triple": 0.23,
+    "is_exponent_restated": 0.1
+   },
+   "C038",
+   "At p=3: if 3 divides none of A,B,C and 3 divides both x and y, then C^z = 2 or 7 mod "
+  ],
+  [
+   0.26,
+   {
+    "uses_equation": 0.74,
+    "holds_for_any_triple": 0.08,
+    "is_exponent_restated": 0.19
+   },
+   "C045",
+   "Exact reduction of the sparsest mod-72 class (x,y even, z odd): a counterexample ther"
+  ],
+  [
+   0.26,
+   {
+    "uses_equation": 0.74,
+    "holds_for_any_triple": 0.14,
+    "is_exponent_restated": 0.14
+   },
+   "C065",
+   "Under DarmonMerelNN2Int ((n,n,2) over Z with signs, n>=4), no Beal counterexample of "
+  ],
+  [
+   0.25,
+   {
+    "uses_equation": 0.88,
+    "holds_for_any_triple": 0.25,
+    "is_exponent_restated": 0.17
+   },
+   "C019",
+   "Whenever 3|x, 3|y and 3|z, A^x + B^y = C^z has no positive solutions; in particular n"
+  ],
+  [
+   0.24,
+   {
+    "uses_equation": 0.76,
+    "holds_for_any_triple": 0.09,
+    "is_exponent_restated": 0.16
+   },
+   "C081",
+   "FIXED THREE BASES, ALL EXPONENTS, bases <= 50: all 17,594 pairwise-coprime triples (A"
+  ],
+  [
+   0.23,
+   {
+    "uses_equation": 0.77,
+    "holds_for_any_triple": 0.13,
+    "is_exponent_restated": 0.22
+   },
+   "C043",
+   "COUNTERSEARCH in Z[i]: of the norm analogues of the verified Z-constraints, exactly o"
+  ],
+  [
+   0.21,
+   {
+    "uses_equation": 0.79,
+    "holds_for_any_triple": 0.11,
+    "is_exponent_restated": 0.15
+   },
+   "C026",
+   "Beal is FALSE over the Gaussian integers: (-2+i)^3 + (-2-i)^3 = (1+i)^4, with exponen"
+  ],
+  [
+   0.2,
+   {
+    "uses_equation": 0.8,
+    "holds_for_any_triple": 0.15,
+    "is_exponent_restated": 0.13
+   },
+   "C071",
+   "Systematic instance-closure of the reduced residual (exponents in {3,4,5,7,11,13,17,1"
+  ],
+  [
+   0.2,
+   {
+    "uses_equation": 0.8,
+    "holds_for_any_triple": 0.17,
+    "is_exponent_restated": 0.12
+   },
+   "C090",
+   "STATEMENT FIDELITY, machine-checked: the root definition IsBealCounterexample encodes"
+  ],
+  [
+   0.19,
+   {
+    "uses_equation": 0.81,
+    "holds_for_any_triple": 0.18,
+    "is_exponent_restated": 0.07
+   },
+   "C009",
+   "No counterexample to Beal's conjecture exists with A, B <= 160000 and exponents x, y,"
+  ],
+  [
+   0.17,
+   {
+    "uses_equation": 0.83,
+    "holds_for_any_triple": 0.05,
+    "is_exponent_restated": 0.09
+   },
+   "C086",
+   "COUNTERSEARCH H216: in Z[i], with bases |re|,|im|<=14 and exponents 3..7 (3093 distin"
+  ],
+  [
+   0.16,
+   {
+    "uses_equation": 0.85,
+    "holds_for_any_triple": 0.16,
+    "is_exponent_restated": 0.13
+   },
+   "C017",
+   "Unified: if 3 | gcd(x,y,z) or 4 | gcd(x,y,z), then A^x + B^y = C^z has no positive so"
+  ],
+  [
+   0.15,
+   {
+    "uses_equation": 0.87,
+    "holds_for_any_triple": 0.06,
+    "is_exponent_restated": 0.15
+   },
+   "C079",
+   "FIXED-BASE closure of (3,3,r) for ALL r at once, including r > 10^9 where the literat"
+  ],
+  [
+   0.14,
+   {
+    "uses_equation": 0.86,
+    "holds_for_any_triple": 0.09,
+    "is_exponent_restated": 0.13
+   },
+   "C082",
+   "FIXED THREE BASES, ALL EXPONENTS, bases <= 80: all 72,511 pairwise-coprime triples (A"
+  ],
+  [
+   0.13,
+   {
+    "uses_equation": 0.87,
+    "holds_for_any_triple": 0.06,
+    "is_exponent_restated": 0.13
+   },
+   "C007",
+   "A^5 + B^5 = C^p has no primitive nontrivial solutions for primes p >= 5, via Hilbert "
+  ],
+  [
+   0.13,
+   {
+    "uses_equation": 0.87,
+    "holds_for_any_triple": 0.09,
+    "is_exponent_restated": 0.1
+   },
+   "C047",
+   "No Beal counterexample of signature (2m,2n,3) with m>=4 and n>=4. Even m or even n: s"
+  ],
+  [
+   0.12,
+   {
+    "uses_equation": 0.88,
+    "holds_for_any_triple": 0.07,
+    "is_exponent_restated": 0.08
+   },
+   "C057",
+   "Signature (6,2n,3), n>=3 (and (2m,6,3) by symmetry): no Beal counterexample, relative"
+  ],
+  [
+   0.11,
+   {
+    "uses_equation": 0.9,
+    "holds_for_any_triple": 0.05,
+    "is_exponent_restated": 0.11
+   },
+   "C078",
+   "FIXED-BASE closure of the {3,4,r} signatures for ALL primes r>=7 at once (covers {3,4"
+  ]
+ ]
+}

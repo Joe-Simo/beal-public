@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C047_audit_S1",
+  "timestamp": "2026-09-18T00:00:04-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "chain": "Beal (2m,2n,3), m,n>=4 via Z[i] + Bennett-Skinner",
+    "step_id": "S1",
+    "step": "Beal counterexample with x=2m, y=2n, z=3 (m,n>=2): C is odd, because C even forces not both x,y even (kernel-verified theorem not_both_exponents_even_of_even_C)."
+  },
+  "questions": {
+    "hidden": {
+      "type": "score",
+      "instructions": "Does this step contain a hidden assumption, an unproved reduction, or a misapplication of the cited theorem?",
+      "criteria": [
+        "level 0: the step is exactly right as stated",
+        "level 1: a minor gap that is easily filled",
+        "level 2: a real gap needing a new argument",
+        "level 3: the step is wrong or the theorem is misapplied"
+      ]
+    },
+    "check": {
+      "type": "choice",
+      "instructions": "Cheapest way to verify this step independently.",
+      "criteria": {
+        "lean": "Lean 4 + mathlib",
+        "enum": "exact enumeration on a model",
+        "source": "re-read the primary source",
+        "paper": "a written derivation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "hidden": {
+        "type": "score",
+        "score": 2.48,
+        "confidence": 0.48,
+        "legend": {
+          "0": "level 0: the step is exactly right as stated",
+          "1": "level 1: a minor gap that is easily filled",
+          "2": "level 2: a real gap needing a new argument",
+          "3": "level 3: the step is wrong or the theorem is misapplied"
+        },
+        "probabilities": {
+          "0": 0.07,
+          "1": 0.1,
+          "2": 0.11,
+          "3": 0.72
+        }
+      },
+      "check": {
+        "type": "choice",
+        "choice": "enum",
+        "confidence": 0.12,
+        "probabilities": {
+          "paper": 0.27,
+          "enum": 0.33,
+          "lean": 0.28,
+          "source": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 560,
+      "output_tokens": 58
+    }
+  }
+}

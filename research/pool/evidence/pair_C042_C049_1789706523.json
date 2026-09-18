@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C042_C049",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C042",
+      "status": "REFUTED",
+      "claim": "Height-gap hypothesis H: with A^x dominant and A<C, A^x <= (C-1)^z, which would give B^y >= z(C-1)^(z-1), an effective lower bound on B in terms of C."
+    },
+    "B": {
+      "id": "C049",
+      "status": "BLOCKED",
+      "claim": "NEGATIVE: for odd prime z in {7,11,13,17,19} there is NO identity P_z(u,v) + c*u^(z-1) = z*R(u,v)^2 over Q (with P_z = Re((u+vi)^z)/u and R homogeneous of degree (z-1)/2), so the one-sided Bennett-type reduction that works for z=3 (direct) and z=5 (4u^4+P_5=5(u^2-v^2)^2) does not extend to (2m,2n,z), z>=7."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.33,
+        "confidence": 0.28,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.25,
+          "2": 0.51,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.21
+      }
+    },
+    "usage": {
+      "input_tokens": 641,
+      "output_tokens": 34
+    }
+  }
+}

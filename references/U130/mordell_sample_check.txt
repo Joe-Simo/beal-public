@@ -1,0 +1,6 @@
+32 cond 1728 min [0, 0, 0, 0, 32] rank [0, 0] an 0 tors 1
+-32 cond 1728 min [0, 0, 0, 0, -32] rank [0, 0] an 0 tors 1
+243 cond 3888 min [0, 0, 0, 0, 243] rank [0, 0] an 0 tors 1
+-3 cond 972 min [0, 0, 0, 0, -3] rank [0, 0] an 0 tors 1
+4 cond 108 min [0, 0, 0, 0, 4] rank [0, 0] an 0 tors 3
+-8 cond 576 min [0, 0, 0, 0, -8] rank [0, 0] an 0 tors 2

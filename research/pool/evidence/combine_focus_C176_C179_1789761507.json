@@ -1,0 +1,103 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C176_C179",
+  "timestamp": "2026-09-18T15:58:27-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C176",
+      "status": "PARTIAL_RESULT",
+      "claim": "The larger-base-field escape from C174/C175 is REAL and CHEAP, so the regularity obstruction is a statement about Q and not a field-independent fact. Over K the orbits of primitive m-th roots have size |Gal(K(zeta_m)/K)| = phi(m)/[K cap Q(zeta_m):Q], so the minimal rank drops; reconciling the largest exponent's rank with the smallest one's ceiling needs only [K:Q] >= phi(r)/p, which is between 2 and 6 for every pairwise distinct triple of reduced exponents up to 19.",
+      "parents": [
+        "C174",
+        "C175",
+        "C170"
+      ],
+      "method": "Exact computation of both measures in code/U319_base_field_escape.py over all 56 pairwise distinct triples from {3,4,5,7,11,13,17,19}. Measure 1 (K contains all three roots of unity) costs phi(lcm(p,q,r)) = (p-1)(q-1)(r-1), ranging 16 to 3456 -- confirmed equal for all 56 triples. Measure 2 (K only shrinks the largest orbit enough) costs ceil(phi(r)/p), ranging 2 to 6. Measure 2 is the binding one.",
+      "evidence": "Measure 1's quantity is already machine-checked as Beal.minBaseDegree_le_triple and Beal.totient_mul_primes in formal/Beal/Rigidity.lean. Measure 2 is a division bound, computed exactly here and not formalised.",
+      "obligations": "CORRECTION TO MY OWN FRAMING: C174 and C175 must be read as statements about Q. I flagged this escape as 'likely live' in the previous cycle and it is. What the escape does NOT do is remove the obstruction -- over K the modular method still needs automorphy of an n-dimensional motive with n > 2 (C171), now over K rather than Q, which is harder. This is consistent with the literature: the (5,5,p) work uses Q(sqrt 5) at RANK 2 and stops there. Untested: whether a degree 2-6 field can carry a Frey object for three independent exponents with the residual representation the method needs; and whether descent to Q of the resulting statement is possible at all, since the Beal solution itself lives over Q.",
+      "novelty": "Prevents the repeat of the U258 failure mode: reporting only the expensive measure would have overstated the obstruction exactly as U258 did before U309 caught it. Records the escape as open with its cost quantified, rather than claiming a closure that is not there.",
+      "evaluations": {
+        "U319": "Exact computation of both cost measures. HYPOTHESIS_ONLY for routing."
+      }
+    },
+    "candidate_B": {
+      "id": "C179",
+      "status": "PARTIAL_RESULT",
+      "claim": "The first steps of EulerDescentStep are machine-checked. formal/Beal/Euler.lean now proves coprime_p_norm (if 3 does not divide p and p,q are coprime then p and p^2+3q^2 are coprime), factors_are_cubes (in that branch both factors are cubes, via Int.eq_pow_of_mul_eq_pow_odd), and three_dvd_p_rewrite (the 3 | p branch becomes 9*p'*(3p'^2+q^2) = c^3).",
+      "parents": [
+        "C177"
+      ],
+      "method": "gcd(p, p^2+3q^2) divides 3q^2, and IsCoprime p q gives IsCoprime p (q^2), so the gcd divides 3; with 3 not dividing p the two factors are coprime. Bezout witnesses computed by hand: from u*p + v*3q^2 = 1 one gets (u - v*p)*p + v*(p^2+3q^2) = 1.",
+      "evidence": "#print axioms = [propext, Classical.choice, Quot.sound] for both new theorems; full lake build clean; no sorry, no custom axioms.",
+      "obligations": "THE HEART IS STILL MISSING: from p^2 + 3q^2 = t^3 with p,q coprime, the factorisation in Z[omega] gives p = s(s-3t')(s+3t') with pairwise coprime factors, hence three cubes and a strictly smaller solution. That is the part needing three_pid (Mathlib/NumberTheory/Cyclotomic/PID.lean) plus unit bookkeeping for the order-6 unit group. Also untouched: the 3 | p branch beyond its rewriting.",
+      "novelty": "Incremental but real: two of the descent's four steps are now machine-checked rather than cited. Does not change what is proved about Beal; by C157 the whole (3,4,4) line cannot reach the open core.",
+      "evaluations": {
+        "U324": "Elementary coprimality plus cube extraction, machine-checked. HYPOTHESIS_ONLY for routing."
+      }
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.63,
+        "confidence": 0.6,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.61,
+          "2": 0.01,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 1967,
+      "output_tokens": 53
+    }
+  }
+}

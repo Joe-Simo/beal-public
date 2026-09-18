@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U48_coefficient2_gaussian_descent",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U48_coefficient2_gaussian_descent.md",
+    "excerpt": "# U48: coefficient-2 square branch \u2014 Gaussian descent\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Input from the coefficient-2 checkpoint\n\nFor a surviving primitive solution\n\n    X^10 + Y^10 = 2 Z^17,\n\nput a=X^2, b=Y^2. The literature-pruned factorization gives\n\n    a+b = 2 u^17,\n    Phi_5(-a,b) = a^4-a^3b+a^2b^2-ab^3+b^4 = v^17,\n    gcd(u,v)=1.\n\nX and Y are odd and coprime.\n\n## 2. First equation is a Gaussian 17th-power equation\n\nSet\n\n    m=(X+Y)/2,\n    n=(X-Y)/2.\n\nThen m,n are coprime integers of opposite parity and\n\n    X=m+n,\n    Y=m-n.\n\nThe first factor equation becomes\n\n    X^2+Y^2 = 2(m^2+n^2)=2u^17,\n\nhence\n\n    m^2+n^2=u^17.                                      (1)\n\nBecause gcd(m,n)=1 and they have opposite parity, m+in and m-in are coprime in Z[i]. Since Z[i] is a UFD, (1) implies, up to a Gaussian unit and conjugation,\n\n    m+in = epsilon (r+is)^17,\n    u=r^2+s^2,\n\nfor coprime r,s of opposite parity.\n\nThus the coefficient-2 branch has an unconditional Gaussian 17th-power parametrization.\n\n## 3. Second factor in the new coordinates\n\nExact symbolic expansion gives\n\n    a^4-a^3b+a^2b^2-ab^3+b^4\n      = m^8 + 44 m^6 n^2 + 166 m^4 n^4 + 44 m^2 n^6 + n^8.\n\nTherefore every surviving solution satisfies the simultaneous system\n\n    m^2+n^2 = u^17,\n    m^8+44m^6n^2+166m^4n^4+44m^2n^6+n^8 = v^17,       (2)\n\nwith gcd(m,n)=gcd(u,v)=1 and m,n of opposite parity.\n\nSubstituting m+in=epsilon(r+is)^17 converts the remaining branch to one explicit binary-form perfect-17th-power equation in r,s. This is a substantially narrower descent target than the original generalized-Fermat equation.\n\n## 4. Interaction with the certified mod-103 constraint\n\nThe previous exact finite-field calculation proved\n\n    103 | X^2-Y^2,\n    103 does not divide XY.\n\nSince\n\n    X^2-Y^2=(X-Y)(X+Y)=4mn,\n\nwe obtain\n\n    103 | mn.                                          (3)\n\nAs gcd(m,n)=1, exactly one of m,n is divisible by 103. Also 103 does not divide u, because (1) and coprimality imply the other coordinate is nonzero modulo 103.\n\nThis local condition can now be imposed directly on the Gaussian parametrization (r+is)^17.\n\n## 5. Additional local-prime experiment\n\nA direct Wolfram enumeration of the square-factor conditions was repeated at q=137,239,307. Unlike q=103, these primes admit non-diagonal ratios a/b, so the q=103 diagonal phenomenon is special and cannot presently be promoted to an infinite family by the same elementary residue test.\n\nThis negative result prevents an unjustified claim that infinitely many auxiliary primes divide X^2-Y^2.\n\n## 6. Next obligation\n\nExploit (2) after substituting the Gaussian 17th-power parametrization. The concrete questions are:\n\n1. factor the resulting binary form over useful subfields;\n2. determine whether (3) forces r/s into a small residue set modulo 103;\n3. search for a descent, resultant obstruction, or a Frey curve attached to the remaining binary-form equation.\n\nNo complete contradiction is claimed here."
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.59,
+        "confidence": 0.59,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.38,
+          "3": 0.6
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.87
+      }
+    },
+    "usage": {
+      "input_tokens": 1540,
+      "output_tokens": 42
+    }
+  }
+}

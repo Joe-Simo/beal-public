@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "repair_Signature3",
+  "timestamp": "2026-09-17T21:21:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal project. Already kernel-verified and axiom-free: Beal.Conjecture (the statement), Beal.AlgebraicIdentities, Beal.ExponentReduction (exponent reduction + the diagonal family (n,n,n) with 4|n via mathlib fermatLastTheoremFour), Beal.Structure (pairwise coprimality of the bases, no counterexample with A=B). mathlib v4.14.0 provides fermatLastTheoremFour but NOT a complete FLT for exponent 3, and provides NO Catalan/Mihailescu theorem. Custom axioms are not acceptable in a verified chain.",
+    "module": "Signature3",
+    "source": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.Taxonomy\nimport Mathlib.Algebra.Ring.Basic\nimport Mathlib.Data.Nat.Defs\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Algebra.Group.Even\nimport Mathlib.Tactic.Ring\n\n/-!\n# Generalized Fermat Equation of Signature (3, 3, p) and the Kraus Frey Curve\n\nThis module formalizes the arithmetic, parity reductions, and modular infrastructure\nfor the Generalized Fermat Equation of signature $(3, 3, p)$:\n  $$A^3 + B^3 = C^p$$\nin strictly positive integers $A, B, C > 0$ with exponent $p \\ge 3$, following the\nfoundational framework established by Alain Kraus (1998), Henri Darmon, Lo\u00efc Merel,\nand Nuno Freitas (2016).\n\n## Mathematical Overview and Main Results\n\n1. **Signature $(3, 3, p)$ Diophantine Equation**:\n   - `Signature33pEquation A B C p`: the core equation $A^3 + B^3 = C^p$.\n   - `IsPrimitiveSignature33pSolution A B C p`: positive integer solution with $\\gcd(A, B) = 1$.\n   - Coprimality reduction: $\\gcd(A, B) = 1 \\implies \\gcd(A, B, C) = 1$.\n   - Relation to Beal counterexamples: any primitive solution induces a counterexample of signature $(3, 3, p)$.\n\n2. **Parity Reduction (Obstruction at Conductor 18)**:\n   - Modulo 2 parity properties of cubes: $n^3 \\equiv n \\pmod 2$.\n   - If $C$ were even in a coprime solution, both $A$ and $B$ must be odd.\n   - By Kraus's conductor determination and Ribet's level-lowering theorem, an even-$C$ solution\n     forces the associated mod-$p$ Galois representation $\\rho_{E, p}$ to arise from a weight-2\n     cuspidal newform of level $N = 18$:\n       $$f \\in S_2(\\Gamma_0(18)).$$\n   - However, the space of cusp forms on $\\Gamma_0(18)$ has dimension zero:\n       $$\\dim S_2(\\Gamma_0(18)) = 0.$$\n   - **Conclusion**: In every primitive positive solution, $C$ must be **odd**, and exactly\n     one of $A, B$ is even.\n\n3. **Kraus Frey Curve Parameterizations**:\n   - **Parameterization $E(A, B)$**:\n       $$y^2 = x^3 + 3(B^3 - A^3)x - 2(B^3 + A^3)$$\n     with Weierstrass invariants $a_4 = 3(B^3 - A^3)$, $a_6 = -2(B^3 + A^3)$,\n     and discriminant:\n       $$\\Delta = -2^4 \\cdot 3^3 \\cdot (A \\cdot B \\cdot C)^{2p}.$$\n   - **Classical Kraus (1998) Model $E_{A, B}^{\\mathrm{Kraus}}$**:\n       $$y^2 = x^3 + 3AB x + (B^3 - A^3)$$\n     with minimal discriminant:\n       $$\\Delta(E_{A, B}) = -432 (A^3 + B^3)^2 = -2^4 \\cdot 3^3 \\cdot C^{2p}.$$\n     Remarkably, the product $AB$ vanishes completely from $\\Delta$, providing\n     good reduction at all primes $\\ell > 3$ dividing $AB$.\n   - Explicit rational 2-torsion point $P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$\n     and cubic factorization identity verified via `ring`.\n\n4. **Consequences for the Beal Conjecture**:\n   - Elimination of signature $(3, 3, 3)$ via Euler's FLT3 theorem.\n   - Elimination of signature $(3, 3, p)$ for all primes $p \\equiv 2 \\pmod 3$ via Freitas (2016).\n   - In particular, signature $(3, 3, 5)$ admits no Beal counterexample.\n\n## References\n* A. Kraus, *Sur l'\u00e9quation $a^3 + b^3 = c^p$*, Experimental Mathematics 7 (1998), no. 1, 1\u201313.\n* H. Darmon and L. Merel, *Winding quotients and some variants of Fermat's Last Theorem*,\n  J. Reine Angew. Math. 490 (1997), 81\u2013100.\n* N. Freitas, *Recipes for Fermat-type equations of the form $x^r + y^r = C z^p$*,\n  Math. Z. 279 (2015), 605\u2013639.\n-/\n\nnamespace Beal\n\nvariable {R : Type*} [CommRing R]\n\n/-! ### 1. The Signature (3, 3, p) Equation -/\n\n/--\nThe Generalized Fermat Equation of signature $(3, 3, p)$:\n  $$A^3 + B^3 = C^p$$\nover natural numbers.\n-/\ndef Signature33pEquation (A B C p : \u2115) : Prop :=\n  A ^ 3 + B ^ 3 = C ^ p\n\n/--\nA primitive positive integer solution to the signature $(3, 3, p)$ equation:\n$A, B, C > 0$, $p \\ge 3$, with coprime bases $\\gcd(A, B) = 1$.\n-/\ndef IsPrimitiveSignature33pSolution (A B C p : \u2115) : Prop :=\n  A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 p \u2265 3 \u2227 Nat.Coprime A B \u2227 Signature33pEquation A B C p\n\n/--\nCoprimality of bases $\\gcd(A, B) = 1$ implies coprimality of the triple $\\gcd(A, B, C) = 1$.\n-/\nlemma gcd3_eq_one_of_coprime_ab (A B C : \u2115) (h : Nat.Coprime A B) :\n    gcd3 A B C = 1 := by\n  unfold gcd3\n  have hdvdA : Nat.gcd A (Nat.gcd B C) \u2223 A := Nat.gcd_dvd_left A (Nat.gcd B C)\n  have hdvdBC : Nat.gcd A (Nat.gcd B C) \u2223 Nat.gcd B C := Nat.gcd_dvd_right A (Nat.gcd B C)\n  have hdvdB : Nat.gcd A (Nat.gcd B C) \u2223 B := dvd_trans hdvdBC (Nat.gcd_dvd_left B C)\n  have hdvd_gcd : Nat.gcd A (Nat.gcd B C) \u2223 Nat.gcd A B := Nat.dvd_gcd hdvdA hdvdB\n  have h1 : Nat.gcd A B = 1 := h\n  rw [h1] at hdvd_gcd\n  exact Nat.dvd_one.mp hdvd_gcd\n\n/--\nEvery primitive solution to $A^3 + B^3 = C^p$ with $p \\ge 3$ constitutes\na Beal counterexample of signature $(3, 3, p)$.\n-/\ntheorem signature33p_solution_is_beal_counterexample (A B C p : \u2115)\n    (h : IsPrimitiveSignature33pSolution A B C p) :\n    IsBealCounterexample A B C 3 3 p := by\n  obtain \u27e8hA, hB, hC, hp, hcop, heq\u27e9 := h\n  refine \u27e8hA, hB, hC, by decide,",
+    "compiler_errors": "error: ././././Beal/Taxonomy.lean:127:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:125:52: unsolved goals\nerror: ././././Beal/Taxonomy.lean:136:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:133:36: unsolved goals\nerror: ././././Beal/Taxonomy.lean:165:11: unknown tactic\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'GE.ge.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'LE.le.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'Nat.le.left'\nerror: ././././Beal/Taxonomy.lean:152:41: tactic 'subst' failed, invalid equality proof, it is not of the form (x = t) or (t = x)\nerror: ././././Beal/Taxonomy.lean:147:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:145:62: unsolved goals\nerror: ././././Beal/Taxonomy.lean:200:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:198:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:186:35: unsolved goals\nerror: ././././Beal/Taxonomy.lean:226:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:220:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:219:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:216:37: unsolved goals\nerror: Lean exited with code 1\nerror: build failed"
+  },
+  "questions": {
+    "repair_value": {
+      "type": "score",
+      "instructions": "If this module were repaired so that it compiles with no sorry and no custom axioms, how much genuine mathematical content would the project gain?",
+      "criteria": [
+        "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+        "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+        "level 2: a self-contained elementary theorem or an executable checker with real content",
+        "level 3: it would close a signature or an infinite family of Beal signatures"
+      ]
+    },
+    "repairable_without_axioms": {
+      "type": "noul",
+      "instructions": "Can this module plausibly be repaired to compile with NO custom axioms and NO sorry, using only mathlib as it actually exists - noting that mathlib has FLT for exponent 4 but not for exponent 3, and has no Catalan/Mihailescu theorem?",
+      "criteria": {
+        "true": "its content is elementary or depends only on results mathlib actually contains",
+        "false": "its substance depends on a deep theorem mathlib does not contain, such as FLT3, Mihailescu, or a modular-method elimination, so it would need a custom axiom"
+      }
+    },
+    "statement_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that this module's THEOREM STATEMENTS misencode the Beal conjecture - for example allowing exponent 2, excluding a base of 1, or putting the coprimality condition on the exponents rather than the bases - so that repairing it would certify the wrong thing?",
+      "criteria": {
+        "true": "its statements look like they may deviate from the exact conjecture, or it restricts to a sub-case without saying so",
+        "false": "its statements appear to encode the conjecture or a clearly labelled sub-case faithfully"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "repair_value": {
+        "type": "score",
+        "score": 1.68,
+        "confidence": 0.14,
+        "legend": {
+          "0": "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+          "1": "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+          "2": "level 2: a self-contained elementary theorem or an executable checker with real content",
+          "3": "level 3: it would close a signature or an infinite family of Beal signatures"
+        },
+        "probabilities": {
+          "0": 0.09,
+          "1": 0.43,
+          "2": 0.19,
+          "3": 0.29
+        }
+      },
+      "repairable_without_axioms": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "statement_risk": {
+        "type": "noul",
+        "noul": 0.52
+      }
+    },
+    "usage": {
+      "input_tokens": 3273,
+      "output_tokens": 57
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C005_C006",
+  "timestamp": "2026-09-18T00:15:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C005",
+      "status": "BLOCKED",
+      "claim": "The Gaussian forcing-prime sieve eliminates the weighted equation by exhausting its forcing primes."
+    },
+    "B": {
+      "id": "C006",
+      "status": "PARTIAL_RESULT",
+      "claim": "A^3 + B^3 = C^p has no primitive nontrivial solutions for every prime p, not merely for p <= 700."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.83,
+        "confidence": 0.17,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.45999999999999996,
+          "1": 0.27,
+          "2": 0.23,
+          "3": 0.04
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.17
+      }
+    },
+    "usage": {
+      "input_tokens": 504,
+      "output_tokens": 34
+    }
+  }
+}

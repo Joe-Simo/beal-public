@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U56_gaussian_103_projective_constraint",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U56_gaussian_103_projective_constraint.md",
+    "excerpt": "# U56: coefficient-2 branch \u2014 Gaussian parametrization and the q=103 projective constraint\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Inputs\n\nU48 gives, up to Gaussian unit/conjugation,\n\n    m + i n = epsilon (r+i s)^17,\n\nwith gcd(r,s)=1 and r,s of opposite parity. Earlier exact local work gives\n\n    103 | mn.\n\nU55 leaves only the negative-B square classes in the independent Q(sqrt(5)) descent.\n\n## Exact Gaussian coordinate forms\n\nFor epsilon=1, exact expansion gives\n\n    m = r F(r,s),\n    n = s G(r,s),\n\nwhere\n\n    F = r^16 -136 r^14 s^2 +2380 r^12 s^4 -12376 r^10 s^6\n        +24310 r^8 s^8 -19448 r^6 s^10 +6188 r^4 s^12\n        -680 r^2 s^14 +17 s^16,\n\n    G = 17 r^16 -680 r^14 s^2 +6188 r^12 s^4 -19448 r^10 s^6\n        +24310 r^8 s^8 -12376 r^6 s^10 +2380 r^4 s^12\n        -136 r^2 s^14 +s^16.\n\nMultiplication by a Gaussian unit only swaps/signs the two coordinates, so the divisibility statement 103|mn is invariant.\n\n## Exact q=103 computation\n\nFor every finite projective ratio t=r/s in F_103, exact Wolfram enumeration found\n\n    F(t,1) != 0,\n    G(t,1) != 0.\n\nThe only finite ratio for which m*n=0 mod 103 is t=0, coming from the explicit factor r in m. The projective point at infinity s=0 gives n=0.\n\nTherefore, for primitive (r,s),\n\n    103 | mn   ==>   103 | r s.                    (1)\n\nBecause gcd(r,s)=1, exactly one of r,s is divisible by 103.\n\nThis pushes the earlier local divisor one full step backward through the Gaussian 17th-power map: it cannot arise from either degree-16 cofactor F or G.\n\n## Cross-check / exceptional-prime structure\n\nA fresh exact resultant calculation gives\n\n    Res_x(F(x,1),G(x,1)) = 2^272.\n\nThus F and G have no common root modulo any odd prime, consistent with the q=103 enumeration. This resultant alone does not prove that F or G individually have no roots modulo 103; the explicit root enumeration above supplies that stronger q=103 fact.\n\nFor comparison, F and G do have roots modulo 67, 409, and 883, so the q=103 property is genuinely special and must not be generalized to the other previously forced divisors.\n\n## Consequence for the active branch\n\nEvery surviving coefficient-2 exponent-17 solution now has\n\n    103 | r s,\n    gcd(r,s)=1,\n\nin addition to the U55 negative-B square-class equations. Hence one Gaussian base coordinate is itself divisible by 103, not merely the much larger coordinates m or n.\n\n## Next obligation\n\nUse 103|r or 103|s to substitute into the U55 equations. Since m,n are degree-17 forms in r,s and B is a square-class factor tied to m*n, compare 103-adic valuations on both descents. The target is to determine whether the exact valuation forced by the Gaussian expansion is compatible with B=-b^2 or B=-17b^2, or whether it forces an impossible parity of v_103(B).\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.46,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.63,
+          "1": 0.3,
+          "2": 0.07,
+          "3": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1831,
+      "output_tokens": 94
+    }
+  }
+}

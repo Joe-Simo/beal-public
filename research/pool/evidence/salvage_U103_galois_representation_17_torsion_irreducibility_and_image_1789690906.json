@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U103_galois_representation_17_torsion_irreducibility_and_image",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U103_galois_representation_17_torsion_irreducibility_and_image.md",
+    "excerpt": "# U103: Galois Representation $\\rho_{J^-, 17}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/K) \\to \\mathrm{GL}_2(\\mathbb{F}_{17})$: Absolute Irreducibility, Conductor/Hodge--Tate Obstructions, and Dickson Classification\n\n**Date**: 2026-09-17  \n**Context**: Arithmetic geometry of the Jacobian $J^-$ of the genus-8 curve $C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$ over the real quadratic field $K = \\mathbb{Q}(\\phi) = \\mathbb{Q}(\\sqrt{5})$ ($\\phi^2 - \\phi - 1 = 0$).  \n**Scope**: Exact Galois-theoretic, representation-theoretic, and modular analysis of the residual 17-torsion representation $\\rho_{J^-, 17}$. Companion script: `code/U103_galois_representation_17_torsion.py`.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint investigates the mod-17 Galois representation attached to the Jacobian $J^-$ of the hyperelliptic curve\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\ndefined over $K = \\mathbb{Q}(\\phi) = \\mathbb{Q}(\\sqrt{5})$.\n\nWe establish four fundamental arithmetic theorems:\n\n1. **The 2-Dimensional Representation**:\n   Although $\\dim J^- = 8$, the geometric endomorphism ring $\\operatorname{End}_{\\overline{K}}(J^-)$ contains the cyclotomic integers $\\mathbb{Z}[\\zeta_{17}]$, and its maximal totally real subring $\\mathcal{O}_{E^+} = \\mathbb{Z}[\\zeta_{17} + \\zeta_{17}^{-1}]$ has rank 8 over $\\mathbb{Z}$.\n   In $\\mathcal{O}_{E^+}$, the prime 17 is totally ramified: $(17) = \\mathfrak{p}_0^8$, with residue field $\\mathcal{O}_{E^+}/\\mathfrak{p}_0 \\cong \\mathbb{F}_{17}$.\n   The $\\mathfrak{p}_0$-torsion module $V_{17} = J^-[\\mathfrak{p}_0]$ is a 2-dimensional vector space over $\\mathbb{F}_{17}$ that is stable under $\\operatorname{Gal}(\\overline{\\mathbb{Q}}/K)$.\n   The resulting 17-torsion representation is:\n   $$\\rho_{J^-, 17}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/K) \\longrightarrow \\mathrm{GL}_2(\\mathbb{F}_{17}),$$\n   with determinant $\\det \\rho_{J^-, 17} = \\bar{\\chi}_{17}$ (the mod-17 cyclotomic character) and Artin conductor $\\mathfrak{N} = \\mathfrak{p}_2^2 \\mathfrak{p}_5^3$ (norm 2000).\n\n2. **Absolute Irreducibility via Conductor and Hodge--Tate Weights**:\n   The representation $\\rho_{J^-, 17}$ is **ABSOLUTELY IRREDUCIBLE**.\n   - If $\\rho_{J^-, 17}$ were reducible over $\\overline{\\mathbb{F}}_{17}$, Fontaine--Laffaille / Raynaud theory at the unramified prime $\\mathfrak{p}_{17} = (17)$ (Hodge--Tate weights $\\{0, 1\\}$) together with global class field theory on $K$ would force $\\rho_{J^-, 17}^{\\mathrm{ss}} \\cong \\chi_1 \\oplus \\chi_1 \\bar{\\chi}_{17}$, where $\\chi_1: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/K) \\to \\mathbb{F}_{17}^\\times$ is at most a quadratic character ($\\chi_1^2 = 1$).\n   - This would force the Frobenius trace at every unramified prime $\\mathfrak{q} \\nmid 2 \\cdot 5 \\cdot 17$ to satisfy:\n     $$\\operatorname{Tr}(\\rho_{J^-, 17}(\\operatorname{Frob}_{\\mathfrak{q}})) \\equiv \\pm(1 + \\operatorname{Norm}(\\mathfrak{q})) \\pmod{17}.$$\n   - However, for every prime $\\mathfrak{q}$ with $\\operatorname{Norm}(\\mathfrak{q}) \\not\\equiv 1 \\pmod{17}$, the polynomial $u \\mapsto u^{17}$ is an automorphism of $\\mathbb{F}_{\\mathfrak{q}}$, which forces $\\operatorname{Tr}(\\rho_{J^-, 17}(\\operatorname{Frob}_{\\mathfrak{q}})) = 0$ identically.\n   - Because $\\pm(1 + \\operatorname{Norm}(\\mathfrak{q})) \\not\\equiv 0 \\pmod{17}$ for small split and inert primes (such as $q = 3, 7, 11, 19, 23, 29, 31, 41$), this yields an absolute, unconditional contradiction.\n\n3. **Absence of Rational Points on $X_0(17)$ and Eisenstein Quotients**:\n   A 1-dimensional $G_K$-stable subrepresentation in $\\rho_{J^-, 17}$ would define a $K$-rational 17-isogeny of an abelian variety, corresponding to a non-cuspidal point on the modular curve $X_0(17)/K$ or its Eisenstein quotient $\\tilde{J}$.\n   - Over $\\mathbb{Q}$, $X_0(17)$ is an elliptic curve of conductor 17 (Cremona `17a1`) with $X_0(17)(\\mathbb{Q}) \\cong \\mathbb{Z}/4\\mathbb{Z}$ (2 cusps and 2 CM points).\n   - By Momose (1984) and Darmon--Merel (1997), since 17 is inert in $K$, all non-cuspidal points on $X_0(17)(K)$ have Complex Multiplication.\n   - However, $J^-$ is strictly non-CM over $K$ ($\\operatorname{End}_K^0(J^-) = \\mathbb{Q}$) and has no elliptic quotients (U73). Thus $J^-$ cannot define a rational point on $X_0(17)$ or its Eisenstein quotient.\n\n4. **Serre / Dickson Classification of the Image in $\\mathrm{GL}_2(\\mathbb{F}_{17})$**:\n   Applying the Dickson (1901) / Serre (1972) classification of subgroups of $\\mathrm{PGL}_2(\\mathbb{F}_{17})$ and $\\mathrm{GL}_2(\\mathbb{F}_{17})$:\n   - **Reducible (Borel)**: Eliminated by Theorem 2.\n   - **Large Image ($\\mathrm{SL}_2(\\mathbb{F}_{17}) \\subset G$)**: Eliminated by the Chebotarev density of trace-zero elements ($15/16 = 93.75\\%$ in $\\operatorname{im}(\\rho)$ vs $17/288 \\approx 5.90\\%$ in $\\mathrm{GL}_2(\\mathbb{F}_{17})$).\n   - **Exceptional ($A_4, S_4, A_5$)**: Eliminated because their maximum trace-zero fractions are $\\le 37.5\\% < 93.75\\%$, and their maximal element orders cannot accommodate the order-16 cyclotomic character.\n   - **Surviving Class: Dihedra"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.5,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.05,
+          "2": 0.28,
+          "3": 0.29
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.79
+      }
+    },
+    "usage": {
+      "input_tokens": 2542,
+      "output_tokens": 42
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U32_weighted_branch_scope_correction",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U32_weighted_branch_scope_correction.md",
+      "excerpt": "# U32: weighted-branch scope correction\n\nStatus: verified research-state correction only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Correction\n\nThe active surviving Beal-derived equation from U15 is\n\n    X^10 + 256 Y^10 = Z^17,\n\nwith gcd(X,Y)=1 and X,Z odd. The coefficient 256 is essential: it is not a tenth power, and no rational common rescaling can simultaneously turn both left-hand terms into integral tenth powers. U15 already recorded that Michaud-Jacobs' unweighted theorem for\n\n    x^(2l) + y^(2m) = z^17\n\nand its ell=5 Hilbert-newform obstructions do not directly cover the weighted equation.\n\nThe modular-method files U26--U31 study the unweighted Michaud-Jacobs ell=5 obstruction. Those calculations may be mathematically useful as method development, but they do not currently eliminate any case of the weighted equation X^10+256Y^10=Z^17 unless a new, proved reduction from the weighted equation to that Hilbert-modular setup is supplied.\n\nTherefore the previous research-state language suggesting that Case 1 versus Case 2 in Michaud-Jacobs determined coverage of the weighted branch was incorrect. No such correspondence has been proved.\n\n## Current valid state of the weighted branch\n\nThe valid chain for X^10+256Y^10=Z^17 is U15--U25 in `research/gaussian-descent/`:\n\n- Gaussian factorization in Z[i];\n- the surviving 17-adic Case III\n\n      a=A^5,\n      b=16*17^4 B^5,\n      G=C^5,\n      H=17 D^5;\n\n- elimination of Cases I and II modulo 11;\n- the finite list of forcing primes and proof that a single forcing prime does not iterate to an infinite p-adic descent;\n- factorization over Q(sqrt(17)), collapse to fixed unit classes, integral-basis coefficient equations, exact 17-adic root locking, and coprime cyclotomic factorization of gamma^5-(eta delta)^5.\n\nThe latest valid weighted checkpoint is U25. Its next obligation is global: exploit the cyclotomic factorization in K(zeta_5), derive a Thue/Thue-Mahler or superelliptic contradiction, or construct a modular method adapted to the coefficient 256 itself.\n\n## Literature check\n\nA search of the 2024 survey `Generalised Fermat equation: a survey of solved cases` and direct searches for the exact equation found no published theorem directly resolving\n\n    X^10 + 256 Y^10 = Z^17\n\nor equivalently the weighted signature-(5,5,17) form\n\n    U^5 + 8 V^5 = Z^17,\n\nwhere U=X^2 and V=2Y^2.\n\nThe survey records unit-coefficient (5,5,n) solutions for n=7 and 19 and Michaud-Jacobs' unweighted (2l,2m,17) result for l,m !=5, but not the present weighted coefficient-8/256 equation.\n\n## Consequence for coverage\n\nU26--U31 remain preserved as auxiliary modular-method research, but they are not counted toward elimination of the active Beal-derived weighted branch. The research program returns to U25 as the mathematically connected frontier.\n",
+      "length_chars": 2833
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.5,
+        "confidence": 0.5,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.8,
+          "1": 0.03,
+          "2": 0.02,
+          "3": 0.14
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.21,
+        "confidence": 0.79,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.93,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.32,
+        "probabilities": {
+          "audit_later": 0.3,
+          "audit_now": 0.15,
+          "no_action": 0.45,
+          "verify_literature": 0.06,
+          "verify_computation": 0.04
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2141,
+      "output_tokens": 124
+    }
+  }
+}

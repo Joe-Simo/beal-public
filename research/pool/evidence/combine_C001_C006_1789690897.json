@@ -1,0 +1,127 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C001_C006",
+  "timestamp": "2026-09-17T20:21:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U99_descent_field_class_number_one_and_selmer_rank_bound.md",
+        "research/checkpoints/U105_all_even_branch_complete_unconditional_resolution.md",
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_u105_degree_obstruction.py"
+      ],
+      "obligations": [
+        "Finiteness is proved; the explicit rational points are NOT yet determined",
+        "Coleman-Strassmann zero counting on the genus-8 quotient must bound the number of zeros to exactly the known trivial points",
+        "Trivial/boundary points must be separated from putative primitive solutions"
+      ],
+      "evaluations": {},
+      "failure_reason": "U113 Part III: the Chabauty-Coleman route bounds the WRONG OBJECT. U99 proves rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5), giving #C^-(k) <= 9. But U105 own \"degree obstruction\" shows a positive integer solution yields c = i*2^(4/5), whose minimal polynomial is x^10 + 256 (verified exactly), of degree 10 over k. Solutions therefore give points of C^-(L) with [L:k] = 10, which are not elements of C^-(k). A bound on the k-rational points is silent about them, so \"C^-(k) contains no points from solutions, therefore no solutions\" is a non sequitur with a vacuously true premise. Closing this needs Chabauty over L (degree 20 over Q) with rank_Z J^-(L) < 8 RE-ESTABLISHED (ranks grow in extensions), or symmetric-power Chabauty / covering collections. None exists in U99, U102 or U105.",
+      "novelty_note": "Only pool route whose finiteness is already unconditional; the residual gap is explicit point determination, not existence of a method.",
+      "extracted": [
+        "rank_Z J^-(k) <= 2 < g = 8 over k=Q(sqrt5) is correct and reusable, but proves finiteness of C^-(k), NOT of the solution set",
+        "the solution field has degree exactly 10 over k with minimal polynomial x^10+256 - this pins down precisely which field a corrected Chabauty argument must work over",
+        "a Chabauty bound over a base field says nothing about points of higher degree; this failure mode should be checked in every other Chabauty claim in the project"
+      ],
+      "id": "C001",
+      "status": "BLOCKED",
+      "claim": "The weighted equation X^10 + 256 Y^10 = Z^17 has no primitive nontrivial integer solutions, established by determining the full set of rational points on the genus-8 anti-invariant quotient curve C^-/k via Chabauty-Coleman.",
+      "method": "Genus-8 quotient of the Frey/Kummer cover; 2-descent bounding rank_Z J^-(k) <= 2 < g = 8; Coleman integration to pin down the finite point set."
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U111_kraus_sieve_p601_p700_signature_3_3_p.md",
+        "references/U111/kraus_sieve_p601_p700.json",
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_kraus_sieve_audit.py",
+        "code/U113_cartan_split_check.py"
+      ],
+      "obligations": [
+        "UNIFORMITY IN p is the real open problem: the sieve certifies p<=700 one prime at a time",
+        "verify Bilu-Parent-Rebolledo (2013) against the primary source - X_split(p)(Q) = cusps + CM points for p>=11, p!=13",
+        "verify Freitas (2016) Halberstadt-Kraus symplectic criterion covers ALL p = 2 mod 3, not just those tested",
+        "fix the misleading unconditionally_eliminated flag in the JSON, or document that 144b1 is handled outside the sieve"
+      ],
+      "evaluations": {
+        "independent_data_audit": "PASSED: 0 Hasse violations, 0 cross-prime trace inconsistencies over 88 repeated (newform,q) pairs, all 44 exponents prime in [43,691]",
+        "coverage_audit": "DEFECT (non-fatal): elim_144b_canon false in all 44 certificates and true in none, while every record is flagged unconditionally_eliminated=true; 144b1 is handled by a separate textual argument",
+        "citation_audit_PRIMARY_SOURCE": "CONFIRMED 2026-09-17: the needed theorem (non-CM E/Q, p>=11, p!=13 => image of rho-bar not in split Cartan normalizer) is real, due to Bilu-Parent (Annals 173, 2011) + Bilu-Parent-Rebolledo (Ann. Inst. Fourier 63, 2013), with p=13 settled by Balakrishnan-Dogra-Muller-Tuitman-Vonk (Annals 189, 2019). All 44 sieve exponents are =1 mod 3 and >=43, so hypotheses are satisfied. The project MISATTRIBUTES this to Momose / Darmon-Merel. Checked against abstracts and bibliographic records, NOT full text."
+      },
+      "failure_reason": null,
+      "novelty_note": "Per-prime finite certification; the missing ingredient is uniformity in p, which is a different mechanism from the sieve itself.",
+      "extracted": [],
+      "id": "C006",
+      "status": "PARTIAL_RESULT",
+      "claim": "A^3 + B^3 = C^p has no primitive nontrivial solutions for every prime p, not merely for p <= 700.",
+      "method": "Kraus sieve with modular elimination of the persistent obstructions at levels 72 and 144 for p = 1 mod 3, combined with Freitas (2016) Halberstadt-Kraus symplectic criterion for p = 2 mod 3."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.61,
+        "confidence": 0.48,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.46,
+          "1": 0.49,
+          "2": 0.03,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.09
+      }
+    },
+    "usage": {
+      "input_tokens": 2293,
+      "output_tokens": 53
+    }
+  }
+}

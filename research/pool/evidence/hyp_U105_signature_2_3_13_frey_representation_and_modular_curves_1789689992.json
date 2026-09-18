@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U105_signature_2_3_13_frey_representation_and_modular_curves",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U105_signature_2_3_13_frey_representation_and_modular_curves.md",
+    "excerpt": "# U105: Arithmetic Analysis of the Boundary Exponent $n = 13$ for $A^2 + B^3 = C^n$: Frey Representations, Modular Curves, and Quadratic Chabauty Assessment\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group  \n**Status**: Authoritative Milestone Checkpoint & Technical Reference  \n**Target Diophantine Equation**: $A^2 + B^3 = C^{13}, \\quad \\gcd(A, B, C) = 1, \\quad ABC \\neq 0, \\quad C \\neq \\pm 1$.\n\n---\n\n## 1. Executive Summary and Theoretical Scope\n\nThe generalized Fermat equation of signature $(2, 3, 13)$,\n$$A^2 + B^3 = C^{13}, \\quad \\gcd(A, B, C) = 1,$$\nconstitutes the unconditional frontier of the Diophantine family $A^2 + B^3 = C^n$. While exponents $n \\in \\{7, 8, 9, 10, 15\\}$ have been unconditionally resolved, and $n = 11$ was resolved conditionally under the Generalized Riemann Hypothesis (GRH) by Freitas, Naskr\u0119cki, and Stoll (2020), the boundary exponent $n = 13$ remains **completely open**.\n\nThis checkpoint establishes an exhaustive, mathematically rigorous analysis of the modular approach to $n = 13$, detailing:\n1. **The Kraus Frey Elliptic Curve**: Construction, invariants, Kodaira types, and local conductor behavior at 2, 3, 13, and $\\ell \\mid C$.\n2. **Modular Lowering and Newform Spectrum**: Determination of Serre levels dividing $2^8 \\cdot 3^5 = 62208$, exact dimensions of $S_2^{\\text{new}}(\\Gamma_0(N))$ across all candidate levels $N \\in \\{27, 32, 54, 96, 144, 288, 864\\}$, and minimal weight $k = 2$.\n3. **Irreducibility of the Mod 13 Galois Representation**: Analysis of FNS (2020) Lemma 8.1, ruling out reducible 13-torsion via non-trivial rational points on genus-2 twists of $X_1(13)$.\n4. **Symplectic Filtering and CM Elimination**: Reduction from 14 candidate twists to 7 via local symplectic criteria at 2 and 3, and complete elimination of all CM newforms ($27a1, 288a1, 288a2$) via Coleman/Chabauty on genus-2 curves over quadratic fields $\\mathbb{Q}(\\omega)$ and $\\mathbb{Q}(i)$.\n5. **The Surviving Candidate Newforms**: Isolation of the exact surviving set of 4 non-CM elliptic curves:\n   $$\\mathcal{S}_{13} = \\{96a2, 864a1, 864b1, 864c1\\}.$$\n6. **The Persistent Catalan Barrier**: Exact identification of candidate curve `864b1` as the quadratic twist by $d = 2$ of the Frey curve evaluated at the universal Catalan solution $(\\pm 3, -2, 1)$, proving that $X_{864b1}(13)(\\mathbb{Q})$ contains genuine non-cuspidal rational points.\n7. **Modular Curve Genera and Geometric Bottleneck**: Exact genus formulas establishing $g(X_0(13)) = 0$, $g(X_1(13)) = 2$, $g(X_{\\text{sp}}^+(13)) = 3$, and $g(X(13)) = g(X_E(13)) = 50$.\n8. **Evaluation of Quadratic Chabauty (BDMTV 2019)**: Detailed assessment of why the landmark method of Balakrishnan, Dogra, M\u00fcller, Tuitman, and Vonk (2019) on $X_{\\text{sp}}^+(13)$ succeeds for CM curves but **fundamentally fails** to resolve the surviving non-CM curves $\\{96a2, 864a1, 864b1, 864c1\\}$.\n\n---\n\n## 2. Explicit Frey Curve Constructions and Local Arithmetic\n\n### 2.1 The Kraus Frey Model\nLet $(a, b, c)$ be a primitive integer solution to $a^2 + b^3 = c^{13}$ with $\\gcd(a, b, c) = 1$, $abc \\neq 0$, and $c \\neq \\pm 1$. Following Alain Kraus (1998, 1999) and Freitas, Naskr\u0119cki, and Stoll (2020), we associate to $(a, b, c)$ the Frey elliptic curve:\n$$E = E_{(a, b, c)}: Y^2 = X^3 + 3bX + 2a.$$\n\nThe standard Weierstrass invariants of $E$ are given by:\n$$\\begin{aligned}\nc_4 &= -2^4 \\cdot 3^2 b = -144 b, \\\\\nc_6 &= -2^5 \\cdot 3^3 a = -864 a, \\\\\n\\Delta &= -2^6 \\cdot 3^3 (a^2 + b^3) = -2^6 \\cdot 3^3 c^{13} = -1728 c^{13}, \\\\\nj &= \\frac{c_4^3}{\\Delta} = \\frac{(-144 b)^3}{-1728 c^{13}} = \\frac{1728 b^3}{c^{13}}, \\\\\n1728 - j &= \\frac{1728 a^2}{c^{13}}.\n\\end{aligned}$$\n\n### 2.2 Local Reduction Types and Serre Conductor Lowering\nThe mod 13 Galois representation $\\bar{\\rho}_{E, 13}: G_\\mathbb{Q} \\to \\operatorname{GL}_2(\\mathbb{F}_{13})$ exhibits precise local behaviors:\n\n1. **At odd primes $\\ell \\mid c$ ($\\ell \\geq 5$)**:\n   - $v_\\ell(\\Delta) = 13 v_\\ell(c) \\equiv 0 \\pmod{13}$.\n   - Because $\\gcd(a, b, c) = 1$, $\\ell \\nmid b$, which implies $v_\\ell(c_4) = v_\\ell(-144 b) = 0$.\n   - By Tate's algorithm, $E$ has multiplicative reduction of Kodaira type $I_{13 v_\\ell(c)}$ at $\\ell$.\n   - By the theory of the Tate curve, the inertia group $I_\\ell$ acts on the 13-torsion $E[13]$ via unramified extensions, so $\\bar{\\rho}_{E, 13}|_{I_\\ell}$ is trivial.\n   - Consequently, the Serre conductor $N_{13}$ is **completely unramified at all primes $\\ell \\mid c$ ($\\ell \\geq 5$)**.\n\n2. **At the exponent prime $\\ell = 13$**:\n   - If $13 \\nmid c$, $E$ has good reduction or multiplicative reduction with minimal valuation.\n   - If $13 \\mid c$, $v_{13}(\\Delta) \\equiv 0 \\pmod{13}$, and $E$ has multiplicative reduction.\n   - In all cases, $\\bar{\\rho}_{E, 13}$ is finite flat (crystalline) at 13 in the sense of Fontaine.\n   - Therefore, by Serre's conjectures (Khare--Wintenberger 2009), the target modular forms have weight $k = 2$ and are unramified at 13.\n\n3. **At bad primes $\\ell \\in \\{2, 3\\}$*"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 1.61,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.24,
+          "1": 0.22,
+          "2": 0.24,
+          "3": 0.3
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2865,
+      "output_tokens": 94
+    }
+  }
+}

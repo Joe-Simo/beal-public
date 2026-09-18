@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U60_audit_and_mod289_reduction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U60_audit_and_mod289_reduction.md",
+    "excerpt": "# U60 \u2014 audited descent and a modulo-289 square-class elimination\n\n**Status: an established partial implication with explicit algebraic and computational certificates; not a complete solution of Beal's conjecture.**\n\nRun date: 2026-09-14 America/New_York / 2026-09-15 UTC.\nInspected base revision: `0c4ca34375b87ab3b41e26cd7ee14bfcfdecba92` in private `Joe-Simo/beal`.\nReview provenance: Astra self-review, exact TypeScript bigint and Python/SymPy checks, and separate Wolfram computations. No independent human review or proof-assistant kernel verification is claimed. Novelty is not claimed.\n\n## 1. Scope and exact result\n\nThe original target remains: for positive integers A0,B0,C0,x,y,z with x,y,z >= 3 and A0^x+B0^y=C0^z, prove gcd(A0,B0,C0)>1 or produce an exactly verified counterexample. Nothing below replaces that target.\n\nThis checkpoint concerns only the simultaneous equations in the current auxiliary branch. Write omega=(1+sqrt(5))/2, with omega^2=omega+1, and\n\n    H_-(m,n) = m^4+30m^2n^2+n^4 - 16m^2n^2 omega.\n\nSuppose coprime integers r,s of opposite parity and integers m,n,A,B satisfy\n\n    m+i n = (r+i s)^17,\n    H_-(m,n) = (A+B omega)^17,\n    gcd(m,n)=gcd(A,B)=1,\n    mn != 0.\n\nHere A,B are algebraic-integer coefficients, NOT the original Beal bases A0,B0.\nA Gaussian unit can be absorbed into r+i s, because its 17th power equals itself. This preserves coprimality and opposite parity.\n\n**Partial theorem.** Exactly one of r,s is divisible by 17. If k=v_17(rs), then k>=1 and\n\n    v_17(mn)=k+1,\n    v_17(B)=2k+1.\n\nConsequently the square class B=-b^2 is impossible, and every such solution has\n\n    B=-17 b^2,\n    P16(A,-17 b^2)=17 c^2,\n    17 b c=4|mn|,\n    gcd(b,c)=gcd(A,b)=1,\n    17|b,  17 does not divide c,  8|b,\n\nfor positive integers b,c. The previously established 103|mn condition additionally implies 103|b and 103 does not divide c, by the corrected argument in section 2.\n\nFor the upstream positive auxiliary variables X=m+n,Y=m-n, this also gives 289 | (X^2-Y^2). The theorem is an implication for the displayed system, not an assertion that all Beal signatures reach it.\n\nBoundary: mn=0 is expressly separated, not discarded silently. For primitive m,n it is the axis case {abs(m),abs(n)}={1,0}; in the positive X,Y orientation this is X=Y=Z=1. The square-class argument divides nonzero quantities and is not applied to this case.\n\n## 2. Audit corrections to U57\u2013U59\n\n### U57/U58: division does not preserve being a square\n\nThe assertion that t=b^2/A is necessarily a quadratic residue is unjustified. An explicit counterexample to that inference is A=57, b=8, q=103: A=1 mod8, gcd(A,b)=1, but b^2/A=21 mod103 and 21^51=-1 mod103. This is NOT a solution of the branch; it refutes the proposed normalization under the stated local hypotheses.\n\nMoreover A can vanish modulo q even when B is nonzero. The safe root question, when B is a unit, is to enumerate every t=A/B in F_q, not just squares. The remaining projective point is (A:B)=(1:0).\n\nThe complete corrected numbers of roots of P16(t,1), over ALL t in F_q, are:\n\n    q=67: 16; q=103: 0; q=409: 16; q=883: 16.\n\nNone has a root at (1:0), since P16(1,0)=17.\nFull lists are in U60_typescript_output.json. U58's old 7/8-element lists are valid outputs for restricted scans but are NOT complete necessary-condition tables. They must not be used to prune all integer solutions.\n\n**U57's conclusion is recovered with a corrected proof.** If 103 divides P16 and B is nonzero modulo 103, then P16(A/B,1)=0, contradicting the complete root enumeration. If B=0 modulo 103, coprimality makes A a unit, and P16=17 A^16 is nonzero. Therefore 103 never divides P16 for primitive A,B. From B P16=-16m^2n^2 and 103|mn, all the 103-adic contribution lies in B. Its valuation is 2v_103(mn), and v_103(b)=v_103(mn).\n\n### U59: distinguish scalar and projective kernels\n\nFor the quadratic algebra over an odd q!=5, its unit group modulo scalar units has order q-(5/q). At q=103 the discriminant 5 is nonsquare and this order is 104, coprime to 17. Thus the projective 17th-power kernel at 103 has size ONE, not 17. The factor 17 in gcd(17,103^2-1) comes from scalar units and does not survive quotienting. At 67,409,883 the projective kernel does have size 17. U59's single-valued-map objection at those three primes survives, but its uniform explanation including 103 was incorrect.\n\n### U59: q^2 is still too shallow for the proposed coefficient test\n\nIf e=v_q(mn)>=1 and q is odd, v_q(-16m^2n^2)=2e. That coefficient remains zero modulo q^2; for e=1 its first nonzero digit is seen modulo q^3, not q^2. Section 5 goes further and constructs solutions of the surviving local equations to all orders at these primes, so merely lifting them indefinitely is not a justified route to a contradiction.\n\n### Upstream dependencies actually rechecked\n\nThe exact P16 coefficients were regenerated from omega^2=omega+1. The U51 sieve was rerun over all nonzero Gaussian 17th powers in the full algebra at 67: k=0 and k=15 each have 132"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.08,
+        "confidence": 0.72,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.02,
+          "2": 0.76,
+          "3": 0.18
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 2185,
+      "output_tokens": 42
+    }
+  }
+}

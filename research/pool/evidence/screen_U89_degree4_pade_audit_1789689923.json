@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U89_degree4_pade_audit",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U89_degree4_pade_audit.md",
+      "excerpt": "# U89: degree-four fixed-weight Pad\u00e9 invariants have higher local order but a weaker certified height bound\n\n**Status: written route audit with exact arithmetic. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This executes the next step identified in U88: test whether degree four improves the certified height obstruction after accounting for the actual size of the primitive integer relation, rather than comparing local vanishing order alone.\n\n## 1. Scope of the audit\n\nKeep U88's notation\n\n    theta=sum_(j=0)^9 a_j c^j,\n    a_j=x*T^j*F_j(T^10),\n    c^10=-256,\n\nat a strong prime dividing `Y`.\n\nThis checkpoint studies **fixed-weight homogeneous degree-four invariants**: linear combinations of monomials\n\n    a_i a_j a_k a_l\n\nwith one fixed index sum `i+j+k+l=W`. It does not claim to exhaust every degree-four invariant mixing weights that differ by multiples of ten.\n\nFor fixed W, factor out `x^4*T^W` and view the remaining monomial products as rational power series in `S=T^10`. If a nonzero combination cancels the first `m` coefficients in S, its local Y-order is\n\n    W+10m.                                           (1.1)\n\n## 2. A modular scan gives rigorous upper bounds on cancellation\n\n`code/U89_degree4_pade_audit.py` enumerates every degree-four monomial and every weight `0<=W<=36`. It reduces the exact binomial-product series modulo the prime 5003 and computes the first row count at which each fixed-weight coefficient matrix reaches full column rank.\n\nA nonzero minor modulo 5003 is a nonzero integer minor. Therefore whenever the modular matrix has full column rank after k rows, no rational combination can cancel all of those k coefficients. The scan consequently provides a rigorous **upper bound** on the possible exact cancellation order; it is not merely heuristic modular evidence.\n\nThe unique best fixed-weight upper bound occurs at\n\n    W=18,\n    number of monomials=43,\n    first full row count=43.                         (2.1)\n\nHence every non-identically-zero fixed-weight degree-four invariant has local order at most\n\n    18+10*42=438.                                    (2.2)\n\n## 3. The extremal order 438 is attained exactly\n\nFor `W=18`, construct the exact 42-by-43 rational coefficient matrix for `S^0,...,S^41`. Exact row scaling and nullspace arithmetic give\n\n    rank=42,\n    nullspace dimension=1.                           (3.1)\n\nLet `lambda` be its primitive integer null-vector. The coefficient of `S^42` in the resulting series is nonzero, so the corresponding degree-four integer invariant `K` has exact formal order\n\n    T^(18+420)=T^438.                                (3.2)\n\nAt the forced prime 31, the leading rational coefficient has\n\n    numerator=20 mod31,\n    denominator=3 mod31.                             (3.3)\n\nThus it is a 31-adic unit. Since U72 forces `31|Y`, the same nonvanishing argument as U87/U88 proves\n\n    K !=0,\n    v_31(K)=438*v_31(Y).                             (3.4)\n\nFor the fourteen-prime product\n\n    P=433992707035920672833426144791,\n\none has\n\n    P^438 | K.                                       (3.5)\n\n## 4. Coefficient growth overwhelms the local-order gain\n\nThe primitive degree-four null-vector is much larger than U88's cubic vector:\n\n    max coefficient digit length = 8817,\n    L1 norm digit length = 8818.                     (4.1)\n\nEvery weight-18 monomial satisfies\n\n    |a_i a_j a_k a_l| <= kappa^(-18) H^(4/17),\n\nso with `L_4=sum |lambda_i|`,\n\n    0<|K|<L_4 H^(4/17).                              (4.2)\n\nCombining with (3.5), `H<3M`, and exact integer arithmetic gives only\n\n    max(X,Y)>10^17696.                               (4.3)\n\nThe exact threshold checks are\n\n    P^(438*17) >81 L_4^17 10^(4*17696),\n    P^(438*17) <81 L_4^17 10^(4*17697).              (4.4)\n\nThus the degree-four fixed-weight invariant has far greater local order than U88's cubic invariant (`438` versus `155`) but a **weaker** final decimal barrier (`17696` versus `21122`) because its primitive coefficients grow by nearly eight thousand digits.\n\n## 5. Independent exact check\n\nThe Python audit performs both the mod-5003 all-weight scan and the exact rational reconstruction at W=18. A separate Wolfram calculation rebuilt the W=18 matrix from the binomial series and returned\n\n    monomial count 43,\n    rank 42,\n    L_4 digit length 8818,\n    maximum lambda digit length 8817,\n    leading residues 20 and 3 modulo 31,\n    both exact threshold comparisons true.           (5.1)\n\nNo decimal approximation determines (4.3).\n\n## 6. Research consequence\n\nU89 shows that **local vanishing order alone is the wrong optimization target**. The relevant quantity is the tradeoff between q-adic order and the arithmetic height of the primitive coefficient relation.\n\nU88 therefore remains the strongest certified explicit lower bound in this Pad\u00e9 family:\n\n    max(X,Y)>10^21122.                               (6.1)\n\nThe ",
+      "length_chars": 5385
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.28,
+        "confidence": 0.72,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.9,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.07
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.14,
+        "confidence": 0.86,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.96,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.04
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.26,
+        "probabilities": {
+          "audit_later": 0.33,
+          "no_action": 0.21,
+          "audit_now": 0.04,
+          "verify_computation": 0.41,
+          "verify_literature": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2728,
+      "output_tokens": 126
+    }
+  }
+}

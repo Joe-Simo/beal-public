@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U111_kraus_sieve_p201_p300_signature_3_3_p",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_kraus_sieve_p201_p300_signature_3_3_p.md",
+    "excerpt": "# U111: Extended Kraus Sieve Modular Elimination for Generalized Fermat Equations $A^3 + B^3 = C^p$ ($p \\equiv 1 \\pmod 3$, $p \\in [201, 300]$)\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group (Signature $(3, 3, p)$ Scale Specialization)  \n**Target Equation**: $A^3 + B^3 = C^p$ with prime exponent $p \\in \\{211, 223, 229, 241, 271, 277, 283\\}$, $\\gcd(A, B, C) = 1$, and $A B C \\neq 0$.  \n**Supporting Code**: [`code/U111_kraus_sieve_p201_p300.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_kraus_sieve_p201_p300.py)  \n**Supporting Data**: [`references/U111/kraus_sieve_p201_p300.json`](file://[LOCAL_HOME]/Downloads/beal/references/U111/kraus_sieve_p201_p300.json)  \n**Status**: Authoritative research checkpoint; 100% unconditional elimination of the persistent modular obstructions at levels 72 and 144 across all primes $p \\equiv 1 \\pmod 3$ in $[201, 300]$.\n\n---\n\n## 1. Executive Summary\n\nIn Checkpoint U110 and the preceding U111 centenary study, the Kraus sieve modular elimination algorithm was verified for all prime exponents $p \\le 200$ with $p \\equiv 1 \\pmod 3$.\n\nThis checkpoint extends the algorithmic Kraus sieve to the third centenary:\n$$p \\in [201, 300] \\quad \\text{with } p \\equiv 1 \\pmod 3 \\implies p \\in \\{211, 223, 229, 241, 271, 277, 283\\}.$$\n\n### Key Mathematical Findings\n1. **100% Unconditional Modular Elimination**:\n   All 7 prime exponents $p \\in \\{211, 223, 229, 241, 271, 277, 283\\}$ are **unconditionally eliminated** by explicit auxiliary prime certificates. No non-trivial primitive solutions to $A^3 + B^3 = C^p$ exist for any of these exponents.\n2. **Ultra-Fast Elimination Search ($q \\le 35,000$)**:\n   Every single prime exponent is eliminated by an auxiliary prime $q < 3,000$:\n   - For $p = 277$, elimination occurs at the very first candidate prime $k = 2$ ($q = 1109$).\n   - For $p \\in \\{241, 271, 283\\}$, elimination occurs at $k = 3$ ($q = 6p + 1$).\n   - For $p = 211$, elimination occurs at $k = 5$ ($q = 2111$).\n   - For $p \\in \\{223, 229\\}$, elimination occurs at $k = 6$ ($q = 12p + 1$).\n3. **Simultaneous Level 72 and Level 144 Elimination**:\n   - Level 72: `72a1` ($y^2 = x^3 + 6x - 7$, non-CM);\n   - Level 144: `144a1` ($y^2 = x^3 + 6x + 7$, non-CM quadratic twist of `72a1` by $\\chi_{-4}$);\n   - Level 144: `144b1` ($y^2 = x^3 - 1$, CM by $\\mathbb{Q}(\\sqrt{-3})$, quadratic twist of `36a1`).\n   Because $a_q(144a1) = \\chi_{-4}(q) a_q(72a1) \\equiv \\pm a_q(72a1) \\pmod p$ and the admissible trace set $\\mathcal{A}_q(p)$ is closed under negation, eliminating `72a1` automatically eliminates `144a1`. The CM form `144b1` is unconditionally ruled out by the Momose / Darmon\u2013Merel theorem on rational 2-torsion.\n4. **Complete Theorem for All Primes $p \\le 300$**:\n   - Primes $p \\equiv 2 \\pmod 3$: 100% resolved by Freitas (2016) via symplectic criteria.\n   - Primes $p \\le 37$ ($p \\equiv 1 \\pmod 3$): Resolved in U106.\n   - Primes $43 \\le p \\le 97$ ($p \\equiv 1 \\pmod 3$): 100% resolved in U110.\n   - Primes $101 \\le p \\le 199$ ($p \\equiv 1 \\pmod 3$): 100% resolved in U111.\n   - Primes $201 \\le p \\le 300$ ($p \\equiv 1 \\pmod 3$): 100% resolved in this checkpoint.\n   - **Theorem**: The generalized Fermat equation $A^3 + B^3 = C^p$ has strictly zero non-trivial primitive integer solutions for **all prime exponents $p \\le 300$**.\n\n---\n\n## 2. Master Verification Ledger: $p \\in [201, 300]$ ($p \\equiv 1 \\pmod 3$)\n\nAll values are computed exactly using `code/U111_kraus_sieve_p201_p300.py` and validated against PARI/GP 2.17.4.\n\n| Exponent $p$ | $p \\pmod 3$ | First Eliminating $q$ | $k$ | $n = 2k$ | $a_q(72a1)$ | $a_q(72a1) \\pmod p$ | $a_q(144a1)$ | $q \\mid C$ Possible? | $|\\mathcal{A}_q(p)| / p$ | Admissible Traces $\\mathcal{A}_q(p) \\pmod p$ | Total $q \\le 3.5 \\times 10^4$ Elim. Rate | Status |\n|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **$p = 211$** | $1$ | **$2111$** | $5$ | $10$ | $-48$ | **$163$** | $+48$ | No ($\\pm 2 \\equiv \\{2, 209\\}$) | $1 / 211$ | $\\{0\\}$ | $14/16$ ($87.5\\%$) | **ELIMINATED** |\n| **$p = 223$** | $1$ | **$2677$** | $6$ | $12$ | $-58$ | **$165$** | $-58$ | No ($\\pm 2 \\equiv \\{2, 221\\}$) | $2 / 223$ | $\\{70, 153\\}$ | $17/17$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 229$** | $1$ | **$2749$** | $6$ | $12$ | $+62$ | **$62$** | $+62$ | No ($\\pm 2 \\equiv \\{2, 227\\}$) | $4 / 229$ | $\\{14, 34, 195, 215\\}$ | $17/17$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 241$** | $1$ | **$1447$** | $3$ | $6$ | $+48$ | **$48$** | $-48$ | No ($\\pm 2 \\equiv \\{2, 239\\}$) | $2 / 241$ | $\\{76, 165\\}$ | $15/15$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 271$** | $1$ | **$1627$** | $3$ | $6$ | $+4$ | **$4$** | $-4$ | No ($\\pm 2 \\equiv \\{2, 269\\}$) | $2 / 271$ | $\\{80, 191\\}$ | $11/12$ ($91.7\\%$) | **ELIMINATED** |\n| **$p = 277$** | $1$ | **$1109$** | $2$ | $4$ | $+18$ | **$18$** | $+18$ | No ($\\pm 2 \\equiv \\{2, 275\\}$) | $1 / 277$ | $\\{0\\}$ | $16/17$ ($94.1\\%$) | **ELIMINATED** |\n| **$p = 283$** | $1$ | **$1699$** | $3$ | $6$ | $-4$ | **$279$** | $+4$ | No ($\\pm"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.57,
+        "confidence": 0.49,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.15,
+          "1": 0.16,
+          "2": 0.65,
+          "3": 0.04
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.75
+      }
+    },
+    "usage": {
+      "input_tokens": 3040,
+      "output_tokens": 42
+    }
+  }
+}

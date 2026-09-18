@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U88_cubic_pade_height_obstruction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U88_cubic_pade_height_obstruction.md",
+    "excerpt": "# U88: a cubic Pad\u00e9 invariant pushes the weighted lower bound beyond 10^21122\n\n**Status: written partial theorem with exact Python/SymPy arithmetic and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This continues U87's systematic Pad\u00e9 route. It uses the same fourteen forced prime divisors of `Y`, but replaces the quadratic invariant by a degree-three invariant with much larger local intersection multiplicity.\n\n## 1. Setup\n\nAssume a primitive positive solution\n\n    X^10+256Y^10=Z^17.                               (W)\n\nKeep U71/U72's common integral root\n\n    c^10=-256,\n    theta=a0+a1*c+...+a9*c^9 in Z[c],\n    theta^17=X+cY.                                   (1.1)\n\nLet\n\n    kappa=|c|=2^(4/5),\n    H=X+kappa Y,\n    M=max(X,Y).\n\nU72 forces the fourteen primes\n\n    11,31,41,61,71,101,151,191,211,281,331,431,461,631\n\nto divide `Y`; their product is\n\n    P=433992707035920672833426144791.                (1.2)\n\nAll fourteen are U81-clean and hence belong to the scalar-root regime.\n\n## 2. Fifteen cubic monomials of common weight fifteen\n\nAt a strong prime q dividing Y, put `T=Y/X` and `S=T^10`. As in U81/U87,\n\n    a_j=x*T^j*F_j(S),\n    F_j(S)=sum_(m>=0) B_(j+10m)(-256)^m S^m,\n    B_n=binomial(1/17,n),\n    x^17=X.                                          (2.1)\n\nThere are exactly fifteen degree-three monomials in the ten coefficients whose index sum is fifteen:\n\n    a0*a6*a9,  a0*a7*a8,\n    a1*a5*a9,  a1*a6*a8,  a1*a7^2,\n    a2*a4*a9,  a2*a5*a8,  a2*a6*a7,\n    a3^2*a9,  a3*a4*a8,  a3*a5*a7,  a3*a6^2,\n    a4^2*a7,  a4*a5*a6,  a5^3.                      (2.2)\n\nEvery one has common local factor `x^3*T^15`.\n\nLet `M_1(S),...,M_15(S)` be the corresponding products of three `F_j` series. Form the 14-by-15 rational matrix whose row n is the coefficient of `S^n` in these series for n=0,...,13.\n\nExact arithmetic gives\n\n    rank = 14.                                       (2.3)\n\nTherefore its nullspace is one-dimensional. Let\n\n    lambda=(lambda_1,...,lambda_15) in Z^15           (2.4)\n\nbe the unique primitive integer generator, with its last coordinate positive. The largest coefficient has 866 decimal digits. This definition fixes the huge vector unambiguously without printing it into the manuscript; `code/U88_cubic_pade.py` reconstructs it exactly from (2.1)-(2.3).\n\nDefine\n\n    G(S)=sum lambda_r M_r(S).                         (2.5)\n\nBy construction,\n\n    [S^n]G=0  for n=0,...,13.                        (2.6)\n\nThe next coefficient is nonzero:\n\n    C=[S^14]G !=0.                                   (2.7)\n\nThus\n\n    G(S)=C*S^14+O(S^15).                             (2.8)\n\n## 3. A nonzero integer invariant of local order 155\n\nLet `J` be the same lambda-linear combination of the fifteen integer monomials in (2.2). Then\n\n    J in Z.                                          (3.1)\n\nUsing (2.1) and (2.8), at any strong q with `e=v_q(Y)>0`,\n\n    J=x^3*T^15*G(T^10)\n     =x^3*C*T^155+terms of T-adic order at least 165. (3.2)\n\nAll `B_n` are q-integral for q!=17, hence\n\n    v_q(J)>=155e.                                    (3.3)\n\nIf `Y_s` is the strong-prime part of Y,\n\n    Y_s^155 | J.                                     (3.4)\n\n### 3.1 Forced nonvanishing at q=31\n\nAs in U87, the forced prime 31 certifies that the global invariant is not zero. The exact leading coefficient C in (2.7), after reduction to lowest terms, satisfies\n\n    numerator(C)=13 mod31,\n    denominator(C)=20 mod31.                         (3.5)\n\nBoth are units. Since U72 forces `31|Y`, equation (3.2) gives\n\n    v_31(J)=155*v_31(Y).                             (3.6)\n\nTherefore\n\n    J !=0.                                           (3.7)\n\nAll fourteen primes in (1.2) divide Y and are strong, so\n\n    P^155 | J.                                       (3.8)\n\n## 4. Archimedean height bound\n\nFourier inversion gives\n\n    |a_j|<=kappa^(-j) H^(1/17).                      (4.1)\n\nEvery cubic monomial in (2.2) has total index fifteen. If\n\n    L=sum |lambda_r|,                                (4.2)\n\nthen\n\n    0<|J|<=L*kappa^(-15) H^(3/17)\n           <L*H^(3/17).                              (4.3)\n\nThe exact `L` has 867 decimal digits and is computed directly from the primitive null-vector by the checker.\n\nCombining (3.8) and (4.3),\n\n    P^155 < L*H^(3/17).                              (4.4)\n\nBecause `H<X+2Y<=3M`, a hypothetical bound `M<=10^21122` would imply\n\n    P^(155*17) < 27*L^17*10^(3*21122).               (4.5)\n\nThe exact integer computation gives the reverse strict inequality:\n\n    P^(2635) > 27*L^17*10^(63366).                   (4.6)\n\nThe next decimal threshold goes the other way:\n\n    P^(2635) < 27*L^17*10^(3*21123).                 (4.7)\n\nHence every primitive positive solution of (W) must satisfy\n\n    max(X,Y) > 10^21122.                             (4.8)\n\nAt least one of the two bases therefore has **at least 21,123 decimal digits**.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.06,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.11,
+          "1": 0.03,
+          "2": 0.55,
+          "3": 0.31
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 2289,
+      "output_tokens": 42
+    }
+  }
+}

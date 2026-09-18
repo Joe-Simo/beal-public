@@ -1,0 +1,1028 @@
+      Winding quotients and some variants of
+             Fermat’s Last Theorem
+                       Henri Darmon at Montréal
+                        Loı̈c Merel at Berkeley
+                            September 9, 2007
+
+
+Introduction
+The motivation (or perhaps the excuse?) for this paper is the study of the
+following variants of Fermat’s equation xn + y n = z n :
+
+                               xn + y n = 2z n ,                             (1)
+                               xn + y n = z 2 ,                              (2)
+                               xn + y n = z 3 .                              (3)
+
+An integer solution (x, y, z) to one of the above equations is called primitive
+if gcd(x, y, z) = 1. The equations (2) and (3) typically have infinitely many
+non-primitive solutions. For example, if n is odd, and a and b are any two
+integers with an + bn = c, then
+                                               n+1
+                            (ac)n + (bc)n = (c 2 )2 ,
+
+giving an abundant but rather uninteresting supply of solutions to equation
+(2). It is natural to restrict ones attention to the primitive solutions, which
+is what we will do from now on.
+    Equations (1), (2) and (3) also have certain obvious “trivial” solutions: a
+solution is called trivial if xyz = 0 or ±1, and is called non-trivial otherwise.
+    The work of Hellegouarch, Frey [12], Serre [27], and Ribet [24] relating
+Fermat’s Last Theorem to the Shimura-Taniyama conjecture (and the precise
+
+                                       1
+form of this conjecture given by Weil) can also be applied to other ternary
+equations analogous to Fermat’s equation. (See, for example, [12], [19], or
+sec. 4.3 of [27].) The idea of applying modular form techniques to equations
+(1), (2) and (3) appeared in [3] for equations (2) and (3), and then in [25]
+for equation (1). As a consequence of the results in [25] and [3], one has:
+Let n = p > 13 be prime. Then:
+
+  1. Equation (1) has no non-trivial solution if n ≡ 1 (mod 4).
+
+  2. Equation (2) has no non-trivial primitive solution if n ≡ 1 (mod 4).
+
+  3. Assume that every elliptic curve over Q is modular. Then equation (3)
+     has no non-trivial primitive solution if n ≡ 1 (mod 3).
+
+    The goal of this article is to dispose of the case of general n, and, in
+particular, of primes which are congruent to −1 mod 4 for equations (1) and
+(2), and primes which are congruent to −1 mod 3 for equation (3). Our main
+result is:
+
+Main Theorem Let the exponent n be an arbitrary positive integer.
+
+  1. The equation xn + y n = 2z n has no non-trivial primitive solution when
+     n ≥ 3.
+
+  2. The equation xn + y n = z 2 has no non-trivial primitive solution when
+     n ≥ 4.
+
+  3. Assume that every elliptic curve over Q is modular. Then xn + y n = z 3
+     has no non-trivial primitive solution when n ≥ 3.
+
+The work of Dénes [7] and Poonen [22] establishes the main theorem when the
+exponent n is a small integer. (See the discussion below.) Hence it is enough
+to deal with the case where the exponent n is a prime p ≥ 7. In essence, the
+proof of the main theorem then follows the same general strategy as in the
+proof of Fermat’s Last Theorem. It relies on a variant of the key idea of Frey
+and Serre, together with the “lowering the level” result of Ribet which was
+used to show that the Shimura-Taniyama conjecture implies Fermat’s Last
+Theorem. Enough of the Shimura-Taniyama conjecture is now known, thanks
+
+                                      2
+to Wiles’ breakthrough in this direction, to make our results on equation (1)
+and (2) (but not equation (3)) independent of any conjecture.
+    Central to the study of Fermat’s equation is Mazur’s theorem that an
+elliptic curve over Q cannot have a rational point of order p if p > 7. Our
+work requires an additional result (theorem 8.1) of a similar nature concern-
+ing elliptic curves whose associated mod p Galois representation maps to
+the normalizer of a nonsplit Cartan subgroup of GL2 (Fp ). This theorem,
+whose statement was suggested by Serre’s problem (see [26], 4.3), may be
+of some independent interest. Its proof borrows heavily from the techniques
+of Mazur [17] [18]. It also exploits (in a manner similar to [20]) a finite-
+ness criterion (predicted by the conjecture of Birch and Swinnerton-Dyer)
+for the Mordell-Weil groups of modular jacobians due to Gross-Zagier and
+Kolyvagin-Logachev.
+We now collect a few miscellaneous comments on equations (1), (2), and (3).
+The equation xn + y n = 2z n :
+Equation (1) was studied in 1952 by Dénes [7], who conjectured part 1 of
+our Main Theorem, and proved it for 2 < n < 31. He was motivated by the
+problem of finding perfect powers in arithmetic progressions: for if (x, y, z) is
+a solution to equation (1), then xn , z n , y n forms an arithmetic progression.
+Part 1 of the main theorem implies that there can be no such three-term
+arithmetic progression when n ≥ 3.
+    The study of equation (1) was later taken up by Ribet in [25], exploiting
+the link between Fermat’s Last Theorem and the Shimura-Taniyama conjec-
+ture. Ribet was able to show that equation (1) has no solutions when n is
+divisible by a prime which is congruent to 1 mod 4, or when xyz is even. In
+the course of proving the Main Theorem, we will retrace the steps in Ribet’s
+argument.
+    The reader is referred to [25] for a more thorough historical discussion of
+equation (1). (See also [4] for a study of the related equation x4 − y 4 = z n .)
+The equation xn + y n = z 2
+When n ≤ 3, equation (2) has infinitely many primitive solutions. For n = 2,
+these solutions correspond to primitive pythagorean triples. For n = 3, an
+infinite family of primitive solutions is given by the equations:
+       x = u(u3 − 8v 3 ),   y = 4v(u3 + v 3 ),    z = (u6 + 20u3 v 3 − 8v 6 ),
+                       3 6 |u + v,   2 6 |u,   gcd(u, v) = 1.
+
+                                          3
+(For the general solution, see for example [5], sec. 7.2.)
+    The smallest case covered by part 2 of the Main Theorem is the case n = 4.
+This was established by Fermat, in the course of proving his Last Theorem
+for exponent four. Perhaps the best-known application of the method of
+descent, Fermat’s proof involved the elliptic curve y 2 = x3 − x with complex
+multiplication by Q(i).
+    In [22], Poonen shows that equation (2) has no non-trivial primitive solu-
+tion when n = 5, 6, and 9, using classical descent arguments. Thanks to this
+work, it is enough to prove part 2 of the main theorem when the exponent n
+is a prime p ≥ 7.
+The equation xn + y n = z 3
+The equation xn + y n = z 3 has infinitely many primitive solutions if n = 2,
+for example:
+
+     x = u3 + 3uv 2 ,   y = v 3 + 3vu2 ,       z = u2 + v 2 ,   gcd(u, v) = 1.
+
+The smallest case covered by part 3 of the Main Theorem is the case n = 3.
+This is just Fermat’s Last Theorem with exponent 3, which was proved by
+Euler by elementary methods. Euler’s descent involves the elliptic curve
+x3 + y 3 = 1 with complex multiplication by Q(e2πi/3 ).
+    The case n = 4 was handled by Lucas (cf. [10], p. 630) and the case n = 5
+was disposed of by Poonen [22], through a descent on the jacobian of a curve
+of genus 3. Hence we are also reduced to proving part 3 of the main theorem
+in the case where the exponent n is a prime p ≥ 7.
+    In this case, our proof of part 3 of the Main Theorem still requires the
+hypothesis that the elliptic curves involved in the study of the equation xn +
+y n = z 3 are modular. This requirement is not a consequence of the results of
+Wiles, not even of the strengthenings due to Conrad, Diamond, and Taylor,
+since the conductor of these elliptic curves is divisible by 27. The problem
+of showing that a cube cannot be expressed as a sum of two relatively prime
+nth powers (n ≥ 3) gives a Diophantine incentive for proving the entire
+Shimura-Taniyama conjecture...
+Acknowledgements: The authors would like to thank D. Abramovich,
+I. Chen, B. Edixhoven, and K. Ribet for many useful discussions related
+to this work.
+
+
+
+                                           4
+1     Frey Curves
+We will assume in this section that the exponent n arising in equations (1),
+(2), and (3) is a prime p ≥ 7.
+    Let (a, b, c) be a non-trivial primitive solution to equation (1), (2), or (3).
+Following [25] and [3], we associate to the solution (a, b, c) a Frey curve E as
+follows:
+Equation (1):
+If (a, b, c) is a primitive solution to equation (1), then a and b are odd. By
+multiplying (a, b, c) by −1 if necessary, assume that a ≡ −1 (mod 4). Let E
+be the elliptic curve given by the Weierstrass equation:
+
+                           Y 2 = X(X − ap )(X − 2cp ).                         (4)
+
+Equation (2):
+If ab is even, we assume without loss of generality that a is even and that
+c ≡ 1 (mod 4). If ab is odd, we assume without loss of generality that a ≡ −1
+(mod 4). This can always be done, by interchanging a and b and replacing c
+by −c if necessary.
+    Let E be the elliptic curve given by the Weierstrass equation:
+                              (c − 1) 2 ap
+            Y 2 + XY = X 3 +         X + 6X                if ab is even,      (5)
+                                  4      2
+                          Y = X + 2cX + ap X
+                           2    3      2
+                                                           if ab is odd.       (6)
+
+Equation (3)
+Define the elliptic curve E by the following Weierstrass equation, when c =
+2c0 is even:
+
+               Y 2 + bp Y = X 3 − 3(c30 + bp )c0 X − c30 (2c30 − 5bp ).        (7)
+
+When ab is even, assume without loss of generality that a is odd and b is
+even, and define E by the equation:
+                                        3                5
+              Y 2 + cXY = X 3 − c2 X 2 − cbp X + bp (ap + bp ).                (8)
+                                        2                4
+Arithmetic invariants of E
+
+                                          5
+Let ∆ be the discriminant of the Weierstrass equation defining E. One finds,
+for equation (1),
+                               ∆ = 26 (abc)2p ;
+for equation (2),
+                     1 2 p
+              ∆=        (a b) if 2|ab,       ∆ = 26 (a2 b)p if 2 6 |ab;
+                    212
+and for equation (3),
+                                 ∆ = 33 (a3 b)p .
+   If M is a positive integer, denote by rad(M ) the product of the primes
+which divide M .
+Proposition 1.1 Let N be the arithmetic conductor of the curve E con-
+structed above.
+  1. For equation (1), N = rad(abc) if abc is even, and N = 25 rad(abc) if
+     abc is odd.
+
+  2. For equation (2), N = rad(ab) if ab is even, and N = 25 rad(ab) if ab
+     is odd.
+
+  3. For equation (3), N = rad(ab) if 3 divides ab, and N = 33 rad(ab) if 3
+     does not divide ab.
+Sketch of Proof: The bad reduction types of the curve E, and the arithmetic
+conductor N of E, can be computed using Tate’s algorithm [28]. (We also
+used the results of [9] in the case of equations (1) to analyze the bad fiber
+at 2 of E; for the case of equations (2) and (3), see also [3], lemmas 2.1 and
+3.2.) Note that the condition gcd(a, b, c) = 1 directly implies that the curve
+E which arises in equations (1) and (2) (resp. equation (3)) has multiplicative
+reduction at all primes except possibly 2 (resp. 3).
+
+Lemma 1.2 The curve E constructed above (from a non-trivial primitive
+solution) has at least one odd prime of multiplicative reduction.
+
+Proof: For otherwise, proposition 1.1 implies that abc (resp. ab) is a power
+of 2 in the case of equation (1) (resp. (2) and (3)). For equation (1), this
+implies directly that (a, b, c) is a trivial solution, contrary to our assumption.
+
+                                         6
+In the case of equation (2) or (3) one can only conclude that (a, b, c) gives
+rise to a solution to the special case of Catalan’s equation: xp ± 1 = z 2 or
+xp ± 1 = z 3 (of a very restricted sort, since x must be a power of 2!). This
+equation is proved to have no non-trivial solutions aside from 8 + 1 = 9; cf.
+[23], (A6.1) and (A7.3).
+
+Extra level structures
+Crucial to our proof is the fact that the curve E is equipped with some
+auxiliary level structure, namely, a rational point of order 2 or 3.
+
+
+
+
+                                     7
+Lemma 1.3 Let E be the Frey curve constructed above.
+
+  1. In the case of equation (1), the curve E has all its points of order 2
+     defined over Q.
+
+  2. In the case of equation (2), the curve E has a point of order 2 defined
+     over Q.
+
+  3. In the case of equation (3), the curve E has a rational point (and
+     therefore a rational subgroup) of order 3.
+
+Proof: Parts 1 and 2 can be seen directly. For part 3, one checks that the
+point on E given by the (X, Y ) coordinates:
+
+                         3c2 ap − bp
+                                      !
+                                                            
+                            ,        ,           3c2 , 4ap
+                          4     2
+
+in the equations (7) and (8) respectively is of order 3. (We mention in passing
+a mistake in the proof of lemma 3.1 of [3]. The point of order 3 on the curve
+denoted Ea,b,c has coordinates (x, y) = (3c2 , 4b), and in particular it is a
+rational point.)
+Modularity of E
+As in the proof of Fermat’s Last Theorem, the modularity of E plays a key
+role in our analysis.
+
+Theorem 1.4 (Wiles, Taylor, Diamond) The curve E associated to a
+solution of equation (1) or (2) is modular.
+
+Proof: The curve associated to a solution of equation (1) or (2) is semistable
+at 3 and 5, and its modularity follows from Diamond’s extension [8] of the
+work of Wiles [30] and Taylor-Wiles [29]. (In the case of equation (1), one
+does not need the full power of Diamond’s extension. Since the curve there
+is of the form Y 2 = X(X − A)(X + B), its modularity follows more directly
+from the results of [30] and [29], as is explained in [9]. For more details, see
+the discussion in [25].)
+Remark: For equation (3), even Diamond’s results are not enough, since the
+curve E has additive reduction at 3: this is why the results on equation (3)
+are still conditional.
+
+                                       8
+2      Galois representations
+In this section, as well as in sections 3 and 4, we continue to suppose that
+n = p is a prime which is ≥ 7.
+    We choose, once for all, an isomorphism of Fp -vector spaces between
+points of order p of E(Q̄) and F2p .
+    Let
+                         ρ : Gal(Q̄/Q) −→ GL2 (Fp )
+be the mod p Galois representation attached to the Frey curve E constructed
+in the previous section. Let N (ρ) be the conductor of ρ in the sense of [27],
+i.e, with the factor at p removed.
+
+Lemma 2.1 The conductor N (ρ) takes on the following values for each of
+equations (1), (2), and (3).
+
+    1. Equation (1): N (ρ) = 2 if abc is even, and N (ρ)|32 if abc is odd.
+
+    2. Equation (2): N (ρ) = 2 if ab is even, and N (ρ)|32 if ab is odd.
+
+    3. Equation (3): N (ρ) = 3 if 3 divides ab, and N (ρ)|27 if 3 does not divide
+       ab.
+
+Proof: By proposition 1.1, the curve E is semistable at all primes except
+possibly r, where r = 2 in the case of equations (1) and (2), and r = 3
+in the case of equation (3). Furthermore, for all primes ` 6= r, one has
+ord` (∆min ) ≡ 0 (mod p), where ∆min is the discriminant of the minimal
+Weierstrass model for E. The result follows directly. (See, for example, [27],
+4.1.12.)
+
+Theorem 2.2 The representation ρ is absolutely irreducible.
+
+Proof: When p ≥ 17, this is a direct consequence of corollary 4.4 of Mazur
+[18], since the curve E has at least one odd prime of multiplicative reduction
+(lemma 1.2). If 7 ≤ p ≤ 13 and ρ is reducible, then the curve E gives rise
+(by lemma 1.3) to a rational point on one of the modular curves X0 (N ) with
+N = 14, 22, 26, 21, 33, or 39. These rational points are known to be either
+cuspidal, or CM, and cannot correspond to an elliptic curve with non-integral
+j-invariant. (This follows from work of Mazur [18], Kubert [16], and Kenku
+[14] for the case N = 39.)
+
+                                        9
+3      Modular forms
+From theorems 2.2 and 1.4, it follows that ρ is an absolutely irreducible
+modular representation in the case of equations (1) and (2), and that a similar
+statement is true for equation (3) if one assumes the Shimura-Taniyama
+conjecture. We now invoke the “lowering the level” theorem of [24] which
+implies an important part of Serre’s -conjecture [27]:
+Theorem 3.1 (Ribet) There is a cusp form f mod p of weight 2 and level
+N (ρ) which is associated to ρ in the sense that
+
+                            a` (f ) = trace(ρ(Frob` ))
+
+for all ` 6 |pN (ρ).
+Theorem 3.1 immediately yields the following corollary which was already
+established in [25] and [3].
+Corollary 3.2 Suppose that n ≥ 7 is prime.
+    1. There are no non-trivial primitive solutions to equation (1) with 2|abc.
+    2. There are no non-trivial primitive solutions to equation (2) with 2|ab.
+    3. Assume the Shimura-Taniyama conjecture. There are no non-trivial
+       primitive solutions to equation (3) with 3|ab.
+Proof: A non-trivial primitive solution of equations (1), (2), or (3) satisfying
+the hypothesis of corollary 3.2 would give rise, by lemma 2.1, to a modular
+irreducible mod p Galois representation of conductor 2 or 3. By theorem 3.1,
+this representation corresponds to a mod p eigenform of weight 2 and level 2
+or 3. This is impossible since there are no weight 2 cusp forms of these levels
+in characteristic p.
+
+
+4      Complex multiplication
+Pushing our investigation further, we now know that ρ corresponds to a mod
+p eigenform of weight 2 and level 32 in the case of equations (1) and (2). In
+the case of equation (3), it corresponds to an eigenform of level 27 provided
+the curve E is modular.
+
+                                       10
+   The curves X0 (32) and X0 (27) are both curves of genus 1 with a rational
+point, i.e, elliptic curves, and they are given by the equations
+
+             X0 (32) : Y 2 = X 3 − X,        X0 (27) : Y 2 = X 3 + 16.
+
+(Note that these curves are also the Frey curves that are associated to the
+trivial solution (1, 1, 1) of equation (1), to the trivial solution (−1, 1, 0) of
+equation (2), and to the trivial solution (−1, 1, 0) of equation (3).) It follows
+that ρ is isomorphic to the Galois representation given by the action on the
+p-division points of the elliptic curve X0 (32), in the case of equation (1) and
+(2), and of the elliptic curve X0 (27), in the case of equation (3). Both of
+these curves have complex multiplication: X0 (32) by the ring of Gaussian
+integers Z[i], and X0 (27) by the ring Z[ζ3 ] where ζ3 is a primitive cube root
+of unity.
+Remark: The reader will note that the curve Y 2 = X 3 − X already appears
+(in a much more elementary guise!) in Fermat’s study of the minimal case
+n = 4 of equation (2). The curve Y 2 = X 3 + 16 plays a similar role in Euler’s
+study of the minimal case n = 3 of equation (3).
+   We will now apply the theory of complex multiplication to get a precise
+understanding of the Galois representation ρ, and in particular of its image.
+Let G be the image of ρ in GL2 (Fp ).
+
+Proposition 4.1       1. In the case of equations (1) and (2), the group G is
+    the normalizer of a Cartan subgroup of GL2 (Fp ). This Cartan subgroup
+    is split if p ≡ 1 (mod 4), and is non-split if p ≡ −1 (mod 4). Moreover,
+    the field cut out by ρ is an abelian extension of Q(i).
+
+  2. Assume the Shimura-Taniyama conjecture. In the case of equation (3),
+     the group G is the normalizer of a Cartan subgroup of GL2 (Fp ). This
+     Cartan subgroup is split if p ≡ 1 (mod 3), and is non-split if p ≡ −1
+     (mod 3). Moreover, the field cut out by ρ is an abelian extension of
+     Q(ζ3 ).
+
+The reader will note that a proof of the following proposition already appears,
+for the most part, in [3] and [25], where it is assumed that the exponent p is
+≥ 17. We repeat the entire proof here for the sake of completeness, and also
+to indicate how to handle the small primes p = 7 and 13.
+
+                                        11
+Proposition 4.2 Let n = p ≥ 7 be prime.
+
+  1. Equation (1) has no non-trivial proper solution if p ≡ 1 (mod 4).
+
+  2. Equation (2) has no non-trivial proper solution if p ≡ 1 (mod 4).
+
+  3. Equation (3) has no non-trivial proper solution if p ≡ 1 (mod 3), as-
+     suming the Shimura-Taniyama conjecture.
+
+Proof: If p satisfies the congruences in proposition 4.2, then proposition 4.1
+shows that the curve E has a pair of subgroups of order p which are defined
+over Q(i) or Q(ζ3 ), and are interchanged by Gal(Q̄/Q), so that the set of
+these two subgroups is defined over Q. Hence E gives rise to a rational point
+on the curve denoted by Xsplit (p) in [21] (and X s (p) below). Suppose first
+that p ≥ 17. Then by prop. 3.1. of [21], E has potentially good reduction at
+all primes ` 6= 2, contradicting lemma 1.2.
+    To complete the proof of parts 1 and 2, it remains to dispose of the
+case n = 13 of equations (1) and (2). One can proceed in various ad hoc
+ways. For example, one can note that the curve E gives rise to a point on
+X0 (26) which is defined over Q(i). The Jacobian J0 (26) is a two-dimensional
+abelian variety which is isogenous to the product of two elliptic curves of rank
+0, denoted 26A and 26B in Cremona’s tables [2]. Their twists over Q(i) are
+curves of conductor 208 = 24 13, denoted 208A and 208D. One checks again
+from Cremona’s tables that the curve 208A has rank 0. Hence J0 (26) has a
+non-trivial quotient, isogenous to 26A, which is of rank 0 over Q(i). Now,
+corollary 4.3. of [18] implies that abc = ±1 in the case of equation (1), and
+that ab = ±1, in the case of equation (2) (where we have also used corollary
+3.2).
+    To finish the proof of part 3, one makes a similar argument to handle the
+exponents n = 7 and n = 13: the key points that need to be checked are that
+the modular
+         √ Jacobians J0 (21) and J0 (39) have quotients of rank 0 over the
+field Q( −3). For example, the Jacobian J0 (21) is isogenous to the elliptic
+curve denoted
+         √      21A in Cremona’s tables, which has rank 0 and whose twist
+over Q( −3) (the curve 63A) also has rank √      0. In the case of the variety
+J0 (39), the quotient which is of rank 0 over Q( −3) is of dimension two and
+hence is not listed in the tables of Cremona. But its existence follows, for
+example, from proposition 2.1 of [13].
+
+
+
+                                      12
+    Thanks to proposition 4.2, it now remains to prove the main theorem in
+the case where the exponent p ≥ 7 is in addition ≡ −1 (mod 4) in the case
+of equations (1) and (2), and is ≡ −1 (mod 3) in the case of equation (3).
+We shall assume that p satisfies these congruences for the rest of section 4.
+    Recall that G denotes the image of Gal(Q̄/Q) in GL2 (Fp ) under ρ. Let
+Dp be a decomposition group at p, and let Gp be its image under ρ.
+Proposition 4.3 Gp = G, and in particular Gp is the normalizer of a non-
+split Cartan subgroup of GL2 (Fp ).
+Proof: This follows directly from the theory of complex multiplication: the
+field cut out by ρ is an abelian extension of the quadratic imaginary field
+K = Q(i) or Q(ζ3 ) of degree (p − 1)(p + 1) which is totally ramified at the
+unique prime of K above p.
+Corollary 4.4 The prime p does not divide abc in the case of equation (1),
+and does not divide ab in the case of equations (2) and (3).
+Proof: Otherwise, E would have multiplicative reduction at p. The group
+Gp would be contained in a Borel subgroup of GL2 (Fp ) by Tate’s analytic
+theory, contradicting proposition 4.3.
+
+
+5     The modular curve X0ns(r, p)
+Let K ns be the normalizer of a nonsplit Cartan subgroup of GL2 (Fp ). Let
+X(p) be the modular curve classifying elliptic curves with full level p structure
+equipped with its action of the group GL2 (Fp ). Let X ns (p) = X(p)/K ns , and
+define (for r = 2 or 3)
+
+     X ns (r, p) := X ns (p) ×X(1) X(r),    X0ns (r, p) := X ns (p) ×X(1) X0 (r).
+
+   By combining the “mod p” information given by proposition 4.1 with the
+“mod r” information (r = 2 or 3) of lemma 1.3, we find that the Frey curve
+E constructed in section 1 corresponds to a rational point on the following
+modular curve:
+Equation (1): X = X ns (2, p).
+Equation (2): X = X0ns (2, p).
+Equation (3): X = X0ns (3, p).
+
+                                           13
+    Let x ∈ X(Q) be the rational point associated to the curve E, and let
+x be its natural image in the curve X = X(2), X0 (2), or X0 (3) obtained by
+“forgetting the level p structure”.
+The curve X
+    The curve X(2) has canonical smooth proper model over Spec(Z[1/2]),
+and is identified with the classical λ-line of Legendre. It has three cusps
+which correspond to the values λ = 0, 1, and ∞. These cusps are permuted
+transitively by the Galois group Gal(X(2)/X(1)) ≃ S3 , and are denoted 0, 1
+and ∞.
+    The curve X0 (r) has a smooth proper model over Spec(Z[1/r]) which
+is isomorphic to the projective line when r = 2 or 3. The curve X0 (r)
+(with r any prime) has two cusps, which are denoted 0 and ∞ because they
+correspond to the images of τ = 0 and τ = ∞ on the upper half plane.
+    The curve X(2) has three distinct projections π0 , π1 , and π∞ to X0 (2)
+given by “forgetting” various parts of the level 2 structure. The map πj is
+characterized by the fact that πj (j) = ∞.
+    Given a rational prime ` which is not equal to r, and two sections P and
+Q of X(2) or of X0 (r) over Spec(Z[1/r]), we let (P · Q)` denote the usual
+arithmetic intersection number. Note that the intersection number (x · ξ)`
+is strictly positive, for some cusp ξ of X, if and only if the curve E has
+multiplicative reduction at `, i.e., if and only if ` divides abc in the case of
+equation (1) or ab in the case of equations (2) and (3).
+
+The curve X:
+The genus of the curve X (= X ns (2, p), X0ns (2, p) or X0ns (3, p)) is indicated
+below. (Here, χ2 and χ3 are the primitive Dirichlet characters associated to
+Q(i) and Q(ζ3 ) respectively.)
+
+                                     p2 − 4p + 7
+                  X ns (2, p) :   g=             ;
+                                          4
+                                     p2 − 6p + 11 + 2χ2 (p)
+                  X0ns (2, p) :   g=                        ;
+                                               8
+                                     p2 − 4p + 8 + χ3 (p)
+                  X0ns (3, p) :   g=                      .
+                                              6
+Note that each of these curves has non-zero genus when p > 3.
+
+
+                                       14
+   We now give a description of the cusps of X. The map of modular curves
+X −→ X is a (non-Galois) covering of degree d = p(p − 1)/2. There are
+exactly m = (p − 1)/2 = d/p cusps above each cusp of X. Each of these
+maps to X with ramification index equal to p. These m cusps are all defined
+over the totally real subfield Q(µp )+ of Q(µp ) and are permuted transitively
+by the absolute Galois group of Q. In particular, X has no rational cusps.
+We denote the cusps above ξ by ξ1 , . . . , ξm .
+   Specifically, the curve X ns (2, p) has 3m cusps, denoted
+
+                    01 , . . . , 0m ,   11 , . . . , 1m ,   ∞1 , . . . , ∞m .
+
+    The curve X0ns (r, p) has 2m cusps, denoted
+
+                              01 , . . . , 0m ,    ∞1 , . . . , ∞m .
+
+
+
+6     Connection with the curve X0(rp2)/wp
+Assume for now that p is any odd prime, and that r be an integer which
+is not divisible by p. (In all our applications, we will have either r = 2 or
+r = 3.) Let J be the Jacobian of X. We write also J = J ns (2, p), J0ns (2, p),
+and J0ns (3, p) to denote the Jacobians of X ns (2, p), X0ns (2, p), and X0ns (3, p)
+in the case of equations (1), (2), and (3) respectively.
+    The following basic result of Imin Chen [1] relates J to the Jacobians of
+the form J0 (N ). Chen’s original proof, based on the trace formula, was indi-
+rect and did not exhibit an explicit isogeny. Theorem 6.1 follows from work
+of Edixhoven [11]. (Note that Edixhoven does not explicitly state theorem
+6.1, but the “functorial” nature of his proof provides it as an application of
+Theorem 1.3 of [11], using the fact that J0 (r) is trivial for r = 2 or 3.) Recall
+that the curve X0 (rp2 ) is equipped with two involutions denoted wp and wr .
+Let J00 (rp2 ) be the p-new quotient of the jacobian J0 (rp2 ), and let J00 (rp2 )/wp
+be its quotient by the Atkin-Lehner involution wp . Note that J0 (rp2 )/wp is
+isogenous to the Jacobian of the curve X0 (rp2 )/wp .
+
+Theorem 6.1 (Chen-Edixhoven) There is an isogeny between J0ns (r, p)
+and J00 (rp2 )/wp when r = 1, 2 or 3 which is compatible with the action of
+the Hecke operators Tn (n positive integer prime to p).
+
+                                                  15
+Remark: When r = 1, the L-functions attached to the weight 2 cusp forms
+on J00 (p2 )/wp have sign −1 in their functional equation, and hence vanish at
+s = 1. As a result, theorem 6.1 combined with the Birch and Swinnerton-
+Dyer conjecture leads one to expect that every non-zero quotient of J ns (p)
+has infinite Mordell-Weil group. This is why the curve X ns (p) has proved
+stubbornly resistant to Mazur’s methods. The auxiliary level r structure
+(r = 2 or 3) plays a providential role in our argument, by allowing us to work
+with the curve X0ns (r, p), whose Jacobian does have a non-trivial quotient of
+rank 0, as will be shown in section 7.
+    We define below an explicit correspondence αr between modular curves.
+From this correspondence one deduces an homomorphism of abelian varieties
+between the jacobian of the curves. We expect (but do not need to prove)
+this homomorphism to be an explicit description of Chen’s isogeny of theorem
+6.1.
+    We begin with the case r = 1. Let K s be the group consisting of diagonal
+or antidiagonal matrices of GL2 (Fp ); it is the normalizer of a split Cartan
+subgroup of GL2 (Fp ). Define the curve X s (p) to be X(p)/K s . Both the
+curves X ns (p) and X s (p) are quotients of the curve X 0 (p) = X(p)/(K s ∩K ns ).
+The morphism
+                            X 0 (p) −→ X s (p) × X ns (p)
+(given by the obvious pair of degeneracy maps) defines a correspondence π
+from X s (p) to X ns (p). This correspondence is of degree (p − 1)/2 (the index
+of K s ∩ K ns in K s ) and is defined over Q.
+    The modular curve X s (p) is isomorphic to X0 (p2 )/wp . The isomorphism
+u from X s (p) to X0 (p2 )/wp is deduced from the multiplication by 1/p in the
+upper half-plane. In particular it sends the cusp ∞ of X s (p) to the cusp ∞
+of X0 (p2 )/wp .
+    Let α be the correspondence from X0 (p2 )/wp to X ns (p) obtained by
+composing π with u. We say that a divisor of X0 (p2 )/wp (resp. X ns (p))
+is p-old if it is in the image of the correspondence X0 (p) −→ X0 (p2 )/wp
+(resp. X0 (1) −→ X ns (p)) deduced from any of the two degeneracy maps
+X0 (p2 ) −→ X0 (p) (resp. from the degeneracy map X ns (p) −→ X0 (1)). We
+will need two properties of the correspondence α.
+
+Lemma 6.2 a) The image by α of a p-old divisor of X0 (p2 )/wp is a p-old
+divisor of X ns (p).
+
+                                        16
+   b) The image by α of the cusp ∞ of X0 (p2 )/wp is equal to the sum of the
+cusps of X ns (p).
+
+Proof: The property a) can be seen more clearly by considering the curve
+X s (p) instead of the curve X0 (p2 )/wp . In this context a p-old divisor of X s (p)
+has an inverse image in X(p) which is the sum of a B + and of a B − -invariant
+divisor, where B + and B − are the upper and lower triangular Borel subgroups
+of GL2 (Fp ). The image in X ns (p) of such a divisor is GL2 (Fp )-invariant since
+K ns B = GL2 (Fp ) (B = B + or B − ).
+     We see the property b) from the fact that α(∞) is necessarily a divisor of
+degree (p − 1)/2 defined over Q. The sum of the cusps of X ns (p) is the only
+cuspidal divisor with this property.
+    By working over the base X0 (r) we deduce a correspondence αr from
+X0 (rp2 )/wp to X0ns (r, p). This correspondence defines functorially a Q-linear
+homomorphism of groups
+
+                αr∗ : H1 (X0 (rp2 )/wp , Q) −→ H1 (X0ns (r, p), Q),
+
+and a homomorphism of abelian varieties from the jacobian of X0 (rp2 )/wp
+to J0ns (r, p).
+
+Corollary 6.3 The p-old part of H1 (X0 (rp2 )/wp , Q) is in the kernel of αr∗ .
+
+Proof: Lemma 6.2 part a) adapted to our situation with an extra Γ0 (r)-
+structure implies that the p-old part of H1 (X0 (rp2 )/wp , Q) is sent by αr∗ into
+the image of the group homomorphism H1 (X0 (r), Q) −→ H1 (X0ns (r, p), Q)
+deduced functorially from the natural map X0ns (r, p) −→ X0 (r). Since X0 (r)
+has genus 0 this image is 0.
+   Recall the notation introduced in section 5 for the cusps of X0ns (r, p). Let
+D be the cuspidal divisor of degree 0 defined by
+
+                 D = (01 ) + · · · + (0m ) − (∞1 ) − · · · − (∞m ).
+
+Corollary 6.4 The image by αr of the divisor (0) − (∞) of X0 (rp2 )/wp is
+D.
+
+Proof: This is just the version over the base X0 (r) of part b) of lemma 6.2.
+
+
+                                         17
+Proposition 6.5 The class of D in J0ns (r, p)(Q) has order p. In particular,
+it is non-trivial.
+
+Proof: Since X0 (r) has genus zero, we may choose an identification of X0 (r)
+with P1 which send the cusps 0 and ∞ to 0 and ∞. Let φ : X0ns (r, p) −→
+X0 (r) ≃ P1 be the natural projection. The divisor Div(φ) is equal to pD, so
+that the order of D divides p. To see that D has order p, suppose otherwise.
+Then we would have φ = αp , for some rational function α on X0ns (r, p). Let X 0
+be an irreducible component of the modular curve classifying elliptic curves
+with a subgroup of order r and full level p structure. It is a Galois covering
+of X0 (r) with Galois group PSL2 (Fp ). Consider the sequence of coverings of
+complex curves:
+                       π             α        ν
+                  X 0 −→ X0ns (r, p) −→ P1 −→ X0 (r) = P1 ,
+
+where π is the natural quotient map, and ν is the cyclic covering of degree
+p which sends a suitable parameter t of P1 to tp . Both the coverings ναπ
+and ν are Galois, with Galois groups isomorphic to PSL2 (Fp ) and Z/pZ
+respectively. This is a contradiction: there are no surjective homomorphisms
+from PSL2 (Fp ) to Z/pZ when p ≥ 5. (The reader will note that when p = 3,
+the curve X0ns (2, 3) has genus 0, so that the divisor D is principal. Indeed,
+the group PSL2 (F3 ) ≃ A4 does have a cyclic quotient of order 3 in this case.)
+Remark: One could also invoke the classical theorem of Galois (“Lorsque
+p > 11 le degré de l’équation modulaire ne s’abaisse pas à p”) stating that
+the group PSL2 (Fp ) has no subgroup of index p when p > 11.
+Examples:
+1. The curve X0ns (2, 5) is a curve of genus one. By theorem 6.1, it is isoge-
+nous to the elliptic curve J0 (50)/w5 . (The modular forms of level 50 are
+automatically new at 5, since X0 (2) and X0 (10) are of genus 0.) This is the
+curve denoted 50B in the tables of Cremona [2], with equation
+
+                       y 2 + xy + y = x3 + x2 − 3x + 1.
+
+The Mordell-Weil group of this curve is a finite group of order 5, generated
+by D by proposition 6.5.
+2. The curve X0ns (3, 5) is a curve of genus 2, and its Jacobian is isogenous to
+a product of two elliptic curves of conductor 75, which are denoted 75B and
+
+                                         18
+75C in [2]. Both of these curves have a finite Mordell-Weil group, and the
+factor 75C has a rational point of order 5.
+3. The curve X0ns (2, 7) has genus 2, and J0ns (2, 7) is an irreducible two-
+dimensional quotient of J0 (98).
+                              √ The Hecke ring acting on this quotient is
+isomorphic to an order in Z[ 2], and the following table lists the values of
+the good Hecke operators T` for the first few primes ` 6 |14 (the authors are
+grateful to Jordi Quer for assisting them with this calculation):
+
+       ` √3    5√ 11 13 √
+                        17 23 29  31
+                                   √ 37 41√ 43
+       T`  2 −2 2 −2 0    2 −4 2 −6 2 10 7 2 2
+
+The reader will note that the values of ` + 1 −√T` computed
+                                                        √    from this table
+are always divisible by the prime ideal (7, 4 − 2) of Z[ 2] which lies above
+7.
+
+
+7    Winding quotients
+We will construct, as in [20], a “winding quotient” of J. Recall that a quotient
+abelian variety A of an abelian variety B is optimal if the kernel of the map
+B −→ A is connected.
+    Let us point out that in the proof of the following proposition we make
+a crucial use of a theorem of Kolyvagin and Logachev [15] (supplemented by
+work of Gross-Zagier, Bump-Friedberg-Hoffstein and Murty-Murty) in the
+direction of the conjecture of Birch and Swinnerton-Dyer.
+
+Proposition 7.1 The abelian variety J possesses a nonzero optimal quotient
+Je such that:
+    1) Je (Q) is finite.
+    2) The kernel of the projection J −→ Je is stable under the action of the
+Hecke operators T` (` 6= p). In particular, Je inherits a natural Hecke action
+from J.
+
+Proof: Chen’s isogeny (cf. theorem 6.1) provides an isogeny J00 (rp2 )/wp −→ J
+which is compatible with the action of Hecke operators of index prime to p.
+By a result due to Ribet (cf. [18], proposition 2.1), any optimal quotient
+of the new quotient of J0 (N ) (where N is any integer) inherits an action of
+Hecke operators compatible with the action on J0 (N ). Therefore it is enough
+
+                                      19
+to show that the new quotient A of the jacobian of X0 (rp2 )/wp has a nonzero
+optimal quotient Ae with finitely many rational points.
+    The Hecke operators T` (` a prime number not dividing pr) operate on
+A in a manner compatible with their action on J0 (rp2 ). They generate a
+commutative semi-simple Q-algebra T contained in the algebra End(A) ⊗ Q.
+Let S be the space of cusp forms of weight 2 for Γ0 (rp2 ) which are new,
+are invariant under wp and have rational q-expansion at ∞. The space S is
+endowed with a natural action of T, and is free of rank one over T by the
+Atkin-Lehner theory of newforms. Given f ∈ S, let ωf be the differential
+form over C on X0 (rp2 )/wp deduced from the differential form 2πif (τ )dτ on
+the upper half-plane.
+    In what follows, the homology groups of modular curves will always be
+understood as the singular homology of the underlying Riemann surfaces.
+Let H = H1 (A(C), Q)+ be the subspace of H1 (A(C), Q) which is invariant
+under complex conjugation. It is naturally a quotient of H1 (X0 (rp2 )/wp , Q)+ ,
+and is endowed with a natural action of T. Given γ ∈ H, let γ̃ be any lift of
+γ to H1 (X0 (rp2 )/wp , Q).
+    The formula                         Z
+                               hf, γi := ωf
+                                            γ̃
+
+defines a nondegenerate C-valued pairing between S and H. The Hecke
+operators T` which act on S and on H are self-adjoint with respect to this
+pairing. As a result, H is also a free T-module of rank one.
+    Let e be the unique element of H1 (X0 (rp2 )/wp , Q)+ such that the integral
+of any differential form ω on X0 (rp2 )/wp of a cycle of class e is equal to the
+integral of a the pullback in the upper half plane of ω over the geodesic path
+from 0 to i∞ in the upper half plane. (It is rational by the Drinfeld-Manin
+theorem and it is fixed by complex conjugation.) Let eA be the image of e
+in H. Let Ie ⊂ T be the annihilator of eA , and let Ie0 be the intersection of
+Ie with the subring of End(A) generated by the Hecke operators T` (` 6 |pr).
+Define Ae := A/Ie0 A.
+    We claim that Ae (Q) is finite. In view of a theorem of Kolyvagin and
+Logachev [15], it is enough to show that the L-function L(Ae , s) is non-zero
+at s = 1.
+    Let SC be the complex vector space of cusp forms generated by S, and let
+SIe be the subspace of SC which is annihilated by Ie . A theorem of Eichler,
+Shimura, Igusa and Carayol asserts that L(Ae , s) is the product of the L-
+
+                                       20
+functions associated to the normalized eigenforms in SIe . (In its classical
+formulation the theorem is concerned only with the case where Ie is a prime
+ideal, but it extends directly to any ideal of T.) If f is any eigenform in SC ,
+then                                Z i∞
+                     L(f, 1) = 2πi       f (τ )dτ = hf, eA i.
+                                      0
+But if f belongs to SIe , it is orthogonal to Ie H, and hence cannot be or-
+thogonal to eA , since H = Ie H ⊕ TeA and the pairing h , i is nondegenerate.
+Therefore L(f, 1) 6= 0.
+   This proves that L(Ae , 1) 6= 0 and therefore that Ae (Q) is finite. It
+remains to show that Ae is non-zero, i.e. that Ie is not the full algebra T.
+This is a consequence of the following key proposition.
+Proposition 7.2 The homology class e of H1 (X0 (rp2 )/wp , Q) associated to
+the geodesic path from 0 to i∞ in the upper half-plane does not belong to the
+old part of H1 (X0 (rp2 )/wp , Q).
+Proof: The Q-vector space H1 (X0ns (r, p), Q) is the sum of its new part, its
+p-old part and its r-old part. It is also the direct sum of its r-old and r-new
+parts, where the r-new part is the intersection of the kernels of the group
+homomorphisms on the homologies deduced from the two degeneracy maps
+X0 (rp2 )/wp −→ X0 (p2 )/wp .
+     Let us prove first that e is r-new. Note first that wr e = −e, since the
+image in X0 (rp2 )(C) of the geodesic path from 0 to i∞ in the upper half
+plane is reversed by the action of the involution wr wp on X0 (rp2 ). Therefore
+if e is killed by one of the two degeneracy maps from level rp2 to level p2 , it is
+killed by the other, since these two maps are exchanged by wr . The image of
+e in the homology of X0 (p2 )/wp by the group homomorphism deduced from
+morphism X0 (rp2 )/wp −→ X0 (p2 )/wp which forgets the Γ0 (r)-structure is
+trivial, since the image in X0 (p2 )(C) of the geodesic path from 0 to i∞ in
+the upper half-plane is reversed by application of the involution wp .
+     It remains to prove that e is not p-old. Suppose it is. Then its image
+under αr∗ would be 0 by corollary 6.3. Now note that the boundary of the
+path from 0 to ∞ in the upper half-plane is equal to the divisor (∞)−(0). By
+Abel’s description of the set of complex points of the jacobian of a curve X as
+H1 (X, R)/H1 (X, Z), the denominator of αr∗ (e) (i.e. the order of the image
+of αr∗ (e) in H1 (X, R)/H1 (X, Z) for X = X0ns (r, p)) is equal to the order of
+the class in J0ns (r, p) of the degree 0 divisor αr ((∞) − (0)). By corollary 6.4,
+
+                                          21
+this divisor is the divisor D of proposition 6.5. By proposition 6.5, its class
+in J0ns (r, p) is nonzero. Therefore αr∗ (e) is nonzero.
+
+
+8     Galois properties of torsion points of ellip-
+      tic curves
+The purpose of this section is to prove the following theorem which might
+be viewed as a small advance in the direction of a positive answer to Serre’s
+problem ([26], section 4.3). We reproduce here a series of arguments invented
+by Mazur [18].
+   We keep the notations of the previous section. In particular, p is an odd
+prime, E is an elliptic curve over Q and
+
+                         ρ : Gal(Q̄/Q) −→ GL2 (Fp )
+
+denotes the mod p Galois representation associated to E.
+
+Theorem 8.1 Suppose that
+    1) E has a Q-rational subgroup of order r, with r = 2 or 3.
+    2) p ≥ 5, and the image of ρ in GL2 (Fp ) is isomorphic to the normalizer
+of a nonsplit Cartan subgroup.
+    Then j(E) belongs to Z[ p1 ].
+
+Remark: We would have liked to conclude that j(E) belongs to Z, but we
+are prevented from doing so by problems arising from the bad reduction of
+the abelian variety J at the prime p.
+Proof of theorem 8.1: Suppose that j(E) ∈    / Z[ p1 ], and let ` 6= p be a prime
+dividing the denominator of j(E). The curve E with its given level structure
+gives rise to a Q-rational point P on the modular curve X = X0ns (r, p) which
+meets a cusp of X at a prime above `. Since the cusps of X are defined over
+Q(µp )+ , ` must be split completely in Q(µp )+ , i.e., it must be congruent to
+±1 modulo p. Since p ≥ 5 we may suppose that ` is not 2 or 3. After a
+suitable choice of our nonsplit Cartan subgroup (there are (p − 1)/2 of them
+naturally indexed by the cusps of X ns (p)) and possibly an application of the
+involution wr , we may suppose that the cusp is ∞, i.e. the point defined
+over R = Z[ p1 , µp ]+ corresponding to i∞ in the upper half-plane.
+
+                                       22
+    Let A be a nonzero optimal quotient of J on which the Hecke operators
+Tn (n an integer prime to p) operate in a manner compatible with their action
+on J. Let A be the Néron model of A. The morphism obtained by composing
+the map X −→ J (normalized by the fact that it sends the cusp ∞ to 0)
+with the canonical map J −→ A is defined over Q(µp )+ since the cusp ∞
+is defined over that field. It extends by the universal property of the Néron
+model to a morphism φ defined over R
+                                   smooth
+                              φ : X/R     −→ A/R
+
+from the smooth part of the canonical model X of X over R to A.
+
+Lemma 8.2 The map φ is a formal immersion in characteristic ` at the
+point ∞.
+
+Proof: We still follow closely the method of Mazur (what follows is modelled
+on [18], proposition 3.1). We have to show that the map deduced from φ on
+the cotangent spaces at ∞ is surjective. Observe that since ` is congruent
+to ±1 modulo p, we are actually working over F` . Since the Jacobian J
+is a semistable abelian variety, by a theorem of Mazur and Raynaud ([18],
+Corollary 1.1) the map J −→ A gives rise functorially to a direct injection
+from the cotangent space of A to the cotangent space of the Néron model J
+of J away from characteristics 2 and p. The cotangent space of J/F` can be
+identified with the space H0 (X/F` , Ω1 ) of differential forms on X/F` , which in
+turn can be identified with the space of cusp forms of weight 2 on X0ns (r, p)
+in characteristic `.
+    The Tate curve equipped with its p-torsion points defined over R[[q 1/p ]]
+provides simultaneously a q-expansion for any such cusp form f of the type
+P∞                                           1    1
+                n/p
+   n=1 an (f )q     and a basis (given by dq p /q p ) over F` of Cotg∞ (X/F` ) ≃ Fl
+(see [6], VII. 2.). With the identifications considered above, the image by φ∗
+in Cotg∞ (X/F` ) ≃ Fl of the element of Cotg0 (J/F` ) associated to f is a1 (f ).
+    Let ω be a non-zero element in Cotg0 (A/F` ) whose associated modu-
+lar form f (in characteristic `) has q-expansion n>0 an (f )q n/p . Since A is
+                                                        P
+
+nonzero such an element exists. The Hecke operators Tn (n prime to p) op-
+erate on A and therefore on its cotangent space. The first Fourier coefficient
+of the modular form associated to Tn ω is an (f ). Therefore the image of Tn ω
+in Cotg∞ (X/F` ) ≃ F` is an (f ). Suppose that φ is not a formal immersion in
+characteristic `. Then we would have an (f ) = 0 whenever n is prime to p.
+
+                                        23
+That would imply that f is modular for Γ0 (r) and therefore zero since there
+are no cusp forms of weight 2 for Γ0 (2) and Γ0 (3) in characteristic ` > 3.
+This contradiction finishes the proof of lemma 8.2.
+   Let us return to the proof of theorem 8.1. Using proposition 7.1 we will
+apply our study to A = Je .
+
+Lemma 8.3 The point φ(P ) is torsion in Je (Q(µp )+ ).
+
+Proof: If σ ∈ Gal(Q(µp )+ /Q), then
+
+                     (σ − 1)((P ) − (∞)) = (∞i ) − (∞j ),
+
+for some 1 ≤ i, j ≤ m. It a cuspidal divisor and hence is torsion by the
+Drinfeld-Manin theorem. Hence there exists an integer n such that n((P ) −
+(∞)) belongs to J(Q). In particular, nφ(P ) belongs to Je (Q). Since Je (Q)
+is torsion by proposition 7.1, the lemma follows.
+    We can now finish the proof of theorem 8.1. Since A has good reduction
+at ` and since the prime ` is unramified in R, the torsion in A over Q(µp )+
+injects into A(R/`0 ), for all primes `0 above `. Since φ(P ) reduces to 0
+modulo such a prime, and since φ(P ) is torsion by lemma 8.3, it follows that
+φ(P ) = 0 = φ(∞). (See [18] 1.c.) The fact that the point P specializes to ∞
+modulo a prime above ` contradicts the fact that φ is a formal immersion in
+characteristic ` ([18], 4.b).
+
+
+9     Proof of the Main Theorem for large expo-
+      nents
+Corollary 9.1 Suppose that the exponent n is a prime p ≥ 7, and let (a, b, c)
+be a primitive solution to equation (1), (2), or (3) with abc 6= 0.
+
+    1. In the case of equation (1), we have abc = ±1.
+
+    2. In the case of equation (2), we have ab = ±1.
+
+    3. Assume the Shimura-Taniyama conjecture. In the case of equation (3)
+       we have ab = ±1.
+
+
+                                      24
+Proof: Assuming that it is modular, the curve E constructed from a non-
+trivial solution (a, b, c) to equation (1), (2) or (3) satisfies the assumptions
+of theorem 8.1, by propositions 4.2 and 4.1. Hence j(E) belongs to Z[ p1 ]. It
+follows that abc (in the case of equation (1)) or ab (in the case of equations
+(2) and (3)) is equal to a power of p. But by corollary 4.4, the prime p does
+not divide abc (in the case of equation (1)) or ab (in the case of equation
+(2) and (3)). Corollary 9.1 follows. This completes our proof of the main
+theorem.
+
+
+References
+    [1] I. Chen, The Jacobian of non-split Cartan modular curve, To appear
+        in the Proceedings of the London Mathematical Society.
+
+    [2] J.E. Cremona, Algorithms for modular elliptic curves, Cambridge
+        University Press, 1992.
+
+    [3] H. Darmon, The equations xn + y n = z 2 and xn + y n = z 3 , Internat.
+        Math. Res. Notices 10 (1993), 263–274.
+
+    [4] H. Darmon, The equation x4 − y 4 = z p , C.R. Math. Rep. Acad. Sci.
+        Canada 15 (1993) 286–290.
+
+    [5] H. Darmon, A. Granville, On the equations xp + y q = z r and z m =
+        f (x, y), Bulletin of the London Math. Society, no 129, 27 part 6,
+        November 1995, pp. 513–544.
+
+    [6] P. Deligne, M. Rappoport, Les schémas de modules des courbes el-
+        liptiques, in: Vol. II of the Proceedings of the International Sum-
+        mer School on modular functions, Antwerp (1972). Lecture Notes in
+        Mathematics 349. Berlin-Heidelberg-New-York: Springer 1973.
+
+    [7] P. Dénes, Über die Diophantische Gleichung x` + y ` = cz ` , Acta
+        Math. 88 (1952) 241–251.
+
+    [8] F. Diamond, On deformation rings and Hecke rings, Ann. of Math.
+        (2) 144 (1996), no. 1, 137–166.
+
+
+
+                                      25
+ [9] F. Diamond, K. Kramer, Modularity of a family of elliptic curves,
+     Math. Res. Letters 2 (1995) 299–304.
+
+[10] L.E. Dickson, History of the theory of numbers, Chelsea, New York,
+     1971.
+
+[11] B. Edixhoven, On a result of Imin Chen, to appear in: Séminaire de
+     théorie des nombres de Paris, 1995-96, Cambridge University Press.
+
+[12] G. Frey, On elliptic curves with isomorphic torsion structures and
+     corresponding curves of genus 2, in: Elliptic curves, modular forms
+     and Fermat’s Last Theorem, J. Coates, S-T. Yau, eds., International
+     Press, Cambridge, MA 1995, 79–98.
+
+[13] S. Kamienny, Points on Shimura curves over fields of even degree,
+     Math. Ann. 286, 731–734 (1990).
+
+[14] M.A. Kenku, The modular curve X0 (39) and rational isogenies, Math.
+     Proc. Camb. Phil. (1979), 85, 21–23
+
+[15] V.A. Kolyvagin, D.Yu. Logachev, Finiteness of the Shafarevich-Tate
+     group and the group of rational points for some modular abelian
+     varieties, Leningrad Math. J. vol. 1 no. 5 (1990) 1229–1253.
+
+[16] D. Kubert, Universal bounds on torsion of elliptic curves, Proc. Lon-
+     don Math. Soc. (3), 33 (1976), 193–237.
+
+[17] B. Mazur, Modular curves and the Eisenstein ideal, Publ. Math.
+     IHES 47 (1977) 33–186.
+
+[18] B. Mazur, Rational isogenies of prime degree, Inv. Math. 44 (1978),
+     129–162.
+
+[19] B. Mazur, Questions about number, in: New Directions in Mathe-
+     matics, to appear.
+
+[20] L. Merel, Bornes pour la torsion des courbes elliptiques sur les corps
+     de nombres, Invent. Math. 124 (1996), no. 1–3, 437-449.
+
+[21] F. Momose, Rational points on the modular curves Xsplit (p), Com-
+     positio Math. 52 (1984) 115–137.
+
+                                  26
+[22] B. Poonen, Some diophantine equations of the form xn + y n = z m , to
+     appear.
+
+[23] P. Ribenboim, Catalan’s conjecture, Academic Press, Boston, 1994.
+
+[24] K. Ribet, On modular representations of Gal(Q̄/Q) arising from mod-
+     ular forms, Invent. Math. 100 (1990), 431–476.
+
+[25] K. Ribet, On the equation ap + 2α bp + cp = 0, Acta Arithmetica, to
+     appear.
+
+[26] J.-P. Serre, Propriétés galoisiennes des points d’ordre fini des courbes
+     elliptiques, Inv. Math. 15 (1972) 259–331.
+
+[27] J.-P. Serre, Sur les représentations modulaires de degré 2 de
+     Gal(Q̄/Q), Duke Math. J. Vol. 54 no. 1 (1987), 179–230.
+
+[28] J. Tate, Algorithm for determining the type of a singular fiber in an
+     elliptic pencil, in Modular Functions of One Variable, SLN 476, pp.
+     33–52.
+
+[29] R. Taylor, A. Wiles, Ring-theoretic properties of certain Hecke alge-
+     bras, Ann. of Math. 141 (1995) 553–572.
+
+[30] A. Wiles, Modular elliptic curves and Fermat’s Last Theorem, Ann.
+     of Math. 141 (1995) 443–551.
+
+
+
+
+                                    27
+

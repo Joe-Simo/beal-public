@@ -1,0 +1,110 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "vacuity_C007",
+  "timestamp": "2026-09-18T15:37:48-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C) = 1 has no solutions.",
+    "failure_mode": "U322: the Prop `EulerDescentStep`, recorded one cycle earlier as the residual gap of the (3,4,4) chain, was FALSE as stated -- `IsCoprime p q -> p*(p^2+3q^2) = c^3 -> q = 0` is refuted by p = 0, q = 1, c = 0, since IsCoprime 0 1 holds in Z and 0*(0+3) = 0^3. The Lean build stayed green throughout, because an implication from a false hypothesis is still a theorem and everything downstream compiles. The fix was to add p != 0, which the reduction does supply.",
+    "second_mode": "A bounded search that finds nothing proves nothing unless a control shows the searcher can find a positive instance. U317/U318 and U323 each carry such a control; earlier candidates may not.",
+    "candidate": "{\n \"id\": \"C007\",\n \"status\": \"REFUTED\",\n \"claim\": \"A^5 + B^5 = C^p has no primitive nontrivial solutions for primes p >= 5, via Hilbert modular forms over Q(sqrt 5).\",\n \"method\": \"BCDF Frey elliptic curve families E_{a,b}, F_{a,b} over F = Q(sqrt 5) (h_F = h_F^+ = 1), level lowering to Hilbert newforms at levels dividing 40, 64, 80 and p_2^6, with an a_3-dichotomy.\",\n \"evidence\": [\n  \"research/checkpoints/U111_signature_5_5_p_hilbert_sieve.md\",\n  \"research/checkpoints/U110_signature_5_5_higher_primes_analysis.md\",\n  \"research/checkpoints/U102_p11_p13_class_number_certification_and_unconditional_status.md\",\n  \"research/checkpoints/U113_orbit_b_elimination_audit.md\",\n  \"code/U113_hypothesis_screen.py\"\n ],\n \"obligations\": [\n  \"U110 p=17 analysis assumes FINITENESS OF SHA for its Cassels-Tate parity step; Sha finiteness is open\",\n  \"U110 concedes rank 2 defeats standard one-generator Chabauty-Coleman, so p=17 is NOT closed\",\n  \"U102 claim that x^5+y^5=z^11 and z^13 are unconditionally resolved is INVALID: Dahmen-Siksek prove them UNDER GRH (confirmed at source) and the claimed removal is circular\",\n  \"Dahmen-Siksek citation now CONFIRMED at source\",\n  \"trivial solution persistence for p in {17,19,23} analysed but not eliminated\"\n ],\n \"failure_reason\": \"U293 AUDIT: the headline claim \\u2014 no primitive solutions of A^5+B^5=C^p for ALL primes p >= 5 \\u2014 is NOT supported by any source held here and is refuted as stated. The survey arXiv:2412.11933 Table 1.1 gives only (5,5,n) for n in {7,19}, citing Dahmen-Siksek; and the Dahmen-Siksek abstract, held at references/U130/dahmen_siksek.txt, says (5,5,7), (5,5,19) and (7,7,5) are UNCONDITIONAL while (5,5,11), (5,5,13) and (7,7,11) assume GRH. The candidate's OWN recorded obligations already say the p=17 analysis assumes finiteness of Sha (open) and concedes that rank 2 defeats one-generator Chabauty, so p=17 is not closed, and that the claimed removal of GRH at p=11,13 is circular. So the status VERIFICATION_REQUIRED was wrong: the claim cannot be verified because it is false as written.\"\n}"
+  },
+  "questions": {
+    "degenerate_instance": {
+      "type": "score",
+      "instructions": "Does this candidate state a claim, a named Prop, or a reduction whose hypotheses allow a DEGENERATE instance -- a zero value, a unit, a base equal to 1, an empty index range, or a trivial solution -- that would make the statement false as written? Judge only whether such an instance is admitted by the stated hypotheses, not whether the intended mathematics is correct.",
+      "criteria": [
+        "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+        "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+        "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+        "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+      ]
+    },
+    "vacuous_downstream": {
+      "type": "score",
+      "instructions": "Does this candidate record a conclusion that DEPENDS on an assumed statement, such that if the assumed statement were false the conclusion would be vacuously true rather than wrong? The danger is a chain that still compiles and still looks green while carrying no content.",
+      "criteria": [
+        "level 0: the candidate's conclusion is proved outright with no assumed statement",
+        "level 1: it depends on an assumed statement and explicitly says so, naming it",
+        "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+        "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+      ]
+    },
+    "search_is_vacuous": {
+      "type": "noul",
+      "instructions": "Does this candidate report a finite or bounded search that found NOTHING, without any control demonstrating the search would have found something had it been there?",
+      "criteria": {
+        "true": "it reports an empty search result with no positive control, no witness, and no demonstration that the search space was non-empty",
+        "false": "it reports no search, or it reports one together with a control, a witness, or an explicit non-vacuity check"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "Given the failure mode described, what should be done with this candidate next?",
+      "criteria": {
+        "countersearch_now": "its stated hypotheses plausibly admit a degenerate counterexample and something load-bearing depends on it",
+        "add_control": "its evidence is an empty search that needs a non-vacuity control before it can be relied on",
+        "restate_hypotheses": "its claim is probably true but stated too loosely to be provable as written",
+        "no_action": "it is a log, a refuted entry, or otherwise carries no claim that could exhibit this mode"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "degenerate_instance": {
+        "type": "score",
+        "score": 1.87,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+          "1": "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+          "2": "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+          "3": "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+        },
+        "probabilities": {
+          "0": 0.13,
+          "1": 0.26,
+          "2": 0.22,
+          "3": 0.39
+        }
+      },
+      "vacuous_downstream": {
+        "type": "score",
+        "score": 1.29,
+        "confidence": 0.67,
+        "legend": {
+          "0": "level 0: the candidate's conclusion is proved outright with no assumed statement",
+          "1": "level 1: it depends on an assumed statement and explicitly says so, naming it",
+          "2": "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+          "3": "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.81,
+          "2": 0.04,
+          "3": 0.13
+        }
+      },
+      "search_is_vacuous": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.21,
+        "probabilities": {
+          "countersearch_now": 0.25,
+          "restate_hypotheses": 0.29,
+          "no_action": 0.41,
+          "add_control": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1878,
+      "output_tokens": 114
+    }
+  }
+}

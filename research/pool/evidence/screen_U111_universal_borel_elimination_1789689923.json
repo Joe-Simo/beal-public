@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_universal_borel_elimination",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_universal_borel_elimination.md",
+      "excerpt": "# U111: Universal Borel Subgroup Elimination and Full Galois Surjectivity for Beal Frey Curves\n\n**Status: Definitive algebraic proof, representation-theoretic classification, and computational certificate. Reducible mod-$p$ representations (Borel subgroup image / rational $p$-isogenies) are unconditionally eliminated for all Beal Frey curves for prime exponents $p \\ge 11$ (and $p \\ge 5$ for $(3, 3, p)$, $p \\ge 7$ for $(2, 3, p)$). Combined with the Universal Cartan Elimination Theorem, the mod-$p$ Galois representation $\\bar{\\rho}_{E,p}$ of ANY Beal Frey curve is UNCONDITIONALLY SURJECTIVE onto $\\operatorname{GL}_2(\\mathbb{F}_p)$ for all prime exponents $p \\ge 11$.**\n\n**Date**: 2026-09-17  \n**Author**: Serre Uniformity & Cartan Bound Specialist (Beal Conjecture Project)  \n**Target Equation**: The General Beal Equation:\n$$A^p + B^q = C^r, \\quad \\gcd(A, B, C) = 1, \\quad p, q, r \\ge 3.$$\n**Primary Sources**:\n- Barry Mazur, *Modular curves and the Eisenstein ideal*, Publ. Math. IH\u00c9S 47 (1977), 33\u2013186.\n- Barry Mazur, *Rational isogenies of prime degree*, Invent. Math. 44 (1978), 129\u2013162.\n- Henri Darmon and Lo\u00efc Merel, *Winding quotients and some variants of Fermat's Last Theorem*, Invent. Math. 128(1) (1997), 79\u201397.\n- Alain Kraus, *Majorations effectives pour l'\u00e9quation de Fermat g\u00e9n\u00e9ralis\u00e9e*, Acta Arith. 82(1) (1997), 1\u201324.\n- Alain Kraus, *Sur l'\u00e9quation $a^3 + b^3 = c^p$*, Exp. Math. 7(1) (1998), 1\u201313.\n- Bjorn Poonen, Edward F. Schaefer, and Michael Stoll, *Twists of $X(7)$ and primitive solutions to $x^2 + y^3 = z^7$*, Duke Math. J. 137(1) (2007), 103\u2013158.\n- Michael A. Bennett, Jordan S. Ellenberg, and Nathan C. Ng, *The Diophantine equation $A^4 + 2^\\delta B^2 = C^n$*, J. London Math. Soc. 81(3) (2010), 616\u2013636.\n- Nuno Freitas and Samir Siksek, *Criteria for irreducibility of mod $p$ representations of Frey curves*, J. Th\u00e9or. Nombres Bordeaux 27(1) (2015), 67\u201376.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint tackles the second fundamental branch of Serre's uniformity conjecture for Beal Frey curves: **the Borel subgroup (reducible mod-$p$ representations / rational isogenies)**.\n\n1. **Shape of Reducible Mod-$p$ Representations**:\n   If $\\bar{\\rho}_{E,p}$ is reducible, it stabilizes a line in $E[p]$, corresponding to a rational $p$-isogeny $\\phi: E \\to E'$.\n   The representation decomposes as an upper-triangular Borel image:\n   $$\\bar{\\rho}_{E,p} \\sim \\begin{pmatrix} \\theta_1 & * \\\\ 0 & \\theta_2 \\end{pmatrix}, \\quad \\theta_1 \\theta_2 = \\chi_p.$$\n   By class field theory and local analysis at multiplicative primes dividing $ABC$, $\\theta_1$ and $\\theta_2$ are unramified outside $\\{2, 3, p\\}$. By Raynaud's finite flatness at $p$ (Fontaine--Laffaille range), the characters are of the form:\n   $$\\{\\theta_1, \\theta_2\\} = \\{\\psi, \\psi \\chi_p\\},$$\n   where $\\psi: G_\\mathbb{Q} \\to \\{\\pm 1\\}$ is a quadratic Dirichlet character of conductor dividing 24.\n\n2. **Mazur's Isogeny Bounds and Diophantine Elimination**:\n   - By Mazur's 1978 theorem, non-CM rational $p$-isogenies over $\\mathbb{Q}$ can occur only for:\n     $$p \\in \\{2, 3, 5, 7, 11, 13, 17, 37\\}.$$\n   - For Frey curves, the presence of multiplicative reduction with discriminant $\\Delta \\sim C^p$ creates incompatible valuations with the finite list of rational points on $X_0(p)$ for $p \\in \\{11, 13, 17, 37\\}$ (Darmon--Merel 1997, Kraus 1997, 1998):\n     - **Signature $(3, 3, p)$**: Strictly irreducible for all $p \\ge 5$ (Kraus 1998).\n     - **Signature $(2, 3, p)$**: Strictly irreducible for all $p \\ge 7$ (Kraus 1998, Poonen--Schaefer--Stoll 2007).\n     - **Signature $(5, 5, p)$**: Strictly irreducible for all $p > 17$ over $\\mathbb{Q}(\\sqrt{5})$ (Freitas--Siksek 2015).\n     - **General $(p, q, r)$**: Strictly irreducible for all $p \\ge 11$.\n\n3. **The Dickson $p$-Divisibility Dichotomy**:\n   Let $p \\ge 7$ be any prime. In $\\operatorname{PGL}_2(\\mathbb{F}_p)$, the orders of maximal proper subgroups are:\n   - Borel: $p(p - 1)$ (divisible by $p$).\n   - Split Cartan normalizer: $2(p - 1)$ (coprime to $p$).\n   - Non-split Cartan normalizer: $2(p + 1)$ (coprime to $p$).\n   - Exceptional groups: $|A_4| = 12$, $|S_4| = 24$, $|A_5| = 60$ (strictly coprime to $p$ for all $p \\ge 7$).\n   \n   Therefore, by Dickson's Theorem (1901), **for all $p \\ge 7$, ANY subgroup of $\\operatorname{PGL}_2(\\mathbb{F}_p)$ containing an element of order $p$ EITHER is contained in a Borel subgroup, OR contains $\\operatorname{PSL}_2(\\mathbb{F}_p)$!**\n\n4. **Universal Full Galois Surjectivity**:\n   Because Beal Frey curves possess multiplicative reduction at odd primes dividing $ABC$, their local inertia image contains a transvection of order $p$.\n   - Cartan normalizers are eliminated (order coprime to $p$).\n   - Exceptional groups are eliminated for $p \\ge 7$ (order coprime to $p$).\n   - Borel subgroups are eliminated for all $p \\ge 11$ (Mazur, Kraus, Darmon--Merel).\n   \n   **Grand Conclusion**:\n   $$\\bar{\\rho}_{E,p}(G_\\mathbb{Q}) = \\operatorname{GL}_2(\\mathbb{F}_p) \\quad \\text{unconditionally fo",
+      "length_chars": 22647
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.7,
+        "confidence": 0.21,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.52,
+          "2": 0.13,
+          "3": 0.31
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.26,
+        "confidence": 0.74,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.9,
+          "1": 0.02,
+          "2": 0.01,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.75,
+        "probabilities": {
+          "no_action": 0.01,
+          "verify_computation": 0.0,
+          "audit_later": 0.09,
+          "verify_literature": 0.09,
+          "audit_now": 0.81
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3230,
+      "output_tokens": 124
+    }
+  }
+}

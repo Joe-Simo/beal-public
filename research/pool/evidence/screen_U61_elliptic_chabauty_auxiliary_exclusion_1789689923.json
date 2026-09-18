@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U61_elliptic_chabauty_auxiliary_exclusion",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U61_elliptic_chabauty_auxiliary_exclusion.md",
+      "excerpt": "# U61 \u2014 an elliptic Chabauty proof excluding the U60 auxiliary system\n\n**Full-project status: Beal's conjecture has not been solved.**\n\n**Partial-result status:** complete written argument for the precisely stated auxiliary exclusion below, with reproduced exact computational certificates. Review is Astra self-review plus separate TypeScript, Python/SymPy, and Wolfram computations; it is not independent expert review or proof-assistant kernel certification. No claim of novelty, publication, or prize eligibility is made.\n\nResearch date: 2026-09-14 America/New_York / 2026-09-15 UTC.\nInspected starting revision: `f772322044f1ce18cc2aa6c4876d07f0fe88f3ec`, private `Joe-Simo/beal`.\n\n## 1. Exact scope and conclusion\n\nThe original project target remains the positive-integer equation\n\n    A0^x + B0^y = C0^z,  x,y,z >= 3,\n\nwith the assertion `gcd(A0,B0,C0)>1`. The letters below are auxiliary quantities, not those original bases.\n\n**Theorem A (the U60 system).** There are no integers r,s,m,n,A,B satisfying all of\n\n    gcd(r,s)=1,  r and s of opposite parity,\n    m+i n=(r+i s)^17,\n    gcd(m,n)=gcd(A,B)=1,  mn != 0,\n    m^4+30m^2n^2+n^4-16m^2n^2*omega=(A+B*omega)^17,\n    omega=(1+sqrt(5))/2.\n\nA Gaussian unit causes no additional case: its seventeenth power is itself and can be absorbed in r+i s.\n\nThis is an exclusion, not just a new congruence condition. It finishes the **explicit auxiliary system** pursued in U60. It does not assert that every Beal counterexample, every all-even signature, or every coefficient-2 equation reaches this system. The upstream source/coverage chain remains a separate audit obligation.\n\nThe core new result is independent of that upstream chain:\n\n**Theorem B (positive region of a genus-three curve).** Put\n\n    g(u)=u^8+u^7-7u^6-6u^5+15u^4+10u^3-10u^2-4u+1.\n\nThere is no rational solution of `g(u)=17*w^2` with `u>2`.\n\nWe prove B by an explicit quadratic-field elliptic descent, then deduce A using U60. We do NOT claim to classify the other real regions of the genus-three curve.\n\n## 2. From U60 to the compact curve\n\nFor an assumed solution of A, U60 proves that positive integers b,c exist with\n\n    B=-17*b^2,  P16(A,B)=17*c^2,\n\nwhere `B*P16(A,B)` is the omega coefficient of `(A+B*omega)^17`. In particular B is nonzero. This implication was not inferred from finite search: U60 includes its modulo-289 polynomial Bezout certificate and valuation argument.\n\nBoth real embeddings of the left-hand algebraic integer in A are positive: its coefficients in the sqrt(5) basis are `m^4+(22 +/- 8*sqrt(5))*m^2*n^2+n^4`, and `22-8*sqrt(5)>0`. Because 17 is odd, both embeddings of A+B*omega are positive. Consequently\n\n    v=A^2+A*B-B^2 > 0.\n\nLet `T0=2*A+B`, so `T0^2-5*B^2=4*v`. The exact coefficient identity used in U60 is\n\n    2^16*P16(A,B) = sum(j=0..8, binomial(17,2j+1)*5^j*T0^(16-2j)*B^(2j)).\n\nDefine\n\n    x=(T0/B)^2,\n    f8(x)=sum(j=0..8, binomial(17,2j+1)*5^j*x^(8-j)).\n\nThen `f8(x)=17*(256*c/B^8)^2` and x>5. The exact substitution\n\n    u=2*(x+5)/(x-5)=2+5*B^2/v,\n    w=c/v^4\n\ngives `g(u)=17*w^2` and **u>2**. Its polynomial certificate is\n\n    (u-2)^8*f8(5*(u+2)/(u-2)) = 2^16*5^8*g(u).\n\nAll denominators here are nonzero under the stated hypotheses. Thus Theorem B contradicts an assumed solution of A. The axis case mn=0 is explicitly outside A: it was already separated in U60 and is not eliminated by division.\n\n## 3. A single quartic twist over Q(sqrt(17))\n\nThis section starts only with a rational point `g(u)=17*w^2`, u>2.\n\nWrite `pi=sqrt(17)`, `epsilon=4+pi`, and `K=Q(pi)`. This is a DIFFERENT quadratic field from U60's Q(sqrt(5)). Let\n\n    gplus(u)=u^4+(1+pi)/2*u^3+(-3+pi)/2*u^2+(2-pi)*u-1,\n    gminus(u)=the conjugate of gplus(u).\n\nExact algebra gives\n\n    g=gplus*gminus,\n    Res(gplus,gminus)=-17^2,\n    gplus(2)=17+4*pi=pi*epsilon,\n    disc(g)=17^7,\n    z^8*g(z+1/z)=1+z+...+z^16.\n\nThe final identity identifies every root of g as `2*cos(2*j*pi/17)`, j=1,...,8, with the usual circular constant in this cosine expression. In particular all roots of both monic quartic factors lie strictly between -2 and 2. Thus both conjugates of gplus(u) are positive for u>2.\n\n### 3.1 Class group and units \u2014 explicit calculations\n\nThe ring of integers is `O_K=Z[(1+pi)/2]`, with discriminant 17. The real-quadratic Minkowski bound is sqrt(17)/2<3. Hence the class group is generated by prime ideals of norm 2. The two primes above 2 are principal, generated by `(5+pi)/2` and `(5-pi)/2`, each of norm 2. Therefore the class number is 1. The splitting also follows from `w0^2-w0-4` modulo 2, where `w0=(1+pi)/2`.\n\nThe unit group is `+/- epsilon^Z`. Here is a check of the fundamental unit rather than an unsupported table lookup. The norm of epsilon is -1. Dirichlet's unit theorem gives rank one. If a positive unit eta=(a+b*pi)/2 satisfied 1<eta<epsilon, then\n\n    b=(eta-eta')/pi,\n    eta'=+/- eta^(-1).\n\nIn either norm case, 0<b<2: the upper bounds are `(epsilon+epsilon^(-1))/pi=2` and `(epsilon-epsilon^(-1))/pi=8/pi<2`. Hence b=1, but the",
+      "length_chars": 26896
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.6,
+        "confidence": 0.4,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.77,
+          "1": 0.03,
+          "2": 0.03,
+          "3": 0.17
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.26,
+        "confidence": 0.21,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.26,
+          "1": 0.46,
+          "2": 0.03,
+          "3": 0.25
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.39,
+        "probabilities": {
+          "verify_computation": 0.1,
+          "audit_now": 0.32,
+          "no_action": 0.06,
+          "verify_literature": 0.01,
+          "audit_later": 0.51
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3049,
+      "output_tokens": 125
+    }
+  }
+}

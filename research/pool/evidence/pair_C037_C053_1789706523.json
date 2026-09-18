@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C037_C053",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C037",
+      "status": "PARTIAL_RESULT",
+      "claim": "Complete mod-8 analysis of a Beal counterexample, covering every parity configuration. C even: both exponents even is IMPOSSIBLE; x even with y odd forces B = 7 mod 8; both odd forces 8 | A+B. A even (so B, C odd): y,z both odd forces B = C mod 8; y odd with z even forces B = 1 mod 8. By symmetry the same holds with A and B exchanged."
+    },
+    "B": {
+      "id": "C053",
+      "status": "PARTIAL_RESULT",
+      "claim": "COUNTERSEARCH RESULT: 14 of the 15 kernel-verified necessary conditions HOLD on all ten Fermat-Catalan solutions (which each contain an exponent 2 and are therefore not Beal counterexamples); the only one that fails is the curvature bound |chi|>=1/12, which is a restatement of exponents>=3. Hence every elementary constraint proved so far is exponen"
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.89,
+        "confidence": 0.11,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.36,
+          "2": 0.26,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.24
+      }
+    },
+    "usage": {
+      "input_tokens": 650,
+      "output_tokens": 34
+    }
+  }
+}

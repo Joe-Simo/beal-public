@@ -1,0 +1,92 @@
+[
+ [
+  0.34,
+  "(4,5,7) arrangements",
+  "explicit abc-type bound for THIS signature from Baker linear forms (Laurent) with z<=x fro"
+ ],
+ [
+  0.31,
+  "(3,5,7) arrangements",
+  "explicit abc-type bound for THIS signature from Baker linear forms (Laurent) with z<=x fro"
+ ],
+ [
+  0.3,
+  "(p,q,r) distinct odd p",
+  "explicit abc-type bound for THIS signature from Baker linear forms (Laurent) with z<=x fro"
+ ],
+ [
+  0.3,
+  "(4,5,7) arrangements",
+  "Catalan/Pillai specialisation: fix the smallest base in {2,3} and use Mihailescu/Bennett r"
+ ],
+ [
+  0.28,
+  "(3,5,7) arrangements",
+  "Catalan/Pillai specialisation: fix the smallest base in {2,3} and use Mihailescu/Bennett r"
+ ],
+ [
+  0.27,
+  "(4,5,7) arrangements",
+  "Darmon-Granville finiteness made explicit for one signature via a covering of the orbifold"
+ ],
+ [
+  0.24,
+  "(3,5,7) arrangements",
+  "Darmon-Granville finiteness made explicit for one signature via a covering of the orbifold"
+ ],
+ [
+  0.21,
+  "(4,5,7) arrangements",
+  "symmetric-function trick: treat (A^3, B^5) as roots of t^2 - C^7 t + (A^3B^5) and bound th"
+ ],
+ [
+  0.2,
+  "(p,q,r) distinct odd p",
+  "Catalan/Pillai specialisation: fix the smallest base in {2,3} and use Mihailescu/Bennett r"
+ ],
+ [
+  0.19,
+  "(p,q,r) distinct odd p",
+  "Darmon-Granville finiteness made explicit for one signature via a covering of the orbifold"
+ ],
+ [
+  0.19,
+  "(3,5,7) arrangements",
+  "Zsigmondy/primitive-divisor argument on C^r - B^q when q = r fails \u2014 check whether a Bilu-"
+ ],
+ [
+  0.18,
+  "(4,5,7) arrangements",
+  "Zsigmondy/primitive-divisor argument on C^r - B^q when q = r fails \u2014 check whether a Bilu-"
+ ],
+ [
+  0.17,
+  "(3,5,7) arrangements",
+  "symmetric-function trick: treat (A^3, B^5) as roots of t^2 - C^7 t + (A^3B^5) and bound th"
+ ],
+ [
+  0.16,
+  "(p,q,r) distinct odd p",
+  "Zsigmondy/primitive-divisor argument on C^r - B^q when q = r fails \u2014 check whether a Bilu-"
+ ],
+ [
+  0.14,
+  "(p,q,r) distinct odd p",
+  "symmetric-function trick: treat (A^3, B^5) as roots of t^2 - C^7 t + (A^3B^5) and bound th"
+ ],
+ [
+  0.07,
+  "(p,q,r) distinct odd p",
+  "probabilistic heuristic count of expected solutions (NOT a proof; only to decide whether a"
+ ],
+ [
+  0.07,
+  "(4,5,7) arrangements",
+  "probabilistic heuristic count of expected solutions (NOT a proof; only to decide whether a"
+ ],
+ [
+  0.07,
+  "(3,5,7) arrangements",
+  "probabilistic heuristic count of expected solutions (NOT a proof; only to decide whether a"
+ ]
+]

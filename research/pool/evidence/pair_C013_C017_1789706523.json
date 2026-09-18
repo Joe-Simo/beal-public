@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C013_C017",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C013",
+      "status": "BLOCKED",
+      "claim": "Orbit b (2.2.5.1-2000.1-b) is incompatible with rho-bar_{J^-,17} by an obstruction that uses ONLY residual mod-17 data: an image-of-inertia, Serre-weight, or Halberstadt-Kraus symplectic incompatibility at 2, 5 or 17."
+    },
+    "B": {
+      "id": "C017",
+      "status": "PARTIAL_RESULT",
+      "claim": "Unified: if 3 | gcd(x,y,z) or 4 | gcd(x,y,z), then A^x + B^y = C^z has no positive solutions. Packages the 3|x,3|y,3|z family (FLT3) and the 4|x,4|y,z even family (not_fermat_42)."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.02,
+        "confidence": 0.98,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.98,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.07
+      }
+    },
+    "usage": {
+      "input_tokens": 617,
+      "output_tokens": 34
+    }
+  }
+}

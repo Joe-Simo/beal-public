@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U62_coefficient_two_coverage",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U62_coefficient_two_coverage.md",
+    "excerpt": "# U62: closing the coefficient-two implication and recording its exact Beal coverage\n\nStatus: complete written proof of a partial theorem, with self-review and exact computational corroboration. Independent expert review and proof-assistant verification remain outstanding. The full Beal conjecture is not solved.\n\nResearch session: 2026-09-14, America/New_York. Base remote revision inspected: f772322044f1ce18cc2aa6c4876d07f0fe88f3ec (U60). U61 was recovered from its actual attached evidence archive and its mathematical computations were replayed, not inferred from an earlier chat summary.\n\n## 1. Claims and scope\n\n**Theorem 1 (coefficient two).** For positive integers X,Y,Z with gcd(X,Y)=1,\n\n    X^10 + Y^10 = 2 Z^17\n\nimplies (X,Y,Z)=(1,1,1).\n\n**Corollary 2 (a family in the original Beal problem).** For integers r>=2, k>=1, l>=1, there is no solution in positive integers E,O,C to\n\n    E^(2r) + O^(10k) = C^(34l),\n    gcd(E,O,C)=1,\n    E even, O odd.\n\nThe letters E and O specify the parities of the bases; they are not an ordering by size. Interchanging the two summands gives the same covered family. The equation with an even base carrying exponent 10k and an odd base carrying the other exponent is NOT automatically covered by this statement.\n\nThese claims depend on the written U61 exclusion and the established external theorem identified below. They are not claims of a complete Beal solution, global novelty, independent expert acceptance, formal verification, or prize eligibility.\n\n## 2. External dependency checked at its original source\n\nBillerey, Chen, Dieulefait and Freitas, *A multi-Frey approach to Fermat equations of signature (r,r,p)*, Transactions of the AMS 371 (2019), 8651-8677, DOI 10.1090/tran/7477. The inspected author text is arXiv:1703.06530v4, Theorem 5 and its proof in section 5.1, together with Proposition 4(2).\n\nThe application needed here is only this: a nontrivial primitive solution of a^5+b^5=2c^17 cannot have 5 dividing a+b. The source's nontriviality and primitivity definitions were checked. Its proof covers p=17 without an additional congruence restriction. This is a use of an established theorem, not a claim to have rerun the authors' Hilbert-newform computation. The source/version record is in references/U62_sources.md.\n\n## 3. Reduction to two coprime seventeenth powers\n\nSuppose X,Y,Z satisfy Theorem 1. If X=Y, coprimality gives X=Y=1 and the equation gives Z=1. Hence assume X!=Y for the remainder of the contradiction argument. A base equal to one is not otherwise excluded.\n\nThe equation modulo 2 says X and Y have the same parity. Their coprimality makes both odd. Their tenth powers are 1 modulo 8, so Z is odd as well. Any prime dividing X and Z would divide Y by the equation, and conversely; thus the three bases are pairwise coprime.\n\nPut a=X^2 and b=Y^2. Then gcd(a,b)=1 and\n\n    a^5+b^5=2Z^17.\n\nThis is nontrivial in the source's sense: X!=Y and positivity imply |abZ|>1. Section 2 therefore gives 5 not dividing a+b.\n\nDefine\n\n    Phi(a,b)=a^4-a^3b+a^2b^2-ab^3+b^4.\n\nThe identities\n\n    (a+b)Phi(a,b)=a^5+b^5,\n    Phi(a,b) mod (a+b) = 5b^4\n\nshow that gcd(a+b,Phi) divides 5: gcd(a+b,b)=1. Since 5 does not divide a+b, the two factors are coprime. They are positive; Phi is odd and a+b is twice an odd number because a and b are odd squares. Unique factorization of positive integers now gives coprime positive u,v with\n\n    a+b=2u^17,   Phi(a,b)=v^17,   Z=uv.             (3.1)\n\nThe exact exponent of 2 is checked here rather than discarded by a normalization of unequal exponents. At an odd prime only one of the two coprime factors can carry its valuation, which must be a multiple of 17.\n\n## 4. The Gaussian equation, including signs and primitive coordinates\n\nSet\n\n    m=(X+Y)/2,    n=(X-Y)/2.\n\nBoth are integers, m>0 and n!=0. Their gcd is one: a common divisor would divide X and Y. Also m+n=X is odd, so m and n have opposite parity. No assumption X>Y is made; n may be negative. Equation (3.1) gives\n\n    m^2+n^2=u^17.                                  (4.1)\n\nA common Gaussian prime divisor of m+in and m-in divides both 2m and 2n. Bezout for gcd(m,n)=1 forces it above 2, but 1+i does not divide m+in when the coordinates have opposite parity. The Gaussian factors are therefore coprime.\n\nThe Euclidean property of Z[i] and (4.1) imply m+in=eta*beta^17, where eta is a Gaussian unit. Since eta^17=eta, replace beta by eta*beta to absorb the unit. Write beta=r+is. Then\n\n    m+in=(r+is)^17.                                (4.2)\n\nIf a rational prime divided r and s it would divide m and n, so gcd(r,s)=1. If r and s were both odd, their norm would be even and so would m^2+n^2, which it is not. They cannot both be even by coprimality. Thus r,s have opposite parity. All Gaussian hypotheses of U61's Theorem A are present.\n\n## 5. Quadratic-field ideal descent with every exceptional prime retained\n\nLet omega=(1+sqrt(5))/2 and K5=Q(sqrt(5)). Its integer ring is Z[omega], with omega^2=omega+1. Define\n\n    h0=m^4+30m^"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.09,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.02,
+          "2": 0.81,
+          "3": 0.15
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.7
+      }
+    },
+    "usage": {
+      "input_tokens": 2060,
+      "output_tokens": 42
+    }
+  }
+}

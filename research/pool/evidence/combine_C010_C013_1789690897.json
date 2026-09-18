@@ -1,0 +1,115 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C010_C013",
+  "timestamp": "2026-09-17T20:21:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U63_weighted_audit_and_twist_repair.md"
+      ],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "U63 invalidated U41: the twist was mishandled and the elimination does not go through. Recorded in README as a standing invalidation.",
+      "novelty_note": "Preserved refutation; any candidate resembling U41's argument should be checked against this failure first.",
+      "extracted": [
+        "The twist repair performed in U63 is itself reusable machinery",
+        "Lesson: a modular elimination must be re-audited after any twist normalization"
+      ],
+      "id": "C010",
+      "status": "REFUTED",
+      "claim": "U41's modular elimination closes the weighted-equation branch of Beal.",
+      "method": "Modular elimination as recorded in U41."
+    },
+    "candidate_B": {
+      "parents": [
+        "C003"
+      ],
+      "inspirations": [
+        "C006"
+      ],
+      "evidence": [
+        "research/checkpoints/U113_orbit_b_elimination_audit.md"
+      ],
+      "obligations": [
+        "Determine the Serre weight and inertial type of rho-bar_{b,17} at 17 (orbit b is CM by Q(zeta_5), 17 inert in M, supersingular reduction: P(T)=T^4+289)",
+        "Determine the same for rho-bar_{J^-,17}; U97 section 2.3 asserts both are supersingular/finite flat at 17, which if correct closes off the 17-adic route and forces the obstruction to live at 2 or 5",
+        "Check whether the Halberstadt-Kraus symplectic criterion at 2 and 3 applies to an RM abelian surface, or only to elliptic curves",
+        "This route is BLOCKED unless C002 level lowering is repaired, since without it there is no congruence to contradict"
+      ],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": "First candidate in the pool that respects the residual/17-adic distinction; every prior orbit-b elimination violated it. Its failure mode would be that rho-bar_{J^-,17} and rho-bar_{b,17} genuinely agree on all local data, which would be informative.",
+      "extracted": [],
+      "id": "C013",
+      "claim": "Orbit b (2.2.5.1-2000.1-b) is incompatible with rho-bar_{J^-,17} by an obstruction that uses ONLY residual mod-17 data: an image-of-inertia, Serre-weight, or Halberstadt-Kraus symplectic incompatibility at 2, 5 or 17.",
+      "method": "Residual-only obstruction. Compare rho-bar_{J^-,17}|_{I_p} against rho-bar_{b,17}|_{I_p} for p in {2,5,17} using Serre weights and the symplectic criterion, avoiding every isogeny-level or 17-adic statement.",
+      "status": "ACTIVE"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.22
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.53,
+        "confidence": 0.47,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.55,
+          "1": 0.39,
+          "2": 0.06,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.12
+      }
+    },
+    "usage": {
+      "input_tokens": 1518,
+      "output_tokens": 53
+    }
+  }
+}

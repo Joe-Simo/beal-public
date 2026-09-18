@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "repair_Signature4",
+  "timestamp": "2026-09-17T21:21:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal project. Already kernel-verified and axiom-free: Beal.Conjecture (the statement), Beal.AlgebraicIdentities, Beal.ExponentReduction (exponent reduction + the diagonal family (n,n,n) with 4|n via mathlib fermatLastTheoremFour), Beal.Structure (pairwise coprimality of the bases, no counterexample with A=B). mathlib v4.14.0 provides fermatLastTheoremFour but NOT a complete FLT for exponent 3, and provides NO Catalan/Mihailescu theorem. Custom axioms are not acceptable in a verified chain.",
+    "module": "Signature4",
+    "source": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.Taxonomy\n\n/-!\n# Formalization of Fermat's Last Theorem for Exponent 4 and Signature (4, 4, 2)\n\nThis module formalizes Fermat's classical theorem on the nonexistence of non-trivial\npositive integer solutions to the Diophantine equations of signatures $(4, 4, 2)$ and $(4, 4, 4)$:\n  $$A^4 + B^4 = C^2 \\quad \\text{and} \\quad A^4 + B^4 = C^4.$$\n\n## Historical and Mathematical Context\n\nPierre de Fermat famously recorded the method of **infinite descent** (*descente infinie*)\nin the margin of Bachet's Diophantus to prove that the area of a right triangle with integer\nsides cannot be a square. Equivalently, this proves that:\n  $$A^4 + B^4 = C^2$$\nadmits no solution in strictly positive integers.\n\nBecause $C^4 = (C^2)^2$, any hypothetical solution to $A^4 + B^4 = C^4$ (Fermat's Last Theorem for $n = 4$)\nimmediately yields a solution $A^4 + B^4 = (C^2)^2$ to the $(4, 4, 2)$ equation. Thus the impossibility\nof $(4, 4, 2)$ is strictly stronger than and implies FLT for $n = 4$.\n\n## Main Results Formalized Here:\n1. **Fermat's Principle of Infinite Descent**:\n   A general, constructive meta-theorem over $\\mathbb{N}$ using `Nat.find`.\n2. **Mod-4 Parity Obstruction**:\n   Squares cannot be $2 \\pmod 4$, proving that $A$ and $B$ cannot both be odd in $A^4 + B^4 = C^2$.\n3. **Impossibility of Signature $(4, 4, 2)$**:\n   $$A^4 + B^4 = C^2 \\implies \\text{False for } A, B, C > 0.$$\n4. **Fermat's Last Theorem for Exponent 4**:\n   $$A^4 + B^4 = C^4 \\implies \\text{False for } A, B, C > 0.$$\n5. **Beal Counterexample Elimination for Signature $(4, 4, 4)$ and $(4, 4, 2k)$**:\n   No Beal counterexample exists for signatures $(4, 4, 4)$ or $(4, 4, 2k)$ with $k \\ge 2$.\n-/\n\nnamespace Beal\n\n/-! ### 1. Fermat's Principle of Infinite Descent -/\n\n/--\n**Fermat's Principle of Infinite Descent**:\nIf a property `P : \u2115 \u2192 Prop` has the property that every witness `c` admitting `P c`\nproduces a strictly smaller witness `c' < c` with `P c'`, then `P` has no witnesses.\n-/\ntheorem infinite_descent {P : \u2115 \u2192 Prop} (h_step : \u2200 c, P c \u2192 \u2203 c', c' < c \u2227 P c') :\n    \u2200 c, \u00ac P c := by\n  intro c hc\n  have h_ex : \u2203 k, P k := \u27e8c, hc\u27e9\n  let m := Nat.find h_ex\n  have hm : P m := Nat.find_spec h_ex\n  obtain \u27e8c', hc'_lt, hc'_prop\u27e9 := h_step m hm\n  have h_min := Nat.find_min h_ex hc'_lt\n  exact h_min hc'_prop\n\n/-! ### 2. Mod-4 Quadratic Residue Obstructions -/\n\n/--\nEvery square in $\\mathbb{N}$ is congruent to $0$ or $1$ modulo $4$.\n-/\nlemma sq_mod_four (n : \u2115) : n ^ 2 % 4 = 0 \u2228 n ^ 2 % 4 = 1 := by\n  have h : n % 4 < 4 := Nat.mod_lt n (by decide)\n  interval_cases n % 4\n  \u00b7 left\n    omega\n  \u00b7 right\n    omega\n  \u00b7 left\n    omega\n  \u00b7 right\n    omega\n\n/--\nEvery fourth power in $\\mathbb{N}$ is congruent to $0$ or $1$ modulo $4$.\n-/\nlemma pow_four_mod_four (n : \u2115) : n ^ 4 % 4 = 0 \u2228 n ^ 4 % 4 = 1 := by\n  have hsq : n ^ 4 = (n ^ 2) ^ 2 := by ring\n  rw [hsq]\n  exact sq_mod_four (n ^ 2)\n\n/--\nAn odd integer has fourth power congruent to $1$ modulo $4$.\n-/\nlemma odd_pow_four_mod_four (n : \u2115) (hn : n % 2 = 1) : n ^ 4 % 4 = 1 := by\n  have h : n % 4 < 4 := Nat.mod_lt n (by decide)\n  have hodd : n % 4 = 1 \u2228 n % 4 = 3 := by\n    omega\n  rcases hodd with h1 | h3\n  \u00b7 omega\n  \u00b7 omega\n\n/--\nIf $A$ and $B$ are both odd, $A^4 + B^4 \\equiv 2 \\pmod 4$.\n-/\nlemma sum_odd_pow_four_mod_four (A B : \u2115) (hA : A % 2 = 1) (hB : B % 2 = 1) :\n    (A ^ 4 + B ^ 4) % 4 = 2 := by\n  have hA4 := odd_pow_four_mod_four A hA\n  have hB4 := odd_pow_four_mod_four B hB\n  omega\n\n/--\n**Parity Obstruction Lemma**:\nIn any solution to $A^4 + B^4 = C^2$, $A$ and $B$ cannot both be odd.\n-/\ntheorem fermat42_not_both_odd (A B C : \u2115) (heq : A ^ 4 + B ^ 4 = C ^ 2) :\n    \u00ac (A % 2 = 1 \u2227 B % 2 = 1) := by\n  rintro \u27e8hA, hB\u27e9\n  have h_lhs := sum_odd_pow_four_mod_four A B hA hB\n  rw [heq] at h_lhs\n  have h_rhs := sq_mod_four C\n  rcases h_rhs with h0 | h1\n  \u00b7 omega\n  \u00b7 omega\n\n/-! ### 3. Reduction from Exponent 4 to Exponent 2 -/\n\n/--\nAny solution to the signature $(4, 4, 4)$ equation $A^4 + B^4 = C^4$ in positive integers\ninduces a positive integer solution to the signature $(4, 4, 2)$ equation $A^4 + B^4 = (C^2)^2$.\n-/\ntheorem fermat42_of_fermat44 (A B C : \u2115) (hC : C > 0) (heq : A ^ 4 + B ^ 4 = C ^ 4) :\n    \u2203 C' : \u2115, C' > 0 \u2227 A ^ 4 + B ^ 4 = C' ^ 2 := by\n  use C ^ 2\n  constructor\n  \u00b7 positivity\n  \u00b7 rw [\u2190 heq]\n    ring\n\n/--\n**FLT4 Reduction Theorem**:\nIf there is no positive integer solution to $A^4 + B^4 = C^2$,\nthen there is no positive integer solution to $A^4 + B^4 = C^4$.\n-/\ntheorem flt4_of_fermat42\n    (h_no42 : \u00ac \u2203 (A B C : \u2115), A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 A ^ 4 + B ^ 4 = C ^ 2) :\n    \u00ac \u2203 (A B C : \u2115), A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 A ^ 4 + B ^ 4 = C ^ 4 := by\n  rintro \u27e8A, B, C, hA, hB, hC, heq\u27e9\n  obtain \u27e8C', hC', heq'\u27e9 := fermat42_of_fermat44 A B C hC heq\n  exact h_no42 \u27e8A, B, C', hA, hB, hC', heq'\u27e9\n\n/-! ### 4. Nonexistence of Solutions (",
+    "compiler_errors": "error: ././././Beal/Taxonomy.lean:127:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:125:52: unsolved goals\nerror: ././././Beal/Taxonomy.lean:136:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:133:36: unsolved goals\nerror: ././././Beal/Taxonomy.lean:165:11: unknown tactic\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'GE.ge.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'LE.le.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'Nat.le.left'\nerror: ././././Beal/Taxonomy.lean:152:41: tactic 'subst' failed, invalid equality proof, it is not of the form (x = t) or (t = x)\nerror: ././././Beal/Taxonomy.lean:147:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:145:62: unsolved goals\nerror: ././././Beal/Taxonomy.lean:200:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:198:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:186:35: unsolved goals\nerror: ././././Beal/Taxonomy.lean:226:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:220:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:219:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:216:37: unsolved goals\nerror: Lean exited with code 1\nerror: build failed"
+  },
+  "questions": {
+    "repair_value": {
+      "type": "score",
+      "instructions": "If this module were repaired so that it compiles with no sorry and no custom axioms, how much genuine mathematical content would the project gain?",
+      "criteria": [
+        "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+        "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+        "level 2: a self-contained elementary theorem or an executable checker with real content",
+        "level 3: it would close a signature or an infinite family of Beal signatures"
+      ]
+    },
+    "repairable_without_axioms": {
+      "type": "noul",
+      "instructions": "Can this module plausibly be repaired to compile with NO custom axioms and NO sorry, using only mathlib as it actually exists - noting that mathlib has FLT for exponent 4 but not for exponent 3, and has no Catalan/Mihailescu theorem?",
+      "criteria": {
+        "true": "its content is elementary or depends only on results mathlib actually contains",
+        "false": "its substance depends on a deep theorem mathlib does not contain, such as FLT3, Mihailescu, or a modular-method elimination, so it would need a custom axiom"
+      }
+    },
+    "statement_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that this module's THEOREM STATEMENTS misencode the Beal conjecture - for example allowing exponent 2, excluding a base of 1, or putting the coprimality condition on the exponents rather than the bases - so that repairing it would certify the wrong thing?",
+      "criteria": {
+        "true": "its statements look like they may deviate from the exact conjecture, or it restricts to a sub-case without saying so",
+        "false": "its statements appear to encode the conjecture or a clearly labelled sub-case faithfully"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "repair_value": {
+        "type": "score",
+        "score": 1.92,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+          "1": "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+          "2": "level 2: a self-contained elementary theorem or an executable checker with real content",
+          "3": "level 3: it would close a signature or an infinite family of Beal signatures"
+        },
+        "probabilities": {
+          "0": 0.23,
+          "1": 0.06,
+          "2": 0.27,
+          "3": 0.44
+        }
+      },
+      "repairable_without_axioms": {
+        "type": "noul",
+        "noul": 0.71
+      },
+      "statement_risk": {
+        "type": "noul",
+        "noul": 0.61
+      }
+    },
+    "usage": {
+      "input_tokens": 3408,
+      "output_tokens": 57
+    }
+  }
+}

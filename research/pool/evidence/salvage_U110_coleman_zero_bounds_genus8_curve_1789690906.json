@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U110_coleman_zero_bounds_genus8_curve",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U110_coleman_zero_bounds_genus8_curve.md",
+    "excerpt": "# U110: Rigorous 3-Adic Coleman Integration, Strassman Zero Bounding, and Complete Classification of Rational Points $C^-(k) = \\{ P_\\infty \\}$ on the Genus-8 Frey Curve\n\n**Date**: 2026-09-17  \n**Author**: Coleman Zero Bounding Specialist  \n**Status**: Exact algebraic certification, closed PARI/GP 2.17.4 Coleman integration ledger, Newton-polygon Strassman zero bounds, and unconditional rational point classification.  \n**Target Curve**:\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\nover the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ is the golden ratio satisfying $\\phi^2 - \\phi - 1 = 0$.\n\n---\n\n## 1. Executive Summary\n\nIn checkpoints U99--U102, the arithmetic geometry of the genus-8 hyperelliptic Frey curve $C^-$ attached to the generalized Fermat equation $X^{10} + 256Y^{10} = Z^{17}$ was developed:\n1. The 2-Selmer rank of the Jacobian $J^-$ was unconditionally bounded by 2:\n   $$\\operatorname{rank}_\\mathbb{Z} J^-(k) \\le \\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(J^-/k) \\le 17 - 15 = 2 < g = 8.$$\n2. Because the Mordell--Weil rank is strictly less than the genus ($r \\le 2 < 8$), the classical method of **Chabauty (1938)** and **Coleman (1985)** applies unconditionally.\n3. The space of annihilating regular 1-forms $\\operatorname{Ann}(J^-(k)) \\subset H^0(C^-, \\Omega^1)$ has dimension:\n   $$\\dim_k \\operatorname{Ann}(J^-(k)) \\ge g - \\operatorname{rank}_\\mathbb{Z} J^-(k) \\ge 8 - 2 = 6.$$\n\nThis checkpoint delivers the complete, unconditional 3-adic Coleman integration and Strassman zero-bounding analysis on $C^-$ at the inert prime $\\mathfrak{p} = (3)\\mathcal{O}_k$, proving:\n\n1. **Exact Taylor Expansions of 6 Independent Coleman Integrals**:\n   On each of the 10 residue discs of $C^-(k_3)$ over the completion $k_3 = \\mathbb{Q}_3(\\phi)$, exact Taylor expansions of the canonical basis differentials $\\omega_j = \\frac{u^j du}{v}$ ($j = 0, \\dots, 7$) and the 6 independent annihilating differentials $\\eta_1, \\dots, \\eta_6 \\in \\operatorname{Ann}(J^-(k))$ are computed to 20 digits of 3-adic precision.\n\n2. **Strassman Zero Bounds across All 10 Residue Discs**:\n   - **Affine Domain $|u|_3 \\le 1$ (9 residue discs)**:\n     - *Weierstrass Disc $]\\tilde{P}_0[$*: The linear coefficient in the uniformizer $t = v$ is a 3-adic unit ($v_3 = 0$), while all higher odd coefficients have valuation $\\ge 2$ in the scaled variable $3w$. By Strassman's theorem, $I_\\omega(t)$ has **at most 1 zero**, which is the center $P_0 = (u_0, 0)$ with $u_0^{17} = \\phi^2/4$. Because $[k(u_0) : k] = 17 > 1$, $P_0 \\notin C^-(k)$, so this disc contains **0 rational points**.\n     - *8 Ordinary Affine Discs $D_1, \\dots, D_8$*: The local parameter $t = u - u_{0, i}$ yields leading linear coefficient $\\frac{u_{0, i}^j}{v_{0, i}}$, which is a 3-adic unit. In $t = 3w$, the linear term has valuation 1 and strictly dominates all higher-order terms (valuations $\\ge 2$). By Strassman's theorem, each ordinary residue disc contains **at most 1 zero** in $C^-(k_3)$.\n   - **Disc Around Infinity $|u|_3 > 1$ (1 residue disc $]\\tilde{P}_\\infty[$)**:\n     In the uniformizer $t = u^8 / v$, the leading term of $I_{\\omega_7}(t)$ is $-2t$. For any differential $\\omega \\in \\operatorname{Ann}(J^-(k))$ with $c_7 \\not\\equiv 0 \\pmod 3$, the linear term has valuation 1 in $3w$ and strictly dominates all higher odd powers $t^3, t^5, \\dots$ (valuations $\\ge 2$). Strassman's theorem bounds the zero count to **at most 1**, which is the known smooth $k$-rational point $P_\\infty = (1 : 0 : 0)$.\n\n3. **Complete Rational Point Classification**:\n   Combining the Strassman bounds, the overdetermined system of 6 independent Coleman integrals, the triviality of rational torsion $J^-(k)_{\\text{tors}} = 0$ (U77 Theorem C), the algebraic non-existence of points at $u = 0, \\pm 1, v = 0, v^2 = \\phi^2$, and the degree-10 coordinate field obstruction for Beal points:\n   $$\\mathbf{C^-(k) = \\{ P_\\infty \\}}.$$\n   The unique $k$-rational point on $C^-$ is the point at infinity $P_\\infty$.\n\n---\n\n## 2. Geometry and Invariants of $C^-/k$\n\n### 2.1 Affine Model and Fundamental Identity\nThe curve $C^-$ is defined over the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ satisfies $\\phi^2 - \\phi - 1 = 0$:\n$$C^-: v^2 = f(u) = A - B u^{17},$$\nwhere:\n$$A = \\phi + 2, \\quad B = 4(3-\\phi).$$\nUsing $\\phi^2 = \\phi + 1$, we establish the algebraic identity:\n$$(3-\\phi)\\phi^2 = 3\\phi^2 - \\phi^3 = 3(\\phi+1) - (2\\phi+1) = \\phi + 2 = A.$$\nTherefore:\n$$\\frac{A}{B} = \\frac{(3-\\phi)\\phi^2}{4(3-\\phi)} = \\frac{\\phi^2}{4} = \\left(\\frac{\\phi}{2}\\right)^2.$$\n\nThe coefficient norms to $\\mathbb{Q}$ are:\n$$\\operatorname{Norm}_{k/\\mathbb{Q}}(A) = (\\phi+2)(\\bar{\\phi}+2) = 5,$$\n$$\\operatorname{Norm}_{k/\\mathbb{Q}}(B) = 16(3-\\phi)(3-\\bar{\\phi}) = 16 \\times 5 = 80.$$\nThe roots of $f(u)$ satisfy $u^{17} = \\phi^2/4 \\ne 0$. All 17 affine roots are distinct and simple.\nThe degree of $f(u)$ is $d = 17 = 2g + 1$, confirming that $C^-$ is a smooth projective hyperelliptic curve of genus:"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.98,
+        "confidence": 0.83,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.01,
+          "2": 0.87,
+          "3": 0.08
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.81
+      }
+    },
+    "usage": {
+      "input_tokens": 2424,
+      "output_tokens": 42
+    }
+  }
+}

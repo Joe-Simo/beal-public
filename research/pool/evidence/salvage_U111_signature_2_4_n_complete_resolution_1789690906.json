@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U111_signature_2_4_n_complete_resolution",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_signature_2_4_n_complete_resolution.md",
+    "excerpt": "# U111: Complete Resolution of Generalized Fermat Signature $(2, 4, n)$ for All Exponents $n \\geq 4$ via Lucas Primitive Divisors and Analytic Non-Vanishing\n\n**Date**: 2026-09-17  \n**Author**: Signature $(2, 4, n)$ Serre Weight Specialist, Beal Conjecture Project  \n**Target Equations**: $A^2 + B^4 = C^n$ and $A^4 + 2^\\delta B^2 = C^n$ ($\\delta \\in \\{0, 1\\}$) with $\\gcd(A, B) = 1$, $AB \\neq 0$, and integer exponent $n \\geq 4$.  \n**Context**: Beal Conjecture Program \u2014 Even-Leg Pythagorean Descent and Quartic Families.  \n**Status**: Authoritative research checkpoint, certifying 100% unconditional elimination across all 208 exponents $n \\in [4, 211]$ and all asymptotic primes $p \\geq 211$, overcoming the CM Plateau via Bilu\u2013Hanrot\u2013Voutier (2001) primitive divisors, Bugeaud\u2013Mignotte\u2013Siksek (2006) square obstructions, and Ellenberg (2004) / Bennett\u2013Ellenberg\u2013Ng (2010) analytic non-vanishing modular winding quotients.\n\n---\n\n## 1. Executive Summary & The Complete Theorem\n\nThe Diophantine equation of generalized Fermat signature $(2, 4, n)$:\n$$A^2 + B^4 = C^n \\quad \\Longleftrightarrow \\quad B^4 + A^2 = C^n,$$\nwith $\\gcd(A, B) = 1$, $AB \\neq 0$, and $n \\geq 4$, is strictly hyperbolic for all $n \\geq 5$ (Euler characteristic $\\chi = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{n} - 1 = \\frac{1}{n} - \\frac{1}{4} \\leq -\\frac{1}{20} < 0$). For $n = 4$, $\\chi = 0$ (parabolic), corresponding to Fermat's right-triangle theorem.\n\nIn Checkpoint U110, we proved that attaching modular forms via Ellenberg's Frey $\\mathbb{Q}$-curve over $\\mathbb{Q}(i)$ produces Serre conductors $N \\in \\{32, 256\\}$, but standard local Frobenius trace sieves ($a_q(E) \\equiv a_q(f) \\pmod n$) **100% fail** because every newform at levels 32 and 256 possesses Complex Multiplication (the *CM Plateau*).\n\nIn this checkpoint, we formalize and certify the **complete resolution** of $A^2 + B^4 = C^n$ (and its quadratic twin $A^4 + 2 B^2 = C^n$) across all exponents $n \\geq 4$, establishing:\n\n> ### The Complete Theorem (Euler, Bruin, Ellenberg, Bennett\u2013Ellenberg\u2013Ng)\n> Let $n \\geq 4$ be an integer. The Diophantine equations:\n> $$A^2 + B^4 = C^n \\quad \\text{and} \\quad A^4 + 2 B^2 = C^n$$\n> have **no solutions in non-zero, pairwise coprime integers** $(A, B, C)$ with $AB \\neq 0$.\n\n### 1.1. Milestone Matrix of Resolution Engines\n\n| Exponent Regime | Primary Method / Engine | Key Literature | Status |\n|---|---|---|---|\n| $n = 4$ | Fermat descent on right triangles with square area | Euler (1738) | **100% Eliminated** |\n| $n = 5$ | Elliptic Chabauty on genus-2 curves over $\\mathbb{Q}$ | Bruin (2003) | **100% Eliminated** |\n| $n = 6$ | 2-coverings and Chabauty on Jacobians | Bruin (1999) | **100% Eliminated** |\n| $n = 7$ | Chabauty on bielliptic genus-2 curve over $\\mathbb{Q}(\\sqrt{2})$ | Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $n = 13$ | Rational points on modular curve $X_0(26)/w_2$ ($\\text{rank} = 0$) | Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $n \\in [7, 30] \\setminus \\{7, 13\\}$ | BHV 0-defective pairs + BMS square obstruction | Bilu\u2013Hanrot\u2013Voutier (2001), BMS (2006) | **100% Eliminated** |\n| $31 \\le n < 211$ | Unconditional primitive divisors + Modular symbols | BHV (2001), Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $p \\ge 211$ (and $p \\ge 61$) | Non-split Cartan winding quotient + Duke $L$-values | Ellenberg (2004), BEN (2010) | **100% Eliminated** |\n| All composites $n \\ge 4$ | Reduction to prime or parabolic sub-exponents | Euler (1738), Darmon\u2013Granville (1995) | **100% Eliminated** |\n\n---\n\n## 2. Mathematical Architecture: The Two Complementary Engines\n\nThe CM Plateau proves that local modular sieving at fixed levels 32 and 256 cannot distinguish the Frey curve from CM newforms. The complete resolution bypasses this barrier by deploying two independent, highly sophisticated mathematical frameworks that overlap over a large intermediate regime:\n\n```mermaid\nflowchart TD\n    Target[\"A^2 + B^4 = C^n (n >= 4)\"] --> Split{\"Exponent Regime\"}\n\n    Split -->|\"Small & Intermediate<br/>4 <= n < 211\"| EngineA[\"Engine 1: Algebraic / Primitive Divisor Theory<br/>(BHV 2001, BMS 2006, BEN 2010)\"]\n    Split -->|\"Large / Asymptotic<br/>p >= 211 (sharpened: p >= 61)\"| EngineB[\"Engine 2: Modular Analytic Geometry<br/>(Ellenberg 2004, Duke 1995, BEN 2010)\"]\n\n    EngineA --> Fact[\"Factorization over Z[i]:<br/>(A + iB^2)(A - iB^2) = C^n\"]\n    Fact --> Lucas[\"Lucas Sequences u_n(alpha, beta) & v_n(alpha, beta)<br/>alpha = u + iv, beta = u - iv\"]\n    Lucas --> BHV[\"Bilu-Hanrot-Voutier Theorem 1.4:<br/>n > 30 ==> u_n has Primitive Divisor p = +-1 (mod n)\"]\n    BHV --> BMS[\"Bugeaud-Mignotte-Siksek (2006):<br/>v_n = 2*square has NO solutions for n >= 7\"]\n    BMS --> Sporadic[\"Sporadic Cases n in {4, 5, 6, 7, 13}:<br/>Euler descent, Bruin Chabauty, BEN bielliptic\"]\n\n    EngineB --> Cartan[\"Normalizer of Cartan Subgroup N(C)<br/>in PGL_2(F_p)\"]\n    Cartan --> SplitCartan[\"Split Cartan:<br/>Ruled out by Mazur Formal Immersion on X_split(p)\"]\n    Cartan --> No"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.25,
+        "confidence": 0.42,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.16,
+          "1": 0.43,
+          "2": 0.41,
+          "3": 0.0
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.64
+      }
+    },
+    "usage": {
+      "input_tokens": 2490,
+      "output_tokens": 42
+    }
+  }
+}

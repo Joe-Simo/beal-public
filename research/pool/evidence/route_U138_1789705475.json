@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U138",
+  "timestamp": "2026-09-18T00:24:35-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "RESTART: pool converging on 'parametrisation + one-sided published theorem'. Pick a genuinely different mechanism with a cheap exact test."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which?",
+      "criteria": {
+        "descent_x4": "elementary Fermat-style descent on b^4 - a^4 = 2 A^m (the open A-even branch of C050): factor (b^2-a^2)(b^2+a^2), 2-adic split, then a^2+b^2=2u^m via Z[i] and b^2-a^2=2^{m-1}v^m; look for a contradiction mod small primes or via infinite descent",
+        "frontier_sieve": "combinatorial: for (3,5,7) enumerate residues mod 2^a 3^b 5 7 to bound density and run an exhaustive pruned search with proved pruning rules to a named height bound",
+        "countersearch_c050": "COUNTERSEARCH: attack C050 \u2014 verify from the BS primary source the C=2 exceptions, and test whether the 'exponent-4 base even' hypothesis can be removed",
+        "lean_c050": "Lean assembly of C050 with (n,n,2) and BS C=2 as named hypotheses"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "frontier_sieve",
+        "confidence": 0.35,
+        "probabilities": {
+          "descent_x4": 0.3,
+          "lean_c050": 0.03,
+          "countersearch_c050": 0.16,
+          "frontier_sieve": 0.51
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 585,
+      "output_tokens": 68
+    }
+  }
+}

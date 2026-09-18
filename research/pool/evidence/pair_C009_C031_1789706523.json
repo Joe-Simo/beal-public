@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C009_C031",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C009",
+      "status": "PARTIAL_RESULT",
+      "claim": "No counterexample to Beal's conjecture exists with A, B <= 160000 and exponents x, y, z in {3,5,7,11,13,17,19}."
+    },
+    "B": {
+      "id": "C031",
+      "status": "PARTIAL_RESULT",
+      "claim": "The ordering of Z enters a proof of Beal at exactly one point: positivity forbids cancellation, giving A^x < C^z, B^y < C^z and C^z <= 2 max(A^x,B^y). Hence with A^x <= B^y, C is pinned to within a factor 2^(1/z) <= 1.26 of B^(y/z). Over Z[i] this fails completely - the Helenius identity collapses norm 125 summands to a norm 16 sum."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.34,
+        "confidence": 0.33,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.19,
+          "1": 0.28,
+          "2": 0.52,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.18
+      }
+    },
+    "usage": {
+      "input_tokens": 627,
+      "output_tokens": 34
+    }
+  }
+}

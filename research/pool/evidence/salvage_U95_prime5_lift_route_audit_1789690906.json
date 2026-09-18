@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U95_prime5_lift_route_audit",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U95_prime5_lift_route_audit.md",
+    "excerpt": "# U95: the prime-5 conductor is explicit, but it does not by itself construct the Breuil--Diamond local lift\n\n**Status: source/code audit of the modular route. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-16.\n\n## 1. Target inherited from U94\n\nU94 isolated the next modular obligation: at the unique prime over 5 in K=Q(sqrt(5)), construct a characteristic-zero local lift of the residual two-dimensional RM component with the determinant and Weil--Deligne type required by Breuil--Diamond Theorem 3.2.2.\n\nU64 already proves uniformly that the relevant quintic is irreducible over Q_5 (indeed its translate is Eisenstein) and records, from Azon's conductor theorem, Artin conductor exponent 3 for the two-dimensional component.\n\n## 2. What the author's implementation actually certifies\n\nThe electronic resources accompanying Azon's preprint were inspected directly. In `level&irred.m`, for signature `(r,r,p)`, the routine `ExponentOfTheLevelAt_r` returns exponent 3 when the coefficient product is prime to r and the user-supplied/established `gminus_irreducible` flag is true. The level routine then uses that exponent in the Hilbert-newform level.\n\nFor our specialization r=5 this agrees with U64's intended prime-5 exponent 3. This is useful independent code-level corroboration that the source's elimination implementation treats precisely this irreducible local branch as level exponent 3.\n\nHowever, the public Magma implementation computes the predicted level and performs the elimination step. It does not expose a construction of the local characteristic-zero representation required as input to Breuil--Diamond 3.2.2, nor does the inspected routine specify its Weil--Deligne matrices or fixed determinant.\n\nTherefore the implementation cannot be used as a substitute for the missing local-lift proof.\n\n## 3. A route correction\n\nThe preprint itself advertises a dedicated level-lowering theorem (Theorem 5.22 in the paper's overview) for the Frey systems, whereas U64/U94 attempted to rebuild the needed global lift through the more general Breuil--Diamond theorem. This suggests a potentially shorter rigorous route:\n\n1. test whether Azon's own Theorem 5.22 applies directly to the corrected negative twist and our specialization `(r,r,p)=(5,5,17)`;\n2. distinguish it carefully from the more restrictive packaged statement U64 recorded as Theorem 5.23/Hypothesis 5;\n3. if 5.22 already supplies the required lowered modular representation under hypotheses that U64 has proved, the explicit Breuil--Diamond local-lift construction may be unnecessary;\n4. if 5.22 still invokes local deformation choices not verified in our case, return to the explicit prime-5 lift problem.\n\nThis is now higher priority than guessing a Weil--Deligne type from the conductor exponent alone.\n\n## 4. What is not claimed\n\nConductor exponent 3 does not uniquely determine a Weil--Deligne type. Eisenstein irreducibility of the defining quintic does not, by itself, construct a two-dimensional fixed-determinant characteristic-zero lift. The author's Magma level routine is corroboration of the intended level formula, not a proof of Breuil--Diamond's local hypotheses.\n\nNo level-2000 comparison is upgraded to unconditional status in this checkpoint.\n\n## 5. Next obligation\n\nThe next checkpoint should source-audit the exact statement and hypotheses of Azon Theorem 5.22 against the specialization already proved in U64. This has a binary payoff: either it bypasses U94's explicit local-lift reconstruction, or it identifies exactly which local datum remains missing.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.38,
+        "confidence": 0.62,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.65,
+          "1": 0.33,
+          "2": 0.02,
+          "3": 0.0
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 1410,
+      "output_tokens": 42
+    }
+  }
+}

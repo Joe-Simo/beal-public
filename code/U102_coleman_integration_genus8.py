@@ -186,6 +186,13 @@ def main() -> None:
             "total_rational_points_bound": "#C^-(k) <= 9 <= 10",
             "weierstrass_disc_empty": True,
             "chabauty_coleman_complete": True,
+            "AUDIT_U251_scope_warning": (
+                "The bound above is on #C^-(k), the k-RATIONAL points. Solutions of the weighted "
+                "equation give points of degree 10 over k (minimal polynomial x^10 + 256), so this "
+                "bound does NOT close the equation. See U113 Part II and CLAUDE.md failure mode 2 "
+                "(Chabauty over the wrong field). 'chabauty_coleman_complete' means the COMPUTATION "
+                "is complete, not that the route is."
+            ),
         },
     }
 

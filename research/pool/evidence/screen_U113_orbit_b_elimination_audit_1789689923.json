@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U113_orbit_b_elimination_audit",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U113_orbit_b_elimination_audit.md",
+      "excerpt": "# U113: Adversarial Audit of U97 \u2014 the Orbit-b Elimination Does Not Hold as Written\n\n**Date**: 2026-09-17\n**Method**: exploration-loop cycle 1, adversarial proof audit + exact computation\n**Audited artifact**: [`research/checkpoints/U97_orbit_b_boundary_CM_obstruction.md`](U97_orbit_b_boundary_CM_obstruction.md)\n**Pool candidate**: C003\n**Verification code**: `code/U113_u97_disc.py`, `code/U113_u97_traces.py`, `code/U113_u97_strategy3.py`, `code/U113_u97_trace_only.py`, `code/U113_u97_growth.py`\n\nU97 claims orbit $b$ (`2.2.5.1-2000.1-b`) is eliminated **unconditionally** by three independent\nstrategies. That claim does not hold as written. Its identification half is confirmed; all three\nelimination strategies fail, one of them by exact computation.\n\n---\n\n## 1. CONFIRMED by independent exact computation\n\n**1.1 Discriminant identity (U97 \u00a72.2).** For\n$f(x) = x^5 + 40UVx^3 + 320U^2V^2x + 64(8V^5 - U^5)$, symbolic computation gives\n$$\\operatorname{disc}(f) = 2^{24}\\cdot 5^5\\cdot (U^5 + 8V^5)^4 = 2^{24}\\cdot 5^5\\cdot Z^{68},$$\nexactly as claimed, confirmed symbolically and at five exact integer specialisations.\nThe good-reduction argument at $q \\mid Y$ stands.\n\n**1.2 Frobenius traces (U97 \u00a71.4).** By direct point counting over $\\mathbb{F}_q$ and\n$\\mathbb{F}_{q^2}$ for $C_0: y^2 = 64 - x^5$, using\n$S = a_{\\mathfrak q_1}+a_{\\mathfrak q_2} = t$ and $P = a_{\\mathfrak q_1}a_{\\mathfrak q_2} = s - 2q$:\n\n| $q$ | $\\#C_0(\\mathbb F_q)$ | $\\#C_0(\\mathbb F_{q^2})$ | $S$ | $P$ | U97 claim | |\n|---|---|---|---|---|---|---|\n| 11 | 3 | 123 | 9 | 19 | $S=9,P=19$ | match |\n| 31 | 43 | 1023 | \u221211 | 29 | $S=-11,P=29$ | match |\n| 41 | 43 | 1543 | \u22121 | \u2212151 | $S=-1,P=-151$ | match |\n\nand $a_{\\mathfrak q}=0$ for every tested $q \\not\\equiv 1 \\pmod 5$. The identification of orbit $b$\nwith $\\operatorname{Jac}(C_0)_{/K}$ is therefore well supported.\n\n---\n\n## 2. REFUTED BY COMPUTATION \u2014 Strategy 3 (infinite split sieve)\n\nU97 Strategy 3 defines\n$$\\mathcal S = \\{\\,q \\equiv 1 \\bmod 5 \\text{ split} : \\forall t \\in \\mathbb F_q^\\times,\\\na_{\\mathfrak q}(C^-(1,t)) \\not\\equiv a_{\\mathfrak q}(b) \\bmod 17 \\,\\}$$\nand asserts, citing Deligne equidistribution, that $\\mathcal S$ has **positive density**, hence is\ninfinite, hence $\\prod_{q\\in\\mathcal S} q \\mid Y$ forces $Y=0$.\n\n**This is backwards.** Equidistribution makes the residual trace $a_{\\mathfrak q}(C^-(1,t)) \\bmod 17$\napproach uniformity over $t \\in \\mathbb F_q^\\times$, so the expected number of matching $t$ is\n$\\approx (q-1)/17$, and the chance that *no* $t$ matches decays like $(1-1/17)^{q-1} \\to 0$.\n$\\mathcal S$ is therefore finite, and equidistribution is evidence **against** Strategy 3, not for it.\n\nExact computation over all $q \\equiv 1 \\pmod 5$, $q < 1600$, counting $t \\in \\mathbb F_q^\\times$\nwhose Euler factor agrees with orbit $b$'s mod 17:\n\n- **Trace-only criterion** (what \u00a72.5 literally states): forcing primes are exactly\n  $\\{11, 31, 41, 71, 131\\}$. Match counts track $q/17$ closely (e.g. $q=1531$: 80 matches vs 90.1 predicted).\n- **$(S,P)$ criterion**: forcing primes below 140 are $\\{11,31,41,71,101,131\\}$; $q=61$ has 5 matching $t$.\n\nUnder **both** criteria the matching count is strictly positive for every $q \\ge 151$ tested up to 1600.\n$\\mathcal S$ is finite. Strategy 3's central step is false.\n\n**Two further defects in Strategy 3.**\n- It attributes its forcing-prime set $\\{11,31,41,61,71,101,151,191,211,281,331,431,461,631\\}$ to U72.\n  U72 \u00a71 takes that set from U68 as a **Gaussian-valuation** forcing list, a different notion from the\n  mod-17 Frobenius congruence used here. Ten of those fourteen primes are not forcing under either\n  reconstruction of the mod-17 criterion. The two notions are conflated.\n- It invokes \"Baker's method on the superelliptic equation $X^{10}+256Y^{10}=Z^{17}$\" for an effective\n  bound $\\log Y \\le C$. Baker-type superelliptic bounds apply to $y^m=f(x)$ with $m$ and $\\deg f$ fixed\n  and $f$ having at least two (resp. three) distinct roots; they do not deliver an effective bound for\n  this three-term equation. No effective $C$ is exhibited.\n\nThis also contradicts U92, which proved the Gaussian forcing-prime sieve is **exhausted** by finitely\nmany primes. A route cannot simultaneously rely on that sieve being exhausted and on it being infinite.\n\n---\n\n## 3. FLAWED BY AUDIT \u2014 Strategy 2 (deformation rigidity)\n\nStrategy 2 argues: $R=\\mathbb T$ is a DVR, therefore any characteristic-zero abelian variety realising\nthe residual representation must lie in orbit $b$'s Hecke eigenspace, therefore $J^- \\sim_K \\operatorname{Jac}(C_0)$,\ncontradicting $\\dim \\operatorname{End}^0(J^-) = 2 \\ne 4$.\n\nThe second implication does not follow. An $R=\\mathbb T$ theorem identifies the deformation ring with\nthe Hecke algebra **for lifts satisfying the fixed local conditions**; it does not assert that a residual\nisomorphism $\\bar\\rho_{J^-,17} \\cong \\bar\\rho_{b,17}$ forces an isogeny of the characteristic-zero\nabelian varieties. If it did, every modular-method argument would terminat",
+      "length_chars": 17681
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.93,
+        "confidence": 0.03,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.46,
+          "2": 0.09,
+          "3": 0.43
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.97,
+        "confidence": 0.03,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.66,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.32
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.24
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.67,
+        "probabilities": {
+          "audit_later": 0.15,
+          "no_action": 0.03,
+          "verify_computation": 0.05,
+          "verify_literature": 0.02,
+          "audit_now": 0.75
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3173,
+      "output_tokens": 124
+    }
+  }
+}

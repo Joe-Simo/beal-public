@@ -1,0 +1,88 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "lean_ExponentReduction",
+  "timestamp": "2026-09-17T20:19:59-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "target_statement": "Beal: for positive integers A,B,C,x,y,z with A^x + B^y = C^z and x,y,z >= 3, the bases A,B,C share a common prime factor, i.e. gcd(gcd(A,B),C) > 1. A counterexample needs: all six positive integers, all three exponents at least 3, exact equality, and gcd(gcd(A,B),C) = 1. Bases equal to 1 are allowed. Exponent 2 is NOT allowed. The condition is on the BASES, not the exponents.",
+    "file": "ExponentReduction.lean",
+    "source": "/-\n# Exponent Reduction for the Beal Conjecture\n\nEvery signature-by-signature attack on Beal tacitly restricts the exponents to\n`{4} \u222a {odd primes}`.  The project's own discipline forbids restricting the exponent range\nwithout proving the restriction covers every case.  This file supplies that proof.\n\nNo `sorry`, no custom `axiom`s.  The only imports are mathlib.\n-/\nimport Mathlib.NumberTheory.Padics.PadicVal\nimport Mathlib.Data.Nat.Factorization.Basic\nimport Mathlib.Data.Nat.Prime.Basic\nimport Mathlib.Tactic\n\nnamespace Beal\n\n/-- A Beal counterexample, stated exactly as in the conjecture: six positive integers,\nall three exponents at least 3, exact equality, and the three **bases** sharing no prime. -/\ndef IsBealCounterexample (A B C x y z : \u2115) : Prop :=\n  0 < A \u2227 0 < B \u2227 0 < C \u2227 3 \u2264 x \u2227 3 \u2264 y \u2227 3 \u2264 z \u2227\n    A ^ x + B ^ y = C ^ z \u2227 Nat.gcd (Nat.gcd A B) C = 1\n\n/-- The exponents that survive reduction: `4`, or an odd prime. -/\ndef Reduced (e : \u2115) : Prop := e = 4 \u2228 (Nat.Prime e \u2227 Odd e)\n\n/-- Every exponent `e \u2265 3` factors as `e' * m` with `e'` reduced and `m \u2265 1`. -/\ntheorem exists_reduced_factor {e : \u2115} (he : 3 \u2264 e) :\n    \u2203 e' m : \u2115, e = e' * m \u2227 0 < m \u2227 Reduced e' := by\n  by_cases hodd : \u2203 p : \u2115, p.Prime \u2227 Odd p \u2227 p \u2223 e\n  \u00b7 obtain \u27e8p, hp, hpodd, hpdvd\u27e9 := hodd\n    obtain \u27e8m, hm\u27e9 := hpdvd\n    refine \u27e8p, m, hm, ?_, Or.inr \u27e8hp, hpodd\u27e9\u27e9\n    rcases Nat.eq_zero_or_pos m with rfl | h\n    \u00b7 simp [hm] at he\n    \u00b7 exact h\n  \u00b7 -- no odd prime divides `e`, so `e` is a power of two; `e \u2265 3` forces `4 \u2223 e`\n    push_neg at hodd\n    have h2 : (4 : \u2115) \u2223 e := by\n      have hcompl : Nat.ord_compl[2] e = 1 := by\n        by_contra hne\n        have hpos : 0 < Nat.ord_compl[2] e :=\n          Nat.ord_compl_pos 2 (by omega : e \u2260 0)\n        have h1 : 1 < Nat.ord_compl[2] e := by omega\n        obtain \u27e8q, hq, hqdvd\u27e9 := Nat.exists_prime_and_dvd (by omega : Nat.ord_compl[2] e \u2260 1)\n        have hqe : q \u2223 e := hqdvd.trans (Nat.ord_compl_dvd e 2)\n        have hq2 : q \u2260 2 := by\n          rintro rfl\n          exact Nat.not_dvd_ord_compl (by norm_num) (by omega : e \u2260 0) hqdvd\n        have : Odd q := hq.odd_of_ne_two hq2\n        exact hodd q hq this hqe\n      have hpow : 2 ^ e.factorization 2 = e := by\n        have := Nat.ord_proj_mul_ord_compl_eq_self e 2\n        rw [hcompl, mul_one] at this\n        exact this\n      have hk : 2 \u2264 e.factorization 2 := by\n        by_contra hlt\n        push_neg at hlt\n        interval_cases h : e.factorization 2 <;> omega_nat <;> simp_all\n      calc (4 : \u2115) = 2 ^ 2 := by norm_num\n        _ \u2223 2 ^ e.factorization 2 := pow_dvd_pow 2 hk\n        _ = e := hpow\n    obtain \u27e8m, hm\u27e9 := h2\n    refine \u27e84, m, hm, ?_, Or.inl rfl\u27e9\n    rcases Nat.eq_zero_or_pos m with rfl | h\n    \u00b7 simp [hm] at he\n    \u00b7 exact h\n\n/-- **Primitivity is preserved by taking powers of the bases.**\nThis is the step that must not be waved through: a prime dividing `A ^ a` divides `A`. -/\ntheorem gcd_pow_eq_one {A B C a b c : \u2115}\n    (h : Nat.gcd (Nat.gcd A B) C = 1) :\n    Nat.gcd (Nat.gcd (A ^ a) (B ^ b)) (C ^ c) = 1 := by\n  rw [Nat.eq_one_iff_not_exists_prime_dvd]\n  rintro q hq hdvd\n  have hqA : q \u2223 A ^ a := (Nat.dvd_gcd_iff.mp (Nat.dvd_gcd_iff.mp hdvd).1).1\n  have hqB : q \u2223 B ^ b := (Nat.dvd_gcd_iff.mp (Nat.dvd_gcd_iff.mp hdvd).1).2\n  have hqC : q \u2223 C ^ c := (Nat.dvd_gcd_iff.mp hdvd).2\n  have h1 : q \u2223 A := hq.dvd_of_dvd_pow hqA\n  have h2 : q \u2223 B := hq.dvd_of_dvd_pow hqB\n  have h3 : q \u2223 C := hq.dvd_of_dvd_pow hqC\n  have : q \u2223 Nat.gcd (Nat.gcd A B) C := Nat.dvd_gcd (Nat.dvd_gcd h1 h2) h3\n  rw [h] at this\n  exact hq.one_lt.ne' (Nat.dvd_one.mp this)\n\n/-- **Exponent Reduction Theorem.**\nIf a Beal counterexample exists at all, then one exists whose three exponents each lie in\n`{4} \u222a {odd primes}`.  Hence it suffices to refute those signatures. -/\ntheorem reduction {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    \u2203 A' B' C' x' y' z' : \u2115,\n      IsBealCounterexample A' B' C' x' y' z' \u2227 Reduced x' \u2227 Reduced y' \u2227 Reduced z' := by\n  obtain \u27e8hA, hB, hC, hx, hy, hz, heq, hgcd\u27e9 := h\n  obtain \u27e8x', mx, hxe, hmx, hxr\u27e9 := exists_reduced_factor hx\n  obtain \u27e8y', my, hye, hmy, hyr\u27e9 := exists_reduced_factor hy\n  obtain \u27e8z', mz, hze, hmz, hzr\u27e9 := exists_reduced_factor hz\n  refine \u27e8A ^ mx, B ^ my, C ^ mz, x', y', z', \u27e8?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_\u27e9,\n    hxr, hyr, hzr\u27e9\n  \u00b7 exact Nat.pos_pow_of_pos _ hA\n  \u00b7 exact Nat.pos_pow_of_pos _ hB\n  \u00b7 exact Nat.pos_pow_of_pos _ hC\n  \u00b7 rcases hxr with rfl | \u27e8hp, _\u27e9\n    \u00b7 norm_num\n    \u00b7 exact hp.three_le_of_ne_two (by rintro rfl; simp_all [Nat.even_iff]) |>.le\n  \u00b7 rcases hyr with rfl | \u27e8hp, _\u27e9\n    \u00b7 norm_num\n    \u00b7 exact hp.three_le_of_ne_two (by rintro rfl; simp_all [Nat.even_iff]) |>.le\n  \u00b7 rcases hzr with rfl | \u27e8hp, _\u27e9\n    \u00b7 norm_num\n    \u00b7 exact hp.three_le_of_ne_two (by rintro rfl; simp_all [Nat.even_iff]) |>.le\n  \u00b7 rw [\u2190 pow_mul, \u2190 pow_mul, \u2190 pow_mul, mul_comm mx x', mul_comm my y', mul_comm mz z',\n      \u2190 hxe, \u2190 hye, \u2190 hze]\n    exact heq\n  \u00b7 exact gcd_pow_eq_one hgcd\n\nend Beal\n"
+  },
+  "questions": {
+    "fidelity": {
+      "type": "score",
+      "instructions": "Does this Lean file's formal definition of a Beal counterexample, or of the statement it proves, faithfully encode the original conjecture as described in the target statement? Check in particular: all six values positive integers; all three exponents at least 3 and not 2; the common-factor condition placed on the BASES rather than the exponents; a base equal to 1 not excluded; the equality exact.",
+      "criteria": [
+        "level 0: the file states no Beal-specific statement, for example it is a helper or arithmetic file",
+        "level 1: it states a Beal-related statement that DEVIATES from the target, for example allowing exponent 2, excluding base 1, or putting the gcd condition on the exponents",
+        "level 2: it states a Beal-related statement that appears faithful but restricts to a sub-case without saying so in the statement itself",
+        "level 3: it states a Beal-related statement that matches the target exactly, or a clearly labelled sub-case of it"
+      ]
+    },
+    "axiom_load": {
+      "type": "score",
+      "instructions": "How much of this file's mathematical content is asserted as a custom axiom or left as sorry, rather than proved from mathlib?",
+      "criteria": [
+        "level 0: no axiom and no sorry; everything is proved or is a definition",
+        "level 1: contains sorry or axioms only for elementary facts that a standard library would already provide",
+        "level 2: contains a small number of axioms asserting named external theorems, clearly labelled as such",
+        "level 3: the file's substantive conclusions rest on custom axioms that assert precisely what would otherwise need proving"
+      ]
+    },
+    "vacuous_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that a theorem in this file is VACUOUS or trivially true - for instance because its hypotheses can never be satisfied, because it is derived from an axiom that already asserts the conclusion, or because the quantifiers make it say less than intended?",
+      "criteria": {
+        "true": "a theorem here is derived almost immediately from an axiom asserting the same thing, or has hypotheses that may be unsatisfiable, so that proving it establishes nothing new",
+        "false": "the theorems here have genuine content derived from definitions and library lemmas"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fidelity": {
+        "type": "score",
+        "score": 2.92,
+        "confidence": 0.92,
+        "legend": {
+          "0": "level 0: the file states no Beal-specific statement, for example it is a helper or arithmetic file",
+          "1": "level 1: it states a Beal-related statement that DEVIATES from the target, for example allowing exponent 2, excluding base 1, or putting the gcd condition on the exponents",
+          "2": "level 2: it states a Beal-related statement that appears faithful but restricts to a sub-case without saying so in the statement itself",
+          "3": "level 3: it states a Beal-related statement that matches the target exactly, or a clearly labelled sub-case of it"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.02,
+          "2": 0.04,
+          "3": 0.94
+        }
+      },
+      "axiom_load": {
+        "type": "score",
+        "score": 0.0,
+        "confidence": 1.0,
+        "legend": {
+          "0": "level 0: no axiom and no sorry; everything is proved or is a definition",
+          "1": "level 1: contains sorry or axioms only for elementary facts that a standard library would already provide",
+          "2": "level 2: contains a small number of axioms asserting named external theorems, clearly labelled as such",
+          "3": "level 3: the file's substantive conclusions rest on custom axioms that assert precisely what would otherwise need proving"
+        },
+        "probabilities": {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      },
+      "vacuous_risk": {
+        "type": "noul",
+        "noul": 0.22
+      }
+    },
+    "usage": {
+      "input_tokens": 2925,
+      "output_tokens": 54
+    }
+  }
+}

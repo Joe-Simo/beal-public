@@ -1,0 +1,110 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "vacuity_C161",
+  "timestamp": "2026-09-18T15:37:30-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C) = 1 has no solutions.",
+    "failure_mode": "U322: the Prop `EulerDescentStep`, recorded one cycle earlier as the residual gap of the (3,4,4) chain, was FALSE as stated -- `IsCoprime p q -> p*(p^2+3q^2) = c^3 -> q = 0` is refuted by p = 0, q = 1, c = 0, since IsCoprime 0 1 holds in Z and 0*(0+3) = 0^3. The Lean build stayed green throughout, because an implication from a false hypothesis is still a theorem and everything downstream compiles. The fix was to add p != 0, which the reduction does supply.",
+    "second_mode": "A bounded search that finds nothing proves nothing unless a control shows the searcher can find a positive instance. U317/U318 and U323 each carry such a control; earlier candidates may not.",
+    "candidate": "{\n \"id\": \"C161\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"THE (3,4,4) SURVIVOR ATTACKED BY A COMPLETE METHOD ON THE RIGHT FORM. Writing Y = m/n in lowest terms, the branch condition W^3 = Y^3+108Y^2-1152Y+3072 becomes: the CUBIC binary form R(m,n) = m^3 + 108m^2n - 1152mn^2 + 3072n^3 is a perfect cube, with the extra requirement that m and n both be squares (since Y = y^2). R is irreducible over Q with discriminant -2^22 * 3^5. PARI thue is COMPLETE for each fixed right-hand side, so running it over all cubes w^3 for w = 1..80 enumerates EVERY solution in that range: 85 solutions in total, and ZERO with m and n both positive coprime squares.\",\n \"method\": \"PARI/GP 2.17 thueinit and thue on the cubic form; code/U296_cubic_thue.gp\",\n \"evidence\": \"Of the 85 solutions, 83 are the degenerate [w,0] with n=0. The only two with n nonzero are [16,3] at w=16 and [80,15] at w=80 \\u2014 and [80,15] is 5*[16,3], not primitive. R(16,3) = 4096 = 16^3 verified in Python. Y = 16/3 is not a square, so it is inadmissible.\",\n \"obligations\": [],\n \"failure_reason\": \"\"\n}"
+  },
+  "questions": {
+    "degenerate_instance": {
+      "type": "score",
+      "instructions": "Does this candidate state a claim, a named Prop, or a reduction whose hypotheses allow a DEGENERATE instance -- a zero value, a unit, a base equal to 1, an empty index range, or a trivial solution -- that would make the statement false as written? Judge only whether such an instance is admitted by the stated hypotheses, not whether the intended mathematics is correct.",
+      "criteria": [
+        "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+        "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+        "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+        "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+      ]
+    },
+    "vacuous_downstream": {
+      "type": "score",
+      "instructions": "Does this candidate record a conclusion that DEPENDS on an assumed statement, such that if the assumed statement were false the conclusion would be vacuously true rather than wrong? The danger is a chain that still compiles and still looks green while carrying no content.",
+      "criteria": [
+        "level 0: the candidate's conclusion is proved outright with no assumed statement",
+        "level 1: it depends on an assumed statement and explicitly says so, naming it",
+        "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+        "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+      ]
+    },
+    "search_is_vacuous": {
+      "type": "noul",
+      "instructions": "Does this candidate report a finite or bounded search that found NOTHING, without any control demonstrating the search would have found something had it been there?",
+      "criteria": {
+        "true": "it reports an empty search result with no positive control, no witness, and no demonstration that the search space was non-empty",
+        "false": "it reports no search, or it reports one together with a control, a witness, or an explicit non-vacuity check"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "Given the failure mode described, what should be done with this candidate next?",
+      "criteria": {
+        "countersearch_now": "its stated hypotheses plausibly admit a degenerate counterexample and something load-bearing depends on it",
+        "add_control": "its evidence is an empty search that needs a non-vacuity control before it can be relied on",
+        "restate_hypotheses": "its claim is probably true but stated too loosely to be provable as written",
+        "no_action": "it is a log, a refuted entry, or otherwise carries no claim that could exhibit this mode"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "degenerate_instance": {
+        "type": "score",
+        "score": 1.25,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+          "1": "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+          "2": "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+          "3": "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.25,
+          "2": 0.1,
+          "3": 0.27
+        }
+      },
+      "vacuous_downstream": {
+        "type": "score",
+        "score": 1.04,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the candidate's conclusion is proved outright with no assumed statement",
+          "1": "level 1: it depends on an assumed statement and explicitly says so, naming it",
+          "2": "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+          "3": "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+        },
+        "probabilities": {
+          "0": 0.49,
+          "1": 0.12,
+          "2": 0.23,
+          "3": 0.16
+        }
+      },
+      "search_is_vacuous": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "add_control",
+        "confidence": 0.3,
+        "probabilities": {
+          "no_action": 0.21,
+          "add_control": 0.48,
+          "restate_hypotheses": 0.09,
+          "countersearch_now": 0.22
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1572,
+      "output_tokens": 114
+    }
+  }
+}

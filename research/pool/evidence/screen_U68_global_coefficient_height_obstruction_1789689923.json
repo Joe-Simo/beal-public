@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U68_global_coefficient_height_obstruction",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U68_global_coefficient_height_obstruction.md",
+      "excerpt": "# U68: a global coefficient-divisibility and height obstruction\n\n**Status: written, self-reviewed partial theorems with distinct exact arithmetic checks. Neither the weighted equation nor Beal's conjecture is solved. No independent expert or proof-assistant certification is claimed.**\n\nResearch date: 2026-09-15. Private remote base actually inspected: `78255c2e82c19670b9cd5a2b7c44c4cbdca82783` (U67). The attached U67 archive was restored additively, with conflicting files preserved rather than overwritten. Its main manuscript agrees with the remote blob `ae9b53ae03a1dee3f9eccee002831e8255d7a04c`.\n\n## 1. What changes in this checkpoint\n\nThe active auxiliary equation remains\n\n    (W) X^10 + 256 Y^10 = Z^17,\n        X,Y,Z positive integers, gcd(X,Y)=1.\n\nThe remote quintic U65, precisely identified in U67, supplies the necessary equation\n\n    (Q) beta^17 = X^2 + 2 rho^3 Y^2,\n        rho = positive fifth root of 2,\n        beta = b0+b1 rho+b2 rho^2+b3 rho^3+b4 rho^4 in Z[rho],\n        17 | XY.\n\nIts complete unit elimination, not merely its norm equation, is essential. This is an inherited written/self-reviewed result, not a newly independently certified theorem. U68 does not invoke the boundary congruence (BC), the invalidated U41, a modular-form identification, newspace completeness, or U61/U62.\n\nThe new argument uses **one common integral beta**. Congruences force a large common divisor of three of its coefficients. All five complex embeddings bound those same coefficients from above. A binomial identity prevents all three coefficients from vanishing. This is a global size argument, rather than an attempt to contradict a passing local solution by increasing precision.\n\n### Main conclusions\n\n1. The sparse-root system (Q), with positive coprime X,Y, X odd and 17|XY, satisfies the explicit prime-support inequality in Theorem 1 below.\n2. Every putative weighted solution, using the inherited implication (W) => (Q), has\n\n       max(X,Y) > 10^514.\n\n   Thus at least one of its two left-hand bases has at least 515 decimal digits. This is **not** a computer search through that range: it is a consequence of a proved inequality and fourteen fully specified finite residue certificates.\n3. Let E be the part of XY supported on primes in the following eleven classes modulo 85, counting their full multiplicities:\n\n       1,13,18,33,38,47,52,67,69,72,84.\n\n   Then a putative weighted solution also has\n\n       E > 10^483.\n\n   This is a bound on a product of prime powers, **not** a claim that a single prime exceeds 10^483. In particular that exceptional part cannot be absent.\n\nThese statements do not give an upper bound, eliminate the remaining exceptional-prime possibilities, settle a new complete original-Beal exponent family, or prove the full conjecture. No novelty claim is made.\n\n## 2. The exact prime-support theorem\n\nCall a rational prime **exceptional** when its residue modulo 85 is in the eleven-class list above. The primes 2,5,17 are not in this list.\n\n**Theorem 1 (global sparse-root obstruction).** Suppose (Q) holds with X,Y positive coprime integers, X odd and 17|XY. Write\n\n    T = max(X,Y),\n    E = product of q^v_q(XY) over exceptional primes q,\n    S = XY/E,\n    Delta = S^2/17.\n\nThen Delta is a positive integer and\n\n    Delta | b1, b2, b3,                              (2.1)\n    at least one of b1,b2,b3 is nonzero,              (2.2)\n    T^2 > Delta^17.                                 (2.3)\n\nEquivalently,\n\n    S^34 < 17^17 T^2,\n    E > XY/(sqrt(17) T^(1/17)).                      (2.4)\n\nIn particular E>1: the sparse-root system cannot have every prime factor of XY outside the exceptional classes.\n\nThe theorem is proved in Sections 3\u20136. Its hypotheses state the actual integral element equation; there is no substitution of a norm identity for that equation.\n\n## 3. Exactly where the seventeenth-power map is injective\n\nFor a prime q and n>=1 set\n\n    R(q,n) = (Z/q^n Z)[rho]/(rho^5-2).\n\nIt is a free rank-five module in the displayed basis, even at the ramified primes. Congruence of its coordinates therefore has its usual coefficientwise meaning.\n\n### 3.1 Residue factor degrees away from 2 and 5\n\nFor q not dividing 10, the polynomial rho^5-2 is separable modulo q. Choose one of its roots a and a primitive fifth root zeta in an algebraic closure. Its five roots are a zeta^j. Frobenius acts on their labels by\n\n    j -> q j + c  in F_5\n\nfor one c in F_5. The lengths of these Frobenius orbits are the degrees of the irreducible residue factors: an element is in F_(q^f) precisely when the f-th Frobenius fixes it.\n\nIf q=1 modulo 5, this affine map is either the identity or a nonzero translation. If q is not 1 modulo 5, translate its unique fixed point to zero. Its nonzero cycles then have length equal to the multiplicative order of q modulo 5. Consequently the only degree patterns are\n\n| q modulo 5 | Degrees of the factors of rho^5-2 |\n|---|---|\n| 1 | 1,1,1,1,1 or 5 |\n| 2 or 3 | 1,4 |\n| 4 | 1,2,2 |\n\nThe unit group modulo q is the p",
+      "length_chars": 20663
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.66,
+        "confidence": 0.34,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.72,
+          "1": 0.07,
+          "2": 0.04,
+          "3": 0.17
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.21,
+        "confidence": 0.79,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.93,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.06
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.39,
+        "probabilities": {
+          "verify_literature": 0.02,
+          "verify_computation": 0.17,
+          "audit_later": 0.51,
+          "audit_now": 0.22,
+          "no_action": 0.08
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2762,
+      "output_tokens": 125
+    }
+  }
+}

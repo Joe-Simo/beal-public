@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C060_audit_Quartic400g2",
+  "timestamp": "2026-09-18T01:03:11-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "hyp": "Quartic400g2"
+  },
+  "questions": {
+    "implied": {
+      "type": "score",
+      "instructions": "Second reader: is the Lean hypothesis implied by the cited facts?",
+      "criteria": [
+        "0 stronger than source",
+        "1 needs a condition",
+        "2 implied modulo detail",
+        "3 clearly implied"
+      ]
+    },
+    "issue": {
+      "type": "choice",
+      "instructions": "Issue if any",
+      "criteria": {
+        "none": "none",
+        "infinity": "points at infinity",
+        "jac_iso": "the curve-to-Jacobian bijection argument",
+        "torsion": "torsion size vs number of points",
+        "rank_cond": "rank is conditional"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "implied": {
+        "type": "score",
+        "score": 2.55,
+        "confidence": 0.55,
+        "legend": {
+          "0": "0 stronger than source",
+          "1": "1 needs a condition",
+          "2": "2 implied modulo detail",
+          "3": "3 clearly implied"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.07,
+          "2": 0.16,
+          "3": 0.72
+        }
+      },
+      "issue": {
+        "type": "choice",
+        "choice": "none",
+        "confidence": 0.54,
+        "probabilities": {
+          "rank_cond": 0.07,
+          "infinity": 0.02,
+          "none": 0.64,
+          "jac_iso": 0.08,
+          "torsion": 0.19
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 552,
+      "output_tokens": 71
+    }
+  }
+}

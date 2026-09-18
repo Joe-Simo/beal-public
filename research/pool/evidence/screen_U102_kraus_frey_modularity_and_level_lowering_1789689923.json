@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U102_kraus_frey_modularity_and_level_lowering",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U102_kraus_frey_modularity_and_level_lowering.md",
+      "excerpt": "# U102: Modularity, Level Lowering, and Classical Newform Enumeration for the Kraus Frey Curve Attached to $A^3 + B^3 = C^p$\n\n**Author**: Arithmetic Geometry & Automorphic Forms Research Group  \n**Date**: 2026-09-17  \n**Status**: Exact symbolic verification, Tate's algorithm conductor certificate, Ribet level-lowering theorem chain, and complete newform enumeration in Cremona / LMFDB.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint provides a complete arithmetic-geometric investigation of the classical **Kraus Frey elliptic curve** attached to the generalized Fermat equation of signature $(3, 3, p)$:\n$$A^3 + B^3 = C^p, \\quad \\gcd(A, B) = 1, \\quad p \\ge 5 \\text{ prime}, \\quad A B C \\ne 0.$$\n\nWe resolve all 7 points of the investigation:\n1. **The Kraus Model**: Defined over $\\mathbb{Q}$ by the Weierstrass equation:\n   $$E: y^2 = x^3 + 3AB x + (B^3 - A^3).$$\n   The cubic factors over $\\mathbb{Q}$ as $(x - (A - B))(x^2 + (A - B)x + (A^2 + AB + B^2))$, producing the rational 2-torsion point $P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$.\n2. **Discriminant**:\n   - The polynomial discriminant of $P(x) = x^3 + 3AB x + (B^3 - A^3)$ is:\n     $$\\operatorname{disc}(P) = -(4(3AB)^3 + 27(B^3 - A^3)^2) = -27 (A^3 + B^3)^2 = -27 C^{2p}.$$\n   - The standard Weierstrass curve discriminant is:\n     $$\\Delta(E) = 16 \\operatorname{disc}(P) = -432 (A^3 + B^3)^2 = -2^4 \\cdot 3^3 C^{2p}.$$\n   - The Weierstrass invariants are $c_4 = -144 AB = -2^4 \\cdot 3^2 AB$ and $c_6 = 864(A^3 - B^3) = 2^5 \\cdot 3^3(A^3 - B^3)$, satisfying $c_4^3 - c_6^2 = 1728 \\Delta(E)$.\n3. **Conductor Support**:\n   - Away from 2, 3, and $C$: $v_q(\\Delta) = 0$, so $E$ has good reduction.\n   - For primes $q \\mid C$ with $q > 3$: $\\gcd(A, B) = 1 \\implies q \\nmid AB \\implies v_q(c_4) = 0$. Since $v_q(\\Delta) = 2p v_q(C) > 0$, $E$ has multiplicative reduction (Kodaira type $I_{2p v_q(C)}$) with conductor exponent $v_q(N) = 1$.\n   - Hence, the prime factors of the minimal conductor $N$ of $E$ **strictly divide $2 \\cdot 3 \\cdot C$**:\n     $$N = 2^{f_2} \\cdot 3^{f_3} \\cdot \\prod_{\\substack{q \\mid C \\\\ q > 3}} q.$$\n4. **Ribet's Level Lowering**:\n   - $E/\\mathbb{Q}$ is modular (Wiles 1995, BCDT 2001).\n   - For all $p \\ge 5$, the Galois representation $\\rho_{E, p}: G_\\mathbb{Q} \\to \\mathrm{GL}_2(\\mathbb{F}_p)$ is **absolutely irreducible** (Mazur 1978, Kraus 1998, Dahmen 2008).\n   - At each prime $q \\mid C$ ($q > 3$), $v_q(\\Delta) = 2p v_q(C) \\equiv 0 \\pmod p$. By Ribet's Level-Lowering Theorem (1990), $q$ is eliminated from the conductor of $\\rho_{E, p}$.\n   - Consequently, $\\rho_{E, p}$ arises from a cuspidal newform of weight 2 and level:\n     $$N_p = 2^a \\cdot 3^b.$$\n5. **Exact Conductor Exponents $a$ and $b$**:\n   - $b = 2$ universally ($3^b = 9$).\n   - $a \\in \\{1, 2, 3, 4, 5, 6\\}$, giving $N_p \\in \\{18, 36, 72, 144, 288, 576\\}$:\n     - $a = 1 \\implies N_p = 18$: occurs when $C$ is even ($A \\equiv 1, B \\equiv 3 \\pmod 4$).\n     - $a = 2 \\implies N_p = 36$: occurs when $C$ is odd, $v_2(A) \\ge 2$, and $B \\equiv 1 \\pmod 4$.\n     - $a = 3 \\implies N_p = 72$: occurs when $C$ is odd, $v_2(A) = 1$, and $B \\equiv 1 \\pmod 4$.\n     - $a = 4 \\implies N_p = 144$: occurs when $B \\equiv 3 \\pmod 4$ (quadratic twist by $-1$) or $C$ even.\n     - $a = 5 \\implies N_p = 288$: occurs when $A, B$ are both odd with $v_2(A+B) = 1$.\n     - $a = 6 \\implies N_p = 576$: occurs under quadratic twisting by $\\pm 2$.\n6. **Newform Spaces and Cremona / LMFDB Enumeration**:\n   - Level 18: $\\dim S_2^{\\mathrm{new}}(18) = 0$ $\\implies$ **$C$ is never even**!\n   - Level 36: $\\dim = 1$ (`36a1`, $y^2 = x^3 + 1$, CM by $\\mathbb{Q}(\\sqrt{-3})$) $\\implies$ **strictly eliminated for all $p \\ge 5$**.\n   - Level 72: $\\dim = 1$ (`72a1`, $y^2 = x^3 + 6x - 7$, non-CM, matching boundary $(1, -1)$) $\\implies$ **eliminated via Kraus sieve / symplectic method**.\n   - Level 144: $\\dim = 2$ (`144a1` non-CM, `144b1` CM) $\\implies$ twists of `72a1` and `36a1`.\n   - Level 288: $\\dim = 5$ (`288a1` through `288e1`).\n   - Level 576: $\\dim = 9$ (`576a1` through `576i1`).\n\n---\n\n## 2. The Kraus Frey Elliptic Curve\n\n### 2.1 Construction\nIn his foundational 1998 paper (*Sur l'\u00e9quation $a^3 + b^3 = c^p$*, Experimental Mathematics 7(1): 1\u201313), Alain Kraus introduced the Frey elliptic curve for the signature $(3, 3, p)$ Diophantine equation $A^3 + B^3 = C^p$:\n$$E_{A, B}: y^2 = x^3 + 3AB x + (B^3 - A^3).$$\n\nIn standard Weierstrass notation $y^2 = x^3 + a_2 x^2 + a_4 x + a_6$:\n$$a_1 = 0, \\quad a_2 = 0, \\quad a_3 = 0, \\quad a_4 = 3AB, \\quad a_6 = B^3 - A^3.$$\n\n### 2.2 Factorization and Rational 2-Torsion\nThe right-hand cubic polynomial factors over $\\mathbb{Q}$ as:\n$$x^3 + 3AB x + (B^3 - A^3) = (x - (A - B))\\left(x^2 + (A - B)x + (A^2 + AB + B^2)\\right).$$\n\n*Proof of Factorization*:\nLet $u = A - B$. Expanding $(x - u)(x^2 + ux + (A^2 + AB + B^2))$:\n$$(x - u)(x^2 + ux + (A^2 + AB + B^2)) = x^3 + (A^2 + AB + B^2 - u^2)x - u(A^2 + AB + B^2).$$\nSubstituting $u^2 = (A - B)^2 = A^2 - 2AB + B^2$:\n$$(A^2 + AB + B^2) - (A^2 - 2AB + B^2) = 3AB.$$\nFurtherm",
+      "length_chars": 17840
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.82,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.32,
+          "1": 0.59,
+          "2": 0.04,
+          "3": 0.05
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.24,
+        "confidence": 0.76,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.91,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.39,
+        "probabilities": {
+          "verify_literature": 0.02,
+          "audit_now": 0.52,
+          "verify_computation": 0.16,
+          "audit_later": 0.26,
+          "no_action": 0.04
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3559,
+      "output_tokens": 124
+    }
+  }
+}

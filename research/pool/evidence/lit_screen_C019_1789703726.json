@@ -1,0 +1,83 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "lit_screen_C019",
+  "timestamp": "2026-09-17T23:55:26-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "literature": "Literature (primary source arXiv:2412.11933, survey of solved cases): fully solved with all exponents>=3 are (3,3,n) for n<=10^9, (n,n,3) for n>=3, (n,n,n) for n>=3. Effective-finiteness only (not solved): (2p,2q,r) with p,q>=V_r [arXiv:2509.21083]. NOT solved: (4,4,5), (4,4,7), (4,6,3), any (2m,2n,r odd) with m!=n, (3,5,7), (5,5,7).",
+    "id": "C019",
+    "status": "PARTIAL_RESULT",
+    "claim": "Whenever 3|x, 3|y and 3|z, A^x + B^y = C^z has no positive solutions; in particular no Beal counterexample has such a signature, including the Fermat cubic (3,3,3)."
+  },
+  "questions": {
+    "subsumed": {
+      "type": "noul",
+      "instructions": "Is this candidate's claim ENTIRELY implied by the solved families listed?",
+      "criteria": {
+        "true": "yes, fully subsumed",
+        "false": "no, it says something about open signatures"
+      }
+    },
+    "touches_open": {
+      "type": "score",
+      "instructions": "How directly does this candidate bear on a signature family the literature leaves OPEN?",
+      "criteria": [
+        "level 0: not at all",
+        "level 1: tangentially",
+        "level 2: it is a necessary condition on an open family",
+        "level 3: it reduces or reformulates an open family"
+      ]
+    },
+    "retarget": {
+      "type": "choice",
+      "instructions": "Best next action for this candidate given the literature.",
+      "criteria": {
+        "close": "mark DUPLICATE of a literature result",
+        "keep": "keep as necessary condition",
+        "sharpen": "restrict it to the open families and sharpen",
+        "combine": "combine with the (2m,2n,z odd) Z[i] reduction (C045)"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "subsumed": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "touches_open": {
+        "type": "score",
+        "score": 0.75,
+        "confidence": 0.25,
+        "legend": {
+          "0": "level 0: not at all",
+          "1": "level 1: tangentially",
+          "2": "level 2: it is a necessary condition on an open family",
+          "3": "level 3: it reduces or reformulates an open family"
+        },
+        "probabilities": {
+          "0": 0.53,
+          "1": 0.28,
+          "2": 0.09,
+          "3": 0.1
+        }
+      },
+      "retarget": {
+        "type": "choice",
+        "choice": "close",
+        "confidence": 0.55,
+        "probabilities": {
+          "close": 0.67,
+          "keep": 0.04,
+          "combine": 0.03,
+          "sharpen": 0.26
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 770,
+      "output_tokens": 82
+    }
+  }
+}

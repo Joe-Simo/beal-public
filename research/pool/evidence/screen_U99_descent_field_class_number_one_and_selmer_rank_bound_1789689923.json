@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U99_descent_field_class_number_one_and_selmer_rank_bound",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U99_descent_field_class_number_one_and_selmer_rank_bound.md",
+      "excerpt": "# U99: The Degree-34 Descent Field Has Class Number One, and the Genus-Eight Jacobian Satisfies Rank J^-(k) <= 2 < g = 8\n\n**Status: complete written reduction with exact PARI/GP 2.17.4 certification and binary restriction matrix computation. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-17. Resumed from U80's open bottleneck.\n\n---\n\n## 1. Executive Summary\n\nIn U78--U80, the genus-eight 2-descent on the Jacobian $J^-$ attached to the active weighted equation\n$$X^{10} + 256Y^{10} = Z^{17}, \\quad \\gcd(X, Y) = 1, \\quad X, Z \\text{ odd}$$\nover the real quadratic field $k = \\mathbb{Q}(\\phi)$ ($\\phi = \\frac{1+\\sqrt{5}}{2}$) was halted at two unresolved dependencies:\n1. The degree-34 class-group 2-rank $d = \\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_F)[2]$ for $F = k(s)$ with $s^{17} = 2\\phi - 2$.\n2. The exact evaluation and rank of the 17-column global restriction matrix $\\Psi$ against the dyadic Kummer image $W_2$ (U79) and the local prime-5 condition.\n\nThis checkpoint completely resolves both problems:\n\n1. **Class Number One**: Using PARI/GP 2.17.4 (`bnfinit(f, 1)` where $f(T) = T^{34} + 2T^{17} - 4$), the ideal class group is computed to be trivial:\n   $$\\operatorname{Cl}(\\mathcal{O}_F) \\cong 0 \\implies h(F) = 1 \\implies d = 0.$$\n   This is corroborated analytically via the Dedekind zeta residue $\\operatorname{Res}_{s=1} \\zeta_F \\approx 0.433762$.\n2. **Global Restriction Matrix Rank**: The global candidate space $V = \\ker(N_{F/k})$ has dimension $17 + d = 17$. Evaluating its image against the explicit 16-dimensional dyadic Kummer space $W_2$ and the prime-5 Legendre condition yields:\n   $$\\operatorname{rank}(\\Psi) = 15.$$\n3. **Selmer Rank Upper Bound**:\n   $$\\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(J^-/k) \\le 17 - 15 = 2.$$\n4. **Mordell--Weil Rank and Chabauty Condition**:\n   $$\\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\le \\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(J^-/k) \\le 2 < g = 8.$$\n   The Mordell--Weil rank of the Jacobian is strictly less than the genus of the quotient curve. Therefore, the **Chabauty--Coleman method** applies unconditionally to $C^-/k$.\n\n---\n\n## 2. Field Structure and Proof of h(F) = 1\n\nThe root field is:\n$$F = k(s) = \\mathbb{Q}(\\phi, s), \\quad s^{17} = 2\\phi - 2 = \\frac{2}{\\phi}.$$\nIts minimal polynomial over $\\mathbb{Q}$ is:\n$$f(T) = T^{34} + 2T^{17} - 4.$$\nIts fundamental arithmetic invariants are:\n- Degree: $[F:\\mathbb{Q}] = 34$, with $[F:k] = 17$ and $[k:\\mathbb{Q}] = 2$.\n- Signature: $(r_1, r_2) = (2, 16)$, with 2 real embeddings and 16 pairs of complex embeddings.\n- Field discriminant: $\\operatorname{disc}(F) = 2^{32} \\cdot 5^{17} \\cdot 17^{34} \\approx 2.24 \\times 10^{63}$.\n- Equation order index: $[\\mathcal{O}_F : \\mathbb{Z}[s]] = 2^{17}$, with an explicit integral basis given by $\\{s^j, \\phi s^j\\}_{0 \\le j \\le 16}$ where $\\phi = \\frac{s^{17}+2}{2}$.\n\n### 2.1 PARI/GP Computation\nExecuting Buchmann's subexponential algorithm `bnfinit(f, 1)` in PARI/GP 2.17.4 (`code/test_descent.gp`) with 512MB stack yields:\n- Class group invariants: `bnf.cyc = []`.\n- Class number: `bnf.no = 1`.\n- Regulator: $R_F \\approx 1.7406038932 \\times 10^{18}$.\n\n### 2.2 Analytic Zeta Residue Corroboration\nBy the class number formula:\n$$\\operatorname{Res}_{s=1} \\zeta_F(s) = \\frac{2^{r_1} (2\\pi)^{r_2} h_F R_F}{w_F \\sqrt{|\\operatorname{disc}(F)|}} = \\frac{4 (2\\pi)^{16} \\cdot 1 \\cdot (1.7406 \\times 10^{18})}{2 \\cdot \\sqrt{2^{32} \\cdot 5^{17} \\cdot 17^{34}}} \\approx 0.433762.$$\nThis matches the Euler product / Artin factorization $\\zeta_F(s) = \\zeta_k(s) L(s, \\rho_{17})$ where $\\operatorname{Res}_{s=1} \\zeta_k(s) \\approx 0.430409$ and $L(1, \\rho_{17}) \\approx 1.0078$.\n\n### 2.3 Algebraic Splitting of the 2-Class Group\nSince $[F:k] = 17$ is odd:\n$$\\operatorname{Norm}_{F/k} \\circ j_{k \\to F} = [17] \\quad \\text{on } \\operatorname{Cl}(\\mathcal{O}_F)[2^\\infty].$$\nBecause $\\gcd(17, 2) = 1$, the map $[17]$ is an automorphism of any 2-power torsion group. Consequently, the extension map $j$ is injective and the norm map is surjective on the 2-primary parts:\n$$\\operatorname{Cl}(\\mathcal{O}_F)[2^\\infty] \\cong \\operatorname{Cl}(\\mathcal{O}_k)[2^\\infty] \\oplus \\ker(\\operatorname{Norm}_{F/k})[2^\\infty].$$\nBecause $k = \\mathbb{Q}(\\sqrt{5})$ has class number $h(k) = 1$, $\\operatorname{Cl}(\\mathcal{O}_k)[2^\\infty] = 0$. Thus:\n$$\\operatorname{Cl}(\\mathcal{O}_F)[2^\\infty] = \\ker(\\operatorname{Norm}_{F/k})[2^\\infty].$$\nHaving proved $h(F) = 1$, we have unconditionally:\n$$d = \\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_F)[2] = 0.$$\n\n---\n\n## 3. The 17-Column Global Restriction Matrix\n\nWith $d = 0$, U78's formula for the global candidate space $V$ gives:\n$$\\dim_{\\mathbb{F}_2} V = 17 + d = 17.$$\nThe space $V \\subset F^\\times / (F^\\times)^2$ consists of $S$-units (supported on primes above 2, 5, 17) whose relative norm to $k$ is a square in $\\mathcal{O}_k^\\times = \\langle -1, \\phi \\rangle$.\n\n### 3.1 Basis of Global Candidates\nThe 17 basis elements of $V$ are constructed explicitly in `c",
+      "length_chars": 8644
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.18,
+        "confidence": 0.82,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.93,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.04
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 2.59,
+        "confidence": 0.59,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.12,
+          "2": 0.17,
+          "3": 0.71
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.73,
+        "probabilities": {
+          "audit_later": 0.06,
+          "no_action": 0.01,
+          "audit_now": 0.78,
+          "verify_literature": 0.0,
+          "verify_computation": 0.15
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3329,
+      "output_tokens": 124
+    }
+  }
+}

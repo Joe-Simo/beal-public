@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U62_coefficient_two_coverage",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U62_coefficient_two_coverage.md",
+      "excerpt": "# U62: closing the coefficient-two implication and recording its exact Beal coverage\n\nStatus: complete written proof of a partial theorem, with self-review and exact computational corroboration. Independent expert review and proof-assistant verification remain outstanding. The full Beal conjecture is not solved.\n\nResearch session: 2026-09-14, America/New_York. Base remote revision inspected: f772322044f1ce18cc2aa6c4876d07f0fe88f3ec (U60). U61 was recovered from its actual attached evidence archive and its mathematical computations were replayed, not inferred from an earlier chat summary.\n\n## 1. Claims and scope\n\n**Theorem 1 (coefficient two).** For positive integers X,Y,Z with gcd(X,Y)=1,\n\n    X^10 + Y^10 = 2 Z^17\n\nimplies (X,Y,Z)=(1,1,1).\n\n**Corollary 2 (a family in the original Beal problem).** For integers r>=2, k>=1, l>=1, there is no solution in positive integers E,O,C to\n\n    E^(2r) + O^(10k) = C^(34l),\n    gcd(E,O,C)=1,\n    E even, O odd.\n\nThe letters E and O specify the parities of the bases; they are not an ordering by size. Interchanging the two summands gives the same covered family. The equation with an even base carrying exponent 10k and an odd base carrying the other exponent is NOT automatically covered by this statement.\n\nThese claims depend on the written U61 exclusion and the established external theorem identified below. They are not claims of a complete Beal solution, global novelty, independent expert acceptance, formal verification, or prize eligibility.\n\n## 2. External dependency checked at its original source\n\nBillerey, Chen, Dieulefait and Freitas, *A multi-Frey approach to Fermat equations of signature (r,r,p)*, Transactions of the AMS 371 (2019), 8651-8677, DOI 10.1090/tran/7477. The inspected author text is arXiv:1703.06530v4, Theorem 5 and its proof in section 5.1, together with Proposition 4(2).\n\nThe application needed here is only this: a nontrivial primitive solution of a^5+b^5=2c^17 cannot have 5 dividing a+b. The source's nontriviality and primitivity definitions were checked. Its proof covers p=17 without an additional congruence restriction. This is a use of an established theorem, not a claim to have rerun the authors' Hilbert-newform computation. The source/version record is in references/U62_sources.md.\n\n## 3. Reduction to two coprime seventeenth powers\n\nSuppose X,Y,Z satisfy Theorem 1. If X=Y, coprimality gives X=Y=1 and the equation gives Z=1. Hence assume X!=Y for the remainder of the contradiction argument. A base equal to one is not otherwise excluded.\n\nThe equation modulo 2 says X and Y have the same parity. Their coprimality makes both odd. Their tenth powers are 1 modulo 8, so Z is odd as well. Any prime dividing X and Z would divide Y by the equation, and conversely; thus the three bases are pairwise coprime.\n\nPut a=X^2 and b=Y^2. Then gcd(a,b)=1 and\n\n    a^5+b^5=2Z^17.\n\nThis is nontrivial in the source's sense: X!=Y and positivity imply |abZ|>1. Section 2 therefore gives 5 not dividing a+b.\n\nDefine\n\n    Phi(a,b)=a^4-a^3b+a^2b^2-ab^3+b^4.\n\nThe identities\n\n    (a+b)Phi(a,b)=a^5+b^5,\n    Phi(a,b) mod (a+b) = 5b^4\n\nshow that gcd(a+b,Phi) divides 5: gcd(a+b,b)=1. Since 5 does not divide a+b, the two factors are coprime. They are positive; Phi is odd and a+b is twice an odd number because a and b are odd squares. Unique factorization of positive integers now gives coprime positive u,v with\n\n    a+b=2u^17,   Phi(a,b)=v^17,   Z=uv.             (3.1)\n\nThe exact exponent of 2 is checked here rather than discarded by a normalization of unequal exponents. At an odd prime only one of the two coprime factors can carry its valuation, which must be a multiple of 17.\n\n## 4. The Gaussian equation, including signs and primitive coordinates\n\nSet\n\n    m=(X+Y)/2,    n=(X-Y)/2.\n\nBoth are integers, m>0 and n!=0. Their gcd is one: a common divisor would divide X and Y. Also m+n=X is odd, so m and n have opposite parity. No assumption X>Y is made; n may be negative. Equation (3.1) gives\n\n    m^2+n^2=u^17.                                  (4.1)\n\nA common Gaussian prime divisor of m+in and m-in divides both 2m and 2n. Bezout for gcd(m,n)=1 forces it above 2, but 1+i does not divide m+in when the coordinates have opposite parity. The Gaussian factors are therefore coprime.\n\nThe Euclidean property of Z[i] and (4.1) imply m+in=eta*beta^17, where eta is a Gaussian unit. Since eta^17=eta, replace beta by eta*beta to absorb the unit. Write beta=r+is. Then\n\n    m+in=(r+is)^17.                                (4.2)\n\nIf a rational prime divided r and s it would divide m and n, so gcd(r,s)=1. If r and s were both odd, their norm would be even and so would m^2+n^2, which it is not. They cannot both be even by coprimality. Thus r,s have opposite parity. All Gaussian hypotheses of U61's Theorem A are present.\n\n## 5. Quadratic-field ideal descent with every exceptional prime retained\n\nLet omega=(1+sqrt(5))/2 and K5=Q(sqrt(5)). Its integer ring is Z[omega], with omega^2=omega+1. Define\n\n    h0=m^4+30m^",
+      "length_chars": 15236
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.52,
+        "confidence": 0.48,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.8,
+          "1": 0.03,
+          "2": 0.03,
+          "3": 0.14
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.41,
+        "confidence": 0.59,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.84,
+          "1": 0.02,
+          "2": 0.01,
+          "3": 0.13
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.27,
+        "probabilities": {
+          "audit_later": 0.41,
+          "audit_now": 0.33,
+          "no_action": 0.05,
+          "verify_literature": 0.15,
+          "verify_computation": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2820,
+      "output_tokens": 125
+    }
+  }
+}

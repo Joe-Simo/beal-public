@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C004_C044",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C004",
+      "status": "PARTIAL_RESULT",
+      "claim": "Mixed-weight cubic Pade approximation forces max(X, Y) > 10^25993 for any solution of the weighted equation."
+    },
+    "B": {
+      "id": "C044",
+      "status": "BLOCKED",
+      "claim": "NEGATIVE: on the exponent>=2 model (100 coprime vs 436 non-coprime solutions, bases<=120, exponents<=15, A!=B, bases>=2), no ordering, gap, exponent-order or residue feature among 22 tested separates coprime from non-coprime solutions, except features logically equivalent to coprimality itself (gcd(A,B)>1; C divides a base; A^x=B^y)."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.44,
+        "confidence": 0.56,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.68,
+          "1": 0.2,
+          "2": 0.11,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.15
+      }
+    },
+    "usage": {
+      "input_tokens": 590,
+      "output_tokens": 34
+    }
+  }
+}

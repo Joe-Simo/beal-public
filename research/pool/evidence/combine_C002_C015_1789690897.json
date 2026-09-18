@@ -1,0 +1,115 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C002_C015",
+  "timestamp": "2026-09-17T20:21:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U96_azon_theorem523_audit_and_lift_status.md",
+        "research/checkpoints/U94_Breuil_Diamond_local_lift_obligations.md"
+      ],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "U96 audit against the primary source found Theorem 5.23 requires Hypothesis 5, which fails identically for the weighted equation. The route is blocked at its stated hypotheses, not merely unfinished.",
+      "novelty_note": "Records the specific hypothesis failure so the loop does not re-attempt Azon-style level lowering unchanged.",
+      "extracted": [
+        "Hypothesis 5 of Azon Thm 5.23 is the precise failing ingredient: any replacement route must supply level lowering without it",
+        "The prime-5 local lift obligation was separately discharged in U98 and is reusable"
+      ],
+      "id": "C002",
+      "status": "BLOCKED",
+      "claim": "Level lowering in the style of Azon arXiv:2504.01967v2 Theorem 5.23 applies to the weighted equation X^10 + 256 Y^10 = Z^17 and eliminates the surviving Frey representation.",
+      "method": "Modular level lowering over a totally real field via Breuil-Diamond Theorem 3.2.2 local lift hypotheses."
+    },
+    "candidate_B": {
+      "parents": [
+        "C009"
+      ],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_lean_axiom_countersearch.py"
+      ],
+      "obligations": [
+        "no Lean toolchain is installed, so NOTHING in formal/ has ever been checked",
+        "7 sorry occurrences: Signature3.lean (4), Signature238.lean (1), Signature4.lean (1), Mihailescu.lean (1)",
+        "5 axioms carry the entire mathematical content: flt_3, freitas_theorem_mod_3, kraus_even_c_level18_newform, bruin_classification_signature_238, mihailescu_theorem",
+        "the formal statements must be audited against the ORIGINAL conjecture: a compiling file that proves the wrong statement is worthless"
+      ],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": "The only candidate whose evaluator is a proof kernel rather than a derivation or a computation. Its failure mode is mechanical (install/compile) rather than mathematical, which makes it unusually cheap relative to its evidential value.",
+      "extracted": [],
+      "id": "C015",
+      "claim": "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero custom axioms outside a clearly quarantined and labelled set of external theorems, and its formal statements faithfully encode the original Beal statement.",
+      "method": "Install a Lean toolchain; compile; replace the four padicValNat axioms with mathlib lemmas; replace flt_3 with mathlib fermatLastTheoremThree; quarantine or discharge the remaining Class B axioms; eliminate the 7 sorry occurrences.",
+      "status": "ACTIVE"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.61,
+        "confidence": 0.39,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.48,
+          "1": 0.44,
+          "2": 0.07,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 1524,
+      "output_tokens": 53
+    }
+  }
+}

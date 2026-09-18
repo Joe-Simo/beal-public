@@ -1,0 +1,118 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C128_C015",
+  "timestamp": "2026-09-18T15:58:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [
+        "C127",
+        "C121",
+        "C120"
+      ],
+      "inspirations": [
+        "asking how many of the three exponents a rigid object can carry, rather than what its rank or field must be"
+      ],
+      "evidence": "Two full punctures consume 2n of the 2n+2 budget, leaving at most 2 for the third; three would need 3n, and 3n > 2n+2 exactly when n > 2. Exhaustive enumeration for n = 3..12: the maximum number of full punctures is 2 at every rank, and the third puncture has exactly 2 distinct eigenvalues in every such triple. At n = 2 all three can be full, which is the classical hypergeometric case.",
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "",
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C128",
+      "status": "BLOCKED",
+      "claim": "SHARPEST FORM OF THE OBSTRUCTION: a rigid local system on P^1 minus {0,1,inf} of rank n >= 3 carries AT MOST TWO exponents. Call a puncture FULL when its local monodromy is regular semisimple (n distinct eigenvalues), the state that can carry a whole exponent. Then at most two punctures are full, and when exactly two are, the third has EXACTLY 2 distinct eigenvalues.",
+      "method": "counting proof from the C121 budget plus exhaustive enumeration, code/U261_two_of_three.py; Lean 4 + mathlib theorems three_full_exceeds_budget and two_full_leaves_two, lake build passes, 0 sorry",
+      "open_obligations": "",
+      "novelty": "This is the whole obstruction in one line: TWO EXPONENTS FIT, THE THIRD DOES NOT. It explains the literature s method directly \u2014 every published closure proceeds through a reduction, (p,p,r), (n,n,2), (n,n,3), (2,3,n), each of which leaves at most two independent exponents to carry. Beal needs three, and no rigid object of rank >= 3 has room."
+    },
+    "candidate_B": {
+      "parents": [
+        "C009"
+      ],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_lean_axiom_countersearch.py"
+      ],
+      "obligations": [
+        "STATEMENT FIDELITY of IsBealCounterexample and BealConjecture: now covered by 16 machine-checked examples in formal/Beal/FidelityCheck.lean (U327/C182).",
+        "REMAINING: fidelity of the fourteen named hypothesis Props against their cited primary sources, which are not all held in references/. C178 rules out degenerate falsity but not citation mismatch."
+      ],
+      "evaluations": {
+        "U177": "root lake build completes successfully for all 23 tracked modules (Lean 4.14.0 / mathlib v4.14.0), 0 sorry, no custom axioms in any module added since U113; TaxonomyExtensions repaired (two case-analysis proofs rewritten, statements unchanged).",
+        "STALE_CORRECTED_U326": "STALE OBLIGATIONS, corrected. Every obligation recorded here is now out of date and three of them are simply false as of this session: (1) 'no Lean toolchain is installed, so NOTHING in formal/ has ever been checked' -- Lean 4.14.0 + mathlib v4.14.0 build cleanly and lake build succeeds; (2) '7 sorry occurrences' -- the root chain has ZERO sorry (only the unimported, non-compiling SquarefreeCore.lean is excluded from the build); (3) '5 axioms carry the entire mathematical content' -- all five were converted to named Props (MihailescuTheorem, KrausEvenCLevel18Newform, FreitasTheoremMod3, BruinClassification238, and flt_3 replaced by mathlib's fermatLastTheoremThree), so the root chain has ZERO custom axioms. The fourth obligation, statement fidelity against the ORIGINAL conjecture, STANDS and is partly addressed by formal/Beal/FidelityCheck.lean. Found by the U326 Jev vacuity screen, which ranked C015 among its countersearch_now hits."
+      },
+      "failure_reason": null,
+      "novelty_note": "The only candidate whose evaluator is a proof kernel rather than a derivation or a computation. Its failure mode is mechanical (install/compile) rather than mathematical, which makes it unusually cheap relative to its evidential value.",
+      "extracted": [],
+      "id": "C015",
+      "claim": "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero custom axioms outside a clearly quarantined and labelled set of external theorems, and its formal statements faithfully encode the original Beal statement.",
+      "method": "Install a Lean toolchain; compile; replace the four padicValNat axioms with mathlib lemmas; replace flt_3 with mathlib fermatLastTheoremThree; quarantine or discharge the remaining Class B axioms; eliminate the 7 sorry occurrences.",
+      "status": "PROMISING"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 1.0,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.23,
+          "1": 0.57,
+          "2": 0.16,
+          "3": 0.04
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.11
+      }
+    },
+    "usage": {
+      "input_tokens": 2024,
+      "output_tokens": 53
+    }
+  }
+}

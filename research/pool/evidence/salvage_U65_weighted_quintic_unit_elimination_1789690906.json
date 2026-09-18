@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U65_weighted_quintic_unit_elimination",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U65_weighted_quintic_unit_elimination.md",
+    "excerpt": "# U65: the last Hecke check and an untwisted quintic descent\n\n**Status: written partial theorems and exhaustive finite certificates, with same-model self-review and distinct exact implementations. The weighted equation and the full Beal conjecture remain unresolved. No independent expert or proof-assistant certification is claimed.**\n\nDate: 2026-09-15 UTC. Base private repository revision: `43e60e0480485cb3c4f003f6ec8232674083848d` (U64). Existing U63/U64 archives, manuscripts, code and the current remote README were inspected before this extension. U41 remains invalidated; this checkpoint does not reinstate it.\n\n## 1. Scope and results\n\nThe original target remains the positive-integer implication\n\n    A^x+B^y=C^z, x,y,z>=3  =>  gcd(A,B,C)>1.\n\nThe active weighted auxiliary equation is\n\n    X^10+256Y^10=Z^17, X,Y,Z>0, gcd(X,Y)=1.             (W)\n\nPut U=X^2, V=2Y^2, and let rho be the positive real fifth root of 2. The new, unconditional necessary condition for (W), at the written-proof/computational-certificate level, is\n\n    X^2+2*rho^3*Y^2 = beta^17,\n    beta in Z[rho], Norm(beta)=Z,\n    17 divides exactly one of X,Y.                    (1)\n\nIn particular, there is **no remaining unit ambiguity** in this quintic-field equation. The proof first establishes 289 explicit unit classes, then excludes 288 using necessary congruences modulo 17^2 and the independent Gaussian factorization. This does not say that (1) has no solutions. It does not classify all Beal signatures.\n\nSeparately, the newly recovered Hecke data for orbit h exclude h at 11. Thus b is the only survivor in U64's recorded eight-orbit list. The intended global level-lowering application and independent completeness of that list are still outstanding. The proof of (1) does not depend on these modular obligations, on identifying b with a CM object, or on U61/U62.\n\n## 2. The recovered h record: an exclusion valid at every embedding\n\nThe primary LMFDB JSON for `2.2.5.1-2000.1-h` was retrieved successfully. It was a cached response with source timestamp 2026-09-14T23:11:48.936324; the exact selected entries and retrieval distinctions are in `references/U65/sources.json`. The common prime-ideal ordering is the previously inspected official exporter and explicit table, not a new guessed offset.\n\nAt the two norm-11 ideals, its eigenvalues are\n\n    a = (-2e^3+15e^2+18e+120)/91,\n    b = ( 2e^3-15e^2-18e+335)/91,\n    F(e)=e^4-10e^3-13e^2+190e+241=0.\n\nWriting N=-2e^3+15e^2+18e+120, exact division gives\n\n    N^2-455N+5*91^2 = 0  (mod F).\n\nThus a and b=5-a each satisfy Q(T)=T^2-5T+5. The denominator 91 is prime to 17, so this relation holds at every prime of the coefficient field above 17.\n\nFor the corrected curve y^2=-f(x), U64's complete square/twice-square enumeration at 11 gives possible RM trace polynomials\n\n    T^2+3T-9,  T^2-T-1,  T^2-9T+19.                (2)\n\nTheir integer resultants with Q(T) are respectively -44, -4, -4, none divisible by 17. Hence none has a common root with Q over any extension of F_17. This excludes either h eigenvalue from being the required residual trace; no assumption that two h entries are Galois conjugate at the two base primes is needed. Python produces Bezout certificates, TypeScript checks all elements of F_(17^2), and Wolfram reproduces the resultants and polynomial remainder.\n\nThe 35 parameter pairs in this prime-11 domain are nonsingular, including permitted individual zero coordinates. U64's proof of that complete domain is retained. This is the seventh excluded orbit, not a solution of (W): b survives and the modular prerequisites have not disappeared.\n\n## 3. A parameter-independent splitting field and an exact index\n\nDefine\n\n    f(T)=T^5+40UVT^3+320U^2V^2T+64(8V^5-U^5),\n    F0=Q(rho),  rho^5=2,\n    M=Q(rho,zeta),  zeta a primitive fifth root of unity.\n\nA direct identity, valid for rational U,V, is\n\n    Res_R(R^5-2, T-(2RU-2R^4V)) = f(T).            (3)\n\nConsequently the five roots of f are\n\n    r_j=2*rho*zeta^j*U-2*rho^4*zeta^(-j)*V,\n    j=0,...,4.                                    (4)\n\nThe substitution into f and the resultant in (3) were checked symbolically. This is a classical radical/Dickson-polynomial identity specialized here; no novelty claim is made.\n\nThe discriminant is\n\n    disc(f)=2^24*5^5*(U^5+8V^5)^4.                  (5)\n\nFor U^5+8V^5!=0 the five roots are distinct. The extension M has degree 20: X^5-2 is Eisenstein, [F0:Q]=5, Q(zeta)/Q is Galois of degree 4, and adjoining that Galois field preserves the relatively prime degree 5. Its automorphisms act on the labels in (4) by all maps j -> a*j+b over F_5 with a!=0. Distinct labels give distinct roots, so this action is faithful. Therefore the splitting field of f is exactly M for every such parameter pair, including U=1,V=0.\n\nAn exact refinement is useful. Let theta=2*rho*U-2*rho^4*V. Relative to 1,rho,...,rho^4, the coordinate matrix of 1,theta,...,theta^4 has determinant\n\n    1024*(U^5+8V^5)^2.                             (6)\n\nSection 4 proves Z["
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.41,
+        "confidence": 0.58,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.59,
+          "3": 0.41
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.87
+      }
+    },
+    "usage": {
+      "input_tokens": 2142,
+      "output_tokens": 42
+    }
+  }
+}

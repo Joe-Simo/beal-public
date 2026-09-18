@@ -1,0 +1,76 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "restart_M5",
+  "timestamp": "2026-09-17T22:57:16-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal: A^x+B^y=C^z, x,y,z>=3, gcd(gcd(A,B),C)=1 has no solutions. ALREADY BLOCKED in this project: the modular method on the all-even branch (Azon Hypothesis 5 provably fails for every reduction, derived); Chabauty over the base field (bounds the wrong point set); abc and IUT (give finiteness only, ineffectively); Darmon's program (literature says min exponent 3 is largely inaccessible); extending computation (far behind the literature: min exponent <=113, bases to 2^100, (3,3,p) to p<=10^7). ALREADY KERNEL-VERIFIED here: exponent reduction to {4} u odd primes; bases pairwise coprime; A != B; no counterexample when 3|gcd(x,y,z) or 4|gcd(x,y,z); the all-even case IS perfect powers in a primitive Pythagorean triple; Beal is FALSE over Z[i] (so any proof must use the ordering of Z or ramification of rational primes); and every one of the ten known Fermat-Catalan solutions fails Beal because it has an exponent 2.",
+    "candidate": {
+      "id": "M5",
+      "mechanism": "Enumerate the signatures NOT excluded by the verified families, to identify exactly where a counterexample could live, and check whether that residual set has exploitable structure.",
+      "why_new": "A coverage computation rather than a proof attempt; its output directs all later work and has not been done."
+    }
+  },
+  "questions": {
+    "genuinely_new": {
+      "type": "noul",
+      "instructions": "Is this mechanism materially different from the routes already blocked in this project - the modular method, Chabauty, abc/IUT, Darmon's program, and extending computation - rather than a restatement or a variant of one of them?",
+      "criteria": {
+        "true": "it uses a different source of constraint, so it would fail for a different reason than the blocked routes",
+        "false": "it is a variant of a blocked route, or it would meet the same obstruction"
+      }
+    },
+    "executable_here": {
+      "type": "noul",
+      "instructions": "Can a discriminating test of this mechanism actually be executed with exact computation, elementary derivation, or Lean - with no access to Magma, no large class-group computation, and no new deep theorem?",
+      "criteria": {
+        "true": "a concrete test can be run now with exact arithmetic, elementary reasoning, or a proof assistant",
+        "false": "it needs machinery not available, such as hyperelliptic Jacobian arithmetic, class groups of high-degree fields, or an unproved theorem"
+      }
+    },
+    "payoff": {
+      "type": "score",
+      "instructions": "If the discriminating test came out favourably, how much would be learned?",
+      "criteria": [
+        "level 0: nothing that is not already recorded",
+        "level 1: a minor constraint on hypothetical counterexamples",
+        "level 2: a new necessary condition, or a precise specification of what a proof must contain",
+        "level 3: a new infinite family excluded, or a genuine reduction of the open problem"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "genuinely_new": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "executable_here": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "payoff": {
+        "type": "score",
+        "score": 1.86,
+        "confidence": 0.67,
+        "legend": {
+          "0": "level 0: nothing that is not already recorded",
+          "1": "level 1: a minor constraint on hypothetical counterexamples",
+          "2": "level 2: a new necessary condition, or a precise specification of what a proof must contain",
+          "3": "level 3: a new infinite family excluded, or a genuine reduction of the open problem"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.15,
+          "2": 0.71,
+          "3": 0.1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 966,
+      "output_tokens": 56
+    }
+  }
+}

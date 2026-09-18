@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U81_clean_prime_density_and_coefficient_support",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U81_clean_prime_density_and_coefficient_support.md",
+    "excerpt": "# U81: a density-105/128 coefficient-support theorem for the weighted branch\n\n**Status: written partial theorem with an exact finite group certificate and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. The repository was resumed through U80. U80's class-group bottleneck and negative shortcut audits remain unchanged. U65/U71/U72 are used only at their stated written/self-reviewed level.\n\n## 1. Scope\n\nAssume a primitive positive solution of\n\n    X^10 + 256 Y^10 = Z^17.                           (W)\n\nU71/U72 give\n\n    L=Q(c), c^10=-256,\n    theta=a0+a1*c+...+a9*c^9 in Z[c],\n    theta^17=X+cY,\n    a9 != 0.                                          (1.1)\n\nU72 established exact coefficient valuations at fourteen already-forced primes. Here we isolate an infinite positive-density set of rational primes for which the same coefficient mechanism works uniformly.\n\n## 2. Clean primes and exact coefficient valuations\n\nFor q not in {2,5,17}, factor\n\n    T^10+256 = product_i f_i(T)  over F_q,\n\nwith irreducible degrees d_i. Call q **clean** if\n\n    17 does not divide q^(d_i)-1 for every i.         (2.1)\n\nEquivalently the finite etale algebra\n\n    A_q=F_q[T]/(T^10+256)\n\nhas no nontrivial seventeenth root of unity, since\n\n    |A_q^*|=product_i(q^(d_i)-1).\n\n**Theorem 1.** If q is clean and q^e exactly divides Y, then\n\n    v_q(a9)=9e+v_q(658767450) >= 9e.                  (2.2)\n\nHence, for\n\n    Y_clean=product_(q clean) q^(v_q(Y)),\n\none has\n\n    Y_clean^9 | a9.                                   (2.3)\n\n### Proof\n\nPrimitivity gives q not dividing X. Reduction of theta^17=X+cY gives\n\n    theta^17=X in A_q.\n\nBy cleanliness the seventeenth-power map on A_q^* is injective. In particular 17 does not divide q-1, so X has a unique scalar seventeenth root x modulo q. Therefore theta is congruent to x modulo q. Since 17*x^16 is a q-adic unit, this root lifts uniquely.\n\nThus the actual local root is the convergent binomial series\n\n    theta=x*sum_(k>=0) B_k(cY/X)^k,\n    B_k=binomial(1/17,k).                             (2.4)\n\nFor q!=17, B_k belongs to Z_q. Grouping exponents modulo ten with c^10=-256 gives\n\n    a9=x*sum_(m>=0) B_(9+10m)(-256)^m(Y/X)^(9+10m). (2.5)\n\nU72's exact value is\n\n    B_9=658767450/17^9,\n    658767450=2*3*5^2*11*59*67*101.                 (2.6)\n\nThe leading term therefore has valuation `9e+v_q(658767450)`, at most `9e+2`. Every tail term has valuation at least `19e`. Since `9e+2<19e` for e>=1, the leading term cannot cancel. This proves (2.2) and (2.3).\n\n## 3. Density of the clean primes\n\nLet S be the splitting field of T^10+256. Put rho^5=2 and c=i*rho^4. Then\n\n    c^4=8rho, c^5=16i,\n\nand the ten roots are c*zeta_10^j. Hence\n\n    S=Q(rho,zeta_5,i), [S:Q]=40.                     (3.1)\n\nThe degree-20 splitting field Q(rho,zeta_5) of T^5-2 has Galois group C5 semidirect C4 and unique quadratic subfield Q(sqrt(5)); adjoining i therefore doubles the degree. On the ten root labels j in Z/10Z the Galois action is the full affine group\n\n    j -> a*j+t,\n    a in {1,3,7,9}, t in Z/10Z.                      (3.2)\n\nExact enumeration of its forty elements gives:\n\n    cycle type                  count\n    1^10                            1\n    10                              4\n    5,5                             4\n    2,2,2,2,2                       6\n    1,1,4,4                        10\n    2,4,4                          10\n    1,1,2,2,2,2                     5.              (3.3)\n\nFor unramified q these are the factor degrees of T^10+256 modulo q.\n\nThe Galois fields S and Q(zeta_17) are linearly disjoint: S is ramified only over 2 and 5, Q(zeta_17) only over 17, and a nontrivial Galois intersection would be unramified at every finite rational prime. Thus the compositum has group\n\n    Gal(S/Q) x (Z/17Z)^*.                            (3.4)\n\nLet r=ord_17(q). A prime is clean precisely when no cycle length in (3.3) is divisible by r. The exact clean counts among the forty affine elements are\n\n    r=1: 0,\n    r=2: 5,\n    r=4: 20,\n    r=8: 40,\n    r=16: 40.                                        (3.5)\n\nThe cyclic group of order sixteen has respectively 1,1,2,4,8 elements of exact orders 1,2,4,8,16. Chebotarev therefore gives natural density\n\n    (1*0+1*5+2*20+4*40+8*40)/(16*40)\n      = 525/640\n      = 105/128.                                     (3.6)\n\nThus clean primes have natural density **105/128**. The Chebotarev theorem used is Milne, *Algebraic Number Theory*, Theorem 8.31; see `references/U81/sources.json`.\n\n## 4. Global support/height consequence\n\nLet kappa=|c|=2^(4/5). The ten embeddings send c to ten equally spaced complex numbers of modulus kappa. Fourier inversion on the ten evaluations of theta gives\n\n    |a9| <= kappa^(-9) max_sigma |sigma(theta)|.      (4.1)\n\nSince theta^17=X+cY,\n\n    max_sigma |sigma(theta)| <= (X+kappa Y)^(1/17).\n\nUsing (2.3),\n\n    (kappa Y_clean)^153 <= "
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.6,
+        "confidence": 0.6,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.01,
+          "2": 0.29,
+          "3": 0.67
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 2278,
+      "output_tokens": 42
+    }
+  }
+}

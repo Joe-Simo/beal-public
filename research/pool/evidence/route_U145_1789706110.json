@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U145",
+  "timestamp": "2026-09-18T00:35:10-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Odd-prime core. Candidate kernel reduction for (p,p,r), p odd prime: A^p+B^p=(A+B)*S with gcd(A+B,S) | p, so A+B = d^r or p^{r-1} d^r... (first step of Kraus's method for a^3+b^3=c^p)."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which?",
+      "criteria": {
+        "ppr_lean": "formalise: gcd(A+B, S) divides p, hence A+B is an r-th power or p times... (exact statement with the p-adic case) \u2014 unconditional, feeds Residual",
+        "pqr_split": "for (p,q,r) distinct odd primes there is no such factorisation; test exactly whether ANY cyclotomic factorisation exists: C^r - A^p = B^q over Z[zeta_p] \u2014 record obstruction only",
+        "kraus_lit": "literature check: Kraus 1998 for (3,3,p) and later extensions (3,3,n) n<=10^9 \u2014 what exactly is the gap and is it computational (feasible at $0)?",
+        "fc_blind_check": "first check whether the (p,p,r) reduction is exponent-2-blind: does it hold with r=2 on FC solutions? (there are none of shape (p,p,2) with p odd in the FC list, so the test is vacuous)"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "ppr_lean",
+        "confidence": 0.95,
+        "probabilities": {
+          "fc_blind_check": 0.0,
+          "ppr_lean": 0.97,
+          "kraus_lit": 0.03,
+          "pqr_split": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 614,
+      "output_tokens": 59
+    }
+  }
+}

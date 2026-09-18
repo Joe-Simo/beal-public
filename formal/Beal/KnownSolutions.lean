@@ -77,10 +77,8 @@ theorem not_beal_counterexample_of_exponent_two (s : GeneralizedFermatSolution)
     (h2 : HasExponentTwo s) :
     ¬ IsBealCounterexample s.A s.B s.C s.x s.y s.z := by
   rintro ⟨_, _, _, hx, hy, hz, _, _⟩
-  rcases h2 with rfl | rfl | rfl
-  · omega
-  · omega
-  · omega
+  -- `s.x` is a projection, not a local variable, so it cannot be `subst`ed; name it instead.
+  rcases h2 with h | h | h <;> omega
 
 /-! ### 1. Solution 1: Catalan Family $1^m + 2^3 = 3^2$ -/
 

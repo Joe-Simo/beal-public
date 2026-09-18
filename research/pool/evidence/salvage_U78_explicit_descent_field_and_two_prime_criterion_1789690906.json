@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U78_explicit_descent_field_and_two_prime_criterion",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U78_explicit_descent_field_and_two_prime_criterion.md",
+    "excerpt": "# U78: an explicit descent field and a two-prime Selmer criterion\n\n**Status: written, self-reviewed field and descent-reduction theorems, corroborated by exact arithmetic. No numerical rank upper bound, weighted-equation exclusion, or solution of Beal's conjecture is obtained. Independent expert and proof-assistant verification remain outstanding.**\n\nResearch date: 2026-09-15. The private remote was read at `11becf1c733016efd853d136e2f1e85dab319b13` (U77). Its attached archive was restored additively: 50 files restored, two identical, no conflicts overwritten, and all manifest hashes verified. The full U77 Python output reproduced unchanged into a new record. This is repeatability, not independent mathematical verification.\n\n## 1. What is established and what remains unknown\n\nKeep U77's fixed curve and Jacobian\n\n    k=Q(phi), phi^2-phi-1=0, phi=(1+sqrt(5))/2,\n    C: v^2=phi+2-4(3-phi)u^17, J=Jac(C).             (1.1)\n\nU77's written argument says that a primitive positive solution of `X^10+256Y^10=Z^17` would force an infinite-order class in J(k). Its application still inherits the earlier common-root proof. The present field and descent statements concern the explicitly defined curve (1.1) and do not require a weighted solution as a hypothesis.\n\n**Theorem.** Let\n\n    F=k(s), s^17=2/phi=2phi-2,\n    f(T)=T^34+2T^17-4,\n    d=dim_F2 Cl(O_F)[2].\n\nThen:\n\n* F is the root field for the odd-degree 2-descent, has signature (2,16), and\n\n      O_F=Z[phi,s],\n      basis: s^j, phi*s^j for 0<=j<=16,\n      disc(F)=2^32*5^17*17^34,\n      [O_F:Z[s]]=2^17.                               (1.2)\n\n* There is a finite global candidate space V of dimension **17+d** and a precisely defined linear map\n\n      Psi: V -> (H_2/W_2) direct_sum F_2,\n      dim(H_2/W_2)=16,\n      Sel_2(J/k)=ker(Psi).                           (1.3)\n\n  The final F_2 coordinate is an explicit local square test at the prime above 5. The prime above 17 and both real places have zero local norm-kernel space and impose no further condition. Good places outside 2,5,17 are already accounted for by the definition of V.\n\nConsequently, writing r_Psi for the rank of this particular restriction map,\n\n    dim Sel_2(J/k)=17+d-r_Psi,\n    rank J(k) <= 17+d-r_Psi.                         (1.4)\n\n**Neither d nor r_Psi has been computed.** In particular, (1.4) is not a numerical rank bound. The 16-dimensional local Kummer image W_2 is defined and its dimension proved, but a basis for it is not supplied. The global candidate basis and the entries of Psi also remain to be computed. \u201cSeventeen conditions\u201d denotes the dimension of the target; it does not assert that their restrictions to V are independent.\n\nA sufficient certificate for the rank-zero route would be\n\n    d=0 and r_Psi=17.                               (1.5)\n\nTogether with U77, this would exclude the active weighted equation, not the complete Beal conjecture. U78 proves the reduction to (1.5), **not** either assertion in (1.5). A nonzero Selmer group would not, by itself, prove positive Mordell-Weil rank either.\n\n## 2. Identifying the correct field and proving its integer ring\n\nPut c=2phi-2. The quadratic ring is O_k=Z[phi]. Both 2 and 17 are inert: `T^2-T-1` is irreducible modulo each. At the prime of k above 2, c has valuation one, so `T^17-c` is Eisenstein. Thus [F:k]=17. Also phi=(s^17+2)/2 belongs to Q(s), which proves [F:Q]=34 and proves that f is its minimal polynomial.\n\nThe relative discriminant of the basis 1,s,...,s^16 is\n\n    17^17*c^16.\n\nOnly the base primes above 2 and 17 can divide its relative index. At 2, s is a uniformizer of a totally ramified extension and generates its local integer ring. For the prime above 17, use the integral shift a=-2phi. Exact reduction in Z[phi] gives\n\n    a^17-c = -129368062-209321986phi,\n    (a^17-c)/17 = 11+8phi modulo17,\n    Norm_(k/Q)(11+8phi) = 9 modulo17.                (2.1)\n\nAll intermediate coefficients of `(T+a)^17-c` are divisible by 17, and its constant term has valuation exactly one. The shifted polynomial is therefore Eisenstein at this prime as well. Its root s-a generates the same local order as s and is a uniformizer, proving local maximality. The Eisenstein/uniformizer statement is used over the completion of k, not over Q_17 with a discarded quadratic coefficient field; see [S1, Proposition 7.55 and Remark 7.56].\n\nThere are no remaining possible relative index primes. Hence O_F=O_k[s]. In particular the ramification of k at 5 was already included by working over O_k; it is not a missing exceptional case.\n\nSince Norm(c)=-4 and disc(k)=5, the discriminant tower formula yields\n\n    disc(F)=5^17 * Norm(17^17*c^16)\n           =2^32*5^17*17^34.                        (2.2)\n\nIts sign is positive. For each of the two real embeddings of k, the odd-degree polynomial has one real root and eight pairs of nonreal roots. Thus F has signature (2,16), consistent with (2.2).\n\nReplacing phi*s^j by `s^j+s^(17+j)/2` gives basis determinant 2^(-17) relative to the s power basis"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.69,
+        "confidence": 0.69,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.29,
+          "3": 0.71
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.87
+      }
+    },
+    "usage": {
+      "input_tokens": 2087,
+      "output_tokens": 42
+    }
+  }
+}

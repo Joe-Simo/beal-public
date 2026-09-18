@@ -1,0 +1,117 @@
+{
+ "jev": {
+  "exactly_one_even": 0.78,
+  "pairwise_coprime": 0.5,
+  "A_ne_B": 0.82,
+  "no_cancellation": 0.87,
+  "C_even=>not_both_xy_even": 0.68,
+  "C_even,x_even,y_odd=>B=7mod8": 0.77,
+  "C_even,x,y_odd=>8|A+B": 0.75,
+  "A_even,y,z_odd=>B=C mod8": 0.75,
+  "A_even,y_odd,z_even=>B=1mod8": 0.73,
+  "C_largest=>z<=max(x,y)": 0.72,
+  "C_smallest=>z>max(x,y)": 0.78,
+  "C<=B=>y<z": 0.75,
+  "dominant_dichotomy": 0.91,
+  "3|x,3|y,3\u2224ABC=>C^z=2,7mod9": 0.74,
+  "curvature_|chi|>=1/12 (12(qr+pr+pq)<=11pqr)": 0.79
+ },
+ "exact": {
+  "exactly_one_even": [],
+  "pairwise_coprime": [],
+  "A_ne_B": [],
+  "no_cancellation": [],
+  "C_even=>not_both_xy_even": [],
+  "C_even,x_even,y_odd=>B=7mod8": [],
+  "C_even,x,y_odd=>8|A+B": [],
+  "A_even,y,z_odd=>B=C mod8": [],
+  "A_even,y_odd,z_even=>B=1mod8": [],
+  "C_largest=>z<=max(x,y)": [],
+  "C_smallest=>z>max(x,y)": [],
+  "C<=B=>y<z": [],
+  "dominant_dichotomy": [],
+  "3|x,3|y,3\u2224ABC=>C^z=2,7mod9": [],
+  "curvature_|chi|>=1/12 (12(qr+pr+pq)<=11pqr)": [
+   [
+    1,
+    2,
+    3,
+    7,
+    3,
+    2
+   ],
+   [
+    2,
+    7,
+    3,
+    5,
+    2,
+    4
+   ],
+   [
+    7,
+    13,
+    2,
+    3,
+    2,
+    9
+   ],
+   [
+    2,
+    17,
+    71,
+    7,
+    3,
+    2
+   ],
+   [
+    3,
+    11,
+    122,
+    5,
+    4,
+    2
+   ],
+   [
+    17,
+    76271,
+    21063928,
+    7,
+    3,
+    2
+   ],
+   [
+    1414,
+    2213459,
+    65,
+    3,
+    2,
+    7
+   ],
+   [
+    9262,
+    15312283,
+    113,
+    3,
+    2,
+    7
+   ],
+   [
+    43,
+    96222,
+    30042907,
+    8,
+    3,
+    2
+   ],
+   [
+    33,
+    1549034,
+    15613,
+    8,
+    2,
+    3
+   ]
+  ]
+ }
+}

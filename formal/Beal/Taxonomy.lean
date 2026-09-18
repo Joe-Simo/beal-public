@@ -4,7 +4,10 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Formal Verification Specialist
 -/
 import Beal.Conjecture
-import Mathlib.Data.Rat.Basic
+import Mathlib.Data.Rat.Defs
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
 
 /-!
 # Signature Taxonomy and Curvature Classification for Generalized Fermat Equations
@@ -143,65 +146,26 @@ Among all exponents $p, q, r \ge 3$, the cubic signature $(3, 3, 3)$ is the
 theorem beal_parabolic_unique (p q r : ℕ) (hp : p ≥ 3) (hq : q ≥ 3) (hr : r ≥ 3)
     (h_ord : p ≤ q ∧ q ≤ r) :
     curvatureNumerator p q r = 0 ↔ (p = 3 ∧ q = 3 ∧ r = 3) := by
+  obtain ⟨hpq, hqr⟩ := h_ord
   constructor
   · intro hE
-    by_contra! h_not_all_3
     unfold curvatureNumerator at hE
-    rcases eq_or_lt_of_le hp with rfl | hp4
-    · -- Case p = 3
-      rcases eq_or_lt_of_le hq.left with rfl | hq4
-      · -- Subcase p = 3, q = 3
-        have hr4 : r ≥ 4 := by
-          by_contra!
-          have : r = 3 := by omega
-          subst this
-          exact h_not_all_3 ⟨rfl, rfl, rfl⟩
-        have h_neg := curvature_3_3_r_neg r hr4
-        omega
-      · -- Subcase p = 3, q ≥ 4
-        have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-        have hq_ge_4 : (q : ℤ) ≥ 4 := by omega
-        have : (q : ℤ) * r + 3 * r + 3 * q - 3 * q * r < 0 := by
-          nlinarith
-        omega
-    · -- Case p ≥ 4
-      have hq_ge_p : (q : ℤ) ≥ (p : ℤ) := by omega
-      have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-      have hp_ge_4 : (p : ℤ) ≥ 4 := by omega
-      have : (q : ℤ) * r + (p : ℤ) * r + (p : ℤ) * q - (p : ℤ) * q * r < 0 := by
-        nlinarith
-      omega
+    have hP : (3 : ℤ) ≤ (p : ℤ) := by exact_mod_cast hp
+    have hQ : (3 : ℤ) ≤ (q : ℤ) := by exact_mod_cast hq
+    have hR : (3 : ℤ) ≤ (r : ℤ) := by exact_mod_cast hr
+    have hPQ : (p : ℤ) ≤ (q : ℤ) := by exact_mod_cast hpq
+    have hQR : (q : ℤ) ≤ (r : ℤ) := by exact_mod_cast hqr
+    -- pqr = qr + pr + pq <= 3qr, so p <= 3
+    have hp3 : (p : ℤ) = 3 := by nlinarith [mul_pos (by linarith : (0:ℤ) < q) (by linarith : (0:ℤ) < r)]
+    rw [hp3] at hE
+    -- now 2qr = 3q + 3r <= 6r, so q <= 3
+    have hq3 : (q : ℤ) = 3 := by nlinarith
+    rw [hq3] at hE
+    have hr3 : (r : ℤ) = 3 := by linarith
+    exact ⟨by exact_mod_cast hp3, by exact_mod_cast hq3, by exact_mod_cast hr3⟩
   · rintro ⟨rfl, rfl, rfl⟩
-    exact curvature_3_3_3
-
-/--
-**Strict Hyperbolicity of Non-Cubic Beal Signatures**:
-Every signature $(p, q, r)$ with $p, q, r \ge 3$ other than $(3, 3, 3)$
-is strictly hyperbolic ($E < 0$).
--/
-theorem beal_non_cubic_is_hyperbolic (p q r : ℕ)
-    (h_beal : IsBealSignature p q r)
-    (h_not_all_3 : ¬(p = 3 ∧ q = 3 ∧ r = 3))
-    (h_ord : p ≤ q ∧ q ≤ r) :
-    IsHyperbolicSignature p q r := by
-  unfold IsHyperbolicSignature
-  have hE := (beal_parabolic_unique p q r h_beal.1 h_beal.2.1 h_beal.2.2 h_ord).not.mpr h_not_all_3
-  unfold curvatureNumerator at hE ⊢
-  rcases eq_or_lt_of_le h_beal.1 with rfl | hp4
-  · rcases eq_or_lt_of_le h_beal.2.1 with rfl | hq4
-    · have hr4 : r ≥ 4 := by
-        by_contra!
-        have : r = 3 := by omega
-        subst this
-        exact h_not_all_3 ⟨rfl, rfl, rfl⟩
-      exact curvature_3_3_r_neg r hr4
-    · have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-      have hq_ge_4 : (q : ℤ) ≥ 4 := by omega
-      nlinarith
-  · have hq_ge_p : (q : ℤ) ≥ (p : ℤ) := by omega
-    have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-    have hp_ge_4 : (p : ℤ) ≥ 4 := by omega
-    nlinarith
+    unfold curvatureNumerator
+    norm_num
 
 /--
 **Curvature Upper Bound in the Beal Domain**:
@@ -214,23 +178,59 @@ theorem curvature_upper_bound_beal (p q r : ℕ)
     (h_not_all_3 : ¬(p = 3 ∧ q = 3 ∧ r = 3))
     (h_ord : p ≤ q ∧ q ≤ r) :
     curvatureNumerator p q r ≤ -3 := by
+  obtain ⟨hpq, hqr⟩ := h_ord
+  obtain ⟨hp, hq, hr⟩ := h_beal
   unfold curvatureNumerator
-  rcases eq_or_lt_of_le h_beal.1 with rfl | hp4
-  · rcases eq_or_lt_of_le h_beal.2.1 with rfl | hq4
-    · have hr4 : r ≥ 4 := by
-        by_contra!
-        have : r = 3 := by omega
-        subst this
-        exact h_not_all_3 ⟨rfl, rfl, rfl⟩
-      have hr_ge : (r : ℤ) ≥ 4 := by omega
-      nlinarith
-    · have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-      have hq_ge_4 : (q : ℤ) ≥ 4 := by omega
-      nlinarith
-  · have hq_ge_p : (q : ℤ) ≥ (p : ℤ) := by omega
-    have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-    have hp_ge_4 : (p : ℤ) ≥ 4 := by omega
-    nlinarith
+  have hP : (3 : ℤ) ≤ (p : ℤ) := by exact_mod_cast hp
+  have hQ : (3 : ℤ) ≤ (q : ℤ) := by exact_mod_cast hq
+  have hR : (3 : ℤ) ≤ (r : ℤ) := by exact_mod_cast hr
+  have hPQ : (p : ℤ) ≤ (q : ℤ) := by exact_mod_cast hpq
+  have hQR : (q : ℤ) ≤ (r : ℤ) := by exact_mod_cast hqr
+  have hQpos : (0 : ℤ) < (q : ℤ) := by linarith
+  have hRpos : (0 : ℤ) < (r : ℤ) := by linarith
+  rcases Nat.lt_or_ge 3 p with hp4 | hp3
+  · -- p ≥ 4 :  E ≤ 3qr - pqr = qr(3-p) ≤ -qr ≤ -9
+    have h4 : (4 : ℤ) ≤ (p : ℤ) := by exact_mod_cast hp4
+    have e1 : (p : ℤ) * r ≤ (q : ℤ) * r := by nlinarith
+    have e2 : (p : ℤ) * q ≤ (q : ℤ) * r := by nlinarith
+    have e3 : (4 : ℤ) * ((q : ℤ) * r) ≤ (p : ℤ) * q * r := by
+      have hqr : (0 : ℤ) ≤ (q : ℤ) * r := by positivity
+      calc (4 : ℤ) * ((q : ℤ) * r) ≤ (p : ℤ) * ((q : ℤ) * r) :=
+            mul_le_mul_of_nonneg_right h4 hqr
+        _ = (p : ℤ) * q * r := by ring
+    have e4 : (9 : ℤ) ≤ (q : ℤ) * r := by nlinarith
+    linarith
+  · have hp3' : p = 3 := by omega
+    subst hp3'
+    rcases Nat.lt_or_ge 3 q with hq4 | hq3
+    · -- p = 3, q ≥ 4 :  E = 3q + 3r - 2qr ≤ 3r + 3r - 8r = -2r ≤ -8
+      have h4 : (4 : ℤ) ≤ (q : ℤ) := by exact_mod_cast hq4
+      have e1 : (8 : ℤ) * r ≤ 2 * ((q : ℤ) * r) := by nlinarith
+      push_cast
+      linarith
+    · have hq3' : q = 3 := by omega
+      subst hq3'
+      -- p = q = 3, r ≥ 4 :  E = 9 - 3r ≤ -3
+      have hr4 : (4 : ℤ) ≤ (r : ℤ) := by
+        rcases Nat.lt_or_ge 3 r with h | h
+        · exact_mod_cast h
+        · exact absurd ⟨rfl, rfl, by omega⟩ h_not_all_3
+      push_cast
+      linarith
+
+/--
+**Strict Hyperbolicity of Non-Cubic Beal Signatures**:
+Every signature $(p, q, r)$ with $p, q, r \ge 3$ other than $(3, 3, 3)$
+is strictly hyperbolic ($E < 0$).
+-/
+theorem beal_non_cubic_is_hyperbolic (p q r : ℕ)
+    (h_beal : IsBealSignature p q r)
+    (h_not_all_3 : ¬(p = 3 ∧ q = 3 ∧ r = 3))
+    (h_ord : p ≤ q ∧ q ≤ r) :
+    IsHyperbolicSignature p q r := by
+  have h := curvature_upper_bound_beal p q r h_beal h_not_all_3 h_ord
+  unfold IsHyperbolicSignature
+  linarith
 
 /-! ### 3. Canonical Signature Classification Table -/
 
@@ -241,4 +241,29 @@ theorem classify_5_5_5 : signatureCurvature 5 5 5 = SignatureCurvature.Hyperboli
 theorem classify_2_3_7 : signatureCurvature 2 3 7 = SignatureCurvature.Hyperbolic := by decide
 theorem classify_2_3_5 : signatureCurvature 2 3 5 = SignatureCurvature.Spherical  := by decide
 
-end Beal
+
+
+/-! ## A sharp curvature bound: every Beal signature has `|χ| ≥ 1/12` -/
+
+/-- **Sharp curvature bound.**  For `p, q, r ≥ 3` not all equal to 3,
+`11pqr ≥ 12(qr + pr + pq)`, which is exactly `|χ| ≥ 1/12` for
+`χ = 1/p + 1/q + 1/r - 1`.
+
+Equality holds precisely at the permutations of `(3,3,4)`.  This strictly strengthens
+`curvature_upper_bound_beal`, whose bound `E ≤ -3` is weak once `pqr` is large. -/
+theorem curvature_sharp_bound (p q r : ℕ) (hp : p ≥ 3) (hq : q ≥ 3) (hr : r ≥ 3)
+    (h_not_all_3 : ¬(p = 3 ∧ q = 3 ∧ r = 3)) :
+    12 * (q * r + p * r + p * q) ≤ 11 * (p * q * r) := by
+  -- at least one exponent is ≥ 4; handle by symmetry
+  have key : ∀ a b c : ℕ, 3 ≤ a → 3 ≤ b → 4 ≤ c →
+      12 * (b * c + a * c + a * b) ≤ 11 * (a * b * c) := by
+    intro a b c ha hb hc
+    nlinarith [Nat.mul_le_mul ha hb, Nat.mul_le_mul hb hc, Nat.mul_le_mul ha hc,
+               Nat.mul_le_mul (Nat.mul_le_mul ha hb) hc]
+  rcases Nat.lt_or_ge 3 r with h | h
+  · exact key p q r hp hq h
+  · rcases Nat.lt_or_ge 3 q with h2 | h2
+    · have := key p r q hp hr h2; linarith [this]
+    · rcases Nat.lt_or_ge 3 p with h3 | h3
+      · have := key q r p hq hr h3; linarith [this]
+      · exact absurd ⟨by omega, by omega, by omega⟩ h_not_all_3

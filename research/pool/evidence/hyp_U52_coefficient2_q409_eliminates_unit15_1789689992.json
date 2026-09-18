@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U52_coefficient2_q409_eliminates_unit15",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U52_coefficient2_q409_eliminates_unit15.md",
+    "excerpt": "# U52: coefficient-2 branch \u2014 q=409 eliminates the omega^15 unit class\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input\n\nU51 reduced the unit exponent in\n\n    H_-(m,n)=omega^k alpha^17\n\nto k in {0,15}, while m+i n is a Gaussian 17th power up to a Gaussian unit.\n\n## Choosing a second discriminating prime\n\nFor a rational prime q, the Gaussian projective 17th-power condition is informative when 17 divides q-chi_{-1}(q), and the Q(sqrt(5)) projective condition is informative when 17 divides q-chi_5(q).\n\nThe next small prime after 67 satisfying both conditions is\n\n    q=409.\n\nAt 409, -1 and 5 are both squares. The Gaussian 17th-power condition leaves 26 projective ratios n/m (including infinity).\n\nThe polynomial T^2-T-1 splits modulo 409 with roots\n\n    omega = 130 or 280.\n\nThus the Q(sqrt5) equation can be tested independently in both F_409 components, avoiding any ambiguity from the split residue algebra.\n\n## Exact combined sieve\n\nFor every Gaussian-compatible projective ratio t=n/m, test whether in both embeddings omega -> 130,280,\n\n    1+30t^2+t^4-16t^2 omega\n\nbelongs to omega^k*(F_409)^17.\n\nResults:\n\n- k=15: no compatible projective ratio.\n- k=0: exactly t=0 and t=infinity survive.\n\nTherefore the omega^15 global unit class is impossible.\n\nEvery surviving coefficient-2 solution must satisfy the untwisted equation\n\n    H_-(m,n)=alpha^17,\n\nand the q=409 local condition\n\n    409 | m*n.\n\nSince gcd(m,n)=1, exactly one of m,n is divisible by 409.\n\nCombining with U48 and U51, a surviving solution now has\n\n    103 | m*n,\n    67  | m*n,\n    409 | m*n,\n\nwith exactly one coordinate divisible by each prime (not necessarily the same coordinate).\n\n## Independent q=883 check\n\nThe next inert/inert discriminating prime q=883 was also tested for the remaining k=0 class. Its Gaussian 17th powers give 52 projective ratios, and after imposing the Q(sqrt5) 17th-power condition only\n\n    t=0, infinity\n\nsurvive. Thus q=883 supplies another forced divisor\n\n    883 | m*n.\n\nThis does not itself contradict primitivity because different large primes may divide one coordinate.\n\n## Current strongest form\n\nThe coefficient-2 branch is now reduced to\n\n    H_-(m,n)=alpha^17\n\nwith no unit twist, together with the Gaussian equation\n\n    m+i n = epsilon*(r+i s)^17,\n\nand the forced divisibility\n\n    67*103*409*883 | m*n.\n\nNo complete contradiction is claimed.\n\n## Next obligation\n\nExploit the untwisted equality itself rather than accumulating divisibility primes indefinitely. Since the omega coefficient of H_- is exactly -16m^2n^2, compare it with the omega coefficient of (A+B omega)^17. This gives an explicit degree-17 binary form equal to -16m^2n^2. Factor/resultant analysis of that coefficient form may force A or B to carry the growing prime divisors and create a descent or valuation contradiction.\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.35,
+        "confidence": 0.65,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.6799999999999999,
+          "1": 0.28,
+          "2": 0.04,
+          "3": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1754,
+      "output_tokens": 94
+    }
+  }
+}

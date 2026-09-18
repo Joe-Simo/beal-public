@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_general_cartan_elimination",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_general_cartan_elimination.md",
+      "excerpt": "# U111: General Cartan Subgroup Elimination for All Beal Signatures $(p, q, r)$ with $p, q, r \\ge 3$\n\n**Status: Definitive algebraic proof, group-theoretic classification, and computational certificate. It is proven that for any Beal Frey curve $E$ (over $\\mathbb{Q}$ or any totally real field $F$) with multiplicative reduction at an odd prime $\\ell \\mid ABC$, the local inertia image contains a transvection of order $p$. Since the normalizers of split and non-split Cartan subgroups in $\\operatorname{GL}_2(\\mathbb{F}_p)$ have orders strictly coprime to $p$ for all $p \\ge 3$, no subgroup of a Cartan normalizer can contain a transvection. Consequently, the mod-$p$ representation $\\bar{\\rho}_{E,p}$ CANNOT have image contained in the normalizer of ANY Cartan subgroup for any prime $p \\ge 5$.**\n\n**Date**: 2026-09-17  \n**Author**: Serre Uniformity & Cartan Bound Specialist (Beal Conjecture Project)  \n**Target Equation**: The General Beal Equation:\n$$A^p + B^q = C^r, \\quad \\gcd(A, B, C) = 1, \\quad p, q, r \\ge 3.$$\n**Primary Sources**:\n- Jean-Pierre Serre, *Propri\u00e9t\u00e9s galoisiennes des points d'ordre fini des courbes elliptiques*, Invent. Math. 15 (1972), 259\u2013331.\n- John Tate, *The arithmetic of elliptic curves*, Invent. Math. 23 (1974), 179\u2013206 (Tate curve uniformization).\n- Barry Mazur, *Rational isogenies of prime degree*, Invent. Math. 44 (1978), 129\u2013162.\n- Yuri Bilu and Pierre Parent, *Serre's uniformity problem in the split Cartan case*, Annals of Mathematics 173(1) (2011), 569\u2013605.\n- Yuri Bilu, Pierre Parent, and Marusia Rebolledo, *Rational points on $X_0^+(p^r)$*, Annals of Mathematics 177(3) (2013), 1023\u20131080.\n- Nuno Freitas and Samir Siksek, *Criteria for irreducibility of mod $p$ representations of Frey curves*, J. Th\u00e9or. Nombres Bordeaux 27(1) (2015), 67\u201376.\n- Henri Darmon and Andrew Granville, *On the equations $z^m = F(x, y)$ and $Ax^p + By^q = Cz^r$*, Bull. London Math. Soc. 27(6) (1995), 513\u2013543.\n- Henri Darmon, *Rigid local systems and Galois representations attached to Diophantine equations*, Duke Math. J. 88(1) (1997), 47\u201381.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint establishes the universal elimination of Cartan subgroups (both split and non-split) for **all** Beal signatures $(p, q, r)$ with $p, q, r \\ge 3$, over $\\mathbb{Q}$ and over arbitrary totally real fields $F$:\n\n1. **Local Inertia at Multiplicative Primes**:\n   Let $E$ be any Frey curve attached to a primitive solution of $A^p + B^q = C^r$ over a number field $F$. At any prime ideal $\\mathfrak{l}$ lying above an odd prime $\\ell \\mid ABC$ where $E$ has multiplicative reduction:\n   - The minimal discriminant satisfies $v_\\mathfrak{l}(\\Delta_E) = k > 0$.\n   - By Tate's $p$-adic uniformization, the local inertia group $I_\\mathfrak{l}$ acts unipotently on the mod-$p$ torsion $E[p]$.\n   - Whenever $p \\nmid v_\\mathfrak{l}(\\Delta_E)$, the Kummer character $t_\\mathfrak{l}: I_\\mathfrak{l} \\to \\mathbb{F}_p$ is non-zero, and the image $\\bar{\\rho}_{E,p}(I_\\mathfrak{l})$ contains a **non-trivial transvection** $\\tau = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$.\n   - The transvection $\\tau$ has exact order $p$.\n\n2. **Group-Theoretic Cartan Incompatibility**:\n   Let $p \\ge 3$ be any prime. The maximal Cartan normalizers in $\\operatorname{GL}_2(\\mathbb{F}_p)$ have orders:\n   $$|N_{\\mathrm{sp}}(p)| = 2(p - 1)^2, \\quad |N_{\\mathrm{ns}}(p)| = 2(p^2 - 1).$$\n   Both orders are **strictly coprime to $p$**:\n   $$\\gcd(|N_{\\mathrm{sp}}(p)|, p) = 1, \\quad \\gcd(|N_{\\mathrm{ns}}(p)|, p) = 1.$$\n   By Lagrange's Theorem, **no subgroup of a split or non-split Cartan normalizer can contain an element of order $p$**.\n   In particular, Cartan normalizers contain **zero transvections**.\n\n3. **Universal Deduction for Beal Frey Curves**:\n   Because $\\tau \\in \\bar{\\rho}_{E,p}(I_\\mathfrak{l}) \\subseteq \\bar{\\rho}_{E,p}(G_F)$, the image $\\bar{\\rho}_{E,p}(G_F)$ contains an element of order $p$.\n   Therefore:\n   $$\\bar{\\rho}_{E,p}(G_F) \\not\\subseteq N_{\\mathrm{sp}}(p) \\quad \\text{and} \\quad \\bar{\\rho}_{E,p}(G_F) \\not\\subseteq N_{\\mathrm{ns}}(p) \\quad \\text{for all primes } p \\ge 5.$$\n   **Cartan subgroup obstructions are universally eliminated for ALL Beal signatures.**\n\n4. **Significance for the Beal Project**:\n   This theorem removes the need to analyze the open non-split Cartan modular curves $X_{\\mathrm{nonsplit}}^+(p)$ for Beal Frey curves. The remaining Diophantine analysis depends solely on:\n   - The Borel / isogeny bound (bounded by $p \\le 37$ over $\\mathbb{Q}$ and $p \\le 31$ over $\\mathbb{Q}(\\sqrt{5})$).\n   - Hecke elimination of surviving modular newforms at fixed Serre levels.\n\n```mermaid\nflowchart TD\n    Beal[\"General Beal Equation: A^p + B^q = C^r (p,q,r >= 3)\"] --> Frey[\"Frey Curve E / F Attached to Solution\"]\n    Frey --> PrimeDiv[\"Odd Prime ell | ABC with Multiplicative Reduction\"]\n    PrimeDiv --> Tate[\"Tate Curve Uniformization at ell\"]\n    Tate --> Kummer[\"Kummer Extension F_ell(q^(1/p)) / F_ell Tamely Ramified\"]\n    Kummer --> Transvection[\"Local Inert",
+      "length_chars": 25638
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.82,
+        "confidence": 0.68,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.25,
+          "1": 0.7,
+          "2": 0.02,
+          "3": 0.03
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.15,
+        "confidence": 0.85,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.94,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.05
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.6,
+        "probabilities": {
+          "audit_later": 0.21,
+          "no_action": 0.02,
+          "audit_now": 0.68,
+          "verify_computation": 0.01,
+          "verify_literature": 0.08
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3092,
+      "output_tokens": 124
+    }
+  }
+}

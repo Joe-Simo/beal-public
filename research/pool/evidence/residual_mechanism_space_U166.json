@@ -1,0 +1,2597 @@
+{
+ "state": "HYPOTHESIS_ONLY",
+ "rows": [
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.23,
+   "new": 0.71,
+   "payoff": 2.18,
+   "s": 0.356
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.25,
+   "new": 0.68,
+   "payoff": 2.08,
+   "s": 0.354
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.29,
+   "new": 0.7,
+   "payoff": 1.67,
+   "s": 0.339
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.37,
+   "new": 0.73,
+   "payoff": 1.18,
+   "s": 0.319
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.27,
+   "new": 0.61,
+   "payoff": 1.93,
+   "s": 0.318
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.29,
+   "new": 0.67,
+   "payoff": 1.53,
+   "s": 0.297
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.24,
+   "new": 0.64,
+   "payoff": 1.9,
+   "s": 0.292
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.2,
+   "new": 0.65,
+   "payoff": 2.21,
+   "s": 0.287
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.31,
+   "new": 0.66,
+   "payoff": 1.39,
+   "s": 0.284
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.33,
+   "new": 0.63,
+   "payoff": 1.36,
+   "s": 0.283
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.33,
+   "new": 0.65,
+   "payoff": 1.31,
+   "s": 0.281
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.21,
+   "new": 0.65,
+   "payoff": 2.06,
+   "s": 0.281
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.32,
+   "new": 0.69,
+   "payoff": 1.26,
+   "s": 0.278
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.18,
+   "new": 0.71,
+   "payoff": 2.16,
+   "s": 0.276
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.18,
+   "new": 0.69,
+   "payoff": 2.22,
+   "s": 0.276
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.27,
+   "new": 0.67,
+   "payoff": 1.5,
+   "s": 0.271
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.31,
+   "new": 0.69,
+   "payoff": 1.21,
+   "s": 0.259
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.24,
+   "new": 0.65,
+   "payoff": 1.65,
+   "s": 0.257
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.19,
+   "new": 0.7,
+   "payoff": 1.92,
+   "s": 0.255
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.28,
+   "new": 0.63,
+   "payoff": 1.44,
+   "s": 0.254
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.23,
+   "new": 0.67,
+   "payoff": 1.65,
+   "s": 0.254
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.27,
+   "new": 0.65,
+   "payoff": 1.44,
+   "s": 0.253
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.28,
+   "new": 0.64,
+   "payoff": 1.39,
+   "s": 0.249
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.25,
+   "new": 0.6,
+   "payoff": 1.66,
+   "s": 0.249
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.19,
+   "new": 0.7,
+   "payoff": 1.87,
+   "s": 0.249
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.18,
+   "new": 0.69,
+   "payoff": 1.99,
+   "s": 0.247
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.17,
+   "new": 0.71,
+   "payoff": 2.05,
+   "s": 0.247
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.18,
+   "new": 0.71,
+   "payoff": 1.93,
+   "s": 0.247
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.23,
+   "new": 0.68,
+   "payoff": 1.57,
+   "s": 0.246
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.19,
+   "new": 0.7,
+   "payoff": 1.85,
+   "s": 0.246
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.17,
+   "new": 0.66,
+   "payoff": 2.18,
+   "s": 0.245
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.19,
+   "new": 0.7,
+   "payoff": 1.84,
+   "s": 0.245
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.2,
+   "new": 0.69,
+   "payoff": 1.76,
+   "s": 0.243
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.19,
+   "new": 0.62,
+   "payoff": 2.05,
+   "s": 0.241
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.32,
+   "new": 0.66,
+   "payoff": 1.14,
+   "s": 0.241
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.22,
+   "new": 0.55,
+   "payoff": 1.99,
+   "s": 0.241
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.17,
+   "new": 0.68,
+   "payoff": 2.08,
+   "s": 0.24
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.19,
+   "new": 0.75,
+   "payoff": 1.68,
+   "s": 0.239
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.18,
+   "new": 0.7,
+   "payoff": 1.9,
+   "s": 0.239
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.2,
+   "new": 0.62,
+   "payoff": 1.93,
+   "s": 0.239
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.22,
+   "new": 0.74,
+   "payoff": 1.46,
+   "s": 0.238
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.17,
+   "new": 0.71,
+   "payoff": 1.97,
+   "s": 0.238
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.67,
+   "payoff": 2.35,
+   "s": 0.236
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.22,
+   "new": 0.67,
+   "payoff": 1.59,
+   "s": 0.234
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.21,
+   "new": 0.71,
+   "payoff": 1.57,
+   "s": 0.234
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.23,
+   "new": 0.57,
+   "payoff": 1.78,
+   "s": 0.233
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.3,
+   "new": 0.59,
+   "payoff": 1.31,
+   "s": 0.232
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.21,
+   "new": 0.57,
+   "payoff": 1.94,
+   "s": 0.232
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.22,
+   "new": 0.64,
+   "payoff": 1.64,
+   "s": 0.231
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.22,
+   "new": 0.7,
+   "payoff": 1.49,
+   "s": 0.229
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.72,
+   "payoff": 2.12,
+   "s": 0.229
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.3,
+   "new": 0.63,
+   "payoff": 1.21,
+   "s": 0.229
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.2,
+   "new": 0.67,
+   "payoff": 1.7,
+   "s": 0.228
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.23,
+   "new": 0.58,
+   "payoff": 1.7,
+   "s": 0.227
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.19,
+   "new": 0.69,
+   "payoff": 1.73,
+   "s": 0.227
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.25,
+   "new": 0.68,
+   "payoff": 1.33,
+   "s": 0.226
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.22,
+   "new": 0.69,
+   "payoff": 1.49,
+   "s": 0.226
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.18,
+   "new": 0.63,
+   "payoff": 1.99,
+   "s": 0.226
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.22,
+   "new": 0.69,
+   "payoff": 1.48,
+   "s": 0.225
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.71,
+   "payoff": 2.11,
+   "s": 0.225
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.22,
+   "new": 0.72,
+   "payoff": 1.41,
+   "s": 0.223
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.23,
+   "new": 0.67,
+   "payoff": 1.45,
+   "s": 0.223
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.16,
+   "new": 0.72,
+   "payoff": 1.94,
+   "s": 0.223
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.21,
+   "new": 0.66,
+   "payoff": 1.59,
+   "s": 0.22
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.16,
+   "new": 0.61,
+   "payoff": 2.24,
+   "s": 0.219
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.21,
+   "new": 0.65,
+   "payoff": 1.6,
+   "s": 0.218
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.21,
+   "new": 0.7,
+   "payoff": 1.48,
+   "s": 0.218
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.17,
+   "new": 0.68,
+   "payoff": 1.88,
+   "s": 0.217
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.2,
+   "new": 0.61,
+   "payoff": 1.78,
+   "s": 0.217
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.19,
+   "new": 0.67,
+   "payoff": 1.7,
+   "s": 0.216
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.15,
+   "new": 0.63,
+   "payoff": 2.29,
+   "s": 0.216
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.2,
+   "new": 0.68,
+   "payoff": 1.58,
+   "s": 0.215
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.16,
+   "new": 0.7,
+   "payoff": 1.92,
+   "s": 0.215
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.19,
+   "new": 0.65,
+   "payoff": 1.74,
+   "s": 0.215
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.22,
+   "new": 0.6,
+   "payoff": 1.62,
+   "s": 0.214
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.27,
+   "new": 0.57,
+   "payoff": 1.39,
+   "s": 0.214
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.15,
+   "new": 0.66,
+   "payoff": 2.14,
+   "s": 0.212
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.17,
+   "new": 0.65,
+   "payoff": 1.91,
+   "s": 0.211
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.16,
+   "new": 0.7,
+   "payoff": 1.88,
+   "s": 0.211
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.21,
+   "new": 0.71,
+   "payoff": 1.41,
+   "s": 0.21
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.16,
+   "new": 0.68,
+   "payoff": 1.93,
+   "s": 0.21
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.18,
+   "new": 0.72,
+   "payoff": 1.6,
+   "s": 0.207
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.15,
+   "new": 0.73,
+   "payoff": 1.89,
+   "s": 0.207
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.2,
+   "new": 0.66,
+   "payoff": 1.56,
+   "s": 0.206
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.26,
+   "new": 0.7,
+   "payoff": 1.13,
+   "s": 0.206
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.17,
+   "new": 0.7,
+   "payoff": 1.73,
+   "s": 0.206
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.21,
+   "new": 0.7,
+   "payoff": 1.39,
+   "s": 0.204
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.25,
+   "new": 0.73,
+   "payoff": 1.12,
+   "s": 0.204
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.15,
+   "new": 0.64,
+   "payoff": 2.13,
+   "s": 0.204
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.21,
+   "new": 0.64,
+   "payoff": 1.51,
+   "s": 0.203
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.17,
+   "new": 0.65,
+   "payoff": 1.83,
+   "s": 0.202
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.14,
+   "new": 0.67,
+   "payoff": 2.15,
+   "s": 0.202
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.24,
+   "new": 0.74,
+   "payoff": 1.13,
+   "s": 0.201
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.21,
+   "new": 0.69,
+   "payoff": 1.39,
+   "s": 0.201
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.23,
+   "new": 0.72,
+   "payoff": 1.21,
+   "s": 0.2
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.73,
+   "payoff": 1.82,
+   "s": 0.199
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.17,
+   "new": 0.68,
+   "payoff": 1.72,
+   "s": 0.199
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.24,
+   "new": 0.65,
+   "payoff": 1.27,
+   "s": 0.198
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.19,
+   "new": 0.68,
+   "payoff": 1.53,
+   "s": 0.198
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.63,
+   "payoff": 2.1,
+   "s": 0.198
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.14,
+   "new": 0.68,
+   "payoff": 2.06,
+   "s": 0.196
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.25,
+   "new": 0.73,
+   "payoff": 1.07,
+   "s": 0.195
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.21,
+   "new": 0.61,
+   "payoff": 1.52,
+   "s": 0.195
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.18,
+   "new": 0.64,
+   "payoff": 1.68,
+   "s": 0.194
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.19,
+   "new": 0.63,
+   "payoff": 1.62,
+   "s": 0.194
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,4,p), p>=7",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.19,
+   "new": 0.74,
+   "payoff": 1.38,
+   "s": 0.194
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.67,
+   "payoff": 1.93,
+   "s": 0.194
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.18,
+   "new": 0.65,
+   "payoff": 1.65,
+   "s": 0.193
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.26,
+   "new": 0.58,
+   "payoff": 1.27,
+   "s": 0.192
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.6,
+   "payoff": 2.13,
+   "s": 0.192
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.13,
+   "new": 0.66,
+   "payoff": 2.23,
+   "s": 0.191
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.19,
+   "new": 0.64,
+   "payoff": 1.57,
+   "s": 0.191
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.18,
+   "new": 0.62,
+   "payoff": 1.71,
+   "s": 0.191
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.12,
+   "new": 0.76,
+   "payoff": 2.08,
+   "s": 0.19
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.13,
+   "new": 0.7,
+   "payoff": 2.08,
+   "s": 0.189
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.23,
+   "new": 0.68,
+   "payoff": 1.21,
+   "s": 0.189
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.23,
+   "new": 0.63,
+   "payoff": 1.29,
+   "s": 0.187
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.19,
+   "new": 0.68,
+   "payoff": 1.45,
+   "s": 0.187
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.15,
+   "new": 0.62,
+   "payoff": 2.01,
+   "s": 0.187
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.14,
+   "new": 0.62,
+   "payoff": 2.16,
+   "s": 0.187
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.15,
+   "new": 0.66,
+   "payoff": 1.87,
+   "s": 0.185
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.18,
+   "new": 0.63,
+   "payoff": 1.63,
+   "s": 0.185
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.14,
+   "new": 0.63,
+   "payoff": 2.1,
+   "s": 0.185
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.23,
+   "new": 0.69,
+   "payoff": 1.16,
+   "s": 0.184
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.14,
+   "new": 0.61,
+   "payoff": 2.15,
+   "s": 0.184
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.19,
+   "new": 0.65,
+   "payoff": 1.49,
+   "s": 0.184
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.12,
+   "new": 0.65,
+   "payoff": 2.36,
+   "s": 0.184
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.12,
+   "new": 0.7,
+   "payoff": 2.19,
+   "s": 0.184
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.23,
+   "new": 0.63,
+   "payoff": 1.26,
+   "s": 0.183
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.17,
+   "new": 0.66,
+   "payoff": 1.63,
+   "s": 0.183
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.17,
+   "new": 0.61,
+   "payoff": 1.76,
+   "s": 0.183
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.62,
+   "payoff": 1.96,
+   "s": 0.182
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.22,
+   "new": 0.66,
+   "payoff": 1.25,
+   "s": 0.181
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.2,
+   "new": 0.58,
+   "payoff": 1.56,
+   "s": 0.181
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.18,
+   "new": 0.63,
+   "payoff": 1.6,
+   "s": 0.181
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.18,
+   "new": 0.67,
+   "payoff": 1.5,
+   "s": 0.181
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.16,
+   "new": 0.72,
+   "payoff": 1.57,
+   "s": 0.181
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.23,
+   "new": 0.65,
+   "payoff": 1.21,
+   "s": 0.181
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.23,
+   "new": 0.66,
+   "payoff": 1.19,
+   "s": 0.181
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.14,
+   "new": 0.58,
+   "payoff": 2.23,
+   "s": 0.181
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.18,
+   "new": 0.62,
+   "payoff": 1.61,
+   "s": 0.18
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.18,
+   "new": 0.65,
+   "payoff": 1.54,
+   "s": 0.18
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.14,
+   "new": 0.66,
+   "payoff": 1.95,
+   "s": 0.18
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.17,
+   "new": 0.66,
+   "payoff": 1.59,
+   "s": 0.178
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.16,
+   "new": 0.7,
+   "payoff": 1.59,
+   "s": 0.178
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.18,
+   "new": 0.66,
+   "payoff": 1.5,
+   "s": 0.178
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,4,p), p>=7",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.71,
+   "payoff": 1.67,
+   "s": 0.178
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.17,
+   "new": 0.68,
+   "payoff": 1.53,
+   "s": 0.177
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.14,
+   "new": 0.64,
+   "payoff": 1.98,
+   "s": 0.177
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.23,
+   "new": 0.7,
+   "payoff": 1.1,
+   "s": 0.177
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.2,
+   "new": 0.69,
+   "payoff": 1.28,
+   "s": 0.177
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.21,
+   "new": 0.69,
+   "payoff": 1.22,
+   "s": 0.177
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.14,
+   "new": 0.73,
+   "payoff": 1.73,
+   "s": 0.177
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.69,
+   "payoff": 1.71,
+   "s": 0.177
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.19,
+   "new": 0.64,
+   "payoff": 1.45,
+   "s": 0.176
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.14,
+   "new": 0.61,
+   "payoff": 2.06,
+   "s": 0.176
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.12,
+   "new": 0.68,
+   "payoff": 2.14,
+   "s": 0.175
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.71,
+   "payoff": 1.9,
+   "s": 0.175
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.2,
+   "new": 0.66,
+   "payoff": 1.32,
+   "s": 0.174
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.21,
+   "new": 0.67,
+   "payoff": 1.24,
+   "s": 0.174
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.23,
+   "new": 0.68,
+   "payoff": 1.11,
+   "s": 0.174
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.22,
+   "new": 0.66,
+   "payoff": 1.2,
+   "s": 0.174
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.17,
+   "new": 0.61,
+   "payoff": 1.68,
+   "s": 0.174
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.13,
+   "new": 0.61,
+   "payoff": 2.2,
+   "s": 0.174
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.18,
+   "new": 0.59,
+   "payoff": 1.64,
+   "s": 0.174
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.18,
+   "new": 0.69,
+   "payoff": 1.39,
+   "s": 0.173
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.15,
+   "new": 0.67,
+   "payoff": 1.72,
+   "s": 0.173
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.17,
+   "new": 0.65,
+   "payoff": 1.56,
+   "s": 0.172
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.13,
+   "new": 0.64,
+   "payoff": 2.05,
+   "s": 0.171
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.13,
+   "new": 0.67,
+   "payoff": 1.96,
+   "s": 0.171
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.18,
+   "new": 0.68,
+   "payoff": 1.4,
+   "s": 0.171
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.15,
+   "new": 0.71,
+   "payoff": 1.61,
+   "s": 0.171
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.17,
+   "new": 0.61,
+   "payoff": 1.64,
+   "s": 0.17
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.14,
+   "new": 0.65,
+   "payoff": 1.87,
+   "s": 0.17
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.22,
+   "new": 0.69,
+   "payoff": 1.12,
+   "s": 0.17
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.23,
+   "new": 0.65,
+   "payoff": 1.14,
+   "s": 0.17
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.17,
+   "new": 0.59,
+   "payoff": 1.67,
+   "s": 0.168
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.18,
+   "new": 0.67,
+   "payoff": 1.39,
+   "s": 0.168
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.14,
+   "new": 0.67,
+   "payoff": 1.79,
+   "s": 0.168
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.18,
+   "new": 0.61,
+   "payoff": 1.52,
+   "s": 0.167
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.7,
+   "payoff": 1.59,
+   "s": 0.167
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.22,
+   "new": 0.59,
+   "payoff": 1.28,
+   "s": 0.166
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.17,
+   "new": 0.56,
+   "payoff": 1.74,
+   "s": 0.166
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.18,
+   "new": 0.63,
+   "payoff": 1.46,
+   "s": 0.166
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.16,
+   "new": 0.69,
+   "payoff": 1.5,
+   "s": 0.166
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.22,
+   "new": 0.63,
+   "payoff": 1.18,
+   "s": 0.164
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.15,
+   "new": 0.7,
+   "payoff": 1.56,
+   "s": 0.164
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.14,
+   "new": 0.64,
+   "payoff": 1.82,
+   "s": 0.163
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.16,
+   "new": 0.6,
+   "payoff": 1.7,
+   "s": 0.163
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,4,p), p>=7",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.16,
+   "new": 0.69,
+   "payoff": 1.48,
+   "s": 0.163
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.72,
+   "payoff": 1.73,
+   "s": 0.162
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.13,
+   "new": 0.69,
+   "payoff": 1.8,
+   "s": 0.161
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.16,
+   "new": 0.69,
+   "payoff": 1.46,
+   "s": 0.161
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.15,
+   "new": 0.68,
+   "payoff": 1.58,
+   "s": 0.161
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.12,
+   "new": 0.71,
+   "payoff": 1.89,
+   "s": 0.161
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.16,
+   "new": 0.6,
+   "payoff": 1.68,
+   "s": 0.161
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.13,
+   "new": 0.65,
+   "payoff": 1.89,
+   "s": 0.16
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.13,
+   "new": 0.66,
+   "payoff": 1.86,
+   "s": 0.16
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.14,
+   "new": 0.6,
+   "payoff": 1.9,
+   "s": 0.16
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.16,
+   "new": 0.73,
+   "payoff": 1.36,
+   "s": 0.159
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,4,p), p>=7",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.16,
+   "new": 0.71,
+   "payoff": 1.4,
+   "s": 0.159
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.11,
+   "new": 0.67,
+   "payoff": 2.15,
+   "s": 0.158
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.21,
+   "new": 0.67,
+   "payoff": 1.12,
+   "s": 0.158
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.16,
+   "new": 0.67,
+   "payoff": 1.46,
+   "s": 0.157
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,4,p), p>=7",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.16,
+   "new": 0.68,
+   "payoff": 1.44,
+   "s": 0.157
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.65,
+   "payoff": 1.61,
+   "s": 0.157
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.18,
+   "new": 0.63,
+   "payoff": 1.37,
+   "s": 0.155
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.16,
+   "new": 0.66,
+   "payoff": 1.46,
+   "s": 0.154
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.14,
+   "new": 0.66,
+   "payoff": 1.67,
+   "s": 0.154
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.16,
+   "new": 0.6,
+   "payoff": 1.6,
+   "s": 0.154
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.19,
+   "new": 0.64,
+   "payoff": 1.26,
+   "s": 0.153
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.15,
+   "new": 0.63,
+   "payoff": 1.62,
+   "s": 0.153
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.12,
+   "new": 0.72,
+   "payoff": 1.77,
+   "s": 0.153
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.13,
+   "new": 0.71,
+   "payoff": 1.65,
+   "s": 0.152
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.21,
+   "new": 0.63,
+   "payoff": 1.15,
+   "s": 0.152
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.14,
+   "new": 0.67,
+   "payoff": 1.62,
+   "s": 0.152
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "combine two closed conditional families",
+   "exec": 0.12,
+   "new": 0.65,
+   "payoff": 1.92,
+   "s": 0.15
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.63,
+   "payoff": 1.59,
+   "s": 0.15
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.16,
+   "new": 0.62,
+   "payoff": 1.51,
+   "s": 0.15
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.14,
+   "new": 0.65,
+   "payoff": 1.64,
+   "s": 0.149
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.16,
+   "new": 0.61,
+   "payoff": 1.53,
+   "s": 0.149
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.62,
+   "payoff": 1.85,
+   "s": 0.149
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.16,
+   "new": 0.65,
+   "payoff": 1.43,
+   "s": 0.149
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.17,
+   "new": 0.61,
+   "payoff": 1.43,
+   "s": 0.148
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.19,
+   "new": 0.62,
+   "payoff": 1.26,
+   "s": 0.148
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.13,
+   "new": 0.68,
+   "payoff": 1.67,
+   "s": 0.148
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,4,p), p>=7",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.7,
+   "payoff": 1.4,
+   "s": 0.147
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.13,
+   "new": 0.61,
+   "payoff": 1.84,
+   "s": 0.146
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.16,
+   "new": 0.65,
+   "payoff": 1.4,
+   "s": 0.146
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.63,
+   "payoff": 1.55,
+   "s": 0.146
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.11,
+   "new": 0.67,
+   "payoff": 1.98,
+   "s": 0.146
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.15,
+   "new": 0.61,
+   "payoff": 1.6,
+   "s": 0.146
+  },
+  {
+   "tool": "genus-1 quartic with local obstruction",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.17,
+   "new": 0.63,
+   "payoff": 1.35,
+   "s": 0.145
+  },
+  {
+   "tool": "factorisation in Z[i] or Z[omega] or Z[sqrt2] with both summands powers",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.16,
+   "new": 0.65,
+   "payoff": 1.39,
+   "s": 0.145
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.12,
+   "new": 0.71,
+   "payoff": 1.7,
+   "s": 0.145
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.15,
+   "new": 0.63,
+   "payoff": 1.52,
+   "s": 0.144
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.15,
+   "new": 0.7,
+   "payoff": 1.37,
+   "s": 0.144
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.15,
+   "new": 0.69,
+   "payoff": 1.38,
+   "s": 0.143
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.15,
+   "new": 0.64,
+   "payoff": 1.49,
+   "s": 0.143
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.12,
+   "new": 0.59,
+   "payoff": 2.02,
+   "s": 0.143
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.63,
+   "payoff": 1.73,
+   "s": 0.142
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.21,
+   "new": 0.6,
+   "payoff": 1.13,
+   "s": 0.142
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.1,
+   "new": 0.63,
+   "payoff": 2.24,
+   "s": 0.141
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.12,
+   "new": 0.71,
+   "payoff": 1.66,
+   "s": 0.141
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.6,
+   "payoff": 1.57,
+   "s": 0.141
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.14,
+   "new": 0.69,
+   "payoff": 1.45,
+   "s": 0.14
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.12,
+   "new": 0.72,
+   "payoff": 1.62,
+   "s": 0.14
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.12,
+   "new": 0.71,
+   "payoff": 1.64,
+   "s": 0.14
+  },
+  {
+   "tool": "exponent-divisibility pullback to a closed family",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.12,
+   "new": 0.56,
+   "payoff": 2.09,
+   "s": 0.14
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.19,
+   "new": 0.63,
+   "payoff": 1.16,
+   "s": 0.139
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.14,
+   "new": 0.72,
+   "payoff": 1.38,
+   "s": 0.139
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.14,
+   "new": 0.7,
+   "payoff": 1.42,
+   "s": 0.139
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.11,
+   "new": 0.68,
+   "payoff": 1.84,
+   "s": 0.138
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.63,
+   "payoff": 1.69,
+   "s": 0.138
+  },
+  {
+   "tool": "Lifting-the-Exponent / p-adic valuation split",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.19,
+   "new": 0.62,
+   "payoff": 1.17,
+   "s": 0.138
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.14,
+   "new": 0.7,
+   "payoff": 1.41,
+   "s": 0.138
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.14,
+   "new": 0.64,
+   "payoff": 1.49,
+   "s": 0.134
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.12,
+   "new": 0.6,
+   "payoff": 1.82,
+   "s": 0.131
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.14,
+   "new": 0.64,
+   "payoff": 1.46,
+   "s": 0.131
+  },
+  {
+   "tool": "classical newform elimination over Q (PARI mf)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.14,
+   "new": 0.65,
+   "payoff": 1.44,
+   "s": 0.131
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.12,
+   "new": 0.59,
+   "payoff": 1.84,
+   "s": 0.13
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.14,
+   "new": 0.69,
+   "payoff": 1.35,
+   "s": 0.13
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.63,
+   "payoff": 1.57,
+   "s": 0.129
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.13,
+   "new": 0.64,
+   "payoff": 1.53,
+   "s": 0.127
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.13,
+   "new": 0.68,
+   "payoff": 1.44,
+   "s": 0.127
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.7,
+   "payoff": 1.39,
+   "s": 0.126
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.14,
+   "new": 0.65,
+   "payoff": 1.38,
+   "s": 0.126
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.13,
+   "new": 0.66,
+   "payoff": 1.46,
+   "s": 0.125
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.14,
+   "new": 0.66,
+   "payoff": 1.34,
+   "s": 0.124
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.17,
+   "new": 0.61,
+   "payoff": 1.2,
+   "s": 0.124
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "combine two closed conditional families",
+   "exec": 0.11,
+   "new": 0.71,
+   "payoff": 1.59,
+   "s": 0.124
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,p,r), p>=5, r>=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.12,
+   "new": 0.63,
+   "payoff": 1.63,
+   "s": 0.123
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.15,
+   "new": 0.62,
+   "payoff": 1.32,
+   "s": 0.123
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.13,
+   "new": 0.71,
+   "payoff": 1.33,
+   "s": 0.123
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.12,
+   "new": 0.61,
+   "payoff": 1.63,
+   "s": 0.119
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(p,q,r) distinct odd primes >=5",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.12,
+   "new": 0.64,
+   "payoff": 1.55,
+   "s": 0.119
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.12,
+   "new": 0.67,
+   "payoff": 1.47,
+   "s": 0.118
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "combine two closed conditional families",
+   "exec": 0.11,
+   "new": 0.72,
+   "payoff": 1.48,
+   "s": 0.117
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "use that TWO terms are perfect powers of known exponent",
+   "exec": 0.13,
+   "new": 0.66,
+   "payoff": 1.35,
+   "s": 0.116
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.13,
+   "new": 0.68,
+   "payoff": 1.31,
+   "s": 0.116
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "look for an accidental low-degree identity",
+   "exec": 0.12,
+   "new": 0.62,
+   "payoff": 1.56,
+   "s": 0.116
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "treat the smallest exponent side only",
+   "exec": 0.14,
+   "new": 0.61,
+   "payoff": 1.35,
+   "s": 0.115
+  },
+  {
+   "tool": "one-sided published ternary theorem (Bennett-Skinner / Ivorra / Kraus / Darmon-Merel)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.11,
+   "new": 0.58,
+   "payoff": 1.78,
+   "s": 0.114
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.15,
+   "new": 0.6,
+   "payoff": 1.22,
+   "s": 0.11
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(4,p,q), p!=q odd primes",
+   "angle": "move a term across (odd exponent allows sign change)",
+   "exec": 0.13,
+   "new": 0.66,
+   "payoff": 1.27,
+   "s": 0.109
+  },
+  {
+   "tool": "descent to a smaller solution of the same signature",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.11,
+   "new": 0.66,
+   "payoff": 1.46,
+   "s": 0.106
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,3,p) beyond 10^9 classes",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.11,
+   "new": 0.62,
+   "payoff": 1.45,
+   "s": 0.099
+  },
+  {
+   "tool": "rank-0 elliptic curve over Q (PARI ellrank)",
+   "target": "(3,p,q) with 3 in the signature",
+   "angle": "use the exponent-4 term as a square of a square",
+   "exec": 0.13,
+   "new": 0.59,
+   "payoff": 1.24,
+   "s": 0.095
+  }
+ ]
+}

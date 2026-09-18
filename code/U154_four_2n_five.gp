@@ -1,0 +1,13 @@
+f1 = 5*x^4 - 10*x^2 + 1;
+f2 = -5*x^4 + 10*x^2 - 1;
+f3 = 5*x^4 - 50*x^2 + 25;
+f4 = -5*x^4 + 50*x^2 - 25;
+print("C1 W^2=5V^4-10V^2+1 pts: ", hyperellratpoints(f1,100));
+E1 = ellinit(ellfromeqn(y^2 - f1)); print("C1 Jac: cond ", ellglobalred(E1)[1], " tors ", elltors(E1)[1], " rank ", ellrank(E1)[1..2], " an ", ellanalyticrank(E1)[1]);
+print("C2 W^2=-(5V^4-10V^2+1) pts: ", hyperellratpoints(f2,100));
+E2 = ellinit(ellfromeqn(y^2 - f2)); print("C2 Jac: cond ", ellglobalred(E2)[1], " tors ", elltors(E2)[1], " rank ", ellrank(E2)[1..2], " an ", ellanalyticrank(E2)[1]);
+print("C3 W^2=5(U^4-10U^2+5) pts: ", hyperellratpoints(f3,100));
+E3 = ellinit(ellfromeqn(y^2 - f3)); print("C3 Jac: cond ", ellglobalred(E3)[1], " tors ", elltors(E3)[1], " rank ", ellrank(E3)[1..2], " an ", ellanalyticrank(E3)[1]);
+print("C4 W^2=-5(U^4-10U^2+5) pts: ", hyperellratpoints(f4,100));
+E4 = ellinit(ellfromeqn(y^2 - f4)); print("C4 Jac: cond ", ellglobalred(E4)[1], " tors ", elltors(E4)[1], " rank ", ellrank(E4)[1..2], " an ", ellanalyticrank(E4)[1]);
+quit;

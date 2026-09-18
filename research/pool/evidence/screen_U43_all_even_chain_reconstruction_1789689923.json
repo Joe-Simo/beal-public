@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U43_all_even_chain_reconstruction",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U43_all_even_chain_reconstruction.md",
+      "excerpt": "# U43: reconstruction of the all-even chain through the 17-divisible branch\n\nStatus: verified partial reconstruction only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Elementary Pythagorean reduction\n\nLet a primitive Beal solution have\n\n    x=2r, y=2s, z=2t.\n\nAfter swapping the two left summands if necessary, take A even and B,C odd. Then\n\n    (A^r)^2 + (B^s)^2 = (C^t)^2\n\nis a primitive Pythagorean triple. Hence there are coprime integers m>n>0 of opposite parity with\n\n    A^r=2mn,\n    B^s=m^2-n^2,\n    C^t=m^2+n^2.\n\nSince\n\n    B^s=(m-n)(m+n)\n\nand m-n,m+n are coprime odd integers, there are coprime odd u<v with\n\n    m-n=u^s,\n    m+n=v^s.\n\nTherefore\n\n    m=(v^s+u^s)/2,\n    n=(v^s-u^s)/2.\n\nAlso 2mn=A^r with gcd(m,n)=1. The odd member of {m,n} is an r-th power; the even member is 2^(r-1) times an r-th power after absorbing any extra power 2^r into its base. Thus for coprime positive a,b,\n\n    {m,n}={a^r, 2^(r-1)b^r}.\n\nConsequently\n\n    {v^s+u^s, v^s-u^s}={2a^r, 2^r b^r}\n\nand, independently of the orientation,\n\n    C^t = a^(2r) + 2^(2r-2)b^(2r).          (1)\n\nThere is a second useful identity from the u,v parametrization:\n\n    2 C^t = u^(2s)+v^(2s).                   (2)\n\nThese identities are direct and restore the core of the missing earlier all-even derivation.\n\n## 2. Published generalized-Fermat input\n\nAnni-Siksek, `Modular elliptic curves over real abelian fields and the generalized Fermat equation x^{2l}+y^{2m}=z^p`, Algebra & Number Theory 10 (2016), Theorem 1:\n\nfor primes l,m>=5 and p in {3,5,7,11,13}, with the original p=13 exception l,m !=7, the only primitive solutions are trivial. The remaining p=13 exception was later closed by Billerey-Chen-Dembele-Dieulefait-Freitas; their 2023 paper states that for l,m>=5 the only solutions to x^(2l)+y^(2m)=z^13 are trivial.\n\nMichaud-Jacobs, `On some generalized Fermat equations of the form x^2+y^{2n}=z^p`, Mathematika 68 (2022), Theorem 3:\n\nfor primes l,m !=5, the equation\n\n    X^(2l)+Y^(2m)=Z^17\n\nhas no solutions in nonzero coprime integers.\n\n## 3. Conditional recovery of the \"one side is a 5-power\" step\n\nAssume 17|t and assume every prime divisor of r and s is >=5.\n\nIf neither r nor s is a power of 5, choose prime divisors\n\n    l|r, m|s, l!=5, m!=5.\n\nThen the original all-even equation can be rewritten\n\n    (A^(r/l))^(2l) + (B^(s/m))^(2m)\n      = (C^(2t/17))^17.\n\nThe transformed bases remain nonzero and coprime. Michaud-Jacobs Theorem 3 gives a contradiction.\n\nTherefore, under the stated prerequisite on the prime divisors of r and s,\n\n    17|t  =>  r is a power of 5 OR s is a power of 5.       (3)\n\nThis is now reconstructed from the published theorem rather than inherited from an AI summary.\n\n## 4. The two orientations are exact\n\n### If s=5^b\n\nFrom (2),\n\n    u^(2s)+v^(2s)=2C^t.\n\nFor b>=1 and 17|t set\n\n    X=u^(s/5),\n    Y=v^(s/5),\n    Z=C^(t/17).\n\nThen\n\n    X^10+Y^10=2 Z^17.                         (4)\n\nThe transformation preserves gcd(X,Y)=1 and X,Y are odd.\n\n### If r=5^a\n\nFrom (1),\n\n    C^t=a0^(2r)+2^(2r-2)b0^(2r)\n\n(rename the Pythagorean bases a0,b0 to avoid confusion with the exponent index).\n\nFor a>=1 and 17|t define\n\n    X=a0^(r/5),\n    Y=2^((r-5)/5) b0^(r/5),\n    Z=C^(t/17).\n\nSince r=5^a, r-5 is divisible by 5 and\n\n    2^(2r-2)=2^8 * (2^((r-5)/5))^10.\n\nThus exactly\n\n    X^10+256Y^10=Z^17.                         (5)\n\nThis proves the coefficient 256 and restores the logical link from the r=5^a orientation to U15-U41.\n\n## 5. What remains missing\n\nThe all-even chain is not yet complete. Two prerequisites still need proof from preserved evidence/primary sources:\n\n1. show that the relevant r and s have no prime divisors 2 or 3 (equivalently, every prime divisor is >=5);\n2. eliminate the alternate orientation (4), X^10+Y^10=2Z^17, or verify a published theorem that does so.\n\nThe available 2011 Q-curve theorem for x^5+y^5=2z^p does not automatically cover p=17: its displayed density result requires congruence conditions not satisfied by 17. Therefore the earlier project summary's assertion that (4) has only the trivial primitive positive solution is NOT accepted here without a stronger source.\n\nU41's weighted equation (5) is also still a candidate elimination pending the independent level-lowering/newspace audit recorded there.\n\n## 6. Coverage consequence\n\nWhat is now rigorously connected is:\n\n    all-even primitive Beal solution\n      -> Pythagorean system (1),(2)\n      -> [if 17|t, all prime divisors of r,s >=5]\n      -> one of r,s is a 5-power\n      -> either (4) or (5).\n\nThis is a substantial reconstruction, but the bracketed prerequisite and the coefficient-2 branch remain open obligations. No complete all-even elimination is claimed.\n",
+      "length_chars": 4696
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.53,
+        "confidence": 0.47,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.79,
+          "1": 0.04,
+          "2": 0.02,
+          "3": 0.15
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.29,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.89,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.09
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_literature",
+        "confidence": 0.26,
+        "probabilities": {
+          "audit_later": 0.39,
+          "audit_now": 0.14,
+          "verify_computation": 0.01,
+          "verify_literature": 0.41,
+          "no_action": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2929,
+      "output_tokens": 126
+    }
+  }
+}

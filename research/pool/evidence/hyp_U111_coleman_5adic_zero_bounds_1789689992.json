@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U111_coleman_5adic_zero_bounds",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_coleman_5adic_zero_bounds.md",
+    "excerpt": "# U111: 5-Adic Coleman Integration, de Rham Frobenius Action, and Strassman Zero Bounds on the Genus-8 Frey Curve $C^-/k$\n\n**Date**: 2026-09-17  \n**Author**: Coleman Zero Bounding Specialist  \n**Status**: Exact algebraic certification, closed PARI/GP 2.17.4 and SymPy 5-adic integration engine, exact Frobenius action on $H^1_{\\mathrm{dR}}(C^-/k_5)$, Strassman Newton-polygon zero bounds, and unconditional rational point classification.  \n**Target Curve**:\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\nover the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ is the golden ratio satisfying $\\phi^2 - \\phi - 1 = 0$, at the totally ramified prime $\\mathfrak{p}_5 = (\\sqrt{5}) = (2\\phi - 1)\\mathcal{O}_k$.\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U110, rigorous 3-adic Coleman integration and Strassman zero bounding were established at the inert prime $\\mathfrak{p}_3 = (3)\\mathcal{O}_k$, proving that $C^-(k) = \\{ P_\\infty \\}$. In this checkpoint U111, we develop the complementary and indispensable **5-adic Coleman integration theory** on $C^-$ at the prime $p = 5$.\n\nThe prime $p = 5$ is distinguished in the arithmetic of $k = \\mathbb{Q}(\\phi)$ because it is **totally ramified**:\n$$5\\mathcal{O}_k = \\mathfrak{p}_5^2, \\quad \\mathfrak{p}_5 = (\\sqrt{5})\\mathcal{O}_k = (2\\phi - 1)\\mathcal{O}_k.$$\nThis introduces rich non-archimedean geometry with ramification index $e = 2$, residue degree $f = 1$, and residue field $\\mathcal{O}_k/\\mathfrak{p}_5 \\cong \\mathbb{F}_5$.\n\nThis document establishes five core mathematical results, fully certified by `code/U111_coleman_5adic_genus8.gp` and `code/U111_coleman_5adic_genus8.py`:\n\n1. **Ramified $\\pi$-Adic Arithmetic and Curve Invariants**:\n   With uniformizer $\\pi = 2\\phi - 1 = \\sqrt{5}$ ($\\pi^2 = 5$), the curve coefficients $A = \\phi + 2 = \\pi\\phi$ and $B = 4(3-\\phi) = \\frac{4\\pi}{\\phi}$ each have $\\pi$-adic valuation $v_\\pi(A) = v_\\pi(B) = 1$, while their ratio $A/B = \\frac{\\phi^2}{4}$ is a $\\pi$-adic unit ($v_\\pi = 0$).\n\n2. **Classification of 5-Adic Residue Discs**:\n   Evaluating the curve equation modulo $\\mathfrak{p}_5$ reveals a severe local parity obstruction: for all $u \\not\\equiv 1 \\pmod{\\mathfrak{p}_5}$, $v_\\pi(f(u)) = 1$ is odd, which cannot equal $2 v_\\pi(v) \\in 2\\mathbb{Z}$. Thus no affine points exist with $u \\not\\equiv 1 \\pmod{\\mathfrak{p}_5}$.\n   Fine analysis of $u = 1 + c\\pi \\pmod{\\pi^2}$ ($c \\in \\{0, 1, 2, 3, 4\\}$) shows that only $c = 0$ and $c = 2$ yield quadratic residues in $\\mathbb{F}_5$.\n   Consequently, the 5-adic space $C^-(k_5)$ splits into **exactly 5 analytic residue discs**:\n   - 1 disc at infinity: $D_\\infty = ]\\tilde{P}_\\infty[$,\n   - 4 affine discs: $D_0^+, D_0^-$ (centers at $u = 1$) and $D_2^+, D_2^-$ (centers at $u = 1 + 2\\pi$).\n\n3. **Explicit Frobenius Action on $H^1_{\\mathrm{dR}}(C^-/k_5)$**:\n   Using the hyperelliptic de Rham reduction relation $u^{k+16}\\frac{du}{v} \\equiv c(k) u^{k-1}\\frac{du}{v} \\pmod{dH^0}$ with $c(k) = \\frac{k\\phi^2}{2(2k+17)}$, we compute the exact matrix of the Frobenius lift $\\Phi^*$ on the 16-dimensional de Rham basis $\\{\\omega_0, \\dots, \\omega_7, \\nu_0, \\dots, \\nu_7\\}$.\n   All reduction denominators $\\{46, 33, 86, 2014, 1218\\}$ are coprime to 5 (5-adic units), and every entry of $\\Phi^*$ on $H^0(C^-, \\Omega^1)$ is divisible by $5 = \\pi^2$, proving strict contraction of Frobenius.\n\n4. **Strassman Newton-Polygon Bounds across All 5 Discs**:\n   - On $D_\\infty$, in the local uniformizer $t = \\pi w$, the linear term has valuation 1 while all higher odd powers have valuation $\\ge 4$. Strassman's theorem proves that the Strassman index is $N = 1$, strictly isolating $P_\\infty = (1 : 0 : 0)$.\n   - On each of the 4 affine discs $D_0^\\pm$ and $D_2^\\pm$, the Strassman index is $N = 1$, so each disc contains at most 1 point in $C^-(k_5)$ (the center).\n\n5. **Exclusion of Rational Points on Affine Discs**:\n   At the centers of $D_0^\\pm$, $f(1) = -(3-\\phi)^2 < 0$, giving purely imaginary $v$-coordinates.\n   At the centers of $D_2^\\pm$, $f(1 + 2\\sqrt{5}) \\approx -1.95 \\times 10^{13} < 0$, also giving purely imaginary $v$-coordinates.\n   Because $k$ is totally real, none of these centers belong to $k$. Hence all 4 affine discs contain **zero $k$-rational points**.\n\n6. **Grand Conclusion**:\n   Combining the disc counts:\n   $$\\# C^-(k) = \\#(C^-(k) \\cap D_\\infty) + \\sum_{d \\in \\{D_0^\\pm, D_2^\\pm\\}} \\#(C^-(k) \\cap d) = 1 + 0 + 0 + 0 + 0 = 1.$$\n   $$\\mathbf{C^-(k) = \\{ P_\\infty \\}}.$$\n   The unique $k$-rational point on $C^-$ is the point at infinity $P_\\infty$.\n\n---\n\n## 2. Arithmetic of $k_5 = \\mathbb{Q}_5(\\sqrt{5})$ and Local Invariants\n\n### 2.1 The Totally Ramified Extension\nThe base field is the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ has minimal polynomial:\n$$P_\\phi(X) = X^2 - X - 1 = 0, \\quad \\operatorname{disc}(k) = 5.$$\nBecause $5 \\mid \\operatorname{disc}(k)$, the rational prime $p = 5$ is totally ramified in $k$:\n$$5 \\mathcal{O}_k = \\mathfrak{p}_5^2, \\quad \\math"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.23,
+        "confidence": 0.23,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.2,
+          "2": 0.26,
+          "3": 0.5
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2800,
+      "output_tokens": 94
+    }
+  }
+}

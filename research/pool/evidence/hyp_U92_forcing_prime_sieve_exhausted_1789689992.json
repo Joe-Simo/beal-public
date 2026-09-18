@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U92_forcing_prime_sieve_exhausted",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U92_forcing_prime_sieve_exhausted.md",
+    "excerpt": "# U92: the U72 Gaussian forcing-prime sieve is globally exhausted\n\n**Status: written partial theorem with a complete finite scan, an exact Kummer-cover genus calculation, Hasse-Weil coverage of the infinite tail, and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This checkpoint revisits U72's fourteen primes not to enlarge the search, but to answer a precise global question: **can the same finite-field criterion ever force any additional rational prime into `Y`?** The answer is no.\n\n## 1. Exact finite-field criterion\n\nAssume a primitive positive solution of the weighted equation\n\n    X^10+256Y^10=Z^17.                               (W)\n\nU71/U72 reconstruct the Gaussian case III. In the notation of `code/U72_full_support.py`, after projective normalization `A=1` one has\n\n    a=1,\n    b=K B^5,     K=16*17^4,                          (1.1)\n\nand the two Gaussian cofactors must satisfy\n\n    G(b^2) is a fifth power,\n    H(b^2)/17 is a fifth power                         (1.2)\n\nmodulo every rational prime `q` for which the reduction is used, where\n\n    G(v)=17v^8-680v^7+6188v^6-19448v^5+24310v^4\n         -12376v^3+2380v^2-136v+1,\n\n    H(v)=v^8-136v^7+2380v^6-12376v^5+24310v^4\n         -19448v^3+6188v^2-680v+17.                 (1.3)\n\nIf there is any `B != 0 (mod q)` satisfying (1.2), this criterion cannot force `q|B`, hence cannot force `q|Y` by this route.\n\nFor `q != 5` with `q not congruent to 1 (mod 5)`, the fifth-power map on `F_q^*` is an automorphism, so this criterion cannot force `B=0`. Thus only primes\n\n    q = 1 (mod 5)                                    (1.4)\n\nneed to be considered. The prime 17 is outside (1.4) and is handled separately upstream.\n\n## 2. The Kummer curve of simultaneous survivors\n\nFor `q=1 (mod 5)`, introduce the affine curve\n\n    R^5 = b/K,\n    C^5 = G(b^2),\n    D^5 = H(b^2)/17.                                 (2.1)\n\nA rational point with\n\n    b R C D != 0                                     (2.2)\n\ngives a nonzero survivor of (1.2): simply take `B=R`.\n\nWe now prove that such a point must exist for every sufficiently large `q`.\n\n### 2.1 Geometric connectedness and degree\n\nOver an algebraic closure, the three Kummer classes\n\n    b/K,  G(b^2),  H(b^2)/17                         (2.3)\n\nare independent in `k(b)^*/k(b)^{*5}`. Indeed:\n\n- at `b=0`, only the first function has valuation one;\n- at a simple root of `G(b^2)`, only the second has valuation one;\n- at a simple root of `H(b^2)`, only the third has valuation one.\n\nHence any relation\n\n    (b/K)^r G(b^2)^s (H(b^2)/17)^t = fifth power\n\nforces `r=s=t=0 (mod 5)`. The smooth projective normalization of (2.1) is therefore geometrically connected of degree\n\n    5^3=125                                           (2.4)\n\nover the `b`-line.\n\nThe needed simplicity/disjointness of the finite branch loci is exact:\n\n    Res(G,H)=2^136,\n    Disc(G)=Disc(H)=2^112*17^7.                      (2.5)\n\nThus for every `q=1 (mod 5)` all sixteen roots of `G(b^2)` and all sixteen roots of `H(b^2)` are simple and mutually disjoint; such a prime is never 2 or 17.\n\n### 2.2 Branch points and genus\n\nThe branch points over an algebraic closure are\n\n- `b=0`;\n- the sixteen roots of `G(b^2)`;\n- the sixteen roots of `H(b^2)`;\n- `b=infinity`.\n\nThere are exactly\n\n    34 branch points.                                (2.6)\n\nAt each one the inertia subgroup has order five. Since the cover has degree 125, there are 25 geometric points above each branch point and each contributes `5-1=4` to the tame ramification divisor. Riemann-Hurwitz therefore gives\n\n    2g-2 = -2*125 + 34*25*4\n         = 3150,\n\nso\n\n    g=1576.                                           (2.7)\n\nThis uses the standard tame Riemann-Hurwitz formula; the precise source is recorded in `references/U92/sources.json`.\n\n## 3. Hasse-Weil eliminates every large forcing prime\n\nFor the smooth geometrically connected projective curve `C_q` above, Hasse-Weil gives\n\n    #C_q(F_q) >= q+1-2g*sqrt(q)\n              = q+1-3152*sqrt(q).                    (3.1)\n\nAcross all 34 branch fibres there are at most\n\n    34*(125/5)=850                                   (3.2)\n\ngeometric points, hence at most 850 rational points. Therefore a nonbranch rational point satisfying (2.2) must exist as soon as\n\n    q+1-3152*sqrt(q) > 850.                          (3.3)\n\nFor `q>849`, squaring the positive sides makes (3.3) equivalent to\n\n    (q-849)^2 > 3152^2 q.                            (3.4)\n\nExact integer arithmetic shows that the least integer satisfying (3.4) is\n\n    q0 = 9,936,802.                                   (3.5)\n\nIndeed the left-minus-right value is negative at `q0-1` and equals `720801>0` at `q0`.\n\nConsequently **no prime `q=1 (mod 5)` with `q>=9,936,802` can be a forcing prime for (1.2)**.\n\n## 4. Complete finite range below ten million\n\nThe remaining range is finite and overlaps the theor"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.5
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.78,
+        "confidence": 0.22,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.49,
+          "1": 0.3,
+          "2": 0.15,
+          "3": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2499,
+      "output_tokens": 94
+    }
+  }
+}

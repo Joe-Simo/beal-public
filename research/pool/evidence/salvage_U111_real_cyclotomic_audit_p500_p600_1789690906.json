@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U111_real_cyclotomic_audit_p500_p600",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_real_cyclotomic_audit_p500_p600.md",
+    "excerpt": "# Checkpoint U111: Real Cyclotomic Class Number and Sahoo Class $\\mathcal{P}_1$ Audit for $500 < p < 600$\n\n**Date**: 2026-09-17  \n**Author**: Real Cyclotomic Class Number Auditor / Arithmetic Geometry Research Group  \n**Target Equation**: $X^{2\\ell} + Y^{2m} = Z^p$, prime exponents $\\ell, m \\ge 5$ (asymptotic bound $\\ell, m > 10^{60}$), prime $p \\in (500, 600)$  \n**Branch**: All-even Beal candidate $A^{2r} + B^{2s} = C^{2t}$ with $17 \\nmid t$  \n**Supporting Code**: [`code/U111_cyclotomic_p500_p600.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_cyclotomic_p500_p600.py)  \n**Machine-Readable Audit**: [`research/checkpoints/U111_real_cyclotomic_audit_p500_p600.json`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U111_real_cyclotomic_audit_p500_p600.json)  \n**Primary References**:\n- S. Sahoo, *Asymptotic solutions of generalized Fermat equations $x^{2l} + y^{2m} = z^p$*, preprint (2025).\n- R. Schoof, *Class numbers of real cyclotomic fields of prime conductor*, Math. Comp. 72, no. 242 (2003), 913\u2013937.\n- J. C. Miller, *Real cyclotomic fields of prime conductor and their class numbers*, Math. Comp. 84, no. 295 (2015), 2459\u20132469; arXiv:1407.2373 (2014).\n- On-Line Encyclopedia of Integer Sequences (OEIS), Sequences A230869 ($p$ with $h_p^+ > 1$) and A230870 ($h_p^+$ values).\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint audits the arithmetic of real cyclotomic fields $K^+ = \\mathbb{Q}(\\zeta_p)^+ = \\mathbb{Q}(2\\cos(2\\pi/p))$ and Sahoo's (2025) Class $\\mathcal{P}_1$ asymptotic elimination for all 14 primes in $500 < p < 600$:\n$$p \\in \\{503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599\\}.$$\n\n### Key Results\n\n1. **Inertia of 2 in $K^+ = \\mathbb{Q}(\\zeta_p)^+$**:\n   - Exactly **9 primes (64.3%)** have $2$ completely inert in $K^+$ ($g^+ = 1$, residue degree $f^+ = \\frac{p-1}{2}$):\n     $$\\mathbf{P_{\\text{inert}} \\cap (500, 600) = \\{503, 509, 523, 541, 547, 557, 563, 587, 599\\}}.$$\n   - Exactly **5 primes (35.7%)** fail inertia ($g^+ \\ge 2$):\n     $$\\mathbf{P_{\\text{split}} \\cap (500, 600) = \\{521, 569, 571, 577, 593\\}}.$$\n     - Four primes fail due to quadratic splitting $p \\equiv 1 \\pmod 8$ ($\\{521, 569, 577, 593\\}$), where $2$ splits in $\\mathbb{Q}(\\sqrt{p}) \\subset K^+$.\n     - One prime fails due to small order mod $p$ ($p = 571$, $g^+ = 5$).\n\n2. **Real Cyclotomic Class Numbers $h_p^+$ from Literature**:\n   - From Schoof (2003, Main Table; OEIS A230869/A230870), exactly **3 primes** in $(500, 600)$ have non-trivial class number $h_p^+ > 1$:\n     - **$p = 521$**: $h_{521}^+ = 27 = 3^3$ (term 12 of A230869/A230870);\n     - **$p = 547$**: $h_{547}^+ = 4 = 2^2$ (term 13 of A230869/A230870);\n     - **$p = 577$**: $h_{577}^+ = 7$ (term 14 of A230869/A230870).\n   - All other 11 primes in $(500, 600)$ have $h_p^+ = 1$ (under GRH).\n\n3. **The $p = 547$ Class Number Anomaly ($h_{547}^+ = 4$)**:\n   - For $p = 547$, $\\operatorname{ord}_{547}(2) = 546 = p - 1$, so **2 is completely inert** in $K^+$ ($f^+ = 273, g^+ = 1$).\n   - However, $h_{547}^+ = 4 = 2^2$ is **even** ($2 \\mid h_{547}^+$!).\n   - Joining $p = 163$ ($h_{163}^+ = 4$), $p = 349$ ($h_{349}^+ = 16$), and $p = 491$ ($h_{491}^+ = 8$), $p = 547$ is the fourth prime with 2 inert and an even class number.\n   - The non-trivial 2-torsion in the class group $\\operatorname{Cl}(\\mathcal{O}_{K^+})[2] \\ne 0$ permits unramified quadratic extensions of $K^+$, **causing Sahoo's Kummer descent lemma to fail**.\n   - Therefore, $p = 547$ **fails Class $\\mathcal{P}_1$** despite 2 being completely inert.\n\n4. **Class $\\mathcal{P}_1$ Certification (under GRH)**:\n   - Exactly **8 primes (57.1%)** satisfy both criteria ($2$ inert and $h_p^+ = 1$):\n     $$\\mathbf{\\mathcal{P}_1 \\cap (500, 600) = \\{503, 509, 523, 541, 557, 563, 587, 599\\}} \\quad (8 / 14 = 57.1\\%).$$\n     For each such prime, Sahoo's (2025) Theorem eliminates all non-trivial primitive integer solutions to $X^{2\\ell} + Y^{2m} = Z^p$ for exponents $\\ell, m > 10^{60}$.\n\n5. **Cumulative Progress across $19 \\le p < 600$**:\n   - Across all six audited intervals ($[19, 100)$, $(100, 200)$, $(200, 300)$, $(300, 400)$, $(400, 500)$, and $(500, 600)$), comprising 102 primes:\n     - Exactly **56 out of 102 primes (54.9%)** belong to Class $\\mathcal{P}_1$.\n\n---\n\n## 2. Algebraic Decomposition of 2 in $\\mathbb{Q}(\\zeta_p)^+$ for $500 < p < 600$\n\n### 2.1 Theoretical Invariants\nLet $p \\in (500, 600)$ be prime, and let $K^+ = \\mathbb{Q}(\\zeta_p)^+$ have degree $d = \\frac{p-1}{2}$.\nThe Galois group is $G^+ = \\operatorname{Gal}(K^+/\\mathbb{Q}) \\cong (\\mathbb{Z}/p\\mathbb{Z})^\\times / \\{\\pm 1\\}$.\nLet $f = \\operatorname{ord}_p(2)$ be the multiplicative order of 2 modulo $p$.\n- Residue degree in $K^+$:\n  $$f^+ = \\begin{cases} f/2 & \\text{if } f \\text{ is even and } 2^{f/2} \\equiv -1 \\pmod p, \\\\ f & \\text{otherwise.} \\end{cases}$$\n- Splitting index:\n  $$g^+ = \\frac{d}{f^+} = \\frac{(p-1)/2}{f^+}.$$\n- The prime 2 is **inert** in $K^+$ if and only if $g^+ = 1 \\iff f^+ = d$.\n\n### 2.2 Classification of Splitting in"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.83,
+        "confidence": 0.17,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.5,
+          "1": 0.17,
+          "2": 0.31,
+          "3": 0.02
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.88
+      }
+    },
+    "usage": {
+      "input_tokens": 2916,
+      "output_tokens": 42
+    }
+  }
+}

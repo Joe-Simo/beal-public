@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U90_mixed_weight_cubic_pade",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U90_mixed_weight_cubic_pade.md",
+    "excerpt": "# U90: mixed-weight cubic Pad\u00e9 cancellation pushes the weighted lower bound beyond 10^25993\n\n**Status: written partial theorem with exact integer/rational computation and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This executes U89's next step: allow homogeneous monomials whose index weights differ by multiples of ten, because `c^10=-256` makes those terms live in the same local `T`-residue class after extracting powers of `S=T^10`.\n\n## 1. Setup\n\nAssume a primitive positive solution\n\n    X^10+256Y^10=Z^17.                               (W)\n\nRetain\n\n    c^10=-256,\n    theta=sum_(j=0)^9 a_j c^j in Z[c],\n    theta^17=X+cY.                                   (1.1)\n\nAt a strong prime q dividing Y, write\n\n    T=Y/X,\n    S=T^10,\n    a_j=x*T^j*F_j(S),\n    F_j(S)=sum_(m>=0) B_(j+10m)(-256)^m S^m,\n    B_n=binomial(1/17,n),\n    x^17=X.                                          (1.2)\n\nAs before let\n\n    P=433992707035920672833426144791                 (1.3)\n\nbe the product of the fourteen U72-forced primes, all of which lie in the strong scalar-root family.\n\n## 2. The full cubic residue-nine space\n\nConsider every degree-three coefficient monomial\n\n    a_i a_j a_k, 0<=i<=j<=k<=9,\n\nwhose total index is congruent to 9 modulo 10. There are exactly twenty-two. Their actual index sums are 9 or 19.\n\nFor a monomial of weight `W=9+10h`, equation (1.2) gives\n\n    a_i a_j a_k\n      =x^3*T^9*S^h*F_i(S)F_j(S)F_k(S).              (2.1)\n\nThus all twenty-two monomials live in one common series space after factoring only `x^3*T^9`. This is the mixed-weight enlargement omitted from U88/U89.\n\nLet `M_1(S),...,M_22(S)` denote those twenty-two shifted product series. Form the exact 21-by-22 coefficient matrix for powers\n\n    S^0,S^1,...,S^20.                                (2.2)\n\nIts rank is 21. Let `lambda in Z^22` be the unique primitive integer null-vector, normalized by positive last coordinate. Then\n\n    G(S)=sum lambda_r M_r(S)                          (2.3)\n\nsatisfies\n\n    [S^n]G=0 for n=0,...,20.                         (2.4)\n\nThe next coefficient is nonzero:\n\n    C=[S^21]G !=0.                                   (2.5)\n\nConsequently\n\n    G(S)=C*S^21+O(S^22).                             (2.6)\n\n## 3. A nonzero cubic integer invariant of local order 219\n\nUse the same `lambda` on the corresponding twenty-two integer coefficient monomials and call the resulting integer `J_9`. Then\n\n    J_9 in Z.                                        (3.1)\n\nEquations (2.1) and (2.6) give, for every strong q with `e=v_q(Y)>0`,\n\n    J_9=x^3*T^9*G(T^10)\n       =x^3*C*T^219+terms of T-adic order at least 229. (3.2)\n\nHence\n\n    v_q(J_9)>=219e.                                  (3.3)\n\nIf `Y_s` is the strong-prime part of Y,\n\n    Y_s^219 | J_9.                                   (3.4)\n\n### 3.1 Forced nonvanishing\n\nThe leading coefficient C is a 31-adic unit. The exact reduced fraction satisfies\n\n    numerator(C)=22 mod31,\n    denominator(C)=21 mod31.                         (3.5)\n\nSince U72 forces `31|Y`, equation (3.2) yields\n\n    v_31(J_9)=219*v_31(Y).                           (3.6)\n\nThus\n\n    J_9 !=0.                                         (3.7)\n\nAll fourteen primes in P divide Y and are strong, so\n\n    P^219 | J_9.                                     (3.8)\n\n## 4. Height bound\n\nLet\n\n    kappa=2^(4/5),\n    H=X+kappa Y,\n    M=max(X,Y).\n\nFourier inversion gives\n\n    |a_j|<=kappa^(-j)H^(1/17).                       (4.1)\n\nThe twenty-two monomials have total weight 9 or 19, so each is bounded by\n\n    |a_i a_j a_k|<=kappa^(-9)H^(3/17)<H^(3/17).     (4.2)\n\nLet\n\n    L=sum |lambda_r|.                                (4.3)\n\nThe exact primitive relation has\n\n    max lambda digit length=1903,\n    L digit length=1904.                             (4.4)\n\nTherefore\n\n    0<|J_9|<L*H^(3/17).                              (4.5)\n\nTogether with (3.8),\n\n    P^219<L*H^(3/17).                                (4.6)\n\nSince `H<X+2Y<=3M`, a hypothetical `M<=10^25993` would imply\n\n    P^(219*17)<27*L^17*10^(3*25993).                 (4.7)\n\nThe exact integer certificate gives the reverse inequality, while the next threshold reverses back:\n\n    P^(3723)>27*L^17*10^(3*25993),\n    P^(3723)<27*L^17*10^(3*25994).                   (4.8)\n\nHence any primitive positive solution of (W) must satisfy\n\n    max(X,Y)>10^25993.                               (4.9)\n\nAt least one base must therefore contain **at least 25,994 decimal digits**.\n\nThis is stronger than U88's `10^21122` lower bound. It is still not a proof of nonexistence.\n\n## 5. Exact audit\n\n`code/U90_mixed_weight_cubic_pade.py` reconstructs the twenty-two monomials, shifts the weight-19 series by one power of S, row-scales the first twenty-one rational coefficient equations to primitive integer rows, and computes the exact integer nullspace using SymPy's `DomainMatrix` over `ZZ`.\n\nIt verifies\n\n    t"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.05,
+        "confidence": 0.47,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.11,
+          "1": 0.03,
+          "2": 0.57,
+          "3": 0.29
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.83
+      }
+    },
+    "usage": {
+      "input_tokens": 2225,
+      "output_tokens": 42
+    }
+  }
+}

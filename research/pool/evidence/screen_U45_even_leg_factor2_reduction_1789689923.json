@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U45_even_leg_factor2_reduction",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U45_even_leg_factor2_reduction.md",
+      "excerpt": "# U45: near-complete elimination of the 2-divisible even-leg exponent\n\nStatus: verified partial theorem. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Setup\n\nFrom U44, if the exponent-half `s` on the even Pythagorean leg is even, then primitive parametrization forces\n\n    m=u^2,\n    n=2v^2,\n\nwith gcd(u,v)=1 and u odd, and therefore\n\n    u^4 + 4 v^4 = C^t.                    (1)\n\nEquivalently, with\n\n    a=2v^2,\n    b=u,\n\nwe obtain\n\n    a^2 + b^4 = C^t,                       (2)\n\nwith gcd(a,b)=1 and ab != 0.\n\n## 2. Published complete theorem for t >= 4\n\nA theorem assembled from Bruin, Ellenberg, and Bennett-Ellenberg-Ng states:\n\n    For every integer n >= 4, the equation a^2+b^4=c^n\n    has no solutions in coprime nonzero integers.\n\nA convenient secondary source giving the theorem explicitly is `Reverse engineered Diophantine equations over Q`, Theorem 4, which attributes n=6 to Bruin, prime n>=211 to Ellenberg, and the remaining n>=4 to Bennett-Ellenberg-Ng.\n\nApplying this theorem to (2) eliminates (1) for every t>=4.\n\n## 3. The t=2 case\n\nIf t=2, (1) is\n\n    (u^2)^2 + (2v^2)^2 = C^2.\n\nThis is a right triangle with integer legs u^2 and 2v^2 and hypotenuse C. Its area is\n\n    (u^2)(2v^2)/2 = (uv)^2,\n\nan integer square. Fermat's right-triangle theorem (equivalently, the classical infinite-descent theorem that no right triangle with positive integer sides has square area) rules this out.\n\nTherefore t=2 is impossible.\n\n## 4. The only remaining case: t=3\n\nThe only exponent not covered by the two preceding arguments is\n\n    u^4 + 4v^4 = C^3,                      (3)\n\nwith gcd(u,v)=1 and u odd.\n\nSophie Germain gives\n\n    u^4+4v^4 = (u^2-2uv+2v^2)(u^2+2uv+2v^2).\n\nFor gcd(u,v)=1 and u odd, the two factors are odd and coprime. Hence (3) forces\n\n    u^2-2uv+2v^2 = r^3,\n    u^2+2uv+2v^2 = s^3\n\nfor coprime positive integers r,s.\n\nTaking the ratio and writing Y=s/r gives a rational point on the genus-2 curve\n\n    W^2 = -Y^6 + 6Y^3 - 1.                (4)\n\nDerivation: if x=u/v, then\n\n    Y^3 = (x^2+2x+2)/(x^2-2x+2).\n\nSolving this quadratic for x requires its discriminant to be a rational square, which after removing a square factor is exactly (4).\n\nThe obvious rational points Y=1, W=+/-2 correspond to the degenerate condition s=r, hence uv=0, and do not give positive solutions of (3).\n\nA bounded exact search found no positive coprime solution of (3) for u,v<500, but this is evidence only.\n\n## 5. Additional structure of the genus-2 curve\n\nCurve (4) has the rational involution\n\n    (Y,W) -> (1/Y, W/Y^3).\n\nWith invariant coordinates\n\n    S = Y + 1/Y,\n    V = W(Y+1)/Y^2,\n\nits quotient is the genus-1 quartic\n\n    V^2 = -(S+2)(S^3-3S-6)\n        = -S^4-2S^3+3S^2+12S+12.          (5)\n\nThus the remaining t=3 problem can be attacked by determining rational points on a genus-1 quotient together with the lifting condition `S^2-4` square, or directly by a genus-2 Chabauty/descent computation.\n\n## 6. Consequence for Beal coverage\n\nThe historical claim `2 does not divide s` is now reduced to one explicit finite-genus Diophantine problem, (3)/(4). It is NOT yet fully proved.\n\nWhat is rigorously established:\n\n- if 2|s and t=2: impossible;\n- if 2|s and t>=4: impossible by the complete (2,4,n) theorem;\n- if 2|s: only t=3 remains.\n\nNext: determine C(Q) for the genus-2 curve W^2=-Y^6+6Y^3-1, or enough of it to show that no nondegenerate rational point lifts to a positive solution of (3). In parallel, perform the analogous reduction for the `2|r` odd-leg equation u^4+v^4=2C^t.\n",
+      "length_chars": 3524
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.36,
+        "confidence": 0.64,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.87,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.1
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.12,
+        "confidence": 0.88,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.94,
+          "1": 0.02,
+          "2": 0.01,
+          "3": 0.03
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.28,
+        "probabilities": {
+          "no_action": 0.07,
+          "audit_later": 0.18,
+          "verify_literature": 0.29,
+          "verify_computation": 0.42,
+          "audit_now": 0.04
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2513,
+      "output_tokens": 126
+    }
+  }
+}

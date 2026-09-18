@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C002_C003",
+  "timestamp": "2026-09-18T00:15:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C002",
+      "status": "BLOCKED",
+      "claim": "Level lowering in the style of Azon arXiv:2504.01967v2 Theorem 5.23 applies to the weighted equation X^10 + 256 Y^10 = Z^17 and eliminates the surviving Frey representation."
+    },
+    "B": {
+      "id": "C003",
+      "status": "BLOCKED",
+      "claim": "The Hilbert newform orbit b at level 2000 (2.2.5.1-2000.1-b) is eliminated unconditionally, so no surviving newform orbit supports the weighted-equation Frey representation."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 1.16,
+        "confidence": 0.4,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.42,
+          "2": 0.34,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.38
+      }
+    },
+    "usage": {
+      "input_tokens": 572,
+      "output_tokens": 34
+    }
+  }
+}

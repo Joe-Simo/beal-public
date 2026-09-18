@@ -1,0 +1,665 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.97,
+   {
+    "title_wider": 0.97,
+    "finite_sample": 0.97,
+    "known_trap": 0.44
+   },
+   "U111: Universal Serre Uniformity & Cartan Elimination for All Signatur",
+   "code/U111_general_cartan_elimination.py"
+  ],
+  [
+   0.94,
+   {
+    "title_wider": 0.94,
+    "finite_sample": 0.94,
+    "known_trap": 0.2
+   },
+   "U111: Universal Borel Subgroup Elimination & Full Galois Surjectivity",
+   "code/U111_universal_borel_elimination.py"
+  ],
+  [
+   0.92,
+   {
+    "title_wider": 0.91,
+    "finite_sample": 0.92,
+    "known_trap": 0.28
+   },
+   "U110: Serre Uniformity & Cartan Bound Certification",
+   "code/U110_serre_uniformity_cartan_bounds.py"
+  ],
+  [
+   0.9,
+   {
+    "title_wider": 0.68,
+    "finite_sample": 0.9,
+    "known_trap": 0.36
+   },
+   "U102: Q-Curves over Q(i) & Quartic Beal Families Elimination",
+   "code/verify_qcurves_modular_forms.py"
+  ],
+  [
+   0.9,
+   {
+    "title_wider": 0.67,
+    "finite_sample": 0.9,
+    "known_trap": 0.16
+   },
+   "U106: Fontaine-Laffaille & Serre Weight Certification",
+   "code/U106_fontaine_laffaille_serre_weights.py"
+  ],
+  [
+   0.9,
+   {
+    "title_wider": 0.74,
+    "finite_sample": 0.9,
+    "known_trap": 0.25
+   },
+   "U111: PARI/GP Hilbert Forms over Q(sqrt(2)) & Resolution of (4, 4, p)",
+   "code/U111_hilbert_forms_q_sqrt2.gp"
+  ],
+  [
+   0.87,
+   {
+    "title_wider": 0.22,
+    "finite_sample": 0.87,
+    "known_trap": 0.09
+   },
+   "U103: Galois 17-Torsion Representation & V4 Image",
+   "code/U103_galois_representation_17_torsion.py"
+  ],
+  [
+   0.87,
+   {
+    "title_wider": 0.35,
+    "finite_sample": 0.87,
+    "known_trap": 0.07
+   },
+   "U106: Algebraic Descent Case II (3 | C) Thue Analysis",
+   "code/U106_case2_three_divides_C.py"
+  ],
+  [
+   0.86,
+   {
+    "title_wider": 0.47,
+    "finite_sample": 0.86,
+    "known_trap": 0.17
+   },
+   "U102: Kraus Frey Modularity & Level-Lowering",
+   "code/U102_kraus_frey_modularity_verification.py"
+  ],
+  [
+   0.86,
+   {
+    "title_wider": 0.35,
+    "finite_sample": 0.86,
+    "known_trap": 0.1
+   },
+   "U106: Algebraic Descent for Signature (3, 3, p)",
+   "code/U106_algebraic_descent.py"
+  ],
+  [
+   0.85,
+   {
+    "title_wider": 0.33,
+    "finite_sample": 0.85,
+    "known_trap": 0.77
+   },
+   "U102: Definitive Elimination of CM Orbit b",
+   "code/U102_orbit_b_definitive_elimination.py"
+  ],
+  [
+   0.85,
+   {
+    "title_wider": 0.22,
+    "finite_sample": 0.85,
+    "known_trap": 0.17
+   },
+   "U110: Frey Conductor 72 & 144 Newform Inventory Audit",
+   "code/U110_frey_conductor_72_newform_inventory.py"
+  ],
+  [
+   0.84,
+   {
+    "title_wider": 0.66,
+    "finite_sample": 0.84,
+    "known_trap": 0.39
+   },
+   "U109: Signature (2, 3, 7) & (2, 3, 11) Modular Forms & LMFDB Audit",
+   "code/U109_signature_2_3_7_and_2_3_11_verification.py"
+  ],
+  [
+   0.83,
+   {
+    "title_wider": 0.83,
+    "finite_sample": 0.8,
+    "known_trap": 0.24
+   },
+   "U111: Signature (2, 4, n) Full Resolution for all n >= 4",
+   "code/U111_signature_2_4_n_lucas_lehmer.py"
+  ],
+  [
+   0.82,
+   {
+    "title_wider": 0.47,
+    "finite_sample": 0.82,
+    "known_trap": 0.13
+   },
+   "U111: Signature (5, 5, p) Modular Level-Lowering & Hilbert Sieve over ",
+   "code/U111_signature_5_5_p_hilbert_sieve.py"
+  ],
+  [
+   0.79,
+   {
+    "title_wider": 0.79,
+    "finite_sample": 0.65,
+    "known_trap": 0.11
+   },
+   "U101: Modularity Lifting & Group-Theoretic Certification",
+   "code/U101_modularity_lifting_verification.py"
+  ],
+  [
+   0.77,
+   {
+    "title_wider": 0.39,
+    "finite_sample": 0.77,
+    "known_trap": 0.26
+   },
+   "U110: Signature (2, 4, n) Serre Weight & Modular Verification",
+   "code/U110_signature_2_4_n_modular_verification.py"
+  ],
+  [
+   0.76,
+   {
+    "title_wider": 0.24,
+    "finite_sample": 0.76,
+    "known_trap": 0.33
+   },
+   "U105: Mod-7 Representation & X_0(14) Absolute Irreducibility",
+   "code/U105_mod7_representation_and_x0_14.py"
+  ],
+  [
+   0.76,
+   {
+    "title_wider": 0.33,
+    "finite_sample": 0.76,
+    "known_trap": 0.26
+   },
+   "U102: PARI/GP Unconditional Class Number Certificate for L_11 & L_13",
+   "code/certify_p11_p13_class_groups.gp"
+  ],
+  [
+   0.75,
+   {
+    "title_wider": 0.5,
+    "finite_sample": 0.75,
+    "known_trap": 0.4
+   },
+   "U104: Kraus Frey Curve Mod-p Irreducibility",
+   "code/U104_kraus_frey_curve_mod_p_irreducibility.py"
+  ],
+  [
+   0.75,
+   {
+    "title_wider": 0.25,
+    "finite_sample": 0.75,
+    "known_trap": 0.06
+   },
+   "U108: PARI/GP Subfield Decomposition for Split-2 Primes (p=31, 43)",
+   "code/decompose_split2_subfields.gp"
+  ],
+  [
+   0.75,
+   {
+    "title_wider": 0.33,
+    "finite_sample": 0.75,
+    "known_trap": 0.17
+   },
+   "U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 101..200]",
+   "code/U111_kraus_sieve_p101_p200.py"
+  ],
+  [
+   0.72,
+   {
+    "title_wider": 0.39,
+    "finite_sample": 0.72,
+    "known_trap": 0.16
+   },
+   "U99: Modular Newform Inventory Audit (Conductors | 864)",
+   "code/U99_newform_inventory_audit.py"
+  ],
+  [
+   0.72,
+   {
+    "title_wider": 0.42,
+    "finite_sample": 0.72,
+    "known_trap": 0.28
+   },
+   "U110: PARI/GP Hilbert Newform Norm 4000 Non-Existence Certificate",
+   "code/U110_hilbert_forms_norm4000.gp"
+  ],
+  [
+   0.71,
+   {
+    "title_wider": 0.46,
+    "finite_sample": 0.71,
+    "known_trap": 0.16
+   },
+   "U110: Signature (2, 3, 11) Higher Prime Trace Rigidity",
+   "code/U110_signature_2_3_11_higher_traces.py"
+  ],
+  [
+   0.7,
+   {
+    "title_wider": 0.29,
+    "finite_sample": 0.7,
+    "known_trap": 0.22
+   },
+   "U110: Kraus Sieve Elimination for Signature (3, 3, p) [p in 43..100]",
+   "code/U110_kraus_sieve_p43_p100.py"
+  ],
+  [
+   0.69,
+   {
+    "title_wider": 0.34,
+    "finite_sample": 0.69,
+    "known_trap": 0.25
+   },
+   "U111: Multi-Prime Simultaneous Sieve for Signature (2, 3, 11)",
+   "code/U111_signature_2_3_11_simultaneous_sieve.py"
+  ],
+  [
+   0.68,
+   {
+    "title_wider": 0.54,
+    "finite_sample": 0.68,
+    "known_trap": 0.15
+   },
+   "U106: Kraus Sieve Elimination for Signature (3, 3, p)",
+   "code/kraus_sieve_signature_3_3_p.py"
+  ],
+  [
+   0.63,
+   {
+    "title_wider": 0.31,
+    "finite_sample": 0.63,
+    "known_trap": 0.21
+   },
+   "U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 301..400]",
+   "code/U111_kraus_sieve_p301_p400.py"
+  ],
+  [
+   0.62,
+   {
+    "title_wider": 0.35,
+    "finite_sample": 0.62,
+    "known_trap": 0.25
+   },
+   "U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 401..500]",
+   "code/U111_kraus_sieve_p401_p500.py"
+  ],
+  [
+   0.61,
+   {
+    "title_wider": 0.32,
+    "finite_sample": 0.61,
+    "known_trap": 0.23
+   },
+   "U111: Kraus Sieve Elimination for Signature (3, 3, p) [p in 201..300]",
+   "code/U111_kraus_sieve_p201_p300.py"
+  ],
+  [
+   0.6,
+   {
+    "title_wider": 0.15,
+    "finite_sample": 0.6,
+    "known_trap": 0.21
+   },
+   "U105: Signature (2, 3, 13) Frey & Modular Curve Analysis",
+   "code/explore_signature_2_3_13.py"
+  ],
+  [
+   0.58,
+   {
+    "title_wider": 0.29,
+    "finite_sample": 0.58,
+    "known_trap": 0.21
+   },
+   "U102: Rational Point Classification on C^-/k",
+   "code/U102_rational_points_analysis.py"
+  ],
+  [
+   0.56,
+   {
+    "title_wider": 0.39,
+    "finite_sample": 0.56,
+    "known_trap": 0.12
+   },
+   "U100: Orbit H LMFDB Hecke Elimination at 11",
+   "code/U100_orbit_h_hecke_elimination.py"
+  ],
+  [
+   0.56,
+   {
+    "title_wider": 0.3,
+    "finite_sample": 0.38,
+    "known_trap": 0.56
+   },
+   "U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 400..500)",
+   "code/U111_cyclotomic_p400_p500.py"
+  ],
+  [
+   0.55,
+   {
+    "title_wider": 0.26,
+    "finite_sample": 0.55,
+    "known_trap": 0.1
+   },
+   "U103: Kraus Frey Level-576 Elimination for p=13",
+   "code/U103_kraus_frey_level576_elimination.py"
+  ],
+  [
+   0.54,
+   {
+    "title_wider": 0.54,
+    "finite_sample": 0.49,
+    "known_trap": 0.11
+   },
+   "U101: Breuil-Diamond Local Lift Bridge Certificate",
+   "code/U101_local_lift_bridge_certificate.py"
+  ],
+  [
+   0.53,
+   {
+    "title_wider": 0.27,
+    "finite_sample": 0.36,
+    "known_trap": 0.53
+   },
+   "U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 300..400)",
+   "code/U111_cyclotomic_p300_p400.py"
+  ],
+  [
+   0.52,
+   {
+    "title_wider": 0.34,
+    "finite_sample": 0.52,
+    "known_trap": 0.2
+   },
+   "U111: Frey Conductor 288 & 576 Elimination for p in [17..37]",
+   "code/U111_conductor_288_576_audit.py"
+  ],
+  [
+   0.52,
+   {
+    "title_wider": 0.37,
+    "finite_sample": 0.52,
+    "known_trap": 0.1
+   },
+   "U111: Formal Immersion Order-16 Obstruction at Infinity for (2, 3, 13)",
+   "code/U111_formal_immersion_13.py"
+  ],
+  [
+   0.51,
+   {
+    "title_wider": 0.29,
+    "finite_sample": 0.51,
+    "known_trap": 0.06
+   },
+   "U110: Linear Forms in Logarithms Bounds & Exponent Envelope",
+   "code/U110_linear_forms_logarithms_bounds.py"
+  ],
+  [
+   0.51,
+   {
+    "title_wider": 0.3,
+    "finite_sample": 0.34,
+    "known_trap": 0.51
+   },
+   "U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 500..600)",
+   "code/U111_cyclotomic_p500_p600.py"
+  ],
+  [
+   0.5,
+   {
+    "title_wider": 0.35,
+    "finite_sample": 0.5,
+    "known_trap": 0.08
+   },
+   "U111: Matveev 3-Variable Linear Forms in Logarithms Bounds",
+   "code/U111_matveev_3variable_logarithms.py"
+  ],
+  [
+   0.48,
+   {
+    "title_wider": 0.23,
+    "finite_sample": 0.48,
+    "known_trap": 0.04
+   },
+   "Python Search Tool & Bridge Test Suite",
+   "code/test_beal_search.py"
+  ],
+  [
+   0.47,
+   {
+    "title_wider": 0.29,
+    "finite_sample": 0.47,
+    "known_trap": 0.1
+   },
+   "U97: Prime-5 Dihedral Galois Certificate",
+   "code/U97_prime5_galois_certificate.py"
+  ],
+  [
+   0.45,
+   {
+    "title_wider": 0.33,
+    "finite_sample": 0.45,
+    "known_trap": 0.35
+   },
+   "U101: Decic Chabauty Feasibility (p=23, 29, 31)",
+   "code/U101_decic_chabauty_feasibility.gp"
+  ],
+  [
+   0.45,
+   {
+    "title_wider": 0.26,
+    "finite_sample": 0.41,
+    "known_trap": 0.45
+   },
+   "U109: PARI/GP Descent & Chabauty Verification for (2, 3, 8) & (2, 3, 9",
+   "code/verify_238_239_descent.gp"
+  ],
+  [
+   0.44,
+   {
+    "title_wider": 0.25,
+    "finite_sample": 0.44,
+    "known_trap": 0.37
+   },
+   "U110: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 100..200)",
+   "code/U110_cyclotomic_p100_p200.py"
+  ],
+  [
+   0.44,
+   {
+    "title_wider": 0.28,
+    "finite_sample": 0.37,
+    "known_trap": 0.44
+   },
+   "U111: Real Cyclotomic Class Number & Sahoo P1 Audit (p in 200..300)",
+   "code/U111_cyclotomic_p200_p300.py"
+  ],
+  [
+   0.43,
+   {
+    "title_wider": 0.22,
+    "finite_sample": 0.38,
+    "known_trap": 0.43
+   },
+   "U110: PARI/GP Elliptic Chabauty & 2-Descent for (2, 3, 8)",
+   "code/U110_elliptic_chabauty_2_3_8.gp"
+  ],
+  [
+   0.42,
+   {
+    "title_wider": 0.33,
+    "finite_sample": 0.42,
+    "known_trap": 0.06
+   },
+   "U111: Modular Curve X_{E_0}(17) Genus 133 & Automorphism Audit",
+   "code/U111_automorphism_twisted_17.py"
+  ],
+  [
+   0.39,
+   {
+    "title_wider": 0.14,
+    "finite_sample": 0.39,
+    "known_trap": 0.14
+   },
+   "U100: Signature (2, 3, 7) Poonen-Schaefer-Stoll Audit",
+   "code/U100_signature_2_3_7_pss_audit.py"
+  ],
+  [
+   0.39,
+   {
+    "title_wider": 0.21,
+    "finite_sample": 0.39,
+    "known_trap": 0.14
+   },
+   "U103: Higher Decic Coleman Integration (p=19, 23, 29, 31)",
+   "code/U103_higher_decic_coleman.py"
+  ],
+  [
+   0.37,
+   {
+    "title_wider": 0.24,
+    "finite_sample": 0.37,
+    "known_trap": 0.24
+   },
+   "U111: Signature (2, 3, 11) Deep Sieve & Diophantine Search",
+   "code/U111_signature_2_3_11_deep_search.py"
+  ],
+  [
+   0.36,
+   {
+    "title_wider": 0.17,
+    "finite_sample": 0.31,
+    "known_trap": 0.36
+   },
+   "U111: PARI/GP X_0(17) Selmer & 2-Descent Field of Degree 36",
+   "code/U111_x0_17_selmer_degree36.gp"
+  ],
+  [
+   0.35,
+   {
+    "title_wider": 0.24,
+    "finite_sample": 0.35,
+    "known_trap": 0.18
+   },
+   "U111: PARI/GP 5-Adic Coleman & Strassman Zero Bounds on C^-",
+   "code/U111_coleman_5adic_genus8.gp"
+  ],
+  [
+   0.33,
+   {
+    "title_wider": 0.16,
+    "finite_sample": 0.19,
+    "known_trap": 0.33
+   },
+   "U100/U102: PARI/GP 3-Adic Coleman Integration on C^-",
+   "code/coleman_integration_p3.gp"
+  ],
+  [
+   0.28,
+   {
+    "title_wider": 0.16,
+    "finite_sample": 0.19,
+    "known_trap": 0.28
+   },
+   "U102: Genus-8 Coleman Integration & Annihilating Differentials",
+   "code/U102_coleman_integration_genus8.py"
+  ],
+  [
+   0.28,
+   {
+    "title_wider": 0.2,
+    "finite_sample": 0.28,
+    "known_trap": 0.18
+   },
+   "U110: PARI/GP 3-Adic Coleman & Strassman Zero Bounds on C^-",
+   "code/U110_coleman_strassman_genus8.gp"
+  ],
+  [
+   0.27,
+   {
+    "title_wider": 0.16,
+    "finite_sample": 0.27,
+    "known_trap": 0.19
+   },
+   "U110: Signature (2, 3, 13) Twisted Modular Curve Geometry Audit",
+   "code/U110_verify_twisted_modular_curve_geometry.py"
+  ],
+  [
+   0.27,
+   {
+    "title_wider": 0.2,
+    "finite_sample": 0.27,
+    "known_trap": 0.07
+   },
+   "U111: Modular Curve X_{E_0}(19) Genus 196 & Automorphism Audit",
+   "code/U111_automorphism_twisted_19.py"
+  ],
+  [
+   0.26,
+   {
+    "title_wider": 0.26,
+    "finite_sample": 0.15,
+    "known_trap": 0.04
+   },
+   "Section 8 TypeScript Checker Suite",
+   "code/test_section8_counterexample_checker.ts"
+  ],
+  [
+   0.24,
+   {
+    "title_wider": 0.21,
+    "finite_sample": 0.24,
+    "known_trap": 0.23
+   },
+   "U99/U102: PARI/GP Degree-34 Class Number & Regulator Certificate",
+   "code/certify_class_number.gp"
+  ],
+  [
+   0.17,
+   {
+    "title_wider": 0.17,
+    "finite_sample": 0.13,
+    "known_trap": 0.03
+   },
+   "Section 8 Python Checker Suite",
+   "code/test_section8_counterexample_checker.py"
+  ],
+  [
+   0.13,
+   {
+    "title_wider": 0.13,
+    "finite_sample": 0.13,
+    "known_trap": 0.03
+   },
+   "Section 8 C+GMP Standalone Checker Suite",
+   "code/test_check_counterexample_gmp.py"
+  ],
+  [
+   0.12,
+   {
+    "title_wider": 0.12,
+    "finite_sample": 0.12,
+    "known_trap": 0.04
+   },
+   "Section 8 C+GMP Shell Test Suite",
+   "code/test_check_counterexample_gmp.sh"
+  ]
+ ]
+}

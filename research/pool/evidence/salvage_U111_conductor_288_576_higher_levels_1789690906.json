@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U111_conductor_288_576_higher_levels",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_conductor_288_576_higher_levels.md",
+    "excerpt": "# U111: Higher Modular Levels 288 and 576 for Signature $(3, 3, p)$: Atkin\u2013Lehner Spectral Theory, Fourier Coefficients, and 100% Kraus Sieve Elimination for Exponents $p \\in [17, 37]$\n\n**Date**: 2026-09-17  \n**Author**: Frey Conductor 72 Serre Level Lowering Specialist  \n**Target Equation**: $A^3 + B^3 = C^p$ with prime exponent $p \\in [17, 37]$, $\\gcd(A, B, C) = 1$, and $A B C \\neq 0$.  \n**Target Levels**: Higher 2-power conductors dividing $576 = 2^6 \\cdot 3^2$: specifically levels $N = 288 = 2^5 \\cdot 3^2$ and $N = 576 = 2^6 \\cdot 3^2$.  \n**Context**: Beal Conjecture Program \u2014 Arithmetic Analysis of Signature $(3, 3, p)$.  \n**Status**: Authoritative research checkpoint, complete Atkin\u2013Lehner eigenvalue classification, 25-prime Fourier coefficients table ($q \\le 100$), and 100% unconditional Kraus sieve elimination across all 14 newforms for all six exponents $p \\in \\{17, 19, 23, 29, 31, 37\\}$.\n\n---\n\n## 1. Executive Summary\n\nIn signature $(3, 3, p)$, Alain Kraus (1998) attached the Frey elliptic curve:\n$$E_{A, B} : y^2 = x^3 + 3AB x + B^3 - A^3.$$\nWhen Ribet's level-lowering theorem is applied, all prime factors $\\ell \\mid C$ with $\\ell \\ge 5$ are removed from the conductor of the mod-$p$ Galois representation $\\rho_{E, p}$. The resulting Serre level is:\n$$N_p = 2^{f_2} \\cdot 3^2,$$\nwhere $f_2 \\in \\{1, 2, 3, 4, 5, 6\\}$. \n\nWhile canonical normalization ($AC$ even, $B \\equiv 1 \\pmod 4$) restricts $N_p \\in \\{36, 72\\}$ (investigated in U102, U106, and U110), unnormalized models, quadratic twists by $\\pm 2$ or $-1$, and alternative 2-adic parity branches ($A, B$ both odd with $v_2(A+B) = 1$) introduce the higher levels:\n$$N = 288 = 2^5 \\cdot 3^2 \\quad \\text{and} \\quad N = 576 = 2^6 \\cdot 3^2.$$\n\nThis checkpoint delivers a complete automorphic and arithmetic audit of levels 288 and 576 for all prime exponents in the range $p \\in [17, 37]$ ($p \\in \\{17, 19, 23, 29, 31, 37\\}$):\n\n1. **Dimensional Structure**:\n   - **Level 288**: $\\dim S_2(\\Gamma_0(288)) = 33$, with exactly **5 newforms** (`288_1` through `288_5`), all non-CM.\n   - **Level 576**: $\\dim S_2(\\Gamma_0(576)) = 73$, with exactly **9 newforms** (`576_1` through `576_9`), containing 2 CM forms (`576_5, 576_6`) and 7 non-CM forms.\n   - **Total Newforms**: Exactly **14 newforms**. All 14 forms have rational integer Fourier coefficients $a_m \\in \\mathbb{Z}$ corresponding to elliptic curves over $\\mathbb{Q}$.\n2. **Atkin\u2013Lehner Eigenvalues**:\n   Using PARI/GP's `mfatkin`, we compute the exact eigenvalues under the $W_2$ and $W_3$ Atkin\u2013Lehner operators ($w_2 \\in \\{\\pm 1\\}, w_3 \\in \\{\\pm 1\\}$) for all 14 newforms.\n3. **Fourier Coefficients for All 25 Primes $q \\le 100$**:\n   We tabulate all Hecke eigenvalues $a_q(f)$ for all 25 primes $q < 100$. Because $2^2 \\mid N$ and $3^2 \\mid N$, $a_2(f) = 0$ and $a_3(f) = 0$ universally for all 14 newforms.\n4. **Momose / Darmon\u2013Merel CM Elimination**:\n   The 2 CM forms at level 576 (`576_5` and `576_6`, CM by $\\mathbb{Q}(\\sqrt{-3})$) are **strictly eliminated for all $p \\ge 5$** by the Cartan normalizer theorem on rational 2-torsion points.\n5. **100% Elimination via the Algebraic-Descent Kraus Sieve**:\n   Using the algebraic descent factorization $A^3 + B^3 = (A+B)(A^2 - AB + B^2) = C^p$, which restricts $t = A/B \\in \\mathbb{F}_q$ to $t+1 \\in U_p$ and $t^2 - t + 1 \\in U_p$, we achieve **100% complete elimination of all 14 newforms across all six exponents**:\n   - **$p = 17$**: Auxiliary prime $q = 103$ ($k = 3$) eliminates all 12 non-CM forms. (100% eliminated!)\n   - **$p = 19$**: Auxiliary primes $q = 229, 419, 457$ eliminate all 12 non-CM forms. (100% eliminated!)\n   - **$p = 23$**: Auxiliary primes $q = 47, 139$ eliminate all 12 non-CM forms. (100% eliminated!)\n   - **$p = 29$**: Auxiliary primes $q = 59, 233$ eliminate all 12 non-CM forms. (100% eliminated!)\n   - **$p = 31$**: Auxiliary primes $q = 311, 373$ eliminate all 12 non-CM forms. (100% eliminated!)\n   - **$p = 37$**: Auxiliary prime $q = 149$ ($k = 2$) eliminates all 12 non-CM forms. (100% eliminated!)\n\n---\n\n## 2. Conductor Exponents and Higher Modular Levels\n\n### 2.1 Conductor Exponent at Prime 2\nLet $E_{A, B} : y^2 = x^3 + 3AB x + B^3 - A^3$. The minimal discriminant is $\\Delta = -2^4 \\cdot 3^3 C^{2p}$, and the Weierstrass invariant is $c_4 = -2^4 \\cdot 3^2 AB = -144 AB$.\nApplying Tate's algorithm at $\\ell = 2$:\n- If $A$ is even, $B$ is odd:\n  - When $v_2(A) \\ge 2$ and $B \\equiv 1 \\pmod 4$: Kodaira type $IV$, conductor exponent $f_2 = 2 \\implies N_p = 36$.\n  - When $v_2(A) = 1$ and $B \\equiv 1 \\pmod 4$: Kodaira type $III$, conductor exponent $f_2 = 3 \\implies N_p = 72$.\n  - When $B \\equiv 3 \\pmod 4$: quadratic twist by $-4$ gives Kodaira type $I_0^*$, conductor exponent $f_2 = 4 \\implies N_p = 144$.\n- If $A$ and $B$ are both odd ($C$ is even):\n  - Then $A + B$ is even. If $v_2(A+B) = 1$, Kodaira type is additive with conductor exponent $f_2 = 5 \\implies N_p = 288$.\n- Under quadratic twists by $\\pm 2$ (e.g. twists by 8 or $-8$):\n  - Conductor exponent increa"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.4,
+        "confidence": 0.33,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.27,
+          "1": 0.1,
+          "2": 0.59,
+          "3": 0.04
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 2653,
+      "output_tokens": 42
+    }
+  }
+}

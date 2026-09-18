@@ -1,0 +1,113 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.09,
+   {
+    "assumes_pairwise": 0.39,
+    "derivation_present": 0.77,
+    "base_one_excluded": 0.26
+   },
+   "ClosedFamilies"
+  ],
+  [
+   0.07,
+   {
+    "assumes_pairwise": 0.3,
+    "derivation_present": 0.77,
+    "base_one_excluded": 0.31
+   },
+   "MordellFixedBase"
+  ],
+  [
+   0.06,
+   {
+    "assumes_pairwise": 0.22,
+    "derivation_present": 0.73,
+    "base_one_excluded": 0.25
+   },
+   "Residual"
+  ],
+  [
+   0.06,
+   {
+    "assumes_pairwise": 0.32,
+    "derivation_present": 0.82,
+    "base_one_excluded": 0.25
+   },
+   "EvenEvenThree"
+  ],
+  [
+   0.06,
+   {
+    "assumes_pairwise": 0.07,
+    "derivation_present": 0.19,
+    "base_one_excluded": 0.22
+   },
+   "Mihailescu"
+  ],
+  [
+   0.05,
+   {
+    "assumes_pairwise": 0.06,
+    "derivation_present": 0.15,
+    "base_one_excluded": 0.16
+   },
+   "FixedBasesExample"
+  ],
+  [
+   0.04,
+   {
+    "assumes_pairwise": 0.25,
+    "derivation_present": 0.86,
+    "base_one_excluded": 0.23
+   },
+   "SameOddPrime"
+  ],
+  [
+   0.04,
+   {
+    "assumes_pairwise": 0.23,
+    "derivation_present": 0.82,
+    "base_one_excluded": 0.27
+   },
+   "SixTwoNThree"
+  ],
+  [
+   0.04,
+   {
+    "assumes_pairwise": 0.34,
+    "derivation_present": 0.87,
+    "base_one_excluded": 0.21
+   },
+   "GaussianPow"
+  ],
+  [
+   0.02,
+   {
+    "assumes_pairwise": 0.1,
+    "derivation_present": 0.79,
+    "base_one_excluded": 0.24
+   },
+   "Necessary"
+  ],
+  [
+   0.02,
+   {
+    "assumes_pairwise": 0.14,
+    "derivation_present": 0.85,
+    "base_one_excluded": 0.28
+   },
+   "FourTwoNFive"
+  ],
+  [
+   0.01,
+   {
+    "assumes_pairwise": 0.11,
+    "derivation_present": 0.93,
+    "base_one_excluded": 0.25
+   },
+   "Structure"
+  ]
+ ]
+}

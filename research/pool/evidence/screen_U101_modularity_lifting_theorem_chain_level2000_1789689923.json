@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U101_modularity_lifting_theorem_chain_level2000",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U101_modularity_lifting_theorem_chain_level2000.md",
+      "excerpt": "# U101: Modularity Lifting over $K = \\mathbb{Q}(\\sqrt{5})$, Residual Absolute Irreducibility, and Certification of the Level-2000 Hilbert Newspace\n\n**Author**: Arithmetic Geometry & Automorphic Forms Research Group  \n**Date**: 2026-09-17  \n**Status**: Rigorous mathematical proof, theorem-level citation audit, and unconditional deformation certificate. The modularity of $\\bar\\rho_{J^-, 17}$ at level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (norm 2000) is unconditionally certified. Downstream elimination of the 8 Hilbert newforms confirms that no non-trivial solution to $X^{10} + 256 Y^{10} = Z^{17}$ exists.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint provides a complete, rigorous arithmetic-geometric treatment of the Frey Galois representation attached to the weighted Beal equation:\n$$X^{10} + 256 Y^{10} = Z^{17}, \\quad \\gcd(X, Y) = 1, \\quad X, Z \\text{ odd}, \\quad X, Y, Z > 0.$$\n\nSetting $U = X^2$ and $V = 2 Y^2$, this equation is specialized as $U^5 + 8 V^5 = Z^{17}$ with $\\gcd(U, V) = 1$. The attached Frey curve is the genus-2 hyperelliptic curve:\n$$C^-: y^2 = -f(x), \\quad f(x) = x^5 + 40 U V x^3 + 320 U^2 V^2 x + 64(8 V^5 - U^5),$$\nwith discriminant $\\Delta(f) = 2^{24} \\cdot 5^5 \\cdot Z^{68}$. The Jacobian $J^- = \\operatorname{Jac}(C^-)$ is an abelian surface over $\\mathbb{Q}$ (and over $K = \\mathbb{Q}(\\sqrt{5})$) equipped with Real Multiplication (RM) by the maximal order $\\mathcal{O}_K = \\mathbb{Z}[\\frac{1+\\sqrt{5}}{2}]$.\n\nWe resolve the four core tasks required to certify the modular pipeline:\n1. **Residual Image and Absolute Irreducibility**:\n   - The modular prime is $p = 17$. Because 17 is inert in $K = \\mathbb{Q}(\\sqrt{5})$, the prime $\\lambda = (17)\\mathcal{O}_K$ has residue field $k_\\lambda \\cong \\mathbb{F}_{17^2}$.\n   - The residual representation $\\bar\\rho = \\bar\\rho_{J^-, 17}: G_K \\to \\mathrm{GL}_2(\\mathbb{F}_{17^2})$ is **locally absolutely irreducible at $\\mathfrak{p}_2 = (2)$**, because the tame inertia quotient acts via characters of order 5 that are non-trivially interchanged by $\\operatorname{Frob}_{\\mathfrak{p}_2}$.\n   - Consequently, $\\bar\\rho$ is globally absolutely irreducible.\n   - Furthermore, by cyclic restriction and the splitting of $\\mathfrak{p}_2$ in $K(\\sqrt{17})$, the restriction $\\bar\\rho|_{G_{K(\\zeta_{17})}}$ is **unconditionally absolutely irreducible**.\n   - By Dickson's classification of subgroups of $\\mathrm{PGL}_2(\\mathbb{F}_{17^2})$, the projective image $\\mathbb{P}\\operatorname{Im}(\\bar\\rho)$ is non-solvable and contains $\\mathrm{PSL}_2(\\mathbb{F}_{17})$ or $\\mathrm{PSL}_2(\\mathbb{F}_{289})$, satisfying the \"adequacy\" / \"big image\" requirements of modern automorphy lifting.\n\n2. **Verification of Modularity Lifting Hypotheses**:\n   - **Residual Automorphy**: Guaranteed unconditionally by **Allen--Khare--Thorne (2021, Theorem 1.2)**, which proves that any continuous, totally odd, absolutely irreducible representation $\\bar\\rho: G_K \\to \\mathrm{GL}_2(\\overline{\\mathbb{F}}_p)$ with $\\bar\\rho|_{G_{K(\\zeta_p)}}$ irreducible is modular (automorphic of parallel weight 2).\n   - **Local Lift Existence & Deformation Rings**:\n     - At $\\mathfrak{p}_5 = (\\sqrt{5})$: The defining quintic $f$ is uniformly Eisenstein at 5. The local Galois group is $D_5$ ($e = 10, f = 1$), the inertia image is $D_5$, and the Weil--Deligne type is dihedral supercuspidal $[r_{\\mathfrak{p}_5}, 0]$. Because $17 \\nmid |D_5| = 10$, Maschke's theorem guarantees that the local deformation ring $R_{\\mathfrak{p}_5}^{\\tau, \\psi} \\cong \\mathcal{O}$ is formally smooth of relative dimension 0.\n     - At $\\mathfrak{p}_2 = (2)$: The curve has good reduction over $K_{\\mathfrak{p}_2}(\\pi)$ with $\\pi^5 = 2$. Inertia acts tamely with order 5. Because $17 \\nmid 5$, Maschke's theorem guarantees that $R_{\\mathfrak{p}_2}^{\\tau, \\psi} \\cong \\mathcal{O}$ is formally smooth of relative dimension 0.\n     - At $\\lambda_{17} = (17)$: Because $17^2 \\mid Y$ (U71), $17 \\nmid Z$, so $J^-$ has good reduction at 17. The representation $\\rho_{J^-, 17}|_{G_{K_{\\lambda_{17}}}}$ is crystalline and **Barsotti--Tate** with Hodge--Tate weights $(0, 1)$ for both embeddings $K \\hookrightarrow \\mathbb{R} \\subset \\mathbb{C}_{17}$. The local deformation ring $R_{\\lambda_{17}}^{\\mathrm{BT}, \\psi}$ is formally smooth (Kisin 2009, Gee--Kisin 2014).\n     - At $q \\mid Z$: Toric semistable reduction with $17 \\mid v_q(\\Delta)$. By standard level lowering (Ribet / Hellegouarch / Freitas--Siksek), $\\bar\\rho$ is unramified at $q$.\n   - **Global Lifting**: The hypotheses of **Breuil--Diamond (2014, Th\u00e9or\u00e8me 3.2.2)**, **Kisin (2009)**, and **Gee--Kisin (2014)** are completely verified.\n\n3. **Serre-Type Conductor Calculation**:\n   - The conductor exponent at $\\mathfrak{p}_2$ is $n(\\bar\\rho_{\\mathfrak{p}_2}) = 2$ per RM component.\n   - The conductor exponent at $\\mathfrak{p}_5$ is $n(\\bar\\rho_{\\mathfrak{p}_5}) = 3$ per RM component, proven via Serre's lower ramification filtration: $H_0 = D_5$ ($|H_0|=10$), $H_1 = C_5$ ($|H_1|=5$), $H_{\\ge 2} = \\{1\\} \\imp",
+      "length_chars": 39630
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.81,
+        "confidence": 0.65,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.27,
+          "1": 0.67,
+          "2": 0.03,
+          "3": 0.03
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.48,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.83,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.15
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.92,
+        "probabilities": {
+          "verify_computation": 0.01,
+          "audit_now": 0.94,
+          "no_action": 0.0,
+          "verify_literature": 0.02,
+          "audit_later": 0.03
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3155,
+      "output_tokens": 124
+    }
+  }
+}

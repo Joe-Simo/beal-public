@@ -1,0 +1,110 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "vacuity_C167",
+  "timestamp": "2026-09-18T15:37:30-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C) = 1 has no solutions.",
+    "failure_mode": "U322: the Prop `EulerDescentStep`, recorded one cycle earlier as the residual gap of the (3,4,4) chain, was FALSE as stated -- `IsCoprime p q -> p*(p^2+3q^2) = c^3 -> q = 0` is refuted by p = 0, q = 1, c = 0, since IsCoprime 0 1 holds in Z and 0*(0+3) = 0^3. The Lean build stayed green throughout, because an implication from a false hypothesis is still a theorem and everything downstream compiles. The fix was to add p != 0, which the reduction does supply.",
+    "second_mode": "A bounded search that finds nothing proves nothing unless a control shows the searcher can find a positive instance. U317/U318 and U323 each carry such a control; earlier candidates may not.",
+    "candidate": "{\n \"id\": \"C167\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"THE SIEVE CONDITION TURNED INTO A SIZE BOUND. The Mordell-Weil sieve of C166 forces 120 | n using only the tiny primes 5, 7, 11, 13, 19, 29 (5 and 7 give n even, 11 gives 4|n, 13 and 19 give 3|n, 29 gives 5|n). Canonical heights satisfy h(nP) = n^2 h(P), and PARI gives h(P) = 2.9993679731... for the generator P = (1024, 143360). So any admissible point has canonical height at least 120^2 h(P) = 43190.9, and the numerator of its x-coordinate has at least about 37,515 DECIMAL DIGITS.\",\n \"method\": \"PARI/GP ellheight at 60-digit precision; growth law h(nP) = n^2 h(P) for a rank-1 curve with trivial torsion\",\n \"evidence\": \"Calibration against the exactly computed multiples of U298: numerator(x(nP)) has 4, 7, 15, 21, 35, 49, 66, 84 digits for n = 1..8, against n^2 h(P) = 3.0, 12.0, 27.0, 48.0, 75.0, 108.0, 147.0, 192.0.\",\n \"obligations\": [\n  \"This is a LOWER bound on any solution, not an upper bound, so it closes nothing.\",\n  \"It applies only to the opposite-parity, d=1 branch of (3,4,4).\",\n  \"The digit estimate uses the standard naive-versus-canonical height comparison rather than an explicit difference bound, so it is indicative, not certified.\"\n ],\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "degenerate_instance": {
+      "type": "score",
+      "instructions": "Does this candidate state a claim, a named Prop, or a reduction whose hypotheses allow a DEGENERATE instance -- a zero value, a unit, a base equal to 1, an empty index range, or a trivial solution -- that would make the statement false as written? Judge only whether such an instance is admitted by the stated hypotheses, not whether the intended mathematics is correct.",
+      "criteria": [
+        "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+        "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+        "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+        "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+      ]
+    },
+    "vacuous_downstream": {
+      "type": "score",
+      "instructions": "Does this candidate record a conclusion that DEPENDS on an assumed statement, such that if the assumed statement were false the conclusion would be vacuously true rather than wrong? The danger is a chain that still compiles and still looks green while carrying no content.",
+      "criteria": [
+        "level 0: the candidate's conclusion is proved outright with no assumed statement",
+        "level 1: it depends on an assumed statement and explicitly says so, naming it",
+        "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+        "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+      ]
+    },
+    "search_is_vacuous": {
+      "type": "noul",
+      "instructions": "Does this candidate report a finite or bounded search that found NOTHING, without any control demonstrating the search would have found something had it been there?",
+      "criteria": {
+        "true": "it reports an empty search result with no positive control, no witness, and no demonstration that the search space was non-empty",
+        "false": "it reports no search, or it reports one together with a control, a witness, or an explicit non-vacuity check"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "Given the failure mode described, what should be done with this candidate next?",
+      "criteria": {
+        "countersearch_now": "its stated hypotheses plausibly admit a degenerate counterexample and something load-bearing depends on it",
+        "add_control": "its evidence is an empty search that needs a non-vacuity control before it can be relied on",
+        "restate_hypotheses": "its claim is probably true but stated too loosely to be provable as written",
+        "no_action": "it is a log, a refuted entry, or otherwise carries no claim that could exhibit this mode"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "degenerate_instance": {
+        "type": "score",
+        "score": 1.17,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+          "1": "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+          "2": "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+          "3": "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+        },
+        "probabilities": {
+          "0": 0.41,
+          "1": 0.11,
+          "2": 0.38,
+          "3": 0.1
+        }
+      },
+      "vacuous_downstream": {
+        "type": "score",
+        "score": 1.44,
+        "confidence": 0.1,
+        "legend": {
+          "0": "level 0: the candidate's conclusion is proved outright with no assumed statement",
+          "1": "level 1: it depends on an assumed statement and explicitly says so, naming it",
+          "2": "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+          "3": "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+        },
+        "probabilities": {
+          "0": 0.29,
+          "1": 0.16,
+          "2": 0.38,
+          "3": 0.17
+        }
+      },
+      "search_is_vacuous": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.12,
+        "probabilities": {
+          "no_action": 0.33,
+          "restate_hypotheses": 0.24,
+          "add_control": 0.31,
+          "countersearch_now": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1647,
+      "output_tokens": 114
+    }
+  }
+}

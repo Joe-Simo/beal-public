@@ -1,0 +1,39 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U146",
+  "timestamp": "2026-09-18T00:36:56-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "C055 split"
+  },
+  "questions": {
+    "branch": {
+      "type": "choice",
+      "instructions": "For the (p,p,r) chain, which branch to formalise first?",
+      "criteria": {
+        "coprime": "p does not divide A+B: A+B = d^r and S = e^r (pure GCD argument)",
+        "padic": "p divides A+B: needs Lifting-The-Exponent (v_p(A^p+B^p) = v_p(A+B)+1) \u2014 mathlib has emultiplicity_pow_add_pow",
+        "both": "both at once"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "branch": {
+        "type": "choice",
+        "choice": "coprime",
+        "confidence": 0.39,
+        "probabilities": {
+          "both": 0.02,
+          "padic": 0.39,
+          "coprime": 0.59
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 413,
+      "output_tokens": 43
+    }
+  }
+}

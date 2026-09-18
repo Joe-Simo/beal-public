@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U102_signatures_4_4_n_and_beal_quartic_families_complete_synthesis",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U102_signatures_4_4_n_and_beal_quartic_families_complete_synthesis.md",
+    "excerpt": "# U102: Complete Resolution Synthesis of Generalized Fermat Signatures $(4, 4, n)$, $(2k, 4m, n)$, and $(4k, 4m, n)$ for the Beal Conjecture\n\n**Date**: 2026-09-17  \n**Status**: Comprehensive mathematical synthesis, exact arithmetic certificate, and structural reduction theorem for the Beal conjecture even-exponent program.  \n**Companion Code**: [`code/verify_qcurves_modular_forms.py`](file://[LOCAL_HOME]/Downloads/beal/code/verify_qcurves_modular_forms.py) (100% test passage).  \n**Preceding Checkpoints**: [U101](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U101_signature_2_4_n_literature_survey_and_modular_method.md), [U45](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U45_even_leg_factor2_reduction.md), [U45-small-factors](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U45_small_prime_factors_for_t_ge_3.md), [U100](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U100_orbit_h_hecke_elimination.md).\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint [U101](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U101_signature_2_4_n_literature_survey_and_modular_method.md), the literature and modular method for generalized Fermat equations of signature $(2, 4, n)$,\n$$A^2 + B^4 = C^n, \\quad \\gcd(A, B) = 1, \\quad AB \\neq 0, \\quad n \\geq 4,$$\nwere audited and confirmed to be **100% completely resolved across all exponents $n \\geq 4$** with zero non-trivial primitive solutions (Euler 1738, Bruin 1999/2003, Ellenberg 2004, Bennett--Ellenberg--Ng 2010).\n\nThis checkpoint deepens the analysis to symmetric quartic equations of signature $(4, 4, n)$,\n$$A^4 + B^4 = C^n, \\quad \\gcd(A, B) = 1, \\quad AB \\neq 0, \\quad n \\geq 2,$$\nand synthesizes the complete resolution status of all Beal candidate equations of the forms $(2k, 4m, n)$ and $(4k, 4m, n)$.\n\n### Key Results Established in U102:\n1. **Complete Resolution of $A^4 + B^4 = C^n$ for All $n \\geq 2$**:\n   - **$n = 2$**: Classical Euler (1738) infinite descent on $x^4 + y^4 = z^2$ proves there are **no coprime nonzero solutions**.\n   - **$n = 3$**: Signature $(4, 4, 3)$ is hyperbolic ($\\frac{1}{4} + \\frac{1}{4} + \\frac{1}{3} = \\frac{5}{6} < 1$). Solved completely by Bennett, Chen, Dahmen, and Yazdani (2015, Theorem 1) via the infinite family $(4, 2s, 3)$ with $s = 2$. There are **no coprime nonzero solutions**.\n   - **$n \\geq 4$**: Because any solution $(A, B, C)$ to $A^4 + B^4 = C^n$ yields a coprime nonzero solution $(A^2, B, C)$ to $X^2 + B^4 = C^n$, the complete resolution of $(2, 4, n)$ for all $n \\geq 4$ **immediately forces the non-existence of non-trivial primitive solutions for all $n \\geq 4$**.\n   - **Conclusion**: The equation $A^4 + B^4 = C^n$ has **zero solutions in coprime nonzero integers for every integer $n \\geq 2$**.\n2. **Complete Resolution of All Beal Quartic Signatures $(4k, 4m, n)$**:\n   - For all positive integers $k, m \\geq 1$ and all $n \\geq 2$, the equation $X^{4k} + Y^{4m} = Z^n$ has **strictly zero primitive nonzero solutions**.\n3. **Resolution of Beal Signatures $(2k, 4m, n)$**:\n   - For all $n \\geq 4$ and all $k, m \\geq 1$, $X^{2k} + Y^{4m} = Z^n$ reduces to $(X^k)^2 + (Y^m)^4 = Z^n$, completely eliminated by $(2, 4, n)$.\n   - For $n = 3$, any valid Beal signature requires $2k \\geq 3 \\implies k \\geq 2$:\n     - If $2 \\mid k$, it reduces to $(4, 4m, 3)$, eliminated by BCDY (2015).\n     - If $3 \\mid k$, it reduces to $(2, 6, 3)$, eliminated by Bennett--Chen (2012).\n4. **Computational Verification Suite**:\n   - Standalone Python verification script [`code/verify_qcurves_modular_forms.py`](file://[LOCAL_HOME]/Downloads/beal/code/verify_qcurves_modular_forms.py) executes with 100% test passage, certifying the degree-2 $\\mathbb{Q}$-curve isogeny, discriminant factorization, modular form dimensions at level 32 and 256, and the exact vanishing of Frobenius traces $a_q(A_0) = a_q(f_{32}) = 0$ for all inert primes $q \\equiv 3 \\pmod 4$ (the CM plateau).\n\n---\n\n## 2. Deepened Analysis of $A^4 + B^4 = C^n$ for All Exponents $n \\geq 2$\n\nThe symmetric quartic generalized Fermat equation is:\n$$A^4 + B^4 = C^n, \\quad \\gcd(A, B) = 1, \\quad AB \\neq 0.$$\n\n```mermaid\nflowchart TD\n    A[\"A^4 + B^4 = C^n\"] --> B{\"Exponent n\"}\n    \n    B -->|\"n = 2\"| C[\"Euler (1738) Descent<br/>x^4 + y^4 = z^2 has no solutions\"]\n    C --> C_Res[\"NO PRIMITIVE SOLUTIONS\"]\n    \n    B -->|\"n = 3\"| D[\"BCDY (2015) Theorem 1<br/>Family (4, 2s, 3) with s=2\"]\n    D --> D_Res[\"NO PRIMITIVE SOLUTIONS\"]\n    \n    B -->|\"n >= 4\"| E[\"Embed X = A^2 into X^2 + B^4 = C^n<br/>Signature (2, 4, n) complete theorem\"]\n    E --> E_Res[\"NO PRIMITIVE SOLUTIONS\"]\n    \n    C_Res --> F[\"THEOREM: Zero non-trivial primitive solutions for ALL n >= 2\"]\n    D_Res --> F\n    E_Res --> F\n```\n\n### 2.1 The Case $n = 2$: Euler's Theorem on Sums of Two Quartics\n- **Equation**: $A^4 + B^4 = C^2$.\n- **History**: Pierre de Fermat (c. 1640) stated that the area of a right triangle with integer sides cannot be a square, which implies that $x^4 - y^4 = z^2$ has no"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.59,
+        "confidence": 0.41,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.67,
+          "1": 0.12,
+          "2": 0.15,
+          "3": 0.06
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.69
+      }
+    },
+    "usage": {
+      "input_tokens": 2474,
+      "output_tokens": 42
+    }
+  }
+}

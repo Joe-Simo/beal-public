@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C044",
+  "timestamp": "2026-09-17T23:49:52-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "feature": "C^z-max(A^x,B^y) < max(A^x,B^y)^(1/2)",
+    "coprime_count": 2,
+    "noncoprime_count": 8,
+    "of": [
+      100,
+      436
+    ]
+  },
+  "questions": {
+    "provable_ge3": {
+      "type": "score",
+      "instructions": "Could this feature be PROVED to hold for every hypothetical Beal counterexample (exponents>=3), from positivity and coprimality?",
+      "criteria": [
+        "level 0: no, it is a small-model artefact",
+        "level 1: unlikely",
+        "level 2: plausible with real work",
+        "level 3: likely a few lines"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "provable_ge3": {
+        "type": "score",
+        "score": 0.58,
+        "confidence": 0.42,
+        "legend": {
+          "0": "level 0: no, it is a small-model artefact",
+          "1": "level 1: unlikely",
+          "2": "level 2: plausible with real work",
+          "3": "level 3: likely a few lines"
+        },
+        "probabilities": {
+          "0": 0.67,
+          "1": 0.17,
+          "2": 0.07,
+          "3": 0.09
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 423,
+      "output_tokens": 20
+    }
+  }
+}

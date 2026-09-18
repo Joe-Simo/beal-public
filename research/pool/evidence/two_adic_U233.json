@@ -1,0 +1,8 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "answers": {
+  "strictly_stronger": 0.57,
+  "gate2": 0.73,
+  "new_here": 0.48
+ }
+}

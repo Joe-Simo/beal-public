@@ -1,0 +1,897 @@
+                                                   PARTIAL DESCENT ON HYPERELLIPTIC CURVES
+                                                AND THE GENERALIZED FERMAT EQUATION x3 + y 4 + z 5 = 0
+
+                                                                        SAMIR SIKSEK AND MICHAEL STOLL
+
+
+                                                  Abstract. Let C : y 2 = f (x) be a hyperelliptic curve defined over Q. Let K be
+                                                  a number field and suppose f factors over K as a product of irreducible polynomials
+                                                  f = f1 f2 . . . fr . We shall define a “Selmer set” corresponding to this factorization with
+                                                  the property that if it is empty then C(Q) = ∅. We shall demonstrate the effectiveness
+
+
+
+
+arXiv:1103.1979v1 [math.NT] 10 Mar 2011
+                                                  of our new method by solving the generalized Fermat equation with signature (3, 4, 5),
+                                                  which is unassailable via the previously existing methods.
+
+
+
+
+                                                                                    1. Introduction
+                                            Let f be a separable polynomial with coefficients in Z and degree d ≥ 3. Let C be
+                                          the non-singular projective hyperelliptic curve with affine patch
+                                                                                       C : y 2 = f (x).
+                                          One is interested in studying the set of rational points on C(Q) and, in particular,
+                                          deciding whether C(Q) is empty or not. Several techniques have been developed to
+                                          attack this problem [5], [6], [7], [8]. The easiest general method is the “two-cover
+                                          descent” of Bruin and Stoll [7]. Let L be the étale algebra L = Q[x]/f ; this algebra is
+                                          the direct sum of number fields. Bruin and Stoll define a map from C(Q) to a group
+                                          H which is either L× /(L× )2 or L× /(Q× (L× )2 ) depending on the parity of d.1 They
+                                          show how to compute a finite subset of H, which they call the “fake 2-Selmer set”, that
+                                          contains the image of C(Q) in H. If this fake 2-Selmer set is empty then so is C(Q).
+                                             The computation of the fake Selmer set requires explicit knowledge of the class and
+                                          unit groups of the number fields that are the direct summands of L. If these number
+                                          fields have large degrees or discriminants, then this computation is impractical. In this
+                                          paper, we look at the situation where there is a number field K of relatively small
+                                          degree such that f factors over K into a product f = f1 f2 · · · fr of irreducible factors.
+                                          We define an appropriate “Selmer set” whose computation demands the knowledge of
+                                          the class group and units of K but not of larger number fields. This can be helpful
+                                          either in proving the non-existence of rational points on our hyperelliptic curve, or in
+                                          the construction of unramified covers that can help in the determination of the set of
+                                          rational points. We call our method “partial descent” as the information it yields is
+                                          usually weaker than the information given by the fake 2-Selmer set. We explain this in
+                                          more detail in Section 2 below
+                                             We shall demonstrate the effectiveness of our new method by solving the generalized
+                                          Fermat equation with signature (3, 4, 5).
+                                             Let p, q, r ∈ Z≥2 . The equation
+                                          (1)                                           xp + y q = z r
+
+                                             Date: November 21, 2018.
+                                             2000 Mathematics Subject Classification. Primary 11G30, Secondary 11G35, 14K20, 14C20.
+                                             Key words and phrases. Hyperelliptic curves, descent, Fermat-Catalan, generalized Fermat equation,
+                                          Selmer set.
+                                             The first-named author is supported by an EPSRC Leadership Fellowship.
+                                             1R× denotes the multiplicative group of an algebra R, and (R× )2 denotes the subgroup of squares.
+                                                                                               1
+2                             SAMIR SIKSEK AND MICHAEL STOLL
+
+is known as the generalized Fermat equation (or the Fermat-Catalan equation) with sig-
+nature (p, q, r). As in Fermat’s Last Theorem, one is interested in non-trivial primitive
+integer solutions. An integer solution (x, y, z) is said to be non-trivial if xyz 6= 0, and
+primitive if x, y, z are coprime. Let χ = p−1 + q −1 + r −1 . The parametrization of non-
+trivial primitive integer solutions for (p, q, r) with χ ≥ 1 has now been completed ([3],
+[14]). The generalized Fermat Conjecture [11], [12] is concerned with the case χ < 1.
+It states that—up to sign and permutation—the only non-trivial primitive solutions to
+(1) with χ < 1 are
+              1 + 23 = 32 ,   25 + 72 = 34 ,   73 + 132 = 29 ,   27 + 173 = 712 ,
+         35 + 114 = 1222 ,    177 + 762713 = 210639282,     14143 + 22134592 = 657 ,
+    92623 + 153122832 = 1137 ,    438 + 962223 = 300429072,      338 + 15490342 = 156133 .
+The generalized Fermat Conjecture has been established for many signatures (p, q, r),
+including for several infinite families of signatures: Fermat’s Last Theorem (p, p, p) by
+Wiles and Taylor [27], [25]; (p, p, 2) and (p, p, 3) by Darmon and Merel [13]; (2, 4, p) by
+Ellenberg [15] and Bennett, Ellenberg and Ng [2]; (2p, 2p, 5) by Bennett [1]. Recently,
+Chen and Siksek [9] have solved the generalized Fermat equation with signatures (3, 3, p)
+for a set of prime exponents p having Dirichlet density 28219/44928. For exhaustive
+surveys see [10, Chapter 14] and [3]. An older but still very useful survey is [17]. An
+up-to-date list of partial results with references is found in [21]. It appears that the
+‘smallest’ signature (p, q, r) for which the equation has not yet been resolved is (3, 4, 5),
+in the sense that it is the only signature with max{p, q, r} ≤ 5 that is still open. In this
+paper we shall prove the following theorem.
+Theorem 1.1. The only primitive integer solutions to the equation
+(2)                                   x3 + y 4 + z 5 = 0
+are the trivial solutions (0, ±1, −1), (−1, 0, 1), (1, 0, −1), (−1, ±1, 0).
+   Our proof proceeds as follows. Edwards parametrized the primitive solutions to the
+generalized Fermat equation x2 + y 3 + z 5 = 0. Using this parametrization, we reduce the
+resolution of (2) to the determination of the set of rational points on 49 hyperelliptic
+curves Ci : y 2 = fi (x) where the polynomial fi has degree 30 (and so the curves are of
+genus 14). Of these 49 we can eliminate 26 using local considerations, which leaves 23
+curves Ci . These include 13 ‘difficult’ curves where the fi are irreducible. An application
+of the method of Bruin and Stoll would require the computation of the class and unit
+groups of number fields of degree 30, which is impractical at present. However, in these
+13 cases there are number fields Ki of degree 5 such that fi factors over Ki ; we shall
+show that an appropriate Selmer set corresponding to this factorization is empty, and
+deduce that Ci (Q) = ∅. For the ten remaining cases, our Selmer sets are non-empty, but
+we use them to construct unramified covers of the Ci . It turns out that these unramified
+covers have low genus quotients for which it is easy to determine the rational points.
+In this way we can first determine the set of rational points on each of the unramified
+covers and then on the remaining curves Ci .
+   We are grateful to Don Zagier for suggesting to us that (2) is the ‘next case’ of
+the generalized Fermat conjecture. The first-named author would like to thank John
+Cremona, Sander Dahmen and Michael Mourao for helpful discussions.
+
+                   2. Partial Descent on Hyperelliptic Curves
+    We will use G to denote the absolute Galois group of Q.
+                      PARTIAL DESCENT ON HYPERELLIPTIC CURVES                               3
+
+  It is convenient to adopt homogeneous coordinates for hyperelliptic curves. Let f (u, v)
+be a squarefree binary form of even degree 2d ≥ 4 with rational integer coefficients. Let
+(3)                                   C : y 2 = f (u, v)
+be the hyperelliptic curve of genus g = d − 1 associated to f in weighted projective
+space P(1,1,d) , where u, v, y are respectively given weights 1, 1 and d. Then C is
+covered by the two affine curves y 2 = f (x, 1) and y 2 = f (1, x). To avoid having to deal
+with special cases, we will assume that f (1, 0) 6= 0 (so that f (x, 1) has degree 2d). If
+f (1, 0) = 0, then we have to work with an extra factor v in the factorisation of f below,
+and everything goes through in much the same way.
+   Over Q̄, we can write
+                            f (u, v) = c(u − θ1 v) · · · (u − θ2d v)
+where c ∈ Q× is the leading coefficient of f (x, 1) and the θj ∈ Q̄ are the (pairwise
+distinct) roots of f (x, 1). Let Θ = {θ1 , . . . , θ2d }; this is a set on which the absolute
+Galois group of Q acts. Denote by
+                            L = Map (Θ, Q̄) ∼
+                                      Q         = Q[T ]/(f (T, 1))
+the corresponding étale algebra (its elements are Galois-equivariant maps from Θ to Q̄).
+This algebra L decomposes as a product of number fields corresponding to the Galois
+orbits on Θ, or equivalently, to the irreducible factors of f in Q[u, v]. Given elements
+α ∈ L× and s ∈ Q× such that cNL/Q (α) = s2 , we can define a curve Dα,s ⊂ P2d−1 × C
+by declaring that
+                                  
+  (z1 : . . . : z2d ), (u : v : y) ∈ Dα,s
+      ⇐⇒ ∃a 6= 0 such that ∀1 ≤ j ≤ 2d : α(Tj )zj2 = a(u − θj v) and sz1 · · · z2d = ad y .
+(We consider α ∈ L as a map α : Θ → Q̄.) It is clear that the condition is invariant under
+scaling and under the action of the Galois group G, so that Dα,s is defined over Q. Note
+that the hyperelliptic involution on C induces an isomorphism between Dα,s and Dα,−s ,
+and both curves are isomorphic to their common projection Dα to P2d−1 . Projection
+to the second factor induces a covering map πα,s : Dα,s → C. It can be checked that
+this map is an unramified covering of C of degree 22d−2 = 22g ; more precisely, πα,s is a
+C-torsor under J[2], the 2-torsion subgroup of the Jacobian variety J of C: a 2-covering
+of C. Two such 2-coverings πα,s and πβ,t are isomorphic over Q as coverings of C if and
+only if there are γ ∈ L× and w ∈ Q× such that β = αγ 2 w and t = sNL/Q (γ)w d. The set
+of isomorphism classes of 2-coverings of C that have points everywhere locally is called
+the 2-Selmer set Sel(2) (C/Q) of C. Since it can be shown that every such 2-covering
+can be realized in the form πα,s , it follows that the 2-Selmer set can be identified with
+a subset of
+                             {(α, s) ∈ L× × Q× : cNL/Q (α) = s2 }
+                      Hc =                                             .
+                            {(γ 2 w, NL/Q (γ)w d ) : γ ∈ L× , w ∈ Q× }
+(The group below acts on the set above by multiplication; the quotient is with respect to
+this group action.) It is known that the 2-Selmer set is finite. The image of Sel(2) (C/Q)
+                                                                           (2)
+under the map to L× /(Q× (L× )2 ) is known as the fake 2-Selmer set Selfake (C/Q) of C.
+                               (2)
+The map Sel(2) (C/Q) → Selfake (C/Q) is either a bijection or two-to-one. There is a
+natural map C(Q) → Sel(2) (C/Q) given on points with nonvanishing y-coordinate by
+                     δ : C(Q) ∋ (u0 : v0 : y0 ) 7−→ [u0 − T v0 , y0] ∈ Hc
+(where the square brackets denote the element represented by (u0 − T v0 , y0 ) and T ∈ L
+is the identity map). If y0 = 0, then we have v0 6= 0, and we can write
+                  f (u, v) = c(u − θ0 v)f˜(u, v) with f˜(x, 1) monic,
+4                           SAMIR SIKSEK AND MICHAEL STOLL
+
+where θ0 = u0/v0 . Then we set (compare [22] and [20])
+                    δ (u0 : v0 : 0) = [θ0 − T + cf˜(T, 1), cf˜(θ0 , 1)].
+                                   
+
+Therefore if the 2-Selmer set or the fake 2-Selmer set of C is empty, then C cannot have
+any rational points. The map δ above has the property that if the image of P ∈ C(Q)
+under δ corresponds to πα,s , then P = πα,s (Q) for some Q ∈ Dα (Q). Denoting the
+analogues of Hc and δ over Qp by Hc,p and δp , and writing ρp : Hc → Hc,p for the
+canonical map, we have that
+              Sel(2) (C/Q) = {h ∈ Hc : ρp (h) ∈ Im δp for all places p of Q} .
+   For a detailed account of the theory of 2-descent on hyperelliptic curves, see [7]. There
+it is shown how the fake 2-Selmer set can be computed if one can determine the class
+group of L (i.e., the class groups of the various number fields occurring as factors of L)
+and an odd-index subgroup of the group of units of L (dito). Now if the irreducible
+factors of f have large degree, then this information may be hard or next to impossible
+to get. So we would like to be able to compute some kind of intermediate Selmer set
+with less effort, at the price of potentially obtaining less information. This is the ‘partial
+2-descent’ that we now describe.
+   We first define a different model of Dα,s that includes a lot of redundant variables.
+We denote by Π the set of all subsets of the set Θ = {θ1 , . . . , θ2d } of rootsQ of f . We
+will frequently identify elements ϕ of Π with the corresponding factor θ∈ϕ (u − θv)
+of f . For any G-invariant subset Y of Π, we let PY be the weighted projective space
+over Q whose coordinates correspond to the elements of Y , with weights given by their
+cardinality (as subsets of Θ) or degrees (as factors of f ), and with twisted Galois action
+given by the G-action on Y . We write zϕ for the coordinate corresponding to ϕ ∈ Y .
+Then we can define an embedding
+                                                                   Y
+                    : PΘ −→ PΠ , (z1 : . . . : z2d ) 7−→ (. . . :   zi : . . .)
+                                                                         i:θi ∈ϕ
+
+where the product gives the zϕ -coordinate of the image point. Now we let
+                            D̃α,s = ( × idC )(Dα,s ) ⊂ PΠ × C .
+  For each G-invariant subset Y ⊂ Π, there is a projection πY : PΠ → PY . We obtain
+a commutative diagram
+                                               π̃α,s
+                                  D̃α,s                           // C
+                                       GG                     zz==
+                                         GG                 zz
+                                           GG             zzπα,s,Y
+                                     πY ×id GG##       zz
+                                                         z
+                                              Dα,s,Y
+We write πα,s,Y for the restriction of the second projection pr2 : PY × C → C to
+the image Dα,s,Y of D̃α,s under πY × idC . With these notations, Dα,s = Dα,s,Θ and
+πα,s = πα,s,Θ , and similarly D̃α,s = Dα,s,Π , π̃α,s = Dα,s,Π .
+  It is well-known that
+                           ker(N : µΘ
+                                    2 → µ2 )
+                                               ker(NL̄/Q̄ : µ2 (L̄) → µ2 )
+                  J[2] ∼
+                       =                     =
+                                  µ2                       µ2
+where L̄ = L ⊗Q Q̄ and N maps an element of µΘ   2 to the product of its entries. The
+elements of µΘ
+             2 correspond to the subsets of Θ in a natural way by
+(4)                             α 7−→ {θ ∈ Θ : α(θ) = −1} .
+                      PARTIAL DESCENT ON HYPERELLIPTIC CURVES                                 5
+
+The 2-torsion points therefore correspond to the partitions of Θ into two sets of even
+cardinality, and addition in J[2] corresponds to taking symmetric differences. The action
+of J[2] on a covering Dα,s is given in this setting by
+                                                                                  
+                 P + (z1 : . . . : z2d ), Q) = (α(θ1 )z1 : . . . : α(θ2d )z2d ), Q
+where P ∈ J[2] is represented
+                        Q            by α ∈ µΘ  2 . Similarly, the action on Dα,s,Y is given by
+multiplying zϕ with θ∈ϕ α(θ), for all ϕ ∈ Y .
+   We use this description to find the group ΓY ⊂ J[2] of deck transformation of the
+covering D̃α,s → Dα,s,Y . Its elements   Q are represented     by those α ∈ µΘ
+                                                                             2 with N(α) = 1
+                                                         #ϕ
+for which there is ε ∈ µ2 such that θ∈ϕ α(θ) = ε for all ϕ ∈ Y . Since we can replace
+α by αε, we can take ε = 1. By Galois theory, it follows that πα,s,Y : Dα,s,Y → C
+is (geometrically) Galois with Galois group GY ∼          = J[2]/ΓY . This group GY is dual
+to the annihilator of ΓY under the Weil pairing on J[2]. Recall that the Weil pairing
+is determined by the parity of the cardinality of the intersections of the sets in the
+partitions corresponding to two elements of J[2]. If we identify Y with a subset of µΘ        2
+via (4), then the dual group is the image of hY i ∩ ker N in J[2] = (ker N)/µ2 .
+   If G∨Y is neither trivial nor all of J[2], then we obtain intermediate coverings. It should
+be noted that this is not possible in the generic case when the Galois group of f is the
+full symmetric group S2d , since then the minimal G-invariant subsets Y of Π contain
+all subsets of some fixed cardinality, and each such Y generates all of J[2]. However,
+in many cases of interest, there are additional symmetries present that lead to smaller
+Galois groups, so that intermediate coverings may be available.
+   We want to generalize our setting for Selmer sets. To this end, we proceed similarly
+as above. We denote by LY the étale Q-algebra corresponding to the G-set Y (then
+L = LΘ ). We have the subgroup
+                                                 Y
+                    UΠ = {α ∈ L× : α(ϕ) =           α(θ) for all ϕ ∈ Π} ⊂ L×Π
+                                             θ∈ϕ
+
+with an embedding
+                           ιΠ : Q× −→ UΠ ,      a 7−→ (ϕ 7→ a#ϕ ) ,
+the set
+                Vc,Π = {(α, s) ∈ UΠ × Q× : cα(Θ) = s2 } ⊂ UΠ × Q× ,
+on which the group
+                   WΠ = {(γ 2 ιΠ (a), ad γ(Θ)) : γ ∈ UΠ , a ∈ Q× } ⊂ V1,Π
+acts, and the quotient set
+                                Hc,Π = Vc,Π /WΠ .
+We can extend the map δ : C(Q) → Hc to a map
+               δΠ : C(Q) −→ Hc,Π ,    (u0 : v0 : y0 ) 7−→ [ϕ 7→ ϕ(u0 , v0 ), y0 ]
+                                                            Q
+where [α, s] denotes the class of (α, s) and ϕ(u, v) = θ∈ϕ (u − θv). If y0 = 0, the
+definition has to be changed suitably, see the definition of δ above.
+  For the following, we will assume that Y contains a partition X of Θ, and that for
+every ϕ ∈ Y , there is a partition of Θ contained in Y that has ϕ as an element. (If
+necessary, we can extend Y by adding the complements of its elements; this does not
+change the covering group GY or the fields that occur as components of LY .) Then,
+using the obvious projections πY : LΠ → LY , we can define a group UY = πY (UΠ ) with
+a map ιY : Q× → UY , a set
+                                              Y
+                Vc,Y = {(α, s) ∈ UY × Q× : c      α(ϕ) = s2 } ⊂ UY × Q× ,
+                                               ϕ∈X
+6                           SAMIR SIKSEK AND MICHAEL STOLL
+
+a group                                 Y
+                WY = {(γ 2 ιY (a), ad         γ(ϕ)) : γ ∈ UY , a ∈ Q× } ⊂ V1,Y
+                                        ϕ∈X
+and the quotient set
+                                       Hc,Y = Vc,Y /WY .
+We get induced maps, which we denote again by πY , from the objects associated to Π
+to the corresponding objects associated to Y . We define δY = πY ◦ δΠ : C(Q) → Hc,Y .
+Using notations Hc,Y,p, ρY,p , δY,p in analogy to Hc,p etc., we define the Y-Selmer set of C
+to be
+            Sel(C, Y ) = {h ∈ Hc,Y : ρY,p (h) ∈ Im δY,p for all places p of Q} .
+Projecting to the first component, we obtain the fake Y-Selmer set Selfake (C, Y ). We
+        ′
+write Hc,Y ⊂ UY /(UY2 ιY (Q× )) for the image of Hc,Y under the map induced by projection
+                                                                                      Y  δ
+of the product UY ×Q× to the first factor, and similarly δY′ for the composition C(Q) →
+          ′          ′
+Hc,Y → Hc,Y . Using Hc,Y,p , ρ′Y,p , δY,p
+                                      ′
+                                          for the local equivalents, we have
+                                  ′
+          Selfake (C, Y ) = {h ∈ Hc,Y : ρ′Y,p (h) ∈ Im δY,p
+                                                        ′
+                                                            for all places p of Q} .
+   It is clear that the covering Dα,s,Y → C only depends on the image of (α, s) in Vc,Y ;
+therefore we will write πβ,s,Y : Dβ,s,Y → C instead, where (β, s) is the image of (α, s)
+in Vc,Y . As usual, we then have the following result.
+                                     
+Theorem 2.1. We have δY C(Q) ⊂ Sel(C, Y ), and
+                                        [                     
+                           C(Q) =            πβ,s,Y Dβ,s,Y (Q) .
+                                   [β,s]∈Sel(C,X)
+
+   The curve Dβ,s is a connected component of the subscheme of PY ×C defined in terms
+of the coordinates zϕ and (u : v : y) by
+                                                                 Y
+        ∃a 6= 0 : β(ϕ)zϕ2 = adeg ϕ ϕ(u, v) for all ϕ ∈ Y and c      zϕ = ad y .
+                                                                        ϕ∈X
+
+(To select the appropriate component, one has to take into account possible relations
+between the zϕ — we can   Q define Dβ,s as the dclosure of the set of all×(P(z), Q) with
+                      2
+z ∈ ŪY satisfying (βz , c ϕ∈X zϕ ) = (ῑY (a), a )δ̄Y (Q) for some a ∈ Q̄ . For this, we
+extend the objects and maps to their Q̄-counterparts.)
+
+                             3. Computing Selmer sets
+   In this section, we explain how a set like Selfake (C, Y ) can be computed. The first
+step is to reduce the infinitely many local conditions to only a finite set of places.
+   Let Y /G be the set of Galois-orbits  Q of Y . For each orbit O ∈ Y /G, we select a
+representative ϕO ∈ O. Then LY ∼       = O KO , where KO is the field of definition of ϕO
+(i.e., the subfield of Q̄ consisting of elements fixed by the stabilizer of ϕO in G). Let p
+be a (finite) prime of Q, and let β ∈ UY be an element such that there is s ∈ Q× with
+[ρY,p (β), s] ∈ Im δY,p . Let βO ∈ KO be the O-component of β, and let p be a place of KO
+above p. Let ϕ′ (u, v) = f /ϕ(u, v) be the cofactor of ϕ(u, v). By assumption, there are
+u0 , v0 , y0 ∈ Qp such that ϕ(u0 , v0 ) = βO and f (u0, v0 ) = y02. If p does not divide the
+leading coefficient c of f and p does not divide the resultant RO = Res(ϕ(u, v), ϕ′(u, v)),
+then the valuation vp (βO ) must be even. We therefore define SO to be the (finite) set
+of places p of KO such that p | ∞ or vp (c) 6= 0 or vp (RO ) 6= 0. Write S for the family
+(SO )O∈Y /G . As usual, if K is a number field and S is a set of places of K containing the
+infinite places, we define
+            K(S, 2) = {α(K × )2 ∈ K × /(K × )2 : vp (α) is even for all p ∈
+                                                                          / S} .
+                      PARTIAL DESCENT ON HYPERELLIPTIC CURVES                              7
+
+Then we can define
+                                       Y
+                                                               × 2
+                         LY (S, 2) =       KO (SO , 2) ⊂ L×
+                                                          Y /(LY ) .
+                                       O
+
+From the discussion above, it follows that elements of the fake Selmer set Selfake (C, Y )
+are represented by elements β of LY (S, 2). Since the groups K(S, 2) are finite when S
+is finite, this gives the Selmer set as a subset of a finite group. We have to determine
+the image of this finite group in the quotient group KY× /((KY× )2 ιY (Q× )).
+   The map ιY : Q× → L×         Y induces a map again denoted ιY from Q /(Q ) →
+                                                                                ×   × 2
+  ×     × 2
+LY /(LY ) . By standard results from algebra, we have that the image of LY (S, 2) in
+KY× /((KY× )2 ιY (Q× )) is given by LY (S, 2)/(LY (S, 2) ∩ ιY (Q× /(Q× )2 )). So we have to
+determine the intersection LY (S, 2) ∩ ιY (Q× /(Q× )2 ). We write ep/p for the ramification
+index of the extension KO,p/Qp .
+Lemma 3.1. Let T be the following set of rational primes p:
+       T = {p : for all O such that #ϕO is odd: ∀p | p, either p ∈ SO or 2 | ep/p } .
+Then
+                             LY (S, 2) ∩ Im ιY = ιY (Q(T, 2)) .
+Proof. First we show that ιY (Q(T, 2)) ⊂ LY (S, 2). Suppose a ∈ Q(T, 2) and p is a finite
+place of KO , where #ϕO is odd (in the other case, there is nothing to show). Let p be
+the rational prime below p. Now
+(5)                                vp (a) = ep/p · vp (a) .
+Suppose vp (a) is odd. Thus vp (a) is odd and ep/p is odd. As a ∈ Q(T, 2) and vp (a) is
+odd, we see that p ∈ T . By definition of T we deduce that p ∈ SO . This shows that
+ιY (a) ∈ LY (S, 2) as required.
+   Now we want to show that LY (S, 2) ∩ Im ιY ⊂ ιY (Q(T, 2)). Suppose α ∈ LY (S, 2) is
+also in Im ιY . Then there is some a ∈ Q× and some β ∈ L×                    2
+                                                             Y such that αO βO = a
+                                                                                  #ϕO
+                                                                                        for
+all O ∈ Y /G. We want to show that a ∈ Q(T, 2). Suppose p ∈      / T . Then there is some
+place p of some KO with #ϕO odd such that p | p, p ∈     / SO and ep/p is odd. As p ∈
+                                                                                    / SO ,
+we know that vp (αO ) is even. This implies that vp (a) is even. By (5), we see that vp (a)
+is even. As this is true for all p ∈
+                                   / T , we have that a ∈ Q(T, 2) as required.           
+   We have already remarked that the group LY (S, 2) is finite; it is also computable.
+Its computation [23] requires knowledge of the class groups of the fields KO and of a
+subgroup of the unit group of each KO of full rank and odd index.
+                                                                                      ′
+Lemma 3.2. The fake Selmer set Selfake (C, Y ) is contained in the intersection Hc,Y      of
+                                                                         ×     × 2      ×
+LY (S, 2)/ιY (Q(T, 2)) with the image of Hc,Y under the projection to LY /((LY ) ιY (Q )).
+If β ∈ LY (S, 2) represents an element of this intersection, then the covering curve Dβ,s,Y
+(for both possible choices of s) has good reduction at all odd primes p not dividing the
+discriminant or the leading coefficient of f .
+Proof. The first assertion follows from the preceding discussion.
+  If p is an odd prime not dividing the discriminant or the leading coefficient of f , then
+β can be represented by a tuple (βO )O such that βO is a p-adic unit for all p | p. The
+whole construction of covering curves can then be carried out over Fp . In particular,
+we obtain an unramified Galois covering of C/Fp that is the reduction of Dβ,s,Y mod p,
+which must therefore be smooth.                                                          
+  Let A be any set of (finite or infinite) places of Q. We denote by Selfake (C, Y, A) the
+           ′
+subset of Hc,Y consisting of elements that satisfy the local conditions for the fake Selmer
+8                            SAMIR SIKSEK AND MICHAEL STOLL
+
+set at all places in A. Then
+            Selfake (C, Y ) = Selfake (C, Y, {all places of Q}) ⊂ Selfake (C, Y, A) .
+By definition, Sel(C, Y ) maps to Selfake (C, Y ). So by Theorem 2.1, we see that C(Q)
+must be empty if Selfake (C, Y, A) = ∅.
+  This definition will be useful, since we will see that we would need to check the local
+conditions at very many primes if we want to compute the fake Selmer set exactly.
+Using a smaller number of primes can already give a very useful upper bound, which is
+much easier to compute.
+  The next result shows that we only need to consider a finite set of places when we
+want to compute a (fake) Selmer set.
+Theorem 3.3. Let B be a set of rational primes containing the following primes p:
+    • p = ∞,
+               2
+    • p < 4gD    where gD = #GY (g − 1) + 1 is the genus of the covering curves Dβ,s,Y .
+    • p dividing the discriminant or the leading coefficient of f .
+Then Selfake (C, Y ) = Selfake (C, Y, B).
+Proof. We have to show that for a prime p outside B, the local condition is automatically
+                                                2
+satisfied. So assume that p ∈ / B. Then p ≥ 4gD   and p does not divide the discriminant
+                                                                           ′
+or leading coefficient of f . Let β ∈ LY (S, 2) represent an element of Hc,Y . The latter
+two conditions on p imply by Lemma 3.2 that Dβ,s,Y has good reduction at p. The first
+condition then implies by the Hasse-Weil bounds that the reduction of Dβ,s,Y mod p has
+(smooth) Fp -points; then Hensel’s Lemma shows that Dβ,s,Y (Qp ) is non-empty. This in
+turn means that the element represented by β is in the image of pr1 ◦δY,p . The theorem
+follows.                                                                               
+   One convenient way of obtaining a suitable set Y is the following. We fix some
+number field K and let X be the partition of Θ corresponding to the factorization of f
+into irreducible factors over K. Then Y can be taken to be the union of the G-orbits of
+the elements of X. In this case, all the fields occurring as components of the algebra LY
+will be (isomorphic to) subfields of K. We will denote the corresponding (fake) Selmer
+sets also by Sel(C, K), Sel(C, K, A), Selfake (C, K) and Selfake (C, K, A).
+   In the following, we will assume that we are in this situation and would like to
+compute Selfake (C, K, A) for some finite set A of primes. For simplicity, we will assume
+in addition that none of the factors in the factorization of f over K is actually defined
+over a smaller field and that no two of the factors are in the same G-orbit. Since it is
+advantageous for the computation, we will remove the requirement that the factors are
+monic and instead consider a factorization
+                           f (u, v) = cf1 (u, v)f2(u, v) · · · fr (u, v)
+with c ∈ Z and polynomials f1 , . . . , fr with coefficients in O, the ring of integers of K.
+(It may be necessary to scale f by an integral square to make this possible.) Then
+LY =∼ K r , and if we let S be the union of the sets Sj corresponding to the orbit of fj ,
+then LY (S, 2) ⊂ K(S, 2)r .
+                                                   ′
+Testing the local conditions. Let h ∈ Hc,Y            , and let p be a rational prime. To
+be able to compute Selfake (C, K, A), we need an algorithm for determining whether
+              ′
+ρp (h) ∈ Im(δY,p ) (for all p ∈ A). Let us deal first with the case p = ∞ which is certainly
+                                                            ′               ′
+easier. In this case we actually compute the image of δY,∞      : C(R) → Hc,Y,∞ . There are
+at most two real points at infinity, and their image is the same as that of nearby points,
+so there is no need to consider them separately. Thus we may restrict to the affine
+patch given by y 2 = f (u, 1). As we move along the affine patch, the image changes
+                       PARTIAL DESCENT ON HYPERELLIPTIC CURVES                                9
+
+only where y = 0. Let I1 , . . . , Ik be the open intervals on which f (u, 1) is positive.
+For each j choose uj ∈ Ij and yj such that yi2 = f (uj , 1). Then Im(δY,∞     ′
+                                                                                 ) is simply
+   ′
+{δY,∞ (uj : 1 : yj ) : 1 ≤ j ≤ k}.
+   We now let p be a finite prime. We shall suppose that h is represented by (α1 , . . . , αr )
+in K(S, 2)r . We denote the degree of fj by dj and shall also suppose that d1 , . . . , ds
+                                                           ′
+are odd and ds+1, . . . , dr are even. Then ρp (h) ∈ Im(δY,p ) if and only if there is some
+(u : v) ∈ P (Qp ) and a ∈ Qp /(Qp ) such that aαi Fi (u, v) ∈ Kp2 for 1 ≤ i ≤ s and
+               1                  ×   × 2
+
+αi Fi (u, v) ∈ Kp2 for s + 1 ≤ i ≤ r and f (u, v) ∈ Q2p . Now Q×       × 2
+                                                                  p /(Qp ) is finite, and we
+choose rational integers a representing its cosets. Moreover (u : v) = (x : 1) or (1 : px)
+for some x ∈ Zp . Thus we can decide whether h maps into the local image st p if we can
+decide the following question: given a polynomial f ∈ Z[x] and polynomials fi ∈ O[x],
+is there x ∈ Zp such that f (x) ∈ Q2p and fi (x) ∈ Kp2 for 1 ≤ i ≤ r. Equivalently, is
+there x ∈ Zp satisfying the following property
+         (
+           f (x) is a square in Qp and
+(6)
+           fi (x) is a square in Kp      for each place p above p and for 1 ≤ i ≤ r.
+
+We shall restrict to the case where
+                                                   Y
+(7)             f is separable      and       f/       fi is a constant in (K × )2 .
+
+This is certainly true for the f and fi in our situation.
+   We shall need the following pair of lemmas.
+                            ai xi ∈ Z[x] and x0 ∈ Z and n ≥ 1. Let c = min vp (ai ) and
+                         P
+Lemma 3.4. Let g =
+m = vp (g ′(x0 )). Write λ = min{m + n, c + 2n}. Let k = vp (g(x0 )). Suppose k < λ. If
+either of the following two conditions holds,
+       • k is odd, or
+       • k is even and g(x0 )/pk is not a square modulo pλ−k ,
+then g(x) is not a square in Qp for all x ∈ x0 + pn Zp .
+                            ai xi ∈ O[x] and x0 ∈ Z and n ≥ 1. Let p be a place above
+                        P
+Lemma 3.5. Let g =
+p having ramification index e and let π ∈ O be a uniformizing element for p. Let
+c = min vp (ai ) and m = vp (g ′ (x0 )). Write λ = min{m + ne, c + 2ne}. Let k = vp (g(x0 )).
+Suppose k < λ. If either of the following two conditions holds,
+       • k is odd, or
+       • k is even and g(x0 )/π k is not a square modulo π λ−k ,
+then g(x) is not a square in Kp for all x ∈ x0 + pn Zp .
+  We shall prove Lemma 3.5, with the proof of Lemma 3.4 being an easy simplification.
+
+Proof. Suppose x ∈ x0 + pn Zp ⊂ x0 + π ne Oπ . Let g1 = g/π c ∈ Oπ [x]. By Taylor’s
+Theorem
+                        g1 (x) = g1 (x0 ) + (x − x0 )g1′ (x0 ) + O(π 2ne ).
+Thus
+                        g(x) = g(x0 ) + (x − x0 )g ′ (x0 ) + O(π c+2ne).
+It follows that
+                                  g(x) ≡ g(x0 ) (mod π λ ),
+where λ is given in the statement of the lemma. The lemma follows.                           
+10                           SAMIR SIKSEK AND MICHAEL STOLL
+
+   We return to our question: given f ∈ Z[x] and fi ∈ O[x] satisfying (7), is there
+x ∈ Zp satisfying (6)? Our algorithm for answering this question produces a sequence
+of finite sets of integers B0 , B1 , B2 , . . . satisfying
+                                                           [
+(8)                     {x ∈ Zp : x satisfies (6)} ⊂         (x0 + pn Zp ).
+                                                              x0 ∈Bn
+
+We start with B0 = {0}. To produce Bn from Bn−1 we initially let
+                     Bn = {x0 + pn a : x0 ∈ Bn−1 and 0 ≤ a ≤ p − 1}.
+If any x0 ∈ Bn satisfies (6) then we have answered our question positively and our
+algorithm terminates. Otherwise, for each x0 ∈ Bn , we apply the tests in Lemmas 3.4
+and 3.5. If the hypotheses of Lemma 3.4 apply to g = f with the current choices of x0
+and n then we eliminate x0 from Bn . Likewise if there is some 1 ≤ i ≤ r, and some p
+above p such that g = fi satisfies the hypotheses of Lemma 3.5. We see that once this
+process is complete, Bn still satisfies (8). At any stage of the algorithm, if Bn is empty
+then we have answered our question negatively.
+Lemma 3.6. The above algorithm terminates in finite time.
+Proof. Suppose otherwise.
+    Suppose first that there is some x∗ ∈ Zp that satisfies property (6) and f (x∗ ) 6= 0.
+By (7) this forces fi (x∗ ) 6= 0. Now by (8) there is, for each n, an xn ∈ Bn such that
+xn ≡ x∗ (mod pn ). However, for n large enough it is clear that xn satisfies (6) and so
+the algorithm would have stopped at the n-th step, and we have a contradiction.
+    Next we shall suppose that x∗ satisfies property (6) and f (x∗ ) = 0. Hence precisely
+one of the fi (x∗ ) is zero. Without loss of generality suppose that f1 (x∗ ) = 0. Now
+f ′ (x∗ ) 6= 0 as f is separable. Let x∗∗ = x∗ + p2u f ′ (x∗ ) where u is a large positive integer
+that will be chosen later. By Taylor’s Theorem
+                                                          2
+                              f (x∗∗ ) ≡ (pu f ′ (x∗ ))        (mod p4u ).
+This forces f (x∗∗ ) to be a non-zero square for u large enough. Moreover, for u large
+enough, fi (x∗∗ ) is a non-zero square in Kp for 2 ≤ i ≤ r, since fi (x∗ ) is a non-zero
+square. By (7), f1 (x∗∗ ) must also be a square. Thus f (x∗∗ ) 6= 0 and x∗∗ satisfies (6).
+This reduces us to the previous case and we have a contradiction.
+   We deduce that no x∗ ∈ Zp satisfies (6). Now choose xn ∈ Bn for n = 0, 1, 2, . . . such
+that xn+1 ≡ xn (mod pn ). Let x∗ = lim xn ∈ Zp . In particular x∗ ≡ xn (mod pn ). Now
+either f (x∗ ) is a non-square in Qp , or fi (x∗ ) is a non-square in Kp for some p above p
+and some 1 ≤ i ≤ r.
+   Suppose that f (x∗ ) is a non-square in Qp . Let k = vp (f (x∗ )) < ∞. Suppose n > k.
+Then k = vp (f (xn )). Now either k is odd, or f (xn )/pk is not a square modulo pn−k , for
+large enough n. In either case, xn satisfies the hypotheses of Lemma 3.4, and cannot
+belong to Bn giving a contradiction. Likewise we obtain a contradiction if fi (x∗ ) is a
+non-square in Kp .                                                                       
+
+                             4. Edwards’ Parametrization
+  The remainder of this paper is devoted to the proof of Theorem 1.1. In this section,
+we use Edwards’ parametrization of the generalized Fermat equation with signature
+(2, 3, 5). This allows us to reduce the resolution of (2) to the determination of rational
+points on 49 hyperelliptic curves of genus 14; in determining the rational points on these
+curves our partial descent will play a major rôle. All our computations are carried out
+using the package MAGMA [4].
+                      PARTIAL DESCENT ON HYPERELLIPTIC CURVES                               11
+
+
+     h1 = [0, 1, 0, 0, 0, 0, −144/7, 0, 0, 0, 0, −20736, 0],
+     h2 = [−1, 0, 0, −2, 0, 0, 80/7, 0, 0, 640, 0, 0, −102400],
+     h3 = [−1, 0, −1, 0, 3, 0, 45/7, 0, 135, 0, −2025, 0, −91125],
+     h4 = [1, 0, −1, 0, −3, 0, 45/7, 0, −135, 0, −2025, 0, 91125],
+     h5 = [−1, 1, 1, 1, −1, 5, −25/7, −35, −65, −215, 1025, −7975, −57025],
+     h6 = [3, 1, −2, 0, −4, −4, 24/7, 16, −80, −48, −928, −2176, 27072],
+     h7 = [−10, 1, 4, 7, 2, 5, 80/7, −5, −50, −215, −100, −625, −10150],
+     h8 = [−19, −5, −8, −2, 8, 8, 80/7, 16, 64, 64, −256, −640, −5632],
+     h9 = [−7, −22, −13, −6, −3, −6, −207/7, −54, −63, −54, 27, 1242, 4293],
+     h10 = [−25, 0, 0, −10, 0, 0, 80/7, 0, 0, 128, 0, 0, −4096],
+     h11 = [6, −31, −32, −24, −16, −8, −144/7, −64, −128, −192, −256, 256, 3072],
+     h12 = [−64, −32, −32, −32, −16, 8, 248/7, 64, 124, 262, 374, 122, −2353],
+     h13 = [−64, −64, −32, −16, −16, −32, −424/7, −76, −68, −28, 134, 859, 2207],
+     h14 = [−25, −50, −25, −10, −5, −10, −235/7, −50, −49, −34, 31, 614, 1763],
+     h15 = [55, 29, −7, −3, −9, −15, −81/7, 9, −9, −27, −135, −459, 567],
+     h16 = [−81, −27, −27, −27, −9, 9, 171/7, 33, 63, 141, 149, −67, −1657],
+     h17 = [−125, 0, −25, 0, 15, 0, 45/7, 0, 27, 0, −81, 0, −729],
+     h18 = [125, 0, −25, 0, −15, 0, 45/7, 0, −27, 0, −81, 0, 729],
+     h19 = [−162, −27, 0, 27, 18, 9, 108/7, 15, 6, −51, −88, −93, −710],
+     h20 = [0, 81, 0, 0, 0, 0, −144/7, 0, 0, 0, 0, −256, 0],
+     h21 = [−185, −12, 31, 44, 27, 20, 157/7, 12, −17, −76, −105, −148, −701],
+     h22 = [100, 125, 50, 15, 0, −15, −270/7, −45, −36, −27, −54, −297, −648],
+     h23 = [192, 32, −32, 0, −16, −8, 24/7, 8, −20, −6, −58, −68, 423],
+     h24 = [−395, −153, −92, −26, 24, 40, 304/7, 48, 64, 64, 0, −128, −512],
+     h25 = [−537, −205, −133, −123, −89, −41, 45/7, 41, 71, 123, 187, 205, −57],
+     h26 = [359, 141, −1, −21, −33, −39, −207/7, −9, −9, −27, −81, −189, −81],
+     h27 = [295, −17, −55, −25, −25, −5, 31/7, −5, −25, −25, −55, −17, 295].
+
+                    Table 1. Definition of the forms hi , 1 ≤ i ≤ 27.
+
+
+  In the following, the notation h = [α0 , α1 , . . . , α12 ] means that h is the binary form
+                                        12  
+                                       X        12
+                             h(u, v) =                 αi ui v 12−i .
+                                       i=0
+                                                 i
+We define binary forms h1 , . . . , h27 as given in Table 1 on page 11.
+  For i = 1, . . . , 27, let
+                                    ∂ 2 hi ∂ 2 hi
+                     2
+                      ∂ hi ∂ 2 hi
+                                                                               
+              1                                              1   ∂hi ∂gi ∂hi ∂gi
+      gi =                        −                 , fi =              −          .
+           1322 ∂u2 ∂v 2            ∂u∂v ∂u∂v              240 ∂u ∂v      ∂v ∂u
+Let
+                     (fi , gi , hi ) = (−fi−27 , gi−27 , hi−27 ),     i = 28, 29,
+                  (fi , gi , hi ) = (−fi−25 , gi−25 , hi−25 ),      i = 30, . . . , 41,
+                  (fi , gi , hi ) = (−fi−23 , gi−23 , hi−23 ),      i = 42, . . . , 49.
+
+
+Note that the fi , gi and hi are binary forms with integral coefficients, of degrees 30, 20
+and 12 respectively.
+Theorem 4.1. (Edwards [14]) Suppose a, b, c are coprime rational integers satisfying
+a2 + b3 + c5 = 0. Then for some i = 1, . . . , 49, there is a pair of coprime rational integers
+12                             SAMIR SIKSEK AND MICHAEL STOLL
+
+u, v such that
+                       a = fi (u, v),       b = gi (u, v),       c = hi (u, v).
+
+Proof. See pages 235–236 of [14], particularly the last paragraph on page 236.                        
+
+
+                                     5. Local Solubility
+Lemma 5.1. Suppose x, y, z are coprime integers satisfying equation (2). Then, for
+some i in
+
+(9)    I = {2, 3, 5, 6, 15, 16, 17, 23, 24, 27, 28, 29, 31, 32, 36, 37, 38, 40, 41, 43, 44, 47, 49}
+
+there is a pair of coprime integers u, v, such that
+
+(10)                   y 2 = fi (u, v),      x = gi (u, v),      z = hi (u, v).
+
+Proof. From Edwards’ Theorem, the conclusion certainly holds for some 1 ≤ i ≤ 49.
+It turns out that for all i the form fi is square-free and so the equation y 2 = fi (u, v)
+defines a hyperelliptic curve
+                                          Ci : y 2 = fi (u, v)
+in weighted projective space, where we give u, v and y the weights 1, 1 and 15. This
+hyperellipic curve has genus g = 14 since the binary form fi has degree 30. We tested
+each Ci for everywhere local solubility using our implementation of the algorithm in
+[19]. By the Hasse-Weil bounds, it is only necessary to test for local solubility at ∞,
+the primes dividing the discriminant of fi , and those < 4g 2. We find that for i in the
+set
+                    {1, 4, 9, 10, 11, 13, 14, 18, 25, 26, 33, 35, 39, 45, 46, 48}
+the curve Ci has no 2-adic points and for i = 20, 42, it has no 3-adic points.
+  We can eliminate a further eight indicies i as follows. Let S = {w2 : w ∈ Z/256Z}
+and T = {2w : w ∈ Z/256Z}. Let
+
+       Ui = {(u, v) ∈ (Z/256Z)2 : fi (u, v) ∈ S,                                           / T 3 }.
+                                                         (fi (u, v), gi (u, v), hi (u, v)) ∈
+
+If Ui = ∅ then for any pair of integers u, v, if fi (u, v) is a square then the integers
+fi (u, v), gi (u, v), hi (u, v) must all be even and so cannot be coprime. It turns out that
+Ui = ∅ for i = 7, 8, 12, 19, 21, 22, 30, 34, and so we can eliminate these indicies from
+consideration. This leaves us with the set I in the statement of the theorem.
+    Our attempts to eliminate other indicies using the corresponding trick with other
+prime powers were unsuccessful.                                                           
+
+
+
+Remark. In what follows we will determine the rational points on the curves Ci for the
+23 values of i ∈ I. There are various relations between these 23 curves which are helpful
+to bear in mind, even though we shall not use them explicitly. First, the curves C3 , C17
+and C47 are isomorphic. Secondly, if we write i ∼ j to mean that Ci is a quadratic twist
+of Cj then we have
+
+                           5 ∼ 31 ∼ 49,     6 ∼ 32,    15 ∼ 16,
+                       23 ∼ 24,     27 ∼ 28 ∼ 37 ∼ 38,     43 ∼ 44.
+                      PARTIAL DESCENT ON HYPERELLIPTIC CURVES                               13
+
+                                6. Factorization Types
+  Let G ∈ Q[u, v] be a binary form, and let K be a number field. We say G has
+factorization type [d1 , d2, . . . , dn ] over K if it factors as a product G = G1 G2 . . . Gn
+where Gj ∈ K[u, v] is irreducible over K of degree dj . The following table records the
+factorization types of fi over Q for the 23 values of i ∈ I.
+      factorization type of fi over Q                        i∈I
+                      [30]            15, 16, 23, 24, 27, 28, 29, 37, 38, 40, 41, 43, 44
+                   [10, 20]                                  2, 36
+                  [6, 12, 12]                             3, 17, 47
+              [1, 1, 4, 4, 4, 8, 8]                    5, 6, 31, 32, 49
+
+   We implemented our partial Descent in MAGMA, and used it to deal with the remaining
+fi as we now explain.
+
+
+6.1. Dealing with factorization type [30]. Here the fi are irreducible and it is im-
+practical to compute the class group and units of the degree 30 number fields Q[x]/fi .
+It follows from Edwards’ construction that the Galois group of the splitting field of
+any of the fi (or gi or hi ) must be isomorphic to a subgroup of GL2 (F5 )/{±I}. In
+these 13 cases where fi is irreducible, it turns out that the Galois group is isomor-
+phic to GL2 (F5 )/{±I}, which has order 240. Now GL2 (F5 )/{±I} has a subgroup of
+order 48 and hence index 5. By the Galois correspondence, the splitting field of fi
+must contain a subfield Ki of degree 5. It is possible to determine for these fields
+Ki the class group and unit information needed for the Selmer set computation. It
+turns out that Selfake (Ci , Ki , Ai ) = ∅ where Ai is the primes < 100, infinity and
+the primes dividing the leading coefficient of fi . This shows that Ci (Q) = ∅ for
+i = 15, 16, 23, 24, 27, 28, 29, 37, 38, 40, 41, 43, 44. We briefly indicate in this table the
+choice of Ki . In all these cases, fi has factorization type [6, 24] over Ki . (It can be
+checked that the Galois group of the coverings one would obtain is isomorphic to µ42 , so
+we have gD = 16(g − 1) + 1 = 209.)
+
+                            i∈I             Defining polynomial for Ki
+                        15, 16, 23, 24         x5 − 10x2 − 15x − 6
+                    27, 28, 37, 38, 43, 44     x5 + 20x2 + 30x + 60
+                             29                x5 + 30x2 + 45x + 18
+                             40                x5 + 20x2 + 30x + 6
+                             41            x5 + 30x3 + 60x2 + 45x + 12
+
+
+  For the remaining factorization types we let K = Q and computed the Selmer set
+Selfake (Ci , Q, Ai ) where again Ai is the primes < 100, infinity and the primes dividing
+the leading coefficient of fi . In all these cases the Selmer set is non-empty. However, it
+turns out that each unramified cover Dh corresponding to an element h of these Selmer
+sets has at least one quotient Dh → D ′ /Q, such that:
+    (i) D ′ is a curve of genus 1, and its Jacobian has rank 0, or
+   (ii) D ′ is a curve of genus 2, and its Jacobian has rank at most 1.
+In either case we have been able determine D ′ (Q) (where for (ii) we use Chabauty’s
+method [16], [18],[26]). This allows us to determine the rational points on the Dh , and
+hence on the Ci . We give some details below.
+14                            SAMIR SIKSEK AND MICHAEL STOLL
+
+6.2. Dealing with factorization type [10, 20]. Here i = 2 or 36. We explain the
+details for i = 2; those for i = 36 are practically identical. Here f2 = F1 F2 where
+      F1 = 20736u10 + v 10
+      F2 = 429981696u20 + 1558683648u15v 5 − 207484416u10v 10 − 75168u5v 15 + v 20 .
+
+
+The Selmer set is
+                                                       1 · (Q× )2 , 1 · (Q× )2
+                                                                                
+                       Selfake (C2 , Q, A2 ) =                                       .
+Thus if (u : v : y) ∈ C2 (Q) then F1 (u, v) and F2 (u, v) are both squares. In other words,
+every rational point (u : v : y) ∈ C2 (Q) lifts to a rational point (u : v : y1 : y2 ) on the
+curve
+                                          F1 (u, v) = y12,
+                                       
+                                  D:
+                                          F2 (u, v) = y22,
+via the map
+                      φ : D → C2 ,          (u : v : y1 : y2 ) 7→ (u : v : y1 y2 ).
+However, the curve D covers the genus 2 curve (given here in affine coordinates)
+                                     D ′ : Y 2 = X 5 + 20736,
+via                                                          v y 
+                                                                 1
+                         ψ : (u : v : y1 : y2 ) 7→ (X, Y ) =   , 5 .
+                                                              u u
+To determine D(Q) and hence C2 (Q) it is enough to determine D2′ (Q). Write J for the
+Jacobian of D ′ . Using the in-built MAGMA routines for descent on Jacobians of genus 2
+curves (based on [24]) we were able to show that J(Q) ∼        = Z/5Z. From this one can
+                       ′
+easily conclude that D (Q) = {∞, (0, ±144)}. Thus
+                    D(Q) = {(0 : 1 : ±1 : ±1), (1 : 0 : ±144 : ±20736)},
+                    C2 (Q) = {(0 : 1 : ±1), (1 : 0 : ±2985984)}.
+From (10) we obtain the following solutions to (2)
+                 (x, y, z) = (−1, ±1, 0),              (−429981696, ±2985984, 0).
+We can exclude the latter pair since we are only interested in solutions where x, y, z
+are coprime.
+                                                                            2
+  In this case, we obtain double covers of genus gD = 2 · 13 + 1 = 27, so 4gD = 2916,
+and the exact computation of the fake Selmer sets would be feasible.
+
+6.3. Dealing with factorization type [6, 12, 12]. Here i = 3, 17 or 47. The Selmer
+sets for all have size 1. It is unsurprising that all three have the same size Selmer set
+since, as we have observed before, the curves C3 , C17 and C47 are isomorphic. We give
+the details for i = 3 here; the other cases are almost identical. We can write f3 = F1 F2 F3
+where
+              F1 = 320u6 + v 6 ,
+              F2 = 102400u12 + 32000u9v 3 + 16440u6v 6 − 100u3v 9 + v 12 ,
+              F3 = 102400u12 + 896000u9v 3 − 140160u6v 6 − 2800u3v 9 + v 12 .
+The Selmer set is
+                                                1 · (Q× )2 , 1 · (Q× )2 , 1 · (Q× )2
+                                                                                        
+                  Selfake (C3 , Q, A3 ) =                                                    .
+                      PARTIAL DESCENT ON HYPERELLIPTIC CURVES                               15
+
+As before, every rational point (u : v : y) ∈ C3 (Q) lifts to a rational point (u : v : y1 :
+y2 : y3 ) on the curve
+                                     
+                                      F1 (u, v) = y12,
+                                 D:      F2 (u, v) = y22,
+                                         F3 (u, v) = y32,
+                                     
+
+via the map
+
+                 φ : D → C3 ,        (u : v : y1 : y2 : y3 ) 7→ (u : v : y1 y2 y3 ).
+
+However, the curve D covers the elliptic curve
+
+                                         E : Y 2 = X 3 + 25
+
+via
+                                                                      20u2 5y1
+                                                                                
+                  ψ : D → E,         (u : v : y1 : y2 : y3 ) 7→           ,          .
+                                                                       v2 v3
+The curve E has rank 0 and the Mordell–Weil group is
+
+                                 E(Q) = {O, (0, 5), (0, −5)}.
+
+We deduce that the only rational points on C3 are (u : v : y) = (0 : 1 : ±1). These give
+the solution (0, 1, −1) to equation (2).
+
+6.4. Dealing with factorization type [1, 1, 4, 4, 4, 8, 8]. Here i = 5, 6, 31, 32, 49. In
+all these cases the Selmer set has exactly two elements. We give the details for i = 5;
+the other cases are similar. Now f5 = 2F1 F2 F3 F4 F5 F6 F7 where
+
+               F1 = v,         F2 = u,       F3 = 45u4 − v 4 ,
+               F4 = 405u4 + 30u2 v 2 + v 4 ,        F5 = 15u4 + 10u2v 2 + 3v 4 ,
+               F6 = 405u8 − 540u6v 2 + 846u4v 4 − 60u2v 6 + 5v 8 ,
+               F7 = 50625u8 − 13500u6v 2 + 4230u4v 4 − 60u2v 6 + v 8 .
+
+The Selmer set has representatives (3, 2, 5, 5, 15, 5, 1) and (5, −6, −1, 1, 3, 5, 1). If (u :
+v : y) is a rational point on C5 mapping to the first element of the Selmer set then there
+are rational numbers a, y1 , . . . , y7 , with a 6= 0, such that
+
+                  F1 = 3ay12 ,      F2 = 2ay22 ,       F3 = 5y32 ,
+                  F4 = 5y42,       F5 = 15y52,        F6 = 5y62,         F7 = y72.
+
+Consider the curve
+                                     D ′ : F3 (u, v) = 5y32.
+The Jacobian of this genus 1 curve is the elliptic curve
+
+                                    E : y 2 = x3 + 4500x,
+
+which has rank 0 and Mordell–Weil group E(Q) = {O, (0, 0)}. It follows that D ′ (Q) =
+{(1 : 0 : 3), (1 : 0 : −3)}. This gives us the solution (184528125, 0, −91125) to (2) which
+we can exclude since we are only interested in primitive solutions. We deal with the
+second element of the Selmer set in a similar way.
+16                             SAMIR SIKSEK AND MICHAEL STOLL
+
+                                           References
+ [1] M. Bennett, On the equation x + y = z 5 , J. Théor. Nombres Bordeaux 18 (2006), 315–321.
+                                    2n    2n
+
+ [2] M. A. Bennett, J. S. Ellenberg and N. C. Ng, The Diophantine equation A4 + 2δ B 2 = C n ,
+     International Journal of Number Theory, 6 (2010), no. 2, 311338.
+ [3] F. Beukers, The Diophantine equation Axp + By q = Cz r , Lectures held at Institut Henri Poincaré,
+     September 2004, http://www.math.uu.nl/people/beukers/Fermatlectures.pdf
+ [4] W. Bosma, J. Cannon and C. Playoust: The Magma Algebra System I: The User Language, J.
+     Symb. Comp. 24 (1997), 235–265. (See also http://magma.maths.usyd.edu.au/magma/)
+ [5] N. Bruin and E. V. Flynn, Towers of 2-covers of hyperelliptic curves, Trans. Amer. Math. Soc.
+     357 (2005), 4329–4347.
+ [6] N. Bruin and M. Stoll, Deciding existence of rational points on curves: an experiment, Experi-
+     mental Mathematics 17 (2008), 181–189.
+ [7] N. Bruin and M. Stoll, Two-cover descent on hyperelliptic curves, Mathematics of Computations
+     78 (2009), 2347–2370.
+ [8] N. Bruin and M. Stoll, The Mordell-Weil sieve: Proving non-existence of rational points on curves,
+     LMS J. Comput. Math. 13 (2010), 272–306.
+ [9] I. Chen and S. Siksek, Perfect powers expressible as sums of two cubes, Journal of Algebra 322
+     (2009), 638–656.
+[10] H. Cohen, Number Theory, Volume II: Analytic and Modern Tools, GTM 240, Springer-Verlag,
+     2007.
+[11] H. Darmon, Faltings plus epsilon, Wiles plus epsilon, and the generalized Fermat equation, C. R.
+     Math. Rep. Acad. Sci. Canada 19 (1997), no. 1, 3–14.
+[12] H. Darmon and A. Granville, On the Equation z m = F (x, y) and Axp + By q = Cz r , Bull. London
+     Math. Society, 27 (1995), no. 6, 513–543.
+[13] H. Darmon and L. Merel, Winding quotients and some variants of Fermat’s Last Theorem, J. reine
+     angew. Math. 490 (1997), 81–100.
+[14] J. Edwards, A complete solution to X 2 + Y 3 + Z 5 = 0, J. reine angew. Math. 571 (2004), 213–236.
+[15] J. Ellenberg, Galois representations attached to Q-curves and the generalized Fermat equation
+     A4 + B 2 = C p , Amer. J. Math. 126 (2004), 763–787.
+[16] E. V. Flynn, A flexible method for applying Chabauty’s Theorem, Compositio Math. 105 (1997),
+     79–94.
+[17] A. Kraus, On the Equation xp + y q = z r : A Survey, Ramanujan Journal 3 (1999), 315–333.
+[18] W. McCallum and B. Poonen, The method of Chabauty and Coleman, preprint, 14 June 2010,
+     http://www-math.mit.edu/∼poonen/papers/chabauty.pdf
+[19] J. R. Merriman, S. Siksek and N. P. Smart, Explicit 4-descents on elliptic curves, Acta Arithmetica
+     LXXVII.4 (1996), 358-404.
+[20] B. Poonen and E. F. Schaefer, Explicit descent on cyclic covers of the projective line, J. reine
+     angew. Math. 488 (1997), 141–188.
+[21] B. Poonen, E. F. Schaefer and M. Stoll, Twists of X(7) and primitive solutions to x2 + y 3 = z 7 ,
+     Duke Math. J. 137 (2007), 103–158.
+[22] E. F. Schaefer, 2–descent on the Jacobians of hyperelliptic curves, J. Number Theory 51 (1995),
+     219–232.
+[23] S. Siksek and N. P. Smart, On the complexity of computing the 2-Selmer group of an elliptic curve,
+     Glasgow Mathematical Journal 39 (1997), 251–258.
+[24] M. Stoll, Implementing 2-descent for Jacobians of hyperelliptic curves, Acta Arith. 98 (2001),
+     245–277.
+[25] R. Taylor and A. Wiles, Ring-theoretic properties of certain Hecke algebras, Annals of Mathematics
+     141 (1995), no. 3, 553–572.
+[26] J. L. Wetherell, Bounding the Number of Rational Points on Certain Curves of High Rank, Ph.D.
+     dissertation, University of California at Berkeley, 1997.
+[27] A. Wiles, Modular elliptic curves and Fermat’s Last Theorem, Annals of Mathematics 141 (1995),
+     no. 3, 443–551.
+
+     Mathematics Institute, University of Warwick, Coventry, CV4 7AL, United Kingdom
+     E-mail address: s.siksek@warwick.ac.uk
+
+     Mathematisches Institut, Universität Bayreuth, 95440 Bayreuth, Germany.
+     E-mail address: Michael.Stoll@uni-bayreuth.de
+

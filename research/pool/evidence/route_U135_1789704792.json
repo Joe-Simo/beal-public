@@ -1,0 +1,55 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U135",
+  "timestamp": "2026-09-18T00:13:12-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "State: (2m,2n,3) m,n>=4 kernel-assembled relative to 3 named hypotheses (C047). (2m,2n,5) blocked (C048). 38+ elementary theorems. Remaining Beal: all signatures with an odd exponent pair or z>=5, plus (4,2n,3)/(6,2n,3) small cases already partly in literature."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Best next cycle (mix exploration and exploitation; do not always exploit)?",
+      "criteria": {
+        "gaussian_lean": "discharge GaussianCubeStep in Lean via mathlib GaussianInt (turn a named hypothesis into a theorem)",
+        "z_odd_general": "(2m,2n,z) for odd prime z>=7: parametrisation Re((u+vi)^z)=u*P_z(u,v); look for a one-sided equation of BS/Bennett shape",
+        "two_two_z": "signature (2m,2n,z) with z even: a^2+b^2=(c^{z/2})^2 Pythagorean; Euclid parametrisation and the both-sides-powers trick",
+        "screen_pool": "Jev pairwise-combination screen of all 48 candidates to find the next NOVEL COMBINATION",
+        "mixed_odd": "attack (odd,odd,even) via C^z - A^x = B^y factored over Z[zeta_x]"
+      }
+    },
+    "exact": {
+      "type": "noul",
+      "instructions": "Does the chosen option have a cheap exact discriminating test first?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "z_odd_general",
+        "confidence": 0.15,
+        "probabilities": {
+          "mixed_odd": 0.11,
+          "gaussian_lean": 0.26,
+          "screen_pool": 0.27,
+          "z_odd_general": 0.31,
+          "two_two_z": 0.05
+        }
+      },
+      "exact": {
+        "type": "noul",
+        "noul": 0.45
+      }
+    },
+    "usage": {
+      "input_tokens": 665,
+      "output_tokens": 83
+    }
+  }
+}

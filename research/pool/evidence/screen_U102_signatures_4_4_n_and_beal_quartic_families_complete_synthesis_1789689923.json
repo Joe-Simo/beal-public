@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U102_signatures_4_4_n_and_beal_quartic_families_complete_synthesis",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U102_signatures_4_4_n_and_beal_quartic_families_complete_synthesis.md",
+      "excerpt": "# U102: Complete Resolution Synthesis of Generalized Fermat Signatures $(4, 4, n)$, $(2k, 4m, n)$, and $(4k, 4m, n)$ for the Beal Conjecture\n\n**Date**: 2026-09-17  \n**Status**: Comprehensive mathematical synthesis, exact arithmetic certificate, and structural reduction theorem for the Beal conjecture even-exponent program.  \n**Companion Code**: [`code/verify_qcurves_modular_forms.py`](file://[LOCAL_HOME]/Downloads/beal/code/verify_qcurves_modular_forms.py) (100% test passage).  \n**Preceding Checkpoints**: [U101](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U101_signature_2_4_n_literature_survey_and_modular_method.md), [U45](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U45_even_leg_factor2_reduction.md), [U45-small-factors](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U45_small_prime_factors_for_t_ge_3.md), [U100](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U100_orbit_h_hecke_elimination.md).\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint [U101](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U101_signature_2_4_n_literature_survey_and_modular_method.md), the literature and modular method for generalized Fermat equations of signature $(2, 4, n)$,\n$$A^2 + B^4 = C^n, \\quad \\gcd(A, B) = 1, \\quad AB \\neq 0, \\quad n \\geq 4,$$\nwere audited and confirmed to be **100% completely resolved across all exponents $n \\geq 4$** with zero non-trivial primitive solutions (Euler 1738, Bruin 1999/2003, Ellenberg 2004, Bennett--Ellenberg--Ng 2010).\n\nThis checkpoint deepens the analysis to symmetric quartic equations of signature $(4, 4, n)$,\n$$A^4 + B^4 = C^n, \\quad \\gcd(A, B) = 1, \\quad AB \\neq 0, \\quad n \\geq 2,$$\nand synthesizes the complete resolution status of all Beal candidate equations of the forms $(2k, 4m, n)$ and $(4k, 4m, n)$.\n\n### Key Results Established in U102:\n1. **Complete Resolution of $A^4 + B^4 = C^n$ for All $n \\geq 2$**:\n   - **$n = 2$**: Classical Euler (1738) infinite descent on $x^4 + y^4 = z^2$ proves there are **no coprime nonzero solutions**.\n   - **$n = 3$**: Signature $(4, 4, 3)$ is hyperbolic ($\\frac{1}{4} + \\frac{1}{4} + \\frac{1}{3} = \\frac{5}{6} < 1$). Solved completely by Bennett, Chen, Dahmen, and Yazdani (2015, Theorem 1) via the infinite family $(4, 2s, 3)$ with $s = 2$. There are **no coprime nonzero solutions**.\n   - **$n \\geq 4$**: Because any solution $(A, B, C)$ to $A^4 + B^4 = C^n$ yields a coprime nonzero solution $(A^2, B, C)$ to $X^2 + B^4 = C^n$, the complete resolution of $(2, 4, n)$ for all $n \\geq 4$ **immediately forces the non-existence of non-trivial primitive solutions for all $n \\geq 4$**.\n   - **Conclusion**: The equation $A^4 + B^4 = C^n$ has **zero solutions in coprime nonzero integers for every integer $n \\geq 2$**.\n2. **Complete Resolution of All Beal Quartic Signatures $(4k, 4m, n)$**:\n   - For all positive integers $k, m \\geq 1$ and all $n \\geq 2$, the equation $X^{4k} + Y^{4m} = Z^n$ has **strictly zero primitive nonzero solutions**.\n3. **Resolution of Beal Signatures $(2k, 4m, n)$**:\n   - For all $n \\geq 4$ and all $k, m \\geq 1$, $X^{2k} + Y^{4m} = Z^n$ reduces to $(X^k)^2 + (Y^m)^4 = Z^n$, completely eliminated by $(2, 4, n)$.\n   - For $n = 3$, any valid Beal signature requires $2k \\geq 3 \\implies k \\geq 2$:\n     - If $2 \\mid k$, it reduces to $(4, 4m, 3)$, eliminated by BCDY (2015).\n     - If $3 \\mid k$, it reduces to $(2, 6, 3)$, eliminated by Bennett--Chen (2012).\n4. **Computational Verification Suite**:\n   - Standalone Python verification script [`code/verify_qcurves_modular_forms.py`](file://[LOCAL_HOME]/Downloads/beal/code/verify_qcurves_modular_forms.py) executes with 100% test passage, certifying the degree-2 $\\mathbb{Q}$-curve isogeny, discriminant factorization, modular form dimensions at level 32 and 256, and the exact vanishing of Frobenius traces $a_q(A_0) = a_q(f_{32}) = 0$ for all inert primes $q \\equiv 3 \\pmod 4$ (the CM plateau).\n\n---\n\n## 2. Deepened Analysis of $A^4 + B^4 = C^n$ for All Exponents $n \\geq 2$\n\nThe symmetric quartic generalized Fermat equation is:\n$$A^4 + B^4 = C^n, \\quad \\gcd(A, B) = 1, \\quad AB \\neq 0.$$\n\n```mermaid\nflowchart TD\n    A[\"A^4 + B^4 = C^n\"] --> B{\"Exponent n\"}\n    \n    B -->|\"n = 2\"| C[\"Euler (1738) Descent<br/>x^4 + y^4 = z^2 has no solutions\"]\n    C --> C_Res[\"NO PRIMITIVE SOLUTIONS\"]\n    \n    B -->|\"n = 3\"| D[\"BCDY (2015) Theorem 1<br/>Family (4, 2s, 3) with s=2\"]\n    D --> D_Res[\"NO PRIMITIVE SOLUTIONS\"]\n    \n    B -->|\"n >= 4\"| E[\"Embed X = A^2 into X^2 + B^4 = C^n<br/>Signature (2, 4, n) complete theorem\"]\n    E --> E_Res[\"NO PRIMITIVE SOLUTIONS\"]\n    \n    C_Res --> F[\"THEOREM: Zero non-trivial primitive solutions for ALL n >= 2\"]\n    D_Res --> F\n    E_Res --> F\n```\n\n### 2.1 The Case $n = 2$: Euler's Theorem on Sums of Two Quartics\n- **Equation**: $A^4 + B^4 = C^2$.\n- **History**: Pierre de Fermat (c. 1640) stated that the area of a right triangle with integer sides cannot be a square, which implies that $x^4 - y^4 = z^2$ has no",
+      "length_chars": 22747
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.33,
+        "confidence": 0.05,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.28,
+          "1": 0.25,
+          "2": 0.33,
+          "3": 0.14
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.5,
+        "confidence": 0.5,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.81,
+          "1": 0.02,
+          "2": 0.01,
+          "3": 0.15
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.57,
+        "probabilities": {
+          "audit_later": 0.2,
+          "audit_now": 0.66,
+          "no_action": 0.02,
+          "verify_literature": 0.03,
+          "verify_computation": 0.09
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3234,
+      "output_tokens": 124
+    }
+  }
+}

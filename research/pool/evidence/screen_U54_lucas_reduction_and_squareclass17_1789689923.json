@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U54_lucas_reduction_and_squareclass17",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U54_lucas_reduction_and_squareclass17.md",
+      "excerpt": "# U54: coefficient-2 branch \u2014 Lucas reduction and elimination of squareclass d=1\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-16.\n\n## 1. Input from U53\n\nWe have\n\n    (A+B omega)^17 = H_-(m,n),\n    omega=(1+sqrt(5))/2,\n\nwith\n\n    H_- = m^4+30m^2n^2+n^4 -16m^2n^2 omega,\n\nand coefficient identity\n\n    B P16(A,B) = -16 m^2 n^2.                      (1)\n\nThe two conjugates of A+B omega are positive because their 17th powers are the two positive quartic factors H_- and H_+.\n\n## 2. Exact Lucas-sequence identification\n\nSet\n\n    P = 2A+B,\n    Q = A^2+A B-B^2.\n\nThen A+B omega and A+B(1-omega) are the roots of\n\n    T^2-P T+Q.\n\nExact Wolfram recurrence verification gives\n\n    P16(A,B) = U_17(P,Q),                             (2)\n\nwhere U_n(P,Q) is the Lucas sequence\n\n    U_0=0, U_1=1, U_n=P U_{n-1}-Q U_{n-2}.\n\nThe discriminant is\n\n    D=P^2-4Q=5B^2.                                    (3)\n\nThe resultants\n\n    Res_A(P,Q)=-5B^2,\n    Res_B(P,Q)=-5A^2\n\nshow that gcd(P,Q) divides 5 when gcd(A,B)=1. From U49, 5 does not divide H=v^17, hence 5 does not divide v=Q. Therefore\n\n    gcd(P,Q)=1.                                       (4)\n\nAlso A is odd and B is divisible by 8, so P is even and\n\n    Q == 1 (mod 4).\n\nBoth roots are positive, hence P>0, Q>0 and D>0.\n\n## 3. Sign and squareclass splitting\n\nBecause both roots alpha,beta are positive,\n\n    U_17(P,Q)=(alpha^17-beta^17)/(alpha-beta)>0.\n\nEquation (1) has negative right side, so necessarily\n\n    B<0.                                               (5)\n\nSince gcd(A,B)=1,\n\n    gcd(B,P16) | 17,\n\nbecause P16 == 17 A^16 (mod B). If 17|B, then exact substitution B=17B1 shows\n\n    v_17(P16)=1.\n\nFor every prime q !=17 dividing B, q does not divide P16. Since B P16 is -16 times a square and P16 is odd, all nonexceptional valuations split with even parity. Consequently there is d in {1,17} and positive coprime R,S such that\n\n    B = -d R^2,\n    U_17(P,Q)=P16=d S^2.                              (6)\n\nIf d=17 then 17 does not divide S. Equation (1) becomes\n\n    d R S = 4 |mn|.                                   (7)\n\n## 4. Published square theorem eliminates d=1\n\nRibenboim and McDaniel, `Squares in Lucas sequences having an even first parameter`, Colloquium Mathematicum 78 (1998), states (building on Rotkiewicz) that for coprime Lucas parameters with\n\n    P even,\n    Q == 1 (mod 4),\n    D=P^2-4Q>0,\n\nif U_n(P,Q) is a square, then n is a square or twice an odd square (with further restrictions on prime divisors of n).\n\nOur parameters satisfy every hypothesis above by (3)-(4) and the parity observations. If d=1 in (6), then\n\n    U_17(P,Q)=S^2.\n\nBut 17 is neither a square nor twice an odd square. Therefore\n\n    d != 1.\n\nHence the only surviving squareclass is\n\n    B = -17 R^2,\n    U_17(P,Q)=17 S^2,                                 (8)\n\nwith gcd(R,S)=1 and 17 not dividing S.\n\nIn particular (7) sharpens to\n\n    17 R S = 4 |mn|,                                  (9)\n\nso 17 divides mn.\n\nThe 1998 theorem does not itself rule out U_17=17 times a square; its Main Theorem produces p-times-square terms as necessary local factors in its analysis of square Lucas terms. Therefore no stronger literature conclusion is claimed here.\n\n## 5. Normalized remaining equation\n\nSince B=-17R^2 and B is divisible by 8, R is even. Write\n\n    R=2r,\n    P=2C.\n\nThen A=C+34r^2 and B=-68r^2. Exact substitution into U_17/17=S^2 gives\n\n    S^2 = C^16\n        + 231200 C^14 r^4\n        + 12160657600 C^12 r^8\n        + 220907031488000 C^10 r^12\n        + 1596053302500800000 C^8 r^16\n        + 4696459390485990400000 C^6 r^20\n        + 5220295245578658560000000 C^4 r^24\n        + 1724188943968265512960000000 C^2 r^28\n        + 73278030118651284300800000000 r^32.         (10)\n\nMoreover\n\n    Q=C^2-5780 r^4>0,\n\nso C^2>5780 r^4, and gcd(C,r)=1 with 17 not dividing C.\n\n## 6. Current bottleneck\n\nThe coefficient-2 branch is now reduced to the single exceptional Lucas squareclass\n\n    U_17(P,Q)=17 S^2,\n\nwith fixed discriminant squareclass\n\n    D=5*17^2*R^4,\n\nplus the independent Gaussian 17th-power equation from U48 and the forced divisibility conditions from U52.\n\nThe general literature on `U_17(P,Q)=17*square` gives finiteness for fixed index and square multiplier but does not provide a complete classification for this case. The next useful route is therefore to exploit the extra fixed discriminant D=5*17^2*R^4 and the full cyclotomic factorization, rather than treating arbitrary Lucas parameters.\n",
+      "length_chars": 4490
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.2,
+        "confidence": 0.8,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.92,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.06
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.09,
+        "confidence": 0.91,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.97,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.03
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_literature",
+        "confidence": 0.18,
+        "probabilities": {
+          "audit_now": 0.06,
+          "verify_literature": 0.35,
+          "audit_later": 0.29,
+          "verify_computation": 0.13,
+          "no_action": 0.17
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2972,
+      "output_tokens": 126
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U101_generalized_fermat_signature_5_5_p_literature_survey",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U101_generalized_fermat_signature_5_5_p_literature_survey.md",
+      "excerpt": "# U101: Comprehensive Literature Survey and Status Ledger for Generalized Fermat Equations $X^5 + Y^5 = Z^p$ and $X^{10} + Y^{10} = Z^p$\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group  \n**Target Equations**:  \n1. $X^5 + Y^5 = Z^p$ for primes $p \\ge 2$, with $\\gcd(X, Y, Z) = 1$, $X Y Z \\neq 0$.  \n2. $X^{10} + Y^{10} = Z^p$ for primes $p \\ge 3$, with $\\gcd(X, Y, Z) = 1$, $X Y Z \\neq 0$.  \n**Context**: Attack on the Beal Conjecture for exponents having prime factors 5 and $p$.  \n**Status**: Authoritative research checkpoint, literature survey, classification ledger, and obstruction analysis.\n\n---\n\n## 1. Executive Summary & Context\n\nThe generalized Fermat equation (GFE) with signature $(p, q, r)$ is:\n$$A^p + B^q = C^r, \\quad \\gcd(A, B, C) = 1, \\quad A B C \\neq 0.$$\nBy the Darmon\u2013Granville theorem (1995), for any fixed signature $(p, q, r)$ with hyperbolic index $\\chi = \\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} < 1$, there are only finitely many primitive integer solutions $(A, B, C)$. The Beal Conjecture asserts that for all integer exponents $p, q, r \\ge 3$, there are no non-trivial primitive solutions (i.e. if $A^p + B^q = C^r$ with $p, q, r \\ge 3$, then $\\gcd(A, B, C) > 1$).\n\nWithin the global program to resolve the Beal Conjecture, equations where exponents have prime factors $5$ and $p$ arise naturally in two key branches:\n1. **The pure signature $(5, 5, p)$**: $X^5 + Y^5 = Z^p$.\n2. **The decic signature $(10, 10, p)$**: $X^{10} + Y^{10} = Z^p$, which corresponds to setting $x = X^2, y = Y^2$ in $x^5 + y^5 = Z^p$, imposing the additional rigid constraint that the fifth-power bases $x, y$ are positive integer squares.\n\nThis report delivers a rigorous survey of the arithmetic literature, provides an explicit taxonomy of all known Frey curves and Frey abelian varieties of $\\mathrm{GL}_2$-type used for signature $(5, 5, p)$, details the exact status of $X^5 + Y^5 = Z^p$ across all prime exponents $p$, and maps out unconditionally proved results versus open frontiers for both $X^5 + Y^5 = Z^p$ and $X^{10} + Y^{10} = Z^p$.\n\n---\n\n## 2. Comprehensive Survey of the Literature\n\nThe study of $X^5 + Y^5 = Z^p$ has driven major developments in arithmetic geometry over the past three decades, evolving from classical descent to Frey curves over $\\mathbb{Q}$, $\\mathbb{Q}$-curves, Hilbert modular forms over totally real fields, multi-Frey techniques, and higher-dimensional Frey varieties within Darmon's program.\n\n### 2.1. Alain Kraus (1997, 1998, 1999)\n- **Kraus (1997, *Canad. J. Math.* 49:1139\u20131161)**: Proved effective upper bounds for exponents in generalized Fermat equations using linear forms in logarithms and modular forms.\n- **Kraus (1998, *Experiment. Math.* 7:1\u201313, \"Sur l\u2019\u00e9quation $a^3 + b^3 = c^p$\")**: Pioneered the systematic use of modular forms to solve ternary equations of signature $(3, 3, p)$. Kraus introduced the **Kraus method (sieve with auxiliary primes $q = 2kp + 1$)** to eliminate modular newforms when level-lowering alone leaves residual forms whose Fourier coefficients do not provide immediate contradictions.\n- **Kraus (1999, *Ramanujan J.* 3:315\u2013333, \"On the Equation $x^p + y^q = z^r$: A Survey\")**:\n  On pages 329\u2013330, Kraus explicitly constructed the first Frey elliptic curve over $\\mathbb{Q}$ for the equation $x^5 + y^5 = z^p$:\n  $$E'_{x,y}: Y^2 = X^3 - 5(x^2 + y^2) X^2 + 5 H_5(x,y) X,$$\n  where $H_5(x,y) = \\frac{x^5+y^5}{x+y} = x^4 - x^3 y + x^2 y^2 - x y^3 + y^4$.  \n  When $5 \\mid z$ (which forces $5 \\mid H_5(x,y)$), Kraus constructed its quadratic twist over $\\mathbb{Q}(\\sqrt{-5})$:\n  $$E_{x,y}: Y^2 = X^3 + (x^2 + y^2) X^2 - \\frac{H_5(x,y)}{5} X.$$\n  Kraus also constructed the genus-2 hyperelliptic curve:\n  $$C_5(x,y): Y^2 = X^5 - 2(x^2 - 3xy + y^2)X^3 + (x-y)^4 X + 4xy(x+y)^2,$$\n  whose Jacobian provides a Frey variety for the equation.\n\n### 2.2. Bjorn Poonen (1998) & Darmon\u2013Merel (1997)\n- **Darmon\u2013Merel (1997, *J. Reine Angew. Math.* 490:81\u2013100)**: Proved that $x^n + y^n = z^2$ and $x^n + y^n = z^3$ have no non-trivial primitive integer solutions for all $n \\ge 4$ using winding quotients of modular Jacobians $J_0(N)$.\n- **Poonen (1998, *Acta Arith.* 86:193\u2013205)**: Directly resolved signatures $(5, 5, 2)$ and $(5, 5, 3)$, showing that $x^5 + y^5 = z^2$ and $x^5 + y^5 = z^3$ have no non-trivial primitive integer solutions via descent to elliptic curves and Jacobians of genus-3 cyclic covers of $\\mathbb{P}^1$.\n\n### 2.3. Nicolas Billerey (2007) & Billerey\u2013Dieulefait (2010)\n- **Billerey (2007, *Bull. Austral. Math. Soc.* 76:161\u2013194, \"\u00c9quations de Fermat de type $(5,5,p)$\")**:\n  Systematically studied $x^5 + y^5 = d z^p$ using Darmon's Frey curve over $\\mathbb{Q}$:\n  $$W_{a,b}: y^2 = x^3 - 5(a^2 + b^2) x^2 + 5 \\left(\\frac{a^5 + b^5}{a+b}\\right) x.$$\n  Billerey computed the conductor $N_{W_{a,b}} = 2^\\alpha 5^\\beta \\operatorname{rad}_{\\{2,5\\}}(a^5+b^5)$, proved absolute irreducibility of the mod $p$ Galois representations for $p \\ge 7$, and identified the Serre levels afte",
+      "length_chars": 35171
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.32,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.44,
+          "1": 0.16,
+          "2": 0.06,
+          "3": 0.34
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.53,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.47,
+          "1": 0.01,
+          "2": 0.03,
+          "3": 0.49
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.37
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.52,
+        "probabilities": {
+          "verify_literature": 0.04,
+          "verify_computation": 0.0,
+          "no_action": 0.62,
+          "audit_later": 0.16,
+          "audit_now": 0.18
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3233,
+      "output_tokens": 124
+    }
+  }
+}

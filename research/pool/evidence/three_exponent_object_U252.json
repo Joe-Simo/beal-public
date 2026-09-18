@@ -1,0 +1,4229 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.338,
+   {
+    "exists_in_lit": 0.58,
+    "needs_unproved": 0.28,
+    "testable": 0.47
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.275,
+   {
+    "exists_in_lit": 0.58,
+    "needs_unproved": 0.36,
+    "testable": 0.43
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.274,
+   {
+    "exists_in_lit": 0.62,
+    "needs_unproved": 0.44,
+    "testable": 0.49
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.266,
+   {
+    "exists_in_lit": 0.44,
+    "needs_unproved": 0.41,
+    "testable": 0.45
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.248,
+   {
+    "exists_in_lit": 0.39,
+    "needs_unproved": 0.45,
+    "testable": 0.45
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.243,
+   {
+    "exists_in_lit": 0.63,
+    "needs_unproved": 0.36,
+    "testable": 0.38
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.223,
+   {
+    "exists_in_lit": 0.55,
+    "needs_unproved": 0.47,
+    "testable": 0.42
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.221,
+   {
+    "exists_in_lit": 0.51,
+    "needs_unproved": 0.52,
+    "testable": 0.46
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.218,
+   {
+    "exists_in_lit": 0.51,
+    "needs_unproved": 0.41,
+    "testable": 0.37
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.202,
+   {
+    "exists_in_lit": 0.5,
+    "needs_unproved": 0.56,
+    "testable": 0.46
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.202,
+   {
+    "exists_in_lit": 0.48,
+    "needs_unproved": 0.53,
+    "testable": 0.43
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.198,
+   {
+    "exists_in_lit": 0.44,
+    "needs_unproved": 0.56,
+    "testable": 0.45
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.198,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.57,
+    "testable": 0.46
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.193,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.53,
+    "testable": 0.41
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.193,
+   {
+    "exists_in_lit": 0.39,
+    "needs_unproved": 0.58,
+    "testable": 0.46
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.193,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.54,
+    "testable": 0.42
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.185,
+   {
+    "exists_in_lit": 0.51,
+    "needs_unproved": 0.56,
+    "testable": 0.42
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.185,
+   {
+    "exists_in_lit": 0.45,
+    "needs_unproved": 0.47,
+    "testable": 0.35
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.185,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.58,
+    "testable": 0.44
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.185,
+   {
+    "exists_in_lit": 0.26,
+    "needs_unproved": 0.58,
+    "testable": 0.44
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.176,
+   {
+    "exists_in_lit": 0.44,
+    "needs_unproved": 0.61,
+    "testable": 0.45
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.176,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.61,
+    "testable": 0.45
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.172,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.61,
+    "testable": 0.44
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.168,
+   {
+    "exists_in_lit": 0.47,
+    "needs_unproved": 0.58,
+    "testable": 0.4
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.168,
+   {
+    "exists_in_lit": 0.44,
+    "needs_unproved": 0.58,
+    "testable": 0.4
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.168,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.57,
+    "testable": 0.39
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.168,
+   {
+    "exists_in_lit": 0.2,
+    "needs_unproved": 0.61,
+    "testable": 0.43
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.164,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.59,
+    "testable": 0.4
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.163,
+   {
+    "exists_in_lit": 0.54,
+    "needs_unproved": 0.56,
+    "testable": 0.37
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.163,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.62,
+    "testable": 0.43
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.16,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.58,
+    "testable": 0.38
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.159,
+   {
+    "exists_in_lit": 0.48,
+    "needs_unproved": 0.63,
+    "testable": 0.43
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.157,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.55,
+    "testable": 0.35
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.155,
+   {
+    "exists_in_lit": 0.45,
+    "needs_unproved": 0.63,
+    "testable": 0.42
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.151,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.58,
+    "testable": 0.36
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.151,
+   {
+    "exists_in_lit": 0.61,
+    "needs_unproved": 0.58,
+    "testable": 0.36
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.151,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.64,
+    "testable": 0.42
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.148,
+   {
+    "exists_in_lit": 0.45,
+    "needs_unproved": 0.62,
+    "testable": 0.39
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.144,
+   {
+    "exists_in_lit": 0.51,
+    "needs_unproved": 0.61,
+    "testable": 0.37
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.143,
+   {
+    "exists_in_lit": 0.41,
+    "needs_unproved": 0.66,
+    "testable": 0.42
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.143,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.66,
+    "testable": 0.42
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.142,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.71,
+    "testable": 0.49
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.141,
+   {
+    "exists_in_lit": 0.46,
+    "needs_unproved": 0.63,
+    "testable": 0.38
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.134,
+   {
+    "exists_in_lit": 0.43,
+    "needs_unproved": 0.68,
+    "testable": 0.42
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.133,
+   {
+    "exists_in_lit": 0.45,
+    "needs_unproved": 0.63,
+    "testable": 0.36
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.133,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.63,
+    "testable": 0.36
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.133,
+   {
+    "exists_in_lit": 0.48,
+    "needs_unproved": 0.71,
+    "testable": 0.46
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.133,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.64,
+    "testable": 0.37
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.132,
+   {
+    "exists_in_lit": 0.5,
+    "needs_unproved": 0.67,
+    "testable": 0.4
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.129,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.7,
+    "testable": 0.43
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.129,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.66,
+    "testable": 0.38
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.126,
+   {
+    "exists_in_lit": 0.61,
+    "needs_unproved": 0.65,
+    "testable": 0.36
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.126,
+   {
+    "exists_in_lit": 0.18,
+    "needs_unproved": 0.64,
+    "testable": 0.35
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.124,
+   {
+    "exists_in_lit": 0.17,
+    "needs_unproved": 0.69,
+    "testable": 0.4
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.122,
+   {
+    "exists_in_lit": 0.37,
+    "needs_unproved": 0.66,
+    "testable": 0.36
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.122,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.64,
+    "testable": 0.34
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.121,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.61,
+    "testable": 0.31
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.121,
+   {
+    "exists_in_lit": 0.37,
+    "needs_unproved": 0.69,
+    "testable": 0.39
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.119,
+   {
+    "exists_in_lit": 0.44,
+    "needs_unproved": 0.64,
+    "testable": 0.33
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.116,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.71,
+    "testable": 0.4
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.115,
+   {
+    "exists_in_lit": 0.26,
+    "needs_unproved": 0.69,
+    "testable": 0.37
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.115,
+   {
+    "exists_in_lit": 0.45,
+    "needs_unproved": 0.59,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.114,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.7,
+    "testable": 0.38
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.112,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.64,
+    "testable": 0.31
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.109,
+   {
+    "exists_in_lit": 0.26,
+    "needs_unproved": 0.74,
+    "testable": 0.42
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.109,
+   {
+    "exists_in_lit": 0.33,
+    "needs_unproved": 0.66,
+    "testable": 0.32
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.109,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.74,
+    "testable": 0.42
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.108,
+   {
+    "exists_in_lit": 0.5,
+    "needs_unproved": 0.7,
+    "testable": 0.36
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.108,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.53,
+    "testable": 0.23
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.106,
+   {
+    "exists_in_lit": 0.17,
+    "needs_unproved": 0.68,
+    "testable": 0.33
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.105,
+   {
+    "exists_in_lit": 0.39,
+    "needs_unproved": 0.69,
+    "testable": 0.34
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.105,
+   {
+    "exists_in_lit": 0.36,
+    "needs_unproved": 0.73,
+    "testable": 0.39
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.105,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.7,
+    "testable": 0.35
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.105,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.75,
+    "testable": 0.42
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.105,
+   {
+    "exists_in_lit": 0.19,
+    "needs_unproved": 0.7,
+    "testable": 0.35
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.104,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.72,
+    "testable": 0.37
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.104,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.74,
+    "testable": 0.4
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.101,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.77,
+    "testable": 0.44
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.101,
+   {
+    "exists_in_lit": 0.43,
+    "needs_unproved": 0.74,
+    "testable": 0.39
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.1,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.75,
+    "testable": 0.4
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.1,
+   {
+    "exists_in_lit": 0.43,
+    "needs_unproved": 0.6,
+    "testable": 0.25
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.099,
+   {
+    "exists_in_lit": 0.31,
+    "needs_unproved": 0.68,
+    "testable": 0.31
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.099,
+   {
+    "exists_in_lit": 0.39,
+    "needs_unproved": 0.7,
+    "testable": 0.33
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.099,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.69,
+    "testable": 0.32
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.098,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.59,
+    "testable": 0.24
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.096,
+   {
+    "exists_in_lit": 0.44,
+    "needs_unproved": 0.68,
+    "testable": 0.3
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.096,
+   {
+    "exists_in_lit": 0.41,
+    "needs_unproved": 0.67,
+    "testable": 0.29
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.096,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.67,
+    "testable": 0.29
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.096,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.7,
+    "testable": 0.32
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.095,
+   {
+    "exists_in_lit": 0.37,
+    "needs_unproved": 0.66,
+    "testable": 0.28
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.095,
+   {
+    "exists_in_lit": 0.31,
+    "needs_unproved": 0.75,
+    "testable": 0.38
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.094,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.76,
+    "testable": 0.39
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.094,
+   {
+    "exists_in_lit": 0.42,
+    "needs_unproved": 0.74,
+    "testable": 0.36
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.093,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.69,
+    "testable": 0.3
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.093,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.69,
+    "testable": 0.3
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.092,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.75,
+    "testable": 0.37
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.091,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.74,
+    "testable": 0.35
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.091,
+   {
+    "exists_in_lit": 0.48,
+    "needs_unproved": 0.74,
+    "testable": 0.35
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.091,
+   {
+    "exists_in_lit": 0.52,
+    "needs_unproved": 0.74,
+    "testable": 0.35
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.09,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.69,
+    "testable": 0.29
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.09,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.79,
+    "testable": 0.43
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.09,
+   {
+    "exists_in_lit": 0.19,
+    "needs_unproved": 0.75,
+    "testable": 0.36
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.09,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.59,
+    "testable": 0.22
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.089,
+   {
+    "exists_in_lit": 0.2,
+    "needs_unproved": 0.76,
+    "testable": 0.37
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.087,
+   {
+    "exists_in_lit": 0.51,
+    "needs_unproved": 0.65,
+    "testable": 0.25
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.087,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.65,
+    "testable": 0.25
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.086,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.78,
+    "testable": 0.39
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.086,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.78,
+    "testable": 0.39
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.086,
+   {
+    "exists_in_lit": 0.44,
+    "needs_unproved": 0.76,
+    "testable": 0.36
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.086,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.78,
+    "testable": 0.39
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.086,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.76,
+    "testable": 0.36
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.085,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.66,
+    "testable": 0.25
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.085,
+   {
+    "exists_in_lit": 0.31,
+    "needs_unproved": 0.77,
+    "testable": 0.37
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.084,
+   {
+    "exists_in_lit": 0.26,
+    "needs_unproved": 0.79,
+    "testable": 0.4
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.084,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.7,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.083,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.74,
+    "testable": 0.32
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.081,
+   {
+    "exists_in_lit": 0.4,
+    "needs_unproved": 0.78,
+    "testable": 0.37
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.081,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.63,
+    "testable": 0.22
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.08,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.75,
+    "testable": 0.32
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.079,
+   {
+    "exists_in_lit": 0.36,
+    "needs_unproved": 0.64,
+    "testable": 0.22
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.7,
+    "testable": 0.26
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.77,
+    "testable": 0.34
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.69,
+    "testable": 0.25
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.2,
+    "needs_unproved": 0.7,
+    "testable": 0.26
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.74,
+    "testable": 0.3
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.37,
+    "needs_unproved": 0.79,
+    "testable": 0.37
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.77,
+    "testable": 0.34
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.77,
+    "testable": 0.34
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.078,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.59,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.077,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.76,
+    "testable": 0.32
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.077,
+   {
+    "exists_in_lit": 0.41,
+    "needs_unproved": 0.78,
+    "testable": 0.35
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.077,
+   {
+    "exists_in_lit": 0.39,
+    "needs_unproved": 0.76,
+    "testable": 0.32
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.076,
+   {
+    "exists_in_lit": 0.33,
+    "needs_unproved": 0.8,
+    "testable": 0.38
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.076,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.73,
+    "testable": 0.28
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.075,
+   {
+    "exists_in_lit": 0.2,
+    "needs_unproved": 0.71,
+    "testable": 0.26
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.075,
+   {
+    "exists_in_lit": 0.31,
+    "needs_unproved": 0.74,
+    "testable": 0.29
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.075,
+   {
+    "exists_in_lit": 0.18,
+    "needs_unproved": 0.74,
+    "testable": 0.29
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.075,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.75,
+    "testable": 0.3
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.074,
+   {
+    "exists_in_lit": 0.33,
+    "needs_unproved": 0.8,
+    "testable": 0.37
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.074,
+   {
+    "exists_in_lit": 0.48,
+    "needs_unproved": 0.76,
+    "testable": 0.31
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.074,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.59,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.073,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.78,
+    "testable": 0.33
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.073,
+   {
+    "exists_in_lit": 0.41,
+    "needs_unproved": 0.83,
+    "testable": 0.43
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.073,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.79,
+    "testable": 0.35
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.073,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.74,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.072,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.8,
+    "testable": 0.36
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.072,
+   {
+    "exists_in_lit": 0.37,
+    "needs_unproved": 0.82,
+    "testable": 0.4
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.072,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.64,
+    "testable": 0.2
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.072,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.62,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.071,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.77,
+    "testable": 0.31
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.071,
+   {
+    "exists_in_lit": 0.43,
+    "needs_unproved": 0.77,
+    "testable": 0.31
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.07,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.83,
+    "testable": 0.41
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.07,
+   {
+    "exists_in_lit": 0.42,
+    "needs_unproved": 0.75,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.07,
+   {
+    "exists_in_lit": 0.4,
+    "needs_unproved": 0.75,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.07,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.8,
+    "testable": 0.35
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.068,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.73,
+    "testable": 0.25
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.068,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.73,
+    "testable": 0.25
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.068,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.81,
+    "testable": 0.36
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.068,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.81,
+    "testable": 0.36
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.068,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.64,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.067,
+   {
+    "exists_in_lit": 0.2,
+    "needs_unproved": 0.77,
+    "testable": 0.29
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.067,
+   {
+    "exists_in_lit": 0.49,
+    "needs_unproved": 0.71,
+    "testable": 0.23
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.066,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.78,
+    "testable": 0.3
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.066,
+   {
+    "exists_in_lit": 0.39,
+    "needs_unproved": 0.83,
+    "testable": 0.39
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.065,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.75,
+    "testable": 0.26
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.065,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.66,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.065,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.64,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.065,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.64,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.064,
+   {
+    "exists_in_lit": 0.26,
+    "needs_unproved": 0.8,
+    "testable": 0.32
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.064,
+   {
+    "exists_in_lit": 0.33,
+    "needs_unproved": 0.77,
+    "testable": 0.28
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.064,
+   {
+    "exists_in_lit": 0.48,
+    "needs_unproved": 0.8,
+    "testable": 0.32
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.063,
+   {
+    "exists_in_lit": 0.33,
+    "needs_unproved": 0.83,
+    "testable": 0.37
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.063,
+   {
+    "exists_in_lit": 0.37,
+    "needs_unproved": 0.81,
+    "testable": 0.33
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.063,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.7,
+    "testable": 0.21
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.063,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.67,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.062,
+   {
+    "exists_in_lit": 0.41,
+    "needs_unproved": 0.84,
+    "testable": 0.39
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.062,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.78,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.061,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.71,
+    "testable": 0.21
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.061,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.81,
+    "testable": 0.32
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.061,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.81,
+    "testable": 0.32
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.061,
+   {
+    "exists_in_lit": 0.47,
+    "needs_unproved": 0.82,
+    "testable": 0.34
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.061,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.79,
+    "testable": 0.29
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.061,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.68,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.06,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.77,
+    "testable": 0.26
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.06,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.8,
+    "testable": 0.3
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.059,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.79,
+    "testable": 0.28
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.059,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.78,
+    "testable": 0.27
+   },
+   "a rigid local system on P^1 minus {0,1,inf} with local monodromy of orders x, y, z (Katz middle convolution)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.059,
+   {
+    "exists_in_lit": 0.42,
+    "needs_unproved": 0.84,
+    "testable": 0.37
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.059,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.65,
+    "testable": 0.17
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.058,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.75,
+    "testable": 0.23
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.058,
+   {
+    "exists_in_lit": 0.38,
+    "needs_unproved": 0.84,
+    "testable": 0.36
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.057,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.77,
+    "testable": 0.25
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.057,
+   {
+    "exists_in_lit": 0.15,
+    "needs_unproved": 0.73,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.057,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.81,
+    "testable": 0.3
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.057,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.78,
+    "testable": 0.26
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.057,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.77,
+    "testable": 0.25
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.057,
+   {
+    "exists_in_lit": 0.16,
+    "needs_unproved": 0.78,
+    "testable": 0.26
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.056,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.72,
+    "testable": 0.2
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.055,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.74,
+    "testable": 0.21
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.055,
+   {
+    "exists_in_lit": 0.39,
+    "needs_unproved": 0.81,
+    "testable": 0.29
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.055,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.77,
+    "testable": 0.24
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.055,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.71,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.054,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.8,
+    "testable": 0.27
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.054,
+   {
+    "exists_in_lit": 0.14,
+    "needs_unproved": 0.8,
+    "testable": 0.27
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.054,
+   {
+    "exists_in_lit": 0.17,
+    "needs_unproved": 0.8,
+    "testable": 0.27
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.054,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.68,
+    "testable": 0.17
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.054,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.64,
+    "testable": 0.15
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.052,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.71,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.78,
+    "testable": 0.23
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.78,
+    "testable": 0.23
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.77,
+    "testable": 0.22
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.26,
+    "needs_unproved": 0.81,
+    "testable": 0.27
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.77,
+    "testable": 0.22
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.83,
+    "testable": 0.3
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.73,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.051,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.68,
+    "testable": 0.16
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.05,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.75,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.05,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.76,
+    "testable": 0.21
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.049,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.74,
+    "testable": 0.19
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.049,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.81,
+    "testable": 0.26
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its dimension is bounded independently of x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.049,
+   {
+    "exists_in_lit": 0.3,
+    "needs_unproved": 0.83,
+    "testable": 0.29
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.049,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.83,
+    "testable": 0.29
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.049,
+   {
+    "exists_in_lit": 0.33,
+    "needs_unproved": 0.81,
+    "testable": 0.26
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.049,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.71,
+    "testable": 0.17
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.049,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.73,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.048,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.78,
+    "testable": 0.22
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.048,
+   {
+    "exists_in_lit": 0.33,
+    "needs_unproved": 0.83,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.048,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.8,
+    "testable": 0.24
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.048,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.77,
+    "testable": 0.21
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.048,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.77,
+    "testable": 0.21
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.048,
+   {
+    "exists_in_lit": 0.14,
+    "needs_unproved": 0.72,
+    "testable": 0.17
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.81,
+    "testable": 0.24
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.17,
+    "needs_unproved": 0.83,
+    "testable": 0.27
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.84,
+    "testable": 0.29
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.38,
+    "needs_unproved": 0.8,
+    "testable": 0.23
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.79,
+    "testable": 0.22
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.84,
+    "testable": 0.29
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.67,
+    "testable": 0.14
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.046,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.73,
+    "testable": 0.17
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.82,
+    "testable": 0.25
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.82,
+    "testable": 0.25
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.82,
+    "testable": 0.25
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.85,
+    "testable": 0.3
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.84,
+    "testable": 0.28
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.82,
+    "testable": 0.25
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.75,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.045,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.72,
+    "testable": 0.16
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.044,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.74,
+    "testable": 0.17
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.044,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.8,
+    "testable": 0.22
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.044,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.78,
+    "testable": 0.2
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.044,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.83,
+    "testable": 0.26
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.044,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.77,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.044,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.77,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.83,
+    "testable": 0.25
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.84,
+    "testable": 0.27
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.84,
+    "testable": 0.27
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.18,
+    "needs_unproved": 0.86,
+    "testable": 0.31
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.32,
+    "needs_unproved": 0.86,
+    "testable": 0.31
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.14,
+    "needs_unproved": 0.83,
+    "testable": 0.25
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.83,
+    "testable": 0.25
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.76,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.043,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.75,
+    "testable": 0.17
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.042,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.8,
+    "testable": 0.21
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.042,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.79,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.042,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.79,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.042,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.78,
+    "testable": 0.19
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.042,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.84,
+    "testable": 0.26
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.042,
+   {
+    "exists_in_lit": 0.23,
+    "needs_unproved": 0.84,
+    "testable": 0.26
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.042,
+   {
+    "exists_in_lit": 0.17,
+    "needs_unproved": 0.84,
+    "testable": 0.26
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.83,
+    "testable": 0.24
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.82,
+    "testable": 0.23
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.35,
+    "needs_unproved": 0.85,
+    "testable": 0.27
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.21,
+    "needs_unproved": 0.83,
+    "testable": 0.24
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.82,
+    "testable": 0.23
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.18,
+    "needs_unproved": 0.83,
+    "testable": 0.24
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.16,
+    "needs_unproved": 0.83,
+    "testable": 0.24
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.18,
+    "needs_unproved": 0.82,
+    "testable": 0.23
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.041,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.83,
+    "testable": 0.24
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.04,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.79,
+    "testable": 0.19
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.04,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.78,
+    "testable": 0.18
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.04,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.75,
+    "testable": 0.16
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.04,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.8,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.04,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.84,
+    "testable": 0.25
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.04,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.78,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.83,
+    "testable": 0.23
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.77,
+    "testable": 0.17
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.83,
+    "testable": 0.23
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.83,
+    "testable": 0.23
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.14,
+    "needs_unproved": 0.85,
+    "testable": 0.26
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.85,
+    "testable": 0.26
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.16,
+    "needs_unproved": 0.85,
+    "testable": 0.26
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.039,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.72,
+    "testable": 0.14
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.81,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.82,
+    "testable": 0.21
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.73,
+    "testable": 0.14
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.15,
+    "needs_unproved": 0.84,
+    "testable": 0.24
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.85,
+    "testable": 0.25
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its dimension is bounded independently of x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.14,
+    "needs_unproved": 0.8,
+    "testable": 0.19
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.85,
+    "testable": 0.25
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.86,
+    "testable": 0.27
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.34,
+    "needs_unproved": 0.86,
+    "testable": 0.27
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.85,
+    "testable": 0.25
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.2,
+    "needs_unproved": 0.84,
+    "testable": 0.24
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.15,
+    "needs_unproved": 0.82,
+    "testable": 0.21
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.84,
+    "testable": 0.24
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.8,
+    "testable": 0.19
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.81,
+    "testable": 0.2
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.79,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.038,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.76,
+    "testable": 0.16
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.037,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.83,
+    "testable": 0.22
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.037,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.83,
+    "testable": 0.22
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.037,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.78,
+    "testable": 0.17
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.037,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.78,
+    "testable": 0.17
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.037,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.77,
+    "testable": 0.16
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.036,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.79,
+    "testable": 0.17
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.036,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.82,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.036,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.8,
+    "testable": 0.18
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.036,
+   {
+    "exists_in_lit": 0.24,
+    "needs_unproved": 0.87,
+    "testable": 0.28
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.035,
+   {
+    "exists_in_lit": 0.28,
+    "needs_unproved": 0.86,
+    "testable": 0.25
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.035,
+   {
+    "exists_in_lit": 0.29,
+    "needs_unproved": 0.87,
+    "testable": 0.27
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.035,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.86,
+    "testable": 0.25
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.035,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.78,
+    "testable": 0.16
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.034,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.84,
+    "testable": 0.21
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.034,
+   {
+    "exists_in_lit": 0.15,
+    "needs_unproved": 0.81,
+    "testable": 0.18
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.034,
+   {
+    "exists_in_lit": 0.18,
+    "needs_unproved": 0.87,
+    "testable": 0.26
+   },
+   "the Jacobian of the smooth projective model of u^x + v^y = 1 pulled back along t = A^x/C^z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.034,
+   {
+    "exists_in_lit": 0.25,
+    "needs_unproved": 0.86,
+    "testable": 0.24
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.034,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.82,
+    "testable": 0.19
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "it admits a modularity lifting theorem already in the literature",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.034,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.77,
+    "testable": 0.15
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.033,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.85,
+    "testable": 0.22
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.033,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.78,
+    "testable": 0.15
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.85,
+    "testable": 0.21
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.84,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.83,
+    "testable": 0.19
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.85,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.14,
+    "needs_unproved": 0.84,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it admits a modularity lifting theorem already in the literature",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.86,
+    "testable": 0.23
+   },
+   "the fibre product of the three cyclic covers y^x = t, y^y = 1-t, y^z = t/(t-1) over the thrice-punctured line",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.86,
+    "testable": 0.23
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.19,
+    "needs_unproved": 0.86,
+    "testable": 0.23
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.032,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.86,
+    "testable": 0.23
+   },
+   "the Kummer-type variety Spec Q[U,V,W]/(U^x+V^y-W^z) with its Galois descent data",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.031,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.83,
+    "testable": 0.18
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.031,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.83,
+    "testable": 0.18
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.031,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.86,
+    "testable": 0.22
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.031,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.83,
+    "testable": 0.18
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.03,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.84,
+    "testable": 0.19
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.03,
+   {
+    "exists_in_lit": 0.13,
+    "needs_unproved": 0.87,
+    "testable": 0.23
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.03,
+   {
+    "exists_in_lit": 0.22,
+    "needs_unproved": 0.87,
+    "testable": 0.23
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.03,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.81,
+    "testable": 0.16
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.03,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.8,
+    "testable": 0.15
+   },
+   "a perverse sheaf / D-module whose characteristic cycle records (x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.85,
+    "testable": 0.19
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.86,
+    "testable": 0.21
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.85,
+    "testable": 0.19
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.86,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.14,
+    "needs_unproved": 0.88,
+    "testable": 0.24
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.87,
+    "testable": 0.22
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.85,
+    "testable": 0.19
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not presuppose Darmon's Big Image Conjecture or any unproved modularity"
+  ],
+  [
+   0.029,
+   {
+    "exists_in_lit": 0.27,
+    "needs_unproved": 0.86,
+    "testable": 0.21
+   },
+   "a Shimura curve / quaternionic form attached to the triangle group Delta(x,y,z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.028,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.86,
+    "testable": 0.2
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.028,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.88,
+    "testable": 0.23
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.027,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.84,
+    "testable": 0.17
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.027,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.87,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.027,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.87,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.027,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.87,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.027,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.87,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its dimension is bounded independently of x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.026,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.85,
+    "testable": 0.17
+   },
+   "a motive over Q whose Hodge numbers depend on all three of x,y,z",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.026,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.88,
+    "testable": 0.22
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.026,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.87,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.026,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.88,
+    "testable": 0.22
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its dimension is bounded independently of x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.026,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.87,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be constructible, at least in one small case, with PARI/GP or Lean here"
+  ],
+  [
+   0.025,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.88,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.025,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.87,
+    "testable": 0.19
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.025,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.87,
+    "testable": 0.19
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.025,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.89,
+    "testable": 0.23
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it is defined over Q, not merely over a field growing with the exponents",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.024,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.88,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.024,
+   {
+    "exists_in_lit": 0.12,
+    "needs_unproved": 0.89,
+    "testable": 0.22
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.024,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.88,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.024,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.88,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it degenerates exactly when 1/x+1/y+1/z >= 1",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.024,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.88,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must not require a Frey curve for a single fixed signature"
+  ],
+  [
+   0.023,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.89,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.023,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.89,
+    "testable": 0.21
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be FALSE for a generic coprime a+b=c with non-power terms (gate 2)"
+  ],
+  [
+   0.022,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.89,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its L-function has a functional equation whose conductor involves A,B,C symmetrically",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.022,
+   {
+    "exists_in_lit": 0.11,
+    "needs_unproved": 0.89,
+    "testable": 0.2
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "it specialises to the classical Frey curve when two of the three exponents coincide",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.021,
+   {
+    "exists_in_lit": 0.09,
+    "needs_unproved": 0.89,
+    "testable": 0.19
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ],
+  [
+   0.02,
+   {
+    "exists_in_lit": 0.08,
+    "needs_unproved": 0.89,
+    "testable": 0.18
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "level lowering applies and the lowered level is independent of A,B,C",
+   "must be stated over Q or a field of bounded degree"
+  ],
+  [
+   0.019,
+   {
+    "exists_in_lit": 0.1,
+    "needs_unproved": 0.9,
+    "testable": 0.19
+   },
+   "an abelian variety of GL_2-type over the compositum Q(zeta_x, zeta_y, zeta_z)",
+   "its mod-p representation is irreducible for p larger than an effective bound in x,y,z",
+   "must degenerate when an exponent equals 2, so it separates Fermat-Catalan (gate 1)"
+  ]
+ ]
+}

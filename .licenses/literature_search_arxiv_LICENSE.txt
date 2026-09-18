@@ -1,4 +1,1 @@
-User Notification Record:
-Checked terms at https://info.arxiv.org/help/api/index.html.
-Always check the license of papers retrieved by the skill for any restrictions.
-Timestamp: 2026-09-17T20:05:30Z
+User notified of arXiv API terms of use (https://info.arxiv.org/help/api/index.html) at Thu Sep 17 20:27:48 UTC 2026

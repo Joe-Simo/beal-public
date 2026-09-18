@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U84_pair_product_discriminant_support",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U84_pair_product_discriminant_support.md",
+    "excerpt": "# U84: a fixed pair-product discriminant captures every prime-to-170 divisor of Y\n\n**Status: written partial theorem with an exact affine-orbit certificate and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This continues the weighted branch after U83. Unlike U81-U83, the theorem below does not discard a positive-density Frobenius complement: it packages all primes dividing Y outside 2,5,17 into one fixed nonzero discriminant attached to the hypothetical common root. The resulting height bound is not strong enough by itself to prove impossibility.\n\n## 1. Setup and a twenty-element Galois orbit\n\nAssume a primitive positive solution\n\n    X^10+256Y^10=Z^17.\n\nRetain\n\n    c^10=-256, c^5=16i,\n    theta=P(c) in Z[c],\n    theta^17=X+cY.\n\nLet zeta be a primitive tenth root of unity and write\n\n    c_j=c*zeta^j,\n    theta_j=P(c_j),  j in Z/10Z.\n\nThese are the ten conjugates of theta. The normal closure acts on j through the forty affine transformations\n\n    j -> a*j+t,  a in {1,3,7,9}, t in Z/10Z.\n\nOn unordered pairs of labels this group has exactly three orbits, of sizes\n\n    5, 20, 20,\n\ncorresponding respectively to cyclic distances `{5}`, `{1,3}`, and `{2,4}`. This is checked exactly in `code/U84_pair_product_orbit.ts` and independently in Wolfram.\n\nChoose the twenty-element orbit\n\n    O={ {j,k}: cyclic distance between j,k is 1 or 3 }.\n\nFor p={j,k} in O put\n\n    beta_p=theta_j*theta_k.                            (1.1)\n\n## 2. The twenty beta_p are globally distinct\n\nSuppose\n\n    theta_i theta_j = theta_k theta_l.\n\nRaising to the seventeenth power and using theta_m^17=X+c_mY gives\n\n    (X+c_iY)(X+c_jY)=(X+c_kY)(X+c_lY).\n\nAfter cancelling the common X^2 term and dividing by cY,\n\n    X A + cY B = 0,                                  (2.1)\n\nwhere\n\n    A=zeta^i+zeta^j-zeta^k-zeta^l,\n    B=zeta^(i+j)-zeta^(k+l)\n\nbelong to Q(zeta).\n\nNow c is not in Q(zeta). Indeed c^5=16i, whereas Q(zeta_10)=Q(zeta_5) has unique quadratic subfield Q(sqrt(5)) and does not contain i. If B were nonzero, (2.1) would put c in Q(zeta), impossible. Hence B=0, and then A=0. Equality of both sum and product of the two roots of unity implies\n\n    {zeta^i,zeta^j}={zeta^k,zeta^l}.\n\nThus the unordered pairs are equal. In particular the twenty numbers beta_p for p in O are pairwise distinct.\n\n## 3. A nonzero integer discriminant\n\nDefine\n\n    Q_O(T)=product_(p in O) (T-beta_p).               (3.1)\n\nThe orbit O is stable under the full Galois group of the normal closure, so Q_O has rational coefficients. Every beta_p is an algebraic integer, hence\n\n    Q_O(T) in Z[T].                                   (3.2)\n\nSection 2 proves it is separable. Therefore its discriminant\n\n    Delta_O=product_(p<r in O) (beta_p-beta_r)^2     (3.3)\n\nis a fixed nonzero rational integer attached to the hypothetical solution.\n\nThis nonvanishing matters: using a discriminant that vanished identically would give no arithmetic information.\n\n## 4. Every q-adic factor of Y outside 2,5,17 enters Delta_O at least sixfold\n\nLet q be a rational prime outside {2,5,17} and let\n\n    e=v_q(Y)>0.\n\nPrimitivity gives q not dividing X. The normal closure of T^10+256 is ramified only over 2 and 5, so q is unramified there. Fix a prime ideal Q above q.\n\nFor every p={j,k} in O,\n\n    beta_p^17=(X+c_jY)(X+c_kY) = X^2 mod Q.          (4.1)\n\nThus the twenty residues beta_p occupy at most seventeen roots of T^17-X^2. If their nonempty residue classes have multiplicities m_1,...,m_s, then\n\n    s<=17,  sum m_i=20,\n\nand\n\n    sum binomial(m_i,2) >= sum(m_i-1)=20-s>=3.       (4.2)\n\nSo at least three distinct unordered pairs of the beta_p coincide modulo Q.\n\nTake one such collision u=beta_p, v=beta_r. Their seventeenth-power difference is\n\n    u^17-v^17\n      =Y * [ X(c_i+c_j-c_k-c_l)\n              +Y(c_i c_j-c_k c_l) ],                 (4.3)\n\nfor the corresponding label pairs. The bracket is integral, so\n\n    v_Q(u^17-v^17) >= e.\n\nBecause u and v are Q-adic units and q is not 17,\n\n    (u^17-v^17)/(u-v)\n\nreduces to 17u^16 and is a Q-adic unit. Therefore\n\n    v_Q(u-v) >= e.                                    (4.4)\n\nEach of the at least three colliding unordered pairs contributes a distinct squared difference to the discriminant. Hence\n\n    v_Q(Delta_O) >= 6e.                               (4.5)\n\nSince q is unramified and Delta_O is a rational integer, its Q-adic and q-adic valuations agree. Consequently\n\n    q^(6e) | Delta_O.                                 (4.6)\n\nLet\n\n    Y_* = product_(q notin {2,5,17}) q^v_q(Y).\n\nApplying (4.6) prime by prime gives the global divisibility theorem\n\n    Y_*^6 | Delta_O.                                  (4.7)\n\nThis is an all-primes statement, not a density assertion and not a bounded search.\n\n## 5. Height bound and its limitation\n\nLet\n\n    kappa=|c|=2^(4/5),\n    H=X+kappa Y.\n\nEvery conjugate satisfies\n\n    |theta_j| <= H^(1/17),\n\nso\n\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.29,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.83,
+          "1": 0.08,
+          "2": 0.07,
+          "3": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2455,
+      "output_tokens": 94
+    }
+  }
+}

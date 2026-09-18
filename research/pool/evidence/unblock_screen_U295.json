@@ -1,0 +1,355 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.47,
+   {
+    "blocker_changed": 0.25,
+    "now_testable": 0.47,
+    "explained": 0.8
+   },
+   "C120",
+   "RESTART on the single converged obstruction (no Frey-type object for t"
+  ],
+  [
+   0.44,
+   {
+    "blocker_changed": 0.21,
+    "now_testable": 0.44,
+    "explained": 0.47
+   },
+   "C121",
+   "EXACT QUANTIFICATION of the C120 obstruction. For a rigid local system"
+  ],
+  [
+   0.4,
+   {
+    "blocker_changed": 0.13,
+    "now_testable": 0.4,
+    "explained": 0.86
+   },
+   "C157",
+   "THE SCOPE OF THE (3,4,4) DESCENT, exactly. That descent needed C^z - B"
+  ],
+  [
+   0.38,
+   {
+    "blocker_changed": 0.2,
+    "now_testable": 0.38,
+    "explained": 0.53
+   },
+   "C124",
+   "THIRD FACE OF THE OBSTRUCTION, machine-checked. Rank 2 is the only rig"
+  ],
+  [
+   0.38,
+   {
+    "blocker_changed": 0.13,
+    "now_testable": 0.38,
+    "explained": 0.36
+   },
+   "C146",
+   "STRUCTURE OF THE C144 FORM. W(a,b) is IRREDUCIBLE over Q: substituting"
+  ],
+  [
+   0.37,
+   {
+    "blocker_changed": 0.23,
+    "now_testable": 0.37,
+    "explained": 0.33
+   },
+   "C061",
+   "Boundary of the exponent-4-side mechanism (C060): for (4,2n,z), z odd,"
+  ],
+  [
+   0.36,
+   {
+    "blocker_changed": 0.2,
+    "now_testable": 0.36,
+    "explained": 0.55
+   },
+   "C127",
+   "FIFTH AND QUANTITATIVE CORE OF THE OBSTRUCTION. A rank-2 object carryi"
+  ],
+  [
+   0.3,
+   {
+    "blocker_changed": 0.13,
+    "now_testable": 0.3,
+    "explained": 0.22
+   },
+   "C003",
+   "The Hilbert newform orbit b at level 2000 (2.2.5.1-2000.1-b) is elimin"
+  ],
+  [
+   0.29,
+   {
+    "blocker_changed": 0.24,
+    "now_testable": 0.29,
+    "explained": 0.57
+   },
+   "C048",
+   "Signature (2m,2n,5): over Z[i], x^2+y^2=z^5 (z odd, forced by kernel t"
+  ],
+  [
+   0.26,
+   {
+    "blocker_changed": 0.22,
+    "now_testable": 0.26,
+    "explained": 0.59
+   },
+   "C126",
+   "FOURTH FACE: the base field degree grows LINEARLY in the exponent, so "
+  ],
+  [
+   0.24,
+   {
+    "blocker_changed": 0.17,
+    "now_testable": 0.24,
+    "explained": 0.41
+   },
+   "C011",
+   "The all-even branch with 17 not dividing t admits no primitive solutio"
+  ],
+  [
+   0.24,
+   {
+    "blocker_changed": 0.18,
+    "now_testable": 0.24,
+    "explained": 0.55
+   },
+   "C041",
+   "NEGATIVE: the combined mod-72 sieve (mod 8 x mod 9) excludes no expone"
+  ],
+  [
+   0.24,
+   {
+    "blocker_changed": 0.18,
+    "now_testable": 0.24,
+    "explained": 0.44
+   },
+   "C128",
+   "SHARPEST FORM OF THE OBSTRUCTION: a rigid local system on P^1 minus {0"
+  ],
+  [
+   0.24,
+   {
+    "blocker_changed": 0.24,
+    "now_testable": 0.17,
+    "explained": 0.47
+   },
+   "C131",
+   "THE OBSTRUCTION IN THE OTHER PICTURE \u2014 the discriminant-valuation Frey"
+  ],
+  [
+   0.23,
+   {
+    "blocker_changed": 0.13,
+    "now_testable": 0.23,
+    "explained": 0.31
+   },
+   "C049",
+   "NEGATIVE: for odd prime z in {7,11,13,17,19} there is NO identity P_z("
+  ],
+  [
+   0.22,
+   {
+    "blocker_changed": 0.21,
+    "now_testable": 0.22,
+    "explained": 0.7
+   },
+   "C123",
+   "THE OBSTRUCTION IS NOW A DICHOTOMY, machine-checked on both sides. For"
+  ],
+  [
+   0.21,
+   {
+    "blocker_changed": 0.15,
+    "now_testable": 0.21,
+    "explained": 0.22
+   },
+   "C013",
+   "Orbit b (2.2.5.1-2000.1-b) is incompatible with rho-bar_{J^-,17} by an"
+  ],
+  [
+   0.21,
+   {
+    "blocker_changed": 0.17,
+    "now_testable": 0.21,
+    "explained": 0.61
+   },
+   "C029",
+   "Classical Fermat descent on the all-even branch sends signature (2r,2s"
+  ],
+  [
+   0.2,
+   {
+    "blocker_changed": 0.2,
+    "now_testable": 0.13,
+    "explained": 0.61
+   },
+   "C072",
+   "Jev sweep U169 over the smallest open reduced signatures ((3,5,7), (4,"
+  ],
+  [
+   0.19,
+   {
+    "blocker_changed": 0.14,
+    "now_testable": 0.19,
+    "explained": 0.27
+   },
+   "C001",
+   "The weighted equation X^10 + 256 Y^10 = Z^17 has no primitive nontrivi"
+  ],
+  [
+   0.18,
+   {
+    "blocker_changed": 0.11,
+    "now_testable": 0.18,
+    "explained": 0.23
+   },
+   "C044",
+   "NEGATIVE: on the exponent>=2 model (100 coprime vs 436 non-coprime sol"
+  ],
+  [
+   0.17,
+   {
+    "blocker_changed": 0.08,
+    "now_testable": 0.17,
+    "explained": 0.14
+   },
+   "C005",
+   "The Gaussian forcing-prime sieve eliminates the weighted equation by e"
+  ],
+  [
+   0.17,
+   {
+    "blocker_changed": 0.17,
+    "now_testable": 0.12,
+    "explained": 0.59
+   },
+   "C012",
+   "The mixed-signature part of Beal's conjecture, comprising all exponent"
+  ],
+  [
+   0.17,
+   {
+    "blocker_changed": 0.13,
+    "now_testable": 0.17,
+    "explained": 0.25
+   },
+   "C032",
+   "The linear form z log C - y log B from the size window equals log(1 + "
+  ],
+  [
+   0.17,
+   {
+    "blocker_changed": 0.17,
+    "now_testable": 0.16,
+    "explained": 0.47
+   },
+   "C054",
+   "NEGATIVE: the only residue conditions mod 16, 32, 27 that fail on a Fe"
+  ],
+  [
+   0.17,
+   {
+    "blocker_changed": 0.17,
+    "now_testable": 0.07,
+    "explained": 0.51
+   },
+   "C083",
+   "Jev sweep (384 cells) restricted to the two directions the user-suppli"
+  ],
+  [
+   0.17,
+   {
+    "blocker_changed": 0.17,
+    "now_testable": 0.17,
+    "explained": 0.7
+   },
+   "C155",
+   "THE SQUARE CONDITION IS THE WHOLE DIFFICULTY, and it does not simplify"
+  ],
+  [
+   0.16,
+   {
+    "blocker_changed": 0.16,
+    "now_testable": 0.14,
+    "explained": 0.38
+   },
+   "C059",
+   "All-even signatures (2m,2n,2k): kernel-ready structure (Pythagorean tr"
+  ],
+  [
+   0.16,
+   {
+    "blocker_changed": 0.16,
+    "now_testable": 0.1,
+    "explained": 0.66
+   },
+   "C063",
+   "(4,4,p) via Q-curves: Dieulefait (arXiv:math/0304425) attaches a Q-cur"
+  ],
+  [
+   0.14,
+   {
+    "blocker_changed": 0.14,
+    "now_testable": 0.14,
+    "explained": 0.4
+   },
+   "C034",
+   "Curvature stratification: |chi| < T is a FINITE set of Beal signatures"
+  ],
+  [
+   0.14,
+   {
+    "blocker_changed": 0.14,
+    "now_testable": 0.09,
+    "explained": 0.44
+   },
+   "C076",
+   "Vocabulary-3 Jev sweep (analytic/size mechanisms, 18 cells) on the ope"
+  ],
+  [
+   0.13,
+   {
+    "blocker_changed": 0.09,
+    "now_testable": 0.13,
+    "explained": 0.24
+   },
+   "C002",
+   "Level lowering in the style of Azon arXiv:2504.01967v2 Theorem 5.23 ap"
+  ],
+  [
+   0.13,
+   {
+    "blocker_changed": 0.13,
+    "now_testable": 0.12,
+    "explained": 0.36
+   },
+   "C073",
+   "Vocabulary-2 Jev sweep (U173, 32 cells): top cells are (a) 2-adic stru"
+  ],
+  [
+   0.11,
+   {
+    "blocker_changed": 0.07,
+    "now_testable": 0.11,
+    "explained": 0.21
+   },
+   "C006",
+   "A^3 + B^3 = C^p has no primitive nontrivial solutions for every prime "
+  ],
+  [
+   0.11,
+   {
+    "blocker_changed": 0.1,
+    "now_testable": 0.11,
+    "explained": 0.24
+   },
+   "C014",
+   "rank_Z J^-(L) < 8 where L is the degree-10 extension of k = Q(sqrt5) g"
+  ]
+ ]
+}

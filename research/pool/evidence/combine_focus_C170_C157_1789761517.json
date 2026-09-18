@@ -1,0 +1,111 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C170_C157",
+  "timestamp": "2026-09-18T15:58:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C170",
+      "status": "PARTIAL_RESULT",
+      "claim": "The correct obstruction in the rigid local-system setting is UNIFORMITY, not existence. A Q-rational local monodromy of order exactly m has rank at least phi(m); the bound is attained for every reduced exponent up to 19 (exact computation). Consequently no single rigid Q-rational object of bounded rank can carry unboundedly many exponents, even though individual signatures with three pairwise distinct exponents are realisable.",
+      "parents": [
+        "C169",
+        "C120",
+        "C121",
+        "C128"
+      ],
+      "method": "Exact enumeration of Galois-stable multiplicity vectors over the divisors of m, combined with the Katz rigidity index. code/U310_galois_stable_rigid.py. Minimal rank per exponent computed exactly: 3->2, 4->2, 5->4, 7->6, 11->10, 13->12, 17->16, 19->18, equal to phi(m) in every case. Minimal rank of a rigid Q-rational triple: (3,4,5)->4, (3,4,7)->7, (3,5,7)->9, (5,7,11)->20, (3,7,11)->21, (7,11,13)-> none up to rank 25.",
+      "evidence": "The rank >= phi(m) half is machine-checked as Beal.rank_ge_totient in formal/Beal/Rigidity.lean, and the rank-4 counterwitness to the old U258 headline as Beal.smallest_rational_rigid_witness. #print axioms: [propext, Classical.choice, Quot.sound] and [propext] respectively; full lake build clean.",
+      "obligations": "NOT a theorem about Beal. (1) The rank >= phi(m) bound is proved only for the combinatorial model (Galois-stable multiplicity vectors); that this model captures Q-rationality of the local system is standard but is NOT formalised here. (2) The uniformity conclusion is informal: 'bounded rank cannot carry unboundedly many exponents' needs a precise statement of what object the modular method would consume. (3) Escape routes untested: non-rigid families (moduli dimension (n-1)(n-2)), base fields larger than Q, and objects that are not local systems. (4) C169's obligations (a) attachment to A^x+B^y=C^z and (b) motivic realisation remain completely untested.",
+      "novelty": "Replaces a refuted obstruction with a correct one of different type: existence is fine, growth is the problem. Same phi(x) quantity that already governs minBaseDegree in Rigidity.lean, now appearing for the right reason. Survey category: neither bounded computation, nor one-signature modular method, nor elementary, nor abc/Baker.",
+      "evaluations": {
+        "U310": "Exact enumeration plus two machine-checked lemmas. HYPOTHESIS_ONLY for routing."
+      }
+    },
+    "candidate_B": {
+      "parents": [
+        "C150",
+        "C107"
+      ],
+      "inspirations": [
+        "asking where the technique that worked on (3,4,4) can apply at all, before reusing it"
+      ],
+      "evidence": "The smallest open signatures all have pairwise gcds (1,1,1): (3,5,7), (4,5,7), (3,4,11), (5,7,11).",
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "The open core is precisely the set of signatures with pairwise DISTINCT reduced exponents \u2014 (4,q,r) with q,r distinct odd primes, and (p,q,r) odd primes not all equal \u2014 so the descent NEVER applies there. This is a structural reason, not a failure of effort.",
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C157",
+      "status": "BLOCKED",
+      "claim": "THE SCOPE OF THE (3,4,4) DESCENT, exactly. That descent needed C^z - B^y to FACTOR, which requires gcd(y,z) > 1. Among reduced exponents \u2014 4 or odd primes \u2014 two of them have gcd exceeding 1 ONLY WHEN THEY ARE EQUAL (verified: no pair (a,b) of distinct reduced exponents has gcd > 1). So the technique applies exactly to signatures with a REPEATED exponent: (3,4,4), (p,p,r), (n,n,n) and the like. Of 219 reduced hyperbolic signatures with exponents in {4} union the odd primes up to 29, 99 admit a factorisation and 120 do not.",
+      "method": "exact enumeration over reduced hyperbolic signatures; gcd computation",
+      "open_obligations": "",
+      "extracted_lemma": "Factorisation-based descent is available exactly when two exponents coincide. That is the same boundary the rest of this session found by other means: C128 (a rigid object carries at most two exponents), C131 and C136 (classical Frey models absorb only the pairs (2,3) and (n,n)), and C157 here. Three independent lines all stop at the same place \u2014 two exponents may be related, the third may not.",
+      "novelty": "This ties the (3,4,4) work back to the general obstruction. The descent was not a new route to Beal: it was available precisely because (3,4,4) has a repeated exponent, which is exactly the configuration the open core excludes."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 1.22,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.68,
+          "2": 0.24,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.17
+      }
+    },
+    "usage": {
+      "input_tokens": 2105,
+      "output_tokens": 53
+    }
+  }
+}

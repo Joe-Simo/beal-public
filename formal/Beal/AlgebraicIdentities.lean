@@ -194,14 +194,8 @@ theorem u73_genus_eight_identity (X Y c phi zeta zeta_inv : R)
     (h_prod : zeta * zeta_inv = 1) :
     4 * (X + c * zeta * Y) * (X + c * zeta_inv * Y) =
       (phi + 1) * (X + c * Y)^2 + (3 - phi) * (X - c * Y)^2 := by
-  have h := u73_genus_eight_expansion X Y c phi zeta zeta_inv
-  have h1 : zeta + zeta_inv - (phi - 1) = 0 := by
-    linear_combination h_sum
-  have h2 : zeta * zeta_inv - 1 = 0 := by
-    linear_combination h_prod
-  rw [h1, h2] at h
-  ring_nf at h ⊢
-  exact sub_eq_zero.mp h
+  -- LHS - RHS = 4cXY * (zeta + zeta_inv - (phi - 1)) + 4c^2Y^2 * (zeta * zeta_inv - 1)
+  linear_combination (4 * c * X * Y) * h_sum + (4 * c ^ 2 * Y ^ 2) * h_prod
 
 /-! ### 4. The U73 Rational Coordinate Vanishing Identity -/
 

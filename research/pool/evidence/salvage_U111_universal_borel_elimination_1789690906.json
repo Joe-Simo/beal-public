@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U111_universal_borel_elimination",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_universal_borel_elimination.md",
+    "excerpt": "# U111: Universal Borel Subgroup Elimination and Full Galois Surjectivity for Beal Frey Curves\n\n**Status: Definitive algebraic proof, representation-theoretic classification, and computational certificate. Reducible mod-$p$ representations (Borel subgroup image / rational $p$-isogenies) are unconditionally eliminated for all Beal Frey curves for prime exponents $p \\ge 11$ (and $p \\ge 5$ for $(3, 3, p)$, $p \\ge 7$ for $(2, 3, p)$). Combined with the Universal Cartan Elimination Theorem, the mod-$p$ Galois representation $\\bar{\\rho}_{E,p}$ of ANY Beal Frey curve is UNCONDITIONALLY SURJECTIVE onto $\\operatorname{GL}_2(\\mathbb{F}_p)$ for all prime exponents $p \\ge 11$.**\n\n**Date**: 2026-09-17  \n**Author**: Serre Uniformity & Cartan Bound Specialist (Beal Conjecture Project)  \n**Target Equation**: The General Beal Equation:\n$$A^p + B^q = C^r, \\quad \\gcd(A, B, C) = 1, \\quad p, q, r \\ge 3.$$\n**Primary Sources**:\n- Barry Mazur, *Modular curves and the Eisenstein ideal*, Publ. Math. IH\u00c9S 47 (1977), 33\u2013186.\n- Barry Mazur, *Rational isogenies of prime degree*, Invent. Math. 44 (1978), 129\u2013162.\n- Henri Darmon and Lo\u00efc Merel, *Winding quotients and some variants of Fermat's Last Theorem*, Invent. Math. 128(1) (1997), 79\u201397.\n- Alain Kraus, *Majorations effectives pour l'\u00e9quation de Fermat g\u00e9n\u00e9ralis\u00e9e*, Acta Arith. 82(1) (1997), 1\u201324.\n- Alain Kraus, *Sur l'\u00e9quation $a^3 + b^3 = c^p$*, Exp. Math. 7(1) (1998), 1\u201313.\n- Bjorn Poonen, Edward F. Schaefer, and Michael Stoll, *Twists of $X(7)$ and primitive solutions to $x^2 + y^3 = z^7$*, Duke Math. J. 137(1) (2007), 103\u2013158.\n- Michael A. Bennett, Jordan S. Ellenberg, and Nathan C. Ng, *The Diophantine equation $A^4 + 2^\\delta B^2 = C^n$*, J. London Math. Soc. 81(3) (2010), 616\u2013636.\n- Nuno Freitas and Samir Siksek, *Criteria for irreducibility of mod $p$ representations of Frey curves*, J. Th\u00e9or. Nombres Bordeaux 27(1) (2015), 67\u201376.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint tackles the second fundamental branch of Serre's uniformity conjecture for Beal Frey curves: **the Borel subgroup (reducible mod-$p$ representations / rational isogenies)**.\n\n1. **Shape of Reducible Mod-$p$ Representations**:\n   If $\\bar{\\rho}_{E,p}$ is reducible, it stabilizes a line in $E[p]$, corresponding to a rational $p$-isogeny $\\phi: E \\to E'$.\n   The representation decomposes as an upper-triangular Borel image:\n   $$\\bar{\\rho}_{E,p} \\sim \\begin{pmatrix} \\theta_1 & * \\\\ 0 & \\theta_2 \\end{pmatrix}, \\quad \\theta_1 \\theta_2 = \\chi_p.$$\n   By class field theory and local analysis at multiplicative primes dividing $ABC$, $\\theta_1$ and $\\theta_2$ are unramified outside $\\{2, 3, p\\}$. By Raynaud's finite flatness at $p$ (Fontaine--Laffaille range), the characters are of the form:\n   $$\\{\\theta_1, \\theta_2\\} = \\{\\psi, \\psi \\chi_p\\},$$\n   where $\\psi: G_\\mathbb{Q} \\to \\{\\pm 1\\}$ is a quadratic Dirichlet character of conductor dividing 24.\n\n2. **Mazur's Isogeny Bounds and Diophantine Elimination**:\n   - By Mazur's 1978 theorem, non-CM rational $p$-isogenies over $\\mathbb{Q}$ can occur only for:\n     $$p \\in \\{2, 3, 5, 7, 11, 13, 17, 37\\}.$$\n   - For Frey curves, the presence of multiplicative reduction with discriminant $\\Delta \\sim C^p$ creates incompatible valuations with the finite list of rational points on $X_0(p)$ for $p \\in \\{11, 13, 17, 37\\}$ (Darmon--Merel 1997, Kraus 1997, 1998):\n     - **Signature $(3, 3, p)$**: Strictly irreducible for all $p \\ge 5$ (Kraus 1998).\n     - **Signature $(2, 3, p)$**: Strictly irreducible for all $p \\ge 7$ (Kraus 1998, Poonen--Schaefer--Stoll 2007).\n     - **Signature $(5, 5, p)$**: Strictly irreducible for all $p > 17$ over $\\mathbb{Q}(\\sqrt{5})$ (Freitas--Siksek 2015).\n     - **General $(p, q, r)$**: Strictly irreducible for all $p \\ge 11$.\n\n3. **The Dickson $p$-Divisibility Dichotomy**:\n   Let $p \\ge 7$ be any prime. In $\\operatorname{PGL}_2(\\mathbb{F}_p)$, the orders of maximal proper subgroups are:\n   - Borel: $p(p - 1)$ (divisible by $p$).\n   - Split Cartan normalizer: $2(p - 1)$ (coprime to $p$).\n   - Non-split Cartan normalizer: $2(p + 1)$ (coprime to $p$).\n   - Exceptional groups: $|A_4| = 12$, $|S_4| = 24$, $|A_5| = 60$ (strictly coprime to $p$ for all $p \\ge 7$).\n   \n   Therefore, by Dickson's Theorem (1901), **for all $p \\ge 7$, ANY subgroup of $\\operatorname{PGL}_2(\\mathbb{F}_p)$ containing an element of order $p$ EITHER is contained in a Borel subgroup, OR contains $\\operatorname{PSL}_2(\\mathbb{F}_p)$!**\n\n4. **Universal Full Galois Surjectivity**:\n   Because Beal Frey curves possess multiplicative reduction at odd primes dividing $ABC$, their local inertia image contains a transvection of order $p$.\n   - Cartan normalizers are eliminated (order coprime to $p$).\n   - Exceptional groups are eliminated for $p \\ge 7$ (order coprime to $p$).\n   - Borel subgroups are eliminated for all $p \\ge 11$ (Mazur, Kraus, Darmon--Merel).\n   \n   **Grand Conclusion**:\n   $$\\bar{\\rho}_{E,p}(G_\\mathbb{Q}) = \\operatorname{GL}_2(\\mathbb{F}_p) \\quad \\text{unconditionally fo"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.71,
+        "confidence": 0.29,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.57,
+          "1": 0.16,
+          "2": 0.25,
+          "3": 0.02
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.71
+      }
+    },
+    "usage": {
+      "input_tokens": 2470,
+      "output_tokens": 42
+    }
+  }
+}

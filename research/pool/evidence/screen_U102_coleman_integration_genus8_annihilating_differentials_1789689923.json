@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U102_coleman_integration_genus8_annihilating_differentials",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U102_coleman_integration_genus8_annihilating_differentials.md",
+      "excerpt": "# U102: Explicit Basis of Holomorphic 1-Forms, 6-Dimensional Annihilating Space Ann(J^-(k)), and Strassman-Coleman Zero Bounds at Inert Prime p=3 for the Genus-8 Frey Curve C^-\n\n**Date**: 2026-09-17  \n**Status**: Exact algebraic certification, closed PARI/GP 2.17.4 local integration ledger, and complete residue disc zero bounds. The weighted generalized Fermat equation and Beal's conjecture remain unresolved.  \n**Context**: Continuation of U99's Mordell--Weil rank bound $\\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\le 2 < g = 8$ for the quotient curve $C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$ over the real quadratic field $k = \\mathbb{Q}(\\phi)$ ($\\phi = \\frac{1+\\sqrt{5}}{2}$).\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U99, the 2-Selmer rank of the genus-8 Jacobian $J^-$ attached to the Frey hyperelliptic curve\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\nover $k = \\mathbb{Q}(\\phi)$ was unconditionally bounded by 2:\n$$\\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\le \\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(J^-/k) \\le 17 - 15 = 2 < g = 8.$$\nBecause the Mordell--Weil rank is strictly smaller than the genus ($r \\le 2 < 8$), the classical method of **Chabauty (1938)** and **Coleman (1985)** applies to $C^-/k$.\n\nThis checkpoint establishes the complete Coleman integration framework on $C^-/k$ at the inert prime $\\mathfrak{p} = (3)$:\n\n1. **Explicit Holomorphic 1-Forms**:\n   An explicit $k$-basis of the 8-dimensional space of global regular 1-forms $H^0(C^-, \\Omega^1)$ is given by:\n   $$\\omega_j = \\frac{u^j \\, du}{v}, \\quad j = 0, 1, 2, 3, 4, 5, 6, 7.$$\n   Each $\\omega_j$ is regular at all affine points (including the 17 Weierstrass branch points) and at the unique $k$-rational point at infinity $\\infty$. At $\\infty$, their orders of vanishing are strictly decreasing and pairwise distinct:\n   $$\\operatorname{ord}_\\infty(\\omega_j) = 14 - 2j \\in \\{14, 12, 10, 8, 6, 4, 2, 0\\}.$$\n   Furthermore, over $k(\\zeta_{17})$, each $\\omega_j$ spans an eigenspace for the order-17 automorphism $\\tau(u, v) = (\\zeta_{17}u, v)$ with eigenvalue $\\zeta_{17}^{j+1}$.\n\n2. **Space of Annihilating Differentials $\\operatorname{Ann}(J^-(k))$**:\n   Under the Coleman logarithm pairing:\n   $$\\log_\\mathfrak{p}: J^-(k) \\times H^0(C^-, \\Omega^1) \\to k_\\mathfrak{p},$$\n   the image of the rank $\\le 2$ Mordell--Weil group spans a subspace of dimension at most 2. The annihilating differential space:\n   $$\\operatorname{Ann}(J^-(k)) = \\left\\{ \\omega \\in H^0(C^-, \\Omega^1) \\;\\middle|\\; \\int_P^Q \\omega = 0 \\quad \\forall [P - Q] \\in J^-(k) \\right\\}$$\n   has dimension:\n   $$\\dim_k \\operatorname{Ann}(J^-(k)) \\ge g - \\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\ge 8 - 2 = 6.$$\n\n3. **Inert Prime $p = 3$ and Residue Field $\\mathbb{F}_9$**:\n   The prime $p = 3$ is inert in $k$ since $(5/3) = -1$. The residue field is $\\mathbb{F}_9 = \\mathbb{F}_3[\\phi] / (\\phi^2 - \\phi - 1)$. Because $\\gcd(17, 8) = 1$, the map $u \\mapsto u^{17} = u$ is an automorphism on $\\mathbb{F}_9$. The reduction $\\widetilde{C}^-(\\mathbb{F}_9)$ contains exactly **10 points** (1 point at infinity, 1 Weierstrass point, and 8 ordinary affine points).\n\n4. **Local Power Series and Strassman Zero Bounds**:\n   For each of the 10 residue discs $D \\subset C^-(k_\\mathfrak{p})$, explicit power series expansions for $u(t), v(t)$, and the Coleman integrals $I_{\\omega_j}(t) = \\int_0^t \\omega_j$ are computed in PARI/GP 2.17.4 to high 3-adic precision:\n   - **Infinity Disc $]\\infty[$**: Uniformizer $t = u^8 / v$. The linear term $t^1$ (from $\\omega_7$) has 3-adic valuation 1 in the scaled variable $3w$, while all higher odd powers have valuation $\\ge 2$. By Strassman's theorem, $I_\\omega(t)$ has at most 1 zero in $]\\infty[$, which is the rational point $\\infty$.\n   - **Weierstrass Disc $]\\bar{P}_0[$**: Center is the unique 3-adic Weierstrass point $P_0 = (u_0, 0)$ with $u_0^{17} = \\phi^2 / 4$. The uniformizer is $t = v$. The linear term has valuation 1 in $3w$ and strictly dominates all higher powers. By Strassman's theorem, $P_0$ is the unique zero in the disc. Because $[k(u_0) : k] = 17 > 1$, $P_0 \\notin C^-(k)$, so this disc contains **0 rational points**.\n   - **8 Ordinary Affine Discs**: Uniformizer $t = u - u_0$. The leading coefficient $\\psi(0) = \\frac{u_0^j}{v_0}$ is a 3-adic unit ($v_3 = 0$), giving valuation 1 in $3w$. All higher powers have valuation $\\ge 2$. Strassman's theorem bounds the number of zeros in each disc to at most 1.\n   \n5. **Global Point Bound**:\n   Summing across all 10 residue discs:\n   $$\\# C^-(k) \\le 1 \\;(\\infty) + 0 \\;(\\text{Weierstrass}) + 8 \\times 1 \\;(\\text{ordinary}) = 9 \\le 10.$$\n   In particular, $C^-(k)$ is finite with at most 9 points, and the only known $k$-rational point is $\\infty$.\n\n---\n\n## 2. Explicit Basis of Regular 1-Forms on $C^-$\n\n### 2.1 Curve Geometry and Genus\nThe curve $C^-$ is defined over $k = \\mathbb{Q}(\\phi)$ by:\n$$C^-: v^2 = f(u), \\quad f(u) = A - B u^{17},$$\nwhere:\n$$A = \\phi + 2, \\quad B = 4(3-\\phi).$$\nTheir algebraic norms to $\\mathbb{Q}$ are:\n$$N_{k/\\mathbb{Q}}(",
+      "length_chars": 22687
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.1,
+        "confidence": 0.9,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.96,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.02
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.87,
+        "confidence": 0.12,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.55,
+          "2": 0.02,
+          "3": 0.43
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.59,
+        "probabilities": {
+          "verify_computation": 0.17,
+          "audit_later": 0.12,
+          "no_action": 0.04,
+          "audit_now": 0.67,
+          "verify_literature": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3239,
+      "output_tokens": 124
+    }
+  }
+}

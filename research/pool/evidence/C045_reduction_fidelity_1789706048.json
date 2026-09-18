@@ -1,0 +1,47 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C045_reduction_fidelity",
+  "timestamp": "2026-09-18T00:34:08-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "statement": "theorem even_even_odd_reduction {A B C m n z : \u2115} (hz : Odd z) (h : IsBealCounterexample A B C (2*m) (2*n) z) : \u2203 w : GaussianInt, w ^ z = \u27e8(A:\u2124)^m, (B:\u2124)^n\u27e9 \u2227 IsCoprime w.re w.im"
+  },
+  "questions": {
+    "faithful": {
+      "type": "score",
+      "instructions": "Is this the exact content of C045's reduction (both summands are squares of powers, C odd forced, Z[i] z-th power)?",
+      "criteria": [
+        "0 wrong",
+        "1 gap",
+        "2 faithful modulo detail",
+        "3 faithful"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "faithful": {
+        "type": "score",
+        "score": 1.88,
+        "confidence": 0.0,
+        "legend": {
+          "0": "0 wrong",
+          "1": "1 gap",
+          "2": "2 faithful modulo detail",
+          "3": "3 faithful"
+        },
+        "probabilities": {
+          "0": 0.14,
+          "1": 0.24,
+          "2": 0.22,
+          "3": 0.4
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 434,
+      "output_tokens": 19
+    }
+  }
+}

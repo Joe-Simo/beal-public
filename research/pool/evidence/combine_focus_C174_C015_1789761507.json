@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C174_C015",
+  "timestamp": "2026-09-18T15:58:27-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C174",
+      "status": "BLOCKED",
+      "claim": "C171 UNDERSTATED THE OBSTRUCTION. The three-exponent rigid Q-rational object is never REGULAR. Regularity (distinct Hodge-Tate weights, required by every potential-automorphy theorem available in rank > 2) means partition (1^n) at both 0 and infinity; those contribute n+n, so rig = 2 forces the third puncture to contribute n^2-2n+2, i.e. the pseudoreflection (n-1,1); and a pseudoreflection is Q-rational only when phi(m) = 1, i.e. m <= 2, excluded by the Beal exponent range. So automorphy is not merely unproved for this object -- the regular-weight family of theorems cannot apply to it however much it is strengthened.",
+      "parents": [
+        "C171",
+        "C169",
+        "C170"
+      ],
+      "method": "Exhaustive exact enumeration, code/U317_regularity_obstruction.py: of 792 rigid Q-rational triples with three pairwise distinct reduced exponents at ranks 2..14, ZERO are regular at both 0 and infinity; and (n-1,1) is Q-rational for NO reduced exponent at any rank 3..8. Self-duality was checked too and is free: a Galois orbit over Q is closed under alpha -> alpha^(-1) because -1 is coprime to m, so only regularity bites.",
+      "evidence": "Arithmetic core machine-checked in formal/Beal/Rigidity.lean: regular_forces_pseudoreflection (rigidityIndex n (n+n+s) = 2 iff s = n^2-2n+2), pseudoreflection_budget, rational_pseudoreflection_order_le_two (via Nat.totient_eq_one_iff), no_rational_pseudoreflection_for_exponent. #print axioms = [propext, Classical.choice, Quot.sound]; full lake build clean.",
+      "failure_reason": "BLOCKED. Two independent obstructions now, not one: (1) automorphy of rank-n motives over Q for n > 2 is unproved (C171); (2) the object is irregular, so the regular-weight potential automorphy theorems are structurally inapplicable to it (this candidate). (2) is the harder of the two because strengthening the existing theorems does not help.",
+      "obligations": "NOT formalised: the step from 'local system defined over Q' to the combinatorial model of Galois-stable multiplicity vectors, and the identification of regularity with partition (1^n) at 0 and infinity. Both are standard but are modelling assumptions here. ESCAPES NOT TESTED: non-rigid families (moduli dimension (n-1)(n-2)), base fields larger than Q, irregular-weight automorphy (Calegari-Geraghty style) which is exactly the hard open direction, and objects that are not local systems at all.",
+      "novelty": "Corrects my own C171 from 'one missing theorem' to 'a structural mismatch plus a missing theorem'. That is a sharper and more useful statement of why the survey's first live direction is open. It is not progress toward a proof of Beal.",
+      "evaluations": {
+        "U317": "Exhaustive exact enumeration plus four machine-checked lemmas. HYPOTHESIS_ONLY for routing.",
+        "escape_1_closed_U318": "First named escape CLOSED by U318/C175: the obstruction does not use rigidity at all. The rank of a regular Q-rational monodromy of order m lies in [phi(m), m], and for three pairwise distinct reduced exponents those intervals are disjoint. Remaining escapes: larger base fields, irregular-weight automorphy, non-local-system objects.",
+        "escape_2_open_U319": "SCOPE CORRECTION from U319/C176: this obstruction is about Q only. The larger-base-field escape is real and cheap -- a field of degree 2 to 6 already reconciles the ranks for every pairwise distinct triple of reduced exponents up to 19. Do not state the regularity obstruction as field-independent. It still does not give a route, because over K the method needs automorphy in rank > 2 over K (C171), which is harder than over Q."
+      }
+    },
+    "candidate_B": {
+      "parents": [
+        "C009"
+      ],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_lean_axiom_countersearch.py"
+      ],
+      "obligations": [
+        "STATEMENT FIDELITY of IsBealCounterexample and BealConjecture: now covered by 16 machine-checked examples in formal/Beal/FidelityCheck.lean (U327/C182).",
+        "REMAINING: fidelity of the fourteen named hypothesis Props against their cited primary sources, which are not all held in references/. C178 rules out degenerate falsity but not citation mismatch."
+      ],
+      "evaluations": {
+        "U177": "root lake build completes successfully for all 23 tracked modules (Lean 4.14.0 / mathlib v4.14.0), 0 sorry, no custom axioms in any module added since U113; TaxonomyExtensions repaired (two case-analysis proofs rewritten, statements unchanged).",
+        "STALE_CORRECTED_U326": "STALE OBLIGATIONS, corrected. Every obligation recorded here is now out of date and three of them are simply false as of this session: (1) 'no Lean toolchain is installed, so NOTHING in formal/ has ever been checked' -- Lean 4.14.0 + mathlib v4.14.0 build cleanly and lake build succeeds; (2) '7 sorry occurrences' -- the root chain has ZERO sorry (only the unimported, non-compiling SquarefreeCore.lean is excluded from the build); (3) '5 axioms carry the entire mathematical content' -- all five were converted to named Props (MihailescuTheorem, KrausEvenCLevel18Newform, FreitasTheoremMod3, BruinClassification238, and flt_3 replaced by mathlib's fermatLastTheoremThree), so the root chain has ZERO custom axioms. The fourth obligation, statement fidelity against the ORIGINAL conjecture, STANDS and is partly addressed by formal/Beal/FidelityCheck.lean. Found by the U326 Jev vacuity screen, which ranked C015 among its countersearch_now hits."
+      },
+      "failure_reason": null,
+      "novelty_note": "The only candidate whose evaluator is a proof kernel rather than a derivation or a computation. Its failure mode is mechanical (install/compile) rather than mathematical, which makes it unusually cheap relative to its evidential value.",
+      "extracted": [],
+      "id": "C015",
+      "claim": "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero custom axioms outside a clearly quarantined and labelled set of external theorems, and its formal statements faithfully encode the original Beal statement.",
+      "method": "Install a Lean toolchain; compile; replace the four padicValNat axioms with mathlib lemmas; replace flt_3 with mathlib fermatLastTheoremThree; quarantine or discharge the remaining Class B axioms; eliminate the 7 sorry occurrences.",
+      "status": "PROMISING"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.37
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.94,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.72,
+          "2": 0.1,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.07
+      }
+    },
+    "usage": {
+      "input_tokens": 2556,
+      "output_tokens": 53
+    }
+  }
+}

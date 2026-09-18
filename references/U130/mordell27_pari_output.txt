@@ -1,0 +1,4 @@
+conductor: 144
+torsion: [2, [2], [[-3, 0]]]
+analytic rank: 0
+2-descent bound (ell2cover/ellrank): 0

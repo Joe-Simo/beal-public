@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U140",
+  "timestamp": "2026-09-18T00:28:06-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "ResidualShape now kernel-checked: exponents in {4} U odd primes, not (4,4,4)/(3,3,3), one even base, etc. Remaining reduced signatures: (4,4,p) p odd prime; (4,p,q); (p,q,r) odd primes; (4,4,... ) with permutations. Ask: which reduced sub-family should the loop attack next, given closed routes: modular method beyond known signatures, Chabauty at the frontier, abc, all local sieves, parametrise-then-cite."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which?",
+      "criteria": {
+        "four_four_p": "(4,4,p): x^4+y^4=z^p; Dieulefait 2005 covers p>13, p != -1 mod 8 (primary source needed); look for what closes the residual p = -1 mod 8 or p<=13 and whether the repo's mod-8 theorems interact",
+        "four_p_q": "(4,p,q): no uniform tool; classify by which base is even using the kernel mod-8 theorems and see which sub-cases reduce to a one-sided theorem",
+        "ppq_frontier": "(p,q,r) odd primes: the genuinely open core; countersearch the repo's own necessary conditions on the Fermat-Catalan solutions with exponent 2 to see which conditions are sharp",
+        "lean_more": "formalise more closed families into ResidualShape (e.g. (2m,2n,3) rel. hypotheses cannot enter since it has external inputs)"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "four_four_p",
+        "confidence": 0.44,
+        "probabilities": {
+          "lean_more": 0.01,
+          "four_four_p": 0.58,
+          "ppq_frontier": 0.29,
+          "four_p_q": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 645,
+      "output_tokens": 56
+    }
+  }
+}

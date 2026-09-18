@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C043",
+  "timestamp": "2026-09-17T23:48:57-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Helenius identity in Z[i] refutes the Beal statement there. Norm analogues of the verified Z-constraints were tested exactly."
+  },
+  "questions": {
+    "essential": {
+      "type": "noul",
+      "instructions": "Is the FAILING constraint (no-cancellation: the sum must exceed each summand) the ingredient any proof of Beal over Z must essentially use, beyond ring structure?",
+      "criteria": {
+        "true": "yes, ordering is essential",
+        "false": "no, a ring-theoretic proof could avoid it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "essential": {
+        "type": "noul",
+        "noul": 0.61
+      }
+    },
+    "usage": {
+      "input_tokens": 531,
+      "output_tokens": 20
+    }
+  }
+}

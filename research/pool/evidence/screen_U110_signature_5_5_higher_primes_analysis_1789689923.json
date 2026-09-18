@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U110_signature_5_5_higher_primes_analysis",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U110_signature_5_5_higher_primes_analysis.md",
+      "excerpt": "# U110: Signature $(5, 5, p)$ for Higher Primes $p \\in \\{17, 19, 23\\}$, Field Invariant Certification for $L_{17}$, and Modular Level-Lowering Evaluation over $\\mathbb{Q}(\\sqrt{5})$\n\n**Date**: 2026-09-17  \n**Author**: Signature $(5, 5, p)$ Higher Prime Specialist  \n**Target Equations**:  \n1. $X^5 + Y^5 = Z^p$ for $p \\in \\{17, 19, 23\\}$, $\\gcd(X, Y, Z) = 1$, $X Y Z \\ne 0$.  \n2. $X^{10} + Y^{10} = Z^p$ for $p \\in \\{17, 19, 23\\}$, $\\gcd(X, Y, Z) = 1$, $X Y Z \\ne 0$.  \n**Target Fields**:  \n- Maximal real cyclotomic subfield $F_{17} = \\mathbb{Q}(\\zeta_{17})^+$ of degree 8.  \n- Stoll 2-descent root fields $L_{17, 0} = \\mathbb{Q}[t]/(t^{34} + 2t^{17} - 4)$ and $L_{17, 1} = \\mathbb{Q}[t]/(t^{34} - 16t^{17} - 16)$ of degree 34 over $\\mathbb{Q}$ ($17$ over $\\mathbb{Q}(\\sqrt{5})$).  \n- Descent fields $L_{19}$ (degree 38) and $L_{23}$ (degree 46).  \n**Status**: Complete written certification, unconditional class group and unit group 2-saturation proofs, Dedekind zeta residue certification, and comprehensive evaluation of Hilbert modular forms / Frey hyperelliptic Jacobians over $\\mathbb{Q}(\\sqrt{5})$.\n\n---\n\n## 1. Executive Summary & Complete Ledger of Higher Primes\n\nFollowing the unconditional certification of class numbers $h = 1$ and 2-saturation for the descent fields $L_{11}$ (degree 22) and $L_{13}$ (degree 26) in checkpoint **U102**, this investigation addresses the next frontier of prime exponents:\n$$p \\in \\{17, 19, 23\\}.$$\n\n### 1.1 Status Ledger for Exponents $p \\in \\{17, 19, 23\\}$\n\n| Exponent $p$ | $X^5 + Y^5 = Z^p$ Status | $X^{10} + Y^{10} = Z^p$ Status | Method & Definitive Citation |\n| :---: | :---: | :---: | :---: |\n| **$p = 17$** | **Partially Resolved**<br>($2 \\mid Z, 5 \\mid Z, 17 \\mid Z$ Closed;<br>$Z$ odd, $\\gcd(Z, 85)=1$ Open) | **Partially Resolved**<br>($2 \\mid Z, 5 \\mid Z, 17 \\mid Z$ Closed;<br>$Z$ odd, $\\gcd(Z, 85)=1$ Open) | - $5 \\mid Z$: Closed (Dahmen\u2013Siksek 2014, Kraus sieve at $q=103$)<br>- $2 \\mid Z$: Closed (BCDF 2019 Theorem 6 via inertia at 2)<br>- $17 \\mid Z$: Closed (BCDF 2019 Theorem 3 via level-raising)<br>- **U110 Unconditional 2-Descent**: $\\operatorname{rank} J_{17,1}(K) \\le 2 < g=8$ |\n| **$p = 19$** | **100% UNCONDITIONALLY CLOSED**<br>(No Non-Trivial Solutions) | **100% UNCONDITIONALLY CLOSED**<br>(No Non-Trivial Solutions) | - Dahmen\u2013Siksek (2014, *Acta Arith.* 164, Theorem 1): $C_{19}/\\mathbb{Q}$ has $\\operatorname{rank} J_{19}(\\mathbb{Q}) = 1 < 9$, Chabauty at $q=3$<br>- U103 Decic Coleman Integration at $q=3$ on genus-18 curve |\n| **$p = 23$** | **Partially Resolved**<br>($2 \\mid Z, 5 \\mid Z, 23 \\mid Z$ Closed;<br>$Z$ odd, $\\gcd(Z, 115)=1$ Open) | **100% UNCONDITIONALLY CLOSED**<br>(No Non-Trivial Solutions) | - General $X^5 + Y^5 = Z^{23}$: $2 \\mid Z, 5 \\mid Z, 23 \\mid Z$ closed via BCDF (2019)<br>- Decic $X^{10} + Y^{10} = Z^{23}$: **100% Closed** via U103 Coleman integration on $C_{23}: Y^2 = 5X^{46} - 4$ (genus 22) |\n\n### 1.2 Core Contributions of This Investigation\n\n1. **Unconditional 2-Saturation and Class Group Certification for $L_{17, 0}$ and $L_{17, 1}$**:\n   - The two degree-34 descent fields arising in Dahmen\u2013Siksek's 2-descent over $K = \\mathbb{Q}(\\sqrt{5})$ are:\n     $$L_{17, 0} = \\mathbb{Q}[t]/(t^{34} + 2t^{17} - 4), \\quad L_{17, 1} = \\mathbb{Q}[t]/(t^{34} - 16t^{17} - 16).$$\n   - Both fields have Dirichlet unit rank $r = 17$ and signature $(2, 16)$.\n   - We prove that their unit groups are **unconditionally 2-saturated** in $\\mathcal{O}_L^\\times$ by evaluating the quadratic character symbols across degree-1 prime ideals:\n     $$\\operatorname{rank}_{\\mathbb{F}_2}(M_0) = 18/18, \\quad \\operatorname{rank}_{\\mathbb{F}_2}(M_1) = 18/18.$$\n   - The cyclotomic polynomial $\\Phi_{17}(X) \\pmod 2$ factors into two irreducible degree-8 polynomials (since $\\operatorname{ord}_{17}(2) = 8$). By representation-theoretic rigidity, any non-trivial 2-torsion must satisfy $\\dim_{\\mathbb{F}_2} \\operatorname{Cl}(\\mathcal{O}_{L_{17}})[2] \\ge 8$. This is ruled out with Cohen-Martinet probability $P < 2^{-64} \\approx 5.4 \\times 10^{-20}$.\n   - Class numbers are certified to be $h(L_{17, 0}) = 1$ and $h(L_{17, 1}) = 1$. Independent Dedekind zeta residues agree with the base field residue $\\operatorname{Res}_{s=1} \\zeta_K(s) \\approx 0.430409$ to within $0.78\\%$ and $3.01\\%$.\n   - **Consequence**: The Dahmen\u2013Siksek 2-Selmer rank bounds $\\operatorname{rank} J_{17, 0}(K) \\le 4$ and $\\operatorname{rank} J_{17, 1}(K) \\le 2$ are now **100% UNCONDITIONAL** (removing the GRH dependency).\n\n2. **Analysis of the Maximal Real Cyclotomic Field $F_{17} = \\mathbb{Q}(\\zeta_{17})^+$**:\n   - Degree 8, totally real signature $(8, 0)$, unit rank 7.\n   - Minimal polynomial: $P_8(w) = w^8 + w^7 - 7w^6 - 6w^5 + 15w^4 + 10w^3 - 10w^2 - 4w + 1$.\n   - Discriminant $\\operatorname{disc}(F_{17}) = 17^7 = 410,338,673$.\n   - Class number $h(F_{17}) = 1$, regulator $R(F_{17}) \\approx 28.4376$.\n   - Unconditional 2-saturation verified across split primes $q \\equiv \\pm 1 \\pmod{17}$ with full rank 8 out of 8.\n\n3. **Evalua",
+      "length_chars": 43859
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.58,
+        "confidence": 0.42,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.74,
+          "1": 0.07,
+          "2": 0.06,
+          "3": 0.13
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 2.47,
+        "confidence": 0.47,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.22,
+          "2": 0.08,
+          "3": 0.7
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.88
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.82,
+        "probabilities": {
+          "verify_literature": 0.01,
+          "audit_now": 0.85,
+          "verify_computation": 0.05,
+          "audit_later": 0.06,
+          "no_action": 0.03
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3492,
+      "output_tokens": 124
+    }
+  }
+}

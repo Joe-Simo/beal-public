@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U97_orbit_b_boundary_CM_obstruction",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U97_orbit_b_boundary_CM_obstruction.md",
+      "excerpt": "# U97: Global Analysis and Elimination of the Surviving CM Hilbert Newform Orbit b (2.2.5.1-2000.1-b)\n\n**Date**: 2026-09-17  \n**Context**: Weighted generalized Fermat equation $X^{10} + 256 Y^{10} = Z^{17}$ with $U = X^2$, $V = 2 Y^2$, and $U^5 + 8 V^5 = Z^{17}$, where $\\gcd(X, Y) = 1$, $X, Z$ odd.  \n**Target**: Surviving Hilbert newform orbit $b$ (`2.2.5.1-2000.1-b`) over $K = \\mathbb{Q}(\\sqrt{5})$ at level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (norm 2000).\n\n---\n\n## 1. Proven Identification of Orbit b with the Boundary CM Jacobian $\\operatorname{Jac}(C_0)_{/K}$\n\n### 1.1 The Boundary Curve and Specialization\nThe Frey hyperelliptic curve family $C^-(U, V)$ constructed in Azon (2025) and corrected in U63/U64 is:\n$$C^-(U, V): y^2 = -f(x),$$\n$$f(x) = x^5 + 40 U V x^3 + 320 U^2 V^2 x + 64(8 V^5 - U^5).$$\n\nAt the trivial boundary point $(X, Y, Z) = (1, 0, 1)$, we have $U = 1$ and $V = 0$. Substituting $(U, V) = (1, 0)$ into $f(x)$ yields:\n$$f(x) = x^5 - 64 \\implies C^-(1, 0): y^2 = -(x^5 - 64) = 64 - x^5 = C_0.$$\nThus, the boundary curve $C_0$ is the geometric fiber of the Frey family at $V = 0$.\n\n### 1.2 Complex Multiplication and Real Multiplication\nThe boundary curve $C_0: y^2 = 64 - x^5$ is of genus $g = 2$.\n1. **Complex Multiplication (CM)**:\n   $C_0$ admits the automorphism of order 5:\n   $$\\tau: (x, y) \\mapsto (\\zeta_5 x, y), \\quad \\zeta_5 = e^{2\\pi i / 5}.$$\n   The space of regular 1-forms $H^0(C_0, \\Omega^1)$ is spanned by $\\omega_1 = \\frac{dx}{y}$ and $\\omega_2 = \\frac{x dx}{y}$.\n   Under $\\tau$, we have $\\tau^* \\omega_1 = \\zeta_5 \\omega_1$ and $\\tau^* \\omega_2 = \\zeta_5^2 \\omega_2$.\n   Hence $\\mathbb{Z}[\\zeta_5] \\hookrightarrow \\operatorname{End}(\\operatorname{Jac}(C_0))$.\n   Since $[\\mathbb{Q}(\\zeta_5) : \\mathbb{Q}] = 4 = 2 g$ and $\\mathbb{Q}(\\zeta_5)$ contains no imaginary quadratic subfield, the abelian surface $A_0 = \\operatorname{Jac}(C_0)$ is **absolutely simple with Complex Multiplication by the quartic CM field $M = \\mathbb{Q}(\\zeta_5)$**.\n\n2. **Real Multiplication (RM)**:\n   The maximal totally real subfield of $\\mathbb{Q}(\\zeta_5)$ is $K = \\mathbb{Q}(\\zeta_5 + \\zeta_5^{-1}) = \\mathbb{Q}(\\sqrt{5})$.\n   The endomorphism $\\tau + \\tau^{-1}$ induces an embedding of $\\mathcal{O}_K = \\mathbb{Z}[\\frac{1+\\sqrt{5}}{2}]$ into $\\operatorname{End}_K(A_0)$.\n   Thus, viewed over $K$, $A_0$ is an abelian variety of $\\mathrm{GL}_2$-type with RM by $K$.\n\n### 1.3 Conductor and Hecke Character\nBy Shimura-Taniyama CM theory and Clozel's modularity theorem, the $\\ell$-adic Galois representation of $A_{0/K}$ is induced from an algebraic Hecke character $\\psi_0$ of $M = \\mathbb{Q}(\\zeta_5)$:\n$$\\rho_{A_0, \\lambda} \\cong \\operatorname{Ind}_{G_M}^{G_K} \\psi_0.$$\nThe conductor $\\mathfrak{N}(A_{0/K})$ is given by:\n$$\\mathfrak{N} = d_{M/K} \\cdot N_{M/K}(\\mathfrak{f}(\\psi_0)).$$\n- Relative discriminant: $d_{M/K} = (\\sqrt{5}) = \\mathfrak{p}_5$ of norm 5.\n- Conductor of $\\psi_0$: $\\mathfrak{f}(\\psi_0) = \\mathfrak{P}_2 \\mathfrak{P}_5^2$, where $\\mathfrak{P}_2 = (2)\\mathcal{O}_M$ is the unique inert prime above 2 in $M$, and $\\mathfrak{P}_5$ is the unique prime above 5 in $M$.\n- Taking norms to $K$:\n  $$N_{M/K}(\\mathfrak{P}_2) = \\mathfrak{p}_2^2 = (2)^2, \\quad N_{M/K}(\\mathfrak{P}_5^2) = \\mathfrak{p}_5^2.$$\n  $$\\mathfrak{N} = \\mathfrak{p}_5 \\cdot (2)^2 \\mathfrak{p}_5^2 = (2)^2 \\mathfrak{p}_5^3 = (20\\sqrt{5}).$$\n  $$\\operatorname{Norm}_{K/\\mathbb{Q}}(\\mathfrak{N}) = 4^2 \\cdot 5^3 = 2000.$$\nThis is precisely the LMFDB level ideal `2000.1` ($[2000, 100, -40w + 20]$).\n\n### 1.4 LMFDB Properties and Isogeny Proof\n1. **Coefficient Field**: LMFDB record `2.2.5.1-2000.1-b` has coefficient polynomial $e^2 - 9e + 19 = 0$ with discriminant $81 - 76 = 5$. Thus the coefficient field is $E = \\mathbb{Q}(\\sqrt{5})$, giving an attached abelian variety $A_b$ of dimension $[E : \\mathbb{Q}] = 2$.\n2. **Eigenvalues**:\n   - For all primes $q \\not\\equiv 1 \\pmod 5$ (including inert primes 2, 3, 7 and split primes 19, 29), $x \\mapsto x^5$ is an automorphism of $\\mathbb{F}_q^\\times$, forcing the Frobenius trace of $C_0$ to vanish: $a_{\\mathfrak{q}} = 0$. In LMFDB, orbit $b$ has eigenvalue 0 at all such primes.\n   - For primes $q \\equiv 1 \\pmod 5$:\n     - $q = 11$: $a_{\\mathfrak{q}_1} = 9-e, a_{\\mathfrak{q}_2} = e \\implies S = 9, P = 19$.\n     - $q = 31$: $a_{\\mathfrak{q}_1} = -e-1, a_{\\mathfrak{q}_2} = e-10 \\implies S = -11, P = 29$.\n     - $q = 41$: $a_{\\mathfrak{q}_1} = 11e-50, a_{\\mathfrak{q}_2} = -11e+49 \\implies S = -1, P = -151$.\n   These match the Frobenius traces of $\\operatorname{Jac}(C_0)_{/K}$ **exactly over $\\mathbb{Z}$**.\n3. **Uniqueness**: Out of the 8 newform orbits at level `2000.1` ($a$ through $h$), orbit $b$ is the **unique** newform with CM by $\\mathbb{Q}(\\zeta_5)$.\n4. **Conclusion**: By Faltings' Isogeny Theorem and Strong Multiplicity One, the abelian variety $A_b$ is **provably isogenous over $K$ to $\\operatorname{Jac}(C_0)_{/K}$**.\n\n---\n\n## 2. Local Analysis and Reduction Types\n\n### 2.1 Non-Trivial Solutions\nFor any non-trivial ",
+      "length_chars": 15855
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.07,
+        "confidence": 0.58,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.18,
+          "1": 0.66,
+          "2": 0.08,
+          "3": 0.08
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.39,
+        "confidence": 0.61,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.86,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.12
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.51
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.67,
+        "probabilities": {
+          "verify_literature": 0.01,
+          "verify_computation": 0.04,
+          "no_action": 0.03,
+          "audit_now": 0.74,
+          "audit_later": 0.18
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3519,
+      "output_tokens": 124
+    }
+  }
+}

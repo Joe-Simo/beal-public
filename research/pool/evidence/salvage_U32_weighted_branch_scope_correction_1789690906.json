@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U32_weighted_branch_scope_correction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U32_weighted_branch_scope_correction.md",
+    "excerpt": "# U32: weighted-branch scope correction\n\nStatus: verified research-state correction only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Correction\n\nThe active surviving Beal-derived equation from U15 is\n\n    X^10 + 256 Y^10 = Z^17,\n\nwith gcd(X,Y)=1 and X,Z odd. The coefficient 256 is essential: it is not a tenth power, and no rational common rescaling can simultaneously turn both left-hand terms into integral tenth powers. U15 already recorded that Michaud-Jacobs' unweighted theorem for\n\n    x^(2l) + y^(2m) = z^17\n\nand its ell=5 Hilbert-newform obstructions do not directly cover the weighted equation.\n\nThe modular-method files U26--U31 study the unweighted Michaud-Jacobs ell=5 obstruction. Those calculations may be mathematically useful as method development, but they do not currently eliminate any case of the weighted equation X^10+256Y^10=Z^17 unless a new, proved reduction from the weighted equation to that Hilbert-modular setup is supplied.\n\nTherefore the previous research-state language suggesting that Case 1 versus Case 2 in Michaud-Jacobs determined coverage of the weighted branch was incorrect. No such correspondence has been proved.\n\n## Current valid state of the weighted branch\n\nThe valid chain for X^10+256Y^10=Z^17 is U15--U25 in `research/gaussian-descent/`:\n\n- Gaussian factorization in Z[i];\n- the surviving 17-adic Case III\n\n      a=A^5,\n      b=16*17^4 B^5,\n      G=C^5,\n      H=17 D^5;\n\n- elimination of Cases I and II modulo 11;\n- the finite list of forcing primes and proof that a single forcing prime does not iterate to an infinite p-adic descent;\n- factorization over Q(sqrt(17)), collapse to fixed unit classes, integral-basis coefficient equations, exact 17-adic root locking, and coprime cyclotomic factorization of gamma^5-(eta delta)^5.\n\nThe latest valid weighted checkpoint is U25. Its next obligation is global: exploit the cyclotomic factorization in K(zeta_5), derive a Thue/Thue-Mahler or superelliptic contradiction, or construct a modular method adapted to the coefficient 256 itself.\n\n## Literature check\n\nA search of the 2024 survey `Generalised Fermat equation: a survey of solved cases` and direct searches for the exact equation found no published theorem directly resolving\n\n    X^10 + 256 Y^10 = Z^17\n\nor equivalently the weighted signature-(5,5,17) form\n\n    U^5 + 8 V^5 = Z^17,\n\nwhere U=X^2 and V=2Y^2.\n\nThe survey records unit-coefficient (5,5,n) solutions for n=7 and 19 and Michaud-Jacobs' unweighted (2l,2m,17) result for l,m !=5, but not the present weighted coefficient-8/256 equation.\n\n## Consequence for coverage\n\nU26--U31 remain preserved as auxiliary modular-method research, but they are not counted toward elimination of the active Beal-derived weighted branch. The research program returns to U25 as the mathematically connected frontier.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.34,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.77,
+          "1": 0.13,
+          "2": 0.1,
+          "3": 0.0
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.69
+      }
+    },
+    "usage": {
+      "input_tokens": 1382,
+      "output_tokens": 42
+    }
+  }
+}

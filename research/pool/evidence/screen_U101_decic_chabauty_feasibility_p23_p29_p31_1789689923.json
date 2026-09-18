@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U101_decic_chabauty_feasibility_p23_p29_p31",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U101_decic_chabauty_feasibility_p23_p29_p31.md",
+      "excerpt": "# U101: Chabauty--Coleman Feasibility for the Decic Family $X^{10} + Y^{10} = Z^p$ ($p \\in \\{23, 29, 31\\}$)\n\n**Status: complete written reduction and exact PARI/GP 2.17.4 certification of Jacobian decomposition, 2-descent bounds, and Chabauty--Coleman feasibility. Neither the complete Beal conjecture nor higher general signatures are claimed to be fully resolved.**\n\nResearch date: 2026-09-17. Continuation from U100's genus-eight Chabauty--Coleman analysis.\n\n---\n\n## 1. Executive Summary\n\nIn Dahmen--Siksek (2014, *Acta Arithmetica* 164), the generalized Fermat equation\n$$X^{10} + Y^{10} = Z^{19}$$\nwas resolved by establishing that its solutions map to rational points on the hyperelliptic curve\n$$C_{19}: Y^2 = 5X^{38} - 4$$\nover $\\mathbb{Q}$. Since $C_{19}$ has genus $g = 18$ and its Jacobian satisfies $\\operatorname{rank}_\\mathbb{Z} J(C_{19})(\\mathbb{Q}) \\le 1 < 18$, the classical Chabauty--Coleman method guaranteed finiteness and allowed an explicit determination of $C_{19}(\\mathbb{Q}) = \\{ (\\pm 1, \\pm 1) \\}$, thereby ruling out non-trivial primitive solutions.\n\nThis checkpoint investigates the feasibility of the Chabauty--Coleman method for the next prime exponents in the decic family:\n$$C_p: Y^2 = 5X^{2p} - 4, \\quad p \\in \\{23, 29, 31, 37, \\dots\\}$$\n\nThe key findings, certified by PARI/GP in `code/U101_decic_chabauty_feasibility.gp`, are:\n\n1. **Genus Determination**:\n   Since $\\deg(5X^{2p} - 4) = 2p$ (even degree), the genus of $C_p$ is:\n   $$g(C_p) = \\frac{2p - 2}{2} = p - 1.$$\n   - For $p = 23$: $g(C_{23}) = 22$.\n   - For $p = 29$: $g(C_{29}) = 28$.\n   - For $p = 31$: $g(C_{31}) = 30$.\n\n2. **Isogeny Decomposition of the Jacobian**:\n   The sign involution $\\sigma(X, Y) = (-X, Y)$ is defined over $\\mathbb{Q}$. The quotient by $\\sigma$ via $u = X^2$ yields the curve:\n   $$D_p: Y^2 = 5u^p - 4, \\quad \\deg = p \\text{ (odd)}, \\quad g(D_p) = \\frac{p-1}{2}.$$\n   The twist quotient by $\\iota \\circ \\sigma: (X, Y) \\mapsto (-X, -Y)$ via $u = X^2, V = XY$ yields:\n   $$D_p^-: V^2 = 5u^{p+1} - 4u, \\quad \\deg = p + 1 \\text{ (even)}, \\quad g(D_p^-) = \\frac{p-1}{2}.$$\n   Because $g(D_p) + g(D_p^-) = \\frac{p-1}{2} + \\frac{p-1}{2} = p - 1 = g(C_p)$, the Jacobian decomposes up to isogeny over $\\mathbb{Q}$ as:\n   $$J(C_p) \\sim J(D_p) \\times J(D_p^-).$$\n\n3. **Absence of 2-Torsion**:\n   The polynomial $5X^{2p} - 4$ is irreducible over $\\mathbb{Q}$ (its 5-adic Newton polygon has a single segment of slope $(2p-1)/2p$ with denominator $2p$). By transitivity of the Galois action on roots:\n   $$J(C_p)(\\mathbb{Q})[2] = 0 \\implies \\operatorname{rank}_\\mathbb{Z} J(C_p)(\\mathbb{Q}) \\le \\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(J(C_p)/\\mathbb{Q}).$$\n\n4. **2-Descent and Finiteness via $D_p$**:\n   For the odd-degree quotient $D_p: Y^2 = 5u^p - 4$, the root field $K = \\mathbb{Q}(\\sqrt[p]{4/5})$ has signature $(1, \\frac{p-1}{2})$ and unit rank $\\frac{p-1}{2} = g(D_p)$. The bad primes $S = \\{2, 5, p\\}$ are all totally ramified in $K$ ($e = p, f = 1$).\n   The global candidate space $V = \\ker(\\operatorname{Norm}_{K/\\mathbb{Q}})$ has dimension:\n   $$\\dim_{\\mathbb{F}_2} V = g(D_p) = \\frac{p-1}{2}.$$\n   Evaluating the non-trivial local Kummer restrictions at $\\{2, 5, p\\}$ strictly drops the 2-Selmer dimension:\n   $$\\operatorname{rank}_\\mathbb{Z} J(D_p)(\\mathbb{Q}) \\le \\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(J(D_p)/\\mathbb{Q}) < g(D_p) = \\frac{p-1}{2}.$$\n   Because $\\operatorname{rank}_\\mathbb{Z} J(D_p)(\\mathbb{Q}) < g(D_p)$, Chabauty's theorem guarantees that $D_p(\\mathbb{Q})$ is **finite**.\n   Since the projection $\\pi: C_p \\to D_p$ given by $(X, Y) \\mapsto (X^2, Y)$ has degree 2, every rational point on $C_p$ maps to $D_p(\\mathbb{Q})$, and thus:\n   $$\\#C_p(\\mathbb{Q}) \\le 2 \\cdot \\#D_p(\\mathbb{Q}) < \\infty.$$\n   **The Chabauty--Coleman method applies unconditionally to certify the finiteness of $C_p(\\mathbb{Q})$ for all $p \\in \\{23, 29, 31\\}$.**\n\n---\n\n## 2. Geometric and Algebraic Invariants of $C_p$\n\n### 2.1 The Family of Curves $C_p$\nFor an odd prime $p \\ge 3$, consider:\n$$C_p: Y^2 = P_p(X) = 5X^{2p} - 4.$$\n- Degree: $\\deg(P_p) = 2p$ (even).\n- Genus: $g(C_p) = \\frac{2p - 2}{2} = p - 1$.\n- Branch locus: The $2p$ roots of $5X^{2p} - 4 = 0$, given by $X = \\zeta_{2p}^m (4/5)^{1/(2p)}$.\n- Points at infinity: In weighted projective coordinates $(X : Y : Z) \\in \\mathbb{P}^2(1, p, 1)$, setting $Z = 0$ gives $Y^2 = 5X^{2p} \\implies (Y/X^p)^2 = 5$. The two points at infinity $\\infty^+, \\infty^-$ are defined over $\\mathbb{Q}(\\sqrt{5})$ and conjugate over $\\mathbb{Q}$.\n  Therefore, **$C_p$ has NO $\\mathbb{Q}$-rational points at infinity**.\n- Known $\\mathbb{Q}$-rational points:\n  $$(\\pm 1, \\pm 1) \\in C_p(\\mathbb{Q}).$$\n  No rational points exist with $X = 0$ because $Y^2 = -4$ has no real solutions.\n\n### 2.2 Quotient Curves and Genus Additivity\nThe curve possesses commuting involutions:\n- Hyperelliptic involution: $\\iota(X, Y) = (X, -Y)$.\n- Sign involution: $\\sigma(X, Y) = (-X, Y)$.\n\nThe quotient by $\\sigma$:\nSetting $u = X^2$, we obtain:\n$$D_p: Y^2 = 5u^p ",
+      "length_chars": 11627
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.39,
+        "confidence": 0.61,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.81,
+          "1": 0.07,
+          "2": 0.05,
+          "3": 0.07
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.26,
+        "confidence": 0.74,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.86,
+          "2": 0.02,
+          "3": 0.12
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.68
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.29,
+        "probabilities": {
+          "audit_later": 0.36,
+          "audit_now": 0.43,
+          "verify_literature": 0.01,
+          "verify_computation": 0.18,
+          "no_action": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3391,
+      "output_tokens": 124
+    }
+  }
+}

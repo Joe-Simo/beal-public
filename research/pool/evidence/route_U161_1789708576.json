@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U161",
+  "timestamp": "2026-09-18T01:16:16-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Residual after U160: (4,4,p) p odd prime; (4,p,q) p != q odd primes; (p,q,r) odd primes not all equal... plus (p,p,r) r odd prime >= 5 outside literature. Conditional closures rely on 7 named published facts."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which?",
+      "criteria": {
+        "four_p_q_lit": "literature check (4,p,q), p != q: any BS-type theorem x^4 + y^p = z^q? (likely none)",
+        "ppq_lit": "literature rows for (p,p,q) q odd: (5,5,7),(5,5,19),(7,7,5) Dahmen-Siksek; (3,3,q) to 1e9 \u2014 add to ledger as named hypotheses? (bookkeeping only)",
+        "residual_refine": "refine ResidualShape conditionally: a theorem listing the residual after all conditional closures (exact account)",
+        "stop": "stop adding bookkeeping; the frontier is fixed"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "residual_refine",
+        "confidence": 0.84,
+        "probabilities": {
+          "ppq_lit": 0.07,
+          "four_p_q_lit": 0.03,
+          "stop": 0.02,
+          "residual_refine": 0.88
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 535,
+      "output_tokens": 60
+    }
+  }
+}

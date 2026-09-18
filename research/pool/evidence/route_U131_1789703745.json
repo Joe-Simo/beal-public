@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U131",
+  "timestamp": "2026-09-17T23:55:45-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "C045: class (2m,2n,r odd) reduces exactly over Z[i] to Re((u+vi)^r), Im((u+vi)^r) both perfect powers, C=u^2+v^2. Literature: only the diagonal m=n, r=3 is solved. Open: (4,6,3),(4,4,5),(4,4,7),(4,6,5),... Choose the FIRST open sub-family to attack."
+  },
+  "questions": {
+    "first": {
+      "type": "choice",
+      "instructions": "Which sub-family first?",
+      "criteria": {
+        "r3_m_ne_n": "r=3, m!=n: Re=u(u^2-3v^2), Im=v(3u^2-v^2); coprime factors u, u^2-3v^2 must each be perfect powers of the right exponents",
+        "r5_diag": "r=5, m=n=2 i.e. (4,4,5): both Re and Im must be squares",
+        "general_r": "general odd r: show Re and Im cannot both be perfect powers via the factorisation u*Phi(u,v)",
+        "lean_first": "formalise the Z[i] reduction in Lean before any sub-family"
+      }
+    },
+    "exact_test": {
+      "type": "noul",
+      "instructions": "Does the chosen route have a cheap exact discriminating test on the (u,v) parametrisation?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "first": {
+        "type": "choice",
+        "choice": "r3_m_ne_n",
+        "confidence": 0.64,
+        "probabilities": {
+          "r5_diag": 0.26,
+          "general_r": 0.0,
+          "r3_m_ne_n": 0.73,
+          "lean_first": 0.01
+        }
+      },
+      "exact_test": {
+        "type": "noul",
+        "noul": 0.36
+      }
+    },
+    "usage": {
+      "input_tokens": 606,
+      "output_tokens": 75
+    }
+  }
+}

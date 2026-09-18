@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U100_orbit_h_hecke_elimination",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U100_orbit_h_hecke_elimination.md",
+      "excerpt": "# U100: Exact Hecke Eigenvalues of Orbit h (2.2.5.1-2000.1-h) at Prime 11 and Complete 100% Elimination of Level-2000 Non-CM Orbits\n\n**Date**: 2026-09-17  \n**Status**: Exact symbolic verification, complete arithmetic certificate, and closed Hecke elimination ledger. Beal's conjecture and the weighted auxiliary equation remain under study.  \n**Context**: Weighted generalized Fermat equation $X^{10} + 256 Y^{10} = Z^{17}$ with $U = X^2$, $V = 2 Y^2$, and $U^5 + 8 V^5 = Z^{17}$, $\\gcd(X, Y) = 1$, $X, Z$ odd. Frey hyperelliptic curve $C^-(U, V): y^2 = -f(x)$ at target level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (norm 2000) over $K = \\mathbb{Q}(\\sqrt{5})$.\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U64, the eight Hilbert newform orbits at level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (LMFDB label `2.2.5.1-2000.1`, orbits $a$ through $h$) were subjected to local Hecke trace sieve at the split prime 11:\n- Six non-CM orbits ($a, c, d, e, f, g$) were strictly eliminated at prime 11 (0 compatible parameter pairs).\n- Orbit $b$ matched the boundary curve $(U, V) = (1, 0)$ (the CM curve $C_0: y^2 = 64 - x^5$), which was subsequently proven eliminated globally in U97 via its complex multiplication obstruction and prime-5 Galois certificate.\n- **Orbit $h$** (`2.2.5.1-2000.1-h`) could not be parsed previously due to a failed remote JSON response, leaving orbit $h$ as the sole unexamined orbit in the level-2000 newspace.\n\nA live fetch of the LMFDB API endpoint for orbit $h$ has now been successfully retrieved and inspected. This checkpoint extracts the exact Hecke eigenvalues for orbit $h$ at the two prime ideals above 11, calculates their trace sum and product, compares them against the U64 admissible traces for $C^-$, and achieves **100% elimination across all 7 non-CM orbits ($a, c, d, e, f, g, h$)**, completing the total elimination of all 8 orbits at level 2000.1.\n\n---\n\n## 2. Exact LMFDB Data for Orbit h\n\nFrom the LMFDB API record `2.2.5.1-2000.1-h` (table `hmf_hecke`):\n- **Base field**: $K = \\mathbb{Q}(\\sqrt{5})$, ring of integers $\\mathcal{O}_K = \\mathbb{Z}[w]$ with $w = \\frac{1+\\sqrt{5}}{2}$ ($w^2 - w - 1 = 0$).\n- **Level ideal**: $\\mathfrak{N} = [2000, 100, -40w + 20] = (2)^2 \\mathfrak{p}_5^3$, with $\\operatorname{Norm}_{K/\\mathbb{Q}}(\\mathfrak{N}) = 2000$.\n- **Hecke coefficient polynomial**:\n  $$P(x) = x^4 - 10x^3 - 13x^2 + 190x + 241.$$\n  This polynomial is irreducible over $\\mathbb{Q}$ with discriminant $\\Delta(P) = 1907942400 = 2^9 \\cdot 3^4 \\cdot 5^2 \\cdot 17 \\cdot 107$.\n- **Prime ideals above 11**:\n  The prime 11 splits in $K$: $11\\mathcal{O}_K = \\mathfrak{q}_{11, 1} \\mathfrak{q}_{11, 2}$, with:\n  $$\\mathfrak{q}_{11, 1} = [11, 11, -3w + 2] \\quad (\\text{LMFDB standard prime index } 3),$$\n  $$\\mathfrak{q}_{11, 2} = [11, 11, -3w + 1] \\quad (\\text{LMFDB standard prime index } 4).$$\n- **Exact Hecke eigenvalues** (in the basis of $E = \\mathbb{Q}[e]/(P(e))$):\n  $$a_{\\mathfrak{q}_{11, 1}} = -\\frac{2}{91}e^3 + \\frac{15}{91}e^2 + \\frac{18}{91}e + \\frac{120}{91},$$\n  $$a_{\\mathfrak{q}_{11, 2}} = \\frac{2}{91}e^3 - \\frac{15}{91}e^2 - \\frac{18}{91}e + \\frac{335}{91}.$$\n\n---\n\n## 3. Algebraic Invariants of Orbit h at Prime 11\n\n### 3.1 Trace Sum and Product\nLet $a_1 = a_{\\mathfrak{q}_{11, 1}}$ and $a_2 = a_{\\mathfrak{q}_{11, 2}}$.\n\n1. **Sum**:\n   $$S = a_1 + a_2 = \\left(-\\frac{2}{91} + \\frac{2}{91}\\right)e^3 + \\left(\\frac{15}{91} - \\frac{15}{91}\\right)e^2 + \\left(\\frac{18}{91} - \\frac{18}{91}\\right)e + \\left(\\frac{120}{91} + \\frac{335}{91}\\right)$$\n   $$S = 0 \\cdot e^3 + 0 \\cdot e^2 + 0 \\cdot e + \\frac{455}{91} = \\frac{5 \\cdot 91}{91} = 5 \\in \\mathbb{Z}.$$\n\n2. **Product**:\n   Reducing $a_1 \\cdot a_2$ modulo the defining polynomial $P(e) = e^4 - 10e^3 - 13e^2 + 190e + 241$:\n   $$P = a_1 \\cdot a_2 \\equiv 5 \\pmod{P(e)} \\in \\mathbb{Z}.$$\n\n3. **Difference and Quadratic Subfield**:\n   $$a_2 - a_1 = \\frac{4}{91}e^3 - \\frac{30}{91}e^2 - \\frac{36}{91}e + \\frac{215}{91}.$$\n   Squaring and reducing modulo $P(e)$:\n   $$(a_2 - a_1)^2 \\equiv 5 \\pmod{P(e)}.$$\n   Therefore, $a_2 - a_1 = \\pm \\sqrt{5}$.\n\n4. **Minimal Polynomial over $\\mathbb{Q}$**:\n   The characteristic polynomial of $a_1$ and $a_2$ is:\n   $$\\operatorname{charpoly}(a_i) = \\operatorname{Res}_e(P(e), x - a_i) = (x^2 - 5x + 5)^2.$$\n   Hence $a_1$ and $a_2$ are algebraic integers generating the real quadratic subfield $\\mathbb{Q}(\\sqrt{5}) \\subset E$, with:\n   $$a_1, a_2 = \\frac{5 \\mp \\sqrt{5}}{2}.$$\n\n### 3.2 Invariance under Embeddings and Residues Modulo 17\nSince $a_1, a_2 \\in \\mathbb{Q}(\\sqrt{5})$ are conjugate under the non-trivial automorphism $\\sqrt{5} \\mapsto -\\sqrt{5}$, any complex embedding of $E$ either preserves $a_1, a_2$ or interchanges them. Consequently:\n- The sum $S = a_1 + a_2 = 5$ is invariant across all embeddings.\n- The product $P = a_1 a_2 = 5$ is invariant across all embeddings.\n\nReducing modulo the deformation characteristic $\\ell = 17$:\n$$S \\equiv 5 \\pmod{17}, \\quad P \\equiv 5 \\pmod{17}.$$\n\n---\n\n## 4. Elimination of Orbit h at Prime 11\n\n### 4.1 U64 Admi",
+      "length_chars": 9155
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.51,
+        "confidence": 0.49,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.72,
+          "1": 0.13,
+          "2": 0.07,
+          "3": 0.08
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.22,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.92,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.84
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.27,
+        "probabilities": {
+          "audit_later": 0.09,
+          "verify_computation": 0.39,
+          "verify_literature": 0.01,
+          "no_action": 0.09,
+          "audit_now": 0.42
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3468,
+      "output_tokens": 124
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U111_real_cyclotomic_audit_p400_p500",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_real_cyclotomic_audit_p400_p500.md",
+    "excerpt": "# Checkpoint U111: Real Cyclotomic Class Number and Sahoo Class $\\mathcal{P}_1$ Audit for $400 < p < 500$\n\n**Date**: 2026-09-17  \n**Author**: Real Cyclotomic Class Number Auditor / Arithmetic Geometry Research Group  \n**Target Equation**: $X^{2\\ell} + Y^{2m} = Z^p$, prime exponents $\\ell, m \\ge 5$ (asymptotic bound $\\ell, m > 10^{60}$), prime $p \\in (400, 500)$  \n**Branch**: All-even Beal candidate $A^{2r} + B^{2s} = C^{2t}$ with $17 \\nmid t$  \n**Supporting Code**: [`code/U111_cyclotomic_p400_p500.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_cyclotomic_p400_p500.py)  \n**Machine-Readable Audit**: [`research/checkpoints/U111_real_cyclotomic_audit_p400_p500.json`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U111_real_cyclotomic_audit_p400_p500.json)  \n**Primary References**:\n- S. Sahoo, *Asymptotic solutions of generalized Fermat equations $x^{2l} + y^{2m} = z^p$*, preprint (2025).\n- R. Schoof, *Class numbers of real cyclotomic fields of prime conductor*, Math. Comp. 72, no. 242 (2003), 913\u2013937.\n- J. C. Miller, *Real cyclotomic fields of prime conductor and their class numbers*, Math. Comp. 84, no. 295 (2015), 2459\u20132469; arXiv:1407.2373 (2014).\n- On-Line Encyclopedia of Integer Sequences (OEIS), Sequences A230869 ($p$ with $h_p^+ > 1$) and A230870 ($h_p^+$ values).\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint audits the arithmetic of real cyclotomic fields $K^+ = \\mathbb{Q}(\\zeta_p)^+ = \\mathbb{Q}(2\\cos(2\\pi/p))$ and Sahoo's (2025) Class $\\mathcal{P}_1$ asymptotic elimination for all 17 primes in $400 < p < 500$:\n$$p \\in \\{401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499\\}.$$\n\n### Key Results\n\n1. **Inertia of 2 in $K^+ = \\mathbb{Q}(\\zeta_p)^+$**:\n   - Exactly **9 primes (52.9%)** have $2$ completely inert in $K^+$ ($g^+ = 1$, residue degree $f^+ = \\frac{p-1}{2}$):\n     $$\\mathbf{P_{\\text{inert}} \\cap (400, 500) = \\{419, 421, 443, 461, 463, 467, 479, 487, 491\\}}.$$\n   - Exactly **8 primes (47.1%)** fail inertia ($g^+ \\ge 2$):\n     $$\\mathbf{P_{\\text{split}} \\cap (400, 500) = \\{401, 409, 431, 433, 439, 449, 457, 499\\}}.$$\n     - Five primes fail due to quadratic splitting $p \\equiv 1 \\pmod 8$ ($\\{401, 409, 433, 449, 457\\}$), where $2$ splits in $\\mathbb{Q}(\\sqrt{p}) \\subset K^+$.\n     - Three primes fail due to small multiplicative order mod $p$ ($\\{431, 439, 499\\}$).\n\n2. **Real Cyclotomic Class Numbers $h_p^+$ from Literature**:\n   - From Schoof (2003, Main Table; OEIS A230869/A230870), exactly **3 primes** in $(400, 500)$ have non-trivial class number $h_p^+ > 1$:\n     - **$p = 401$**: $h_{401}^+ = 45$ (term 9 of A230869/A230870);\n     - **$p = 457$**: $h_{457}^+ = 5$ (term 10 of A230869/A230870);\n     - **$p = 491$**: $h_{491}^+ = 8$ (term 11 of A230869/A230870).\n   - All other 14 primes in $(400, 500)$ have $h_p^+ = 1$ (under GRH).\n\n3. **The $p = 491$ Class Number Anomaly ($h_{491}^+ = 8$)**:\n   - For $p = 491$, $\\operatorname{ord}_{491}(2) = 490 = p - 1$, so **2 is completely inert** in $K^+$ ($f^+ = 245, g^+ = 1$).\n   - However, $h_{491}^+ = 8 = 2^3$ is **even** ($2 \\mid h_{491}^+$!).\n   - Joining $p = 163$ ($h_{163}^+ = 4$) and $p = 349$ ($h_{349}^+ = 16$), $p = 491$ is the third prime with 2 inert and an even class number.\n   - The non-trivial 2-torsion in the class group $\\operatorname{Cl}(\\mathcal{O}_{K^+})[2] \\ne 0$ permits unramified quadratic extensions of $K^+$, **causing Sahoo's Kummer descent lemma to fail**.\n   - Therefore, $p = 491$ **fails Class $\\mathcal{P}_1$** despite 2 being completely inert.\n\n4. **Class $\\mathcal{P}_1$ Certification (under GRH)**:\n   - Exactly **8 primes (47.1%)** satisfy both criteria ($2$ inert and $h_p^+ = 1$):\n     $$\\mathbf{\\mathcal{P}_1 \\cap (400, 500) = \\{419, 421, 443, 461, 463, 467, 479, 487\\}} \\quad (8 / 17 = 47.1\\%).$$\n     For each such prime, Sahoo's (2025) Theorem eliminates all non-trivial primitive integer solutions to $X^{2\\ell} + Y^{2m} = Z^p$ for exponents $\\ell, m > 10^{60}$.\n\n5. **Cumulative Progress across $19 \\le p < 500$**:\n   - Across all five audited intervals ($[19, 100)$, $(100, 200)$, $(200, 300)$, $(300, 400)$, and $(400, 500)$), comprising 88 primes:\n     - Exactly **48 out of 88 primes (54.5%)** belong to Class $\\mathcal{P}_1$.\n\n---\n\n## 2. Algebraic Decomposition of 2 in $\\mathbb{Q}(\\zeta_p)^+$ for $400 < p < 500$\n\n### 2.1 Theoretical Invariants\nLet $p \\in (400, 500)$ be prime, and let $K^+ = \\mathbb{Q}(\\zeta_p)^+$ have degree $d = \\frac{p-1}{2}$.\nThe Galois group is $G^+ = \\operatorname{Gal}(K^+/\\mathbb{Q}) \\cong (\\mathbb{Z}/p\\mathbb{Z})^\\times / \\{\\pm 1\\}$.\nLet $f = \\operatorname{ord}_p(2)$ be the multiplicative order of 2 modulo $p$.\n- Residue degree in $K^+$:\n  $$f^+ = \\begin{cases} f/2 & \\text{if } f \\text{ is even and } 2^{f/2} \\equiv -1 \\pmod p, \\\\ f & \\text{otherwise.} \\end{cases}$$\n- Splitting index:\n  $$g^+ = \\frac{d}{f^+} = \\frac{(p-1)/2}{f^+}.$$\n- The prime 2 is **inert** in $K^+$ if and only if $g^+ = 1 \\iff f^+ = d$.\n\n### 2.2 Classification of Splitting in $(400, "
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.94
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.56,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.62,
+          "1": 0.22,
+          "2": 0.14,
+          "3": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3236,
+      "output_tokens": 94
+    }
+  }
+}

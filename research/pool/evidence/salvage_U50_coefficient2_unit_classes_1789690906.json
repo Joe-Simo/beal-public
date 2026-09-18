@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U50_coefficient2_unit_classes",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U50_coefficient2_unit_classes.md",
+    "excerpt": "# U50: coefficient-2 branch \u2014 unit classes over Q(sqrt(5))\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input from U49\n\nFor a surviving solution, with K=Q(sqrt(5)),\n\n    H_- = m^4+(22-8sqrt(5))m^2n^2+n^4\n\nhas principal ideal equal to a 17th power, and the conjugate factor is coprime to it. Since K has class number 1, H_- is a unit times an element 17th power.\n\n## Integral basis and unit ambiguity\n\nLet\n\n    omega=(1+sqrt(5))/2,\n\nso O_K=Z[omega], omega^2=omega+1, and Norm(omega)=-1. The unit group is generated, up to sign, by omega.\n\nIn this basis\n\n    H_- = m^4+30m^2n^2+n^4 - 16m^2n^2 omega.\n\nBecause the exponent 17 is odd, -1 itself is a 17th power (-1)^17, so sign contributes no separate class. Modulo 17th powers of units, the only ambiguity is therefore\n\n    epsilon = omega^k,  k=0,...,16.\n\nThus every surviving solution satisfies\n\n    m^4+30m^2n^2+n^4-16m^2n^2 omega\n       = omega^k (A+B omega)^17                 (1)\n\nfor some integers A,B and one of exactly 17 unit classes k.\n\nWolfram exact arithmetic also verifies\n\n    omega^17 = 987+1597 omega.\n\n## Local unit-class sieve\n\nA finite-field implementation of O_K/q = F_q[omega]/(omega^2-omega-1) was used to test equation (1) modulo auxiliary primes. For q=67, the 17th-power map is nontrivial and the quartic shape eliminates six unit classes outright.\n\nThe surviving classes modulo 17 are\n\n    k in {0,1,2,3,4,6,9,13,14,15,16}.\n\nThe eliminated classes are\n\n    k in {5,7,8,10,11,12}.\n\nChecks at q=101,103,137 did not further reduce the unit classes in the unrestricted quartic equation. Imposing U48's special condition 103|mn also leaves all 17 unit classes locally possible at 103, so no false strengthening is claimed.\n\n## Consequence\n\nThe coefficient-2 branch has now been reduced from an arbitrary algebraic 17th-power relation to eleven explicit unit-twisted equations of the form (1), together with\n\n    gcd(m,n)=1,\n    m,n opposite parity,\n    103|mn,\n    m+i n = Gaussian-unit*(r+i s)^17.\n\nThis is finite in the unit parameter.\n\n## Next obligation\n\nUse several primes q with 17 dividing |(O_K/q)^*| and include the Gaussian-17th-power condition simultaneously, not merely the quartic equation. The q=67 sieve ignored that additional structure. A combined local sieve should classify tuples (m:n,k) compatible with both\n\n    m+i n = (r+i s)^17\n\nand (1), and may eliminate more or all eleven surviving unit classes.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.0,
+        "confidence": 0.83,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.02,
+          "2": 0.87,
+          "3": 0.08
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 1365,
+      "output_tokens": 42
+    }
+  }
+}

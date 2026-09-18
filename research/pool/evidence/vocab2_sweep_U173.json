@@ -1,0 +1,162 @@
+[
+ [
+  1.02,
+  "(4,q,r), q != r odd prim",
+  "parity/2-adic structure beyond mod 8 for the specific signature (exponent 4 term is 0 or 1 mod 16)"
+ ],
+ [
+  0.93,
+  "(4,q,r), q != r odd prim",
+  "descent on the Frey-Hellegouarch curve of the (2,q,r)-type equation over Q when one exponent is 2 af"
+ ],
+ [
+  0.85,
+  "(4,q,r), q != r odd prim",
+  "reduce (4,q,r) to x^2 + y^q = z^r with x a square and use the (2,q,r) literature row by row (which ("
+ ],
+ [
+  0.83,
+  "(4,5,7) all arrangements",
+  "parity/2-adic structure beyond mod 8 for the specific signature (exponent 4 term is 0 or 1 mod 16)"
+ ],
+ [
+  0.82,
+  "(4,5,7) all arrangements",
+  "descent on the Frey-Hellegouarch curve of the (2,q,r)-type equation over Q when one exponent is 2 af"
+ ],
+ [
+  0.77,
+  "(4,5,7) all arrangements",
+  "reduce (4,q,r) to x^2 + y^q = z^r with x a square and use the (2,q,r) literature row by row (which ("
+ ],
+ [
+  0.73,
+  "(p,q,r) distinct odd pri",
+  "parity/2-adic structure beyond mod 8 for the specific signature (exponent 4 term is 0 or 1 mod 16)"
+ ],
+ [
+  0.69,
+  "(p,q,r) distinct odd pri",
+  "descent on the Frey-Hellegouarch curve of the (2,q,r)-type equation over Q when one exponent is 2 af"
+ ],
+ [
+  0.67,
+  "(4,5,7) all arrangements",
+  "p-adic / LTE constraints on v_p(C^r - B^q) when p | (C - B) and q = r fails; find a forced prime-pow"
+ ],
+ [
+  0.66,
+  "(3,5,7) all arrangements",
+  "parity/2-adic structure beyond mod 8 for the specific signature (exponent 4 term is 0 or 1 mod 16)"
+ ],
+ [
+  0.65,
+  "(4,q,r), q != r odd prim",
+  "p-adic / LTE constraints on v_p(C^r - B^q) when p | (C - B) and q = r fails; find a forced prime-pow"
+ ],
+ [
+  0.65,
+  "(3,5,7) all arrangements",
+  "descent on the Frey-Hellegouarch curve of the (2,q,r)-type equation over Q when one exponent is 2 af"
+ ],
+ [
+  0.62,
+  "(3,5,7) all arrangements",
+  "p-adic / LTE constraints on v_p(C^r - B^q) when p | (C - B) and q = r fails; find a forced prime-pow"
+ ],
+ [
+  0.61,
+  "(p,q,r) distinct odd pri",
+  "p-adic / LTE constraints on v_p(C^r - B^q) when p | (C - B) and q = r fails; find a forced prime-pow"
+ ],
+ [
+  0.59,
+  "(p,q,r) distinct odd pri",
+  "reduce (4,q,r) to x^2 + y^q = z^r with x a square and use the (2,q,r) literature row by row (which ("
+ ],
+ [
+  0.56,
+  "(3,5,7) all arrangements",
+  "reduce (4,q,r) to x^2 + y^q = z^r with x a square and use the (2,q,r) literature row by row (which ("
+ ],
+ [
+  0.49,
+  "(4,5,7) all arrangements",
+  "Runge's method or Thue-type finiteness with PARI thue() after fixing one base to a small value (a na"
+ ],
+ [
+  0.47,
+  "(4,5,7) all arrangements",
+  "treat the exponent-4 term as a norm from Z[i]: A^4 = N(A^2) and factor C^r - B^q over Z[i]? (needs a"
+ ],
+ [
+  0.47,
+  "(3,5,7) all arrangements",
+  "Runge's method or Thue-type finiteness with PARI thue() after fixing one base to a small value (a na"
+ ],
+ [
+  0.45,
+  "(4,q,r), q != r odd prim",
+  "Runge's method or Thue-type finiteness with PARI thue() after fixing one base to a small value (a na"
+ ],
+ [
+  0.44,
+  "(4,5,7) all arrangements",
+  "solve the S-unit-like specialisation: fix A in {2,3,5,6,7,10} and use known results on Pillai/Catala"
+ ],
+ [
+  0.41,
+  "(3,5,7) all arrangements",
+  "treat the exponent-4 term as a norm from Z[i]: A^4 = N(A^2) and factor C^r - B^q over Z[i]? (needs a"
+ ],
+ [
+  0.39,
+  "(p,q,r) distinct odd pri",
+  "Runge's method or Thue-type finiteness with PARI thue() after fixing one base to a small value (a na"
+ ],
+ [
+  0.39,
+  "(3,5,7) all arrangements",
+  "solve the S-unit-like specialisation: fix A in {2,3,5,6,7,10} and use known results on Pillai/Catala"
+ ],
+ [
+  0.38,
+  "(4,q,r), q != r odd prim",
+  "treat the exponent-4 term as a norm from Z[i]: A^4 = N(A^2) and factor C^r - B^q over Z[i]? (needs a"
+ ],
+ [
+  0.35,
+  "(4,q,r), q != r odd prim",
+  "solve the S-unit-like specialisation: fix A in {2,3,5,6,7,10} and use known results on Pillai/Catala"
+ ],
+ [
+  0.29,
+  "(p,q,r) distinct odd pri",
+  "treat the exponent-4 term as a norm from Z[i]: A^4 = N(A^2) and factor C^r - B^q over Z[i]? (needs a"
+ ],
+ [
+  0.29,
+  "(p,q,r) distinct odd pri",
+  "solve the S-unit-like specialisation: fix A in {2,3,5,6,7,10} and use known results on Pillai/Catala"
+ ],
+ [
+  0.09,
+  "(4,5,7) all arrangements",
+  "Eisenstein-integer factorisation of the cubic term A^3 = C^r - B^q (needs a sum/difference of cubes:"
+ ],
+ [
+  0.08,
+  "(p,q,r) distinct odd pri",
+  "Eisenstein-integer factorisation of the cubic term A^3 = C^r - B^q (needs a sum/difference of cubes:"
+ ],
+ [
+  0.08,
+  "(3,5,7) all arrangements",
+  "Eisenstein-integer factorisation of the cubic term A^3 = C^r - B^q (needs a sum/difference of cubes:"
+ ],
+ [
+  0.05,
+  "(4,q,r), q != r odd prim",
+  "Eisenstein-integer factorisation of the cubic term A^3 = C^r - B^q (needs a sum/difference of cubes:"
+ ]
+]

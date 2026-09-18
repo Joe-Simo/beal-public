@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U107_class_p1_arithmetic_classification_and_non_p1_constructions",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U107_class_p1_arithmetic_classification_and_non_p1_constructions.md",
+    "excerpt": "# Checkpoint U107: Arithmetic Classification of Exponents $p \\in [19, 100]$ in Class $\\mathcal{P}_1$ and Modular Constructions for Non-$\\mathcal{P}_1$ Primes\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Geometry Research Group  \n**Target Equation**: $X^{2\\ell} + Y^{2m} = Z^p$ with prime exponents $\\ell, m \\ge 5$ and prime $p \\ge 19$.  \n**Branch**: All-even Beal candidate $A^{2r} + B^{2s} = C^{2t}$ with $17 \\nmid t$.  \n**Supporting Code**: `code/check_class_p1.gp`.  \n**Status**: Exact PARI/GP 2.17.4 arithmetic classification, Sahoo $\\mathcal{P}_1$ certification, and geometric construction framework for non-$\\mathcal{P}_1$ exponents.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint deepens the arithmetic geometry of the generalized Fermat equation\n$$X^{2\\ell} + Y^{2m} = Z^p, \\quad \\ell, m \\ge 5, \\quad p \\ge 19 \\text{ prime}, \\quad \\gcd(X, Y, Z) = 1,$$\nwhich constitutes the surviving Diophantine core of the all-even Beal branch outside the $17 \\mid t$ branch.\n\n### Key Results\n1. **PARI/GP Complete Classification for $p \\in [19, 100]$**:\n   Among the 18 primes in $[19, 100]$, exactly **11 primes (61%)** satisfy the hypotheses of Sahoo's Theorem (Class $\\mathcal{P}_1$):\n   $$\\mathcal{P}_1 \\cap [19, 100] = \\{19, 23, 37, 47, 53, 59, 61, 67, 71, 79, 83\\}.$$\n   For each such prime, the equation has **no non-trivial primitive integer solutions** for $\\ell, m > V_p \\approx 10^{60}$.\n2. **Analysis of the 7 Non-$\\mathcal{P}_1$ Primes**:\n   The remaining 7 primes $\\{29, 31, 41, 43, 73, 89, 97\\}$ fail Sahoo's hypotheses via distinct arithmetic mechanisms:\n   - **$p = 29$**: $2$ is inert in $K_{29}$, and $29 \\equiv 5 \\pmod 8$, but the narrow class number is even ($h_{29}^+ = 8$), violating $2 \\nmid h_K^+$.\n   - **Split-2 Primes ($p = 31, 43$)**: $2$ splits into 3 prime ideals in $K_p$.\n   - **$p \\equiv 1 \\pmod 8$ Primes ($p = 41, 73, 89, 97$)**: By quadratic reciprocity, $(\\frac{2}{p}) = 1$, so $2$ splits in the quadratic subfield $\\mathbb{Q}(\\sqrt{p}) \\subset K_p$. Thus, **every prime $p \\equiv 1 \\pmod 8$ is automatically a split-2 prime in $K_p$**.\n3. **Frey and Abelian Variety Framework for Non-$\\mathcal{P}_1$ Primes**:\n   We establish explicit geometric constructions to overcome the non-$\\mathcal{P}_1$ bottlenecks:\n   - For $p = 29$: direct algorithmic resolution of the $S_{K, 2}$-unit equation via Alvarado et al. (2021);\n   - For split-2 primes ($p = 31, 43, \\dots$): descent to the decomposition subfield $F_2 \\subset K_p$ where $2$ is inert, and Darmon's Frey hyperelliptic Jacobians over $\\mathbb{Q}$.\n\n---\n\n## 2. Examination of Sahoo's Class $\\mathcal{P}_1$ Elimination Mechanism\n\n### 2.1 The Modular Framework\nLet $p \\ge 19$ be a prime, and let $K = \\mathbb{Q}(\\zeta_p + \\zeta_p^{-1}) = \\mathbb{Q}(\\zeta_p)^+$ be the maximal totally real subfield of degree $d = (p-1)/2$.\nLet $(X, Y, Z)$ be a primitive non-trivial solution to $X^{2\\ell} + Y^{2m} = Z^p$, with $X$ even and $Y$ odd.\nDescent over $\\mathbb{Z}[i]$ and factorization over $K$ yields a Hellegouarch--Frey elliptic curve $E / K$ with:\n- Full 2-torsion: $E(K)[2] \\cong (\\mathbb{Z}/2\\mathbb{Z})^2$;\n- Semistable reduction over $K$;\n- Potential multiplicative reduction at all prime ideals dividing $2\\mathcal{O}_K$.\n\n**Modularity**: Because $p \\ge 19$, $K$ is an abelian totally real field unramified at $3, 5, 7$. By **Sho Yoshikawa (2018, Theorem 1.2)**, every elliptic curve over $K$ is unconditionally modular.\n\n### 2.2 The $S$-Unit Inertia Obstruction\nBy level lowering (Fujiwara, Jarvis, Rajaei, Freitas--Siksek), for $\\ell > D_K$, the mod $\\ell$ representation $\\bar{\\rho}_{E, \\ell}$ arises from a Hilbert newform $f$ of parallel weight 2 over $K$ at level $\\mathfrak{n}_\\ell \\in \\{2\\mathcal{O}_K, 2\\mathcal{O}_K \\mathfrak{r}\\}$.\nFor $\\ell$ exceeding Mazur's principle bounds, the eigenfield is $\\mathbb{Q}_f = \\mathbb{Q}$.\nBy **Eichler--Shimura** (unconditional since $[K:\\mathbb{Q}] = (p-1)/2$ is odd for $p \\equiv 3 \\pmod 4$, and via Blasius/Darmon), $f$ corresponds to an elliptic curve $E' / K$ with:\n1. Full 2-torsion over $K$;\n2. Good reduction outside $S_{K, 2}$ (if $p \\nmid X$) or $S_{K, 2p}$ (if $p \\mid X$);\n3. Potential multiplicative reduction at every prime $\\mathfrak{P} \\mid 2$ (so $v_\\mathfrak{P}(j_{E'}) < 0$).\n\nFull 2-torsion gives a Legendre model $Y^2 = X(X-1)(X-\\lambda)$, where $(\\lambda, \\mu)$ with $\\mu = 1 - \\lambda$ is a solution to the $S$-unit equation:\n$$\\lambda + \\mu = 1, \\quad \\lambda, \\mu \\in \\mathcal{O}_S^\\times.$$\nThe $j$-invariant of $E'$ satisfies:\n$$v_\\mathfrak{P}(j_{E'}) \\ge 8 v_\\mathfrak{P}(2) - 2 \\max(|v_\\mathfrak{P}(\\lambda)|, |v_\\mathfrak{P}(\\mu)|).$$\n\n### 2.3 Why Class $\\mathcal{P}_1$ Forces a Contradiction\nWhen:\n1. $2$ is **inert** in $K$ (so $\\mathfrak{P}_2 = 2\\mathcal{O}_K$ is the unique prime above 2, $v_{\\mathfrak{P}_2}(2) = 1$);\n2. $2 \\nmid h_K^+$ (odd narrow class number);\n3. $p \\not\\equiv 1 \\pmod 8$ (for the $p \\mid X$ branch);\n\nSahoo proves (Propositions 1.9 and 1.10) that **every solution** $(\\lambda, \\mu)$ to the $S$-unit equation "
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.19
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.02,
+        "confidence": 0.38,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.09,
+          "1": 0.11,
+          "2": 0.48,
+          "3": 0.32
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2877,
+      "output_tokens": 94
+    }
+  }
+}

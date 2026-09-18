@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U80_norm_redundancy_hecke_audit",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U80_norm_redundancy_hecke_audit.md",
+    "excerpt": "# U80: the quadratic-norm shortcut is redundant, Hecke reciprocity is vacuous here, and the class-group bottleneck remains\n\n**Status: written self-reviewed reduction/audit with exact finite corroboration. The class-group 2-rank, full global restriction matrix, numerical rank upper bound, weighted equation, and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. The private repository was resumed from U79. No existing mathematical checkpoint was overwritten. A bounded PARI/GP GitHub Actions attempt was also made and failed before any workflow step executed; this is an execution-environment failure, not class-group evidence.\n\n## 1. What this checkpoint establishes\n\nKeep U78/U79's genus-eight Jacobian over\n\n    k=Q(phi), phi^2-phi-1=0,\n\nand its odd-degree 2-descent root field\n\n    F=k(s), s^17=2/phi=2phi-2,\n    O_F=Z[phi,s],\n    disc(F)=2^32*5^17*17^34.\n\nWrite `Sel_2(J/k)` for the Selmer group described in U78 and let\n\n    d=dim_F2 Cl(O_F)[2].\n\nU79 determined the complete dyadic Kummer image. The present checkpoint proves two negative-but-useful route eliminations.\n\n**Theorem A (the extra quadratic-norm condition gives no new Selmer restriction).** The weighted divisor class constructed in U77 has Kummer squareclass represented by a norm from `F(i)/F`. However, **every** class in `Sel_2(J/k)` is already represented by a global norm from `F(i)/F`. Thus the special quadratic-norm shape of the weighted class cannot reduce the U78/U79 Selmer space any further.\n\n**Theorem B (Hecke reciprocity supplies no class-group parity restriction for this field).** For the degree-seventeen extension `F/k`, the Hecke ideal of Shnidman--Siad has even valuation at every prime. Hence there are no Hecke primes in the sense of their Definition 3.7. Their Theorem 3.8 is therefore vacuous here and does not determine or bound `d`.\n\nThe exact class-group 2-rank remains uncomputed. The best current rank-zero certificate is still U78's\n\n    d=0 and rank(Psi)=17.\n\nU80 does not establish either assertion.\n\n## 2. Exact norm shape of the weighted Kummer class\n\nThis section records a structural fact that initially looked like a possible shortcut, then shows why it is redundant.\n\nLet `zeta` be a primitive fifth root with `phi=1+zeta+zeta^-1`. Keep U77's fields and automorphisms. In particular, let\n\n    K0=k(c), c^10=-256,\n\nand in a Galois closure let `sigma(c)=zeta*c`, while `eta` sends `i` and `c` to their negatives and fixes `zeta,k`. Let `kappa` send `zeta` to `zeta^-1` and fix `c,i,k`. U77's common-root orbit gives\n\n    u_j=sigma^j(U), j mod 5,\n\nfor the `u`-coordinate `U` used in the genus-eight quotient. Let `r` be a branch root of the odd-degree model over `F`; the monic coordinate change in U78 multiplies every `u-r` factor by the same base-field constant, which cancels on degree-zero divisor differences.\n\nFor U77's effective divisor `D=sum_j P_j`, define\n\n    q=product_(j=0)^4 (u_j-r).\n\nThe five factors are permuted by `kappa`, so `q` is `kappa`-fixed. Before taking `kappa` invariants it lies in the compositum with `Q(zeta,i)`; hence\n\n    q in F(i).\n\nFor the anti-invariant class\n\n    Z=[D-eta(D)],\n\nthe odd-degree hyperelliptic Kummer map gives\n\n    delta(Z)=q/eta(q)  in F*/F*^2.\n\nModulo squares,\n\n    q/eta(q) = q*eta(q),\n\nbecause the quotient differs from the product by the square `eta(q)^2`. Therefore\n\n    delta(Z)=[Norm_(F(i)/F)(q)].                    (2.1)\n\nEquivalently, multiplying the five `sigma` factors and their five `eta` conjugates gives all ten `k`-embeddings of `K0`, so\n\n    delta(Z)=[Norm_(K0/k)(U-r)].                    (2.2)\n\nThe quadratic-twist isomorphism from U77 leaves the hyperelliptic `u`-coordinate and branch locus unchanged, so the same 2-Kummer squareclass represents the descended class on `Jminus`.\n\nThere is also an immediate norm-kernel check. Since\n\n    r^17=phi^2/4,\n    U^17-r^17=(3-phi)V^2/4,\n\nwe have\n\n    Norm_(F/k)(U-r)=(3-phi)V^2/4.\n\nTaking `Norm_(K0/k)` and using `Norm_(K0/k)(V)=1` shows that the norm of (2.2) down to `k` is a square, as required by U78's global space `V`.\n\nThis is an exact structural identity, not a point search and not a proof that a weighted solution exists.\n\n## 3. The dyadic local norm group already contains W_2\n\nLet `K2` be the completion of `k` at its unique prime above 2 and\n\n    E=K2(s), s^17=2/phi.\n\nU79 uses the normalization `v_s(s)=1`, so\n\n    2=phi*s^17.                                    (3.1)\n\nAdjoin `i` and put\n\n    pi=i-1.\n\nFor every `b in E`, direct multiplication gives\n\n    Norm_(E(i)/E)(1+b*pi)=1-2b+2b^2.               (3.2)\n\nSuppose `v_s(b)=m>=1`. By (3.1), the first correction term in (3.2) has valuation `17+m`, while the quadratic correction has valuation `17+2m`. Thus the leading coefficient of the norm correction at depth `17+m` is\n\n    -phi * bar(b) in F_4.\n\nMultiplication by `-phi` is a bijection of `F_4`. Consequently an arbitrary leading coefficient at every depth `d>=18` can be "
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.22
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.73,
+        "confidence": 0.27,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.52,
+          "1": 0.29,
+          "2": 0.12,
+          "3": 0.07
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2403,
+      "output_tokens": 94
+    }
+  }
+}

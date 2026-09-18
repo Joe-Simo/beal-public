@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U96_azon_theorem523_audit_and_lift_status",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U96_azon_theorem523_audit_and_lift_status.md",
+      "excerpt": "# U96: Azon Theorem 5.23 requires Hypothesis 5 and invokes Breuil--Diamond directly; no shortcut bypasses the local-lift construction\n\n**Status: source-verified modular-route audit. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-17. Inspected primary source: Martin Azon, *Effective Darmon's program for the generalised Fermat equation*, arXiv:2504.01967v2, 2025-07-03.\n\n## 1. Resolution of the U95 binary alternative\n\nU95 proposed testing whether Azon's level-lowering result (referenced as Theorem 5.22 in the paper's overview) could apply directly to the corrected negative twist and our specialization `(r,r,p)=(5,5,17)`, thereby bypassing the explicit reconstruction of the Breuil--Diamond local characteristic-zero lifts mapped in U94.\n\nA direct audit of the full preprint arXiv:2504.01967v2 resolves this question definitively:\n\n1. In the text of Section 5.3.3, label 5.22 is **Definition 5.22** (defining the conductor factor $\\mathfrak{n}_{\\operatorname{tor},\\not\\equiv 0 (p)}$), and the actual level-lowering theorem is **Theorem 5.23**.\n2. Theorem 5.23 explicitly assumes **Hypothesis 5**.\n3. For our weighted equation $X^{10}+256Y^{10}=Z^{17}$, **Hypothesis 5 fails identically**.\n4. The proof of Theorem 5.23 does not establish an independent level-lowering mechanism; it literally applies Breuil--Diamond [BD14, Theorem 3.2.2] under the umbrella of Hypothesis 5.\n\nTherefore, Azon's work does not provide an automatic shortcut around Breuil--Diamond Theorem 3.2.2. The explicit local-lift construction at the prime over 5 remains the genuine, inescapable mathematical obligation.\n\n## 2. Detailed audit of Azon Theorem 5.23 and Hypothesis 5\n\nIn Azon's notation, Hypothesis 5 states:\n\n> **Hypothesis 5.** *There is at least one prime number $q' \\nmid 2r$ such that $\\nu_{q'} < 0$, $\\nu_{q'} \\not\\equiv 0 \\pmod r$, and $\\operatorname{ord}^\\times(q' \\pmod r)$ is even.*\n\nFor signature $(r,r,p)$ with $r=5$ and $p=17$, our specialization parameters from Proposition 3.22 are:\n$$U = X^2, \\quad V = 2Y^2, \\quad A = 1, \\quad B = 8, \\quad C = 1, \\quad a = U, \\quad b = V, \\quad c = Z,$$\ngoverning the equation $U^5 + 8V^5 = Z^{17}$.\n\nThe valuation $\\nu_q$ defined in the preprint is:\n$$\\nu_q = 34 v_q(Z) - v_q(128 U^5 V^5).$$\n\nLet $q' \\nmid 2r = 10$ be any odd rational prime away from 5:\n\n- **Case 1: $q' \\mid Z$.** By pairwise coprimality of $X, Y, Z$, $q'$ does not divide $UV$. Hence $v_{q'}(UV) = 0$ and:\n  $$\\nu_{q'} = 34 v_{q'}(Z) > 0.$$\n  This violates the condition $\\nu_{q'} < 0$.\n\n- **Case 2: $q' \\mid UV$.** By pairwise coprimality, $q'$ does not divide $Z$, so $v_{q'}(Z) = 0$. Hence:\n  $$\\nu_{q'} = -v_{q'}(128 U^5 V^5) = -5 v_{q'}(UV) < 0.$$\n  However, this valuation satisfies:\n  $$\\nu_{q'} \\equiv -5 v_{q'}(UV) \\equiv 0 \\pmod 5.$$\n  This directly violates the second condition $\\nu_{q'} \\not\\equiv 0 \\pmod r$.\n\n- **Case 3: $q' \\nmid UVZ$.** Then $\\nu_{q'} = 0$, violating $\\nu_{q'} < 0$.\n\nConsequently, **there does not exist any prime $q'$ satisfying Hypothesis 5** for a primitive positive solution of the weighted equation.\n\n## 3. Why Azon imposed Hypothesis 5\n\nExamining the proof of Theorem 5.23 (lines 3664--3668 of the author manuscript) reveals why the author required Hypothesis 5:\n\n1. **Unipotent reduction**: Hypothesis 5 guarantees that the Jacobian has unipotent reduction at $q'$, producing a supercuspidal Weil--Deligne representation at $q'$ whose inertial restriction has order $r$ or $2r$.\n2. **Coefficient field inclusion**: Via [BCDF25, Proposition 8.4], that supercuspidal type forces the field of coefficients $K_g$ of the lowered form to contain $\\mathcal{K} = \\mathbb{Q}(\\sqrt{5})$.\n3. **Absolute irreducibility**: Hypothesis 5 was used to invoke [BCDF25, Lemma 6.9] to establish that $\\bar\\rho|_{G_{\\mathcal{K}(\\zeta_p)}}$ is absolutely irreducible.\n\nCrucially, **U64 already proved absolute irreducibility unconditionally** through a completely different route:\n- Local absolute irreducibility at the prime over 2 was proved directly from the tame inertia action $\\Phi_5$ on the good flat model $C^-$ over $F(\\pi)$;\n- Global absolute irreducibility on $G_{K(\\zeta_{17})}$ was then deduced via the cyclic-restriction lemma (Lemma 3 in U64) because the prime above 2 splits in $K(\\sqrt{17})/K$.\n\nThus, while U64 bypassed Azon's need for Hypothesis 5 to prove residual irreducibility, it cannot use Azon's Theorem 5.23 as a packaged black box because the preprint did not state a version of level-lowering without Hypothesis 5.\n\n## 4. The proof of Azon Theorem 5.23 contains no new lowering theorem\n\nAzon's proof of Theorem 5.23 explicitly states:\n\n> *\"The first claim follows from combining Theorem 5.21 with Theorem 3.2.2 in [BD14].\"*\n\nThe author did not develop a new level-lowering machine; he cited Breuil--Diamond (2014) Theorem 3.2.2.\n\nThis settles the research priority:\n- There is no separate \"Azon lowering theorem\" that bypasses Breuil--Diamond.\n- The author's Magma package (`level&irred.m`) computes t",
+      "length_chars": 6979
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.68,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.44,
+          "1": 0.48,
+          "2": 0.03,
+          "3": 0.05
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.29,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.9,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.09
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.4
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_literature",
+        "confidence": 0.26,
+        "probabilities": {
+          "verify_literature": 0.42,
+          "audit_later": 0.25,
+          "no_action": 0.17,
+          "audit_now": 0.14,
+          "verify_computation": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3022,
+      "output_tokens": 126
+    }
+  }
+}

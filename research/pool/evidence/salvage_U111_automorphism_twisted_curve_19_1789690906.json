@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U111_automorphism_twisted_curve_19",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_automorphism_twisted_curve_19.md",
+    "excerpt": "# U111: Geometric and Arithmetic Automorphisms of the Twisted Modular Curve $X_{E_0}(19)$ Over $\\mathbb{Q}$, $\\mathbb{Q}(\\sqrt{-19})$, and $\\mathbb{Q}(i)$\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group (Catalan Twisted Automorphism Auditor)  \n**Status**: Authoritative Technical Checkpoint & Mathematical Proof Reference  \n**Target Curve**: Twisted modular curve $X_{E_0}(19)$ associated to the indestructible Catalan Frey curve $E_0 = 864b1$ ($E_{(3, -2, 1)}^{(2)}: Y^2 = X^3 - 24X + 48$) of conductor 864.  \n**Companion Computational Script**: [`code/U111_automorphism_twisted_19.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_automorphism_twisted_19.py)\n\n---\n\n## 1. Executive Summary & Core Theorems\n\nContinuing the systematic geometric and arithmetic audit of Catalan twisted modular curves initiated in Checkpoint U110 ($p = 13$) and U111 ($p = 17$), this checkpoint investigates the level $p = 19$ twisted modular curve $X_{E_0}(19)$ attached to the Catalan solution $3^2 + (-2)^3 = 1^{19}$. \n\nBecause $19 \\equiv 3 \\pmod 4$, this prime exhibits important structural contrasts with $p = 13$ and $p = 17$:\n1. The unique quadratic subfield of the 19-cyclotomic field $\\mathbb{Q}(\\zeta_{19})$ is the **imaginary quadratic field** $\\mathbb{Q}(\\sqrt{-19})$, rather than a real quadratic field.\n2. The number of cyclic subgroups of order 19 in $E_0[19]$ is $19 + 1 = 20$, yielding an isogeny number field $K_{E_0}$ of degree 20 over $\\mathbb{Q}$.\n3. The modular curve $X_0(19)$ is an elliptic curve of conductor 19 (Cremona label `19a1`), having rank 0 over $\\mathbb{Q}$ and rational torsion $\\mathbb{Z}/3\\mathbb{Z}$.\n4. A 2-descent or quadratic base-change over $K_{E_0}$ requires an extension field of degree **40**, rigorously clarifying the statement of Freitas, Naskr\u0119cki, and Stoll (2020, line 627) regarding \"number fields of degree 36 or 40\".\n\n### 1.1 Principal Theorems Established\n\n> [!IMPORTANT]\n> **Theorem 1.1 (Exact Genus of $X_{E_0}(19)$)**  \n> The twisted modular curve $X_{E_0}(19)$ has geometric genus:\n> $$g(X_{E_0}(19)) = \\mathbf{196}.$$\n> Because $X_{E_0}(19)$ is an inner twist of the full level-19 modular curve $X(19)$ over $\\bar{\\mathbb{Q}}$, the genus is strictly invariant under base change.\n\n> [!IMPORTANT]\n> **Theorem 1.2 (Triviality of Rational Automorphisms Over $\\mathbb{Q}$ and Quadratic Fields)**  \n> Let $K$ be any field in $\\{\\mathbb{Q}, \\; \\mathbb{Q}(\\sqrt{-19}), \\; \\mathbb{Q}(i)\\}$. Then the group of $K$-rational automorphisms of the twisted modular curve $X_{E_0}(19)$ is strictly trivial:\n> $$\\operatorname{Aut}_K(X_{E_0}(19)) = \\{ \\operatorname{id} \\}.$$\n> In particular, $X_{E_0}(19)$ possesses **no non-trivial automorphisms** over $\\mathbb{Q}$, over the imaginary quadratic subfield $\\mathbb{Q}(\\sqrt{-19})$ of the 19-division field, or over the Gaussian field $\\mathbb{Q}(i)$.\n\n> [!IMPORTANT]\n> **Theorem 1.3 (Non-Existence of Intermediate Modular Quotients Over $K$)**  \n> For each field $K \\in \\{\\mathbb{Q}, \\; \\mathbb{Q}(\\sqrt{-19}), \\; \\mathbb{Q}(i)\\}$, the projective image of the mod-19 Galois representation contains the simple group $\\operatorname{PSL}_2(\\mathbb{F}_{19})$:\n> $$\\mathbb{P}\\operatorname{Im}(\\bar{\\rho}_{E_0, 19}|_{G_K}) \\supseteq \\operatorname{PSL}_2(\\mathbb{F}_{19}).$$\n> Because $\\operatorname{PSL}_2(\\mathbb{F}_{19})$ is a non-abelian simple group of order 3420, it admits no non-trivial proper normal subgroups. Consequently:\n> - No proper non-trivial subgroup $H \\subset \\operatorname{PSL}_2(\\mathbb{F}_{19})$ is stable under $\\operatorname{Gal}(\\bar{K}/K)$.\n> - $X_{E_0}(19)$ admits **no intermediate modular quotient curves** $X_{E_0}(19) / H$ defined over $K$.\n> - The only $K$-rational modular quotients are the curve $X_{E_0}(19)$ itself ($H = \\{1\\}$) and the modular $j$-line $X(1) \\cong \\mathbb{P}^1$ ($H = \\operatorname{PSL}_2(\\mathbb{F}_{19})$).\n\n> [!IMPORTANT]\n> **Theorem 1.4 (Genus of the Involution Quotient)**  \n> Any modular involution $w \\in \\operatorname{PSL}_2(\\mathbb{F}_{19})$ acting on $X(19)$ has exactly 10 fixed points (all located in the fiber above $j = 1728$). The quotient curve $X_{E_0}(19) / \\langle w \\rangle$ has genus:\n> $$g(X_{E_0}(19) / \\langle w \\rangle) = \\mathbf{96}.$$\n> The involution quotient does not reduce the curve to the hyperelliptic or low-genus Chabauty regime ($96 \\gg 2$).\n\n> [!IMPORTANT]\n> **Theorem 1.5 (Descent to $X_0(19)$ and the Degree-40 Field)**  \n> The 20 cyclic subgroups of order 19 in $E_0[19]$ define a number field $K_{E_0}$ of degree $[K_{E_0} : \\mathbb{Q}] = 20$. \n> - The Borel subgroup $B \\subset \\operatorname{PGL}_2(\\mathbb{F}_{19})$ stabilizing a line surjects onto $\\operatorname{PGL}_2(\\mathbb{F}_{19}) / \\operatorname{PSL}_2(\\mathbb{F}_{19}) \\cong \\mathbb{Z}/2\\mathbb{Z}$.\n> - Consequently, $K_{E_0}$ is **linearly disjoint** from the imaginary quadratic field $\\mathbb{Q}(\\sqrt{-19})$.\n> - The compositum field $L = K_{E_0}(\\sqrt{-19})$ has degree $[L : \\mathbb{Q}] = 20 \\times 2 = \\mathbf{40}$.\n> - Over $K_{E_0}"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.57,
+        "confidence": 0.43,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.68,
+          "1": 0.1,
+          "2": 0.2,
+          "3": 0.02
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.79
+      }
+    },
+    "usage": {
+      "input_tokens": 2452,
+      "output_tokens": 42
+    }
+  }
+}

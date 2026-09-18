@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U100_all_even_17_does_not_divide_t_boundary_p19",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U100_all_even_17_does_not_divide_t_boundary_p19.md",
+      "excerpt": "# U100: All-Even Branch with 17 \u2224 t: Boundary Case p = 19, Frey Representations, Effective Bounds, and Global Coverage Ledger\n\n**Status: authoritative arithmetic geometry research checkpoint. The Beal Conjecture and the 17 \u2224 t all-even branch remain open.**\n\n**Research Date**: 2026-09-17  \n**Branch**: All-even Beal candidate $A^{2r} + B^{2s} = C^{2t}$ with $17 \\nmid t$.  \n**Target Signature**: $(2\\ell, 2m, p)$ with primes $\\ell, m \\ge 5$ and prime $p \\ge 19$.  \n**Minimal Boundary Equation**: $X^{10} + Y^{10} = Z^{19}$ ($\\ell = m = 5, p = 19$).\n\n---\n\n## 1. Executive Summary\n\nIn the global Beal coverage ledger established in checkpoints U42\u2013U47 and updated by U57:\n1. **$17 \\mid t$ Branch**:\n   - Orientation A ($X^{10} + Y^{10} = 2Z^{17}$): **Closed** by Freitas--Dieulefait (U57, Freitas PhD thesis 2012 / Math. Comp. 2014).\n   - Orientation B ($X^{10} + 256Y^{10} = Z^{17}$): Active under dual modular attack (U41) and genus-eight Chabauty--Coleman descent over $k = \\mathbb{Q}(\\sqrt{5})$ (U78--U99).\n2. **$17 \\nmid t$ Branch**:\n   - Exponents: $x = 2r, y = 2s, z = 2t$, with $\\gcd(A,B,C) = 1$.\n   - Previous checkpoints (U45, U46, U47) proved:\n     - $t$ is odd (U46 eliminates $t = 2$ and $2 \\mid t$ via $(4, 2s, 2)$);\n     - $3 \\nmid rs$ and $2 \\nmid rs$ for all $t \\ge 3$ (Bennett--Chen 2012 on $a^2 + b^6 = c^n$; Bennett--Ellenberg--Ng on $a^2 + b^4 = c^n$);\n     - Every prime divisor of $r$ and $s$ is at least $5$;\n     - Every prime divisor of $t$ is at least $17$ (Anni--Siksek 2016 and Billerey et al. 2023 eliminate $p \\in \\{3, 5, 7, 11, 13\\}$).\n   - If $17 \\nmid t$, every prime divisor of $t$ satisfies $p \\ge 19$.\n   - Choosing prime divisors $\\ell \\mid r$, $m \\mid s$, and $p \\mid t$ reduces the problem to the ternary generalized Fermat equation:\n     $$X^{2\\ell} + Y^{2m} = Z^p, \\quad \\ell, m \\ge 5, \\quad p \\ge 19.$$\n\nThis checkpoint investigates the boundary case $p = 19$, surveys the literature on signatures $(2\\ell, 2m, p)$ and $(n, n, p)$, details the modular representations available over totally real fields and via Darmon's program, analyzes effective computability of exponent bounds, and constructs an exact coverage map for the $17 \\nmid t$ family.\n\n---\n\n## 2. Investigation of the Boundary Case $p = 19$: $X^{2\\ell} + Y^{2m} = Z^{19}$\n\n### 2.1 Diophantine Setup and Gaussian Descent\nLet $(X, Y, Z)$ be a putative non-trivial primitive integer solution to\n$$X^{2\\ell} + Y^{2m} = Z^{19}, \\quad \\ell, m \\ge 5 \\text{ primes}, \\quad \\gcd(X, Y, Z) = 1.$$\n- Parity: $Z$ must be odd (if $2 \\mid Z$, $X^{2\\ell} + Y^{2m} \\equiv 0 \\pmod 4 \\implies 2 \\mid X$ and $2 \\mid Y$, violating coprimality).\n- Hence exactly one of $X, Y$ is even. Without loss of generality, let $X$ be even and $Y$ be odd.\n- In the Gaussian integers $\\mathbb{Z}[i]$:\n  $$(X^\\ell + i Y^m)(X^\\ell - i Y^m) = Z^{19}.$$\n  Since $\\gcd(X^\\ell, Y^m) = 1$ and $Z$ is odd, the factors are coprime in $\\mathbb{Z}[i]$. Since $\\mathbb{Z}[i]^\\times = \\{\\pm 1, \\pm i\\}$ and $19 \\equiv 3 \\pmod 4$, standard descent yields coprime integers $a_0, b_0$ such that\n  $$X^\\ell + i Y^m = (a_0 + i b_0)^{19}, \\quad Z = a_0^2 + b_0^2,$$\n  with $a_0$ even and $b_0$ odd.\n\n### 2.2 Cyclotomic Descent Field $K = \\mathbb{Q}(\\zeta_{19})^+$\nExpanding the real part:\n$$X^\\ell = \\operatorname{Re}\\left((a_0 + i b_0)^{19}\\right) = a_0 \\prod_{j=1}^9 \\beta_j,$$\nwhere $\\beta_j \\in \\mathcal{O}_K$ are elements of the maximal totally real subfield\n$$K = \\mathbb{Q}(\\zeta_{19} + \\zeta_{19}^{-1}) = \\mathbb{Q}(\\zeta_{19})^+.$$\n\n**Arithmetic Invariants of $K$**:\n- **Degree**: $[K : \\mathbb{Q}] = \\frac{19-1}{2} = 9$ (odd degree).\n- **Integral Basis / Ring of Integers**: $\\mathcal{O}_K = \\mathbb{Z}[\\theta_1]$, where $\\theta_j = \\zeta_{19}^j + \\zeta_{19}^{-j} = 2 \\cos(2\\pi j / 19)$.\n- **Discriminant**: $\\operatorname{disc}(K) = 19^8 = 16,983,563,041$. The rational prime $19$ is the unique ramified prime in $K$, with $19\\mathcal{O}_K = \\mathfrak{r}^9$, where $\\mathfrak{r} = (2 - \\theta_1)\\mathcal{O}_K$.\n- **Decomposition of $2$**:\n  The multiplicative order of $2$ in $(\\mathbb{Z}/19\\mathbb{Z})^\\times$ is $\\phi(19) = 18$. The decomposition group of $2$ in $\\mathbb{Q}(\\zeta_{19})$ is the entire Galois group. Under the projection to $\\operatorname{Gal}(K/\\mathbb{Q}) \\cong (\\mathbb{Z}/19\\mathbb{Z})^\\times / \\{\\pm 1\\}$, the Frobenius element generates the quotient of order $9$.\n  **Therefore, $2$ is completely inert in $K$**:\n  $$2\\mathcal{O}_K = \\mathfrak{P}_2, \\quad \\operatorname{Norm}_{K/\\mathbb{Q}}(\\mathfrak{P}_2) = 2^9 = 512.$$\n- **Class Group and Narrow Class Group**:\n  - Class number: $h_K = h_{19}^+ = 1$.\n  - Narrow class number: $h_K^+ = 1$ (odd), since $K$ has odd degree and fundamental units have independent signs.\n\n### 2.3 Linear Relations and Frey Construction over $K$\nFor any distinct $j, k \\in \\{1, \\dots, 9\\}$, the terms $a_0^2, \\beta_j, \\beta_k$ satisfy a linear relation over $K$:\n$$\\alpha \\beta_j + \\beta \\beta_k + \\gamma a_0^2 = 0.$$\nBy the cyclotomic descent lemma (Anni--Siksek 2016 Lemma 4.1; Sah",
+      "length_chars": 21534
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.97,
+        "confidence": 0.03,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.56,
+          "1": 0.15,
+          "2": 0.06,
+          "3": 0.23
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.67,
+        "confidence": 0.33,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.75,
+          "1": 0.02,
+          "2": 0.03,
+          "3": 0.2
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.33
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.26,
+        "probabilities": {
+          "verify_computation": 0.01,
+          "audit_later": 0.22,
+          "audit_now": 0.34,
+          "verify_literature": 0.02,
+          "no_action": 0.41
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3373,
+      "output_tokens": 124
+    }
+  }
+}

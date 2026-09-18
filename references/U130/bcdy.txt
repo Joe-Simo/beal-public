@@ -1,0 +1,1542 @@
+November 14, 2014 15:22 WSPC/S1793-0421                  203-IJNT         1530001
+
+
+
+
+         International Journal of Number Theory
+         Vol. 11, No. 1 (2015) 1–28
+         c World Scientific Publishing Company
+         DOI: 10.1142/S179304211530001X
+
+
+
+
+                           Generalized Fermat equations: A miscellany
+
+
+                                                Michael A. Bennett
+                          Department of Mathematics, University of British Columbia
+                                     Vancouver, BC, Canada V6T 1Z2
+                                            bennett@math.ubc.ca
+
+                                                    Imin Chen
+                              Department of Mathematics, Simon Fraser University
+                                            Burnaby, BC, Canada
+                                             ichen@math.sfu.ca
+
+                                                Sander R. Dahmen
+                           Department of Mathematics, VU University Amsterdam
+                          De Boelelaan 1081a, 1081 HV Amsterdam, The Netherlands
+                                              s.r.dahmen@vu.nl
+
+                                                 Soroosh Yazdani
+                  Department of Mathematics and Computer Science, University of Lethbridge
+                                     Lethbridge, AB, Canada T1K 3M4
+                                          soroosh.yazdani@uleth.ca
+
+
+                                              Received 10 July 2013
+                                              Accepted 9 June 2014
+                                              Published 8 July 2014
+
+
+             This paper is devoted to the generalized Fermat equation xp + y q = z r , where p, q and
+             r are integers, and x, y and z are nonzero coprime integers. We begin by surveying the
+             exponent triples (p, q, r), including a number of infinite families, for which the equation
+             has been solved to date, detailing the techniques involved. In the remainder of the paper,
+             we attempt to solve the remaining infinite families of generalized Fermat equations that
+             appear amenable to current techniques. While the main tools we employ are based upon
+             the modularity of Galois representations (as is indeed true with all previously solved
+             infinite families), in a number of cases we are led via descent to appeal to a rather
+             intricate combination of multi-Frey techniques.
+
+             Keywords: Fermat equations; Galois representations; Q-curves; multi-Frey techniques.
+
+             Mathematics Subject Classification 2010: 11D41, 11D61, 11G05, 14G05
+
+
+
+
+                                                         1
+November 14, 2014 15:22 WSPC/S1793-0421                      203-IJNT         1530001
+
+
+
+
+       2    M. A. Bennett et al.
+
+
+       1. Introduction
+       Since Wiles’ [74] remarkable proof of Fermat’s Last Theorem, a number of tech-
+       niques have been developed for solving various generalized Fermat equations of the
+       shape
+                                                            1 1 1
+                                   a p + b q = cr    with    + + ≤ 1,                                    (1)
+                                                            p q r
+       where p, q and r are positive integers, and a, b and c are coprime integers. The
+       Euclidean case, when 1/p+1/q+1/r = 1, is well understood (see, e.g., Proposition 6)
+       and hence the main topic of interest is when 1/p+1/q +1/r < 1, the hyperbolic case.
+       The number of solutions (a, b, c) to such an equation is known to be ﬁnite, via work
+       of Darmon and Granville [34], provided we ﬁx the triple (p, q, r). It has, in fact, been
+       conjectured that there are only ﬁnitely many nonzero coprime solutions to Eq. (1),
+       even allowing the triples (p, q, r) to be variable (counting solutions corresponding
+       to 1p + 23 = 32 just once). Perhaps the only solutions are those currently known;
+       i.e. (a, b, c, p, q, r) coming from the solution to Catalan’s equation 1p + 23 = 32 , for
+       p ≥ 6, and from the following nine identities:
+
+                  25 + 72 = 34 ,     73 + 132 = 29 ,      27 + 173 = 712 ,      35 + 114 = 1222 ,
+                        177 + 762713 = 210639282,           14143 + 22134592 = 657 ,
+
+                        92623 + 153122832 = 1137 ,          438 + 962223 = 300429072,          and
+                        338 + 15490342 = 156133.
+
+       Since all known solutions have min{p, q, r} ≤ 2, a similar formulation of the afore-
+       mentioned conjecture, due to Beal (see [60]), is that there are no nontrivial solutions
+       in coprime integers to (1), once we assume that min{p, q, r} ≥ 3. For references on
+       the history of this problem, the reader is directed to the papers of Beukers [10, 11],
+       Darmon and Granville [34], Mauldin [60] and Tijdeman [73], and, for more classical
+       results along these lines, to the book of Dickson [36].
+           Our goals in this paper are two-fold. First, we wish to treat the remaining cases of
+       Eq. (1) which appear within reach of current technology (though, as a caveat, we will
+       avoid discussion of exciting recent developments involving Hilbert modular forms
+       [37, 42–44] in the interest of keeping our paper reasonably self-contained). Secondly,
+       we wish to take this opportunity to document what, to the best of our knowledge,
+       is the state-of-the-art for these problems. Regarding the former objective, we will
+       prove the following two theorems.
+
+       Theorem 1. Suppose that (p, q, r) are positive integers with 1p + 1q + 1r < 1 and
+
+           (p, q, r) ∈ {(2, n, 6), (2, 2n, 9), (2, 2n, 10), (2, 2n, 15), (3, 3, 2n), (3, 6, n), (4, 2n, 3)}
+
+       for some integer n. Then Eq. (1) has no solutions in coprime nonzero integers a, b
+       and c.
+November 14, 2014 15:22 WSPC/S1793-0421                  203-IJNT          1530001
+
+
+
+
+                                                           Generalized Fermat equations: A miscellany       3
+
+
+         Proof. These seven cases will be dealt with in Propositions 13, 19, 21, 22, 27, 9
+         and 23 respectively.
+
+         Theorem 2. Suppose that (p, q, r) are positive integers with p1 + 1q + 1r < 1 and
+                         
+                           (2m, 2n, 3), n ≡ 3 (mod 4), m ≥ 2, or
+             (p, q, r) =
+                           (2, 4n, 3),  n ≡ ±2 (mod 5) or n ≡ ±2, ±4 (mod 13).
+         Then the only solution to Eq. (1) in coprime nonzero integers a, b and c is with
+         (p, q, r, |a|, |b|, c) = (2, 8, 3, 1549034, 33, 15613).
+
+         Proof. The ﬁrst case will be treated in Proposition 18. The second is Proposi-
+         tion 24.
+
+             Taking these results together with work of many other authors over the past
+         twenty years or so, we currently know that Eq. (1) has only the known solutions
+         for the following triples (p, q, r); in Table 1, we list inﬁnite families for which the
+         desired results are known without additional conditions.
+             The (∗) in Table 2 indicates that the result has been proven for a family of expo-
+         nents of natural density one (but that there remain inﬁnitely many prime exponents
+         of positive Dirichlet density untreated). Table 3 provides the exact conditions that
+         the exponents must satisfy.
+
+         Remark 3. We do not list in these tables examples of Eq. (1) which can be solved
+         under additional local conditions (such as, for example, the case (p, q, r) = (5, 5, n)
+         with c even, treated in an unpublished note of Darmon and Kraus). We will also not
+         provide information on generalized versions of (1) such as equations of the shape
+         Aa p + Bb q = Cc r , where A, B and C are integers whose prime factors lie in a ﬁxed
+         ﬁnite set. Regarding the latter, the reader is directed to [23, 34, 39, 46, 55, 56, 62] (for
+         general signatures), [52, 53] (for signature (p, p, p)), [7, 8, 27, 48–50] (for signature
+
+
+             Table 1. Infinite families of exponent triples for which Eq. (1) has been solved completely.
+
+             (p, q, r)                                                Reference(s)
+             (n, n, n), n ≥ 3                     Wiles [74], Taylor–Wiles [72]
+             (n, n, 2), n ≥ 4                     Darmon–Merel [35], Poonen [63]
+             (n, n, 3), n ≥ 3                     Darmon–Merel [35], Poonen [63]
+             (2n, 2n, 5), n ≥ 2                   Bennett [1]
+             (2, 4, n), n ≥ 4                     Ellenberg [41], Bennett–Ellenberg–Ng [5], Bruin [16]
+             (2, 6, n), n ≥ 3                     Bennett–Chen [2], Bruin [16]
+             (2, n, 4), n ≥ 4                     Immediate from Bennett–Skinner [8], Bruin [18]
+             (2, n, 6), n ≥ 3                     Theorem 1, Bruin [16]
+             (3j, 3k, n), j, k ≥ 2, n ≥ 3         Immediate from Kraus [54]
+             (3, 3, 2n), n ≥ 2                    Theorem 1
+             (3, 6, n), n ≥ 2                     Theorem 1
+             (2, 2n, k), n ≥ 2, k ∈ {9, 10, 15}   Theorem 1
+             (4, 2n, 3), n ≥ 2                    Theorem 1
+November 14, 2014 15:22 WSPC/S1793-0421                        203-IJNT           1530001
+
+
+
+
+       4   M. A. Bennett et al.
+
+
+                     Table 2. Remaining exponent triples for which Eq. (1) has been solved.
+
+              (p, q, r)                                                 Reference(s)
+              (3, 3, n)∗                         Chen–Siksek [24], Kraus [54], Bruin [17], Dahmen [28]
+              (2, 2n, 3)∗                        Chen [21], Dahmen [28, 29], Siksek [68, 69]
+              (2, 2n, 5)∗                        Chen [22]
+              (2m, 2n, 3)∗                       Theorem 2
+              (2, 4n, 3)∗                        Theorem 2
+              (3, 3n, 2)∗                        Bennett–Chen–Dahmen–Yazdani [3]
+              (2, 3, n), 6 ≤ n ≤ 9               Poonen–Schaefer–Stoll [64], Bruin [16, 18, 19],
+              (2, 3, n), n ∈ {10, 15}            Brown [15], Siksek [69], Siksek–Stoll [71]
+              (3, 4, 5)                          Siksek–Stoll [70]
+              (5, 5, 7), (5, 5, 19), (7, 7, 5)   Dahmen–Siksek [30]
+
+
+
+               Table 3. Corresponding conditions on exponent triples in Table 2 for which Eq. (1)
+               has been solved.
+               (p, q, r)                                            n
+               (3, 3, n)                                     3 ≤ n ≤ 104 , or
+                                                            n ≡ 2, 3 (mod 5),
+                                                          n ≡ 17, 61 (mod 78),
+                                                    n ≡ 51, 103, 105 (mod 106), or
+                                 n ≡ 43, 49, 61, 79, 97, 151, 157, 169, 187, 205, 259, 265, 277, 295, 313
+                                  367, 373, 385, 403, 421, 475, 481, 493, 511, 529, 583, 601, 619, 637,
+                                691, 697, 709, 727, 745, 799, 805, 817, 835, 853, 907, 913, 925, 943, 961,
+                                1015, 1021, 1033, 1051, 1069, 1123, 1129, 1141, 1159, 1177, 1231, 1237,
+                                                     1249, 1267, 1285 (mod 1296)
+               (2, 2n, 3)                            3 ≤ n ≤ 107 or n ≡ −1 (mod 6)
+               (2m, 2n, 3)                             m ≥ 2 and n ≡ −1 (mod 4)
+               (2, 4n, 3)                        n ≡ ±2 (mod 5) or n ≡ ±2, ±4 (mod 13)
+               (2, 2n, 5)                           n ≥ 17 and n ≡ 1 (mod 4) prime
+               (3, 3n, 2)                                 n ≡ 1 (mod 8) prime
+
+
+
+       (p, p, 2)), [9, 57] (for signature (p, p, 3)), and to [6, 12, 13, 26, 37, 38, 42] (for various
+       signatures of the shape (n, n, p) with n ﬁxed).
+
+       Remark 4. In [30], Eq. (1) with signatures (5, 5, 11), (5, 5, 13) and (7, 7, 11) is
+       solved under the assumption of (a suitable version of) the Generalized Riemann
+       Hypothesis. In each case, with suﬃciently large computation, such a result can be
+       made unconditional (and may, indeed, be so by the time one reads this).
+
+       Remark 5. Recent advances in proving modularity over totally real ﬁelds have
+       enabled one to solve equations of the shape (1) over certain number ﬁelds. Early
+       work along these lines is due to √
+                                        Jarvis and Meekin [51], which proves such a result
+       for signatures (n, n, n) over Q( 2), while a striking recent paper of Freitas and
+       Siksek [44] extends this to a positive proportion of all real quadratic ﬁelds.
+          In each of the cases where Eq. (1) has been treated for an inﬁnite family of
+       exponents, the underlying techniques have been based upon the modularity of Galois
+November 14, 2014 15:22 WSPC/S1793-0421                  203-IJNT         1530001
+
+
+
+
+                                                          Generalized Fermat equations: A miscellany     5
+
+
+         representations. The limitations of this approach are unclear at this time, though
+         work of Darmon and Granville (see e.g., [34, Proposition 4.2]; see also the discussion
+         in [2]) suggests that restricting attention to Frey–Hellegouarch curves over Q (or,
+         for that matter, to Q-curves) might enable us to treat only signatures which can be
+         related via descent to one of
+                      (p, q, r) ∈ {(n, n, n), (n, n, 2), (n, n, 3), (2, 3, n), (3, 3, n)}.             (2)
+         Of course, as demonstrated by the striking work of Ellenberg [41] (and, to a lesser
+         degree, by Theorems 1 and 2), there are some quite nontrivial cases of equations
+         of the shape (1) which may be reduced to the study of the form Aap + Bbq = Ccr
+         for signatures (p, q, r) in (2). By way of example, if we wish to treat the equation
+         x2 + y 4 = z n , we may, as in [41], factor the left-hand side of this equation over Q(i)
+         to conclude that both y 2 + ix and y 2 − ix are essentially nth powers in Q(i). Adding
+         y 2 + ix to y 2 − ix thus leads to an equation of signature (n, n, 2).
+             For more general signatures, an ambitious program of Darmon [32] (see also
+         [31]), based upon the arithmetic of Frey–Hellegouarch abelian varieties, holds great
+         promise for the future, though, in its full generality, perhaps not the near future.
+             By way of notation, in what follows, when we reference a newform f , we will
+         always mean a cuspidal newform of weight 2 with respect to Γ0 (N ) for some positive
+         integer N . This integer will be called the level of f .
+
+
+         2. The Euclidean Case
+         For convenience in the sequel, we will collect together a number of old results on
+         the equation ap + bq = cr in the Euclidean case when p1 + 1q + 1r = 1.
+
+         Proposition 6. The equations
+                   a 2 + b 6 = c3 ,   a 2 + b 4 = c4 ,   a 4 + b 4 = c2   and    a 3 + b 3 = c3
+         have no solutions in coprime nonzero integers a, b and c. The only solutions to the
+         equation a2 + b3 = c6 in coprime nonzero integers a, b and c are with (|a|, b, |c|) =
+         (3, −2, 1).
+
+         Proof. This is standard (and very classical). The equations correspond to the ellip-
+         tic curves E/Q denoted by 144A1, 32A1, 64A1, 21A1 and 36A1 in Cremona’s nota-
+         tion, respectively. Each of these curves is of rank 0 over Q; checking the rational
+         torsion points yields the desired result.
+
+
+         3. Multi-Frey Techniques
+         In [2], the ﬁrst two authors applied multi-Frey techniques pioneered by Bugeaud,
+         Mignotte and Siksek [20] to the generalized Fermat equation a2 + b6 = cn . In this
+         approach, information derived from one Frey–Hellegouarch curve (in this case, a
+         Q-curve speciﬁc to this equation) is combined with that coming from a second
+November 14, 2014 15:22 WSPC/S1793-0421                203-IJNT      1530001
+
+
+
+
+       6   M. A. Bennett et al.
+
+
+       such curve (corresponding, in this situation, to the generalized Fermat equation
+       x2 + y 3 = z n , with the additional constraint that y is square).
+           In this section, we will employ a similar strategy to treat two new families of
+       generalized Fermat equations, the second of which is, in some sense, a “twisted”
+       version of that considered in [2] (though with its own subtleties). A rather more
+       substantial application of such techniques is published separately in [3], where we
+       discuss the equation a3 + b3n = c2 .
+
+
+       3.1. The equation a3 + b6 = cn
+       Here, we will combine information from Frey–Hellegouarch curves over Q, corre-
+       sponding to Eq. (1) for signatures (2, 3, n) and (3, 3, n). We begin by noting a result
+       of Kraus [54] on (1) with (p, q, r) = (3, 3, n).
+       Proposition 7 (Kraus). If a, b and c are nonzero, coprime integers for which
+                                            a 3 + b 3 = cn ,
+       where n ≥ 3 is an integer, then c ≡ 3 (mod 6) and v2 (ab) = 1. Here vl (x) denotes
+       the largest power of a prime l dividing a nonzero integer x.
+          Actually, Kraus proves this only for n ≥ 17 a prime. The remaining cases
+       of the above proposition follow from Proposition 6 and the results of [17, 28],
+       which yield that there are no nontrivial solutions to the equation above when
+       n ∈ {3, 4, 5, 7, 11, 13}.
+
+       Remark 8. Proposition 7 trivially implies that the equation
+                                            a3j + b3k = cn
+       has no solutions in coprime nonzero integers a, b and c, provided n ≥ 3 and the
+       integers j and k each exceed unity. The case with n = 2 remains, apparently, open.
+           Returning to the equation a3 + b6 = cn , we may assume that n > 163 is prime,
+       by appealing to work of Dahmen [28] (for n ∈ {5, 7, 11, 13}) and Kraus [54] (for
+       primes n with 17 ≤ n ≤ 163). The cases n ∈ {3, 4} follow from Proposition 6
+       (alternatively, if n ∈ {4, 5}, one can also appeal to work of Bruin [17]). Applying
+       Proposition 7, we may suppose further that c ≡ 3 (mod 6) and v2 (a) = 1. We begin
+       by considering the Frey–Hellegouarch curve
+                                                      b2 + a    b(b2 + a)
+                             F : Y 2 = X 3 + bX 2 +          X+           ,
+                                                         3          9
+       essentially a twist of the standard curve for signature (2, 3, n) (see [34, p. 530]). What
+       underlies our argument here (and subsequently) is the fact that the discriminant of
+       F satisﬁes
+                                            64                64
+                                    ∆F = − (a3 + b6 ) = − cn ,
+                                            27                27
+November 14, 2014 15:22 WSPC/S1793-0421             203-IJNT        1530001
+
+
+
+
+                                                      Generalized Fermat equations: A miscellany     7
+
+
+         whereby n | vl (∆F ) for each prime l > 3 dividing c. Since 3 | c, noting that v3 (a2 −
+         ab2 +b4 ) ≤ 1, we thus have v3 (a+b2 ) ≥ n−1. It follows, from a routine application of
+                                                         
+         Tate’s algorithm, that F has conductor 26 · 3 · p, where the product runs through
+         primes p > 3 dividing c (the fact that 3 divides c ensures multiplicative reduction
+         at 3).
+             Here and henceforth, for an elliptic curve E/Q and prime l, we denote by
+                                       ρE
+                                        l : Gal(Q/Q) → GL2 (Fl )
+
+         the Galois representation induced from the natural action of Gal(Q/Q) on the
+         l-torsion points of E. Since n > 163, by work of Mazur et al. (see, e.g., [28,
+         Theorem 22]), the representation ρF  n is irreducible. Appealing to modularity [14]
+         and Ribet’s level lowering [65, 66], it follows that the modular form attached to
+         F is congruent, modulo n, to a modular form g of level 26 · 3 = 192. All such
+         modular forms are integral and, in particular, have Fourier coeﬃcients satisfying
+         a7 (g) ∈ {0, ±4}.
+             Considering the curve F modulo 7, we ﬁnd that either 7 | c or that a7 (F ) ≡
+         −b3 (mod 7). In the ﬁrst case, a7 (g) ≡ ±8 (mod n), contradicting the fact that
+         n > 163. If 7  bc, then a7 (F ) ≡ ±1 (mod 7) and hence, by the Weil bounds,
+         a7 (F ) = ±1, which is incongruent modulo n to any of the choices for a7 (g). We
+         therefore conclude that 7 | b.
+             We turn now to our second Frey–Hellegouarch curve, that corresponding to
+         signature (3, 3, n). Following Kraus [54], we consider
+                          E : Y 2 = X 3 + 3ab 1 X + a3 − b31 ,   where b1 = b2 .
+         Arguing as in [54], the modular form attached to E is congruent modulo n to the
+         unique modular form g  of level 72 which has a7 (g  ) = 0. Since 7 | b, we ﬁnd that
+         a7 (E) = ±4, an immediate contradiction. We thus may conclude as follows.
+         Proposition 9. If n ≥ 2 is an integer, then the only solutions to the equation
+         a3 + b6 = cn in nonzero coprime integers a, b and c are given by (n, a, |b|, |c|) =
+         (2, 2, 1, 3).
+
+         3.2. The equations a2 ± cn = b6
+         We begin by noting that the cases with n = 3 follow from Proposition 6, while those
+         with n = 4 were treated by Bruin [16, Theorems 2 and 3]. The desired result with
+         n = 7 is immediate from [64]. We will thus suppose, without loss of generality, that
+         there exist coprime nonzero integers a, b and c, with
+                            a 2 + cn = b 6 ,   for n = 5 or n ≥ 11 prime.                          (3)
+         We distinguish two cases depending upon the parity of c.
+             Assume ﬁrst that c is odd. In the factorization b6 − a2 = (b3 − a)(b3 + a), the
+         factors on the right-hand side must be odd and hence coprime. We deduce, therefore,
+         the existence of nonzero integers A and B for which
+                                   b3 − a = An     and b3 + a = B n ,
+November 14, 2014 15:22 WSPC/S1793-0421              203-IJNT        1530001
+
+
+
+
+       8   M. A. Bennett et al.
+
+
+       where gcd(b, A, B) = 1. This leads immediately to the Diophantine equation
+                                           An + B n = 2b3 ,
+       which, by [9, Theorem 1.5], has no coprime solutions for primes n ≥ 5 and |AB | > 1.
+       It follows that there are no nonzero coprime solutions to Eq. (3) with c odd.
+
+       Remark 10. If we write the Frey–Hellegouarch curve used to prove Theorem 1.5
+       [9] in terms of a and b, i.e. substitute An = b3 + a, we are led to consider
+                                  E : Y 2 + 6bXY + 4(b3 + a)Y = X 3 .
+       This model has the same c-invariants as, and hence is isomorphic to, the curve
+       given by
+                       Y 2 = X 3 − 3(5b3 − 4a)bX + 2(11b6 − 14b3a + 2a2 ).                 (4)
+       On replacing a by −ia in (4), one obtains the Frey–Hellegouarch Q-curve used for
+       the equation a2 + b6 = cn in [2].
+            Next, assume that c is even. In this case, we can of course proceed as previously,
+       i.e. by factoring b6 − a2 as
+                       b3 ± a = 2An    and b3 ∓ a = 2n−1 B n ,    for A, B ∈ Z,
+       reducing to a generalized Fermat equation
+                                        An + 2n−2 B n = b3 ,                               (5)
+       and considering the Frey–Hellegouarch elliptic curve
+                                    E1 : Y 2 + 3bXY + An Y = X 3 .
+       This approach, as it transpires, again yields a curve isomorphic to (4). By [9,
+       Lemma 3.1], the Galois representation on the n-torsion points of E1 is absolutely
+       irreducible for n ≥ 5, whereby we can apply the standard machinery based on
+       modularity of Galois representations. If one proceeds in this direction, however, it
+       turns out that one ends up dealing with (after level lowering, etc.) weight 2 cus-
+       pidal newforms of level 54; at this level, we are apparently unable to obtain the
+       desired contradiction, at least for certain n. One fundamental reason why this level
+       causes such problems is the fact that the curve (4), evaluated at (a, b) = (3, 1) or
+       (a, b) = (17, 1), is itself, in each case, a curve of conductor 54.
+           It is, however, still possible to use this approach to rule out particular values of
+       n, appealing to the method of Kraus [54] — we will do so for n = 5 and n = 13.
+       In case n = 5, considering solutions modulo 31 to (5), we ﬁnd that if 31  AB, then
+       necessarily a31 (E1 ) ∈ {−7, −4, 2, 8}, whereby we have, for F1 a weight 2 cuspidal
+       newform of level 54, that a31 (F1 ) ≡ −7, −4, 2, 8 (mod 5) or a31 (F1 ) ≡ ±32 (mod 5).
+       Since each such newform is one dimensional with a31 (F1 ) = 5, we arrive at a
+       contradiction, from which we conclude that Eq. (3) has no nonzero coprime solutions
+       with n = 5.
+November 14, 2014 15:22 WSPC/S1793-0421                  203-IJNT           1530001
+
+
+
+
+                                                            Generalized Fermat equations: A miscellany     9
+
+
+             Similarly, if n = 13 and we consider solutions modulo 53 to (5), we ﬁnd that
+         a53 (E1 ) ∈ {−6, 3, 12} or E1 has multiplicative reduction at 53. This implies that for
+         F1 a weight 2 cuspidal newform of level 54, we have a53 (F1 ) ≡ −6, 3, 12 (mod 13) or
+         a53 (F1 ) ≡ ±54 (mod 13). On the other hand, for every such newform F1 , a53 (F1 ) =
+         ±9, a contradiction. Equation (3) thus has no nonzero coprime solutions with
+         n = 13.
+             To treat the remaining values of n, we will employ a second Frey–Hellegouarch
+         curve (that for the signature (2, 3, n)). Speciﬁcally, to a potential solution (a, b, c) to
+         (3) with n ≥ 11 and n = 13 prime, we associate the curve given by the Weierstrass
+         equation
+
+                                        E2 : Y 2 = X 3 − 3b2 X − 2a.                                     (6)
+
+         This model has discriminant ∆ = 26 33 cn . Note that since c is even, both a and b are
+         odd, whereby it is easy to show that v2 (c4 ) = 4, v2 (c6 ) = 6 and v2 (∆) > 12 (since
+         n > 6). These conditions alone are not suﬃcient to ensure nonminimality of the
+         model at 2 (in contrast to like conditions at an odd prime p). A standard application
+         of Tate’s algorithm, however, shows that for a short Weierstrass model satisfying
+         these conditions either the given model or that obtained by replacing a6 by −a6
+                               √
+         (i.e. twisting over Q( −1)) is necessarily nonminimal. Without loss of generality,
+         replacing a by −a if necessary, we may thus assume that E2 is not minimal at 2. It
+         follows that a minimal model for this curve has v2 (c4 ) = v2 (c6 ) = 0 and v2 (∆) > 0,
+         whereby the conductor N (E2 ) of E2 satisﬁes v2 (N (E2 )) = 1. If 3  c, then v3 (∆) ≤ 3
+         and so v3 (N (E2 )) ≤ 3. If 3 | c, then v3 (c4 ) = 2, v3 (c6 ) = 3 and v3 (∆) > 6 (since
+                                                                          √
+         n > 3), which implies that the twist of E2 over either of Q( ±3) has multiplicative
+         reduction at 3, whereby v3 (N (E2 )) = 2. For any prime p > 3, we see that the
+         model for E2 is minimal at p. In particular n | vp (∆min (E2 )) for primes p > 3. In
+         conclusion,
+                                                      
+                                   N (E2 ) = 2 · 3α         p, α ≤ 3.
+                                                         p|c,p>3
+
+            In order to apply level lowering, it remains to establish the irreducibility of the
+         representation ρE 2
+                         n .
+
+         Lemma 11. If n ≥ 11, n = 13 is prime, then ρE 2
+                                                     n is irreducible.
+
+
+         Proof. As is well known (see, e.g., [28, Theorem 22]) by the work of Mazur et al.,
+         ρE
+          n is irreducible if n = 11 or n ≥ 17, and j(E2 ) is not one of
+            2
+
+
+
+                                           −17 · 3733 −172 · 1013
+              −215 , −112 , −11 · 1313 ,             ,            , −215 · 33 , −7 · 1373 · 20833,
+                                             217          2
+                   −7 · 113 , −218 · 33 · 53 , −215 · 33 · 53 · 113 , −218 · 33 · 53 · 233 · 293 .
+
+         Since j(E2 ) = 26 · 33 b6 /cn , one quickly checks that none of these j-values leads to
+         a solution of (3).
+November 14, 2014 15:22 WSPC/S1793-0421                    203-IJNT          1530001
+
+
+
+
+       10   M. A. Bennett et al.
+
+
+       Remark 12. We note that proving irreducibility of ρE    n for n = 5, 7, 13 is reduced
+                                                                 2
+
+
+       to studying the Diophantine equation j(E2 ) = jn (x), where jn (x) is the j-map
+       from X0 (n) to X(1). For example, when n = 13, this amounts (after introducing
+       y = a/b3 ) to ﬁnding rational points on a hyperelliptic curve of genus 3 that we can
+       solve (with some work) using standard Chabauty-type techniques. The previous
+       argument then shows that the Frey–Hellegouarch curve E2 can be used as well to
+       solve (5) for n = 13. We leave the details to the interested reader.
+           Using Lemma 11, modularity [14] and level lowering [65, 66], we thus arrive at
+       the fact that ρE                             α
+                         n is modular of level 2 · 3 with α ≤ 3 (and, as usual, with weight
+                          2
+
+
+       2 and trivial character). At levels 2, 6 and 18, there are no newforms whatsoever,
+       while at level 54 there are only rational newforms. It follows that there exists a
+       newform f of level 54, with ρE        f
+                                      n ≃ ρn (equivalently, an elliptic curve F2 of conductor
+                                       2
+
+                  E2        F2
+       54 with ρn ≃ ρn ). If 5 | c, then E2 has multiplicative reduction at 5 and hence
+       a5 (f ) ≡ ±6 (mod n). Since we are assuming that n ≥ 11, and since a5 (f ) = ±3, this
+       leads to a contradiction. If 5  c, then E2 has good reduction at 5 and, considering
+       all possible solutions of Eq. (3) modulo 5, we ﬁnd that a5 (E2 ) ∈ {±4, ±1, 0}. Since
+       a5 (f ) ≡ a5 (E2 ) (mod n) and n ≥ 11, the resulting contradiction ﬁnishes our proof.
+       We have shown the following.
+
+       Proposition 13. The only solutions to the generalized Fermat equation
+
+                                                a2 + δcn = b6 ,
+
+       in coprime nonzero integers a, b and c, with n ≥ 3 an integer and δ ∈ {−1, 1}, are
+       given by (n, |a|, |b|, δc) = (3, 3, 1, −2) (i.e. the Catalan solutions).
+
+       Remark 14. In the preceding proof, we saw that the possibilities for ap (f ) and
+       ap (E2 ) are disjoint for p = 5. This does not appear to be the case for any prime
+       p > 5 (and we cannot use either p = 2 or p = 3 in this fashion), so, insofar as
+       there is ever luck involved in such a business, it appears that we have been rather
+       lucky here.
+
+
+       4. Covers of Spherical Equations
+       The spherical cases of the generalized Fermat equation xp + y q = z r are those with
+       signature (p, q, r) satisfying 1p + 1q + 1r > 1 (for integers p, q and r, each exceeding
+       unity). To be precise, they are, up to reordering,
+
+                             (p, q, r) ∈ {(2, 3, 3), (2, 3, 4), (2, 4, 3), (2, 3, 5)}
+
+       and (p, q, r) = (2, 2, n) or (2, n, 2), for some n ≥ 2. In each case, the corresponding
+       equations possess inﬁnitely many coprime nonzero integer solutions, given by a ﬁnite
+       set of 2-parameter families (see, e.g., [10, 40]). The explicit parametrizations (with
+       proofs) can be found in [25, Chap. 14]. We will have need of those for (p, q, r) =
+       (2, 2, 3), (2, 2, 5), (2, 4, 3) and (3, 3, 2).
+November 14, 2014 15:22 WSPC/S1793-0421               203-IJNT        1530001
+
+
+
+
+                                                       Generalized Fermat equations: A miscellany    11
+
+
+         4.1. The equation x2 + y 2 = z 3
+         If x, y and z are coprime integer solutions to this equation, then we have (see
+         [25, p. 466])
+                            (x, y, z) = (s(s2 − 3t2 ), t(3s2 − t2 ), s2 + t2 ),                     (7)
+         for coprime integers s and t, of opposite parity. We begin this subsection with some
+         remarks on the Diophantine equation a2 +b2n = c3 . This particular family is treated
+         in [21, 29], where, using techniques of Kraus [54] and Chen–Siksek [24], the following
+         is proved.
+         Theorem 15 (Dahmen [29]). If n is a positive integer satisfying 3 ≤ n ≤ 107 or
+         n ≡ −1 (mod 6), then the Diophantine equation a2 + b2n = c3 has no solutions in
+         nonzero coprime integers a, b and c.
+            Here we recall part of the proof of this theorem for completeness (and future
+         use).
+
+         Proposition 16. If a, b and c are nonzero coprime integers for which
+                                                a2 + b2n = c3 ,
+         where n ≥ 3 is an integer, then b ≡ 3 (mod 6).
+
+         Proof. We may suppose that n ≥ 7 is prime, since for n = 3, 4 and 5 there are
+         no solutions (see Proposition 6, [16, 29]). From (7), if we have coprime integers a, b
+         and c with a2 + b2n = c3 , there exist coprime integers s and t, of opposite parity, for
+         which bn = t(3s2 − t2 ), and hence coprime integers B and C, and δ ∈ {0, 1}, with
+                                  t = 3−δ B n     and 3s2 − t2 = 3δ C n .
+         If δ = 0 (this is the case when 3  b), it follows that C n + B 2n = 3s2 which, via
+         [8, Theorem 1.1], implies a = 0 (and so s = 0). If, on the other hand, we have
+         δ = 1 (so that 3 | b) and b (and hence t) even, then, writing B = 3B1 , we have that
+         C n + 32n−3 B12n = s2 , with B1 even. Arguing as in [8], there thus exists a weight 2
+         cuspidal newform of level 6, an immediate contradiction.
+
+            Note that when b ≡ 3 (mod 6) we are led to the Diophantine equation
+                                         1 2n
+                                          Cn +
+                                            B = A2 ,                                (8)
+                                         27
+         with A even and BC odd, and hence, via (say) the Frey–Hellegouarch curve (see,
+         e.g., [8])
+                                                          B 2n
+                                   E : Y 2 = X 3 + 2AX 2 +     X,                         (9)
+                                                          27
+         to a cuspidal newform of level 96, which we are (presently) unable to rule out for
+         certain n. However, arguing as in [24, 29], we can resolve this case for a family of
+         exponents n of natural density 1. We recall these techniques here.
+November 14, 2014 15:22 WSPC/S1793-0421                      203-IJNT       1530001
+
+
+
+
+       12   M. A. Bennett et al.
+
+
+       4.2. Quadratic reciprocity
+       In what follows, we will employ the Hilbert symbol instead of the Legendre symbol,
+       to enable us to treat the prime 2 without modiﬁcation of our arguments. Recall the
+       (symmetric, multiplicative) Hilbert symbol ( , )K : K ∗ × K ∗ → {±1} deﬁned by
+                           
+                              1    if z 2 = Ax 2 + By 2 has a nonzero solution in K,
+               (A, B)K =
+                              −1 otherwise.
+       For concision, we let ( , )p , ( , ) and ( , )∞ denote ( , )Qp , ( , )Q and ( , )R , respectively.
+       Note that we have the reciprocity law
+                                              
+                                                 (a, b)p = 1,                                       (10)
+                                            p≤∞
+
+       valid for all nonzero rationals a and b. For an odd prime p, if A = pα u and B = pβ v
+       with u and v p-adic units, we further have
+                                                       β  α
+                                             αβ (p−1)  u      v
+                              (A, B)p = (−1)      2               .                    (11)
+                                                       p      p
+       In particular, for an odd prime p where vp (A) and vp (B) are even, it follows that
+       (A, B)p = 1. When p = 2, we have the following analogous formula: if we write
+       A = 2α u and B = 2β v with u and v 2-adic units, then
+                                                    u−1 v−1   v2 −1     2
+                                                                    +β u 8−1
+                                   (A, B)2 = (−1) 2      2 +α   8              .
+
+       Proposition 17. Let r and s be nonzero rational numbers. Assume that vl (r) = 0
+       for all l | n and that the Diophantine equation
+                                        A2 − rB 2n = s(C n − B 2n )
+       has a solution in coprime nonzero integers A, B and C, with BC odd. Then
+                                             
+                           (r, s(C − B 2 ))2      (r, s(C − B 2 ))p = 1.
+                                                vp (r) odd
+                                                vp (s) odd
+                                                 2<p<∞
+
+
+       Proof. Let us begin by noting that, by the reciprocity law (10), we have
+                                         
+                       (r, s(C − B 2 ))2       (r, s(C − B 2 ))p
+                                              vp (r) odd,
+                                              vp (s) odd,
+                                               2<p<∞
+                                                              
+                                   = (r, s(C − B 2 ))∞              (r, s(C − B 2 ))p .             (12)
+                                                         vp (r) even,
+                                                         vp (s) odd,
+                                                          2<p<∞
+
+       Since we suppose
+                                      A2 = rB 2n + s(C n − B 2n ) · 12 ,
+November 14, 2014 15:22 WSPC/S1793-0421                 203-IJNT        1530001
+
+
+
+
+                                                         Generalized Fermat equations: A miscellany   13
+
+
+         it follows that (r, s(C n − B 2n ))p = 1, for all primes p ≤ ∞. Therefore
+                                (r, s(C − B 2 ))p = (r, C n−1 + · · · + B 2n−2 )p .
+         Since C n−1 + · · · + B 2n−2 > 0, we also have (r, s(C − B 2 ))∞ = 1. Now, assume that
+         vp (r) is even for an odd prime p. If vp (s(C − B 2 )) is also even then, by Eq. (11), we
+         have that (r, s(C − B 2 ))p = 1. If vp (s(C − B 2 )) is odd, but p  n then vp (C n−1 +
+         · · · + B 2n−2 ) = 0, which implies that
+                              (r, s(C − B 2 ))p = (r, C n−1 + · · · + B 2n−2 )p = 1.
+         When p | n and vp (s(C − B 2 )) is odd, since we are assuming that r is a p-unit and
+         since A, B and C are coprime, it follows that
+                                            A2 ≡ rB 2n      (mod p),
+         and hence ( rp ) = 1. Appealing again to Eq. (11), we conclude that (r, s(C − B 2 ))p =
+         1, as desired.
+
+             This proposition provides us with an extra constraint upon C/B 2 (mod r) to
+         which we can appeal, at least on occasion, to rule out exponents n in certain residue
+         classes. If we suppose that we have a solution to Eq. (8) in integers A, B, C and n,
+         with A even and BC odd, we can either add or subtract B 2n from both sides of the
+         equation in order to apply the above proposition. Subtracting B 2n (this is the case
+         treated in [29]), we obtain
+                                            28
+                                      A2 − B 2n = C n − B 2n .
+                                            27
+         Here we have r = 28  27 and s = 1, and, via Proposition 17 (supposing that n ≡
+         −1 (mod 6) and appealing to [64] to treat the cases with 7 | n), may conclude that
+                          (28/27, C − B 2 )2 (28/27, C − B 2 )3 (28/27, C − B 2 )7 = 1.
+         Since 3 | B, the quantity C n is a perfect square modulo 3 and so (28/27, C−B 2)3 = 1.
+         Also, since C n−1 + · · · + B 2n−2 is odd, we may compute that
+                                (28/27, C − B 2 )2 = (28/27, C n − B 2n )2 = 1.
+         If 7 | C − B 2 then necessarily 7 | A. It is easy to check from (9) that, in this case,
+         a7 (E) = 0. On the other hand, each cuspidal newform f at level 96 has a7 (f ) = ±4,
+         whereby we have
+                                        0 = a7 (E) ≡ a7 (f ) (mod n),
+         an immediate contradiction. Therefore 7  C − B 2 , and so
+                                                               
+                                                       C − B2
+                            1 = (28/27, C − B 2 )7 =              .                               (13)
+                                                            7
+         On the other hand, since each elliptic curve E/Q of conductor 96 has a7 (E) =
+         ±4, computing the corresponding Fourier coeﬃcient for our Frey–Hellegouarch
+         curve (9), we ﬁnd that
+                               A2 ≡ B 2n    (mod 7) (where A ≡ 0 (mod 7)).
+November 14, 2014 15:22 WSPC/S1793-0421               203-IJNT        1530001
+
+
+
+
+       14   M. A. Bennett et al.
+
+
+       It follows from (8) that (C/B 2 )n ≡ 2 (mod 7). Since n ≡ −1 (mod 6), we therefore
+       have C/B 2 − 1 ≡ 3 (mod 7), contradicting (13). This proves the second part of
+       Theorem 15.
+           Similarly, adding B 2n to both sides of Eq. (8), we have
+                                     26 2n
+                              A2 +      B = C n + B 2n = −((−C)n − B 2n ),
+                                     27
+       where we suppose that n ≡ 3 (mod 4) is prime (so that, via Theorem 15, n ≡
+       7 (mod 12)). We may thus apply Proposition 17 with r = −26/27 and s = −1 to
+       conclude that
+                                                  
+                       (−26/27, s((−C) − B 2 ))p =   (−78, C + B 2 )p = 1.
+                       p|78                              p|78
+
+       As before, we ﬁnd that (−78, C + B 2 )3 = 1. Since each elliptic curve E/Q of
+       conductor 96 has a13 (E) = ±2, we thus have, via (9),
+                  
+                  
+                   A ≡ ±1 (mod 13), B 2n ≡ 4, 9, 10 or 12 (mod 13), or
+                  
+                  
+                  
+                   A ≡ ±2 (mod 13), B 2n ≡ 1, 3, 9 or 10 (mod 13), or
+                  
+                  
+                  
+                  
+                  A ≡ ±3 (mod 13), B 2n ≡ 3, 4, 10 or 12 (mod 13), or
+                    
+                     A ≡ ±4 (mod 13),         B 2n ≡ 1, 4, 10 or 12 (mod 13), or
+                    
+                    
+                    
+                    
+                    
+                     A ≡ ±5 (mod 13),         B 2n ≡ 1, 3, 4 or 9    (mod 13), or
+                    
+                    
+                    
+                      A ≡ ±6 (mod 13),         B 2n ≡ 1, 3, 9 or 12   (mod 13),
+
+       whereby (C/B 2 )n ≡ 2, 3, 9 or 11 (mod 13) and hence from n ≡ 7 (mod 12), C/B 2 ≡
+       2, 3, 9 or 11 (mod 13). It follows that (−78, C +B 2 )13 = 1, whereby (−78, C +B 2 )2 =
+       1. We also know that A is even, while BC is odd, whence C + B 2 ≡ 2 (mod 4). It
+       follows from (−78, C + B 2 )2 = 1 that C/B 2 + 1 ≡ ±2 (mod 16), and so C/B 2 ≡ 1
+       or 13 (mod 16). If we now assume that v2 (A) > 1, then Eq. (8) implies that C n ≡
+       −3B 2n (mod 16) (and so necessarily C/B 2 ≡ 13 (mod 16)). Our assumption that
+       n ≡ 3 (mod 4) thus implies (C/B 2 )n ≡ 5 (mod 16), a contradiction. In conclusion,
+       appealing to Proposition 6 in case 3 | n, we have the following proposition.
+
+       Proposition 18. If n ≡ 3 (mod 4) and there exist nonzero coprime integers a, b
+       and c for which a2 + b2n = c3 , then v2 (a) = 1. In particular, if m ≥ 2 is an integer,
+       then the equation a2m + b2n = c3 has no solution in nonzero coprime integers a, b
+       and c.
+
+
+       4.2.1. a2 + b2n = c9
+       The case n = 2 was handled previously by Bennett, Ellenberg and Ng [5], while the
+       case n = 3 is well known (see Proposition 6). We may thereby suppose that n ≥ 5 is
+       prime. Applying Proposition 16 and (7), there thus exist coprime integers s and t,
+November 14, 2014 15:22 WSPC/S1793-0421               203-IJNT         1530001
+
+
+
+
+                                                       Generalized Fermat equations: A miscellany   15
+
+
+         with s even and t ≡ 3 (mod 6), for which
+                                  bn = t(3s2 − t2 ) and c3 = s2 + t2 .
+         We can therefore ﬁnd coprime A, B ∈ Z with t = 3n−1 An and 3s2 − t2 = 3B n ,
+         whence
+                                          B n + 4 · 32n−3 A2n = c3 .
+         Via Lemma 3.4 of [9], for prime n ≥ 5 this leads to a weight 2 cuspidal newform of
+         level 6, a contradiction. We thus have the following proposition.
+         Proposition 19. If n is an integer with n ≥ 2, then the equation a2 + b2n = c9 has
+         no solutions in nonzero coprime integers a, b and c.
+
+         4.3. The equation x2 + y 2 = z 5
+         If x, y and z are coprime integers satisfying x2 + y 2 = z 5 , then (see [25, p. 466])
+         there exist coprime integers s and t, of opposite parity, with
+                  (x, y, z) = (s(s4 − 10s2 t2 + 5t4 ), t(5s4 − 10s2 t2 + t4 ), s2 + t2 ).       (14)
+         The following result is implicit in [22]; we include a short proof for completeness.
+         Proposition 20. If a, b and c are nonzero coprime integers for which
+                                               a2 + b2n = c5 ,
+         where n ≥ 2 is an integer, then b ≡ 1 (mod 2).
+
+         Proof. The cases n = 2, 3 and 5 are treated in [5], [2] and [63], respectively. We
+         may thus suppose that n ≥ 7 is prime. From (14), there are coprime integers s and t,
+         of opposite parity, for which bn = t(5s4 − 10s2 t2 + t2 ). There thus exist integers A
+         and B, and δ ∈ {0, 1}, with
+                             t = 5−δ An     and 5s4 − 10s2 t2 + t4 = 5δ B n .
+         It follows that
+                                  5δ B n + 4 · 5−4δ A4n = 5(s2 − t2 )2 .                        (15)
+         If b is even (whereby the same is true of t and A) and δ = 1, then again arguing
+         as in [8], we deduce the existence of a weight 2 cuspidal newform of level 10, a
+         contradiction. If, however, b is even and δ = 0, the desired result is an immediate
+         consequence of [8, Theorem 1.2].
+
+         4.3.1. The equation a2 + b2n = c10
+         As noted earlier, we may suppose that n ≥ 7 is prime and, from Proposition 20,
+         that b is odd. Associated to such a solution, via the theory of Pythagorean triples,
+         there thus exist coprime integers u and v, of opposite parity, with
+                                 bn = u2 − v 2     and c5 = u2 + v 2 .                          (16)
+November 14, 2014 15:22 WSPC/S1793-0421                 203-IJNT        1530001
+
+
+
+
+       16   M. A. Bennett et al.
+
+
+       Hence, we may ﬁnd integers A and B with
+                                    u − v = An     and u + v = B n .
+       From the second equation in (16) and from (14), there exist coprime integers s and
+       t, of opposite parity, with
+                           u − v = (s − t)(s4 − 4s3 t − 14s2 t2 − 4st3 + t4 ).
+       Since
+                         (s − t)4 − (s4 − 4s3 t − 14s2 t2 − 4st3 + t4 ) = 20s2 t2 ,
+       it follows that gcd(s − t, s4 − 4s3 t − 14s2 t2 − 4st3 + t4 ) | 5. Similarly, we have
+                           u + v = (s + t)(s4 + 4s3 t − 14s2 t2 + 4st3 + t4 ),
+       where gcd(s+t, s4 +4s3 t−14s2 t2 +4st3 +t4 ) also divides 5. Since s and t are coprime,
+       we cannot have s − t ≡ s + t ≡ 0 (mod 5) and so may conclude that at least one of
+       gcd(s − t, s4 − 4s3 t − 14s2 t2 − 4st3 + t4 ) or gcd(s + t, s4 + 4s3 t − 14s2 t2 + 4st3 + t4 )
+       is equal to 1. There thus exist integers X and Y such that either (X n , Y n ) =
+       (s − t, s4 − 4s3 t − 14s2 t2 − 4st3 + t4 ) or (s + t, s4 + 4s3 t − 14s2 t2 + 4st3 + t4 ). In
+       either case, X 4n − Y n = 5(2st)2 which, with [8, Theorem 1.1], contradicts st = 0.
+       In conclusion, we have the following proposition.
+
+       Proposition 21. If n is an integer with n ≥ 2, then the equation a2 + b2n = c10
+       has no solutions in nonzero coprime integers a, b and c.
+
+
+       4.3.2. The equation a2 + b2n = c15
+       As before, we may suppose that n ≥ 7 is prime. Using Proposition 16, we may
+       also assume that b ≡ 3 (mod 6). Appealing to our parametrizations for x2 + y 2 =
+       z 5 (i.e. Eq. (14)), we deduce the existence of a coprime pair of integers (s, t) for
+       which
+                            bn = t(5s4 − 10s2 t2 + t4 )   and c3 = s2 + t2 .
+       Since s and t are coprime, it follows that 5s4 − 10s2 t2 + t4 ≡ ±1 (mod 3), whereby
+       3 | t. There thus exist integers A and B, and δ ∈ {0, 1} satisfying Eq. (15), with the
+       additional constraint that 3 | A. It follows that the corresponding Frey–Hellegouarch
+       curve has multiplicative reduction at the prime 3, but level lowers to a weight 2
+       cuspidal newform of level N = 40 or 200 (depending on whether δ = 1 or 0,
+       respectively). This implies the existence of a form f at one of these levels with
+       a3 (f ) ≡ ±4 (mod n). Since all such forms are one dimensional and have a3 (f ) ∈
+       {0, ±2, ±3}, it follows that n = 7, contradicting the main result of [64]. We thus
+       have the following proposition.
+
+       Proposition 22. If n is an integer with n ≥ 2, then the equation a2 + b2n = c15
+       has no solutions in nonzero coprime integers a, b and c.
+November 14, 2014 15:22 WSPC/S1793-0421           203-IJNT        1530001
+
+
+
+
+                                                   Generalized Fermat equations: A miscellany   17
+
+
+         4.4. The equation x2 + y 4 = z 3
+         Coprime integer solutions to this equation satisfy one of the following: (see [25,
+         pp. 475–477])
+                     
+                     
+                      x = 4ts(s2 − 3t2 )(s4 + 6s2 t2 + 81t4 )(3s4 + 2s2 t2 + 3t4 ),
+                     
+                       y = ±(s2 + 3t2 )(s4 − 18s2 t2 + 9t4 ),                          (17)
+                     
+                     
+                     z = (s4 − 2t2 s2 + 9t4 )(s4 + 30t2 s2 + 9t4 ),
+                      
+                      
+                      x = ±(4s4 + 3t4 )(16s8 − 408t4s4 + 9t8 ),
+                      
+                       y = 6ts(4s4 − 3t4 ),                                                 (18)
+                      
+                      
+                      z = 16s8 + 168t4 s4 + 9t8 ,
+                      
+                      
+                      x = ±(s4 + 12t4 )(s8 − 408t4s4 + 144t8 ),
+                      
+                       y = 6ts(s4 − 12t4 ),                                                 (19)
+                      
+                      
+                      z = s8 + 168t4 s4 + 144t8 ,
+         or
+                
+                
+                 x = ±2(s4 + 2ts3 + 6t2 s2 + 2t3 s + t4 )(23s8 − 16ts7 − 172t2 s6
+                
+                
+                
+                     − 112t3 s5 − 22t4 s4 − 112t5 s3 − 172t6 s2 − 16t7 s + 23t8 ),
+                
+                
+                  y = 3(s − t)(s + t)(s4 + 8ts3 + 6t2 s2 + 8t3 s + t4 ),                    (20)
+                
+                
+                
+                 z = 13s8 + 16ts7 + 28t2 s6 + 112t3 s5 + 238t4 s4
+                
+                
+                
+                
+                      + 112t5 s3 + 28t6 s2 + 16t7 s + 13t8 .
+         Here, s and t are coprime integers satisfying
+                    
+                    
+                      s ≡ t (mod 2) and s ≡ ±1 (mod 3), in case (17),
+                    
+                    
+                    t ≡ 1 (mod 2) and s ≡ ±1 (mod 3), in case (18),
+                    
+                      s ≡ 1 (mod 2) and s ≡ ±1 (mod 3), in case (19),
+                    
+                    
+                    
+                       s ≡ t (mod 2) and s ≡ t (mod 3), in case (20).
+            Since work of Ellenberg [41] (see also [5]) treats the case where z is an nth power
+         (and more), we are interested in considering equations corresponding to x = an or
+         y = bn . We begin with the former.
+
+         4.4.1. The equation a2n + b4 = c3
+         The case n = 2 follows (essentially) from work of Lucas; see Sec. 5. We may thus
+         suppose that n ≥ 3. We appeal to the parametrizations (17)–(20), with x = an . In
+         (17) and (20), we have a even, while, in (18) and (19), a is coprime to 3. Applying
+         Proposition 16 leads to the desired conclusion.
+
+         Proposition 23. If n is an integer with n ≥ 2, then the equation a2n + b4 = c3 has
+         no solutions in nonzero coprime integers a, b and c.
+November 14, 2014 15:22 WSPC/S1793-0421                 203-IJNT         1530001
+
+
+
+
+       18   M. A. Bennett et al.
+
+
+       4.4.2. The equation a2 + b4n = c3
+       For this equation, with n ≥ 2 an integer, Proposition 16 implies that we are in case
+       (20), i.e. that there exist integers s and t for which
+              bn = 3(s − t)(s + t)(s4 + 8s3 t + 6s2 t2 + 8st3 + t4 ),     gcd(s − t, 6) = 1.   (21)
+            Assuming n is odd, we thus can ﬁnd integers A, B and C with
+                                        1 n
+              s − t = An ,    s+t=        B     and s4 + 8s3 t + 6s2 t2 + 8st3 + t4 = C n .
+                                        3
+       It follows that
+                                          1 4n
+                                        A4n −B = −2C n ,                         (22)
+                                          27
+       with ABC odd and 3 | B. There are (at least) three Frey–Hellegouarch curves we
+       can attach to this Diophantine equation:
+                                                             
+                                                         B 4n
+                              E1 : Y 2 = X(X − A4n ) X −       ,
+                                                          27
+                                   E2 : Y 2 = X 3 + 2A2n X 2 − 2C n X,
+                                                 2B 2n 2 2C n
+                                   E3 : Y 2 = X 3 −   X +        X.
+                                                  27          27
+       Although the solution (A4n , B 4n , C n ) = (1, 81, 1) does not persist for large n, it
+       still appears to cause an obstruction to resolving this equation fully using current
+       techniques: none of the Ei have complex multiplication, nor can we separate out
+       this solution using images of inertia at 3 or other primes dividing the conductor. In
+       terms of the original equation, the obstruction corresponds to the identity
+                                          (±46)2 + (±3)4 = 133 .
+       Incidentally, this is the same obstructive solution which prevents a full resolution
+       of a2 + b2n = c3 .
+           By Theorem 15, we may assume that every prime divisor l of n exceeds 106 ,
+       which implies that ρE   i
+                             l is, in each case, irreducible. Applying level lowering results,
+       we ﬁnd that the modular form attached to Ei is congruent to a modular form fi of
+       weight 2 and level Ni , where
+                                             
+                                             
+                                               96,    i = 1,
+                                             
+                                             
+                                        Ni = 384, i = 2,
+                                             
+                                             
+                                             
+                                             1152, i = 3.
+
+       The latter two conductor calculations can be found in [8] and the former in [53].
+       Since l > 106 , all the fi ’s with noninteger coeﬃcients can be ruled out, after a short
+       computation. This implies that there is an elliptic curve Fi with conductor Ni such
+       that ρF      Ei
+              l ≃ ρl . Furthermore, Ei must have good reduction at primes 5 ≤ p ≤ 53
+               i
+
+
+       (again after a short calculation using the fact that l > 106 ).
+November 14, 2014 15:22 WSPC/S1793-0421             203-IJNT        1530001
+
+
+
+
+                                                     Generalized Fermat equations: A miscellany   19
+
+
+            Adding 2B 4n to both sides of Eq. (22), we have
+                                            53 4n
+                                    A4n +      B = 2(−C n + B 4n )
+                                            27
+         and hence, via Proposition 17,
+
+            (−53/27, 2(−C + B 4 ))2 (−53/27, 2(−C + B 4 ))3 (−53/27, 2(−C + B 4 ))53 = 1.
+
+         Since −2C n ≡ A4n (mod 3), we have (−53/27, 2(−C + B 4 ))3 = 1. Also, since
+         −53/27 ≡ 1 (mod 8), it is a perfect square in Q2 , which implies that (−53/27,
+         2(−C + B 4 ))2 = 1. Therefore
+
+                                     (−53/27, 2(−C + B 4 ))53 = 1,
+
+         i.e. −C/B 4 + 1 is a quadratic nonresidue modulo 53. Since all the elliptic curves F1
+         of conductor 96 have a53 (F1 ) = 10 (whereby, from l > 106 , a53 (E1 ) = 10), if follows
+         that (A4 /B 4 )n ≡ 36 (mod 53). Therefore
+
+                                      (−C/B 4 )n ≡ 17 (mod 53).
+
+         If n ≡ ±9, ±11, ±15, ±17 (mod 52) then (−C/B 4 )n = (α − 1)n ≡ 17 (mod 53)
+         for any choice of quadratic nonresidue α. It follows that if n ≡ ±2, ±4 (mod 13),
+         Eq. (22) has no solution with ABC odd and 3 | B.
+             Similarly, if we subtract 2B 2n from both sides of Eq. (22), we obtain
+                                            55 4n
+                                    A4n −      B = 2(−C n − B 4n ).
+                                            27
+         Proposition 17 thus implies
+
+                   (55/27, 2(−C − B 4 ))2 (55/27, 2(−C − B 4 ))3 (55/27, 2(−C − B 4 ))5
+                       × (55/27, 2(−C − B 4 ))11 = 1.
+
+         As before we have (55/27, 2(−C − B 4 ))3 = 1 and since 55/27 ≡ 1 (mod 4) and
+         C n−1 + · · · + B 4n−4 is odd, also (55/27, C n−1 + · · · + B 4n−4 )2 = (55/27, 2(−C −
+         B 4 ))2 = 1. Similarly, since (A4 /B 4 )n ≡ 1 (mod 5), it follows that (−C/B 4 )n ≡
+         −1 (mod 5), whereby, since n is odd, −C/B 4 ≡ −1 (mod 5). Therefore
+         (55/27, 2(−C − B 4 ))5 = 1, which implies (55/27, 2(−C − B 4 ))11 = 1. In partic-
+         ular −C/B 4 ≡ λ (mod 11) where
+
+                                        λ ∈ {0, 1, 3, 7, 8, 9}.                               (23)
+
+         We can rule out λ = 0 and 1 since we are assuming that 11  ABC . To treat the
+         other cases, we will apply the Chen–Siksek method to the curves E2 and E3 . We
+         ﬁrst show that a11 (E2 ) = −4.
+             Notice that considering all possible solutions to Eq. (22) modulo 13, necessarily
+         a13 (E2 ) = −6 (since we assume that 13  ABC ). Observe also that E2 has nonsplit
+November 14, 2014 15:22 WSPC/S1793-0421              203-IJNT          1530001
+
+
+
+
+       20    M. A. Bennett et al.
+
+
+       multiplicative reduction at 3. Therefore
+                                                          χ ∗
+                                    ρE        F2
+                                     n |G3 ≃ ρn |G3 ≃
+                                       2
+                                                                   ,
+                                                           0   
+       where χ is the cyclotomic character and  : G3 → F∗n is the unique unramiﬁed
+       quadratic character (see, for example, [33]). It follows that F2 must have nonsplit
+       multiplicative reduction at 3 and hence F2 must be isogenous to the elliptic curve
+       384D in the Cremona’s database. In particular, we have a11 (E2 ) = −4 and so
+                                        A2n
+                                             ≡ 1, 5 (mod 11).
+                                        B 2n
+       When A2n /B 2n ≡ 1 (mod 11), we ﬁnd, by direct computation, that a11 (E3 ) =
+       0, contradicting the fact that a11 (E) ∈ {±2, ±4} for every elliptic curve E/Q of
+       conductor 1152. Therefore, we necessarily have
+                                                    n
+                         A2n                      −C
+                             ≡ 5 (mod 11) ⇒             ≡ 8 (mod 11),
+                        B 2n                      B4
+       whereby λn ≡ 8 (mod 11). A quick calculation shows, however, that for n ≡
+       ±3 (mod 10), this contradicts (23). Collecting all this together, we conclude as
+       follows (noting the solution coming from (p, q, r) = (2, 8, 3); see [16]).
+
+       Proposition 24. If n is a positive integer with either n ≡ ±2 (mod 5) or n ≡
+       ±2, ±4 (mod 13), then the equation a2 + b4n = c3 has only the solution (a, b, c, n) =
+       (1549034, 33, 15613, 2) in positive coprime integers a, b and c.
+
+       Remark 25. The table of results regarding Eq. (1) given on p. 490 of [25] lists
+       the case of signature (2, 4n, 3) as solved, citing work of the ﬁrst two authors. This
+       is due to an over-optimistic communication of the ﬁrst author to Professor Cohen.
+       We regret any inconvenience or confusion caused by this mistake.
+
+       Remark 26. Regarding the Diophantine equation (22) as an equation of signature
+       (2, 4, n), we can attach the Frey–Hellegouarch Q-curves
+                                                                 √
+                           E4 : Y 2 = X 3 + 4B n X 2 + 2(B 2n + 3 3A2n )X
+
+       and
+                                                                   
+                                                              1
+                           E5 : Y 2 = X 3 + 4An X 2 + 2 A2n + √ B 2n X.
+                                                             3 3
+       One further Frey–Hellegouarch Q-curve can be derived as follows. Deﬁning
+
+                      U = (A4n + B 4n /27)/2 = 2(s4 + 2s3 t + 6s2 t2 + 2st3 + t4 )
+
+       we have
+                                              1 4n 4n
+                                       U2 −      A B = C 2n .
+                                              27
+November 14, 2014 15:22 WSPC/S1793-0421             203-IJNT        1530001
+
+
+
+
+                                                     Generalized Fermat equations: A miscellany   21
+
+
+         Considering this as an equation of signature (n, n, 2) turns out to give us the Frey–
+         Hellegouarch curve E1 again. Writing V = An B n /3 and W = C 2 , we arrive at the
+         generalized Fermat equation of signature (2, 4, n)
+
+                                            U 2 − 3V 4 = W n
+
+         in nonzero coprime integers U, V and W , with 3 | V and v2 (U ) = 1. As before, we
+         can associate a Q-curve to this equation.
+             Although the solution (A4n , B 4n , C n ) = (1, 81, 1) does not satisfy our desired
+         3-adic properties, it still apparently forms an obstruction using current techniques,
+         here and for all Frey–Hellegouarch curves we have considered, to solving this equa-
+         tion in full generality.
+
+
+         4.5. The equation x3 + y 3 = z 2
+         From [25, pp. 467–470], the coprime integer solutions to this equation satisfy one
+         of the following:
+                        
+                        
+                         x = s(s + 2t)(s2 − 2ts + 4t2 ),
+                        
+                          y = −4t(s − t)(s2 + ts + t2 ),                               (24)
+                        
+                        
+                        z = ±(s2 − 2ts − 2t2 )(s4 + 2ts3 + 6t2 s2 − 4t3 s + 4t4 ),
+                       
+                       
+                        x = s4 − 4ts3 − 6t2 s2 − 4t3 s + t4 ,
+                       
+                         y = 2(s4 + 2ts3 + 2t3 s + t4 ),                                      (25)
+                       
+                       
+                       z = 3(s − t)(s + t)(s4 + 2s3 t + 6s2 t2 + 2st3 + t4 ),
+
+         or
+                                     
+                                     
+                                      x = −3s4 + 6t2 s2 + t4 ,
+                                     
+                                       y = 3s4 + 6t2 s2 − t4 ,                                (26)
+                                     
+                                     
+                                     z = 6st(3s4 + t4 ).
+
+         Here, the parametrizations are up to exchange of x and y, and s and t are coprime
+         integers with
+                      
+                      
+                       s ≡ 1 (mod 2) and s ≡ t (mod 3), in case (24),
+                      
+                        s ≡ t (mod 2) and s ≡ t (mod 3), in case (25),
+                      
+                      
+                      s ≡ t (mod 2) and t ≡ 0 (mod 3), in case (26).
+
+
+         4.5.1. The equation a3 + b3 = c2n
+         The cases n ∈ {2, 3, 5} follow from [17] and Proposition 6. We may thus suppose
+         that n ≥ 7 is prime. Since Proposition 7 implies c ≡ 3 (mod 6), it follows that
+
+                          cn = 3(s − t)(s + t)(s4 + 2s3 t + 6s2 t2 + 2st3 + t4 ),
+November 14, 2014 15:22 WSPC/S1793-0421              203-IJNT        1530001
+
+
+
+
+       22   M. A. Bennett et al.
+
+
+       for s and t coprime integers with s ≡ t (mod 2) and s ≡ t (mod 3). There thus exist
+       integers A, B and C with
+             s − t = An ,   s + t = 3n−1 B n   and s4 + 2s3 t + 6s2 t2 + 2st3 + t4 = C n ,
+
+       whereby
+
+                                      A4n + 34n−3 B 4n = 4C n ,
+
+       which we rewrite as
+
+                                    4C n − A4n = 3(32n−2 B 2n )2 .
+
+       Applying Theorem 1.2 of [8] to this last equation, we may conclude, for n ≥ 7
+       prime, that either ABC = 0 or 32n−2 B 2n = ±1, in either case a contradiction. We
+       thus have the following proposition.
+
+       Proposition 27. If n is an integer with n ≥ 2, then the equation a3 + b3 = c2n has
+       no solutions in nonzero coprime integers a, b and c.
+
+
+       4.5.2. The equation a3 + b3n = c2
+       The techniques involved in this case require some of the most elaborate combination
+       of ingredients to date, including Q-curves and delicate multi-Frey and image of
+       inertia arguments. For this reason, we have chosen to publish this separately in [3].
+       Our main result there is as follows.
+       Theorem 28 ([3]). If n is prime with n ≡ 1 (mod 8), then the equation a3 + b3n =
+       c2 has no solutions in coprime nonzero integers a, b and c, apart from those given
+       by (a, b, c) = (2, 1, ±3).
+
+
+       4.6. Other spherical equations
+       Solutions to the generalized Fermat equation with icosahedral signature (2, 3, 5)
+       correspond to 27 parametrized families, in each case with parametrizing forms of
+       degrees 30, 20 and 12 (see, e.g., [40]). We are unable to apply the techniques of this
+       paper to derive much information of value in this situation (but see [4]).
+
+
+       5. Historical Notes on the Equations a4 ± b4 = c3
+       In [35], it is proved that the generalized Fermat equation (1) with (p, q, r) = (n, n, 3),
+       has no coprime, nonzero integer solutions a, b and c, provided n ≥ 7 is prime
+       (and assuming the modularity of elliptic curves over Q with conductor divisible by
+       27, now a well-known theorem [14]). To show the nonexistence of solutions for all
+       integers n ≥ 3, it suﬃces, in addition, to treat the cases n = 3, 4 and 5; the ﬁrst of
+       these is classical and was (essentially) solved by Euler (see Proposition 6), while the
+       last was handled by Poonen in [63]. The case n = 4 is attributed in [35, 63], citing
+November 14, 2014 15:22 WSPC/S1793-0421                  203-IJNT           1530001
+
+
+
+
+                                                             Generalized Fermat equations: A miscellany   23
+
+
+         [36, p. 630], to the French mathematician Édouard Lucas (1842–1891), in particular
+         to [58] and [59, Chap. III].
+             In these two papers, as well as in other work of Lucas [47, pp. 282–288], there
+         does not appear to be, however, any explicit mention of the equation
+                      a 4 + b 4 = c3 ,   a, b, c ∈ Z,    abc = 0,       gcd(a, b, c) = 1.             (27)
+         In this section, we will attempt to indicate why, despite this, the aforementioned
+         attributions are in fact correct. It is worth mentioning that the equations a4 ±b4 = c3
+         are also explicitly solved in [25, Proposition 14.6.6].
+
+
+         5.1. Reduction to elliptic generalized Fermat equations
+         First of all, it is quite elementary to reduce the nonexistence of solutions to (27) (or,
+         analogously, the equation a4 − b4 = c3 ; in the sequel, we will not discuss this latter
+         equation further) to the nonexistence of solutions to certain elliptic generalized
+         Fermat equations of signature (4, 4, 2). To carry this out, we note that a solution in
+         integers a, b and c to (27) implies, via (7) (and changing the sign of t), the existence
+         of nonzero coprime integers s and t for which
+                                               a2 = s(s2 − 3t2 ),                                     (28)
+                                               b2 = t(t2 − 3s2 )                                      (29)
+         (and c = s2 + t2 ). Without loss of generality, we assume that 3  s. Then gcd(s, s2 −
+         3t2 ) = 1 and, from (28), we have
+                                                         s = 1 α2 ,                                  (30)
+                                               s2 − 3t2 = 1 β 2 ,                                    (31)
+         for some nonzero integers α, β and 1 ∈ {±1}. Using gcd(t, t2 − 3s2 ) ∈ {1, 3} and
+         (29), we have
+                                                         t = 2 γ 2 ,                                 (32)
+                                               t − 3s = 2 δ ,
+                                                2        2          2
+                                                                                                      (33)
+         for nonzero integers γ, δ and 2 ∈ {±1, ±3}. Examining (31) or (33) modulo 4, shows
+         that 1 , 2 ≡ −1 (mod 4). Considering these equations simultaneously modulo 8,
+         now shows that 2 = 1. It follows that we have
+                                           1 = 1       and 2 = −3.
+         Substituting (30) and (32) in Eq. (31) now yields
+                                             α4 − 27γ 4 = β 2 ,                                       (34)
+         while substituting (30) and (32) in (33) yields
+                                              α4 − 3γ 4 = δ 2 .                                       (35)
+November 14, 2014 15:22 WSPC/S1793-0421            203-IJNT       1530001
+
+
+
+
+       24   M. A. Bennett et al.
+
+
+       5.2. Relation to work of Lucas
+       In the preceding subsection, we showed that in order to prove that there are no solu-
+       tions to (27), it suﬃces to demonstrate that one of the Diophantine equations (34)
+       or (35) does not have solutions in nonzero integers. In [58, Chap. I; 59, Chap. III],
+       Lucas studied the Diophantine equation Ax 4 + By 4 = Cz 2 in unknown integers
+       x, y, z, using Fermat’s method of descent. Here, A, B and C are integers whose prime
+       divisors are contained in {2, 3}. His chief concern, however, was not with explicitly
+       showing that a given equation of this shape has no nontrivial solutions, but rather
+       in describing nontrivial solutions in the cases where they exist. In [58, Chap. I,
+       §X] a description of all the equations Ax 4 + By 4 = Cz 2 as above that do have
+       nontrivial solutions is recorded, together with a reference to the explicit solutions.
+       For the other equations Ax 4 + By 4 = Cz 2 , including (34) and (35), it is simply
+       stated that there are no nontrivial solutions, without explicit proof of this fact.
+       In these references, however, Lucas clearly demonstrates his mastery of Fermat’s
+       method of descent and one can check that this method indeed applies immediately
+       to prove the nonexistence of nontrivial solutions in these cases. This provides con-
+       vincing evidence that Lucas had proofs for his claims that there are no nontrivial
+       solutions to (34) and (35), amongst others (which he failed to record, apparently as
+       he considered these cases to be lacking in interest!).
+
+       6. Future Work
+       A problem of serious diﬃculty that likely awaits fundamentally new techniques is
+       that of solving Eq. (1) for, say, ﬁxed r and inﬁnite, unbounded families p and q,
+       with gcd(p, q) = 1. A truly spectacular result at this stage would be to solve an
+       inﬁnite family where p, q and r are pairwise coprime. Indeed, solving a single new
+       equation of this form will likely cost considerable eﬀort using current techniques.
+           A limitation of the modular method at present is that the possible exponents
+       (p, q, r) must relate to a moduli space of elliptic curves (or more generally, abelian
+       varieties of GL2 -type). For general (p, q, r), this is not the case. When this pre-
+       condition holds, the modular method can be viewed as a technique for reducing
+       the problem of resolving (1) to that of studying certain rational points on these
+       moduli spaces through Galois representations. The inability to carry out the mod-
+       ular method in such a situation relates to a lack of suﬃciently strong methods
+       for eﬀectively bounding these rational points (i.e. Mazur’s method fails or has not
+       been developed). We note however that irreducibility is typically easier to prove
+       because the Frey–Hellegouarch curves encountered will have semi-stable reduction
+       away from small primes — this allows Dieulefait and Freitas [37], and Freitas [42],
+       and Freitas and Siksek [45] for instance, to prove irreducibility without resort to a
+       Mazur-type result (essentially, via modiﬁcations of a method of Serre [67, p. 314,
+       Corollaire 2] which predates and is used in [61]).
+           For general (p, q, r), Darmon [32] constructs Frey–Hellegouarch abelian varieties
+       of GL2 -type over a totally real ﬁeld and established modularity in some cases;
+November 14, 2014 15:22 WSPC/S1793-0421               203-IJNT        1530001
+
+
+
+
+                                                       Generalized Fermat equations: A miscellany   25
+
+
+         the analogous modular curves are, in general, quotients of the complex upper half-
+         plane by nonarithmetic Fuchsian groups.
+             The ABC conjecture implies that there are only ﬁnitely many solutions to (1) in
+         coprime integers once min{p, q, r} ≥ 3. In addition, an eﬀective version of the ABC
+         conjecture would imply an eﬀective bound on the size of the solutions, though this
+         eﬀectivity needs to be within computational range to allow a complete quantitative
+         resolution of (1).
+
+
+         Acknowledgments
+         The authors would like to thank the anonymous referee for numerous suggestions
+         that improved the readability of this paper. The research was supported by NSERC.
+         The third author was supported by an NWO-Veni grant.
+
+
+         References
+          [1] M. Bennett, The equation x2n + y 2n = z 5 , J. Théor. Nombres Bordeaux 18(2) (2006)
+              315–321.
+          [2] M. Bennett and I. Chen, Multi-Frey Q-curves and the Diophantine equation a2 +b6 =
+              cn , Algebra Number Theory 6(4) (2012) 707–730.
+          [3] M. Bennett, I. Chen, S. Dahmen and S. Yazdani, On the equation a3 + b3n = c2 ,
+              Acta Arith. 163 (2014) 327–343.
+          [4] M. Bennett and S. Dahmen, Klein forms and the generalized superelliptic equation,
+              Ann. Math. 77 (2013) 171–239.
+          [5] M. Bennett, J. Ellenberg and N. Ng, The Diophantine equation A4 + 2δ B 2 = C n ,
+              Int. J. Number Theory 6 (2010) 311–338.
+          [6] M. Bennett, F. Luca and J. Mulholland, Twisted extensions of the cubic case of
+              Fermat’s last theorem, Ann. Sci. Math. Québec 35 (2011) 1–15.
+          [7] M. Bennett and J. Mulholland, On the Diophantine equation xn + y n = 2α pz 2 , C. R.
+              Math. Acad. Sci. Soc. R. Can. 28 (2006) 6–11.
+          [8] M. Bennett and C. Skinner, Ternary Diophantine equations via Galois representations
+              and modular forms, Canad. J. Math. 56 (2004) 23–54.
+          [9] M. Bennett, V. Vatsal and S. Yazdani, Ternary Diophantine equations of signature
+              (p, p, 3), Compos. Math. 140 (2004) 1399–1416.
+         [10] F. Beukers, The Diophantine equation Ax p + By q = Cz r , Duke Math. J. 91 (1998)
+              61–88.
+         [11]          , The generalized Fermat equation, in Explicit Methods in Number Theory,
+              Panor. Synthéses, Vol. 36 (Soc. Math, Paris, 2012), pp. 119–149.
+         [12] N. Billerey, Équations de Fermat de type (5, 5, p), Bull. Austral. Math. Soc. 76 (2007)
+              161–194.
+         [13] N. Billerey and L. V. Dieulefait, Solving Fermat-type equations x5 + y 5 = dz p , Math.
+              Comp. 79 (2010) 535–544.
+         [14] C. Breuil, B. Conrad, F. Diamond and R. Taylor, On the modularity of elliptic curves
+              over Q: Wild 3-adic exercises, J. Amer. Math. Soc. 14(4) (2001) 843–939.
+         [15] D. Brown, Primitive integral solutions to x2 +y 3 = z 10 , Int. Math. Res. Notices 2012
+              (2012) 423–436.
+         [16] N. Bruin, The Diophantine equations x2 ± y 4 = ±z 6 and x2 + y 8 = z 3 , Compos.
+              Math. 118 (1999) 305–321.
+November 14, 2014 15:22 WSPC/S1793-0421                203-IJNT        1530001
+
+
+
+
+       26     M. A. Bennett et al.
+
+
+       [17]         , On powers as sums of two cubes, in Algorithmic Number Theory, Lecture
+            Notes in Computer Science, Vol. 1838 (Springer, Berlin, 2000), pp. 169–184.
+       [18]         , Chabauty methods using elliptic curves, J. Reine Angew. Math. 562 (2003)
+            27–49.
+       [19]         , The primitive solutions to x3 + y 9 = z 2 , J. Number Theory 111(1) (2005)
+            179–189.
+       [20] Y. Bugeaud, M. Mignotte and S. Siksek, A multi-Frey approach to some multi-
+            parameter families of Diophantine equations, Canad. J. Math. 60 (2008) 491–519.
+       [21] I. Chen, On the equation s2 + y 2p = α3 , Math. Comp. 77 (2008) 1223–1227.
+       [22]         , On the equation a2 + b2p = c5 , Acta Arith. 143 (2010) 345–375.
+       [23]         , On the equation a2 −2b6 = cp , LMS J. Comput. Math. 15(1) (2012) 158–171.
+       [24] I. Chen and S. Siksek, Perfect powers expressible as sums of two cubes, J. Algebra
+            322 (2009) 638–656.
+       [25] H. Cohen, Number Theory, Vol. II : Analytic and Modern Tools, Graduate Texts in
+            Mathematics, Vol. 240 (Springer, New York, 2007).
+       [26] A. Dabrowski, On integers represented by x4 −y 4 , Bull. Austral. Math. Soc. 76 (2007)
+            133–136.
+       [27]         , On a class of generalized Fermat equations, Bull. Austral. Math. Soc. 82
+            (2010) 505–510.
+       [28] S. Dahmen, Classical and modular methods applied to Diophantine equations, Ph.D.
+            thesis, University of Utrecht (2008); http://igitur-archive.library.uu.nl/dissertations/
+            2008-0820-200949/UUindex.html.
+       [29]         , A reﬁned modular approach to the Diophantine equation x2 + y 2n = z 3 , Int.
+            J. Number Theory 7(5) (2011) 1303–1316.
+       [30] S. Dahmen and S. Siksek, Perfect powers expressible as sums of two ﬁfth or seventh
+            powers, Acta Arith. 164 (2014) 65–100.
+       [31] H. Darmon, Faltings plus epsilon, Wiles plus epsilon, and the generalized Fermat
+            equation, C. R. Math. Rep. Acad. Sci. Canada 19 (1997) 3–14.
+       [32]         , Rigid local systems, Hilbert modular forms, and Fermat’s last theorem, Duke
+            Math. J. 102 (2000) 413–449.
+       [33] H. Darmon, F. Diamond and R. Taylor, Fermat’s last theorem, in Elliptic Curves,
+            Modular Forms & Fermat’s Last Theorem (International Press, Cambridge, MA,
+            1997), pp. 2–140.
+       [34] H. Darmon and A. Granville, On the equations z m = F (x, y) and Ax p + By q = Cz r ,
+            Bull. London Math. Soc. 27 (1995) 513–543.
+       [35] H. Darmon and L. Merel, Winding quotients and some variants of Fermat’s last
+            theorem, J. Reine Angew. Math. 490 (1997) 81–100.
+       [36] L. E. Dickson, History of the Theory of Numbers, Vol. II : Diophantine Analysis
+            (Chelsea Publishing Co., New York, 1971).
+       [37] L. V. Dieulefait and N. Freitas, Fermat-type equations of signature (13, 13, p) via
+            Hilbert cuspforms, Math. Ann. 357 (2013) 987–1004.
+       [38]         , The Fermat-type equations x5 + y 5 = 2z p and x5 + y 5 = 3z p solved via
+            Q-curves, Math. Comp. 83 (2014) 917–933.
+       [39] L. V. Dieulefait and J. J. Urroz, Solving Fermat-type equations x4 + dy 2 = z p via
+            modular Q-curves over polyquadratic ﬁelds, J. Reine Angew. Math. 633 (2009) 183–
+            195.
+       [40] J. Edwards, A complete solution to X 2 + Y 3 + Z 5 = 0, J. Reine Angew. Math. 571
+            (2004) 213–236.
+       [41] J. Ellenberg, Galois representations attached to Q-curves and the generalized Fermat
+            equation A4 + B 2 = C p , Amer. J. Math. 126 (2004) 763–787.
+November 14, 2014 15:22 WSPC/S1793-0421                203-IJNT         1530001
+
+
+
+
+                                                        Generalized Fermat equations: A miscellany    27
+
+
+         [42] N. Freitas, Recipes to Fermat-type equations of the form xr + y r = Cz p , preprint
+              (2012); arXiv:1203.3371 [math.NT].
+         [43] N. Freitas, B. Le Hung and S. Siksek, Elliptic curves over real quadratic ﬁelds are
+              modular, preprint (2013); arXiv:1310.7088 [math.NT].
+         [44] N. Freitas and S. Siksek, Modularity and the Fermat equation over totally real ﬁelds,
+              preprint (2013); arXiv:1307.3162 [math.NT].
+         [45]         , Criteria for the irreducibility of mod p representations of Frey curves, to
+              appear in J. Théor. Nombres Bordeaux.
+         [46] E. Halberstadt and A. Kraus, Courbes de Fermat: Résultats and problèmes, J. Reine
+              Angew. Math. 548 (2002) 167–234.
+         [47] D. Harkin, On the mathematical work of Francois–Édouard–Anatole Lucas, Enseigne-
+              ment Math. (2) 3 (1957) 276–288.
+         [48] W. Ivorra, Sur les équations xp + 2β y p = z 2 et xp + 2β y p = 2z 2 , Acta Arith. 108
+              (2003) 327–338.
+         [49]         , Sur les courbes hyperelliptiques cyclotomiques et les équations xp −y p = cz 2 ,
+              Dissertationes Math. 444 (2007) 1–46.
+         [50] W. Ivorra and A. Kraus, Quelques résultats sur les équations ax p +by p = cz 2 , Canad.
+              J. Math. 58 (2006) 115–153.                               √
+         [51] F. Jarvis and P. Meekin, The Fermat equation over Q( 2), J. Number Theory 109
+              (2004) 182–196.
+         [52] A. Kraus, Sur les équations ap + bp + 15cp = 0 et ap + 3bp + 5cp = 0, C. R. Acad.
+              Sci. Par. Sér. I Math. 322 (1996) 809–812.
+         [53]         , Majorations eﬀectives pour l’équation de Fermat généralisée, Canad. J.
+              Math. 49(6) (1997) 1139–1161.
+         [54]         , Sur l’équation a3 + b3 = cp , Experiment. Math. 7 (1998) 1–13.
+         [55]         , On the equation xp + y q = z r : A survey, Ramanujan J. 3 (1999) 315–333.
+         [56]         , Une question sur les équations xm − y m = Rz n , Compos. Math. 132 (2002)
+              1–26.
+         [57] K. Krawciow, On generalized Fermat equations of signature (p, p, 3), Colloq. Math.
+              123 (2011) 49–52.
+         [58] É. Lucas, Recherches sur l’analyse indéterminée et l’arithmètique de Diophante,
+              Extrait du Bulletin de la Société d’émulation du Département de l’Allier (Moulins,
+              1873, Imprimerie de C. Desrosiers); http://edouardlucas.free.fr/pdf/oeuvres/
+              diophante.pdf.
+         [59]         , Recherches sur plusieurs ouvrages de Léonard de Pise et sur diverses ques-
+              tions d’arithmétique supérieure, Extrait du Bullettino di Bibliograﬁa e di Sioria delle
+              Scienze Matematiche e Fisiche (Rome, 1877, Imprimerie des Sciences Mathématiques
+              et Physiques); http://edouardlucas.free.fr/pdf/oeuvres/Leonard de Pise.pdf.
+         [60] R. Mauldin, A generalization of Fermat’s last theorem: The Beal conjecture and prize
+              problem, Notices Amer. Math. Soc. 44 (1997) 1436–1437.
+         [61] B. Mazur, Rational isogenies of prime degree, Invent. Math. 44(2) (1978) 129–162.
+         [62] L. Merel, Arithmetic of elliptic curves and Diophantine equations, J. Théor. Nombres
+              Bordeaux 11 (1999) 173–200.
+         [63] B. Poonen, Some Diophantine equations of the form xn + y n = z m , Acta Arith. 86
+              (1998) 193–205.
+         [64] B. Poonen, E. Schaefer and M. Stoll, Twists of X(7) and primitive solutions to
+              x2 + y 3 = z 7 , Duke Math. J. 137 (2007) 103–158.
+         [65] K. Ribet, On modular representations of Gal(Q/Q) arising from modular forms,
+              Invent. Math. 100 (1990) 431–476.
+November 14, 2014 15:22 WSPC/S1793-0421               203-IJNT        1530001
+
+
+
+
+       28     M. A. Bennett et al.
+
+
+       [66]         , Report on mod l representations of Gal(Q/Q), in Motives, Procedings of
+            Symposia in Pure Mathematics, Vol. 55 (American Mathematical Society, Providence,
+            RI, 1994), pp. 639–676.
+       [67] J.-P. Serre, Propriétés galoisiennes des points d’order ﬁni des courbes elliptiques,
+            Invent. Math. 15 (1972) 259–331.
+       [68] S. Siksek, Correspondence with second author (2008).
+       [69] S. Siksek, Explicit Chabauty over number ﬁelds, Algebra Number Theory 7(4) (2013)
+            765–793.
+       [70] S. Siksek and M. Stoll, Partial descent on hyperelliptic curves and the generalized
+            Fermat equation x3 + y 4 + z 5 = 0, Bull. London Math. Soc. 44 (2012) 151–166.
+       [71]         , The generalized Fermat equation x2 + y 3 = z 15 , preprint (2013);
+            arXiv:1309.4421 [math.NT].
+       [72] R. Taylor and A. Wiles, Ring-theoretic properties of certain Hecke algebras, Ann.
+            Math. 141 (1995) 553–572.
+       [73] R. Tijdeman, Diophantine equations and Diophantine approximations, in Number
+            Theory and Applications (Kluwer Academic Publishers, Dordrecht, 1989), pp. 215–
+            243.
+       [74] A. Wiles, Modular elliptic curves and Fermat’s last theorem, Ann. Math. 141 (1995)
+            443–551.
+

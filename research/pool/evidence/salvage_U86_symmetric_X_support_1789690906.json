@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U86_symmetric_X_support",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U86_symmetric_X_support.md",
+    "excerpt": "# U86: the coefficient-support and all-prime collision mechanisms also control X\n\n**Status: written partial theorem with an exact TypeScript certificate and Wolfram algebra corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This is the X-side counterpart of U81-U85. It uses only the recorded common-root theorem and the same fixed Frobenius partition; it does not assume any symmetry of the original weighted equation.\n\n## 1. Setup\n\nAssume a primitive positive solution\n\n    X^10+256Y^10=Z^17.\n\nRetain\n\n    c^10=-256,\n    theta=sum_(j=0)^9 a_j c^j in Z[c],\n    theta^17=X+cY,\n\nwith all ten a_j nonzero. Let kappa=|c|=2^(4/5) and H=X+kappa Y.\n\nFor q not in {2,5,17}, write e=v_q(X)>0. Then q does not divide Y. The key normalization is\n\n    (c^3)^17=c^51=(-256)^5 c.                       (1.1)\n\nThus, whenever x^17=Y/(-256)^5 in Q_q, the element x*c^3 is a seventeenth root of cY.\n\nThe strong/semi-strong/weak Frobenius families are exactly those defined in U82/U83; their disjoint densities are\n\n    529/640, 8/640, 16/640,\n\nwith residual density 87/640.\n\n## 2. Strong primes force the ninth power of the X-part into a4\n\nLet q be strong. In the U81-clean cases the seventeenth-power map on the residue root algebra is injective, so the reduction of theta is the unique root of cY. Since 17 does not divide q-1, Y/(-256)^5 has a unique scalar seventeenth root x and\n\n    theta = x*c^3 mod q.\n\nFor the additional strong family q=1 mod17 with irreducible degree-ten root algebra, the same scalar conclusion holds: Q_q contains the seventeenth roots of unity, and a seventeenth root of the scalar Y/(-256)^5 inside an extension of degree ten would generate a Kummer subextension of degree dividing both 17 and 10, hence degree one. Any remaining root-of-unity factor is already scalar.\n\nLift x q-adically and set delta=x*c^3. Then delta^17=cY and theta/delta is 1 modulo q. Therefore\n\n    theta=x*c^3*sum_(n>=0) B_n (X/(cY))^n,\n    B_n=binomial(1/17,n).                            (2.1)\n\nGrouping powers modulo ten, the c^4 coefficient begins at n=9:\n\n    a4=x*sum_(m>=0) B_(9+10m)(-256)^(-m-1)\n                 (X/Y)^(9+10m).                     (2.2)\n\nThe exact leading numerator is\n\n    B_9=658767450/17^9.\n\nFor q outside 2,5,17 its q-adic valuation is at most one, while every tail term has valuation at least 19e. Hence\n\n    v_q(a4)=9e+v_q(658767450)>=9e.                  (2.3)\n\nThus if X_s denotes the strong-prime part of X,\n\n    X_s^9 | a4.                                      (2.4)\n\n## 3. Semi-strong primes force fourth powers into a4 and a9\n\nLet q be semi-strong. Apply the same normalization by c^3. U82's local-field argument says that the root-of-unity ambiguity belongs to\n\n    Q_q+Q_q*c^5=Q_q(i).\n\nHence the exact root delta of cY matching theta modulo q lies in\n\n    span_Qq{c^3,c^8}.                                (3.1)\n\nIn the expansion\n\n    theta=delta*sum_(n>=0)B_n(X/(cY))^n,\n\nreaching coefficient c^4 from c^3 requires n=9 mod10, while reaching it from c^8 requires n=4 mod10. Thus every contribution to a4 contains at least X^4. The same calculation for c^9 has first indices 4 and 9. Consequently\n\n    q^(4e) | a4,\n    q^(4e) | a9.                                     (3.2)\n\nIf X_m is the semi-strong part,\n\n    X_s^9 X_m^4 | a4.                               (3.3)\n\n## 4. Weak primes force their X-part into a8\n\nLet q be weak: q=1 mod17, the affine Frobenius has odd translation, and its cycle is not one of the already-strong 10-cycles.\n\nNormalize the local root as\n\n    delta=x*c^3*epsilon,\n\nwhere x is scalar and epsilon is a seventeenth root of unity in each residue factor. Since q=1 mod17, Frobenius fixes all seventeenth roots of unity, so epsilon is constant on each Frobenius orbit of the ten root labels.\n\nOdd translation flips the parity of every label. Every orbit therefore contains equally many even and odd labels. Fourier inversion gives zero c^5 coefficient for epsilon. Multiplication by c^3 says precisely that\n\n    coefficient of c^8 in delta = 0.                 (4.1)\n\nIn the binomial expansion of theta around delta, the n=0 contribution to a8 is therefore absent and every remaining term contains at least one factor X. Hence\n\n    q^e | a8.                                        (4.2)\n\nWriting X_w for the weak-prime part,\n\n    X_w | a8.                                        (4.3)\n\nThus the same density-553/640 union that controls Y also controls X, through shifted coefficients.\n\n## 5. Global X-support height inequalities\n\nFourier inversion on the ten complex embeddings gives\n\n    |a4|<=kappa^(-4) H^(1/17),\n    |a8|<=kappa^(-8) H^(1/17).                       (5.1)\n\nFrom Sections 2-4,\n\n    kappa^68 X_s^153 X_m^68 <= H,                   (5.2)\n    kappa^136 X_w^17 <= H.                           (5.3)\n\nIn particular\n\n    X_s^153 X_m^68 < X+2Y,\n    X_w^17 < X+2Y.                                   (5.4)\n\nThese are t"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.67,
+        "confidence": 0.32,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.24,
+          "1": 0.04,
+          "2": 0.54,
+          "3": 0.18
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.72
+      }
+    },
+    "usage": {
+      "input_tokens": 2129,
+      "output_tokens": 42
+    }
+  }
+}

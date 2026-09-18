@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_signature_2_4_n_complete_resolution",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_signature_2_4_n_complete_resolution.md",
+      "excerpt": "# U111: Complete Resolution of Generalized Fermat Signature $(2, 4, n)$ for All Exponents $n \\geq 4$ via Lucas Primitive Divisors and Analytic Non-Vanishing\n\n**Date**: 2026-09-17  \n**Author**: Signature $(2, 4, n)$ Serre Weight Specialist, Beal Conjecture Project  \n**Target Equations**: $A^2 + B^4 = C^n$ and $A^4 + 2^\\delta B^2 = C^n$ ($\\delta \\in \\{0, 1\\}$) with $\\gcd(A, B) = 1$, $AB \\neq 0$, and integer exponent $n \\geq 4$.  \n**Context**: Beal Conjecture Program \u2014 Even-Leg Pythagorean Descent and Quartic Families.  \n**Status**: Authoritative research checkpoint, certifying 100% unconditional elimination across all 208 exponents $n \\in [4, 211]$ and all asymptotic primes $p \\geq 211$, overcoming the CM Plateau via Bilu\u2013Hanrot\u2013Voutier (2001) primitive divisors, Bugeaud\u2013Mignotte\u2013Siksek (2006) square obstructions, and Ellenberg (2004) / Bennett\u2013Ellenberg\u2013Ng (2010) analytic non-vanishing modular winding quotients.\n\n---\n\n## 1. Executive Summary & The Complete Theorem\n\nThe Diophantine equation of generalized Fermat signature $(2, 4, n)$:\n$$A^2 + B^4 = C^n \\quad \\Longleftrightarrow \\quad B^4 + A^2 = C^n,$$\nwith $\\gcd(A, B) = 1$, $AB \\neq 0$, and $n \\geq 4$, is strictly hyperbolic for all $n \\geq 5$ (Euler characteristic $\\chi = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{n} - 1 = \\frac{1}{n} - \\frac{1}{4} \\leq -\\frac{1}{20} < 0$). For $n = 4$, $\\chi = 0$ (parabolic), corresponding to Fermat's right-triangle theorem.\n\nIn Checkpoint U110, we proved that attaching modular forms via Ellenberg's Frey $\\mathbb{Q}$-curve over $\\mathbb{Q}(i)$ produces Serre conductors $N \\in \\{32, 256\\}$, but standard local Frobenius trace sieves ($a_q(E) \\equiv a_q(f) \\pmod n$) **100% fail** because every newform at levels 32 and 256 possesses Complex Multiplication (the *CM Plateau*).\n\nIn this checkpoint, we formalize and certify the **complete resolution** of $A^2 + B^4 = C^n$ (and its quadratic twin $A^4 + 2 B^2 = C^n$) across all exponents $n \\geq 4$, establishing:\n\n> ### The Complete Theorem (Euler, Bruin, Ellenberg, Bennett\u2013Ellenberg\u2013Ng)\n> Let $n \\geq 4$ be an integer. The Diophantine equations:\n> $$A^2 + B^4 = C^n \\quad \\text{and} \\quad A^4 + 2 B^2 = C^n$$\n> have **no solutions in non-zero, pairwise coprime integers** $(A, B, C)$ with $AB \\neq 0$.\n\n### 1.1. Milestone Matrix of Resolution Engines\n\n| Exponent Regime | Primary Method / Engine | Key Literature | Status |\n|---|---|---|---|\n| $n = 4$ | Fermat descent on right triangles with square area | Euler (1738) | **100% Eliminated** |\n| $n = 5$ | Elliptic Chabauty on genus-2 curves over $\\mathbb{Q}$ | Bruin (2003) | **100% Eliminated** |\n| $n = 6$ | 2-coverings and Chabauty on Jacobians | Bruin (1999) | **100% Eliminated** |\n| $n = 7$ | Chabauty on bielliptic genus-2 curve over $\\mathbb{Q}(\\sqrt{2})$ | Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $n = 13$ | Rational points on modular curve $X_0(26)/w_2$ ($\\text{rank} = 0$) | Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $n \\in [7, 30] \\setminus \\{7, 13\\}$ | BHV 0-defective pairs + BMS square obstruction | Bilu\u2013Hanrot\u2013Voutier (2001), BMS (2006) | **100% Eliminated** |\n| $31 \\le n < 211$ | Unconditional primitive divisors + Modular symbols | BHV (2001), Bennett\u2013Ellenberg\u2013Ng (2010) | **100% Eliminated** |\n| $p \\ge 211$ (and $p \\ge 61$) | Non-split Cartan winding quotient + Duke $L$-values | Ellenberg (2004), BEN (2010) | **100% Eliminated** |\n| All composites $n \\ge 4$ | Reduction to prime or parabolic sub-exponents | Euler (1738), Darmon\u2013Granville (1995) | **100% Eliminated** |\n\n---\n\n## 2. Mathematical Architecture: The Two Complementary Engines\n\nThe CM Plateau proves that local modular sieving at fixed levels 32 and 256 cannot distinguish the Frey curve from CM newforms. The complete resolution bypasses this barrier by deploying two independent, highly sophisticated mathematical frameworks that overlap over a large intermediate regime:\n\n```mermaid\nflowchart TD\n    Target[\"A^2 + B^4 = C^n (n >= 4)\"] --> Split{\"Exponent Regime\"}\n\n    Split -->|\"Small & Intermediate<br/>4 <= n < 211\"| EngineA[\"Engine 1: Algebraic / Primitive Divisor Theory<br/>(BHV 2001, BMS 2006, BEN 2010)\"]\n    Split -->|\"Large / Asymptotic<br/>p >= 211 (sharpened: p >= 61)\"| EngineB[\"Engine 2: Modular Analytic Geometry<br/>(Ellenberg 2004, Duke 1995, BEN 2010)\"]\n\n    EngineA --> Fact[\"Factorization over Z[i]:<br/>(A + iB^2)(A - iB^2) = C^n\"]\n    Fact --> Lucas[\"Lucas Sequences u_n(alpha, beta) & v_n(alpha, beta)<br/>alpha = u + iv, beta = u - iv\"]\n    Lucas --> BHV[\"Bilu-Hanrot-Voutier Theorem 1.4:<br/>n > 30 ==> u_n has Primitive Divisor p = +-1 (mod n)\"]\n    BHV --> BMS[\"Bugeaud-Mignotte-Siksek (2006):<br/>v_n = 2*square has NO solutions for n >= 7\"]\n    BMS --> Sporadic[\"Sporadic Cases n in {4, 5, 6, 7, 13}:<br/>Euler descent, Bruin Chabauty, BEN bielliptic\"]\n\n    EngineB --> Cartan[\"Normalizer of Cartan Subgroup N(C)<br/>in PGL_2(F_p)\"]\n    Cartan --> SplitCartan[\"Split Cartan:<br/>Ruled out by Mazur Formal Immersion on X_split(p)\"]\n    Cartan --> No",
+      "length_chars": 34294
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.87,
+        "confidence": 0.13,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.39,
+          "1": 0.38,
+          "2": 0.18,
+          "3": 0.05
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.55,
+        "confidence": 0.33,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.6,
+          "2": 0.07,
+          "3": 0.27
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.92
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.6,
+        "probabilities": {
+          "audit_later": 0.16,
+          "no_action": 0.03,
+          "audit_now": 0.68,
+          "verify_computation": 0.03,
+          "verify_literature": 0.1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3250,
+      "output_tokens": 124
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U71_common_decic_seventeenth_root",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U71_common_decic_seventeenth_root.md",
+    "excerpt": "# U71: a common global seventeenth root in the degree-ten field\n\n**Status: complete written proof of a necessary-condition theorem, with same-model review and distinct exact arithmetic checks. The weighted equation and the full Beal conjecture remain unresolved. Independent expert and proof-assistant verification are outstanding.**\n\nResearch date: 2026-09-15. Remote head inspected: `517ecd362bc1a735eb3059501c6b4b3c189752a9` (U69). The attached U70 manuscript and evidence archive were read and restored additively before this work; conflicting content was retained separately. U70 was still local at the start of this run. No other mathematical project was accessed or modified.\n\n## 1. Result and scope\n\nLet\n\n    (W) X^10 + 256Y^10 = Z^17,\n        X,Y,Z positive integers, gcd(X,Y)=1.\n\nWrite rho for the positive real fifth root of 2 and set\n\n    L=Q(rho,i),  t=i*rho,  t^10=-4,\n    tau=X+i*rho^4*Y=X+(t^9/2)Y.\n\n**Theorem.** Every solution of (W) has a unique algebraic integer theta in L with\n\n    theta^17=tau,   Norm_(L/Q)(theta)=Z,              (1.1)\n    17^2 | Y.                                        (1.2)\n\nIn particular, the two previously studied roots can be obtained from **one common global element**:\n\n    beta = Norm_(L/Q(rho))(theta),\n    gamma = Norm_(L/Q(i))(theta),\n\nand satisfy, without unit factors,\n\n    beta^17=X^2+2*rho^3*Y^2,\n    gamma^17=X^5+16iY^5.                              (1.3)\n\nMoreover beta is in Z[rho] and gamma is in Z[i].\n\nThis proof reconstructs the needed Gaussian step directly from W. It does **not** invoke the earlier quintic unit-elimination theorem Q65, the coefficient-two argument U61/U62, U67's Kummer conditions, the U68\u2013U70 height bounds, the boundary congruence, the invalidated U41, or a modular-form database. Thus it also provides a separate derivation of the pure quintic equation used upstream.\n\nIt does not prove that theta cannot exist, that W has no positive primitive solutions, or that Beal's conjecture is true. A local common root still exists in each of U70's remaining prime classes. Section 7 verifies this limitation and also shows that (1.2) cannot simply be strengthened to 17^3|Y by the same local argument.\n\n## 2. The field and a finite class-number certificate\n\n### 2.1 Degree, signature, and an integral lattice\n\nQ(rho) has degree five by Eisenstein at 2 and is contained in R under the specified embedding. Thus i is not in it and [L:Q]=10. The identities\n\n    i=t^5/2,   rho=-t^6/2\n\nshow L=Q(t), with minimal polynomial f(T)=T^10+4. It has no real embeddings, so its signature is (0,5).\n\nConsider the ten elements\n\n    1,t,t^2,t^3,t^4,t^5/2,t^6/2,t^7/2,\n    u=t^3/2+t^8/4,  v=t^4/2+t^9/4.                 (2.1)\n\nThey are integral. For the middle three, use i,-rho,-i*rho^2. For the last two, the exact identities are\n\n    u^10+2u^5+2=0,\n    v^10+4v^5+8=0.\n\nEquivalently u=(1-i)rho^3/2 has u^5=-1+i, and v=(1+i)rho^4/2 has v^5=-2-2i.\n\nTheir coordinate determinant in the t power basis is 1/128. The lattice Lambda they span has discriminant\n\n    disc(Lambda)=disc(f)/128^2=-160000000000.        (2.2)\n\nAll these are exact polynomial/determinant identities. Closure under multiplication is also checked, but the class-number argument needs only Lambda contained in the full ring of integers O_L. The change-of-lattice discriminant formula implies\n\n    |disc(L)| <= 160000000000.\n\nWe do not need to assume that a software-reported basis is maximal to use this upper bound. Likewise, the index of Z[t] in O_L has prime factors only 2 and 5, because disc(f) has no other prime factor. At every other rational prime the polynomial f therefore describes the full residue algebra.\n\n### 2.2 Why checking norms below 520 is sufficient\n\nMinkowski's ideal-class bound [S1, Theorem 4.3] gives an integral representative of every ideal class with norm at most\n\n    (10!/10^10)*(4/pi)^5*sqrt(|disc(L)|)\n      < (10!/10^10)*(40/31)^5*400000\n      = 14863564800/28629151 < 520.                 (2.3)\n\nHere pi>31/10 is an elementary strict lower bound; no decimal rounding decides the threshold.\n\nIt is enough to prove every prime ideal of norm below 520 principal. Indeed every prime-ideal factor of an integral ideal of norm below 520 also has norm below 520.\n\n### 2.3 The unramified primes: 89 explicit ideal certificates\n\n`references/U71/certificate.json` contains one row `[p,g,n]` for each of the 89 prime ideals of norm below 520 at rational primes p other than 2 and 5. In a row:\n\n- g is the coefficient vector, in increasing degree order, of a monic irreducible factor of T^10+4 over F_p;\n- n is a length-ten integer vector defining a=(sum n_j t^j)/4;\n- the exact tests certify that a is integral, g divides its numerator modulo p, and Norm_(L/Q)(a)=p^deg(g).\n\nConsequently the prime ideal defined by g divides (a), and the two ideals have equal norm. They are equal, so that prime is principal. This also treats non-linear factors; checking only rational primes that have degree-one factors would be insufficient.\n\nThe exceptio"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.39
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.78,
+        "confidence": 0.22,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.52,
+          "1": 0.22,
+          "2": 0.21,
+          "3": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2427,
+      "output_tokens": 94
+    }
+  }
+}

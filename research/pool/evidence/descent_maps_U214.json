@@ -1,0 +1,63 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "maps": {
+  "vieta": "Vieta jumping: fix B^y and exponents, view A^x+B^y=C^z as a relation in (A,C) and jump to a second root",
+  "norm_split": "factor C^z-B^y over Z[zeta] when gcd(y,z)=d>1 and descend to the factor equation with exponents (x,y/d,z/d)",
+  "frey_isogeny": "pass to the 2-isogenous Frey curve: (a,b,c)->(( a-b)^2, 4ab, (a+b)^2) i.e. c^2=(a-b)^2+4ab, and ask whether perfect-power shape persists",
+  "abc_square": "the map (a,b,c)->(a^2, 2ab+b^2, c^2) or (a^2,b^2,c^2-2ab) keeping two terms perfect powers",
+  "belyi_pull": "pull back along a Belyi map of degree n preserving {0,1,inf}: (a:b:c)->(a^n : c^n-a^n : c^n) style, keeping power structure on two terms",
+  "exponent_gcd": "if p | x, replace A by A^(x/p): reduces to prime/4 exponents (known reduction) then descend via signature-specific parametrisation to a smaller solution of a DIFFERENT signature",
+  "pss_chain": "the chain 2^7+17^3=71^2 -> 17^7+76271^3=21063928^2 sharing base 17: a map reusing a base with a new exponent",
+  "infinite_descent_height": "classical infinite descent on height via 2-descent on the Frey curve E: y^2=x(x-a)(x+b), using that E has full 2-torsion"
+ },
+ "answers": {
+  "vieta": {
+   "well_defined": 0.32,
+   "preserves": 0.31,
+   "zi_blocks": 0.65,
+   "known": 0.36
+  },
+  "norm_split": {
+   "well_defined": 0.28,
+   "preserves": 0.25,
+   "zi_blocks": 0.62,
+   "known": 0.67
+  },
+  "frey_isogeny": {
+   "well_defined": 0.84,
+   "preserves": 0.15,
+   "zi_blocks": 0.57,
+   "known": 0.48
+  },
+  "abc_square": {
+   "well_defined": 0.7,
+   "preserves": 0.09,
+   "zi_blocks": 0.5,
+   "known": 0.18
+  },
+  "belyi_pull": {
+   "well_defined": 0.4,
+   "preserves": 0.28,
+   "zi_blocks": 0.39,
+   "known": 0.24
+  },
+  "exponent_gcd": {
+   "well_defined": 0.21,
+   "preserves": 0.28,
+   "zi_blocks": 0.66,
+   "known": 0.28
+  },
+  "pss_chain": {
+   "well_defined": 0.29,
+   "preserves": 0.31,
+   "zi_blocks": 0.49,
+   "known": 0.19
+  },
+  "infinite_descent_height": {
+   "well_defined": 0.26,
+   "preserves": 0.25,
+   "zi_blocks": 0.7,
+   "known": 0.63
+  }
+ }
+}

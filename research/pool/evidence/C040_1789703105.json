@@ -1,0 +1,76 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C040",
+  "timestamp": "2026-09-17T23:45:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal counterexample A^x+B^y=C^z, x,y,z>=3, gcd(A,B,C)=1. Already kernel-verified: pairwise coprime bases; A!=B; exactly one base even; if A^x<=B^y then B^y<C^z<=2B^y; C largest base => z<=max(x,y); C smallest base => z>max(x,y); C<=B => y<z. The statement below is TRUE on every solution with bases<=60 and exponents<=12 (exponents 1,2 included).",
+    "statement": "IF B^y<A^x AND y<x THEN C^z<=2*max(A^x,B^y)",
+    "support": 328
+  },
+  "questions": {
+    "provable": {
+      "type": "score",
+      "instructions": "Is this a THEOREM about all Beal counterexamples (not a small-model artifact), provable elementarily?",
+      "criteria": [
+        "level 0: almost surely a finite-model artifact",
+        "level 1: plausibly true but hard",
+        "level 2: true and provable with some work",
+        "level 3: true and a few lines from the verified facts"
+      ]
+    },
+    "payoff": {
+      "type": "score",
+      "instructions": "How much does this add beyond the verified facts listed?",
+      "criteria": [
+        "level 0: trivially implied by them",
+        "level 1: a small refinement",
+        "level 2: a genuinely new necessary condition",
+        "level 3: excludes an infinite family of signatures"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "provable": {
+        "type": "score",
+        "score": 1.17,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: almost surely a finite-model artifact",
+          "1": "level 1: plausibly true but hard",
+          "2": "level 2: true and provable with some work",
+          "3": "level 3: true and a few lines from the verified facts"
+        },
+        "probabilities": {
+          "0": 0.54,
+          "1": 0.07,
+          "2": 0.08,
+          "3": 0.31
+        }
+      },
+      "payoff": {
+        "type": "score",
+        "score": 0.87,
+        "confidence": 0.13,
+        "legend": {
+          "0": "level 0: trivially implied by them",
+          "1": "level 1: a small refinement",
+          "2": "level 2: a genuinely new necessary condition",
+          "3": "level 3: excludes an infinite family of signatures"
+        },
+        "probabilities": {
+          "0": 0.41,
+          "1": 0.33,
+          "2": 0.23,
+          "3": 0.03
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 622,
+      "output_tokens": 32
+    }
+  }
+}

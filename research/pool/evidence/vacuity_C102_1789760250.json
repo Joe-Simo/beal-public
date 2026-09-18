@@ -1,0 +1,110 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "vacuity_C102",
+  "timestamp": "2026-09-18T15:37:30-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C) = 1 has no solutions.",
+    "failure_mode": "U322: the Prop `EulerDescentStep`, recorded one cycle earlier as the residual gap of the (3,4,4) chain, was FALSE as stated -- `IsCoprime p q -> p*(p^2+3q^2) = c^3 -> q = 0` is refuted by p = 0, q = 1, c = 0, since IsCoprime 0 1 holds in Z and 0*(0+3) = 0^3. The Lean build stayed green throughout, because an implication from a false hypothesis is still a theorem and everything downstream compiles. The fix was to add p != 0, which the reduction does supply.",
+    "second_mode": "A bounded search that finds nothing proves nothing unless a control shows the searcher can find a positive instance. U317/U318 and U323 each carry such a control; earlier candidates may not.",
+    "candidate": "{\n \"id\": \"C102\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"UNSUPPORTED HYPOTHESIS FOUND. FreitasTheoremMod3 asserted that (3,3,p) has no non-trivial primitive solutions for EVERY prime p = 2 mod 3. No primary source held in references/U130/ supports it. BCDY 2015 Table 3 gives the solved range for (3,3,n) as 3<=n<=10^4, or n = 2,3 (mod 5), or n = 17,61 (mod 78), or n = 51,103,105 (mod 106), or a list of residues mod 1296 \\u2014 there is NO mod-3 class. The 2024 survey Table 1.1 gives only the bounded range 3<=n<=10^9. Fixed: the docstring now marks the hypothesis UNVERIFIED and forbids building anything unconditional on it; a SUPPORTED replacement BCDYThreeThreeBounded (3<=n<=10000) was added, with no_beal_counterexample_3_3_5_of_bounded deriving (3,3,5) through it instead.\",\n \"method\": \"primary-source literature check (references/U130/bcdy.txt Table 3, survey.txt Table 1.1); Lean 4 + mathlib, lake build passes, 0 sorry, new theorem reports [propext, Classical.choice, Quot.sound]\",\n \"evidence\": \"bcdy.txt lines 195-204 list the (3,3,n) conditions with no mod-3 class; survey.txt Table 1.1 row (3,3,n), 3<=n<=10^9.\",\n \"obligations\": [],\n \"failure_reason\": \"\"\n}"
+  },
+  "questions": {
+    "degenerate_instance": {
+      "type": "score",
+      "instructions": "Does this candidate state a claim, a named Prop, or a reduction whose hypotheses allow a DEGENERATE instance -- a zero value, a unit, a base equal to 1, an empty index range, or a trivial solution -- that would make the statement false as written? Judge only whether such an instance is admitted by the stated hypotheses, not whether the intended mathematics is correct.",
+      "criteria": [
+        "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+        "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+        "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+        "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+      ]
+    },
+    "vacuous_downstream": {
+      "type": "score",
+      "instructions": "Does this candidate record a conclusion that DEPENDS on an assumed statement, such that if the assumed statement were false the conclusion would be vacuously true rather than wrong? The danger is a chain that still compiles and still looks green while carrying no content.",
+      "criteria": [
+        "level 0: the candidate's conclusion is proved outright with no assumed statement",
+        "level 1: it depends on an assumed statement and explicitly says so, naming it",
+        "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+        "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+      ]
+    },
+    "search_is_vacuous": {
+      "type": "noul",
+      "instructions": "Does this candidate report a finite or bounded search that found NOTHING, without any control demonstrating the search would have found something had it been there?",
+      "criteria": {
+        "true": "it reports an empty search result with no positive control, no witness, and no demonstration that the search space was non-empty",
+        "false": "it reports no search, or it reports one together with a control, a witness, or an explicit non-vacuity check"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "Given the failure mode described, what should be done with this candidate next?",
+      "criteria": {
+        "countersearch_now": "its stated hypotheses plausibly admit a degenerate counterexample and something load-bearing depends on it",
+        "add_control": "its evidence is an empty search that needs a non-vacuity control before it can be relied on",
+        "restate_hypotheses": "its claim is probably true but stated too loosely to be provable as written",
+        "no_action": "it is a log, a refuted entry, or otherwise carries no claim that could exhibit this mode"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "degenerate_instance": {
+        "type": "score",
+        "score": 0.75,
+        "confidence": 0.25,
+        "legend": {
+          "0": "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+          "1": "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+          "2": "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+          "3": "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+        },
+        "probabilities": {
+          "0": 0.64,
+          "1": 0.07,
+          "2": 0.21,
+          "3": 0.08
+        }
+      },
+      "vacuous_downstream": {
+        "type": "score",
+        "score": 0.29,
+        "confidence": 0.71,
+        "legend": {
+          "0": "level 0: the candidate's conclusion is proved outright with no assumed statement",
+          "1": "level 1: it depends on an assumed statement and explicitly says so, naming it",
+          "2": "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+          "3": "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+        },
+        "probabilities": {
+          "0": 0.75,
+          "1": 0.23,
+          "2": 0.01,
+          "3": 0.01
+        }
+      },
+      "search_is_vacuous": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.53,
+        "probabilities": {
+          "countersearch_now": 0.09,
+          "add_control": 0.15,
+          "no_action": 0.65,
+          "restate_hypotheses": 0.11
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1587,
+      "output_tokens": 114
+    }
+  }
+}

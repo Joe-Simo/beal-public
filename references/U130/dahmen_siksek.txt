@@ -1,0 +1,1752 @@
+                                            PERFECT POWERS EXPRESSIBLE AS SUMS OF TWO
+                                                     FIFTH OR SEVENTH POWERS
+
+                                                               SANDER R. DAHMEN AND SAMIR SIKSEK
+
+                                                  Abstract. We show that the generalized Fermat equations with sig-
+
+
+
+
+arXiv:1309.4030v2 [math.NT] 26 Jan 2014
+                                                  natures (5, 5, 7), (5, 5, 19), and (7, 7, 5) (and unit coefficients) have no
+                                                  non-trivial primitive integer solutions. Assuming GRH, we also prove the
+                                                  nonexistence of non-trivial primitive integer solutions for the signatures
+                                                  (5, 5, 11), (5, 5, 13), and (7, 7, 11). The main ingredients for obtaining our
+                                                  results are descent techniques, the method of Chabauty-Coleman, and
+                                                  the modular approach to Diophantine equations.
+
+
+
+
+                                                                            1. Introduction
+                                             Let p, q, r ∈ Z≥2 . The equation
+                                          (1.1)                                  xp + y q = z r
+                                          is known as the Generalized Fermat equation (or the Fermat–Catalan equa-
+                                          tion) with signature (p, q, r) (and unit coefficients). As in Fermat’s Last
+                                          Theorem, one is interested in integer solutions x, y, z. Such a solution is
+                                          called non-trivial if xyz 6= 0, and primitive if x, y, z are coprime. Let
+                                          χ = p−1 + q −1 + r −1 . The parametrization of non-trivial primitive integer
+                                          solutions for (p, q, r) with χ ≥ 1 has now been completed [12]. The General-
+                                          ized Fermat Conjecture [9], [10] is concerned with the case χ < 1. It states
+                                          that the only non-trivial primitive integer solutions to (1.1) with χ < 1 are
+                                          given by
+                                                  1 + 23 = 32 ,     25 + 72 = 34 ,     73 + 132 = 29 ,       27 + 173 = 712 ,
+                                           35 + 114 = 1222 ,      177 + 762713 = 210639282,             14143 + 22134592 = 657 ,
+                                                     92623 + 153122832 = 1137 ,             438 + 962223 = 300429072,
+                                                                        338 + 15490342 = 156133.
+                                          The Generalized Fermat Conjecture has been established for many signa-
+                                          tures (p, q, r), including for several infinite families of signatures. For ex-
+                                          haustive surveys see Cohen’s book [6, Chapter 14], or [1].
+
+                                            Date: January 25, 2014.
+                                            2010 Mathematics Subject Classification. Primary 11D41; Secondary 11F80, 11G30.
+                                            Key words and phrases. Chabauty-Coleman, Curves, Elliptic Curves, Fermat-Catalan,
+                                          Galois Representations, Generalized Fermat, Jacobians, Modular Forms.
+                                                                                        1
+2                           S. R. DAHMEN AND S. SIKSEK
+
+   Many of the equations are solved using the modular approach to Dio-
+phantine equations. If we restrict ourselves to Frey curves over Q and the
+signature (p, q, r) with χ < 1 consisting of only primes, then the only sig-
+natures (up to permutation) for which a Frey curve is known are given by
+
+         (l, l, l), (l, l, 2), (l, l, 3), (2, 3, l), (3, 3, l), (5, 5, l), (7, 7, l)
+
+where l is a prime (≥ 5, 5, 5, 7, 5, 2, 2 respectively to ensure that χ < 1).
+These Frey curve are all already mentioned in [9]. For all but the last two
+signatures, these Frey curves have been used to completely solve at least one
+Generalized Fermat equation (with unit coefficients, as always throughout
+this paper). In fact, the first three cases have completely been solved. The
+(l, l, l) case corresponds of course to Fermat’s Last Theorem [28] (with expo-
+nent l ≥ 5) and the (l, l, 2) and (l, l, 3) cases have been solved for l ≥ 7 by
+Darmon and Merel [11] using a modular approach and for l = 5 by Poonen
+[16] using descent on elliptic curves and Jacobians of genus 3 cyclic covers of
+the projective line. The (2, 3, l) case has only been solved (recall that we have
+now restricted ourselves to primes l ≥ 7) for l = 7 using a combination of
+the modular approach and explicit methods (including Chabauty-Coleman)
+for determining Q-rational points on certain genus 3 curves (twists of the
+Klein quartic); see [17]. Finally the (3, 3, l) case is solved for a set of prime
+exponents l with Dirichlet density ≥ 0.628, and all l ≤ 109 ; see [5]. One
+feature that is common to the Frey curves associated to the first five sig-
+natures, is that evaluating the Frey curve at a trivial solution gives either
+a singular curve or an elliptic curve with complex multiplication. This is
+one of the main reasons why the first three signatures can be dealt with
+for all relevant prime exponents and why in the (3, 3, l) case so many prime
+exponents l can be handled. In the latter case the main obstruction to solv-
+ing the equation completely is because of the Catalan solution (which is
+actually only present for l = 2, but nevertheless still forms an obstruction
+for larger primes l). The Catalan solution also forms an obstruction for the
+(2, 3, l) case, but here there are many other difficulties.
+     The main reason why the Frey curves associated to signature (5, 5, l) or
+(7, 7, l) have not been used before to completely solve a generalized Fermat
+equation, is probably because evaluating the Frey curve at a (primitive)
+trivial integer solution does not always give a singular or CM curve. In fact,
+only (±1)5 + (∓1)5 = 0l leads to a singular curve (throughout this paper,
+when ± or ∓ signs are present in a formula, they are meant to correspond in
+the obvious way within the formula). The modular approach however still
+gives a lot of non-trivial information. This allows us to combine the modular
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                 3
+
+approach with the method of Chabauty-Coleman and descent techniques to
+solve three new cases of the generalized Fermat equations
+(1.2)                            x5 + y 5 =z l
+(1.3)                            x7 + y 7 =z l .
+In fact, the only values for which these equations already have been solved,
+are covered by the first three families of exponent triples: (5, 5, 2) and
+(5, 5, 3) are solved by Poonen, (7, 7, 2) and (7, 7, 3) are solved by Darmon
+and Merel, while the cases (5, 5, 5) and (7, 7, 7) are of course special cases
+of Fermat’s Last Theorem, and the modular method using a Frey curve for
+exponent (l, l, l) works for these two special cases as well (of course there
+are classical descent proofs, exponent 5 was first solved around 1825 inde-
+pendently by Legendre and Dirichlet, exponent 7 was first solved around
+1839 by Lamé). We see that the first two open cases for (1.2) and (1.3) are
+the signatures (5, 5, 7) and (7, 7, 5) respectively. In this paper we shall solve
+these equations, as well as the equation with signature (5, 5, 19).
+
+Theorem 1. Let l = 7 or l = 19. Then the only solutions to the equation
+                                 x5 + y 5 = z l
+in coprime integers x, y, z are (±1, ∓1, 0), (±1, 0, ±1), and (0, ±1, ±1).
+
+Theorem 2. The only solutions to the equation
+(1.4)                            x7 + y 7 = z 5
+in coprime integers x, y, z are (±1, ∓1, 0), (±1, 0, ±1), and (0, ±1, ±1).
+
+    To prove Theorem 1, we exploit the fact that the associated Frey curve
+evaluated at a primitive trivial integer solution with z = 0 gives a singular
+curve in order to solve (1.2) when 5 | z for all primes l. For the remaining case
+5 ∤ z, we relate primitive integer solutions of (1.2) with l = 7 and l = 19 to
+Q-rational points on a curve of genus 3 and 9 respectively, which we are able
+to determine using Chabauty-Coleman. For Theorem 2, we relate primitive
+integer solutions of (1.4) to K-rational points on genus 2 curves over the to-
+tally real cubic field K = Q(ζ +ζ −1) where ζ is a primitive 7-th root of unity.
+Our factorization argument leads us in fact to 50 5-tuples of such genus 2
+curves for which we need to determine the K-rational points for at least one
+curve per 5-tuple. We shall use the modular approach to rule out all but two
+of the 5-tuples of genus 2 curves. For the remaining two 5-tuples of curves,
+we were able to determine enough K-rational points using the method of
+Chabauty-Coleman to finish the proof of Theorem 2. We used the computer
+4                        S. R. DAHMEN AND S. SIKSEK
+
+package MAGMA [2] for all our calculations. The MAGMA scripts we refer to in
+this paper are posted at www.few.vu.nl/~sdn249/sumsofpowers.html.
+   Many of our computations depend on class group and unit group com-
+putations, which become significantly faster under assumption of the gen-
+eralized Riemann hypothesis for Dedekind zeta functions (abbreviated as
+GRH from now on). As it turns out, assuming GRH, we can also deal with
+the exponents (5, 5, 11), (5, 5, 13), and (7, 7, 11).
+
+Theorem 3. Assume GRH. If l ∈ {11, 13}, then (1.2) has no non-trivial
+primitive integer solutions. If l = 11, then (1.3) has no non-trivial primitive
+integer solutions.
+
+                             2. Preliminaries
+2.1. The method of Chabauty-Coleman. Chabauty-Coleman is a method
+for bounding the number of K-rational points on a curve of genus ≥ 2 de-
+fined over a number field K, subject to certain conditions. We will need
+Chabauty-Coleman for the proof of our Theorems 1, 2, and 3, and so we
+provide in this section a brief sketch of the method. For details we rec-
+ommend the expository paper of McCallum and Poonen [15], as well as
+Wetherell’s thesis [27], and Coleman’s original paper [7].
+    Let C/K be a smooth projective geometrically integral curve of genus
+g ≥ 2, and let J be its Jacobian. It is convenient to suppose the existence
+of K-rational points on C and fix one such point P0 ∈ C(K). We use P0 as
+the base for our Abel-Jacobi embedding:
+                        : C → J,      P 7→ [P − P0 ].
+Let P be a prime of good reduction for C and denote by KP the P-adic
+completion of K. Write Ω(C/KP ) for the KP -vector space of regular differ-
+entials on C, and Ω(J/KP ) for the corresponding space on J. Both these
+spaces have dimension g, and the Abel-Jacobi embedding induces an iso-
+morphism ∗ : Ω(C/KP ) → Ω(J/KP ); this is independent of the choice of
+base point P0 , and we shall use it to identify the two spaces.
+   The method of Chabauty is based on the integration pairing
+                                                          Z D
+(2.1)        Ω(C/KP ) × J(KP ) → KP ,           (ω, D) 7→     ω.
+                                                           0
+
+The Mordell-Weil group J(K) is contained in J(KP ). Let r be its rank, and
+write Ann(J(K)) for the KP -subspace of Ω(C/KP ) that annihilates J(K)
+in the above pairing. If r < g, then this has dimension at least g − r. Sup-
+pose Ann(J(K)) is positive dimensional and let ω be a non-zero differential
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                   5
+
+belonging to it. Denote by FP the residue class field of KP , let p be its char-
+acteristic and let e denote the absolute ramification index of P. We scale ω
+so that it reduces to a non-zero differential ω on the reduction C̃/FP . The
+differential ω can be used to bound the number of K-rational points C(K).
+In particular, if ω does not vanish at P ∈ C̃(FP ) and e < p − 1, then there
+is at most one K-rational point P on C that reduces to P modulo P.
+
+Remark 2.1. In [21] a modified version of the above method is developed
+where instead of the traditional r ≤ g − 1 condition of Chabauty-Coleman
+the necessary condition of the new method is r ≤ [K : Q](g − 1). However,
+as it turns out, the ‘classical’ Chabauty-Coleman method sketched above
+suffices for our purposes.
+
+2.2. The modular approach. Our proofs will make heavy use of the mod-
+ular approach to Diophantine equations, involving Frey curves, modularity,
+Galois representations and level-lowering. For an introduction, the reader
+can consult e.g. [6, Chapter 15] or [8, Chapter 2]. By a newform of level N
+we will mean a cuspidal newform of weight 2 with respect to Γ0 (N) (so the
+character is trivial). A newform is always normalized by default (i.e. the
+first Fourier coefficient of the expansion at the infinite cusp equals 1).
+
+2.3. A standard factorization lemma. The following simple result will
+be very useful when we are factorizing x5 + y 5 and x7 + y 7 .
+
+Lemma 2.2. Let p be an odd prime and x, y coprime integers. Write
+                                    xp + y p
+                             Hp =            .
+                                     x+y
+Then g := gcd(x + y, Hp ) = 1 or p. Consequently, g = p ⇔ p|xp + y p ⇔
+p|Hp ⇔ p|x + y. Moreover, p2 ∤ Hp .
+
+Proof. Let u = −(x + y), then using the binomial formula we get
+                                        p  
+                      (y + u)p − y p X p k−1 p−k
+                Hp =                =         u y .
+                            u          k=1
+                                            k
+Form the expression above we see that g|py p−1. Since gcd(u, y) = gcd(x, y) =
+1, we get g|p. Furthermore, if p ∤ u, then using that p| kp for k = 1, . . . , p − 1
+                                                           
+
+we see that p ∤ Hp . If p|u, then Hp ≡ py p−1 (mod p2 ), which is nonzero
+modulo p2 since p ∤ y.                                                            
+
+                          3. Proof of Theorem 1
+    In light of Lemma 2.2 it is natural to distinguish two cases. Namely non-
+trivial primitive integer solutions to (1) with 5 ∤ z on the one hand and
+6                        S. R. DAHMEN AND S. SIKSEK
+
+those with 5|z on the other hand. For the former case, we relate non-trivial
+primitive integer solutions to (1.2) for some odd prime l to determining
+Q-rational points on the hyperelliptic curve
+(3.1)                       Cl : Y 2 = 20X l + 5.
+Note that this curve has genus (l − 1)/2 and that
+                           Cl (Q) ⊃ {∞, (1, ±5)}.
+
+Lemma 3.1. Let l be an odd prime. If
+(3.2)                      Cl (Q) = {∞, (1, ±5)}
+then there are no non-trivial primitive integer solutions to (1.2) with 5 ∤ z
+
+Proof. Suppose that x, y, z are non-zero coprime integers satisfying (1.2).
+Then
+(3.3)                          (x + y)H5 = z l .
+For any odd prime p, we have that Hp is a symmetric binary form of even
+degree in x, y, hence a binary form in x2 + y 2 and (x + y)2. For p = 5 we
+have explicitly
+(3.4)                  5(x2 + y 2)2 = 4H5 + (x + y)4 .
+We assume 5 ∤ z. By Lemma 2.2 we have gcd(x + y, H5) = 1. Hence (3.3)
+yields
+(3.5)                     x + y = z1l ,    H5 = z2l
+where z1 , z2 are coprime non-zero integers satisfying z = z1 z2 . Using iden-
+tity (3.4) we have
+                          5(x2 + y 2)2 = 4z2l + z14l .
+Multiplying both sides by 5/z14l , we see that
+                            z2 5(x2 + y 2)
+                                           
+                     P :=       ,              ∈ Cl (Q).
+                            z14       z12l
+Since z1 6= 0, we have P 6= ∞. If P = (1, ±5), then we see that z2 = 1 and
+z1 = ±1, which by (3.5) leads to xy = 0. A contradiction which proves the
+lemma.                                                                   
+   We expect that (3.2) holds for all primes l ≥ 7 (it holds for l = 5,
+but we do not need this here). The cases we can prove at the present are
+summarized as follows.
+
+Proposition 3.2. If l = 7 or l = 19, then
+                           Cl (Q) = {∞, (1, ±5)}.
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                    7
+
+   A proof, using 2-descent on hyperelliptic Jacobians and the method of
+Chabauty-Coleman, is given in Section 3.1 below. In a similar fashion we
+can reduce proving the nonexistence of non-trivial primitive integer solutions
+with 5|z (to (1.2) for some odd prime l) to finding Q-rational points on a
+twist of Cl ; see Section 3.3. We can however deal with this case in a uniform
+manner for all primes l ≥ 7 using the modular method; see Section 3.2.
+Taking into account previously solved small exponent cases, we have in fact
+a complete solution in the 5|z case.
+
+Proposition 3.3. Let l ≥ 2 be an integer. There are no non-trivial primitive
+integer solutions to (1.2) with 5|z
+
+   Trivially, Lemma 3.1 and Propositions 3.2 and 3.3 together imply The-
+orem 1.
+
+3.1. Rational points on Cl . Let Jl denote the Jacobian of Cl and gl =
+(l − 1)/2 the genus of Cl (which equals the dimension of Jl ). In order to use
+Chabauty-Coleman to determine the Q-rational points on Cl for some l, it
+is necessary that the Chabauty condition, rank Jl (Q) < gl , is satisfied and
+we need to compute a subgroup of finite index in the Mordell-Weil group
+Jl (Q).
+    Before we go into the rank computations, we start with a description
+of the torsion subgroup Jl (Q)tors of Jl (Q). The curve Cl , and hence its
+Jacobian Jl , has good reduction away from 2, 5, l. For any odd prime p of
+good reduction, the natural map
+                                Jl (Q)tors → Jl (Fp )
+is injective. In the rest of this section, l will always stand for a prime in the
+range 7 ≤ l ≤ 19. Using MAGMA we find for every prime l in our range, two
+primes p1 6= p2 distinct from 2, 5, or l such that
+                          gcd(#Jl (Fp1 ), #Jl (Fp2 )) = 1.
+This shows that for all these primes l we have Jl (Q)tors = {0}. To be con-
+crete, for l = 7, 11, 13, 17, 19 we can take (p1 , p2 ) = (3, 43), (13, 23), (3, 53),
+(3, 103), (7, 191) respectively.
+    As for the rank computations, MAGMA includes implementations by Nils
+Bruin and Michael Stoll of 2-descent on Jacobians of hyperelliptic curves
+over number fields; the algorithm is detailed in Stoll’s paper [25]. Using this
+we were able to compute the 2-Selmer ranks of Jl /Q for the primes l in our
+range (and no further, not even assuming GRH). The values are given in
+Table 1 below together with the time it took to compute them on a machine
+8                         S. R. DAHMEN AND S. SIKSEK
+
+with 2 Intel Xeon dual core CPUs at 3.0 GHz. We want to stress that the
+MAGMA routine TwoSelmerGroup involved, makes use of the pseudo-random
+number generator of MAGMA. So the exact time also depends on the seed.
+From the usual exact sequence
+
+           0 → Jl (Q)/2Jl (Q) → Sel(2) (Q, Jl ) → X(Q, Jl )[2] → 0
+
+together with the fact that Jl (Q) has no 2-torsion, we get
+(3.6)
+ rank Jl (Q) = dimF2 Sel(2) (Q, Jl ) − dimF2 X(Q, Jl )[2] ≤ dimF2 Sel(2) (Q, Jl ).
+
+Let D = [(1, 5) − ∞], then D is a non-zero element of Jl (Q) and therefore
+(remembering that Jl (Q)tors = {0}) has infinite order. This shows that
+
+                                rank Jl (Q) ≥ 1.
+
+In particular, we get from the 2-Selmer ranks of Jl /Q in Table 1 that for
+l = 7, 19 we have rank Jl (Q) = 1 and D generates a subgroup of finite index
+in Jl (Q).
+
+               Table 1. Rank bounds for the Jacobian of Cl
+
+                   l dimF2 Sel(2) (Q, Jl )      Time
+                  7          1                  0.4s
+                  11         2                    3s
+                  13         2                   23s
+                  17         2              4821s ≈ 1.3h
+                  19         1             109819s ≈ 30.5h
+
+
+Remark 3.4. Assume that X(Q, Jl ) is finite. As Cl (Q) 6= ∅, it follows
+from the work of Poonen and Stoll [18] that the Cassels-Tate pairing on
+X(Q, Jl ) is alternating, and so #X(Q, Jl ) is a square. In this case, we
+get from the equality in (3.6) that rank Jl (Q) and dimF2 Sel(2) (Q, Jl ) have
+the same parity. Together with the fact that rank Jl (Q) ≥ 1 we now see
+that we can read of rank Jl (Q) from Table 1 (still assuming the finiteness
+of X(Q, Jl ), or actually just of the 2-part).
+
+Remark 3.5. Instead of using a 2-descent on Jl /Q, we can also apply [24],
+[26] to get an upper bound for rank Jl (Q) using a (1−ζl )-descent on Jl /Q(ζl ).
+It turns out that for l = 7, 11 this gives the same upper bound for rank Jl (Q)
+as given by Table 1 (namely 1 and 2 respectively). For l = 13, 17, 19 however,
+the upper bounds obtained from a (1 − ζl )-descent are strictly larger than
+the bounds given by Table 1.
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                 9
+
+    For l = 7, 19 both the Chabauty condition is satisfied and we have explic-
+itly found a subgroup of finite index in the Mordell-Weil group Jl (Q). We
+are thus in a position to use the method of Chabauty-Coleman to determine
+Cl (Q) for these l.
+
+Proof of Proposition 3.2. Let l ∈ {7, 19} and let Jl denote, as before, the
+Jacobian of Cl . We already know that rank Jl (Q) = 1 and D := [(1, 5)−∞] ∈
+Jl (Q) generates a subgroup of finite index in Jl (Q). We shall apply the
+method of Chabauty-Coleman, sketched in Section 2.1, with p = 3. A basis
+for Ω(Cl /Q3 ) is given by X i dX
+                                Y
+                                   with i = 0, 1, . . . , gl − 1 = (l − 3)/2. For
+l = 7 we find
+Z D                   Z D                      Z D
+     dX                      dX      2                     dX
+         ≡ 3·40,          X       ≡ 3 ·25,           X2        ≡ 32 ·13 (mod 35 ).
+  0   Y                 0     Y                 0           Y
+For l = 19 we find the following congruences modulo 35 ,
+Z D         8
+        k dX
+      X           ≡ (3·43, 3·76, 3·16, 3·22, 3·65, 3·74, 32 ·17, 32 ·23, 32 ·22);
+   0       Y  k=0
+for hints on the evaluation of p-adic integrals see [27] (especially Section
+1.9). Using these values, one can easily approximate an explicit basis for
+Ann(Jl (Q)) in both cases. However, it is enough to notice that
+                Z D                      Z D            
+                      dX                          gl −1 dX
+           ord3             = 1,     ord3       X            = 2.
+                   0   Y                     0           Y
+Thus we can find some ωl ∈ Ann(Jl (Q)) of the form
+                   dX            dX
+            ωl = 3αl   + X gl −1    , αl ∈ Z3 ,          ord3 (αl ) = 0.
+                    Y             Y
+We reduce to obtain a differential on C̃l /F3 ,
+                                          dX
+                                 ω l = X gl −1.
+                                           Y
+The differential ω l does not vanish at any of the four points of Cl (F3 ):
+                       Cl (F3 ) = {∞, (1, 1), (1, 2), (2, 0)}.
+It follows that for each P̃ ∈ Cl (F3 ) there is at most one P ∈ Cl (Q) that
+reduces to P̃ . Now the rational points ∞, (1, 5) and (1, −5) respectively
+reduce to ∞, (1, 2), (1, 1). To complete the proof it is sufficient to show
+that no Q-rational point reduces to (2, 0). One way of showing this is to
+use the Mordell-Weil sieve [4]. Here is a simpler method. Note that (2, 0)
+lifts to (γ, 0) ∈ Cl (Q3 ) where γ is the unique element in Q3 satisfying
+γ l = −1/4. Now the divisor D ′ = (γ, 0) − ∞ has order 2 in Jl (Qp ), and
+hence belongs to the left-kernel of the pairing (2.1). If there is a Q-rational
+point that reduces to (2, 0) then that would force ω l to vanish at (2, 0).
+10                         S. R. DAHMEN AND S. SIKSEK
+
+This completes the proof. Further details can be found in our MAGMA script
+Chabauty55l.m.                                                          
+
+3.2. A modular approach to x5 + y 5 = z l when 5 | z. The purpose of
+this section is to give a proof of Proposition 3.3. Let (x, y, z) be a primitive
+integer solution to (1.2) with z 6= 0 for some prime l ≥ 7 and assume 5|z.
+In this case Lemma 2.2 gives us gcd(x + y, H5) = 5 and 52 ∤ H5 . Hence (3.3)
+yields
+                          5(x + y) = z1l ,   H5 = 5z2l
+where z1 , z2 are coprime non-zero integers satisfying z = z1 z2 .
+    Kraus [14, pp. 329–330] constructed a Frey curve for the equation x5 +
+y 5 = z l . Following Kraus, we associate to our solution (x, y, z) to (1.2) the
+Frey elliptic curve
+                 ′
+                Ex,y : Y 2 = X 3 + 5(x2 + y 2 )X 2 + 5H5 (x, y)X.
+Since we are assuming that 5|z we have that 5|H5 (x, y). So the quadratic
+             √
+twist over Q( −5) given by the following model has integer coefficients.
+                                                       H5 (x, y)
+                 Ex,y : Y 2 = X 3 − (x2 + y 2 )X 2 +             X.
+                                                           5
+     We record some of the invariants of Ex,y :
+        c4 = 24 · 5−1 · (2x4 + 3x3 y + 7x2 y 2 + 3xy 3 + 2y 4) ∈ Z,
+        c6 = 25 · 5−1 · (x2 + y 2)(x4 + 9x3 y + 11x2 y 2 + 9xy 3 + y 4 ) ∈ Z,
+                                                       2l
+        ∆ = 24 · 5−3 · (x + y)4 H52 = 24 · 5−5 · z12 z2 ∈ Z,
+            28 · (2x4 + 3x3 y + 7x2 y 2 + 3xy 3 + 2y 4)3
+         j=                                              .
+                           (x + y)4 H52
+Lemma 3.6. The conductor N and minimal discriminant ∆min of Ex,y
+satisfy
+       • N = 2α 5 Rad{2,5} (z) where α ∈ {1, 3, 4} and Rad{2,5} (z) is the prod-
+         uct of the distinct primes not equal to 2 or 5 dividing z;
+       • If 2 ∤ z, then ∆min = ∆ and if 2 | z, then ∆min = ∆/212 .
+
+Proof. Recall that x, y are coprime. The resultant of x5 + y 5 and 2x4 +
+3x3 y + 7x2 y 2 + 3xy 3 + 2y 4 is 55 . Thus any prime p 6= 2, 5 dividing z cannot
+divide c4 and divides ∆, and must therefore be a prime of multiplicative
+reduction. Using 5|z, we see that 5 | ∆ and 5 ∤ c4 . So 5 is also a prime of
+multiplicative reduction. Thus the conductor N is 2α 5 Rad{2,5} (z) for some
+α ∈ Z≥0 . We also see that the model for Ex,y is minimal at any prime p 6= 2.
+   If 2 ∤ z, then ord2 (∆) = 4, ord2 (c6 ) = 5, and ord2 (c4 ) ≥ 5. So in this
+case the model for Ex,y is minimal at 2 and a straightforward application
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                 11
+
+of Tate’s algorithm [22, Section IV.9] gives α ∈ {3, 4}. Finally, if 2 | z, then
+ord2 (∆) ≥ 32 and ord2 (c4 ) = 4. A straightforward application of Tate’s
+algorithm shows that the model for Ex,y is not minimal at 2 and we get a
+new model E ′ that is integral at 2 with ord2 (∆′ ) = ord2 (∆) − 12 ≥ 20 and
+ord2 (c′4 ) = ord2 (c4 ) − 4 = 0. So in this case Ex,y has multiplicative reduction
+at 2 and ∆min = ∆/212 .                                                           
+   For a prime l we write ρx,y
+                            l  for the Galois representation on the l-torsion
+of Ex,y
+                     ρx,y
+                      l   : Gal(Q/Q) → Aut(Ex,y [l]).
+
+Lemma 3.7. For primes l ≥ 7 the representation ρx,y
+                                                l   is irreducible.
+
+Proof. Since Ex,y has a rational 2-isogeny, a reducible ρx,y
+                                                           l  (for an odd prime
+l) would give rise to a noncuspidal Q-rational point on the modular curve
+X0 (2l). By work of Mazur et al. (see e.g. [8, Section 2.1.2]) this is impossible
+for primes l ≥ 11 and only possible for l = 7 if j ∈ {−33 · 53 , 33 · 53 · 173 }.
+Using our explicit formula for the j-invariant of Ex,y we easily check that
+that there are no [x : y] ∈ P1 (Q) giving rise to one of these two values for
+j.                                                                             
+   Now applying modularity and level-lowering we deduce the following.
+
+Lemma 3.8. For primes l ≥ 7 the Galois representation ρx,y
+                                                       l   arises from a
+                        α
+newform f of level N = 2 5 where α ∈ {1, 3, 4}.
+
+Proof. By [3] we have that ρx,y
+                              l  is modular of level N(Ex,y ). Since by Lemma 3.7
+ρl is also irreducible, we obtain by level lowering [19], [20], that ρx,y
+ x,y
+                                                                      l   is mod-
+ular of level N(Ex,y )/M where M is the product of all primes p||N(Ex,y )
+with l | ordp (∆min (Ex,y )). The possible values for N(Ex,y ) and ∆min (Ex,y )
+can be read off from Lemma 3.6, which finishes the proof.                      
+    We used MAGMA to compute the newforms at these levels; MAGMA uses
+Stein’s algorithms for this [23]. We found respectively 0, 1 and 2 newforms
+at these levels, which are all rational. The (strong Weil) elliptic curves E0
+corresponding to these newforms are E40a1 , E80a1 , and E80b1 , where the
+subscript denotes the Cremona reference. We wrote a short MAGMA script
+Modular55l.m which contains these, as well as the remaining computations
+of this section. Comparing traces of Frobenius as usual, gives the following.
+
+Lemma 3.9. Suppose that ρx,y   l  ≃ ρE
+                                     l
+                                       0
+                                         for some prime l ≥ 7 and some E0
+as above. Let p 6= 2, 5 be a prime.
+     • If p ∤ z, then ap (E0 ) ≡ ap (Ex,y ) (mod l).
+12                          S. R. DAHMEN AND S. SIKSEK
+
+        • If p|z, then ap (E0 ) ≡ ±(1 + p) (mod l).
+
+Proof. See e.g. [6, Propositions 15.2.2 and 15.2.3] or [8, Theorem 36].            
+
+     We will now finish our intended proof.
+
+Proof of Proposition 3.3. By Lemma 3.8 and the determination of newforms
+of level 2α 5 where α ∈ {1, 3, 4}, we know that ρx,y
+                                                   l   ≃ ρEl
+                                                             0
+                                                               for some prime
+l ≥ 7 and E0 one of E40a1 , E80a1 , E80b1 . We will eliminate these three
+possibilities for E0 , which then proves the proposition. Let p 6= 2, 5 denote
+a prime and define the sets
+
+Ap := {p+1−#Ea,b (Fp ) : a, b ∈ Fp ,       a5 +b5 6= 0},     Tp := Ap ∪{±(1+p)}.
+
+Obviously, if p ∤ z, then ap (Ex,y ) ∈ Ap . Hence by Lemma 3.9 we have
+
+(3.7)                 ap (E0 ) ≡ t    (mod l) for some t ∈ Tp .
+
+We compute
+                                     T3 = {±2, ±4}.
+However, E40a1 and E80a1 have full 2-torsion, and so a3 (E40a1 ) = a3 (E80a1 ) =
+0. Thus for l ≥ 7 prime and E0 one of E40a1 or E80a1 , we have that (3.7)
+with p = 3 does not hold, and consequently ρx,y  l  6≃ E0 . To deal with the
+remaining case E0 = E80b1 , we compute
+
+      T43 = {−44, −10, −8, −6, −2, 0, 2, 4, 6, 8, 12, 44},    a43 (E80b1 ) = 10.
+
+Now (3.7) does not hold for any prime l ≥ 7, except l = 17. So from now on
+let l = 17, we deal with this case using the method of Kraus. For a prime
+                       l
+p ≡ 1 (mod l), let F∗p denote the nonzero l-th powers in Fp and define
+the sets
+  ′
+        n
+                                                      ∗ l
+                                                                          o
+                                                                         ∗ l
+Ap,l := p + 1 − #Ea,b (Fp ) : a, b ∈ Fp , 5(a + b) ∈ Fp , H5 (a, b)/5 ∈ Fp    ,
+ ′
+Tp,l := A′p,l ∪ {±2}.
+
+Now take p = 6 · 17 + 1 = 103. Since we are assuming ρx,y   E0
+                                                      17 ≃ ρ17 (with
+E0 = E80b1 ), Lemma 3.9 gives us that
+                                                            ′
+(3.8)           a103 (E80b1 ) ≡ t    (mod 17) for some t ∈ T103,17 .
+
+We compute
+                     ′
+                    T103,17 = {−6, ±2},       a103 (E80b1 ) = −14
+and conclude that (3.8) does not hold, which completes the proof.                  
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                 13
+
+3.3. Necessity of the modular approach. Proving the nonexistence of
+non-trivial primitive integer solutions to (1.2) with 5|z for some odd prime
+l can be reduced to finding Q-rational points on the hyperelliptic curve
+                            Dl : Y 2 = 4X l + 52l−5 .
+Note that this curve has genus (l − 1)/2 and that
+                                 Dl (Q) ⊃ {∞}.
+
+Lemma 3.10. Let l be an odd prime. If
+(3.9)                            Dl (Q) = {∞}.
+then there are no non-trivial primitive integer solutions to (1.2) with 5|z.
+
+Proof. In this case Lemma 2.2 gives us gcd(x + y, H5) = 5 and 52 ∤ H5 .
+Hence (3.3) yields
+                       5(x + y) = z1l , H5 = 5z2l
+where z1 , z2 are coprime non-zero integers satisfying z = z1 z2 . Using identity
+(3.4) we see that
+                         5(x2 + y 2)2 = 20z2l + 5−4 z14l .
+Multiplying both sides by 52l−1 /z14l gives
+                   l 2          2       2 l
+                    5 (x + y 2 )            5 z2
+                                     =4          + 52l−5 .
+                         2l
+                        z1                   z14
+Thus                       2
+                            5 z2 5l (x2 + y 2 )
+                                                
+                     P =         ,                ∈ Dl (Q).
+                             z14      z12l
+Since z1 6= 0, we have P 6= ∞. This proves the lemma.                          
+
+    Upper bounds for rank Jac(Dl )(Q) are given by the 2-Selmer ranks of
+Jac(Dl )/Q; see Table 2. For l = 7 and l = 13 (and, assuming GRH, also for
+l = 17) we conclude that rank Jac(Dl )(Q) = 0, so it is easy to determine
+Dl (Q) for these values of l. Since our focus is on l = 7, 19, we give the details
+for l = 7.
+
+Remark 3.11. Instead of using a 2-descent on Jac(Dl )/Q, we can also
+apply [24], [26] to get an upper bound for rank Jac(Dl )(Q) using a (1 − ζl )-
+descent on Jac(Dl ))/Q(ζl ). It turns out that for l = 11 this gives the same
+upper bound for rank Jac(Dl )(Q) as given by Table 2 (namely 3). For l =
+7, 13, 17, 19 however, the upper bounds obtained from a (1 − ζl )-descent will
+be strictly larger than the bounds given by Table 2 (but one does not need
+to assume GRH).
+14                         S. R. DAHMEN AND S. SIKSEK
+
+                Table 2. Rank bounds for the Jacobian of Dl
+
+  l dimF2 Sel(2) (Q, Jac(Dl )) a       Time
+  7               0                     1.4s
+ 11               3                    2093s
+ 13               0              264613s ≈ 3.1 days
+ 17              0∗                     240s
+                   ∗
+ 19              1                      723s
+aThe ∗ indicates that the result is conditional on GRH
+
+
+
+
+Lemma 3.12. The only Q-rational point on D7 is the single point at infin-
+ity.
+
+Proof. Let J denote the Jacobian of D7 . We shall show that J(Q) = {0}.
+Since the Abel-Jacobi map
+
+                           D7 → J,        P 7→ [P − ∞]
+
+is injective, it will follow that D7 (Q) = {∞}.
+    First we determine the torsion subgroup J(Q)tors of J(Q). The curve D7 ,
+and hence its Jacobian J, has good reduction away from 2, 5, 7. For any
+(necessarily odd) prime p of good reduction, the natural map
+
+                                 J(Q)tors → J(Fp )
+
+is injective. Using MAGMA we find that
+
+                      #J(F3 ) = 28,        #J(F43 ) = 39929.
+
+Since gcd(28, 39929) = 1, we deduce that J(Q)tors = {0}.
+   We have already seen that rank J(Q) = 0. It follows that J(Q) = {0},
+which completes the proof.                                           
+
+      Let r := rank Jac(D19 )(Q). We see from Table 2 that r ≤ 1 under the
+assumption of GRH. Assuming the finiteness of X(Q, Jac(D19 )) in addition
+to GRH leads us to r = 1. So in order to use the method of Chabauty-
+Coleman to determine D19 (Q), we must first of all prove that r = 1 (if true
+. . . ) and next find a Q-rational point of infinite order on Jac(D19 ). Both
+tasks seem quite challenging at the moment.
+      We conclude that the modular method is not necessary to prove Theo-
+rem 1 for the case l = 7, but that for l = 19 we really do need it at this
+point.
+               PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7              15
+
+                             4. Proof of Theorem 2
+   In this section we shall be concerned with the primitive integer solutions
+to (1.3) for primes l 6= 2, 3, 7. Although ultimately we will only to be able
+to (unconditionally) determine all the solutions if l = 5, we will take a more
+general approach. The reason for doing this is threefold. First of all, it is
+simply not much more work to consider more values of l. Second, while
+we do not fully determine (unconditionally) all primitive integer solutions
+to (1.3) for any prime l ≥ 11, we do obtain many other partial results for
+l ≥ 11, which may be interesting in their own right. Finally, in Section 5
+we solve (1.3) for l = 11 assuming GRH, for which we lay the foundations
+here.
+
+4.1. Initial factorizations for x7 + y 7 = z l . Let (x, y, z) be a primitive
+integer solution to (1.3) for some prime l 6= 2, 3, 7 and suppose that z 6= 0.
+Recall that
+                  x7 + y 7
+      H7 (x, y) =          = x6 − x5 y + x4 y 2 − x3 y 3 + x2 y 4 − xy 5 + y 6 .
+                   x+y
+By Lemma 2.2, gcd(x + y, H7(x, y)) = 1 or 7 and 72 ∤ H7 (x, y). Thus we can
+again subdivide into two cases:
+        • If 7 ∤ z then
+(4.1)              x + y = z1l ,       H7 (x, y) = z2l ,       z = z1 z2
+          where z1 , z2 are non-zero, coprime integers.
+        • If 7|z then
+(4.2)            7(x + y) = z1l ,       H7 (x, y) = 7z2l ,       z = z1 z2
+          where z1 , z2 are non-zero, coprime integers.
+These factorizations do not seem to be sufficient to enable us to solve the
+problem. Henceforth, ζ will denote a primitive 7-th root of unity, L = Q(ζ)
+and O = Z[ζ] the ring of integers of L. The class number of O is 1 and the
+unit rank is 2. The unit group is in fact
+                  {±ζ i (1 + ζ)r (1 + ζ 2)s : 0 ≤ i ≤ 6,       r, s ∈ Z}.
+Moreover, 7 ramifies as 7O = (1 − ζ)6O. Now H7 (x, y) = Norm(x + ζy).
+From (4.1) and (4.2) we have
+        • If 7 ∤ z then
+(4.3)           x + ζy = (1 + ζ)r (1 + ζ 2 )s β l ,        0 ≤ r, s ≤ l − 1,
+          for some β ∈ Z[ζ].
+16                           S. R. DAHMEN AND S. SIKSEK
+
+        • If 7|z then
+(4.4)         x + ζy = (1 − ζ)(1 + ζ)r (1 + ζ 2)s β l ,      0 ≤ r, s ≤ l − 1,
+          for some β ∈ Z[ζ].
+Thus we have 2l2 ≥ 50 cases to consider. In the next section we will use the
+modular approach to reduce the number of cases to just 2 for many values
+of l, e.g. l = 5, 11.
+
+4.2. A modular approach to x7 + y 7 = z l . Consider the subset of primes
+                    L7 := {primes l : l 6= 2, 3, 7 and l < 100}.
+The purpose of this section is to prove the following proposition.
+
+Proposition 4.1. Let (x, y, z) be a primitive integer solution to (1.3) with
+z 6= 0 and l ∈ L7 . If 7 ∤ z then (4.3) holds with r = s = 0. If 7|z then (4.4)
+holds with r = s = 0.
+
+   Let (x, y, z) be a primitive integer solution to (1.3) with z 6= 0 for some
+prime l ≥ 5, l 6= 7. Kraus [14, pp. 329–330] constructed a Frey curve for the
+equation x7 + y 7 = z l . Following Kraus, we associate to our solution (x, y, z)
+to (1.3) the Frey elliptic curve
+                        Ex,y : Y 2 = X 3 + a2 X 2 + a4 X + a6 ,
+where
+           a2 = −(x − y)2,        a4 = −2x4 + x3 y − 5x2 y 2 + xy 3 − 2y 4
+           a6 = x6 − 6x5 y + 8x4 y 2 − 13x3 y 3 + 8x2 y 4 − 6xy 5 + y 6.
+We record some of the invariants of Ex,y :
+(4.5) c4 = 24 · 7(x4 − x3 y + 3x2 y 2 − xy 3 + y 4 ),
+(4.6) c6 = −25 · 7(x6 − 15x5 y + 15x4 y 2 − 29x3 x3 + 15x2 y 4 − 15xy 5 + y 6),
+                                          28 · 7(x4 − x3 y + 3x2 y 2 − xy 3 + y 4 )3
+(4.7) ∆ = 24 · 72 H7 (x, y)2 ,       j=                                              .
+                                                         H7 (x, y)2
+Lemma 4.2. The conductor N and minimal discriminant ∆min of Ex,y
+satisfy
+        • N = 2α 72 Rad(z2 ) where α = 2 or 3 and Rad(z2 ) is the product of
+          the distinct primes dividing z2 (and 2, 7 ∤ z2 );
+        • ∆min = ∆.
+
+Proof. Recall that x, y are coprime. The resultant of H7 (x, y) and x4 −x3 y +
+3x2 y 2 − xy 3 + y 4 is 72 . Thus any prime p 6= 2, 7 dividing H7 (x, y) cannot
+divide c4 and divides ∆, and must therefore be a prime of multiplicative
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                   17
+
+reduction. We know that H7 (x, y) = 7z2l or H7 (x, y) = z2l . Moreover, 72 ∤
+H7 (x, y), so 7 ∤ z2 . Thus the conductor N is Rad(z2 ) up to powers of 2 and
+7. We also see that the model for Ex,y is minimal at any prime p 6= 2, 7
+    Now ord7 (∆) = 4 or 2. Hence the model for Ex,y is minimal at 7. Since
+7 | c4 , we see that Ex,y has additive reduction at 7, and so ord7 (N) = 2.
+    Finally, as x, y are coprime we quickly get ord2 (c4 ) = 4, ord2 (c6 ) = 5 as
+well as ord2 (∆) = 4. Thus the model for Ex,y is also minimal at 2 and we
+conclude that ∆min = ∆. Note that Ex,y = Ey,x . Without loss of generality
+we may suppose that either x is even or z is even. Applying Tate’s Algorithm
+[22, Section IV.9] shows the following
+   (a) if 2 | z then ord2 (N) = 3;
+   (b) if 2 || x then ord2 (N) = 3;
+   (c) if 4 | x then ord2 (N) = 2.
+This completes the proof.                                                         
+
+   We shall write ρx,y
+                   l   for the Galois representation on the l-torsion of Ex,y .
+
+                        ρx,y
+                         l   : Gal(Q/Q) → Aut(Ex,y [l]).
+
+Lemma 4.3. For l = 5 or primes l ≥ 11 the representation ρx,y
+                                                          l   is irre-
+ducible.
+
+Proof. If l = 11 or l ≥ 17, then, by work of Mazur et al. on the Q-rational
+points of X0 (l), the irreducibility follows by checking that the j-invariant
+of Ex,y does not belong to an explicit list of 11 values; see e.g. [8, Theorem
+22].
+   Now let l ∈ {5, 13} and suppose that ρx,y          l   is reducible. Then the j-
+invariant of Ex,y must be in the image of X0 (l)(Q) under the j map X0 (l) →
+X(1). In [8, Section 3.2] this j map is given explicitly as
+                     ( 2
+                        (t +10t+5)3
+                                                            if l = 5;
+(4.8)            j = (t4 +7tt3 +20t2 +19t+1)3 (t2 +5t+13)
+                                       t
+                                                            if l = 13.
+In other words, this equation must have a Q-rational solution t where j is
+the j-invariant of Ex,y . It is clear from (4.7) that ord2 (j) = 8. It is easy to see
+that this is impossible from (4.8). This completes the proof. Alternatively,
+the irreducibility for l ∈ {5, 13} follows immediately from [8, Theorem 60
+and Table 3.1] with F (u, v) = u3 − u2 v − 2uv 2 + v 3 and the remark that
+F (x2 + y 2, xy) = H7 (x, y).                                                      
+
+   Using Lemmata 4.2 and 4.3 we can apply modularity [3] and level-
+lowering [19], [20] as usual, to deduce the following.
+18                         S. R. DAHMEN AND S. SIKSEK
+
+Lemma 4.4. For a prime l 6= 2, 3, 7, the Galois representation ρx,y
+                                                                l   arises
+                               α 2
+from a newform f of level N = 2 7 where α = 2 or 3.
+
+    We again used MAGMA to compute the newforms at these levels. We found
+respectively 3 and 8 newforms (up to Galois conjugacy) at these levels. Of
+these 2 and 6 are respectively rational newforms and therefore correspond to
+elliptic curves. We wrote a short MAGMA script Modular77l.m which contains
+these, as well as the remaining computations of this section. Our first step
+is to eliminate as many of the newforms above as possible.
+
+Lemma 4.5. Suppose ρx,y
+                    l   arises from a newform
+                                 X
+(4.9)                   f =q+       ai (f )q i .
+                                         i≥2
+
+Let K = Q(a2 (f ), a3 (f ), . . . ) be the number field generated by the coefficients
+of f . Let p 6= 2, 7 be prime. If K 6= Q we also impose p 6= l.
+     • If p ∤ z2 , then l | NormK/Q (ap (Ex,y ) − ap (f )).
+     • If p | z2 , then l | NormK/Q ((p + 1)2 − ap (f )2 ).
+
+Proof. This follows from comparing traces of Frobenius; see e.g. [6, Propo-
+sitions 15.2.2 and 15.2.3] or [8, Theorem 36].                           
+
+    Specializing Ex,y at a trivial primitive integer solution with xy = 0 (i.e.
+(x, y) = (±1, 0) or (0, ±1) ), yields E196a1 , and specializing at a trivial
+primitive integer solution with z = 0 (i.e. (x, y) = (±1, ∓1)) yields E392c1 .
+Using the basic congruences from the lemma above, we can quickly eliminate
+all the (Galois conjugacy classes of) newforms at the levels 196 and 392 for
+all l simultaneously, except of course the two newforms corresponding to
+the two elliptic curves we just obtained by specialization of Ex,y .
+
+Lemma 4.6. For a prime l 6= 2, 3, 7, the Galois representation ρx,y
+                                                                l   arises
+from E196a1 or E392c1 .
+
+Proof. By Lemma 4.4 we have that ρx,y l  arises from a newform f of level
+ α 2
+2 7 where α = 2 or 3. Let p 6= 2, 7 denote a prime and define the sets
+
+            Ap := {p + 1 − #Ea,b (Fp ) : a, b ∈ Fp , H7 (a, b) 6= 0},
+                  (
+                    Ap                  if p 6≡ 1 (mod 7)
+            Tp :=
+                    Ap ∪ {±(1 + p)} if p ≡ 1 (mod 7).
+
+Obviously, if p ∤ z2 , then ap (Ex,y ) ∈ Ap . Furthermore, p ≡ 1 (mod 7) if and
+only p splits completely in Z[ζ] if and only H7 (a, b) = 0 for some a, b ∈ Fp
+            PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7               19
+
+not both zero (for this last step we use p 6= 7). So we obtain from Lemma 4.5
+that for any prime p 6= 2, 7 we have
+(4.10)             l | NormK/Q (ap (f ) − t) for some t ∈ Tp
+or, in case K 6= Q, that l = p.
+                                                          √     √
+    If f is not rational, we compute that a3 (f ) ∈ {± 2, ± 8} and T3 =
+{−1, 3}. In this case (4.10) with p = 3 reduces to l = 7, hence l = 7 or l =
+p = 3. Since l = 3, 7 are values outside our consideration we conclude that we
+have eliminated the possibility that ρx,y
+                                        l  arises form a non-rational newform.
+Similarly, for any rational newform f (of level 2α 72 where α ∈ {2, 3}) not
+corresponding to either of E196a1 , E392c1 , we can find a single prime p ≤ 23,
+p 6= 2, 7 such that (4.10) does not hold for any prime l 6= 2, 3, 7. To be
+specific, for the rational newforms corresponding to an elliptic curve whose
+isogeny class has Cremona reference one of 196b, 392a, 392b, 392f we can
+take p = 3, for the isogeny classes given by 392e, 392d we can take p = 11, 13
+respectively.                                                                
+   So far we have not distinguished between the cases 7 ∤ z and 7|z. To refine
+the lemma above with respect to these two cases we can use the following.
+
+Lemma 4.7. Let E1 , E2 be elliptic curves over Q with potentially good re-
+duction at a prime p ≥ 5. If gcd(12, ordp (∆(E1 ))) 6= gcd(12, ordp (∆(E2 ))),
+then for all primes l 6= 2, p we have ρE     E2
+                                       l 6≃ ρl .
+                                         1
+
+
+
+Proof. This follows by comparing images of inertia; see e.g. [13].           
+   We can now strengthen Lemma 4.6 as follows.
+
+Lemma 4.8. Let l 6= 2, 3, 7 be prime. If 7 ∤ z then ρx,y
+                                                     l   arises from E196a1 .
+             x,y
+If 7|z then ρl arises from E392c1 .
+
+Proof. Considering F := x4 −x3 y+3x2y 2 −xy 3 +y 4 modulo 7, we obtain that
+7 | F if and only if 7 | H7 . Since 72 ∤ H7 we get from the invariants of Ex,y
+that ord7 (j) ≥ 1, so Ex,y has potentially good reduction at 7. Furthermore,
+if 7 ∤ z, then ord7 (∆) = 2, and if 7 | z, then ord7 (∆) = 4. The curves
+E196a1 and E392c1 , also have potentially good reduction at 7 and finally
+ord7 (∆(E196a1 )) = 2 and ord7 (∆(E392c1 )) = 4. The lemma follows from
+Lemma 4.7.                                                                  
+
+Remark 4.9. To prove Lemma 4.8 we used image of inertia arguments. It
+turns out that one can also eliminate E196a1 when 7 | z for, say, l < 100
+with a simple application of Kraus’ method. The curve E392c1 (when 7 ∤ z)
+is not susceptible to this method.
+20                         S. R. DAHMEN AND S. SIKSEK
+
+    We now turn our attention to a result involving the exponents (r, s)
+in (4.3) and (4.4), after which we will complete the proof of Proposition 4.1.
+
+Lemma 4.10. Let E0 /Q be an elliptic curve, let p 6= 2, 7 be prime, let
+l 6= 2, 3, 7 be prime, and let g ∈ {1, 7}. Denote by Ag (E0 , p) the set of
+(a, b) ∈ F2p − {0, 0} such that (a + b)g and H7 (a, b)/g are both l-th powers in
+Fp , and
+      • either H7 (a, b) 6= 0 and ap (E0 ) ≡ ap (Ea,b ) (mod l),
+      • or H7 (a, b) = 0 and ap (E0 )2 ≡ (p + 1)2 (mod l).
+Let P1 , . . . , Pm be the prime ideals of Z[ζ] dividing p. Write κi for the
+residue class field Z[ζ]/Pi and πi for the corresponding natural map
+                              πi : Z[ζ]/pZ[ζ] → κi .
+Denote by Bg (E0 , p) the set of pairs (µ, η) with 0 ≤ µ, η < l, such that there
+exists (a, b) ∈ Ag (E0 , p) with
+                                                                
+                                          a + bζ
+                     πi
+                            (1 − ζ)ord7 (g) (1 + ζ)µ (1 + ζ 2 )η
+an l-th power in κi for i = 1, . . . , m.
+     (a) If Ex,y arises from E0 and 7 ∤ z, then (4.3) holds for some (r, s) ∈
+         B1 (E0 , p).
+     (b) If Ex,y arises from E0 and 7 | z, then (4.4) holds for some (r, s) ∈
+         B7 (E0 , p).
+
+Proof. Let g := gcd(x + y, H7(x, y)). By Lemma 4.5 and (4.1) and (4.2) we
+see that if ρx,y
+              l  arises from E0 , then (x, y) ≡ (a, b) (mod l) for some (a, b) ∈
+Ag (E0 , p). The statement now follows directly by taking into account that
+the factorization of x7 + y 7 in Z[ζ] yields (4.3) and (4.4).                  
+
+Proof of Proposition 4.1. Let (x, y, z) be a primitive integer solution to (1.3)
+with l ∈ L7 . We know that for some 0 ≤ r, s < l we have (4.3) if 7 ∤ z
+and (4.4) if 7 | z. Moreover, from Lemma 4.8 we know that ρx,y   l  arises from
+E196a1 if 7 ∤ z and from E392c1 if 7 | z. By Lemma 4.10, for any prime p 6= 2,
+7, if 7 ∤ z, then
+                              (r, s) ∈ B1 (E196a1 , p)
+and if 7 | z, then
+                              (r, s) ∈ B7 (E392c1 , p).
+We wrote a short MAGMA script to compute Bg (E0 , p). We found that for
+every prime l ∈ L7 there exist primes p1 , p2 such that
+             B1 (E196a1 , p1 ) = (0, 0) and B7 (E392c1 , p2 ) = (0, 0).
+               PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                           21
+
+This proves the proposition (see the MAGMA script Modular77l.m for more
+details).                                                            
+
+4.3. The hyperelliptic curves. Assume l ∈ L7 and let (x, y, z) be a prim-
+itive integer solution to x7 + y 7 = z l with z 6= 0. Then according to Propo-
+sition 4.1 we have
+
+(4.11)                        x + ζy = ǫβ l ,    d(x + y) = z1l
+
+where β ∈ Z[ζ] and
+                                       (
+                                        (1, 1)     if 7 ∤ z
+                              (d, ǫ) =
+                                        (7, 1 − ζ) if 7|z.
+
+Let θ = ζ + ζ −1 and K = Q(θ); this is the totally real cyclic cubic subfield
+of L. The Galois conjugates of θ are θ1 , θ2 , θ3 , which in terms of ζ are given
+by
+              θ1 = ζ + ζ −1,          θ2 = ζ 2 + ζ −2,          θ3 = ζ 3 + ζ −3.
+Note that
+                 θ1 = θ,         θ2 = θ2 − 2,         θ3 = −θ2 − θ + 1.
+Let
+                      µ = NormL/K (ǫ),            γ = NormL/K (β).
+Taking norms in (4.11) down to K we obtain
+
+(4.12)                 x2 + θxy + y 2 = µγ l ,       d(x + y) = z1l
+
+where γ ∈ OK and
+                                       (
+                                        (1, 1)     if 7 ∤ z
+                              (d, µ) =
+                                        (7, 2 − θ) if 7|z.
+   Let µ1 = µ, µ2 , µ3 denote the conjugates of µ that correspond respec-
+tively to θ 7→ θj , for j = 1, 2, 3. Likewise let γ1 , γ2 , γ3 be the corresponding
+conjugates of γ. Then
+
+x2 + θ1 xy + y 2 = µ1 γ1l ,       x2 + θ2 xy + y 2 = µ2 γ2l ,       x2 + θ3 xy + y 2 = µ3 γ3l .
+
+Furthermore, recall that
+                                                       (
+                                                        1 if 7 ∤ z;
+                   (x + y)2 = d−2 z12l ,     where d =
+                                                        7 if 7|z.
+The left-hand sides of the previous four equations are symmetric binary
+quadratic forms over K. Since such forms obviously form a 2-dimensional
+22                          S. R. DAHMEN AND S. SIKSEK
+
+vector space over K there exist linear relations between the four forms. We
+calculate
+
+(x + y)2 + θ2 (x2 + θ1 xy + y 2) + θ3 (x2 + θ2 xy + y 2) + θ1 (x2 + θ3 xy + y 2) = 0,
+(x + y)2 + θ3 (x2 + θ1 xy + y 2) + θ1 (x2 + θ2 xy + y 2) + θ2 (x2 + θ3 xy + y 2) = 0.
+
+This yields nice equations for a curve in projective 3-space in the coordinates
+z12 , γ1 , γ2 , γ3.
+
+                     d−2 z12l + θ2 µ1 γ1l + θ3 µ2 γ2l + θ1 µ3 γ3l = 0,
+                     d−2 z12l + θ3 µ1 γ1l + θ1 µ2 γ2l + θ2 µ3 γ3l = 0.
+
+We can eliminate one of the γi , say γ3 , to get
+
+(4.13)        (θ2 − θ1 )d−2 z12l + (θ22 − θ1 θ3 )µ1 γ1l + (θ2 θ3 − θ12 )µ2 γ2l = 0.
+
+And a projective plane curve in the coordinates γ1 , γ2 , γ3 is quickly obtained
+as
+
+(4.14)        (θ2 − θ3 )µ1 γ1l + (θ3 − θ1 )µ2 γ2l + (θ1 − θ2 )µ3 γ3l = 0.
+
+Remark 4.11. Let α1 , α2 , α3 be nonzero elements in a field F of characteris-
+tic 0 and consider the nonsingular plane projective curve over F determined
+by the equation
+
+(4.15)                        α1 ul + α2 v l + α3 w l = 0.
+
+Using the identity
+
+                (α1 ul − α2 v l )2 = (α1 ul + α2 v l )2 − 4α1 α2 (uv)l ,
+
+we get from (4.15) that
+
+                     (α1 ul − α2 v l )2 = −4α1 α2 (uv)l + α32 w 2l .
+
+By dividing both sides by α32 w 2l , we see that
+                         uv α1 ul − α2 v l
+                                            
+                             ,                 ∈ C(F )
+                         w2         α3 w l
+where C is the genus (l − 1)/2 hyperelliptic curve determined by
+                                                           α1 α2
+                       C : Y 2 = −4ηX l + 1,          η=         .
+                                                            α32
+Obviously, by permuting the indices, we find that F -rational points on (4.15)
+also give rise to F -rational points on the hyperelliptic curves given by the
+equation above with η = α2 α3 /α12 and η = α3 α1 /α22 respectively.
+                PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                               23
+
+   Define
+      α1 := (θ2 − θ1 )d−2 ,          α2 := (θ22 − θ1 θ3 )µ1 ,    α3 := (θ2 θ3 − θ12 )µ2 ;
+       α1′ := (θ2 − θ3 )µ1 ,           α2′ := (θ3 − θ1 )µ2 ,       α3′ := (θ1 − θ2 )µ3 ;
+    η1 := α2 α3 /α12 ,     η2 := α3 α1 /α22 ,      η3 := α1 α2 /α32 ,    η4 := α1′ α2′ /α3′2 .
+Then we see that Remark 4.11 above leads to K-rational points on the
+curves
+                         Y 2 = −4ηi X l + 1
+for i = 1, 2, 3, 4 and the two possibilities for (d, µ). More precisely, if 7 ∤ z,
+then
+      γ1 γ2 α2 γ1l − α3 γ2l                  γ2 z12 α3 γ2l − α1 z12l
+                                                                  
+           ,                  ∈ Cl,1 (K),          ,                    ∈ Cl,2 (K),
+       z14       α1 z12l                      γ12        α2 γ1l
+     2
+      z1 γ1 α1 z12l − α2 γ1l                  γ1 γ2 α1′ γ1l − α2′ γ2l
+                                                                    
+           ,                   ∈ Cl,3 (K),           ,                  ∈ Cl,4 (K)
+       γ22        α3 γ2l                       γ32        α3′ γ3l
+where Cl,i denotes the genus (l − 1)/2 hyperelliptic curve given by
+              Cl,i : Y 2 = −4ηi X l + 1,       (µ, d) = (1, 1),      i = 1, 2, 3, 4.
+If 7|z, then similarly
+      γ1 γ2 α2 γ1l − α3 γ2l                  γ2 z12 α3 γ2l − α1 z12l
+                                                                  
+            ,                 ∈ Dl,1 (K),          ,                    ∈ Dl,2 (K),
+       z14      α1 z12l                       γ12        α2 γ1l
+     2
+      z1 γ1 α1 z12l − α2 γ1l                  γ1 γ2 α1′ γ1l − α2′ γ2l
+                                                                    
+            ,                  ∈ Dl,3 (K),           ,                  ∈ Dl,4 (K)
+        γ22       α3 γ2l                       γ32        α3′ γ3l
+where Dl,i denotes the genus (l − 1)/2 hyperelliptic curve given by
+         Dl,i : Y 2 = −4ηi X l + 1,          (µ, d) = (2 − θ, 7),       i = 1, 2, 3, 4.
+The possible values of ηi are given explicitly in Table 3. Note that if 7|z,
+then η2 = −η3 , hence Dl,2 ≃ Dl,3 .
+                                     Table 3. Values of ηi
+   (µ, d)              η1                     η2                   η3                 η4
+   (1, 1)          2θ2 + θ − 5          −5θ2 + 4θ + 3       −θ2 − 3θ − 2            θ2 − 3
+ (2 − θ, 7)   74 (20θ2 + 11θ − 46)    7−3 (−θ2 + 4θ + 3)   7−3 (θ2 − 4θ − 3)   20θ2 + 11θ − 45
+
+
+   Next, we note that there must be a linear dependence between the sym-
+metric binary quadratic forms (x − y)2, (x + y)2, and x2 + θxy + y 2 . It is
+given by
+              (θ − 2)(x − y)2 = −4(x2 + θxy + y 2) + (θ + 2)(x + y)2.
+Using (x + y)2 = d−2 z12l and x2 + θxy + y 2 = µγ l , we get
+                            2            l
+                                  −4µd2 γ
+                   
+                     x−y                             θ+2
+(4.16)                         =             2
+                                                +         .
+                      x+y          θ − 2 z1          θ−2
+24                         S. R. DAHMEN AND S. SIKSEK
+
+So if 7 ∤ z, then
+                                            
+                                 γ x−y
+(4.17)                              ,            ∈ Cl,0 (K)
+                                 z12 x + y
+where Cl,0 denotes the genus (l − 1)/2) hyperelliptic curve given by
+
+         Cl,0 : Y 2 = 7−1 (4θ2 + 12θ + 16)X l + 7−1 (−4θ2 − 12θ − 9).
+
+If 7|z, then
+                                            
+                                 γ x−y
+                                    ,            ∈ Dl,0 (K)
+                                 z12 x + y
+where Dl,0 denotes the genus (l − 1)/2 hyperelliptic curve given by
+
+                    Dl,0 : Y 2 = 142 X l + 7−1 (−4θ2 − 12θ − 9).
+
+   Thus we have reduced our problem to determining the K-rational points
+on two genus (l − 1)/2 curves. Namely one of the Cl,i and one of the Dl,i .
+Note that
+                    
+                    
+                     {∞, (1, ±1)}                       if i = 0
+                                           2
+                    {∞, (0, ±1), (1, ±(2θ − 5))}        if i = 1
+                    
+                    
+                    
+(4.18)    Cl,i (K) ⊃ {∞, (0, ±1), (1, ±(2θ2 − 2θ − 1))} if i = 2
+                    
+                    
+                    
+                    
+                     {∞, (0, ±1), (1, ±(2θ + 3))}       if i = 3
+                                           2
+                      {∞, (0, ±1), (1, ±(2θ + 2θ − 3))} if i = 4
+                    
+                    
+                    {∞}
+                                                          if i = 0
+(4.19)    Dl,i (K) ⊃ {∞, (0, ±1)}                          if i = 1, 2, 3
+                    {∞, (0, ±1), (1, ±(6θ2 + 4θ − 13))} if i = 4.
+                    
+
+Lemma 4.12. Let l ∈ L7 .
+     • If for at least one i ∈ {0, 1, 2, 3, 4} equality holds in (4.18), then
+       there are no non-trivial primitive integer solutions to x7 + y 7 = z l
+       with 7 ∤ z.
+     • If for at least one i ∈ {0, 1, 2, 3, 4} equality holds in (4.19), then
+       there are no non-trivial primitive integer solutions to x7 + y 7 = z l
+       with 7|z.
+
+Proof. Let (x, y, z) be a non-trivial primitive integer solution to (1.3). We
+have seen that this gives rise to a P = (X, Y ) ∈ Cl,i (K) for all i ∈
+{0, 1, 2, 3, 4} if 7 ∤ z and it gives rise to a P = (X, Y ) ∈ Dl,i (K) for all
+i ∈ {0, 1, 2, 3, 4} if 7|z. Obviously, P 6= ∞ and X 6= 0. So the first part
+of the lemma (i.e. the 7 ∤ z case) follows if we prove that X 6= 1, and the
+second part of the lemma (i.e. the 7|z case) follows if we prove that X 6= 1 if
+i = 4. Let γ = γ1 , γ2 , γ3, z1 be as before. Note that they are nonzero pairwise
+            PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                25
+
+coprime algebraic integers in K = Q[θ] and of course z1 ∈ Z. Also note that
+the roots of unity in Z[θ] are ±1. For i = 0, 1, 2, 3, 4 we have respectively
+                             γ γ1 γ2 γ2 z12 z12 γ1 γ1 γ2
+                       X=       ,    , 2 , 2 , 2 .
+                             z12 z14   γ1    γ2     γ3
+Furthermore, recall that
+                              x2 + θxy + y 2 = µγ l
+where µ = 1 if 7 ∤ z, and µ = 2 − θ if 7|z.
+   Let us assume that 7 ∤ z. From the condition X = 1 we now see that
+ 2
+z1 = 1 and that the γi are units. If i = 0, then we get γ = 1. If i = 1,
+then we get 1 = γ1 γ2 = Norm(γ)/γ3 = ±1/γ3 , hence γ = ±1. If i = 2, then
+γ2 = γ12 , and from the Galois action we see that γ28 = γ2 , which implies
+γ2 = 1 and hence γ = 1. If i = 3, then similar as in the previous case we get
+to γ = 1. Finally, if i = 4, then 1 = γ1 γ2 /γ32 = Norm(γ)/γ33 = ±1/γ33 , which
+implies γ3 = ±1 and hence γ = ±1. In all cases we see that γ = ±1, so
+                             x2 + θxy + y 2 = ±1.
+Since x, y, ∈ Z we get xy = 0. A contradiction which proves the first part
+of the lemma.
+    Now assume 7|z. We let i = 4. The condition X = 1 implies, as before,
+that γ = ±1. This gives us
+                           x2 + θxy + y 2 = ±(2 − θ).
+The integer solution are (x, y) = (±1, ∓1), hence z = 0. A contradiction
+which proves the second part of the lemma.                             
+
+Remark 4.13. We know of at least one instance where equality does not
+hold in (4.19), namely
+(4.20)   D13,1 (K) ⊃ {∞, (0, ±1), (7−1(3θ2 + 2θ − 2), ±(4θ2 + 6θ + 1))}.
+It is of course a simple matter to check that the pair of ‘new’ points does
+not come from a non-trivial primitive integer solution to (1.3), from which
+we conclude that equality in (4.20) implies the nonexistence of non-trivial
+primitive integer solutions to (1.3) with 7|z and l = 13. Although it seems
+very likely that indeed this equality holds, proving it still remains quite a
+challenge.
+
+Remark 4.14. Instead of finding the full set S of K-rational points on one
+of the Cl,i or Dl,i in order to apply Lemma 4.12, it can be convenient to use
+extra (local) information so that the same conclusion can be obtained by
+finding a specific subset of S satisfying extra (local) conditions. For example,
+26                        S. R. DAHMEN AND S. SIKSEK
+
+let P be the prime above 7, then for j = 1, 2, 3 we have x2 + θj xy + y 2 ≡
+(x + y)2 (mod P). So for a primitive integer solution to (1.3) with 7 ∤ z we
+get, using γ1 , γ2 , γ3, z1 as before, that γ1l ≡ γ2l ≡ γ3l ≡ (z12 )l (mod P). Since
+l 6= 2, 3 and 7 ∤ z we obtain respectively
+(4.21)       γ1 ≡ γ2 ≡ γ3 ≡ z12     (mod P),       γ1 γ2 γ3 z12 6≡ 0 (mod P).
+We note that Cl,i for i = 1, 2, 3, 4 has good reduction at P. Now the local
+information (4.21) implies that our solution gives rise to a point P̃i on the
+reduction C̃l,i /F7 where
+                         P̃i = (1, 3), (1, 4), (1, 0), (1, 2)
+for i = 1, 2, 3, 4 respectively. Therefore define for i = 1, 2, 3, 4
+                Cl,i (K)′ := {P ∈ Cl,i (K) : P      (mod P) = P̃i }.
+For the curve Cl,0 we see, by (4.17), that any P ∈ Cl,0 (K) that comes from
+a solution to (1.3) has second coordinate in Q, where by convention we say
+that ∞ has second coordinate in Q. Therefore define
+          Cl,0 (K)′ := {P ∈ Cl,0 (K) : P has second coordinate in Q}.
+We arrive at the following refined version of the first part of Lemma 4.12.
+
+Lemma 4.15. Let l ∈ L7 . If for at least one i ∈ {0, 1, 2, 3, 4} we have
+                        
+                        
+                         {∞, (1, ±1)}             if i = 0
+                                  2
+                        {(1, 2θ − 5)}             if i = 1
+                        
+                        
+                        
+                    ′               2
+            Cl,i (K) = {(1, −2θ + 2θ + 1)} if i = 2
+                        
+                        
+                        
+                        
+                         {(1, ±(2θ + 3))}         if i = 3
+                                  2
+                          {(1, 2θ + 2θ − 3)}       if i = 4,
+                        
+
+then there are no non-trivial primitive integer solutions to x7 + y 7 = z l with
+7 ∤ z.
+
+     Similar remarks apply to Dl,0 and Dl,4 .
+
+4.4. Rational points on Cl,i and Dl,i . The curves Cl,i for i = 0, . . . , 4 and
+Dl,4 contain a K-rational point P = (X, Y ) with X = 1. We can check that
+D := [P − ∞] is a point of infinite order on the Jacobian. Upper bounds for
+the ranks of the Jacobians of the C5,i and the D5,i can be found in Tables 4
+and 5 respectively. We conclude that
+       rank Jac(C5,1 )(K) = rank Jac(C5,2 )(K) = rank Jac(C5,3 )(K) = 1
+               rank Jac(D5,4 )(K) = 1,      rank Jac(D5,2 )(K) = 0.
+   We see that we are in a good position to solve (1.3) for l = 5. For the
+case 7 ∤ z the candidates C5,1 , C5,2 , and C5,3 seem equally promising at this
+            PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7               27
+
+              Table 4. Rank bounds for the Jacobian of C5,i
+
+                     C dimF2 Sel(2) (K, Jac(C))     Time
+                    C5,0           2                1545s
+                    C5,1           1                1667s
+                    C5,2           1                1700s
+                    C5,3           1                1928s
+                    C5,4           2                571s
+
+             Table 5. Rank bounds for the Jacobian of D5,i
+
+               D        dimF2 Sel(2) (K, Jac(D))      Time
+              D5,0                  1             79083s ≈ 22.0h
+              D5,1                  1             89039s ≈ 24.7h
+         D5,2 (≃ D5,3 )             0            102817s ≈ 28.6h
+              D5,4                  1                 1838s
+
+point, we choose to work with C5,3 . For the case 7|z, the curves D5,1 and
+D5,2 are both good candidates, but obviously D5,2 is the easier one to work
+with, since its Jacobian has rank zero.
+
+Proposition 4.16. We have
+                        C5,3 (K)′ = {(1, ±(2θ + 3))},
+                        D5,2 (K) = {∞, (0, ±1)}.
+
+Proof. We will first determine C5,3 (K)′ and write for now J := Jac(C5,3 ).
+Let P± := (1, ±(2θ + 3)) ∈ C5,3 (K) and D := [P+ − ∞] ∈ J(K). Then,
+as remarked before, D has infinite order. Since we need this fact in the
+proof, we will supply details here. Using explicit computations in MAGMA it
+is straightforward to check this, but it can actually easily be shown ‘by hand’
+as follows. Note that C5,3 and hence J have good reduction at the prime
+P above 7, denote the reductions by C̃5,3 and J˜ respectively. The points
+P± reduce to a single Weierstrass point P̃ = (1, 0) ∈ C̃5,3 (F7 ). Thus the
+reduction D̃ of D has order 2 in J(F˜ 7 ). Since the hyperelliptic polynomial
+f := −4η3 X 5 + 1 in the defining equation for C5,3 is irreducible, we get that
+#J(K)tors is odd. This implies that any elements of J(K) whose reduction
+modulo a prime of good reduction has even order cannot be torsion, in
+particular D has infinite order.
+    Now we will apply Chabauty-Coleman with the prime P. A basis for
+Ω(C5,3 /KP ) is given by X i dX/Y with i = 0, 1. We have explicitly 2D =
+[P+ − P− ], which also has infinite order of course. We note that the rational
+function X − 1 does not reduce to a local uniformizer at P̃ , but the function
+28                        S. R. DAHMEN AND S. SIKSEK
+
+T := Y + Y0 does, where Y0 := 2θ + 3. We compute 2Y dY = −20η3 X 4 dX,
+so
+                       dX           dY               dT
+                    Xi      = Xi          4
+                                             =              .
+                        Y        −10η3 X       −10η3 X 4−i
+Furthermore, (with the obvious choice for the 5-th root) we have around P−
+                              −1/5                       −1/5
+                                               T 2 − 2Y0 T
+                      2
+               −1      Y −1
+            X =                      = 1+                         =
+                        −4η3                      −4η3
+      −θ + 2      13θ2 − 17θ + 2 2 287θ2 − 274θ − 103 3
+   1+         T+                   T +                          T + . . . ∈ K[[T ]].
+        10                100                     1000
+Formal integration allows us to calculate to high-enough P-adic precision
+                 Z 2D            Z P+             Z 2Y0
+                         i dX           i dX                 dT
+           ci :=       X      =       X        =                    .
+                  0         Y     P−       Y       0    −10η3 X 4−i
+We note that vP (c0 ) = vP (c1 ) = 1. Now ω := (−c1 /c0 +X)/dY ∈ Ann(J(K))
+and the function
+                                 Z T
+                                     (−c1 /c0 + X(T ′ ))dT ′
+                      f (T ) :=
+                                  0     −10η3 X(T ′ )4
+vanishes for T ∈ Y0 OKP such that (X(T ), Y (T )) ∈ C5,3 (K), which have to
+reduce mod P to P̃ . The Strassmann bound for the power series in t of
+f (Y0 t) can be computed to be 3. The zeroes t = 0 and t = 2 correspond
+to the points P− and P+ respectively. The third solution occurs at t = 1,
+which corresponds to the unique Hensel-lift of P̃ to a P-adic Weierstrass
+point. This last point is not K-rational (since f is irreducible over K), so we
+conclude that C5,3 (K)′ = {P± }. Further details can be found in our MAGMA
+script Chabauty77l.m.
+    Determining D5,2 (K) is straightforward, since J := Jac(D5,2 ) has rank 0.
+The number of points on the reduction of J at the prime above p for p = 3, 11
+respectively can be calculated to equal 730 and 1882705 respectively. Their
+gcd equals 5. Since [(0, 1) − ∞] ∈ J(K) is non-trivial, it must be a point of
+order 5 generating J(K). The Abel-Jacobi map
+                      D5,2 (K) → J(K) :      P 7→ [P − ∞]
+is injective. The points n[(0, 1) − ∞] for n = 2, 3 cannot be represented as
+[P −∞] for some P ∈ D5,2 (K). This shows that D5,2 (K) = {∞, (0, ±1)}. 
+
+  Obviously, the proposition above together with Lemmata 4.12 and 4.15
+imply Theorem 2.
+
+Remark 4.17. With a bit more work it is possible to determine C5,3 (K)
+completely as well as C5,1 (K), C5,2 (K), and D5,4 (K). In an earlier version
+of this paper we only dealt with the curves C5,4 and D5,4 , so we had to
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                  29
+
+determine C5,4 (K) as well. For this curve it is in fact possible to find an-
+other independent K-rational point on the Jacobian and use Chabauty over
+number fields [21] to determine C5,4 (K) on this genus 2 curve of rank 2 over
+K.
+
+                        5. Results assuming GRH
+   The purpose of this section is to prove Theorem 3. There are however
+many other, unconditional, results in this section, which can be interesting
+in their own right. When a result is conditional on GRH, we shall clearly
+state so. We shall start with the equation x7 + y 7 = z l , since the treatment
+is a direct continuation of the previous section. After this, the equation
+x5 + y 5 = z l will be revisited. In the final section we shall briefly discuss the
+possibility of making the results unconditional.
+
+5.1. The equation x7 + y 7 = z l for l = 11, 13. As in the l = 5 case,
+we can check that for l ∈ {11, 13} the K-rational points on Cl,i for i =
+0, 1, 2, 3, 4 and Dl,4 give rise to a point of infinite order on their Jacobians.
+Assume GRH. Rank bounds for the Jacobians of the Cl,i and the Dl,i with
+l ∈ {11, 13} can be found in Tables 6 and 7 respectively. We want to stress
+again that because of the pseudo-random number generator involved in
+computing the ranks, the computation time also depends (really heavily
+this time) on the seed. We conclude from the tables that
+              rank Jac(C11,3 )(K) = 1,     rank Jac(D11,4 )(K) = 1
+and of course
+             rank Jac(D11,0 )(K) = 0,     rank Jac(D13,2 )(K) = 0.
+
+           Table 6. GRH Rank bounds for the Jacobian of Cl,i
+
+             C    dimF2 Sel(2) (K, Jac(C))       Time
+            C11,0             4              10481s ≈ 2.9h
+            C11,1             3               4226s ≈ 1.2h
+            C11,2             2               7207s ≈ 2.0h
+            C11,3             1               3604s ≈ 1.0h
+            C11,4             2              14816s ≈ 4.1h
+            C13,0             2              10508s ≈ 2.9h
+            C13,1             2            365096s ≈ 4.2 days
+            C13,2             2             108629s ≈ 30.2h
+            C13,3             4             107770s ≈ 29.9h
+            C13,4             3             119062s ≈ 33.1h
+30                         S. R. DAHMEN AND S. SIKSEK
+
+          Table 7. GRH Rank bounds for the Jacobian of Dl,i
+
+              D         dimF2 Sel(2) (K, Jac(D))       Time
+            D11,0                   0               6419s ≈ 1.8h
+            D11,1                   1               7550s ≈ 2.1h
+       D11,2 (≃ D11,3 )             2              12010s ≈ 3.3h
+            D11,4                   1               1800s ≈ 0.5h
+            D13,0                   2            469263s ≈ 5.4 days
+            D13,1                   3              91258s ≈ 25.3h
+       D13,2 (≃ D13,3 )             0              43182s ≈ 12.0h
+            D13,4                   3              10225s ≈ 2.8h
+
+   We see that we are in a good position to solve (1.3) for l = 11, but that
+we have insufficient information to treat the 7 ∤ z case when l = 13.
+
+Proposition 5.1. Assuming GRH, we have
+                        C11,3 (K)′ = {(1, ±(2θ + 3))},
+                        D11,0 (K) = {∞}.
+
+Proof. The proof that C11,3 (K)′ = {(1, ±(2θ +3))} is analogous to our proof
+that C5,3 (K)′ = {(1, ±(2θ + 3))} given in Proposition 4.16. Details can be
+found in our MAGMA script Chabauty77l.m.
+   Since rank Jac(D11,0 )(K) = 0 we can get D11,0 (K) = {∞} from the fact
+that Jac(D11,0 )(K)tors is trivial. This last statement follows from observing
+that the defining equation for D11,0 shows that # Jac(D11,0 )(K)tors is odd
+and counting points on the reduction of Jac(D11,0 ) modulo the prime above
+5 and a prime above 13.                                                     
+
+Corollary 5.2. Assuming GRH, there are no non-trivial primitive integer
+solutions to (1.3) for l = 11.
+
+5.2. The equation x5 + y 5 = z l revisited. Instead of just working over
+Q, like we did in Section 3, we shall use the factorization of Hp over Q(ζp )
+and Q(ζp + ζp−1 ), like we did in Section 4, but now with p = 5 instead of
+p = 7 of course.
+
+5.2.1. Initial factorizations for x5 + y 5 = z l . Let (x, y, z) be a primitive
+integer solution to (1.2) with 5 ∤ z for some prime l > 5. Recall that
+                           x5 + y 5
+             H5 (x, y) =            = x4 − x3 y + x2 y 2 − xy 3 + y 4.
+                            x+y
+By Lemma 2.2, gcd(x + y, H5(x, y)) = 1, and consequently
+                x + y = z1l ,      H5 (x, y) = z2l ,     z = z1 z2
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                31
+
+where z1 , z2 are non-zero, coprime integers.
+   Let ζ denote a primitive 5-th root of unity, L = Q(ζ) and O = Z[ζ] the
+ring of integers of L. The class number of O is 1 and the unit rank is 1. The
+unit group is in fact
+                     {±ζ i (1 + ζ)r : 0 ≤ i ≤ 4,   r ∈ Z}.
+Moreover, 5 ramifies as 5O = (1 − ζ)4 O. Now H5 (x, y) = Norm(x + ζy). We
+have
+(5.1)              x + ζy = (1 + ζ)r β l ,    0 ≤ r ≤ l − 1,
+for some β ∈ Z[ζ]. Thus we have l cases to consider. Using a modular
+approach, we can reduce the number of cases to just 1 for many values of l,
+e.g. l = 11, 13, 17.
+
+5.2.2. A modular Approach to x5 + y 5 = z l when 5 ∤ z. Consider the set
+                       L5 := {primes l : 5 < l < 100}.
+
+Proposition 5.3. Let (x, y, z) be a primitive integer solution to (1.2) with
+5 ∤ z and l ∈ L5 . Then (5.1) holds with r = 0.
+
+   The proof is very much analogous to the proof of Proposition 4.1 in
+Section 4.2. So we just describe the main steps. We use the Frey curve
+               Ex,y : Y 2 = X 3 − 5(x2 + y 2 )X 2 + 5H5 (x, y)X.
+Write ρx,y
+        l   for the Galois representation on the l-torsion of Ex,y . Since Ex,y
+is a quadratic twist of the the Frey curve from Section 3.2 (which is also
+denoted as Ex,y there), the irreducibility of ρx,y l  for primes l ≥ 7 follows
+directly from Lemma 3.7. Now a straightforward computation of the con-
+ductor and minimal discriminant of Ex,y and applying modularity [3] and
+level lowering [19], [20] as usual, yields the following lemma.
+
+Lemma 5.4. For a prime l ≥ 7, the Galois representation ρx,y
+                                                         l   arises from
+                          α 2
+a newform f of level N = 2 5 where α = 1, 3, or 4.
+
+    There are respectively 2, 5, and 8 newforms at these levels, which all
+happen to be rational. Specializing Ex,y at a trivial primitive integer solution
+with xy = 0 (i.e. (x, y) = (±1, 0) or (0, ±1) ), yields E200b1 , and specializing
+at (x, y) = (±1, ±1) (which does not correspond to a solution) yields E400d2 .
+Note that in the latter case we have H5 (x, y) = 1. By comparing traces of
+Frobenius as usual (including the method of Kraus for some small values of
+l), we can eliminate all but two of the 15 newforms for all primes l ≥ 7. The
+two exceptions being of course the two newforms corresponding to the two
+32                          S. R. DAHMEN AND S. SIKSEK
+
+elliptic curves we just obtained by specialization of Ex,y . We note that in
+the case p|z it is convenient to strengthen the congruence ap (E0 ) ≡ ±(1 + p)
+(mod l) to the congruence ap (E0 ) ≡ ap (Ex,y )(1 + p) (mod l).
+
+Lemma 5.5. For a prime l ≥ 7, the Galois representation ρx,y
+                                                         l   arises from
+either E200b or E400d .
+
+   By a basic application of Kraus’ method we are able to eliminate the
+possibility of E400d for all l ∈ L5 except l = 7, 11, 19. These remaining three
+cases can be dealt with using an analogue of Lemma 4.10.
+
+Lemma 5.6. For l ∈ L5 , we have that ρx,y
+                                      l   does not arise from E400d .
+
+   To finish the proof of Proposition 5.3 we now only have to deal with E200b ,
+which is possible using again the analogue of Lemma 4.10. Computational
+details can be found in the second part of the MAGMA script Modular55l.m.
+
+5.2.3. The hyperelliptic curves. Now we come to the hyperelliptic curves.
+   Let θ = ζ + ζ −1 and K = Q(θ); this is the totally real quadratic subfield
+of L. The Galois conjugate of θ are θ1 , θ2 which in terms of ζ are given by
+                         θ1 = ζ + ζ −1 ,       θ2 = ζ 2 + ζ −2 ,
+Note that
+                             θ1 = θ,        θ2 = −1 − θ.
+Let
+                                 γ = NormL/K (β).
+Taking norms in (5.1) with r = 0 down to K we obtain
+                                x2 + θxy + y 2 = γ l .
+   Let γ1 = γ, γ2 denote the conjugates of γ that correspond respectively
+to θ 7→ θj , for j = 1, 2. Then
+                 x2 + θ1 xy + y 2 = γ1l ,      x2 + θ2 xy + y 2 = γ2l .
+Furthermore, recall that
+                                   (x + y)2 = z12l .
+The left hand sides of the previous three equations are symmetric binary
+quadratic forms over K, hence linearly dependent. We calculate
+            (x + y)2 + θ2 (x2 + θ1 xy + y 2 ) + θ1 (x2 + θ2 xy + y 2 ) = 0.
+In terms of the coordinates z12 , γ1 , γ2 we get
+                               z12l + θ2 γ1l + θ1 γ2l = 0.
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                 33
+
+Using Remark 4.11, we see that
+                        2
+                         z1 γ1 z12l − θ2 γ1l
+                                             
+                               ,               ∈ Cl,1(K)
+                           γ22     θ1 γ2l
+where Cl,1 is the genus (l − 1)/2 hyperelliptic curve given by
+(5.2)         Cl,1 : Y 2 = −4η1 X l + 1,   η1 = θ2 /θ12 = −2θ − 3.
+   The linear dependence between the symmetric binary quadratic forms
+(x − y)2 , (x + y)2, and x2 + θxy + y 2 is given by
+          (θ − 2)(x − y)2 = −4(x2 + θxy + y 2) + (θ + 2)(x + y)2.
+Using (x + y)2 = z12l and x2 + θxy + y 2 = γ l , we get
+                          2             l
+                      x−y          −4      γ         θ+2
+(5.3)                         =              2
+                                                  +      .
+                      x+y        (θ − 2) z1          θ−2
+We compute −4/(θ − 2) = 4(θ + 3)/5 and (θ + 2)/(θ − 2) = −(4θ + 7)/5.
+Hence
+                                        
+                                γ x−y
+                        P :=      ,        ∈ Cl,0 (K)
+                               z12 x + y
+where Cl,0 is the genus (l − 1)/2 hyperelliptic curve given by
+(5.4)                Cl,0 : 5Y 2 = (4θ + 12)X l − (4θ + 7).
+Note that in fact the second coordinate of P lies in Q. Furthermore, since 5
+is a square in K, the factor 5 in front of Y 2 above could easily be absorbed
+by rescaling Y (by a factor of 2θ + 1). However, this would spoil the nice
+feature of the curve that the points of our interest have second coordinate
+lying in Q.
+    Regarding K-rational points on the curves C0,l and C1,l , we note that
+                           (
+                             {∞, (1, ±1)}             if i = 0
+(5.5)           Cl,i (K) ⊃
+                             {∞, (0, ±1), (1, ±η1)} if i = 1.
+   As in (the first part of) Lemma 4.12 we have the the following.
+
+Lemma 5.7. Let l ∈ L5 . If for i = 0 or i = 1 equality holds in (5.5), then
+there are no non-trivial primitive integer solutions to x5 + y 5 = z l with 5 ∤ z.
+
+   Let P be the prime above 5. We note that Cl,1 has good reduction at P.
+Define
+           Cl,1(K)′ := {P ∈ Cl,i (K) : P (mod P) = (1, 2)}.
+As in the x7 + y 7 = z l case, define as well
+        Cl,0 (K)′ := {P ∈ Cl,0(K) : P has second coordinate in Q}.
+Completely similar as in Remark 4.14, we arrive at a refinement of Lemma 5.7.
+34                       S. R. DAHMEN AND S. SIKSEK
+
+Lemma 5.8. Let l ∈ L5 .
+If for i = 0 or i = 1 we have
+                                 (
+                                  {∞, (1, ±1)} if i = 0
+                     Cl,i (K)′ =
+                                  {(1, 2θ + 3)} if i = 1,
+then there are no non-trivial primitive integer solutions to x5 + y 5 = z l with
+5 ∤ z.
+
+5.2.4. Rational points on Cl,i . For i = 0, 1 let Jl,i := Jac(Cl,i ). For l =
+11, 13, 17 it is easy to check that
+              [(1, 1) − ∞] ∈ Jl,0(K),    [(1, η1 ) − ∞] ∈ Jl,1 (K)
+are points of infinite order. Assume GRH. For these values of l we also
+computed upper bounds for the ranks of Jl,0 (K) and Jl,1 (K); see Table 8.
+
+      Table 8. GRH Rank bounds for the Jacobians of Cl,0 and Cl,1
+
+  l   dimF2 Sel(2) (K, Jac(Cl,0)) Time dimF2 Sel(2) (K, Jac(Cl,1 )) Time
+ 11                 1              55s               2               145s
+ 13                 2              178s              1               175s
+ 17                 4             2178s              2              13087s
+
+   We conclude that J11,0 (K) and J13,1 (K) both have rank 1 and that we
+have an explicit generator for a finite index subgroup for both of them.
+Hence, we are again in a position to apply Chabauty-Coleman.
+
+Lemma 5.9. Assuming GRH, we have
+                          C11,0 (K)′ = {∞, (1, ±1)},
+                          C13,1 (K)′ = {(1, 2θ + 3)}.
+
+Proof. We start by determining C11,0 (K)′ using Chabauty-Coleman with the
+prime P above 3. The curve C11,0 has good reduction at P. This reduction,
+denoted C̃11,0 , contains 10 F9 -rational points, but the subset of F9 -rational
+points whose second coordinate is F3 -rational consists only of the 4 points,
+namely ∞, (1, ±1), (X̃0, 0) where X̃0 ∈ F9 with X̃02 = −1. If we show that for
+each P̃ = ∞, (1, ±1) we have a unique lift to P ∈ C11,0 (K) and that (X̃0 , 0)
+does not lift to a point in C11,0 (K), then it will follow that C11,0 (K)′ =
+{∞, (1, ±1)}.
+   A basis for Ω(C11,0 /KP ) is given by X i dX/Y for i = 0, 1, . . . , 4. We can
+compute
+                             Z D
+                                     dX
+                       ci :=      Xi    , i = 0, 1, . . . , 4
+                              0       Y
+             PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                  35
+
+to high enough P-adic precision and find e.g. that vP (c2 ) = vP (c4 ) = vP (c4 −
+c2 ) = vP (c4 +c2 ) = 1. Write u := −c2 /c4 and let ω := (X 2 +uX 4 )/dY . Then
+we see that ω ∈ Ann(Jac(C11,0 )(K)) and it reduces to a differential ω̃ on
+C̃11,0 /F9 . Since vP (u) = vP (c2 )−vP (c4 ) = 0, we see that ω̃ does not vanish at
+∞. Similarly, since vP (1+u) = vP (c4 −c2 )−vP (c4 ) = 0 we see that ω̃ does not
+vanish at (1, ±1). Finally, since vP (−1+u) = vP (c4 +c2 )−vP (c4 ) = 0 we see
+that ω̃ does not vanish at (X̃0 , 0). We conclude that for each P̃ = ∞, (1, ±1)
+we have a unique lift to P ∈ C11,0 (K). The point (X̃0 , 0) Hensel-lifts uniquely
+to a Weierstrass point (X0 , 0) ∈ C11,0 (Kp ), which is not K-rational. This
+finishes the first part of the proof as in the proof of Proposition 3.2.
+     Next we determine C13,1 (K)′ using Chabauty-Coleman with the prime
+P above 5. The curve C13,1 has good reduction at P, denoted C̃13,1 . Let
+T = X − 1 be a uniformizer at P = (1, 2θ + 3). A basis for Ω(C13,1 /KP ) is
+given by T i dT /Y for i = 0, 1, . . . , 5. We can compute
+                                Z D
+                                        dT
+                          ci :=     T i , i = 0, 1, . . . , 5
+                                 0       Y
+to high enough P-adic precision and find that vP (c0 ) = 1 and vP (ci ) = 2 for
+i = 1, . . . , 5. This shows that it is impossible to find an ω ∈ Ann(Jac(C13,1 )(K))
+with good reduction at P which is non vanishing at P̃ ∈ C̃13,1 (F5 ). Let us
+define instead ω := (T − c1 /c5 T 5 )dT /Y . Then ω ∈ Ann(Jac(C13,1 )(K)) and
+the reduction mod P has vanishing order 1 at P̃ . On can indeed check that
+the Strassmann bound for the function
+                                     Z πt
+                                               c1     dT
+                               t 7→       (T − T 5 )
+                                       0       c5      Y
+(with π a suitable uniformizing parameter) equals 2. By construction it has
+a double zero at t = 0, hence the only lift of P̃ to C13,1 (K) is P . This means
+C13,1 (K)′ = {(1, 2θ + 3)}. Further details can be found in our MAGMA script
+Chabauty55l.m.                                                                
+
+   We note that it should not be much harder to determine C11,0 (K) and
+C13,1 (K) completely. But since it is not necessary for our purposes, we will
+not pursue this.
+
+Corollary 5.10. Assuming GRH, there are no non-trivial primitive integer
+solutions to (1.2) for l ∈ {11, 13}.
+
+5.3. Making the results unconditional. Full GRH is of course not nec-
+essary, we ‘only’ need to obtain certain class and unit group information
+unconditionally in order to carry out the 2-descent on the four Jacobians
+involved. For a hyperelliptic curve defined over a number field K given by an
+36                       S. R. DAHMEN AND S. SIKSEK
+
+equation of the form y 2 = f (x) where f (x) ∈ K[x] is irreducible over K, it
+suffices to have available the class and unit group information of the number
+field L := K[x]/f (x) (or possibly only certain relative info for the extension
+K/L). For example in the case of x5 + y 5 = z l with l ∈ {11, 13} the field
+L = Ll coming from the curve C11,0 for l = 11 and C13,1 for l = 13 is given
+by Ll = Q[t]/gl (t) with g11 (t) := t22 + 2t11 − 4 and g13 (t) = t26 + 22t13 − 4.
+Assuming GRH, either MAGMA or PARI/GP can compute the class and unit
+group info for these two fields rather quickly. In particular, we find that the
+class group is trivial for both fields (assuming of course GRH). It suffices
+in fact to know that our conditional unit group is a finite index 2-saturated
+subgroup of the (unconditional) unit group. This will be easy to check and
+reduces the problem to verifying that the class groups of the fields L11 and
+L13 are trivial. This is something that can be parallelized and it looks like
+the class group verification for at least L11 and probably also L13 is within
+reach of current technology (but the actual verification, especially for L13 ,
+would in practice of course take considerable effort, time, and computer
+power). For x7 + y 7 = z 11 we are looking at number fields of (absolute)
+degree 33, and verifying class group information is probably not doable in
+practice at the moment. The case where 7|z might actually be solved using
+a Hilbert modular approach. We did not pursue this however, since we are
+not able to treat the case 7 ∤ z unconditionally anyway.
+    Alternatively, we might be able to use partial results on BSD for abelian
+varieties over number fields. The four Jacobians J involved, for which we
+need to determine the rank unconditionally, all have CM (over a cyclotomic
+extension) and are defined over a totally real number field. For such abelian
+varieties, the partial BSD result ‘if analytic rank ≤ 1, then analytic rank =
+algebraic rank’ seems within reach; see e.g. [29]. If on top of this, we are able
+to compute LJ (1) in the rank 0 case and L′J (1) in the three rank 1 cases
+to high enough precision to conclude that these four values are nonzero,
+then we have made our results unconditional. However, the computations of
+LJ (1) and L′J (1) do not seem to be easier than the class group computations
+at the moment.
+
+Acknowledgements. The authors would like to thank the anonymous
+referee for providing various useful comments and Karim Belabas for dis-
+cussing class group computations in PARI/GP. The first-named author was
+supported by a VENI grant from the Netherlands Organisation for Scientific
+Research (NWO). The second-named author was supported by an EPSRC
+Leadership Fellowship.
+            PERFECT POWERS EXPRESSIBLE AS x5 + y 5 OR x7 + y 7                37
+
+                                References
+ [1] M. A. Bennett, I. Chen, S. R. Dahmen and S. Yazdani, Generalized
+     Fermat equations: a miscellany, preprint.
+ [2] W. Bosma, J. Cannon and C. Playoust: The Magma algebra system I:
+     The user language, J. Symbolic Comput. 24 (1997), no. 3–4, 235–265.
+     (See also http://magma.maths.usyd.edu.au/magma/)
+ [3] C. Breuil, B. Conrad, F. Diamond and R. Taylor, On the modularity
+     of elliptic curves over Q: wild 3-adic exercises, J. Amer. Math. Soc. 14
+     (2001), no. 4, 843–939.
+ [4] N. Bruin and M. Stoll, The Mordell-Weil sieve: proving non-existence
+     of rational points on curves, LMS J. Comput. Math. 13 (2010), 272–
+     306.
+ [5] I. Chen and S. Siksek, Perfect powers expressible as sums of two cubes,
+     J. Algebra 322 (2009), no. 3, 638–656.
+ [6] H. Cohen, Number theory, Volume II: Analytic and modern tools, Grad-
+     uate Texts in Mathematics 240, Springer, New York, 2007.
+ [7] R. F. Coleman, Effective Chabauty, Duke Math. J. 52 (1985), no. 3,
+     765–770.
+ [8] S. R. Dahmen, Classical and modular methods applied to Diophantine
+     equations, Ph.D. thesis, Utrecht University, 2008.
+ [9] H. Darmon, Faltings plus epsilon, Wiles plus epsilon, and the general-
+     ized Fermat equation, C. R. Math. Rep. Acad. Sci. Canada 19 (1997),
+     no. 1, 3–14.
+[10] H. Darmon and A. Granville, On the equations z m = F (x, y) and Axp +
+     By q = Cz r , Bull. London Math. Soc. 27 (1995), no. 6, 513–543.
+[11] H. Darmon and L. Merel, Winding quotients and some variants of
+     Fermat’s last theorem, J. Reine Angew. Math. 490 (1997), 81–100.
+[12] J. Edwards, A complete solution to X 2 + Y 3 + Z 5 = 0, J. Reine Angew.
+     Math. 571 (2004), 213–236.
+[13] A. Kraus, Sur le défaut de semi-stabilité des courbes elliptiques à ré-
+     duction additive, Manuscripta Math. 69 (1990), no. 4, 353–385.
+[14]          , On the equation xp +y q = z r : a survey, Ramanujan J. 3 (1999),
+     no. 3, 315–333.
+[15] W. McCallum and B. Poonen, The method of Chabauty and Coleman,
+     Explicit methods in number theory, rational points and Diophantine
+     equations, 99–117, Panor. Synthèses 36, Soc. Math. France, Paris, 2012.
+[16] B. Poonen, Some Diophantine equations of the form xn + y n = z m ,
+     Acta Arith. 86 (1998), no. 3, 193–205.
+38                      S. R. DAHMEN AND S. SIKSEK
+
+[17] B. Poonen, E. F. Schaefer and M. Stoll, Twists of X(7) and primitive
+     solutions to x2 + y 3 = z 7 , Duke Math. J. 137 (2007), no. 1, 103–158.
+[18] B. Poonen and M. Stoll, The Cassels-Tate pairing on polarized abelian
+     varieties, Ann. of Math. (2) 150 (1999), no. 3, 1109–1149.
+                                                         
+[19] K. Ribet, On modular representations of Gal Q/Q arising from mod-
+     ular forms, Invent. Math. 100 (1990), no. 2, 431–476.
+                                                               
+[20]         , Report on mod l representations of Gal Q/Q , in Motives,
+     639–676, Proc. Sympos. Pure Math. 55, Part 2, Amer. Math. Soc.,
+     Providence, RI, 1994.
+[21] S. Siksek, Explicit Chabauty over number fields, Algebra & Number
+     Theory 7 (2013), no. 4, 765–793.
+[22] J. H. Silverman, Advanced topics in the arithmetic of elliptic curves,
+     Graduate Texts in Mathematics 151, Springer-Verlag, New York, 1994.
+[23] W. Stein, Modular forms, a computational approach, Graduate Studies
+     in Mathematics 79, American Mathematical Society, Providence, RI,
+     2007.
+[24] M. Stoll, On the arithmetic of the curves y 2 = xl + A and their Jaco-
+     bians, J. Reine Angew. Math. 501 (1998), 171–189.
+[25]         , Implementing 2-descent for Jacobians of hyperelliptic curves,
+     Acta Arith. 98 (2001), no. 3, 245–277.
+[26]         , On the arithmetic of the curves y 2 = xl + A, II, J. Number
+     Theory 93 (2002), no. 2, 183–206.
+[27] J. L. Wetherell, Bounding the number of rational points on certain
+     curves of high rank, Ph.D. thesis, University of California at Berkeley,
+     1997.
+[28] A. Wiles, Modular elliptic curves and Fermat’s last theorem, Ann. of
+     Math. (2) 141 (1995), no. 3, 443–551.
+[29] S. Zhang, Gross-Zagier formula for GL(2). II, in Heegner points and
+     Rankin L-series, 191–214, Math. Sci. Res. Inst. Publ. 49, Cambridge
+     Univ. Press, Cambridge, 2004.
+   Department of Mathematics, VU University Amsterdam, De Boelelaan
+1081a, 1081 HV Amsterdam, The Netherlands
+   E-mail address: s.r.dahmen@vu.nl
+
+   Mathematics Institute, University of Warwick, Coventry, CV4 7AL,
+United Kingdom
+   E-mail address: s.siksek@warwick.ac.uk
+

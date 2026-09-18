@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C047_audit_S6",
+  "timestamp": "2026-09-18T00:00:04-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "chain": "Beal (2m,2n,3), m,n>=4 via Z[i] + Bennett-Skinner",
+    "step_id": "S6",
+    "step": "Bennett-Skinner, Canad. J. Math. 56 (2004) 23-54, Theorem 1.1: for integer n>=4 and C=3, x^n+y^n=3z^2 has no solutions in nonzero pairwise coprime integers, with no listed exceptions for C=3. Applied with n=m>=4, x=s^2, y=-+t, z=v."
+  },
+  "questions": {
+    "hidden": {
+      "type": "score",
+      "instructions": "Does this step contain a hidden assumption, an unproved reduction, or a misapplication of the cited theorem?",
+      "criteria": [
+        "level 0: the step is exactly right as stated",
+        "level 1: a minor gap that is easily filled",
+        "level 2: a real gap needing a new argument",
+        "level 3: the step is wrong or the theorem is misapplied"
+      ]
+    },
+    "check": {
+      "type": "choice",
+      "instructions": "Cheapest way to verify this step independently.",
+      "criteria": {
+        "lean": "Lean 4 + mathlib",
+        "enum": "exact enumeration on a model",
+        "source": "re-read the primary source",
+        "paper": "a written derivation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "hidden": {
+        "type": "score",
+        "score": 2.35,
+        "confidence": 0.35,
+        "legend": {
+          "0": "level 0: the step is exactly right as stated",
+          "1": "level 1: a minor gap that is easily filled",
+          "2": "level 2: a real gap needing a new argument",
+          "3": "level 3: the step is wrong or the theorem is misapplied"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.12,
+          "2": 0.26,
+          "3": 0.57
+        }
+      },
+      "check": {
+        "type": "choice",
+        "choice": "source",
+        "confidence": 0.78,
+        "probabilities": {
+          "lean": 0.0,
+          "enum": 0.02,
+          "paper": 0.14,
+          "source": 0.84
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 603,
+      "output_tokens": 58
+    }
+  }
+}

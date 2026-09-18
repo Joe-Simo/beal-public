@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U32_weighted_branch_scope_correction",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U32_weighted_branch_scope_correction.md",
+    "excerpt": "# U32: weighted-branch scope correction\n\nStatus: verified research-state correction only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Correction\n\nThe active surviving Beal-derived equation from U15 is\n\n    X^10 + 256 Y^10 = Z^17,\n\nwith gcd(X,Y)=1 and X,Z odd. The coefficient 256 is essential: it is not a tenth power, and no rational common rescaling can simultaneously turn both left-hand terms into integral tenth powers. U15 already recorded that Michaud-Jacobs' unweighted theorem for\n\n    x^(2l) + y^(2m) = z^17\n\nand its ell=5 Hilbert-newform obstructions do not directly cover the weighted equation.\n\nThe modular-method files U26--U31 study the unweighted Michaud-Jacobs ell=5 obstruction. Those calculations may be mathematically useful as method development, but they do not currently eliminate any case of the weighted equation X^10+256Y^10=Z^17 unless a new, proved reduction from the weighted equation to that Hilbert-modular setup is supplied.\n\nTherefore the previous research-state language suggesting that Case 1 versus Case 2 in Michaud-Jacobs determined coverage of the weighted branch was incorrect. No such correspondence has been proved.\n\n## Current valid state of the weighted branch\n\nThe valid chain for X^10+256Y^10=Z^17 is U15--U25 in `research/gaussian-descent/`:\n\n- Gaussian factorization in Z[i];\n- the surviving 17-adic Case III\n\n      a=A^5,\n      b=16*17^4 B^5,\n      G=C^5,\n      H=17 D^5;\n\n- elimination of Cases I and II modulo 11;\n- the finite list of forcing primes and proof that a single forcing prime does not iterate to an infinite p-adic descent;\n- factorization over Q(sqrt(17)), collapse to fixed unit classes, integral-basis coefficient equations, exact 17-adic root locking, and coprime cyclotomic factorization of gamma^5-(eta delta)^5.\n\nThe latest valid weighted checkpoint is U25. Its next obligation is global: exploit the cyclotomic factorization in K(zeta_5), derive a Thue/Thue-Mahler or superelliptic contradiction, or construct a modular method adapted to the coefficient 256 itself.\n\n## Literature check\n\nA search of the 2024 survey `Generalised Fermat equation: a survey of solved cases` and direct searches for the exact equation found no published theorem directly resolving\n\n    X^10 + 256 Y^10 = Z^17\n\nor equivalently the weighted signature-(5,5,17) form\n\n    U^5 + 8 V^5 = Z^17,\n\nwhere U=X^2 and V=2Y^2.\n\nThe survey records unit-coefficient (5,5,n) solutions for n=7 and 19 and Michaud-Jacobs' unweighted (2l,2m,17) result for l,m !=5, but not the present weighted coefficient-8/256 equation.\n\n## Consequence for coverage\n\nU26--U31 remain preserved as auxiliary modular-method research, but they are not counted toward elimination of the active Beal-derived weighted branch. The research program returns to U25 as the mathematically connected frontier.\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.15,
+        "confidence": 0.85,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.87,
+          "1": 0.11,
+          "2": 0.02,
+          "3": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1701,
+      "output_tokens": 94
+    }
+  }
+}

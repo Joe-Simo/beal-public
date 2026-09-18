@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_signature_2_3_11_simultaneous_sieve",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_signature_2_3_11_simultaneous_sieve.md",
+      "excerpt": "# U111: Multi-Prime Simultaneous Sieve for Signature (2, 3, 11)\n\n**Date**: 2026-09-17  \n**Status**: Exact multi-prime simultaneous sieve formulation, density analysis, Catalan residue constraints, and bounded integer verification.  \n**Target Equation**: Generalized Fermat equation of signature $(2, 3, 11)$:\n$$A^2 + B^3 = C^{11}, \\quad \\gcd(A, B, C) = 1.$$\n**Primary Sources**:\n- Henri Darmon and Andrew Granville, *On the equations $z^m = F(x, y)$ and $Ax^p + By^q = Cz^r$*, Bull. London Math. Soc. 27 (1995), 513\u2013543.\n- Sander R. Dahmen, *Classical and modular methods applied to Diophantine equations*, PhD Thesis, Universiteit Utrecht (2008).\n- Nuno Freitas, Bartosz Naskr\u0119cki, and Michael Stoll, *The generalized Fermat equation with exponents 2, 3, n*, Compositio Math. 156 (2020), 77\u2013113.\n- Executable Verification Script: [`code/U111_signature_2_3_11_simultaneous_sieve.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_signature_2_3_11_simultaneous_sieve.py)\n- Structured Sieve Ledger: [`references/U111_signature_2_3_11_simultaneous_sieve.json`](file://[LOCAL_HOME]/Downloads/beal/references/U111_signature_2_3_11_simultaneous_sieve.json)\n\n---\n\n## 1. Formulation of the Multi-Prime Simultaneous Sieve\n\n### 1.1 Sieve Primes and Modulus\nWe formulate a simultaneous CRT sieve across the 8 good auxiliary primes:\n$$\\mathcal{Q} = \\{5, 7, 13, 17, 19, 23, 29, 31\\}.$$\nThe global sieve modulus is the squarefree product:\n$$M = \\prod_{q \\in \\mathcal{Q}} q = 5 \\cdot 7 \\cdot 13 \\cdot 17 \\cdot 19 \\cdot 23 \\cdot 29 \\cdot 31 = 3,038,795,305.$$\nThe ambient residue space of non-zero pairs $(A, B) \\pmod M$ with $\\gcd(A, B, M) = 1$ has size:\n$$\\Omega_M = \\prod_{q \\in \\mathcal{Q}} (q^2 - 1) = 24 \\cdot 48 \\cdot 168 \\cdot 288 \\cdot 360 \\cdot 528 \\cdot 840 \\cdot 960 \\approx 8.5436 \\times 10^{18}.$$\n\n### 1.2 Local Admissibility Conditions at $q \\in \\mathcal{Q}$\nFor any primitive integer solution $(A, B, C)$ of $A^2 + B^3 = C^{11}$, its reduction $(a_q, b_q) \\equiv (A, B) \\pmod q$ must satisfy:\n1. **Equation Congruence**:\n   $$a_q^2 + b_q^3 \\equiv c_q^{11} \\pmod q \\quad \\text{for some } c_q \\in \\mathbb{F}_q.$$\n   Thus $a_q^2 + b_q^3 \\in \\mu_{11}(\\mathbb{F}_q) = \\{c^{11} \\pmod q : c \\in \\mathbb{F}_q\\}$.\n2. **Coprimality**: $(a_q, b_q) \\not\\equiv (0, 0) \\pmod q$.\n3. **Trace Compatibility with Newform $f$**:\n   - If $a_q^2 + b_q^3 \\not\\equiv 0 \\pmod q$ ($q \\nmid C$, good reduction):\n     The Kraus Frey curve $E_{(a_q, b_q)}: Y^2 = X^3 + 3b_q X + 2a_q$ has Frobenius trace $a_q(E_{(a_q, b_q)}) = q + 1 - \\#E_{(a_q, b_q)}(\\mathbb{F}_q)$, which must satisfy:\n     $$a_q(E_{(a_q, b_q)}) \\equiv a_q(f) \\pmod{11}.$$\n   - If $a_q^2 + b_q^3 \\equiv 0 \\pmod q$ ($q \\mid C$, multiplicative reduction):\n     The newform eigenvalue must satisfy the Deligne/Tate congruence:\n     $$a_q(f) \\equiv \\pm(q + 1) \\pmod{11}.$$\n\n---\n\n## 2. Simultaneous Sieve Results Across Candidate Newforms\n\n### 2.1 Local Counts and Global Sieve Density\nFor each rational newform $f \\in S_2^{\\mathrm{new}}(432) \\cup S_2^{\\mathrm{new}}(864)$, we compute the number of locally compatible pairs $N_f(q)$ at each prime $q$, and by the Chinese Remainder Theorem, the total number of simultaneous residue classes:\n$$N_f(M) = \\prod_{q \\in \\mathcal{Q}} N_f(q), \\quad \\rho_f = \\frac{N_f(M)}{\\Omega_M}.$$\n\n| Form Label | Level | $N(5)$ | $N(7)$ | $N(13)$ | $N(17)$ | $N(19)$ | $N(23)$ | $N(29)$ | $N(31)$ | Total CRT Classes $N_f(M)$ | Sieve Density $\\rho_f$ | $\\log_{10}(\\rho_f)$ |\n|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **`432_1`** | 432 | 1 | 9 | 12 | 40 | 21 | 5 | 84 | 115 | $4,381,776,000$ | $5.13 \\times 10^{-10}$ | $-9.29$ |\n| **`432_2`** | 432 | 2 | 4 | 17 | 32 | 45 | 5 | 112 | 75 | $8,225,280,000$ | $9.63 \\times 10^{-10}$ | $-9.02$ |\n| **`432_3`** | 432 | 2 | 9 | 17 | 28 | 45 | 25 | 112 | 115 | $124,150,320,000$ | $1.45 \\times 10^{-8}$ | $-7.84$ |\n| **`432_4`** | 432 | 2 | 9 | 17 | 28 | 45 | 25 | 112 | 115 | $124,150,320,000$ | $1.45 \\times 10^{-8}$ | $-7.84$ |\n| **`432_5`** | 432 | 2 | 4 | 17 | 32 | 45 | 5 | 112 | 75 | $8,225,280,000$ | $9.63 \\times 10^{-10}$ | $-9.02$ |\n| **`432_6`** | 432 | 1 | 9 | 12 | 40 | 21 | 5 | 84 | 115 | $4,381,776,000$ | $5.13 \\times 10^{-10}$ | $-9.29$ |\n| **`432_7`** (CM) | 432 | 4 | 4 | 17 | 32 | 48 | 6 | 84 | 115 | $24,215,224,320$ | $2.83 \\times 10^{-9}$ | $-8.55$ |\n| **`432_8`** (CM) | 432 | 4 | 1 | 17 | 32 | 21 | 6 | 84 | 115 | $2,648,540,160$ | $3.10 \\times 10^{-10}$ | $-9.51$ |\n| **`864_1`** | 864 | 3 | 9 | 18 | 28 | 21 | 5 | 98 | 100 | $14,002,632,000$ | $1.64 \\times 10^{-9}$ | $-8.79$ |\n| **`864_2`** | 864 | 3 | 4 | 12 | 32 | 36 | 5 | 98 | 90 | $7,315,660,800$ | $8.56 \\times 10^{-10}$ | $-9.07$ |\n| **`864_3`** | 864 | 3 | 4 | 12 | 32 | 36 | 5 | 98 | 90 | $7,315,660,800$ | $8.56 \\times 10^{-10}$ | $-9.07$ |\n| **`864b1`** (Form 4) | 864 | 3 | 9 | 18 | 28 | 21 | 5 | 98 | 100 | $14,002,632,000$ | $1.64 \\times 10^{-9}$ | $-8.79$ |\n| **`864_5`** | 864 | 2 | 9 | 12 | 40 | 36 | 5 | 84 | 75 | $9,797,760,000$ | $1.15 \\times 1",
+      "length_chars": 11173
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.65,
+        "confidence": 0.35,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.65,
+          "1": 0.18,
+          "2": 0.04,
+          "3": 0.13
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.38,
+        "confidence": 0.62,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.87,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.12
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.19
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.2,
+        "probabilities": {
+          "verify_computation": 0.35,
+          "audit_later": 0.1,
+          "audit_now": 0.19,
+          "verify_literature": 0.0,
+          "no_action": 0.36
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3924,
+      "output_tokens": 124
+    }
+  }
+}

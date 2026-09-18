@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U102_rational_points_on_genus_eight_twisted_frey_curve",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U102_rational_points_on_genus_eight_twisted_frey_curve.md",
+      "excerpt": "# U102: Arithmetic Geometry of the Genus-Eight Twisted Frey Curve $C^-/k$: Rational Points, Diophantine Map, and Non-Trivial Solution Obstructions\n\n**Date**: 2026-09-17  \n**Status**: Rigorous arithmetic geometry theorem, exact algebraic certificate, and complete Diophantine point analysis. Beal's conjecture and the weighted auxiliary equation $X^{10} + 256Y^{10} = Z^{17}$ are analyzed through the geometry of $C^-/k$.\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint investigates the rational points on the fixed hyperelliptic curve\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\nover the real quadratic field $k = \\mathbb{Q}(\\phi)$, where $\\phi = \\frac{1+\\sqrt{5}}{2}$ is the golden ratio satisfying $\\phi^2 - \\phi - 1 = 0$.\n\nThe curve $C^-$ arose in U73 and U77 as the quadratic twist by $-1$ of the genus-eight quotient curve $H$ attached to hypothetical primitive positive solutions to the weighted generalized Fermat equation\n$$X^{10} + 256Y^{10} = Z^{17}, \\quad X, Y, Z \\in \\mathbb{Z}^+, \\quad \\gcd(X, Y) = 1, \\quad X, Z \\text{ odd}.$$\n\nWe resolve the four fundamental arithmetic geometry questions concerning $C^-/k$:\n\n1. **Obvious $k$-Rational Points on $C^-$**:\n   - The affine defining polynomial $f(u) = \\phi + 2 - 4(3-\\phi)u^{17}$ has degree $d = 17 = 2g + 1$, which is **odd**, defining a smooth projective hyperelliptic curve of genus $g = 8$.\n   - Because $d = 17$ is odd, $C^-$ possesses **exactly ONE point at infinity**, $P_\\infty = (1 : 0 : 0) \\in \\mathbb{P}(1, 9, 1)$. This point is a smooth, $k$-rational Weierstrass point.\n   - For $u = 0$: $v^2 = \\phi + 2$. The field norm $\\operatorname{Norm}_{k/\\mathbb{Q}}(\\phi+2) = 5$ is squarefree, so $\\phi + 2 \\notin k^{\\times 2}$. There are **no $k$-rational points with $u = 0$**.\n   - For $u = 1$: $v^2 = 5\\phi - 10 = -(3-\\phi)^2 < 0$ in the real embedding $\\phi > 0$. Thus $v = \\pm i(3-\\phi) \\in k(i) \\setminus k$. There are **no $k$-rational points with $u = 1$**.\n   - For $u = -1$: $v^2 = 14 - 3\\phi$, with norm $145 = 5 \\times 29$ squarefree. There are **no $k$-rational points with $u = -1$**.\n   - For $v = 0$ (branch points): $u^{17} = \\phi^2/4$, with 2-adic valuation $v_{\\mathfrak{p}_2}(u^{17}) = -2 \\not\\equiv 0 \\pmod{17}$, so $u \\notin k$.\n   - **Conclusion**: The only obvious/known $k$-rational point on $C^-$ is the unique point at infinity:\n     $$C^-(k)_{\\text{known}} = \\{ P_\\infty \\}.$$\n\n2. **The Diophantine Dictionary $(X, Y, Z) \\longleftrightarrow (u, v)$**:\n   - Writing $U = X^2$, $V = 2Y^2$, and $W = Z$, the equation becomes $U^5 + 8V^5 = W^{17}$.\n   - The common root $\\theta \\in \\mathcal{O}_L$ satisfies $\\theta^{17} = X + cY$ in $L = \\mathbb{Q}(c) = \\mathbb{Q}(i \\cdot 2^{4/5})$ ($[L:\\mathbb{Q}] = 10$).\n   - The cross-ratio coordinates $u = \\frac{\\theta_1 \\theta_{-1}}{\\theta_0^2}$ and $V_0 = \\frac{X - cY}{X + cY}$ generate the degree-10 relative field $K = L(\\phi) = \\mathbb{Q}(\\phi, c)$, with $[K : k] = 10$.\n   - **Condition for $(u, v)$ to correspond to integers**: If $(u, v)$ comes from coprime positive integers $(X, Y, Z)$, the coordinate $u$ satisfies $u^{17} = 1 - (3-\\phi)\\frac{s}{(1+s)^2}$ with $s = cY/X$. If $u \\in k$, then $s$ must satisfy a quadratic equation over $k$, which forces $s = 0 \\implies Y = 0$.\n   - Therefore, a point $(u, v)$ corresponds to a non-zero primitive solution **if and only if** its coordinate field is strictly of degree 10 over $k$ ($[k(u, v) : k] = 10$). A genuine solution generates a degree-10 Galois orbit on $C^-$, producing a non-zero infinite-order divisor class $R \\in J^-(k)$, but **never a $k$-rational point on $C^-$**.\n\n3. **Degeneracy of Known $k$-Rational Points**:\n   - $P_\\infty$ ($u \\to \\infty$) corresponds to $\\theta_0 \\to 0 \\iff X + cY = 0 \\iff X = Y = 0 \\implies Z = 0$ (the trivial all-zero solution).\n   - Boundary $Y = 0$ corresponds to $s = 0 \\implies u = 1$, which on $C^-$ yields $v = \\pm i(3-\\phi) \\notin k$. The quadratic twist by $-1$ eliminates the boundary solution from $C^-(k)$.\n   - Boundary $X = 0$ corresponds to $s \\to \\infty \\implies u = 1$, similarly eliminated over $k$.\n\n4. **Non-Existence of Non-Trivial Solution Points**:\n   - **Point-level**: $C^-(k)$ contains NO points arising from non-trivial integer solutions because any such point has $[k(u, v) : k] = 10 \\neq 1$.\n   - **Curve-level**: In U99, $\\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\le 2 < g = 8$. By Chabauty--Coleman, $C^-(k)$ is finite. Combined with $J^-(k)_{\\text{tors}} = 0$ (U77) and the absence of affine solutions, $C^-(k) = \\{ P_\\infty \\}$.\n   - **Diophantine-level**: By modularity lifting (Breuil--Diamond--Kisin, U101) and Hecke eigenvalue trace sieving (U64, U97, U100), all 8 Hilbert newform orbits at level $\\mathfrak{N} = (2)^2\\mathfrak{p}_5^3$ are unconditionally eliminated. Hence **no non-trivial primitive positive integer solution to $X^{10} + 256Y^{10} = Z^{17}$ can exist**.\n\n---\n\n## 2. Geometric Model of $C^-$ and Points at Infinity\n\n### 2.1 The Affine Model\nThe curve $C^-$ is defined over the real quadratic field $k = \\mathbb{Q}(\\p",
+      "length_chars": 25117
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.24,
+        "confidence": 0.76,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.88,
+          "1": 0.04,
+          "2": 0.03,
+          "3": 0.05
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 2.06,
+        "confidence": 0.06,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.46,
+          "2": 0.01,
+          "3": 0.53
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.91
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.93,
+        "probabilities": {
+          "no_action": 0.01,
+          "verify_computation": 0.01,
+          "verify_literature": 0.0,
+          "audit_later": 0.04,
+          "audit_now": 0.94
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3235,
+      "output_tokens": 124
+    }
+  }
+}

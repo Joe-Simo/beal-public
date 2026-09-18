@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U46_coefficient2_square_branch_literature_and_mod103",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U46_coefficient2_square_branch_literature_and_mod103.md",
+      "excerpt": "# U46: coefficient-2 square branch \u2014 literature pruning and a mod-103 constraint\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Branch\n\nThe unresolved all-even orientation from U45 is\n\n    X^10 + Y^10 = 2 Z^17,\n\nwith positive pairwise-coprime X,Y,Z. Put\n\n    a = X^2,  b = Y^2,  c = Z.\n\nThen\n\n    a^5 + b^5 = 2 c^17,                              (1)\n\nwhere a,b are squares and gcd(a,b)=1.\n\nSince X,Y must both be odd in this primitive coefficient-2 orientation, a,b are odd squares and hence\n\n    a \u2261 b \u2261 1 (mod 8),\n    a+b \u2261 2 (mod 8).\n\n## 2. Published results that prune (1)\n\nBillerey\u2013Chen\u2013Dieulefait\u2013Freitas, `A multi-Frey approach to Fermat equations of signature (r,r,p)`, Trans. AMS 371 (2019), proves for x^5+y^5=d z^p:\n\n- Theorem 3: no non-trivial solution for d in {1,2} if p | c.\n- Theorem 4: no non-trivial solution for d=2 if c is even; also none if 5 | c.\n- Theorem 5: no non-trivial primitive solution for d=2 if 5 | a+b.\n- Theorem 6: no non-trivial primitive solution for d=2 if 4 | a+b.\n\nApplied to p=17,d=2, any non-trivial primitive solution of (1) must therefore satisfy\n\n    c odd,\n    5 \u2224 c,\n    17 \u2224 c,\n    5 \u2224 a+b,\n    4 \u2224 a+b.\n\nThe last condition is automatic for our square branch because a+b \u2261 2 (mod 8).\n\nThe older Dieulefait\u2013Freitas Q-curve theorem (Math. Comp. 83 (2014), Theorem 1.1) does not cover p=17: it requires p>13, p\u22611 (mod 4), and p\u2261\u00b11 (mod 5). Although 17\u22611 (mod4), it is 2 mod5.\n\nThus published d=2 results do not by themselves close the square branch.\n\n## 3. Exact factorization in the remaining branch\n\nLet\n\n    Phi(a,b) = a^4-a^3 b+a^2 b^2-a b^3+b^4.\n\nThen\n\n    (a+b) Phi(a,b) = 2 c^17.\n\nFor primitive a,b, gcd(a+b,Phi(a,b)) divides 5. Since Theorem 5 excludes 5 | a+b, the factors are coprime. Since a,b are odd and a+b\u22612 (mod8), Phi(a,b) is odd. Therefore there exist coprime positive integers u,v with\n\n    a+b = 2 u^17,\n    Phi(a,b) = v^17,\n    c = uv.                                           (2)\n\nThis is a stronger square-specific reformulation of the surviving branch.\n\n## 4. A certified mod-103 obstruction\n\nA Wolfram finite-field enumeration over F_103 was performed on the necessary conditions from (2), with a,b restricted to quadratic residues. The conditions tested were\n\n    (a+b)/2 is a 17th power in F_103,\n    Phi(a,b) is a 17th power in F_103,\n    a,b are squares.\n\nThe only square pairs (a,b) satisfying both conditions are\n\n    (0,0), (1,1), (46,46), (56,56).\n\nHence every primitive integer solution to (2) satisfies\n\n    a \u2261 b (mod 103),\n\nand because gcd(a,b)=1, neither is 0 mod103. Equivalently,\n\n    103 | (X^2-Y^2),\n    103 \u2224 XY.                                         (3)\n\nThis is a rigorous local constraint, but not yet a contradiction.\n\n## 5. Current bottleneck\n\nAzon's Proposition 5.20 cannot supply residual irreducibility for this branch because its q=2 criterion requires negative nu_2, whereas here nu_2=30>0. The 2014 Q-curve theorem also misses p=17 because 17 is inert modulo the CM condition at Q(sqrt(-5)).\n\nThe promising next route is therefore to exploit the additional square restrictions a=X^2,b=Y^2 inside the multi-Frey/Q-curve elimination, especially against the CM-by-Q(sqrt(-5)) residual forms that survive for p=17, or to combine (2) with descent on the superelliptic equation Phi(X^2,Y^2)=v^17.\n",
+      "length_chars": 3346
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.64,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.58,
+          "1": 0.26,
+          "2": 0.08,
+          "3": 0.08
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.15,
+        "confidence": 0.85,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.94,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.05
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.77,
+        "probabilities": {
+          "verify_computation": 0.81,
+          "audit_later": 0.08,
+          "no_action": 0.03,
+          "audit_now": 0.03,
+          "verify_literature": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2474,
+      "output_tokens": 126
+    }
+  }
+}

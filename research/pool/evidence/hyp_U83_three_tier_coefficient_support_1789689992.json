@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U83_three_tier_coefficient_support",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U83_three_tier_coefficient_support.md",
+    "excerpt": "# U83: three-tier coefficient support controls density 553/640\n\n**Status: written partial theorem with an exact TypeScript certificate and independent Wolfram group-count corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This extends U82's strong and semi-strong families. The only inherited arithmetic input is U71/U72's common integral seventeenth root and nonvanishing of all ten coefficients, together with U81/U82's already written local expansions.\n\n## 1. Setup\n\nAssume a primitive positive solution\n\n    X^10+256Y^10=Z^17.\n\nLet\n\n    c^10=-256, c^5=16i,\n    theta=sum_(j=0)^9 a_j c^j in Z[c],\n    theta^17=X+cY,\n\nwith every a_j nonzero. Let S be the degree-40 splitting field of T^10+256. Its Galois group acts on the ten roots c*zeta_10^j by\n\n    j -> a*j+t,\n    a in {1,3,7,9}, t in Z/10Z.\n\nAs in U81, S is linearly disjoint from Q(zeta_17), so Frobenius data are pairs from a set of 40*16=640 group elements.\n\nU82 partitions two controlled classes:\n\n- **strong**: density 529/640, with q^(9v_q(Y)) | a9;\n- **semi-strong**: density 8/640=1/80, with q^(4v_q(Y)) dividing both a4 and a9.\n\nThis checkpoint finds a third disjoint family of density 16/640=1/40 controlled by the fixed coefficient a5.\n\n## 2. The weak family\n\nLet q not be 2,5,17. Write the affine Frobenius on root labels as\n\n    g(j)=a*j+t mod 10.\n\nCall q **weak** when\n\n1. q is congruent to 1 modulo 17;\n2. t is odd;\n3. g is not a 10-cycle.\n\nThe exclusion of 10-cycles only keeps the categories disjoint: those four cases already belong to U82's strong family.\n\n### Theorem 1\n\nIf q is weak and e=v_q(Y)>0, then\n\n    q^e | a5.                                         (2.1)\n\n### Proof\n\nBecause q is 1 modulo 17, all seventeenth roots of unity lie in Q_q. As in U82, the residual seventeenth roots of X occurring in each factor of the etale root algebra come from a scalar seventeenth root x of X, multiplied by a seventeenth root of unity. Thus the exact q-adic root delta of X matching theta modulo q is constant on each Frobenius orbit of the ten roots.\n\nWrite\n\n    delta=d0+d1*c+...+d9*c^9.\n\nLet r_j=c*zeta_10^j. Fourier inversion gives\n\n    d5*c^5 = (1/10) sum_(j=0)^9 delta(r_j) zeta_10^(-5j)\n            = (1/10) sum_(j=0)^9 delta(r_j) (-1)^j.   (2.2)\n\nSince a is odd and t is odd, g flips parity at every application:\n\n    parity(g(j)) = parity(j)+1 mod 2.\n\nEvery Frobenius orbit therefore has even length and contains equally many even and odd labels. The value delta(r_j) is constant on each orbit, so the alternating sum in (2.2) vanishes orbit by orbit. Hence\n\n    d5=0.                                             (2.3)\n\nNow put T=Y/X. The local root is\n\n    theta = delta * sum_(n>=0) B_n(cT)^n,\n    B_n=binomial(1/17,n),                             (2.4)\n\nwith all B_n q-integral. The c^5 coefficient is obtained from terms d_j B_n c^(j+n) with j+n congruent to 5 modulo 10. The only possible term with n=0 would be d5, which is zero by (2.3). Every remaining contributing term has n>=1 and therefore contains T^n, hence is divisible by q^e. This proves (2.1).\n\nThe proof is all-precision and does not infer divisibility from a finite residue search.\n\n## 3. Density count\n\nThere are twenty affine elements with odd translation t: four choices of a and five odd choices of t. Among them, exactly four are 10-cycles, namely the multiplier-one translations by 1,3,7,9. Those four are already strong.\n\nThus sixteen affine elements remain. The weak condition also fixes the cyclotomic Frobenius to the identity, the unique element corresponding to q congruent to 1 modulo 17. Therefore the weak family occupies\n\n    16/640 = 1/40                                    (3.1)\n\nof the compositum Galois group.\n\nChebotarev gives the same natural density for the corresponding unramified rational primes. The exact group enumeration in `code/U83_three_tier_support.ts` gives the disjoint counts\n\n    strong        529,\n    semi-strong     8,\n    weak           16,\n    uncontrolled   87,\n    total         640.                               (3.2)\n\nA separately written Wolfram enumeration returned exactly `{529,8,16,87}` and densities `{529/640,1/80,1/40,87/640}`.\n\n## 4. Global support inequalities\n\nLet\n\n    Y_s = product over strong q of q^v_q(Y),\n    Y_m = product over semi-strong q of q^v_q(Y),\n    Y_w = product over weak q of q^v_q(Y).\n\nThe supports are disjoint. U82 and Theorem 1 give\n\n    Y_s^9 Y_m^4 | a9,\n    Y_w | a5.                                         (4.1)\n\nLet kappa=|c|=2^(4/5) and H=X+kappa Y. Fourier inversion over the ten complex embeddings gives\n\n    |a9| <= kappa^(-9) H^(1/17),\n    |a5| <= kappa^(-5) H^(1/17).                     (4.2)\n\nTherefore\n\n    kappa^153 Y_s^153 Y_m^68 <= H,                   (4.3)\n    kappa^85  Y_w^17 <= H.                           (4.4)\n\nIn particular\n\n    Y_s^153 Y_m^68 < X+2Y,\n    Y_w^17 < X+2Y.                                   (4.5)\n\nMulti"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.48,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.65,
+          "1": 0.25,
+          "2": 0.07,
+          "3": 0.03
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2491,
+      "output_tokens": 94
+    }
+  }
+}

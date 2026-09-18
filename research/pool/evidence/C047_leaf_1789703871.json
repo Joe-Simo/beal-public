@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C047_leaf",
+  "timestamp": "2026-09-17T23:57:51-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Signature (2m,2n,3), m,n>=2 (the diagonal m=n solved in the literature). Over Z[i]: A^m=|u(u^2-3v^2)|, B^n=|v(3u^2-v^2)| (or swapped), gcd(u,v)=1, u+v odd. gcd(u,u^2-3v^2)=gcd(u,3). Case tree: (R1) 3 does not divide u: u=s^m, u^2-3v^2=+-t^m, giving s^{2m}-+t^m=3v^2 i.e. X^m+Y^m=3Z^2 with X a square. (R2) 3|u with v_3(u)=a: A^m=3^{a+1}u0 w with u0,w,3 pairwise coprime, so m | a+1, u0=s^m, w=3^{2a-1}s^{2m}-v^2=+-t^m. Same two cases (I1),(I2) on the Im side. Exact data u,v<=2000: Re a perfect power 26 times, all squares (m=2), 20 of them with 3|u; never a cube or higher.",
+    "leaf": "cross: combine the Re-side and Im-side conditions: v=p^n substituted into R1 gives s^{2m} -+ t^m = 3p^{2n}, signature (2m,m,2n) with coefficient 3"
+  },
+  "questions": {
+    "attack": {
+      "type": "score",
+      "instructions": "How likely is this leaf to be closed by exact derivation plus a verified literature theorem within one cycle?",
+      "criteria": [
+        "level 0: no",
+        "level 1: unlikely",
+        "level 2: plausible",
+        "level 3: likely"
+      ]
+    },
+    "infinite": {
+      "type": "noul",
+      "instructions": "Would closing this leaf exclude an INFINITE family of Beal signatures?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "attack": {
+        "type": "score",
+        "score": 1.49,
+        "confidence": 0.32,
+        "legend": {
+          "0": "level 0: no",
+          "1": "level 1: unlikely",
+          "2": "level 2: plausible",
+          "3": "level 3: likely"
+        },
+        "probabilities": {
+          "0": 0.09,
+          "1": 0.44,
+          "2": 0.35,
+          "3": 0.12
+        }
+      },
+      "infinite": {
+        "type": "noul",
+        "noul": 0.39
+      }
+    },
+    "usage": {
+      "input_tokens": 731,
+      "output_tokens": 35
+    }
+  }
+}

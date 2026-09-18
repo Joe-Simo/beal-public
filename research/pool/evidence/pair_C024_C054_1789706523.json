@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C024_C054",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C024",
+      "status": "PARTIAL_RESULT",
+      "claim": "Beal Prize status (verified 2026-09-17): US $1,000,000 held by the AMS, donated by D. Andrew Beal, announced in the Notices of the AMS December 1997; awarded for EITHER a proof OR a counterexample, conditional on publication in a refereed and respected mathematics publication, a two-year waiting period, and verification by two outside experts chose"
+    },
+    "B": {
+      "id": "C054",
+      "status": "BLOCKED",
+      "claim": "NEGATIVE: the only residue conditions mod 16, 32, 27 that fail on a Fermat-Catalan solution are restatements of v_p(p-divisible term) >= 3 (2-adic: 122^2 has v_2 = 2; 3-adic: 3^2 has v_3 = 2), i.e. exactly the exponent>=3 hypothesis itself; the mod-11 hit is an artefact of the test (the FC tuple is simply not a solution with exponent 6, not a faile"
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.02,
+        "confidence": 0.98,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.98,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 676,
+      "output_tokens": 34
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C047_audit_S3",
+  "timestamp": "2026-09-18T00:00:04-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "chain": "Beal (2m,2n,3), m,n>=4 via Z[i] + Bennett-Skinner",
+    "step_id": "S3",
+    "step": "Z[i] is a UFD and every unit is a cube, so a+bi=(u+vi)^3 for some u,v in Z with gcd(u,v)=1 and u+v odd; hence a=|u(u^2-3v^2)|, b=|v(3u^2-v^2)| up to swapping the roles of a and b."
+  },
+  "questions": {
+    "hidden": {
+      "type": "score",
+      "instructions": "Does this step contain a hidden assumption, an unproved reduction, or a misapplication of the cited theorem?",
+      "criteria": [
+        "level 0: the step is exactly right as stated",
+        "level 1: a minor gap that is easily filled",
+        "level 2: a real gap needing a new argument",
+        "level 3: the step is wrong or the theorem is misapplied"
+      ]
+    },
+    "check": {
+      "type": "choice",
+      "instructions": "Cheapest way to verify this step independently.",
+      "criteria": {
+        "lean": "Lean 4 + mathlib",
+        "enum": "exact enumeration on a model",
+        "source": "re-read the primary source",
+        "paper": "a written derivation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "hidden": {
+        "type": "score",
+        "score": 1.58,
+        "confidence": 0.17,
+        "legend": {
+          "0": "level 0: the step is exactly right as stated",
+          "1": "level 1: a minor gap that is easily filled",
+          "2": "level 2: a real gap needing a new argument",
+          "3": "level 3: the step is wrong or the theorem is misapplied"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.39,
+          "2": 0.27,
+          "3": 0.22
+        }
+      },
+      "check": {
+        "type": "choice",
+        "choice": "paper",
+        "confidence": 0.33,
+        "probabilities": {
+          "lean": 0.21,
+          "enum": 0.15,
+          "paper": 0.5,
+          "source": 0.14
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 583,
+      "output_tokens": 58
+    }
+  }
+}

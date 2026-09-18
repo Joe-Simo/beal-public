@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U102_coleman_integration_genus8_annihilating_differentials",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U102_coleman_integration_genus8_annihilating_differentials.md",
+    "excerpt": "# U102: Explicit Basis of Holomorphic 1-Forms, 6-Dimensional Annihilating Space Ann(J^-(k)), and Strassman-Coleman Zero Bounds at Inert Prime p=3 for the Genus-8 Frey Curve C^-\n\n**Date**: 2026-09-17  \n**Status**: Exact algebraic certification, closed PARI/GP 2.17.4 local integration ledger, and complete residue disc zero bounds. The weighted generalized Fermat equation and Beal's conjecture remain unresolved.  \n**Context**: Continuation of U99's Mordell--Weil rank bound $\\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\le 2 < g = 8$ for the quotient curve $C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$ over the real quadratic field $k = \\mathbb{Q}(\\phi)$ ($\\phi = \\frac{1+\\sqrt{5}}{2}$).\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U99, the 2-Selmer rank of the genus-8 Jacobian $J^-$ attached to the Frey hyperelliptic curve\n$$C^-: v^2 = \\phi + 2 - 4(3-\\phi)u^{17}$$\nover $k = \\mathbb{Q}(\\phi)$ was unconditionally bounded by 2:\n$$\\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\le \\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(J^-/k) \\le 17 - 15 = 2 < g = 8.$$\nBecause the Mordell--Weil rank is strictly smaller than the genus ($r \\le 2 < 8$), the classical method of **Chabauty (1938)** and **Coleman (1985)** applies to $C^-/k$.\n\nThis checkpoint establishes the complete Coleman integration framework on $C^-/k$ at the inert prime $\\mathfrak{p} = (3)$:\n\n1. **Explicit Holomorphic 1-Forms**:\n   An explicit $k$-basis of the 8-dimensional space of global regular 1-forms $H^0(C^-, \\Omega^1)$ is given by:\n   $$\\omega_j = \\frac{u^j \\, du}{v}, \\quad j = 0, 1, 2, 3, 4, 5, 6, 7.$$\n   Each $\\omega_j$ is regular at all affine points (including the 17 Weierstrass branch points) and at the unique $k$-rational point at infinity $\\infty$. At $\\infty$, their orders of vanishing are strictly decreasing and pairwise distinct:\n   $$\\operatorname{ord}_\\infty(\\omega_j) = 14 - 2j \\in \\{14, 12, 10, 8, 6, 4, 2, 0\\}.$$\n   Furthermore, over $k(\\zeta_{17})$, each $\\omega_j$ spans an eigenspace for the order-17 automorphism $\\tau(u, v) = (\\zeta_{17}u, v)$ with eigenvalue $\\zeta_{17}^{j+1}$.\n\n2. **Space of Annihilating Differentials $\\operatorname{Ann}(J^-(k))$**:\n   Under the Coleman logarithm pairing:\n   $$\\log_\\mathfrak{p}: J^-(k) \\times H^0(C^-, \\Omega^1) \\to k_\\mathfrak{p},$$\n   the image of the rank $\\le 2$ Mordell--Weil group spans a subspace of dimension at most 2. The annihilating differential space:\n   $$\\operatorname{Ann}(J^-(k)) = \\left\\{ \\omega \\in H^0(C^-, \\Omega^1) \\;\\middle|\\; \\int_P^Q \\omega = 0 \\quad \\forall [P - Q] \\in J^-(k) \\right\\}$$\n   has dimension:\n   $$\\dim_k \\operatorname{Ann}(J^-(k)) \\ge g - \\operatorname{rank}_{\\mathbb{Z}} J^-(k) \\ge 8 - 2 = 6.$$\n\n3. **Inert Prime $p = 3$ and Residue Field $\\mathbb{F}_9$**:\n   The prime $p = 3$ is inert in $k$ since $(5/3) = -1$. The residue field is $\\mathbb{F}_9 = \\mathbb{F}_3[\\phi] / (\\phi^2 - \\phi - 1)$. Because $\\gcd(17, 8) = 1$, the map $u \\mapsto u^{17} = u$ is an automorphism on $\\mathbb{F}_9$. The reduction $\\widetilde{C}^-(\\mathbb{F}_9)$ contains exactly **10 points** (1 point at infinity, 1 Weierstrass point, and 8 ordinary affine points).\n\n4. **Local Power Series and Strassman Zero Bounds**:\n   For each of the 10 residue discs $D \\subset C^-(k_\\mathfrak{p})$, explicit power series expansions for $u(t), v(t)$, and the Coleman integrals $I_{\\omega_j}(t) = \\int_0^t \\omega_j$ are computed in PARI/GP 2.17.4 to high 3-adic precision:\n   - **Infinity Disc $]\\infty[$**: Uniformizer $t = u^8 / v$. The linear term $t^1$ (from $\\omega_7$) has 3-adic valuation 1 in the scaled variable $3w$, while all higher odd powers have valuation $\\ge 2$. By Strassman's theorem, $I_\\omega(t)$ has at most 1 zero in $]\\infty[$, which is the rational point $\\infty$.\n   - **Weierstrass Disc $]\\bar{P}_0[$**: Center is the unique 3-adic Weierstrass point $P_0 = (u_0, 0)$ with $u_0^{17} = \\phi^2 / 4$. The uniformizer is $t = v$. The linear term has valuation 1 in $3w$ and strictly dominates all higher powers. By Strassman's theorem, $P_0$ is the unique zero in the disc. Because $[k(u_0) : k] = 17 > 1$, $P_0 \\notin C^-(k)$, so this disc contains **0 rational points**.\n   - **8 Ordinary Affine Discs**: Uniformizer $t = u - u_0$. The leading coefficient $\\psi(0) = \\frac{u_0^j}{v_0}$ is a 3-adic unit ($v_3 = 0$), giving valuation 1 in $3w$. All higher powers have valuation $\\ge 2$. Strassman's theorem bounds the number of zeros in each disc to at most 1.\n   \n5. **Global Point Bound**:\n   Summing across all 10 residue discs:\n   $$\\# C^-(k) \\le 1 \\;(\\infty) + 0 \\;(\\text{Weierstrass}) + 8 \\times 1 \\;(\\text{ordinary}) = 9 \\le 10.$$\n   In particular, $C^-(k)$ is finite with at most 9 points, and the only known $k$-rational point is $\\infty$.\n\n---\n\n## 2. Explicit Basis of Regular 1-Forms on $C^-$\n\n### 2.1 Curve Geometry and Genus\nThe curve $C^-$ is defined over $k = \\mathbb{Q}(\\phi)$ by:\n$$C^-: v^2 = f(u), \\quad f(u) = A - B u^{17},$$\nwhere:\n$$A = \\phi + 2, \\quad B = 4(3-\\phi).$$\nTheir algebraic norms to $\\mathbb{Q}$ are:\n$$N_{k/\\mathbb{Q}}("
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.56,
+        "confidence": 0.25,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.26,
+          "1": 0.08,
+          "2": 0.51,
+          "3": 0.15
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 2479,
+      "output_tokens": 42
+    }
+  }
+}

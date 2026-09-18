@@ -1,0 +1,413 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.4,
+   0.88,
+   "C026",
+   "Beal is FALSE over the Gaussian integers: (-2+i)^3 + (-2-i)^3 = (1+i)^4, with exponents (3"
+  ],
+  [
+   0.33,
+   0.74,
+   "C043",
+   "COUNTERSEARCH in Z[i]: of the norm analogues of the verified Z-constraints, exactly one fa"
+  ],
+  [
+   0.33,
+   0.53,
+   "C031",
+   "The ordering of Z enters a proof of Beal at exactly one point: positivity forbids cancella"
+  ],
+  [
+   0.31,
+   0.89,
+   "C027",
+   "Beal is equivalent to: 2 is an obligatory exponent for every non-trivial primitive solutio"
+  ],
+  [
+   0.31,
+   0.17,
+   "C076",
+   "Vocabulary-3 Jev sweep (analytic/size mechanisms, 18 cells) on the open core: every cell s"
+  ],
+  [
+   0.3,
+   0.78,
+   "C045",
+   "Exact reduction of the sparsest mod-72 class (x,y even, z odd): a counterexample there is "
+  ],
+  [
+   0.29,
+   0.89,
+   "C086",
+   "COUNTERSEARCH H216: in Z[i], with bases |re|,|im|<=14 and exponents 3..7 (3093 distinct pe"
+  ],
+  [
+   0.27,
+   0.81,
+   "C051",
+   "Kernel-checked account of what remains: residual_of_counterexample \u2014 any Beal counterexamp"
+  ],
+  [
+   0.26,
+   0.53,
+   "C041",
+   "NEGATIVE: the combined mod-72 sieve (mod 8 x mod 9) excludes no exponent class. For every "
+  ],
+  [
+   0.25,
+   0.26,
+   "C053",
+   "COUNTERSEARCH RESULT: 14 of the 15 kernel-verified necessary conditions HOLD on all ten Fe"
+  ],
+  [
+   0.24,
+   0.77,
+   "C013",
+   "Orbit b (2.2.5.1-2000.1-b) is incompatible with rho-bar_{J^-,17} by an obstruction that us"
+  ],
+  [
+   0.24,
+   0.59,
+   "C005",
+   "The Gaussian forcing-prime sieve eliminates the weighted equation by exhausting its forcin"
+  ],
+  [
+   0.24,
+   0.28,
+   "C032",
+   "The linear form z log C - y log B from the size window equals log(1 + A^x/B^y) identically"
+  ],
+  [
+   0.23,
+   0.7,
+   "C054",
+   "NEGATIVE: the only residue conditions mod 16, 32, 27 that fail on a Fermat-Catalan solutio"
+  ],
+  [
+   0.23,
+   0.55,
+   "C018",
+   "The bases of any Beal counterexample are pairwise coprime (gcd A B = gcd A C = gcd B C = 1"
+  ],
+  [
+   0.22,
+   0.6,
+   "C075",
+   "final_residual (formal/Beal/ClosedFamilies.lean): under thirteen named hypotheses (all aud"
+  ],
+  [
+   0.22,
+   0.54,
+   "C081",
+   "FIXED THREE BASES, ALL EXPONENTS, bases <= 50: all 17,594 pairwise-coprime triples (A<B) h"
+  ],
+  [
+   0.21,
+   0.55,
+   "C080",
+   "FIXED THREE BASES, ALL EXPONENTS \u2014 COMPLETE for bases <= 30: for EVERY pairwise-coprime tr"
+  ],
+  [
+   0.2,
+   0.72,
+   "C016",
+   "If a Beal counterexample exists, one exists with all three exponents in {4} union {odd pri"
+  ],
+  [
+   0.2,
+   0.42,
+   "C004",
+   "Mixed-weight cubic Pade approximation forces max(X, Y) > 10^25993 for any solution of the "
+  ],
+  [
+   0.2,
+   0.23,
+   "C040",
+   "Dominant-term dichotomy: if B^y <= A^x then z <= x iff A < C (and symmetrically for B). In"
+  ],
+  [
+   0.19,
+   0.9,
+   "C035",
+   "Exactly one of A, B, C is even in any Beal counterexample. Not two, by pairwise coprimalit"
+  ],
+  [
+   0.19,
+   0.61,
+   "C066",
+   "Conditional what-remains theorem: conditional_residual_of_counterexample (formal/Beal/Clos"
+  ],
+  [
+   0.19,
+   0.57,
+   "C025",
+   "Consolidated necessary conditions on any Beal counterexample, kernel-verified: the bases a"
+  ],
+  [
+   0.19,
+   0.55,
+   "C068",
+   "published_residual (formal/Beal/ClosedFamilies.lean): under eleven named hypotheses (the e"
+  ],
+  [
+   0.19,
+   0.45,
+   "C028",
+   "At every modulus m, a Beal counterexample forces a in <A>, b in <B>, c in <C> with a+b = c"
+  ],
+  [
+   0.19,
+   0.45,
+   "C019",
+   "Whenever 3|x, 3|y and 3|z, A^x + B^y = C^z has no positive solutions; in particular no Bea"
+  ],
+  [
+   0.19,
+   0.44,
+   "C039",
+   "Base order forces exponent order in any Beal counterexample: C largest base implies z <= m"
+  ],
+  [
+   0.18,
+   0.64,
+   "C009",
+   "No counterexample to Beal's conjecture exists with A, B <= 160000 and exponents x, y, z in"
+  ],
+  [
+   0.18,
+   0.5,
+   "C046",
+   "Literature state (primary-source, U130): among signatures with all exponents >= 3, the ful"
+  ],
+  [
+   0.18,
+   0.23,
+   "C044",
+   "NEGATIVE: on the exponent>=2 model (100 coprime vs 436 non-coprime solutions, bases<=120, "
+  ],
+  [
+   0.17,
+   0.71,
+   "C017",
+   "Unified: if 3 | gcd(x,y,z) or 4 | gcd(x,y,z), then A^x + B^y = C^z has no positive solutio"
+  ],
+  [
+   0.17,
+   0.65,
+   "C033",
+   "Sharp curvature separation. Every hyperbolic Beal signature has |chi| >= 1/12 with equalit"
+  ],
+  [
+   0.17,
+   0.48,
+   "C072",
+   "Jev sweep U169 over the smallest open reduced signatures ((3,5,7), (4,5,7), (3,4,11) uncon"
+  ],
+  [
+   0.16,
+   0.88,
+   "C059",
+   "All-even signatures (2m,2n,2k): kernel-ready structure (Pythagorean triple of powers; the "
+  ],
+  [
+   0.16,
+   0.45,
+   "C049",
+   "NEGATIVE: for odd prime z in {7,11,13,17,19} there is NO identity P_z(u,v) + c*u^(z-1) = z"
+  ],
+  [
+   0.16,
+   0.44,
+   "C055",
+   "Kernel-checked first factorisation step for signature (p,p,r), p odd prime: A^p+B^p = (A+B"
+  ],
+  [
+   0.15,
+   0.96,
+   "C037",
+   "Complete mod-8 analysis of a Beal counterexample, covering every parity configuration. C e"
+  ],
+  [
+   0.15,
+   0.7,
+   "C015",
+   "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero custom ax"
+  ],
+  [
+   0.15,
+   0.56,
+   "C020",
+   "A Beal counterexample with all three exponents even is exactly a primitive Pythagorean tri"
+  ],
+  [
+   0.14,
+   0.91,
+   "C029",
+   "Classical Fermat descent on the all-even branch sends signature (2r,2s,2t) to signature (2"
+  ],
+  [
+   0.14,
+   0.48,
+   "C036",
+   "The congruence conditions at coprime moduli are positively CORRELATED as constraints, not "
+  ],
+  [
+   0.14,
+   0.29,
+   "C023",
+   "The abc conjecture implies only that there are FINITELY MANY counterexamples to Beal, not "
+  ],
+  [
+   0.13,
+   0.91,
+   "C021",
+   "For Azon signature (r,r,p), Hypothesis 5 holds iff AB has a prime factor q not dividing 2r"
+  ],
+  [
+   0.13,
+   0.85,
+   "C062",
+   "Ledger theorems (formal/Beal/ClosedFamilies.lean): closed_unconditional (mathlib only), cl"
+  ],
+  [
+   0.13,
+   0.68,
+   "C030",
+   "Of 405 reduced signatures with exponents in {3,4,5,7,11,13,17,19,23} and x<=y, this projec"
+  ],
+  [
+   0.13,
+   0.43,
+   "C003",
+   "The Hilbert newform orbit b at level 2000 (2.2.5.1-2000.1-b) is eliminated unconditionally"
+  ],
+  [
+   0.13,
+   0.15,
+   "C038",
+   "At p=3: if 3 divides none of A,B,C and 3 divides both x and y, then C^z = 2 or 7 mod 9, an"
+  ],
+  [
+   0.12,
+   0.79,
+   "C024",
+   "Beal Prize status (verified 2026-09-17): US $1,000,000 held by the AMS, donated by D. Andr"
+  ],
+  [
+   0.12,
+   0.62,
+   "C008",
+   "The mod-p Galois representation attached to the project's Frey curves is surjective unifor"
+  ],
+  [
+   0.12,
+   0.47,
+   "C074",
+   "Statement-fidelity screen of formal/Beal/ClosedFamilies.lean (22 declarations, Jev, HYPOTH"
+  ],
+  [
+   0.12,
+   0.26,
+   "C069",
+   "Standalone checker validated (goal COMPUTATION discipline): code/beal_counterexample_check"
+  ],
+  [
+   0.11,
+   0.94,
+   "C073",
+   "Vocabulary-2 Jev sweep (U173, 32 cells): top cells are (a) 2-adic structure beyond mod 8 \u2014"
+  ],
+  [
+   0.11,
+   0.94,
+   "C011",
+   "The all-even branch with 17 not dividing t admits no primitive solutions."
+  ],
+  [
+   0.11,
+   0.6,
+   "C012",
+   "The mixed-signature part of Beal's conjecture, comprising all exponent triples not reduced"
+  ],
+  [
+   0.11,
+   0.53,
+   "C061",
+   "Boundary of the exponent-4-side mechanism (C060): for (4,2n,z), z odd, the branch curves a"
+  ],
+  [
+   0.1,
+   0.57,
+   "C056",
+   "Literature state for the residual family (p,p,r), p odd prime (primary sources BCDY 2015 T"
+  ],
+  [
+   0.09,
+   0.69,
+   "C048",
+   "Signature (2m,2n,5): over Z[i], x^2+y^2=z^5 (z odd, forced by kernel theorem) gives (s(Q_s"
+  ],
+  [
+   0.09,
+   0.2,
+   "C034",
+   "Curvature stratification: |chi| < T is a FINITE set of Beal signatures precisely when T < "
+  ],
+  [
+   0.08,
+   0.86,
+   "C071",
+   "Systematic instance-closure of the reduced residual (exponents in {3,4,5,7,11,13,17,19}, 2"
+  ],
+  [
+   0.08,
+   0.82,
+   "C077",
+   "Recent-literature read (U183): Darmon program II (arXiv:2308.07062) resolves x^7+y^7=3z^n "
+  ],
+  [
+   0.08,
+   0.43,
+   "C006",
+   "A^3 + B^3 = C^p has no primitive nontrivial solutions for every prime p, not merely for p "
+  ],
+  [
+   0.08,
+   0.31,
+   "C022",
+   "ExponentReduction.lean duplicates the definition of IsBealCounterexample already present i"
+  ],
+  [
+   0.06,
+   0.64,
+   "C063",
+   "(4,4,p) via Q-curves: Dieulefait (arXiv:math/0304425) attaches a Q-curve over a quadratic "
+  ],
+  [
+   0.06,
+   0.42,
+   "C083",
+   "Jev sweep (384 cells) restricted to the two directions the user-supplied survey leaves ope"
+  ],
+  [
+   0.05,
+   0.35,
+   "C001",
+   "The weighted equation X^10 + 256 Y^10 = Z^17 has no primitive nontrivial integer solutions"
+  ],
+  [
+   0.04,
+   0.49,
+   "C002",
+   "Level lowering in the style of Azon arXiv:2504.01967v2 Theorem 5.23 applies to the weighte"
+  ],
+  [
+   0.04,
+   0.28,
+   "C014",
+   "rank_Z J^-(L) < 8 where L is the degree-10 extension of k = Q(sqrt5) generated by a root o"
+  ]
+ ]
+}

@@ -1,0 +1,149 @@
+{
+ "status": "HYPOTHESIS_ONLY",
+ "rows": [
+  [
+   0.8,
+   {
+    "stronger_than_source": 0.8,
+    "source_present": 0.41,
+    "assumes_beal": 0.78
+   },
+   "BCDYThreeThreeTwoN"
+  ],
+  [
+   0.78,
+   {
+    "stronger_than_source": 0.74,
+    "source_present": 0.16,
+    "assumes_beal": 0.78
+   },
+   "DarmonMerelNN2"
+  ],
+  [
+   0.78,
+   {
+    "stronger_than_source": 0.65,
+    "source_present": 0.15,
+    "assumes_beal": 0.78
+   },
+   "DahmenSiksek"
+  ],
+  [
+   0.77,
+   {
+    "stronger_than_source": 0.73,
+    "source_present": 0.16,
+    "assumes_beal": 0.77
+   },
+   "DarmonMerelNN2Int"
+  ],
+  [
+   0.77,
+   {
+    "stronger_than_source": 0.73,
+    "source_present": 0.2,
+    "assumes_beal": 0.77
+   },
+   "DarmonMerelNN3"
+  ],
+  [
+   0.76,
+   {
+    "stronger_than_source": 0.63,
+    "source_present": 0.33,
+    "assumes_beal": 0.76
+   },
+   "BEN24n"
+  ],
+  [
+   0.76,
+   {
+    "stronger_than_source": 0.76,
+    "source_present": 0.16,
+    "assumes_beal": 0.72
+   },
+   "FLTHyp"
+  ],
+  [
+   0.69,
+   {
+    "stronger_than_source": 0.66,
+    "source_present": 0.12,
+    "assumes_beal": 0.69
+   },
+   "BruinClassification238"
+  ],
+  [
+   0.56,
+   {
+    "stronger_than_source": 0.53,
+    "source_present": 0.21,
+    "assumes_beal": 0.56
+   },
+   "Mordell27"
+  ],
+  [
+   0.53,
+   {
+    "stronger_than_source": 0.53,
+    "source_present": 0.83,
+    "assumes_beal": 0.53
+   },
+   "BennettSkinnerThree"
+  ],
+  [
+   0.52,
+   {
+    "stronger_than_source": 0.46,
+    "source_present": 0.17,
+    "assumes_beal": 0.52
+   },
+   "FreitasTheoremMod3"
+  ],
+  [
+   0.52,
+   {
+    "stronger_than_source": 0.41,
+    "source_present": 0.19,
+    "assumes_beal": 0.52
+   },
+   "KrausEvenCLevel18Newform"
+  ],
+  [
+   0.5,
+   {
+    "stronger_than_source": 0.43,
+    "source_present": 0.06,
+    "assumes_beal": 0.5
+   },
+   "MihailescuTheorem"
+  ],
+  [
+   0.35,
+   {
+    "stronger_than_source": 0.35,
+    "source_present": 0.79,
+    "assumes_beal": 0.32
+   },
+   "BCDYFourTwoNThree"
+  ],
+  [
+   0.25,
+   {
+    "stronger_than_source": 0.11,
+    "source_present": 0.93,
+    "assumes_beal": 0.25
+   },
+   "Quartic400g2"
+  ],
+  [
+   0.21,
+   {
+    "stronger_than_source": 0.11,
+    "source_present": 0.92,
+    "assumes_beal": 0.21
+   },
+   "Quartic400b2"
+  ]
+ ]
+}

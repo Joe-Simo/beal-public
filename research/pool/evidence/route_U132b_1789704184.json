@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U132b",
+  "timestamp": "2026-09-18T00:03:04-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "BCDY 2015 Prop 16 uses the same mechanism as our C047 chain (parametrisation (7) + Bennett-Skinner Thm 1.1) for (2,2n,3) and Theorem 2 gives (2m,2n,3) for n = 3 mod 4, m>=2. Our chain: (2m,2n,3) for ALL m,n>=4, by observing 3 divides at most one of s,t so the delta=0 branch is available on at least one side. Neither BCDY Table 1 nor the 2024 survey lists (2m,2n,3) with m,n>=4 unconditionally."
+  },
+  "questions": {
+    "status": {
+      "type": "choice",
+      "instructions": "What is the honest status of the C047 chain relative to the literature?",
+      "criteria": {
+        "known": "an unstated but obvious corollary of BCDY; treat as folklore, not novel",
+        "new_stmt": "a new stated theorem whose proof is a two-line corollary of published tools",
+        "subsumed": "already stated somewhere in BCDY or later work",
+        "unsure": "cannot tell without reading Prop 18"
+      }
+    },
+    "worth_lean": {
+      "type": "noul",
+      "instructions": "Is it worth formalising the elementary part of the chain in Lean now?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "status": {
+        "type": "choice",
+        "choice": "new_stmt",
+        "confidence": 0.88,
+        "probabilities": {
+          "known": 0.06,
+          "unsure": 0.01,
+          "subsumed": 0.02,
+          "new_stmt": 0.91
+        }
+      },
+      "worth_lean": {
+        "type": "noul",
+        "noul": 0.63
+      }
+    },
+    "usage": {
+      "input_tokens": 599,
+      "output_tokens": 69
+    }
+  }
+}

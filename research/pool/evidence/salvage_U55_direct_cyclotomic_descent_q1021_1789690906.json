@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U55_direct_cyclotomic_descent_q1021",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U55_direct_cyclotomic_descent_q1021.md",
+    "excerpt": "# U55: coefficient-2 branch \u2014 direct Q(zeta_20) descent and unit-class collapse\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-16.\n\n## 1. Direct cyclotomic norm hidden in the second factor\n\nLet zeta be a primitive 20th root of unity and M=Q(zeta). The second factor in U46 is\n\n    Phi = X^8-X^6Y^2+X^4Y^4-X^2Y^6+Y^8 = v^17.\n\nSince\n\n    Phi_20(T)=T^8-T^6+T^4-T^2+1,\n\nwe have the exact norm identity\n\n    Norm_{M/Q}(Y+X zeta)=Phi=v^17.                 (1)\n\nThe eight conjugate linear factors Y+X zeta^a, a in (Z/20Z)^*, are pairwise coprime as ideals.\nIndeed, a common prime ideal divisor of two distinct factors divides X(zeta^a-zeta^b); it cannot divide X because gcd(X,Y)=1, and root-of-unity differences here are supported only above 2 or 5. But Phi is odd and 5 does not divide Phi by U46, so primes above 2 and 5 do not divide any factor.\n\nThe cyclotomic field Q(zeta_20) has class number 1 (Masley-Montgomery, `Cyclotomic fields with unique factorization`, J. Reine Angew. Math. 286/287 (1976), 248-256; conductor 20 is on their class-number-one list).\n\nTherefore each linear factor is a 17th power ideal and hence\n\n    Y+X zeta = epsilon * Gamma^17                 (2)\n\nfor a unit epsilon of O_M.\n\nRoots of unity cause no ambiguity modulo 17th powers because gcd(17,20)=1.\n\n## 2. Unit classes modulo 17th powers\n\nLet L=M^+=Q(zeta+zeta^{-1})=Q(zeta_20)^+. The full and real unit groups have the same rank 3, and the Hasse unit index [E_M : mu_M E_L] is 1 or 2. Since this index is coprime to 17, real units generate E_M/E_M^17 after roots of unity are ignored.\n\nUse the normalized real generator a=zeta+zeta^{-1}, satisfying\n\n    a^4-5a^2+5=0.\n\nA fundamental-unit basis for L is\n\n    e1=a^2-3,\n    e2=a^3+a^2-3a-3,\n    e3=a^2-a-2.\n\nThus modulo 17th powers we may write\n\n    epsilon == e1^j1 e2^j2 e3^j3,\n    (j1,j2,j3) in F_17^3.\n\n## 3. Exact q=1021 unit sieve\n\nThe first factor descent U48 also gives\n\n    m+i n = Gaussian-unit * (r+i s)^17,\n\nwith\n\n    m=(X+Y)/2,\n    n=(X-Y)/2.\n\nAt q=1021, both -1 and all 20th roots split, and 17 divides q-1. The eight roots of Phi_20 modulo 1021 are exactly\n\n    226, 250, 384, 486, 535, 637, 771, 795.\n\nFor each of these eight residue embeddings, take the 17th-power residue character of e1,e2,e3. Exact Wolfram finite-field arithmetic gives the 8x3 matrix\n\n    [ 5, 6, 0 ]\n    [12, 0,11 ]\n    [ 5,11, 0 ]\n    [12, 0,11 ]\n    [12, 0, 6 ]\n    [ 5, 6, 0 ]\n    [12, 0, 6 ]\n    [ 5,11, 0 ].\n\nIts rank over F_17 is 3, so reduction at this one rational prime detects all three global unit exponents modulo 17.\n\nNext enumerate the Gaussian 17th-power projective possibilities coming from m+i n. There are 62 residue-character vectors for Y+X zeta compatible with that Gaussian condition.\n\nTesting all 17^3 unit exponent triples in (2) leaves exactly\n\n    (j1,j2,j3)=(9,8,9)\n    or\n    (j1,j2,j3)=(9,9,8).                            (3)\n\nThis was reproduced directly in Wolfram; no floating-point arithmetic is involved.\n\n## 4. The two surviving classes are the trivial cyclotomic units\n\nAt the same eight residue embeddings, the character vector of zeta-1 equals the character vector of\n\n    e1^9 e2^8 e3^9,\n\nand the character vector of 1+zeta equals that of\n\n    e1^9 e2^9 e3^8.\n\nBecause the unit-character matrix above has rank 3, these local equalities identify the corresponding global classes in E_M/E_M^17.\n\nHence (2) sharpens globally to exactly one of\n\n    Y+X zeta = (1+zeta) Gamma^17,                  (4+)\n\nor\n\n    Y+X zeta = (zeta-1) Gamma^17.                  (4-)\n\nAll other unit classes are impossible.\n\nThe original Diophantine equation is invariant under X -> -X. Applying the automorphism zeta -> -zeta to (4-) and replacing X by -X converts it to the plus form, with -1 absorbed as a 17th power. Therefore, up to this legitimate sign symmetry, we may work with the single exact equation\n\n    Y+X zeta = (1+zeta) Gamma^17.                  (5)\n\n## 5. A very simple 17th-power equation in m,n\n\nUsing X=m+n and Y=m-n,\n\n    Y+X zeta\n      = m(1+zeta)+n(zeta-1).\n\nSince 1+zeta is a unit,\n\n    (Y+X zeta)/(1+zeta)\n      = m + mu n,\n\nwhere\n\n    mu=(zeta-1)/(zeta+1).\n\nThus the surviving coefficient-2 branch satisfies the exact untwisted cyclotomic equation\n\n    m + mu n = Gamma^17                              (6)\n\nin Q(zeta_20), in addition to\n\n    m+i n=(r+i s)^17\n\nin Z[i].\n\nThe q=1021 sieve shows that in the plus orientation (6),\n\n    1021 | n,\n    1021 does not divide m.\n\nWithout choosing the sign orientation, the invariant statement is 1021|mn.\n\n## 6. Two lower-degree relative norm descents\n\nTaking the relative norm of (1) to Q(i) gives the exact identity\n\n    R+iS = Norm_{M/Q(i)}(Y+X zeta),\n\nwhere\n\n    R = X^4-X^2Y^2+Y^4,\n    S = XY(X^2-Y^2),\n\nand\n\n    R^2+S^2 = Phi = v^17.\n\nSince gcd(R,S)=1, R is odd and S is even, Gaussian UFD gives\n\n    R+iS=(C+iD)^17                                  (7)\n\nwith coprime C,D.\n\nLikewise the subgroup fixing Q(sqrt(-5)) gives\n\n    E + sqrt(-5) S = Norm_{M/Q"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.98,
+        "confidence": 0.69,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.08,
+          "1": 0.01,
+          "2": 0.77,
+          "3": 0.14
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 2344,
+      "output_tokens": 42
+    }
+  }
+}

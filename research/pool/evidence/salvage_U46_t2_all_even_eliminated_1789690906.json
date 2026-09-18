@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U46_t2_all_even_eliminated",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U46_t2_all_even_eliminated.md",
+    "excerpt": "# U46: elimination of the all-even t=2 boundary\n\nStatus: verified partial theorem for the all-even branch. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Target\n\nLet a primitive all-even Beal candidate satisfy\n\n    A^(2r) + B^(2s) = C^(2t),\n\nwith r,s,t>=2 and pairwise coprime positive bases A,B,C.\n\nU45 proves that if t>=3 then neither 2 nor 3 divides r*s. The only boundary not covered there was t=2. This checkpoint eliminates t=2 completely.\n\nAssume for contradiction\n\n    A^(2r) + B^(2s) = C^4.                    (1)\n\nAfter interchanging the left terms if necessary, take A even and B,C odd. Then\n\n    (A^r)^2 + (B^s)^2 = (C^2)^2\n\nis a primitive Pythagorean triple whose even leg is A^r.\n\n## 2. If r is even, Fermat descent gives an immediate contradiction\n\nIf 2|r, put X=A^(r/2) and Y=B^s. Equation (1) becomes\n\n    X^4 + Y^2 = C^4,\n\nhence\n\n    C^4 - X^4 = Y^2.                           (2)\n\nFermat's classical infinite-descent theorem says that\n\n    x^4-y^4=z^2\n\nhas no solution in positive integers with xyz nonzero. Equation (2) is exactly such a solution, contradiction.\n\nTherefore any hypothetical t=2 solution would have r odd. Since r>=2,\n\n    r>=3 and r is odd.                          (3)\n\n## 3. Nested Pythagorean parametrization for odd r\n\nParameterize the outer primitive Pythagorean triple:\n\n    A^r = 2mn,\n    B^s = m^2-n^2,\n    C^2 = m^2+n^2,\n\nwhere gcd(m,n)=1 and m,n have opposite parity.\n\nBecause m^2+n^2=C^2, the pair (m,n) is itself the pair of legs of a primitive Pythagorean triple. Thus there are coprime positive P,Q of opposite parity with\n\n    {m,n} = { |P^2-Q^2|, 2PQ }.\n\nTherefore\n\n    A^r = 2mn\n        = 4 P Q |P-Q| (P+Q).                   (4)\n\nThe four positive integers\n\n    P, Q, |P-Q|, P+Q\n\nare pairwise coprime except for the fact that exactly one of P,Q is even; the other three factors are odd and pairwise coprime. Since the product (4) is an r-th power and r is odd, every odd factor in (4) is itself an r-th power.\n\nLet the odd member of {P,Q} be a^r, and write\n\n    |P-Q|=b^r,\n    P+Q=c^r\n\nfor positive coprime a,b,c.\n\nThere are two cases.\n\n### Case A: the odd parameter is larger\n\nThen\n\n    |P-Q| + (P+Q) = 2*(odd parameter),\n\nso\n\n    b^r + c^r = 2 a^r.                         (5)\n\n### Case B: the odd parameter is smaller\n\nThen\n\n    (P+Q) - |P-Q| = 2*(odd parameter),\n\nso\n\n    c^r - b^r = 2 a^r.\n\nBecause r is odd, (-b)^r=-b^r, hence this is\n\n    c^r + (-b)^r = 2 a^r.                      (6)\n\nThus in either case we obtain a nontrivial primitive integer solution of\n\n    x^r + y^r = 2 z^r.                         (7)\n\n## 4. Darmon-Merel contradiction\n\nHenri Darmon and Loic Merel, `Winding quotients and some variants of Fermat's Last Theorem`, J. reine angew. Math. 490 (1997), 81-100, prove that for every integer n>=3, the primitive solutions of\n\n    x^n+y^n=2z^n\n\nare only the trivial ones. In particular, no solution with nonzero unequal x,y,z exists.\n\nEquations (5) and (6) are nontrivial because P,Q>0 and |P-Q|>0, and the factors above are coprime. This contradicts Darmon-Merel for n=r>=3.\n\nHence the odd-r case is impossible as well.\n\n## 5. Conclusion\n\nThere is no primitive positive solution of\n\n    A^(2r)+B^(2s)=C^4\n\nwith r,s>=2. Equivalently, the all-even Beal branch has no survivor with t=2.\n\nCombining this with U45 gives the unconditional statement for every surviving all-even candidate:\n\n    t>=3,\n    2 does not divide r*s,\n    3 does not divide r*s.\n\nTherefore every prime divisor of r and s is at least 5. This restores the prerequisite used in U43 without any remaining t=2 exception.\n\n## 6. Coverage consequence\n\nFor the all-even branch we now have a rigorously restored chain:\n\n    primitive all-even Beal candidate\n      -> t>=3\n      -> every prime divisor of r,s is >=5.\n\nIf additionally 17|t, U43 and Michaud-Jacobs imply that one of r,s is a positive power of 5, reducing the problem to either\n\n    X^10+Y^10=2Z^17\n\nor\n\n    X^10+256Y^10=Z^17.\n\nThe next unresolved coverage question is not r or s; it is t. The repository still lacks a proof that an arbitrary surviving all-even candidate must have 17|t, or a complete treatment of the cases 17 does not divide t.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.89,
+        "confidence": 0.51,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.13,
+          "1": 0.04,
+          "2": 0.64,
+          "3": 0.19
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.49
+      }
+    },
+    "usage": {
+      "input_tokens": 1923,
+      "output_tokens": 42
+    }
+  }
+}

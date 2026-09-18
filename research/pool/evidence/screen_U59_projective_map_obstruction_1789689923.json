@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U59_projective_map_obstruction",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U59_projective_map_obstruction.md",
+      "excerpt": "# U59: coefficient-2 branch \u2014 why the proposed local map is not projectively well-defined\n\nStatus: verified partial/negative result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Question from U58\n\nU58 proposed deriving an algebraic map from the Gaussian projective ratio r/s to the U55 normalized square parameter b^2/A, then intersecting finite local sets at q=67,409,883.\n\nThis checkpoint tests whether such a single-valued projective map actually exists.\n\n## Exact reconstruction equation\n\nThe two descents meet through\n\n    H_-(m,n) = (A+B omega)^17,\n\nwhere omega^2=omega+1 and\n\n    H_-(m,n) = h0 + h1 omega,\n    h0=m^4+30m^2n^2+n^4,\n    h1=-16m^2n^2.\n\nThe Gaussian descent gives m=rF(r,s), n=sG(r,s).\n\nFor a forced prime q dividing mn, h1=0 mod q. Since exactly one of m,n is zero mod q in the primitive local situations under study,\n\n    H_- mod q = m^4 or n^4,\n\nwhich is a nonzero rational element of O_K/q.\n\nThus the local reconstruction problem is\n\n    (A+B omega)^17 in F_q^*,\n\nnot an equation retaining the detailed Gaussian root t=r/s. The information that distinguished the F- and G-root classes disappears after H_- is reduced modulo q.\n\n## Exact Wolfram test\n\nFor representative forced Gaussian roots at q=67 and q=409, we explicitly enumerated projective pairs (A:B) satisfying\n\n    (A+B omega)^17 proportional to H_-(m,n) mod q.\n\nEach tested Gaussian root produced 17 projective solutions, not one. At q=67, for both an F-root t=4 and a G-root t=3, the same 17 projective classes occurred:\n\n    (7:1),(12:1),(17:1),(18:1),(20:1),(21:1),(23:1),(29:1),\n    (37:1),(43:1),(45:1),(46:1),(48:1),(49:1),(54:1),(59:1),(1:0).\n\nThe same multiplicity 17 occurs for tested q=409 roots.\n\nThis is explained by the 17th-power kernel in the quadratic algebra: for all q in {67,103,409,883}, gcd(17,q^2-1)=17. Hence taking a 17th root modulo q naturally has a 17-fold ambiguity in the relevant quadratic extension/split algebra.\n\n## Consequence\n\nThe proposed U58 object\n\n    r/s  ->  b^2/A mod q\n\nis not a canonical single-valued projective map at primes q|mn. Moreover, the condition B=-delta b^2 is not itself invariant under arbitrary projective rescaling of (A:B), so simply selecting one projective representative would risk introducing a false obstruction.\n\nTherefore the naive finite-set intersection proposed in U58 is not rigorous and must not be used to claim a contradiction.\n\n## What survives\n\nU58's exact root tables remain valid. U57's q=103 factor-location result remains valid. What fails is only the proposed next-step simplification to a single projective map.\n\n## Better next route\n\nRetain integral/valuation information instead of projectivizing away the scale. Two promising exact options are:\n\n1. work modulo q^2 (or q^k) at q=67,409,883 so that h1=-16m^2n^2, although zero mod q, retains first nonzero valuation data and may distinguish Gaussian root lifts;\n2. use the global identity delta*b*c=4|mn| together with gcd(b,c)=1 to allocate prime valuations before reducing the 17th-root equation.\n\nThe cheapest next test is q^2 lifting: for each simple F/G root modulo q, compute the valuation of the corresponding Gaussian cofactor under t=t0+qk and compare with whether q divides b or c in the U55 equation. This preserves precisely the information lost modulo q.\n",
+      "length_chars": 3307
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.32,
+        "confidence": 0.68,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.87,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.09
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.23,
+        "confidence": 0.77,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.93,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.27,
+        "probabilities": {
+          "verify_computation": 0.28,
+          "audit_later": 0.41,
+          "audit_now": 0.05,
+          "no_action": 0.25,
+          "verify_literature": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2323,
+      "output_tokens": 125
+    }
+  }
+}

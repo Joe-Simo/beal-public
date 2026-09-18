@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U133",
+  "timestamp": "2026-09-18T00:04:58-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "C047 now: (2m,2n,3), m,n>=4 closed modulo Lean assembly. Remaining open even-even families: (6,2n,3) [m=3, x^3+y^3=3z^2 has solutions], (2m,2n,5) m!=n via parametrisation s(s^4-10s^2t^2+5t^4), (2m,2n,z) z>=7 odd. Also all odd-odd and mixed signatures."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Best next cycle?",
+      "criteria": {
+        "six": "(6,2n,3): Re side s^6 -+ T^3 = 3t^2, a genus-? curve family; check whether the known x^3+y^3=3z^2 solutions have x a square",
+        "five": "(2m,2n,5): apply the same 'both are powers so at least one side has the good branch' trick with the quintic parametrisation and look for a BS/Bennett shape",
+        "lean": "Lean assembly of C047 now, before more mathematics",
+        "seven": "(2m,2n,7) via the degree-7 parametrisation of x^2+y^2=z^7"
+      }
+    },
+    "exact": {
+      "type": "noul",
+      "instructions": "Does the chosen option have a cheap exact discriminating test?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "five",
+        "confidence": 0.42,
+        "probabilities": {
+          "lean": 0.2,
+          "seven": 0.03,
+          "five": 0.56,
+          "six": 0.21
+        }
+      },
+      "exact": {
+        "type": "noul",
+        "noul": 0.36
+      }
+    },
+    "usage": {
+      "input_tokens": 616,
+      "output_tokens": 62
+    }
+  }
+}

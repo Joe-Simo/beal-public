@@ -1,0 +1,113 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C083_C128",
+  "timestamp": "2026-09-18T15:58:27-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [
+        "C033",
+        "C026",
+        "C053"
+      ],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "The live directions require (a) modularity of Frey representations of general signature and (b) an unconditional big-image theorem \u2014 both open in the literature; PARI/Lean cannot supply them.",
+      "novelty_note": null,
+      "extracted": [
+        "Category gate (CLAUDE.md U211): any future cycle must state which survey category it is in before it runs."
+      ],
+      "id": "C083",
+      "claim": "Jev sweep (384 cells) restricted to the two directions the user-supplied survey leaves open (a unifying modular/motivic object for three independent exponents; effective Diophantine geometry), with two exact filters (must fail over Z[i]; must separate exponent 2 from >=3). The top cells all reduce to one theme: an object on the (p,q,r)-orbifold / triangle-group side that degenerates exactly when an exponent is 2. The only exactly-testable content of that theme is already in the pool as C033 (every hyperbolic Beal signature has |chi| >= 1/12, every known primitive solution has |chi| <= 1/18), which is a heuristic separation, not a proof mechanism; turning it into one is Darmon-s program (Frey representations for general (p,q,r)), whose modularity and big-image inputs are unproved \u2014 the current research frontier (Billerey-Chen-Dieulefait-Freitas). Nothing executable here advances it.",
+      "method": "code/U212_live_directions.py, research/pool/evidence/live_directions_U212.json (HYPOTHESIS_ONLY); cross-check against C033 and the survey audit U117.",
+      "status": "BLOCKED"
+    },
+    "candidate_B": {
+      "parents": [
+        "C127",
+        "C121",
+        "C120"
+      ],
+      "inspirations": [
+        "asking how many of the three exponents a rigid object can carry, rather than what its rank or field must be"
+      ],
+      "evidence": "Two full punctures consume 2n of the 2n+2 budget, leaving at most 2 for the third; three would need 3n, and 3n > 2n+2 exactly when n > 2. Exhaustive enumeration for n = 3..12: the maximum number of full punctures is 2 at every rank, and the third puncture has exactly 2 distinct eigenvalues in every such triple. At n = 2 all three can be full, which is the classical hypergeometric case.",
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "",
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C128",
+      "status": "BLOCKED",
+      "claim": "SHARPEST FORM OF THE OBSTRUCTION: a rigid local system on P^1 minus {0,1,inf} of rank n >= 3 carries AT MOST TWO exponents. Call a puncture FULL when its local monodromy is regular semisimple (n distinct eigenvalues), the state that can carry a whole exponent. Then at most two punctures are full, and when exactly two are, the third has EXACTLY 2 distinct eigenvalues.",
+      "method": "counting proof from the C121 budget plus exhaustive enumeration, code/U261_two_of_three.py; Lean 4 + mathlib theorems three_full_exceeds_budget and two_full_leaves_two, lake build passes, 0 sorry",
+      "open_obligations": "",
+      "novelty": "This is the whole obstruction in one line: TWO EXPONENTS FIT, THE THIRD DOES NOT. It explains the literature s method directly \u2014 every published closure proceeds through a reduction, (p,p,r), (n,n,2), (n,n,3), (2,3,n), each of which leaves at most two independent exponents to carry. Beal needs three, and no rigid object of rank >= 3 has room."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.37
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.65,
+        "confidence": 0.35,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.51,
+          "1": 0.36,
+          "2": 0.11,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 1741,
+      "output_tokens": 53
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U75_jacobian_decomposition_and_infinite_order_classes",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U75_jacobian_decomposition_and_infinite_order_classes.md",
+    "excerpt": "# U75: explicit Jacobian factors, exact torsion, and fifteen independent infinite-order classes\n\n**Status: written, self-reviewed geometric and arithmetic theorems, with distinct exact implementations. The weighted equation and the full Beal conjecture remain unresolved. No independent expert or proof-assistant certification is claimed.**\n\nResearch date: 2026-09-15. The private repository head inspected was `e328962be7621a0b0276ff27f4c35b0838346b2d` (U73). The attached local U74 manuscript and evidence archive were read and restored additively: 46 files restored, three identical, no conflicting file overwritten. U74 was not on the remote branch when this continuation began. The new arguments below concern its explicitly defined curve, not an assumed completed classification of its points.\n\n## 1. Result and exact scope\n\nLet zeta be a primitive fifth root of unity, let B=Q(i,zeta), and put d=1+zeta. U74's curve\n\n    D: T^17+zeta*S^17=d*W0^17\n\nbecomes\n\n    F: A^17+B1^17=d*W0^17                           (1.1)\n\nunder A=T and B1=zeta^3*S, since (zeta^3)^17=zeta. Here B1 is a coordinate, whereas B is the number field. F is a smooth plane curve of degree seventeen, of genus 120. For each a=1,...,15 let C_a be the **smooth projective normalization** of\n\n    C_a: y^17=x^a(d-x),                             (1.2)\n\nand let J_a be its Jacobian. Every C_a has genus eight.\n\n**Main theorem.** Over B, there are explicit degree-seventeen maps f_a:F -> C_a inducing isogenies\n\n    Phi: J_F -> product_(a=1)^15 J_a,\n    Psi: product_(a=1)^15 J_a -> J_F,\n    Psi Phi=[17],  Phi Psi=[17].                    (1.3)\n\nFor all fifteen factors,\n\n    J_a(B)_tors = <[P0-Pinfinity]> = Z/17Z,          (1.4)\n\nwhere P0 and Pinfinity are the unique points above x=0 and x=infinity. The B-rational point\n\n    Q_a=(1,zeta^3)\n\ngives an infinite-order class [Q_a-Pinfinity]. Their pullbacks along the fifteen maps give fifteen independent classes modulo torsion on J_F(B). In particular,\n\n    rank J_F(B) >= 15.                              (1.5)\n\nAlso every B-rational torsion class of J_F is killed by 289. This is an exponent bound, not a calculation of that full torsion group.\n\nThe new result replaces one dimension-120 Jacobian problem by explicit dimension-eight factors and supplies non-torsion starting classes. It also rules out a rank-zero or torsion-only shortcut for U74's degree-five divisor problem. **No new weighted solution, degree-five point, or complete Beal signature is eliminated.** The exact ranks, full Mordell-Weil groups, finite-index bounds, saturation, and relevant effective degree-five divisors are not computed.\n\nThe geometric and factor-arithmetic statements need only (1.1), not U71 or any earlier conjectural application. Their use for the weighted equation\n\n    X^10+256Y^10=Z^17, X,Y,Z>0, gcd(X,Y)=1\n\ninherits U71/U74's written common-root reduction. That application remains self-reviewed. U41 stays invalidated; no boundary-curve congruence, unchecked modular-form list, or rank conjecture is invoked here.\n\n## 2. Quotient maps and the full decomposition\n\nOn W0=1 define\n\n    f_a(A,B1)=(A^17,A^a B1).                        (2.1)\n\nThe relation y^17=x^a(d-x) follows directly from (1.1). A nonconstant rational map between smooth projective curves extends uniquely to a morphism. Over a field containing a primitive seventeenth root xi, its generic fiber is the orbit of\n\n    (A,B1) -> (xi*A,xi^(-a)*B1).\n\nThese seventeen points are distinct generically, and adjoining A with A^17=x recovers B1=y/A^a. Thus the map has degree seventeen. The monomial formula (2.1) is defined over B, even though this description of all deck transformations uses an extension of B. No seventeenth root of unity is incorrectly assumed to lie in B.\n\nThe degree-seventeen map x:C_a -> P1 is ramified exactly at 0,d,infinity. The corresponding exponents are a,1,-a-1; each is coprime to seventeen. There is one point above each branch point, and all three are B-rational. Riemann-Hurwitz gives\n\n    2g(C_a)-2=17*(-2)+3*(17-1)=14.\n\nFor F, a basis of holomorphic differentials in the affine chart is\n\n    omega_(r,s)=A^(r-1)*B1^(s-17)*dA,\n    r,s>=1, r+s<=16.                               (2.2)\n\nThis is the usual plane-curve differential basis: it has 120 elements, and its displayed exponents make it regular at the coordinate branches and infinity. The subgroup for a acts on it by xi^(r-a*s). Therefore the pullback differentials from C_a occupy exactly the eight pairs satisfying\n\n    r=a*s modulo 17.                               (2.3)\n\nEvery pair in (2.2) occurs in exactly one of the fifteen blocks. Indeed s is nonzero modulo 17, so it determines a=r/s; a=16 is excluded because r+s<17. The complete 120-entry partition is retained in the finite output.\n\nSet Phi=(f_(a*) )_a and Psi=sum f_a^*, using the pushforward and pullback maps on Jacobians. The usual divisor identities for a degree-seventeen quotient are\n\n    f_(a*) f_a^*=[17],\n    f_a^* f_(a*)=sum over its seventeen deck trans"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.39,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.01,
+          "2": 0.54,
+          "3": 0.43
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.8
+      }
+    },
+    "usage": {
+      "input_tokens": 2029,
+      "output_tokens": 42
+    }
+  }
+}

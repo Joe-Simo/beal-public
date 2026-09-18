@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U64_weighted_eisenstein_and_Hecke_rebuild",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U64_weighted_eisenstein_and_Hecke_rebuild.md",
+      "excerpt": "# U64: a uniform Eisenstein lemma, the full cyclotomic hypothesis, and the surviving boundary obstruction\n\n**Status: written partial results, source-application audit, and exact finite certificates. Beal's conjecture and the weighted equation remain unresolved.** This is same-model research and review, with distinct arithmetic implementations, not independent expert or proof-assistant certification. U41 remains invalidated by U63; nothing here reinstates its elimination claim.\n\nDate checked: 2026-09-15 UTC. Private remote base inspected: `e14080a0bef24004784fa6806a111bf3006dfb76`. U63's actual manuscript, code and archive were inspected and preserved before extending them.\n\n## 1. Exact scope\n\nThe original target is: for positive integers A,B,C,x,y,z with x,y,z>=3 and A^x+B^y=C^z, prove gcd(A,B,C)>1 or independently verify a counterexample. No finite computation below covers that infinite statement.\n\nThe active auxiliary problem is\n\n    X^10+256Y^10=Z^17,   X,Y,Z>0,   gcd(X,Y)=1.\n\nPut U=X^2, V=2Y^2. Then U^5+8V^5=Z^17. Necessarily X,Z are odd: if X were even, Y would be odd and the sum would have 2-adic valuation 8, not a multiple of 17. Thus gcd(U,V)=1, and the three parameters U,V,Z are pairwise coprime.\n\nUse U63's corrected negative twist\n\n    C^-: y^2=-f(x),\n    f(x)=x^5+40UVx^3+320U^2V^2x+64(8V^5-U^5).\n\nThe symbol C^- here means this explicit negative twist, not an unannounced switch between the source's two different Frey families. U63 supplies its written good-reduction model over Q_2(sqrt(5),2^(1/5)) and the consequent local residual irreducibility and conductor exponent 2 per RM component at 2. Those arguments are inherited at their stated self-reviewed level.\n\nThe coefficient-two theorem in U62 is a separate written partial proof and is not used to assert this weighted problem is solved.\n\n## 2. Uniform irreducibility at 5: no parameter search is needed\n\n**Lemma 1.** For any integers U,V such that 5 does not divide U^5+8V^5, the polynomial f is irreducible over Q_5. In fact f(T-U-2V) is Eisenstein at 5.\n\n**Proof.** Reducing coefficients modulo 5 gives\n\n    f(x) = (x+U+2V)^5  (mod 5).\n\nHence every nonleading coefficient of the monic polynomial f(T-U-2V) is divisible by 5. Its constant coefficient satisfies the exact identity\n\n    f(-U-2V)=10(U^5+8V^5)+25R(U,V),\n\nwhere\n\n    R=-3U^5-2U^4V-24U^3V^2-48U^2V^3-16UV^4+16V^5.\n\nTherefore\n\n    f(-U-2V)/5 = 2(U^5+8V^5) (mod 5),\n\nwhich is nonzero by hypothesis. The constant coefficient has valuation exactly one, so Eisenstein's criterion applies. Translation preserves irreducibility. QED.\n\nFor an explicit coefficient certificate, the coefficients of f(T-U-2V), in ascending powers of T, are\n\n    -65U^5-50U^4V-600U^3V^2-1200U^2V^3-400UV^4+480V^5,\n    5U^4+160U^3V+920U^2V^2+640UV^3+80V^4,\n    -10U^3-180U^2V-360UV^2-80V^3,\n    10U^2+80UV+40V^2,\n    -5U-10V,\n    1.\n\nThe unit hypothesis cannot simply be omitted: U=1,V=3 gives a translated constant divisible by 25. This is a boundary check on the lemma's assumptions, not a weighted solution.\n\nThe quintic also remains irreducible over Q_5(sqrt(5)). If L=Q_5(alpha) for a root, then [L:Q_5]=5. The quadratic Galois extension E=Q_5(sqrt(5)) is not contained in L, so [LE:L]=2 and [LE:E]=5. This is a degree argument, not an unjustified general base-change assertion.\n\n**Corollary 2.** Lemma 1 applies to every positive primitive weighted solution.\n\nIf 5 divides exactly one of X,Y, the sum X^10+256Y^10 is a 5-adic unit. If neither is divisible by 5, each tenth power is +1 or -1 modulo 25, and 256=6 modulo 25. A sum that is zero modulo 5 is then +5 or -5 modulo 25, so has valuation one, impossible for Z^17. Thus 5 does not divide Z, and U^5+8V^5=Z^17 is a 5-adic unit. QED.\n\nThis replaces both the old bounded root search and the special-family implication 'reducible quintic implies a root'. No inherited condition 5|Y is needed.\n\n## 3. Source application: the prime-5 conductor and the other valuation cases\n\nThe source and its notation are recorded in [S1]. Its defining polynomial g_5^- is exactly f after specializing the (r,r,p) construction with r=5, p=17, A=1, B=8, C=1, a=U, b=V. Indeed delta_Q^2=-8UV in Proposition 3.22, yielding the displayed positive cubic and linear coefficients. The further twist is delta_K=-1.\n\nThe relevant source valuation becomes\n\n    nu_q=34 v_q(Z)-v_q(128U^5V^5).\n\nAt 5 this is -5v_5(UV), so nu_5<=0 and nu_5=0 modulo 5. Lemma 1 now supplies irreducibility of g_5^- over Q_5, exactly as required in Theorem 5.11, Table 2. The indicated Artin conductor is **3 per two-dimensional RM component at the prime above 5**. The twist -1 is a square in Q_5, so it makes no change locally. This is an application of the inspected preprint theorem, not a newly reconstructed conductor algorithm.\n\nThe valuation cases away from 2 and 5 do not require the old condition 17|Y either:\n\n- If q divides Z, then q does not divide UV and nu_q=34v_q(Z)>0, divisible by 17. Theorem 5.21 gives residual unramifiedness for q!=17 and finite",
+      "length_chars": 19455
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.03,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.44,
+          "1": 0.3,
+          "2": 0.05,
+          "3": 0.21
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.34,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.88,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.1
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.28,
+        "probabilities": {
+          "verify_literature": 0.13,
+          "audit_later": 0.42,
+          "no_action": 0.03,
+          "verify_computation": 0.02,
+          "audit_now": 0.4
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2994,
+      "output_tokens": 125
+    }
+  }
+}

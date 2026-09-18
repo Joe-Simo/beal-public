@@ -1,0 +1,105 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C176_C177",
+  "timestamp": "2026-09-18T15:58:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C176",
+      "status": "PARTIAL_RESULT",
+      "claim": "The larger-base-field escape from C174/C175 is REAL and CHEAP, so the regularity obstruction is a statement about Q and not a field-independent fact. Over K the orbits of primitive m-th roots have size |Gal(K(zeta_m)/K)| = phi(m)/[K cap Q(zeta_m):Q], so the minimal rank drops; reconciling the largest exponent's rank with the smallest one's ceiling needs only [K:Q] >= phi(r)/p, which is between 2 and 6 for every pairwise distinct triple of reduced exponents up to 19.",
+      "parents": [
+        "C174",
+        "C175",
+        "C170"
+      ],
+      "method": "Exact computation of both measures in code/U319_base_field_escape.py over all 56 pairwise distinct triples from {3,4,5,7,11,13,17,19}. Measure 1 (K contains all three roots of unity) costs phi(lcm(p,q,r)) = (p-1)(q-1)(r-1), ranging 16 to 3456 -- confirmed equal for all 56 triples. Measure 2 (K only shrinks the largest orbit enough) costs ceil(phi(r)/p), ranging 2 to 6. Measure 2 is the binding one.",
+      "evidence": "Measure 1's quantity is already machine-checked as Beal.minBaseDegree_le_triple and Beal.totient_mul_primes in formal/Beal/Rigidity.lean. Measure 2 is a division bound, computed exactly here and not formalised.",
+      "obligations": "CORRECTION TO MY OWN FRAMING: C174 and C175 must be read as statements about Q. I flagged this escape as 'likely live' in the previous cycle and it is. What the escape does NOT do is remove the obstruction -- over K the modular method still needs automorphy of an n-dimensional motive with n > 2 (C171), now over K rather than Q, which is harder. This is consistent with the literature: the (5,5,p) work uses Q(sqrt 5) at RANK 2 and stops there. Untested: whether a degree 2-6 field can carry a Frey object for three independent exponents with the residual representation the method needs; and whether descent to Q of the resulting statement is possible at all, since the Beal solution itself lives over Q.",
+      "novelty": "Prevents the repeat of the U258 failure mode: reporting only the expensive measure would have overstated the obstruction exactly as U258 did before U309 caught it. Records the escape as open with its cost quantified, rather than claiming a closure that is not there.",
+      "evaluations": {
+        "U319": "Exact computation of both cost measures. HYPOTHESIS_ONLY for routing."
+      }
+    },
+    "candidate_B": {
+      "id": "C177",
+      "status": "PARTIAL_RESULT",
+      "claim": "The EulerCubicTwo gap in the (3,4,4) chain is narrowed from the whole of Euler's theorem to its descent step alone. formal/Beal/Euler.lean proves euler_both_odd, euler_identity and euler_of_descent : EulerDescentStep -> EulerCubicTwo, plus cohen344_of_descent : EulerDescentStep -> NoCoprimeSol 3 4 4. EulerDescentStep is: IsCoprime p q -> p*(p^2+3*q^2) = c^3 -> q = 0.",
+      "parents": [
+        "C173",
+        "C172"
+      ],
+      "method": "Elementary reduction. n^3 = n mod 2 gives a and b the same parity, and both-even is excluded by coprimality, so both are odd; then p = (a+b)/2 and q = (a-b)/2 are integers, IsCoprime p q follows from a Bezout rearrangement, and (p+q)^3+(p-q)^3 = 2p(p^2+3q^2) turns the equation into p(p^2+3q^2) = c^3.",
+      "evidence": "#print axioms Beal.euler_of_descent and Beal.cohen344_of_descent = [propext, Classical.choice, Quot.sound]; formal/Beal/Euler.lean added to the root Beal.lean; full lake build clean; no sorry, no custom axioms.",
+      "obligations": "EulerDescentStep, NOW STATED CORRECTLY as p != 0 -> IsCoprime p q -> p*(p^2+3*q^2) = c^3 -> q = 0, is STATED, NOT PROVED. Prerequisite confirmed present: IsPrincipalIdealRing for the ring of integers of Q(zeta_3) is three_pid in Mathlib/NumberTheory/Cyclotomic/PID.lean. Unit group has order 6, so cube extraction needs unit bookkeeping. LESSON RECORDED: state a Prop and then immediately counterexample-search it before recording it as the residual gap; a vacuous hypothesis is the dangerous direction because everything downstream still compiles.",
+      "novelty": "Converts a vague 'needs a classical theorem' into a single precisely stated Prop whose prerequisites are confirmed present in mathlib. That makes the remaining work schedulable rather than open-ended. It does not change what is proved about Beal, and by C157 the whole (3,4,4) line cannot reach the open core.",
+      "evaluations": {
+        "U321": "Elementary reduction, machine-checked, with the residual gap isolated as one Prop. HYPOTHESIS_ONLY for routing.",
+        "FLAW_FOUND_U322": "FLAW IN MY OWN C177, FOUND AND FIXED IN THE SAME SESSION. EulerDescentStep as first recorded -- IsCoprime p q -> p*(p^2+3*q^2) = c^3 -> q = 0 -- is FALSE. Counterexample p = 0, q = 1, c = 0: IsCoprime 0 1 holds in Z (0*0 + 1*1 = 1) and 0*(0+3) = 0^3, yet q != 0. Found by exact counterexample search immediately after recording the Prop. euler_of_descent was not WRONG (an implication from a false hypothesis is still a theorem) but it was VACUOUS, and C177's claim that the remaining gap was 'this Prop' was wrong, since a false Prop can never be proved. FIXED: the hypothesis p != 0 is added, which the Euler reduction does supply because p = (a+b)/2 with a, b > 0; formal/Beal/Euler.lean now proves hppos : p != 0 explicitly. Exact re-search finds NO witness with 0 < p and q != 0 over 1 <= p,q <= 4000, nor over -1200 <= p < 0. lake build clean after the fix."
+      }
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.72,
+        "confidence": 0.7,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.29,
+          "1": 0.7,
+          "2": 0.01,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 2394,
+      "output_tokens": 53
+    }
+  }
+}

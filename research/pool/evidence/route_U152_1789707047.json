@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U152",
+  "timestamp": "2026-09-18T00:50:47-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "(2m,2n,3) all m,n>=2 assembled rel. BS + BCDY + rank-0 curve. Mechanism: both summands powers => good side available; exponent-3 side needs a rank-0 curve. Residual: (4,4,p),(4,p,q),(p,q,r)."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which next?",
+      "criteria": {
+        "curve_trick_5": "try the same curve trick on the (2m,2n,5) one-sided equation 4S^{4m}+eps T^m = 5Z^2 for m=3 (curve 5Z^2 = 4 + eps T^3, PARI rank) \u2014 but the other side has no BS-type theorem, so at best a conditional partial",
+        "even_z_family": "(2m,2n,2k): Pythagorean both-sides trick gives a^m + b^m = 2^n p^n and b^m - a^m = 2 q^n type equations; check which are closed by Darmon-Merel (x^n+y^n=2z^n) / BS C=2 and which need a curve",
+        "post2015_search": "web search post-2015 literature for x^{2m}+y^{2n}=z^3 to settle novelty of C058",
+        "audit_second_reader": "run a Jev screen simulating a second-reader audit of each named hypothesis vs its quoted source text (HYPOTHESIS_ONLY) and record"
+      }
+    },
+    "exact": {
+      "type": "noul",
+      "instructions": "cheap exact test first?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "even_z_family",
+        "confidence": 0.28,
+        "probabilities": {
+          "even_z_family": 0.46,
+          "audit_second_reader": 0.13,
+          "post2015_search": 0.16,
+          "curve_trick_5": 0.25
+        }
+      },
+      "exact": {
+        "type": "noul",
+        "noul": 0.6
+      }
+    },
+    "usage": {
+      "input_tokens": 664,
+      "output_tokens": 77
+    }
+  }
+}

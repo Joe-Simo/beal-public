@@ -1,0 +1,91 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "lemma_L6",
+  "timestamp": "2026-09-17T21:15:34-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal: A^x + B^y = C^z, A,B,C >= 1 positive integers, x,y,z >= 3, gcd(gcd(A,B),C) = 1. Already kernel-verified in this project: the exponent reduction lemma, and the diagonal family (n,n,n) with 4|n via mathlib fermatLastTheoremFour. Goal is to add unconditional kernel-verified structure with NO custom axioms.",
+    "lemma": {
+      "id": "L6",
+      "statement": "No Beal counterexample has A = 1 (equivalently B = 1), i.e. all three bases are at least 2.",
+      "sketch": "1 + B^y = C^z with y,z >= 3 is Catalan's equation; by Mihailescu the only solution of u^p - v^q = 1 with u,v,p,q > 1 is 3^2 - 2^3, whose exponents are 2 and 3, so none has both exponents >= 3. REQUIRES Mihailescu as an external theorem."
+    }
+  },
+  "questions": {
+    "is_true": {
+      "type": "score",
+      "instructions": "Is this stated lemma actually TRUE as written, given the Beal hypotheses? Judge the exact statement, not the sketch. Watch for statements that quietly need a base to be at least 2, that mishandle the case where a base equals 1, or that assume the exponents are equal.",
+      "criteria": [
+        "level 0: the statement is false as written, or a counterexample within the Beal hypotheses exists",
+        "level 1: the statement is probably true but as written has an unhandled edge case such as a base equal to 1",
+        "level 2: the statement is true and its sketch is essentially a correct argument",
+        "level 3: the statement is true, standard, and the sketch is a complete argument"
+      ]
+    },
+    "elementary": {
+      "type": "noul",
+      "instructions": "Can this lemma be proved using only elementary number theory - divisibility, coprimality, and basic inequalities - with NO appeal to a deep external theorem such as Fermat's Last Theorem, Mihailescu's theorem, or the modular method?",
+      "criteria": {
+        "true": "only divisibility, gcd manipulation and elementary inequalities are needed",
+        "false": "it requires a deep external theorem, for example Catalan/Mihailescu or FLT for some exponent"
+      }
+    },
+    "structural_value": {
+      "type": "score",
+      "instructions": "How much does this lemma constrain the search space for a Beal counterexample, or how much does it simplify later arguments?",
+      "criteria": [
+        "level 0: it restates a hypothesis or follows immediately with no new constraint",
+        "level 1: it rules out a single degenerate case such as one specific pair of bases",
+        "level 2: it imposes a structural condition used repeatedly in later arguments, such as pairwise coprimality or a parity constraint",
+        "level 3: it eliminates an infinite family of signatures or bases outright"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "is_true": {
+        "type": "score",
+        "score": 1.93,
+        "confidence": 0.48,
+        "legend": {
+          "0": "level 0: the statement is false as written, or a counterexample within the Beal hypotheses exists",
+          "1": "level 1: the statement is probably true but as written has an unhandled edge case such as a base equal to 1",
+          "2": "level 2: the statement is true and its sketch is essentially a correct argument",
+          "3": "level 3: the statement is true, standard, and the sketch is a complete argument"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.19,
+          "2": 0.53,
+          "3": 0.23
+        }
+      },
+      "elementary": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "structural_value": {
+        "type": "score",
+        "score": 2.22,
+        "confidence": 0.22,
+        "legend": {
+          "0": "level 0: it restates a hypothesis or follows immediately with no new constraint",
+          "1": "level 1: it rules out a single degenerate case such as one specific pair of bases",
+          "2": "level 2: it imposes a structural condition used repeatedly in later arguments, such as pairwise coprimality or a parity constraint",
+          "3": "level 3: it eliminates an infinite family of signatures or bases outright"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.36,
+          "2": 0.03,
+          "3": 0.6
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 950,
+      "output_tokens": 52
+    }
+  }
+}

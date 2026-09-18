@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C015_C038",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C015",
+      "status": "PROMISING",
+      "claim": "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero custom axioms outside a clearly quarantined and labelled set of external theorems, and its formal statements faithfully encode the original Beal statement."
+    },
+    "B": {
+      "id": "C038",
+      "status": "PARTIAL_RESULT",
+      "claim": "At p=3: if 3 divides none of A,B,C and 3 divides both x and y, then C^z = 2 or 7 mod 9, and consequently 3 does not divide z. Elementary (the cubes among units mod 9 are exactly {1,8}), independent of FLT3."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.82,
+        "confidence": 0.18,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.49,
+          "1": 0.2,
+          "2": 0.3,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 571,
+      "output_tokens": 34
+    }
+  }
+}

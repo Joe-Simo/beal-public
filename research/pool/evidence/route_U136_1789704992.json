@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U136",
+  "timestamp": "2026-09-18T00:16:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Pair screen top: C025xC043 (necessary conditions x ordering diagnostic), C009xC037 (search bound x mod 8), C032xC039 (linear form x exponent order), C016xC048 (exponent reduction x (2m,2n,5)). Also: discharge GaussianCubeStep in mathlib."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Best next cycle?",
+      "criteria": {
+        "gauss": "Lean: prove GaussianCubeStep from mathlib GaussianInt (coprime factors of a cube in a UFD)",
+        "c016_c048": "NOVEL COMBINATION C016xC048: (2m,2n,5) with the exponent-reduction: reduce m,n to {2} or odd primes first, then check which reduced cases Bennett 2006 / one-sided equation already cover",
+        "c032_c039": "C032xC039: combine z<=x (dominant dichotomy) with the linear form to get an explicit Baker-type bound and compare to known effective bounds",
+        "c009_c037": "C009xC037: extend the exhaustive search using the mod-72 sieve only if it tests a named hypothesis"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "gauss",
+        "confidence": 0.49,
+        "probabilities": {
+          "c016_c048": 0.29,
+          "c009_c037": 0.01,
+          "c032_c039": 0.08,
+          "gauss": 0.62
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 596,
+      "output_tokens": 68
+    }
+  }
+}

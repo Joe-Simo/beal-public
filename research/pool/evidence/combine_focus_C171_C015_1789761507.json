@@ -1,0 +1,115 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C171_C015",
+  "timestamp": "2026-09-18T15:58:27-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C171",
+      "status": "BLOCKED",
+      "claim": "After U309/U310/U311, the ONLY surviving obstruction to the three-exponent local-system route is automorphy. Rigidity permits three pairwise distinct local orders (C169); Q-rationality permits them, at rank >= phi(m) (C170); and the Beal specialisation point t = A^x/C^z is tame at every prime dividing A*B*C, unconditionally, for a coprime solution (this candidate). What is missing is that a rank-n motive over Q attached to such a sheaf is automorphic, which is unavailable for n > 2.",
+      "parents": [
+        "C169",
+        "C170",
+        "C083"
+      ],
+      "method": "Exact valuation arithmetic with non-coprime controls (code/U311_tame_specialisation.py) plus four machine-checked lemmas in formal/Beal/Structure.lean. Elimination: each of C169's obligations (a) and (c) was tested and failed to obstruct, leaving (b).",
+      "evidence": "support_disjoint_A, support_disjoint_C, tame_valuation_at_A, tame_valuation_at_C; #print axioms = [propext, Classical.choice, Quot.sound] for all four; full lake build clean. Controls: the three non-coprime identities fail H1-H3, confirming the test is not vacuous.",
+      "failure_reason": "BLOCKED, not refuted. Automorphy of n-dimensional motives over Q for n > 2 is a major open problem (potential automorphy results exist but are not in a form that yields the level-lowering and elimination the modular method needs). At $0 budget with no new automorphy input this is a hard stop, and the survey (research/checkpoints/U117_external_survey_audit.md) names exactly this as why the 'unifying motivic object' direction is open rather than available.",
+      "obligations": "Preserved for reuse: (1) the tameness lemmas are unconditional and reusable by any future construction; (2) the rank >= phi(m) growth bound (C170) says any such object has rank growing with the exponent, so even a future automorphy theorem would have to be uniform in n; (3) the combinatorial model of Q-rationality is still not formalised.",
+      "novelty": "Narrows the survey's first live direction from 'no Frey object is known' to a single named missing theorem. That is a sharper statement of the obstruction, NOT progress toward a proof.",
+      "evaluations": {
+        "U311": "Exact arithmetic with controls; four machine-checked lemmas. HYPOTHESIS_ONLY for routing.",
+        "corrected_by_U317": "CORRECTED, not withdrawn. The claim that automorphy is the ONLY surviving obstruction is too weak: U317/C174 shows the object is never regular, so the regular-weight potential-automorphy theorems are structurally inapplicable, not merely unproved. Everything else recorded here (rigidity permits three distinct orders, Q-rationality permits them at rank >= phi(m), the specialisation is tame) stands."
+      }
+    },
+    "candidate_B": {
+      "parents": [
+        "C009"
+      ],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_lean_axiom_countersearch.py"
+      ],
+      "obligations": [
+        "STATEMENT FIDELITY of IsBealCounterexample and BealConjecture: now covered by 16 machine-checked examples in formal/Beal/FidelityCheck.lean (U327/C182).",
+        "REMAINING: fidelity of the fourteen named hypothesis Props against their cited primary sources, which are not all held in references/. C178 rules out degenerate falsity but not citation mismatch."
+      ],
+      "evaluations": {
+        "U177": "root lake build completes successfully for all 23 tracked modules (Lean 4.14.0 / mathlib v4.14.0), 0 sorry, no custom axioms in any module added since U113; TaxonomyExtensions repaired (two case-analysis proofs rewritten, statements unchanged).",
+        "STALE_CORRECTED_U326": "STALE OBLIGATIONS, corrected. Every obligation recorded here is now out of date and three of them are simply false as of this session: (1) 'no Lean toolchain is installed, so NOTHING in formal/ has ever been checked' -- Lean 4.14.0 + mathlib v4.14.0 build cleanly and lake build succeeds; (2) '7 sorry occurrences' -- the root chain has ZERO sorry (only the unimported, non-compiling SquarefreeCore.lean is excluded from the build); (3) '5 axioms carry the entire mathematical content' -- all five were converted to named Props (MihailescuTheorem, KrausEvenCLevel18Newform, FreitasTheoremMod3, BruinClassification238, and flt_3 replaced by mathlib's fermatLastTheoremThree), so the root chain has ZERO custom axioms. The fourth obligation, statement fidelity against the ORIGINAL conjecture, STANDS and is partly addressed by formal/Beal/FidelityCheck.lean. Found by the U326 Jev vacuity screen, which ranked C015 among its countersearch_now hits."
+      },
+      "failure_reason": null,
+      "novelty_note": "The only candidate whose evaluator is a proof kernel rather than a derivation or a computation. Its failure mode is mechanical (install/compile) rather than mathematical, which makes it unusually cheap relative to its evidential value.",
+      "extracted": [],
+      "id": "C015",
+      "claim": "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero custom axioms outside a clearly quarantined and labelled set of external theorems, and its formal statements faithfully encode the original Beal statement.",
+      "method": "Install a Lean toolchain; compile; replace the four padicValNat axioms with mathlib lemmas; replace flt_3 with mathlib fermatLastTheoremThree; quarantine or discharge the remaining Class B axioms; eliminate the 7 sorry occurrences.",
+      "status": "PROMISING"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.53
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.99,
+        "confidence": 0.81,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.1,
+          "1": 0.81,
+          "2": 0.08,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 2262,
+      "output_tokens": 53
+    }
+  }
+}

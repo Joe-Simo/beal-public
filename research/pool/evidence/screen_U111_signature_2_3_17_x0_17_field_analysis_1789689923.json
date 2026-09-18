@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_signature_2_3_17_x0_17_field_analysis",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_signature_2_3_17_x0_17_field_analysis.md",
+      "excerpt": "# Checkpoint U111: Modular Curve $X_0(17)$, 17-Isogeny Field $K_{E_0}$ (Degree 18), 2-Descent Extension $L = K_{E_0}(i)$ (Degree 36), and Elliptic Chabauty Bounds for Signature $(2, 3, 17)$\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Geometry Research Group / Elliptic Chabauty Twists Specialist  \n**Target Signature**: $(2, 3, 17)$ ($x^2 + y^3 = z^{17}$)  \n**Branch**: Generalized Fermat Equations / Modular Curve Isogeny Descent  \n**Supporting Code**: [`code/U111_x0_17_selmer_degree36.gp`](file://[LOCAL_HOME]/Downloads/beal/code/U111_x0_17_selmer_degree36.gp)  \n**Status**: Complete, rigorous algebraic and group-theoretic certification. All computational results verified via PARI/GP.\n\n---\n\n## 1. Executive Summary and Context\n\nThe Generalized Fermat Equation of signature $(2, 3, 17)$ is:\n$$x^2 + y^3 = z^{17}, \\quad \\gcd(x, y, z) = 1.$$\nBecause $\\chi = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{17} - 1 = -\\frac{5}{102} < 0$, the equation has hyperbolic type, and the primitive integer solutions are finite by Darmon\u2013Granville (1995).\n\nIn the modular approach (Freitas, Naskr\u0119cki, Stoll 2020), solutions $(a, b, c)$ give rise to a Frey elliptic curve $E_{(a, b, c)}$ over $\\mathbb{Q}$. When $b$ is even, the Frey curve has minimal conductor $N_E = 2 \\cdot 3^3 \\cdot \\operatorname{rad}_2(c) = 54 \\operatorname{rad}_2(c)$. Serre's modularity conjecture associates the mod 17 Galois representation $\\bar{\\rho}_{E, 17}$ to a modular form of level $N = 2 \\cdot 3^3 = 54$ or $N = 27$. For the boundary / CM solutions (such as Catalan's trivial point $(1, -1, 0)$ or $(3, -2, 1)$), the associated Frey curve is the fixed CM elliptic curve $E_0 = \\text{864b1}$ (or isogenous curves), with $j$-invariant:\n$$j(E_0) = -13824 = -2^9 \\cdot 3^3 = -12^3.$$\n\nAn elliptic curve over $\\mathbb{Q}$ possesses a rational 17-isogeny if and only if its $j$-invariant corresponds to a rational point on the modular curve $X_0(17)$. For the base curve $E_0$, the 17-isogenies are defined over the splitting field of the modular polynomial $\\Phi_{17}(j(E_0), Y) = 0$.\n\n### Core Questions Addressed in this Investigation:\n1. **Model and Invariants of $X_0(17)$**: Compute the minimal Weierstrass model, conductor, torsion, Mordell\u2013Weil rank, 2-division polynomial, and 2-Selmer group over $\\mathbb{Q}$.\n2. **Base Change to $\\mathbb{Q}(i)$**: Determine the full 2-torsion field of $X_0(17)$, its quadratic twist by $\\mathbb{Q}(i)$, and the Mordell\u2013Weil and 2-Selmer ranks over $\\mathbb{Q}(i)$.\n3. **The 17-Isogeny Field $K_{E_0}$ (Degree 18)**: Compute the explicit minimal polynomial $P_{18}(x)$, discriminant, signature, and ramification set.\n4. **The 2-Descent Field $L = K_{E_0}(i)$ (Degree 36)**: Classify all intermediate subfields of $L$. Prove mathematically and computationally whether cubic, quartic, sextic, or nonic subfields exist.\n5. **Weil Restriction and Chabauty Feasibility**: Analyze the decomposition of $\\operatorname{Res}_{K_{E_0}/\\mathbb{Q}} X_0(17)$ and the rank conditions for Elliptic Chabauty.\n\n---\n\n## 2. Arithmetic of the Modular Curve $X_0(17) \\cong \\text{17a1}$\n\nThe modular curve $X_0(17)$ has genus 1. With its canonical rational cusp $\\infty$, it is an elliptic curve over $\\mathbb{Q}$, catalogued in Cremona's database as **17a1**.\n\n### 2.1 Minimal Model and Invariants over $\\mathbb{Q}$\n- **Weierstrass Model**:\n  $$E: y^2 + xy + y = x^3 - x^2 - x - 14$$\n- **Weierstrass Invariants**:\n  $$[a_1, a_2, a_3, a_4, a_6] = [1, -1, 1, -1, -14]$$\n  $$b_2 = -3, \\quad b_4 = -1, \\quad b_6 = -55, \\quad b_8 = -28$$\n  $$c_4 = 49 = 7^2, \\quad c_6 = -895, \\quad \\Delta = -83521 = -17^4$$\n- **Conductor**: $N = 17$ (prime conductor).\n- **Kodaira Symbol at 17**: $\\text{I}_4$ (multiplicative reduction, Kodaira type $\\text{I}_4$).\n- **Tamagawa Number**: $c_{17} = 4$.\n- **Torsion Subgroup over $\\mathbb{Q}$**:\n  $$E(\\mathbb{Q})_{\\text{tors}} \\cong \\mathbb{Z}/4\\mathbb{Z}$$\n  Generated by the point $P = (7, 13)$:\n  $$2P = (11/4, -15/8), \\quad 3P = (7, -21), \\quad 4P = \\mathcal{O}.$$\n- **Mordell\u2013Weil Rank**:\n  $$\\operatorname{rank} E(\\mathbb{Q}) = 0.$$\n- **2-Selmer Group**:\n  $$\\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(E/\\mathbb{Q}) = 0.$$\n  Since $\\operatorname{rank} E(\\mathbb{Q}) = \\dim_{\\mathbb{F}_2} \\operatorname{Sel}_2(E/\\mathbb{Q}) - \\dim_{\\mathbb{F}_2} E(\\mathbb{Q})[2] + \\dim_{\\mathbb{F}_2} E(\\mathbb{Q})[2] = 0$, the 2-torsion Shafarevich\u2013Tate group is trivial:\n  $$\\Sha(E/\\mathbb{Q})[2] = 0.$$\n\n### 2.2 The 2-Division Polynomial and Field of Full 2-Torsion\nThe 2-division polynomial is given by $\\psi_2(x) = 4x^3 + b_2 x^2 + 2b_4 x + b_6$:\n$$\\psi_2(x) = 4x^3 - 3x^2 - 2x - 55.$$\n\nFactoring $\\psi_2(x)$ over $\\mathbb{Q}$:\n$$\\psi_2(x) = (4x - 11)(x^2 + 2x + 5).$$\n\nThe roots are:\n1. $x_1 = \\frac{11}{4} \\in \\mathbb{Q}$, yielding the rational 2-torsion point $2P = \\left(\\frac{11}{4}, -\\frac{15}{8}\\right)$.\n2. $x_{2, 3} = -1 \\pm 2i \\in \\mathbb{Q}(i)$.\n\n> [!IMPORTANT]\n> **Field of Full 2-Torsion**:\n> The splitting field of the 2-division polynomial is $\\mathbb{Q}(E[2]) = \\mathbb{Q}(i)",
+      "length_chars": 24900
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.85,
+        "confidence": 0.34,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.4,
+          "1": 0.41000000000000003,
+          "2": 0.13,
+          "3": 0.06
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 1.62,
+        "confidence": 0.13,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.4,
+          "2": 0.22,
+          "3": 0.26
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.35,
+        "probabilities": {
+          "verify_literature": 0.01,
+          "verify_computation": 0.2,
+          "no_action": 0.05,
+          "audit_now": 0.48,
+          "audit_later": 0.26
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3386,
+      "output_tokens": 124
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U73_genus_eight_reduction",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U73_genus_eight_reduction.md",
+      "excerpt": "# U73: a fixed genus-eight reduction, its actual point field, and the absence of an elliptic quotient\n\n**Status: written, self-reviewed reduction and method-obstruction theorems, with distinct exact arithmetic checks. Neither the weighted equation nor the full Beal conjecture is solved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-15. Remote input inspected: `79b63d464ce5fbd1295d5c65d931a6beb46920db` in private `Joe-Simo/beal`. The attached local U72 archive was restored additively and its distinct manuscript was read. No earlier mathematical checkpoint is replaced.\n\n## 1. The result and the two U72 versions\n\nThe current remote U72 is `U72_root_closed_order_and_full_support.md`: its subject is the smaller order, all ten coefficients of the common root, and their exact divisibility profiles. The attached local U72 is `U72_common_root_constant_obstructions.md`: its subject is constant seventeenth-power tests modulo Z^17. They are different research continuations, not interchangeable filenames. Their source identifiers and preservation status are recorded separately in `references/U73/sources.json`.\n\nThe present theorem needs only the common-root conclusion of U71, not either U72 refinement. Starting from a hypothetical primitive positive solution of\n\n    (W) X^10+256Y^10=Z^17,\n\nthat written/self-reviewed result supplies\n\n    L=Q(rho,i), rho^5=2, rho>0,\n    c=i*rho^4, c^10=-256,\n    theta in O_L, theta^17=X+cY, and 289|Y.        (1.1)\n\nU73 constructs a point on the fixed curve\n\n    H: (3-phi)V^2 = 4U^17-phi^2,\n       phi=(1+sqrt(5))/2.                          (1.2)\n\nIt proves three precise statements.\n\n1. H has genus eight. The point forced by (1.1) lies in K=L(phi), and its coordinate field is **exactly K**, of degree twenty over Q and degree ten over Q(phi). In particular, computing only H(Q(phi)) cannot capture any point arising from positive X,Y in W.\n2. The Jacobian of H is absolutely simple. H has no nonconstant map, even after extension to an algebraic closure in characteristic zero, to a smooth projective curve of genus one through seven. In particular H has no elliptic quotient.\n3. The second coordinate has an additional required form V=R^17 with R in L and relative norm one. Retaining this condition gives an explicit degree-seventeen cover of H of genus 256. Arbitrary points on H(K) cannot be treated as weighted solutions.\n\nThese are a global reduction and two exclusions of proposed shortcuts. **No new integer solution range, prime class, or complete Beal signature is eliminated here.** No rank, complete point set, or effective upper height bound is computed. The genus-eight curve is a necessary target, not a certified parametrization equivalent to W.\n\n## 2. The fields, with no hidden descent assumption\n\nLet zeta be a primitive fifth root of unity, chosen so\n\n    phi=1+zeta+zeta^(-1)=-zeta^2-zeta^3.\n\nThe last equality uses Phi_5(zeta)=0. It follows that phi^2=phi+1. Define\n\n    F=Q(phi), K=L(phi), M=L(zeta).\n\nThe field Q(rho) has degree five by Eisenstein at 2. It is contained in R in the specified embedding, so adjoining i doubles its degree. Thus [L:Q]=10. Also\n\n    rho=c^4/8, i=c^5/16,\n\nso Q(c)=L.\n\nThe real quadratic field F cannot be contained in L: otherwise the distinct quadratic fields F and Q(i) would generate a biquadratic subfield of L, whose degree four cannot divide ten. Therefore\n\n    L intersect F=Q, [K:Q]=20, [K:L]=2, [K:F]=10.   (2.1)\n\nThe cyclic quartic field Q(zeta) has unique quadratic subfield F. Its intersection with L is Q: a larger intersection would contain F, just ruled out. Since Q(zeta)/Q is Galois, these fields are linearly disjoint. Consequently\n\n    [M:L]=4, [M:Q]=40, [M:K]=2.                   (2.2)\n\nThe involution of M that fixes L and sends zeta to zeta^(-1) has fixed field K. This involution must not be confused with complex conjugation on L, which sends c to -c.\n\n## 3. The exact map from the common root\n\nWrite theta=p(c), with p a polynomial of degree at most nine over Q. Its coefficients need not be integral for this construction. For j modulo five put\n\n    theta_j=p(c*zeta^j), tau_j=X+c*zeta^j*Y.\n\nThe assignment c -> c*zeta^j is an embedding of L into M: it sends c to another root of its irreducible polynomial. Hence\n\n    theta_j^17=tau_j.\n\nAll theta_j are nonzero. Define\n\n    U=theta_1*theta_(-1)/theta_0^2,\n    V=(X-cY)/(X+cY).                               (3.1)\n\nThe zeta-inversion involution exchanges theta_1 and theta_(-1) and fixes theta_0. Thus U belongs to K; V belongs to L.\n\nThe elementary identity\n\n    4(X+c*zeta*Y)(X+c*zeta^(-1)*Y)\n      =(phi+1)(X+cY)^2+(3-phi)(X-cY)^2             (3.2)\n\nholds identically. To check it, use zeta+zeta^(-1)=phi-1 and expand the three quadratic expressions. Dividing by the nonzero (X+cY)^2 and using phi+1=phi^2 gives exactly (1.2).\n\nThe affine equation is smooth: its defining polynomial has partial derivatives proportional to U^16 and V, and their simultaneous zero U=V=0 does ",
+      "length_chars": 17662
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.38,
+        "confidence": 0.62,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.82,
+          "1": 0.05,
+          "2": 0.04,
+          "3": 0.09
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.17,
+        "confidence": 0.83,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.05
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_later",
+        "confidence": 0.46,
+        "probabilities": {
+          "verify_computation": 0.02,
+          "no_action": 0.1,
+          "verify_literature": 0.01,
+          "audit_now": 0.3,
+          "audit_later": 0.57
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2773,
+      "output_tokens": 125
+    }
+  }
+}

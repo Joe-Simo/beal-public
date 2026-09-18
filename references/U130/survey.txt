@@ -1,0 +1,2827 @@
+                                                        Generalised Fermat equation: a survey of solved cases
+                                                                                 Ashleigh Ratcliffe and Bogdan Grechuk
+
+                                                                                                 April 15, 2025
+
+
+
+
+arXiv:2412.11933v2 [math.NT] 14 Apr 2025
+                                                                                                      Abstract
+                                                     Generalised Fermat equation (GFE) is the equation of the form ax p + byq = czr , where a, b, c, p, q, r are
+                                                 positive integers. If 1/p + 1/q + 1/r < 1, GFE is known to have at most finitely many primitive integer
+                                                 solutions ( x, y, z). A large body of the literature is devoted to finding such solutions explicitly for various
+                                                 six-tuples ( a, b, c, p, q, r ), as well as for infinite families of such six-tuples. This paper surveys the families
+                                                 of parameters for which GFE has been solved. Although the proofs are not discussed here, collecting these
+                                                 references in one place will make it easier for the readers to find the relevant proof techniques in the original
+                                                 papers. Also, this survey will help the readers to avoid duplicate work by solving the already solved cases.
+
+
+                                           Contents
+                                           1 Introduction                                                                                                                2
+                                             1.1 Generalized Fermat equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       2
+                                             1.2 Easy reductions and elementary special cases . . . . . . . . . . . . . . . . . . . . . . . . . .                        4
+                                             1.3 Some conjectures and open problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                        6
+
+                                           2 Equations with special signatures                                                                                            8
+                                             2.1 Equations of signature (4, 4, 4) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                     8
+                                             2.2 Equations of signature (2, 4, r) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                    10
+                                             2.3 Equations of signature (2, 6, r) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                    12
+                                             2.4 Equations of signature (4, 4, 3) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                    13
+                                             2.5 A systematic approach . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       14
+
+                                           3 Equations of signature ( p, p, p)                                                                                           14
+                                             3.1 Reduction to computing rational points on hyperelliptic curves . . . . . . . . . . . . . . . . .                        14
+                                             3.2 Explicit small values of p . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                    15
+                                             3.3 The case a = b = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      16
+                                             3.4 The case a = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      17
+                                             3.5 General a, b, c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                   18
+
+                                           4 Equations of signature ( p, p, r)                                                                                           20
+                                             4.1 The case a = b = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      20
+                                                 4.1.1 Eq. (4.2) with fixed p . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      20
+                                                 4.1.2 Eq. (4.2) with fixed r . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      26
+                                             4.2 The case a = c = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      27
+                                             4.3 The case a = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      28
+                                             4.4 The case c = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      30
+                                                 4.4.1 Eq. (4.30) with fixed p . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       30
+                                                 4.4.2 Eq. (4.30) with fixed r . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       30
+                                             4.5 The general a, b, c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                   31
+
+
+
+                                                                                                          1
+5 Equations of signature ( p, q, r)                                                                               32
+  5.1 The case a = c = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          33
+  5.2 The general a, b, c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       34
+
+6 Summarizing table                                                                                               36
+
+
+1 Introduction
+1.1 Generalized Fermat equation
+Around 1637, Pierre de Fermat wrote in the margin of his private copy of Arithmetica that for any integer n ≥ 3
+the equation
+                                               x n + yn = zn
+has no solutions in positive integers. This statement became known as Fermat’s Last Theorem (FLT), and has
+been one of the most famous open problems in mathematics for over 350 years. After cancelling the common
+factors if needed, it suffices to prove the non-existence of positive integer solutions such that gcd( x, y, z) = 1.
+The FLT has been finally proved by Andrew Wiles1 [149] in 1995, and this proof is widely recognized as one
+of the most monumental achievements of modern mathematics.
+    Even before FLT had been proven, many researchers started to investigate special cases of the more general
+equation
+                                                 ax p + byq = czr ,                                             (1.1)
+where x, y, z are integer variables, while positive integers p, q, r and integers a, b, c are parameters. If abc = 0,
+then (1.1) has at most two monomials and is easy to solve, see [77, Section 1.6] and [148, Section 1.16], so
+from now on we will assume that abc 6= 0. If (1.1) is solvable in integers ( x, y, z) 6= (0, 0, 0), then, under
+a minor condition2 on ( p, q, r), it has infinitely many integer solutions, and all these solutions are easy to
+describe, see [78, Section 3.4.2] and [77, Proposition 4.53]. However, the problem of describing primitive
+integer solutions to (1.1), that is, ones satisfying gcd( x, y, z) = 1, turns out to be much more interesting and
+delicate.
+    The triple ( p, q, r) is called the signature of Eq. (1.1). If min{ p, q, r} = 1 then (1.1) is trivial, see [77,
+Section 1.5.1] and [148, Section 1.12], so we may assume that min{ p, q, r} ≥ 2. The theory of primitive
+solutions to (1.1) crucially depends on whether the quantity 1/p + 1/q + 1/r is greater than 1, equal to 1, or
+less than 1. In the first case, we have the following result proved by Beukers [18] in 1998.
+Theorem 1.1. Assume that 1/p + 1/q + 1/r > 1 and min{ p, q, r} ≥ 2. Then if (1.1) has at least one
+primitive solution with xyz 6= 0, then it has infinitely many such solutions. In this case, there exists a finite
+number of parametrized solutions of (1.1) with two parameters such that all primitive solutions can be obtained
+by specialization of the parameters to integer values. Moreover, there is an algorithm that computes these
+parametrized solutions.
+     Theorem 1.1 covers the signatures (2, 2, k) for k ≥ 2, (2, 3, 3), (2, 3, 4), (2, 3, 5), and their permutations.
+As a nice example of its application, see [66] for the complete description of primitive integer solutions to the
+equation x2 + y3 = z5 .
+     In the case 1/p + 1/q + 1/r = 1, which consists of permutations of (2, 3, 6), (2, 4, 4) and (3, 3, 3),
+Eq. (1.1) reduces to the problem of computing rational points on certain elliptic curves. This problem is open
+in general, but there are algorithms that work well for all specific equations with not-too-large coefficients
+a, b, c. For example, as early as in 1954, Selmer [126, 127] solved (1.1) with ( p, q, r) = (3, 3, 3) for all a, b, c
+satisfying 1 ≤ | abc| ≤ 500. With modern computers and improved algorithms one may proceed much further
+if needed.
+     The most interesting and challenging case of Eq. (1.1) is 1/p + 1/q + 1/r < 1. In this case, Darmon and
+Granville [54] proved the following fundamental result.
+  1 With part of the proof delegated to a joint paper with Richard Taylor [143].
+  2 Specifically, under the condition that at least one of the integers p, q, r is coprime with another two.
+
+
+
+                                                                    2
+Table 1.1: Triples ( p, q, r) for which equation (1.2) has been solved, up to permutations (triples marked with *
+do not include permutations).
+
+                                       Triple                                                 Solved
+                       (2, 3, n), 7 ≤ n ≤ 12,3 n = 15                       [119, 29, 31, 32, 48, 27, 132, 74, 134]
+                                  (2, 4, n), n ≥ 5                                    [11, 67, 29, 15, 31]
+                                  (2, 6, n), n ≥ 3                                          [7, 29, 9]
+                           (2, 2n, 3)∗ , 3 ≤ n ≤ 107                                   [40, 49, 48, 132]
+                (2, 2n, m)∗ , m ∈ {6, 9, 10, 15, 21}, n ≥ 2                                  [9, 100]
+                                (4, 2n, 3)∗ , n ≥ 2                                              [9]
+                                      (3, 4, 5)                                                [133]
+                             (3, 3, n), 3 ≤ n ≤ 109                                   [44, 91, 30, 48, 13]
+                                 (3, 3, 2n), n ≥ 2                                               [9]
+                                  (3, 6, n), n ≥ 3                                               [9]
+                             (5, 5, n), n ∈ {7, 19}                                             [50]
+                                      (7, 7, 5)                                                 [50]
+                                 (n, n, 2), n ≥ 5                                           [55, 117]
+                                 (n, n, 3), n ≥ 3                                          [55, 117]4
+                                 (n, n, n), n ≥ 3                                          [149, 143]
+             (2j, 2k, n)∗ , j, k ≥ 5 prime, n ∈ {3, 5, 7, 11, 13}                             [1, 20]
+                        (2j, 2k, 17)∗ , j, k 6= 5 primes                                       [100]
+                               (2n, 2n, 5)∗ , n ≥ 2                                              [4]
+                                   (2n, 2n, 17)∗                                               [100]
+                         (3j, 3k, n)∗ , j, k ≥ 2, n ≥ 3                                         [91]
+
+
+
+Theorem 1.2. For any given positive integers p, q, r, a, b, c satisfying 1/p + 1/q + 1/r < 1, the generalized
+Fermat Eq. (1.1) has only finitely many primitive integer solutions.
+
+    The proof of Theorem 1.2 is ineffective and does not provide an algorithm for actually listing the primitive
+solutions to (1.1) for a given p, q, r, a, b, c. This problem is the topic of current intensive research. The case
+a = b = c = 1, that is, equation
+                                                     x p + y q = zr ,                                        (1.2)
+is known as the Fermat–Catalan equation, and has been particularly well-studied. A number of survey pa-
+pers exist which are devoted to this equation, see, for example, [9, 92], Section 1.2 in [82], and wikipedia
+page https://en.wikipedia.org/wiki/Beal_conjecture. We provide a summary5 of solved signa-
+tures ( p, q, r) in Table 1.1. There is also some recent work with partial results for other signatures, see
+e.g [5, 8, 9, 17, 21, 22, 30, 41, 43, 44, 48, 49, 50, 51, 60, 71, 74, 91, 96, 103, 121, 146]. Famous Fermat–
+Catalan conjecture predicts that (1.2) has only finitely many solutions in positive integers ( p, q, r, x, y, z) such
+that 1/p + 1/q + 1/r < 1 and gcd( x, y, z) = 1. In fact, the only known such solutions are listed in Table 1.2,
+and failing to find other solutions despite extensive efforts [109, 130] suggests that this list might be complete.
+One may note that all exponents ( p, q, r) in Table 1.2 have min( p, q, r) = 2. In 1997, Beal [98] offered a
+million-dollar prize for the proof or disproof that (1.2) has no solutions in coprime positive integers ( x, y, z)
+when min{ p, q, r} ≥ 3.
+   3 The proof for n = 11 in [74] is conditional on the generalized Riemann hypothesis. The case n = 12 follows from the analysis of
+
+case (2, 3, 6), which reduces to a rank 0 elliptic curve.
+   4 It was noted on Mathoverflow (https://mathoverflow.net/questions/488724/) that [55] does not provide details for the
+
+case (3, 4, 4), this case is proven in [47, Proposition 14.6.6].
+   5 Recently, Bartolomé and Mihăilescu [3] claimed to solve (1.2) for all signatures ( p, p, r ) such that p, r are primes, p ≥ 5, and
+       p
+r > 3 p log2 p. To the best of our knowledge, this paper has not been peer reviewed yet.
+
+
+
+                                                                   3
+Table 1.2: Known primitive positive integer solutions to (1.2) with 1/p + 1/q + 1/r < 1, up to exchange of
+( x, p) with (y, q).
+
+                           ( p, q, r)      ( x, y, z)   ( p, q, r)           ( x, y, z)
+                           ( p, 3, 2)      (1, 2, 3)    (8, 2, 3)     (33, 1549034, 15613)
+                           (5, 2, 4)       (2, 7, 3)    (3, 2, 7)      (1414, 2213459, 65)
+                           (3, 2, 9)      (7, 13, 2)    (3, 2, 7)    (9262, 15312283, 113)
+                           (7, 3, 2)     (2, 17, 71)    (7, 3, 2)    (17, 76271, 21063928)
+                           (5, 4, 2)    (3, 11, 122)    (8, 3, 2)    (43, 96222, 30042907)
+
+
+
+     Comparison of Table 1.1 with Table 1.3 below shows that the only cases of Eq. (1.2) with ( p, q, r) not-
+all-primes that remain to be considered are ( p, q, r) = (2, 5, 9) and ( p, q, r) = (2, 3, 25). In the case when
+all ( p, q, r) are primes, Table 1.1 covers the triples (2, 3, 7), (5, 5, 7), (5, 5, 19), (7, 7, 5), (3, 3, p) for p ≤
+109 , ( p, p, 2), ( p, p, 3) and ( p, p, p) for all p, as well as (2, 3, 11) conditional on the generalized Riemann
+hypothesis. Hence, the triple ( p, q, r) with the smallest sum p + q + r for which Eq. (1.2) is currently open is
+( p, q, r) = (2, 5, 7). The smallest triple for which Beal’s conjecture remains open is ( p, q, r) = (3, 5, 7).
+     Recently, Sikora [130] reported that Eq. (1.2) has no solutions in coprime positive integers other than ones
+listed in Table 1.2 in the range zr < 271 . Restricting the search to only exponents not covered in Table 1.1
+allowed us to significantly speed up the search and reach the bound 2100 .
+
+Proposition 1.3. The only solutions to (1.2) in coprime positive integers such that zr ≤ 2100 are those listed in
+Table 1.2.
+
+    While there are good surveys of Eq. (1.2), a similar survey for the more general Eq. (1.1) is not available.
+There are many dozens of papers studying this equation, and each of them cites just a small portion of others. As
+a result, some equations of the form (1.1) have been solved multiple times. For example, equation x4 + 3y4 =
+z3 has been solved in 1994 by Terai [144], and then again in 2019 by Söderlund [137].
+    The aim of this survey is to summarize the solved cases of the generalized Fermat Eq. (1.1) with | abc| > 1.
+This will help the readers to avoid duplicate work by solving the already solved cases. To keep the survey
+relatively short, we will not discuss proofs. Despite this, we hope that collecting all these references in one
+place should make it much easier for the readers to find the proof techniques in the original papers.
+    In the rest of the introduction, we discuss some easy reductions, elementary special cases, and state some
+conjectures. Sections 2 to 5 discuss for which parameters ( a, b, c, p, q, r) Eq. (1.1) has been solved. The solved
+cases are then summarized in the final table (Table 6.1) in Section 6.
+
+1.2 Easy reductions and elementary special cases
+We first observe that we may assume that the integers a, b and c in (1.1) are all positive. Indeed, if an equation
+Ax p + Byq + Czr = 0 has A, B, C all of the same sign, then it has no solutions other than ( x, y, z) = (0, 0, 0)
+if all p, q, r are even, and otherwise we can change the sign of one of A, B, C by a transformation of one of
+the variables to their negative. Hence, we may assume that not all A, B, C are of the same sign, and then the
+equation can be rearranged to the form (1.1) with positive a, b, c.
+     We are interested in finding primitive solutions to (1.1), that is, ones satisfying gcd( x, y, z) = 1. Because
+solutions to (1.1) with xyz = 0 are easy to describe, it suffices to find primitive solutions in non-zero inte-
+gers. We will call such solutions non-trivial. Further, if a prime s is a common factor of, say, x and y, then
+gcd( x, y, z) = 1 implies that gcd(s, z) = 1, but then (1.1) implies that smin{ p,q} is a divisor of c. Continuing
+this way, we obtain the following observation.
+
+Proposition 1.4. Assume that c has no divisors of the form smin{ p,q} for prime s, b has no divisors of the form
+smin{ p,r } for prime s, while a has no divisors of the form smin{q,r } for prime s. Then ( x, y, z) is a primitive
+solution to (1.1) if and only if x, y, z are pairwise coprime.
+
+
+                                                            4
+                               Table 1.3: Special triples ( p, q, r), up to permutations.
+
+                                (2, 3, 8)          (2, 3, 25)          (2, 5, 6)   (3, 3, 9)
+                                (2, 3, 9)   (2, 4, r), r ≥ 5 prime     (2, 5, 9)   (3, 4, 4)
+                               (2, 3, 10)           (2, 4, 6)          (2, 6, 6)   (3, 4, 5)
+                               (2, 3, 12)           (2, 4, 8)          (3, 3, 4)   (4, 4, 4)
+                               (2, 3, 15)           (2, 4, 9)          (3, 3, 6)
+
+
+
+     From now on, for all equations satisfying the conditions of Proposition 1.4, we will use the terms “primitive
+solution” and “solution in pairwise coprime integers” interchangeably.
+     We next observe that if one of the integers ( p, q, r), say r, is not prime, and 1 < d < r is any divisor of
+r, then change of variables Z = zr/d reduces (1.1) to an equation of the same form with exponents ( p, q, d).
+If 1/p + 1/q + 1/d < 1, then this equation has finitely many primitive integer solutions by Theorem 1.2. If
+we list all such solutions ( x, y, Z ), we can then check for which of them z = Z d/r is an integer. This implies
+that it is sufficient to solve (1.1) only in the case when either p, q, r are all primes, or ( p, q, r) is a special triple
+defined below.
+Definition 1.5. A triple ( p, q, r) of positive integers is called special if (i) not all p, q, r are primes, (ii) 1/p +
+1/q + 1/r < 1, and (iii) if P, Q, R are positive divisors of p, q, r, respectively, such that ( P, Q, R) 6= ( p, q, r),
+then 1/P + 1/Q + 1/R ≥ 1.
+    Every special triple is a permutation of one of the triples listed in Table 1.3.
+    Some equations of the form (1.1) have no non-trivial primitive solutions for elementary reasons. For ex-
+ample, modulo 9 analysis shows that if ( x, y, z) is any integer solution to the equation x4 + y4 = 3z3 , then all
+x, y, z must be divisible by 3. Hence, this equation has no non-trivial primitive solutions. More generally, we
+have the following trivial observation.
+Proposition 1.6. If there exists any prime s and positive integer m such that all solutions ( x, y, z) to (1.1)
+modulo sm must have all x, y, z divisible by s, then (1.1) has no non-trivial primitive solutions.
+    For equations covered by Proposition 1.6, we say that they have no non-trivial primitive solutions by local
+obstructions. All such equations will from now be excluded from this survey.
+    As mentioned above, we may assume that either p, q, r are all primes, or ( p, q, r) is a permutation of one of
+the special triples listed in Table 1.3. In the second case, at least one of the integers p, q, r is composite. If, for
+example, r is composite, and 1 < d < r is any divisor of r, then change of variables Z = zr/d reduces (1.1) to
+the equation
+                                                  ax p + byq = cZ d .                                            (1.3)
+Because ( p, q, r) is a special triple, we must have 1/p + 1/q + 1/d ≥ 1. If 1/p + 1/q + 1/d > 1, then, by
+Theorem 1.1, either (1.3) has no non-trivial primitive solutions, or all such solutions can be covered by a finite
+number of parametrizations with two parameters. In the first case, (1.1) has no non-trivial primitive solutions
+as well. In the second case, we obtain that
+
+                                  zr/d = Z = Pi (u, v) for some i ∈ {1, 2, . . . , k},                               (1.4)
+
+where P1 , . . . , Pk are some polynomials in two variables u, v with integer coefficients. In some cases, Eqs. (1.4)
+are easy to solve, which leads to the resolution of (1.1).
+    If 1/p + 1/q + 1/d = 1, then (1.3) reduces to computing rational points on an elliptic curve. If this curve
+has rank 0, then there is a finite number of such points, and they can be explicitly listed, see e.g. [77, Section
+3.4.4] and [148, Section 3.21]. Then (1.3) has a finite number of primitive solutions, and it is easy to check for
+which of them (if any) z = Z d/r is an integer.
+    For some of the special triples in Table 1.3 more than one of the exponents p, q, r is composite, and some
+exponents may have more than one non-trivial divisor d. Hence, Eq. (1.1) with special ( p, q, r) may be reducible
+
+                                                            5
+to several equations of the form (1.3). If any of the reduced equations has finitely many primitive solutions,
+and these solutions can be computed, this immediately solves (1.1). For example, this solves equation x4 +
+2y4 = z4 , which is the case ( a, b, c, p, q, r) = (1, 2, 1, 4, 4, 4) of Eq. (1.1), because the corresponding equation
+x4 + 2y4 = Z2 reduces to finding rational points on rank 0 elliptic curve Y 2 = X 4 + 2, where Y = yZ2 , X = yx .
+From now on, all Eqs. (1.1) solvable by this method will be excluded from this survey.
+    In summary, below we will discuss the generalized Fermat’s Eqs. (1.1), not covered by Proposition 1.6, in
+which a, b, c are positive integers with abc > 1, and exponents ( p, q, r) are either (i) prime numbers satisfying
+1/p + 1/q + 1/r < 1, or (ii) one of the special triples listed in Table 1.3 such that all the corresponding
+Eqs. (1.3) have infinitely many primitive solutions. For each such equation, we will consider the following
+problem.
+
+Problem 1.7. For a given a, b, c, p, q, r, list all primitive integer solutions ( x, y, z) to (1.1).
+
+    For some equations, we will also discuss the following easier problem.
+
+Problem 1.8. For a given a, b, c, p, q, r, determine whether Eq. (1.1) has any non-trivial primitive integer
+solutions.
+
+    Because the solutions to (1.1) with xyz = 0 are easy to find, the negative answer to Problem 1.8 solves
+Problem 1.7 for the corresponding equation as well. However, if (1.1) has some easy-to-find non-trivial primi-
+tive integer solution, this automatically solves Problem 1.8 with a “Yes” answer, without resolving Problem 1.7
+for this equation.
+
+1.3 Some conjectures and open problems
+Famous and well-believed abc conjecture of Masser and Oesterlé [113] predicts that for every real number
+ǫ > 0 there exist only finitely many triples ( A, B, C ) of coprime positive integers such that
+
+                                          A+B = C          and    C > rad( ABC )1+ǫ ,                                         (1.5)
+
+where rad(n) denotes the product of the distinct prime factors of n. Darmon and Granville [54, Section 5.2]
+observed that the abc conjecture implies the Fermat–Catalan conjecture about the finiteness of primitive integer
+solutions to (1.2), and remarked that the same argument may be extended to show that it also implies the
+following conjectures.
+
+Conjecture 1.9. For any integers a, b, c such that abc 6= 0, Eq. (1.1) has only finitely many solutions6 in
+integers ( x, y, z, p, q, r) such that gcd( x, y, z) = 1, p > 0, q > 0, r > 0, 1/p + 1/q + 1/r < 1.
+
+Conjecture 1.10. For any finite set S of primes, Eq. (1.1) has only finitely many solutions in integers
+( a, b, c, x, y, z, p, q, r) such that gcd( ax, by, cz) = 1, p > 0, q > 0, r > 0, 1/p + 1/q + 1/r < 1, and all the
+prime factors of abc belong to set S.
+
+    Conjecture 1.9 is a far-reaching generalization of Theorem 1.2 that allows p, q, r to also be variables. There
+is no triple ( a, b, c) for which this conjecture has been proved. Conjecture 1.10 is even more general.
+    Eq. (1.2) corresponds to the case a = b = c = 1 of Conjecture 1.9. The “next” case one may consider is
+|abc| = 2. By rearranging (1.1) appropriately, we may assume that a, b, c, x, y, z are all positive integers, and
+consider equation
+
+                    ax p + byq = czr ,       gcd( x, y, z) = 1,       1/p + 1/q + 1/r < 1,              abc = 2,              (1.6)
+
+for which we are looking for solutions in positive integers a, b, c, p, q, r, x, y, z. Our computer search7 in the
+range czr ≤ 280 returned only the solutions listed in Table 1.4.
+   6 Solutions to (1.1) that have min{ x, y, z } = 1 and differ only by the exponent(s) of 1 are assumed to be the same, e.g. family
+
+( x, y, z, p, q, r ) = (1, 1, 1, p, q, r ) for ( a, b, c) = (1, 1, 2) is considered as one solution.
+     7 This search used the ALICE High Performance Computing facility at the University of Leicester.
+
+
+
+                                                                  6
+Table 1.4: Known positive integer solutions ( x, y, z, p, q, r, a, b, c) to (1.6), up to exchange of ( a, p, x) and
+(b, q, y).
+
+                              ( a, b, c)    ( p, q, r)               ( x, y, z)
+                              (1, 1, 2)     ( p, q, r)               (1, 1, 1)
+                              (1, 2, 1)     (2, q, 3)                (5, 1, 3)
+                              (2, 1, 1)     (2, q, 5)               (11, 1, 3)
+                              (1, 1, 2)     (3, 2, 8)               (7, 13, 2)
+                              (2, 1, 1)     (4, 4, 3)               (5, 3, 11)
+                              (1, 1, 2)     (7, 3, 2)               (3, 5, 34)
+                              (1, 1, 2)     (3, q, 2)              (23, 1, 78)
+                              (1, 2, 1)     (5, 8, 2)              (7, 3, 173)
+                              (1, 2, 1)     (5, 4, 2)              (7, 9, 173)
+                              (2, 1, 1)     (9, 3, 2)             (3, 19, 215)
+                              (1, 1, 2)     (2, q, 4)             (239, 1, 13)
+                              (1, 1, 2)     (3, 4, 3)            (237, 43, 203)
+                              (1, 1, 2)    (3, 13, 2)            (239, 3, 2761)
+                              (2, 1, 1)     (2, 8, 3)           (21395, 3, 971)
+                              (1, 1, 2)     (3, 8, 2)           (799, 7, 16060)
+                              (1, 2, 1)    (3, 11, 2)          (1719, 5, 71953)
+                              (1, 2, 1)     (9, 2, 3)         (13, 75090, 2797)
+                              (2, 1, 1)     (4, 5, 2)       (6071, 959, 59397119)
+                              (1, 1, 2)     (2, 5, 4)       (49800547, 953, 6357)
+                              (1, 2, 1)     (3, 7, 2)    (1346695, 177, 1566280459)
+
+
+
+Open Question 1.11. Find all solutions to (1.6) in positive integers a, b, c, p, q, r, x, y, z. In particular, does
+it have any solutions except of the ones listed in Table 1.4?
+
+    While we are not sure whether the solution list to (1.6) in Table 1.4 is complete, we conjecture that (1.6) has
+no solutions with min( p, q, r) ≥ 3 other than 1 p + 1q = 2 · 1r , 2 · 54 + 34 = 113 and 434 + 2373 = 2 · 2033 .
+    Another goal, suggested in [78, Section 3.4.2], is to describe all (not necessary primitive) integer solutions
+to (1.1), or at least to (1.2). This might be easier because for some exponents ( p, q, r) there exist formulas
+describing all integer solutions to these equations that give no hint on the structure of primitive solutions.
+As mentioned above, such formulas have been derived in [78] for Eq. (1.1) under the condition that at least
+one of the integers p, q, r is coprime with the other two. This condition fails, if, for example, ( p, q, r) =
+( PQ, QR, RP) for some integers P, Q, R greater than 1. In this case, (1.1) reduces to ax PQ + byQR = czRP ,
+or a + b(yR /x P ) Q = c(zR /x Q ) P . This equation can be written as
+
+                                                  cU P − bV Q = a,                                            (1.7)
+
+where U = zR /x Q and V = yR /x P are rational variables. If P + Q ≥ 7, this is an equation of genus g ≥ 2,
+hence it has finitely many rational solutions by Falting’s Theorem [68], and, if we could list them all, we would
+be able to easily describe all possible x, y, z. In the case a = b = c = 1, (1.7) reduces to U P − V Q = 1.
+Mihăilescu [101], confirming famous conjecture of Catalan, proved that the only positive integer solutions to
+this equation with P, Q ≥ 2 is (U, V, P, Q) = (3, 2, 2, 3), but solving this equation in rational U, V seems to
+be more difficult, see [129, Theorem 12.4] and [102, Theorem 5] for a partial progress.
+
+
+
+
+                                                           7
+    All conjectures and open questions mentioned in this section look very difficult.8 Readers preferring easier-
+looking open problems are invited to investigate equations listed in Table 2.2, see Section 2.5.
+
+
+2 Equations with special signatures
+In this section we will discuss Eq. (1.1) with special signatures ( p, q, r) presented in Table 1.3. We start with
+the most studied case ( p, q, r) = (4, 4, 4).
+
+2.1 Equations of signature (4, 4, 4)
+The case p = q = r = 4 in (1.1) results in the equation
+
+                                                            ax4 + by4 = cz4                                                             (2.1)
+
+for positive integers a, b, c. Sections 6.2.2 and 6.3.4 of [77] and Sections 6.4 and 6.5 of [148] study Eqs. (2.1)
+ordered by a + b + c, decide the existence of a solution ( x, y, z) 6= (0, 0, 0) for all equations with a + b + c ≤
+62, and solves Problem 1.8 for the equations with a + b + c < 39. The first Eq. (2.1) for which Problem 1.8 is
+left open in [77] is
+                                                 7x4 + 25y4 = 7z4 .
+However, there are Eqs. (2.1) with a + b + c < 39 that have easy-to-find non-trivial solutions, which solves
+Problem 1.8 but leaves open Problem 1.7. For example, this happens if a + b = c, in which case ( x, y, z) =
+(±1, ±1, ±1) are the solutions. The smallest non-trivial example in this category is the equation
+
+                                                            x4 + 2y4 = 3z4 ,
+
+whose only primitive solutions are ( x, y, z) = (±1, ±1, ±1), as proved by Jeremy Rouse on Mathoverflow
+website.9 Other non-trivial examples with a + b = c are the equations
+
+                                      ( a) x4 + 3y4 = 4z4 ,          and     (b) x4 + 8y4 = 9z4 .
+
+Lucas (see [59, pp. 630]) proved that these equations have no primitive integer solutions other than (±1, ±1, ±1).
+   In the case a = b = 1, Eq. (2.1) reduces to
+
+                                                             x4 + y4 = cz4 .                                                            (2.2)
+
+Problem 1.8 for this equation reduces to the question whether a positive integer c can be represented as a sum
+of two rational fourth powers. Cohen [46, Section 6.6] solved this problem for all integers c in the range
+1 ≤ c ≤ 10, 000, except of c = 4481, 7537 and 8882. These values of c have been addressed in [25, 26], hence
+Problem 1.8 for (2.2) is now solved for all 1 ≤ c ≤ 10, 000. In particular, c = 5906 = (25/17)4 + (149/17)4
+is the smallest integer that is the sum of two fourth powers of rational numbers but not the sum of two fourth
+powers of integers.
+     Grigorov and Rizov [79] proved that if c > 2 is a fourth-power free integer and the rank of elliptic curve
+v = u3 − cu is 1, then Eq. (2.2) has no non-zero integer solutions.
+  2
+
+     For values of c when (2.2) is solvable, such as c = 17, the question to find all primitive solutions (that is,
+Problem 1.7) has not been addressed in [46, Section 6.6]. The mentioned case c = 17 has been solved in 2001
+by Flynn and Wetherell [69].
+   8 In 2022, Mochizuki et al. [104] claimed to prove the effective abc conjecture, stating that (1.5) has only finitely many solutions in
+
+coprime positive integers ( A, B, C ), and, moreover, there is an explicitly computable upper bound for the size of any such solution. If
+true, this would imply the truth of Conjectures 1.9 and 1.10, the full resolution of (1.2) for all but finitely many explicit signatures [155],
+reduce Open Question 1.11 to finite computation, and solve many other cases of (1.1). However, Scholze and Stix [125] have found a
+serious flaw in the argument.
+    9 https://mathoverflow.net/questions/480114
+
+
+
+
+                                                                      8
+Theorem 2.1. The primitive positive integer solutions to Eq. (2.2) with c = 17, that is,
+                                                  x4 + y4 = 17z4
+are ( x, y, z) = (2, 1, 1) and (1, 2, 1).
+     A combination of Theorem 2.1 with elementary methods discussed in the introduction solves Eq. (2.2) for
+all 1 ≤ c ≤ 81, and in fact for all 1 ≤ c ≤ 100 except of c = 82 and c = 97. In 2023, using the methods
+developed to prove Theorem 2.1 with some extra tweaks, Pădurariu [116] was able to resolve the case c = 97.
+Theorem 2.2. The primitive positive integer solutions to Eq. (2.2) with c = 97, that is,
+                                                  x4 + y4 = 97z4
+are ( x, y, z) = (2, 3, 1) and (3, 2, 1).
+    To the best of our knowledge, the case c = 82 remains open.
+    Eq. (2.2) with z 6= 0 can be rewritten as ( x/z)4 + (y/z)4 = c, and reduces to finding a representation of
+c as a sum of two rational fourth powers. A similar problem of representing an integer b as a difference of two
+fourth powers reduces to equation
+                                                 x4 + by4 = z4                                             (2.3)
+with y 6= 0. The problem of existence of integer solutions to (2.3) has been solved in [77, Section 6.3.4] for
+1 ≤ b ≤ 218, and is left open for b = 219. However, if a non-trivial solution to (2.3) exists, the problem of
+finding all solutions has not been studied in [77]. In 2020, Söderlund [138] resolved this problem for b = 34.
+Theorem 2.3. The only primitive non-zero integer solutions to the equation
+                                                  x4 + 34y4 = z4
+are ( x, y, z) = (±3, ±2, ±5).
+    Taclay and Bacani [142] consider Eq. (2.3) with b = 2p where p is a prime and they prove the following
+result.
+Theorem 2.4. If p is a prime satisfying any of the following conditions:
+  (i) p 6≡ 1 (mod 16),
+  (ii) p ≡ 3, 4 (mod 5),
+ (iii) p ≡ 7, 8, 11 (mod 13),
+ (iv) p ≡ 4, 5, 6, 9, 13, 22, 28 (mod 29).
+Then the equation
+                                                  x4 + 2py4 = z4                                           (2.4)
+has no non-trivial primitive integer solutions.
+    The smallest prime p for which Eq. (2.4) is not covered by Theorems 2.3 and 2.4 is p = 97.
+    Eq. (2.1) with coefficients a, b, c being perfect cubes was studied in [105, 106], and we have the following
+result.
+Theorem 2.5. Let s, t, u be pairwise coprime positive integers, with s ≡ t ≡ u ≡ −1 (mod 8). Let n be an
+integer divisible by 8 and let v, w be integers satisfying v ≡ w ≡ −1 (mod 8), and ratios
+                                       tw − uv       un − sw     sv − tn
+                                                 ,           ,
+                                           s            t           u
+are integers whose positive odd factors are all 1 modulo 8. Then, there are no non-trivial integer solutions of
+                             tw − uv 3 4           un − sw 3 4        tn − sv 3 4
+                                                                         
+                                          x +                  y =               z .
+                                 s                    t                  u
+
+                                                        9
+   Examples of values (s, t, u, n, v, w) satisfying these conditions are (7, 15, 23,
+8280, 4991, 13335), (7, 15, 23, 8280, 16583, 15855) and (7, 15, 23, 11040, 3703,
+14175) which correspond to equations
+
+                      121763 x4 + 64733 y4 = 38813 z4 ,      205123 x4 + 3533 y4 = 52973 z4 ,
+                      182083 x4 + 103133 y4 = 60733 z4 ,
+
+respectively.
+
+2.2 Equations of signature (2, 4, r )
+The case p = 2, q = 4 and prime r ≥ 5 in (1.1) results in the equation
+
+                                            ax2 + by4 = czr ,     r≥5                                         (2.5)
+
+with positive integer parameters a, b, c.
+    Let us first consider Eq. (2.5) with a = 2 and b = c = 1, that is,
+
+                                           2x2 + y4 = zr ,        r ≥ 5.                                      (2.6)
+
+In 2008, Dieulefait and Urroz [65] proved that if r > 349 is a prime, then Eq. (2.6) does not have non-
+trivial primitive solutions. In 2010, Bennett, Ellenberg and Ng [11] significantly strengthened this result and
+completely solved Eq. (2.6) for all integers r ≥ 5.
+Theorem 2.6. Eq. (2.6) has no non-trivial primitive solutions for integer r ≥ 6, while for r = 5 its only
+non-trivial primitive integer solutions are ( x, y, z) = (±11, ±1, 3).
+     Let us now consider Eq. (2.5) with a = 3 and b = c = 1. Dieulefait and Urroz [65] proved that if r > 131
+is a prime, then the equation
+                                                3x2 + y4 = zr ,
+does not have any non-trivial primitive solutions. Pacetti and Villagra Torcomian [114] remarked that this result
+can be improved to r > 17 by Proposition 5.4 of [88].
+    In 2022, Pacetti and Villagra Torcomian [114] studied Eq. (2.5) with a ∈ {5, 6, 7}, b = c = 1 and prime
+p, that is,
+                                                 ax2 + y4 = z p ,                                           (2.7)
+and they proved the following results.
+Theorem 2.7. Let ( a, p0 ) ∈ {(5, 499), (6, 563), (7, 349)}. Assume that p > p0 is prime. Then Eq. (2.7) has
+no non-trivial primitive solutions.
+   Da̧browski [57] studied equations of the form y4 − z2 = sx p , which, after substitution x → − x, can be
+rewritten with positive coefficients as
+                                              sx p + y4 = z2 ,                                         (2.8)
+where (s, p) are certain pairs of odd primes. They used a result from [86] to deduce the following theorem.
+Theorem 2.8. Let s > 3 be a prime and let s √  ≡ 3 mod 8 and s 6= 2t2 + 1, or s ≡ 5 mod 8 and s 6= t2 + 4.
+In addition, let p be a prime satisfying p > (8 s + 1 + 1)16(s−1) . Then Eq. (2.8) has no non-trivial primitive
+integer solutions.
+    Examples of s satisfying the conditions of Theorem 2.8 are s = 11, 37, 43 and so on.
+    Equation
+                                                sx p + y4 = z4                                                (2.9)
+is a special case of (2.8) with z in (2.8) being a perfect square. This equation has been studied in [56, 57], where
+the following results have been obtained.
+
+                                                        10
+Theorem 2.9. Let α ≥ 0 be an integer and p ≥ 5 be a prime. Then equation
+
+                                                   2α x p + y4 = z4
+
+has no non-trivial primitive integer solutions.
+                                                                                      √
+Theorem 2.10. Let s be an odd prime and s 6= 2t ± 1. Let p be a prime satisfying p > ( 8s + 8 + 1)2s−2 .
+Let α ≥ 0 and β > 0 be integers. Then equation
+
+                                                  2α s β x p + y4 = z4                                     (2.10)
+
+has no non-trivial primitive integer solutions.
+
+    Eq. (2.10) has been further studied by Bennett [5], who proved a version of Theorem 2.10 with a smaller
+set of excluded primes.
+                                                    2          k
+                                           √ s = 2 +2s1−2for integer k ≥ 1, and let α, β be non-negative
+Theorem 2.11. Let s be a prime not of the form
+integers. Let p be a prime satisfying p > ( 8s + 8 + 1)   . Then Eq. (2.10) has no non-trivial primitive
+integer solutions.
+                                k
+     Primes of the form s = 22 + 1 are called Fermat primes. It is widely believed that the only such primes
+are s = 3, 5, 17, 257 and 65537. The case s = 3 corresponds to k = 0, while Theorem 2.11 fails to apply only
+if k ≥ 1. Bennett [5] also solved Eq. (2.10) for the exceptional cases s = 5 and 17, at least for (α, β) = (0, 1).
+
+Theorem 2.12. For every prime p > 5, equations
+
+                                    5x p + y4 = z4       and       17x p + y4 = z4
+
+have no non-trivial primitive integer solutions.
+
+   Theorem 2.11 is applicable only if p is large in terms of s. For small values of s, Bennett [5] was able to
+remove this condition and extend Theorem 2.11 to all p > 5.
+
+Theorem 2.13. If s is a prime with 2 ≤ s < 50, s 6= 5, s 6= 17, α and β are non-negative integers, and p > 5
+is a prime, then Eq. (2.10) has no non-trivial primitive integer solutions.
+
+    Pacetti and Villagra Torcomian [115] studied equation
+
+                                                     x p + by2 = z4                                        (2.11)
+
+for certain values of b, and they obtained the following results.
+
+Theorem 2.14. Let p > 19 be a prime number such that p 6= 97 and p ≡ 1, 3 modulo 8. Then, Eq. (2.11) with
+b = 6 has the only non-trivial primitive integer solutions ( x, y, z) = (1, ±20, ±7).
+
+Theorem 2.15. Let p > 19 be a prime number such that p ≡ 1, 3 modulo 8. If
+
+  (i) b = 10 and p 6= 139, or
+
+  (ii) b = 11 and p 6= 73, or
+
+ (iii) b = 19 and p 6= 43, 113, or
+
+ (iv) b = 129 and p 6= 43,
+
+then Eq. (2.11) has no non-trivial primitive solutions.
+
+Theorem 2.16. Let p > 900 be a prime number. Then, there are no non-trivial primitive solutions of Eq. (2.11)
+with b = 129.
+
+                                                          11
+   Cao [35] studied Eq. (2.11) with b = p, that is,
+
+                                                 x p + py2 = z4                                           (2.12)
+
+and proved that if p ≡ 1 modulo 4 is a prime and10 p ∤ B( p−1)/2, then Eq. (2.12) has no integer solutions with
+gcd(y, z) = 1, p|y and 2|z.
+   Langmann [95] considers the equation
+
+                                                ax2m + y2 = zn                                            (2.13)
+
+and they obtained the following result.
+
+Theorem 2.17. Let m, n ≥ 2 be integers. Then, for almost all square-free a 6≡ −1 modulo 4 with
+                                          n
+                                                  ≥ max{6, 14 − 2m},
+                                  gcd(n, h(− a))
+                                              √
+where h(− a) denotes the class number11 of Q ( − a), Eq. (2.13) has no non-trivial primitive integer solutions.
+
+   The case m = 2 of Theorem 2.17 solves many equations of the form ax4 + y2 = zn of signature (4, 2, n).
+
+2.3 Equations of signature (2, 6, r )
+Some researchers have considered equations with signatures (2, 6, r) for r ≥ 3. This family contains special
+signatures (2, 6, 4), (2, 6, 5) and (2, 6, 6).
+    Chen [42] studied Eq. (1.1) with p prime, q = 6, b = r = 2 and a = c = 1, that is,
+
+                                                 x p + 2y6 = z2 .                                         (2.14)
+
+Theorem 2.18. Let p be a prime such that p ≡ 1, 7 (mod 24) and p 6= 7. Then Eq. (2.14) does not have any
+non-trivial primitive integer solutions except those with x = ±1.
+
+   Eq. (1.1) with r prime, q = 6, p = 2 and a = c = 1, that is,
+
+                                                 x2 + by6 = zr ,                                          (2.15)
+
+has been studied in several papers. The case b = 2 of (2.15), that is,
+
+                                                 x2 + 2y6 = zr ,                                          (2.16)
+
+has been studied by Pacetti and Villagra Torcomian [114], where it was resolved for all r > 257.
+
+Theorem 2.19. Let r > 257 be a prime number. Then Eq. (2.16) has no non-trivial primitive integer solutions.
+
+   Koutsianas [88] solved the case b = 3 of (2.15), that is, equation
+
+                                                 x2 + 3y6 = zr .                                          (2.17)
+
+Theorem 2.20. Let r ≥ 3 be an integer. If r 6= 4, then Eq. (2.17) has no non-trivial primitive integer solutions,
+while for r = 4 its only non-trivial primitive integer solutions are ( x, y, z) = (±47, ±2, ±7).
+
+   Eq. (2.15) with b = 6, that is,
+                                                 x2 + 6y6 = zr ,                                          (2.18)
+was solved by Pacetti and Villagra Torcomian [114] for r > 563.
+
+Theorem 2.21. Let r > 563 be a prime number. Then, Eq. (2.18) has no non-trivial primitive integer solutions.
+
+
+                                                       12
+                                          Table 2.1: Details for Theorem 2.22.
+
+                                      b     r0           Congruence conditions
+                                      5    1033
+                                      7    337              r ≡ 5, 7 (mod 12)
+                                     11    557                r ≡ 3 (mod 4)
+                                     13    3491
+                                     15    743      r ≡ 5, 7, 15, 17, or 19 (mod 24)
+                                     19    1031
+
+
+
+   Eq. (2.15) with some other values of b has been studied in [97], where the following theorem has been
+proven.
+
+Theorem 2.22. Let (b, r0 ) be as in Table 2.1. Assume that r ≥ r0 is a prime satisfying the congruence
+conditions in Table 2.1. Then Eq. (2.15) has no non-trivial primitive integer solutions.
+
+    In the same paper [97], the authors remarked that they also studied (2.15) with b = 10 and b = 17, but the
+resulting computation is unfeasible.
+    Zelator [150] proves that for any positive odd integer b with a prime factor l ≡ ±3 modulo 8 and positive
+integers m and n, the equation
+                                               x2 + b2 y2m = z4n
+has no positive integer solutions with gcd( x, by) = 1 and y odd. With m = 3 and n = 1, this gives some
+partial progress towards the resolution of the equation x2 + b2 y6 = z4 of signature (2, 6, 4).
+
+2.4 Equations of signature (4, 4, 3)
+Let us now discuss Eq. (1.1) with ( p, q, r) = (4, 4, 3) and a = c = 1, that is, equation
+
+                                                      x4 + by4 = z3 .                                                  (2.19)
+
+The case b = 2 of (2.19) has been resolved in 2017 by Söderlund [136].
+
+Theorem 2.23. The only non-trivial primitive integer solutions to the equation
+
+                                                      x4 + 2y4 = z3
+
+are ( x, y, z) = (±3, ±5, 11).
+
+    The case b = 3 was solved in 1994 by Terai [144].
+
+Theorem 2.24. The equation
+                                                      x4 + 3y4 = z3
+has no non-trivial primitive integer solutions.
+
+    The next case b = 4 is a special case of the following theorem [139].
+
+Theorem 2.25. For any prime number s, equation
+
+                                                      x 4 + s2 y4 = z3
+
+has no non-trivial primitive integer solutions.
+  10 Here, B
+             n denotes the nth Bernoulli number.
+  11 A list of the class numbers for the first 10,000 square-free a can be found at https://oeis.org/A000924/b000924.txt.
+
+
+
+                                                             13
+               Table 2.2: Uninvestigated equations (1.1) with H = | a|2 p + |b|2q + |c|2r ≤ 60.
+
+                H            Equation          H            Equation           H        Equation
+                40      x4 + 2y3 + z3 = 0      56      x4 + 4y3 + z3 = 0       56   x5 + y4 − 2z2 = 0
+                48     x4 + 3y3 + z3 = 0       56     2x4 − y4 + z3 = 0        60   x5 + y4 + 3z2 = 0
+                56     x4 + 3y3 + 2z3 = 0      56     x5 + 2y3 + z3 = 0        60   x5 + y4 − 3z2 = 0
+
+
+
+    The next case is b = 5, and we do not know whether this case has been solved. In 2019, Söderlund [137]
+reproved the case b = 3 and resolved the cases of b = 19, 43 and 67.
+Theorem 2.26. For b ∈ {3, 19, 43, 67}, equation
+
+                                                     x4 + by4 = z3
+
+has no non-trivial primitive integer solutions.
+
+2.5 A systematic approach
+Monograph [77] suggests studying Diophantine equations systematically. It defines the size of Eq. (1.1) as
+H = | a|2 p + |b|2q + |c|2r , and lists all non-trivial equations of size H ≤ 60. Equations of small size with
+|abc| = 1 are covered in Table 1.1. Equations x4 + y4 = 2z3 and y3 + z3 = 2x4 of size H = 48 are
+special cases of Theorems 4.32 and 4.3, respectively. Equation 2x2 + y4 = z5 of size H = 56 is the r = 5
+case of Theorem 2.6. Equation x4 + 2y4 = z3 of the same size has been solved in Theorem 2.23. Equations
+x4 + 2y3 + 2z3 = 0, x4 − y4 = 2z3 and x4 − y4 = 3z3 of sizes H = 48, 48 and 56, respectively, have been
+solved in [148, Appendix A]. All other non-trivial equations of size H ≤ 60 are listed in Table 2.2. All these
+equations except x5 + 2y3 + z3 = 0 have special signatures, and we were not able to find a reference where
+any of them has been solved. We invite the reader to investigate these equations.
+
+
+3 Equations of signature ( p, p, p)
+3.1 Reduction to computing rational points on hyperelliptic curves
+As discussed in the introduction, if the exponents ( p, q, r) in (1.1) are not special, then we may assume that all
+p, q, r are prime. In this section we discuss the case p = q = r, that is, equation
+
+                                                    ax p + by p = cz p ,                                      (3.1)
+
+where a, b, c are positive integers, and p ≥ 5 is a prime. It is well-known [77, Section 6.2.3] and easy to check
+that if ( x, y, z) with xyz 6= 0 is an integer solution to (3.1), then
+
+                        ( X, Y ) = ( xy/z2 , a( x/z) p − c/2),      ( xz/y2 , −c(z/y) p + b/2)
+                                    and   (yz/x2 , b(y/x) p + a/2)
+are rational points on the curves
+
+                     Y 2 = − abX p + c2 /4,   Y 2 = acX p + b2 /4          and Y 2 = bcX p + a2 /4,           (3.2)
+
+respectively. In all cases, X 6= 0. These are curves of genus g = ( p − 1)/2 ≥ 2, and, by Faltings’ theo-
+rem [68], each of them has a finite number of rational points. If these points can be computed for at least one of
+these curves, it is straightforward to convert them into solutions to (3.1). However, computing rational points
+on a high-genus curve is a difficult problem in general, and the algorithms are known only in some special
+cases. One example is given by the following theorem, which is a corollary of the main result of [118], and
+formulated explicitly in [77, Theorem 3.76].
+
+                                                            14
+Theorem 3.1. There is an algorithm for computing all rational solutions to any equation defining a curve of
+genus g ≥ 2 whose Jacobian has rank r = 0.
+
+    The definition of the rank of Jacobian r in Theorem 3.1 is too technical to be presented here, but we mention
+that for the equation y2 = P( x), the rank r can be computed (most often estimated) using the following Magma
+commands
+
+                               > P < x >:= PolynomialRing(Rationals());
+                               > C := HyperellipticCurve(P(x));
+                               > J := Jacobian(C);
+                               > RankBounds(J);
+
+that can be run in the Magma calculator http://magma.maths.usyd.edu.au/calc/. In general, the output
+looks like “a b”, where a and b are integers that are the lower and upper bounds for the rank r of the Jacobian.
+If for at least one out of the three curves (3.2) the output is “0 0”, then its rational points can be computed by
+Theorem 3.1, which in turn leads to the resolution of the corresponding Eq. (3.1).
+
+3.2 Explicit small values of p
+We next discuss Eq. (3.1) for explicit small p ≥ 5. In this section, we will not assume that p is prime.
+   With p = 5, Eq. (3.1) becomes
+                                               ax5 + by5 = cz5 ,                                              (3.3)
+where a, b, c are positive integers. For Eq. (3.3), the corresponding curves (3.2) have genus g = 2, and if at least
+one of these curves has the rank of the Jacobian r ≤ 1, then its rational points can be computed by Magma’s
+Chabauty command, which leads to the complete resolution of (3.3). As noted in Sections 6.2.2 and 6.3.4
+of [77], this method resolves Problem 1.8 for all Eqs. (3.3) with a + b + c < 19. If Eqs. (3.3) are ordered by
+a + b + c, then the first Eq. (3.3) for which Problem 1.8 is left open in [77] is
+
+                                               4x5 + 4y5 = 11z5 .                                             (3.4)
+
+   If an Eq. (3.3) has some obvious non-trivial integer solution, this immediately solves Problem 1.8 with the
+“Yes” answer, but leaves open the problem of listing all primitive integer solutions (Problem 1.7). In particular,
+equation
+                                              2x5 + 3y5 = 5z5
+has solution ( x, y, z) = (1, 1, 1), but we do not know whether it has any other non-trivial primitive integer
+solutions.
+    Problem 1.8 for Eq. (3.3) with a = b = 1, that is,
+
+                                                  x5 + y5 = cz5 ,                                             (3.5)
+
+reduces to investigating which positive integers c can be represented as a sum of two rational fifth powers. As
+remarked in [77, Section 6.3.4], the discussed argument solves this question for all positive integers 1 ≤ c ≤
+100 except of c = 68, 74, 87 and 88.
+    Dirichlet (see [59, pp. 735]) proved the non-existence of non-zero integer solutions to (3.5) for certain
+values of c with no prime factors congruent to 1 modulo 5. Lebesgue conjectured that (3.5) is not solvable for
+any such c, except of solutions with x = y = z for c = 2. In 2004, Halberstadt and Kraus [81] confirmed this
+conjecture.
+
+Theorem 3.2. Let c be an integer with no prime factors congruent to 1 modulo 5. If c 6= 2, Eq. (3.5) has no
+non-trivial integer solutions. If c = 2, the only non-trivial primitive solutions are ( x, y, z) = ±(1, 1, 1).
+
+
+
+
+                                                        15
+    In particular, out of the exceptional values c = 68, 74, 87 and 88 listed above, Theorem 3.2 covers the first
+three, hence the only 1 ≤ c ≤ 100 for which Problem 1.8 for Eq. (3.5) remains open is c = 88. In this case,
+(3.5) reduces to (3.4).
+    With p = 6, Eq. (3.1) becomes
+                                                 ax6 + by6 = cz6 .                                         (3.6)
+In 2023, Newton and Rouse [108] investigated the solvability of Eq. (3.6) with a = b = 1. Specifically, they
+proved that 164634913 is the smallest positive integer that is the sum of two sixth powers of rational numbers,
+and not the sum of two sixth powers of integers. To prove this result, the authors determine all positive integers
+c ≤ 164634913 for which the equation
+                                                x6 + y6 = cz6
+has a solution with z 6= 0.
+    Dirichlet (see [59, pp. 736]) proved that Eq. (3.1) with p = 14, a = c = 1 and b = 2α 7β for α ≥ 0 and
+β ≥ 1, that is,
+                                             x14 + 2α 7β y14 = z14 ,
+has no non-trivial primitive integer solutions.
+
+3.3 The case a = b = 1
+We next discuss the works investigating infinite families of Eq. (3.1) in which some of a, b, c are fixed while p
+varies. We start with the case a = b = 1. In this instance, Eq. (3.1) reduces to
+                                                          x p + y p = cz p ,                                                      (3.7)
+where c is a positive integer and p ≥ 5 is a prime.
+   Eq. (3.7) with c = 15, that is,
+                                                x p + y p = 15z p                                                                 (3.8)
+was considered by Kraus [89] who proved the following result.
+Theorem 3.3. If p ≥ 5 is a prime12 such that either 2p + 1 or 4p + 1 is also prime then Eq. (3.8) has no
+non-trivial integer solutions.
+    Examples of primes satisfying the condition of Theorem 3.3 are p = 5, 7, 11, 13, 23 and so on. Kraus [89]
+also proved that for all primes p ≥ 5 Eq. (3.8) has no non-trivial integer solutions with xyz divisible by p.
+    We next consider Eq. (3.7) with c = p, that is,
+                                                          x p + y p = pz p .                                                      (3.9)
+    Maillet (see [59, pp. 759]) solved Eq. (3.9) with p being a regular prime. Recall that a prime p is said to be
+a regular prime, when it is not a factor of the numerator of any one of the first ( p − 3)/2 Bernoulli numbers.
+Theorem 3.4. For any regular prime p, Eq. (3.9) has no non-trivial integer solutions.
+    A note of Westlund [147] extended the theory of this equation for any odd prime p, resulting in the following
+partial result.
+Theorem 3.5. For any odd prime p, Eq. (3.9) has no integer solutions such that z is coprime to p.
+    Ribet [124] considered Eq. (3.7) with c = 2α where α is a positive integer, that is,
+                                                         x p + y p = 2α z p .                                                   (3.10)
+The case when α = 1 corresponds to the three integers x p , z p and y p forming an arithmetic progression.
+Confirming conjecture of Dénes’ [58], Darmon and Merel [55, 99] proved that this is impossible unless xyz = 0
+or x, y and z are all equal.
+  12 Kraus [89] states the result for p ≥ 7, but direct verification using the method described in 3.1 shows that it remains correct for
+
+p = 5.
+
+
+                                                                  16
+Theorem 3.6. Eq. (3.7) with c = 2 has no primitive solutions with | xyz| > 1 for integers p ≥ 3.
+    Theorem 3.6 treats the case of α = 1 in (3.10). For 2 ≤ α < p, Ribet [124] proved the following result.
+Theorem 3.7. For prime p ≥ 3 and any 2 ≤ α < p, Eq. (3.10) has no solutions with xyz 6= 0.
+   Because the case of general α ≥ 0 can be reduced to the case 0 ≤ α < p, and the case α = 0 is covered by
+Fermat’s Last Theorem, a combination of Theorems 3.6 and 3.7 solves (3.10) for all α ≥ 0.
+   We next discuss Eq. (3.7) with c = sα for odd prime s, that is, equation
+                                               x p + y p = sα z p .                                     (3.11)
+    Kraus [90] investigated Eq. (3.11) and proved the following result.
+Theorem 3.8. Let s be an odd prime number which is not of the form s = 2k ± 1, and let α be a non-negative
+                                         p          (s+11)/6
+integer. If p is a prime such that p > 1 + (s + 1)/2           , then Eq. (3.11) has no solutions in non-zero
+integers x, y, z.
+   Theorem 3.8 works only if p is large in terms of s. For small s, we have the general results covering all p.
+As remarked by Ribet [124], the following result was proved by Serre [128] subject to some conjectures that
+have been established in later works [90, 123, 149].
+Theorem 3.9. Suppose that p and s are prime numbers, 3 ≤ s ≤ 60, s 6= 31, p ≥ 11, p 6= s. If α ≥ 1, then
+there are no triples of non-zero integers ( x, y, z) which satisfy (3.11).
+    Cohen [47, Theorem 15.5.3] extended Theorem 3.9 to the range 3 ≤ s ≤ 100 and all p ≥ 5.
+Theorem 3.10. Suppose that 3 ≤ s ≤ 100 is a prime, s 6= 31. Then Eq. (3.11) with prime p ≥ 5 and any
+α ≥ 1, does not have any solutions with x, y, z non-zero and pairwise coprime.
+    Theorem 3.10 does not work for s = 31, because the resulting equation
+                                              x p + y p = 31α z p ,                                     (3.12)
+has the primitive solution ( x, y, z) = (2, −1, 1) when α = 1 and p = 5. For 7 ≤ p ≤ 106 , Cohen [47] proved
+the following theorem.
+Theorem 3.11. Eq. (3.12) does not have any non-trivial pairwise coprime solutions ( x, y, z) for prime p
+satisfying 7 ≤ p ≤ 106 .
+   See [47, Theorem 15.6.4] for the case 11 ≤ p ≤ 106 and [47, Corollary 15.7.5] for the case p = 7.
+   We next return to Eq. (3.7) with c not necessarily being a prime power. Sitaraman [135] considered the case
+c = sp for regular prime p and integer s, and obtained the following theorem.
+Theorem 3.12. Let p ≥ 5 be a regular prime, and let s be an integer divisible only by primes of the form
+kp − 1 where gcd(k, p) = 1. Then
+                                         x p + y p = psz p
+has no non-trivial integer solutions.
+
+3.4 The case a = 1
+In this instance, Eq. (3.1) reduces to
+                                               x p + by p = cz p ,                                      (3.13)
+where integers b, c > 1.
+   Eq. (3.13) with b = 3, c = 5 and p ≥ 7 a prime, that is,
+                                               x p + 3y p = 5z p                                        (3.14)
+was considered by Kraus [89] who proved that the following result.
+
+                                                       17
+Theorem 3.13. If p ≥ 5 is a prime13 such that 2p + 1 or 4p + 1 is also prime then Eq. (3.14) has no non-zero
+integer solutions.
+
+    Examples of primes satisfying the condition of Theorem 3.13 are p = 5, 7, 11, 13, 23 and so on. Kraus [89]
+also proved that for all primes p ≥ 5 Eq. (3.14) has no non-trivial integer solutions with xyz divisible by p.
+Kraus [80] later verified that for 5 ≤ p < 107 , Eq. (3.14) has at least one local obstruction and therefore has
+no non-trivial integer solutions.
+    Kraus [90] considered equations of the form (3.13) with coefficients being powers of primes, and obtained
+the following results.
+
+Theorem 3.14. Let s be an odd prime number not of the form s = 2k ± 1. Let α and β be non-negative integers.
+                                   p          2( s − 1)
+If p is a prime such that p > 1 + 8(s + 1)                , b = 2β , c = sα and if α is not a multiple of p, then there
+are no integer solutions to Eq. (3.13) with xyz 6= 0.
+
+Theorem 3.15. Let s be an odd prime number which is not equal to 17, and p ≥ 5 is prime with p 6= s.
+             p           (s+1)/6
+If p > 1 + (s + 1)/6               , b = 16 and c = sα with α ≥ 0, then there are no integer solutions to
+Eq. (3.13) with xyz 6= 0.
+
+3.5 General a, b, c
+Dahmen and Yazdani [52] considered Eq. (3.1) with c = 16 and p ≥ 5, that is,
+
+                                                         ax p + by p = 16z p ,                                      (3.15)
+
+and their results imply the following theorem.
+
+Theorem 3.16. Let
+
+                            ( a, b) ∈ {(52 , 234 ), (58 , 37), (57 , 597 ), (7, 477 ), (11, (5 · 17)2 )}.
+
+Then for odd p ≥ 5, Eq. (3.15) has no non-zero integer solutions.
+
+    In 2002, Kraus [80, Proposition 2.3] considered Eq. (3.1) with a = 3, b = 4 and c = 5 and proved the
+following theorem.
+
+Theorem 3.17. Let p be a prime number congruent to 13 modulo 24. Then the equation
+
+                                                          3x p + 4y p = 5z p                                        (3.16)
+
+has no non-trivial integer solutions.
+
+    In 2016, Freitas and Kraus [72] improved this result and obtained the following.
+
+Theorem 3.18. Let p ≥ 5 be a prime satisfying p ≡ 5 (mod 8) or p ≡ 19 (mod 24). Then Eq. (3.16) has no
+non-trivial integer solutions.
+
+    In the same paper, Freitas and Kraus [72] also studied Eq. (3.1) with a = 3, b = 8 and c = 21 and obtained
+the following result.
+
+Theorem 3.19. Let p ≥ 5 be a prime14 satisfying p ≡ 5 (mod 8) or p ≡ 23 (mod 24). Then the equation
+
+                                                         3x p + 8y p = 21z p
+
+has no non-trivial integer solutions.
+  13 Kraus [89] states the result for p ≥ 7, but direct verification shows that it remains correct for p = 5.
+  14 The paper [72] states the result for p > 5, but direct verification shows that it remains correct for p = 5.
+
+
+
+                                                                    18
+   Dieulefait and Soto [64] studied Eq. (3.1) under some restrictions on the prime factors of abc, and they
+proved the following results.15
+
+Theorem 3.20. Assume that all prime factors of abc are 1 modulo 3. Then the equation
+
+                                                        ax p + by p = 16cz p                                                             (3.17)
+
+has no solutions with xyz 6= 0 for all sufficiently large p.
+
+Theorem 3.21. Let n be a positive integer not dividing 14, 16 or 18. Assume that all prime factors of a, b, c are
+equal to ±1 modulo n. Then Eq. (3.17) has no solutions with xyz 6= 0 for all sufficiently large p.
+
+Theorem 3.22. Assume that all prime factors of abc are 1 modulo 12. Then for every integer r ≥ 0, r 6= 1, the
+equation
+                                          ax p + by p = 2r cz p
+has no solutions with xyz 6= 0 for all sufficiently large p.
+
+Theorem 3.23. Let q be an odd prime. Assume that gcd( a, b, c) = 1, all odd prime factors of a, b, c are equal
+to 1 modulo 4q, and either abc is odd or 4|bc. Then Eq. (3.1) has no solutions with xyz 6= 0 for all sufficiently
+large p.
+
+    In the same work, the authors [64] also prove the following result which uses the Legendre symbol16 ·· .
+                                                                                                              
+
+Theorem 3.24. Let q ≥ 5 and l ≥ 5 be primes. Assume one of the following:
+
+  (i) (q, l ) ≡ (−5, 5) or (11, −11) modulo 24,
+                                                               q
+  (ii) q ≡ 11 modulo 24, l ≡ 5 modulo 24 and                   l = −1, or
+
+ (iii) q ≡ ±3 modulo 8, l ≡ −1 modulo 24, l 6≡ −1 modulo q.
+
+Assume that gcd( a, b, c) = 1 and rad( abc) = ql. Let n = 0 or n ≥ 4, then the equation
+
+                                                       ax p + by p + 2n cz p = 0
+
+has no solutions with xyz 6= 0 for all sufficiently large p. Let r ≥ 1, then the equation
+
+                                                      ax p + 2r by p + 2r cz p = 0
+
+has no solutions with xyz 6= 0 for all sufficiently large p.
+
+    Powell [120] studied Eq. (3.1) and obtained the following result.
+
+Theorem 3.25. For any even integer m for which17 3φ(m) > m, if n is any positive integer sufficiently large
+for which mn + 1 = q, with q a prime, and a, b, and c are integers for which a ± b ± c 6= 0 and a 6= ±b,
+b 6= ±c, a 6= ±c, then the equation
+                                           axn + byn = czn                                           (3.18)
+has no solutions in integers x, y, z with xyz 6= 0.
+
+    The work [122] then provides explicit bounds for what it means for n to be sufficiently large, and obtained
+the following result.
+
+Theorem 3.26. Let a, b, c be non-zero integers such that a ± b ± c 6= 0, a ± b 6= 0, a ± c 6= 0, b ± c 6= 0.
+  15 These results state that p is sufficiently large. Specifically, p > G ( a, b, c) which is an explicit bound dependent on a, b, c.
+  16 For the definition, see [45, Sec. 1.4.2].
+  17 Here φ ( c) denotes Euler’s totient function.
+
+
+
+
+                                                                     19
+  (a) Let l be a prime, l > | a| + |b| + |c|, let n ≥ 1 be an integer such that 2ln + 1 = q is a prime bigger
+      than (| a| + |b| + |c|)l −1 .
+
+  (b) Let m ≥ 2 be an even integer such that 3φ(m) > m, let n ≥ 1 be an integer such that mn + 1 = q is a
+      prime bigger than (| a| + |b| + |c|)φ(m) .
+
+If (a) or (b) holds, then Eq. (3.18) has no solutions in integers x, y, z with xyz 6= 0.
+
+     Browning and Dietmann [28] proved that for any fixed n > 1 the set of integers ( a, b, c) for which Eq. (3.18)
+is solvable in non-zero integers ( x, y, z) has density 0.
+
+
+4 Equations of signature ( p, p, r)
+In this section we discuss the case p = q in (1.1), that is, equation
+
+                                                 ax p + by p = czr ,                                           (4.1)
+
+where a, b, c are positive integers, p 6= r primes and p ≥ 3. We discuss the works investigating infinite families
+of (4.1) in which some of a, b, c are fixed whilst p or r varies.
+
+4.1 The case a = b = 1
+We start with the case a = b = 1. In this instance Eq. (4.1) reduces to
+
+                                                  x p + y p = czr .                                            (4.2)
+
+We remark that for Eq. (4.2) Proposition 1.4 is applicable if and only if c is not divisible by a pth power of any
+prime. If this condition is satisfied, we may talk about solutions in pairwise coprime integers ( x, y, z). From
+symmetry, we may also assume that x > y.
+    In 2023, Freitas and Najman [73] considered Eq. (4.2) where p, r > 3 are primes and c is an odd positive
+integer, not an rth power and r ∤ c. They obtained that for a set of prime exponents p of positive density, the
+equation has no non-trivial primitive solutions ( x, y, z) such that 2 | x + y or r | x + y.
+    In 2024, Kara, Mocanu and Özman [87] prove some results conditional on the weak Frey–Mazur conjec-
+ture [87, Conjecture 3.9] and the Eichler–Shimura conjecture [76, 87, Conjecture 3.11].
+
+Theorem 4.1. Let p > 5 be a fixed prime and c be a non-zero integer with gcd(c, p) = 1. Assume the Weak
+Frey-Mazur Conjecture. Then,
+
+  (i) If p ≡ 3 modulo 4, then there exists a (non-effective) constant B p such that for any prime r with r > B p ,
+      Eq. (4.2) has no non-trivial primitive integer solutions.
+
+  (ii) If p ≡ 1 modulo 4, then there exists a (non-effective) constant B ′p such that for any prime r with r > B ′p ,
+       Eq. (4.2) has no non-trivial primitive integer solutions ( x, y, z) where p|z.
+
+Theorem 4.2. Let p > 5 be a fixed prime such that p ≡ 1 modulo 4 and c be a non-zero integer with
+gcd(c, p) = 1. Assume the Weak Frey-Mazur Conjecture and the Eichler-Shimura Conjecture. Then there
+exists a (non-effective) constant B ′′p such that for any prime r with r > B ′′p , Eq. (4.2) has no non-trivial
+primitive integer solutions.
+
+4.1.1   Eq. (4.2) with fixed p
+In this section, we consider Eq. (4.2) with p ≥ 3 fixed and r varies. In this section, we will not assume that p
+is a prime. We start with the case p = 3.
+     Eq. (4.2) with p = 3, c = 2 and r even was solved by Zhang and Bai [153].
+
+
+                                                         20
+Theorem 4.3. Let r ≥ 2 be an integer. Then the equation
+
+                                                           x3 + y3 = 2z2r
+
+has no integer solutions with x, y coprime other than ( x, y, z) = (1, 1, ±1), ±(1, −1, 0).
+
+    Eq. (4.2) with p = 3, c = sα with s prime, α ≥ 1 and r ≥ 4, that is,
+
+                                                           x 3 + y3 = s α zr                                                         (4.3)
+
+has been studied by several authors. In 2006, Mulholland [107] obtained the following result.
+
+Theorem 4.4. There is an explicit set T of primes containing a positive proportion of all primes,18 such that
+for every s ∈ T, every integer α ≥ 1, and every prime r satisfying r ≥ s8s and r ∤ α, Eq. (4.3) has no solutions
+in coprime non-zero integers x, y, z.
+
+    Theorem 4.4 has been significantly strengthened by Bennett, Luca and Mulholland [12].
+                                                                                 √
+Theorem 4.5. There exists a set W3 of primes, with #{s ≤ x : s ∈ W3 } ≤ K x log2 ( x) for some K > 0,
+such that for every prime s ≥ 5 with s 6∈ W3 , any α ≥ 1, and every prime r satisfying r ≥ s2s , Eq. (4.3) has no
+solutions in coprime non-zero integers x, y, z.
+
+    Because the number of all primes up to x is about logx x , set W3 contains a negligible part of all primes,
+hence Theorem 4.5 solves Eq. (4.3) for almost all primes s. There is an algorithm for checking whether any
+particular prime belongs to W3 . For example, it is known [12] that all primes s equal to 317 or 1757 modulo
+2040 do not belong to W3 , hence Theorem 4.5 is applicable to all such primes.
+    Theorem 4.5 is not applicable for primes s ∈ W3 . In 2018, Bennett, Bruni and Freitas [6] proved a more
+general version of this theorem with a smaller exceptional set.
+    Let
+                          S1 = {q prime : q = 2a 3b ± 1, a ∈ {2, 3} or a ≥ 5, b ≥ 0},
+                               S2 = {q prime : q = |2a ± 3b |, a ∈ {2, 3} or a ≥ 5, b ≥ 1},
+                                                                                
+                                                          1 a
+                                     S3 = q prime : q = (2 + 1), a ≥ 5 odd ,
+                                                          3
+                           S4 = {q prime : q = d2 + 2a 3b , a ∈ {2, 4} or a ≥ 8 even, b odd},
+                            S5 = {q prime : q = 3d2 + 2a , a ∈ {2, 4} or a ≥ 8 even, d odd},
+                                                                                
+                                                        1 2        b
+                                   S6 = q prime : q = (d + 3 ), d and b odd ,
+                                                        4
+                                                                             
+                                                             1   2
+                                      S7 = q prime : q = (3d + 1), d odd ,
+                                                             4
+                                                                                  
+                                                      1
+                                 S8 = q prime : q = (3v2 − 1), u2 − 3v2 = −2 ,
+                                                      2
+where a, b, u, v and d are integers, and let
+
+                                        S0 = S1 ∪ S2 ∪ S3 ∪ S4 ∪ S5 ∪ S6 ∪ S7 ∪ S8 .                                                 (4.4)
+
+Theorem 4.6. For every prime s ≥ 5 such that s 6∈ S0 , any α ≥ 1, and any prime r satisfying r ≥ s2s , Eq. (4.3)
+has no solutions in coprime non-zero integers x, y, z.
+  18 Specifically, T is the set of primes s for which there does not exist an elliptic curve with rational 2-torsion and conductor 2 M 32 s,
+
+1 ≤ M ≤ 3.
+
+
+
+
+                                                                    21
+Table 4.1: Modularity conditions on r for small primes s, such that Eq. (4.5) has no primitive integer solutions
+if r ≥ s2s .
+
+                     s              Condition on r                             s                  Condition on r
+                     5           13,19 or 23 (mod 24)                         47        5, 11, 13, 17, 19 or 23 (mod 24)
+                    11         13, 17, 19 or 23 (mod 24)                      59        5, 7, 11, 13, 19 or 23 (mod 24)
+                    13                11 (mod 12)                             67           7, 11, 13, 29, 37, 41, 43, 59,
+                                                                                       67, 71, 89, 101 or 103 (mod 120)
+                    17            5,17 or 23 (mod 24)                         71                     5 (mod 6)
+                    23             19 or 23 (mod 24)                          73             41,71 or 89 (mod 120)
+                    29     7, 11, 13, 17, 19 or 23 (mod 24)                   79        5, 7, 11, 13, 19 or 23 (mod 24)
+                    31              5 or 11 (mod 24)                          89            13, 17, 19 or 23 (mod 24)
+                    41      5, 7, 11, 17, 19 or 23 (mod 24)                   97                   11 (mod 12)
+
+
+
+   As mentioned in [6], S0 ⊂ W3 , hence Theorem 4.6 is a generalization of Theorem 4.5. The smallest
+examples of primes in W3 \ S0 are
+                                  s = 53, 83, 149, 167, 173, 199, 223, 227, 233, 263, 281, 293, 311, 347, 353, 359, . . .
+
+
+Examples of infinite families outside S0 are primes s equal to 53 modulo 96, 120 or 144, or primes s equal to
+65 modulo 81 or 84. So, Theorem 4.6 is applicable to all such primes.
+   Bennett, Bruni and Freitas [6] considered the equation
+
+                                                                  x3 + y3 = szr                                             (4.5)
+
+where s and r are primes. For small primes s ∈ S0 , they determined [6, Theorem 7.2] the modularity conditions
+on r such that for r ≥ s2s the equation has no primitive integer solutions, see Table 4.1.
+    In the case s = 5, the authors were able to remove the condition r ≥ s2s and prove the following theorem.
+
+Theorem 4.7. If r is prime with r ≡ 13, 19 or 23 (mod 24), then there are no non-trivial primitive integer
+solutions ( x, y, z) to the equation
+                                            x3 + y3 = 5zr .
+
+    Set S0 contains all primes of the form s = 2a 3b − 1 for integers a ≥ 5 and b ≥ 1, hence these primes are
+not covered by Theorem 4.6. For such primes, we have the following result [6], which uses a Jacobi symbol19
+condition.
+
+Theorem 4.8. Suppose that s = 2a 3b − 1 is prime, where a ≥ 5 and b ≥ 1 are integers and let α ≥ 1. If
+r > s2s is prime and integers (α, r, a, b) do not satisfy the condition
+                                           α   4 − a   −6b 
+                                               =              =         ,                        (4.6)
+                                            r           r            r
+then Eq. (4.3) has no non-trivial primitive solutions.
+
+    Another result from [6] is the following one.
+Theorem 4.9. Let T = S7 ∪ {q prime : q = 3d2 + 16, d ∈ Z }. If s is a prime with s 6∈ T, then, for a positive
+proportion of primes r, there are no solutions to equation
+
+                                                                  x3 + y3 = szr
+
+in coprime non-zero integers x, y and z.
+  19 For the definition and its main properties, see [45, Section 1.4.2].
+
+
+
+                                                                           22
+    We next discuss Eq. (4.2) with p = 4 and c, r primes, that is
+
+                                                 x4 + y4 = czr .                                              (4.7)
+
+If c is not equal to 1 modulo 8, then it is easy to show (see [61]) that (4.7) has no solutions modulo c other
+than (0, 0, 0) and therefore has no primitive integer solutions for any r. Hence, it suffices to consider the case
+c ≡ 1(mod 8).
+    We first discuss Eq. (4.7) with c = 73, 89 or 113 and r > 13. Dieulefait [61] proved the following theorem.
+
+Theorem 4.10. If r is a prime with r > 13, then Eq. (4.7) with c = 73, 89 or 113 does not have any non-trivial
+primitive integer solutions.
+
+    The techniques of [61] are applicable only to prove that an equation of the form (4.7) has no primitive
+integer solutions. If c = A4 + B4 for some integers A, B, then the equation has an integer solution with z = 1,
+so the techniques of [61] are not applicable. For a different reason, the techniques are also not applicable if
+c = (2A)4 + B2 for some integers A, B. The values c = 73, 89, 113 are the first three values of c satisfying
+c ≡ 1(mod 8) and not belonging to these excluded families.
+    We next discuss Eq. (4.2) with p = 5, that is,
+
+                                                 x5 + y5 = czr .                                              (4.8)
+
+   In 2015, Bruni [34] proved a version of Theorem 4.5 with exponent 5 instead of 3.
+                                                                                 √
+Theorem 4.11. There exists a set W5 of primes, with #{s ≤ x : s ∈ W5 } ≤ K x log2 ( x) for some K > 0,
+such that for every prime s ≥ 5 such that s 6∈ W5 , any α ≥ 1, and any prime r satisfying r ≥ s13s , equation
+
+                                                 x 5 + y5 = s α zr                                            (4.9)
+
+has no solutions in coprime non-zero integers x, y, z.
+
+    Bruni [34] also developed methods for solving Eq. (4.9) for certain primes s belonging to W5 . In fact, he
+solved Eq. (4.9) for all primes s outside the specific families listed in Table 7.6 of [34].
+    For Eq. (4.8) with c = 2, that is,
+                                                 x5 + y5 = 2zr ,                                        (4.10)
+we have the following partial result.
+
+Theorem 4.12 ([22]). For all primes r, Eq. (4.10) has no non-trivial primitive integer solutions ( x, y, z) such
+that z is divisible by either 2, 5, or r.
+
+    Eq. (4.8) with c = 3, that is,
+                                                  x5 + y5 = 3zr                                             (4.11)
+has been solved for certain values of r in [19, 24], and then for all values of r by Billerey, Chen, Dieulefait and
+Freitas [22].
+
+Theorem 4.13. Eq. (4.11) has no non-trivial primitive integer solutions for any integer r ≥ 2.
+
+    We next discuss Eq. (4.8) for other values of c. In 2013, Dieulefait and Freitas [63] proved the following
+theorem.
+
+Theorem 4.14. Let s be an integer divisible only by primes si 6≡ 1 (mod 5).
+
+  (a) For any prime r > 13 such that r ≡ 1 (mod 4), or r ≡ ±1 (mod 5), Eq. (4.8) with c = 2s has no
+      non-trivial integer solutions with gcd( x, y) = 1.
+
+  (b) For any prime r > 73 such that r ≡ 1 (mod 4), or r ≡ ±1 (mod 5), Eq. (4.8) with c = 3s has no
+      non-trivial integer solutions with gcd( x, y) = 1.
+
+                                                         23
+    In 2007, Billerey [19] proved the following result.
+Theorem 4.15. Let c = 2α · 5γ with 2 ≤ α ≤ 4 and 0 ≤ γ ≤ 4 and let r be a prime satisfying r ≥ 7. Then,
+Eq. (4.8) has no non-trivial coprime integer solutions.
+    Billerey and Dieulefait [24] studied the cases of c = 7 and c = 13 in (4.8) and proved the following results.
+Theorem 4.16. If either (i) c = 7 and r ≥ 13 or (ii) c = 13 and r ≥ 19, then Eq. (4.8) does not have any
+non-trivial primitive integer solutions.
+    In the same paper [24], the authors also proved that Eq. (4.8) with c = 2α 3β 5γ , that is,
+
+                                                          x 5 + y5 = 2α 3 β 5γ zr
+
+with α ≥ 2, β, γ arbitrary and r ≥ 13, has no integer solutions with gcd( x, y) = 1 and z 6= 0. Work [19]
+studies this equation for primes r ≥ 7 and provides sufficient conditions for r, α, β and γ for which the equation
+has no non-trivial coprime integer solutions.
+    None of the theorems above include the case when c is divisible by 11 in (4.8). Noubissie [110] considered
+Eq. (4.8) with c = 2α 11, that is,
+                                               x5 + y5 = 2α 11zr                                            (4.12)
+and proved the following theorem.
+Theorem 4.17. Let r > 19 be prime and α ≥ 2. Then Eq. (4.12) has no non-trivial primitive integer solutions.
+    Noubissie [110] also proved some results in the cases α = 0 and α = 1 which are not included in Theorem
+4.17. If α = 0, the resulting equation x5 + y5 = 11zr has no non-trivial primitive solutions with x ≡ 2(mod 4),
+while if α = 1 then the resulting equation x5 + y5 = 22zr has no non-trivial primitive solutions with z even.
+    Let us now discuss Eq. (4.2) with p > 5. In case p = 6, Kraus [93] proved the following result.
+Theorem 4.18. Let r ≥ 5 be a prime number. Then equation
+
+                                                              x6 + y6 = 2zr
+
+has no non-trivial primitive integer solutions with | xyz| 6= 1.
+    For odd p, equation
+                                                              x p − y p = czr                                  (4.13)
+reduces to (4.2) by the trivial change of variables y → −y. For even p, these equations are not equivalent,
+and (4.13) must be considered separately. Kraus [93] studied Eq. (4.13) with p being an integer in the range
+6 ≤ p ≤ 12. To state the results, we must first introduce the following notation.
+    Given an integer N ≥ 1, we denote by D N the set of integers A ≥ 1 which satisfy both conditions
+  (i) for any prime number l we have20 νl ( A) < N, and,
+
+  (ii) for any prime divisor l of A we have l 6≡ 1 modulo N.
+    We may now state the theorems proved by Kraus [93].
+Theorem 4.19.          (1) Suppose we have
+
+                                        ( p, r) ∈ {(6, 2), (8, 2), (8, 3), (9, 3), (10, 2), (12, 2)}.
+
+       Then, for any integer c belonging to D p , Eq. (4.13) has no non-trivial primitive integer solutions.
+
+  (2) Suppose we have p = 5 or p = 7. Let c be an integer divisible by p and belonging to D p . Then,
+      Eq. (4.13) with r = 2 has no non-trivial primitive integer solutions.
+  20 For a prime l, ν ( A ) is the l-adic valuation of A, that is, the highest power of l that divides A.
+                     l
+
+
+                                                                     24
+Theorem 4.20. Let c ≥ 1 be an integer such that for any prime divisor l of c, we have νl (c) < 12 and l 6≡ 1
+modulo 4. Then, for any integer r ≥ 3, the equation
+
+                                                  x12 − y12 = czr
+
+has no non-trivial primitive integer solutions.
+
+     We now return to Eq. (4.2), and next discuss it with p = 7. Let s be an integer only divisible by primes
+si 6≡ 0, 1 modulo 7. In 2015, Freitas [70] proved that if either (i) α ≥ 2, β ≥ 0 and γ ≥ 0, or (ii) α = 1, β ≥ 1
+and γ ≥ 0, or (iii) α = 0, β ≥ 0 and γ ≥ 1, then Eq. (4.2) with p = 7, r ≥ 17 and c = 2α 3β 5γ s has no integer
+solutions where z is divisible by 7 and | xyz| > 1. In the same paper, Freitas [70] also proved the following
+result.
+
+Theorem 4.21. If α ≥ 2 or β > 0 or γ > 0, then Eq. (4.2) with p = 14, r ≥ 17 and c = 2α 3β 5γ s, (where s is
+an integer only divisible by primes si 6≡ 0, 1 modulo 7), has no primitive integer solutions with | xyz| > 1.
+
+    In 2024, the authors of [23] use the Darmon program [53] to solve Eq. (4.2) for ( p, c) = (7, 3).
+
+Theorem 4.22. For any integer r ≥ 2, equation
+
+                                                  x7 + y7 = 3zr
+
+has no non-trivial primitive integer solutions.
+
+    The case ( p, r) = (9, 2) of (4.2) has been studied by Cel [37], who proved the following result.
+
+Theorem 4.23. For any n ≥ 0, the equation
+
+                                                  x 9 + y9 = 2n z2
+
+has no non-trivial primitive integer solutions with z 6= ±1.
+
+   We next discuss the case p = 13 in (4.2). In 2014, Siksek and Frietas [75], improving an earlier result of
+Dieulefait and Freitas [62], proved the following theorem.
+
+Theorem 4.24. Let s = 3, 5, 7 or 11 and γ be an integer divisible only by primes γi 6≡ 1 (mod 13). Let also
+
+                                     R := {2, 3, 5, 7, 11, 13, 19, 23, 29, 71}.                            (4.14)
+
+If r is a prime not belonging to R, then:
+
+  (i) Eq. (4.2) with p = 13 and c = sγ has no primitive integer solutions ( x, y, z) such that 13 ∤ z and
+      | xyz| > 1.
+  (ii) Eq. (4.2) with p = 26 and c = 10γ has no primitive integer solutions with | xyz| > 1.
+
+     Billerey, Chen, Dieulefait, and Freitas [22] proved that Eq. (4.2) with c = 3, p = 13 and r ≥ 2 where
+r is not a power of 7 has no non-trivial primitive integer solutions. In a later paper, Billerey, Chen, Dembélé,
+Dieulefait, and Freitas [20] extended this result to all integers r ≥ 2.
+
+Theorem 4.25. Equation
+                                                  x13 + y13 = 3zr
+has no non-trivial primitive integer solutions for all integers r ≥ 2.
+
+
+
+
+                                                        25
+4.1.2   Eq. (4.2) with fixed r
+We now consider Eq. (4.2) with r fixed. We start with the case r = 2, that is, equation
+
+                                                     x p + y p = cz2 .                                       (4.15)
+
+    In 1977, Terjanian [145] proved for an odd prime p and integer c ≥ 2 with no square factor or a prime
+divisor of the form 2kp + 1, if ( x, y, z) is a non-trivial primitive integer solution to (4.15) with even z, then z
+must be divisible by p.
+    In 2011, Söderlund and Aldén [140] studied Eq. (4.15) with p = 5 and proved the following result.
+
+Theorem 4.26. If α = 0 or α ≥ 2, β ≥ 0, γ ≥ 0, s is a prime equal to 3 or 7 modulo 10, then the equation
+
+                                                     x5 + y5 = cz2                                           (4.16)
+
+with c = 2α 5β sγ has no non-trivial primitive integer solutions.
+
+    The examples of values of c covered by Theorem 4.26 are
+
+                    c = 1, 3, 5, 7, 8, 13, 15, 17, 23, 24, 35, 37, 40, 43, 47, 53, 56, 65, 67, 73, . . .
+
+Theorem 4.26 does not include the case α = 1. In the follow-up work [141], the same authors included this
+case as well, and thus solved Eq. (4.16) for c = 10 and c = 2s where s is a prime equal to 3 or 7 modulo 10.
+    Bennett and Skinner [15] considered Eq. (4.15) with p ≥ 4, and they obtained the following result.
+
+Theorem 4.27. If p ≥ 4 and c ∈ {2, 3, 5, 6, 10, 11, 13, 17} then Eq. (4.15) has no solutions in non-zero
+pairwise coprime integers ( x, y, z) with x > y, unless ( p, c) = (4, 17) or
+
+                    ( p, c, x, y, z) ∈ {(5, 2, 3, −1, ±11), (5, 11, 3, 2, ±5), (4, 2, 1, −1, ±1)}.
+
+    Bennett and Skinner [15] state that with further computation, the results can be extended to cover the
+additional cases c = 14, 15 and 19. Some cases of Theorem 4.27 rely on results proven by Bruin in [33].
+    Eq. (4.15) has also been studied by Bennett and Mulholland [14], who proved that if p and c ≥ 5 are
+                                2
+primes with c 6= 7 and p > c12c , then (4.15) has no primitive solutions with | xy| > 1 and z even. They also
+considered the case c = 2s where s ≥ 5 is prime, and proved the following theorem.
+                                                                     2
+Theorem 4.28. If p and s ≥ 5 are primes such that p > s132s , then the equation
+
+                                                    x p + y p = 2sz2
+
+has no primitive integer solutions with | xy| > 1.
+
+   Bennett and Mulholland [107] studied Eq. (4.15) with coefficient c = 2α s where s is prime and α ≥ 1, and
+proved the following theorem.
+                                                                                      2
+Theorem 4.29. Let s 6= 7 be prime and α ≥ 1. If prime p satisfies p > s27s , then the equation
+
+                                                    x p + y p = 2α sz2                                       (4.17)
+
+has no primitive integer solutions.
+
+    Da̧browski [57] proved a more general version of this theorem, which does not restrict s to being a prime.
+
+Theorem 4.30. Let s be an odd square-free positive integer with gcd(s, 21) = 1 and α ≥ 1. If prime p satisfies
+         2
+p > s132s , then Eq. (4.17) has no primitive integer solutions.
+
+    Ivorra [85] studied Eq. (4.15) for p ∈ {11, 13, 17} and obtained the following theorem.
+
+                                                            26
+Theorem 4.31. Let p ∈ {11, 13, 17} and let c ≥ 3 be an integer without square factors and for any prime
+divisor l of c we have l 6≡ 1 modulo p. Then Eq. (4.15) has no non-trivial primitive integer solutions.
+
+    Bennett, Vatsal and Yazdani [16] studied Eq. (4.2) with r = 3, and proved the following theorems.
+
+Theorem 4.32. If c and p are integers with 2 ≤ c ≤ 5 and p ≥ 4, then the equation
+
+                                                   x p + y p = cz3                                          (4.18)
+
+has no solutions in coprime non-zero integers x, y and z with | xy| > 1.
+                                                            2
+Theorem 4.33. If s and p are primes such that p > s4s , and α is a non-negative integer, then the equation
+
+                                                  x p + y p = s α z3
+
+has no solutions in coprime integers x, y and z with | xy| > 1.
+
+    Krawciów [94] studied Eq. (4.18) where c is divisible by 3 and obtained the following result.
+
+Theorem 4.34. Let p be a prime number, and let c be a non-zero cube-free integer which is divisible by 3. Let
+                            2
+C = rad(c), then if p > C10C , Eq. (4.18) has no non-trivial primitive integer solutions.
+
+4.2 The case a = c = 1
+In this case, Eq. (4.1) is of the form
+                                                  x p + by p = zr .                                         (4.19)
+    Eq. (4.19) with r = 2, b = 2α for α ≥ 2, and p ≥ 7 prime was studied by Cohen [47, Section 15.3] who
+obtained the following result.
+
+Theorem 4.35. The only non-zero pairwise coprime solutions to
+
+                                                  x p + 2α y p = z2                                         (4.20)
+
+for α ≥ 2 and p ≥ 7 prime are for α = 3, for which ( x, y, z) = (1, 1, ±3) is a solution for all p.
+
+    Theorem 4.35 describes pairwise coprime solutions to (4.20) under the stated conditions, but this equation
+can have primitive solutions that are not pairwise coprime, e.g. ( x, y, z) = (2, 1, 3 · 2( p−3)/2 ) for α = p − 3,
+see [83]. In 2004, Ivorra [84, Chapter 1] proves that there are no other such examples, which completely solves
+Eq. (4.20) for α ≥ 2 and p ≥ 7. Siksek also independently proved the same result in [131].
+    Theorem 4.35 excludes the case where p = 5. In this case, Ivorra [83] proved the following result.
+
+Theorem 4.36. If 1 ≤ α ≤ 4 then for Eq. (4.20) with p = 5, that is,
+
+                                                  x 5 + 2α y5 = z2 ,
+
+the non-trivial primitive integer solutions ( x, y, z) are given by
+
+                    (α, x, y, z) = (1, −1, 1, ±1), (2, 2, 1, ±6), (3, 1, 1, ±3), (4, 2, −1, ±4).
+
+    Bennett, Vatsal and Yazdani [16] considered Eq. (4.19) with r = 3 and b being a prime power, that is,
+
+                                                  x p + s α y p = z3 ,                                      (4.21)
+
+and they obtained the following results.
+
+Theorem 4.37. If s and p are primes such that s 6= s31 ± 3s2 for any integers s1 and s2 with s2 6= 1, p > s2s
+and α ≥ 0, then Eq. (4.21) has no solutions in coprime integers x, y and z with | xy| > 1.
+
+                                                          27
+Theorem 4.38. Let α ≥ 1 be an integer,
+
+                        s ∈ {5, 11, 13, 23, 29, 31, 41, 43, 47, 53, 59, 61, 67, 71, 79, 83, 97}
+
+and let p ≥ 11 be a prime not dividing s2 − 1. Assume also that
+
+                            (s, p) 6∈ {(13, 19), (29, 11), (43, 13), (47, 13), (59, 11),
+                                       (61, 61), (67, 73), (79, 97), (97, 13), (97, 79)}.
+
+Then Eq. (4.21) has no solutions in coprime integers x, y and z with | xy| > 1.
+
+    So far in this section we considered the cases r = 2 and r = 3. For the next case r = 5, we have the
+following result [137, Theorem 2.8].
+
+Theorem 4.39. If b ∈ {3, 11, 19, 43, 67, 163}, then the equation
+
+                                                   x4 + by4 = z5
+
+has no non-trivial primitive solutions.
+
+    Azon [2] considered Eq. (4.19) where r varies. Specifically, he considered Eq. (4.19) with b = 7, p = 5
+and r > 41 a prime and he proved that the equation has no non-trivial primitive integer solutions such that 10|z.
+
+4.3 The case a = 1
+In this instance, Eq. (4.1) reduces to
+                                                  x p + by p = czr ,                                      (4.22)
+with min{b, c} > 1.
+    We first consider the case r = 2, which reduces Eq. (4.22) to
+
+                                                  x p + by p = cz2 .                                      (4.23)
+
+    Ivorra [83] studies Eq. (4.23) with b = 2β for 0 ≤ β ≤ p − 1, c = 2 and p ≥ 7 prime, that is,
+
+                                                  x p + 2β y p = 2z2 ,                                    (4.24)
+
+and obtained the following result.
+
+Theorem 4.40. For prime p ≥ 7 and integer 1 ≤ β ≤ p − 1, Eq. (4.24) has no non-trivial primitive integer
+solutions.
+
+   Let prime p ≥ 7 and α ≥ 2. The task of finding all primitive integer solutions to Eq. (4.23) with b = 2α
+and c = 3, that is,
+                                          x p + 2α y p = 3z2 ,
+is left as an exercise to the reader in [47, Section 15.8]. The authors of [154] prove that the equation has no
+solutions in coprime non-zero integers x, y, z with | xy| > 1.
+     Bennett and Skinner [15] obtained the following results concerning Eq. (4.23).
+
+Theorem 4.41. Suppose that p ≥ 7 is prime. Let b = 2α . If
+
+                        (c, α0 ) ∈ {(3, 2), (5, 6), (7, 4), (11, 2), (13, 2), (15, 6), (17, 6)},          (4.25)
+
+α ≥ α0 , p > c and (c, α, p) 6= (11, 3, 13), then Eq. (4.23) has no solutions in non-zero pairwise coprime
+integers ( x, y, z) with xy 6= ±1.
+
+
+                                                          28
+Theorem 4.42. Suppose that p ≥ 11 is prime and α is a non-negative integer. If b ∈ {5α , 11α , 13α } and p is
+not a divisor of b, then Eq. (4.23) with c = 2 has no solution in non-zero pairwise coprime integers ( x, y, z).
+    Eq. (4.23) with b a power of 2 and c a prime was studied by Zhang [151], who proved the following theorem.
+                                                                                                                           2
+Theorem 4.43. Let s, p be odd primes. For any integers k, d, s 6= (2k ± 1)/d2 and α ≥ 0, α 6= 1. If p > s8s ,
+then the equation
+                                            x p + 2α y p = sz2
+has no integer solutions in pairwise coprime integers x, y, z with xyz 6= 0.
+    From Theorem 4.43, Zhang [151] deduces the following.
+Corollary 4.44. Let s, p be odd primes. For any integers α ≥ 2 and s > 5 satisfying s ≡ ±3 modulo 8. If
+       2
+p > s8s , then the equation
+                                            x p + 2α y p = sz2
+has no integer solutions in pairwise coprime integers x, y, z with xyz 6= 0.
+    We next consider the case r = 3 in (4.22), that is, equation
+                                                     x p + by p = cz3 .                                               (4.26)
+Bennett et al. [16] studied (4.26) with b = sα and c = 3β for prime s and positive integers α, β, that is,
+                                                   x p + s α y p = 3 β z3 ,                                           (4.27)
+and they proved the following theorems.
+Theorem 4.45. If s and p are primes such that s 6∈ {5, 3t3 ± 1, 9t3 ± 1 : t ∈ N }, p > s28s and α, β are
+positive integers with 3 ∤ β, then Eq. (4.27) has no solutions in coprime integers x, y and z with | xy| > 1.
+Theorem 4.46. If p ≥ 7 is prime, s ∈ {7, 11, 13} with
+                                               (s, p) 6∈ {(7, 13), (13, 7)}
+and α, β are positive integers with 3 ∤ β, then Eq. (4.27) has no solutions in coprime integers x, y and z with
+| xy| > 1.
+    Bennett et al. [16] also studied equation
+                                                    x p + 3α y p = s β z3                                             (4.28)
+and proved the following theorem.
+Theorem 4.47. If s ∈ {2, 3, 5, 7, 11, 13, 15, 17, 19}, p is a prime satisfying p > max{s, 4},
+                     (s, p) 6∈ {(7, 11), (11, 13)}     and      (α, s) 6∈ {(1, t) : t = 2, or t ≥ 11},
+and α and β are non-negative integers, then Eq. (4.28) has no solutions in coprime integers x, y and z with
+| xy| > 1, unless (| x|, |y|, α, p, |s β z3 |) = (2, 1, 1, 7, 125).
+    Krawciów [94] studied Eq. (4.26) with b = sα , that is,
+                                                     x p + sα y p = cz3 ,                                             (4.29)
+and solved it under some conditions on the parameters. To state the conditions, we must first introduce some
+notation. Let s1 , . . . , sk be odd primes, such that 3 ∈ {s1 , . . . , sk }. Then let P(s1 , . . . , sk ) denote the set of
+primes x satisfying any of the 2k+1 equations
+                             xα − s1 α1 · · · sk αk y3 = ±1,     (1 ≤ αi ≤ 2, i = 1, . . . , k),
+for some integers α > 1 and y > 1. Theorem 4.34 implies that the set P(s1 , . . . , sk ) is always finite. For
+example, P(3) = {2, 5}, see [94].
+                                   γ
+Theorem 4.48. Let c = ∏ki=1 si i be a prime factorization of a positive cube-free odd integer c which is divisible
+by 3, α be a positive integer, p is a prime, and let C = rad(c). If s is a prime such that s 6∈ P(s1 , . . . , sk ) and
+                                                                                              2
+s 6= ∏ki=1 sαi i t3 ± 1 (1 ≤ αi ≤ 2, i = 1, . . . , k) for any integer t, and if p > (sC )10sC , then Eq. (4.29) has no
+non-trivial primitive integer solutions.
+
+                                                               29
+                              Table 4.2: Values for a, b, p, α not covered by Theorem 4.50.
+
+                                     ab       p        α             ab        p       α
+                                    2α 19β   11        1            2α 61β    13      0,3
+                                    2α 43β   11    0, 3, ≥ 7        2α 61β    31      ≥7
+                                    2α 53β   11     2, 4, 5         2α 67β    11    0, 3, 6
+                                    2α 53β   17       0,3           2α 67β    13      0,3
+                                    2α 59β   11       ≥7            2α 67β    17   0, 3, ≥ 7
+                                    2α 59β   29        6
+
+
+
+4.4 The case c = 1
+In this instance, Eq. (4.1) reduces to
+                                                      ax p + by p = zr                                        (4.30)
+for positive integers a, b.
+
+4.4.1   Eq. (4.30) with fixed p
+Eq. (4.30) with p = 3 was considered by Bennett and Dahmen which led to the following partial result [10,
+Theorem 13.2].
+Theorem 4.49. Let a and b be odd integers such that ax3 + by3 is irreducible in Q [ x, y], and suppose that all
+solutions to the equation
+                                          ax3 + by3 = ∏ sαs                                             (4.31)
+                                                                     s |6ab
+
+in coprime non-zero integers x and y, and non-negative integers αs , satisfy α2 ∈ {1, 4}. Then there exists an
+effectively computable constant r0 such that the equation
+
+                                                      ax3 + by3 = zr                                          (4.32)
+
+has no solution in non-zero integers x, y and z (with gcd( x, y) = 1) and prime r ≡ 1 (mod 3) with r ≥ r0 . If
+all solutions to (4.31) with x and y coprime integers have α2 ≤ 4, then there exists an effectively computable
+constant r1 such that Eq. (4.32) has no solutions in odd integers x, y and prime r ≥ r1 .
+    Examples of pairs ( a, b) satisfying the conditions of Theorem 4.49 are (1, 57), (1, 83) and (3, 19).
+
+4.4.2   Eq. (4.30) with fixed r
+In 2004, Bennett and Skinner [15] considered Eq. (4.30) with r = 2, and p ≥ 11 prime, that is,
+
+                                                     ax p + by p = z2 ,                                       (4.33)
+
+and they obtained the following results.
+Theorem 4.50. Suppose that p ≥ 11 is prime, a, b are coprime integers satisfying p ∤ ab, α ≥ 0 and β ≥ 1
+are integers, and the values ab, p, α, β are not those given in Table 4.2. If
+
+                     ab ∈ {2α 11β , 2α 13β , 2α 19β , 2α 29β , 2α 43β , 2α 53β , 2α 59β , 2α 61β , 2α 67β }
+
+for α = 0 or α ≥ 3, or if
+
+                          ab ∈ {2 · 19β , 4 · 11β , 4 · 19β , 4 · 43β , 4 · 59β , 4 · 61β , 4 · 67β }
+
+then Eq. (4.33) has no solutions in non-zero pairwise coprime integers ( x, y, z).
+
+                                                               30
+   Table 4.3: Assume that β and γ are positive integers. Values for a, b, p, α not covered by Theorem 4.51.
+
+                                      ab          p     α             ab          p     α
+                                  2α 5β 23γ      11     ≥7        2α 11β 29γ     13     ≥7
+                                   2α 7β 19γ     11     ≥7        2α 19β 23γ     11     ≥7
+                                  2α 11β 23γ     11     ≥6        2α 19β 29γ     11     ≥7
+
+
+
+Theorem 4.51. Suppose that p ≥ 11 is prime, a and b are coprime integers satisfying p ∤ ab, α, β, γ are
+non-negative integers with α ≥ 6 and ab = 2α s β tγ where
+
+                (s, t) ∈ {(3, 31)( β ≥ 1), (5, 11)(α ≥ 7), (5, 19), (5, 23)( β ≥ 1),
+                          (7, 19)(γ ≥ 1), (11, 13), (11, 23)( β ≥ 1), (11, 29), (11, 31)( β ≥ 1),
+                          (13, 31)( β ≥ 1), (19, 23)( β ≥ 1), (19, 29), (29, 31)( β ≥ 1)},
+
+and the values ab, p and α are not those given in Table 4.3. Then Eq. (4.33) has no solutions in non-zero
+pairwise coprime integers ( x, y, z).
+
+    In 2014, Zhang and Luo [154] obtained the following result in the case ab = 2α 3β of Eq. (4.33).
+
+Theorem 4.52. Suppose that a and b are coprime integers with ab = 2α 3β where α ≥ 6 and β ≥ 0, and p ≥ 7
+is prime. Then Eq. (4.33) has no solutions in non-zero pairwise coprime integers ( x, y, z).
+
+4.5 The general a, b, c
+In this case, we are considering Eq. (4.1) with general positive coefficients a, b, c. In this section, we will
+sometimes consider equations with p or r composite. If p is even, we may also have b < 0.
+    We start with the case r = 2, that is, equation
+
+                                                    ax p + by p = cz2 .                                         (4.34)
+
+    Noubissie and Togbé [111, 112] studied Eq. (4.34) with a = 5α , α ≥ 1, b = 64, and c = 3, and obtained
+the following result.
+
+Theorem 4.53. Suppose that p ≥ 7 is a prime number and α ≥ 1. Then the equation
+
+                                                  5α x p + 64y p = 3z2
+
+has no non-zero primitive integer solutions with xy ≡ 1 (mod 2).
+
+    In 2006, Ivorra and Kraus [86] considered Eq. (4.34) with
+
+                                 ( a, b, c) ∈ {(2n , l m , 1), (2n l m , 1, 1), (1, l m , 2)}.                  (4.35)
+
+They provide some restrictions on (l, n) and for m ≥ 1, such that for p larger than an explicit bound which
+depends on l, m and n, Eq. (4.34) has no non-trivial primitive integer solutions.
+    Ivorra and Kraus [86] also solved Eq. (4.34) for certain values of ( a, b, c) not of the form (4.35). Specifically,
+they obtain the following results.
+
+Theorem 4.54. (a) For p ≥ 7 and ( a, b, c) = (4, 1, 3), Eq. (4.34) only has the non-trivial primitive integer
+     solutions ( x, y, z) = (1, −1, ±1).
+
+  (b) For p ≥ 11 and ( a, b, c) = (64, 1, 7), Eq. (4.34) only has the non-trivial primitive integer solutions
+      ( x, y, z) = (1, −1, ±3).
+
+
+                                                             31
+    In 2022, Chałupka et al. [38] studied Eq. (4.34) with ( a, b, c, p) = (331 , −4, 7, 34) and proved the following
+theorem.
+
+Theorem 4.55. The equation
+                                               331 x34 − 4y34 = 7z2
+has no solutions in coprime odd integers.
+
+    We next discuss Eq. (4.1) with r = 3, that is,
+
+                                                 ax p + by p = cz3 .                                         (4.36)
+
+Noubissie and Togbé [111, 112] considered Eq. (4.36) with a = 2α , α ≥ 1, b = 27, c = s β , β ≥ 1, and
+s ∈ {7, 13}, and proved the following results.
+
+Theorem 4.56. Suppose that p ≥ 11 is a prime number and α ≥ 1, β ≥ 1 and β ≡ 1 (mod 3). Then the
+equation
+                                        2α x p + 27y p = 7β z3
+has no non-zero primitive integer solutions.
+
+Theorem 4.57. Suppose that p > 13 is a prime number, α ≥ 1, β ≥ 1 and β ≡ 1 (mod 3). Then the equation
+
+                                               2α x p + 27y p = 13β z3
+
+has no non-zero primitive integer solutions.
+
+    We next discuss Eq. (4.1) with r = 5, that is,
+
+                                                 ax p + by p = cz5 .                                         (4.37)
+
+Azon [2] considered Eq. (4.37) with a = 7, b = 1, c = 3 and p > 71 a prime and he proved that this equation
+has no non-trivial primitive integer solutions such that 10| xy. In the same paper, he also proved the following
+result.
+
+Theorem 4.58. (a) Suppose that p > 71 is a prime. Then, for any α ∈ {1, 2, 3, 4} and β ∈ {3, 4}, there
+     are no non-trivial primitive integer solutions to the equation
+
+                                                   7x p + 2i 5j y p = 3z5 .
+
+  (b) Suppose that p > 41 is a prime. Then, for any α ∈ {1, 2, 3, 4} and β ∈ {2, 3, 4}, there are no non-trivial
+      primitive integer solutions to the equation
+
+                                                   x5 + 7y5 = 2α 5β z p .
+
+
+5 Equations of signature ( p, q, r)
+This section discusses Eq. (1.1) with exponents p 6= q 6= r. We will sometimes consider equations with some
+of the exponents being composite.
+
+
+
+
+                                                         32
+5.1 The case a = c = 1
+In this case, Eq. (1.1) reduces to
+                                                 x p + byq = zr .                                             (5.1)
+    In 2014, Zhang and Luo [154] studied Eq. (5.1) for p = 2, r = 3 and q even, that is,
+
+                                                 x2 + by2q = z3                                               (5.2)
+
+and they obtained the following results.
+
+Theorem 5.1. Let q ≥ 7 be prime and α ≥ 6 and β ≥ 0 be integers. If b ∈ {2α , 4 · 32β }, then (5.2) has no
+non-trivial solutions in pairwise coprime integers x, y, z, except ( x, y, z, b) = (±11, ±1, 5, 4).
+
+Theorem 5.2. Let q ≥ 11 be prime and let α ≥ 6, β ≥ 1 and γ ≥ 0 be integers that do not satisfy any of the
+following conditions.
+
+  (i) 2|α, 2| β, 2 ∤ γ,
+
+  (ii) 2|α, 2 ∤ β, 2|γ,
+
+ (iii) 2 ∤ αβγ.
+
+If b = 2α 3β 31γ and q ∤ b, then Eq. (5.2) has no non-trivial solutions in pairwise coprime integers x, y, z. Also,
+if γ = 0, then the same result holds for q = 7.
+
+    Noubissie [110] studied Eq. (5.1) with p even, q = 2 and b = r = 3, that is,
+
+                                                 x2p + 3y2 = z3 ,                                             (5.3)
+
+and they obtained the following result.
+
+Theorem 5.3. Eq. (5.3) with integer p ≥ 8 has no non-trivial primitive integer solutions.
+
+    Noubissie [110] also proved that for prime q satisfying q > 1964, the equation
+
+                                                 x2 + 3y2q = z3
+
+has no non-trivial primitive integer solutions with q|y, while equation
+
+                                                 x2 + 2y3 = z3r
+
+with prime r ≥ 3 has no non-trivial primitive solutions with x even.
+   √Eq. (5.1) with b a positive odd integer, p even, and 5 ∤ h(−b) where h(−b) denotes the class number of
+Q ( −b) was considered by Zhang and Bai [152] who obtained the following partial result.
+
+Theorem 5.4. Let p ≥ 7 be a prime, b be a positive odd integer such that 5 ∤ h(−b). Then the equation
+
+                                                 x2p + by2 = z5
+
+has no solutions in pairwise coprime integers with xyz 6= 0 and x even.
+
+    In the same paper, Zhang and Bai [152] considered Eq. (5.1) with p = 2, q even and r = 5 and proved the
+following theorem.
+
+Theorem 5.5. Let β ≥ 1, γ ≥ 0 and p ≥ 11 prime. Let b satisfy one of the following conditions.
+
+  (i) b = 2α , α ≥ 2,
+
+  (ii) b = 2α 5β 11γ , α ≥ 3, p ∤ b,
+
+                                                        33
+ (iii) b = 2α 5β 19γ , α ≥ 2, p ∤ b,
+
+ (iv) b = 2α 5β 23γ , α ≥ 2, 2|αβγ, p ∤ b, γ ≥ 1 and p ≥ 13.
+Then the equation
+                                                  x2 + by2p = z5
+has no integer solutions in pairwise coprime integers x, y, z with xyz 6= 0. The same conclusion holds in case
+(i) for p = 7.
+    The authors of [154] also considered Eq. (5.1) with q = 2p and r = 2, that is,
+
+                                                  x p + by2p = z2 ,                                        (5.4)
+
+and they obtained the following result.
+Theorem 5.6. Let p ≥ 7 be prime, and let b = 4 · 32β+1 with β ≥ 0. Then Eq. (5.4) has no non-trivial
+solutions in pairwise coprime integers x, y, z.
+    Noubissie [110] studied Eq. (5.4) with b = 32p−6 , that is,
+
+                                              x p + 32p−6 y2p = z2 ,
+
+and proved that for prime p ≡ 13 modulo 24, the equation has no non-trivial primitive integer solutions with
+z ≡ 2(mod 4).
+
+5.2 The general a, b, c
+In this section we discuss cases of Eq. (1.1) with non-equal exponents ( p, q, r) such that at least two of the
+coefficients a, b, c are greater than 1.
+    In 2022, Chałupka et al. [38] studied equations
+
+                                                  x2p + ay2 = 4z3                                          (5.5)
+
+
+                                                  x2 + ay2p = 4z3                                          (5.6)
+where p ≥ 2 is an integer.
+   In the case a = 7 in (5.5), they obtained the following results.
+Theorem 5.7 (Theorem 1 and 12 of [38]). Let p be a prime satisfying 5 ≤ p < 109 with p 6= 7, 13, then the
+equation
+                                           x2p + 7y2 = 4z3                                          (5.7)
+has no non-trivial primitive integer solutions.
+Theorem 5.8. Let p be a prime satisfying
+
+                  p ≡ 3 or 55(mod 106)       or     p ≡ 47, 65, 113, 139, 143 or 167(mod 168).
+
+Then Eq. (5.7) has no non-trivial primitive integer solutions.
+Theorem 5.9. If a ∈ {11, 19, 43, 67, 163} and p ≥ 2 is an integer, then Eqs. (5.5) and (5.6) have no non-trivial
+primitive integer solutions.
+    Noubissie [110] also considered Eqs. (5.5) and (5.6) with a = 3, and proved that for prime p ≥ 3 these
+equations have no non-trivial primitive integer solutions with 6|y.
+    Chałupka et al. [38] also studied some Eqs. (1.1) with p = 2q. Specifically, they proved the following
+results.
+
+                                                         34
+Theorem 5.10. Let p be a prime with p ≡ 5 (mod 6). Then the equation
+
+                                                     x2p + 4y p = 21z2                                         (5.8)
+
+has no non-trivial solutions.
+
+     They also prove that for all primes p ≥ 11 with p 6= 19, Eq. (5.8) has no solutions in coprime odd integers
+( x, y, z).
+Theorem 5.11. Let 11 ≤ p < 109 and p 6= 13, 17 be a prime. Then the equation
+
+                                                32p−3 x2p + 4y p = 7z2                                         (5.9)
+
+has no primitive solutions ( x, y, z) in odd integers.
+
+Theorem 5.12. Let p be a prime satisfying
+
+                  p ≡ 3 or 55(mod 106)          or      p ≡ 47, 65, 113, 139, 143 or 167(mod 168).
+
+Then Eq. (5.9) has no primitive solutions in odd integers.
+
+Theorem 5.13. The equation
+                                                   x38 + 4y19 = 21z2
+has no solution in coprime odd integers ( x, y, z).
+
+    In 2024, Cazorla Garcı́a [36] studied equation
+
+                                                     ax2 + sk y2n = zn                                       (5.10)
+
+where s is prime, and provided an algorithmically testable set of conditions on ( a, s) which, if satisfied, imply
+the existence of a constant B = B( a, s) such that if n > B then for any k ≥ 0 Eq. (5.10) has no solutions in
+coprime integers ( x, y, z) such that gcd( ax, sy, z) = 1 and z is even.
+    In a follow-on paper to [38], the authors [39] prove that for any prime p = 5 or 11 modulo 12, the equation
+
+                                                32p−3 7x2p + 4y p = z2
+
+has no solutions in coprime odd integers.
+    In the same paper [39], the authors prove the following result.
+
+Theorem 5.14. Let n ≥ 2 be an integer. The equation
+
+                                                     x2 + 7y2n = 4z12
+
+has no non-trivial primitive integer solutions x, y, z.
+
+    In Chapter 5 of their thesis, Putz [121] solved a number of equations of signature (5, 3, 11), that is, equation
+
+                                                     ax5 + by3 = cz11 .                                      (5.11)
+
+Specifically, they proved the following theorem.
+
+Theorem 5.15. Let
+                           C :={(118 , 1, 36 · 510 ), (36 · 118 , 1, 510 ), (39 · 118 , 1, 510 ),
+                                (1, 114 , 36 · 510 ), (34 · 118 , 1, 510 ), (118 , 33 , 510 ),               (5.12)
+                                   7      8     10       8     8       10      10      8         10
+                                (3 · 11 , 1, 5 ), (3 · 11 , 1, 5 ), (3 · 11 , 1, 5 )}.
+If ( a, b, c) ∈ C then Eq. (5.11) has no non-trivial primitive integer solutions.
+
+                                                             35
+6 Summarizing table
+Table 6.1 below summarizes the equations solved in the literature considered in this survey. The table lists
+Eqs. (1.1) with | abc| > 1, see Table 1.1 for the case | abc| = 1. Table 6.1 specifies the equation, any restrictions
+on the parameters, the progress towards the solution of the equation, and the reference to the solution. The
+progress we refer to can be:
+
+    • “Solved” implies that all primitive integer solutions have been described. This includes where the equa-
+      tion has no non-trivial primitive integer solutions.
+
+    • “Partial” implies that there is only partial progress in the solution of the equation. This means that only
+      the primitive solutions satisfying some additional conditions have been described.
+
+    • “Non-trivial” implies that it has been determined whether the equation has any non-trivial integer solution
+      (that is, one with all variables non-zero).
+
+    • “Non-zero” implies that it has been determined whether the equation has any integer solution with
+      ( x, y, z) 6= (0, 0, 0).
+
+
+Table 6.1: Generalised Fermat Eqs. (1.1) with 1/p + 1/q + 1/r < 1 and | abc| > 1 solved in the literature.
+Assume m, n are integers and p, r, s are primes. Unless otherwise stated, assume α, β, γ ≥ 0.
+
+               Equation                           Parameters                    Progress        References
+                                               Special Signatures
+                                                Signature (4, 4, 4)
+            x4 + y4 = cz4                    1 ≤ c ≤ 100, c 6= 82                Solved          [69, 116]
+            x4 + y4 = cz4                         c ≤ 10000                     Non-zero          [25, 26]
+                                                                                               [46, Sec 6.6]
+            x4 + y4 = cz4                  c > 2 fourth-power free,              Solved             [79]
+                                          rank of v2 = u3 − cu is 1
+          x4 + 2y4 = 3z4                                                         Solved      Mathoverflow21
+          x4 + 3y4 = 4z4                                                         Solved        [59, pp. 630]
+          x4 + 8y4 = 9z4                                                         Solved        [59, pp. 630]
+          ax4 + by4 = cz4                    |a| + |b| + |c| ≤ 62               Non-zero      [77, Sec 6.2.2]
+                                                                                             [148, Sec 6.4-5]
+          ax4 + by4 = bz4                       |a| + 2|b| ≤ 38                Non-trivial    [148, Sec 6.15]
+           x4 + by4 = z4                         1 ≤ b ≤ 218                   Non-trivial    [148, Sec 6.15]
+          x4 + 34y4 = z4                                                        Solved             [138]
+          x4 + 2py4 = z4                    Any of the conditions               Solved             [142]
+                                                 in Theorem 2.4
+         a3 x 4 + b 3 y4 = c 3 z4                 Conditions in                  Solved         [105, 106]
+                                                  Theorem 2.5
+                                                  Signature (2, 4, r)
+            2x2 + y4 = zn                              n≥5                       Solved            [11]
+            ax2 + y4 = z p                    ( a = 3, p > 17) or                Solved          [65, 114]
+                                             ( a = 5, p > 499) or
+                                             ( a = 6, p > 563) or
+                                               ( a = 7, p > 349)
+            sx p + y4 = z2                  s > 3, s ≡ 3 (mod 8),                Solved             [57]
+                                                   s 6= 2t2 + 1,
+
+
+                                                         36
+                                   √
+                         p > (8 s + 1 + 1)16(s−1)
+   sx p + y4 = z2       s ≡ 5 (mod              2
+                                   √ 8), s 6= t16(+    4,     Solved           [57]
+                         p > ( 8 s + 1 + 1)        s − 1)
+
+  2α x p + y4 = z4               α ≥ 0, p ≥ 5                 Solved           [57]
+ 2α s β x p + y4 = z4       α ≥ 0, β ≥ 0, s ≥ 3,              Solved          [57, 5]
+                                         k
+                                  s√6= 22 + 1,
+                           p > ( 8s + 8 + 1)2s−2
+   sx p + y4 = z4             s ∈ {5, 17}, p > 5              Solved            [5]
+ 2α s β x p + y4 = z4   2 ≤ s < 50, s 6= 5, s 6= 17,          Solved            [5]
+                                p > 5, α, β ≥ 0
+   x p + py2 = z4       p ≡ 1 (mod 4), p ∤ B( p−1)/2          Partial          [35]
+  ax2m + y2 = zn                 Conditions in                Solved           [95]
+                                 Theorem 2.17
+   x p + by2 = z4        p > 19, p ≡ 1, 3 (mod 8),            Solved          [115]
+                              (b = 6, p 6= 97) or
+                            (b = 10, p 6= 139) or
+                             (b = 11, p 6= 73) or
+                          (b = 19, p 6= 43, 113) or
+                              (b = 129, p 6= 43)
+ x p + 129y2 = z4                    p > 900                  Solved          [115]
+                                 Signature (2, 6, r)
+   x p + 2y6 = z2        p 6= 7, p ≡ 1, 7 (mod 24)            Solved           [42]
+   x2 + 2y6 = z p                 p > 257                     Solved          [114]
+   x2 + 3y6 = zn                    n≥3                       Solved           [88]
+   x2 + 6y6 = z p                 p > 563                     Solved          [114]
+   x2 + by6 = z p         p ≥ r0 , (b, r0 ) given by          Solved           [97]
+                                  Table 2.1
+ x2 + b2 y2m = z4n         b > 0 odd with prime               Partial         [150]
+                          factor l = ±3 (mod 8)
+                               Signature (3, 3, 4)
+  2x3 + 2y3 = z4                                              Solved      [148, App. A]
+                                Signature (4, 4, 3)
+  x4 + 2y3 = z4                                               Solved      [148, App. A]
+  x4 + 3y3 = z4                                               Solved      [148, App. A]
+  x4 + 2y4 = z3                                               Solved          [136]
+  x4 + 3y4 = z3                                               Solved          [144]
+  x 4 + s2 y4 = z3                                            Solved          [139]
+  x4 + by4 = z3               b ∈ {19, 43, 67}                Solved          [137]
+                              Signature ( p, p, p)
+                           Explicit small values of p
+   x5 + y5 = cz5           1 ≤ c ≤ 100, c 6= 88             Non-trivial   [77, Sec 6.3.4]
+   x5 + y5 = cz5         c only divisible by primes          Solved            [81]
+                               ci 6≡ 1 (mod 5)
+ ax5 + by5 = cz5              a + b + c < 19                Non-zero      [77, Sec 6.2.3]
+                                                                           [148, Sec 6.7]
+   x6 + y6 = cz6               c ≤ 164634913                Non-trivial         [108]
+  ax6 + by6 = bz6              |a| + 2|b| ≤ 10              Non-trivial   [148, Sec 6.16]
+x14 + 2α 7β y14 = z14           α ≥ 0, β ≥ 1                 Solved         [59, pp. 736]
+
+
+                                         37
+                                The case a = b = 1
+ x p + y p = 15z p            p ≥ 5 and 2p + 1 or                Solved         [89]
+                                4p + 1 is prime
+ x p + y p = 15z p                   p≥5                         Partial        [89]
+ x p + y p = pz p                   p regular                    Solved    [59, pp. 759]
+                               (see Theorem 3.4)
+  x p + y p = pz p                   p≥3                         Partial        [147]
+  x n + y n = 2α z n              α ≥ 0, n ≥ 3                   Solved      [55, 124]
+ x p + y p = 31α z p          7 ≤ p ≤ 106 , α ≥ 0                Solved    [47, Sec 15.7]
+  x p + y p = sα z p        s 6= 2n ± 1 odd, α ≥ 0,              Solved          [90]
+                                  p            (s+11)/6
+                         p > 1 + (s + 1)/2
+ x p + y p = sα z p            3 ≤ s ≤ 100, p ≥ 5,               Solved      [124, 90],
+                                  α ≥ 0, s 6= 31                           [47, Th.15.5.3]
+ x p + y p = psz p                p ≥ 5 regular,                 Solved         [135]
+                            s only divisible by primes
+                           kp − 1 with gcd(k, p) = 1
+                                   The case a = 1
+ x p + 3y p = 5z p              p ≥ 5 and 2p + 1                 Solved         [89]
+                               or 4p + 1 is prime
+ x p + 3y p = 5z p                    p≥5                        Partial        [89]
+ x p + 3y p = 5z p                5 ≤ p < 107                    Solved         [80]
+x p + 2 β y p = sα z p         s > 3,ps 6= 2n ± 1,               Solved         [90]
+                          p > (1 + 8(s + 1))2(s−1) ,
+                                 α, β ≥ 0, p ∤ α
+x p + 16y p = sα z p         α ≥ 0, s ≥ 3, s 6= 17,              Solved         [90]
+                                  p 6= s, p ≥ 5,
+                                  p             (s+1)/6
+                         p > 1 + (s + 1)/6
+                                     General a, b, c
+axn + byn = 16zn           ( a, b) ∈ {(25, 234 ), (58 , 37),     Solved         [52]
+                          (57 , 597 ), (7, 477 ), (11, 852 )},
+                                       n ≥ 5 odd
+ 3x p + 4y p = 5z p                p ≡ 5 (mod 8) or              Solved       [80, 72]
+                                   p ≡ 19 (mod 24)
+3x p + 8y p = 21z p                p ≡ 5 (mod 8) or              Solved         [72]
+                                   p ≡ 23 (mod 24)
+ax p + by p = 16cz p             Prime factors of abc            Solved         [64]
+                                     are 1 (mod 3),
+                                  p sufficiently large
+ax p + by p = 16cz p            n > 0 not a divisor of           Solved         [64]
+                             14,16 or 18, prime factors
+                               of abc are ±1 (mod n),
+                                  p sufficiently large
+ax p + by p = 2r cz p                r ≥ 0, r 6= 1,              Solved         [64]
+                                 prime factors of abc
+                                    are 1 (mod 12),
+                                  p sufficiently large
+ ax p + by p = cz p                  Conditions in               Solved         [64]
+
+
+                                            38
+                                      Theorem 3.23
+ax p + by p + 2n cz p = 0          Any of the conditions            Solved       [64]
+                                     in Theorem 3.24
+ax p + 2r by p + 2r cz p = 0       Any of the conditions            Solved       [64]
+                                     in Theorem 3.24
+    axn + byn = czn                    Conditions in                Solved    [120, 122]
+                                      Theorem 3.26
+                                        Signature ( p, p, r)
+                                The case a = b = 1 and fixed p
+     x3 + y3 = 2z2r                           r≥2                   Solved       [153]
+     x 3 + y3 = s α zr             α ≥ 1, r ≥ s2s , s ≥ 5,          Solved        [6]
+                                       s 6∈ S0 , see (4.4)
+     x 3 + y3 = s α zr              s = 2a 3b − 1, a ≥ 5,           Solved        [6]
+                                   b ≥ 1, α ≥ 1, r > s2s ,
+                                       (α, r, a, b) do not
+                                          satisfy (4.6)
+      x3 + y3 = szr               s 6∈ T, see Theorem 4.9,          Solved        [6]
+                                   positive proportion of r
+      x3 + y3 = szr                (s, r) satisfy Table 4.1,        Solved        [6]
+                                             r ≥ s2s
+     x3 + y3 = 5zr               r ≡ 13, 19 or 23 (mod 24)          Solved        [6]
+     x4 + y4 = szr               s ∈ {73, 89, 113}, r > 13          Solved       [61]
+     x 5 + y5 = s α zr                 r ≥ s13s , α ≥ 1,            Solved       [34]
+                                        s 6∈ W5 prime,
+                                      see Theorem 4.11
+     x5 + y5 = 2zr                                                  Partial       [22]
+     x p + y p = 3zn                 p ∈ {5, 7, 13}, n ≥ 2          Solved    [22, 20, 23]
+     x5 + y5 = 2czr               c only divisible by primes        Solved        [63]
+                                   ci 6≡ 1 (mod 5), r > 13,
+                                       r ≡ 1 (mod 4) or
+                                        r ≡ ±1 (mod 5)
+     x5 + y5 = 3czr               c only divisible by primes        Solved       [63]
+                                   ci 6≡ 1 (mod 5), r > 73,
+                                       r ≡ 1 (mod 4) or
+                                        r ≡ ±1 (mod 5)
+      x5 + y5 = 7zr                           r ≥ 13                Solved       [24]
+     x5 + y5 = 13zr                           r ≥ 19                Solved       [24]
+  x 5 + y5 = 2α 3 β 5γ zr           r ≥ 7, α ≥ 2, β, γ ≥ 0          Partial    [19, 24]
+  x 5 + y5 = 2α 3 β 5γ zr          r ≥ 13, α ≥ 2, β, γ ≥ 0          Solved       [24]
+   x5 + y5 = 2α 11zr                     r > 19, α ≥ 2              Solved      [110]
+   x5 + y5 = 2α 11zr                    r > 19, α = 0, 1            Partial     [110]
+      x6 + y6 = 2zr                            r≥5                  Solved       [93]
+      x p − y p = czr          ( p, r) ∈ {(6, 2), (8, 2), (8, 3),   Solved       [93]
+                                   (9, 3), (10, 2), (12, 2)},
+                                 c ∈ D p , see Theorem 4.19
+      x p − y p = cz2                   p ∈ {5, 7}, p|c,            Solved       [93]
+                                 c ∈ D p , see Theorem 4.19
+     x12 − y12 = czn                      n ≥ 3, c ≥ 1,             Solved       [93]
+                                     l prime divisors of c,
+                                           νl (c) < 12
+
+                                                39
+                                      and l 6≡ 1 (mod 4)
+   x 9 + y9 = 2n z2                          n≥0                      Solved        [37]
+  x13 + y13 = sγzr                     s ∈ {3, 5, 7, 11},             Partial       [62]
+                                 γ divisible only by primes
+                                      γi 6≡ 1 (mod 13),
+                                       r 6∈ R, see (4.14)
+x14 + y14 = 2α 3β 5γ czr               r ≥ 17, α ≥ 2 or               Solved        [70]
+                                        β > 0 or γ > 0
+                                  c only divisible by primes
+                                      ci 6≡ 0, 1 (mod 7)
+  x26 + y26 = 10γzr              γ only divisible by primes           Solved        [75]
+                                      γi 6≡ 1 (mod 13),
+                                       r 6∈ R, see (4.14)
+                                 The case a = b = 1 and fixed r
+ x 5 + y5 = 2α 5 β s γ z2             s = ±3 (mod 10),                Solved     [140, 141]
+                                     α ≥ 0, β ≥ 0, γ ≥ 0
+    xn + yn = cz2                      c ∈ {2, 3, 5, 6, 10,           Solved        [15]
+                                      11, 13, 17}, n ≥ 5
+                                                             2
+    x p + y p = cz2                c ≥ 5, c 6= 7, p > c12c            Partial        [14]
+                                                           2
+   x p + y p = 2sz2                    s ≥ 5, p > s132s               Solved         [14]
+                                             2
+   x p + y p = 2α sz2              p > s27s , s 6= 7, α ≥ 1           Solved        [107]
+   x p + y p = 2α cz2              c odd square-free, 3 ∤ c,          Solved         [57]
+                                                     2
+                                   7 ∤ c, p > c132c , α ≥ 1
+    x p + y p = cz2                  c ≥ 3, c square-free,            Solved        [85]
+                                  c only divisible by primes
+                                        ci 6≡ 1 (mod p),
+                                        p ∈ {11, 13, 17}
+   xn + yn = cz3                    c ∈ {2, 3, 4, 5}, n ≥ 4           Solved        [16]
+                                                         2
+   x p + y p = s α z3                   α ≥ 0, p > s4s                Solved        [16]
+   x p + y p = cz3                   c 6= 0 cube-free, 3|c,           Solved        [94]
+                                                             2
+                                   C = rad(c), p > C10C
+                                 The case a = c = 1 and fixed r
+    x5 + 2y5 = z2                                                     Solved         [83]
+   x p + 2α y p = z2                    α ≥ 2, p ≥ 5                  Solved         [83]
+                                                                                [47, Sec 15.3]
+   x p + s α y p = z3                  α ≥ 0, p > s2s ,               Solved         [16]
+                                   s 6= s31 ± 3s2 for s2 6= 1
+   x p + s α y p = z3             s ∈ {5, 11, 13, 23, 29, 31,         Solved        [16]
+                                  41, 43, 47, 53, 59, 61, 67,
+                                        71, 79, 83, 97}
+                                 α ≥ 1, p ≥ 11, p ∤ s2 − 1,
+                                (s, p) 6∈ {(13, 19), (29, 11),
+                                (43, 13), (47, 13), (59, 11),
+                                (61, 61), (67, 73), (79, 97),
+                                      (97, 13), (97, 79)}
+    x4 + by4 = z5               b ∈ {3, 11, 19, 43, 67, 163}          Solved    [137, Th.2.8]
+                                   The case a = 1 and fixed p
+  x5 + 7y5 = 2α 5β zr       r > 41, α ∈ {1, 2, 3, 4}, β ∈ {2, 3, 4}   Solved         [2]
+
+
+
+                                                40
+  x5 + 7y5 = zr                     r > 41                      Partial        [2]
+                             The case a = 1 and fixed r
+x p + 2β y p = 2z2           p ≥ 7, 1 ≤ β ≤ p − 1               Solved        [83]
+
+x p + 2α y p = cz2        c ∈ {3, 5, 7, 11, 13, 15, 17},        Solved        [15]
+                                   α ≥ α0 , p > c,
+                              (c, α, p) 6= (11, 3, 13),
+                                    where (c, α0 )
+                                 is given by (4.25)
+x p + sα y p = 2z2           p ≥ 11, s ∈ {5, 11, 13},           Solved        [15]
+                                    s 6= p, α ≥ 0
+x p + 2α y p = sz2                 k
+                          s 6= (2 ± 1)/d2 , k, d ∈ Z,           Solved       [151]
+                                                        2
+                             α ≥ 0, α 6= 1, p > s8s
+x p + 2α y p = sz2                  α ≥ 2, s > 5,               Solved       [151]
+                                 s = ±3 (mod 8),
+                                               2
+                                       p > s8s
+x p + s α y p = 3 β z3            s 6∈ {5, 3t3 ± 1,             Solved        [16]
+                                 9t3 ± 1 : t ∈ N }
+                            α, β ≥ 1, 3 ∤ β, p > s28s
+x p + s α y p = 3 β z3       p ≥ 7, s ∈ {7, 11, 13},            Solved        [16]
+                            (s, p) 6= (7, 13), (13, 7),
+                                   3 ∤ β, α, β ≥ 1
+x p + 3α y p = c β z3          c ∈ {2, 3, 5, 7, 11, 13,         Solved        [16]
+                                     15, 17, 19},
+                          (c, p) 6∈ {(7, 11), (11, 13)},
+                          (α, c) 6∈ {(1, t) : t = 2, or
+                                       t ≥ 11},
+                           α, β ≥ 0, p > max{c, 4}
+x p + sα y p = Mz3                  Conditions of               Solved        [94]
+                                   Theorem 4.48
+                             The case c = 1 and fixed p
+ ax3 + by3 = zn                     Conditions of               Partial   [10, Th.13.2]
+                                   Theorem 4.49
+                              The case c = 1 and fixed r
+ ax p + by p = z2         p ≥ 11, ab ∈ {2α 11β , 2α 13β ,       Solved        [15]
+                               2α 19β , 2α 29β , 2α 43β ,
+                         2α 53β , 2α 59β , 2α 61β , 2α 67β },
+                                a, b coprime, p ∤ ab,
+                             α = 0 or α ≥ 3, β ≥ 1,
+                            ab, p, α, β not in Table 4.2
+ ax p + by p = z2        p ≥ 11, ab ∈ {2 · 19β , 4 · 11β ,      Solved        [15]
+                              4 · 19β , 4 · 43β , 4 · 59β ,
+                                  4 · 61β , 4 · 67β },
+                           a, b coprime, p ∤ ab, β ≥ 1,
+                            ab, p, α, β not in Table 4.2
+ ax p + by p = z2          a, b coprime, ab = 2α s β tγ ,       Solved        [15]
+                                  β, γ ≥ 0, α ≥ 6,
+                            (s, t) ∈ {(3, 31)( β ≥ 1),
+
+
+                                           41
+                                 (5, 11)(α ≥ 7), (5, 19),
+                            (5, 23)( β ≥ 1), (7, 19)(γ ≥ 1),
+                               (11, 13), (11, 23)( β ≥ 1),
+                               (11, 29), (11, 31)( β ≥ 1),
+                           (13, 31)( β ≥ 1), (19, 23)( β ≥ 1),
+                              (19, 29), (29, 31)( β ≥ 1)},
+                                       p ≥ 11, p ∤ ab,
+                                ab, p, α, β not in Table 4.3
+   ax p + by p = z2            ab = 2α 3β , gcd( a, b) = 1,        Solved      [154]
+                              α ≥ 6, β ≥ 0, p ≥ 7, p ∤ ab
+                                The general a, b, c and fixed r
+ 5α x p + 64y p = 3z2                   p ≥ 7, α ≥ 1               Partial   [111, 112]
+  ax p + by p = cz2              ( a, b, c) ∈ {(2n , l m , 1),     Solved       [86]
+                                 (2n l m , 1, 1), (1, l m , 2)},
+                                 conditions below (4.35)
+   4x p + y p = 3z2                          p≥7                   Solved       [86]
+   64x p + y p = 7z2                        p ≥ 11                 Solved       [86]
+ 3 x34 − 4y34 = 7z2
+  31                                                               Partial      [38]
+ 2α x p + 27y p = s β z3      s ∈ {7, 13}, p > s, α ≥ 1,           Solved    [111, 112]
+                                 β ≥ 1, β ≡ 1 (mod 3)
+   7x p + y p = 3z5                     p > 71                     Partial      [2]
+ 7x p + 2α 5β y p = 3z5    p > 71, α ∈ {1, 2, 3, 4}, β ∈ {3, 4}    Solved       [2]
+                                     Signature ( p, q, r)
+                                    The case a = c = 1
+   x2n + 3y2 = z3                        n≥8                       Solved      [110]
+   x2 + 3y2p = z3                      p > 1964                    Partial     [110]
+   x2 + 2y3 = z3p                        p≥3                       Partial     [110]
+   x2 + by2p = z3                p ≥ 7, α ≥ 6, β ≥ 0,              Solved      [154]
+                                   b ∈ {2α , 4 · 32β }
+x2 + 2α 3β 31γ y2p = z3              Conditions of                 Solved      [154]
+                                     Theorem 5.2
+   x2p + by2 = z5                p ≥ 7, b positive odd,            Partial     [152]
+                                       5 ∤ h(−b)
+   x2 + 2α y2p = z5                  α ≥ 2, p ≥ 7                  Solved      [152]
+x2 + 2α 5β 11γ y2p = z5             α ≥ 3, p > 11,                 Solved      [152]
+                                     β ≥ 1, γ ≥ 0
+x2 + 2α 5β 19γ y2p = z5         α ≥ 2, p ≥ 11, p 6= 19,            Solved      [152]
+                                     β ≥ 1, γ ≥ 0
+x2 + 2α 5β 23γ y2p = z5       α ≥ 2, β ≥ 1, γ ≥ 1, 2|αβγ           Solved      [152]
+                                    p ≥ 13, p 6= 23
+x p + 4 · 32β+1 y2p = z2             p ≥ 7, β ≥ 0                  Solved      [154]
+  x p + 32p−6 y2p = z2                   p ≥ 7,                    Partial     [110]
+                                   p ≡ 13 (mod 24)
+                                     The general a, b, c
+   x2 + 3y2p = 4z3                       p≥3                       Partial     [110]
+   x2p + 3y2 = 4z3                       p≥3                       Partial     [110]
+   7x2 + y2p = 4z3              5 ≤ p < 109 , p 6= 7, 13           Solved       [38]
+   7x2 + y2p = 4z3              p ≡ 3, 55 (mod 106) or             Solved       [38]
+                                   p ≡ 47, 65, 113,
+
+
+                                              42
+                                       139,143 or 167 (mod 168)
+          ax2 + y2n = 4z3              a ∈ {11, 19, 43, 67, 163},           Solved            [38]
+                                                n≥2
+          x2 + ay2n = 4z3              a ∈ {11, 19, 43, 67, 163},           Solved            [38]
+                                                n≥2
+         x2p + 4y p = 21z2                   p ≡ 5 (mod 6)                  Solved            [38]
+         x2p + 4y p = 21z2                      p ≥ 11                      Partial           [38]
+       32p−3 x2p + 4y p = 7z2          11 ≤ p < 109 , p 6= 13, 17           Partial           [38]
+       32p−3 x2p + 4y p = 7z2           p ≡ 3, 55 (mod 106) or              Solved            [38]
+                                            p ≡ 47, 65, 113,
+                                       139,143 or 167 (mod 168)
+         x38 + 4y19 = 21z2                                                  Partial           [38]
+         ax2 + sk y2n = zn            See conditions below (5.10)           Partial           [36]
+       32p−3 7x2p + 4y p = z2                                               Partial           [39]
+         x2 + 7y2n = 4z12                           n≥2                     Solved            [39]
+         ax5 + by3 = cz11                ( a, b, c) ∈ C , see (5.12)        Solved           [121]
+
+
+
+Acknowledgements
+The authors sincerely thank Frits Beukers, Andrew Bremner, David Zureick-Brown, Tim Browning, Carmen
+Bruni, Pedro José Cazorla Garcı́a, Andrzej Da̧browski, Rainer Dietmann, Jordan Ellenberg, Victor Flynn, Nuno
+Freitas, Andrew Granville, Alain Kraus, Florian Luca, Loı̈c Merel, Oana Pădurariu, Kenneth Ribet, Jeremy
+Rouse, Samir Siksek, Sankar Sitaraman, Gökhan Soydan, Alain Togbé, Lucas Villagra Torcomian, Soroosh
+Yazdani, Konstantine Zelator and Zhongfeng Zhang for their responses, feedback and corrections on earlier
+versions of this paper. This research used the ALICE High Performance Computing facility at the University
+of Leicester. We also thank the referees for their useful comments to improve the quality of this paper.
+
+
+References
+  [1] S. Anni and S. Siksek. Modular elliptic curves over real abelian fields and the generalized Fermat equa-
+      tion x2ℓ + y2m = z p . Algebra Number Theory, 10(6):1147–1172, 2016. doi:10.2140/ant.2016.10.1147.
+
+  [2] M. Azon. Effective Darmon’s program for the generalised Fermat equation.                arXiv preprint
+      arXiv:2504.01967, 2025. URL https://arxiv.org/abs/2504.01967.
+
+  [3] B. Bartolomé and P. Mihăilescu. Semilocal approximation for the Fermat-Catalan and fur-
+      ther popular Diophantine norm equations.   arXiv preprint arXiv:2108.08572, 2021.   URL
+      https://arxiv.org/abs/2108.08572.
+
+  [4] M. A. Bennett. The equation x2n + y2n = z5 . J. Théor. Nombres Bordeaux, 18(2):315–321, 2006. URL
+      http://jtnb.cedram.org/item?id=JTNB_2006__18_2_315_0.
+
+  [5] M. A. Bennett. Integers represented by x4 − y4 revisited. Bull. Aust. Math. Soc., 103(1):38–49, 2021.
+      doi:10.1017/S0004972720000441.
+
+  [6] M. A. Bennett, C. Bruni, and N. Freitas. Sums of two cubes as twisted perfect powers, revisited. Algebra
+      Number Theory, 12(4):959–999, 2018. doi:10.2140/ant.2018.12.959.
+
+  [7] M. A. Bennett and I. Chen. Multi-Frey Q-curves and the Diophantine equation a2 + b6 = cn . Algebra
+      Number Theory, 6(4):707–730, 2012. doi:10.2140/ant.2012.6.707.
+ 21 https://mathoverflow.net/questions/480114
+
+
+
+                                                       43
+ [8] M. A. Bennett, I. Chen, S. R. Dahmen, and S. Yazdani. On the equation a3 + b3n = c2 . Acta Arith.,
+     163(4):327–343, 2014. doi:10.4064/aa163-4-3.
+
+ [9] M. A. Bennett, I. Chen, S. R. Dahmen, and S. Yazdani. Generalized Fermat equations: a miscellany. Int.
+     J. Number Theory, 11(1):1–28, 2015. doi:10.1142/S179304211530001X.
+
+[10] M. A. Bennett and S. R. Dahmen. Klein forms and the generalized superelliptic equation. Ann. of Math.
+     (2), 177(1):171–239, 2013. doi:10.4007/annals.2013.177.1.4.
+
+[11] M. A. Bennett, J. S. Ellenberg, and N. C. Ng. The Diophantine equation A4 + 2δ B2 = C n . Int. J.
+     Number Theory, 6(2):311–338, 2010. doi:10.1142/S1793042110002971.
+
+[12] M. A. Bennett, F. Luca, and J. Mulholland. Twisted extensions of the cubic case of Fermat’s last theorem.
+     Ann. Sci. Math. Québec, 35(1):1–15, 2011.
+
+[13] M. A. Bennett, P. Mihăilescu, and S. Siksek. The generalized Fermat equation. In Open problems in
+     mathematics, pages 173–205. Springer, [Cham], 2016.
+
+[14] M. A. Bennett and J. Mulholland. On the Diophantine equation xn + yn = 2α pz2 . C. R. Math. Acad.
+     Sci. Soc. R. Can., 28(1):6–11, 2006.
+
+[15] M. A. Bennett and C. M. Skinner. Ternary Diophantine equations via Galois representations and modular
+     forms. Canad. J. Math., 56(1):23–54, 2004. doi:10.4153/CJM-2004-002-2.
+
+[16] M. A. Bennett, V. Vatsal, and S. Yazdani. Ternary Diophantine equations of signature ( p, p, 3). Compos.
+     Math., 140(6):1399–1416, 2004. doi:10.1112/S0010437X04000983.
+
+[17] A. Bérczes, M. Le, I. Pink, and G. Soydan. A note on the ternary Diophantine equation x2 − y2m = zn .
+     An. Ştiinţ. Univ. “Ovidius” Constanţa Ser. Mat., 29(2):93–105, 2021. doi:10.2478/auom-2021-0020.
+
+[18] F. Beukers. The Diophantine equation Ax p + Byq = Czr .             Duke Math. J., 91(1):61–88, 1998.
+     doi:10.1215/S0012-7094-98-09105-0.
+
+[19] N. Billerey. Équations de Fermat de type (5, 5, p). Bull. Aust. Math. Soc., 76(2):161–194, 2007.
+     doi:10.1017/S0004972700039575.
+
+[20] N. Billerey, I. Chen, L. Dembélé, L. V. Dieulefait, and N. Freitas. Some extensions of the mod-
+     ular method and Fermat equations of signature (13, 13, n). Publ. Mat., 67(2):715–741, 2023.
+     doi:10.5565/publmat6722309.
+
+[21] N. Billerey, I. Chen, L. V. Dieulefait, and N. Freitas. A result on the equation x p + y p = zr using Frey
+     abelian varieties. Proc. Amer. Math. Soc., 145(10):4111–4117, 2017. doi:10.1090/proc/13475.
+
+[22] N. Billerey, I. Chen, L. V. Dieulefait, and N. Freitas. A multi-Frey approach to Fermat equations of
+     signature (r, r, p). Trans. Amer. Math. Soc., 371(12):8651–8677, 2019. doi:10.1090/tran/7477.
+
+[23] N. Billerey, I. Chen, L. V. Dieulefait, and N. Freitas. On Darmon’s program for the Generalized Fermat
+     equation, II. Math. Comp., 94(354):1977–2003, 2025. doi:10.1090/mcom/4012.
+
+[24] N. Billerey and L. V. Dieulefait. Solving Fermat-type equations x5 + y5 = dz p . Math. Comp.,
+     79(269):535–544, 2010. doi:10.1090/S0025-5718-09-02294-7.
+
+[25] A. Bremner and P. Morton. A new characterization of the integer 5906. Manuscripta Math., 44(1-
+     3):187–229, 1983. doi:10.1007/BF01166081.
+
+[26] A. Bremner and N. X. Tho. On the Diophantine equation x4 + y4 = c. Acta Arith., 204(2):141–150,
+     2022. doi:10.4064/aa210718-5-4.
+
+
+                                                     44
+[27] D. Brown. Primitive integral solutions to x2 + y3 = z10 . Int. Math. Res. Not. IMRN, 2012(2):423–436,
+     2012. doi:10.1093/imrn/rnr022.
+
+[28] T. D. Browning and R. Dietmann. Solubility of Fermat equations. In Quadratic forms—Algebra, Arith-
+     metic, and Geometry, volume 493 of Contemp. Math., pages 99–106. Amer. Math. Soc., Providence, RI,
+     2009. doi:10.1090/conm/493/09666.
+
+[29] N. Bruin. The Diophantine equations x2 ± y4 = ±z6 and x2 + y8 = z3 . Compos. Math., 118(3):305–
+     321, 1999. doi:10.1023/A:1001529706709.
+
+[30] N. Bruin. On powers as sums of two cubes. In Algorithmic number theory (Leiden, 2000), volume 1838
+     of Lecture Notes in Comput. Sci., pages 169–184. Springer, Berlin, 2000. doi:10.1007/10722028 9.
+
+[31] N. Bruin. Chabauty methods using elliptic curves.           J. Reine Angew. Math., 562:27–49, 2003.
+     doi:10.1515/crll.2003.076.
+
+[32] N. Bruin. The primitive solutions to x3 + y9 = z2 . J. Number Theory, 111(1):179–189, 2005.
+     doi:10.1016/j.jnt.2004.11.008.
+
+[33] N. Bruin. Some ternary Diophantine equations of signature (n, n, 2). In Discovering mathemat-
+     ics with Magma, volume 19 of Algorithms Comput. Math., pages 63–91. Springer, Berlin, 2006.
+     doi:10.1007/978-3-540-37634-7 3.
+
+[34] C. A. Bruni. Twisted extensions of Fermat’s Last Theorem. PhD thesis, University of British Columbia,
+     2015.
+
+[35] Z. F. Cao. On the Diophantine equation x4 − py2 = z p . C. R. Math. Rep. Acad. Sci. Canada, 17(2-
+     3):61–66, 1995.
+
+[36] P. J. Cazorla Garcı́a. Asymptotic Fermat’s last theorem for a family of equations of signature (2, 2n, n).
+     Mathematika, 70(4):Paper No. e12279, 21, 2024.
+
+[37] J. Cel. Über die diophantische Gleichung x9 + y9 = 2n z2 . Acta Univ. Lodz. Folia Math., 3:23–28, 1989.
+
+[38] K. Chałupka, A. Da̧browski, and G. Soydan. On a class of generalized Fermat equations of signature
+     (2, 2n, 3). J. Number Theory, 234:153–178, 2022. doi:10.1016/j.jnt.2021.06.019.
+[39] K. Chałupka, A. Da̧browski, and G. Soydan. On a class of generalized Fermat equations of signature
+     (2, 2n, 3), II. (In preparation), 2024.
+[40] I. Chen.     On the equation s2 + y2p          =     α3 .   Math. Comp., 77(262):1223–1227, 2008.
+     doi:10.1090/S0025-5718-07-02083-2.
+
+[41] I. Chen. On the equation a2 + b2p = c5 . Acta Arith., 143(4):345–375, 2010. doi:10.4064/aa143-4-3.
+
+[42] I. Chen. On the equations a2 − 2b6 = c p and a2 − 2 = c p . LMS J. Comput. Math., 15:158–171, 2012.
+     doi:10.1112/S146115701200006X.
+
+[43] I. Chen and A. Koutsianas.           A modular approach to Fermat equations of signature
+     ( p, p, 5) using Frey hyperelliptic curves.  arXiv preprint arXiv:2210.02316, 2022. URL
+     https://arxiv.org/abs/2210.02316.
+
+[44] I. Chen and S. Siksek. Perfect powers expressible as sums of two cubes. J. Algebra, 322(3):638–656,
+     2009. doi:10.1016/j.jalgebra.2009.03.010.
+
+[45] H. Cohen. A course in computational algebraic number theory, volume 138 of Graduate Texts in Math-
+     ematics. Springer-Verlag, Berlin, 1993. doi:10.1007/978-3-662-02945-9.
+
+
+                                                     45
+[46] H. Cohen. Number theory. Vol. I. Tools and Diophantine equations, volume 239 of Graduate Texts in
+     Mathematics. Springer, New York, 2007.
+
+[47] H. Cohen. Number theory. Vol. II. Analytic and modern tools, volume 240 of Graduate Texts in Mathe-
+     matics. Springer, New York, 2007.
+
+[48] S. Dahmen. Classical and Modular Methods Applied to Diophantine Equations. PhD thesis, University
+     of Utrecht, 2008. URL dspace.library.uu.nl/handle/1874/29640.
+
+[49] S. R. Dahmen. A refined modular approach to the Diophantine equation x2 + y2n = z3 . Int. J. Number
+     Theory, 7(5):1303–1316, 2011. doi:10.1142/S1793042111004472.
+
+[50] S. R. Dahmen and S. Siksek. Perfect powers expressible as sums of two fifth or seventh powers. Acta
+     Arith., 164(1):65–100, 2014. doi:10.4064/aa164-1-5.
+
+[51] S. R. Dahmen and S. Siksek. On the generalized Fermat equation x5 + y3 = z7 . 2024. URL
+     few.vu.nl/~sdn249/GFE357.pdf.
+
+[52] S. R. Dahmen and S. Yazdani. Level lowering modulo prime powers and twisted Fermat equations.
+     Canad. J. Math., 64(2):282–300, 2012. doi:10.4153/CJM-2011-059-8.
+
+[53] H. Darmon. Rigid local systems, Hilbert modular forms, and Fermat’s last theorem. Duke Math. J.,
+     102(3):413–449, 2000. doi:10.1215/S0012-7094-00-10233-5.
+
+[54] H. Darmon and A. Granville. On the equations zm = F ( x, y) and Ax p + Byq = Czr . Bull. Lond. Math.
+     Soc., 27(6):513–543, 1995. doi:10.1112/blms/27.6.513.
+
+[55] H. Darmon and L. Merel. Winding quotients and some variants of Fermat’s last theorem. J. Reine Angew.
+     Math., 490:81–100, 1997.
+
+[56] A. Da̧browski. On the integers represented by x4 − y4 . Bull. Aust. Math. Soc., 76(1):133–136, 2007.
+     doi:10.1017/S0004972700039514.
+
+[57] A. Da̧browski. On a class of generalized Fermat equations. Bull. Aust. Math. Soc., 82(3):505–510, 2010.
+     doi:10.1017/S000497271000033X.
+
+[58] P. Dénes. Über die Diophantische Gleichung xl + yl = czl .           Acta Math., 88:241–251, 1952.
+     doi:10.1007/BF02392133.
+
+[59] L. E. Dickson. History of the Theory of Numbers: Diophantine Analysis, volume 2. Carnegie Institution,
+     1920.
+
+[60] L. V. Dieulefait. Modular congruences, Q-curves, and the Diophantine equation x4 + y4 = z p . Bull.
+     Belg. Math. Soc. Simon Stevin, 12(3):363–369, 2005.
+
+[61] L. V. Dieulefait. Solving Diophantine equations x4 + y4 = qz p . Acta Arith., 117(3):207–211, 2005.
+     doi:10.4064/aa117-3-1.
+
+[62] L. V. Dieulefait and N. Freitas. Fermat-type equations of signature (13, 13, p) via Hilbert cuspforms.
+     Math. Ann., 357(3):987–1004, 2013. doi:10.1007/s00208-013-0920-7.
+
+[63] L. V. Dieulefait and N. Freitas. The Fermat-type equations x5 + y5 = 2z p or 3z p solved through Q-
+     curves. Math. Comp., 83(286):917–933, 2014. doi:10.1090/S0025-5718-2013-02731-7.
+
+[64] L. V. Dieulefait and E. Soto. Solving ax p + by p = cz p with abc containing an arbitrary number of prime
+     factors. Mediterr. J. Math., 18(2):Paper No. 48, 24, 2021. doi:10.1007/s00009-020-01678-1.
+
+
+
+                                                     46
+[65] L. V. Dieulefait and J. J. Urroz. Solving Fermat-type equations via modular Q-curves over polyquadratic
+     fields. J. Reine Angew. Math., 633:183–195, 2009. doi:10.1515/CRELLE.2009.064.
+
+[66] E. J. Edwards. Platonic Solids and Solutions to x2 + y3 = dzr . PhD thesis, Utrecht University, 2005.
+
+[67] J. S. Ellenberg.  Galois representations attached to Q-curves and the generalized Fer-
+     mat equation A4 + B2    = C p.         Amer. J. Math., 126(4):763–787, 2004.      URL
+     http://muse.jhu.edu/journals/american_journal_of_mathematics/v126/126.4ellenberg.pdf.
+
+[68] G. Faltings. Endlichkeitssätze für abelsche Varietäten über Zahlkörpern. Invent. Math., 73(3):349–366,
+     1983. doi:10.1007/BF01388432.
+
+[69] E. V. Flynn and J. L. Wetherell. Covering collections and a challenge problem of Serre. Acta Arith.,
+     98(2):197–205, 2001. doi:10.4064/aa98-2-9.
+
+[70] N. Freitas. Recipes to Fermat-type equations of the form xr + yr = Cz p . Math. Z., 279(3-4):605–639,
+     2015. doi:10.1007/s00209-014-1384-5.
+
+[71] N. Freitas. On the Fermat-type equation x3 + y3 = z p . Comment. Math. Helv., 91(2):295–304, 2016.
+     doi:10.4171/CMH/386.
+
+[72] N. Freitas and A. Kraus. An application of the symplectic argument to some Fermat-type equations. C.
+     R. Math. Acad. Sci. Paris, 354(8):751–755, 2016. doi:10.1016/j.crma.2016.06.002.
+
+[73] N. Freitas and F. Najman. Two results on xr + yr = dz p . Proc. Amer. Math. Soc., 152(2):591–598,
+     2024. doi:10.1090/proc/16575.
+
+[74] N. Freitas, B. Naskrȩcki, and M. Stoll. The generalized Fermat equation with exponents 2, 3, n. Compos.
+     Math., 156(1):77–113, 2020. doi:10.1112/s0010437x19007693.
+
+[75] N. Freitas and S. Siksek.          Criteria for irreducibility of mod p representa-
+     tions of Frey curves.    J. Théor. Nombres Bordeaux, 27(1):67–76, 2015.      URL
+     http://jtnb.cedram.org/item?id=JTNB_2015__27_1_67_0.
+
+[76] G. Frey. On ternary equations of Fermat type and relations with elliptic curves. In Modular forms and
+     Fermat’s last theorem (Boston, MA, 1995), pages 527–548. Springer, New York, 1997.
+
+[77] B. Grechuk. Polynomial Diophantine Equations: A Systematic Approach. Springer International Pub-
+     lishing, 2024. URL https://books.google.co.uk/books?id=rj8eEQAAQBAJ.
+
+[78] B. Grechuk, T. Grechuk, and A. Wilcox. Diophantine equations with three monomials. J. Number
+     Theory, 253:69–108, 2023. doi:10.1016/j.jnt.2023.06.011.
+
+[79] G. Grigorov and J. Rizov. Heights on Elliptic Curves and the Diophantine Equation x4 + y4 = cz4 .
+     Humboldt-Universität zu Berlin, Mathematisch-Naturwissenschaftliche Fakultät II, Institut für Mathe-
+     matik, 1998. doi:http://dx.doi.org/10.18452/2724.
+
+[80] E. Halberstadt and A. Kraus. Courbes de Fermat: résultats et problèmes. J. Reine Angew. Math.,
+     548:167–234, 2002. doi:10.1515/crll.2002.058.
+
+[81] E. Halberstadt and A. Kraus. Une conjecture de Lebesgue. J. Lond. Math. Soc. (2), 69(2):291–302,
+     2004. doi:10.1112/S0024610703005106.
+
+[82] E. Işik, Y. Kara, and E. Ozman. On ternary Diophantine equations of signature ( p, p, 2) over number
+     fields. Turkish J. Math., 44(4):1197–1211, 2020. doi:10.3906/mat-1911-88.
+
+[83] W. Ivorra. Sur les équations x p + 2β y p = z2 et x p + 2β y p = 2z2 . Acta Arith., 108(4):327–338, 2003.
+     doi:10.4064/aa108-4-3.
+
+                                                      47
+ [84] W. Ivorra. Equations Diophantiennes Ternaires de type ( p, p, 2) et Courbes Elliptiques. PhD thesis,
+      Paris 6, 2004.
+
+ [85] W. Ivorra. Sur les courbes hyperelliptiques cyclotomiques et les équations x p − y p = cz2 . Dissertationes
+      Math., 444:46, 2007. doi:10.4064/dm444-0-1.
+
+ [86] W. Ivorra and A. Kraus. Quelques résultats sur les équations ax p + by p = cz2 . Canad. J. Math.,
+      58(1):115–153, 2006. doi:10.4153/CJM-2006-006-9.
+
+ [87] Y. Kara, D. Mocanu, and E. Özman. Non-trivial integer solutions of xr + yr = Dz p . arXiv preprint
+      arXiv:2404.07319, 2024. URL https://arxiv.org/abs/2404.07319.
+
+ [88] A. Koutsianas. On the generalized Fermat equation a2 + 3b6 = cn . Bull. Hellenic Math. Soc., 64:56–68,
+      2020.
+
+ [89] A. Kraus. Sur les équations a p + b p + 15c p = 0 et a p + 3b p + 5c p = 0. C. R. Acad. Sci. Paris Sér. I
+      Math., 322(9):809–812, 1996.
+
+ [90] A. Kraus. Majorations effectives pour l’équation de Fermat généralisée. J. Canadien Math, 49(6):1139–
+      1161, 1997. doi:10.4153/CJM-1997-056-2.
+
+ [91] A. Kraus.  Sur l’équation a3 + b3 = c p . Experiment. Math., 7(1):1–13, 1998.                        URL
+      http://projecteuclid.org/euclid.em/1047674269.
+
+ [92] A. Kraus. On the equation x p + yq = zr : a survey.                 Ramanujan J., 3(3):315–333, 1999.
+      doi:10.1023/A:1009835521324.
+
+ [93] A. Kraus. Une question sur les équations xm − ym = Rzn . Compos. Math., 132(1):1–26, 2002.
+      doi:10.1023/A:1016028914506.
+
+ [94] K. Krawciów. On generalized Fermat equations of signature ( p, p, 3). Colloq. Math., 123(1):49–52,
+      2011. doi:10.4064/cm123-1-4.
+
+ [95] K. Langmann. Unlösbarkeit der Gleichung xn − y2 = azm bei kleinem ggT(n, h(− a)). Arch. Math.
+      (Basel), 70(3):197–203, 1998. doi:10.1007/s000130050184.
+
+ [96] F. G. Madriaga and A. Pacetti. Hypergeometric motives and the generalized Fermat equation. arXiv
+      preprint arXiv: 2412.08804, 2024. URL https://arxiv.org/abs/2412.08804.
+
+ [97] F. G. Madriaga, A. Pacetti, and L. V. Torcomian. On the equation x2 + dy6 = z p for square-free
+      1 ≤ d ≤ 20. Int. J. Number Theory, 19(5):1129–1165, 2023. doi:10.1142/S1793042123500562.
+
+ [98] R. D. Mauldin. A generalization of Fermat’s last theorem: the Beal conjecture and prize problem.
+      Notices Amer. Math. Soc., 44(11):1436–1437, 1997.
+
+ [99] L. Merel. Arithmetic of elliptic curves and Diophantine equations. J. Théor. Nombres Bordeaux,
+      11(1):173–200, 1999. URL http://jtnb.cedram.org/item?id=JTNB_1999__11_1_173_0. Les
+      XXèmes Journées Arithmétiques (Limoges, 1997).
+
+[100] P. Michaud-Jacobs. On some generalized Fermat equations of the form x2 + y2n = z p . Mathematika,
+      68(2):344–361, 2022. doi:10.1112/mtk.12127.
+
+[101] P. Mihăilescu. Primary cyclotomic units and a proof of Catalan’s conjecture. J. Reine Angew. Math.,
+      572:167–195, 2004. doi:10.1515/crll.2004.048.
+
+[102] P. Mihăilescu. A cyclotomic investigation of the Fermat-Catalan equation. arXiv preprint Math/0702766,
+      2007.
+
+
+                                                       48
+[103] D. Mocanu. Asymptotic Fermat for signatures (r, r, p) using the modular approach. Res. Number
+      Theory, 9(4):Paper No. 71, 17, 2023. doi:10.1007/s40993-023-00474-6.
+
+[104] S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, and W. Porowski. Explicit estimates in inter-universal
+      Teichmüller theory. Kodai Math. J., 45(2):175–236, 2022.
+
+[105] L. J. Mordell. Diophantine equations, volume 30 of Pure and Applied Mathematics. Academic Press,
+      London-New York, 1969.
+
+[106] L. J. Mordell. The Diophantine equation Ax4 + By4 + Cz4 = 0. Proc. Cambridge Philos. Soc., 68:125–
+      128, 1970. doi:10.1017/s0305004100001122.
+
+[107] J. T. Mulholland. Elliptic curves with rational 2-torsion and related ternary Diophantine equations. PhD
+      thesis, University of British Columbia, 2006.
+
+[108] A. Newton and J. Rouse. Integers that are sums of two rational sixth powers. Canad. Math. Bull.,
+      66(1):166–177, 2023. doi:10.4153/S0008439522000157.
+
+[109] P. Norvig. Beal’s conjecture: A search for counterexamples.          Retrieved 2024-11, 2015.      URL
+      https://norvig.com/beal.html.
+
+[110] A. Noubissie.   On the generalized Fermat’s equations.  (preprint), 2020.  URL
+      https://www.researchgate.net/profile/Armand-Noubissie/publication/344171399_ON_THE_GENERAL
+
+[111] A. Noubissie. Study of Some Exponential Diophantine Equations. PhD thesis, Université d’Abomey-
+      Calavi (UAC) The Abdus Salam International Centre for Theoretical Physics (ICTP), 07 2020.
+      doi:10.13140/RG.2.2.14755.07205.
+
+[112] A. Noubissie and A. Togbé. On some ternary Diophantine equations of signature ( p, p, k). Bull. Malays.
+      Math. Sci. Soc., 44(1):163–170, 2021. doi:10.1007/s40840-020-00943-6.
+
+[113] J. Oesterlé. Nouvelles approches du théorème de Fermat. In Séminaire Bourbaki : Volume 1987/88,
+      Exposés 686-699, number 161-162 in Astérisque, pages 165–186. Société mathématique de France,
+      1988. URL http://www.numdam.org/item/SB_1987-1988__30__165_0/. talk:694.
+
+[114] A. Pacetti and L. Villagra Torcomian. Q-Curves, Hecke characters and some Diophantine equations.
+      Math. Comp., 91(338):2817–2865, 2022. doi:10.1090/mcom/3759.
+
+[115] A. Pacetti and L. Villagra Torcomian. Q-curves, Hecke characters and some Diophantine equations II.
+      Publ. Mat., 67(2):569–599, 2023. doi:10.5565/publmat6722304.
+
+[116] O. Pădurariu. Rational Points on Curves with Extra Structure. PhD thesis, Boston University, 2023.
+
+[117] B. Poonen. Some Diophantine equations of the form xn + yn = zm . Acta Arith., 86(3):193–205, 1998.
+      doi:10.4064/aa-86-3-193-205.
+
+[118] B. Poonen. Computing Torsion Points on Curves. Exp. Math., 10(3):449 – 466, 2001.
+
+[119] B. Poonen, E. F. Schaefer, and M. Stoll. Twists of X (7) and primitive solutions to x2 + y3 = z7 . Duke
+      Math. J., 137(1):103–158, 2007. doi:10.1215/S0012-7094-07-13714-1.
+
+[120] B. J. Powell. Proof of the impossibility of the Fermat equation X p + Y p = Z p for special values
+      of p and of the more general equation bX n + cY n = dZ n . J. Number Theory, 18(1):34–40, 1984.
+      doi:10.1016/0022-314X(84)90040-4.
+
+[121] P. Putz. Enumeration of Local and Global Étale Algebras Applied to Generalized Fermat Equations.
+      PhD thesis, Vrije Universiteit Amsterdam, Nov. 2024. doi:10.5463/thesis.832.
+
+
+                                                     49
+[122] P. Ribenboim. An extension of Sophie Germain’s method to a wide class of Diophantine equations. J.
+      Reine Angew. Math., 356:49–66, 1985. doi:10.1515/crll.1985.356.49.
+
+[123] K. A. Ribet. On modular representations of Gal(Q/Q) arising from modular forms. Invent. Math.,
+      100(2):431–476, 1990. doi:10.1007/BF01231195.
+
+[124] K. A. Ribet.      On the equation a p + 2α b p + c p      =    0.    Acta Arith., 79(1):7–16, 1997.
+      doi:10.4064/aa-79-1-7-16.
+
+[125] P. Scholze and J. Stix. Why abc is still a conjecture.         URL http://www. kurims. kyoto-u. ac.
+      jp/motizuki/SS2018-08. pdf, 2018.
+
+[126] E. S. Selmer. The Diophantine equation ax3 + by3 + cz3 = 0. Acta Math., 85:203–362 (1 plate), 1951.
+      doi:10.1007/BF02395746.
+
+[127] E. S. Selmer. The Diophantine equation ax3 + by3 + cz3 = 0. Completion of the tables. Acta Math.,
+      92:191–197, 1954. doi:10.1007/BF02392703.
+
+[128] J.-P. Serre. Sur les représentations modulaires de degré 2 de Gal(Q/Q). Duke Math. J., 54(1):179–230,
+      1987. doi:10.1215/S0012-7094-87-05413-5.
+
+[129] T. N. Shorey and R. Tijdeman. Exponential Diophantine equations, volume 87 of Cambridge Tracts in
+      Mathematics. Cambridge University Press, Cambridge, 1986. doi:10.1017/CBO9780511566042.
+
+[130] A. S. Sikora. Fermat-Catalan and Tijdeman-Zagier conjectures for products.              arXiv preprint
+      arXiv:2410.21552, 2024. URL https://arxiv.org/abs/2410.21552.
+
+[131] S. Siksek. On the Diophantine equation x2 = y p + 2k z p . J. Théor. Nombres Bordeaux, 15(3):839–846,
+      2003. URL http://jtnb.cedram.org/item?id=JTNB_2003__15_3_839_0.
+
+[132] S. Siksek. Explicit Chabauty over number fields.       Algebra Number Theory, 7(4):765–793, 2013.
+      doi:10.2140/ant.2013.7.765.
+
+[133] S. Siksek and M. Stoll. Partial descent on hyperelliptic curves and the generalized Fermat equation
+      x3 + y4 + z5 = 0. Bull. Lond. Math. Soc., 44(1):151–166, 2012. doi:10.1112/blms/bdr086.
+
+[134] S. Siksek and M. Stoll. The generalised Fermat equation x2 + y3 = z15 . Arch. Math. (Basel),
+      102(5):411–421, 2014. doi:10.1007/s00013-014-0639-z.
+
+[135] S. Sitaraman. On a Fermat-type Diophantine equation. J. Number Theory, 80(2):174–186, 2000.
+      doi:10.1006/jnth.1999.2438.
+
+[136] G. Söderlund. The primitive solutions to the Diophantine equation 2X 4 + Y 4 = Z3 . Notes on Number
+      Theory and Discrete Mathematics, 23(2):36–44, 2017.
+
+[137] G. Söderlund. On some Diophantine equations of the form hX 4 + Y 4 = Z n . Int. J. Algebra, 13(8):407–
+      430, 2019.
+
+[138] G. Söderlund. A note on the Fermat quartic 34x4 + y4 = z4 . Notes on Number Theory and Discrete
+      Mathematics, 26(4):103–105, 2020.
+
+[139] G. Söderlund. On the Diophantine equation h2 X 4 + Y 4 = Z3 . Int. J. Algebra, 14(4):259–272, 2020.
+
+[140] G. Söderlund and E. Aldén. On the Diophantine Equation CZ2 = X 5 + Y 5 . Advances in Theoretical
+      and Applied Mathematics (ATAM), 7(1):59–71, 2011.
+
+[141] G. Söderlund and E. Aldén. A note on the Diophantine equation Cz2 = x5 + y5 . Advances in Theoretical
+      and Applied Mathematics (ATAM), 8(3):173–176, 2013.
+
+                                                     50
+[142] R. J. Taclay and J. B. Bacani. On the Fermat quartic 2px4 + y4 = z4 . AIP Conf. Proc., 2896(1):030006–
+      1–03006–6, 11 2023. doi:10.1063/5.0177129.
+
+[143] R. Taylor and A. Wiles. Ring-theoretic properties of certain Hecke algebras. Ann. of Math. (2),
+      141(3):553–572, 1995. doi:10.2307/2118560.
+
+[144] N. Terai. The Diophantine equation x4 ± py4 = z p . C. R. Math. Rep. Acad. Sci. Canada, 16(2-3):63–68,
+      1994.
+
+[145] G. Terjanian. L’équation x p − y p = az2 et le théorème de Fermat. In Séminaire de Théorie des Nombres
+      1977–1978, pages Exp. No. 29, 7. Centre National de la Recherche Scientifique (CNRS), Laboratoire de
+      Théorie des Nombres, Talence, 1978. URL http://www.jstor.org/stable/44165317.
+
+[146] L. Villagra Torcomian. Asymptotic Fermat for signature (4, 2, p) over number fields. J. Number Theory,
+      250:124–138, 2023. doi:10.1016/j.jnt.2023.03.006.
+
+[147] J. Westlund.    On the equation xn + yn          = nzn .      Amer. Math. Monthly, 16(1):3–4, 1909.
+      doi:10.2307/2968108.
+
+[148] A. Wilcox. A systematic approach to Diophantine equations: two thousand solved examples. arXiv
+      preprint arXiv: 2404.08719, 2024. URL https://arxiv.org/abs/2404.08719v2.
+
+[149] A. Wiles. Modular elliptic curves and Fermat’s last theorem. Ann. of Math. (2), 141(3):443–551, 1995.
+      doi:10.2307/2118559.
+
+[150] K. D. Zelator. The Diophantine equation x2 + a2 ym = z2n with ( x, ay) = 1. Fibonacci Quart.,
+      30(4):305–309, 1992.
+
+[151] Z. Zhang. On the Diophantine equation xn + 2k yn = pz2 (English translation). Scientia Sinica Math.,
+      42(10):1047–1052, 2012. doi:10.1360/012011-1045.
+
+[152] Z. Zhang and M. Bai. On the Diophantine equation Ax2 + By2p = z5 (English translation). J. Southwest
+      China Normal Univ. (Nat. Sci. Ed.), 38(4):25–27, 2013. doi:10.13718/j.cnki.xsxb.2013.04.031.
+
+[153] Z. Zhang and M. Bai. On Diophantine equation x3 + y3 = 2z2n (English translation). J. Southwest
+      China Normal Univ. (Nat. Sci. Ed.), 39(6):14–16, 2014. doi:10.13718/j.cnki.xsxb.2014.06.004.
+
+[154] Z. Zhang and J. G. Luo. The Diophantine equation x2 + By2p = z3 . Acta Math. Sinica (Chinese Ser.),
+      57(1):195–198, 2014.
+
+[155] Z.-P. Zhou. The inter-universal Teichmüller theory and new Diophantine results over the rational num-
+      bers. I. arXiv preprint arXiv:2503.14510, 2025. URL https://arxiv.org/abs/2503.14510.
+
+
+
+
+                                                       51
+

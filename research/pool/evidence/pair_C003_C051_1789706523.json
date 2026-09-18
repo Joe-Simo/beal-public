@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "pair_C003_C051",
+  "timestamp": "2026-09-18T00:42:03-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "A": {
+      "id": "C003",
+      "status": "BLOCKED",
+      "claim": "The Hilbert newform orbit b at level 2000 (2.2.5.1-2000.1-b) is eliminated unconditionally, so no surviving newform orbit supports the weighted-equation Frey representation."
+    },
+    "B": {
+      "id": "C051",
+      "status": "PARTIAL_RESULT",
+      "claim": "Kernel-checked account of what remains: residual_of_counterexample \u2014 any Beal counterexample yields one with exponents in {4} U odd primes, not (4,4,4), not (3,3,3), exactly one even base, C even => not (x,y)=(4,4), no cancellation, pairwise coprime distinct bases; beal_of_no_residual \u2014 refuting every ResidualShape proves Beal."
+    }
+  },
+  "questions": {
+    "combine": {
+      "type": "score",
+      "instructions": "Would combining these two candidates produce a genuinely NEW attack (not a reword of either)?",
+      "criteria": [
+        "level 0: no, unrelated or redundant",
+        "level 1: marginal",
+        "level 2: a concrete new lemma or test could be written",
+        "level 3: the combination could close an infinite family"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do they share the SAME failure mode (so combining cannot help)?",
+      "criteria": {
+        "true": "same obstruction",
+        "false": "different mechanisms"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "combine": {
+        "type": "score",
+        "score": 0.93,
+        "confidence": 0.07,
+        "legend": {
+          "0": "level 0: no, unrelated or redundant",
+          "1": "level 1: marginal",
+          "2": "level 2: a concrete new lemma or test could be written",
+          "3": "level 3: the combination could close an infinite family"
+        },
+        "probabilities": {
+          "0": 0.44,
+          "1": 0.22,
+          "2": 0.32,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.14
+      }
+    },
+    "usage": {
+      "input_tokens": 615,
+      "output_tokens": 34
+    }
+  }
+}

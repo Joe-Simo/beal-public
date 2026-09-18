@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U45_even_leg_factor2_reduction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U45_even_leg_factor2_reduction.md",
+    "excerpt": "# U45: near-complete elimination of the 2-divisible even-leg exponent\n\nStatus: verified partial theorem. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Setup\n\nFrom U44, if the exponent-half `s` on the even Pythagorean leg is even, then primitive parametrization forces\n\n    m=u^2,\n    n=2v^2,\n\nwith gcd(u,v)=1 and u odd, and therefore\n\n    u^4 + 4 v^4 = C^t.                    (1)\n\nEquivalently, with\n\n    a=2v^2,\n    b=u,\n\nwe obtain\n\n    a^2 + b^4 = C^t,                       (2)\n\nwith gcd(a,b)=1 and ab != 0.\n\n## 2. Published complete theorem for t >= 4\n\nA theorem assembled from Bruin, Ellenberg, and Bennett-Ellenberg-Ng states:\n\n    For every integer n >= 4, the equation a^2+b^4=c^n\n    has no solutions in coprime nonzero integers.\n\nA convenient secondary source giving the theorem explicitly is `Reverse engineered Diophantine equations over Q`, Theorem 4, which attributes n=6 to Bruin, prime n>=211 to Ellenberg, and the remaining n>=4 to Bennett-Ellenberg-Ng.\n\nApplying this theorem to (2) eliminates (1) for every t>=4.\n\n## 3. The t=2 case\n\nIf t=2, (1) is\n\n    (u^2)^2 + (2v^2)^2 = C^2.\n\nThis is a right triangle with integer legs u^2 and 2v^2 and hypotenuse C. Its area is\n\n    (u^2)(2v^2)/2 = (uv)^2,\n\nan integer square. Fermat's right-triangle theorem (equivalently, the classical infinite-descent theorem that no right triangle with positive integer sides has square area) rules this out.\n\nTherefore t=2 is impossible.\n\n## 4. The only remaining case: t=3\n\nThe only exponent not covered by the two preceding arguments is\n\n    u^4 + 4v^4 = C^3,                      (3)\n\nwith gcd(u,v)=1 and u odd.\n\nSophie Germain gives\n\n    u^4+4v^4 = (u^2-2uv+2v^2)(u^2+2uv+2v^2).\n\nFor gcd(u,v)=1 and u odd, the two factors are odd and coprime. Hence (3) forces\n\n    u^2-2uv+2v^2 = r^3,\n    u^2+2uv+2v^2 = s^3\n\nfor coprime positive integers r,s.\n\nTaking the ratio and writing Y=s/r gives a rational point on the genus-2 curve\n\n    W^2 = -Y^6 + 6Y^3 - 1.                (4)\n\nDerivation: if x=u/v, then\n\n    Y^3 = (x^2+2x+2)/(x^2-2x+2).\n\nSolving this quadratic for x requires its discriminant to be a rational square, which after removing a square factor is exactly (4).\n\nThe obvious rational points Y=1, W=+/-2 correspond to the degenerate condition s=r, hence uv=0, and do not give positive solutions of (3).\n\nA bounded exact search found no positive coprime solution of (3) for u,v<500, but this is evidence only.\n\n## 5. Additional structure of the genus-2 curve\n\nCurve (4) has the rational involution\n\n    (Y,W) -> (1/Y, W/Y^3).\n\nWith invariant coordinates\n\n    S = Y + 1/Y,\n    V = W(Y+1)/Y^2,\n\nits quotient is the genus-1 quartic\n\n    V^2 = -(S+2)(S^3-3S-6)\n        = -S^4-2S^3+3S^2+12S+12.          (5)\n\nThus the remaining t=3 problem can be attacked by determining rational points on a genus-1 quotient together with the lifting condition `S^2-4` square, or directly by a genus-2 Chabauty/descent computation.\n\n## 6. Consequence for Beal coverage\n\nThe historical claim `2 does not divide s` is now reduced to one explicit finite-genus Diophantine problem, (3)/(4). It is NOT yet fully proved.\n\nWhat is rigorously established:\n\n- if 2|s and t=2: impossible;\n- if 2|s and t>=4: impossible by the complete (2,4,n) theorem;\n- if 2|s: only t=3 remains.\n\nNext: determine C(Q) for the genus-2 curve W^2=-Y^6+6Y^3-1, or enough of it to show that no nondegenerate rational point lifts to a positive solution of (3). In parallel, perform the analogous reduction for the `2|r` odd-leg equation u^4+v^4=2C^t.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.21,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.01,
+          "2": 0.69,
+          "3": 0.27
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.83
+      }
+    },
+    "usage": {
+      "input_tokens": 1754,
+      "output_tokens": 42
+    }
+  }
+}

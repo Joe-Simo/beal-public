@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U139",
+  "timestamp": "2026-09-18T00:26:41-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Two cycles in a row landed on literature-known territory via parametrisation + one-sided theorem. RESTART with a mechanism that is NOT 'parametrise then cite'. Verified assets: 40 elementary kernel theorems (mod 8/9, exponent order, dominant dichotomy, exact reduction to {4} U odd primes), (2m,2n,3) m,n>=4 rel. two theorems."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which is the most productive different mechanism?",
+      "criteria": {
+        "ribet_odd": "apply Ribet 1997 (x^p + 2^alpha y^p = z^p) as a one-sided theorem where the repo's own reductions produce 2-power coefficients: search all pool derivations for equations of shape x^p + 2^a y^p = z^p",
+        "descent_lean": "prove an unconditional NEW kernel theorem: any counterexample with z even and x,y odd primes forces 8 | A+B and C^z = (A+B)*S with gcd(A+B,S) | x... push the classical factorisation A^x+B^y... (only works when x=y)",
+        "signature_p_p_q": "(p,p,q) with p odd prime, q>=3: A^p+B^p=C^q factors as (A+B)*Phi_p(A,B)=C^q with gcd | p; both factors are q-th powers up to p: A+B = d^q or p^{q-1}d^q... then Phi_p(A,B) = e^q: a Thue-type equation; literature: Kraus (p,p,3) via (3j,3k,n); check what one-sided theorems apply",
+        "lean_tail": "formalise in Lean the exact dependency statement: every Beal counterexample not covered by the verified families has a specific reduced shape (a 'what remains' theorem)"
+      }
+    },
+    "exact": {
+      "type": "noul",
+      "instructions": "cheap exact test available?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "lean_tail",
+        "confidence": 0.35,
+        "probabilities": {
+          "signature_p_p_q": 0.25,
+          "ribet_odd": 0.1,
+          "lean_tail": 0.51,
+          "descent_lean": 0.14
+        }
+      },
+      "exact": {
+        "type": "noul",
+        "noul": 0.53
+      }
+    },
+    "usage": {
+      "input_tokens": 747,
+      "output_tokens": 73
+    }
+  }
+}

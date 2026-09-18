@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_real_cyclotomic_audit_p300_p400",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_real_cyclotomic_audit_p300_p400.md",
+      "excerpt": "# Checkpoint U111: Real Cyclotomic Class Number and Sahoo Class $\\mathcal{P}_1$ Audit for $300 < p < 400$\n\n**Date**: 2026-09-17  \n**Author**: Real Cyclotomic Class Number Auditor / Arithmetic Geometry Research Group  \n**Target Equation**: $X^{2\\ell} + Y^{2m} = Z^p$, prime exponents $\\ell, m \\ge 5$ (asymptotic bound $\\ell, m > 10^{60}$), prime $p \\in (300, 400)$  \n**Branch**: All-even Beal candidate $A^{2r} + B^{2s} = C^{2t}$ with $17 \\nmid t$  \n**Supporting Code**: [`code/U111_cyclotomic_p300_p400.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_cyclotomic_p300_p400.py)  \n**Machine-Readable Audit**: [`research/checkpoints/U111_real_cyclotomic_audit_p300_p400.json`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U111_real_cyclotomic_audit_p300_p400.json)  \n**Primary References**:\n- S. Sahoo, *Asymptotic solutions of generalized Fermat equations $x^{2l} + y^{2m} = z^p$*, preprint (2025).\n- R. Schoof, *Minus class groups of the fields of the $l$-th roots of unity*, Math. Comp. 67 (1998), 1225\u20131245.\n- R. Schoof, *Class numbers of real cyclotomic fields of prime conductor*, Math. Comp. 72, no. 242 (2003), 913\u2013937.\n- J. C. Miller, *Real cyclotomic fields of prime conductor and their class numbers*, Math. Comp. 84, no. 295 (2015), 2459\u20132469; arXiv:1407.2373 (2014).\n- On-Line Encyclopedia of Integer Sequences (OEIS), Sequences A230869 ($p$ with $h_p^+ > 1$) and A230870 ($h_p^+$ values).\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint audits the arithmetic of real cyclotomic fields $K^+ = \\mathbb{Q}(\\zeta_p)^+ = \\mathbb{Q}(2\\cos(2\\pi/p))$ and Sahoo's (2025) Class $\\mathcal{P}_1$ asymptotic elimination for all 16 primes in $300 < p < 400$:\n$$p \\in \\{307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397\\}.$$\n\n### Key Results\n\n1. **Inertia of 2 in $K^+ = \\mathbb{Q}(\\zeta_p)^+$**:\n   - Exactly **10 primes (62.5%)** have $2$ completely inert in $K^+$ ($g^+ = 1$, residue degree $f^+ = \\frac{p-1}{2}$):\n     $$\\mathbf{P_{\\text{inert}} \\cap (300, 400) = \\{311, 317, 347, 349, 359, 367, 373, 379, 383, 389\\}}.$$\n   - Exactly **6 primes (37.5%)** fail inertia ($g^+ \\ge 2$):\n     $$\\mathbf{P_{\\text{split}} \\cap (300, 400) = \\{307, 313, 331, 337, 353, 397\\}}.$$\n     - Three primes fail due to quadratic splitting $p \\equiv 1 \\pmod 8$ ($\\{313, 337, 353\\}$), where $2$ splits in $\\mathbb{Q}(\\sqrt{p}) \\subset K^+$.\n     - Three primes fail due to small multiplicative order mod $p$ ($\\{307, 331, 397\\}$).\n\n2. **Real Cyclotomic Class Numbers $h_p^+$ from Literature**:\n   - From Schoof (2003, Main Table; OEIS A230869/A230870), exactly **3 primes** in $(300, 400)$ have non-trivial class number $h_p^+ > 1$:\n     - **$p = 313$**: $h_{313}^+ = 7$ (term 6 of A230869/A230870);\n     - **$p = 349$**: $h_{349}^+ = 16$ (term 7 of A230869/A230870);\n     - **$p = 397$**: $h_{397}^+ = 4$ (term 8 of A230869/A230870).\n   - All other 13 primes in $(300, 400)$ have $h_p^+ = 1$ (under GRH).\n\n3. **The $p = 349$ Class Number Anomaly ($h_{349}^+ = 16$)**:\n   - For $p = 349$, $\\operatorname{ord}_{349}(2) = 348 = p - 1$, so **2 is completely inert** in $K^+$ ($f^+ = 174, g^+ = 1$).\n   - However, $h_{349}^+ = 16 = 2^4$ is **even** ($2 \\mid h_{349}^+$!).\n   - Just like $p = 163$ ($h_{163}^+ = 4$), the non-trivial 2-torsion in the class group $\\operatorname{Cl}(\\mathcal{O}_{K^+})[2] \\ne 0$ permits unramified quadratic extensions of $K^+$, **causing Sahoo's Kummer descent lemma to fail**.\n   - Therefore, $p = 349$ **fails Class $\\mathcal{P}_1$** despite 2 being completely inert.\n\n4. **Class $\\mathcal{P}_1$ Certification (under GRH)**:\n   - Exactly **9 primes (56.2%)** satisfy both criteria ($2$ inert and $h_p^+ = 1$):\n     $$\\mathbf{\\mathcal{P}_1 \\cap (300, 400) = \\{311, 317, 347, 359, 367, 373, 379, 383, 389\\}} \\quad (9 / 16 = 56.2\\%).$$\n     For each such prime, Sahoo's (2025) Theorem eliminates all non-trivial primitive integer solutions to $X^{2\\ell} + Y^{2m} = Z^p$ for exponents $\\ell, m > 10^{60}$.\n\n5. **Cumulative Progress across $19 \\le p < 400$**:\n   - Across all four audited intervals ($[19, 100)$, $(100, 200)$, $(200, 300)$, and $(300, 400)$), comprising 71 primes:\n     - Exactly **40 out of 71 primes (56.3%)** belong to Class $\\mathcal{P}_1$.\n\n---\n\n## 2. Algebraic Decomposition of 2 in $\\mathbb{Q}(\\zeta_p)^+$ for $300 < p < 400$\n\n### 2.1 Theoretical Invariants\nLet $p \\in (300, 400)$ be prime, and let $K^+ = \\mathbb{Q}(\\zeta_p)^+$ have degree $d = \\frac{p-1}{2}$.\nThe Galois group is $G^+ = \\operatorname{Gal}(K^+/\\mathbb{Q}) \\cong (\\mathbb{Z}/p\\mathbb{Z})^\\times / \\{\\pm 1\\}$.\nLet $f = \\operatorname{ord}_p(2)$ be the multiplicative order of 2 modulo $p$.\n- Residue degree in $K^+$:\n  $$f^+ = \\begin{cases} f/2 & \\text{if } f \\text{ is even and } 2^{f/2} \\equiv -1 \\pmod p, \\\\ f & \\text{otherwise.} \\end{cases}$$\n- Splitting index:\n  $$g^+ = \\frac{d}{f^+} = \\frac{(p-1)/2}{f^+}.$$\n- The prime 2 is **inert** in $K^+$ if and only if $g^+ = 1 \\iff f^+ = d$.\n\n### 2.2 Classification of Splitting in $(300, 400)$\n\n#### 1. Quad",
+      "length_chars": 12402
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.69,
+        "confidence": 0.31,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.74,
+          "1": 0.03,
+          "2": 0.03,
+          "3": 0.2
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.46,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.84,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.14
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.16,
+        "probabilities": {
+          "no_action": 0.08,
+          "audit_later": 0.23,
+          "verify_computation": 0.32,
+          "audit_now": 0.24,
+          "verify_literature": 0.13
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3661,
+      "output_tokens": 126
+    }
+  }
+}

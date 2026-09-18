@@ -1,0 +1,630 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C040",
+  "timestamp": "2026-09-18T00:31:51-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal's conjecture: if A^x + B^y = C^z with A,B,C,x,y,z positive integers and x,y,z > 2, then A, B, C share a common prime factor. Equivalently, the generalized Fermat equation A^x + B^y = C^z has no primitive solutions with all exponents at least 3. Current project work: modular method / Frey curves, Kraus sieves over signatures (3,3,p), (2,4,n), (5,5,p), Hilbert modular forms over real quadratic fields, Chabauty-Coleman on higher-genus quotients, cyclotomic class-group audits, and Lean 4 formalization of settled signatures.",
+    "candidate": {
+      "parents": [
+        "C039"
+      ],
+      "inspirations": [],
+      "evidence": [
+        "formal/Beal/Structure.lean section Dominant",
+        "code/U124_conjecture_mill.py",
+        "research/pool/evidence/conjecture_mill_ranking.json",
+        "research/checkpoints/U120_jev_scale_and_padic.md section 9"
+      ],
+      "obligations": [],
+      "evaluations": {
+        "lean4_mathlib_kernel": "VERIFIED: z_le_x_of_dominant_A_lt_C and z_le_y_of_dominant_B_lt_C on [propext, Quot.sound]; x_lt_z_of_C_lt_A and dominant_dichotomy on standard axioms.",
+        "exact_model": "true on all 2179 model solutions satisfying the hypothesis; zero violations."
+      },
+      "failure_reason": null,
+      "novelty_note": "Sharpens C039: needs only the dominant base below C, not both bases.",
+      "extracted": [],
+      "id": "C040",
+      "claim": "Dominant-term dichotomy: if B^y <= A^x then z <= x iff A < C (and symmetrically for B). In particular C < A implies x < z unconditionally.",
+      "method": "Machine-generated statement (conjecture mill over 13x14 atomic predicates), exact filter on the 5392-solution model, Jev ranking of the 177 survivors, Lean 4 + mathlib kernel proof.",
+      "status": "PARTIAL_RESULT"
+    },
+    "existing_pool": [
+      {
+        "id": "C001",
+        "claim": "The weighted equation X^10 + 256 Y^10 = Z^17 has no primitive nontrivial integer solutions, established by determining the full set of rational points on the genus-8 anti-invariant quotient curve C^-/k via Chabauty-Coleman.",
+        "method": "Genus-8 quotient of the Frey/Kummer cover; 2-descent bounding rank_Z J^-(k) <= 2 < g = 8; Coleman integration to pin down the finite point set.",
+        "status": "BLOCKED",
+        "failure_reason": "U113 Part III: the Chabauty-Coleman route bounds the WRONG OBJECT. U99 proves rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5), giving #C^-(k) <= 9. But U105 own \"degree obstruction\" shows a positive integer solution yields c = i*2^(4/5), whose minimal polynomial is x^10 + 256 (verified exactly), of degree 10 over k. Solutions therefore give points of C^-(L) with [L:k] = 10, which are not elements of C^-(k). A bound on the k-rational points is silent about them, so \"C^-(k) contains no points from solutions, therefore no solutions\" is a non sequitur with a vacuously true premise. Closing this needs Chabauty over L (degree 20 over Q) with rank_Z J^-(L) < 8 RE-ESTABLISHED (ranks grow in extensions), or symmetric-power Chabauty / covering collections. None exists in U99, U102 or U105."
+      },
+      {
+        "id": "C002",
+        "claim": "Level lowering in the style of Azon arXiv:2504.01967v2 Theorem 5.23 applies to the weighted equation X^10 + 256 Y^10 = Z^17 and eliminates the surviving Frey representation.",
+        "method": "Modular level lowering over a totally real field via Breuil-Diamond Theorem 3.2.2 local lift hypotheses.",
+        "status": "BLOCKED",
+        "failure_reason": "U96 audit against the primary source found Theorem 5.23 requires Hypothesis 5, which fails identically for the weighted equation. The route is blocked at its stated hypotheses, not merely unfinished."
+      },
+      {
+        "id": "C003",
+        "claim": "The Hilbert newform orbit b at level 2000 (2.2.5.1-2000.1-b) is eliminated unconditionally, so no surviving newform orbit supports the weighted-equation Frey representation.",
+        "method": "Three independent global obstructions: reducibility over Q(zeta_5) via X_0(17); endomorphism dimension clash dim End^0(J^-) = 2 != 4 = dim End^0(Jac(C_0)); R = T deformation rigidity against the boundary CM curve C_0: y^2 = 64 - x^5.",
+        "status": "BLOCKED",
+        "failure_reason": "U113 adversarial audit: all three elimination strategies fail. Strategy 3 refuted by exact computation (its set S of forcing primes is FINITE - exactly {11,31,41,71,131} under the trace criterion for q<1600, with match counts tracking q/17 - so the \"positive density / infinitely many\" step is false; Deligne equidistribution argues against the claim, not for it; it also conflates U68/U72 Gaussian-valuation forcing primes with mod-17 Frobenius congruence primes, and misapplies Baker superelliptic bounds to a three-term equation). Strategy 2 is circular: R=T does not turn a residual mod-17 isomorphism into a characteristic-zero isogeny, and if it did the modular method would need no elimination step at all; its endomorphism-dimension contradiction is therefore vacuous. Strategy 1 is a category error: J^- is an abelian surface with RM, so an O_K-linear 17-isogeny is classified by a Hilbert modular variety, not by the elliptic modular curve X_0(17); the cited Momose/Darmon-Merel/Bilu-Parent-Rebolledo statements are not quoted with their actual hypotheses and do not cover M=Q(zeta_5)."
+      },
+      {
+        "id": "C004",
+        "claim": "Mixed-weight cubic Pade approximation forces max(X, Y) > 10^25993 for any solution of the weighted equation.",
+        "method": "Pade/Thue-Siegel style height obstruction on the weighted binary form.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C005",
+        "claim": "The Gaussian forcing-prime sieve eliminates the weighted equation by exhausting its forcing primes.",
+        "method": "Gaussian descent sieve over forcing primes, genus-1576 Kummer cover.",
+        "status": "BLOCKED",
+        "failure_reason": "U92 proved exactly 14 forcing primes exist and the sieve is exhausted by them; the sieve cannot eliminate the remaining cases and provides no further leverage."
+      },
+      {
+        "id": "C006",
+        "claim": "A^3 + B^3 = C^p has no primitive nontrivial solutions for every prime p, not merely for p <= 700.",
+        "method": "Kraus sieve with modular elimination of the persistent obstructions at levels 72 and 144 for p = 1 mod 3, combined with Freitas (2016) Halberstadt-Kraus symplectic criterion for p = 2 mod 3.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C007",
+        "claim": "A^5 + B^5 = C^p has no primitive nontrivial solutions for primes p >= 5, via Hilbert modular forms over Q(sqrt 5).",
+        "method": "BCDF Frey elliptic curve families E_{a,b}, F_{a,b} over F = Q(sqrt 5) (h_F = h_F^+ = 1), level lowering to Hilbert newforms at levels dividing 40, 64, 80 and p_2^6, with an a_3-dichotomy.",
+        "status": "VERIFICATION_REQUIRED",
+        "failure_reason": null
+      },
+      {
+        "id": "C008",
+        "claim": "The mod-p Galois representation attached to the project's Frey curves is surjective uniformly across the relevant signatures (universal Serre surjectivity).",
+        "method": "Serre-type surjectivity criteria applied uniformly rather than per-prime.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C009",
+        "claim": "No counterexample to Beal's conjecture exists with A, B <= 160000 and exponents x, y, z in {3,5,7,11,13,17,19}.",
+        "method": "Exhaustive multi-threaded GMP search over coprime base pairs with arbitrary-precision verification.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C010",
+        "claim": "U41's modular elimination closes the weighted-equation branch of Beal.",
+        "method": "Modular elimination as recorded in U41.",
+        "status": "REFUTED",
+        "failure_reason": "U63 invalidated U41: the twist was mishandled and the elimination does not go through. Recorded in README as a standing invalidation."
+      },
+      {
+        "id": "C011",
+        "claim": "The all-even branch with 17 not dividing t admits no primitive solutions.",
+        "method": "Not yet selected; the branch is currently uncovered by every closed route.",
+        "status": "BLOCKED",
+        "failure_reason": "Closed by U116. The all-even branch reduces to the (r,r,p) shape by exactly two routes - the Pythagorean parametrisation (U114 VIII) and the direct factorisation of A^(2r) = (C^t - B^s)(C^t + B^s) (U116) - and BOTH force AB into {1} union {powers of 2}, because the only ambiguity in splitting coprime factors of a difference of powers is the factor 2 from parity. Azon Hypothesis 5 needs a prime factor of AB not dividing 2r, and 2 | 2r always, so the modular route is structurally unavailable for this branch regardless of whether 17 divides t. Separately, U105 claimed this branch closed for 17|t but both its pathways fail (U113 Part III), and its Theorem 1.1 assumes r,s >= 5, leaving x or y in {4,6,8} uncovered with no reduction proved."
+      },
+      {
+        "id": "C012",
+        "claim": "The mixed-signature part of Beal's conjecture, comprising all exponent triples not reduced to the handled signatures, admits no primitive solutions.",
+        "method": "Not yet selected; requires either a reduction to finitely many signatures or a mechanism uniform in the exponent triple.",
+        "status": "BLOCKED",
+        "failure_reason": "U114 Part II: the literature verdict is explicit - \"signatures with minimum exponent three remain largely inaccessible through current techniques\" (Darmon Program survey, arXiv:2507.15149, 2025). The smallest open Beal signature (3,5,7) has been attacked by Dahmen-Siksek with hyperelliptic descent and Selmer sets and yields only a CONDITIONAL result (solutions with 3|xy, 5|y or 7|x are trivial; removing the conditions is open). The fields own immediate targets are (2,3,9) and (2,4,5), both of which have an exponent equal to 2 and therefore lie OUTSIDE Beal. No mechanism this project can build will close this region; recording it as blocked rather than leaving it open-with-no-mechanism is the honest status."
+      },
+      {
+        "id": "C013",
+        "claim": "Orbit b (2.2.5.1-2000.1-b) is incompatible with rho-bar_{J^-,17} by an obstruction that uses ONLY residual mod-17 data: an image-of-inertia, Serre-weight, or Halberstadt-Kraus symplectic incompatibility at 2, 5 or 17.",
+        "method": "Apply Azon (arXiv:2504.01967v2) Theorem 5.23 part 3, a purely residual CM-exclusion criterion: if some prime q not dividing 2r has nu_q > 0 and nu_q not= 0 mod p, then the level-lowered Hilbert newform g does NOT have complex multiplication. Orbit b is a CM newform, so this would exclude it at the residual level, which is the level the modular method actually operates at.",
+        "status": "BLOCKED",
+        "failure_reason": "U114 Part VI + U116: Azon Theorem 5.23(3) is the correctly-shaped residual CM-exclusion criterion, but it sits under the standing Hypothesis 5, which FAILS for the weighted equation. The failure is now known to be COMPLETE across both reduction routes: the Pythagorean parametrisation (U114 VIII) and the direct factorisation of A^(2r) = (C^t - B^s)(C^t + B^s) (U116) each force AB to be 1 or a power of 2, because the only ambiguity in splitting coprime factors of a difference of powers is the factor 2 from parity. Hypothesis 5 needs a prime factor of AB not dividing 2r, and 2 | 2r always. No reduction reachable by either route can satisfy it."
+      },
+      {
+        "id": "C014",
+        "claim": "rank_Z J^-(L) < 8 where L is the degree-10 extension of k = Q(sqrt5) generated by a root of x^10 + 256, so that Chabauty-Coleman applies to C^-(L) - the field that actually contains the points coming from solutions of X^10 + 256 Y^10 = Z^17.",
+        "method": "Redo the U99 2-descent and Selmer rank bound over L instead of over k, or replace it with symmetric-power Chabauty / a covering collection over k of the degree-10 points.",
+        "status": "BLOCKED",
+        "failure_reason": "Closed on three independent grounds accumulated after this candidate was opened. (1) FEASIBILITY: [L:Q]=20, so the descent field over L has degree 340 over Q; U99 already cannot certify the degree-34 case unconditionally (Minkowski bound 5.67e19, bnfcertify fails), so degree 340 is hopeless. (2) SYMMETRIC-POWER CHABAUTY IS RULED OUT ARITHMETICALLY: it needs rank < g - d + 1 = 8 - 10 + 1 < 0 for d = 10, impossible. (3) THE BASE CASE IS ITSELF CONDITIONAL: U113 Part IV showed the U99 rank bound over k rests on GRH plus a Cohen-Martinet heuristic, so even the starting point is not unconditional. Jev independently routed this to discard (0.49) with failure_similarity 1.9."
+      },
+      {
+        "id": "C015",
+        "claim": "The Lean 4 development in formal/ compiles against mathlib with zero sorry, zero custom axioms outside a clearly quarantined and labelled set of external theorems, and its formal statements faithfully encode the original Beal statement.",
+        "method": "Install a Lean toolchain; compile; replace the four padicValNat axioms with mathlib lemmas; replace flt_3 with mathlib fermatLastTheoremThree; quarantine or discharge the remaining Class B axioms; eliminate the 7 sorry occurrences.",
+        "status": "PROMISING",
+        "failure_reason": null
+      },
+      {
+        "id": "C016",
+        "claim": "If a Beal counterexample exists, one exists with all three exponents in {4} union {odd primes}; equivalently the signature-by-signature strategy is legitimate.",
+        "method": "Elementary: least-prime-factor argument for the power-of-two case, and preservation of primitivity under taking powers of the bases.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C017",
+        "claim": "Unified: if 3 | gcd(x,y,z) or 4 | gcd(x,y,z), then A^x + B^y = C^z has no positive solutions. Packages the 3|x,3|y,3|z family (FLT3) and the 4|x,4|y,z even family (not_fermat_42).",
+        "method": "Reduce (A^m)^4 + (B^m)^4 = (C^m)^4 and apply mathlib fermatLastTheoremFour.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C018",
+        "claim": "The bases of any Beal counterexample are pairwise coprime (gcd A B = gcd A C = gcd B C = 1), and no counterexample has A = B.",
+        "method": "Elementary divisibility: a common prime of two bases divides the third via the equation, contradicting gcd(gcd(A,B),C)=1; then A=B forces A=1 and 2 is not a perfect power of exponent >= 3.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C019",
+        "claim": "Whenever 3|x, 3|y and 3|z, A^x + B^y = C^z has no positive solutions; in particular no Beal counterexample has such a signature, including the Fermat cubic (3,3,3).",
+        "method": "Reduce to (A^a)^3 + (B^b)^3 = (C^c)^3 and apply mathlib fermatLastTheoremThree.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C020",
+        "claim": "A Beal counterexample with all three exponents even is exactly a primitive Pythagorean triple (A^r, B^s, C^t) whose entries are perfect powers with r,s,t >= 2.",
+        "method": "Elementary: x=2r with x>=3 forces r>=2; rewrite A^(2r) = (A^r)^2; primitivity and pairwise coprimality transfer via the verified gcd_pow_eq_one and gcd_ab/ac/bc_eq_one.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C021",
+        "claim": "For Azon signature (r,r,p), Hypothesis 5 holds iff AB has a prime factor q not dividing 2r with ord*(q mod r) even. Moreover EVERY (r,r,p)-reduction of the all-even Beal branch arising from the Pythagorean parametrisation has AB = 1 or a power of 2, so Hypothesis 5 fails for all of them and Azon level lowering is structurally inapplicable to that branch.",
+        "method": "Case analysis on primes q not dividing 2r using the derived formula nu_q = 2p v_q(c) + 2 v_q(C) - v_q(AB) - r v_q(ab), together with Azon Definition 3.11 (r-th-power-freeness) and Lemma 3.12 (pairwise coprimality of A a^r, B b^r, C c^p).",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C022",
+        "claim": "ExponentReduction.lean duplicates the definition of IsBealCounterexample already present in Conjecture.lean, with a different gcd association (gcd (gcd A B) C vs gcd3 A B C = gcd A (gcd B C)) and the last two fields in the opposite order.",
+        "method": "Discovered when importing Beal.ExponentReduction into Beal.Signature238 failed with: environment already contains Beal.IsBealCounterexample from Beal.Conjecture.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C023",
+        "claim": "The abc conjecture implies only that there are FINITELY MANY counterexamples to Beal, not that there are none; and the finiteness is ineffective. Therefore no route through abc - including inter-universal Teichmuller theory - can resolve Beal.",
+        "method": "Literature check at abstract/encyclopaedic level: abc implies the Fermat-Catalan conjecture (finiteness of solutions with 1/p+1/q+1/r<1); Beal asserts zero solutions with min exponent >= 3.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C024",
+        "claim": "Beal Prize status (verified 2026-09-17): US $1,000,000 held by the AMS, donated by D. Andrew Beal, announced in the Notices of the AMS December 1997; awarded for EITHER a proof OR a counterexample, conditional on publication in a refereed and respected mathematics publication, a two-year waiting period, and verification by two outside experts chosen by the AMS and the Beal Prize Committee. Never awarded to date.",
+        "method": "Literature/primary-source check. The AMS rules page returned HTTP 403 to automated fetching, so this is at search/secondary level rather than a direct read.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C025",
+        "claim": "Consolidated necessary conditions on any Beal counterexample, kernel-verified: the bases are pairwise coprime; A != B; the exponents are not all divisible by 3; x and y are not both divisible by 4 with z even; and neither 3 nor 4 divides gcd(x,y,z). Together with exponent reduction: if a counterexample exists, one exists with all exponents in {4} union {odd primes} AND satisfying all of these.",
+        "method": "Assemble the verified components (gcd_ab/ac/bc_eq_one, not_eq_bases, no_counterexample_of_three_dvd_all, no_counterexample_of_four_four_even, no_counterexample_of_three_or_four_dvd_gcd, reduction) into a single theorem.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C026",
+        "claim": "Beal is FALSE over the Gaussian integers: (-2+i)^3 + (-2-i)^3 = (1+i)^4, with exponents (3,3,4) all >= 3 and bases sharing no Gaussian prime (norms 5, 5, 2). Therefore Beal cannot be proved from unique factorisation alone; any valid proof must use the total ordering of Z or the ramification of rational primes.",
+        "method": "Helenius (2004), supplied via an external survey; verified here in exact Gaussian-integer arithmetic.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C027",
+        "claim": "Beal is equivalent to: 2 is an obligatory exponent for every non-trivial primitive solution in the hyperbolic regime. Of the ten coprime Fermat-Catalan solutions listed in the external survey, the nine whose identities verify all have 2 among their exponents.",
+        "method": "Exact verification of each listed identity and gcd.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C028",
+        "claim": "At every modulus m, a Beal counterexample forces a in <A>, b in <B>, c in <C> with a+b = c mod m, because {X^x mod m : x >= 3} is exactly the cyclic subgroup <X> when gcd(X,m)=1. Combined with the kernel-verified pairwise coprimality this rejects 77.7% of coprime residue triples at m = 240.",
+        "method": "Exhaustive exact computation over residue triples, subsets of Z/m held as integer bitmasks.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C029",
+        "claim": "Classical Fermat descent on the all-even branch sends signature (2r,2s,2t) to signature (2r,2r,t) with coefficient 2 - it diagonalises the left exponents, halves the right one, and introduces a 2. It is therefore NOT a self-map of a single equation, so infinite descent cannot close. The number of available steps is exactly v_2(t).",
+        "method": "Derive the descent step from the kernel-verified Pythagorean characterisation: m-n = p^r, m+n = q^r gives C^t - B^s = p^(2r), C^t + B^s = q^(2r), 2C^t = p^(2r) + q^(2r). Verified symbolically for r = 2,3,5.",
+        "status": "BLOCKED",
+        "failure_reason": "The descent changes the signature rather than reducing size within one, so there is no strictly decreasing quantity while the equation stays fixed - which is what infinite descent requires. Fermat right-triangle theorem succeeds precisely because at r=s=2, t=1 the descent IS a self-map with a strictly smaller hypotenuse."
+      },
+      {
+        "id": "C030",
+        "claim": "Of 405 reduced signatures with exponents in {3,4,5,7,11,13,17,19,23} and x<=y, this project can cite a recorded result for only 40. The remaining 365 are signatures THIS PROJECT cannot justify - not signatures that are open in the literature.",
+        "method": "Enumeration against the results recorded in this project (FLT; the two kernel-verified families; (p,p,3); (3,3,p) for p<=1e7; (5,5,p); (3,4,5); (3,3,4)).",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C031",
+        "claim": "The ordering of Z enters a proof of Beal at exactly one point: positivity forbids cancellation, giving A^x < C^z, B^y < C^z and C^z <= 2 max(A^x,B^y). Hence with A^x <= B^y, C is pinned to within a factor 2^(1/z) <= 1.26 of B^(y/z). Over Z[i] this fails completely - the Helenius identity collapses norm 125 summands to a norm 16 sum.",
+        "method": "Elementary, from positivity plus the kernel-verified pairwise coprimality; formalised in Lean.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C032",
+        "claim": "The linear form z log C - y log B from the size window equals log(1 + A^x/B^y) identically, so it carries no information beyond the ratio of the summands and yields no new obstruction. Combining the M3 size window with the M1 congruence sieve gives a ~17x search reduction.",
+        "method": "Exact logarithmic identity plus numerical verification on known solutions; combination arithmetic.",
+        "status": "BLOCKED",
+        "failure_reason": "M4 produces no new obstruction: the apparent linear form in logarithms is identically log(1 + A^x/B^y), a restatement of the equation rather than an independent constraint, so Baker-type reasoning finds nothing to bite on here."
+      },
+      {
+        "id": "C033",
+        "claim": "Sharp curvature separation. Every hyperbolic Beal signature has |chi| >= 1/12 with equality exactly at permutations of (3,3,4), while every one of the ten known primitive hyperbolic solutions has |chi| <= 1/18. Hence Beal is equivalent to: no primitive solution has |chi| >= 1/12. This explains the exponent-2 phenomenon quantitatively - an exponent 2 contributes 1/2 to the reciprocal sum, which is what permits |chi| to stay small.",
+        "method": "Exhaustive exact rational computation over 3 <= p,q,r < 40 for the Beal region; exact chi for each known solution; the Beal half formalised in Lean as 12(qr+pr+pq) <= 11pqr.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C034",
+        "claim": "Curvature stratification: |chi| < T is a FINITE set of Beal signatures precisely when T < 1/3 (since with x=y=3 the reciprocal sum is 2/3 + 1/z, bounded iff 1-T > 2/3). There are exactly 4 signatures with 1/12 <= |chi| < 1/6, 13 with |chi| < 1/4, and 29 with |chi| < 3/10, over reduced exponents with x <= y.",
+        "method": "Exact rational enumeration over reduced exponents, with the finiteness threshold derived rather than assumed.",
+        "status": "BLOCKED",
+        "failure_reason": "The stratification is exact but moves no difficulty: the finite part (13 signatures below |chi| = 1/4) is ALREADY closed by known results - (3,3,p) Kraus/Chen-Siksek, (p,p,3) Darmon-Merel/Poonen, (3,4,5) Siksek-Stoll - so it buys nothing; and the infinite tail |chi| >= 1/3 contains every large-exponent signature, which is exactly where genus grows and the modular method is weakest."
+      },
+      {
+        "id": "C035",
+        "claim": "Exactly one of A, B, C is even in any Beal counterexample. Not two, by pairwise coprimality; not zero, since two odd bases force C^z even.",
+        "method": "p-adic reasoning at p=2, chaining off the kernel-verified pairwise coprimality lemmas. Direction surfaced by ranking a 300-mechanism space with Jev, where valuation/p-adic took 9 of the top 18 slots.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C036",
+        "claim": "The congruence conditions at coprime moduli are positively CORRELATED as constraints, not independent: f(m1*m2) < f(m1)*f(m2) in every measured case, with ratios 0.749-0.889 for two factors and 0.500-0.560 for three.",
+        "method": "Exact enumeration of admissible residue triples at each modulus and at their product.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C037",
+        "claim": "Complete mod-8 analysis of a Beal counterexample, covering every parity configuration. C even: both exponents even is IMPOSSIBLE; x even with y odd forces B = 7 mod 8; both odd forces 8 | A+B. A even (so B, C odd): y,z both odd forces B = C mod 8; y odd with z even forces B = 1 mod 8. By symmetry the same holds with A and B exchanged.",
+        "method": "p-adic at 2: A, B both odd by exactly_one_even; 8 | C^z since z >= 3; and for odd n, n^k = 1 mod 8 for even k, n^k = n mod 8 for odd k.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C038",
+        "claim": "At p=3: if 3 divides none of A,B,C and 3 divides both x and y, then C^z = 2 or 7 mod 9, and consequently 3 does not divide z. Elementary (the cubes among units mod 9 are exactly {1,8}), independent of FLT3.",
+        "method": "Exact residue arithmetic mod 9, Lean 4 + mathlib kernel verification, plus exhaustive enumeration of the mod-9 model. Direction selected by a Jev ranking of 20 concrete mod-9 claims.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C039",
+        "claim": "Base order forces exponent order in any Beal counterexample: C largest base implies z <= max(x,y); C smallest base implies z > max(x,y); C <= B implies z > y.",
+        "method": "Elementary inequalities from no_cancellation, Lean 4 + mathlib kernel, exhaustive model cross-check. Cell chosen by the Jev mechanism ranking (top unmined cell) and the claims ranked by Jev before any reasoning.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C040",
+        "claim": "Dominant-term dichotomy: if B^y <= A^x then z <= x iff A < C (and symmetrically for B). In particular C < A implies x < z unconditionally.",
+        "method": "Machine-generated statement (conjecture mill over 13x14 atomic predicates), exact filter on the 5392-solution model, Jev ranking of the 177 survivors, Lean 4 + mathlib kernel proof.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C041",
+        "claim": "NEGATIVE: the combined mod-72 sieve (mod 8 x mod 9) excludes no exponent class. For every (x,y,z) mod 6 there are admissible residue triples with pairwise coprime bases (minimum 2304 of 373248, maximum 27648).",
+        "method": "Exact enumeration over all (A,B,C) mod 72 and x,y,z in 3..8, code/U125_mod72_classes.py.",
+        "status": "BLOCKED",
+        "failure_reason": "A purely local sieve at 2 and 3 cannot exclude any infinite signature family: every exponent class remains locally solvable. Consistent with C036 (local conditions are correlated, never reach zero)."
+      },
+      {
+        "id": "C042",
+        "claim": "Height-gap hypothesis H: with A^x dominant and A<C, A^x <= (C-1)^z, which would give B^y >= z(C-1)^(z-1), an effective lower bound on B in terms of C.",
+        "method": "Cheapest discriminating test first: exact enumeration on the exponent>=2 model (bases<=120, exponents<=15), code/U126_height_gap_test.py. Route selected by a Jev call over 7 mechanisms.",
+        "status": "REFUTED",
+        "failure_reason": "H fails on genuine pairwise-coprime solutions: 3^5+10^2=7^3 has 243 > 6^3=216, and 17^3+2^7=71^2 has 4913 > 70^2=4900. So the dominant term can sit strictly between (C-1)^z and C^z; the elementary gap C^z-(C-1)^z gives no lower bound on the minor term. Whether H holds with all exponents >=3 is untestable on a model (no such solutions are known) and has no elementary proof mechanism."
+      },
+      {
+        "id": "C043",
+        "claim": "COUNTERSEARCH in Z[i]: of the norm analogues of the verified Z-constraints, exactly one fails on the Helenius identity (-2+i)^3+(-2-i)^3=(1+i)^4: the lower half of no_cancellation, that the sum exceeds each summand (N(C^z)=16 < 125 = N(A^x) = N(B^y)). Every other tested analogue (upper half of no_cancellation, C-smallest exponent order, dominant dichotomy, exactly-one-even, mod-8 parity rule) HOLDS there.",
+        "method": "Exact Gaussian-integer arithmetic, code/U127_gaussian_countersearch.py; Jev used once, after the exact test, to route (HYPOTHESIS_ONLY, noul 0.61 that ordering is essential).",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C044",
+        "claim": "NEGATIVE: on the exponent>=2 model (100 coprime vs 436 non-coprime solutions, bases<=120, exponents<=15, A!=B, bases>=2), no ordering, gap, exponent-order or residue feature among 22 tested separates coprime from non-coprime solutions, except features logically equivalent to coprimality itself (gcd(A,B)>1; C divides a base; A^x=B^y).",
+        "method": "Machine-generated feature mill with exact enumeration, code/U128_gcd_separator_mill.py; Jev ranked provability of the features afterwards (HYPOTHESIS_ONLY).",
+        "status": "BLOCKED",
+        "failure_reason": "Every non-tautological feature has substantial support on BOTH sides: e.g. C^z<=2max holds on 100/100 and 436/436; z<=max(x,y) on 82/100 and 318/436; exactly-one-even on 100/100 and 180/436. The gcd condition is invisible to first-order ordering and gap statements on the model."
+      },
+      {
+        "id": "C045",
+        "claim": "Exact reduction of the sparsest mod-72 class (x,y even, z odd): a counterexample there is exactly a coprime opposite-parity pair (u,v) with Re((u+vi)^z) and Im((u+vi)^z) both perfect powers (exponents >= 2), and C = u^2+v^2. Derivation: C is odd (kernel-verified not_both_exponents_even_of_even_C), so a+bi, a-bi are coprime in the UFD Z[i]; units are z-th powers for z odd. Box search u,v<=400, z in {3,5,7}: 194,970 pairs, zero hits.",
+        "method": "Exact derivation over Z[i] (paper), exact big-integer parametrised search (code/U129_gaussian_param_search.py), Jev routing after the test.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C046",
+        "claim": "Literature state (primary-source, U130): among signatures with all exponents >= 3, the fully solved families are (3,3,n) n<=10^9, (n,n,3) n>=3, (n,n,n). Hence (4,4,3) is solved; (4,4,5), (4,4,7), (4,6,3), every (2m,2n,r odd) with m != n, (3,5,7), (5,5,7) are open. A Jev screen of all 45 pool candidates found NONE subsumed by these (max subsumed 0.24); C045 routed to combine, 30 candidates routed to sharpen onto the open families.",
+        "method": "WebSearch + fetch of arXiv:2412.11933 (survey) and arXiv:2509.21083, arXiv:2103.03298 abstracts; Jev screen code/U130_literature_subsumption_screen.py (HYPOTHESIS_ONLY routing).",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C047",
+        "claim": "No Beal counterexample of signature (2m,2n,3) with m>=4 and n>=4. Even m or even n: signature (4,2n,3) / (2m,4,3), excluded by BCDY 2015 Thm 1. Both odd (>=5): C odd forces a+bi=(u+vi)^3 in Z[i]; on whichever side 3 does not divide the parameter, (s^2)^m+(-eps t)^m=3v^2 with m odd, forbidden by Bennett-Skinner 2004 Thm 1.1 (C=3).",
+        "method": "Exact derivation over Z[i] + primary-source theorem (Canad. J. Math. 56 (2004) 23-54, Thm 1.1, C=3). Jev routed the sub-family and audited the dependency chain.",
+        "status": "VERIFICATION_REQUIRED",
+        "failure_reason": "FLAW FOUND AND REPAIRED (U134): original S5 mis-handled the sign for even m (difference of m-th powers, not a sum). Repaired by routing even m or n through BCDY 2015 Thm 1 for (4,2n,3). Status stays VERIFICATION_REQUIRED."
+      },
+      {
+        "id": "C048",
+        "claim": "Signature (2m,2n,5): over Z[i], x^2+y^2=z^5 (z odd, forced by kernel theorem) gives (s(Q_s), t(Q_t), s^2+t^2) with Q_s=s^4-10s^2t^2+5t^4; gcd(s,Q_s)|5; on the 5-free side the identity 4s^4+Q_s=5(s^2-t^2)^2 yields the SINGLE-exponent ternary equation 4X^{4m}... precisely 4S^{4m} + eps T^m = 5Z^2 with (S^4, eps T, Z) nonzero pairwise coprime, 5 not dividing ST.",
+        "method": "Exact derivation and enumeration (identity: 0 violations; parametrisation covers all 64 coprime solutions z<200), primary-source reading of Bennett 2006 (JTNB 18, 315-321, saved references/U130/bennett2006.txt), Jev audit C048_audit_Q1-Q5 and routing.",
+        "status": "BLOCKED",
+        "failure_reason": "Bennett 2006 closes the diagonal (2n,2n,5) using CROSS-side equations (D^n+20A^{4n}=w^2, D^n+4*5^{4n-3}A^{4n}=w^2) that need the same exponent on both sides; with m!=n these become mixed-exponent equations with no Frey curve. The one-sided equation Y^m+4X^{4m}=5Z^2 is Bennett eq. (3.4); he kills it only when X is even (Frey curve E2, level 50, c_3=+-1 trace argument, prime m>=7). The exact search confirms it has a genuine coprime solution at m=4: (X,Y,Z)=(11,+-71,2257), so no unconditional \"no solutions\" statement holds for it."
+      },
+      {
+        "id": "C049",
+        "claim": "NEGATIVE: for odd prime z in {7,11,13,17,19} there is NO identity P_z(u,v) + c*u^(z-1) = z*R(u,v)^2 over Q (with P_z = Re((u+vi)^z)/u and R homogeneous of degree (z-1)/2), so the one-sided Bennett-type reduction that works for z=3 (direct) and z=5 (4u^4+P_5=5(u^2-v^2)^2) does not extend to (2m,2n,z), z>=7.",
+        "method": "Exact rational linear/quadratic coefficient solve, code/U135_odd_z_identity_test.py; route chosen by Jev route_U135 at low confidence (0.15 = no signal), executed as the cheapest exact test.",
+        "status": "BLOCKED",
+        "failure_reason": "The z=5 identity is special (it is the discriminant identity of the quintic Chebyshev-type polynomial); for z>=7 the coefficient system is inconsistent for every normalisation tried. Any (2m,2n,z>=7) attack needs a different auxiliary equation."
+      },
+      {
+        "id": "C050",
+        "claim": "Signature (2m,4,2k), m>=4, k>=2, with the exponent-4 base B EVEN: no Beal counterexample, relative to (n,n,2) for n>=4 [Darmon-Merel 1997, Poonen 1998; BCDY Table 1] and Bennett-Skinner 2004 Thm 1.1 with C=2. Derivation: (A^m,B^2,C^k) is a primitive Pythagorean triple with C^k odd; B^2=2rs forces {r,s}={2p^2,q^2}; A^m=(r-s)(r+s) with coprime odd factors gives r-s=a^m, r+s=b^m; then a^m+b^m = 4p^2 (r even; a square: (m,m,2)) or a^m+b^m = 2q^2 (s even; BS C=2, whose only exceptions (5,3,-1),(4,1,-1) are not positive). The A-even case reduces instead to b^4 - a^4 = 2A^m (open here).",
+        "method": "Exact derivation; exact checks code/U137_pythagorean_even4.py (2898 primitive triples, identities hold; auxiliary equations have solutions at m=3 and none at m in 4..7 in the box, consistent with the cited theorems; model solutions exist only at exponent 2). Route chosen by Jev route_U137 (0.72).",
+        "status": "DUPLICATE",
+        "failure_reason": "LITERATURE DUPLICATE (found by the mandatory primary-source check): (2m,4,2k) is x^4 + y^{2m} = z^2 with z = C^k, i.e. signature (4,2m,2), a permutation of the BCDY 2015 Table 1 row (2,n,4), n>=4, marked \"immediate from Bennett-Skinner [8], Bruin [18]\" and of the 2024 survey row (2,4,n) n>=5 (unstarred = all permutations). The derivation here reproduces that \"immediate\" argument: (z-B^2)(z+B^2)=A^{2m} gives a^{2m}+b^{2m}=2x^2 (BS Thm 1.1, C=2) in the B-even case and x^n+2^beta y^n=2z^2 (Ivorra 2003, BCDY ref [48]) in the A-even case. Also: m even is trivially subsumed by the repo theorem no_counterexample_of_four_four_even via 4 | 2m."
+      },
+      {
+        "id": "C051",
+        "claim": "Kernel-checked account of what remains: residual_of_counterexample \u2014 any Beal counterexample yields one with exponents in {4} U odd primes, not (4,4,4), not (3,3,3), exactly one even base, C even => not (x,y)=(4,4), no cancellation, pairwise coprime distinct bases; beal_of_no_residual \u2014 refuting every ResidualShape proves Beal.",
+        "method": "Lean 4 + mathlib, formal/Beal/Residual.lean, standard axioms, 0 sorry, no external hypotheses. Route chosen by Jev route_U139 (0.51).",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C052",
+        "claim": "Literature state for the residual family (4,4,p), p odd prime: (4,4,3) solved via (n,n,3); (4,4,5) solved via (2n,2n,5) [Bennett 2006]; for general p only the First Case (p does not divide xyz) is proved, for p != 7 (Dieulefait, arXiv:math/0304425, Q-curves and modular congruences). The Second Case is open.",
+        "method": "Primary-source abstracts (arXiv:math/0304425), BCDY 2015 and 2024 survey tables; Jev route_U140 (0.58).",
+        "status": "BLOCKED",
+        "failure_reason": "Closing (4,4,p) needs the Q-curve modular method (Dieulefait / Ellenberg style), which is not executable here without modular-forms computation and is exactly the frontier technique the literature has stalled on for the Second Case. The repo can contribute only the elementary facts already in ResidualShape (C odd, one of A,B even)."
+      },
+      {
+        "id": "C053",
+        "claim": "COUNTERSEARCH RESULT: 14 of the 15 kernel-verified necessary conditions HOLD on all ten Fermat-Catalan solutions (which each contain an exponent 2 and are therefore not Beal counterexamples); the only one that fails is the curvature bound |chi|>=1/12, which is a restatement of exponents>=3. Hence every elementary constraint proved so far is exponent-2-blind and carries no Beal-specific content by itself.",
+        "method": "Exact evaluation on the ten FC identities (all re-verified exactly), code/U141_countersearch_fc.py; Jev asked beforehand to predict failures (HYPOTHESIS_ONLY): it predicted failure with 0.68-0.91 for all 15 and was wrong on 14 \u2014 recorded as calibration evidence that Jev is not a proof oracle.",
+        "status": "PARTIAL_RESULT",
+        "failure_reason": null
+      },
+      {
+        "id": "C054",
+        "claim": "NEGATIVE: the only residue conditions mod 16, 32, 27 that fail on a Fermat-Catalan solution are restatements of v_p(p-divisible term) >= 3 (2-adic: 122^2 has v_2 = 2; 3-adic: 3^2 has v_3 = 2), i.e. exactly the exponent>=3 hypothesis itself; the mod-11 hit is an artefact of the test (the FC tuple is simply not a solution with exponent 6, not a failed proven condition). No genuinely new non-blind residue condition exists at these moduli.",
+        "method": "Exact enumeration of admissible residue classes for exponents 3..14 at M in {16,32,9,27,5,7,13,11}, code/U142_mod16_nonblind.py; compared against the ten FC solutions.",
+        "status": "BLOCKED",
+        "failure_reason": "Local information distinguishes exponent 2 from >=3 only through p-adic valuations of the p-divisible term, which is already used (mod 8, mod 9). Combined with C036/C041 (sieves never reach zero) this closes the elementary-residue mechanism for good."
+      }
+    ]
+  },
+  "questions": {
+    "relevance": {
+      "type": "score",
+      "instructions": "How directly would establishing this research candidate's exact stated claim bear on Beal's conjecture itself, as opposed to on some peripheral or already-settled case? Judge the claim as written, not the enthusiasm of its description.",
+      "criteria": [
+        "level 0: the claim concerns an unrelated problem, or a case already fully settled in the project, so proving it changes nothing about Beal's conjecture",
+        "level 1: the claim touches the modular method in general but resolves no signature or family of exponents appearing in Beal's conjecture",
+        "level 2: the claim would settle finitely many additional exponent triples, or one signature for a bounded range of primes",
+        "level 3: the claim would settle an entire infinite signature family such as (3,3,p) for all primes p, or (5,5,p) for all p",
+        "level 4: the claim would settle all remaining signatures with min exponent at least 3, or otherwise prove Beal's conjecture outright"
+      ]
+    },
+    "novelty": {
+      "type": "score",
+      "instructions": "How different is the mathematical mechanism of this candidate from the mechanisms already present in the existing candidate pool listed in the state? Different wording of the same Frey-curve-plus-level-lowering argument is not novelty; a different source of finiteness is.",
+      "criteria": [
+        "level 0: the same mechanism as an existing pool candidate, differing only in wording or in the numerical range searched",
+        "level 1: an existing mechanism applied to a new signature or a new field, with no new structural ingredient",
+        "level 2: an existing mechanism combined with one genuinely new ingredient such as a new descent, quotient, or auxiliary curve",
+        "level 3: a mechanism not represented in the pool at all, for instance a different cohomological, analytic, or Diophantine-approximation source of finiteness"
+      ]
+    },
+    "proof_leverage": {
+      "type": "score",
+      "instructions": "Assume this candidate's exact stated claim is true and available as a black box. How much of the remaining path to Beal's conjecture then follows by routine or already-completed arguments?",
+      "criteria": [
+        "level 0: even granting the claim, no currently open case becomes easier",
+        "level 1: granting the claim removes one technical obstruction inside a single ongoing argument",
+        "level 2: granting the claim closes one open signature or exponent family by arguments already implemented in the project",
+        "level 3: granting the claim reduces all remaining open cases to a finite, explicitly computable check",
+        "level 4: granting the claim yields Beal's conjecture immediately"
+      ]
+    },
+    "failure_similarity": {
+      "type": "score",
+      "instructions": "How closely does this candidate resemble a route recorded in the state as already REFUTED or BLOCKED, in the sense that it would run into the same obstruction for the same reason?",
+      "criteria": [
+        "level 0: no recorded failed route shares this candidate's obstruction",
+        "level 1: a recorded failed route shares surface features but the obstruction that stopped it does not apply here",
+        "level 2: a recorded failed route hits an obstruction that plausibly applies here too, though the candidate proposes something that might avoid it",
+        "level 3: this candidate would meet exactly the obstruction that already stopped a recorded route, with nothing new offered to avoid it"
+      ]
+    },
+    "contradiction_risk": {
+      "type": "score",
+      "instructions": "How likely is this candidate's stated claim to contradict an established published theorem or a verified computation recorded in this project?",
+      "criteria": [
+        "level 0: the claim is consistent with everything established and follows familiar patterns",
+        "level 1: the claim is stronger than anything established but no known result rules it out",
+        "level 2: the claim implies something that known results make doubtful, such as uniformity where only ineffective finiteness is known",
+        "level 3: the claim directly contradicts a published theorem or a verified computation in this project"
+      ]
+    },
+    "needs_literature_check": {
+      "type": "noul",
+      "instructions": "Should the next action on this candidate be to verify its claimed external inputs against the primary published sources, before any further reasoning is invested in it?",
+      "criteria": {
+        "true": "the candidate leans on a cited external theorem, a level-lowering or modularity statement, or a newform or class-number table whose exact hypotheses have not been checked against the primary source",
+        "false": "the candidate's external inputs are already verified against primary sources, or it uses none"
+      }
+    },
+    "needs_computation_check": {
+      "type": "noul",
+      "instructions": "Should the next action on this candidate be an exact computation, such as a symbolic derivation, an exhaustive bounded search, or a class-group or newform calculation in exact arithmetic?",
+      "criteria": {
+        "true": "the candidate rests on a numerical or finite claim that has not been verified in exact arithmetic, or a bounded counterexample search would discriminate it",
+        "false": "the candidate is purely structural, or its computational content has already been verified exactly"
+      }
+    },
+    "needs_proof_audit": {
+      "type": "noul",
+      "instructions": "Should the next action on this candidate be an adversarial step-by-step proof audit that re-derives each step from its stated hypotheses alone and lists every implicit assumption?",
+      "criteria": {
+        "true": "the candidate presents a chain of reasoning whose steps have not been independently re-derived, or whose hypotheses may be used beyond what is stated",
+        "false": "the candidate is a bare conjecture or computation with no reasoning chain yet, or its chain has already been audited"
+      }
+    },
+    "recommended_action": {
+      "type": "choice",
+      "instructions": "What single next action should this candidate receive from the research loop right now?",
+      "criteria": {
+        "advance": "the candidate is sound so far and the productive next step is more mathematical development along its own line",
+        "combine": "the candidate is stalled alone but has an ingredient that fits a specific other pool candidate, and merging them is the productive step",
+        "counterexample_search": "the candidate makes a falsifiable claim and a bounded or randomized search could refute it cheaply",
+        "exact_computation": "the candidate's next discriminating test is a symbolic or exact-arithmetic computation",
+        "formalize": "the candidate's argument is believed complete and small enough to check in Lean 4 or Z3",
+        "literature_check": "the candidate's next discriminating test is verifying a cited result against its primary source",
+        "park": "the candidate may become useful later but nothing can discriminate it now, so it should be preserved untouched",
+        "discard": "the candidate is refuted, duplicated, or has no path forward, and only its extracted lemma or obstruction is worth keeping"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "relevance": {
+        "type": "score",
+        "score": 0.49,
+        "confidence": 0.59,
+        "legend": {
+          "0": "level 0: the claim concerns an unrelated problem, or a case already fully settled in the project, so proving it changes nothing about Beal's conjecture",
+          "1": "level 1: the claim touches the modular method in general but resolves no signature or family of exponents appearing in Beal's conjecture",
+          "2": "level 2: the claim would settle finitely many additional exponent triples, or one signature for a bounded range of primes",
+          "3": "level 3: the claim would settle an entire infinite signature family such as (3,3,p) for all primes p, or (5,5,p) for all p",
+          "4": "level 4: the claim would settle all remaining signatures with min exponent at least 3, or otherwise prove Beal's conjecture outright"
+        },
+        "probabilities": {
+          "0": 0.55,
+          "1": 0.44,
+          "2": 0.01,
+          "3": 0.0,
+          "4": 0.0
+        }
+      },
+      "novelty": {
+        "type": "score",
+        "score": 0.62,
+        "confidence": 0.38,
+        "legend": {
+          "0": "level 0: the same mechanism as an existing pool candidate, differing only in wording or in the numerical range searched",
+          "1": "level 1: an existing mechanism applied to a new signature or a new field, with no new structural ingredient",
+          "2": "level 2: an existing mechanism combined with one genuinely new ingredient such as a new descent, quotient, or auxiliary curve",
+          "3": "level 3: a mechanism not represented in the pool at all, for instance a different cohomological, analytic, or Diophantine-approximation source of finiteness"
+        },
+        "probabilities": {
+          "0": 0.69,
+          "1": 0.11,
+          "2": 0.07,
+          "3": 0.13
+        }
+      },
+      "proof_leverage": {
+        "type": "score",
+        "score": 0.38,
+        "confidence": 0.69,
+        "legend": {
+          "0": "level 0: even granting the claim, no currently open case becomes easier",
+          "1": "level 1: granting the claim removes one technical obstruction inside a single ongoing argument",
+          "2": "level 2: granting the claim closes one open signature or exponent family by arguments already implemented in the project",
+          "3": "level 3: granting the claim reduces all remaining open cases to a finite, explicitly computable check",
+          "4": "level 4: granting the claim yields Beal's conjecture immediately"
+        },
+        "probabilities": {
+          "0": 0.67,
+          "1": 0.29,
+          "2": 0.03,
+          "3": 0.01,
+          "4": 0.0
+        }
+      },
+      "failure_similarity": {
+        "type": "score",
+        "score": 0.21,
+        "confidence": 0.79,
+        "legend": {
+          "0": "level 0: no recorded failed route shares this candidate's obstruction",
+          "1": "level 1: a recorded failed route shares surface features but the obstruction that stopped it does not apply here",
+          "2": "level 2: a recorded failed route hits an obstruction that plausibly applies here too, though the candidate proposes something that might avoid it",
+          "3": "level 3: this candidate would meet exactly the obstruction that already stopped a recorded route, with nothing new offered to avoid it"
+        },
+        "probabilities": {
+          "0": 0.85,
+          "1": 0.1,
+          "2": 0.02,
+          "3": 0.03
+        }
+      },
+      "contradiction_risk": {
+        "type": "score",
+        "score": 0.37,
+        "confidence": 0.63,
+        "legend": {
+          "0": "level 0: the claim is consistent with everything established and follows familiar patterns",
+          "1": "level 1: the claim is stronger than anything established but no known result rules it out",
+          "2": "level 2: the claim implies something that known results make doubtful, such as uniformity where only ineffective finiteness is known",
+          "3": "level 3: the claim directly contradicts a published theorem or a verified computation in this project"
+        },
+        "probabilities": {
+          "0": 0.8,
+          "1": 0.12,
+          "2": 0.01,
+          "3": 0.07
+        }
+      },
+      "needs_literature_check": {
+        "type": "noul",
+        "noul": 0.17
+      },
+      "needs_computation_check": {
+        "type": "noul",
+        "noul": 0.19
+      },
+      "needs_proof_audit": {
+        "type": "noul",
+        "noul": 0.49
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "advance",
+        "confidence": 0.33,
+        "probabilities": {
+          "exact_computation": 0.02,
+          "park": 0.11,
+          "advance": 0.39999999999999997,
+          "literature_check": 0.02,
+          "formalize": 0.08,
+          "discard": 0.05,
+          "combine": 0.3,
+          "counterexample_search": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 14559,
+      "output_tokens": 224
+    }
+  }
+}

@@ -1,0 +1,2306 @@
+[
+ [
+  0.715,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.692,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.676,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.664,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.664,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.657,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.641,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.637,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.632,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.628,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.628,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.628,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.614,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.606,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.587,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.587,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.579,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.576,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.573,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.57,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.564,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.56,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.554,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.553,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.549,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.544,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.541,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.539,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.539,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.537,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.534,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.528,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.528,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.524,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.51,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.505,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.502,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.502,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.499,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.499,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.49,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.49,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.486,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.484,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.483,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.48,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.478,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.475,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.475,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.472,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.469,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.466,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.465,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.463,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.457,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.457,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.455,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.453,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.451,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.449,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.447,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.446,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.445,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.444,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.444,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.443,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.441,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.44,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.435,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.431,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.43,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.43,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.429,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.427,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.424,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.422,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.421,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.418,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.418,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.416,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.412,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.412,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.405,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.402,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.399,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.399,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.397,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.396,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.395,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.394,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.394,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.393,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.392,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.392,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.392,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.391,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.388,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.388,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.385,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the height equals log max exactly (no regulator contribution)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.385,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.384,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.383,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.382,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.381,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.381,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.378,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.374,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.368,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.367,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.366,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.361,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.36,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.359,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.357,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.356,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.355,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.354,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.353,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.351,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.348,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.344,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.341,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.338,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.337,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.327,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.324,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.324,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.324,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.323,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "class number and unit rank both trivial",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.32,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.318,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.316,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.316,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.315,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.315,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.314,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.31,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.31,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must be false for the Helenius Z[i] identity (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.308,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.308,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.307,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.307,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.306,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.306,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.305,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.304,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.299,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.299,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.298,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.297,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.295,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.295,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.292,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.292,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.287,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.285,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.285,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.283,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.282,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.28,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.278,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.276,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.276,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.275,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.275,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "class number and unit rank both trivial",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.274,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.268,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.266,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.264,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.263,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.262,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.261,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.261,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.261,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the height equals log max exactly (no regulator contribution)",
+  "must fail on at least one exponent-2 Fermat-Catalan identity such as 2^7+17^3=71^2"
+ ],
+ [
+  0.258,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.253,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.251,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.25,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.25,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.248,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.248,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.246,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.246,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.245,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.245,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.243,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.243,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.242,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.241,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.24,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.24,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.239,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.238,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.237,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.236,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.235,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.224,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.22,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.218,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.217,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.216,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.215,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.214,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.214,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.21,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.21,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.209,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.206,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.205,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.202,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.201,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.199,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.198,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.196,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.196,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.196,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.195,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.194,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.194,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.193,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.192,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.191,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.19,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.188,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.188,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.186,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.185,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.185,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.183,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.183,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.183,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.182,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.18,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.179,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.179,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.178,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.177,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.176,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.176,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.176,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.175,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.174,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.173,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.171,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.171,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.171,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.171,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.17,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.17,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.169,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.167,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.166,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.165,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.165,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.164,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.163,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.163,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.162,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.161,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.158,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.158,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.156,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.155,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.154,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.154,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.153,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.153,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.15,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.147,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.147,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.145,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.145,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.144,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.144,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.144,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.141,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.141,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.141,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.14,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "class number and unit rank both trivial",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.139,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.139,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.138,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.138,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.138,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.137,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.137,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.137,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.136,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.136,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.136,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.134,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.133,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.133,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.133,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.132,
+  "descent on the exponent lattice: a map (x,y,z)->(x',y',z') producing a smaller coprime solution",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.132,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.13,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.129,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.129,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.129,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.129,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.127,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.124,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.121,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "class number and unit rank both trivial",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.119,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.119,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.118,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.117,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.117,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.117,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.116,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.116,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.116,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.115,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.115,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.113,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the height equals log max exactly (no regulator contribution)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.112,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.109,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.109,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.108,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.108,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the height equals log max exactly (no regulator contribution)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.105,
+  "the Frobenius-lift obstruction: Z has no derivation but has Frobenius lifts on Z_p; compare delta_p(A^x)+delta_p(B^y)+carry = delta_p(C^z)",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.105,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.105,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.104,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.104,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.103,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.102,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.102,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.101,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.1,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.099,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.099,
+  "a Wronskian-type determinant built from Fermat quotients at several primes simultaneously",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.099,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.098,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.098,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.097,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.096,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.096,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.094,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.094,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.094,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.093,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.093,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.093,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.092,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.091,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.091,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.091,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.091,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.09,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "2 is the only even prime and is ramified in Z[i] but A,B,C parity is forced in Z",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.089,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.088,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.088,
+  "an arithmetic derivative (Buium p-derivation delta_p x=(x-x^p)/p... Fermat quotient) replacing d/dt in the Wronskian proof of Mason-Stothers",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.088,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.088,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.085,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must yield an exact integer identity or inequality checkable in Python on known data"
+ ],
+ [
+  0.085,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the carry term in delta_p(a+b)=delta_p a+delta_p b+C_p(a,b)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.084,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.084,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "class number and unit rank both trivial",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.084,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.084,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must produce a statement that could be formalised in Lean with mathlib"
+ ],
+ [
+  0.082,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "unique real embedding / product formula with ONE archimedean place",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.081,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.08,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.079,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.079,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.076,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the archimedean ordering C^z>max(A^x,B^y)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.076,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.074,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.074,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "units of Z are only +-1 (Z[i] has i, Z[t] over k has k*)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.072,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.069,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.066,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.066,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.065,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.064,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.064,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "class number and unit rank both trivial",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.064,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not be a reformulation of abc, Baker bounds, a congruence sieve, or a single-signature Frey curve"
+ ],
+ [
+  0.06,
+  "a Belyi map attached to A^x/C^z and its dessin's monodromy in the triangle group",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.056,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "the height equals log max exactly (no regulator contribution)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.051,
+  "a Szpiro-type inequality for the specific elliptic curve with j-invariant built from A^x/C^z, proved only for THIS family via its extra perfect-power structure",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.048,
+  "the tilting/perfectoid correspondence moving the equation to characteristic p where Mason-Stothers holds",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ],
+ [
+  0.048,
+  "a model-theoretic transfer (Ax-Kochen style, ultraproduct of F_p[[t]] vs Z_p) of the polynomial theorem",
+  "Z is the initial ring (no base field to differentiate over)",
+  "must not fix any base or restrict exponents to a finite list"
+ ]
+]

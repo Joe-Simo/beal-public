@@ -1,0 +1,2306 @@
+[
+ [
+  0.917,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.781,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.766,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.763,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.747,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.732,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.704,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.658,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.65,
+  "the height pairing on a generalized Fermat surface",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.643,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.639,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.633,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.629,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.629,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.623,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.599,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.598,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.592,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.589,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.577,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.575,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.569,
+  "the height pairing on a generalized Fermat surface",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.565,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.563,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.562,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.556,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.556,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.554,
+  "the height pairing on a generalized Fermat surface",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.554,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.548,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.547,
+  "the height pairing on a generalized Fermat surface",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.54,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.532,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.525,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.524,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.522,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.521,
+  "the height pairing on a generalized Fermat surface",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.512,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.509,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.507,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.506,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.502,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.488,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.488,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.486,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.481,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.481,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.48,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.475,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.473,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.465,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.463,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.462,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.461,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.458,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.453,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.449,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.448,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.446,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.444,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.441,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.441,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.44,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.44,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.439,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.438,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.437,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.436,
+  "the height pairing on a generalized Fermat surface",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.43,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.425,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.423,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.415,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.415,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.413,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.412,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.41,
+  "the height pairing on a generalized Fermat surface",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.406,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.404,
+  "the height pairing on a generalized Fermat surface",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.403,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.402,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.399,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.398,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.393,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.393,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it degenerates exactly when an exponent equals 2",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.392,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.392,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.391,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.39,
+  "the height pairing on a generalized Fermat surface",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.387,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.387,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.384,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.382,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.379,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.378,
+  "the height pairing on a generalized Fermat surface",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.376,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.373,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.372,
+  "the height pairing on a generalized Fermat surface",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.372,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.369,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.367,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.364,
+  "the height pairing on a generalized Fermat surface",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.362,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.36,
+  "the height pairing on a generalized Fermat surface",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.36,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.359,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.358,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.354,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.35,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.35,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.349,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.348,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.346,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.344,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.344,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.343,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.341,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.341,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.341,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.34,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.34,
+  "the height pairing on a generalized Fermat surface",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.34,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.338,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.337,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.335,
+  "the height pairing on a generalized Fermat surface",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.335,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.333,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.333,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.329,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.325,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.325,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.323,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.322,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.32,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.32,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.318,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.316,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.316,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.313,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.313,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its conductor is bounded independently of the solution",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.31,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.309,
+  "the height pairing on a generalized Fermat surface",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.309,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.309,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its residual representation is irreducible for all large primes",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.306,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.305,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.303,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.298,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.295,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.294,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.293,
+  "the height pairing on a generalized Fermat surface",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.291,
+  "the height pairing on a generalized Fermat surface",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.29,
+  "the height pairing on a generalized Fermat surface",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.289,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.288,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.284,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.284,
+  "the height pairing on a generalized Fermat surface",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.283,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.283,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.282,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.282,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.281,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.281,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.28,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.278,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.277,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.275,
+  "the height pairing on a generalized Fermat surface",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.275,
+  "the height pairing on a generalized Fermat surface",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.272,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.27,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.269,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.269,
+  "the height pairing on a generalized Fermat surface",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.269,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.268,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.266,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.266,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.266,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.265,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.263,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.261,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.26,
+  "the height pairing on a generalized Fermat surface",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.259,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.258,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.258,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.258,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.257,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.257,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.256,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.255,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.254,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.252,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.251,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.25,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.248,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.248,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.248,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.246,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.244,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.243,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.242,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.24,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.239,
+  "the height pairing on a generalized Fermat surface",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.239,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.237,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.237,
+  "the height pairing on a generalized Fermat surface",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.236,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.235,
+  "the height pairing on a generalized Fermat surface",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.235,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.233,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.232,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.23,
+  "the height pairing on a generalized Fermat surface",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.23,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.228,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.227,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.226,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.224,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.223,
+  "the height pairing on a generalized Fermat surface",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.222,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.22,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.218,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.215,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.213,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.21,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.209,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.209,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.209,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.209,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.208,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "level lowering removes all primes dividing ABC",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.207,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.206,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.203,
+  "the height pairing on a generalized Fermat surface",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.203,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.202,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.202,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its residual representation is irreducible for all large primes",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.2,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.199,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.198,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.197,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.196,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.196,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.196,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.195,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.195,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.194,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.191,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.191,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.19,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.188,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.187,
+  "the height pairing on a generalized Fermat surface",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.187,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.186,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.185,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its conductor is bounded independently of the solution",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.185,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it degenerates exactly when an exponent equals 2",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.184,
+  "the height pairing on a generalized Fermat surface",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.184,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its residual representation is irreducible for all large primes",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.181,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.181,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.181,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its conductor is bounded independently of the solution",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.18,
+  "the height pairing on a generalized Fermat surface",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.18,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.179,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.178,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.177,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.173,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.173,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.169,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.169,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.169,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.169,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "the space of newforms at the lowered level is computable and SMALL",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.168,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.166,
+  "the height pairing on a generalized Fermat surface",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.165,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.164,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.162,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.162,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.161,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.161,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.161,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it degenerates exactly when an exponent equals 2",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.16,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.159,
+  "the height pairing on a generalized Fermat surface",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.158,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.158,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.156,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.155,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.154,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.153,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.15,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.15,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.15,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.148,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.148,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it degenerates exactly when an exponent equals 2",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.147,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it degenerates exactly when an exponent equals 2",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.146,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.146,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.146,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it degenerates exactly when an exponent equals 2",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.144,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.144,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.143,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.143,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.141,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.141,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.14,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.139,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.139,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.138,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.138,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.137,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.136,
+  "the height pairing on a generalized Fermat surface",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.135,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.135,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.134,
+  "the height pairing on a generalized Fermat surface",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.134,
+  "the height pairing on a generalized Fermat surface",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be false for the Helenius solution (-2+i)^3+(-2-i)^3=(1+i)^4"
+ ],
+ [
+  0.131,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its residual representation is irreducible for all large primes",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.131,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.13,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.129,
+  "the height pairing on a generalized Fermat surface",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.129,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.128,
+  "the height pairing on a generalized Fermat surface",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.128,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.127,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.126,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "level lowering removes all primes dividing ABC",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.125,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.125,
+  "the height pairing on a generalized Fermat surface",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.125,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "level lowering removes all primes dividing ABC",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.123,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.122,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.121,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.121,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is functorial under the exponent reductions x -> x/d",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.12,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.118,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.118,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.116,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.116,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.116,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its conductor is bounded independently of the solution",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.115,
+  "the height pairing on a generalized Fermat surface",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.114,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.113,
+  "the height pairing on a generalized Fermat surface",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.113,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.112,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its residual representation is irreducible for all large primes",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.112,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its conductor is bounded independently of the solution",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.108,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.107,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.106,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.105,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.105,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "its residual representation is irreducible for all large primes",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.104,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.104,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.101,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "its conductor is bounded independently of the solution",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.1,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "level lowering removes all primes dividing ABC",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.097,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.096,
+  "an Artin representation of the triangle group Delta(p,q,r) reduced mod a prime",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.096,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it detects the real ordering C^z > max(A^x,B^y) (the one input that fails over Z[i])",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.095,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.095,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "level lowering removes all primes dividing ABC",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.094,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "level lowering removes all primes dividing ABC",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.092,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.089,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.089,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.086,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.085,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.082,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.078,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.077,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.076,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.073,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.073,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.073,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.07,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.067,
+  "a family of curves over the (x,y,z)-exponent lattice with a common fibre",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.065,
+  "the Jacobian of the superelliptic curve y^p = x^q (1-x) type attached to the signature",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.065,
+  "a p-adic period / Coleman integral attached to the descent curve",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.065,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.063,
+  "the height pairing on a generalized Fermat surface",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not hold for the ten Fermat-Catalan solutions"
+ ],
+ [
+  0.063,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.063,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.063,
+  "a hypergeometric motive / Darmon's Frey representation of signature (p,q,r)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.062,
+  "a Frey abelian variety of GL2-type over Q(zeta_p,zeta_q,zeta_r)^+",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.061,
+  "the height pairing on a generalized Fermat surface",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.059,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.054,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must survive the residual/isogeny conflation trap (CLAUDE.md failure mode 1)"
+ ],
+ [
+  0.051,
+  "the height pairing on a generalized Fermat surface",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must not rely on GRH or an unproved big-image conjecture"
+ ],
+ [
+  0.05,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ],
+ [
+  0.05,
+  "the height pairing on a generalized Fermat surface",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.049,
+  "the orbifold P^1(p,q,r) and its triangle-group covers (Darmon-Granville)",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be checkable in a small case with PARI/GP over Q"
+ ],
+ [
+  0.041,
+  "the height pairing on a generalized Fermat surface",
+  "it is modular over a totally real field by a KNOWN modularity lifting theorem",
+  "must be stated without fixing any base or exponent"
+ ]
+]

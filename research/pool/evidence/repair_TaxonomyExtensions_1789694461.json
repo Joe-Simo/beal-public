@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "repair_TaxonomyExtensions",
+  "timestamp": "2026-09-17T21:21:01-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Beal project. Already kernel-verified and axiom-free: Beal.Conjecture (the statement), Beal.AlgebraicIdentities, Beal.ExponentReduction (exponent reduction + the diagonal family (n,n,n) with 4|n via mathlib fermatLastTheoremFour), Beal.Structure (pairwise coprimality of the bases, no counterexample with A=B). mathlib v4.14.0 provides fermatLastTheoremFour but NOT a complete FLT for exponent 3, and provides NO Catalan/Mihailescu theorem. Custom axioms are not acceptable in a verified chain.",
+    "module": "TaxonomyExtensions",
+    "source": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.Taxonomy\nimport Mathlib.Algebra.Ring.Basic\nimport Mathlib.Data.Nat.Defs\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Tactic.Ring\n\n/-!\n# Complete Curvature Taxonomy and Darmon Modular Frey Curve Assignments\n\nThis module formalizes the complete classification of Generalized Fermat signatures\n$(p, q, r)$ according to their geometric curvature:\n  $$\\chi(p, q, r) = \\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} - 1$$\nand establishes the foundational Frey curve parameterizations in **Darmon's Program**\nfor hyperbolic signatures:\n  $$\\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} < 1.$$\n\n## 1. Complete Geometric Taxonomy of Signatures\n\nFor sorted exponents $2 \\le p \\le q \\le r$:\n\n1. **Spherical Signatures ($\\chi > 0 \\iff E > 0$)**:\n   - The infinite family $(2, 2, r)$ for all $r \\ge 2$: dihedral / Pythagorean regime, $E(2, 2, r) = 4 > 0$.\n   - $(2, 3, 3)$: tetrahedral, $E(2, 3, 3) = 3 > 0$.\n   - $(2, 3, 4)$: octahedral, $E(2, 3, 4) = 2 > 0$.\n   - $(2, 3, 5)$: icosahedral, $E(2, 3, 5) = 1 > 0$.\n   These four classes constitute the **exhaustive** list of spherical signatures.\n\n2. **Parabolic Signatures ($\\chi = 0 \\iff E = 0$)**:\n   - $(2, 3, 6)$: $E(2, 3, 6) = 0$.\n   - $(2, 4, 4)$: $E(2, 4, 4) = 0$.\n   - $(3, 3, 3)$: $E(3, 3, 3) = 0$.\n   These three classes constitute the **unique** parabolic signatures.\n\n3. **Hyperbolic Signatures ($\\chi < 0 \\iff E < 0$)**:\n   - All other signatures $(p, q, r)$ with $p, q, r \\ge 2$, including the entire\n     Beal conjecture domain ($p, q, r \\ge 3$) with $(p, q, r) \\ne (3, 3, 3)$.\n   - By the **Darmon\u2013Granville Theorem (1995)**, every hyperbolic signature equation\n     $A^p + B^q = C^r$ has at most finitely many primitive integer solutions.\n\n## 2. Darmon Modular Frey Curve Assignments\n\nTo resolve generalized Fermat equations of hyperbolic signature, Henri Darmon (1997)\nsystematized the modular method by attaching Frey curves (or Frey abelian varieties)\nto solutions $(A, B, C)$:\n\n1. **Signature $(p, p, p)$ \u2014 Hellegouarch\u2013Frey Curve**:\n   $$E : y^2 = x(x - A^p)(x + B^p)$$\n   attached to $A^p + B^p = C^p$, with discriminant $\\Delta = 16 (A B C)^{2p}$,\n   level-lowering to $N = 2$, where $\\dim S_2(\\Gamma_0(2)) = 0$ yields FLT (Wiles 1995).\n\n2. **Signature $(2, 3, p)$ \u2014 Frey\u2013Kraus Curve**:\n   $$E : y^2 = x^3 + 3Bx + 2A$$\n   attached to $A^2 + B^3 = C^p$, with discriminant $\\Delta = -1728 (A^2 + B^3) = -1728 C^p$.\n\n3. **Signature $(2, 4, p)$ \u2014 Ellenberg's $\\mathbb{Q}$-Curve**:\n   $$E : y^2 = x^3 + 2(1+i)Ax^2 + (B + iA^2)x \\quad \\text{over } \\mathbb{Q}(i)$$\n   attached to $A^4 + B^2 = C^p$, with discriminant $\\Delta = -64i (A^2 + iB)(A^2 - iB)^2$,\n   where $(A^2 + iB)(A^2 - iB) = A^4 + B^2 = C^p$.\n\n4. **Signature $(3, 3, p)$ \u2014 Kraus Frey Curve**:\n   $$E : y^2 = x^3 + 3ABx + (B^3 - A^3)$$\n   attached to $A^3 + B^3 = C^p$, with discriminant $\\Delta = -432 (A^3 + B^3)^2 = -2^4 \\cdot 3^3 C^{2p}$,\n   in which the product $AB$ completely cancels from the discriminant.\n\n5. **Signature $(5, 5, p)$ \u2014 Billerey / Darmon Curve**:\n   $$W_{A, B} : y^2 = x^3 - 5(A^2 + B^2)x^2 + 5(A^4 - A^3B + A^2B^2 - AB^3 + B^4)x$$\n   attached to $A^5 + B^5 = C^p$, with polynomial discriminant $\\Delta = 5^3 (A+B)^2 (A^5+B^5)^2$.\n\n## References\n* H. Darmon and A. Granville, *On the equations $z^m = F(x, y)$ and $Ax^p + By^q = Cz^r$*,\n  Bull. London Math. Soc. 27 (1995), 513\u2013543.\n* H. Darmon, *Rigid local systems, Hilbert modular forms, and Fermat's Last Theorem*,\n  Ann. of Math. 149 (1999), 415\u2013425.\n* J. S. Ellenberg, *Galois representations attached to $\\mathbb{Q}$-curves and the generalized Fermat equation $A^4 + B^2 = C^p$*,\n  Amer. J. Math. 126 (2004), 763\u2013787.\n* A. Kraus, *Sur l'\u00e9quation $a^3 + b^3 = c^p$*, Exp. Math. 7 (1998), 1\u201313.\n* N. Billerey, *\u00c9quations de Fermat de type $(5, 5, p)$*, Bull. Austral. Math. Soc. 76 (2007), 161\u2013194.\n* N. Billerey, I. Chen, L. Dieulefait, and N. Freitas, *A multi-Frey approach to Fermat equations of signature $(r, r, p)$*,\n  Trans. Amer. Math. Soc. 371 (2019), 8651\u20138677.\n-/\n\nnamespace Beal\n\nvariable {R : Type*} [CommRing R]\n\n/-! ### 1. Integer Curvature Formulas -/\n\n/--\nCurvature numerator for the family $(2, 2, r)$ is constant and equal to $4$.\n-/\nlemma curvature_2_2_r (r : \u2115) :\n    curvatureNumerator 2 2 r = 4 := by\n  unfold curvatureNumerator\n  ring\n\n/--\nCurvature numerator for $(2, 3, r)$ is $6 - r$.\n-/\nlemma curvature_2_3_r (r : \u2115) :\n    curvatureNumerator 2 3 r = 6 - (r : \u2124) := by\n  unfold curvatureNumerator\n  ring\n\n/--\nCurvature numerator for $(2, 4, r)$ is $8 - 2r = 2(4 - r)$.\n-/\nlemma curvature_2_4_r (r : \u2115) :\n    curvatureNumerator 2 4 r = 8 - 2 * (r : \u2124) := by\n  unfold curvatureNumerator\n  ring\n\n/--\nCurvature numerator for $(2, 5, r)$ is $10 - 3r$.\n-/\nlemma curvature_2_5_r (r : \u2115) :\n    curvatureNumerator 2 5 r = 10 - 3 * (r : \u2124) := by\n  unfold curvatureNumerator\n  ri",
+    "compiler_errors": "error: ././././Beal/Taxonomy.lean:127:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:125:52: unsolved goals\nerror: ././././Beal/Taxonomy.lean:136:3: unknown tactic\nerror: ././././Beal/Taxonomy.lean:133:36: unsolved goals\nerror: ././././Beal/Taxonomy.lean:165:11: unknown tactic\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'GE.ge.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'LE.le.left'\nerror: ././././Beal/Taxonomy.lean:152:28: invalid field 'left', the environment does not contain 'Nat.le.left'\nerror: ././././Beal/Taxonomy.lean:152:41: tactic 'subst' failed, invalid equality proof, it is not of the form (x = t) or (t = x)\nerror: ././././Beal/Taxonomy.lean:147:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:145:62: unsolved goals\nerror: ././././Beal/Taxonomy.lean:200:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:198:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:186:35: unsolved goals\nerror: ././././Beal/Taxonomy.lean:226:7: unknown tactic\nerror: ././././Beal/Taxonomy.lean:220:4: unsolved goals\nerror: ././././Beal/Taxonomy.lean:219:2: unsolved goals\nerror: ././././Beal/Taxonomy.lean:216:37: unsolved goals\nerror: Lean exited with code 1\nerror: build failed"
+  },
+  "questions": {
+    "repair_value": {
+      "type": "score",
+      "instructions": "If this module were repaired so that it compiles with no sorry and no custom axioms, how much genuine mathematical content would the project gain?",
+      "criteria": [
+        "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+        "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+        "level 2: a self-contained elementary theorem or an executable checker with real content",
+        "level 3: it would close a signature or an infinite family of Beal signatures"
+      ]
+    },
+    "repairable_without_axioms": {
+      "type": "noul",
+      "instructions": "Can this module plausibly be repaired to compile with NO custom axioms and NO sorry, using only mathlib as it actually exists - noting that mathlib has FLT for exponent 4 but not for exponent 3, and has no Catalan/Mihailescu theorem?",
+      "criteria": {
+        "true": "its content is elementary or depends only on results mathlib actually contains",
+        "false": "its substance depends on a deep theorem mathlib does not contain, such as FLT3, Mihailescu, or a modular-method elimination, so it would need a custom axiom"
+      }
+    },
+    "statement_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that this module's THEOREM STATEMENTS misencode the Beal conjecture - for example allowing exponent 2, excluding a base of 1, or putting the coprimality condition on the exponents rather than the bases - so that repairing it would certify the wrong thing?",
+      "criteria": {
+        "true": "its statements look like they may deviate from the exact conjecture, or it restricts to a sub-case without saying so",
+        "false": "its statements appear to encode the conjecture or a clearly labelled sub-case faithfully"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "repair_value": {
+        "type": "score",
+        "score": 0.99,
+        "confidence": 0.82,
+        "legend": {
+          "0": "level 0: nothing; its content is already covered by an existing verified module, or it only restates definitions",
+          "1": "level 1: convenience definitions or a taxonomy with no theorem of independent value",
+          "2": "level 2: a self-contained elementary theorem or an executable checker with real content",
+          "3": "level 3: it would close a signature or an infinite family of Beal signatures"
+        },
+        "probabilities": {
+          "0": 0.09,
+          "1": 0.85,
+          "2": 0.04,
+          "3": 0.02
+        }
+      },
+      "repairable_without_axioms": {
+        "type": "noul",
+        "noul": 0.37
+      },
+      "statement_risk": {
+        "type": "noul",
+        "noul": 0.67
+      }
+    },
+    "usage": {
+      "input_tokens": 3481,
+      "output_tokens": 57
+    }
+  }
+}

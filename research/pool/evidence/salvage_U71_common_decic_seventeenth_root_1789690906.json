@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U71_common_decic_seventeenth_root",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U71_common_decic_seventeenth_root.md",
+    "excerpt": "# U71: a common global seventeenth root in the degree-ten field\n\n**Status: complete written proof of a necessary-condition theorem, with same-model review and distinct exact arithmetic checks. The weighted equation and the full Beal conjecture remain unresolved. Independent expert and proof-assistant verification are outstanding.**\n\nResearch date: 2026-09-15. Remote head inspected: `517ecd362bc1a735eb3059501c6b4b3c189752a9` (U69). The attached U70 manuscript and evidence archive were read and restored additively before this work; conflicting content was retained separately. U70 was still local at the start of this run. No other mathematical project was accessed or modified.\n\n## 1. Result and scope\n\nLet\n\n    (W) X^10 + 256Y^10 = Z^17,\n        X,Y,Z positive integers, gcd(X,Y)=1.\n\nWrite rho for the positive real fifth root of 2 and set\n\n    L=Q(rho,i),  t=i*rho,  t^10=-4,\n    tau=X+i*rho^4*Y=X+(t^9/2)Y.\n\n**Theorem.** Every solution of (W) has a unique algebraic integer theta in L with\n\n    theta^17=tau,   Norm_(L/Q)(theta)=Z,              (1.1)\n    17^2 | Y.                                        (1.2)\n\nIn particular, the two previously studied roots can be obtained from **one common global element**:\n\n    beta = Norm_(L/Q(rho))(theta),\n    gamma = Norm_(L/Q(i))(theta),\n\nand satisfy, without unit factors,\n\n    beta^17=X^2+2*rho^3*Y^2,\n    gamma^17=X^5+16iY^5.                              (1.3)\n\nMoreover beta is in Z[rho] and gamma is in Z[i].\n\nThis proof reconstructs the needed Gaussian step directly from W. It does **not** invoke the earlier quintic unit-elimination theorem Q65, the coefficient-two argument U61/U62, U67's Kummer conditions, the U68\u2013U70 height bounds, the boundary congruence, the invalidated U41, or a modular-form database. Thus it also provides a separate derivation of the pure quintic equation used upstream.\n\nIt does not prove that theta cannot exist, that W has no positive primitive solutions, or that Beal's conjecture is true. A local common root still exists in each of U70's remaining prime classes. Section 7 verifies this limitation and also shows that (1.2) cannot simply be strengthened to 17^3|Y by the same local argument.\n\n## 2. The field and a finite class-number certificate\n\n### 2.1 Degree, signature, and an integral lattice\n\nQ(rho) has degree five by Eisenstein at 2 and is contained in R under the specified embedding. Thus i is not in it and [L:Q]=10. The identities\n\n    i=t^5/2,   rho=-t^6/2\n\nshow L=Q(t), with minimal polynomial f(T)=T^10+4. It has no real embeddings, so its signature is (0,5).\n\nConsider the ten elements\n\n    1,t,t^2,t^3,t^4,t^5/2,t^6/2,t^7/2,\n    u=t^3/2+t^8/4,  v=t^4/2+t^9/4.                 (2.1)\n\nThey are integral. For the middle three, use i,-rho,-i*rho^2. For the last two, the exact identities are\n\n    u^10+2u^5+2=0,\n    v^10+4v^5+8=0.\n\nEquivalently u=(1-i)rho^3/2 has u^5=-1+i, and v=(1+i)rho^4/2 has v^5=-2-2i.\n\nTheir coordinate determinant in the t power basis is 1/128. The lattice Lambda they span has discriminant\n\n    disc(Lambda)=disc(f)/128^2=-160000000000.        (2.2)\n\nAll these are exact polynomial/determinant identities. Closure under multiplication is also checked, but the class-number argument needs only Lambda contained in the full ring of integers O_L. The change-of-lattice discriminant formula implies\n\n    |disc(L)| <= 160000000000.\n\nWe do not need to assume that a software-reported basis is maximal to use this upper bound. Likewise, the index of Z[t] in O_L has prime factors only 2 and 5, because disc(f) has no other prime factor. At every other rational prime the polynomial f therefore describes the full residue algebra.\n\n### 2.2 Why checking norms below 520 is sufficient\n\nMinkowski's ideal-class bound [S1, Theorem 4.3] gives an integral representative of every ideal class with norm at most\n\n    (10!/10^10)*(4/pi)^5*sqrt(|disc(L)|)\n      < (10!/10^10)*(40/31)^5*400000\n      = 14863564800/28629151 < 520.                 (2.3)\n\nHere pi>31/10 is an elementary strict lower bound; no decimal rounding decides the threshold.\n\nIt is enough to prove every prime ideal of norm below 520 principal. Indeed every prime-ideal factor of an integral ideal of norm below 520 also has norm below 520.\n\n### 2.3 The unramified primes: 89 explicit ideal certificates\n\n`references/U71/certificate.json` contains one row `[p,g,n]` for each of the 89 prime ideals of norm below 520 at rational primes p other than 2 and 5. In a row:\n\n- g is the coefficient vector, in increasing degree order, of a monic irreducible factor of T^10+4 over F_p;\n- n is a length-ten integer vector defining a=(sum n_j t^j)/4;\n- the exact tests certify that a is integral, g divides its numerator modulo p, and Norm_(L/Q)(a)=p^deg(g).\n\nConsequently the prime ideal defined by g divides (a), and the two ideals have equal norm. They are equal, so that prime is principal. This also treats non-linear factors; checking only rational primes that have degree-one factors would be insufficient.\n\nThe exceptio"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.23,
+        "confidence": 0.74,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.0,
+          "2": 0.75,
+          "3": 0.24
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 2108,
+      "output_tokens": 42
+    }
+  }
+}

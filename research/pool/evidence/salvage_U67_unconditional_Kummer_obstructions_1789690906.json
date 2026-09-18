@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U67_unconditional_Kummer_obstructions",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U67_unconditional_Kummer_obstructions.md",
+    "excerpt": "# U67: two boundary-independent Kummer obstructions, with explicit roots modulo Z^17\n\n**Status: written partial theorems, an upstream proof audit, and exact arithmetic corroboration. The weighted equation and the full Beal conjecture remain unresolved.** \u201cUnconditional\u201d below means that the new weighted implications do not assume the boundary congruence (BC), a level-lowering adaptation, database completeness, or a conjectural rank computation. They inherit the written/self-reviewed quintic descent identified precisely below. No independent expert or proof-assistant certification, novelty, publication, or prize claim is made.\n\nResearch date: 2026-09-15. Remote input inspected: `a15e419765463f68a641ed71fd549aafae2cc95d` in private `Joe-Simo/beal`.\n\n## 0. Continuity: two different checkpoints numbered U65\n\nThe preceding local U66 used `U65_last_orbit_and_CM_boundary.md` from the attached evidence archive. During this continuation the remote repository had advanced along another route to `U65_weighted_quintic_unit_elimination.md`, at the revision above. These are different manuscripts, not alternate filenames for the same proof. The old archive was restored additively before new work, and neither U65 is silently replaced. The source mapping is in `references/U67/sources.json`.\n\nThe remote quintic U65 supplies the following written necessary condition for a primitive positive solution of\n\n    (W)  X^10 + 256Y^10 = Z^17,   gcd(X,Y)=1:\n\n    (Q)  X^2 + 2*rho^3*Y^2 = beta^17,\n         rho^5=2, beta in Z[rho], Norm(beta)=Z.\n\nThe associated Gaussian equation, which also follows directly from (W), is\n\n    (G)  X^5 + 16*i*Y^5 = (r0+i*s0)^17.\n\nIts Gaussian unit is absorbed, since each Gaussian unit is its own seventeenth power. The remote argument removes all quintic unit twists; that removal is essential to this continuation. Section 7 records what was actually rechecked rather than treating an earlier success label as certification.\n\nU41 remains invalidated. U61/U62 concern the coefficient-two equation and are not used. U66's hypothesis (BC) remains unproved for all weighted solutions; none of Sections 1\u20135 below invokes it.\n\n## 1. Main partial theorem\n\nLet X,Y,Z be positive integers satisfying (W), and suppose the pure element equation (Q) holds. Put\n\n    N=Z^17,  A=Z/NZ,  phi=(1+sqrt(5))/2,  c=5/32.\n\nThen there are units d in A and w in A[phi]=A[T]/(T^2-T-1) such that\n\n    d^17=c,                  w^17=phi.                  (1.1)\n\nThe fraction c is interpreted using the inverse of 32 modulo N. Thus the two statements hold simultaneously modulo the entire Z^17, not merely modulo one selected prime. The proof gives the roots explicitly in terms of beta and the Gaussian root.\n\n**Weighted corollary.** Applying the remote quintic U65 implication (W) => (Q), every primitive positive weighted solution satisfies (1.1). In particular, at every prime q dividing Z, the rational constant 5/32 and the quadratic unit phi pass their respective seventeenth-power tests. This is an implication about an unbounded family, not an emptiness theorem for that family.\n\n### 1.1 Exceptional primes and legitimate inverses\n\nIf X is even, coprimality makes Y odd. The left side of (W) then has 2-adic valuation exactly 8, whereas a seventeenth power has valuation divisible by 17. Therefore X and Z are odd. A prime dividing Z and either X or Y would divide both, so X and Y are units modulo N.\n\nAlso 5 does not divide Z. When both X and Y are 5-adic units their tenth powers modulo 25 are in {1,-1}. Since 256=6 modulo 25, the possible sums are 7,5,-5,-7: any sum divisible by 5 has valuation exactly one. If just one of X,Y is divisible by 5, the sum is a unit. Both alternatives exclude 5|Z.\n\nSet U=X^2 and V=2Y^2. Thus 2,5,U,V,X,Y are units of A. Positivity implies Z>1, so the zero ring modulo one is not involved.\n\n## 2. Explicit construction of the rational seventeenth root\n\nDefine in A\n\n    a=U^2/(2V^2).\n\nThe following rational-function identities, whose denominators are units here, prove that a is a fifth root of 2 modulo N and that the linear component of gamma vanishes:\n\n    32V^10*(a^5-2)=(U^5+8V^5)(U^5-8V^5),\n    8V^5*(V*a^3+U)=U*(U^5+8V^5).\n\nSince U^5+8V^5=N=0 in A,\n\n    a^5=2,        U=-V*a^3.                          (2.1)\n\nFactor\n\n    R^5-2=(R-a)h(R),\n    h(R)=R^4+aR^3+a^2R^2+a^3R+a^4.\n\nBecause h(a)=5a^4 is a unit, the factors are comaximal even when N is composite. Hence the actual ring decomposition is\n\n    A[R]/(R^5-2) = A x A[R]/h.\n\nThis is not a projective normalization and does not discard a zero divisor.\n\nLet beta4 denote beta in the second, rank-four algebra, and let\n\n    s4=Norm_(A[R]/h / A)(beta4).\n\nHere norm means the determinant of multiplication on a free module, so it is defined over A without any field assumption. Reducing (Q), using (2.1), and taking that norm gives\n\n    s4^17 = Norm(V*(R^3-a^3)) = 5a^12V^4 = 5U^4 = 5X^8.     (2.2)\n\nThe middle identity is exact:\n\n    Res_R(h(R),V*(R^3-a^3))=5a^12V^4.\n\nIt also follows by multipl"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.24,
+        "confidence": 0.55,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.01,
+          "2": 0.6,
+          "3": 0.34
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.77
+      }
+    },
+    "usage": {
+      "input_tokens": 2072,
+      "output_tokens": 42
+    }
+  }
+}

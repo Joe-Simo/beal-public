@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U58_forced_prime_location_tables",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U58_forced_prime_location_tables.md",
+      "excerpt": "# U58: coefficient-2 branch \u2014 exact factor-location tables for q=67,409,883\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input\n\nU57 forces q=103 entirely into the B=-delta b^2 factor. The other previously forced primes q=67,409,883 divide mn, but unlike 103 the Gaussian degree-16 cofactors F and G have roots modulo q.\n\nWe now compute both sides of the location problem exactly.\n\n## Gaussian side\n\nFor m=r F(r,s), n=s G(r,s), normalize s=1 when s is nonzero modulo q. Exact Wolfram enumeration gives 16 roots of F(t,1) and 16 roots of G(t,1) for each q in {67,409,883}. Thus q|mn can arise from four projective locations: r=0, s=0, F=0, or G=0.\n\nThe root sets are:\n\nq=67:\nF roots = {4,5,6,8,13,15,16,22,45,51,52,54,59,61,62,63}\nG roots = {3,9,11,17,21,25,27,31,36,40,42,46,50,56,58,64}\n\nq=409:\nF roots = {13,41,80,81,132,158,180,190,219,229,251,277,328,329,368,396}\nG roots = {10,25,44,46,63,101,127,189,220,282,308,346,363,365,384,399}\n\nq=883:\nF roots = {55,66,98,156,233,238,351,400,483,532,645,650,727,785,817,828}\nG roots = {9,72,117,161,256,289,300,388,495,583,594,627,722,766,811,874}\n\n## Q(sqrt(5)) square-class side\n\nU55 gives\n\n    B=-delta b^2,\n    P16(A,B)=delta c^2,\n\nwith delta in {1,17}. If q does not divide b, normalize A=1 and ask whether q can instead divide P16 through a nonzero square t=b^2/A. Exact enumeration shows that it can: the numbers of admissible nonzero square roots t are\n\nq=67: 8 for delta=1, 8 for delta=17;\nq=409: 7 for delta=1, 7 for delta=17;\nq=883: 7 for delta=1, 7 for delta=17.\n\nHence, unlike q=103, none of these primes is individually forced into b. Each may lie either in b (equivalently B) or in c (equivalently P16).\n\nExact admissible t sets:\n\nq=67:\ndelta=1:  {16,64,14,10,26,39,60,19}\ndelta=17: {9,64,55,56,39,40,22,37}\n\nq=409:\ndelta=1:  {375,45,389,394,229,231,191}\ndelta=17: {324,407,71,147,182,230,360}\n\nq=883:\ndelta=1:  {756,747,550,666,839,408,727}\ndelta=17: {361,875,195,24,718,344,460}\n\n## Interpretation\n\nThe hoped-for one-prime contradiction does not occur at 67,409,883. The local problem is now finite and explicit: for each prime, the Gaussian ratio r/s must occupy one of 32 cofactor roots (or a coordinate axis), while the quadratic-field factor chooses B or P16; if P16, its normalized square parameter must belong to the listed 7/8-element set.\n\nThe useful next step is therefore not another independent prime. We must compute the algebraic map from the Gaussian projective ratio r/s to the normalized U55 square parameter b^2/A (or an equivalent invariant). Once that map is explicit, intersect its images of the Gaussian root sets with the listed P16-admissible sets simultaneously at 67,409,883, with q=103 forcing the B branch. A missing intersection would be a rigorous local contradiction.\n",
+      "length_chars": 2812
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.41,
+        "confidence": 0.59,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.84,
+          "1": 0.03,
+          "2": 0.02,
+          "3": 0.11
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.22,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.92,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.07
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "verify_computation",
+        "confidence": 0.62,
+        "probabilities": {
+          "verify_computation": 0.7,
+          "no_action": 0.18,
+          "audit_now": 0.03,
+          "audit_later": 0.09,
+          "verify_literature": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2577,
+      "output_tokens": 126
+    }
+  }
+}

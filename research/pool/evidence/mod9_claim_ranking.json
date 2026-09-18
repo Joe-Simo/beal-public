@@ -1,0 +1,122 @@
+[
+  [
+    2.03,
+    1.97,
+    0.96,
+    "If 3 divides none of A,B,C and all exponents are multiples of 3 then {1,8}+{1,8} never meets {1,8} mod 9."
+  ],
+  [
+    1.58,
+    2.65,
+    0.87,
+    "If 3 divides all of x, y, z and 3 divides none of A, B, C then 1 + 1 = 1 mod 9 is required, a contradiction."
+  ],
+  [
+    2.43,
+    1.42,
+    0.9,
+    "If 3 divides A then 27 divides A^x, so B^y = C^z mod 27."
+  ],
+  [
+    2.6,
+    1.12,
+    0.96,
+    "If x, y, z are all multiples of 3 then A^x, B^y, C^z are cubes, and cubes mod 9 lie in {0,1,8}."
+  ],
+  [
+    1.64,
+    1.72,
+    0.9,
+    "If all exponents are multiples of 3 then the equation mod 9 forces 3 to divide exactly one base."
+  ],
+  [
+    1.72,
+    1.62,
+    0.91,
+    "Combining mod 8 and mod 9 gives a mod-72 sieve strictly stronger than either alone."
+  ],
+  [
+    1.6,
+    1.82,
+    0.82,
+    "If 3 divides C and x, y are both divisible by 3 then 1 + 1 = 0 mod 27 fails."
+  ],
+  [
+    1.38,
+    1.76,
+    0.85,
+    "If 3 divides B then A^x = C^z mod 27, so A and C lie in the same coset of the cube subgroup."
+  ],
+  [
+    2.86,
+    0.69,
+    0.98,
+    "The cubes mod 9 are exactly 0, 1 and 8."
+  ],
+  [
+    2.42,
+    0.79,
+    0.96,
+    "For n coprime to 3, n^k mod 9 depends only on k mod 6."
+  ],
+  [
+    1.49,
+    1.16,
+    0.95,
+    "For n coprime to 3, if 3 divides k then n^k = 1 mod 9."
+  ],
+  [
+    1.09,
+    1.79,
+    0.82,
+    "If 3 divides C then A^x + B^y = 0 mod 27."
+  ],
+  [
+    0.85,
+    1.97,
+    0.94,
+    "If 3 divides none of A, B, C then A^x + B^y = C^z has no solution mod 9."
+  ],
+  [
+    1.09,
+    1.63,
+    0.84,
+    "If 3 divides x and y but not any base, then C^z = 2 mod 9, which forces z odd and C = 2 mod 9 or similar."
+  ],
+  [
+    1.47,
+    1.6,
+    0.51,
+    "There is a residue class mod 9 that no Beal counterexample base C can occupy."
+  ],
+  [
+    0.99,
+    1.62,
+    0.63,
+    "At least one of A, B, C is divisible by 3."
+  ],
+  [
+    0.72,
+    1.6,
+    0.54,
+    "Exactly one of A, B, C is divisible by 3."
+  ],
+  [
+    0.81,
+    0.82,
+    0.86,
+    "The mod-9 obstruction is strictly weaker than the mod-8 one because 9 has a cyclic unit group."
+  ],
+  [
+    1.15,
+    0.8,
+    0.52,
+    "If 3 divides A and x >= 3 then v_3(A^x) >= 3 exactly when v_3(A) = 1."
+  ],
+  [
+    0.71,
+    0.78,
+    0.35,
+    "v_3(A^x + B^y) is unbounded, so no fixed power of 3 gives an obstruction."
+  ]
+]

@@ -1,0 +1,38 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C038",
+  "timestamp": "2026-09-17T23:37:21-0400",
+  "model": "jev-latest",
+  "request_state": "HYPOTHESIS_ONLY. Context: A^x + B^y = C^z, A,B,C >= 1, x,y,z >= 3, gcd(A,B,C)=1 (bases are then pairwise coprime). CLAIM: There is a residue class mod 9 that no Beal counterexample base C can occupy.",
+  "questions": [
+    {
+      "type": "noul",
+      "instructions": "Is this claim about a hypothetical Beal counterexample TRUE as a matter of elementary number theory?",
+      "criteria": {
+        "true": "true",
+        "false": "false"
+      }
+    },
+    {
+      "type": "noul",
+      "instructions": "Is this claim decidable by a finite exact computation over residues, with no deep theory?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    },
+    {
+      "type": "score",
+      "instructions": "How much does this claim, if true, actually restrict the space of Beal counterexamples? 0 = nothing, 3 = eliminates an infinite family.",
+      "criteria": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ],
+  "response": {
+    "error": "HTTP 422 from Jev: {\"detail\":[{\"type\":\"dict_type\",\"loc\":[\"body\",\"questions\"],\"msg\":\"Input should be a valid dictionary\",\"input\":[{\"type\":\"noul\",\"instructions\":\"Is this claim about a hypothetical Beal counterexample TRUE as a matter of elementary number theory?\",\"criteria\":{\"true\":\"true\",\"false\":\"false\"}},{\"type\":\"noul\",\"instructions\":\"Is this claim decidable by a finite exact computation over residues, with no deep "
+  }
+}

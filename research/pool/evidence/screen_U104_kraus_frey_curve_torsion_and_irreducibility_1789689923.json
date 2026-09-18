@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U104_kraus_frey_curve_torsion_and_irreducibility",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U104_kraus_frey_curve_torsion_and_irreducibility.md",
+      "excerpt": "# U104: Kraus Frey Curve $E: y^2 = x^3 + 3AB x + (B^3 - A^3)$: Torsion Structure, Discriminant, and Mod-$p$ Galois Irreducibility\n\n**Date**: 2026-09-17  \n**Context**: Generalized Fermat equation $A^3 + B^3 = C^p$ ($p \\ge 5$, $\\gcd(A, B) = 1$, $A, B$ coprime integers).  \n**Target**: The Kraus Frey elliptic curve $E: y^2 = x^3 + 3AB x + (B^3 - A^3)$ introduced by Alain Kraus (1998).  \n**Companion Script**: [`code/U104_kraus_frey_curve_mod_p_irreducibility.py`](file://[LOCAL_HOME]/Downloads/beal/code/U104_kraus_frey_curve_mod_p_irreducibility.py)  \n**JSON Certificate**: [`research/checkpoints/U104_kraus_frey_curve.json`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U104_kraus_frey_curve.json)\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint provides a complete arithmetic geometry investigation of the Kraus Frey curve\n$$E: y^2 = x^3 + 3AB x + (B^3 - A^3)$$\nassociated with hypothetical coprime integer solutions to the Fermat-type equation $A^3 + B^3 = C^p$ with prime exponent $p \\ge 5$.\n\nWe resolve the six specific mathematical questions:\n\n1. **Degeneracy at $B = -A$**:\n   When $B = -A$, $E$ specializes to $y^2 = x^3 - 3A^2 x - 2A^3 = (x + A)^2 (x - 2A)$. The curve develops a nodal singularity at $(-A, 0)$ with discriminant $\\Delta = 0$, corresponding precisely to the trivial Diophantine boundary $A^3 + B^3 = 0 \\iff C = 0$.\n\n2. **Exact 2-Torsion Factorization**:\n   The 2-torsion polynomial factors completely over $\\mathbb{Q}$:\n   $$x^3 + 3AB x + (B^3 - A^3) = (x - (A - B))\\left( x^2 + (A - B)x + (A^2 + AB + B^2) \\right).$$\n   - **Rational root**: $e_1 = A - B \\in \\mathbb{Q}$ is an exact root for all $A, B$.\n   - **Rational 2-torsion point**: $P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$, establishing that $\\mathbb{Z}/2\\mathbb{Z} \\subseteq E(\\mathbb{Q})_{\\mathrm{tors}}$.\n   - **Quadratic quotient discriminant**: $\\Delta_{\\mathrm{quad}} = -3(A + B)^2$.\n   - **2-Torsion field**: $\\mathbb{Q}(E[2]) = \\mathbb{Q}(\\sqrt{-3}) = \\mathbb{Q}(\\zeta_3)$.\n\n3. **Discriminants and Invariants**:\n   - Polynomial cubic discriminant: $\\operatorname{disc}(x^3 + 3AB x + B^3 - A^3) = -27(A^3 + B^3)^2 = -27 C^{2p}$.\n   - Weierstrass discriminant: $\\Delta_E = 16 \\operatorname{disc} = -432 (A^3 + B^3)^2 = -432 C^{2p} = -2^4 \\cdot 3^3 C^{2p}$.\n   - Invariants: $c_4 = -144 AB$, $c_6 = 864 (A^3 - B^3)$.\n   - $j$-invariant: $j(E) = \\frac{6912 A^3 B^3}{C^{2p}} = 1728 \\frac{4A^3 B^3}{(A^3 + B^3)^2}$.\n\n4. **Mazur's Theorem (1977) and Rational $p$-Isogenies**:\n   By Mazur (1977), an elliptic curve over $\\mathbb{Q}$ can have a rational $p$-isogeny for $p \\ge 5$ only if $p \\in \\{5, 7, 11, 13, 17, 37, 43, 67, 163\\}$.\n   Crucially, because $E$ possesses the rational 2-torsion point $(A - B, 0)$, any rational $p$-isogeny on $E$ automatically generates a rational cyclic $2p$-isogeny!\n   By Kenku's theorem (1981) on cyclic isogenies over $\\mathbb{Q}$, the only composite orders of the form $2p$ that can ever occur on an elliptic curve over $\\mathbb{Q}$ are $2p \\in \\{10, 14\\}$ ($p = 5, 7$).\n   For all $p \\ge 11$, $2p \\ge 22$ is **strictly impossible** on any elliptic curve over $\\mathbb{Q}$!\n   Consequently, $\\rho_{E, p}$ is **ABSOLUTELY IRREDUCIBLE for all $p \\ge 11$**!\n\n5. **Complete Survey of $X_0(p)$ for $p \\in \\{5, 7, 11, 13, 17, 19\\}$**:\n   - $p = 5$: Genus 0, $\\infty$-many non-cuspidal rational points (both CM and non-CM).\n   - $p = 7$: Genus 0, $\\infty$-many non-cuspidal rational points (both CM and non-CM).\n   - $p = 11$: Genus 1, exactly 3 non-cuspidal rational points on $X_0(11)(\\mathbb{Q}) \\cong \\mathbb{Z}/5\\mathbb{Z}$ (all 3 are strictly non-CM).\n   - $p = 13$: Genus 0, $\\infty$-many non-cuspidal rational points (both CM and non-CM).\n   - $p = 17$: Genus 1, exactly 2 non-cuspidal rational points on $X_0(17)(\\mathbb{Q}) \\cong \\mathbb{Z}/4\\mathbb{Z}$ (**both are CM points**).\n   - $p = 19$: Genus 1, **0 non-cuspidal rational points** (all rational points are cusps).\n\n---\n\n## 2. Degenerate Fibers and the Boundary $B = -A$\n\nThe curve is given by the Weierstrass equation:\n$$E: y^2 = f(x) = x^3 + 3AB x + (B^3 - A^3).$$\n\nWhen $B = -A$:\n$$3AB = -3A^2, \\quad B^3 - A^3 = (-A)^3 - A^3 = -2A^3.$$\nThe cubic polynomial becomes:\n$$f_{-A}(x) = x^3 - 3A^2 x - 2A^3.$$\nEvaluating at $x = -A$:\n$$f_{-A}(-A) = (-A)^3 - 3A^2(-A) - 2A^3 = -A^3 + 3A^3 - 2A^3 = 0.$$\nEvaluating the derivative $f_{-A}'(x) = 3x^2 - 3A^2$ at $x = -A$:\n$$f_{-A}'(-A) = 3(-A)^2 - 3A^2 = 3A^2 - 3A^2 = 0.$$\nThus $x = -A$ is a root of multiplicity at least 2.\nDividing by $(x + A)^2 = x^2 + 2Ax + A^2$:\n$$x^3 - 3A^2 x - 2A^3 = (x + A)^2 (x - 2A).$$\n\n**Geometric Nature of the Singularity**:\n- At $(x, y) = (-A, 0)$, both partial derivatives vanish: $\\frac{\\partial F}{\\partial x} = 0$, $\\frac{\\partial F}{\\partial y} = -2y = 0$.\n- The second-order Taylor expansion at $(-A, 0)$ with $X = x + A$ is:\n  $$y^2 = X^2 (X - 3A) \\approx -3A X^2.$$\n- When $A \\neq 0$, the tangent cone is given by $y^2 + 3A X^2 = 0$, which factors into two distinct tangent lines $y = \\pm \\sqrt{-3A} X$ over $\\overlin",
+      "length_chars": 18216
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 1.75,
+        "confidence": 0.11,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.07,
+          "1": 0.45,
+          "2": 0.14,
+          "3": 0.34
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.2,
+        "confidence": 0.8,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.93,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.06
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.51,
+        "probabilities": {
+          "audit_now": 0.61,
+          "audit_later": 0.28,
+          "no_action": 0.02,
+          "verify_literature": 0.07,
+          "verify_computation": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3512,
+      "output_tokens": 124
+    }
+  }
+}

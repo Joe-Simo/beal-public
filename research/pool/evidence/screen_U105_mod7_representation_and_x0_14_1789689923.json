@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U105_mod7_representation_and_x0_14",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U105_mod7_representation_and_x0_14.md",
+      "excerpt": "# U105: Mod-7 Representation $\\rho_{E, 7}$ and the Modular Curve $X_0(14)$ for $A^3 + B^3 = C^7$: Absolute Irreducibility via the 2-Torsion Lift and CM Valuation Obstructions\n\n**Date**: 2026-09-17  \n**Context**: Generalized Fermat equation $A^3 + B^3 = C^7$ with $\\gcd(A, B) = 1$, $A, B \\in \\mathbb{Z}$.  \n**Target**: The Kraus Frey curve $E: y^2 = x^3 + 3AB x + (B^3 - A^3)$ and its mod-7 Galois representation $\\rho_{E, 7}$.  \n**Companion Script**: [`code/U105_mod7_representation_and_x0_14.py`](file://[LOCAL_HOME]/Downloads/beal/code/U105_mod7_representation_and_x0_14.py)  \n**JSON Certificate**: [`research/checkpoints/U105_mod7_x0_14.json`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U105_mod7_x0_14.json)\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U104, we proved that for all primes $p \\ge 11$, the mod-$p$ Galois representation $\\rho_{E, p}$ attached to the Kraus Frey curve\n$$E: y^2 = x^3 + 3AB x + (B^3 - A^3)$$\nis unconditionally and absolutely irreducible, because the rational 2-torsion point $P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$ forces any rational $p$-isogeny to lift to a rational cyclic $2p$-isogeny, and by Kenku's Theorem (1981), no elliptic curve over $\\mathbb{Q}$ can admit a rational cyclic $2p$-isogeny for any $2p \\ge 22$.\n\nFor the exponent $p = 7$, $2p = 14$, which lies inside the classical Kenku list $\\{4, \\dots, 27\\}$, corresponding to the modular curve $X_0(14)$.\n\nThis checkpoint resolves the arithmetic geometry of $X_0(14)$ and establishes the definitive absolute irreducibility of $\\rho_{E, 7}$:\n\n1. **The 7-to-14 Isogeny Lift**:\n   Because $(A - B, 0)$ is a non-trivial rational 2-torsion point on $E$, any rational 7-isogeny on $E$ generates a rational cyclic 14-isogeny $C_{14} = C_2 \\oplus C_7$, defining a $\\mathbb{Q}$-rational point on the modular curve $X_0(14)$.\n\n2. **Arithmetic Geometry of $X_0(14)$**:\n   The modular curve $X_0(14)$ has genus $g = 1$, conductor 14, index $[SL_2 : \\Gamma_0(14)] = 24$, and 4 cusps.\n   It is isomorphic over $\\mathbb{Q}$ to the elliptic curve **14a1** (Cremona label):\n   $$14a1: y^2 + xy + y = x^3 + 4x - 6, \\quad \\Delta = -21952 = -2^6 \\cdot 7^3.$$\n   The Mordell--Weil group is finite of order 6 (rank 0):\n   $$X_0(14)(\\mathbb{Q}) \\cong \\mathbb{Z}/6\\mathbb{Z}.$$\n\n3. **Complete Inventory of Rational Points on $X_0(14)$**:\n   The 6 rational points on $X_0(14)$ partition cleanly into:\n   - **4 cusps**: $\\infty, 0, 1/2, 1/7$ (all $\\mathbb{Q}$-rational, corresponding to degenerate fibers with $j = \\infty$).\n   - **2 CM points**: fixed by the Atkin--Lehner involution $w_7$, with exact integer $j$-invariants:\n     $$j_1 = -15^3 = -3375 \\quad (\\text{CM by maximal order of } \\mathbb{Q}(\\sqrt{-7}), \\text{disc } -7),$$\n     $$j_2 = 255^3 = 16581375 \\quad (\\text{CM by order of conductor 2 in } \\mathbb{Q}(\\sqrt{-7}), \\text{disc } -28).$$\n   - **0 non-CM points**: $X_0(14)$ possesses **NO non-CM rational points**!\n\n4. **Valuation and Multiplicative Reduction Obstruction**:\n   The $j$-invariant of the Kraus curve is $j(E) = \\frac{6912 A^3 B^3}{C^{14}} = \\frac{2^8 \\cdot 3^3 A^3 B^3}{C^{14}}$.\n   For any primitive solution to $A^3 + B^3 = C^7$ with $C > 1$:\n   - $\\gcd(AB, C) = 1$.\n   - At every prime $q \\mid C$, the $q$-adic valuation is strictly negative:\n     * For $q \\ge 5$: $v_q(j(E)) = -14 v_q(C) \\le -14 < 0$.\n     * For $q = 2$: $A, B$ odd $\\implies v_2(AB) = 0 \\implies v_2(j(E)) = 8 - 14 v_2(C) \\le -6 < 0$.\n     * For $q = 3$: $v_3(AB) = 0 \\implies v_3(j(E)) = 3 - 14 v_3(C) \\le -11 < 0$.\n   - In all cases, $j(E)$ has strictly negative valuations, whereas $j_1 = -3375$ and $j_2 = 16581375$ are integers ($v_q(j_i) \\ge 0$ for all $q$).\n   - For $C = 1$, $A^3 + B^3 = 1 \\implies AB = 0 \\implies j(E) = 0 \\notin \\{j_1, j_2\\}$.\n   - For $C = 0$, $B = -A$ is the degenerate boundary cusp.\n\n5. **Conclusion**:\n   $E$ cannot correspond to any rational point on $X_0(14)$.\n   Therefore, $E$ has **NO rational 14-isogeny**, and consequently **NO rational 7-isogeny**.\n   The mod-7 representation $\\rho_{E, 7}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/\\mathbb{Q}) \\to \\mathrm{GL}_2(\\mathbb{F}_7)$ is **ABSOLUTELY IRREDUCIBLE**.\n\n---\n\n## 2. The Rational 2-Torsion Point and the 7-to-14 Isogeny Lift\n\nFrom U104, the 2-torsion polynomial of the Kraus Frey curve\n$$E: y^2 = x^3 + 3AB x + (B^3 - A^3)$$\nfactors completely as:\n$$x^3 + 3AB x + (B^3 - A^3) = (x - (A - B))\\left( x^2 + (A - B)x + (A^2 + AB + B^2) \\right).$$\nThe point:\n$$P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$$\nis a non-trivial rational 2-torsion point on $E$.\nThe subgroup $C_2 = \\langle P_2 \\rangle \\cong \\mathbb{Z}/2\\mathbb{Z}$ is $\\mathbb{Q}$-rational.\n\nNow suppose for contradiction that $\\rho_{E, 7}: \\operatorname{Gal}(\\overline{\\mathbb{Q}}/\\mathbb{Q}) \\to \\mathrm{GL}_2(\\mathbb{F}_7)$ is reducible.\nThen $E$ admits a $\\mathbb{Q}$-rational subgroup $C_7 \\subset E[7]$ of order 7, which defines a $\\mathbb{Q}$-rational 7-isogeny:\n$$\\phi_7: E \\longrightarrow E' = E / C_7.$$\n\nBecause $\\gcd(2, 7) = 1$, the direct sum of th",
+      "length_chars": 20045
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 2.05,
+        "confidence": 0.05,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.39,
+          "2": 0.05,
+          "3": 0.52
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.62,
+        "confidence": 0.38,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.62,
+          "1": 0.26,
+          "2": 0.01,
+          "3": 0.11
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.86
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.36,
+        "probabilities": {
+          "audit_now": 0.49,
+          "audit_later": 0.33,
+          "no_action": 0.03,
+          "verify_computation": 0.08,
+          "verify_literature": 0.07
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3438,
+      "output_tokens": 124
+    }
+  }
+}

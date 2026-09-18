@@ -1,0 +1,121 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C001_C009",
+  "timestamp": "2026-09-17T20:21:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U99_descent_field_class_number_one_and_selmer_rank_bound.md",
+        "research/checkpoints/U105_all_even_branch_complete_unconditional_resolution.md",
+        "research/checkpoints/U113_orbit_b_elimination_audit.md",
+        "code/U113_u105_degree_obstruction.py"
+      ],
+      "obligations": [
+        "Finiteness is proved; the explicit rational points are NOT yet determined",
+        "Coleman-Strassmann zero counting on the genus-8 quotient must bound the number of zeros to exactly the known trivial points",
+        "Trivial/boundary points must be separated from putative primitive solutions"
+      ],
+      "evaluations": {},
+      "failure_reason": "U113 Part III: the Chabauty-Coleman route bounds the WRONG OBJECT. U99 proves rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5), giving #C^-(k) <= 9. But U105 own \"degree obstruction\" shows a positive integer solution yields c = i*2^(4/5), whose minimal polynomial is x^10 + 256 (verified exactly), of degree 10 over k. Solutions therefore give points of C^-(L) with [L:k] = 10, which are not elements of C^-(k). A bound on the k-rational points is silent about them, so \"C^-(k) contains no points from solutions, therefore no solutions\" is a non sequitur with a vacuously true premise. Closing this needs Chabauty over L (degree 20 over Q) with rank_Z J^-(L) < 8 RE-ESTABLISHED (ranks grow in extensions), or symmetric-power Chabauty / covering collections. None exists in U99, U102 or U105.",
+      "novelty_note": "Only pool route whose finiteness is already unconditional; the residual gap is explicit point determination, not existence of a method.",
+      "extracted": [
+        "rank_Z J^-(k) <= 2 < g = 8 over k=Q(sqrt5) is correct and reusable, but proves finiteness of C^-(k), NOT of the solution set",
+        "the solution field has degree exactly 10 over k with minimal polynomial x^10+256 - this pins down precisely which field a corrected Chabauty argument must work over",
+        "a Chabauty bound over a base field says nothing about points of higher degree; this failure mode should be checked in every other Chabauty claim in the project"
+      ],
+      "id": "C001",
+      "status": "BLOCKED",
+      "claim": "The weighted equation X^10 + 256 Y^10 = Z^17 has no primitive nontrivial integer solutions, established by determining the full set of rational points on the genus-8 anti-invariant quotient curve C^-/k via Chabauty-Coleman.",
+      "method": "Genus-8 quotient of the Frey/Kummer cover; 2-descent bounding rank_Z J^-(k) <= 2 < g = 8; Coleman integration to pin down the finite point set."
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [
+        "research/checkpoints/U112_empirical_search_milestone_160k.md",
+        "references/search_logs/interval_140001_160000_primes19.json",
+        "code/beal_search_gmp.c"
+      ],
+      "obligations": [
+        "Search range extension tests no mathematical hypothesis and has near-zero proof leverage",
+        "Composite and larger exponents are not covered by the pure-prime exponent set"
+      ],
+      "evaluations": {
+        "independent_reimplementation": "PASSED 2026-09-17: independent checker written from the conjecture statement agrees with code/section8_counterexample_checker.py on all required vectors AND on the discriminating reason; True-branch reachability proven by mutating only the exponent gate to >=2, under which 3^5+10^2=7^3 is correctly reported as a counterexample; exact at 121 digits with no float path"
+      },
+      "failure_reason": null,
+      "novelty_note": "Pure verification, no mechanism; kept to bound where a counterexample could live and to stop further range extension being mistaken for progress.",
+      "extracted": [],
+      "id": "C009",
+      "status": "PARTIAL_RESULT",
+      "claim": "No counterexample to Beal's conjecture exists with A, B <= 160000 and exponents x, y, z in {3,5,7,11,13,17,19}.",
+      "method": "Exhaustive multi-threaded GMP search over coprime base pairs with arbitrary-precision verification."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.72,
+        "confidence": 0.67,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.31,
+          "1": 0.67,
+          "2": 0.02,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.06
+      }
+    },
+    "usage": {
+      "input_tokens": 1920,
+      "output_tokens": 53
+    }
+  }
+}

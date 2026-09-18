@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U55_coefficient2_sign_elimination_mod64",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U55_coefficient2_sign_elimination_mod64.md",
+    "excerpt": "# U55: coefficient-2 branch \u2014 eliminate the positive-B square classes modulo 64\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input from U54\n\nEvery survivor has\n\n    B = sigma delta b^2,\n    P16(A,B) = -sigma delta c^2,\n\nwhere delta is 1 or 17, sigma is +/-1, A is odd, 8|b, and gcd(A,B)=1. Also gcd(B,P16)=delta, hence gcd(b,c)=1.\n\n## Modulo 64 reduction\n\nBecause 8|b, one has 64|B for either delta. Every term of P16 except the leading term contains B, so\n\n    P16(A,B) == 17 A^16 (mod 64).\n\nFor odd A,\n\n    A^16 == 1 (mod 64),\n\nhence\n\n    P16(A,B) == 17 (mod 64).                       (1)\n\nThe U54 square-class equation therefore requires\n\n    -sigma delta c^2 == 17 (mod 64).                (2)\n\nSince P16 is odd, c is odd. The odd square residues modulo 64 are exactly\n\n    {1,9,17,25,33,41,49,57}.\n\n### delta = 1\n\nIf sigma=+1, (2) requires c^2 == -17 == 47 (mod 64), impossible because 47 is not an odd square residue.\n\nThus sigma=-1.\n\n### delta = 17\n\nSince 17 is invertible modulo 64 (17^{-1}=49), sigma=+1 would require\n\n    c^2 == -1 == 63 (mod 64),\n\nagain impossible. Thus sigma=-1.\n\n## Conclusion\n\nThe sign ambiguity in U54 disappears completely. Every surviving solution in this branch must satisfy, for delta in {1,17},\n\n    B = -delta b^2,\n    P16(A,-delta b^2) = delta c^2,\n    delta b c = 4 |mn|,\n    gcd(b,c)=1,\n    gcd(A,b)=1,\n    A odd,\n    8|b.                                            (3)\n\nIn particular B is necessarily negative.\n\nA fresh Wolfram check returned the complete odd-square residue set modulo 64 as\n\n    {1,9,17,25,33,41,49,57},\n\nconfirmed that 17 is present but 47 is absent, and returned 17^{-1} mod 64 = 49.\n\n## Additional local scan\n\nA direct exact finite-field scan of the U54 equations for odd primes below 100 (excluding 5 and 17) found local solutions for all four pre-U55 square classes, so no single small odd-prime obstruction was available at that level. The mod-64 condition is strictly stronger for the sign question and removes both sigma=+1 classes.\n\n## Next obligation\n\nOnly two equations remain:\n\n    P16(A,-b^2) = c^2,\n    P16(A,-17 b^2) = 17 c^2,\n\nwith gcd(A,b)=gcd(b,c)=1, A odd, and 8|b. The next target is to combine these equations with the Gaussian 17th-power parametrization of m,n and delta*b*c=4|mn|, rather than treating the superelliptic equations in isolation. Prime-support separation from gcd(b,c)=1 may force a rigid allocation of the Gaussian factors into b and c."
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.44,
+        "confidence": 0.56,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.64,
+          "1": 0.27,
+          "2": 0.08,
+          "3": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1730,
+      "output_tokens": 94
+    }
+  }
+}

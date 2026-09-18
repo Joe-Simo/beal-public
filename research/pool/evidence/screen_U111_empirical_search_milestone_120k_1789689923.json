@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_empirical_search_milestone_120k",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_empirical_search_milestone_120k.md",
+      "excerpt": "# U111: Empirical Search Milestone $A \\le 120,000$ \u2014 Multi-Threaded GMP Verification and Zero Counterexample Certification\n\n**Status**: Definitive empirical verification milestone. Multi-threaded GNU MP search engine executed over base interval $[100001, 120000]$ and cumulative envelope $[2, 120000]$ for pure odd prime exponents $x, y, z \\in [3, 19]$. **Zero counterexamples exist.**  \n**Date**: 2026-09-17  \n**Author**: GMP Search Scale Engineer (Beal Conjecture Project)  \n**Target Equation**: Generalized Fermat / Beal Conjecture Equation:\n$$A^x + B^y = C^z, \\quad \\gcd(A, B, C) = 1, \\quad x, y, z \\ge 3.$$\n\n**Artifacts & Verification Logs**:\n- Interval $[100001, 120000]$ Log: [`references/search_logs/interval_100001_120000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_100001_120000_primes19.json)\n- Search Engine Source: [`code/beal_search_gmp.c`](file://[LOCAL_HOME]/Downloads/beal/code/beal_search_gmp.c)\n- Executable Binary: `code/beal_search_gmp`\n- Boundaries & Benchmarks: [`references/beal_search_boundaries_and_benchmarks.md`](file://[LOCAL_HOME]/Downloads/beal/references/beal_search_boundaries_and_benchmarks.md)\n- Preceding 100k Milestone: [`research/checkpoints/U110_empirical_search_milestone_100k.md`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U110_empirical_search_milestone_100k.md)\n\n---\n\n## 1. Executive Summary\n\nThis milestone report certifies the expansion of the high-performance computational search envelope past base $100,000$ to base $A = 120,000$:\n\n1. **Interval $[100001, 120000]$ Execution**:\n   - **Search Envelope**: Base $A \\in [100001, 120000]$, base $B \\in [A, 120000]$, pure odd prime exponents $x, y, z \\in \\{3, 5, 7, 11, 13, 17, 19\\}$.\n   - **Candidate Pairs Evaluated**: **3,404,417,044** ($3.404 \\times 10^9$ pairs).\n   - **Wall Time**: $92.537$ seconds ($1.54$ minutes) on 8 worker threads.\n   - **Average Throughput**: $36.79$ Million candidate pairs/second.\n   - **Counterexamples Found**: **EXACT ZERO ($0$)**.\n   - **Non-Primitive Equalities**: **EXACT ZERO ($0$)** in the coprime search space.\n\n2. **Grand Cumulative Verification Envelope ($A \\le 120,000$)**:\n   - Across all 10 partitioned search logs from $A = 2$ through $A = 120,000$, the C + GMP engine has exhaustively evaluated:\n     $$\\mathbf{13,651,983,773 \\quad \\text{coprime candidate pairs}}$$\n     (over **13.651 Billion** candidate pairs) with arbitrary-precision verification.\n   - Cumulative wall-clock search time: **$455.67$ seconds** ($7.59$ minutes).\n   - Cumulative counterexamples detected: **$\\mathbf{0}$**.\n   - **Certification**: The Beal Conjecture is verified to hold unconditionally for all bases $A, B \\le 120,000$ and pure odd prime exponents $x, y, z \\in \\{3, 5, 7, 11, 13, 17, 19\\}$.\n\n---\n\n## 2. Algorithmic Architecture and Precomputation\n\nThe C + GMP search engine (`code/beal_search_gmp.c`) operates with high memory locality and arbitrary-precision integer arithmetic:\n\n### 2.1 Precomputed Powers at Scale 120k\n- For base envelope $[2, 120000]$ and 7 prime exponents $\\{3, 5, 7, 11, 13, 17, 19\\}$, exactly $839,993$ distinct powers are precomputed in arbitrary precision using GMP `mpz_ui_pow_ui`.\n- Hash table: $2^{21} = 2,097,152$ slots with SplitMix64 hashing, operating at a load factor of $0.40$.\n- Candidate power sums $S = A^x + B^y$ are looked up in $O(1)$ expected time, with exact arbitrary-precision verification (`mpz_cmp`) upon hash matches.\n\n### 2.2 Dynamic Concurrency & Coprimality Filter\n- Binary GCD pruning eliminates non-coprime candidate base pairs $\\gcd(A, B) > 1$ before entering the exponentiation loop.\n- Dynamic work chunking on base $A$ ($\\Delta A = 156$) with 8 POSIX worker threads ensures load balancing across cores.\n\n---\n\n## 3. Section 8 Verification & Validation Protocol\n\nPrior to the search execution, the engine executed and passed the complete 13-case Section 8 test suite:\n\n| Test ID | Case Description | Arithmetic Check | $\\gcd(A,B,C)$ | Admissible | Counterexample | Result |\n|:---|:---|:---:|:---:|:---:|:---:|:---:|\n| 01 | $13^2 + 7^3 = 2^9$ ($169 + 343 = 512$) | Exact Match | 1 | **False** ($x=2 < 3$) | **False** | **PASS** |\n| 02 | $3^5 + 10^2 = 7^3$ ($243 + 100 = 343$) | Exact Match | 1 | **False** ($y=2 < 3$) | **False** | **PASS** |\n| 03 | $1^3 + 2^3 = 3^2$ ($1 + 8 = 9$) | Exact Match | 1 | **False** ($z=2 < 3$) | **False** | **PASS** |\n| 04 | $2^5 + 7^2 = 3^4$ ($32 + 49 = 81$) | Exact Match | 1 | **False** ($y=2 < 3$) | **False** | **PASS** |\n| 05 | $17^3 + 2^7 = 71^2$ ($4913 + 128 = 5041$) | Exact Match | 1 | **False** ($z=2 < 3$) | **False** | **PASS** |\n| 06 | $3^3 + 6^3 = 3^5$ ($27 + 216 = 243$) | Exact Match | **3** | True | **False** (Non-coprime) | **PASS** |\n| 07 | $7^3 + 7^4 = 14^3$ ($343 + 2401 = 2744$) | Exact Match | **7** | True | **False** (Non-coprime) | **PASS** |\n| 08 | $2^3 + 2^3 = 2^4$ ($8 + 8 = 16$) | Exact Match | **2** | True | **False** (Non-coprime) | **PASS** |\n| 09 | $2^{10} + 2^{10} = 2^{11}$ ($1024",
+      "length_chars": 9913
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.64,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.77,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.19
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.47,
+        "confidence": 0.53,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.85,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.15
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.61,
+        "probabilities": {
+          "verify_computation": 0.28,
+          "audit_later": 0.02,
+          "no_action": 0.69,
+          "audit_now": 0.01,
+          "verify_literature": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3346,
+      "output_tokens": 124
+    }
+  }
+}

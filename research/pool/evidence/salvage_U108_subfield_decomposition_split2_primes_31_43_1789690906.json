@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U108_subfield_decomposition_split2_primes_31_43",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U108_subfield_decomposition_split2_primes_31_43.md",
+    "excerpt": "# Checkpoint U108: Subfield Decomposition of Split-2 Exponents $p = 31$ and $p = 43$: Cubic Decomposition Fields and Inert Subfields\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Geometry Research Group  \n**Target Exponents**: Split-2 primes $p = 31$ and $p = 43$ in the generalized Fermat equation $X^{2\\ell} + Y^{2m} = Z^p$.  \n**Branch**: All-even Beal candidate $A^{2r} + B^{2s} = C^{2t}$ with $17 \\nmid t$.  \n**Supporting Code**: `code/decompose_split2_subfields.gp`.  \n**Status**: Exact algebraic certification in PARI/GP 2.17.4; rigorous decomposition of $K_p = \\mathbb{Q}(\\zeta_p)^+$ into cubic subfields $F_3$ and inert subfields $F_{\\text{inert}}$; computation of class numbers and narrow class groups.\n\n---\n\n## 1. Executive Summary\n\nIn Checkpoint U107, the arithmetic classification of right primes $p \\in [19, 100]$ showed that $p = 31$ and $p = 43$ fail Sahoo's (2025) Class $\\mathcal{P}_1$ criteria because $2$ splits in the full maximal real cyclotomic field $K_p = \\mathbb{Q}(\\zeta_p)^+$.\nThis checkpoint provides a complete algebraic and modular resolution of this splitting phenomenon:\n\n1. **Galois Subfield Structure of $K_p = \\mathbb{Q}(\\zeta_p)^+$**:\n   - For $p = 31$: $[K_{31} : \\mathbb{Q}] = 15$. The residue degree of $2$ in $K_{31}$ is $f_2 = 5$. The splitting index is $g = 15 / 5 = 3$.\n   - For $p = 43$: $[K_{43} : \\mathbb{Q}] = 21$. Because $2^7 \\equiv -1 \\pmod{43}$, the residue degree of $2$ in $K_{43}$ is $f_2 = 7$. The splitting index is $g = 21 / 7 = 3$.\n2. **The Cubic Subfield $F_3 = K_p^{\\langle \\operatorname{Frob}_2 \\rangle}$ (Degree 3)**:\n   - For both $p = 31$ and $p = 43$, the decomposition field $F_3$ has degree $[F_3 : \\mathbb{Q}] = 3$ (a totally real cubic field).\n   - Minimal polynomials computed via PARI/GP `polsubcyclo(p, 3)`:\n     $$F_3(31): P_{31, 3}(x) = x^3 + x^2 - 10x - 8, \\quad \\operatorname{disc}(F_3) = 31^2 = 961,$$\n     $$F_3(43): P_{43, 3}(x) = x^3 + x^2 - 14x + 8, \\quad \\operatorname{disc}(F_3) = 43^2 = 1849.$$\n   - Both cubic fields have **class number $h = 1$** and **narrow class number $h^+ = 1$ (strictly odd)**.\n   - By **Derickx--Najman--Siksek (2020, Theorem 4)**, *all elliptic curves over totally real cubic fields are unconditionally modular*.\n3. **The Inert Subfield $F_{\\text{inert}}$ (Degree $f_2$)**:\n   - For $p = 31$: degree $f_2 = 5$, polynomial $P_{31, 5}(x) = x^5 + x^4 - 12x^3 - 21x^2 + x + 5$.\n   - For $p = 43$: degree $f_2 = 7$, polynomial $P_{43, 7}(x) = x^7 + x^6 - 18x^5 - 35x^4 + 38x^3 + 104x^2 + 7x - 49$.\n   - In both subfields, **$2$ is completely inert** ($\\#\\operatorname{dec}(2) = 1, f = f_2$), **$h = 1$**, and **$h^+ = 1$**.\n   - Because $F_{\\text{inert}}$ is unramified at $3, 5, 7$, modularity holds by Yoshikawa (2018).\n   - Therefore, pushing down the Frey representation from $K_p$ to $F_{\\text{inert}}$ **recovers the Sahoo Class $\\mathcal{P}_1$ $S$-unit inertia contradiction in full force**.\n\n---\n\n## 2. Mathematical Framework: Decomposition Subfields and Inert Subfields\n\nLet $p$ be an odd prime, and let $K_p = \\mathbb{Q}(\\zeta_p + \\zeta_p^{-1})$ be the maximal real subfield of $\\mathbb{Q}(\\zeta_p)$, with $[K_p : \\mathbb{Q}] = d = \\frac{p-1}{2}$.\nThe Galois group $G = \\operatorname{Gal}(K_p / \\mathbb{Q})$ is cyclic of order $d$.\n\n### 2.1 The Frobenius Element and Its Subgroups\nLet $\\sigma_2 \\in \\operatorname{Gal}(\\mathbb{Q}(\\zeta_p)/\\mathbb{Q})$ be the Frobenius automorphism at 2, corresponding to $2 \\in (\\mathbb{Z}/p\\mathbb{Z})^\\times$.\nIn $K_p$, the restriction $\\bar\\sigma_2 = \\sigma_2|_{K_p}$ generates a cyclic subgroup $H = \\langle \\bar\\sigma_2 \\rangle \\subset G$.\nThe order of $H$ is the residue degree $f_2 = [K_{\\mathfrak{P}} : \\mathbb{Q}_2]$ for any prime ideal $\\mathfrak{P} \\mid 2$ in $K_p$:\n- If $\\operatorname{ord}_p(2)$ is odd, $f_2 = \\operatorname{ord}_p(2)$.\n- If $\\operatorname{ord}_p(2)$ is even and $2^{\\operatorname{ord}_p(2)/2} \\equiv -1 \\pmod p$, then $f_2 = \\frac{\\operatorname{ord}_p(2)}{2}$.\n\nThe number of prime ideals of $K_p$ lying above 2 is the splitting index:\n$$g_2 = \\frac{d}{f_2} = [G : H].$$\n\nBy Galois correspondence for the cyclic group $G$:\n1. **The Decomposition Field $F_3 = K_p^H$**:\n   The fixed field of $H$ has degree $[K_p^H : \\mathbb{Q}] = [G : H] = g_2 = 3$.\n   In $F_3$, the Frobenius $\\bar\\sigma_2$ acts trivially ($\\bar\\sigma_2 \\in H$). Therefore, the residue degree of $2$ in $F_3$ is $f(2/F_3) = 1$.\n   The prime $2$ **splits completely** in $F_3$ into $g_2 = 3$ prime ideals.\n2. **The Inert Subfield $F_{\\text{inert}} = K_p^J$**:\n   Let $J \\subset G$ be the unique subgroup of order $g_2 = 3$.\n   The fixed field $F_{\\text{inert}} = K_p^J$ has degree $[F_{\\text{inert}} : \\mathbb{Q}] = [G : J] = f_2$.\n   Because $\\bar\\sigma_2 \\notin J$, $\\bar\\sigma_2$ generates the quotient group $G/J \\cong H$.\n   Therefore, **$2$ is completely inert in $F_{\\text{inert}}$**, with residue degree $f(2/F_{\\text{inert}}) = f_2$.\n\n---\n\n## 3. PARI/GP Exact Arithmetic Invariants\n\nExecuting `code/decompose_split2_subfields.gp` produces the f"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.85,
+        "confidence": 0.61,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.1,
+          "1": 0.07,
+          "2": 0.71,
+          "3": 0.12
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 2630,
+      "output_tokens": 42
+    }
+  }
+}

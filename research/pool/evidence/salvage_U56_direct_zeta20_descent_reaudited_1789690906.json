@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U56_direct_zeta20_descent_reaudited",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U56_direct_zeta20_descent_reaudited.md",
+    "excerpt": "# U56: coefficient-2 branch \u2014 audited direct Q(zeta_20) descent\n\nStatus: verified partial arithmetic result within the evidence recorded here; **the branch-level frontier in this file is superseded by U57**. This does not resolve Beal's conjecture.\n\nDate: 2026-09-16.\n\n> **Correction notice (2026-09-16):** After this checkpoint was written, a stronger primary source was recovered. Freitas' 2012 thesis, Theorem 2.0.3, uses the condition `p \u2261 1 (mod 4) OR p \u2261 \u00b11 (mod 5)` and therefore directly eliminates the non-trivial primitive equation `x^5+y^5=2z^17`. U57 records the complete source audit and the pullback to U43. Sections 1\u20137 below remain preserved as independent arithmetic work, but Section 8's old literature conclusion and Section 9's designation of this route as the active frontier are superseded.\n\nThis checkpoint re-audits a mathematically useful route that existed in an older off-main research commit and places only the rechecked conclusions onto the current `main` chain.\n\n## 1. Input\n\nAssume a surviving primitive positive solution\n\n    X^10 + Y^10 = 2 Z^17,\n\nwith X,Y odd and coprime. From U46/U48,\n\n    Phi := X^8-X^6Y^2+X^4Y^4-X^2Y^6+Y^8 = v^17,\n\nand\n\n    m=(X+Y)/2,\n    n=(X-Y)/2,\n    gcd(m,n)=1,\n    m,n opposite parity,\n    m+i n = Gaussian-unit*(r+i s)^17.\n\nU46 gives Phi odd and 5 does not divide Phi.\n\n## 2. Exact cyclotomic norm\n\nLet xi=zeta_20 and M=Q(xi). Since\n\n    Phi_20(T)=T^8-T^6+T^4-T^2+1,\n\nwe have the exact norm identity\n\n    Norm_{M/Q}(Y+X xi)=Phi=v^17.                    (1)\n\nThe eight Galois conjugates Y+X xi^a, a in (Z/20Z)^*, are pairwise coprime as ideals. A common prime-ideal divisor of two distinct factors divides X(xi^a-xi^b); primitivity excludes primes dividing X, and root-of-unity differences are supported over 2 or 5. But their product Phi is odd and prime to 5.\n\nThe cyclotomic field Q(zeta_20) has class number one; the standard reference used here is J. M. Masley and H. L. Montgomery, `Cyclotomic fields with unique factorization`, J. Reine Angew. Math. 286/287 (1976), 248-256. Therefore\n\n    Y+X xi = epsilon Gamma^17                         (2)\n\nfor a unit epsilon of O_M. Roots of unity cause no ambiguity modulo 17th powers because gcd(17,20)=1.\n\n## 3. Real-unit basis re-audit\n\nLet L=M^+=Q(a), a=xi+xi^(-1), so\n\n    a^4-5a^2+5=0,\n    disc(L)=2000.\n\nThe following three real units were used:\n\n    e1=a^2-3,\n    e2=a^3+a^2-3a-3,\n    e3=a^2-a-2.\n\nWolfram `NumberFieldFundamentalUnits` independently returns a fundamental rank-three unit system for this quartic field. As a cross-check, the determinant of the logarithmic embedding matrix of e1,e2,e3 agrees with `NumberFieldRegulator[L]` to 50 decimal digits, with ratio exactly 1 at the displayed precision. Thus these units give the full real unit lattice in the computation used below.\n\nThe CM Hasse unit index [E_M : mu_M E_L] is 1 or 2, hence prime to 17. Therefore the classes of e1,e2,e3 span E_M/E_M^17 after roots of unity are discarded.\n\n## 4. Exact q=1021 unit sieve\n\nAt q=1021, q splits completely in M and 17|(q-1). The eight roots of Phi_20 modulo q are exactly\n\n    226, 250, 384, 486, 535, 637, 771, 795.\n\nThe exact 17th-power residue-character matrix of (e1,e2,e3) at those eight embeddings has rank 3 over F_17. Recomputing the Gaussian 17th-power projective condition for m+i n and testing every unit exponent triple in F_17^3 leaves exactly\n\n    (j1,j2,j3)=(9,9,8), with n/m=0,\n    (j1,j2,j3)=(9,8,9), with n/m=infinity.            (3)\n\nNo floating-point arithmetic enters this finite-field sieve.\n\nThe two surviving unit classes are represented by 1+xi and xi-1 respectively. Since the original equation is invariant under X -> -X and the automorphism xi -> -xi interchanges the two orientations, we may choose the plus orientation without loss:\n\n    Y+X xi = (1+xi) Gamma^17.                         (4)\n\nUsing X=m+n and Y=m-n and putting\n\n    mu=(xi-1)/(xi+1),\n\nthis becomes the exact untwisted equation\n\n    m + mu n = Gamma^17.                              (5)\n\nTogether with the Gaussian descent,\n\n    m+i n = rho^17                                    (6)\n\n(up to an absorbable Gaussian unit).\n\nIn the chosen plus orientation, q=1021 forces\n\n    1021 | n,\n    1021 does not divide m.                           (7)\n\nThe orientation-free statement is 1021|mn.\n\n## 5. Correct projective local test and additional forced divisors\n\nA normalization error must be avoided here: after dividing by m, the common scalar m need not itself be a 17th power. Therefore the correct split-prime test is that the order-17 residue characters of all nonzero conjugates of\n\n    1+i t,\n    1+mu t,\n\nwhere t=n/m, agree with one common scalar character; they are not required individually to be zero.\n\nThis corrected projective computation was executed exactly in Wolfram. For each of\n\n    q = 1021, 1361, 2381, 3061, 4421, 5101,\n\nall 20th roots split and 17|(q-1), and the only compatible projective ratio is\n\n    t=0.\n\nHence, in the chosen plus orientation,\n\n    1021*1361*2381"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.01,
+        "confidence": 0.76,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.02,
+          "2": 0.8,
+          "3": 0.13
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.88
+      }
+    },
+    "usage": {
+      "input_tokens": 2193,
+      "output_tokens": 42
+    }
+  }
+}

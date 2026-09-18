@@ -1,0 +1,59 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C045_lean_fidelity",
+  "timestamp": "2026-09-18T00:32:44-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "statement": "theorem gaussian_odd_pow_step {z : \u2115} (hz : Odd z) {a b c : \u2124} (hab : IsCoprime a b) (hc : \u00ac 2 \u2223 c) (h : a^2+b^2 = c^z) : \u2203 w : GaussianInt, w ^ z = \u27e8a, b\u27e9 \u2227 IsCoprime w.re w.im"
+  },
+  "questions": {
+    "faithful": {
+      "type": "score",
+      "instructions": "Does this Lean statement capture the classical fact 'coprime sum of two squares equal to an odd z-th power (z odd) is the norm-form of a z-th power in Z[i]' without over- or under-claiming?",
+      "criteria": [
+        "level 0: wrong",
+        "level 1: subtle gap (e.g. z=1, units, sign)",
+        "level 2: faithful up to harmless detail",
+        "level 3: faithful"
+      ]
+    },
+    "unit_step": {
+      "type": "noul",
+      "instructions": "Is 'every unit eps of Z[i] satisfies eps = (eps^z)^z for odd z' correct (since eps^4=1 and z^2 = 1 mod 4)?",
+      "criteria": {
+        "true": "correct",
+        "false": "incorrect"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "faithful": {
+        "type": "score",
+        "score": 1.87,
+        "confidence": 0.38,
+        "legend": {
+          "0": "level 0: wrong",
+          "1": "level 1: subtle gap (e.g. z=1, units, sign)",
+          "2": "level 2: faithful up to harmless detail",
+          "3": "level 3: faithful"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.35,
+          "2": 0.39,
+          "3": 0.25
+        }
+      },
+      "unit_step": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 544,
+      "output_tokens": 36
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U96_azon_theorem523_audit_and_lift_status",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U96_azon_theorem523_audit_and_lift_status.md",
+    "excerpt": "# U96: Azon Theorem 5.23 requires Hypothesis 5 and invokes Breuil--Diamond directly; no shortcut bypasses the local-lift construction\n\n**Status: source-verified modular-route audit. The weighted equation and Beal's conjecture remain unresolved.**\n\nResearch date: 2026-09-17. Inspected primary source: Martin Azon, *Effective Darmon's program for the generalised Fermat equation*, arXiv:2504.01967v2, 2025-07-03.\n\n## 1. Resolution of the U95 binary alternative\n\nU95 proposed testing whether Azon's level-lowering result (referenced as Theorem 5.22 in the paper's overview) could apply directly to the corrected negative twist and our specialization `(r,r,p)=(5,5,17)`, thereby bypassing the explicit reconstruction of the Breuil--Diamond local characteristic-zero lifts mapped in U94.\n\nA direct audit of the full preprint arXiv:2504.01967v2 resolves this question definitively:\n\n1. In the text of Section 5.3.3, label 5.22 is **Definition 5.22** (defining the conductor factor $\\mathfrak{n}_{\\operatorname{tor},\\not\\equiv 0 (p)}$), and the actual level-lowering theorem is **Theorem 5.23**.\n2. Theorem 5.23 explicitly assumes **Hypothesis 5**.\n3. For our weighted equation $X^{10}+256Y^{10}=Z^{17}$, **Hypothesis 5 fails identically**.\n4. The proof of Theorem 5.23 does not establish an independent level-lowering mechanism; it literally applies Breuil--Diamond [BD14, Theorem 3.2.2] under the umbrella of Hypothesis 5.\n\nTherefore, Azon's work does not provide an automatic shortcut around Breuil--Diamond Theorem 3.2.2. The explicit local-lift construction at the prime over 5 remains the genuine, inescapable mathematical obligation.\n\n## 2. Detailed audit of Azon Theorem 5.23 and Hypothesis 5\n\nIn Azon's notation, Hypothesis 5 states:\n\n> **Hypothesis 5.** *There is at least one prime number $q' \\nmid 2r$ such that $\\nu_{q'} < 0$, $\\nu_{q'} \\not\\equiv 0 \\pmod r$, and $\\operatorname{ord}^\\times(q' \\pmod r)$ is even.*\n\nFor signature $(r,r,p)$ with $r=5$ and $p=17$, our specialization parameters from Proposition 3.22 are:\n$$U = X^2, \\quad V = 2Y^2, \\quad A = 1, \\quad B = 8, \\quad C = 1, \\quad a = U, \\quad b = V, \\quad c = Z,$$\ngoverning the equation $U^5 + 8V^5 = Z^{17}$.\n\nThe valuation $\\nu_q$ defined in the preprint is:\n$$\\nu_q = 34 v_q(Z) - v_q(128 U^5 V^5).$$\n\nLet $q' \\nmid 2r = 10$ be any odd rational prime away from 5:\n\n- **Case 1: $q' \\mid Z$.** By pairwise coprimality of $X, Y, Z$, $q'$ does not divide $UV$. Hence $v_{q'}(UV) = 0$ and:\n  $$\\nu_{q'} = 34 v_{q'}(Z) > 0.$$\n  This violates the condition $\\nu_{q'} < 0$.\n\n- **Case 2: $q' \\mid UV$.** By pairwise coprimality, $q'$ does not divide $Z$, so $v_{q'}(Z) = 0$. Hence:\n  $$\\nu_{q'} = -v_{q'}(128 U^5 V^5) = -5 v_{q'}(UV) < 0.$$\n  However, this valuation satisfies:\n  $$\\nu_{q'} \\equiv -5 v_{q'}(UV) \\equiv 0 \\pmod 5.$$\n  This directly violates the second condition $\\nu_{q'} \\not\\equiv 0 \\pmod r$.\n\n- **Case 3: $q' \\nmid UVZ$.** Then $\\nu_{q'} = 0$, violating $\\nu_{q'} < 0$.\n\nConsequently, **there does not exist any prime $q'$ satisfying Hypothesis 5** for a primitive positive solution of the weighted equation.\n\n## 3. Why Azon imposed Hypothesis 5\n\nExamining the proof of Theorem 5.23 (lines 3664--3668 of the author manuscript) reveals why the author required Hypothesis 5:\n\n1. **Unipotent reduction**: Hypothesis 5 guarantees that the Jacobian has unipotent reduction at $q'$, producing a supercuspidal Weil--Deligne representation at $q'$ whose inertial restriction has order $r$ or $2r$.\n2. **Coefficient field inclusion**: Via [BCDF25, Proposition 8.4], that supercuspidal type forces the field of coefficients $K_g$ of the lowered form to contain $\\mathcal{K} = \\mathbb{Q}(\\sqrt{5})$.\n3. **Absolute irreducibility**: Hypothesis 5 was used to invoke [BCDF25, Lemma 6.9] to establish that $\\bar\\rho|_{G_{\\mathcal{K}(\\zeta_p)}}$ is absolutely irreducible.\n\nCrucially, **U64 already proved absolute irreducibility unconditionally** through a completely different route:\n- Local absolute irreducibility at the prime over 2 was proved directly from the tame inertia action $\\Phi_5$ on the good flat model $C^-$ over $F(\\pi)$;\n- Global absolute irreducibility on $G_{K(\\zeta_{17})}$ was then deduced via the cyclic-restriction lemma (Lemma 3 in U64) because the prime above 2 splits in $K(\\sqrt{17})/K$.\n\nThus, while U64 bypassed Azon's need for Hypothesis 5 to prove residual irreducibility, it cannot use Azon's Theorem 5.23 as a packaged black box because the preprint did not state a version of level-lowering without Hypothesis 5.\n\n## 4. The proof of Azon Theorem 5.23 contains no new lowering theorem\n\nAzon's proof of Theorem 5.23 explicitly states:\n\n> *\"The first claim follows from combining Theorem 5.21 with Theorem 3.2.2 in [BD14].\"*\n\nThe author did not develop a new level-lowering machine; he cited Breuil--Diamond (2014) Theorem 3.2.2.\n\nThis settles the research priority:\n- There is no separate \"Azon lowering theorem\" that bypasses Breuil--Diamond.\n- The author's Magma package (`level&irred.m`) computes t"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.57,
+        "confidence": 0.57,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.04,
+          "2": 0.29,
+          "3": 0.65
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.79
+      }
+    },
+    "usage": {
+      "input_tokens": 2263,
+      "output_tokens": 42
+    }
+  }
+}

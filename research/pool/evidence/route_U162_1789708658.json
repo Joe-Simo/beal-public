@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U162",
+  "timestamp": "2026-09-18T01:17:38-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "332n"
+  },
+  "questions": {
+    "ok": {
+      "type": "noul",
+      "instructions": "BCDY 2015 Theorem 1 includes (3,3,2n), n>=2: x^3+y^3=z^{2n} has no coprime nonzero solutions. Adding it as a named hypothesis closes (3,3,4) in the residual. Correct reading?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "ok": {
+        "type": "noul",
+        "noul": 0.65
+      }
+    },
+    "usage": {
+      "input_tokens": 363,
+      "output_tokens": 20
+    }
+  }
+}

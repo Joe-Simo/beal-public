@@ -1,0 +1,6002 @@
+[
+ [
+  0.982,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.893,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.873,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.828,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.808,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.805,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.801,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.8,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.799,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.798,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.787,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.778,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.776,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.772,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.772,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.77,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.758,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.753,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.748,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.745,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.735,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.731,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.726,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.72,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.704,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.701,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.694,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.693,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.693,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.685,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.684,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.683,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.678,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.676,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.671,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.668,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.667,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.66,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.659,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.658,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.65,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.646,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.646,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.645,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.642,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.639,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.638,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.637,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.634,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.63,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.627,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.622,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.62,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.617,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.616,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.616,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.615,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.61,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.61,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.607,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.606,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.604,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.603,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.603,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.603,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.602,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.6,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.597,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.594,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.593,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.592,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.592,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.59,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.588,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.587,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.587,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.587,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.584,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.581,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.579,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.579,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.578,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.577,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.576,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.576,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.575,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.574,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.569,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.569,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.568,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.566,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.564,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.564,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.562,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.562,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.561,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.56,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.555,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.553,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.552,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.549,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.544,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.543,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.542,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.54,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.539,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.539,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.539,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.539,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.535,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.534,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.533,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.532,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.53,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.529,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.529,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.528,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.527,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.525,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.525,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.524,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.522,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.52,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.52,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.519,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.519,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.519,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.518,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.516,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.516,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.516,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.516,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.516,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.515,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.513,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.513,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.512,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.511,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.509,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.508,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.507,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.507,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.506,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.506,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.505,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.502,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.502,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.502,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.498,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.498,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.494,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.494,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.492,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.491,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.488,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.488,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.488,
+  "the fourth power A^4 in (4,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.488,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.488,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.488,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.487,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.487,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.486,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.485,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.484,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.484,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.484,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.482,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.482,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.481,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.481,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.48,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.479,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.478,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.478,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.477,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.477,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.476,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.476,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.476,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.476,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.475,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.475,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.474,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.47,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.47,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.468,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.468,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.468,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.467,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.466,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.465,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.464,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.464,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.463,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.461,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.46,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.46,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.459,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.457,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.457,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.457,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.456,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.456,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.454,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.453,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.453,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.453,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.452,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.452,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.452,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.452,
+  "the cubic term A^3 in (3,5,7)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.452,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.451,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.45,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.45,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.449,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.449,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.448,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.448,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.446,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.446,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.446,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.446,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.445,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.445,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.444,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.444,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.443,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.442,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.441,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.441,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.44,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.439,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.437,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.436,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.434,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.433,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.432,
+  "the difference C^r - B^q of two odd-prime powers",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.432,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.431,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.428,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.428,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.428,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.428,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.427,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.425,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.424,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.424,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.423,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.422,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.422,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.422,
+  "the difference C^r - B^q of two odd-prime powers",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.422,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.422,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.42,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.42,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.42,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.42,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.42,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.419,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.417,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.415,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.415,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.415,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.415,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.414,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.414,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.414,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "both summands are perfect powers"
+ ],
+ [
+  0.413,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.41,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.41,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.41,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.41,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.41,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.409,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.408,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.408,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.407,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.406,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.405,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.404,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.404,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.404,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.404,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.402,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.402,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.402,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.402,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.402,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.402,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.401,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.4,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.4,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.399,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.399,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.399,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.399,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.398,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.398,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.397,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.396,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.396,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.396,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.396,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.393,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.393,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.393,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.392,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.392,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.39,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.39,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.39,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.389,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.388,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.387,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.387,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.386,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.386,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.386,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.386,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.385,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.385,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.385,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.384,
+  "the fourth power A^4 in (4,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.384,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.383,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.382,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.382,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.381,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.381,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.381,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.379,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.379,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.378,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.376,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.376,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.376,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.376,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.375,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.374,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.373,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "both summands are perfect powers"
+ ],
+ [
+  0.373,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.373,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.372,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.372,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.372,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.371,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.371,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.371,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.37,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.37,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.37,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.37,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.37,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.37,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.369,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.369,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.368,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.368,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.368,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.366,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.366,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.366,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.365,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.365,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.365,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.364,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.362,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.362,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.362,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.362,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.36,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.36,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.36,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.36,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.359,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.359,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.359,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.359,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.359,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.359,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.358,
+  "the fourth power A^4 in (4,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.358,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.358,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.357,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.357,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.357,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.357,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.356,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.356,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.355,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.355,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.353,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.353,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.353,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.351,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.351,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.351,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.35,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.35,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.35,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.349,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.349,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.348,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.348,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.347,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.347,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.347,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.347,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.346,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.345,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.345,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.343,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "both summands are perfect powers"
+ ],
+ [
+  0.343,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.342,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.341,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.341,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.34,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.34,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.34,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.34,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.339,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.338,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.338,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.338,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.338,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.337,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.336,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.336,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.335,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.335,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.335,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.333,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.333,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.333,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.333,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.332,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.332,
+  "the difference C^r - B^q of two odd-prime powers",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.332,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.332,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.331,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.331,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.331,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.331,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.33,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.33,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.329,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.329,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.328,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.327,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.327,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.326,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.326,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.326,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.325,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.325,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.324,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.324,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.324,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.323,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.323,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.323,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.323,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.323,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.322,
+  "the sum A^p + B^q with p != q",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.322,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.322,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.321,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.321,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.32,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.32,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.32,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.32,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.319,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.319,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.318,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.318,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.318,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.318,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.318,
+  "the cubic term A^3 in (3,5,7)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.318,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.317,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.317,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.316,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.316,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.314,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.314,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.314,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.314,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.314,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.313,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.313,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.312,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.312,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.312,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.311,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.311,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.311,
+  "the cubic term A^3 in (3,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.31,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.31,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.31,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.31,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.309,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.309,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.309,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.309,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.308,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.307,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.306,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.305,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.305,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.305,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.304,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.304,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.303,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.303,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.303,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.302,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.302,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.301,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.301,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.3,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.3,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.3,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.3,
+  "the cubic term A^3 in (3,5,7)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.3,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.299,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.298,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.298,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.298,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.297,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.297,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.297,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.297,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.297,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.297,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.297,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.296,
+  "the sum A^p + B^q with p != q",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.296,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.296,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.296,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.296,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.295,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.295,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.295,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.294,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.294,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.294,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.294,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.294,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.293,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.292,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.292,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.292,
+  "the difference C^r - B^q of two odd-prime powers",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.291,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.291,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.291,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.29,
+  "the fourth power A^4 in (4,5,7)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.29,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.29,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.288,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.288,
+  "the cubic term A^3 in (3,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.288,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.288,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.287,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.287,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.287,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.286,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.285,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.284,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.284,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.283,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.283,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.282,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.282,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.281,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.281,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.281,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.281,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.281,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.28,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.28,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.279,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.279,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.278,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.278,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.278,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.278,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.278,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.277,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.277,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.276,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.276,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.276,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.276,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.276,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.275,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.275,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.275,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.275,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.275,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.274,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.274,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.273,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.271,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.271,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.271,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.271,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.271,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.27,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.27,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.269,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.269,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.269,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.269,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.269,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.268,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.268,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.268,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.268,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.268,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.267,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.266,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.266,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.266,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.266,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.266,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.266,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.266,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.264,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.264,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.264,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.263,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.263,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.262,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.262,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.262,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.261,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.261,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.261,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.261,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.261,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.26,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.26,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.26,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.259,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.259,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.258,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.258,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.257,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.257,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.257,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.257,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.257,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.257,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.256,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.255,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.255,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.255,
+  "the fourth power A^4 in (4,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.254,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.254,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.254,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.254,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.253,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.253,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.253,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.251,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.251,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.251,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.25,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.25,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.25,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.25,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.249,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.249,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.248,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.248,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.248,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.248,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.248,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "both summands are perfect powers"
+ ],
+ [
+  0.247,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.247,
+  "the sum A^p + B^q with p != q",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.246,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.244,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.243,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.243,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.243,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.243,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.243,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.242,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.242,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.242,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.242,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.241,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.24,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.24,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.24,
+  "the fourth power A^4 in (4,5,7)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.24,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.24,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.24,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.239,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.239,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.239,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.239,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.239,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.238,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.237,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.237,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.237,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "both summands are perfect powers"
+ ],
+ [
+  0.236,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.236,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.236,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.236,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.236,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.234,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.234,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.234,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.233,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.233,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "both summands are perfect powers"
+ ],
+ [
+  0.233,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.233,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.232,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.232,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.232,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.232,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.231,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.231,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.231,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.23,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.23,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.23,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.23,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.229,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.229,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.229,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.229,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.228,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.228,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.228,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.228,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.228,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.228,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.228,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.228,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.227,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.227,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.227,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.227,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.227,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.226,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.226,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.226,
+  "the sum A^p + B^q with p != q",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.226,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.226,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.226,
+  "the difference C^r - B^q of two odd-prime powers",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.226,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.226,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.225,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.225,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.224,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.224,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.223,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.223,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.222,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.222,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.222,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.221,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.221,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.22,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.22,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.22,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.219,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.219,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.219,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.218,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.218,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.218,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.218,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.218,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.218,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.217,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.217,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.216,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.216,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.215,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.214,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.214,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.214,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.214,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.214,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.214,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.214,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.213,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.213,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.213,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.213,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.213,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.212,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "run an exact bounded search that tests a named structural hypothesis",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.211,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.211,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.21,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.21,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.21,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.209,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.209,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.209,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.208,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.208,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.208,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.207,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.207,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.207,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.207,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.206,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.206,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.206,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.206,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "C^z <= 2 max(A^x,B^y) (kernel-verified)"
+ ],
+ [
+  0.204,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.204,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.204,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.204,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.203,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.203,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.203,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.202,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.202,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.201,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.201,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.201,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.201,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.2,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.2,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.2,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.2,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.197,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.197,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.196,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.196,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.196,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.196,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.196,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.195,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.195,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.195,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.194,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.194,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.194,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.193,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.193,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.193,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.193,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.192,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.192,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.192,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.192,
+  "the fourth power A^4 in (4,5,7)",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.192,
+  "the difference C^r - B^q of two odd-prime powers",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.192,
+  "the cubic term A^3 in (3,5,7)",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.191,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.191,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.19,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.19,
+  "the sum A^p + B^q with p != q",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.19,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.19,
+  "the cubic term A^3 in (3,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.19,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.19,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.19,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.189,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.189,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.189,
+  "the difference C^r - B^q of two odd-prime powers",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.189,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.188,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.187,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.187,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.186,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.186,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.185,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.184,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.184,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "both summands are perfect powers"
+ ],
+ [
+  0.183,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.183,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.182,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.182,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.182,
+  "the difference C^r - B^q of two odd-prime powers",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.181,
+  "the sum A^p + B^q with p != q",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.181,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.18,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.18,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.18,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.18,
+  "the fourth power A^4 in (4,5,7)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.179,
+  "the difference C^r - B^q of two odd-prime powers",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.177,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.177,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.177,
+  "the fourth power A^4 in (4,5,7)",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.177,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "both summands are perfect powers"
+ ],
+ [
+  0.176,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.176,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.176,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.175,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.174,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "map to an elliptic curve over Q and compute its rank in PARI",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.174,
+  "the sum A^p + B^q with p != q",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.174,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.174,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.173,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.173,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.173,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.172,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.172,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.172,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.171,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.171,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.17,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.17,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.17,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.17,
+  "the cubic term A^3 in (3,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.169,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.168,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.168,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.167,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.167,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.167,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "rank-0 elliptic curves from LMFDB"
+ ],
+ [
+  0.166,
+  "the difference C^r - B^q of two odd-prime powers",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.165,
+  "the sum A^p + B^q with p != q",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.165,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.164,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.164,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.163,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.162,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.162,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.161,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "apply Lifting-the-Exponent to pin a valuation",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.161,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.161,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.161,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.16,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.16,
+  "the cubic term A^3 in (3,5,7)",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.16,
+  "the 2-adic and 3-adic valuations of the three terms",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.159,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.159,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.158,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.158,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.157,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.157,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.156,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.156,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.154,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.154,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "both summands are perfect powers"
+ ],
+ [
+  0.154,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.152,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.152,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.152,
+  "the Mordell curve Y^2 = X^3 + k obtained by fixing one term",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.151,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.149,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.149,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "the closed instance rows (PSS, Siksek-Stoll, BEN, Darmon-Merel)"
+ ],
+ [
+  0.148,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.147,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.147,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.147,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.144,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "count solutions mod l and look for a forced zero",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.144,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.143,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "exactly one base is even (kernel-verified)"
+ ],
+ [
+  0.142,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.141,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.14,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.14,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.14,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.14,
+  "the fourth power A^4 in (4,5,7)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.139,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.139,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.139,
+  "the ratio log C / log B forced by z log C ~ y log B",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.138,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.138,
+  "the cubic term A^3 in (3,5,7)",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.138,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "factor over a quadratic or cyclotomic ring where it splits",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.137,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.137,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.137,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.134,
+  "the pair (A+B, cofactor) when two exponents share a factor after regrouping",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.134,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "pairwise coprimality of the bases"
+ ],
+ [
+  0.133,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.133,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "count solutions mod l and look for a forced zero",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.13,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.129,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.129,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.126,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.126,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.125,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.121,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.121,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.118,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.116,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.116,
+  "the sum A^p + B^q with p != q",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.109,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "compare with the ten Fermat-Catalan solutions to see which property they have that exponent>=3 forbids",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.107,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.106,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Z[i] / Z[omega] reductions already in the kernel"
+ ],
+ [
+  0.103,
+  "the triple of residues mod a prime l = 1 mod pqr",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "Mihailescu's theorem (Catalan)"
+ ],
+ [
+  0.103,
+  "the sum A^p + B^q with p != q",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.1,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "feed to a conjecture mill: generate statements, filter exactly, prove survivors in Lean",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.097,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.096,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "recognise as an instance of a solved lower signature after a substitution",
+  "the dominant-term dichotomy z<=x iff A<C"
+ ],
+ [
+  0.093,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "derive a second independent equation and intersect",
+  "nothing beyond the equation itself"
+ ],
+ [
+  0.077,
+  "a hypothetical MINIMAL counterexample (smallest C^z)",
+  "build a descent step producing a smaller solution",
+  "nothing beyond the equation itself"
+ ]
+]

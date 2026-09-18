@@ -1,0 +1,74 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C058_audit_Mordell27",
+  "timestamp": "2026-09-18T00:51:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "hyp": "Mordell27",
+    "lean": "\u2200 X Y : \u211a, Y^2 = X^3 + 27 \u2192 X = -3 \u2227 Y = 0",
+    "source": "LMFDB 144.a4: [0,0,0,0,27], rank 0, torsion Z/2. PARI: conductor: 144\ntorsion: [2, [2], [[-3, 0]]]\nanalytic rank: 0\n2-descent bound (ell2cover/ellrank): 0\n"
+  },
+  "questions": {
+    "implied": {
+      "type": "score",
+      "instructions": "As a second reader: is the Lean hypothesis IMPLIED by the quoted source (never stronger than it)?",
+      "criteria": [
+        "0 the Lean statement is stronger than the source",
+        "1 unclear/needs a condition",
+        "2 implied modulo harmless reformulation",
+        "3 clearly implied"
+      ]
+    },
+    "issue": {
+      "type": "choice",
+      "instructions": "If any, the issue.",
+      "criteria": {
+        "none": "none",
+        "coprime": "coprimality convention",
+        "sign": "signs/negatives",
+        "exponent": "exponent range",
+        "permutation": "which term is the sum (permutation of signature)",
+        "rank": "rank 0 depends on 2-descent being unconditional"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "implied": {
+        "type": "score",
+        "score": 2.2,
+        "confidence": 0.2,
+        "legend": {
+          "0": "0 the Lean statement is stronger than the source",
+          "1": "1 unclear/needs a condition",
+          "2": "2 implied modulo harmless reformulation",
+          "3": "3 clearly implied"
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.06,
+          "2": 0.18,
+          "3": 0.59
+        }
+      },
+      "issue": {
+        "type": "choice",
+        "choice": "none",
+        "confidence": 0.68,
+        "probabilities": {
+          "permutation": 0.01,
+          "rank": 0.17,
+          "coprime": 0.0,
+          "exponent": 0.02,
+          "sign": 0.06,
+          "none": 0.74
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 605,
+      "output_tokens": 79
+    }
+  }
+}

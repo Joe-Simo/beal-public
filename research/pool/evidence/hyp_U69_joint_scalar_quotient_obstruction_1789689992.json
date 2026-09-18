@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U69_joint_scalar_quotient_obstruction",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U69_joint_scalar_quotient_obstruction.md",
+    "excerpt": "# U69: joint scalar-quotient obstruction and an all-precision local limitation\n\n**Status: written, self-reviewed partial results with distinct exact arithmetic checks. Neither the weighted equation nor the full Beal conjecture is solved. No independent expert or proof-assistant certification is claimed.**\n\nResearch date: 2026-09-15. Private remote revision inspected: `9ed3f2c0b04b59222516183b62282c13ea2c58c8` (U68). The attached U68 archive was restored additively; no conflicting files were overwritten. U68's Python computation was replayed with exactly the same mathematical output, into a new log rather than replacing the old evidence.\n\n## 1. Scope and result\n\nThe active weighted equation is\n\n    (W) X^10 + 256Y^10 = Z^17,\n        X,Y,Z positive integers, gcd(X,Y)=1.\n\nThe remote quintic U65 supplies the written necessary condition\n\n    (Q) beta^17 = X^2 + 2rho^3 Y^2,\n        rho^5=2, rho>0,\n        beta=b0+b1rho+b2rho^2+b3rho^3+b4rho^4 in Z[rho].\n\nGaussian factorization independently gives\n\n    (G) (a+ib)^17 = X^5 + 16iY^5.\n\nU68 reconstructs the Gaussian cases and proves that 17 and every prime in\n\n    Pset={11,31,41,61,71,101,151,191,211,281,331,431,461,631}\n\ndivide Y. In particular X is a unit at 17. Write\n\n    P=product(Pset)=433992707035920672833426144791,\n    T=max(X,Y).\n\nThe weighted applications here inherit the written/self-reviewed U65 implication (W)=>(Q). No boundary-curve congruence, Hilbert-newspace completeness claim, U41 elimination, or conjectural rank is used.\n\nDefine a rational prime q to be **jointly exceptional** when\n\n    q mod340 is in {1,67,69,137,203,273,339},           (1.1)\n\nand, in the class q=1 modulo 340 only, additionally\n\n    2^((q-1)/5)=1 modulo q.                          (1.2)\n\nLet J be the product of q^v_q(XY) over these primes, retaining the full multiplicity of each prime. The main weighted consequence is\n\n    J^2 > 17^15 P^30 > 10^906,\n    therefore J > 10^453.                            (1.3)\n\nThus at least one prime from this more restrictive set must divide XY, and those primes must account for a large product of prime powers. This does **not** forbid all other primes from dividing X or Y, does not bound a single prime below by 10^453, and does not give an upper bound on J.\n\nU68's separate bounds T>10^514 and its broader exceptional product >10^483 remain unchanged. The new result is a restriction on which primes must support part of that large product, not a claim to have increased the 515-digit base bound.\n\nThe limiting result is also explicit: at q=137 there are compatible solutions of (Q), (G), and both norm equations in the 137-adic integers for every positive valuation of Y. Both roots can remain nonscalar modulo 137. Section 7 proves this for all precisions and supplies a checked example modulo 137^12. It is not an integer solution of (W).\n\n## 2. Root uniqueness in a quotient, not in the full unit group\n\nFor a prime q and n>=1, put\n\n    R(q,n)=(Z/q^n Z)[rho]/(rho^5-2),\n    C(q,n)=(Z/q^n Z)^*,\n\nwhere C embeds as the scalar units of R. If the finite quotient group R(q,n)^*/C(q,n) has order prime to 17, then\n\n    u^17 scalar and invertible  =>  u scalar.        (2.1)\n\nIndeed the class of u in that quotient is killed by 17, so it is the identity. This does not require the power map on the full unit group to be injective; scalar seventeenth roots of unity are harmless here.\n\nReduction modulo q induces a surjection of these quotient groups. Its kernel is a q-group: after multiplication by a scalar lift, a representative in this kernel is 1 modulo q, and successive congruence subquotients are additive groups in characteristic q. Consequently, for q!=17 it suffices to test the quotient modulo q.\n\nFor q away from 2 and 5, factor rho^5-2 into irreducibles of degrees d1,...,ds over F_q. The Chinese remainder decomposition shows that this quotient has order\n\n    product(q^dj-1)/(q-1).                           (2.2)\n\nU68's affine-Frobenius argument gives precisely these factor-degree patterns:\n\n| q modulo 5 | Factor degrees |\n|---|---|\n| 1 | (5) or (1,1,1,1,1) |\n| 2 or 3 | (1,4) |\n| 4 | (1,2,2) |\n\nFor completeness, Frobenius permutes the roots rho*zeta_5^j by j->qj+c. A nonidentity slope can be translated to fix zero, giving the displayed nonzero orbit lengths; slope one gives either five fixed points or a five-cycle.\n\nFor the irreducible pattern (5), the order in (2.2) is\n\n    q^4+q^3+q^2+q+1.\n\nIt is never divisible by 17. If q=1 modulo 17 its value is 5; otherwise a zero would imply that the order of q modulo 17 divides both 5 and 16, which is impossible. Thus **every irreducible quintic residue prime is good for (2.1)**, even if scalar units have nontrivial seventeenth roots of unity.\n\nIn the other three patterns, the quotient orders are respectively (q-1)^4, q^4-1, and (q^2-1)^2. Therefore the quintic bad-prime set is exactly U68's eleven classes modulo 85,\n\n    {1,13,18,33,38,47,52,67,69,72,84},               (2.3)\n\nwith the following refinement: in class q=1 modulo"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.5,
+        "confidence": 0.5,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.58,
+          "1": 0.34,
+          "2": 0.07,
+          "3": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2476,
+      "output_tokens": 94
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C045",
+  "timestamp": "2026-09-17T23:53:14-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "Class (x,y even, z odd) reduced exactly to: Re and Im of (u+vi)^z both perfect powers. Box search found no hit."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "What is the best next step for this class?",
+      "criteria": {
+        "descent": "prove Re((u+vi)^z) is never a perfect power >=2 by descent on u(u^2-3v^2) for z=3",
+        "lean": "formalise the Z[i] reduction in Lean 4 with mathlib GaussianInt",
+        "extend": "extend the box (not justified unless it tests a named hypothesis)",
+        "literature": "check whether (4,4,3)/(2n,2m,z odd) is already settled in the literature"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "literature",
+        "confidence": 0.28,
+        "probabilities": {
+          "descent": 0.39,
+          "lean": 0.14,
+          "literature": 0.46,
+          "extend": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 458,
+      "output_tokens": 48
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "lean_AlgebraicIdentities",
+  "timestamp": "2026-09-17T20:19:59-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "target_statement": "Beal: for positive integers A,B,C,x,y,z with A^x + B^y = C^z and x,y,z >= 3, the bases A,B,C share a common prime factor, i.e. gcd(gcd(A,B),C) > 1. A counterexample needs: all six positive integers, all three exponents at least 3, exact equality, and gcd(gcd(A,B),C) = 1. Bases equal to 1 are allowed. Exponent 2 is NOT allowed. The condition is on the BASES, not the exponents.",
+    "file": "AlgebraicIdentities.lean",
+    "source": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Mathlib.Algebra.Ring.Basic\nimport Mathlib.Tactic.Ring\nimport Mathlib.Tactic.LinearCombination\n\n/-!\n# Key Algebraic Lemmas for the Weighted Beal Equation\n\nThis module formalizes key algebraic identities and factorizations underlying\nthe analysis of the weighted Fermat-type equation:\n  $$X^{10} + 256Y^{10} = Z^{17}$$\nassociated with the Beal conjecture program.\n\n## Results Formalized:\n1. **Cyclotomic Splitting over the Golden Ratio Field $\\mathbb{Q}(\\phi)$**:\n   - The 10th cyclotomic polynomial $\\Phi_{10}(T) = T^4 - T^3 + T^2 - T + 1$ splits\n     into quadratic factors over $\\mathbb{Z}[\\phi]$ where $\\phi^2 = \\phi + 1$.\n   - The 5th cyclotomic polynomial $\\Phi_5(T) = T^4 + T^3 + T^2 + T + 1$ splits\n     into quadratic factors over $\\mathbb{Z}[\\phi]$.\n2. **Decic Factorization over $\\mathbb{Q}(\\phi, c)$**:\n   - Factorization of $X^{10} - c^{10}Y^{10}$ into two linear and four quadratic factors.\n   - When $c^{10} = -256$, this establishes the complete algebraic factorization of\n     $X^{10} + 256Y^{10}$ over the field $K = \\mathbb{Q}(\\phi, c)$.\n3. **The U73 Genus-Eight Algebraic Reduction Identity**:\n   - For 5th roots of unity $\\zeta$ satisfying $\\zeta + \\zeta^{-1} = \\phi - 1$,\n     $$4(X + c\\zeta Y)(X + c\\zeta^{-1}Y) = (\\phi + 1)(X + cY)^2 + (3 - \\phi)(X - cY)^2$$\n     which produces the genus-eight curve $(3-\\phi)V^2 = 4U^{17} - \\phi^2$.\n4. **The U73 Rational Coordinate Vanishing Identity**:\n   - Exact vanishing of the degree-10 polynomial $X^{10}(1-V)^{10} + 256Y^{10}(1+V)^{10}$\n     evaluated at $V = (X - cY)/(X + cY)$.\n-/\n\nnamespace Beal\n\nvariable {R : Type*} [CommRing R]\n\n/-! ### 1. Cyclotomic Factorizations over the Golden Ratio -/\n\n/--\nPolynomial identity showing that $\\Phi_{10}(T)$ is factored by\n$(T^2 - \\phi T + 1)(T^2 - \\bar\\phi T + 1)$ up to a multiple of $(\\phi^2 - \\phi - 1)$.\n-/\nlemma phi10_expansion (T phi : R) :\n    (T^2 - phi * T + 1) * (T^2 - (1 - phi) * T + 1) =\n    (T^4 - T^3 + T^2 - T + 1) - T^2 * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe 10th cyclotomic polynomial $\\Phi_{10}(T) = T^4 - T^3 + T^2 - T + 1$ factors\ninto quadratic factors over any ring containing a golden ratio $\\phi^2 = \\phi + 1$.\n-/\ntheorem phi10_factorization (T phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (T^2 - phi * T + 1) * (T^2 - phi_bar * T + 1) = T^4 - T^3 + T^2 - T + 1 := by\n  subst hbar\n  have h := phi10_expansion T phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\n/--\nPolynomial identity showing that $\\Phi_{5}(T)$ is factored by\n$(T^2 + \\phi T + 1)(T^2 + \\bar\\phi T + 1)$ up to a multiple of $(\\phi^2 - \\phi - 1)$.\n-/\nlemma phi5_expansion (T phi : R) :\n    (T^2 + phi * T + 1) * (T^2 + (1 - phi) * T + 1) =\n    (T^4 + T^3 + T^2 + T + 1) - T^2 * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe 5th cyclotomic polynomial $\\Phi_5(T) = T^4 + T^3 + T^2 + T + 1$ factors\ninto quadratic factors over any ring containing a golden ratio $\\phi^2 = \\phi + 1$.\n-/\ntheorem phi5_factorization (T phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (T^2 + phi * T + 1) * (T^2 + phi_bar * T + 1) = T^4 + T^3 + T^2 + T + 1 := by\n  subst hbar\n  have h := phi5_expansion T phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\n/-! ### 2. Quintic and Decic Factorization of $X^{10} + 256Y^{10}$ -/\n\nlemma quintic_split_plus_expansion (X Y c phi : R) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - (1 - phi) * c * X * Y + c^2 * Y^2) =\n    (X^5 + c^5 * Y^5) - X^2 * Y^2 * c^2 * (X + c * Y) * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe quintic factor $X^5 + c^5 Y^5$ splits into one linear and two quadratic factors\nover any commutative ring containing $\\phi$ with $\\phi^2 = \\phi + 1$.\n-/\ntheorem quintic_split_plus (X Y c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - phi_bar * c * X * Y + c^2 * Y^2) =\n    X^5 + c^5 * Y^5 := by\n  subst hbar\n  have h := quintic_split_plus_expansion X Y c phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\nlemma quintic_split_minus_expansion (X Y c phi : R) :\n    (X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + (1 - phi) * c * X * Y + c^2 * Y^2) =\n    (X^5 - c^5 * Y^5) + X^2 * Y^2 * c^2 * (-X + c * Y) * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe quintic factor $X^5 - c^5 Y^5$ splits into one linear and two quadratic factors\nover any commutative ring containing $\\phi$ with $\\phi^2 = \\phi + 1$.\n-/\ntheorem quintic_split_minus (X Y c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + phi_bar * c * X * Y + c^2 * Y^2) =\n    X^5 - c^5 * Y^5 := by\n  subst hbar\n  have h := quintic_split_minus_expansion X Y c phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\n/--\nComplete decic factorization of $X^{10} - c^{10}Y^{10}$ over $\\mathbb{Q}(\\phi, c)$.\n-/\ntheorem decic_factorization (X Y c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - phi_bar * c * X * Y + c^2 * Y^2) *\n    ((X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + phi_bar * c * X * Y + c^2 * Y^2)) =\n    X^10 - c^10 * Y^10 := by\n  rw [quintic_split_plus X Y c phi phi_bar hphi hbar]\n  rw [quintic_split_minus X Y c phi phi_bar hphi hbar]\n  ring\n\n/--\nWhen $c^{10} = -256$, the weighted expression $X^{10} + 256Y^{10}$ factors into\nthe six exhibited linear and quadratic algebraic factors over $\\mathbb{Q}(\\phi, c)$.\n-/\ntheorem weighted_decic_identity (X Y c phi phi_bar : R)\n    (hp"
+  },
+  "questions": {
+    "fidelity": {
+      "type": "score",
+      "instructions": "Does this Lean file's formal definition of a Beal counterexample, or of the statement it proves, faithfully encode the original conjecture as described in the target statement? Check in particular: all six values positive integers; all three exponents at least 3 and not 2; the common-factor condition placed on the BASES rather than the exponents; a base equal to 1 not excluded; the equality exact.",
+      "criteria": [
+        "level 0: the file states no Beal-specific statement, for example it is a helper or arithmetic file",
+        "level 1: it states a Beal-related statement that DEVIATES from the target, for example allowing exponent 2, excluding base 1, or putting the gcd condition on the exponents",
+        "level 2: it states a Beal-related statement that appears faithful but restricts to a sub-case without saying so in the statement itself",
+        "level 3: it states a Beal-related statement that matches the target exactly, or a clearly labelled sub-case of it"
+      ]
+    },
+    "axiom_load": {
+      "type": "score",
+      "instructions": "How much of this file's mathematical content is asserted as a custom axiom or left as sorry, rather than proved from mathlib?",
+      "criteria": [
+        "level 0: no axiom and no sorry; everything is proved or is a definition",
+        "level 1: contains sorry or axioms only for elementary facts that a standard library would already provide",
+        "level 2: contains a small number of axioms asserting named external theorems, clearly labelled as such",
+        "level 3: the file's substantive conclusions rest on custom axioms that assert precisely what would otherwise need proving"
+      ]
+    },
+    "vacuous_risk": {
+      "type": "noul",
+      "instructions": "Is there a risk that a theorem in this file is VACUOUS or trivially true - for instance because its hypotheses can never be satisfied, because it is derived from an axiom that already asserts the conclusion, or because the quantifiers make it say less than intended?",
+      "criteria": {
+        "true": "a theorem here is derived almost immediately from an axiom asserting the same thing, or has hypotheses that may be unsatisfiable, so that proving it establishes nothing new",
+        "false": "the theorems here have genuine content derived from definitions and library lemmas"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fidelity": {
+        "type": "score",
+        "score": 0.08,
+        "confidence": 0.92,
+        "legend": {
+          "0": "level 0: the file states no Beal-specific statement, for example it is a helper or arithmetic file",
+          "1": "level 1: it states a Beal-related statement that DEVIATES from the target, for example allowing exponent 2, excluding base 1, or putting the gcd condition on the exponents",
+          "2": "level 2: it states a Beal-related statement that appears faithful but restricts to a sub-case without saying so in the statement itself",
+          "3": "level 3: it states a Beal-related statement that matches the target exactly, or a clearly labelled sub-case of it"
+        },
+        "probabilities": {
+          "0": 0.96,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.0
+        }
+      },
+      "axiom_load": {
+        "type": "score",
+        "score": 0.02,
+        "confidence": 0.98,
+        "legend": {
+          "0": "level 0: no axiom and no sorry; everything is proved or is a definition",
+          "1": "level 1: contains sorry or axioms only for elementary facts that a standard library would already provide",
+          "2": "level 2: contains a small number of axioms asserting named external theorems, clearly labelled as such",
+          "3": "level 3: the file's substantive conclusions rest on custom axioms that assert precisely what would otherwise need proving"
+        },
+        "probabilities": {
+          "0": 0.99,
+          "1": 0.01,
+          "2": 0.0,
+          "3": 0.0
+        }
+      },
+      "vacuous_risk": {
+        "type": "noul",
+        "noul": 0.31
+      }
+    },
+    "usage": {
+      "input_tokens": 3430,
+      "output_tokens": 54
+    }
+  }
+}

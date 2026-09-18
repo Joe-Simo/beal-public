@@ -1,0 +1,108 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C179_C157",
+  "timestamp": "2026-09-18T15:58:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C179",
+      "status": "PARTIAL_RESULT",
+      "claim": "The first steps of EulerDescentStep are machine-checked. formal/Beal/Euler.lean now proves coprime_p_norm (if 3 does not divide p and p,q are coprime then p and p^2+3q^2 are coprime), factors_are_cubes (in that branch both factors are cubes, via Int.eq_pow_of_mul_eq_pow_odd), and three_dvd_p_rewrite (the 3 | p branch becomes 9*p'*(3p'^2+q^2) = c^3).",
+      "parents": [
+        "C177"
+      ],
+      "method": "gcd(p, p^2+3q^2) divides 3q^2, and IsCoprime p q gives IsCoprime p (q^2), so the gcd divides 3; with 3 not dividing p the two factors are coprime. Bezout witnesses computed by hand: from u*p + v*3q^2 = 1 one gets (u - v*p)*p + v*(p^2+3q^2) = 1.",
+      "evidence": "#print axioms = [propext, Classical.choice, Quot.sound] for both new theorems; full lake build clean; no sorry, no custom axioms.",
+      "obligations": "THE HEART IS STILL MISSING: from p^2 + 3q^2 = t^3 with p,q coprime, the factorisation in Z[omega] gives p = s(s-3t')(s+3t') with pairwise coprime factors, hence three cubes and a strictly smaller solution. That is the part needing three_pid (Mathlib/NumberTheory/Cyclotomic/PID.lean) plus unit bookkeeping for the order-6 unit group. Also untouched: the 3 | p branch beyond its rewriting.",
+      "novelty": "Incremental but real: two of the descent's four steps are now machine-checked rather than cited. Does not change what is proved about Beal; by C157 the whole (3,4,4) line cannot reach the open core.",
+      "evaluations": {
+        "U324": "Elementary coprimality plus cube extraction, machine-checked. HYPOTHESIS_ONLY for routing."
+      }
+    },
+    "candidate_B": {
+      "parents": [
+        "C150",
+        "C107"
+      ],
+      "inspirations": [
+        "asking where the technique that worked on (3,4,4) can apply at all, before reusing it"
+      ],
+      "evidence": "The smallest open signatures all have pairwise gcds (1,1,1): (3,5,7), (4,5,7), (3,4,11), (5,7,11).",
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "The open core is precisely the set of signatures with pairwise DISTINCT reduced exponents \u2014 (4,q,r) with q,r distinct odd primes, and (p,q,r) odd primes not all equal \u2014 so the descent NEVER applies there. This is a structural reason, not a failure of effort.",
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C157",
+      "status": "BLOCKED",
+      "claim": "THE SCOPE OF THE (3,4,4) DESCENT, exactly. That descent needed C^z - B^y to FACTOR, which requires gcd(y,z) > 1. Among reduced exponents \u2014 4 or odd primes \u2014 two of them have gcd exceeding 1 ONLY WHEN THEY ARE EQUAL (verified: no pair (a,b) of distinct reduced exponents has gcd > 1). So the technique applies exactly to signatures with a REPEATED exponent: (3,4,4), (p,p,r), (n,n,n) and the like. Of 219 reduced hyperbolic signatures with exponents in {4} union the odd primes up to 29, 99 admit a factorisation and 120 do not.",
+      "method": "exact enumeration over reduced hyperbolic signatures; gcd computation",
+      "open_obligations": "",
+      "extracted_lemma": "Factorisation-based descent is available exactly when two exponents coincide. That is the same boundary the rest of this session found by other means: C128 (a rigid object carries at most two exponents), C131 and C136 (classical Frey models absorb only the pairs (2,3) and (n,n)), and C157 here. Three independent lines all stop at the same place \u2014 two exponents may be related, the third may not.",
+      "novelty": "This ties the (3,4,4) work back to the general obstruction. The descent was not a new route to Beal: it was available precisely because (3,4,4) has a repeated exponent, which is exactly the configuration the open core excludes."
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.88
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.76,
+        "confidence": 0.57,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.34,
+          "1": 0.59,
+          "2": 0.05,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.16
+      }
+    },
+    "usage": {
+      "input_tokens": 1903,
+      "output_tokens": 53
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U101_signature_3_3_n_literature_and_modular_survey",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U101_signature_3_3_n_literature_and_modular_survey.md",
+    "excerpt": "# U101: Literature Survey, Frey Curve Taxonomy, and Modular Elimination Ledger for the Generalized Fermat Equation $A^3 + B^3 = C^n$ ($n \\ge 4$)\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group  \n**Target Equation**: $A^3 + B^3 = C^n$ with $n \\ge 4$, $\\gcd(A, B, C) = 1$, and $A B C \\neq 0$.  \n**Context**: Beal Conjecture Program \u2014 Arithmetic Survey of Signature $(3, 3, n)$.  \n**Status**: Authoritative research checkpoint, literature survey, classification ledger, and obstruction analysis.\n\n---\n\n## 1. Executive Summary & Problem Formulation\n\nThe generalized Fermat equation (GFE) with signature $(p, q, r)$ is given by:\n$$A^p + B^q = C^r, \\quad \\gcd(A, B, C) = 1, \\quad A B C \\neq 0.$$\nBy the celebrated Darmon\u2013Granville theorem (1995), when the hyperbolic index $\\chi = \\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} < 1$, the equation possesses at most finitely many primitive integer solutions $(A, B, C)$. The Beal Conjecture posits that whenever $p, q, r \\ge 3$, no non-trivial primitive solutions exist.\n\nThe equation of signature $(3, 3, n)$:\n$$A^3 + B^3 = C^n, \\quad n \\ge 4, \\quad \\gcd(A, B, C) = 1, \\quad A B C \\neq 0,$$\noccupies a central position in Diophantine geometry. For $n = 3$, the non-existence of non-trivial solutions is the cubic case of Fermat's Last Theorem, classically established by Euler (1753). For $n \\ge 4$, the signature $(3, 3, n)$ has hyperbolic index $\\chi = \\frac{2}{3} + \\frac{1}{n} \\le \\frac{11}{12} < 1$, guaranteeing finiteness.\n\nUnlike the classical Fermat equation $A^n + B^n = C^n$ (where the Hellegouarch\u2013Frey curve level-lowers to the empty space $S_2(\\Gamma_0(2)) = \\{0\\}$), the modular approach to $A^3 + B^3 = C^n$ is characterized by a fundamental arithmetic asymmetry:\n1. **Level lowering lands on levels 18, 36, and 72**:\n   - $S_2(\\Gamma_0(18)) = \\{0\\}$, which unconditionally forces $C$ to be **odd**.\n   - $S_2^{\\text{new}}(\\Gamma_0(36))$ is 1-dimensional, corresponding to the CM elliptic curve `36a1` ($y^2 = x^3 + 1$), which is completely eliminated for all prime exponents $p \\ge 5$.\n   - $S_2^{\\text{new}}(\\Gamma_0(72))$ is 1-dimensional, spanned by the rational elliptic curve `72a1` ($y^2 = x^3 + 6x - 7$).\n2. **The Persistent `72a1` Obstruction**:\n   The curve `72a1` has a rational 2-torsion point and exactly the same local conductor invariants at 2 and 3 as the Kraus Frey curve evaluated at the trivial boundary point $(A, B) = (1, -1)$ ($A^3 + B^3 = 0$). Consequently, **standard level-lowering alone cannot eliminate `72a1` for any exponent $n$**.\n\nTo overcome this bottleneck, arithmetic geometers developed an arsenal of sophisticated techniques over the last three decades:\n- **Chabauty\u2013Coleman methods on Jacobian covers** (Bruin 2000, 2004) resolved $n = 4$ and $n = 5$.\n- **The Kraus Sieve Method** (Kraus 1998, Dahmen 2008, Freitas 2016) used local Frobenius traces at auxiliary primes $q = kp + 1$ to eliminate all primes $p \\le 10^9$ computationally.\n- **Dahmen's Irreducibility Certificates** (Dahmen 2008) closed the small-prime gaps $n \\in \\{5, 7, 11, 13\\}$ via the modular method.\n- **The Chen\u2013Siksek Reciprocity Method** (Chen\u2013Siksek 2007/2009) established that no solutions exist whenever $n$ is divisible by any integer in infinite congruence classes (including $d \\equiv 2, 3 \\pmod 5$).\n- **The Symplectic Method** (Halberstadt\u2013Kraus 2002, Freitas 2016) completely eliminated `72a1` for the entire infinite half-space of prime exponents **$p \\equiv 2 \\pmod 3$**.\n\nThis checkpoint synthesizes the complete mathematical theory, taxonomy of Frey curves, level-lowering paths, elimination techniques, and the master status ledger for $A^3 + B^3 = C^n$.\n\n---\n\n## 2. Chronological Literature Survey\n\n### 2.1. Alain Kraus (1998) \u2014 *Sur l\u2019\u00e9quation $a^3 + b^3 = c^p$*\n- **Citation**: *Experimental Mathematics*, Vol. 7, No. 1 (1998), pp. 1\u201313.\n- **Key Breakthroughs**:\n  1. Attached the Frey elliptic curve $E_{a,b} : y^2 = x^3 + 3ab x + b^3 - a^3$ to a hypothetical coprime solution of $a^3 + b^3 = c^p$ with prime $p \\ge 17$.\n  2. Computed the minimal discriminant $\\Delta = -2^4 \\cdot 3^3 c^{2p}$ and proved that Ribet's level-lowering theorem lowers the Galois representation $\\rho_{E, p}$ to conductor $N \\in \\{36, 72\\}$ (with $N=18$ ruled out because $S_2(\\Gamma_0(18)) = \\{0\\}$).\n  3. Proved that level 36 is eliminated for all $p \\ge 5$.\n  4. Identified `72a1` as the sole surviving newform obstruction at level 72.\n  5. Formulated the **Method of Kraus**: by choosing auxiliary primes $q = 2kp + 1$ with $q \\nmid 72$, the local condition $a^3 + b^3 \\equiv c^p \\pmod q$ restricts the possible ratios $a/b \\pmod q$ to a small finite set, allowing trace comparison $a_q(E_{a,b}) \\not\\equiv a_q(E_{72a1}) \\pmod{\\mathfrak{p}}$ to eliminate candidate newforms.\n  6. Verified computationally that the criterion holds for all prime exponents $17 \\le p < 10,000$.\n\n### 2.2. Nils Bruin (2000, 2004) \u2014 *On powers as sums of two cubes* & *Visualising $\\Sha[2]$*\n- **Citations**: \n  - *Algorithmic Numb"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.7,
+        "confidence": 0.3,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.51,
+          "1": 0.29,
+          "2": 0.2,
+          "3": 0.0
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 2398,
+      "output_tokens": 42
+    }
+  }
+}

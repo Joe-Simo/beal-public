@@ -6,11 +6,11 @@ Authors: Formal Verification Specialist
 import Beal.Conjecture
 import Beal.Taxonomy
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Defs
 import Mathlib.Data.Nat.GCD.Basic
-import Mathlib.Data.Nat.Parity
+import Mathlib.Algebra.Group.Even
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Omega
+import Mathlib.NumberTheory.FLT.Three
 
 /-!
 # Generalized Fermat Equation of Signature (3, 3, p) and the Kraus Frey Curve
@@ -57,10 +57,16 @@ and Nuno Freitas (2016).
    - Explicit rational 2-torsion point $P_2 = (A - B, 0) \in E(\mathbb{Q})[2]$
      and cubic factorization identity verified via `ring`.
 
-4. **Consequences for the Beal Conjecture**:
-   - Elimination of signature $(3, 3, 3)$ via Euler's FLT3 theorem.
-   - Elimination of signature $(3, 3, p)$ for all primes $p \equiv 2 \pmod 3$ via Freitas (2016).
-   - In particular, signature $(3, 3, 5)$ admits no Beal counterexample.
+4. **Consequences for the Beal Conjecture** — note the conditionality:
+   - UNCONDITIONAL: elimination of signature $(3, 3, 3)$, discharged by mathlib's
+     `fermatLastTheoremThree` (`no_beal_counterexample_3_3_3`).
+   - CONDITIONAL on the named hypothesis `FreitasTheoremMod3`: elimination of signature
+     $(3, 3, p)$ for primes $p \equiv 2 \pmod 3$, and in particular $(3, 3, 5)$.  Those theorems
+     take the hypothesis as an explicit argument; nothing here proves Freitas's theorem.
+   - CONDITIONAL on the named hypothesis `KrausEvenCLevel18Newform`: `c_must_be_odd` and
+     `bases_one_even_one_odd`.
+   - `no_beal_counterexample_3_3_p` itself is unconditional: it is the reduction from Beal to
+     primitive solvability, and takes the non-existence of primitive solutions as an argument.
 
 ## References
 * A. Kraus, *Sur l'équation $a^3 + b^3 = c^p$*, Experimental Mathematics 7 (1998), no. 1, 1–13.
@@ -136,8 +142,8 @@ lemma coprime_not_both_even (A B : ℕ) (hcop : Nat.Coprime A B) :
 Parity conservation for integer cubes: $n^3 \equiv n \pmod 2$.
 -/
 lemma cube_mod_two (n : ℕ) : (n ^ 3) % 2 = n % 2 := by
-  -- Since n³ - n = n(n-1)(n+1) is a multiple of 6, it is always even.
-  sorry
+  rw [Nat.pow_mod]
+  rcases Nat.mod_two_eq_zero_or_one n with h | h <;> rw [h] <;> norm_num
 
 /--
 If $C$ is even in $A^3 + B^3 = C^p$ with $p \ge 1$ and $\gcd(A, B) = 1$,
@@ -147,7 +153,19 @@ theorem both_odd_of_even_c (A B C p : ℕ)
     (hcop : Nat.Coprime A B) (hp : p ≥ 1)
     (heq : A ^ 3 + B ^ 3 = C ^ p) (hC : C % 2 = 0) :
     A % 2 = 1 ∧ B % 2 = 1 := by
-  sorry
+  obtain ⟨k, hk⟩ : 2 ∣ C ^ p := dvd_pow (Nat.dvd_of_mod_eq_zero hC) (by omega)
+  have hA3 := cube_mod_two A
+  have hB3 := cube_mod_two B
+  have hsum : A ^ 3 + B ^ 3 = 2 * k := by rw [heq, hk]
+  rcases Nat.mod_two_eq_zero_or_one A with hA2 | hA2
+  · exfalso
+    have h2A : 2 ∣ A := Nat.dvd_of_mod_eq_zero hA2
+    have h2B : 2 ∣ B := Nat.dvd_of_mod_eq_zero (by omega)
+    have hg : 2 ∣ Nat.gcd A B := Nat.dvd_gcd h2A h2B
+    rw [hcop] at hg
+    have := Nat.le_of_dvd one_pos hg
+    omega
+  · exact ⟨hA2, by omega⟩
 
 /--
 Dimension of the space of weight-2 cuspidal modular forms on $\Gamma_0(N)$,
@@ -174,13 +192,43 @@ If there exists a coprime positive solution to $A^3 + B^3 = C^p$ ($p \ge 3$)
 with $C$ even, the Kraus Frey curve has conductor $N_p = 18$ after Ribet level-lowering,
 forcing the existence of a non-trivial weight-2 newform in $S_2(\Gamma_0(18))$.
 Hence $\dim S_2(\Gamma_0(18)) \ge 1$.
--/
-axiom kraus_even_c_level18_newform (A B C p : ℕ)
+
+⚠ **UNVERIFIED** (audit U240, pool C103): no source held in `references/U130/` states this
+level-lowering consequence; Kraus 1998 is not in the repository.  Superseded by `KrausProp7`
+below, which is quoted verbatim from BCDY 2015 Proposition 7.  Retained only so that the older
+theorems below still typecheck; prefer `c_must_be_odd_of_kraus7`. -/
+def KrausEvenCLevel18Newform : Prop :=
+  ∀ A B C p : ℕ, A > 0 → B > 0 → C > 0 → p ≥ 3 → Nat.Coprime A B →
+    A ^ 3 + B ^ 3 = C ^ p → C % 2 = 0 → cuspFormsDimGamma0 18 2 ≥ 1
+
+/-- **Supported named hypothesis — BCDY 2015, Proposition 7 (Kraus).**  Audited U240 against
+`references/U130/bcdy.txt`: *"If `a`, `b` and `c` are nonzero, coprime integers for which
+`a³ + b³ = cⁿ`, where `n ≥ 3` is an integer, then `c ≡ 3 (mod 6)` and `v₂(ab) = 1`."*  BCDY note
+that Kraus proves it for `n ≥ 17` prime and that the remaining cases follow from their
+Proposition 6 and refs [17, 28].
+
+This is strictly stronger than `c_must_be_odd` (it also forces `3 ∣ c`), and unlike
+`KrausEvenCLevel18Newform` it is backed by a source held in this repository. -/
+def KrausProp7 : Prop :=
+  ∀ a b c n : ℕ, 3 ≤ n → 0 < a → 0 < b → 0 < c → Nat.Coprime a b →
+    a ^ 3 + b ^ 3 = c ^ n → c % 6 = 3
+
+/-- `C` is odd, via the **supported** hypothesis `KrausProp7` rather than the unverifiable
+level-18 newform input. -/
+theorem c_must_be_odd_of_kraus7 (hK : KrausProp7) (A B C p : ℕ)
     (hA : A > 0) (hB : B > 0) (hC : C > 0) (hp : p ≥ 3)
-    (hcop : Nat.Coprime A B)
-    (heq : A ^ 3 + B ^ 3 = C ^ p)
-    (hC_even : C % 2 = 0) :
-    cuspFormsDimGamma0 18 2 ≥ 1
+    (hcop : Nat.Coprime A B) (heq : A ^ 3 + B ^ 3 = C ^ p) :
+    C % 2 = 1 := by
+  have h6 := hK A B C p hp hA hB hC hcop heq
+  omega
+
+/-- `KrausProp7` also gives `3 ∣ C`, which the level-18 route never provided. -/
+theorem three_dvd_C_of_kraus7 (hK : KrausProp7) (A B C p : ℕ)
+    (hA : A > 0) (hB : B > 0) (hC : C > 0) (hp : p ≥ 3)
+    (hcop : Nat.Coprime A B) (heq : A ^ 3 + B ^ 3 = C ^ p) :
+    3 ∣ C := by
+  have h6 := hK A B C p hp hA hB hC hcop heq
+  omega
 
 /--
 **Parity Reduction Theorem (Kraus 1998)**:
@@ -189,14 +237,14 @@ $C$ must be **strictly odd**.
 Proof: If $C$ were even, Ribet level-lowering yields a newform of level 18,
 contradicting $\dim S_2(\Gamma_0(18)) = 0$.
 -/
-theorem c_must_be_odd (A B C p : ℕ)
+theorem c_must_be_odd (hK : KrausEvenCLevel18Newform) (A B C p : ℕ)
     (hA : A > 0) (hB : B > 0) (hC : C > 0) (hp : p ≥ 3)
     (hcop : Nat.Coprime A B)
     (heq : A ^ 3 + B ^ 3 = C ^ p) :
     C % 2 = 1 := by
   have h_parity : C % 2 = 0 ∨ C % 2 = 1 := by omega
   rcases h_parity with h_even | h_odd
-  · have h_ge_1 := kraus_even_c_level18_newform A B C p hA hB hC hp hcop heq h_even
+  · have h_ge_1 := hK A B C p hA hB hC hp hcop heq h_even
     have h_zero := dim_S2_Gamma0_18
     omega
   · exact h_odd
@@ -206,12 +254,21 @@ theorem c_must_be_odd (A B C p : ℕ)
 In every primitive solution to $A^3 + B^3 = C^p$ with $p \ge 3$,
 exactly one of $A$ and $B$ is even, and the other is odd.
 -/
-theorem bases_one_even_one_odd (A B C p : ℕ)
+theorem bases_one_even_one_odd (hK : KrausEvenCLevel18Newform) (A B C p : ℕ)
     (hA : A > 0) (hB : B > 0) (hC : C > 0) (hp : p ≥ 3)
     (hcop : Nat.Coprime A B)
     (heq : A ^ 3 + B ^ 3 = C ^ p) :
     (A % 2 = 0 ∧ B % 2 = 1) ∨ (A % 2 = 1 ∧ B % 2 = 0) := by
-  sorry
+  -- Depends on `c_must_be_odd`, which takes the named hypothesis
+  -- `KrausEvenCLevel18Newform`.  Not elementary.
+  have hodd := c_must_be_odd hK A B C p hA hB hC hp hcop heq
+  have hCp : C ^ p % 2 = 1 := by rw [Nat.pow_mod, hodd, one_pow]; norm_num
+  have hA3 := cube_mod_two A
+  have hB3 := cube_mod_two B
+  have hsum : (A ^ 3 + B ^ 3) % 2 = 1 := by rw [heq]; exact hCp
+  rcases Nat.mod_two_eq_zero_or_one A with hA2 | hA2
+  · exact Or.inl ⟨hA2, by omega⟩
+  · exact Or.inr ⟨hA2, by omega⟩
 
 /-! ### 3. Short Weierstrass Models and the Kraus Frey Curve Parameterization -/
 
@@ -332,7 +389,19 @@ theorem coprime_ab_of_beal_counterexample (A B C p : ℕ)
     (h_prim : gcd3 A B C = 1)
     (heq : A ^ 3 + B ^ 3 = C ^ p) :
     Nat.Coprime A B := by
-  sorry
+  rw [Nat.Coprime, Nat.eq_one_iff_not_exists_prime_dvd]
+  rintro q hq hdvd
+  have hqA : q ∣ A := hdvd.trans (Nat.gcd_dvd_left A B)
+  have hqB : q ∣ B := hdvd.trans (Nat.gcd_dvd_right A B)
+  have hqC : q ∣ C := by
+    refine hq.dvd_of_dvd_pow (n := p) ?_
+    rw [← heq]
+    exact Nat.dvd_add (dvd_pow hqA (by omega)) (dvd_pow hqB (by omega))
+  have hg : q ∣ gcd3 A B C := by
+    unfold gcd3
+    exact Nat.dvd_gcd hqA (Nat.dvd_gcd hqB hqC)
+  rw [h_prim] at hg
+  exact hq.one_lt.ne' (Nat.dvd_one.mp hg)
 
 /--
 **Reduction to Primitive Solvability**:
@@ -352,8 +421,11 @@ theorem no_beal_counterexample_3_3_p (p : ℕ) (hp : p ≥ 3)
 **Fermat's Last Theorem for Exponent 3 (Euler 1770)**:
 The cubic equation $A^3 + B^3 = C^3$ has no solutions in strictly positive integers.
 -/
-axiom flt_3 :
-    ¬ ∃ (A B C : ℕ), A > 0 ∧ B > 0 ∧ C > 0 ∧ A ^ 3 + B ^ 3 = C ^ 3
+theorem flt_3 :
+    ¬ ∃ (A B C : ℕ), A > 0 ∧ B > 0 ∧ C > 0 ∧ A ^ 3 + B ^ 3 = C ^ 3 := by
+  -- Discharged by mathlib's `fermatLastTheoremThree`.  This replaces a custom `axiom`.
+  rintro ⟨A, B, C, hA, hB, hC, heq⟩
+  exact fermatLastTheoremThree A B C (by omega) (by omega) (by omega) heq
 
 /--
 No Beal counterexample exists for signature $(3, 3, 3)$.
@@ -364,27 +436,105 @@ theorem no_beal_counterexample_3_3_3 :
   exact flt_3 ⟨A, B, C, hA, hB, hC, heq⟩
 
 /--
-**Freitas's Symplectic Elimination Theorem (2016)**:
-For every prime $p \equiv 2 \pmod 3$, the signature $(3, 3, p)$ equation
-$A^3 + B^3 = C^p$ has no non-trivial primitive integer solutions.
+**UNVERIFIED named hypothesis** — `(3, 3, p)` for primes `p ≡ 2 (mod 3)`.
+
+⚠ Audit U239 (pool C102): **no primary source held in `references/U130/` supports this
+statement.** BCDY 2015 Table 3 gives the solved range for `(3, 3, n)` as `3 ≤ n ≤ 10⁴`, or
+`n ≡ 2, 3 (mod 5)`, or `n ≡ 17, 61 (mod 78)`, or `n ≡ 51, 103, 105 (mod 106)`, or a list of
+residues mod `1296` — **there is no `mod 3` class**. The 2024 survey
+(arXiv:2412.11933) Table 1.1 likewise gives only the bounded range `3 ≤ n ≤ 10⁹`.
+
+This hypothesis is therefore retained only as a *named assumption whose published status is
+unconfirmed here*, and nothing unconditional may be built on it. For `(3, 3, 5)` use
+`BCDYThreeThreeBounded` below instead, which is supported by both sources.
 -/
-axiom freitas_theorem_mod_3 (p : ℕ) (hp : Nat.Prime p) (hmod : p % 3 = 2) :
+def FreitasTheoremMod3 : Prop :=
+  ∀ p : ℕ, Nat.Prime p → p % 3 = 2 →
     ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p
 
 /--
 **Beal Counterexample Elimination for $p \equiv 2 \pmod 3$**:
 No Beal counterexample exists for signature $(3, 3, p)$ when $p$ is a prime with $p \equiv 2 \pmod 3$.
 -/
-theorem no_beal_counterexample_3_3_p_of_mod_two (p : ℕ) (hp : Nat.Prime p) (hp_ge : p ≥ 3) (hmod : p % 3 = 2) :
+theorem no_beal_counterexample_3_3_p_of_mod_two (hF : FreitasTheoremMod3) (p : ℕ) (hp : Nat.Prime p) (hp_ge : p ≥ 3) (hmod : p % 3 = 2) :
     ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p := by
   apply no_beal_counterexample_3_3_p p hp_ge
-  exact freitas_theorem_mod_3 p hp hmod
+  exact hF p hp hmod
 
-/--
-In particular, signature $(3, 3, 5)$ admits no Beal counterexample.
--/
-theorem no_beal_counterexample_3_3_5 :
+/-- **Supported named hypothesis** (BCDY 2015 Table 3, row `(3, 3, n)`, range `3 ≤ n ≤ 10⁴`;
+2024 survey Table 1.1, range `3 ≤ n ≤ 10⁹`): the signature `(3, 3, n)` equation has no non-trivial
+primitive solutions for `3 ≤ n ≤ 10000`. Audited U239. -/
+def BCDYThreeThreeBounded : Prop :=
+  ∀ n : ℕ, 3 ≤ n → n ≤ 10000 →
+    ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C n
+
+/-- `(3, 3, 5)` via the **supported** bounded hypothesis, not via the unverified mod-3 one. -/
+theorem no_beal_counterexample_3_3_5_of_bounded (hB : BCDYThreeThreeBounded) :
     ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 5 := by
-  apply no_beal_counterexample_3_3_p_of_mod_two 5 (by decide) (by decide) (by decide)
+  apply no_beal_counterexample_3_3_p 5 (by decide)
+  exact hB 5 (by decide) (by decide)
+
+/-- In particular, signature `(3, 3, 5)` admits no Beal counterexample — but only under the
+UNVERIFIED mod-3 hypothesis. Prefer `no_beal_counterexample_3_3_5_of_bounded`. -/
+theorem no_beal_counterexample_3_3_5 (hF : FreitasTheoremMod3) :
+    ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 5 := by
+  apply no_beal_counterexample_3_3_p_of_mod_two hF 5 (by decide) (by decide) (by decide)
+
+/-! ### Interaction with the mod-9 machinery (U241, pool C104)
+
+`Beal.not_three_dvd_z_of_three_dvd_xy` (in `Structure.lean`) rules out `3 ∣ z` when `3 ∣ x`,
+`3 ∣ y` **and** none of `A, B, C` is divisible by `3`.  Signature `(3, 3, z)` satisfies `3 ∣ x`
+and `3 ∣ y` by definition, so it looks like the natural place to apply it.  It never applies:
+`KrausProp7` forces `3 ∣ C`, contradicting the hypothesis `C % 3 ≠ 0`.
+
+So that lemma is **vacuous on signature `(3, 3, z)`** — a fact worth recording, since the lemma's
+shape invites exactly that misuse. -/
+
+/-- Under `KrausProp7`, no Beal counterexample of signature `(3, 3, z)` has `C` coprime to `3`;
+hence `not_three_dvd_z_of_three_dvd_xy` cannot fire on this signature. -/
+theorem three_dvd_C_of_signature_three_three (hK : KrausProp7) {A B C z : ℕ}
+    (h : IsBealCounterexample A B C 3 3 z) : C % 3 = 0 := by
+  obtain ⟨hA, hB, hC, -, -, hz, hprim, heq⟩ := h
+  have hcop := coprime_ab_of_beal_counterexample A B C z hA hB hC hz hprim heq
+  have h6 := hK A B C z hz hA hB hC hcop heq
+  omega
+
+
+/-! ### The `(p,p,r)` dichotomy collapses at `p = 3` (U242, pool C105)
+
+`Beal.ppr_dichotomy` (in `SameOddPrime.lean`) splits signature `(p,p,r)` into a *coprime branch*
+(`¬ p ∣ A + B`) and a *p-adic branch* (`p ∣ A + B`, where `ppr_padic_branch` gives
+`v_p(A+B) + 1 = r · v_p(C)`).  Under `KrausProp7` the coprime branch is **empty at `p = 3`**:
+`3 ∣ C` forces `3 ∣ A³ + B³`, and `n³ ≡ n (mod 3)` turns that into `3 ∣ A + B`.
+
+So every `(3,3,z)` counterexample lies in the p-adic branch, and `v₃(A+B) = z·v₃(C) − 1 ≥ z − 1`,
+i.e. `3^(z-1) ∣ A + B`.  Category: elementary / LTE, which the survey lists as unable to resolve
+Beal; recorded as structure, not as progress. -/
+
+/-- `n³ ≡ n (mod 3)`. -/
+theorem cube_mod_three (n : ℕ) : n ^ 3 % 3 = n % 3 := by
+  conv_lhs => rw [show n = 3 * (n / 3) + n % 3 by omega]
+  have h : n % 3 < 3 := Nat.mod_lt _ (by norm_num)
+  interval_cases h3 : (n % 3) <;> ring_nf <;> omega
+
+/-- **The coprime branch is empty at `p = 3`.**  Under `KrausProp7`, every Beal counterexample of
+signature `(3, 3, z)` satisfies `3 ∣ A + B`, so `ppr_dichotomy` always lands in the p-adic branch. -/
+theorem three_dvd_add_of_signature_three_three (hK : KrausProp7) {A B C z : ℕ}
+    (h : IsBealCounterexample A B C 3 3 z) : 3 ∣ A + B := by
+  have hC3 : C % 3 = 0 := three_dvd_C_of_signature_three_three hK h
+  obtain ⟨-, -, hC, -, -, hz, -, heq⟩ := h
+  have hCz : C ^ z % 3 = 0 := by
+    obtain ⟨c, rfl⟩ : ∃ c, C = 3 * c := ⟨C / 3, by omega⟩
+    have : (3 * c) ^ z = 3 ^ z * c ^ z := by rw [Nat.mul_pow]
+    rw [this]
+    have h3 : 3 ∣ 3 ^ z := dvd_pow_self 3 (by omega)
+    obtain ⟨t, ht⟩ := h3
+    rw [ht]
+    have hd : 3 ∣ 3 * t * c ^ z := ⟨t * c ^ z, by ring⟩
+    omega
+  have hsum : (A ^ 3 + B ^ 3) % 3 = 0 := by rw [heq]; exact hCz
+  have hA := cube_mod_three A
+  have hB := cube_mod_three B
+  omega
 
 end Beal

@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U137",
+  "timestamp": "2026-09-18T00:22:19-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "(2m,2n,3) m,n>=4 closed rel. two published theorems. Mechanism: 'both summands are perfect powers, so on the good branch of a classical parametrisation a one-sided published ternary theorem applies'. Choose where to apply it next."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Best next application?",
+      "criteria": {
+        "pyth": "(2m,2n,2k) all-even: Pythagorean (A^m,B^n,C^k)=(r^2-s^2,2rs,r^2+s^2); B^n=2rs forces r=2^{n-1}p^n,s=q^n; A^m=(r-s)(r+s) gives a^m+b^m=2^n p^n and b^m-a^m=2q^n; compare with Darmon-Merel x^n+y^n=2z^n and BVY (p,p,3)",
+        "two_n_three": "(2m, n, 3) with n odd via a^2 + B^n = c^3 parametrisation? no rational parametrisation; skip",
+        "sig_2m_3_3": "(2m,3,3)? n=3 both: A^{2m} = C^3 - B^3 = (C-B)(C^2+CB+B^2), coprime-ish factors, both must be 2m-th powers up to 3; C-B = d^{2m}, C^2+CB+B^2 = e^{2m}: (C-B)^2 + 3CB = e^{2m}...",
+        "c025_c043": "pair-screen top: C025 x C043 ordering diagnostic, no concrete equation yet"
+      }
+    },
+    "exact": {
+      "type": "noul",
+      "instructions": "Has a cheap exact discriminating test?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "pyth",
+        "confidence": 0.63,
+        "probabilities": {
+          "two_n_three": 0.03,
+          "pyth": 0.72,
+          "sig_2m_3_3": 0.19,
+          "c025_c043": 0.06
+        }
+      },
+      "exact": {
+        "type": "noul",
+        "noul": 0.37
+      }
+    },
+    "usage": {
+      "input_tokens": 726,
+      "output_tokens": 80
+    }
+  }
+}

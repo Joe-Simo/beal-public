@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U42_coverage_ledger_rebuild",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U42_coverage_ledger_rebuild.md",
+    "excerpt": "# U42: rebuilt coverage ledger from preserved evidence\n\nStatus: verified coverage checkpoint only. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## 1. Exact target\n\nA primitive counterexample is a positive-integer solution\n\n    A^x + B^y = C^z,\n    x,y,z >= 3,\n    gcd(A,B,C)=1.\n\nFor such a solution the bases are pairwise coprime: if a prime divides two bases, the equation forces it to divide the third.\n\nA base equal to 1 is impossible. For example A=1 would give C^z-B^y=1 with y,z>=3, contradicting the Catalan-Mihailescu theorem (the unique nontrivial consecutive perfect powers are 3^2 and 2^3). C=1 is impossible by positivity.\n\n## 2. Universal exponent reduction\n\nFor every integer n>=3 there is a divisor d of n such that d is either 4 or an odd prime:\n\n- if 4|n, take d=4;\n- otherwise n has an odd prime divisor.\n\nTherefore from any primitive Beal solution one may replace each base by a positive integral power and reduce the corresponding exponent independently. For example, if d_x|x, then\n\n    A^x = (A^(x/d_x))^d_x.\n\nThe transformed bases remain pairwise coprime. Hence it is enough to rule out primitive solutions for exponent signatures\n\n    (e1,e2,e3),   ei in S := {4} union {odd primes}.\n\nThis is a rigorous infinite reduction, not a finite list.\n\nIf gcd(x,y,z) has a divisor d>=3, then\n\n    (A^(x/d))^d + (B^(y/d))^d = (C^(z/d))^d,\n\ncontradicting Fermat's Last Theorem. Thus any primitive counterexample has gcd(x,y,z) in {1,2}. Equivalently, in the reduced S^3 ledger all diagonal signatures are already impossible.\n\nThese observations still leave infinitely many mixed signatures, including triples of distinct odd primes, signatures involving one or two exponents 4, and signatures arising from original gcd(x,y,z)=2.\n\n## 3. What the preserved U15-U41 chain actually proves\n\nThe repository currently begins the all-even specialized chain at U15. U15 explicitly states, but does not prove in that file:\n\n    \"For the surviving all-even branch with 17 | t and r a positive power of 5, prior reduction gives ...\n     X^10 + 256 Y^10 = Z^17.\"\n\nThus U15-U41 do not by themselves prove that every relevant all-even Beal solution reaches the weighted equation. The missing U1-U14 derivations are not present on main and were not found by repository search.\n\nU15-U39 rigorously analyze the weighted equation once it is assumed. U40-U41 develop a direct weighted Frey route for the equivalent equation\n\n    U^5 + 8 V^5 = Z^17,\n\nwhere U=X^2 and V=2Y^2.\n\nU41's corrected computation gives a candidate elimination of this weighted equation through a norm-2000 Hilbert-newform space over Q(sqrt(5)) and a q=11 trace sieve. That modular argument still requires an independent audit/reproduction of the level-lowering adaptation and newspace computation before this weighted subproblem is marked independently verified.\n\nAccordingly, U41 is NOT presently credited as eliminating the complete all-even branch in the global Beal coverage ledger.\n\n## 4. Published theorem that can be credited directly\n\nPhilippe Michaud-Jacobs, \"On some generalized Fermat equations of the form x^2+y^{2n}=z^p\", Mathematika 68 (2022), proves in particular that\n\n    X^(2*l) + Y^(2*m) = Z^17\n\nhas no nonzero coprime integer solutions when l and m are primes different from 5.\n\nThis is a genuine published elimination for those exact generalized-Fermat signatures. It does not cover l=5 or m=5, and it does not by itself prove the missing all-even reductions recorded only by summary in the previous project state.\n\n## 5. Reconstructed elementary all-even entry point\n\nSuppose a primitive Beal solution has x=2r, y=2s, z=2t. Then\n\n    (A^r)^2 + (B^s)^2 = (C^t)^2.\n\nExactly one of A^r,B^s is even. After interchanging the two left terms if needed, primitive Pythagorean parametrization gives coprime m>n of opposite parity such that\n\n    A^r = 2mn,\n    B^s = m^2-n^2,\n    C^t = m^2+n^2.\n\nSince m-n and m+n are coprime odd integers whose product is B^s,\n\n    m-n = u^s,\n    m+n = v^s\n\nfor coprime odd u<v. Since 2mn=A^r and gcd(m,n)=1, one of m,n is an r-th power and the even one is 2^(r-1) times an r-th power (with any extra 2^r absorbed into the base). Thus for coprime positive a,b,\n\n    {m,n} = {a^r, 2^(r-1)b^r},\n\nand hence\n\n    {v^s+u^s, v^s-u^s} = {2a^r, 2^r b^r}.\n\nThis part of the former U5-U6 chain is now reconstructed directly and does not depend on a missing file.\n\nWhat is NOT yet reconstructed here are the later restrictions formerly attributed to U7-U14: the exact exclusions on prime divisors of r,s,t, the proof that 17|t forces one of r,s to be a power of 5, and the final orientation argument yielding X^10+256Y^10=Z^17. Those claims must be rebuilt from primary sources before they count globally.\n\n## 6. Current global coverage status\n\nProved/unconditional in the present ledger:\n\n1. Primitive bases are pairwise coprime and bases equal to 1 are impossible.\n2. Every exponent may be reduced to 4 or an odd prime while preserving a primitive solution.\n3. gcd(x,y,z) cannot ha"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.53
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.09,
+        "confidence": 0.91,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.93,
+          "1": 0.05,
+          "2": 0.01,
+          "3": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2347,
+      "output_tokens": 94
+    }
+  }
+}

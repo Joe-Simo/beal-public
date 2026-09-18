@@ -1,0 +1,41 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U134",
+  "timestamp": "2026-09-18T00:07:44-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "C047 (2m,2n,3) m,n>=4 closed modulo Lean; C048 (2m,2n,5) blocked at mixed-exponent equations. 36+2 Lean theorems. Choose the next cycle."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Best next cycle for verified content?",
+      "criteria": {
+        "lean_assembly": "Lean file EvenEvenThree.lean: assemble C047 with the Z[i]-cube step and Bennett-Skinner as explicit named hypotheses, prove S1,S4,S5,S8 in the kernel",
+        "lmfdb_50": "fetch LMFDB level-50 weight-2 newform a_3 values to close the even-parameter sub-case of C048 (VERIFICATION_REQUIRED)",
+        "odd_z_general": "generalise C047 to (2m,2n,z) for odd z>=7 via the degree-z parametrisation and look for a one-sided BS-shaped equation",
+        "mixed_sig": "leave even-even; attack a mixed signature (odd,odd,even) with the analogous Z[i] or Z[zeta] factorisation of C^{2k}-A^x"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "lean_assembly",
+        "confidence": 0.78,
+        "probabilities": {
+          "odd_z_general": 0.08,
+          "lmfdb_50": 0.04,
+          "mixed_sig": 0.04,
+          "lean_assembly": 0.84
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 560,
+      "output_tokens": 61
+    }
+  }
+}

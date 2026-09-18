@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U50_coefficient2_unit_classes",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U50_coefficient2_unit_classes.md",
+    "excerpt": "# U50: coefficient-2 branch \u2014 unit classes over Q(sqrt(5))\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input from U49\n\nFor a surviving solution, with K=Q(sqrt(5)),\n\n    H_- = m^4+(22-8sqrt(5))m^2n^2+n^4\n\nhas principal ideal equal to a 17th power, and the conjugate factor is coprime to it. Since K has class number 1, H_- is a unit times an element 17th power.\n\n## Integral basis and unit ambiguity\n\nLet\n\n    omega=(1+sqrt(5))/2,\n\nso O_K=Z[omega], omega^2=omega+1, and Norm(omega)=-1. The unit group is generated, up to sign, by omega.\n\nIn this basis\n\n    H_- = m^4+30m^2n^2+n^4 - 16m^2n^2 omega.\n\nBecause the exponent 17 is odd, -1 itself is a 17th power (-1)^17, so sign contributes no separate class. Modulo 17th powers of units, the only ambiguity is therefore\n\n    epsilon = omega^k,  k=0,...,16.\n\nThus every surviving solution satisfies\n\n    m^4+30m^2n^2+n^4-16m^2n^2 omega\n       = omega^k (A+B omega)^17                 (1)\n\nfor some integers A,B and one of exactly 17 unit classes k.\n\nWolfram exact arithmetic also verifies\n\n    omega^17 = 987+1597 omega.\n\n## Local unit-class sieve\n\nA finite-field implementation of O_K/q = F_q[omega]/(omega^2-omega-1) was used to test equation (1) modulo auxiliary primes. For q=67, the 17th-power map is nontrivial and the quartic shape eliminates six unit classes outright.\n\nThe surviving classes modulo 17 are\n\n    k in {0,1,2,3,4,6,9,13,14,15,16}.\n\nThe eliminated classes are\n\n    k in {5,7,8,10,11,12}.\n\nChecks at q=101,103,137 did not further reduce the unit classes in the unrestricted quartic equation. Imposing U48's special condition 103|mn also leaves all 17 unit classes locally possible at 103, so no false strengthening is claimed.\n\n## Consequence\n\nThe coefficient-2 branch has now been reduced from an arbitrary algebraic 17th-power relation to eleven explicit unit-twisted equations of the form (1), together with\n\n    gcd(m,n)=1,\n    m,n opposite parity,\n    103|mn,\n    m+i n = Gaussian-unit*(r+i s)^17.\n\nThis is finite in the unit parameter.\n\n## Next obligation\n\nUse several primes q with 17 dividing |(O_K/q)^*| and include the Gaussian-17th-power condition simultaneously, not merely the quartic equation. The q=67 sieve ignored that additional structure. A combined local sieve should classify tuples (m:n,k) compatible with both\n\n    m+i n = (r+i s)^17\n\nand (1), and may eliminate more or all eleven surviving unit classes.\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.45,
+        "confidence": 0.55,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.64,
+          "1": 0.29,
+          "2": 0.07,
+          "3": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1684,
+      "output_tokens": 94
+    }
+  }
+}

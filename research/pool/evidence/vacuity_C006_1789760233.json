@@ -1,0 +1,110 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "vacuity_C006",
+  "timestamp": "2026-09-18T15:37:13-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C) = 1 has no solutions.",
+    "failure_mode": "U322: the Prop `EulerDescentStep`, recorded one cycle earlier as the residual gap of the (3,4,4) chain, was FALSE as stated -- `IsCoprime p q -> p*(p^2+3q^2) = c^3 -> q = 0` is refuted by p = 0, q = 1, c = 0, since IsCoprime 0 1 holds in Z and 0*(0+3) = 0^3. The Lean build stayed green throughout, because an implication from a false hypothesis is still a theorem and everything downstream compiles. The fix was to add p != 0, which the reduction does supply.",
+    "second_mode": "A bounded search that finds nothing proves nothing unless a control shows the searcher can find a positive instance. U317/U318 and U323 each carry such a control; earlier candidates may not.",
+    "candidate": "{\n \"id\": \"C006\",\n \"status\": \"BLOCKED\",\n \"claim\": \"A^3 + B^3 = C^p has no primitive nontrivial solutions for every prime p, not merely for p <= 700.\",\n \"method\": \"Kraus sieve with modular elimination of the persistent obstructions at levels 72 and 144 for p = 1 mod 3, combined with Freitas (2016) Halberstadt-Kraus symplectic criterion for p = 2 mod 3.\",\n \"evidence\": [\n  \"research/checkpoints/U111_kraus_sieve_p601_p700_signature_3_3_p.md\",\n  \"references/U111/kraus_sieve_p601_p700.json\",\n  \"research/checkpoints/U113_orbit_b_elimination_audit.md\",\n  \"code/U113_kraus_sieve_audit.py\",\n  \"code/U113_cartan_split_check.py\"\n ],\n \"obligations\": [\n  \"SUPERSEDED, PRECISELY (U114 Part IV): Chen-Siksek (2009) proved (3,3,p) has no non-trivial primitive solutions for ALL 3 <= p <= 10^7, and Kraus (1998) for 17 < p <= 10^4. This project certified p <= 700 - four orders of magnitude behind a 2009 result. Extending the sieve is definitively wasted effort.\",\n  \"Freitas (2016) Theorem 3 requires p >= 17, a hypothesis this project does not state (harmless: its range starts at p=43)\",\n  \"UNUSED: Kraus (1998) Theorem 1 gives free structural constraints on any solution - v_2(a)=1, v_2(b)=0, v_2(c)=0, v_3(c)>=1 - which this projects (3,3,p) work does not appear to use\",\n  \"the only part still genuinely open is UNIFORMITY IN p\"\n ],\n \"failure_reason\": \"OVERCLAIM as stated (Jev triage U143: discard 0.85; confirmed against primary sources): the literature has (3,3,n) solved only for 3 <= n <= 10^9 (survey arXiv:2412.11933 Table 1.1, refs [44,91,30,48,13]; Kraus 1998 [91] for 17 <= p <= 10^4 originally). Nothing in this repository proves it for every prime p. Keep only the finite verified range recorded in its evidence.\"\n}"
+  },
+  "questions": {
+    "degenerate_instance": {
+      "type": "score",
+      "instructions": "Does this candidate state a claim, a named Prop, or a reduction whose hypotheses allow a DEGENERATE instance -- a zero value, a unit, a base equal to 1, an empty index range, or a trivial solution -- that would make the statement false as written? Judge only whether such an instance is admitted by the stated hypotheses, not whether the intended mathematics is correct.",
+      "criteria": [
+        "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+        "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+        "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+        "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+      ]
+    },
+    "vacuous_downstream": {
+      "type": "score",
+      "instructions": "Does this candidate record a conclusion that DEPENDS on an assumed statement, such that if the assumed statement were false the conclusion would be vacuously true rather than wrong? The danger is a chain that still compiles and still looks green while carrying no content.",
+      "criteria": [
+        "level 0: the candidate's conclusion is proved outright with no assumed statement",
+        "level 1: it depends on an assumed statement and explicitly says so, naming it",
+        "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+        "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+      ]
+    },
+    "search_is_vacuous": {
+      "type": "noul",
+      "instructions": "Does this candidate report a finite or bounded search that found NOTHING, without any control demonstrating the search would have found something had it been there?",
+      "criteria": {
+        "true": "it reports an empty search result with no positive control, no witness, and no demonstration that the search space was non-empty",
+        "false": "it reports no search, or it reports one together with a control, a witness, or an explicit non-vacuity check"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "Given the failure mode described, what should be done with this candidate next?",
+      "criteria": {
+        "countersearch_now": "its stated hypotheses plausibly admit a degenerate counterexample and something load-bearing depends on it",
+        "add_control": "its evidence is an empty search that needs a non-vacuity control before it can be relied on",
+        "restate_hypotheses": "its claim is probably true but stated too loosely to be provable as written",
+        "no_action": "it is a log, a refuted entry, or otherwise carries no claim that could exhibit this mode"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "degenerate_instance": {
+        "type": "score",
+        "score": 1.47,
+        "confidence": 0.19,
+        "legend": {
+          "0": "level 0: the candidate states no universally quantified claim at all, or every variable is explicitly bounded away from degenerate values",
+          "1": "level 1: it states a quantified claim and the hypotheses visibly exclude zero, units and trivial cases",
+          "2": "level 2: it states a quantified claim and whether degenerate values are excluded cannot be determined from the text",
+          "3": "level 3: the hypotheses as written admit a zero, a unit, a base of 1, or an empty range under which the claim is false"
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.36,
+          "2": 0.29,
+          "3": 0.18
+        }
+      },
+      "vacuous_downstream": {
+        "type": "score",
+        "score": 1.41,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: the candidate's conclusion is proved outright with no assumed statement",
+          "1": "level 1: it depends on an assumed statement and explicitly says so, naming it",
+          "2": "level 2: it depends on an assumed statement but the dependency is not clearly flagged",
+          "3": "level 3: it presents a conclusion as established while the assumed statement it rests on is itself unverified and not named"
+        },
+        "probabilities": {
+          "0": 0.43,
+          "1": 0.07,
+          "2": 0.15,
+          "3": 0.35
+        }
+      },
+      "search_is_vacuous": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "restate_hypotheses",
+        "confidence": 0.47,
+        "probabilities": {
+          "add_control": 0.07,
+          "restate_hypotheses": 0.6,
+          "countersearch_now": 0.18,
+          "no_action": 0.15
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1786,
+      "output_tokens": 118
+    }
+  }
+}

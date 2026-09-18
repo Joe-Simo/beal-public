@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_kraus_sieve_p201_p300_signature_3_3_p",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_kraus_sieve_p201_p300_signature_3_3_p.md",
+      "excerpt": "# U111: Extended Kraus Sieve Modular Elimination for Generalized Fermat Equations $A^3 + B^3 = C^p$ ($p \\equiv 1 \\pmod 3$, $p \\in [201, 300]$)\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group (Signature $(3, 3, p)$ Scale Specialization)  \n**Target Equation**: $A^3 + B^3 = C^p$ with prime exponent $p \\in \\{211, 223, 229, 241, 271, 277, 283\\}$, $\\gcd(A, B, C) = 1$, and $A B C \\neq 0$.  \n**Supporting Code**: [`code/U111_kraus_sieve_p201_p300.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_kraus_sieve_p201_p300.py)  \n**Supporting Data**: [`references/U111/kraus_sieve_p201_p300.json`](file://[LOCAL_HOME]/Downloads/beal/references/U111/kraus_sieve_p201_p300.json)  \n**Status**: Authoritative research checkpoint; 100% unconditional elimination of the persistent modular obstructions at levels 72 and 144 across all primes $p \\equiv 1 \\pmod 3$ in $[201, 300]$.\n\n---\n\n## 1. Executive Summary\n\nIn Checkpoint U110 and the preceding U111 centenary study, the Kraus sieve modular elimination algorithm was verified for all prime exponents $p \\le 200$ with $p \\equiv 1 \\pmod 3$.\n\nThis checkpoint extends the algorithmic Kraus sieve to the third centenary:\n$$p \\in [201, 300] \\quad \\text{with } p \\equiv 1 \\pmod 3 \\implies p \\in \\{211, 223, 229, 241, 271, 277, 283\\}.$$\n\n### Key Mathematical Findings\n1. **100% Unconditional Modular Elimination**:\n   All 7 prime exponents $p \\in \\{211, 223, 229, 241, 271, 277, 283\\}$ are **unconditionally eliminated** by explicit auxiliary prime certificates. No non-trivial primitive solutions to $A^3 + B^3 = C^p$ exist for any of these exponents.\n2. **Ultra-Fast Elimination Search ($q \\le 35,000$)**:\n   Every single prime exponent is eliminated by an auxiliary prime $q < 3,000$:\n   - For $p = 277$, elimination occurs at the very first candidate prime $k = 2$ ($q = 1109$).\n   - For $p \\in \\{241, 271, 283\\}$, elimination occurs at $k = 3$ ($q = 6p + 1$).\n   - For $p = 211$, elimination occurs at $k = 5$ ($q = 2111$).\n   - For $p \\in \\{223, 229\\}$, elimination occurs at $k = 6$ ($q = 12p + 1$).\n3. **Simultaneous Level 72 and Level 144 Elimination**:\n   - Level 72: `72a1` ($y^2 = x^3 + 6x - 7$, non-CM);\n   - Level 144: `144a1` ($y^2 = x^3 + 6x + 7$, non-CM quadratic twist of `72a1` by $\\chi_{-4}$);\n   - Level 144: `144b1` ($y^2 = x^3 - 1$, CM by $\\mathbb{Q}(\\sqrt{-3})$, quadratic twist of `36a1`).\n   Because $a_q(144a1) = \\chi_{-4}(q) a_q(72a1) \\equiv \\pm a_q(72a1) \\pmod p$ and the admissible trace set $\\mathcal{A}_q(p)$ is closed under negation, eliminating `72a1` automatically eliminates `144a1`. The CM form `144b1` is unconditionally ruled out by the Momose / Darmon\u2013Merel theorem on rational 2-torsion.\n4. **Complete Theorem for All Primes $p \\le 300$**:\n   - Primes $p \\equiv 2 \\pmod 3$: 100% resolved by Freitas (2016) via symplectic criteria.\n   - Primes $p \\le 37$ ($p \\equiv 1 \\pmod 3$): Resolved in U106.\n   - Primes $43 \\le p \\le 97$ ($p \\equiv 1 \\pmod 3$): 100% resolved in U110.\n   - Primes $101 \\le p \\le 199$ ($p \\equiv 1 \\pmod 3$): 100% resolved in U111.\n   - Primes $201 \\le p \\le 300$ ($p \\equiv 1 \\pmod 3$): 100% resolved in this checkpoint.\n   - **Theorem**: The generalized Fermat equation $A^3 + B^3 = C^p$ has strictly zero non-trivial primitive integer solutions for **all prime exponents $p \\le 300$**.\n\n---\n\n## 2. Master Verification Ledger: $p \\in [201, 300]$ ($p \\equiv 1 \\pmod 3$)\n\nAll values are computed exactly using `code/U111_kraus_sieve_p201_p300.py` and validated against PARI/GP 2.17.4.\n\n| Exponent $p$ | $p \\pmod 3$ | First Eliminating $q$ | $k$ | $n = 2k$ | $a_q(72a1)$ | $a_q(72a1) \\pmod p$ | $a_q(144a1)$ | $q \\mid C$ Possible? | $|\\mathcal{A}_q(p)| / p$ | Admissible Traces $\\mathcal{A}_q(p) \\pmod p$ | Total $q \\le 3.5 \\times 10^4$ Elim. Rate | Status |\n|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **$p = 211$** | $1$ | **$2111$** | $5$ | $10$ | $-48$ | **$163$** | $+48$ | No ($\\pm 2 \\equiv \\{2, 209\\}$) | $1 / 211$ | $\\{0\\}$ | $14/16$ ($87.5\\%$) | **ELIMINATED** |\n| **$p = 223$** | $1$ | **$2677$** | $6$ | $12$ | $-58$ | **$165$** | $-58$ | No ($\\pm 2 \\equiv \\{2, 221\\}$) | $2 / 223$ | $\\{70, 153\\}$ | $17/17$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 229$** | $1$ | **$2749$** | $6$ | $12$ | $+62$ | **$62$** | $+62$ | No ($\\pm 2 \\equiv \\{2, 227\\}$) | $4 / 229$ | $\\{14, 34, 195, 215\\}$ | $17/17$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 241$** | $1$ | **$1447$** | $3$ | $6$ | $+48$ | **$48$** | $-48$ | No ($\\pm 2 \\equiv \\{2, 239\\}$) | $2 / 241$ | $\\{76, 165\\}$ | $15/15$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 271$** | $1$ | **$1627$** | $3$ | $6$ | $+4$ | **$4$** | $-4$ | No ($\\pm 2 \\equiv \\{2, 269\\}$) | $2 / 271$ | $\\{80, 191\\}$ | $11/12$ ($91.7\\%$) | **ELIMINATED** |\n| **$p = 277$** | $1$ | **$1109$** | $2$ | $4$ | $+18$ | **$18$** | $+18$ | No ($\\pm 2 \\equiv \\{2, 275\\}$) | $1 / 277$ | $\\{0\\}$ | $16/17$ ($94.1\\%$) | **ELIMINATED** |\n| **$p = 283$** | $1$ | **$1699$** | $3$ | $6$ | $-4$ | **$279$** | $+4$ | No ($\\pm",
+      "length_chars": 15270
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.58,
+        "confidence": 0.42,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.71,
+          "1": 0.12,
+          "2": 0.07,
+          "3": 0.1
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.35,
+        "confidence": 0.65,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.87,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.11
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.89
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.18,
+        "probabilities": {
+          "audit_later": 0.11,
+          "audit_now": 0.26,
+          "no_action": 0.34,
+          "verify_literature": 0.01,
+          "verify_computation": 0.28
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3800,
+      "output_tokens": 124
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U100_orbit_h_hecke_elimination",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U100_orbit_h_hecke_elimination.md",
+    "excerpt": "# U100: Exact Hecke Eigenvalues of Orbit h (2.2.5.1-2000.1-h) at Prime 11 and Complete 100% Elimination of Level-2000 Non-CM Orbits\n\n**Date**: 2026-09-17  \n**Status**: Exact symbolic verification, complete arithmetic certificate, and closed Hecke elimination ledger. Beal's conjecture and the weighted auxiliary equation remain under study.  \n**Context**: Weighted generalized Fermat equation $X^{10} + 256 Y^{10} = Z^{17}$ with $U = X^2$, $V = 2 Y^2$, and $U^5 + 8 V^5 = Z^{17}$, $\\gcd(X, Y) = 1$, $X, Z$ odd. Frey hyperelliptic curve $C^-(U, V): y^2 = -f(x)$ at target level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (norm 2000) over $K = \\mathbb{Q}(\\sqrt{5})$.\n\n---\n\n## 1. Executive Summary\n\nIn checkpoint U64, the eight Hilbert newform orbits at level $\\mathfrak{N} = (2)^2 \\mathfrak{p}_5^3$ (LMFDB label `2.2.5.1-2000.1`, orbits $a$ through $h$) were subjected to local Hecke trace sieve at the split prime 11:\n- Six non-CM orbits ($a, c, d, e, f, g$) were strictly eliminated at prime 11 (0 compatible parameter pairs).\n- Orbit $b$ matched the boundary curve $(U, V) = (1, 0)$ (the CM curve $C_0: y^2 = 64 - x^5$), which was subsequently proven eliminated globally in U97 via its complex multiplication obstruction and prime-5 Galois certificate.\n- **Orbit $h$** (`2.2.5.1-2000.1-h`) could not be parsed previously due to a failed remote JSON response, leaving orbit $h$ as the sole unexamined orbit in the level-2000 newspace.\n\nA live fetch of the LMFDB API endpoint for orbit $h$ has now been successfully retrieved and inspected. This checkpoint extracts the exact Hecke eigenvalues for orbit $h$ at the two prime ideals above 11, calculates their trace sum and product, compares them against the U64 admissible traces for $C^-$, and achieves **100% elimination across all 7 non-CM orbits ($a, c, d, e, f, g, h$)**, completing the total elimination of all 8 orbits at level 2000.1.\n\n---\n\n## 2. Exact LMFDB Data for Orbit h\n\nFrom the LMFDB API record `2.2.5.1-2000.1-h` (table `hmf_hecke`):\n- **Base field**: $K = \\mathbb{Q}(\\sqrt{5})$, ring of integers $\\mathcal{O}_K = \\mathbb{Z}[w]$ with $w = \\frac{1+\\sqrt{5}}{2}$ ($w^2 - w - 1 = 0$).\n- **Level ideal**: $\\mathfrak{N} = [2000, 100, -40w + 20] = (2)^2 \\mathfrak{p}_5^3$, with $\\operatorname{Norm}_{K/\\mathbb{Q}}(\\mathfrak{N}) = 2000$.\n- **Hecke coefficient polynomial**:\n  $$P(x) = x^4 - 10x^3 - 13x^2 + 190x + 241.$$\n  This polynomial is irreducible over $\\mathbb{Q}$ with discriminant $\\Delta(P) = 1907942400 = 2^9 \\cdot 3^4 \\cdot 5^2 \\cdot 17 \\cdot 107$.\n- **Prime ideals above 11**:\n  The prime 11 splits in $K$: $11\\mathcal{O}_K = \\mathfrak{q}_{11, 1} \\mathfrak{q}_{11, 2}$, with:\n  $$\\mathfrak{q}_{11, 1} = [11, 11, -3w + 2] \\quad (\\text{LMFDB standard prime index } 3),$$\n  $$\\mathfrak{q}_{11, 2} = [11, 11, -3w + 1] \\quad (\\text{LMFDB standard prime index } 4).$$\n- **Exact Hecke eigenvalues** (in the basis of $E = \\mathbb{Q}[e]/(P(e))$):\n  $$a_{\\mathfrak{q}_{11, 1}} = -\\frac{2}{91}e^3 + \\frac{15}{91}e^2 + \\frac{18}{91}e + \\frac{120}{91},$$\n  $$a_{\\mathfrak{q}_{11, 2}} = \\frac{2}{91}e^3 - \\frac{15}{91}e^2 - \\frac{18}{91}e + \\frac{335}{91}.$$\n\n---\n\n## 3. Algebraic Invariants of Orbit h at Prime 11\n\n### 3.1 Trace Sum and Product\nLet $a_1 = a_{\\mathfrak{q}_{11, 1}}$ and $a_2 = a_{\\mathfrak{q}_{11, 2}}$.\n\n1. **Sum**:\n   $$S = a_1 + a_2 = \\left(-\\frac{2}{91} + \\frac{2}{91}\\right)e^3 + \\left(\\frac{15}{91} - \\frac{15}{91}\\right)e^2 + \\left(\\frac{18}{91} - \\frac{18}{91}\\right)e + \\left(\\frac{120}{91} + \\frac{335}{91}\\right)$$\n   $$S = 0 \\cdot e^3 + 0 \\cdot e^2 + 0 \\cdot e + \\frac{455}{91} = \\frac{5 \\cdot 91}{91} = 5 \\in \\mathbb{Z}.$$\n\n2. **Product**:\n   Reducing $a_1 \\cdot a_2$ modulo the defining polynomial $P(e) = e^4 - 10e^3 - 13e^2 + 190e + 241$:\n   $$P = a_1 \\cdot a_2 \\equiv 5 \\pmod{P(e)} \\in \\mathbb{Z}.$$\n\n3. **Difference and Quadratic Subfield**:\n   $$a_2 - a_1 = \\frac{4}{91}e^3 - \\frac{30}{91}e^2 - \\frac{36}{91}e + \\frac{215}{91}.$$\n   Squaring and reducing modulo $P(e)$:\n   $$(a_2 - a_1)^2 \\equiv 5 \\pmod{P(e)}.$$\n   Therefore, $a_2 - a_1 = \\pm \\sqrt{5}$.\n\n4. **Minimal Polynomial over $\\mathbb{Q}$**:\n   The characteristic polynomial of $a_1$ and $a_2$ is:\n   $$\\operatorname{charpoly}(a_i) = \\operatorname{Res}_e(P(e), x - a_i) = (x^2 - 5x + 5)^2.$$\n   Hence $a_1$ and $a_2$ are algebraic integers generating the real quadratic subfield $\\mathbb{Q}(\\sqrt{5}) \\subset E$, with:\n   $$a_1, a_2 = \\frac{5 \\mp \\sqrt{5}}{2}.$$\n\n### 3.2 Invariance under Embeddings and Residues Modulo 17\nSince $a_1, a_2 \\in \\mathbb{Q}(\\sqrt{5})$ are conjugate under the non-trivial automorphism $\\sqrt{5} \\mapsto -\\sqrt{5}$, any complex embedding of $E$ either preserves $a_1, a_2$ or interchanges them. Consequently:\n- The sum $S = a_1 + a_2 = 5$ is invariant across all embeddings.\n- The product $P = a_1 a_2 = 5$ is invariant across all embeddings.\n\nReducing modulo the deformation characteristic $\\ell = 17$:\n$$S \\equiv 5 \\pmod{17}, \\quad P \\equiv 5 \\pmod{17}.$$\n\n---\n\n## 4. Elimination of Orbit h at Prime 11\n\n### 4.1 U64 Admi"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.12,
+        "confidence": 0.64,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.03,
+          "2": 0.6900000000000001,
+          "3": 0.24
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.82
+      }
+    },
+    "usage": {
+      "input_tokens": 2709,
+      "output_tokens": 42
+    }
+  }
+}

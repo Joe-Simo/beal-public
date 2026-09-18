@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U112_empirical_search_milestone_140k",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U112_empirical_search_milestone_140k.md",
+    "excerpt": "# U112: Empirical Search Milestone $A \\le 140,000$ \u2014 Multi-Threaded GMP Verification and Zero Counterexample Certification\n\n**Status**: Definitive empirical verification milestone. Multi-threaded GNU MP search engine executed over base interval $[120001, 140000]$ and cumulative envelope $[2, 140000]$ for pure odd prime exponents $x, y, z \\in [3, 19]$. **Zero counterexamples exist.**  \n**Date**: 2026-09-17  \n**Author**: GMP Search Scale Engineer (Beal Conjecture Project)  \n**Target Equation**: Generalized Fermat / Beal Conjecture Equation:\n$$A^x + B^y = C^z, \\quad \\gcd(A, B, C) = 1, \\quad x, y, z \\ge 3.$$\n\n**Artifacts & Verification Logs**:\n- Interval $[120001, 140000]$ Log: [`references/search_logs/interval_120001_140000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_120001_140000_primes19.json)\n- Preceding 120k Milestone: [`research/checkpoints/U111_empirical_search_milestone_120k.md`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U111_empirical_search_milestone_120k.md)\n- Preceding 100k Milestone: [`research/checkpoints/U110_empirical_search_milestone_100k.md`](file://[LOCAL_HOME]/Downloads/beal/research/checkpoints/U110_empirical_search_milestone_100k.md)\n- Search Engine Source: [`code/beal_search_gmp.c`](file://[LOCAL_HOME]/Downloads/beal/code/beal_search_gmp.c)\n- Executable Binary: `code/beal_search_gmp`\n\n---\n\n## 1. Executive Summary\n\nThis milestone report certifies the expansion of the high-performance computational search envelope past base $120,000$ to base $A = 140,000$:\n\n1. **Interval $[120001, 140000]$ Execution**:\n   - **Search Envelope**: Base $A \\in [120001, 140000]$, base $B \\in [A, 140000]$, pure odd prime exponents $x, y, z \\in \\{3, 5, 7, 11, 13, 17, 19\\}$.\n   - **Candidate Pairs Evaluated**: **3,404,418,724** ($3.404 \\times 10^9$ pairs).\n   - **Wall Time**: $266.113$ seconds ($4.44$ minutes) on 8 worker threads.\n   - **Average Throughput**: $12.79$ Million candidate pairs/second.\n   - **Counterexamples Found**: **EXACT ZERO ($0$)**.\n   - **Non-Primitive Equalities**: **EXACT ZERO ($0$)** in the coprime search space.\n\n2. **Grand Cumulative Verification Envelope ($A \\le 140,000$)**:\n   - Across all 11 partitioned search logs from $A = 2$ through $A = 140,000$, the C + GMP engine has exhaustively evaluated:\n     $$\\mathbf{17,056,402,497 \\quad \\text{coprime candidate pairs}}$$\n     (over **17.056 Billion** candidate pairs) with arbitrary-precision verification.\n   - Cumulative wall-clock search time: **$721.78$ seconds** ($12.03$ minutes).\n   - Cumulative counterexamples detected: **$\\mathbf{0}$**.\n   - **Certification**: The Beal Conjecture is verified to hold unconditionally for all bases $A, B \\le 140,000$ and pure odd prime exponents $x, y, z \\in \\{3, 5, 7, 11, 13, 17, 19\\}$.\n\n---\n\n## 2. Precomputation and Performance Parameters\n\n- **Precomputed Powers**: $979,993$ distinct powers for base range $[2, 140000]$ across prime exponents $\\{3, 5, 7, 11, 13, 17, 19\\}$.\n- **Hash Table**: $2^{21} = 2,097,152$ slots with SplitMix64 hashing, load factor $0.47$.\n- **Section 8 Test Suite**: 13/13 (100.0%) pass rate prior to search start.\n\n---\n\n## 3. Comprehensive 11-Interval Ledger: Base $A \\le 140,000$\n\n| Interval | Base $A$ Range | Max Base | Exponents | Pairs Checked | Elapsed (s) | Rate (M pairs/s) | Counterexamples | JSON Certificate |\n|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|\n| 01 | $[2, 10000]$ | 10,000 | Pure primes $\\le 19$ | 885,552,473 | 16.67 | 53.14 | 0 | [`interval_00002_10000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_00002_10000_primes19.json) |\n| 02 | $[10001, 20000]$ | 20,000 | Pure primes $\\le 19$ | 851,135,936 | 24.94 | 34.13 | 0 | [`interval_10001_20000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_10001_20000_primes19.json) |\n| 03 | $[20001, 30000]$ | 30,000 | Pure primes $\\le 19$ | 851,071,368 | 19.60 | 43.42 | 0 | [`interval_20001_30000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_20001_30000_primes19.json) |\n| 04 | $[30001, 40000]$ | 40,000 | Pure primes $\\le 19$ | 851,082,988 | 24.30 | 35.02 | 0 | [`interval_30001_40000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_30001_40000_primes19.json) |\n| 05 | $[40001, 50000]$ | 50,000 | Pure primes $\\le 19$ | 851,156,124 | 33.25 | 25.60 | 0 | [`interval_40001_50000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_40001_50000_primes19.json) |\n| 06 | $[50001, 60000]$ | 60,000 | Pure primes $\\le 19$ | 851,051,796 | 12.46 | 68.31 | 0 | [`interval_50001_60000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/search_logs/interval_50001_60000_primes19.json) |\n| 07 | $[60001, 70000]$ | 70,000 | Pure primes $\\le 19$ | 851,075,652 | 14.06 | 60.53 | 0 | [`interval_60001_70000_primes19.json`](file://[LOCAL_HOME]/Downloads/beal/references/sear"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.92,
+        "confidence": 0.45,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.32,
+          "1": 0.47,
+          "2": 0.19,
+          "3": 0.02
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.51
+      }
+    },
+    "usage": {
+      "input_tokens": 2827,
+      "output_tokens": 42
+    }
+  }
+}

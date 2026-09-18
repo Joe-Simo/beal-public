@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U111_formal_immersion_signature_2_3_13",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_formal_immersion_signature_2_3_13.md",
+    "excerpt": "# U111: Formal Immersion Criterion Analysis for Signature $(2, 3, 13)$ at the Cusp $\\infty$\n\n**Date**: 2026-09-17  \n**Author**: Signature $(2, 3, 13)$ Modular Curve Analyst  \n**Status**: Authoritative Milestone Report & Computational Proof Certificate  \n**Target Diophantine Equation**: $A^2 + B^3 = C^{13}, \\quad \\gcd(A, B, C) = 1, \\quad ABC \\neq 0, \\quad C \\neq \\pm 1$  \n**Core Question**: Can the formal immersion criterion of Mazur (1977) and Merel (1996) at the cusp $\\infty$ be applied to eliminate the surviving newforms $\\mathcal{S}_{13} = \\{96a2, 864a1, 864b1, 864c1\\}$ or resolve the twisted modular curve $X_{E_0}(13)$?  \n**Executable Companion**: [`code/U111_formal_immersion_13.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_formal_immersion_13.py)\n\n---\n\n## 1. Executive Summary\n\nIn checkpoints U104, U105, and U110, we established that the boundary generalized Fermat equation of signature $(2, 3, 13)$ reduces to determining rational points on the twisted modular curve $X_{E_0}(13)$ ($g = 50$), with surviving Serre levels $N \\in \\{96, 864\\}$ and candidate non-CM elliptic curves $\\mathcal{S}_{13} = \\{96a2, 864a1, 864b1, 864c1\\}$.\nA classical strategy in modular Diophantine analysis\u2014dating from Mazur's 1977 Eisenstein ideal paper, Kamienny's 1992 criterion, and Merel's 1996 proof of the uniform boundedness conjecture\u2014is the **formal immersion criterion at the cusp $\\infty$**.\n\nThis checkpoint executes an exhaustive analysis of the formal immersion criterion for the twisted curve $X_{E_0}(13)$ and the candidate newforms in $S_2(\\Gamma_0(864))$.\n\n### Key Mathematical Results:\n1. **Geometric Obstruction: Absence of Rational Cusps on $X_{E_0}(13)$**:  \n   Mazur's formal immersion criterion requires a $\\mathbb{Q}$-rational cusp $\\infty$. On the untwisted curve $X(13)$, the 84 cusps are defined over $\\mathbb{Q}(\\zeta_{13})^+$. On the twisted curve $X_{E_0}(13)$, the Galois action on cusps is given by $\\sigma_{\\text{twist}}(c) = \\bar{\\rho}_{E_0, 13}(\\sigma) \\cdot \\sigma(c)$. A cusp is fixed by $G_\\mathbb{Q}$ if and only if $E_0[13]$ possesses a $G_\\mathbb{Q}$-stable line. Because the mod 13 representation $\\bar{\\rho}_{E_0, 13}$ is **absolutely irreducible** (Freitas, Naskr\u0119cki, and Stoll 2020, Lemma 8.1):\n   $$X_{E_0}(13)(\\mathbb{Q}) \\cap \\operatorname{Cusps} = \\emptyset.$$\n   **$X_{E_0}(13)$ possesses NO $\\mathbb{Q}$-rational cusps.** The cusps are defined over number fields of degree at least 14 (the Borel field $K_B$).\n2. **Wild Ramification Obstacle at Level 13**:  \n   Over the field of definition $K_B$, the cusp on $X(13)$ has width $e = 13$. The local uniformizer is $t = q^{1/13}$. The differential map satisfies $dt = \\frac{1}{13} q^{-12/13} dq \\implies dq = 13 t^{12} dt$. Modulo 13, the differential $dq$ vanishes identically, causing the cotangent map to become totally degenerate in characteristic 13.\n3. **Linear Dependence of Leading Coefficients in $S_2(\\Gamma_0(864))$**:  \n   We analyze the $q$-expansions and their $\\theta$-derivatives $q \\frac{df}{dq} = \\sum_{n=1}^\\infty n a_n q^n$ for the candidate forms $f_{864a1}, f_{864b1}, f_{864c1}$, the Catalan form $f_{\\text{Cat}}$, and $f_{96a2}$.\n   We discover an exact leading algebraic relation among the candidate newforms:\n   $$-4 f_{864a1} + f_{864b1} + 3 f_{\\text{Cat}} = 6 q^{13} - 24 q^{17} + 18 q^{19} + O(q^{25}).$$\n   - Over $\\mathbb{Q}$, this linear combination vanishes for all $n < 13$! Consequently, the $4 \\times K$ leading coefficient matrix has rank strictly less than 4 for all $K \\le 12$.\n   - In the $\\theta$-expansion $q \\frac{df}{dq}$, the $n = 13$ coefficient is $13 \\times 6 = 78 \\equiv 0 \\pmod{13}$.\n   - Because $a_{14} = a_{15} = a_{16} = 0$ (additive reduction), the relation persists modulo 13:\n     $$-4 \\theta(f_{864a1}) + \\theta(f_{864b1}) + 3 \\theta(f_{\\text{Cat}}) \\equiv 0 \\pmod{q^{17}, 13}!$$\n   - Over $\\mathbb{F}_{13}$, the rank of the leading coefficients remains strictly deficient (rank $\\le 3$) for all $K \\le 16$. Full rank 4 is **delayed until $K = 17$**.\n4. **Definitive Conclusion**:  \n   The formal immersion criterion fails to eliminate the candidate newforms or solve signature $(2, 3, 13)$ due to:\n   - The absence of rational cusps on $X_{E_0}(13)$,\n   - The wild ramification at $p = 13$,\n   - The 16-th order jet degeneracy of the candidate forms modulo 13, and\n   - The presence of the genuine Catalan point $P_{\\text{Cat}} \\in X_{864b1}(13)(\\mathbb{Q})$.\n\n---\n\n## 2. Theoretical Framework: Mazur's Formal Immersion and Merel's Winding Method\n\n### 2.1 Mazur's Classical Criterion (1977)\nLet $X/\\mathbb{Q}$ be a modular curve, and let $\\mathcal{X}/\\mathbb{Z}_p$ be its minimal regular model. Let $P \\in \\mathcal{X}(\\mathbb{Z}_p)$ be a section, typically a cusp such as $\\infty$.\nLet $J$ be the Jacobian of $X$, and let $\\pi: J \\to A$ be an abelian variety quotient with $A(\\mathbb{Q})$ finite (such as the Eisenstein quotient or a subvariety of rank 0).\nLet $\\phi: X \\to A$ be the morphism defined by $x \\mapsto \\pi([x - P])$.\nWe say "
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 1.98,
+        "confidence": 0.45,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.07,
+          "1": 0.14,
+          "2": 0.53,
+          "3": 0.26
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2754,
+      "output_tokens": 94
+    }
+  }
+}

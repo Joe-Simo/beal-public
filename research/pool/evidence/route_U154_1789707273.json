@@ -1,0 +1,59 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U154",
+  "timestamp": "2026-09-18T00:54:33-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "(4,2n,5): Re side exponent 4 of the quintic Z[i] parametrisation gives u = s^2 and P_5(u,v)=+-t^2 (5-free) or 5t^2 (5|u): four genus-1 quartics W^2=+-(5V^4-10V^2+1), +-5W^2=U^4-10U^2+5. If all have only trivial rational points, (4,2n,5) closes for all n>=2 via PARI rank computations."
+  },
+  "questions": {
+    "go": {
+      "type": "score",
+      "instructions": "Is this the best executable next cycle (PARI, exact) versus consolidation?",
+      "criteria": [
+        "0 no",
+        "1 weak",
+        "2 good",
+        "3 best"
+      ]
+    },
+    "lit": {
+      "type": "noul",
+      "instructions": "Is (4,2n,5) likely already solved in the literature?",
+      "criteria": {
+        "true": "likely solved",
+        "false": "likely open"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "go": {
+        "type": "score",
+        "score": 2.29,
+        "confidence": 0.29,
+        "legend": {
+          "0": "0 no",
+          "1": "1 weak",
+          "2": "2 good",
+          "3": "3 best"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.12,
+          "2": 0.28,
+          "3": 0.54
+        }
+      },
+      "lit": {
+        "type": "noul",
+        "noul": 0.55
+      }
+    },
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 33
+    }
+  }
+}

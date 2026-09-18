@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U54_coefficient2_gcd_squareclass_split",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U54_coefficient2_gcd_squareclass_split.md",
+    "excerpt": "# U54: coefficient-2 branch \u2014 exact gcd and square-class split\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Input from U53\n\nFor coprime integers A,B, the surviving coefficient-2 / exponent-17 branch satisfies\n\n    B P16(A,B) = -16 m^2 n^2,\n\nwhere\n\n    P16(A,B) = 17 A^16 + 136 A^15 B + ... + 1597 B^16,\n\nand U53 established\n\n    P16(A,B) == 17 A^16 (mod B),\n    A == 1 (mod 8),\n    v2(B) = 4 + 2 v2(mn),\n\nwith m,n coprime and of opposite parity. U53 also established that if 17|B then v17(P16)=1 and v17(B) is odd.\n\n## Lemma 1: exact gcd restriction\n\nLet d = gcd(B,P16(A,B)). Since d|B and P16(A,B) == 17 A^16 (mod B),\n\n    d | 17 A^16.\n\nBut gcd(A,B)=1 and d|B, hence gcd(d,A)=1. Therefore\n\n    d | 17.\n\nThus\n\n    gcd(B,P16) in {1,17}.                         (1)\n\nThis is stronger than the tentative U53 obligation: no prime other than 17 can divide both factors.\n\n## Lemma 2: square classes when 17 does not divide B\n\nIf 17 does not divide B, (1) gives gcd(B,P16)=1. Since\n\n    |B P16| = (4mn)^2,\n\nand the two factors are coprime, every prime valuation in each factor is even. Therefore there exist positive integers b,c such that, for one sign sigma in {+1,-1},\n\n    B   = sigma b^2,\n    P16 = -sigma c^2,\n    b c = 4 |mn|.                                  (2)\n\nMoreover U53 gives v2(B)>=6 and even, hence\n\n    8 | b.                                          (3)\n\n## Lemma 3: square classes when 17 divides B\n\nIf 17|B, U53 gives v17(P16)=1 and v17(B) odd. For every prime p != 17, (1) implies p cannot divide both B and P16, so the product-square identity forces the p-adic valuation of whichever factor contains p to be even. At p=17, both valuations are odd. Consequently there exist positive integers b,c and sigma in {+1,-1} such that\n\n    B   = sigma 17 b^2,\n    P16 = -sigma 17 c^2,\n    17 b c = 4 |mn|.                                (4)\n\nAgain v2(B)>=6 and even, and 17 is odd, so\n\n    8 | b.                                          (5)\n\n## Unified reduction\n\nLet delta in {1,17}. Every surviving solution satisfies\n\n    B   = sigma delta b^2,\n    P16(A,B) = -sigma delta c^2,\n    delta b c = 4 |mn|,\n    8 | b,\n\nwhere delta=17 exactly when 17|B, and gcd(A,B)=1.\n\nSubstituting B=sigma delta b^2 into the degree-16 equation gives the explicit superelliptic equation\n\n    P16(A, sigma delta b^2) = -sigma delta c^2.      (6)\n\nThis reduces the U53 product equation to two controlled square classes, with the only exceptional prime 17.\n\n## Independent exact check of the key congruence\n\nA fresh Wolfram evaluation on the explicit U53 polynomial returned\n\n    PolynomialRemainder[P16, B, B] = 17 A^16,\n\nand after B=17 b it factored P16 as 17 times a polynomial whose first term is A^16, consistent with the 17-adic argument in U53.\n\n## What this establishes\n\nThis is a genuine structural reduction of the active exponent-17 coefficient-2 branch. It is not an emptiness proof for (6), and it does not resolve Beal's conjecture.\n\n## Next obligation\n\nExploit (6), gcd(A,b)=1, A odd, and 8|b. First test local solubility of the two equations\n\n    P16(A, b^2) = -sigma c^2,\n    P16(A, 17 b^2) = -sigma 17 c^2\n\nfor sigma=+/-1 over carefully chosen primes. If local obstructions do not eliminate a square class, dehomogenize using gcd(A,b)=1 and identify the resulting hyperelliptic/Thue-type curve for a rigorous global attack.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.61,
+        "confidence": 0.61,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.02,
+          "2": 0.23,
+          "3": 0.71
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 1707,
+      "output_tokens": 42
+    }
+  }
+}

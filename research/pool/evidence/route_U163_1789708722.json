@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U163",
+  "timestamp": "2026-09-18T01:18:42-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "diag"
+  },
+  "questions": {
+    "ok": {
+      "type": "noul",
+      "instructions": "Adding named hypotheses FLT (n,n,n) n>=3 [Wiles], DarmonMerelNN3 (n,n,3) n>=3, DahmenSiksek {(5,5,7),(5,5,19),(7,7,5)} to exclude the diagonal cases from the residual is faithful bookkeeping of BCDY Tables 1-2?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "ok": {
+        "type": "noul",
+        "noul": 0.52
+      }
+    },
+    "usage": {
+      "input_tokens": 374,
+      "output_tokens": 20
+    }
+  }
+}

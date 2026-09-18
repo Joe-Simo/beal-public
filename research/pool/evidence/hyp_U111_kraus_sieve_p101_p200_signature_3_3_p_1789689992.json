@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U111_kraus_sieve_p101_p200_signature_3_3_p",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U111_kraus_sieve_p101_p200_signature_3_3_p.md",
+    "excerpt": "# U111: Extended Kraus Sieve Modular Elimination for Generalized Fermat Equations $A^3 + B^3 = C^p$ ($p \\equiv 1 \\pmod 3$, $p \\in [101, 200]$)\n\n**Date**: 2026-09-17  \n**Author**: Arithmetic Number Theory Research Group (Signature $(3, 3, p)$ Scale Specialization)  \n**Target Equation**: $A^3 + B^3 = C^p$ with prime exponent $p \\in \\{103, 109, 127, 139, 151, 157, 163, 181, 193, 199\\}$, $\\gcd(A, B, C) = 1$, and $A B C \\neq 0$.  \n**Supporting Code**: [`code/U111_kraus_sieve_p101_p200.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_kraus_sieve_p101_p200.py)  \n**Supporting Data**: [`references/U111/kraus_sieve_p101_p200.json`](file://[LOCAL_HOME]/Downloads/beal/references/U111/kraus_sieve_p101_p200.json)  \n**Status**: Authoritative research checkpoint; 100% unconditional elimination of the persistent modular obstructions at levels 72 and 144 across all primes $p \\equiv 1 \\pmod 3$ in $[101, 200]$.\n\n---\n\n## 1. Executive Summary\n\nIn Checkpoint U110, the Kraus sieve modular elimination algorithm was extended and certified for all prime exponents $p \\in [43, 100]$ with $p \\equiv 1 \\pmod 3$ ($p \\in \\{43, 61, 67, 73, 79, 97\\}$).\n\nThis checkpoint (U111) establishes the unconditional resolution of the signature $(3, 3, p)$ generalized Fermat equation for all primes in the second centenary:\n$$p \\in [101, 200] \\quad \\text{with } p \\equiv 1 \\pmod 3 \\implies p \\in \\{103, 109, 127, 139, 151, 157, 163, 181, 193, 199\\}.$$\n\n### Key Mathematical Findings\n1. **100% Unconditional Modular Elimination**:\n   All 10 prime exponents $p \\in \\{103, 109, 127, 139, 151, 157, 163, 181, 193, 199\\}$ are **unconditionally eliminated** by explicit auxiliary prime certificates. No non-trivial primitive solutions to $A^3 + B^3 = C^p$ exist for any of these exponents.\n2. **Immediate First-Prime Elimination**:\n   For 5 of the 10 primes ($p \\in \\{127, 139, 163, 193, 199\\}$), elimination is achieved at the very first candidate auxiliary prime ($k = 2$, $q = 4p + 1$).\n   For the remaining primes, elimination occurs at $k = 3$ ($q = 6p + 1$) or $k = 5$ ($q = 10p + 1$).\n3. **Exceptionally High Elimination Density**:\n   Across all auxiliary primes $q = 2kp + 1 \\le 25,000$, the elimination density ranges from $88.9\\%$ to $100.0\\%$, demonstrating that the Frey curve mod-$p$ representations fail local compatibility with newforms `72a1` and `144a1` with asymptotic probability 1.\n4. **Complete Theorem for All Primes $p \\le 200$**:\n   - Primes $p \\equiv 2 \\pmod 3$: 100% resolved by Freitas (2016) via symplectic criteria.\n   - Primes $p \\le 37$ ($p \\equiv 1 \\pmod 3$): Resolved in U106 (`code/kraus_sieve_signature_3_3_p.py`).\n   - Primes $43 \\le p \\le 97$ ($p \\equiv 1 \\pmod 3$): 100% resolved in U110 (`code/U110_kraus_sieve_p43_p100.py`).\n   - Primes $101 \\le p \\le 200$ ($p \\equiv 1 \\pmod 3$): 100% resolved in U111 (`code/U111_kraus_sieve_p101_p200.py`).\n   - **Theorem**: The equation $A^3 + B^3 = C^p$ admits strictly zero non-trivial primitive integer solutions for **all prime exponents $p \\le 200$**.\n\n---\n\n## 2. Master Verification Ledger: $p \\in [101, 200]$ ($p \\equiv 1 \\pmod 3$)\n\nAll values are computed exactly using `code/U111_kraus_sieve_p101_p200.py` and validated against PARI/GP 2.17.4.\n\n| Exponent $p$ | $p \\pmod 3$ | First Eliminating $q$ | $k$ | $n = 2k$ | $a_q(72a1)$ | $a_q(72a1) \\pmod p$ | $a_q(144a1)$ | $q \\mid C$ Possible? | $|\\mathcal{A}_q(p)| / p$ | Total $q \\le 2.5 \\times 10^4$ Elim. Rate | Unconditional Status |\n|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **$p = 103$** | $1$ | **$619$** | $3$ | $6$ | $-44$ | **$59$** | $+44$ | No ($\\pm 2 \\equiv \\{2, 101\\}$) | $1 / 103$ | $28/30$ ($93.3\\%$) | **ELIMINATED** |\n| **$p = 109$** | $1$ | **$1091$** | $5$ | $10$ | $+52$ | **$52$** | $-52$ | No ($\\pm 2 \\equiv \\{2, 107\\}$) | $1 / 109$ | $20/21$ ($95.2\\%$) | **ELIMINATED** |\n| **$p = 127$** | $1$ | **$509$** | $2$ | $4$ | $-6$ | **$121$** | $-6$ | No ($\\pm 2 \\equiv \\{2, 125\\}$) | $2 / 127$ | $21/22$ ($95.5\\%$) | **ELIMINATED** |\n| **$p = 139$** | $1$ | **$557$** | $2$ | $4$ | $+26$ | **$26$** | $+26$ | No ($\\pm 2 \\equiv \\{2, 137\\}$) | $1 / 139$ | $17/18$ ($94.4\\%$) | **ELIMINATED** |\n| **$p = 151$** | $1$ | **$907$** | $3$ | $6$ | $+4$ | **$4$** | $-4$ | No ($\\pm 2 \\equiv \\{2, 149\\}$) | $1 / 151$ | $19/19$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 157$** | $1$ | **$1571$** | $5$ | $10$ | $-60$ | **$97$** | $+60$ | No ($\\pm 2 \\equiv \\{2, 155\\}$) | $1 / 157$ | $11/12$ ($91.7\\%$) | **ELIMINATED** |\n| **$p = 163$** | $1$ | **$653$** | $2$ | $4$ | $-6$ | **$157$** | $-6$ | No ($\\pm 2 \\equiv \\{2, 161\\}$) | $1 / 163$ | $16/18$ ($88.9\\%$) | **ELIMINATED** |\n| **$p = 181$** | $1$ | **$1087$** | $3$ | $6$ | $+8$ | **$8$** | $-8$ | No ($\\pm 2 \\equiv \\{2, 179\\}$) | $1 / 181$ | $19/19$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 193$** | $1$ | **$773$** | $2$ | $4$ | $+18$ | **$18$** | $+18$ | No ($\\pm 2 \\equiv \\{2, 191\\}$) | $1 / 193$ | $14/14$ ($100.0\\%$) | **ELIMINATED** |\n| **$p = 199$** | $1$ | **$797$** | $2$ | $4$ | $-22$ | "
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.2
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.98
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 2.42,
+        "confidence": 0.42,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.12,
+          "2": 0.25,
+          "3": 0.6
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3413,
+      "output_tokens": 94
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U180",
+  "timestamp": "2026-09-18T07:31:34-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "c": "residual v3"
+  },
+  "questions": {
+    "ok": {
+      "type": "noul",
+      "instructions": "Is folding BEN24n and InstanceRows into the final residual theorem (so it excludes x'=y'=4 entirely, {3,4,7}, {3,4,5}, (3,4,4), (p,4,4)) the right consolidation step now?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "ok": {
+        "type": "noul",
+        "noul": 0.42
+      }
+    },
+    "usage": {
+      "input_tokens": 355,
+      "output_tokens": 20
+    }
+  }
+}

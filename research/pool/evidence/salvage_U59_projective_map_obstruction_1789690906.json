@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U59_projective_map_obstruction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U59_projective_map_obstruction.md",
+    "excerpt": "# U59: coefficient-2 branch \u2014 why the proposed local map is not projectively well-defined\n\nStatus: verified partial/negative result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Question from U58\n\nU58 proposed deriving an algebraic map from the Gaussian projective ratio r/s to the U55 normalized square parameter b^2/A, then intersecting finite local sets at q=67,409,883.\n\nThis checkpoint tests whether such a single-valued projective map actually exists.\n\n## Exact reconstruction equation\n\nThe two descents meet through\n\n    H_-(m,n) = (A+B omega)^17,\n\nwhere omega^2=omega+1 and\n\n    H_-(m,n) = h0 + h1 omega,\n    h0=m^4+30m^2n^2+n^4,\n    h1=-16m^2n^2.\n\nThe Gaussian descent gives m=rF(r,s), n=sG(r,s).\n\nFor a forced prime q dividing mn, h1=0 mod q. Since exactly one of m,n is zero mod q in the primitive local situations under study,\n\n    H_- mod q = m^4 or n^4,\n\nwhich is a nonzero rational element of O_K/q.\n\nThus the local reconstruction problem is\n\n    (A+B omega)^17 in F_q^*,\n\nnot an equation retaining the detailed Gaussian root t=r/s. The information that distinguished the F- and G-root classes disappears after H_- is reduced modulo q.\n\n## Exact Wolfram test\n\nFor representative forced Gaussian roots at q=67 and q=409, we explicitly enumerated projective pairs (A:B) satisfying\n\n    (A+B omega)^17 proportional to H_-(m,n) mod q.\n\nEach tested Gaussian root produced 17 projective solutions, not one. At q=67, for both an F-root t=4 and a G-root t=3, the same 17 projective classes occurred:\n\n    (7:1),(12:1),(17:1),(18:1),(20:1),(21:1),(23:1),(29:1),\n    (37:1),(43:1),(45:1),(46:1),(48:1),(49:1),(54:1),(59:1),(1:0).\n\nThe same multiplicity 17 occurs for tested q=409 roots.\n\nThis is explained by the 17th-power kernel in the quadratic algebra: for all q in {67,103,409,883}, gcd(17,q^2-1)=17. Hence taking a 17th root modulo q naturally has a 17-fold ambiguity in the relevant quadratic extension/split algebra.\n\n## Consequence\n\nThe proposed U58 object\n\n    r/s  ->  b^2/A mod q\n\nis not a canonical single-valued projective map at primes q|mn. Moreover, the condition B=-delta b^2 is not itself invariant under arbitrary projective rescaling of (A:B), so simply selecting one projective representative would risk introducing a false obstruction.\n\nTherefore the naive finite-set intersection proposed in U58 is not rigorous and must not be used to claim a contradiction.\n\n## What survives\n\nU58's exact root tables remain valid. U57's q=103 factor-location result remains valid. What fails is only the proposed next-step simplification to a single projective map.\n\n## Better next route\n\nRetain integral/valuation information instead of projectivizing away the scale. Two promising exact options are:\n\n1. work modulo q^2 (or q^k) at q=67,409,883 so that h1=-16m^2n^2, although zero mod q, retains first nonzero valuation data and may distinguish Gaussian root lifts;\n2. use the global identity delta*b*c=4|mn| together with gcd(b,c)=1 to allocate prime valuations before reducing the 17th-root equation.\n\nThe cheapest next test is q^2 lifting: for each simple F/G root modulo q, compute the valuation of the corresponding Gaussian cofactor under t=t0+qk and compare with whether q divides b or c in the U55 equation. This preserves precisely the information lost modulo q.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.35,
+        "confidence": 0.61,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.61,
+          "3": 0.37
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.83
+      }
+    },
+    "usage": {
+      "input_tokens": 1564,
+      "output_tokens": 42
+    }
+  }
+}

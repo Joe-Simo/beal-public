@@ -6,10 +6,13 @@ Authors: Formal Verification Specialist
 import Beal.Conjecture
 import Beal.Taxonomy
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Defs
 import Mathlib.Data.Nat.GCD.Basic
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Omega
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.IntervalCases
+import Mathlib.Tactic.Positivity
 
 /-!
 # Complete Curvature Taxonomy and Darmon Modular Frey Curve Assignments
@@ -160,63 +163,41 @@ theorem spherical_signatures_exhaustive (p q r : ℕ)
       (p = 2 ∧ q = 3 ∧ r = 3) ∨
       (p = 2 ∧ q = 3 ∧ r = 4) ∨
       (p = 2 ∧ q = 3 ∧ r = 5) := by
+  unfold curvatureNumerator
+  obtain ⟨hpq, hqr⟩ := h_ord
+  have hp' : (2 : ℤ) ≤ p := by exact_mod_cast hp
+  have hpq' : (p : ℤ) ≤ q := by exact_mod_cast hpq
+  have hqr' : (q : ℤ) ≤ r := by exact_mod_cast hqr
   constructor
   · intro hE
-    rcases eq_or_lt_of_le hp with rfl | hp3
-    · -- Case p = 2
-      rcases eq_or_lt_of_le hq.left with rfl | hq3
+    have hp3 : p ≤ 3 := by
+      by_contra hc; push_neg at hc
+      have hp4 : (4 : ℤ) ≤ p := by exact_mod_cast hc
+      nlinarith [mul_le_mul hpq' hqr' (by linarith) (by linarith : (0:ℤ) ≤ q),
+        mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ) - p) (by linarith : (0:ℤ) ≤ (r:ℤ)),
+        mul_nonneg (by linarith : (0:ℤ) ≤ (r:ℤ) - p) (by linarith : (0:ℤ) ≤ (q:ℤ)),
+        mul_nonneg (by linarith : (0:ℤ) ≤ (p:ℤ) - 4) (mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ)) (by linarith : (0:ℤ) ≤ (r:ℤ)))]
+    interval_cases p
+    · -- p = 2 : 2r + 2q - qr > 0
+      have hq3 : q ≤ 3 := by
+        by_contra hc; push_neg at hc
+        have hq4 : (4 : ℤ) ≤ q := by exact_mod_cast hc
+        push_cast at hE
+        nlinarith [mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ) - 4) (by linarith : (0:ℤ) ≤ (r:ℤ))]
+      interval_cases q
       · left; exact ⟨rfl, rfl⟩
-      · rcases eq_or_lt_of_le hq3 with rfl | hq4
-        · -- Subcase p = 2, q = 3
-          rw [curvature_2_3_r] at hE
-          have hr_le_5 : r ≤ 5 := by omega
-          have hr_ge_3 : r ≥ 3 := h_ord.2
-          interval_cases r
-          · right; left; exact ⟨rfl, rfl, rfl⟩
-          · right; right; left; exact ⟨rfl, rfl, rfl⟩
-          · right; right; right; exact ⟨rfl, rfl, rfl⟩
-        · rcases eq_or_lt_of_le hq4 with rfl | hq5
-          · -- Subcase p = 2, q = 4
-            rw [curvature_2_4_r] at hE
-            have hr_ge_4 : r ≥ 4 := h_ord.2
-            have : (r : ℤ) < 4 := by omega
-            omega
-          · -- Subcase p = 2, q ≥ 5
-            have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-            have hq_ge_5 : (q : ℤ) ≥ 5 := by omega
-            unfold curvatureNumerator at hE
-            have : (q : ℤ) * r + 2 * r + 2 * q - 2 * q * r < 0 := by
-              nlinarith
-            omega
-    · -- Case p ≥ 3
-      rcases eq_or_lt_of_le hp3 with rfl | hp4
-      · -- Subcase p = 3
-        rcases eq_or_lt_of_le hq.left with rfl | hq4
-        · -- Subcase p = 3, q = 3
-          rw [curvature_3_3_r] at hE
-          have hr_ge_3 : r ≥ 3 := h_ord.2
-          have : (r : ℤ) < 3 := by omega
-          omega
-        · -- Subcase p = 3, q ≥ 4
-          have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-          have hq_ge_4 : (q : ℤ) ≥ 4 := by omega
-          unfold curvatureNumerator at hE
-          have : (q : ℤ) * r + 3 * r + 3 * q - 3 * q * r < 0 := by
-            nlinarith
-          omega
-      · -- Case p ≥ 4
-        have hq_ge_p : (q : ℤ) ≥ (p : ℤ) := by omega
-        have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-        have hp_ge_4 : (p : ℤ) ≥ 4 := by omega
-        unfold curvatureNumerator at hE
-        have : (q : ℤ) * r + (p : ℤ) * r + (p : ℤ) * q - (p : ℤ) * q * r < 0 := by
-          nlinarith
-        omega
+      · have hr5 : r ≤ 5 := by push_cast at hE; omega
+        have hr3 : 3 ≤ r := hqr
+        interval_cases r <;> simp
+    · -- p = 3 : 3r + 3q - 2qr > 0 is impossible for q ≥ 3
+      exfalso
+      have hq3 : (3 : ℤ) ≤ q := by exact_mod_cast hpq
+      push_cast at hE
+      nlinarith [mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ) - 3) (by linarith : (0:ℤ) ≤ (r:ℤ)),
+        mul_nonneg (by linarith : (0:ℤ) ≤ (r:ℤ) - 3) (by linarith : (0:ℤ) ≤ (q:ℤ))]
   · rintro (⟨rfl, rfl⟩ | ⟨rfl, rfl, rfl⟩ | ⟨rfl, rfl, rfl⟩ | ⟨rfl, rfl, rfl⟩)
-    · exact spherical_2_2_r r hr
-    · exact spherical_2_3_3
-    · exact spherical_2_3_4
-    · exact spherical_2_3_5
+    · push_cast; nlinarith
+    all_goals norm_num
 
 /-! ### 3. Complete Classification of Parabolic Signatures -/
 
@@ -236,65 +217,42 @@ theorem parabolic_signatures_exhaustive (p q r : ℕ)
       (p = 2 ∧ q = 3 ∧ r = 6) ∨
       (p = 2 ∧ q = 4 ∧ r = 4) ∨
       (p = 3 ∧ q = 3 ∧ r = 3) := by
+  unfold curvatureNumerator
+  obtain ⟨hpq, hqr⟩ := h_ord
+  have hp' : (2 : ℤ) ≤ p := by exact_mod_cast hp
+  have hpq' : (p : ℤ) ≤ q := by exact_mod_cast hpq
+  have hqr' : (q : ℤ) ≤ r := by exact_mod_cast hqr
   constructor
   · intro hE
-    rcases eq_or_lt_of_le hp with rfl | hp3
-    · -- Case p = 2
-      rcases eq_or_lt_of_le hq.left with rfl | hq3
-      · -- Subcase p = 2, q = 2
-        rw [curvature_2_2_r] at hE
-        omega
-      · rcases eq_or_lt_of_le hq3 with rfl | hq4
-        · -- Subcase p = 2, q = 3
-          rw [curvature_2_3_r] at hE
-          have : (r : ℤ) = 6 := by omega
-          have hr6 : r = 6 := by omega
-          left
-          exact ⟨rfl, rfl, hr6⟩
-        · rcases eq_or_lt_of_le hq4 with rfl | hq5
-          · -- Subcase p = 2, q = 4
-            rw [curvature_2_4_r] at hE
-            have : (r : ℤ) = 4 := by omega
-            have hr4 : r = 4 := by omega
-            right; left
-            exact ⟨rfl, rfl, hr4⟩
-          · -- Subcase p = 2, q ≥ 5
-            have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-            have hq_ge_5 : (q : ℤ) ≥ 5 := by omega
-            unfold curvatureNumerator at hE
-            have : (q : ℤ) * r + 2 * r + 2 * q - 2 * q * r < 0 := by
-              nlinarith
-            omega
-    · -- Case p ≥ 3
-      rcases eq_or_lt_of_le hp3 with rfl | hp4
-      · -- Subcase p = 3
-        rcases eq_or_lt_of_le hq.left with rfl | hq4
-        · -- Subcase p = 3, q = 3
-          have h_sub := curvature_3_3_r r
-          rw [h_sub] at hE
-          have : (r : ℤ) = 3 := by omega
-          have hr3 : r = 3 := by omega
-          right; right
-          exact ⟨rfl, rfl, hr3⟩
-        · -- Subcase p = 3, q ≥ 4
-          have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-          have hq_ge_4 : (q : ℤ) ≥ 4 := by omega
-          unfold curvatureNumerator at hE
-          have : (q : ℤ) * r + 3 * r + 3 * q - 3 * q * r < 0 := by
-            nlinarith
-          omega
-      · -- Case p ≥ 4
-        have hq_ge_p : (q : ℤ) ≥ (p : ℤ) := by omega
-        have hr_ge_q : (r : ℤ) ≥ (q : ℤ) := by omega
-        have hp_ge_4 : (p : ℤ) ≥ 4 := by omega
-        unfold curvatureNumerator at hE
-        have : (q : ℤ) * r + (p : ℤ) * r + (p : ℤ) * q - (p : ℤ) * q * r < 0 := by
-          nlinarith
-        omega
-  · rintro (⟨rfl, rfl, rfl⟩ | ⟨rfl, rfl, rfl⟩ | ⟨rfl, rfl, rfl⟩)
-    · exact parabolic_2_3_6
-    · exact parabolic_2_4_4
-    · exact parabolic_3_3_3
+    have hp3 : p ≤ 3 := by
+      by_contra hc; push_neg at hc
+      have hp4 : (4 : ℤ) ≤ p := by exact_mod_cast hc
+      nlinarith [mul_le_mul hpq' hqr' (by linarith) (by linarith : (0:ℤ) ≤ q),
+        mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ) - p) (by linarith : (0:ℤ) ≤ (r:ℤ)),
+        mul_nonneg (by linarith : (0:ℤ) ≤ (r:ℤ) - p) (by linarith : (0:ℤ) ≤ (q:ℤ)),
+        mul_nonneg (by linarith : (0:ℤ) ≤ (p:ℤ) - 4) (mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ)) (by linarith : (0:ℤ) ≤ (r:ℤ)))]
+    interval_cases p
+    · -- p = 2 : (q-2)(r-2) = 4
+      have hq4 : q ≤ 4 := by
+        by_contra hc; push_neg at hc
+        have hq5 : (5 : ℤ) ≤ q := by exact_mod_cast hc
+        push_cast at hE
+        nlinarith [mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ) - 5) (by linarith : (0:ℤ) ≤ (r:ℤ) - 5)]
+      interval_cases q
+      · exfalso; push_cast at hE; omega
+      · left; refine ⟨rfl, rfl, ?_⟩; push_cast at hE; omega
+      · right; left; refine ⟨rfl, rfl, ?_⟩; push_cast at hE; omega
+    · -- p = 3 : 3r + 3q = 2qr forces q = r = 3
+      have hq3 : (3 : ℤ) ≤ q := by exact_mod_cast hpq
+      have hq3' : q ≤ 3 := by
+        by_contra hc; push_neg at hc
+        have hq4 : (4 : ℤ) ≤ q := by exact_mod_cast hc
+        push_cast at hE
+        nlinarith [mul_nonneg (by linarith : (0:ℤ) ≤ (q:ℤ) - 4) (by linarith : (0:ℤ) ≤ (r:ℤ))]
+      have hq_eq : q = 3 := by omega
+      subst hq_eq
+      right; right; refine ⟨rfl, rfl, ?_⟩; push_cast at hE; omega
+  · rintro (⟨rfl, rfl, rfl⟩ | ⟨rfl, rfl, rfl⟩ | ⟨rfl, rfl, rfl⟩) <;> norm_num
 
 /-! ### 4. Complete Classification of Hyperbolic Signatures -/
 
@@ -555,7 +513,7 @@ theorem classify_arch_ppp (p : ℕ) :
       else if p = 5 then some DarmonFreyArchitecture.BillereyDarmon
       else some DarmonFreyArchitecture.HellegouarchFrey := by
   unfold darmonArchitecture
-  split_ifs <;> rfl
+  split_ifs <;> first | rfl | (exfalso; omega) | simp_all
 
 theorem classify_arch_2_3_p (p : ℕ) :
     darmonArchitecture 2 3 p = some DarmonFreyArchitecture.FreyKraus := by

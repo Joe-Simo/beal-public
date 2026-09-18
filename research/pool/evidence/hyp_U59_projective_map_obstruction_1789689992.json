@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "hyp_U59_projective_map_obstruction",
+  "timestamp": "2026-09-17T20:06:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U59_projective_map_obstruction.md",
+    "excerpt": "# U59: coefficient-2 branch \u2014 why the proposed local map is not projectively well-defined\n\nStatus: verified partial/negative result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Question from U58\n\nU58 proposed deriving an algebraic map from the Gaussian projective ratio r/s to the U55 normalized square parameter b^2/A, then intersecting finite local sets at q=67,409,883.\n\nThis checkpoint tests whether such a single-valued projective map actually exists.\n\n## Exact reconstruction equation\n\nThe two descents meet through\n\n    H_-(m,n) = (A+B omega)^17,\n\nwhere omega^2=omega+1 and\n\n    H_-(m,n) = h0 + h1 omega,\n    h0=m^4+30m^2n^2+n^4,\n    h1=-16m^2n^2.\n\nThe Gaussian descent gives m=rF(r,s), n=sG(r,s).\n\nFor a forced prime q dividing mn, h1=0 mod q. Since exactly one of m,n is zero mod q in the primitive local situations under study,\n\n    H_- mod q = m^4 or n^4,\n\nwhich is a nonzero rational element of O_K/q.\n\nThus the local reconstruction problem is\n\n    (A+B omega)^17 in F_q^*,\n\nnot an equation retaining the detailed Gaussian root t=r/s. The information that distinguished the F- and G-root classes disappears after H_- is reduced modulo q.\n\n## Exact Wolfram test\n\nFor representative forced Gaussian roots at q=67 and q=409, we explicitly enumerated projective pairs (A:B) satisfying\n\n    (A+B omega)^17 proportional to H_-(m,n) mod q.\n\nEach tested Gaussian root produced 17 projective solutions, not one. At q=67, for both an F-root t=4 and a G-root t=3, the same 17 projective classes occurred:\n\n    (7:1),(12:1),(17:1),(18:1),(20:1),(21:1),(23:1),(29:1),\n    (37:1),(43:1),(45:1),(46:1),(48:1),(49:1),(54:1),(59:1),(1:0).\n\nThe same multiplicity 17 occurs for tested q=409 roots.\n\nThis is explained by the 17th-power kernel in the quadratic algebra: for all q in {67,103,409,883}, gcd(17,q^2-1)=17. Hence taking a 17th root modulo q naturally has a 17-fold ambiguity in the relevant quadratic extension/split algebra.\n\n## Consequence\n\nThe proposed U58 object\n\n    r/s  ->  b^2/A mod q\n\nis not a canonical single-valued projective map at primes q|mn. Moreover, the condition B=-delta b^2 is not itself invariant under arbitrary projective rescaling of (A:B), so simply selecting one projective representative would risk introducing a false obstruction.\n\nTherefore the naive finite-set intersection proposed in U58 is not rigorous and must not be used to claim a contradiction.\n\n## What survives\n\nU58's exact root tables remain valid. U57's q=103 factor-location result remains valid. What fails is only the proposed next-step simplification to a single projective map.\n\n## Better next route\n\nRetain integral/valuation information instead of projectivizing away the scale. Two promising exact options are:\n\n1. work modulo q^2 (or q^k) at q=67,409,883 so that h1=-16m^2n^2, although zero mod q, retains first nonzero valuation data and may distinguish Gaussian root lifts;\n2. use the global identity delta*b*c=4|mn| together with gcd(b,c)=1 to allocate prime valuations before reducing the 17th-root equation.\n\nThe cheapest next test is q^2 lifting: for each simple F/G root modulo q, compute the valuation of the corresponding Gaussian cofactor under t=t0+qk and compare with whether q divides b or c in the U55 equation. This preserves precisely the information lost modulo q.\n"
+  },
+  "questions": {
+    "dep_heuristic": {
+      "type": "noul",
+      "instructions": "Does this checkpoint rely on a probabilistic or statistical heuristic - such as Cohen-Lenstra, Cohen-Martinet, a random-matrix model, or an argument that some event is too improbable to occur - as a step in establishing a mathematical claim?",
+      "criteria": {
+        "true": "a probability, density, expected-value or 'too improbable to happen' argument is used to rule out or establish a case, rather than merely to motivate or to guide a search",
+        "false": "no probabilistic reasoning is used for a mathematical step, or probability appears only as commentary on why a search is likely to succeed"
+      }
+    },
+    "dep_sha": {
+      "type": "noul",
+      "instructions": "Does this checkpoint assume the finiteness of the Tate-Shafarevich group Sha, or use a Cassels-Tate parity argument that requires it, in order to pin down a Mordell-Weil rank?",
+      "criteria": {
+        "true": "finiteness of Sha, or a parity consequence of it, is used to determine or bound a rank",
+        "false": "Sha is not used, or is mentioned only as an acknowledged open obstruction that the argument does not rely on"
+      }
+    },
+    "dep_grh": {
+      "type": "noul",
+      "instructions": "Does this checkpoint depend on the Generalized Riemann Hypothesis, or on a class-group or unit-group computation whose certification requires GRH?",
+      "criteria": {
+        "true": "GRH is assumed, or a class number, class group, or unit index is certified only under GRH",
+        "false": "no GRH dependency, or a GRH-free certification is actually carried out and reported"
+      }
+    },
+    "claims_unconditional": {
+      "type": "noul",
+      "instructions": "Does this checkpoint apply the words unconditional, 100% closed, definitive, or complete resolution to a result?",
+      "criteria": {
+        "true": "such closure language is applied to a mathematical result in this checkpoint",
+        "false": "no such closure language is used, or it is used only to describe other people's published theorems"
+      }
+    },
+    "mismatch": {
+      "type": "score",
+      "instructions": "Consider the gap between how strongly this checkpoint states its conclusions and what its arguments actually establish. A checkpoint that assumes an unproved hypothesis and then calls the result unconditional has a large gap; one that states its dependencies plainly has none.",
+      "criteria": [
+        "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+        "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+        "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+        "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "dep_heuristic": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_sha": {
+        "type": "noul",
+        "noul": 0.03
+      },
+      "dep_grh": {
+        "type": "noul",
+        "noul": 0.04
+      },
+      "claims_unconditional": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "mismatch": {
+        "type": "score",
+        "score": 0.44,
+        "confidence": 0.56,
+        "legend": {
+          "0": "level 0: every conclusion is stated with its actual dependencies and no closure language is misapplied",
+          "1": "level 1: conclusions are slightly stronger than the arguments, for instance an unstated appeal to another checkpoint",
+          "2": "level 2: a result depending on an unproved hypothesis or an unverified external citation is described without that condition",
+          "3": "level 3: a result is explicitly called unconditional or 100% closed while the checkpoint itself uses a heuristic, an unproved hypothesis such as finiteness of Sha, or GRH"
+        },
+        "probabilities": {
+          "0": 0.63,
+          "1": 0.3,
+          "2": 0.06,
+          "3": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1883,
+      "output_tokens": 94
+    }
+  }
+}

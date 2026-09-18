@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U57_q103_forced_into_B",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U57_q103_forced_into_B.md",
+    "excerpt": "# U57: coefficient-2 branch \u2014 the forced prime 103 lies in B\n\nStatus: verified partial result. This does not resolve Beal's conjecture.\n\nDate: 2026-09-14.\n\n## Inputs\n\nU54-U55 reduce every surviving case to\n\n    B = -delta b^2,\n    P16(A,B) = delta c^2,\n    delta b c = 4 |mn|,\n\nwhere delta is 1 or 17, gcd(A,B)=1, and 8|b.\n\nU56 proves that 103|mn and, through the Gaussian parametrization, exactly one of r,s is divisible by 103.\n\nAlso gcd(B,P16)|17, so 103 cannot divide both B and P16.\n\n## Exact finite-field test\n\nTo decide which factor carries 103, suppose first that 103 does not divide b. Since gcd(A,B)=1, A is also nonzero modulo 103 whenever 103|B; in the present alternative B is nonzero mod 103, so normalize by A and use homogeneity.\n\nFor each delta in {1,17}, enumerate the nonzero quadratic residues t=b^2/A (equivalently after projective normalization, the square-class parameter) modulo 103 and test\n\n    P16(1,-delta t) == 0 (mod 103).\n\nA fresh exact Wolfram enumeration returned no roots for either delta:\n\n    delta=1:  {}\n    delta=17: {}\n\nTherefore P16 cannot be divisible by 103 in either surviving U55 square class when B is nonzero modulo 103.\n\nSince 103 divides B*P16 = -16 m^2 n^2 and cannot divide P16 in that alternative, it follows that\n\n    103 | B,\n\nhence\n\n    103 | b.                                           (1)\n\nBecause gcd(B,P16)|17,\n\n    103 does not divide P16,\n    103 does not divide c.                              (2)\n\n## Exact valuations\n\nFrom delta b c = 4|mn|, with 103 not dividing 4 delta c,\n\n    v103(b) = v103(mn).                                 (3)\n\nFrom U56, if 103|r then the Gaussian coordinate formulas satisfy\n\n    m = r F(r,s),  F(r,s) == 17 s^16 (mod 103),\n    n = s G(r,s),  G(r,s) == s^16 (mod 103),\n\nand s is a 103-adic unit. Hence\n\n    v103(mn)=v103(r).\n\nSimilarly, if 103|s then v103(mn)=v103(s). Therefore\n\n    v103(b) = v103(r)  if 103|r,\n    v103(b) = v103(s)  if 103|s.                       (4)\n\nConsequently\n\n    v103(B)=2 v103(b)=2 v103(mn),                      (5)\n\nexactly matching the product equation.\n\n## Interpretation\n\nThe hoped-for immediate valuation-parity contradiction does not occur: the U55 square class is compatible with the Gaussian valuation. However, the local information is now substantially sharper: the entire 103-adic contribution is forced into B (and b), never into P16 (or c), and its valuation is exactly the valuation of the divisible Gaussian base coordinate r or s.\n\nThis negative/positive distinction is important: U57 does not claim a contradiction.\n\n## Next obligation\n\nRepeat the factor-location test for the other forced primes 67, 409, and 883, but unlike 103 their Gaussian cofactors have roots. Track simultaneously whether each prime enters r, s, F, or G and whether the U55 square-class equation forces it into b or c. A combined incompatibility between these location patterns is now the most economical local route.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.79,
+        "confidence": 0.25,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.21,
+          "1": 0.05,
+          "2": 0.47000000000000003,
+          "3": 0.27
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.85
+      }
+    },
+    "usage": {
+      "input_tokens": 1521,
+      "output_tokens": 42
+    }
+  }
+}

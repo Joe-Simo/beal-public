@@ -1,0 +1,53 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "route_U142",
+  "timestamp": "2026-09-18T00:30:13-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "context": "All 14 elementary kernel conditions are exponent-2-blind (hold on the Fermat-Catalan solutions). A Beal proof needs an input that uses exponent>=3 essentially. Local sieves are exhausted; modular method and Chabauty beyond reach here."
+  },
+  "questions": {
+    "next": {
+      "type": "choice",
+      "instructions": "Which?",
+      "criteria": {
+        "height": "height/size: use z<=x (dominant dichotomy) to derive an explicit inequality between the bases that FAILS on some FC solution, i.e. a size condition where exponent 3 vs 2 matters (test exactly on FC first)",
+        "v2": "2-adic valuation: v_2(even term) >= 3 for exponents>=3 vs >=2 for squares; find a mod-16 or mod-32 condition that fails on an FC solution (exact enumeration over residues first)",
+        "fc_structure": "study WHY the ten FC solutions exist: each has a small term; formalise 'the minor term is < the major^(1/2)' type statements and check which fail for exponents>=3",
+        "stop_elementary": "declare the elementary pool exhausted and spend cycles only on Lean-consolidation and literature-relative families"
+      }
+    },
+    "exact": {
+      "type": "noul",
+      "instructions": "cheap exact test first?",
+      "criteria": {
+        "true": "yes",
+        "false": "no"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "next": {
+        "type": "choice",
+        "choice": "stop_elementary",
+        "confidence": 0.47,
+        "probabilities": {
+          "stop_elementary": 0.6,
+          "fc_structure": 0.06,
+          "v2": 0.2,
+          "height": 0.14
+        }
+      },
+      "exact": {
+        "type": "noul",
+        "noul": 0.5
+      }
+    },
+    "usage": {
+      "input_tokens": 585,
+      "output_tokens": 70
+    }
+  }
+}

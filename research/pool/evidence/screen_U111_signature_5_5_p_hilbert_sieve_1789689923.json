@@ -1,0 +1,116 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "screen_U111_signature_5_5_p_hilbert_sieve",
+  "timestamp": "2026-09-17T20:05:23-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1 has no solutions.",
+    "failure_mode_1": "U113 found that U97 and U102 both refute isogeny / l-adic isomorphism / endomorphism-algebra equality and conclude a residual mod-17 congruence is impossible. That inference is invalid: non-isogenous abelian varieties routinely share a residual mod-p representation (verified exactly with curves having rational 5-torsion, a_p = p+1 mod 5 while a_p differ over Z).",
+    "failure_mode_2": "U113 found that U105 uses rank_Z J^-(k) <= 2 < g = 8 over k = Q(sqrt5) to bound C^-(k), while solutions give points of degree 10 over k (minimal polynomial x^10 + 256). The bound is silent about those points.",
+    "checkpoint": {
+      "filename": "U111_signature_5_5_p_hilbert_sieve.md",
+      "excerpt": "# U111: Modular Method and Hilbert Sieve over $\\mathbb{Q}(\\sqrt{5})$ for Signature $(5, 5, p)$\n\n**Date**: 2026-09-17  \n**Author**: Signature $(5, 5, p)$ Higher Prime Specialist  \n**Target Equation**: $A^5 + B^5 = C^p$ for prime exponents $p \\ge 5$, $\\gcd(A, B) = 1$, $A B C \\ne 0$.  \n**Base Field**: Real quadratic field $F = \\mathbb{Q}(\\sqrt{5})$ with ring of integers $\\mathcal{O}_F = \\mathbb{Z}[\\omega] / (\\omega^2 + \\omega - 1)$, discriminant $d_F = 5$, class number $h_F = 1$, narrow class number $h_F^+ = 1$.  \n**Status**: Complete technical checkpoint, exact Frobenius trace certification, inventory and elimination of candidate Hilbert modular forms at levels dividing 40, 64, 80, and level $\\mathfrak{p}_2^6$, proof of the $a_3$-dichotomy, and rigorous analysis of trivial solution persistence for $p \\in \\{17, 19, 23\\}$.  \n**Executable Verification**: [`code/U111_signature_5_5_p_hilbert_sieve.py`](file://[LOCAL_HOME]/Downloads/beal/code/U111_signature_5_5_p_hilbert_sieve.py)\n\n---\n\n## 1. Executive Summary & Context\n\nMilestone **U111** establishes the comprehensive modular machinery over the real quadratic base field $F = \\mathbb{Q}(\\sqrt{5})$ for the Generalized Fermat equation:\n$$A^5 + B^5 = C^p, \\quad p \\ge 5 \\text{ prime}, \\quad \\gcd(A, B) = 1, \\quad A B C \\ne 0.$$\n\nFollowing the unconditional resolution of the descent fields $L_{11}, L_{13}$ in **U102** and $L_{17, 0}, L_{17, 1}$ in **U110**, this checkpoint investigates whether modular level-lowering over $F = \\mathbb{Q}(\\sqrt{5})$ can eliminate putative solutions via Hilbert modular forms (HMFs) or Frey hyperelliptic Jacobians.\n\n### 1.1 Key Achievements of Milestone U111\n\n1. **Exact BCDF Frey Curve Architecture over $F = \\mathbb{Q}(\\sqrt{5})$**:\n   - Implemented the two Frey elliptic curve families attached by Billerey, Chen, Dieulefait, and Freitas (BCDF 2019/2020):\n     $$E_{a,b} : y^2 = x^3 + 2(a+b)x^2 - \\bar{\\omega}\\psi_5(a,b)x \\quad (5 \\nmid a+b),$$\n     $$F_{a,b} : y^2 = x^3 + 2(a-b)x^2 + \\left(\\frac{-3\\sqrt{5}}{10} + \\frac{1}{2}\\right)\\psi_5(a,b)x \\quad (5 \\mid a+b),$$\n     where $\\omega = \\frac{-1+\\sqrt{5}}{2}$, $\\bar{\\omega} = \\frac{-1-\\sqrt{5}}{2}$, and $\\psi_5(a, b) = a^2 + \\omega a b + b^2$.\n   - Conductor valuations: $\\mathfrak{p}_2 = (2)$ is inert (norm 4), $v_{\\mathfrak{p}_2}(N_E) = v_{\\mathfrak{p}_2}(N_F) = 6$. Away from 2, $v_{\\mathfrak{q}}(N) = 0$ for all $\\mathfrak{q} \\nmid \\phi_5(a, b)$.\n   - Level-lowered Serre level: $\\mathfrak{N} = \\mathfrak{p}_2^6 = (64)$ in $\\mathcal{O}_F$, with ideal norm $\\operatorname{Norm}_{F/\\mathbb{Q}}(\\mathfrak{N}) = 4^6 = 4096$.\n\n2. **Complete Classification and 100% Elimination of Sub-Level Newforms (Norms 64 and 80)**:\n   - Every ideal dividing $(4\\sqrt{5})$ (norm 80) or dividing $(8)$ (norm 64) is of the form $\\mathfrak{p}_2^u \\mathfrak{p}_5^v$.\n   - For norms 1, 4, 5, 16, 20: the newform spaces are strictly trivial ($S_2^{\\text{new}}(\\mathfrak{N}) = \\{0\\}$).\n   - For norm 64: the unique newform `2.2.5.1-64.1-a` (dim 1, non-CM) has $a_3 = -2$.\n   - For norm 80: the unique newform `2.2.5.1-80.1-a` (dim 1, non-CM, Cremona `80a1` base changed) has $a_3 = -2$.\n   - **Elimination Theorem**: Because every putative solution curve $E_{a,b}$ has $a_3(E_{a,b}) \\in \\{4, 6\\}$, the trace difference $|a_3(E_{a,b}) - a_3(f)| \\in \\{4 - (-2), 6 - (-2)\\} = \\{6, 8\\}$. Since no prime $p \\ge 5$ can divide 6 or 8, **both candidate newforms at norm 64 and norm 80 are 100% strictly eliminated by the single auxiliary prime $q = 3$ for all $p \\ge 5$!**\n\n3. **Classification of the 39 Newforms at Level $\\mathfrak{p}_2^6$ (Norm 4096)**:\n   - Sieve across auxiliary primes $\\{3, 7, 11, 17, 29\\}$ eliminates 33 newforms for all $p \\ge 7$.\n   - Exactly 6 newforms survive for $E_{a,b}$, corresponding precisely to twists of trivial solutions:\n     $$E_{1,0}, \\quad E_{1,0} \\otimes \\chi_{-1}, \\quad E_{1,0} \\otimes \\chi_2, \\quad E_{1,0} \\otimes \\chi_{-2}, \\quad E_{1,1}, \\quad E_{1,1} \\otimes \\chi_2.$$\n   - For $F_{a,b}$, exactly 2 newforms survive for $p \\ge 11$: $F_{1,-1} \\cong E_{1,1} \\otimes \\chi_2$ and $F_{1,-1} \\otimes \\chi_2 \\cong E_{1,1}$.\n   - All surviving newforms have trace of Frobenius $a_3 = 4$.\n\n4. **The $a_3$-Frobenius Trace Dichotomy & Branch Resolution**:\n   - For $E_{a,b}$: $a_3 = 4$ if $3 \\nmid a+b$, whereas $a_3 = 6$ if $3 \\mid a+b$.\n     Hence $3 \\mid a+b \\implies a_3(E) - a_3(f) = 2 \\not\\equiv 0 \\pmod p$ (eliminated for all $p \\ge 5$).\n   - For $F_{a,b}$: $a_3 = 4$ if $3 \\mid a+b$, whereas $a_3 \\in \\{-2, 6\\}$ if $3 \\nmid a+b$.\n     Hence $3 \\nmid a+b \\implies a_3(F) - a_3(f) \\in \\{-6, 2\\} \\not\\equiv 0 \\pmod p$ (eliminated for all $p \\ge 7$).\n   - This proves BCDF Theorem 5: the branch $5 \\mid a+b$ forces $3 \\mid a+b$, which imparts multiplicative reduction at 3 to Darmon's curve $W_{a,b}/\\mathbb{Q}$, completely eliminating the branch $5 \\mid a+b$ for all $p$.\n   - Branch $2 \\mid a+b$ is eliminated by the image of inertia at 2 (BCDF Theorem 6).\n   - Branch $p \\mid a+b$ is eliminated by level-raising at $p$ (BCDF Th",
+      "length_chars": 23428
+    }
+  },
+  "questions": {
+    "fm1_residual_isogeny": {
+      "type": "score",
+      "instructions": "Does this checkpoint argue that two objects are NOT isogenous, or that their l-adic Tate modules or endomorphism algebras differ, and then conclude from that alone that a RESIDUAL mod-p Galois representation congruence is impossible? Refuting isogeny or an l-adic isomorphism is strictly stronger than refuting a mod-p congruence, so that inference is invalid. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+        "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+        "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+        "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+      ]
+    },
+    "fm2_chabauty_wrong_field": {
+      "type": "score",
+      "instructions": "Does this checkpoint apply Chabauty-Coleman, a Mordell-Weil rank bound, or a Selmer rank bound over one field, and then draw a conclusion about Diophantine solutions whose coordinates actually generate a strictly larger field? A bound on the rational points over a base field says nothing about points of higher degree. Judge only whether this pattern is present.",
+      "criteria": [
+        "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+        "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+        "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+        "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+      ]
+    },
+    "overclaimed_language": {
+      "type": "noul",
+      "instructions": "Does this checkpoint describe a result as unconditional, definitive, 100% closed, or completely resolved, while the argument supporting it depends on a step whose hypotheses are not verified within the checkpoint itself?",
+      "criteria": {
+        "true": "it uses words such as unconditional, definitive, 100% closed, or complete resolution for a result that leans on an external theorem, another checkpoint, or a step whose hypotheses are not checked there",
+        "false": "its claims are stated with their actual dependencies and conditions, or it makes no strong closure claim"
+      }
+    },
+    "audit_priority": {
+      "type": "choice",
+      "instructions": "Given the two known failure modes described in the other material, what should be done with this checkpoint next?",
+      "criteria": {
+        "audit_now": "it very likely contains one of the two failure modes and a load-bearing claim depends on it",
+        "audit_later": "it may contain a failure mode but nothing currently load-bearing depends on it",
+        "verify_computation": "its main risk is an unchecked numerical or finite computation rather than a logical failure mode",
+        "verify_literature": "its main risk is an external citation used outside its actual hypotheses",
+        "no_action": "it is a search log, a ledger, or otherwise carries no argument that could exhibit these failure modes"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fm1_residual_isogeny": {
+        "type": "score",
+        "score": 0.77,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: the checkpoint makes no claim about isogenies, endomorphism algebras or Galois representation congruences at all",
+          "1": "level 1: it discusses Galois representations but keeps residual mod-p statements and l-adic or isogeny statements clearly separate",
+          "2": "level 2: it mentions both an isogeny or endomorphism argument and a residual congruence, and the relationship between them is not made explicit",
+          "3": "level 3: it explicitly refutes an isogeny, an l-adic isomorphism, or matching endomorphism algebras, and concludes from that a residual mod-p congruence cannot hold"
+        },
+        "probabilities": {
+          "0": 0.34,
+          "1": 0.59,
+          "2": 0.03,
+          "3": 0.04
+        }
+      },
+      "fm2_chabauty_wrong_field": {
+        "type": "score",
+        "score": 0.25,
+        "confidence": 0.75,
+        "legend": {
+          "0": "level 0: the checkpoint uses no rank bound, Chabauty, Coleman integration or Selmer computation",
+          "1": "level 1: it uses a rank or Chabauty bound and the solutions it concludes about are rational over the same field the bound was proved over",
+          "2": "level 2: it uses a rank or Chabauty bound and the field of definition of the relevant points is not clearly identified",
+          "3": "level 3: it uses a rank or Chabauty bound over one field while the solutions demonstrably generate a larger field, and concludes about the solutions anyway"
+        },
+        "probabilities": {
+          "0": 0.9,
+          "1": 0.01,
+          "2": 0.01,
+          "3": 0.08
+        }
+      },
+      "overclaimed_language": {
+        "type": "noul",
+        "noul": 0.82
+      },
+      "audit_priority": {
+        "type": "choice",
+        "choice": "audit_now",
+        "confidence": 0.34,
+        "probabilities": {
+          "audit_now": 0.48,
+          "audit_later": 0.12,
+          "no_action": 0.02,
+          "verify_literature": 0.01,
+          "verify_computation": 0.37
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3373,
+      "output_tokens": 124
+    }
+  }
+}

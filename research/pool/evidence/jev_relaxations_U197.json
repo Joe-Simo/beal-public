@@ -1,0 +1,3458 @@
+[
+ [
+  0.517,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.505,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.503,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.5,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.487,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.483,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.478,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.475,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.475,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.473,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.468,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.467,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.462,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.46,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.457,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.453,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.449,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.448,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.448,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.447,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.446,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.446,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.439,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.438,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.437,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.436,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.435,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.434,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.434,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.431,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.428,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.428,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.427,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.426,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.425,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.424,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.422,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.421,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.42,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.419,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.418,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.417,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.416,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.415,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.412,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.41,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.409,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.407,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.406,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.405,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.404,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.403,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.403,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.402,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.402,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.4,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.4,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.399,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.399,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.397,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.396,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.395,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.395,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.393,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.393,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.391,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.391,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.389,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.389,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.389,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.388,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.388,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.388,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.388,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.388,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.387,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.385,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.385,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.384,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.383,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.382,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.381,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.381,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.379,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.378,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.377,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.376,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.376,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.375,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.374,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.374,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.374,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.373,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.373,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.373,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.371,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.37,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.37,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.369,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.369,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.369,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.368,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.368,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.368,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.368,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.367,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.367,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.367,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.366,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.366,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.364,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.364,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.364,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.363,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.363,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.362,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.362,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.362,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.362,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.362,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.362,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.361,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.361,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.361,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.36,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.36,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.36,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.359,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.359,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.359,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.359,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.358,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.358,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.358,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.358,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.357,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.357,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.356,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.356,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.355,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.355,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.354,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.353,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.352,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.35,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.348,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.348,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.348,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.348,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.347,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.347,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.347,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.346,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.346,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.345,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.345,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.345,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.344,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.343,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.343,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.343,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.343,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.343,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.342,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.342,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.342,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.342,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.342,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.341,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.341,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.34,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.34,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.339,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.339,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.339,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.338,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.338,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.338,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.338,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.337,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.337,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.337,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.337,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.336,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.335,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.335,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.334,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.333,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.333,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.332,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.332,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.331,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.331,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.331,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.33,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.329,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.329,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.328,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.327,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.326,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.326,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.326,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.326,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.325,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.325,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.325,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.324,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.324,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.323,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.323,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.322,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.322,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.322,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.322,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.322,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.322,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.321,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.32,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.32,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.319,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.319,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.319,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.319,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.319,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.319,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.319,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.318,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.318,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.318,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.317,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.317,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.317,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.316,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.316,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.316,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.315,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.315,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.315,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.314,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.314,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.313,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.313,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.312,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.31,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.31,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.31,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.309,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.309,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.309,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.309,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.308,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.308,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.307,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.307,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.307,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.307,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.307,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.306,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.306,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.306,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.305,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.305,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.305,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.304,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.304,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.303,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.302,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.302,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.302,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.302,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.302,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.301,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.301,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.3,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.299,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.299,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.299,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.298,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.298,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.297,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.297,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.297,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.297,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.296,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.296,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.295,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.295,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.295,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.295,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.295,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.295,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.294,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.293,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.292,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.291,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.291,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.291,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.291,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.29,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.289,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.289,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.289,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.288,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.288,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.288,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.288,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.287,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.287,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.287,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.287,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.287,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.286,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.286,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.285,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.284,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.284,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.283,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.283,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.283,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.283,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.281,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.281,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.281,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.281,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.28,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.28,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.279,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.279,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.278,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.278,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.277,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.277,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.277,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.276,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.276,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.276,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.276,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.275,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.274,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.274,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.273,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.273,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.273,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.272,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.272,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.271,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.271,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.271,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.271,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.271,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.271,
+  "fix the base of the largest-exponent term",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.27,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.27,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.27,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.269,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.269,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.269,
+  "fix one base to be a prime power",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.269,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.268,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.268,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.267,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.267,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.267,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.266,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.266,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.266,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.266,
+  "fix the base of the largest-exponent term",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.266,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.266,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.266,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.265,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.265,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.265,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.265,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.264,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.264,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.264,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.264,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.263,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.263,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.262,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.262,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.262,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.261,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.261,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.26,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.26,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.26,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.259,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.259,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.259,
+  "fix the base of the smallest-exponent term",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.258,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.258,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.258,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.258,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.257,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.256,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.256,
+  "fix the base of the smallest-exponent term",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.256,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.254,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.253,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.253,
+  "fix one base to be a prime power",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.253,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.253,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.252,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.251,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.25,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.25,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.25,
+  "fix the base of the largest-exponent term",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.25,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.249,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.248,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.248,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.248,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.247,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.247,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.247,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.247,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.246,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.246,
+  "fix the base of the smallest-exponent term",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.246,
+  "fix one base to be a prime power",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.245,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.245,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.245,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.245,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.245,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.244,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.244,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.244,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.244,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.244,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.244,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.244,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.243,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.243,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.243,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.243,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.241,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.241,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.241,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.24,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.24,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.24,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.239,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.239,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.239,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.239,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.238,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.238,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.238,
+  "fix the ratio of two exponents",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.238,
+  "fix the ratio of two exponents",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.238,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.238,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.238,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a Thue or Thue-Mahler equation (PARI thue)"
+ ],
+ [
+  0.238,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.237,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.237,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.237,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.237,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.235,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.234,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.234,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.233,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.233,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.232,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.232,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.232,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.232,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.229,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.228,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.228,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.228,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.228,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.226,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.226,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.226,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.225,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.225,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.224,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.223,
+  "fix the ratio of two exponents",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.223,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.223,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.222,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.222,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.222,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.221,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.221,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.221,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.22,
+  "fix the 2-adic valuation pattern of the even base",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.22,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.22,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(5,7,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.22,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.219,
+  "fix the difference C - B",
+  "(5,7,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.219,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.219,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.219,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.219,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.218,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.218,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.218,
+  "fix the difference C - B",
+  "(4,q,r) q != r",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.218,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,r) r varying",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.217,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.217,
+  "fix the difference C - B",
+  "(3,5,r) r varying",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.216,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.215,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.214,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.213,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.213,
+  "fix one base to be a prime power",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.213,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a rank-0 Jacobian quotient of a higher-genus curve"
+ ],
+ [
+  0.212,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.212,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.212,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.211,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.21,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.208,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.207,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.207,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.207,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.207,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.206,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.204,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.204,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.2,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.2,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.199,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.198,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.197,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a genus-1 curve over Q (PARI ellrank)"
+ ],
+ [
+  0.193,
+  "fix one base to be a prime power",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.192,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.19,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.189,
+  "fix one base to be a prime power",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.187,
+  "fix the ratio of two exponents",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.186,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.185,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.183,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.183,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a Lean-provable elementary contradiction"
+ ],
+ [
+  0.18,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.18,
+  "fix all prime factors of ABC to lie in a finite set S (S-unit equation)",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.18,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.18,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,q,r) q != r",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.179,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.179,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a finite exponential congruence sieve with a PROVED covering (exact)"
+ ],
+ [
+  0.178,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(p,q,r) distinct odd primes",
+  "a Pell/continued-fraction condition"
+ ],
+ [
+  0.178,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.178,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.176,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.173,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.172,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.167,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.165,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.163,
+  "fix two of the three bases (exponential equation in the exponents)",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.16,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.16,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.16,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.159,
+  "fix the residue of a base modulo a small prime AND its exponent class",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.159,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.158,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.155,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(p,q,r) distinct odd primes",
+  "a classical-newform elimination over Q (PARI mf)"
+ ],
+ [
+  0.15,
+  "fix the ratio of two exponents",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.15,
+  "fix the difference C - B",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.15,
+  "fix A = 1 or A = 2 (Catalan / Pillai type)",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.149,
+  "fix the base of the smallest-exponent term",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.147,
+  "require one base to be a perfect square or cube (extra structure)",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.145,
+  "fix the base of the smallest-exponent term",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.144,
+  "fix the 2-adic valuation pattern of the even base",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.143,
+  "fix the base of the largest-exponent term",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.139,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.136,
+  "fix the 2-adic valuation pattern of the even base",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.134,
+  "fix the difference C - B",
+  "(3,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.133,
+  "fix the base of the largest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.13,
+  "fix the ratio of two exponents",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.127,
+  "fix the base of the smallest-exponent term",
+  "(p,q,r) distinct odd primes",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.125,
+  "fix the base of the largest-exponent term",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.125,
+  "fix the 2-adic valuation pattern of the even base",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.124,
+  "fix the difference C - B",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ],
+ [
+  0.115,
+  "assume the counterexample is minimal in C^z and derive a smaller one",
+  "(4,5,7)",
+  "a known theorem on perfect powers in recurrences or a^x - b^y = c (Mihailescu, Bennett, Bugeaud-Mignotte-Siksek)"
+ ]
+]

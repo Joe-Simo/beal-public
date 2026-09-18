@@ -1,0 +1,104 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_focus_C176_C180",
+  "timestamp": "2026-09-18T15:58:27-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "id": "C176",
+      "status": "PARTIAL_RESULT",
+      "claim": "The larger-base-field escape from C174/C175 is REAL and CHEAP, so the regularity obstruction is a statement about Q and not a field-independent fact. Over K the orbits of primitive m-th roots have size |Gal(K(zeta_m)/K)| = phi(m)/[K cap Q(zeta_m):Q], so the minimal rank drops; reconciling the largest exponent's rank with the smallest one's ceiling needs only [K:Q] >= phi(r)/p, which is between 2 and 6 for every pairwise distinct triple of reduced exponents up to 19.",
+      "parents": [
+        "C174",
+        "C175",
+        "C170"
+      ],
+      "method": "Exact computation of both measures in code/U319_base_field_escape.py over all 56 pairwise distinct triples from {3,4,5,7,11,13,17,19}. Measure 1 (K contains all three roots of unity) costs phi(lcm(p,q,r)) = (p-1)(q-1)(r-1), ranging 16 to 3456 -- confirmed equal for all 56 triples. Measure 2 (K only shrinks the largest orbit enough) costs ceil(phi(r)/p), ranging 2 to 6. Measure 2 is the binding one.",
+      "evidence": "Measure 1's quantity is already machine-checked as Beal.minBaseDegree_le_triple and Beal.totient_mul_primes in formal/Beal/Rigidity.lean. Measure 2 is a division bound, computed exactly here and not formalised.",
+      "obligations": "CORRECTION TO MY OWN FRAMING: C174 and C175 must be read as statements about Q. I flagged this escape as 'likely live' in the previous cycle and it is. What the escape does NOT do is remove the obstruction -- over K the modular method still needs automorphy of an n-dimensional motive with n > 2 (C171), now over K rather than Q, which is harder. This is consistent with the literature: the (5,5,p) work uses Q(sqrt 5) at RANK 2 and stops there. Untested: whether a degree 2-6 field can carry a Frey object for three independent exponents with the residual representation the method needs; and whether descent to Q of the resulting statement is possible at all, since the Beal solution itself lives over Q.",
+      "novelty": "Prevents the repeat of the U258 failure mode: reporting only the expensive measure would have overstated the obstruction exactly as U258 did before U309 caught it. Records the escape as open with its cost quantified, rather than claiming a closure that is not there.",
+      "evaluations": {
+        "U319": "Exact computation of both cost measures. HYPOTHESIS_ONLY for routing."
+      }
+    },
+    "candidate_B": {
+      "id": "C180",
+      "status": "REFUTED",
+      "claim": "TESTED AND REFUTED: the shortcut round the opposite-parity (3,4,4) branch that would avoid Euler's theorem. Besides mu^6+nu^6 = 2 tau^3, the descent also yields tau^3 + (mu nu)^3 = 2C^2 and tau^3 - (mu nu)^3 = 2B^2, since tau^3 = C^2+B^2 and (mu nu)^3 = C^2-B^2. If either of x^3 +/- y^3 = 2z^2 forced x = y, the branch would close with no Euler input. Neither does.",
+      "parents": [
+        "C172",
+        "C177"
+      ],
+      "method": "Exact search, no floating point. x^3+y^3 = 2z^2 with coprime x > y has at least 10 solutions below 3000, smallest (13,11,42) and (23,1,78); x^3-y^3 = 2z^2 has at least 18, smallest (5,3,7). Verified exactly: 13^3+11^3 = 2*42^2, 23^3+1^3 = 2*78^2, 5^3-3^3 = 2*7^2.",
+      "failure_reason": "The square-target variants have abundant coprime solutions with x != y, so they impose no constraint. The cube on the right-hand side of a^3+b^3 = 2c^3 is doing the work, not the factor 2 or the sum-of-cubes shape. Euler's theorem is genuinely the needed input and cannot be traded for a weaker cousin.",
+      "obligations": "Extracted lemma, preserved for reuse: when a descent produces several simultaneous conditions, check each candidate closure separately -- shapes that look equally strong can differ completely in solvability. Recorded as a permanent assertion in code/U320_regression_checks.py (check_u325_square_variants_are_dead) with positive witnesses, so the shortcut cannot be proposed again without the counterexamples surfacing.",
+      "novelty": "A negative result that sharpens C177: it explains WHY the (3,4,4) chain needs Euler specifically. Cost: one cheap exact search. Nothing about Beal's open core.",
+      "evaluations": {
+        "U325": "Exact search with explicit verified witnesses. HYPOTHESIS_ONLY for routing."
+      }
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.71,
+        "confidence": 0.67,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.31,
+          "1": 0.67,
+          "2": 0.02,
+          "3": 0.0
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 2014,
+      "output_tokens": 53
+    }
+  }
+}

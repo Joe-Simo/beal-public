@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U87_quadratic_pade_height_obstruction",
+  "timestamp": "2026-09-17T20:21:46-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U87_quadratic_pade_height_obstruction.md",
+    "excerpt": "# U87: a quadratic Pad\u00e9 invariant raises the weighted lower bound past 12,155 powers of ten\n\n**Status: written partial theorem with exact TypeScript/Python arithmetic and independent Wolfram corroboration. The weighted equation and Beal's conjecture remain unresolved. No independent expert or proof-assistant verification is claimed.**\n\nResearch date: 2026-09-16. This continues U81-U86. It uses the same common integral seventeenth root and the fourteen forced prime divisors of `Y`, but replaces the single-coefficient height argument by a carefully chosen nonzero quadratic invariant.\n\n## 1. Setup\n\nAssume a primitive positive solution\n\n    X^10+256Y^10=Z^17.                               (W)\n\nRetain U71/U72's common root\n\n    c^10=-256,\n    theta=a0+a1*c+...+a9*c^9 in Z[c],\n    theta^17=X+cY.                                   (1.1)\n\nLet\n\n    kappa=|c|=2^(4/5),\n    H=X+kappa Y,\n    M=max(X,Y).\n\nU72 forces the fourteen distinct primes\n\n    11,31,41,61,71,101,151,191,211,281,331,431,461,631\n\nto divide `Y`. Their product is\n\n    P=433992707035920672833426144791.                (1.2)\n\nU81 verifies that all fourteen are clean; in particular their local seventeenth root is scalar.\n\n## 2. Five weight-ten quadratic monomials\n\nAt any strong prime q dividing Y, put\n\n    T=Y/X,  S=T^10.\n\nThe scalar-root expansion used in U81 is\n\n    theta=x*sum_(n>=0) B_n(cT)^n,\n    B_n=binomial(1/17,n),\n    x^17=X.                                          (2.1)\n\nGrouping powers with `c^10=-256` gives\n\n    a_j=x*T^j*F_j(S),\n    F_j(S)=sum_(m>=0) B_(j+10m)(-256)^m S^m.         (2.2)\n\nConsider the five quadratic monomials whose coefficient indices sum to ten:\n\n    a1*a9, a2*a8, a3*a7, a4*a6, a5^2.               (2.3)\n\nEvery one has the common factor `x^2*T^10`. Put\n\n    G_0=F_1 F_9,\n    G_1=F_2 F_8,\n    G_2=F_3 F_7,\n    G_3=F_4 F_6,\n    G_4=F_5^2.                                       (2.4)\n\nExact rational linear algebra gives the primitive integer vector\n\n    lambda_0=15798242183726487723872974980213975697091265396056,\n    lambda_1=-249202890961784236021683574474477003603265904312448,\n    lambda_2=1216292797751835710390793468584676049161821798713448,\n    lambda_3=-2877403423806299594932394239043237544733898769276736,\n    lambda_4=1894513509087467786381667797189625338402082189240825.\n\nFor\n\n    G(S)=sum_(j=0)^4 lambda_j G_j(S),                 (2.5)\n\nthe coefficients of `S^0,S^1,S^2,S^3` vanish exactly, while the coefficient `C` of `S^4` is nonzero. Therefore\n\n    G(S)=C*S^4+O(S^5).                               (2.6)\n\nThis is a Pad\u00e9-type cancellation in the exact q-adic binomial series, not a numerical fit.\n\n## 3. The global integer invariant and its local order\n\nDefine\n\n    I = lambda_0*a1*a9\n      + lambda_1*a2*a8\n      + lambda_2*a3*a7\n      + lambda_3*a4*a6\n      + lambda_4*a5^2.                               (3.1)\n\nBecause all `a_j` and all `lambda_j` are integers,\n\n    I in Z.                                          (3.2)\n\nFrom (2.2)-(2.6), at every strong q with `e=v_q(Y)>0`,\n\n    I=x^2*T^10*G(T^10)\n     =x^2*C*T^50+terms of T-adic order at least 60.  (3.3)\n\nAll binomial coefficients are q-integral for q!=17. Hence\n\n    v_q(I)>=50e.                                     (3.4)\n\nIn particular, if `Y_s` is the strong-prime part of Y,\n\n    Y_s^50 | I.                                      (3.5)\n\n### 3.1 Why I is definitely nonzero\n\nA high-order invariant would be useless if it could vanish on the hypothetical solution. The forced prime `q=31` prevents that.\n\nU72 forces 31|Y and U81 shows 31 is clean. The exact coefficient `C` in (2.6), reduced to lowest terms, has numerator and denominator both congruent to 19 modulo 31. Thus C is a 31-adic unit.\n\nIf `e=v_31(Y)`, equation (3.3) gives the exact valuation\n\n    v_31(I)=50e.                                     (3.6)\n\nTherefore\n\n    I != 0.                                          (3.7)\n\nThis nonvanishing is a mathematical consequence of an already-forced prime, not an assumption based on the formal series.\n\nSince every prime in (1.2) is strong and divides Y,\n\n    P^50 | I.                                        (3.8)\n\n## 4. Archimedean bound\n\nThe ten complex embeddings send c to ten equally spaced points of modulus kappa. Fourier inversion gives for every j\n\n    |a_j| <= kappa^(-j) H^(1/17).                    (4.1)\n\nEach product in (3.1) has total index ten, so\n\n    |a_r a_(10-r)| <= kappa^(-10) H^(2/17).\n\nPut\n\n    L=sum |lambda_j|\n     =6253210863791113815450412054272229911598159926939513.    (4.2)\n\nThen\n\n    0<|I| <= L*kappa^(-10)*H^(2/17)\n            < L*H^(2/17).                            (4.3)\n\nTogether with (3.8),\n\n    P^50 < L*H^(2/17).                               (4.4)\n\nBecause `1<kappa<2`,\n\n    H=X+kappa Y < X+2Y <=3M.                         (4.5)\n\nIf `M<=10^12155`, equations (4.4)-(4.5) would imply after raising to the seventeenth power\n\n    P^(850) < 9*L^17*10^(2*12155).                   (4.6)\n\nThe exact integer comparison goes in the opposite direction:\n\n    P^(850) > 9*L^17*"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.0,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.13,
+          "1": 0.02,
+          "2": 0.57,
+          "3": 0.28
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 2491,
+      "output_tokens": 42
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C068_audit_DahmenSiksek",
+  "timestamp": "2026-09-18T01:19:40-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "hyp": "DahmenSiksek"
+  },
+  "questions": {
+    "implied": {
+      "type": "score",
+      "instructions": "Second reader: is the Lean hypothesis implied by the cited theorem (never stronger)?",
+      "criteria": [
+        "0 stronger",
+        "1 needs condition",
+        "2 implied modulo detail",
+        "3 clearly implied"
+      ]
+    },
+    "issue": {
+      "type": "choice",
+      "instructions": "Issue",
+      "criteria": {
+        "none": "none",
+        "coprime": "coprimality",
+        "n_range": "exponent range (n=3 for (n,n,3) is FLT3 itself; fine)",
+        "sign": "signs",
+        "trivial": "trivial solutions like 1^n+... excluded?"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "implied": {
+        "type": "score",
+        "score": 2.08,
+        "confidence": 0.08,
+        "legend": {
+          "0": "0 stronger",
+          "1": "1 needs condition",
+          "2": "2 implied modulo detail",
+          "3": "3 clearly implied"
+        },
+        "probabilities": {
+          "0": 0.19,
+          "1": 0.09,
+          "2": 0.18,
+          "3": 0.54
+        }
+      },
+      "issue": {
+        "type": "choice",
+        "choice": "none",
+        "confidence": 0.4,
+        "probabilities": {
+          "none": 0.52,
+          "sign": 0.03,
+          "n_range": 0.02,
+          "coprime": 0.38,
+          "trivial": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 538,
+      "output_tokens": 70
+    }
+  }
+}
