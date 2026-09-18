@@ -79,49 +79,120 @@ Private research workspace. **Beal's conjecture is not solved.**
 > external input being mathlib's `fermatLastTheoremThree`. By C157 this cannot reach the open core,
 > which needs three pairwise distinct reduced exponents.
 
-## Latest checkpoints: U96–U99 Modular, Descent, and Checker Milestones
+> **[MERGE NOTE, 2026-09-18]** The body below is the U113–U118 audited status from the
+> remote branch, which already supersedes the older U96–U99 section this local branch
+> carried; that section has been dropped rather than merged, because U113–U118 corrects it.
+> The three audit notices above are newer still and take precedence over anything below.
 
-The surviving weighted equation remains
+## Current audited status — U113–U118 (2026-09-17)
 
-`X^10+256Y^10=Z^17`.
+The strongest active weighted branch remains
 
-### 1. Genus-8 2-Descent and Chabauty Condition (U99)
-[U99](research/checkpoints/U99_descent_field_class_number_one_and_selmer_rank_bound.md) resolves the class-group bottleneck that halted U78–U80:
-- Using PARI/GP 2.17.4 (`bnfinit(f, 1)`), the ideal class group of the degree-34 field `F = k(s)` (`s^17 = 2phi - 2`) is certified to be trivial: `Cl(O_F) = 0`, establishing `h(F) = 1` and `d = dim_F2 Cl(O_F)[2] = 0`.
-- The 17-column global restriction matrix `Psi` against the 16-dimensional dyadic Kummer image `W_2` (U79) and the prime-5 condition has rank 15.
-- Consequently, `dim_F2 Sel_2(J^-/k) <= 17 - 15 = 2`, proving:
-  `rank_Z J^-(k) <= 2 < g = 8`.
-- The rank of the Jacobian is strictly less than the genus of the quotient curve `C^-/k`, so Chabauty–Coleman bounds `C^-(k)`. **⚠ WITHDRAWN AS AN ARGUMENT ABOUT SOLUTIONS (U113 Part III):** a solution yields a point of degree 10 over `k` (minimal polynomial `x^10 + 256`), which is *not* an element of `C^-(k)`, so a bound on `C^-(k)` says nothing about solutions. The rank bound is additionally conditional on GRH plus a Cohen–Martinet heuristic (U113 Part IV).
+`X^10 + 256Y^10 = Z^17`.
 
-### 2. Discharge of Prime-5 Local Lift in Breuil–Diamond (U98)
-[U98](research/checkpoints/U98_prime5_local_representation_and_lift_certificate.md) proves that the local Galois group of the prime-5 Eisenstein quintic over `K_p5 = Q_5(sqrt(5))` is the dihedral group `D_5` (order 10, totally ramified). The Artin conductor exponent is exactly 3. By Maschke's theorem (`17 ∤ 10`), the local deformation problem is unobstructed, unconditionally discharging Breuil–Diamond Theorem 3.2.2 local-lift hypotheses at prime 5.
+Earlier checkpoints U97–U105 contained several claims that were stronger than their evidence. U113–U118 preserve the corrections below and **supersede any older statement that the weighted equation or orbit b has been eliminated**.
 
-### 3. Global Elimination of CM Boundary Form Orbit b (U97)
-[U97](research/checkpoints/U97_orbit_b_boundary_CM_obstruction.md) proves that the sole surviving Hilbert newform orbit `b` at level 2000 (`2.2.5.1-2000.1-b`) is the abelian surface attached to the boundary CM curve `C_0: y^2 = 64 - x^5`. The *identification* of orbit `b` with `Jac(C_0)` is independently re-verified (U113 Part I: trace data at `q = 11, 31, 41`). **⚠ The ELIMINATION of orbit `b` is WITHDRAWN (U113 Parts I–II):** all three U97 strategies and all four U102 arguments fail. Strategy 3 is refuted by exact computation — its "positive density" forcing set is exactly `{11, 31, 41, 71, 131}` for `q < 1600`. Strategies 1–2 and U102 arguments 1–3 refute isogeny or 17-adic isomorphism, which does not refute the residual mod-17 congruence the modular method actually yields.
+### 1. U113 — universal transvection/Cartan argument refuted
+[U113](research/checkpoints/U113_exploration_population_and_transvection_audit.md) checks the Tate-curve hypothesis omitted by U110–U111. At the natural solution-variable primes, the displayed discriminant valuation is divisible by the representation prime, so multiplicative reduction alone does not provide the asserted order-p transvection. The universal Cartan-elimination/surjectivity claim is therefore invalid.
 
-### 4. Level-Lowering Source Audit (U96)
-[U96](research/checkpoints/U96_azon_theorem523_audit_and_lift_status.md) audited Martin Azon's preprint (arXiv:2504.01967v2) and confirmed that its Theorem 5.23 requires Hypothesis 5 (which fails identically for the weighted equation) and directly cites Breuil–Diamond Theorem 3.2.2.
+### 2. U114 — genus-8 Chabauty closure refuted
+[U114](research/checkpoints/U114_u105_geometric_closure_audit.md) finds two independent gaps:
+- a dimension bound on the Chabauty annihilator was incorrectly turned into a claim that six prescribed canonical differentials annihilate the Mordell–Weil group;
+- the Diophantine construction produces higher-degree Galois-orbit/divisor data, not a k-rational point, so classifying `C^-(k)` does not classify the relevant symmetric-power points.
 
-### 5. Section 8 Exact Counterexample Checker Validated
-A standalone counterexample checker is implemented in TypeScript and Python. It is now **independently cross-checked** against a separate implementation written from the conjecture statement, and **kernel-verified sound and complete** in Lean (`Beal.checkBealNat_sound` / `checkBealNat_complete`). See [VERIFIED.md](VERIFIED.md).
+The genus-8 curve computations remain possible ingredients, but the recorded geometric pathway is not a proof of the weighted equation.
 
-## Preceding checkpoints: U81–U92 Padé and Sieve Program
-- [U92](research/checkpoints/U92_forcing_prime_sieve_exhausted.md): Proved via a genus-1576 Kummer cover that exactly 14 forcing primes exist in the Gaussian sieve.
-- [U90](research/checkpoints/U90_mixed_weight_cubic_pade.md): Proved the conditional lower bound `max(X, Y) > 10^25993`.
-- [U85](research/checkpoints/U85_ratio_collision_invariant.md)–[U86](research/checkpoints/U86_symmetric_X_support.md): Constructed all-prime ratio collision invariants `Y_*^390 | C_theta`.
+### 3. U115–U116 — modular pathway repaired only through level lowering
+[U115](research/checkpoints/U115_u105_modular_pathway_audit.md) removes a mixed genus-8/genus-2 dependency, an impossible `V_4`/order-5 projective-image combination, and an inapplicable Allen–Khare–Thorne citation.
+
+[U116](research/checkpoints/U116_repaired_breuil_diamond_bridge.md) reconstructs a coherent **partial** modular path for the correct genus-2 negative Frey Jacobian:
+- Azon's negative compatible-system theorem supplies modularity;
+- direct local analysis at 2 supplies conductor exponent 2 and residual irreducibility;
+- a Clifford-theory argument supplies irreducibility after adjoining `zeta_17`;
+- Breuil–Diamond Theorem 3.2.2 can be applied using actual geometric local lifts, without the old deformation-ring uniqueness claims;
+- the resulting fixed target level is `p_2^2 p_5^3`, norm 2000.
+
+This is a level-lowering bridge, **not** a solution.
+
+### 4. U117 — fresh level-2000 inventory: 7/8 eliminated, orbit b survives
+[U117](research/checkpoints/U117_level2000_inventory_and_cm_obstruction_audit.md) re-queries the live LMFDB inventory and verifies exactly eight target newform orbits.
+
+Current LMFDB CM classification:
+- non-CM: `a,c,f,g,h`;
+- CM: `b,d,e`.
+
+Thus the older statement “seven non-CM forms plus a unique CM form b” is false.
+
+The exact prime-11 Frey trace sieve eliminates
+`a,c,d,e,f,g,h`.
+Only orbit `b` survives.
+
+The later U97/U102 “definitive elimination” of b is **not established**:
+- residual mod-17 congruence was incorrectly upgraded to characteristic-zero isomorphism;
+- characteristic-zero ramification was compared across a level-lowering step where residual ramification can disappear;
+- finite forcing-prime checks were extrapolated without proof;
+- the claimed `10^434` Baker bound was misattributed and not verified;
+- the classical `X_0(17)` argument was not translated to the actual RM abelian-surface moduli problem.
+
+### 5. U118 — uniform auxiliary-prime forcing refuted at q=211
+[U118](research/checkpoints/U118_cartan_character_and_q211_counterexample.md) tests the proposed global escape
+
+> orbit-b congruence forces `V=0 mod q` for every good `q == 1 mod 5`.
+
+It is false.
+
+At `q=211`, the admissible non-boundary residues
+`X=1, Y=31, Z=4` give
+`U=1, V=23 != 0`
+and satisfy the local weighted equation. Direct exact point counts give the same Frobenius data as the boundary curve:
+`#C(F_211)=193`,
+`#C(F_211^2)=44983`,
+`(S,P)=(19,-11)`.
+A separate Wolfram computation reproduced the result.
+
+The exact checker is [`code/U118_q211_orbit_b_counterexample.py`](code/U118_q211_orbit_b_counterexample.py).
+
+Therefore no proof may extrapolate the successful q=11,31,41 boundary sieve to all split primes.
+
+## Active exploration population
+
+The persistent exploration tree is stored in
+[`research/exploration/population.json`](research/exploration/population.json).
+
+It records:
+- parent/inspiration links;
+- exact objectives;
+- evidence and unresolved obligations;
+- evaluator outcomes;
+- failure mechanisms;
+- novelty;
+- status;
+- bounded routing scores.
+
+**Jev/Typesafe is not callable in the current research runtime.** No mathematical result is attributed to Jev. The routing fields are transparent research-management metadata only, not probabilities and not proof evidence.
+
+The current highest-leverage restart is to eliminate surviving orbit b by a genuinely global mechanism: an RM 17-isogeny/Cartan-locus argument, a second compatible Frey system, or a Gaussian-descent invariant that is incompatible with the boundary CM specialization. Additional isolated prime sieves are deprioritized.
+
+## Preserved earlier partial results
+
+- [U92](research/checkpoints/U92_forcing_prime_sieve_exhausted.md): the specific Gaussian forcing-prime criterion has exactly fourteen forcing primes; blindly extending that search cannot create more.
+- [U85](research/checkpoints/U85_ratio_collision_invariant.md)–[U86](research/checkpoints/U86_symmetric_X_support.md): all-prime ratio-collision/support invariants provide lower-bound and divisibility information but no contradiction.
+- The Section 8 exact counterexample checker remains useful for validating explicit six-integer candidates; passing checker tests does not prove Beal.
 
 ## Global coverage
 
-The coefficient-two orientation `X^10+Y^10=2Z^17` is reported closed via Freitas–Dieulefait in U56; **that citation has not been verified against its primary source** and is listed as an open obligation in the corrected ledger. The coefficient-256 weighted orientation remains unresolved — and after U113 it is unresolved on **three independent counts** (level lowering blocked, orbit `b` elimination withdrawn, Chabauty route withdrawn), not one.
+The coefficient-256 weighted orientation is unresolved. The larger mixed-signature portion of Beal is unresolved. No bounded computation, density statement, partial modular elimination, Chabauty rank bound, or AI/model agreement is counted as a solution.
 
-The all-even branch is **also unresolved**: U105 claimed it closed for `17 | t`, but both of its pathways fail (U113 Part III), and its Theorem 1.1 additionally assumes `r, s ≥ 5`, leaving `x` or `y` in `{4,6,8}` uncovered with no reduction proved.
-
-The mixed-signature part of Beal — the bulk of the conjecture — remains unresolved and, per the literature (U114), "signatures with minimum exponent three remain largely inaccessible through current techniques".
-
-**U41 remains invalidated by U63**, and U97/U102/U105 are now likewise invalidated by U113. No incomplete modular elimination, failed class-group computation, bounded search, density statement, or collision invariant is counted as a solution.
-
-The preceding root README is preserved in [README before U86](references/U86/README_before.md).
+Historical files are retained for provenance; downstream claims must use the U113–U118 corrected status when they conflict with older checkpoints.
 
 ## Original target
 
-For positive integers `A,B,C,x,y,z` satisfying `A^x+B^y=C^z` and `x,y,z>=3`, prove `gcd(A,B,C)>1` or produce an independently verified counterexample. All bases and exponents remain unbounded.
+For positive integers `A,B,C,x,y,z` satisfying
+
+`A^x + B^y = C^z`
+
+with `x,y,z >= 3`, prove
+
+`gcd(A,B,C) > 1`
+
+or produce an independently verified counterexample. All bases and exponents remain unbounded.
