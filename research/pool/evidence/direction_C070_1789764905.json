@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C070",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C070\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"CORRECTED RESIDUAL (U167): under BEN24n (BCDY Table 1 row (2,4,n), n>=4) no Beal counterexample has 4|x, 2|y, z>=4 (theorem no_counterexample_four_even_any); with BCDY (4,2n,3) this closes every signature containing an exponent divisible by 4 and another even exponent, in particular (4,4,p) for ALL p. The genuinely open reduced core is therefore: (4,p,q) with p,q odd primes, p != q; and (p,q,r) odd primes not all equal, minus (p,p,3) and the Dahmen-Siksek triples. Independent confirmation at z=5 (C060) and z=7 (rank-0 elliptic quotients, references/U130/z7_quotients_pari_output.txt).\",\n \"method\": \"Jev-at-scale residual mechanism sweep (288 cells, research/pool/evidence/residual_mechanism_space_U166.json) pointed at (4,4,p); working the top cell exposed both the even-quotient trick and the BEN subsumption. Lean: formal/Beal/ClosedFamilies.lean, standard axioms, 0 sorry.\",\n \"evidence\": [\n  \"formal/Beal/ClosedFamilies.lean\",\n  \"code/U167_z7_quotients.gp\",\n  \"code/U167_z7_second_quotients.gp\",\n  \"references/U130/z7_quotients_pari_output.txt\",\n  \"references/U130/bcdy.txt line 160\"\n ],\n \"obligations\": [],\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.82,
+        "confidence": 0.18,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.66,
+          "1": 0.05,
+          "2": 0.12,
+          "3": 0.17
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "cannot_tell",
+        "confidence": 0.07,
+        "probabilities": {
+          "conservative": 0.25,
+          "optimistic": 0.16,
+          "not_applicable": 0.29,
+          "cannot_tell": 0.3
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "check_direction_now",
+        "confidence": 0.57,
+        "probabilities": {
+          "no_action": 0.09,
+          "check_direction_now": 0.71,
+          "state_direction": 0.2
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1434,
+      "output_tokens": 140
+    }
+  }
+}

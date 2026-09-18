@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C058",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C058\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"ALL of (2m,2n,3), m,n>=2: no Beal counterexample, relative to three named hypotheses \\u2014 Bennett-Skinner 2004 Thm 1.1 (C=3), BCDY 2015 Thm 1 (4,2n,3), and E(Q)={O,(-3,0)} for y^2=x^3+27 (LMFDB 144.a4, rank 0; PARI 2-descent bound 0). Assembled from C047 (m,n>=4), BCDY (m or n = 2) and C057 (m or n = 3).\",\n \"method\": \"Lean 4 + mathlib: no_counterexample_even_even_three_all in formal/Beal/SixTwoNThree.lean, standard axioms, 0 sorry.\",\n \"evidence\": [\n  \"formal/Beal/SixTwoNThree.lean\",\n  \"research/checkpoints/U131_even_even_three_via_gaussian_and_bennett_skinner.md\"\n ],\n \"obligations\": [\n  \"Independent statement-and-dependency audit of the three named hypotheses against their saved sources (BS lines 73-83; BCDY lines 107-111; LMFDB 144.a4 + PARI output) \\u2014 still owed by a second reader.\",\n  \"LITERATURE (U152, read BCDY pp. 13-15): Prop. 18 treats a^2 + b^{2n} = c^3 with a NOT assumed a power, via Hilbert-symbol and conductor-96 Frey-curve arguments, which is why it needs n = 3 mod 4; the present statement assumes both summands are powers and is therefore a different (weaker-hypothesis, stronger-family) theorem. No source read states (2m,2n,3) for all m,n>=2; novelty still not claimed pending a search of post-2015 literature.\"\n ],\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.75
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.85,
+        "confidence": 0.15,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.66,
+          "1": 0.03,
+          "2": 0.1,
+          "3": 0.21
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.28,
+        "probabilities": {
+          "not_applicable": 0.47000000000000003,
+          "cannot_tell": 0.18,
+          "conservative": 0.16,
+          "optimistic": 0.19
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "check_direction_now",
+        "confidence": 0.23,
+        "probabilities": {
+          "no_action": 0.29,
+          "check_direction_now": 0.49,
+          "state_direction": 0.22
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1525,
+      "output_tokens": 141
+    }
+  }
+}

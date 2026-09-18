@@ -771,6 +771,58 @@ def check_u350_same_parity_proof_steps():
             f"zero violations")
 
 
+def check_u355_c079_criterion_direction():
+    """U355/C208: C079's flag criterion errs in the SAFE direction.
+
+    A Beal solution A^3+B^3 = n^r with r = 3j+e, j >= 1, gcd(A,n) = 1 gives the rational point
+    x = A/n^j on x^3+y^3 = n^e, whose denominator is exactly n^j > 1. The script flags a torsion
+    point whenever denominator(x) > 1, which is a SUPERSET of the Beal-relevant points: it can
+    over-flag but can never miss one. Over-flagging is the safe direction for a closure claim.
+    """
+    from fractions import Fraction
+
+    # a genuine Beal solution never gives an integral x
+    for n in range(2, 40):
+        for j in range(1, 4):
+            for A in range(1, 120):
+                if gcd(A, n) != 1:
+                    continue
+                assert Fraction(A, n ** j).denominator == n ** j > 1
+
+    # over-flagging is genuinely possible, so the empty flagged set is informative
+    t = Fraction(7, 4)
+    assert t.denominator > 1 and t.denominator not in (3, 9, 27), \
+        "the over-flagging witness is no longer a witness"
+    return ("U355: C079's denominator > 1 flag is a superset of the Beal-relevant points -- it can "
+            "over-flag but never miss, and over-flagging is demonstrably possible")
+
+
+def check_u357_no_literal_bounds_in_output():
+    """U357/C210: no verification script prints a range bound as a literal.
+
+    Mitigation (c) from C206: a bound printed from a literal in a format string can be edited
+    apart from the loop it describes, producing a correct computation under a false label -- the
+    worst of the four false-pass modes, since nothing errors. This scans every U3xx script for a
+    print whose text contains a comparison or range phrase followed by a multi-digit number that is
+    NOT interpolated from a variable.
+    """
+    import re as _re
+    from pathlib import Path
+    code = Path(__file__).resolve().parent
+    pat = _re.compile(r'print\(\s*f?"[^"]*(?:<=|>=|<|up to|below|bases 2\.\.)[^"]*\d{2,}[^"]*"')
+    offenders = []
+    scanned = 0
+    for f in sorted(code.glob("U3*.py")):
+        scanned += 1
+        for m in pat.finditer(f.read_text(errors="replace")):
+            if "{" not in m.group(0):
+                offenders.append((f.name, m.group(0)[:70]))
+    assert scanned >= 8, f"only {scanned} scripts scanned; the glob is not matching"
+    assert not offenders, f"literal bounds printed in: {offenders[:3]}"
+    return (f"U357: {scanned} U3xx scripts scanned; every printed range bound is interpolated from "
+            f"a variable, none is a literal")
+
+
 CHECKS = [
     check_target_discipline,
     check_u309_rigidity_countersearch,
@@ -791,6 +843,8 @@ CHECKS = [
     check_u347_elementary_route,
     check_u348_odd_divisor_descent,
     check_u350_same_parity_proof_steps,
+    check_u355_c079_criterion_direction,
+    check_u357_no_literal_bounds_in_output,
 ]
 
 

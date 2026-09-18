@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C168",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C168\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"MORE OF THE (3,4,4) SAME-PARITY DESCENT IS NOW MACHINE-CHECKED. Two arithmetic steps that were prose in C151 are formalised in formal/Beal/ThreeFourFour.lean: zmod_eight_odd_sq (an odd square is 1 in ZMod 8) and odd_sq_add_sq_mod_eight (for odd B and C, (C^2+B^2) mod 8 = 2, hence v_2(C^2+B^2) = 1 \\u2014 step (i) of the descent). Both build with 0 sorry; they report [propext, Classical.choice, Quot.sound] and [propext, Quot.sound].\",\n \"method\": \"Lean 4 + mathlib; the key identity (2n+1)^2 = 4n(n+1)+1 with n(n+1) even, then omega\",\n \"evidence\": \"lake build clean; the only occurrence of the word sorry in the file is the header sentence asserting there are none\",\n \"obligations\": \"NO open obligations for this branch. What it does NOT give: (1) the other branches of (3,4,4) -- the 3 | gcd branch is machine-checked empty (three_not_dvd_sq_add_sq) but the opposite-parity branch still reduces to the Mordell curve y^2 = x^3 - 972 and needs elliptic Chabauty, unavailable at $0 (C155/C156); (2) anything about Beal's open core. SCOPE (C157): the descent needs gcd(y,z) > 1, i.e. two equal exponents among the reduced ones. The open core has three pairwise distinct reduced exponents and no such factorisation, so this technique cannot reach it. This closes a case already closed in the literature (Cohen), replacing an unauditable citation with a machine-checked proof -- an audit improvement, not progress on the conjecture.\",\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.16
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.12,
+        "confidence": 0.88,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.93,
+          "1": 0.03,
+          "2": 0.02,
+          "3": 0.02
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.59,
+        "probabilities": {
+          "conservative": 0.13,
+          "not_applicable": 0.7,
+          "cannot_tell": 0.09,
+          "optimistic": 0.08
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.88,
+        "probabilities": {
+          "state_direction": 0.06,
+          "check_direction_now": 0.02,
+          "no_action": 0.92
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1498,
+      "output_tokens": 140
+    }
+  }
+}

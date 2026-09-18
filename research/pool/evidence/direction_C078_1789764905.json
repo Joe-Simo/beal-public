@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C078",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C078\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"FIXED-BASE closure of the {3,4,r} signatures for ALL primes r>=7 at once (covers {3,4,11} without GRH for these bases). If A^3+B^4=n^r, or A^3+n^r=C^4, then dividing by n^{6j} (r=6j+e, e in {1,5}) gives a rational point on the Mordell curve y^2=x^3+n^e; if A^4+n^r=C^3 the point lies on y^2=x^3-n^e. When the curve has rank 0 the point is torsion, hence integral (Nagell-Lutz), forcing n^{2j} | A, impossible for gcd(A,n)=1, n>=2, j>=1. PARI 2-descent upper bounds (unconditional) for 2<=n<=120: rank 0 for 40/119 bases (+n, r=1 mod 6), 56/119 (+n^5, r=5 mod 6), 48/119 (-n, r=1 mod 6), 66/119 (-n^5, r=5 mod 6). Example: A^3+B^4=2^r and A^3+2^r=C^4 have no coprime solutions for any prime r = 5 mod 6 (r = 11, 17, 23, 29, ...).\",\n \"method\": \"Found by the 1000-cell Jev sweep U190 (top cell 0.98: Mordell curve x rank in PARI); exact derivation; PARI ellrank upper bounds saved in references/U130/mordell_fixed_base_ranks.txt (code/U191_mordell_fixed_base.gp). COUNTERSEARCH passed: the three Fermat-Catalan identities with a cube and a square (2^7+17^3=71^2, 1414^3+2213459^2=65^7, 9262^3+15312283^2=113^7) all sit on columns with rank bound >= 1 (1, 2, 3), as they must. The argument never uses that Y is a fourth power, so it is NOT Beal-specific in Y, but it IS sensitive to the exponent r>=7 (j>=1).\",\n \"evidence\": [\n  \"research/pool/evidence/jev_1000_U190.json\",\n  \"references/U130/mordell_fixed_base_ranks.txt\",\n  \"code/U191_mordell_fixed_base.gp\"\n ],\n \"obligations\": [\n  \"Lean: the scaling + Nagell-Lutz step with rank-0 as a named hypothesis per (n,e).\",\n  \"Independent rank confirmation (LMFDB) for a sample of the rank-0 curves.\",\n  \"Literature: fixed-base results of this shape are classical (S-unit / Mordell-curve arguments); not claimed novel.\"\n ],\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.96
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 1.53,
+        "confidence": 0.13,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.32,
+          "2": 0.31,
+          "3": 0.2
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "optimistic",
+        "confidence": 0.35,
+        "probabilities": {
+          "cannot_tell": 0.03,
+          "not_applicable": 0.06,
+          "conservative": 0.39,
+          "optimistic": 0.52
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "state_direction",
+        "confidence": 0.18,
+        "probabilities": {
+          "no_action": 0.31,
+          "check_direction_now": 0.24,
+          "state_direction": 0.45
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1746,
+      "output_tokens": 139
+    }
+  }
+}

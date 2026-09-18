@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C202",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C202\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"An ELEMENTARY route to sub-step (1) exists that avoids Z[omega], and the 2-obstruction of U343 reappears in it verbatim -- so that obstruction is intrinsic, not an artefact of the framing. The form x^2+3y^2 is multiplicative: (a^2+3b^2)(c^2+3d^2) = (ac-3bd)^2 + 3(ad+bc)^2, checked exactly over |a|,|b|,|c|,|d| <= 12 with zero mismatches. The divisor lemma the descent needs -- every divisor of p^2+3q^2 with gcd(p,q)=1 is itself u^2+3v^2 -- is FALSE as stated, and true for ODD divisors.\",\n \"method\": \"Tested the lemma directly. It failed immediately with small explicit witnesses, which is why the failure is the useful part: 2 divides 1^2+3*1^2 = 4 and 2 is not of the form; 14 divides 1^2+3*3^2 = 28 and 14 is not of the form. Restricting to odd divisors: 38,368 divisors tested over gcd(p,q)=1 with p,q < 120, zero failures.\",\n \"evidence\": \"Multiplicativity and both counterexamples and the odd-divisor version are asserted in code/U320_regression_checks.py as check_u347_elementary_route.\",\n \"obligations\": \"WHAT THIS CHANGES: the formalisation of sub-step (1) does not have to go through the ring of integers of Q(zeta_3) at all -- a descent on the form x^2+3y^2 itself, using multiplicativity plus the odd-divisor lemma, is enough, and mathlib's lack of a Z[omega] arithmetic layer stops being the blocker. WHAT IT DOES NOT CHANGE: the odd-divisor restriction is the SAME 2-obstruction found in U343 through the index-2 inclusion Z[sqrt(-3)] in Z[omega], so it must still be handled, just in elementary language. The odd-divisor lemma itself is NOT proved here -- a bounded check is not a proof, and its classical proof is a Fermat-style descent on the form.\",\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.89
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 1.02,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.52,
+          "1": 0.13,
+          "2": 0.18,
+          "3": 0.17
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "optimistic",
+        "confidence": 0.27,
+        "probabilities": {
+          "not_applicable": 0.1,
+          "cannot_tell": 0.11,
+          "conservative": 0.34,
+          "optimistic": 0.45
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.38,
+        "probabilities": {
+          "no_action": 0.58,
+          "check_direction_now": 0.15,
+          "state_direction": 0.27
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1581,
+      "output_tokens": 139
+    }
+  }
+}

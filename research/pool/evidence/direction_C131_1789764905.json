@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C131",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C131\",\n \"status\": \"BLOCKED\",\n \"claim\": \"THE OBSTRUCTION IN THE OTHER PICTURE \\u2014 the discriminant-valuation Frey curve that C130 showed the rigidity bounds do NOT cover. (a) For the STANDARD two-term Frey curve E: Y^2 = X(X-a)(X+b) with a=A^x, b=B^y, c=C^z, the discriminant is 16(abc)^2, and Ribet level lowering strips a bad prime l exactly when p divides v_l(Delta). By coprimality exactly one of A,B,C is divisible by l, so the three strip conditions are p|2x, p|2y, p|2z, i.e. p divides 2*gcd(x,y,z). For three PAIRWISE COPRIME exponents gcd = 1, so NO odd prime strips all three and the lowered level retains primes of the other two terms \\u2014 it is not bounded independently of the solution. (b) The literature EVADES this by using curves whose discriminant is a power of a SINGLE term, verified symbolically this cycle: Kraus (3,3,p) uses Y^2 = X^3+3ABX+(B^3-A^3) with disc = -27(A+B)^2(A^2-AB+B^2)^2 = -27(A^3+B^3)^2, so the A- and B-primes have GOOD reduction; the (2,3,n) curve Y^2 = X^3+3bX+2a has disc = -108(a^2+b^3).\",\n \"method\": \"exact derivation plus symbolic discriminant computation with sympy, code/U262_frey_level_lowering.py\",\n \"evidence\": \"Exact table: among (3,3,3), (3,3,5), (5,5,7), (3,4,5), (3,5,7), (4,5,7), (7,7,5), (6,6,6), (3,3,7), (4,4,5), the only signatures admitting an odd stripping prime are (3,3,3) and (6,6,6), exactly those with gcd(x,y,z) > 1. Equivalence of the strip condition with p | gcd(x,y,z) verified over all ten signatures and all odd p < 60. Discriminant identities verified symbolically.\",\n \"obligations\": [],\n \"failure_reason\": \"\"\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.56
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.12,
+        "confidence": 0.88,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.02
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.81,
+        "probabilities": {
+          "conservative": 0.07,
+          "not_applicable": 0.86,
+          "cannot_tell": 0.03,
+          "optimistic": 0.04
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.79,
+        "probabilities": {
+          "check_direction_now": 0.07,
+          "state_direction": 0.07,
+          "no_action": 0.86
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1598,
+      "output_tokens": 140
+    }
+  }
+}

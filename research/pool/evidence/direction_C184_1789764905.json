@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C184",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C184\",\n \"status\": \"BLOCKED\",\n \"claim\": \"NOVEL COMBINATION cycle, run as a focused Jev pairwise screen over the 14 live obstruction-line candidates (91 pairs, code/U329_combine_focus.py). RESULT: the obstruction cluster C169-C176 has CONVERGED and is largely redundant. No pair reaches combination_value level 2 ('one candidate discharges a specific open obligation recorded in the other') solidly -- the maximum is 1.82 on a 0-3 scale -- and the highest-value pairs also carry the highest shared_failure: C174+C175 at 0.70 and C170+C175 at 0.72. Jev is saying these would fail for the same reason.\",\n \"method\": \"Reused the exact COMBINE_Q questions from code/U113_combine_and_salvage.py rather than restating them, on a focused set instead of all C(183,2) = 16,653 pairs. Every result persisted HYPOTHESIS_ONLY.\",\n \"evidence\": \"91 pairs screened. Top by (value + compat - shared_fail): C171+C175, C170+C171, C170+C176, C174+C175, C169+C174 -- all inside the obstruction cluster. Informative negative at the bottom: C128 ('two exponents can be related, the third cannot') pairs at compatibility 0.10-0.14 with every candidate from this session, which is consistent with its framing having been superseded by the corrected account in C169/C174/C175/C176 rather than merely refined.\",\n \"obligations\": \"A RESTART must not re-enter the same line. Categories to AVOID by the survey gate: bounded computation, one-signature modular method, elementary congruences, abc/Baker. The survey's two live directions are a unifying modular/motivic object for three exponents -- which is the line just declared converged -- and EFFECTIVE DIOPHANTINE GEOMETRY, which this session has not touched at all. That is the untried direction of record.\",\n \"failure_reason\": \"This is the pool-convergence condition the exploration loop names as the RESTART trigger: the population has collapsed onto one obstruction and further candidates in the same line add reworded variants rather than diverse failure mechanisms. Continuing to mine C169-C176 is predicted by the screen to add nothing.\"\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.84
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.8,
+        "confidence": 0.2,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.67,
+          "1": 0.02,
+          "2": 0.14,
+          "3": 0.16
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "cannot_tell",
+        "confidence": 0.14,
+        "probabilities": {
+          "optimistic": 0.19,
+          "conservative": 0.14,
+          "not_applicable": 0.31,
+          "cannot_tell": 0.36
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.47,
+        "probabilities": {
+          "state_direction": 0.18,
+          "check_direction_now": 0.17,
+          "no_action": 0.65
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1603,
+      "output_tokens": 139
+    }
+  }
+}

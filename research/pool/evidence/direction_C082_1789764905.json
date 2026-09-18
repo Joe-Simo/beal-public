@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C082",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C082\",\n \"status\": \"VERIFICATION_REQUIRED\",\n \"claim\": \"FIXED THREE BASES, ALL EXPONENTS, bases <= 80: all 72,511 pairwise-coprime triples (A<B) have NO solution of A^x+B^y=C^z with x,y,z>=3: single modulus 66,886; joint sieve 5,420; shadow separation 165; two-stage 5; the Fermat-Catalan shadow (2,17,71) [2^7+17^3=71^2, only z=2 is below 3] by a dedicated sieve: 71^3 forces 2^x+17^y = 0 mod 71^3 (dict-based 2-D sieve over classes mod lcm(360, 70*71^2)), then primes q with (q-1) | that period, then a joint 3-D stage with 2^10, 17^3, 17^4 on the 7 surviving pairs per state \\u2014 all six states die; A=1: 34 triples via Mihailescu (named hypothesis). H_80 (the pipeline decides every triple) held after adding that one dedicated routine.\",\n \"method\": \"code/U204_pipeline.py (with two-stage fallback), code/U207_fermat_catalan_shadow.py; exact integer arithmetic; outputs research/pool/evidence/pipeline_N80.json.\",\n \"evidence\": [\n  \"research/pool/evidence/pipeline_N80.json\",\n  \"code/U207_fermat_catalan_shadow.py\"\n ],\n \"obligations\": [\n  \"Independent pure-Python re-implementation at N=80 was started (U208) and did NOT finish inside its 3580 s limit; no result. Not re-run: by the survey-of-failures gate (CLAUDE.md, U211) this is bounded computation, a category that cannot resolve Beal. C082 stays VERIFICATION_REQUIRED on the first implementation only (N<=50 is doubly implemented).\",\n  \"Category label: bounded / fixed-input computation.\"\n ],\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.95
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.48,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.8,
+          "1": 0.04,
+          "2": 0.06,
+          "3": 0.1
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.26,
+        "probabilities": {
+          "cannot_tell": 0.22,
+          "not_applicable": 0.44,
+          "optimistic": 0.13,
+          "conservative": 0.21
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.32,
+        "probabilities": {
+          "check_direction_now": 0.22,
+          "no_action": 0.55,
+          "state_direction": 0.23
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1536,
+      "output_tokens": 140
+    }
+  }
+}

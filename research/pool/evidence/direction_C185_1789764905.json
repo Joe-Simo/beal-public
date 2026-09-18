@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C185",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C185\",\n \"status\": \"BLOCKED\",\n \"claim\": \"RESTART into the survey's other live direction, effective Diophantine geometry, with its cost computed before entry. For a fixed hyperbolic signature the Darmon-Granville curve is a Galois cover of P^1 branched over {0,1,inf} with ramification (x,y,z), and Riemann-Hurwitz gives g = 1 + N|chi|/2. Over the Beal range the genus is UNBOUNDED: with N = lcm(x,y,z) as a degree proxy, g ranges from 15/2 at (3,4,5) to 1705 at (13,17,19) for exponents <= 19, and fixing (3,4,r) gives g >= 49855/2 already at r = 9973.\",\n \"method\": \"code/U330_effective_geometry_cost.py, exact Fraction arithmetic, no floating point. Controls included: the euclidean case and the Fermat-Catalan floor.\",\n \"evidence\": \"Controls: (3,3,3) is the unique Beal signature with |chi| = 0 -- euclidean, not hyperbolic, and it is FLT3; the smallest POSITIVE |chi| in the Beal range is 1/12 at (3,3,4), against 1/42 at (2,3,7) for Fermat-Catalan, so the exponent-2 cases are the geometrically hard ones and Beal excludes them. MY FIRST RUN ASSERTED 1/12 WITHOUT EXCLUDING THE EUCLIDEAN CASE AND FAILED; the assertion caught it. That is preserved in the script's comments.\",\n \"obligations\": \"The degree proxy N = lcm(x,y,z) is a LOWER-BOUND stand-in for the actual minimal Galois cover degree; the true degree is at least this, so the genus bound is a lower bound and the unboundedness conclusion is safe, but the exact degrees are not computed here. The count and arithmetic of the TWISTS, which is where the class-group input enters, is not computed at all. Neither gap affects the unboundedness.\",\n \"failure_reason\": \"BLOCKED, and blocked DIFFERENTLY from the automorphy line. Faltings gives finiteness per signature but ineffectively; making it effective is open even for a single curve of genus >= 2 in general, and Beal needs it for infinitely many curves whose genus grows without bound, plus control of the twists. Automorphy (C171/C174) fails on the RANK of one object; this fails on UNIFORMITY over a growing family. Different walls, neither reachable at $0.\"\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.97
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 1.0,
+        "confidence": 0.99,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "conservative",
+        "confidence": 0.46,
+        "probabilities": {
+          "conservative": 0.59,
+          "cannot_tell": 0.02,
+          "not_applicable": 0.01,
+          "optimistic": 0.38
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.76,
+        "probabilities": {
+          "no_action": 0.84,
+          "check_direction_now": 0.03,
+          "state_direction": 0.13
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1648,
+      "output_tokens": 139
+    }
+  }
+}

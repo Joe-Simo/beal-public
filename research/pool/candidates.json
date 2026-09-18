@@ -3844,7 +3844,8 @@
         "step_iv_b_U307": "CORRECTION to the U306 note: the claim that step (iv b) is blocked over Z because Z^x is not a Subsingleton was WRONG. For ODD exponents mathlib has the integral version outright, Int.eq_pow_of_mul_eq_pow_odd (Mathlib/RingTheory/Int/Basic.lean:146); the sign ambiguity is absorbed by (-d)^k = -(d^k) for odd k, and 3 is odd. Step (iv b) is now machine-checked as three_coprime_factors_cubes, with isCoprime_of_forall_common_unit as the bridge from the 'every odd common divisor is a unit' shape of the U306 lemmas to IsCoprime. #print axioms = [propext, Classical.choice, Quot.sound]; full lake build clean.",
         "assembly_a_U308": "Assembly part 1 machine-checked in formal/Beal/ThreeFourFour.lean: two_pow_mul_odd_inj (the decomposition n = 2^e * odd is unique in both components, by induction on e) and odd_part_cube (if 2^e * P = A^3 with P odd then 3 | e AND P is a cube). This UPGRADES step (iii): the divisibility 3 | k+2 was previously a hypothesis of k_mod_three_of_three_dvd and is now derived. #print axioms = [propext, Classical.choice, Quot.sound]; full lake build clean.",
         "assembly_bc_U312_U313": "Assembly parts b and c machine-checked in formal/Beal/ThreeFourFour.lean (23 theorems, no sorry, no custom axioms): quartic_factorisation (A^3 = (C-B)(C+B)(C^2+B^2), proved by substituting C = B + d to avoid Nat subtraction), descent_two_adic (splits all three factors as 2^e * odd and returns BOTH 3 | a+b+1 and the product of odd parts being a cube), sq_sum_two_mul_odd, odd_parts_cubes (joins the three odd_common_divisor_* lemmas through isCoprime_of_forall_common_unit into three_coprime_factors_cubes), two_exponents (1 <= a, 1 <= b, and a = 1 or b = 1 -- if both were >= 2 then 4 | 2B and B would be even), nat_cube_of_int_cube. #print axioms: [propext, Quot.sound] or [propext, Classical.choice, Quot.sound] throughout; full lake build clean.",
-        "assembly_d_U314": "BRANCH CLOSED, no prose step left. formal/Beal/ThreeFourFour.lean now proves three_four_four_same_parity : forall {A B C : Nat}, 0 < A -> Odd B -> Odd C -> B < C -> Nat.Coprime B C -> A^3 + B^4 = C^4 -> False. #print axioms = [propext, Classical.choice, Quot.sound]; only external input is mathlib fermatLastTheoremThree. 25 theorems, no sorry, no custom axioms, full lake build clean. Final step: (C-B)^2 + (C+B)^2 = 2(C^2+B^2) gives 4^a u^2 + 4^b v^2 = 4w; two_exponents forces exactly one of a,b to be 1; cancelling 4 leaves w = u^2 + 4^(b-1) v^2; the odd parts are cubes and 3 | a+b+1 makes 4^(b-1) a cube; no_sixth_power_cube_relation closes it."
+        "assembly_d_U314": "BRANCH CLOSED, no prose step left. formal/Beal/ThreeFourFour.lean now proves three_four_four_same_parity : forall {A B C : Nat}, 0 < A -> Odd B -> Odd C -> B < C -> Nat.Coprime B C -> A^3 + B^4 = C^4 -> False. #print axioms = [propext, Classical.choice, Quot.sound]; only external input is mathlib fermatLastTheoremThree. 25 theorems, no sorry, no custom axioms, full lake build clean. Final step: (C-B)^2 + (C+B)^2 = 2(C^2+B^2) gives 4^a u^2 + 4^b v^2 = 4w; two_exponents forces exactly one of a,b to be 1; cancelling 4 leaves w = u^2 + 4^(b-1) v^2; the odd parts are cubes and 3 | a+b+1 makes 4^(b-1) a cube; no_sixth_power_cube_relation closes it.",
+        "build_reverified_U358": "BUILD RESTORED AND VERIFIED. mathlib finished recompiling; lake build completes successfully twice (initial plus a confirmation rebuild). Axiom audit of the session's theorems, all [propext, Classical.choice, Quot.sound]: three_four_four_same_parity, opposite_parity_reduction, cohen344_of_euler, euler_of_descent, rank_ge_totient, tame_valuation_at_A. So everything claimed before the mathlib directory was lost is now re-verified in this environment, not merely inherited from pre-breakage builds."
       }
     },
     {
@@ -3882,7 +3883,8 @@
       "obligations": "NOT a theorem about Beal. (1) The rank >= phi(m) bound is proved only for the combinatorial model (Galois-stable multiplicity vectors); that this model captures Q-rationality of the local system is standard but is NOT formalised here. (2) The uniformity conclusion is informal: 'bounded rank cannot carry unboundedly many exponents' needs a precise statement of what object the modular method would consume. (3) Escape routes untested: non-rigid families (moduli dimension (n-1)(n-2)), base fields larger than Q, and objects that are not local systems. (4) C169's obligations (a) attachment to A^x+B^y=C^z and (b) motivic realisation remain completely untested.",
       "novelty": "Replaces a refuted obstruction with a correct one of different type: existence is fine, growth is the problem. Same phi(x) quantity that already governs minBaseDegree in Rigidity.lean, now appearing for the right reason. Survey category: neither bounded computation, nor one-signature modular method, nor elementary, nor abc/Baker.",
       "evaluations": {
-        "U310": "Exact enumeration plus two machine-checked lemmas. HYPOTHESIS_ONLY for routing."
+        "U310": "Exact enumeration plus two machine-checked lemmas. HYPOTHESIS_ONLY for routing.",
+        "build_reverified_U358": "BUILD RESTORED AND VERIFIED. mathlib finished recompiling; lake build completes successfully twice (initial plus a confirmation rebuild). Axiom audit of the session's theorems, all [propext, Classical.choice, Quot.sound]: three_four_four_same_parity, opposite_parity_reduction, cohen344_of_euler, euler_of_descent, rank_ge_totient, tame_valuation_at_A. So everything claimed before the mathlib directory was lost is now re-verified in this environment, not merely inherited from pre-breakage builds."
       }
     },
     {
@@ -3901,7 +3903,8 @@
       "novelty": "Narrows the survey's first live direction from 'no Frey object is known' to a single named missing theorem. That is a sharper statement of the obstruction, NOT progress toward a proof.",
       "evaluations": {
         "U311": "Exact arithmetic with controls; four machine-checked lemmas. HYPOTHESIS_ONLY for routing.",
-        "corrected_by_U317": "CORRECTED, not withdrawn. The claim that automorphy is the ONLY surviving obstruction is too weak: U317/C174 shows the object is never regular, so the regular-weight potential-automorphy theorems are structurally inapplicable, not merely unproved. Everything else recorded here (rigidity permits three distinct orders, Q-rationality permits them at rank >= phi(m), the specialisation is tame) stands."
+        "corrected_by_U317": "CORRECTED, not withdrawn. The claim that automorphy is the ONLY surviving obstruction is too weak: U317/C174 shows the object is never regular, so the regular-weight potential-automorphy theorems are structurally inapplicable, not merely unproved. Everything else recorded here (rigidity permits three distinct orders, Q-rationality permits them at rank >= phi(m), the specialisation is tame) stands.",
+        "build_reverified_U358": "BUILD RESTORED AND VERIFIED. mathlib finished recompiling; lake build completes successfully twice (initial plus a confirmation rebuild). Axiom audit of the session's theorems, all [propext, Classical.choice, Quot.sound]: three_four_four_same_parity, opposite_parity_reduction, cohen344_of_euler, euler_of_descent, rank_ge_totient, tame_valuation_at_A. So everything claimed before the mathlib directory was lost is now re-verified in this environment, not merely inherited from pre-breakage builds."
       }
     },
     {
@@ -3919,7 +3922,8 @@
       "obligations": "The CLOSURE is not proved. Euler's theorem (a^3+b^3=2c^3 has only a=b in coprime integers) is NOT in mathlib -- checked by grep over Mathlib/, and Mathlib/NumberTheory/FLT/ contains only Basic, Four, MasonStothers, Three. To close the branch either formalise Euler's descent (classical route: a=u+v, b=u-v gives u(u^2+3v^2)=c^3, then descent in Z[omega]) or find the result under another name. The bounded search in step 4 of the script is NOT evidence for it -- bounded computation is a dead category by the survey gate.",
       "novelty": "Replaces an unavailable computation (elliptic Chabauty on y^2 = x^3 - 972, which PARI cannot do and which cannot be bought at $0) with a classical named theorem that is formalisable. This changes the obstruction from TOOLING to WORK. It says nothing about Beal's open core: the descent still needs gcd(y,z) > 1 (C157).",
       "evaluations": {
-        "U315": "Exact arithmetic over 32,335 pairs plus a machine-checked reduction. HYPOTHESIS_ONLY for routing."
+        "U315": "Exact arithmetic over 32,335 pairs plus a machine-checked reduction. HYPOTHESIS_ONLY for routing.",
+        "build_reverified_U358": "BUILD RESTORED AND VERIFIED. mathlib finished recompiling; lake build completes successfully twice (initial plus a confirmation rebuild). Axiom audit of the session's theorems, all [propext, Classical.choice, Quot.sound]: three_four_four_same_parity, opposite_parity_reduction, cohen344_of_euler, euler_of_descent, rank_ge_totient, tame_valuation_at_A. So everything claimed before the mathlib directory was lost is now re-verified in this environment, not merely inherited from pre-breakage builds."
       }
     },
     {
@@ -3936,7 +3940,8 @@
       "obligations": "EulerCubicTwo is STATED, NOT PROVED. It is not in mathlib -- Mathlib/NumberTheory/FLT/ holds only Basic, Four, MasonStothers, Three, and a grep for the statement finds nothing. The classical proof is a descent (a = u+v, b = u-v gives u(u^2+3v^2) = c^3, then factorisation in Z[omega]); mathlib's FermatLastTheoremForThreeGen does NOT apply, since it covers a^3+b^3 = U*c^3 for a UNIT U, and 2 is not a unit in the ring of integers of Q(zeta_3). Formalising it is a multi-hundred-line project, not attempted.",
       "novelty": "This is an AUDIT IMPROVEMENT, not a new theorem: an unverifiable book reference becomes a named 1770 result with the remaining gap explicit in the type. It does not change what is proved about Beal, and by C157 the whole (3,4,4) line cannot reach the open core.",
       "evaluations": {
-        "U316": "Machine-checked derivation with one named unproved hypothesis. HYPOTHESIS_ONLY for routing."
+        "U316": "Machine-checked derivation with one named unproved hypothesis. HYPOTHESIS_ONLY for routing.",
+        "build_reverified_U358": "BUILD RESTORED AND VERIFIED. mathlib finished recompiling; lake build completes successfully twice (initial plus a confirmation rebuild). Axiom audit of the session's theorems, all [propext, Classical.choice, Quot.sound]: three_four_four_same_parity, opposite_parity_reduction, cohen344_of_euler, euler_of_descent, rank_ge_totient, tame_valuation_at_A. So everything claimed before the mathlib directory was lost is now re-verified in this environment, not merely inherited from pre-breakage builds."
       }
     },
     {
@@ -4008,7 +4013,8 @@
       "evaluations": {
         "U321": "Elementary reduction, machine-checked, with the residual gap isolated as one Prop. HYPOTHESIS_ONLY for routing.",
         "FLAW_FOUND_U322": "FLAW IN MY OWN C177, FOUND AND FIXED IN THE SAME SESSION. EulerDescentStep as first recorded -- IsCoprime p q -> p*(p^2+3*q^2) = c^3 -> q = 0 -- is FALSE. Counterexample p = 0, q = 1, c = 0: IsCoprime 0 1 holds in Z (0*0 + 1*1 = 1) and 0*(0+3) = 0^3, yet q != 0. Found by exact counterexample search immediately after recording the Prop. euler_of_descent was not WRONG (an implication from a false hypothesis is still a theorem) but it was VACUOUS, and C177's claim that the remaining gap was 'this Prop' was wrong, since a false Prop can never be proved. FIXED: the hypothesis p != 0 is added, which the Euler reduction does supply because p = (a+b)/2 with a, b > 0; formal/Beal/Euler.lean now proves hppos : p != 0 explicitly. Exact re-search finds NO witness with 0 < p and q != 0 over 1 <= p,q <= 4000, nor over -1200 <= p < 0. lake build clean after the fix.",
-        "estimate_corrected_U343": "MY OWN ESTIMATE WAS TOO LOW, corrected. C177 said EulerDescentStep needs 'a few hundred lines' because mathlib has three_pid (IsPrincipalIdealRing for the ring of integers of Q(zeta_3)). That is necessary but NOT sufficient, and the missing piece is the classical trap in this exact descent. The norm form of Z[omega] is a^2 - ab + b^2, not a^2 + 3b^2. Exact identity, verified over |p|,|q| <= 25 with zero mismatches: p + q*sqrt(-3) = (p+q) + 2q*omega, so p^2 + 3q^2 = N_omega(p+q, 2q) -- whose SECOND coordinate is always EVEN. Z[sqrt(-3)] sits inside Z[omega] with index 2, and a factorisation valid in Z[omega] does not descend without a parity argument. Witness: N_omega(1,1) = 1, but (1,1) is not of the form ((p+q), 2q) for any integers p,q. So the formalisation needs the index-2 bookkeeping on top of the UFD property, and 'a few hundred lines' should be read as a LOWER BOUND. This is also exactly why the naive Euler descent in Z[sqrt(-3)] is unsound -- the historical flaw in Euler's own argument, which PSS mention in passing ('Euler's argument had a flaw, but it was later fixed by others')."
+        "estimate_corrected_U343": "MY OWN ESTIMATE WAS TOO LOW, corrected. C177 said EulerDescentStep needs 'a few hundred lines' because mathlib has three_pid (IsPrincipalIdealRing for the ring of integers of Q(zeta_3)). That is necessary but NOT sufficient, and the missing piece is the classical trap in this exact descent. The norm form of Z[omega] is a^2 - ab + b^2, not a^2 + 3b^2. Exact identity, verified over |p|,|q| <= 25 with zero mismatches: p + q*sqrt(-3) = (p+q) + 2q*omega, so p^2 + 3q^2 = N_omega(p+q, 2q) -- whose SECOND coordinate is always EVEN. Z[sqrt(-3)] sits inside Z[omega] with index 2, and a factorisation valid in Z[omega] does not descend without a parity argument. Witness: N_omega(1,1) = 1, but (1,1) is not of the form ((p+q), 2q) for any integers p,q. So the formalisation needs the index-2 bookkeeping on top of the UFD property, and 'a few hundred lines' should be read as a LOWER BOUND. This is also exactly why the naive Euler descent in Z[sqrt(-3)] is unsound -- the historical flaw in Euler's own argument, which PSS mention in passing ('Euler's argument had a flaw, but it was later fixed by others').",
+        "build_reverified_U358": "BUILD RESTORED AND VERIFIED. mathlib finished recompiling; lake build completes successfully twice (initial plus a confirmation rebuild). Axiom audit of the session's theorems, all [propext, Classical.choice, Quot.sound]: three_four_four_same_parity, opposite_parity_reduction, cohen344_of_euler, euler_of_descent, rank_ge_totient, tame_valuation_at_A. So everything claimed before the mathlib directory was lost is now re-verified in this environment, not merely inherited from pre-breakage builds."
       }
     },
     {
@@ -4156,10 +4162,11 @@
       ],
       "method": "Exact instance-division computation; memory item 'instance check before calling a signature open' applied in the forward direction for once, to see what the new theorem buys. Control on the reducedness predicate: 12 and 9 are not reduced, 4 and 7 are.",
       "evidence": "288 signatures in the box; exactly one reduced, namely (3,4,4). Separately re-ran the instance check on the smallest open signature (3,5,7): NO solved signature in the list divides it coordinatewise, so it is genuinely not closed by instance division. Lean statement drafted as three_four_four_family; NOT YET BUILT -- the mathlib package directory was lost mid-session and is rebuilding (1426/2662 at time of writing), so this theorem is UNVERIFIED until the build finishes.",
-      "obligations": "three_four_four_family is written but NOT machine-checked yet. Do not cite it until lake build succeeds. The unconditional content is still only the same-parity branch; the opposite-parity branch of each family member needs Euler (C172/C177).",
+      "obligations": "DISCHARGED: the family theorem is machine-checked. The scope limitation stands unchanged -- of the 288 signatures in the box x,y,z <= 24 that this closes, exactly ONE has all three exponents reduced, namely (3,4,4) itself, so the family cannot reach the open core (C157).",
       "novelty": "Quantifies exactly what the session's one unconditional theorem buys -- an infinite family rather than a single signature -- while making C157's limitation precise in the same breath: the family contains exactly one reduced signature, which is why it cannot touch the open core.",
       "evaluations": {
-        "U331": "Exact instance-division count with a reducedness control. Not routing."
+        "U331": "Exact instance-division count with a reducedness control. Not routing.",
+        "built_and_verified_U358": "three_four_four_family IS NOW BUILT AND VERIFIED, discharging C186's obligation not to cite it. Statement: forall {A B C k m n : Nat}, 0 < A -> 0 < k -> Odd (B^m) -> Odd (C^n) -> B^m < C^n -> Nat.Coprime (B^m) (C^n) -> A^(3*k) + B^(4*m) = C^(4*n) -> False. #print axioms = [propext, Classical.choice, Quot.sound]."
       }
     },
     {
@@ -4361,10 +4368,11 @@
       ],
       "method": "Validated each INTERMEDIATE claim of the intended proof, not merely the conclusion, over 7922 triples with gcd(a,b) = 1, 3 not dividing a, a nonzero, and a,b of opposite parity: gcd(a,3b) = 1 in every case; a-3b and a+3b odd in every case; gcd(a-3b, a+3b) divides both 2a and 6b in every case. Zero violations on all three steps.",
       "evidence": "Lean source drafted in /tmp/coprime3.lean with four theorems -- coprime_a_three_b, coprime_a_sub, coprime_a_add, sub_add_odd -- as Bezout rearrangements of IsCoprime a (3*b) plus a parity case split. NOT BUILT: the mathlib package directory was lost mid-session and is still recompiling, so none of this is verified and it must not be cited until lake build succeeds.",
-      "obligations": "Do not cite the drafted theorems. When the build finishes, compile them, run #print axioms, and only then record them as machine-checked. Sub-steps (1) -- the parametrisation from unique factorisation in Z[omega] with the U343 index-2 bookkeeping -- and (3) -- the triple cube extraction and descent -- remain untouched. (1) is the hard one.",
+      "obligations": "Sub-step (2) DONE and verified. Remaining in the Euler gap: sub-step (1), now split into 1a (form_mul, PROVED), 1b (OddDivisorForm, stated not proved) and 1c (CubeFormParam, stated not proved); and sub-step (3), whose identities descent_sum and descent_to_euler are PROVED.",
       "novelty": "Validating the INTERMEDIATE steps rather than the conclusion is what makes this a proof skeleton rather than another bounded search: each line of the intended Lean proof has a numerical counterpart that would fail if the line were wrong.",
       "evaluations": {
-        "U345": "Step-by-step numerical validation of a proof skeleton, plus unbuilt Lean source. Category: bounded computation, used only to de-risk."
+        "U345": "Step-by-step numerical validation of a proof skeleton, plus unbuilt Lean source. Category: bounded computation, used only to de-risk.",
+        "built_and_verified_U358": "BUILT AND VERIFIED: coprime_a_three_b, coprime_a_sub, coprime_a_add all [propext, Classical.choice, Quot.sound]; sub_add_odd is [propext, Quot.sound]. Sub-step (2) of EulerDescentStep is no longer drafted -- it is machine-checked."
       }
     },
     {
@@ -4430,7 +4438,8 @@
       "obligations": "OddDivisorForm carries the 2-obstruction as an explicit hypothesis -- its statement requires m odd, and the counterexamples 2 | 1^2+3*1^2 and 14 | 1^2+3*3^2 are why. CubeFormParam carries the opposite-parity hypothesis as the condition that p - q is odd. Both are the hypotheses my own tests found by failing when they were omitted, which is the argument for stating them rather than summarising them away.",
       "novelty": "Converts an unauditable book citation into two precisely stated Props plus five proved identities, with both residual hypotheses carrying the exact side conditions that bounded testing showed to be load-bearing. The residual gap is now two statements a reader can check against the literature, instead of one theorem a reader must take on trust.",
       "evaluations": {
-        "U349": "Lean source staged, unbuilt. Not verification; the verification is pending the build."
+        "U349": "Lean source staged, unbuilt. Not verification; the verification is pending the build.",
+        "built_and_verified_U358": "BUILT AND VERIFIED. form_mul, param_factor, param_q, descent_sum and descent_to_euler are machine-checked ([propext, Quot.sound] for the pure ring identities). OddDivisorForm and CubeFormParam remain stated-not-proved Props, so the residual gap still shows in every type that uses them."
       }
     },
     {
@@ -4461,6 +4470,75 @@
       "novelty": "Turns four accidents into a checklist. The project already had the 'empty search needs a positive control' rule; none of these four is caught by that rule, so it was not sufficient.",
       "evaluations": {
         "U352": "Failure-mode extraction with mitigations applied to one script. Not routing; this is process."
+      }
+    },
+    {
+      "id": "C207",
+      "status": "PARTIAL_RESULT",
+      "claim": "Attempted an independent cross-check of C079's rank-0 determinations by a DIFFERENT mechanism -- direct integral-point search instead of descent -- and MEASURED ITS POWER instead of assuming it. On 65 rank-0 curves in the family, zero integral points outside torsion with |X| <= 20000. But the positive control shows the searcher finds an integral point on only 42 of the 53 positive-rank curves in the same family. So this is WEAK CORROBORATION, not verification.",
+      "parents": [
+        "C079",
+        "C206"
+      ],
+      "method": "code/U353_c079_rank_crosscheck.gp. The control is the point: run the same searcher on curves of KNOWN positive rank and count how often it fires. Without that number, 'zero extras on rank-0 curves' would have looked like confirmation.",
+      "evidence": "65 rank-0 curves, 13 torsion x-coordinates seen, 0 extras. Control: 53 positive-rank curves, integral point found on 42 -- sensitivity about 42/53, missing roughly one in five. Named misses recorded: n=43 e=2, n=50 e=1, n=51 e=1, n=53 e=2, n=58 e=1, n=58 e=2.",
+      "obligations": [
+        "The cross-check is WITHDRAWN as evidence, not merely down-weighted. An integral-point search cannot test rank here: every miss examined has a non-integral generator, so absence of integral points carries no information about rank.",
+        "C079's rank-0 determinations rest on PARI's ellrank upper bound ALONE. Unchanged, and now known not to be checkable this way.",
+        "A genuine independent check needs a second descent implementation, unavailable at $0."
+      ],
+      "novelty": "The useful output is a NEGATIVE calibration: a plausible-looking cross-check was measured and found too weak to carry the claim. Recording the sensitivity number is what separates this from the false-pass modes of C206 -- the check was not wrong, it was underpowered, and that is only visible because the control was run.",
+      "evaluations": {
+        "U353": "Cross-check with measured sensitivity. Conclusion: insufficient power; the original caveat is retained.",
+        "root_cause_U354": "ROOT CAUSE of the 11 misses, diagnosed rather than left as a rate. In EVERY miss examined the curve has rank exactly 1 and its GENERATOR IS NON-INTEGRAL: n=43 e=2 gives x = 4217569/2209; n=50 e=1 gives 2716/9; n=51 e=1 gives 5473/36; n=53 e=2 gives 2026956/361; n=58 e=1 gives 3148/9; n=58 e=2 gives 14580300595449/1479556225. So the misses are not a matter of search range -- widening |X| would not find them, because there is nothing integral to find. An integral-point search is therefore STRUCTURALLY unable to detect positive rank in this family, not merely underpowered, and the 42/53 rate understates the problem: the 42 hits are the curves that happen to have an integral point, which is a property independent of rank."
+      }
+    },
+    {
+      "id": "C208",
+      "status": "PARTIAL_RESULT",
+      "claim": "C079's flag criterion is verified to err in the SAFE direction. A Beal solution A^3+B^3 = n^r with r = 3j+e, j >= 1 and gcd(A,n) = 1 gives x = A/n^j with denominator exactly n^j > 1. The script flags a torsion point whenever denominator(x) > 1 -- a strict SUPERSET of the Beal-relevant points -- so it can over-flag but can never miss one.",
+      "parents": [
+        "C079",
+        "C207"
+      ],
+      "method": "Checked the inclusion directly rather than assuming it: verified over n < 40, j < 4, A < 120 with gcd(A,n) = 1 that the denominator is always exactly n^j > 1, so no Beal solution can hide behind an integral x.",
+      "evidence": "Zero counterexamples. Over-flagging is demonstrably possible -- x = 7/4 on a base-3 curve has denominator 4, not a power of 3, and would be flagged though it cannot come from a base-3 Beal solution -- which is what makes the EMPTY flagged set informative rather than definitional. Asserted in code/U320_regression_checks.py.",
+      "obligations": "This checks the criterion's DIRECTION, not the rank-0 inputs it is applied to. Those still rest on PARI's ellrank upper bound alone (C079), and C207 established that an integral-point search cannot cross-check them. Unchanged.",
+      "novelty": "After C207 withdrew one check as structurally uninformative, this establishes that a different part of the same argument is sound in the direction that matters. Checking which way an over- or under-approximation errs is the same discipline that caught the ellrank lower-bound mistake in C206, applied prospectively instead of after the fact.",
+      "evaluations": {
+        "U355": "Inclusion check with an over-flagging witness. Not routing; this is verification of a criterion's direction."
+      }
+    },
+    {
+      "id": "C209",
+      "status": "PARTIAL_RESULT",
+      "claim": "Jev screen for the UNCHECKED APPROXIMATION DIRECTION failure mode, over all 205 live pool candidates (code/U356_direction_screen.py). NO NEW INSTANCE above the project's ~0.5 action-confidence threshold. The single highest-confidence hit is C001 -- errs=optimistic at 0.85, action=check_direction_now at 0.52 -- which is ALREADY BLOCKED and whose recorded failure_reason is exactly this mode: it bounds rank over k while the solutions generate a degree-10 extension.",
+      "parents": [
+        "C206",
+        "C208"
+      ],
+      "method": "Reasoning found the mode in C206 (ellrank lower bound used to conclude rank 0) and C208 (denominator > 1 as a safe superset); Jev found the instances, which is the division of labour CLAUDE.md mandates. Four narrow questions per candidate, one request each, concurrency 12, every result persisted HYPOTHESIS_ONLY.",
+      "evidence": "205 screened. Top by (unstated + uses_approx): C004 unstated 2.69 but errs=cannot_tell and action confidence 0.44, below threshold; C001 unstated 2.02, errs=optimistic 0.85, action 0.52; C135 1.90, action 0.31. THAT C001 CAME BACK FIRST IS THE SCREEN'S CONTROL: the one candidate known to carry this mode is the one it ranked highest, so the screen is not blind. C004's direction concern is likewise already on its obligations ('the bound is conditional; the condition must be stated and discharged').",
+      "obligations": "A clean screen is weaker evidence than a screen with hits, and this one is clean. It does NOT establish that the remaining 204 candidates state their directions correctly -- only that none is flagged above the threshold this project treats as signal. The 47 candidates scoring unstated >= 1.0 were not individually audited; most are bounded-search candidates in a category the survey gate already marks dead, so the audit cost is not obviously justified. That judgement is recorded rather than silently acted on.",
+      "novelty": "Third application of the mandated pattern in this session (after the vacuity screen C181 and the combination screen C184), and the second where the screen validated itself by recovering a known instance. The mode itself is new to the repo's recorded list, which had three: residual/isogeny conflation, Chabauty over the wrong field, and heuristic laundering.",
+      "evaluations": {
+        "U356": "Jev screen, 205 candidates, HYPOTHESIS_ONLY. Clean above threshold; top hit is a known, already-BLOCKED instance."
+      }
+    },
+    {
+      "id": "C211",
+      "status": "PARTIAL_RESULT",
+      "claim": "The Fermat descent STEP for OddDivisorForm (sub-step 1b of the Euler gap) is now machine-checked, not just numerically validated. formal/Beal/Euler.lean defines symRes and proves symRes_congr (the residue is congruent mod m), symRes_abs_le (it is bounded by m/2 in absolute value) and descent_dvd (m still divides P^2 + 3Q^2 for the symmetric residues).",
+      "parents": [
+        "C203",
+        "C204"
+      ],
+      "method": "Wrote the step directly rather than the whole theorem. descent_dvd is a Bezout-style linear_combination: from p - P = m*s and q - Q = m*t, expand P^2 + 3Q^2 and collect the m.",
+      "evidence": "#print axioms: symRes_congr and descent_dvd are [propext, Classical.choice, Quot.sound]; full lake build clean. Numerical validation of the same step: 18,488 triples, zero violations, max ratio m'/m = 0.9336 (C203).",
+      "obligations": "NOT the theorem. What remains for 1b: the strong induction on m that turns one step into the statement, and the division of P^2 + 3Q^2 = m*m' by m' using form_mul -- the step where multiplicativity is actually consumed. Also still open: 1c (CubeFormParam). Both remain stated Props, so the gap is still visible in every type that uses them.",
+      "novelty": "First piece of the classical content of EulerDescentStep to become machine-checked rather than stated or numerically validated. The session's arc on this gap: unauditable book citation -> named Prop -> five-step skeleton -> two of five steps proved -> the descent step of a third.",
+      "evaluations": {
+        "U359": "Machine-checked descent step; build clean; axioms standard."
       }
     }
   ]

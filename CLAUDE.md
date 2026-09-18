@@ -66,6 +66,29 @@ Check every new claim against these three. All were found by audit in
    bounds, used to "remove" a GRH dependency, with the result relabelled unconditional. A
    GRH-conditional result may be used *if labelled as such*; it may not be relabelled.
 
+4. **Unchecked approximation direction** (added U356, pool C206/C208/C209). A bound, interval,
+   sieve, superset or truncated range is used, and the conclusion is valid only if the
+   approximation errs one particular way — but which way is never stated. For a **closure** claim
+   the safe direction is to over-approximate the dangerous set; for an **existence** claim it is the
+   opposite. Two concrete cases from this repo:
+   - *error*: `ellrank(E)[1]` is PARI's **lower** rank bound; using it to conclude `rank = 0` is
+     unsound. The sound index is `[2]`, the upper bound.
+   - *save*: C079 flags `denominator(x) > 1`, a strict **superset** of the Beal-relevant
+     `denominator(x) = n^j`, so it can over-flag but never miss — confirmed with an explicit
+     over-flagging witness, which is what makes an empty flagged set informative.
+
+## Verification scripts must be able to fail (added U352, pool C206)
+
+Four distinct false-pass modes were observed in one session, all self-inflicted:
+unsound bound direction; a criterion that is vacuously satisfied; a broken parse that still prints
+plausible numbers; and **a correct computation under a false label** (a `sed` that changed the
+print string `bases 2..40` → `2..150` but not the loop bound). The last is the worst — nothing
+errors — and was caught only because the number contradicted one already on record.
+
+Every verification script therefore gets: (a) a **positive control** that must fire, (b) an
+**assertion on the count** of things tested so it cannot go vacuous, and (c) its **actual
+parameters printed from the variables used**, never from a literal in a format string.
+
 ## Standing discipline
 
 - Exact integer arithmetic for anything affecting validity. No floating point where exactness

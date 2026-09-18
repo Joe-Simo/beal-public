@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C164",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C164\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"THE (3,4,4) SURVIVOR ENUMERATED THROUGH THE MORDELL-WEIL GROUP. The parametrisation is now EXPLICIT: the quartic y^2 = D(s) of C162 has a rational root at s = 0, so s = 1/t turns it into the cubic w^2 = 36864t^3 + 6912t^2 + 432t - 3, which under X = 36864t, Y = 36864w is the curve [0,6912,0,15925248,-4076863488] \\u2014 minimal model y^2 = x^3 - 972, rank 1, trivial torsion, with generator P = (1024, 143360) on that model. Since the torsion is trivial and the rank is 1, EVERY rational point is nP, so the branch points can be enumerated exactly. For n = 1..40, computing t = X(nP)/36864, then s = 1/t, then the roots Y of (3s-108)Y^2 + (3s^2+1152)Y + (s^3-3072) = 0, and testing whether either root is a positive rational SQUARE: ZERO admissible hits.\",\n \"method\": \"PARI/GP 2.17, exact rational arithmetic throughout: issquare(D,&r) to extract exact square roots, never sqrt()\",\n \"evidence\": \"n=1 is the degenerate case a=0 giving Y = -908/105; n=2 gives Y = 546704/256647 and 239630902736/16925613003; and so on. Every root is exact and none is a positive rational square for n <= 40.\",\n \"obligations\": [],\n \"failure_reason\": \"\"\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.84
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.14,
+        "confidence": 0.86,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.94,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.03
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.61,
+        "probabilities": {
+          "cannot_tell": 0.02,
+          "conservative": 0.06,
+          "optimistic": 0.22,
+          "not_applicable": 0.7
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.76,
+        "probabilities": {
+          "no_action": 0.84,
+          "check_direction_now": 0.08,
+          "state_direction": 0.08
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1524,
+      "output_tokens": 140
+    }
+  }
+}

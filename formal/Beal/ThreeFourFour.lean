@@ -629,4 +629,20 @@ theorem opposite_parity_reduction {A B C : ℕ} (hA : 0 < A) (hBpos : 0 < B) (hl
     rw [e1, e2] at h2
     omega
 
+/-! ### The infinite family this closes (U331, pool C186) -/
+
+/-- **The infinite family the same-parity theorem actually closes.**  Instance closure: if
+`3 ∣ x`, `4 ∣ y`, `4 ∣ z` then `A^x + B^y = C^z` reads `(A^k)^3 + (B^m)^4 = (C^n)^4`, so the
+same-parity theorem applies whenever the two rewritten bases `B^m`, `C^n` are odd and coprime. -/
+theorem three_four_four_family {A B C k m n : ℕ}
+    (hA : 0 < A) (hk : 0 < k)
+    (hB : Odd (B ^ m)) (hC : Odd (C ^ n)) (hlt : B ^ m < C ^ n)
+    (hcop : Nat.Coprime (B ^ m) (C ^ n))
+    (h : A ^ (3 * k) + B ^ (4 * m) = C ^ (4 * n)) : False := by
+  have hrw : (A ^ k) ^ 3 + (B ^ m) ^ 4 = (C ^ n) ^ 4 := by
+    rw [← pow_mul, ← pow_mul, ← pow_mul]
+    rw [mul_comm k 3, mul_comm m 4, mul_comm n 4] at *
+    exact h
+  exact three_four_four_same_parity (by positivity) hB hC hlt hcop hrw
+
 end Beal

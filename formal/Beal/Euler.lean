@@ -152,4 +152,111 @@ theorem factors_are_cubes {p q c : ℤ} (hpq : IsCoprime p q) (h3 : ¬ (3 : ℤ)
   exact ⟨Int.eq_pow_of_mul_eq_pow_odd_left hcop hodd h,
     Int.eq_pow_of_mul_eq_pow_odd_right hcop hodd h⟩
 
+/-- **Sub-step (2) of `EulerDescentStep` (U345, pool C200).**  With `gcd(a,b) = 1` and `3 ∤ a`, the
+integer `a` is coprime to `3b`, hence to `a ± 3b`. -/
+theorem coprime_a_three_b {a b : ℤ} (hab : IsCoprime a b) (h3 : ¬ (3 : ℤ) ∣ a) :
+    IsCoprime a (3 * b) := by
+  have h3a : IsCoprime a 3 :=
+    ((Int.prime_three.irreducible.coprime_iff_not_dvd).mpr h3).symm
+  exact h3a.mul_right hab
+
+theorem coprime_a_sub {a b : ℤ} (hab : IsCoprime a b) (h3 : ¬ (3 : ℤ) ∣ a) :
+    IsCoprime a (a - 3 * b) := by
+  obtain ⟨u, v, huv⟩ := coprime_a_three_b hab h3
+  exact ⟨u + v, -v, by linear_combination huv⟩
+
+theorem coprime_a_add {a b : ℤ} (hab : IsCoprime a b) (h3 : ¬ (3 : ℤ) ∣ a) :
+    IsCoprime a (a + 3 * b) := by
+  obtain ⟨u, v, huv⟩ := coprime_a_three_b hab h3
+  exact ⟨u - v, v, by linear_combination huv⟩
+
+/-- Both `a - 3b` and `a + 3b` are odd when `a, b` have opposite parity. -/
+theorem sub_add_odd {a b : ℤ} (hpar : (Even a ∧ Odd b) ∨ (Odd a ∧ Even b)) :
+    Odd (a - 3 * b) ∧ Odd (a + 3 * b) := by
+  rcases hpar with ⟨⟨k, hk⟩, ⟨m, hm⟩⟩ | ⟨⟨k, hk⟩, ⟨m, hm⟩⟩ <;> subst hk <;> subst hm <;>
+    constructor <;> [exact ⟨k - 3 * m - 2, by ring⟩; exact ⟨k + 3 * m + 1, by ring⟩;
+                     exact ⟨k - 3 * m, by ring⟩; exact ⟨k + 3 * m, by ring⟩]
+
+/-! ### The Euler descent, skeletonised (U349, pool C204)
+
+`EulerDescentStep` is decomposed into five steps.  Three are proved here outright; the two that
+carry the classical content are stated as named `Prop`s, so every use shows in the type — the same
+discipline as `EulerCubicTwo` itself. -/
+
+/-- **Step 1a.**  The form `x² + 3y²` is multiplicative. -/
+theorem form_mul (a b c d : ℤ) :
+    (a ^ 2 + 3 * b ^ 2) * (c ^ 2 + 3 * d ^ 2)
+      = (a * c - 3 * b * d) ^ 2 + 3 * (a * d + b * c) ^ 2 := by ring
+
+/-- **Step 1b**, stated not proved: every ODD divisor of `p² + 3q²` with `p, q` coprime is itself
+of the form `u² + 3v²`.  The oddness is not decoration — `2 ∣ 1² + 3·1²` while `2` is not of the
+form, and `14 ∣ 1² + 3·3²` likewise (pool C202).  Classical proof: Fermat descent on the symmetric
+residues mod `m`, whose strictness is checked in `code/U320_regression_checks.py` (pool C203). -/
+def OddDivisorForm : Prop :=
+  ∀ m p q : ℤ, ¬ (2 : ℤ) ∣ m → m ∣ p ^ 2 + 3 * q ^ 2 → IsCoprime p q →
+    ∃ u v : ℤ, m = u ^ 2 + 3 * v ^ 2
+
+/-- **Step 1c**, stated not proved: the parametrisation of cubes of the form.  Numerically
+confirmed with zero unmatched cases in pool C199. -/
+def CubeFormParam : Prop :=
+  ∀ p q t : ℤ, IsCoprime p q → ¬ (2 : ℤ) ∣ (p - q) → p ^ 2 + 3 * q ^ 2 = t ^ 3 →
+    ∃ a b : ℤ, p = a * (a - 3 * b) * (a + 3 * b) ∧ q = 3 * b * (a ^ 2 - b ^ 2)
+
+/-- The factorisation used by step 1c, as a ring identity. -/
+theorem param_factor (a b : ℤ) :
+    a * (a - 3 * b) * (a + 3 * b) = a ^ 3 - 9 * a * b ^ 2 := by ring
+
+theorem param_q (a b : ℤ) : 3 * b * (a ^ 2 - b ^ 2) = 3 * a ^ 2 * b - 3 * b ^ 3 := by ring
+
+/-- **Step 3.**  The descent lands back on Euler's own equation: the two outer factors sum to
+twice the middle one, so three cubes `a = e³`, `a - 3b = f³`, `a + 3b = g³` give `f³ + g³ = 2e³`. -/
+theorem descent_sum (a b : ℤ) : (a - 3 * b) + (a + 3 * b) = 2 * a := by ring
+
+theorem descent_to_euler {a b e f g : ℤ} (he : a = e ^ 3) (hf : a - 3 * b = f ^ 3)
+    (hg : a + 3 * b = g ^ 3) : f ^ 3 + g ^ 3 = 2 * e ^ 3 := by
+  have := descent_sum a b
+  rw [hf, hg, he] at this
+  exact this
+
+/-! ### Towards `OddDivisorForm`: the descent step, formalised (U359, pool C211)
+
+`OddDivisorForm` is proved classically by Fermat descent on the symmetric residues mod `m`.  The
+step itself is formalised below: the residues stay congruent, they are bounded by `m/2` in absolute
+value, and `m` still divides `P² + 3Q²`.  What is NOT yet formalised is the strong induction that
+turns one step into the theorem, together with the division of `P² + 3Q² = m·m'` by `m'` using
+`form_mul`.  Numerical validation of the step: 18,488 triples, zero violations, maximum ratio
+`m'/m = 0.9336` (pool C203). -/
+
+/-- A symmetric residue: `symRes a m` is congruent to `a` mod `m` and has `2·|symRes| ≤ m`. -/
+def symRes (a m : ℤ) : ℤ := if 2 * (a % m) ≤ m then a % m else a % m - m
+
+theorem symRes_congr (a m : ℤ) (hm : 0 < m) : m ∣ a - symRes a m := by
+  unfold symRes
+  split
+  · exact Int.dvd_sub_of_emod_eq rfl
+  · have : a - (a % m - m) = (a - a % m) + m := by ring
+    rw [this]
+    exact dvd_add (Int.dvd_sub_of_emod_eq rfl) dvd_rfl
+
+theorem symRes_abs_le (a m : ℤ) (hm : 0 < m) : 2 * |symRes a m| ≤ m + m := by
+  unfold symRes
+  have h0 : 0 ≤ a % m := Int.emod_nonneg a (by omega)
+  have h1 : a % m < m := Int.emod_lt_of_pos a hm
+  split
+  · rw [abs_of_nonneg h0]; omega
+  · rename_i h
+    rw [abs_of_nonpos (by omega)]; omega
+
+/-- **The descent step for `OddDivisorForm`.**  If `m` divides `p² + 3q²`, it also divides
+`P² + 3Q²` for the symmetric residues, because `P ≡ p` and `Q ≡ q` modulo `m`. -/
+theorem descent_dvd {m p q : ℤ} (hm : 0 < m) (h : m ∣ p ^ 2 + 3 * q ^ 2) :
+    m ∣ (symRes p m) ^ 2 + 3 * (symRes q m) ^ 2 := by
+  obtain ⟨s, hs⟩ := symRes_congr p m hm
+  obtain ⟨t, ht⟩ := symRes_congr q m hm
+  have hp : symRes p m = p - m * s := by linarith
+  have hq : symRes q m = q - m * t := by linarith
+  rw [hp, hq]
+  obtain ⟨c, hc⟩ := h
+  exact ⟨c - 2 * p * s - 6 * q * t + m * s ^ 2 + 3 * m * t ^ 2, by linear_combination hc⟩
+
 end Beal

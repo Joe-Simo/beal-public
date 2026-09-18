@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C094",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C094\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"COUNTERSEARCH on my own C092: the Fermat-Catalan blindness test is NECESSARY but NOT SUFFICIENT for a condition to carry Beal-specific content. New second gate, added to CLAUDE.md: does the proof of the condition use the equation A^x+B^y=C^z at all? If not, the condition is the exponent hypothesis in disguise however it scores on the ten solutions.\",\n \"method\": \"exact derivation + exact brute force (code/U228_blindness_mechanism.py) + Lean (radical_cube_iff_of_rad_eq)\",\n \"evidence\": \"radical_cube_le is proved from rad n | n and A^3<=A^x alone, never from the equation. 9 of the 10 Fermat-Catalan solutions have squarefree base product, where the condition collapses to A^3B^3C^3<=A^xB^yC^z; verified as an iff on all 298,080 squarefree pairwise-coprime triples with exponents 1..6. 2^5+7^2=3^4 has an exponent 2 and passes the condition, so the 4 failures are a size accident.\",\n \"obligations\": [],\n \"failure_reason\": \"\"\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.34,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.82,
+          "1": 0.08,
+          "2": 0.05,
+          "3": 0.05
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.11,
+        "probabilities": {
+          "not_applicable": 0.34,
+          "cannot_tell": 0.26,
+          "conservative": 0.26,
+          "optimistic": 0.14
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.46,
+        "probabilities": {
+          "check_direction_now": 0.16,
+          "state_direction": 0.2,
+          "no_action": 0.64
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1328,
+      "output_tokens": 140
+    }
+  }
+}

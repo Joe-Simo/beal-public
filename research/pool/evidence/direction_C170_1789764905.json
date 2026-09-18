@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C170",
+  "timestamp": "2026-09-18T16:55:05-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C170\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"The correct obstruction in the rigid local-system setting is UNIFORMITY, not existence. A Q-rational local monodromy of order exactly m has rank at least phi(m); the bound is attained for every reduced exponent up to 19 (exact computation). Consequently no single rigid Q-rational object of bounded rank can carry unboundedly many exponents, even though individual signatures with three pairwise distinct exponents are realisable.\",\n \"method\": \"Exact enumeration of Galois-stable multiplicity vectors over the divisors of m, combined with the Katz rigidity index. code/U310_galois_stable_rigid.py. Minimal rank per exponent computed exactly: 3->2, 4->2, 5->4, 7->6, 11->10, 13->12, 17->16, 19->18, equal to phi(m) in every case. Minimal rank of a rigid Q-rational triple: (3,4,5)->4, (3,4,7)->7, (3,5,7)->9, (5,7,11)->20, (3,7,11)->21, (7,11,13)-> none up to rank 25.\",\n \"evidence\": \"The rank >= phi(m) half is machine-checked as Beal.rank_ge_totient in formal/Beal/Rigidity.lean, and the rank-4 counterwitness to the old U258 headline as Beal.smallest_rational_rigid_witness. #print axioms: [propext, Classical.choice, Quot.sound] and [propext] respectively; full lake build clean.\",\n \"obligations\": \"NOT a theorem about Beal. (1) The rank >= phi(m) bound is proved only for the combinatorial model (Galois-stable multiplicity vectors); that this model captures Q-rationality of the local system is standard but is NOT formalised here. (2) The uniformity conclusion is informal: 'bounded rank cannot carry unboundedly many exponents' needs a precise statement of what object the modular method would consume. (3) Escape routes untested: non-rigid families (moduli dimension (n-1)(n-2)), base fields larger than Q, and objects that are not local systems. (4) C169's obligations (a) attachment to A^x+B^y=C^z and (b) motivic realisation remain completely untested.\",\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.93
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 1.05,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.58,
+          "1": 0.04,
+          "2": 0.12,
+          "3": 0.26
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "optimistic",
+        "confidence": 0.11,
+        "probabilities": {
+          "not_applicable": 0.13,
+          "conservative": 0.25,
+          "cannot_tell": 0.29,
+          "optimistic": 0.33
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "check_direction_now",
+        "confidence": 0.19,
+        "probabilities": {
+          "no_action": 0.33,
+          "state_direction": 0.21,
+          "check_direction_now": 0.46
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1613,
+      "output_tokens": 140
+    }
+  }
+}
