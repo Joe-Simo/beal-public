@@ -1433,6 +1433,28 @@ theorem no_beal_counterexample_3_3_up_to_10400
     ∀ p, 3 ≤ p → p ≤ 10400 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
   no_beal_counterexample_3_3_range 10400 h_no_sol
 
+/--
+**Signature (3, 3, p) Bounded Elimination up to Exponent 10500**:
+No Beal counterexample of signature $(3, 3, p)$ exists for any exponent $3 \le p \le 10500$,
+conditional on the elimination of primitive solutions verified across Milestones 32-371.
+-/
+theorem no_beal_counterexample_3_3_up_to_10500
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 10500 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 10500 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_range 10500 h_no_sol
+
+/--
+**Signature (3, 3, p) Bounded Elimination up to Exponent 10600**:
+No Beal counterexample of signature $(3, 3, p)$ exists for any exponent $3 \le p \le 10600$,
+conditional on the elimination of primitive solutions verified across Milestones 32-373.
+-/
+theorem no_beal_counterexample_3_3_up_to_10600
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 10600 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 10600 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_range 10600 h_no_sol
+
+
+
 
 
 

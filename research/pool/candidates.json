@@ -5768,13 +5768,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Failure Mode 4: Local-Global / Moduli Conflation & Fermat-Catalan Blindness. Rigid local systems on P^1 \\ {0, 1, infty} attached to triangle groups Delta(p, q, r) are pulled back along the projective cross-ratio t = A^x / C^z. The geometric monodromy and Katz algorithm depend solely on t in P^1(Q), making them completely blind to integer coprimality gcd(A, B, C) = 1. Furthermore, rigid local systems exist equally for triangle groups containing 2 (e.g. Delta(2, 3, 7)), making the framework 10/10 Fermat-Catalan blind.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Rigid local systems on P^1 \\ {0, 1, infty} pull back along projective cross-ratios and cannot detect integer coprimality."
+      ],
       "id": "C281",
       "claim": "DARMON RIGID LOCAL SYSTEMS: Construct rigid local systems on P^1 \\ {0, 1, \\infty} with monodromy in triangle groups Delta(p, q, r) to attach compatible systems of l-adic representations across all three independent exponents.",
       "method": "Rigid local systems, Katz algorithm, hypergeometric motives, triangle group representations",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5796,13 +5798,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Failure Mode 2 / Modularity Extension Barrier: Potential Modularity over Unbounded Extensions. Applying potential modularity (Boxer-Calegari-Gee-Newton-Thorne 2021) to abelian varieties of GL_2-type decomposes J(C_{A,B,C}) into modular representations only over an unknown, arbitrarily large Galois extension F/Q. Over such field extensions, the base change conductor grows, the space of cusp forms S_2(N_F) has massive positive dimension, and Mazur-style level lowering to an empty space is impossible.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Potential modularity establishes automorphy only over large Galois extensions where cusp form spaces cannot be eliminated."
+      ],
       "id": "C283",
       "claim": "JACOBIAN GL_2 DECOMPOSITION AND POTENTIAL MODULARITY: Decompose J(C_{A,B,C}) into abelian varieties of GL_2-type over totally real subfields Q(zeta_x + zeta_x^{-1}) and apply potential modularity (Boxer-Calegari-Gee-Newton-Thorne 2021) to obtain modular representations.",
       "method": "Endomorphism algebras, GL_2-type varieties, potential modularity theorems, automorphic representations",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5838,13 +5842,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Failure Mode 4: Local-Global / Moduli Conflation & FC Blindness. Motivic hypergeometric Galois representations attached to hypergeometric equations on P^1 \\ {0, 1, infty} factor through the projective coordinate t in P^1(Q) and are invariant under projective scaling (A, B, C) -> (dA, dB, dC). They cannot distinguish primitive coprime solutions from non-coprime identities or Fermat-Catalan solutions.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Hypergeometric motives on P^1 \\ {0, 1, infty} are projective moduli invariants blind to integer coprimality."
+      ],
       "id": "C286",
       "claim": "MOTIVIC HYPERGEOMETRIC GALOIS REPRESENTATIONS: Construct compatible systems of l-adic representations attached to hypergeometric motives with monodromy in triangle groups Delta(p, q, r), avoiding single-signature Frey curves.",
       "method": "Hypergeometric motives, Katayama-Katz algorithm, Hodge structures, l-adic representations",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5852,13 +5858,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Dead category (Vojta / ABC / Corvaja-Zannier) & Heuristic Laundering (Failure Mode 3). Vojta defect bounds on weighted projective surfaces branched at orders p, q, r >= 3 depend on the unproved Vojta conjecture for algebraic surfaces. Unconditional Schmidt subspace theorem applies only to linear forms and fixed finite sets of places, yielding finiteness only when coordinates are S-units with fixed S, which fails for variable coprime bases.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Vojta defect bounds on weighted surfaces are equivalent to the ABC conjecture and cannot be made unconditional via Corvaja-Zannier without fixing S."
+      ],
       "id": "C287",
       "claim": "CORVAJA-ZANNIER ARITHMETIC DEFECT ON ORBIFOLD SURFACES: Use Vojta defect bounds and Schmidt subspace theorem on weighted projective surfaces branched at orders p, q, r >= 3 to bound coprime integral points.",
       "method": "Vojta inequality, Schmidt subspace theorem, Corvaja-Zannier method, weighted projective planes",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5866,13 +5874,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Dead category (Baker / linear forms in logarithms). Baker-Wustholz linear forms in logarithms give bounds of the form z <= C(x, y) * log(A) * log(B), inherently scaling with the heights of the bases. Because the bases A, B, C in Beal's conjecture are unrestricted, Baker bounds cannot bound the exponents x, y, z independently of the bases, and therefore cannot resolve the conjecture.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Baker linear forms in logarithms bound exponents only in terms of base heights, leaving variable-base Diophantine families open."
+      ],
       "id": "C288",
       "claim": "BAKER-WUSTHOLZ LOGARITHMIC FORMS ON SEMI-ABELIAN VARIETIES: Extend Baker effective linear forms in logarithms to semi-abelian varieties associated to A^x + B^y = C^z to bound max(x, y, z) independently of fixed bases.",
       "method": "Baker-Wustholz theorem, semi-abelian varieties, logarithmic forms, height bounds",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5880,13 +5890,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Finiteness-to-Nonexistence Gap & Selmer dimension growth. Non-abelian Chabauty on P^1 \\ {0, 1, infty} can at most prove finiteness of S-integral points |X(Z_S)| < infty, but cannot force non-existence of primitive solutions. Furthermore, depth n must grow with the unknown ramification set S = primes(ABC).",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Non-abelian Chabauty on P^1 \\ {0, 1, infty} yields only finiteness for a fixed S, and is structurally unable to bridge to Beal non-existence."
+      ],
       "id": "C289",
       "claim": "MINHYONG KIM NON-ABELIAN CHABAUTY ON P1 MINUS THREE POINTS: Apply the arithmetic unipotent Albanese map to Selmer varieties of pi_1(P^1 \\ {0, 1, infty}) to obstruct coprime solutions with three exponents >= 3.",
       "method": "Non-abelian Chabauty-Kim, unipotent Albanese map, p-adic iterated integrals, Selmer schemes",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5894,13 +5906,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Failure Mode 4: Conductor Blowup & Moduli Conflation. Belyi uniformization of Delta(p, q, r) orbifolds produces covers branched over {0, 1, infty}, but the Serre conductor of the resulting motive is bounded below by rad(ABC), which grows without bound for putative counterexamples. Claiming an absolute upper bound on the Serre conductor contradicts the non-vanishing of Kodaira type multiplicative reduction at all primes dividing ABC (U295).",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Belyi map motives have Serre conductors scaling with rad(ABC), refuting absolute conductor bounds."
+      ],
       "id": "C290",
       "claim": "BELYI MAP BRANCH LOCUS RIGIDIFICATION: Use Belyi uniformization of Delta(p, q, r) orbifolds to prove an absolute upper bound on the Serre conductor of any motive associated to A^x + B^y = C^z.",
       "method": "Belyi maps, Grothendieck dessins d enfants, Serre conductor bounds, ramification filtering",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5908,13 +5922,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Failure Mode 2: Unbounded Selmer dimension blowup. At depth 2, dim U_2(Q_p) = 2, while dim Sel(U_2) >= |S| where S = primes(ABC). For any non-trivial Beal triple with |S| >= 3, dim Sel(U_2) strictly exceeds dim U_2(Q_p), causing the non-abelian Chabauty obstruction to collapse.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "At depth 2, non-abelian Chabauty fails for any curve whenever the ramification set |S| >= 3, proving that depth 2 Chabauty-Kim cannot resolve Beal triples."
+      ],
       "id": "C291",
       "claim": "DEPTH-2 SELMER SCHEME DIMENSION FOR P^1 \\ {0, 1, \\infty}: The global Selmer variety Sel(U_2) for pi_1(P^1 \\ {0, 1, \\infty}) with ramification at S = primes(ABC) has dimension strictly less than the local unipotent Albanese image, producing non-trivial p-adic iterated integral obstructions for all Beal triples.",
       "method": "Non-abelian Chabauty-Kim, Selmer schemes, p-adic iterated integrals, dilogarithm relations",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5922,13 +5938,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Failure Mode 4: Local-Global / Moduli Conflation & Finiteness Gap. Lawrence-Venkatesh period maps prove finiteness of rational points for families of varieties, but depend solely on the projective cross-ratio t in P^1(Q), making the method blind to integer coprimality gcd(A, B, C) = 1, and 10/10 Fermat-Catalan blind.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Lawrence-Venkatesh p-adic period maps depend only on the projective cross-ratio in P^1(Q) and cannot detect integer coprimality or distinguish Beal from Fermat-Catalan."
+      ],
       "id": "C292",
       "claim": "LAWRENCE-VENKATESH METHOD ON FREY FAMILIES OVER EXPONENT LATTICE: Apply p-adic Hodge theory and period maps to variations of Hodge structures attached to covers of P^1 branched at orders (p, q, r) to prove effective finiteness across varying signatures.",
       "method": "Lawrence-Venkatesh method, p-adic period maps, variation of Hodge structures",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5936,13 +5954,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Dead category (Arakelov / Bogomolov height inequality). Using Faltings-Arakelov intersection theory to bound the Faltings height h_F(A, B, C) via the hyperbolic defect -chi >= 1/12 requires an effective arithmetic Bogomolov-Miyaoka-Yau inequality on the arithmetic surface, which is known to be equivalent to the effective Szpiro / ABC conjecture and remains completely unproved unconditionally.",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Arakelov intersection bounds on triangle orbifolds depend on the unproved arithmetic Bogomolov-Miyaoka-Yau inequality."
+      ],
       "id": "C293",
       "claim": "EFFECTIVE ARAKELOV HEIGHT BOUNDS ON TRIANGLE ORBIFOLDS: Use Faltings-Arakelov intersection theory on arithmetic surfaces with orbifold divisor Delta = (1-1/p)D_0 + (1-1/q)D_1 + (1-1/r)D_infty to bound the Faltings height h_F(A, B, C) via hyperbolic defect -chi >= 1/12.",
       "method": "Arakelov geometry, Faltings height, arithmetic intersection theory, orbifold canonical bundle",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -5964,13 +5984,15 @@
       "evidence": [],
       "obligations": [],
       "evaluations": {},
-      "failure_reason": null,
+      "failure_reason": "Failure Mode 1: Residual Conflation & Conductor Parity Flaw. For any Frey curve attached to A^p + B^q = C^r, the Serre weight k(rho) at 2 is determined by local ramification at 2, which depends on the 2-adic valuation of A, B, C. Fontaine-Laffaille weights for 2-dimensional representations over F_p with good or semistable reduction take standard values k in {2, p+1}. Claiming a universal parity incompatibility at 2 confuses distinct Frey curve models and conflates geometric weight parity with non-existence of residual mod-p congruences (Failure Mode 1).",
       "novelty_note": null,
-      "extracted": [],
+      "extracted": [
+        "Serre weights at 2 for Frey curves over Q take values in {2, p+1} and do not create an unconditional parity obstruction across independent exponents."
+      ],
       "id": "C295",
       "claim": "UNIVERSAL SERRE WEIGHT PARITY OBSTRUCTION FOR THREE ODD EXPONENTS: For any hypothetical solution to A^p + B^q = C^r with p, q, r odd primes >= 3, the Serre weights of the associated residual representations are mutually incompatible at 2.",
       "method": "Serre modularity conjectures, Fontaine-Laffaille weights, 2-adic wild ramification, Artin representations",
-      "status": "ACTIVE"
+      "status": "BLOCKED"
     },
     {
       "parents": [],
@@ -11426,6 +11448,50 @@
       "method": "Kraus sieve modular method using weight-2 newforms of levels 72 and 144, Frey curve traces, and PARI/GP independent verification.",
       "status": "PARTIAL_RESULT",
       "category": "classical_modular_frey"
+    },
+    {
+      "parents": [
+        "C506"
+      ],
+      "inspirations": [
+        "Kraus 1998",
+        "Darmon-Merel 1997"
+      ],
+      "evidence": [
+        "code/U611_kraus_sieve_p10401_p10500.py",
+        "code/U612_gp_kraus_audit.gp"
+      ],
+      "obligations": [
+        "Eliminate primes p in [10401, 10500] with p = 1 mod 3."
+      ],
+      "evaluations": {
+        "category": "classical_modular_frey"
+      },
+      "failure_reason": null,
+      "novelty_note": "Extends empirical Kraus sieve frontier from p = 10,400 to p = 10,500.",
+      "extracted": [
+        "All 4 primes in [10401, 10500] with p = 1 mod 3 unconditionally eliminated by auxiliary primes q = 2kp + 1."
+      ],
+      "id": "C507",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [10401, 10500]",
+      "claim": "The generalized Fermat equation A^3 + B^3 = C^p has no non-trivial primitive integer solutions for all prime exponents p in [10401, 10500].",
+      "method": "Kraus sieve modular method using weight-2 newforms of levels 72 and 144, Frey curve traces, and PARI/GP independent verification.",
+      "status": "PARTIAL_RESULT",
+      "category": "classical_modular_frey"
+    },
+    {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C508",
+      "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [10501, 10600]",
+      "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
+      "status": "PARTIAL_RESULT"
     }
   ],
   "C503": {

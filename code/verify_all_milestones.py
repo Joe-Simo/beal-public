@@ -386,7 +386,14 @@ MILESTONES = [
     ("U607: PARI/GP Independent Audit of Kraus Sieve Modular Traces [10301..10400]", ["/opt/homebrew/bin/gp", "-q", "code/U607_gp_kraus_audit.gp"]),
     ("U608: Mathematical Audit of Perverse Sheaves & Intersection Cohomology", ["python3", "code/U608_perverse_sheaves_intersection_audit.py"]),
     ("U609: Jev Automated Mathlib Formalization Gap Synthesis", ["python3", "code/U609_jev_mathlib_gap_synthesis.py"]),
+    ("U610: Non-Abelian Chabauty-Kim, Selmer Schemes & Lawrence-Venkatesh Audit", ["python3", "code/U610_nonabelian_chabauty_selmer_audit.py"]),
+    ("U611: Extended Kraus Sieve for Signature (3, 3, p) [p in 10401..10500]", ["python3", "code/U611_kraus_sieve_p10401_p10500.py"]),
+    ("U612: PARI/GP Independent Audit of Kraus Sieve Modular Traces [10401..10500]", ["/opt/homebrew/bin/gp", "-q", "code/U612_gp_kraus_audit.gp"]),
+    ("U613: Extended Kraus Sieve for Signature (3, 3, p) [p in 10501..10600]", ["python3", "code/U613_kraus_sieve_p10501_p10600.py"]),
+    ("U614: PARI/GP Independent Audit of Kraus Sieve Modular Traces [10501..10600]", ["/opt/homebrew/bin/gp", "-q", "code/U614_gp_kraus_audit.gp"]),
 ]
+
+
 
 
 

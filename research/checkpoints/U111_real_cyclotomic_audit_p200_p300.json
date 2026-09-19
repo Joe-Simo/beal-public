@@ -46,7 +46,7 @@
       "pari_factors": [
         105
       ],
-      "t_pari": 0.016978979110717773,
+      "t_pari": 0.015527009963989258,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1) / Schoof 2003",
@@ -68,7 +68,7 @@
         37,
         37
       ],
-      "t_pari": 0.01627492904663086,
+      "t_pari": 0.015191078186035156,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1) / Schoof 2003",
@@ -88,7 +88,7 @@
       "pari_factors": [
         113
       ],
-      "t_pari": 0.016113758087158203,
+      "t_pari": 0.015249013900756836,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1) / Schoof 2003",
@@ -110,7 +110,7 @@
         38,
         38
       ],
-      "t_pari": 0.016203880310058594,
+      "t_pari": 0.015424966812133789,
       "h_plus": 3,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1) / Schoof 2003",
@@ -133,7 +133,7 @@
         29,
         29
       ],
-      "t_pari": 0.015979766845703125,
+      "t_pari": 0.015495777130126953,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1) / Schoof 2003",
@@ -153,7 +153,7 @@
       "pari_factors": [
         119
       ],
-      "t_pari": 0.016003131866455078,
+      "t_pari": 0.015297889709472656,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1) / Schoof 2003",
@@ -182,7 +182,7 @@
         12,
         12
       ],
-      "t_pari": 0.01571488380432129,
+      "t_pari": 0.015353202819824219,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1) / Schoof 2003",
@@ -206,7 +206,7 @@
         25,
         25
       ],
-      "t_pari": 0.01573038101196289,
+      "t_pari": 0.015326976776123047,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 Main Table",
@@ -241,7 +241,7 @@
         8,
         8
       ],
-      "t_pari": 0.015900135040283203,
+      "t_pari": 0.015906095504760742,
       "h_plus": 3,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 / OEIS A230869 (Fermat prime F_4)",
@@ -261,7 +261,7 @@
       "pari_factors": [
         131
       ],
-      "t_pari": 0.01578807830810547,
+      "t_pari": 0.015312910079956055,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 Main Table",
@@ -281,7 +281,7 @@
       "pari_factors": [
         134
       ],
-      "t_pari": 0.015577077865600586,
+      "t_pari": 0.015408992767333984,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 Main Table",
@@ -301,7 +301,7 @@
       "pari_factors": [
         135
       ],
-      "t_pari": 0.015681982040405273,
+      "t_pari": 0.015210866928100586,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 Main Table",
@@ -323,7 +323,7 @@
         46,
         46
       ],
-      "t_pari": 0.015794992446899414,
+      "t_pari": 0.015224218368530273,
       "h_plus": 4,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 / OEIS A230869",
@@ -346,7 +346,7 @@
         35,
         35
       ],
-      "t_pari": 0.016028881072998047,
+      "t_pari": 0.01518392562866211,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 Main Table",
@@ -368,7 +368,7 @@
         47,
         47
       ],
-      "t_pari": 0.015966176986694336,
+      "t_pari": 0.015289783477783203,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 Main Table",
@@ -388,7 +388,7 @@
       "pari_factors": [
         146
       ],
-      "t_pari": 0.015916109085083008,
+      "t_pari": 0.014986991882324219,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 Main Table",
