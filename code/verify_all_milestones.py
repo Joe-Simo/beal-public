@@ -498,6 +498,8 @@ MILESTONES = [
     ("U719: PARI/GP Independent Audit of Kraus Sieve Modular Traces [15701..15800]", ["/opt/homebrew/bin/gp", "-q", "code/U719_gp_kraus_audit.gp"]),
     ("U720: Extended Kraus Sieve for Signature (3, 3, p) [p in 15801..15900]", ["python3", "code/U720_kraus_sieve_p15801_p15900.py"]),
     ("U721: PARI/GP Independent Audit of Kraus Sieve Modular Traces [15801..15900]", ["/opt/homebrew/bin/gp", "-q", "code/U721_gp_kraus_audit.gp"]),
+    ("U722: Extended Kraus Sieve for Signature (3, 3, p) [p in 15901..16000] - 16000 Centennial Milestone", ["python3", "code/U722_kraus_sieve_p15901_p16000.py"]),
+    ("U723: PARI/GP Independent Audit of Kraus Sieve Modular Traces [15901..16000]", ["/opt/homebrew/bin/gp", "-q", "code/U723_gp_kraus_audit.gp"]),
 ]
 
 
