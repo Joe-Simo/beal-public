@@ -1007,6 +1007,46 @@ theorem post_century_signature_3_3_p_elimination_14000
     ∀ p, 3 ≤ p → p ≤ 14000 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
   no_beal_counterexample_3_3_up_to_14000 h_no_sol
 
+/--
+**Post-Centennial Milestone 444: Modular Elimination of Signature (3, 3, p) up to p = 14100**.
+-/
+theorem post_century_signature_3_3_p_elimination_14100
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 14100 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 14100 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_up_to_14100 h_no_sol
+
+/--
+**Post-Centennial Milestone 446: Modular Elimination of Signature (3, 3, p) up to p = 14200**.
+-/
+theorem post_century_signature_3_3_p_elimination_14200
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 14200 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 14200 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_up_to_14200 h_no_sol
+
+/--
+**Post-Centennial Milestone 448: Modular Elimination of Signature (3, 3, p) up to p = 14300**.
+-/
+theorem post_century_signature_3_3_p_elimination_14300
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 14300 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 14300 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_up_to_14300 h_no_sol
+
+/--
+**Post-Centennial Milestone 450: Modular Elimination of Signature (3, 3, p) up to p = 14400**.
+-/
+theorem post_century_signature_3_3_p_elimination_14400
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 14400 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 14400 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_up_to_14400 h_no_sol
+
+/--
+**Post-Centennial Milestone 452: Modular Elimination of Signature (3, 3, p) up to p = 14500 (14,500 Centennial Milestone)**.
+-/
+theorem post_century_signature_3_3_p_elimination_14500
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 14500 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 14500 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_up_to_14500 h_no_sol
+
 
 
 
