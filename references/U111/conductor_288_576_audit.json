@@ -468,7 +468,35 @@
           "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
           "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
         },
-        "576_2": {
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 16,
+          "aq_mod_p": 16,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "288_1": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 103,
           "k": 3,
@@ -496,63 +524,21 @@
           ],
           "valid_t_count": 1
         },
-        "288_1": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 103,
-          "k": 3,
-          "aq": 0,
-          "aq_mod_p": 0,
-          "admissible_traces": [
-            2,
-            3,
-            14,
-            15
-          ],
-          "valid_t_count": 1
-        },
-        "288_2": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 103,
-          "k": 3,
-          "aq": 0,
-          "aq_mod_p": 0,
-          "admissible_traces": [
-            2,
-            3,
-            14,
-            15
-          ],
-          "valid_t_count": 1
-        },
-        "576_9": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 103,
-          "k": 3,
-          "aq": -16,
-          "aq_mod_p": 1,
-          "admissible_traces": [
-            2,
-            3,
-            14,
-            15
-          ],
-          "valid_t_count": 1
-        },
-        "288_3": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 103,
-          "k": 3,
-          "aq": 0,
-          "aq_mod_p": 0,
-          "admissible_traces": [
-            2,
-            3,
-            14,
-            15
-          ],
-          "valid_t_count": 1
-        },
         "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 12,
+          "aq_mod_p": 12,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "576_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 103,
           "k": 3,
@@ -580,12 +566,12 @@
           ],
           "valid_t_count": 1
         },
-        "576_3": {
+        "576_9": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 103,
           "k": 3,
-          "aq": 12,
-          "aq_mod_p": 12,
+          "aq": -16,
+          "aq_mod_p": 1,
           "admissible_traces": [
             2,
             3,
@@ -594,12 +580,26 @@
           ],
           "valid_t_count": 1
         },
-        "576_7": {
+        "576_2": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 103,
           "k": 3,
-          "aq": 16,
-          "aq_mod_p": 16,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            3,
+            14,
+            15
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 103,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
           "admissible_traces": [
             2,
             3,
@@ -622,7 +622,7 @@
           ],
           "valid_t_count": 1
         },
-        "576_8": {
+        "288_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 103,
           "k": 3,
@@ -652,12 +652,12 @@
           "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
           "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
         },
-        "576_2": {
+        "576_8": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 229,
           "k": 6,
-          "aq": 30,
-          "aq_mod_p": 11,
+          "aq": -30,
+          "aq_mod_p": 8,
           "admissible_traces": [
             2,
             3,
@@ -684,7 +684,39 @@
           ],
           "valid_t_count": 5
         },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": 30,
+          "aq_mod_p": 11,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
         "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 229,
+          "k": 6,
+          "aq": 30,
+          "aq_mod_p": 11,
+          "admissible_traces": [
+            2,
+            3,
+            9,
+            10,
+            16,
+            17
+          ],
+          "valid_t_count": 5
+        },
+        "576_1": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 229,
           "k": 6,
@@ -716,44 +748,12 @@
           ],
           "valid_t_count": 5
         },
-        "576_1": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 229,
-          "k": 6,
-          "aq": 30,
-          "aq_mod_p": 11,
-          "admissible_traces": [
-            2,
-            3,
-            9,
-            10,
-            16,
-            17
-          ],
-          "valid_t_count": 5
-        },
-        "576_8": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 229,
-          "k": 6,
-          "aq": -30,
-          "aq_mod_p": 8,
-          "admissible_traces": [
-            2,
-            3,
-            9,
-            10,
-            16,
-            17
-          ],
-          "valid_t_count": 5
-        },
-        "576_9": {
+        "576_7": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 419,
           "k": 11,
-          "aq": -12,
-          "aq_mod_p": 7,
+          "aq": 12,
+          "aq_mod_p": 12,
           "admissible_traces": [
             0,
             1,
@@ -765,12 +765,12 @@
           ],
           "valid_t_count": 3
         },
-        "576_7": {
+        "576_9": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 419,
           "k": 11,
-          "aq": 12,
-          "aq_mod_p": 12,
+          "aq": -12,
+          "aq_mod_p": 7,
           "admissible_traces": [
             0,
             1,
@@ -822,7 +822,7 @@
           ],
           "valid_t_count": 6
         },
-        "576_4": {
+        "576_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 457,
           "k": 12,
@@ -842,7 +842,7 @@
           ],
           "valid_t_count": 6
         },
-        "576_3": {
+        "576_4": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 457,
           "k": 12,
@@ -904,19 +904,6 @@
           ],
           "valid_t_count": 1
         },
-        "576_4": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 47,
-          "k": 1,
-          "aq": -8,
-          "aq_mod_p": 15,
-          "admissible_traces": [
-            0,
-            2,
-            21
-          ],
-          "valid_t_count": 1
-        },
         "576_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 47,
@@ -930,63 +917,20 @@
           ],
           "valid_t_count": 1
         },
-        "576_2": {
+        "576_4": {
           "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 139,
-          "k": 3,
-          "aq": 0,
-          "aq_mod_p": 0,
+          "auxiliary_prime_q": 47,
+          "k": 1,
+          "aq": -8,
+          "aq_mod_p": 15,
           "admissible_traces": [
+            0,
             2,
-            7,
-            16,
             21
           ],
           "valid_t_count": 1
         },
-        "288_1": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 139,
-          "k": 3,
-          "aq": 0,
-          "aq_mod_p": 0,
-          "admissible_traces": [
-            2,
-            7,
-            16,
-            21
-          ],
-          "valid_t_count": 1
-        },
-        "288_2": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 139,
-          "k": 3,
-          "aq": 0,
-          "aq_mod_p": 0,
-          "admissible_traces": [
-            2,
-            7,
-            16,
-            21
-          ],
-          "valid_t_count": 1
-        },
-        "576_9": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 139,
-          "k": 3,
-          "aq": -12,
-          "aq_mod_p": 11,
-          "admissible_traces": [
-            2,
-            7,
-            16,
-            21
-          ],
-          "valid_t_count": 1
-        },
-        "288_3": {
+        "576_8": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 139,
           "k": 3,
@@ -1014,6 +958,62 @@
           ],
           "valid_t_count": 1
         },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": -12,
+          "aq_mod_p": 11,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 139,
+          "k": 3,
+          "aq": 0,
+          "aq_mod_p": 0,
+          "admissible_traces": [
+            2,
+            7,
+            16,
+            21
+          ],
+          "valid_t_count": 1
+        },
         "576_1": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 139,
@@ -1028,7 +1028,7 @@
           ],
           "valid_t_count": 1
         },
-        "576_8": {
+        "288_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 139,
           "k": 3,
@@ -1058,6 +1058,19 @@
           "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
           "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
         },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": 4,
+          "aq_mod_p": 4,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
         "288_5": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 59,
@@ -1071,33 +1084,7 @@
           ],
           "valid_t_count": 1
         },
-        "576_9": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 59,
-          "k": 1,
-          "aq": -4,
-          "aq_mod_p": 25,
-          "admissible_traces": [
-            0,
-            2,
-            27
-          ],
-          "valid_t_count": 1
-        },
         "288_4": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 59,
-          "k": 1,
-          "aq": -4,
-          "aq_mod_p": 25,
-          "admissible_traces": [
-            0,
-            2,
-            27
-          ],
-          "valid_t_count": 1
-        },
-        "576_4": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 59,
           "k": 1,
@@ -1123,12 +1110,12 @@
           ],
           "valid_t_count": 1
         },
-        "576_7": {
+        "576_4": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 59,
           "k": 1,
-          "aq": 4,
-          "aq_mod_p": 4,
+          "aq": -4,
+          "aq_mod_p": 25,
           "admissible_traces": [
             0,
             2,
@@ -1136,7 +1123,33 @@
           ],
           "valid_t_count": 1
         },
-        "576_2": {
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 59,
+          "k": 1,
+          "aq": -4,
+          "aq_mod_p": 25,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "576_8": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 233,
+          "k": 4,
+          "aq": -26,
+          "aq_mod_p": 3,
+          "admissible_traces": [
+            0,
+            2,
+            27
+          ],
+          "valid_t_count": 1
+        },
+        "288_1": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 233,
           "k": 4,
@@ -1149,7 +1162,7 @@
           ],
           "valid_t_count": 1
         },
-        "288_1": {
+        "576_2": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 233,
           "k": 4,
@@ -1175,19 +1188,6 @@
           ],
           "valid_t_count": 1
         },
-        "288_3": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 233,
-          "k": 4,
-          "aq": 16,
-          "aq_mod_p": 16,
-          "admissible_traces": [
-            0,
-            2,
-            27
-          ],
-          "valid_t_count": 1
-        },
         "576_1": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 233,
@@ -1201,12 +1201,12 @@
           ],
           "valid_t_count": 1
         },
-        "576_8": {
+        "288_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 233,
           "k": 4,
-          "aq": -26,
-          "aq_mod_p": 3,
+          "aq": 16,
+          "aq_mod_p": 16,
           "admissible_traces": [
             0,
             2,
@@ -1230,6 +1230,19 @@
           "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
           "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
         },
+        "576_7": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 311,
+          "k": 5,
+          "aq": 24,
+          "aq_mod_p": 24,
+          "admissible_traces": [
+            0,
+            2,
+            29
+          ],
+          "valid_t_count": 1
+        },
         "288_5": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 311,
@@ -1243,7 +1256,7 @@
           ],
           "valid_t_count": 1
         },
-        "576_9": {
+        "288_4": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 311,
           "k": 5,
@@ -1256,7 +1269,7 @@
           ],
           "valid_t_count": 1
         },
-        "288_4": {
+        "576_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 311,
           "k": 5,
@@ -1282,7 +1295,7 @@
           ],
           "valid_t_count": 1
         },
-        "576_3": {
+        "576_9": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 311,
           "k": 5,
@@ -1295,20 +1308,7 @@
           ],
           "valid_t_count": 1
         },
-        "576_7": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 311,
-          "k": 5,
-          "aq": 24,
-          "aq_mod_p": 24,
-          "admissible_traces": [
-            0,
-            2,
-            29
-          ],
-          "valid_t_count": 1
-        },
-        "576_2": {
+        "576_8": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 373,
           "k": 6,
@@ -1336,12 +1336,12 @@
           ],
           "valid_t_count": 1
         },
-        "288_2": {
+        "576_2": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 373,
           "k": 6,
-          "aq": 14,
-          "aq_mod_p": 14,
+          "aq": -14,
+          "aq_mod_p": 17,
           "admissible_traces": [
             2,
             7,
@@ -1350,7 +1350,7 @@
           ],
           "valid_t_count": 1
         },
-        "288_3": {
+        "288_2": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 373,
           "k": 6,
@@ -1378,12 +1378,12 @@
           ],
           "valid_t_count": 1
         },
-        "576_8": {
+        "288_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 373,
           "k": 6,
-          "aq": -14,
-          "aq_mod_p": 17,
+          "aq": 14,
+          "aq_mod_p": 14,
           "admissible_traces": [
             2,
             7,
@@ -1408,116 +1408,12 @@
           "method": "Momose-Darmon-Merel Cartan Normalizer Theorem",
           "reason": "Rational 2-torsion point forces C = +- 1 (Catalan trivial)"
         },
-        "576_2": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": -20,
-          "aq_mod_p": 17,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "288_5": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": -18,
-          "aq_mod_p": 19,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "288_1": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": 20,
-          "aq_mod_p": 20,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "288_2": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": -14,
-          "aq_mod_p": 23,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "576_9": {
+        "576_8": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 149,
           "k": 2,
           "aq": 14,
           "aq_mod_p": 14,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "288_3": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": -20,
-          "aq_mod_p": 17,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "288_4": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": -18,
-          "aq_mod_p": 19,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "576_4": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": 18,
-          "aq_mod_p": 18,
-          "admissible_traces": [
-            0,
-            2,
-            35
-          ],
-          "valid_t_count": 1
-        },
-        "576_3": {
-          "method": "Kraus Trace Sieve",
-          "auxiliary_prime_q": 149,
-          "k": 2,
-          "aq": 18,
-          "aq_mod_p": 18,
           "admissible_traces": [
             0,
             2,
@@ -1538,6 +1434,110 @@
           ],
           "valid_t_count": 1
         },
+        "288_1": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 20,
+          "aq_mod_p": 20,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "288_5": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -18,
+          "aq_mod_p": 19,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "288_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -18,
+          "aq_mod_p": 19,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_3": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 18,
+          "aq_mod_p": 18,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_4": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 18,
+          "aq_mod_p": 18,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_9": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": 14,
+          "aq_mod_p": 14,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "576_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -20,
+          "aq_mod_p": 17,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
+        "288_2": {
+          "method": "Kraus Trace Sieve",
+          "auxiliary_prime_q": 149,
+          "k": 2,
+          "aq": -14,
+          "aq_mod_p": 23,
+          "admissible_traces": [
+            0,
+            2,
+            35
+          ],
+          "valid_t_count": 1
+        },
         "576_1": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 149,
@@ -1551,12 +1551,12 @@
           ],
           "valid_t_count": 1
         },
-        "576_8": {
+        "288_3": {
           "method": "Kraus Trace Sieve",
           "auxiliary_prime_q": 149,
           "k": 2,
-          "aq": 14,
-          "aq_mod_p": 14,
+          "aq": -20,
+          "aq_mod_p": 17,
           "admissible_traces": [
             0,
             2,
