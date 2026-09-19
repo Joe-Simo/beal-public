@@ -623,6 +623,12 @@
       "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [15201, 15300]",
       "lemma_type": "modular_trace_congruence",
       "salvage_timestamp": "2026-09-19T12:47:00Z"
+    },
+    {
+      "candidate_id": "C606",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [15301, 15400]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T12:48:00Z"
     }
   ]
 }

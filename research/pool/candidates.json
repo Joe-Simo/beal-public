@@ -12164,6 +12164,20 @@
       "claim": "All primes p in [15201, 15300] with p = 1 mod 3 eliminated via Kraus auxiliary primes q = 2kp + 1 (k <= 51) and trace contradiction against newform 72a1",
       "method": "Kraus modular sieve over Frey curve E: Y^2 = X^3 + 2 A X^2 + (A^2 - B^3) X with level 72 / newform 72a1",
       "status": "PARTIAL_RESULT"
+    },
+    {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C606",
+      "claim": "All primes p in [15301, 15400] with p = 1 mod 3 eliminated via Kraus auxiliary primes q = 2kp + 1 (k <= 18) and trace contradiction against newform 72a1",
+      "method": "Kraus modular sieve over Frey curve E: Y^2 = X^3 + 2 A X^2 + (A^2 - B^3) X with level 72 / newform 72a1",
+      "status": "PARTIAL_RESULT"
     }
   ],
   "C503": {
