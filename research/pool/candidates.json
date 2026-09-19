@@ -11786,6 +11786,62 @@
       "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [12501, 12600]",
       "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
       "status": "PARTIAL_RESULT"
+    },
+    {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C552",
+      "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [12601, 12700]",
+      "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
+      "status": "PARTIAL_RESULT"
+    },
+    {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C554",
+      "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [12701, 12800]",
+      "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
+      "status": "PARTIAL_RESULT"
+    },
+    {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C556",
+      "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [12801, 12900]",
+      "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
+      "status": "PARTIAL_RESULT"
+    },
+    {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C558",
+      "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [12901, 13000] - 13000 Centennial Milestone",
+      "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
+      "status": "PARTIAL_RESULT"
     }
   ],
   "C503": {

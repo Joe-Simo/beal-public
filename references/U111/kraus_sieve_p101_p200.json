@@ -18,7 +18,7 @@
     "total_tested": 30,
     "total_eliminating": 28,
     "elimination_rate": 0.9333333333333333,
-    "elapsed_seconds": 2.1344032287597656,
+    "elapsed_seconds": 2.9713850021362305,
     "all_records": [
       {
         "q": 619,
@@ -431,7 +431,7 @@
     "total_tested": 21,
     "total_eliminating": 20,
     "elimination_rate": 0.9523809523809523,
-    "elapsed_seconds": 1.2185242176055908,
+    "elapsed_seconds": 2.3843750953674316,
     "all_records": [
       {
         "q": 1091,
@@ -727,7 +727,7 @@
     "total_tested": 22,
     "total_eliminating": 21,
     "elimination_rate": 0.9545454545454546,
-    "elapsed_seconds": 1.494368076324463,
+    "elapsed_seconds": 3.0925040245056152,
     "all_records": [
       {
         "q": 509,
@@ -1036,7 +1036,7 @@
     "total_tested": 18,
     "total_eliminating": 17,
     "elimination_rate": 0.9444444444444444,
-    "elapsed_seconds": 0.7999050617218018,
+    "elapsed_seconds": 2.1132400035858154,
     "all_records": [
       {
         "q": 557,
@@ -1293,7 +1293,7 @@
     "total_tested": 19,
     "total_eliminating": 19,
     "elimination_rate": 1.0,
-    "elapsed_seconds": 0.729729175567627,
+    "elapsed_seconds": 1.7807590961456299,
     "all_records": [
       {
         "q": 907,
@@ -1563,7 +1563,7 @@
     "total_tested": 12,
     "total_eliminating": 11,
     "elimination_rate": 0.9166666666666666,
-    "elapsed_seconds": 0.5299170017242432,
+    "elapsed_seconds": 1.2250819206237793,
     "all_records": [
       {
         "q": 1571,
@@ -1742,7 +1742,7 @@
     "total_tested": 18,
     "total_eliminating": 16,
     "elimination_rate": 0.8888888888888888,
-    "elapsed_seconds": 0.9391622543334961,
+    "elapsed_seconds": 2.5418031215667725,
     "all_records": [
       {
         "q": 653,
@@ -1999,7 +1999,7 @@
     "total_tested": 19,
     "total_eliminating": 19,
     "elimination_rate": 1.0,
-    "elapsed_seconds": 0.8245408535003662,
+    "elapsed_seconds": 1.9074692726135254,
     "all_records": [
       {
         "q": 1087,
@@ -2269,7 +2269,7 @@
     "total_tested": 14,
     "total_eliminating": 14,
     "elimination_rate": 1.0,
-    "elapsed_seconds": 0.6063210964202881,
+    "elapsed_seconds": 1.2506110668182373,
     "all_records": [
       {
         "q": 773,
@@ -2474,7 +2474,7 @@
     "total_tested": 10,
     "total_eliminating": 9,
     "elimination_rate": 0.9,
-    "elapsed_seconds": 0.44983911514282227,
+    "elapsed_seconds": 0.8741109371185303,
     "all_records": [
       {
         "q": 797,

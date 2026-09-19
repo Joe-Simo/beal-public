@@ -432,6 +432,14 @@ MILESTONES = [
     ("U653: PARI/GP Independent Audit of Kraus Sieve Modular Traces [12401..12500]", ["/opt/homebrew/bin/gp", "-q", "code/U653_gp_kraus_audit.gp"]),
     ("U654: Extended Kraus Sieve for Signature (3, 3, p) [p in 12501..12600]", ["python3", "code/U654_kraus_sieve_p12501_p12600.py"]),
     ("U655: PARI/GP Independent Audit of Kraus Sieve Modular Traces [12501..12600]", ["/opt/homebrew/bin/gp", "-q", "code/U655_gp_kraus_audit.gp"]),
+    ("U656: Extended Kraus Sieve for Signature (3, 3, p) [p in 12601..12700]", ["python3", "code/U656_kraus_sieve_p12601_p12700.py"]),
+    ("U657: PARI/GP Independent Audit of Kraus Sieve Modular Traces [12601..12700]", ["/opt/homebrew/bin/gp", "-q", "code/U657_gp_kraus_audit.gp"]),
+    ("U658: Extended Kraus Sieve for Signature (3, 3, p) [p in 12701..12800]", ["python3", "code/U658_kraus_sieve_p12701_p12800.py"]),
+    ("U659: PARI/GP Independent Audit of Kraus Sieve Modular Traces [12701..12800]", ["/opt/homebrew/bin/gp", "-q", "code/U659_gp_kraus_audit.gp"]),
+    ("U660: Extended Kraus Sieve for Signature (3, 3, p) [p in 12801..12900]", ["python3", "code/U660_kraus_sieve_p12801_p12900.py"]),
+    ("U661: PARI/GP Independent Audit of Kraus Sieve Modular Traces [12801..12900]", ["/opt/homebrew/bin/gp", "-q", "code/U661_gp_kraus_audit.gp"]),
+    ("U662: Extended Kraus Sieve for Signature (3, 3, p) [p in 12901..13000] - 13000 Centennial Milestone", ["python3", "code/U662_kraus_sieve_p12901_p13000.py"]),
+    ("U663: PARI/GP Independent Audit of Kraus Sieve Modular Traces [12901..13000]", ["/opt/homebrew/bin/gp", "-q", "code/U663_gp_kraus_audit.gp"]),
 ]
 
 
