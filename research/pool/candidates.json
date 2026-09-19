@@ -11576,6 +11576,20 @@
       "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [11001, 11100]",
       "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
       "status": "PARTIAL_RESULT"
+    },
+    {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C522",
+      "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [11101, 11200]",
+      "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination",
+      "status": "PARTIAL_RESULT"
     }
   ],
   "C503": {

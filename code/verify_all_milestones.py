@@ -402,7 +402,10 @@ MILESTONES = [
     ("U623: Mathematical Audit of Topological Cyclic Homology, Prismatic Crystals & Orbifold Higgs Bundles", ["python3", "code/U623_untried_frontiers_deconstruction_audit.py"]),
     ("U624: Extended Kraus Sieve for Signature (3, 3, p) [p in 11001..11100]", ["python3", "code/U624_kraus_sieve_p11001_p11100.py"]),
     ("U625: PARI/GP Independent Audit of Kraus Sieve Modular Traces [11001..11100]", ["/opt/homebrew/bin/gp", "-q", "code/U625_gp_kraus_audit.gp"]),
+    ("U626: Extended Kraus Sieve for Signature (3, 3, p) [p in 11101..11200]", ["python3", "code/U626_kraus_sieve_p11101_p11200.py"]),
+    ("U627: PARI/GP Independent Audit of Kraus Sieve Modular Traces [11101..11200]", ["/opt/homebrew/bin/gp", "-q", "code/U627_gp_kraus_audit.gp"]),
 ]
+
 
 
 
