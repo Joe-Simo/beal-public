@@ -799,6 +799,15 @@ theorem post_century_signature_3_3_p_elimination_11400
     ∀ p, 3 ≤ p → p ≤ 11400 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
   no_beal_counterexample_3_3_up_to_11400 h_no_sol
 
+/--
+**Post-Centennial Milestone 392: Modular Elimination of Signature (3, 3, p) up to p = 11500**.
+-/
+theorem post_century_signature_3_3_p_elimination_11500
+    (h_no_sol : ∀ p, 3 ≤ p → p ≤ 11500 → ¬ ∃ (A B C : ℕ), IsPrimitiveSignature33pSolution A B C p) :
+    ∀ p, 3 ≤ p → p ≤ 11500 → ¬ ∃ (A B C : ℕ), IsBealCounterexample A B C 3 3 p :=
+  no_beal_counterexample_3_3_up_to_11500 h_no_sol
+
+
 
 
 
