@@ -400,7 +400,10 @@ MILESTONES = [
     ("U621: Extended Kraus Sieve for Signature (3, 3, p) [p in 10901..11000] - Centennial Milestone", ["python3", "code/U621_kraus_sieve_p10901_p11000.py"]),
     ("U622: PARI/GP Independent Audit of Kraus Sieve Modular Traces [10901..11000]", ["/opt/homebrew/bin/gp", "-q", "code/U622_gp_kraus_audit.gp"]),
     ("U623: Mathematical Audit of Topological Cyclic Homology, Prismatic Crystals & Orbifold Higgs Bundles", ["python3", "code/U623_untried_frontiers_deconstruction_audit.py"]),
+    ("U624: Extended Kraus Sieve for Signature (3, 3, p) [p in 11001..11100]", ["python3", "code/U624_kraus_sieve_p11001_p11100.py"]),
+    ("U625: PARI/GP Independent Audit of Kraus Sieve Modular Traces [11001..11100]", ["/opt/homebrew/bin/gp", "-q", "code/U625_gp_kraus_audit.gp"]),
 ]
+
 
 
 

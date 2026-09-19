@@ -365,9 +365,16 @@
       "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [10901, 11000] (11,000 CENTENNIAL MILESTONE)",
       "lemma_type": "modular_trace_congruence",
       "salvage_timestamp": "2026-09-19T10:35:00Z"
+    },
+    {
+      "candidate_id": "C520",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [11001, 11100]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T10:38:00Z"
     }
   ]
 }
+
 
 
 
