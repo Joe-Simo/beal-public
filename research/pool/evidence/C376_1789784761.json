@@ -1,0 +1,90 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C376",
+  "timestamp": "2026-09-18T22:26:01-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C376 - HIGHER NON-ABELIAN HODGE THEORY, SIMPSON CORRESPONDENCE AND PERIOD DOMAINS\nClaim: Simpson's non-abelian Hodge correspondence for Higgs bundles and representations of fundamental groups obstructs primitive Beal points.\nMethod: Non-abelian Hodge theory on punctured projective lines, stable Higgs bundles, and harmonic bundles.\nCategory: unifying_modular_motivic_geometry\nContext: Beal conjecture requires x, y, z >= 3. Fermat-Catalan identities have exponent 2 and defect -chi <= 1/18, while Beal has -chi >= 1/12.",
+  "questions": {
+    "relevance": {
+      "type": "score",
+      "instructions": "How directly does this candidate address the general Beal conjecture across arbitrary triples (p, q, r) >= 3?",
+      "criteria": [
+        "level 0: Settle only bounded prime exponents or dead category computation with no general leverage.",
+        "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+        "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+        "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+      ]
+    },
+    "fc_blindness": {
+      "type": "noul",
+      "instructions": "Is this candidate's mathematical mechanism blind to exponent 2 (i.e. does it also hold for Fermat-Catalan identities with exponent 2)?",
+      "criteria": {
+        "true": "The mechanism holds on all Fermat-Catalan identities with exponent 2, hence cannot prove Beal on its own.",
+        "false": "The mechanism strictly exploits the Beal hyperbolic defect -chi >= 1/12 (which fails on Fermat-Catalan) or specific exponent >= 3 geometry."
+      }
+    },
+    "dead_category": {
+      "type": "noul",
+      "instructions": "Does this candidate fall into a known dead category (bounded sieves, modular method one signature at a time, elementary congruences, abc/Baker)?",
+      "criteria": {
+        "true": "Yes, it is in a known dead category incapable of proving the full conjecture.",
+        "false": "No, it explores live directions such as effective Diophantine geometry on orbifolds or unifying motivic objects."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate in the research loop?",
+      "criteria": {
+        "exploit_bounded": "Execute exact computation or Kraus sieve verification to advance empirical milestone bounds.",
+        "audit_obstruction": "Perform rigorous primary-source mathematical audit to expose fundamental structural obstruction.",
+        "refute": "Refute the candidate due to heuristic laundering or geometric impossibility.",
+        "pursue_frontier": "Actively develop as the leading mathematical frontier for unconditional Diophantine bounds."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "relevance": {
+        "type": "score",
+        "score": 0.69,
+        "confidence": 0.31,
+        "legend": {
+          "0": "level 0: Settle only bounded prime exponents or dead category computation with no general leverage.",
+          "1": "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+          "2": "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+          "3": "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+        },
+        "probabilities": {
+          "0": 0.57,
+          "1": 0.22,
+          "2": 0.18,
+          "3": 0.03
+        }
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "dead_category": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "action": {
+        "type": "choice",
+        "choice": "audit_obstruction",
+        "confidence": 0.45,
+        "probabilities": {
+          "audit_obstruction": 0.58,
+          "pursue_frontier": 0.01,
+          "refute": 0.39,
+          "exploit_bounded": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 925,
+      "output_tokens": 114
+    }
+  }
+}

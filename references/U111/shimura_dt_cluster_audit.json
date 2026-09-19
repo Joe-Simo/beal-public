@@ -1,0 +1,21 @@
+{
+  "C330": {
+    "status": "BLOCKED",
+    "reason": "Jacobian dimensions g = Theta(xy) explode across variable signatures, precluding any single Shimura variety from parameterizing all cases. Furthermore, points on PEL moduli spaces A_g parameterize abelian varieties up to isomorphism, depending only on the projective curve C/Q and strictly blind to Diophantine coprimality gcd(A, B, C) = 1. Hodge cycles are geometric and do not bound exponents.",
+    "sample_primes": [
+      5,
+      7,
+      11
+    ],
+    "genera": [
+      6,
+      15,
+      45
+    ]
+  },
+  "C331": {
+    "status": "BLOCKED",
+    "reason": "Motivic Donaldson-Thomas invariants and cluster algebra mutation graphs are local invariants of the singularity at the origin (0, 0, 0) in C^3. Positive integer solutions A, B, C >= 1 lie outside the singular locus, and the local 3-CY category provides no Diophantine filter for global coprimality gcd(A, B, C) = 1 or exponent bounds.",
+    "milnor_number_333": 8
+  }
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C410",
+    "title": "ANTICYCLOTOMIC IWASAWA THEORY AND PRYM MONODROMY OF CYCLIC COVERS",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_2_chabauty_unbounded_s",
+    "failure_mode_confidence": 0.3,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "selmer_dimension_growth",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.64
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_2_chabauty_unbounded_s",
+        "confidence": 0.3,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.47,
+          "sound_no_failure_mode": 0.42,
+          "mode_1_residual_conflation": 0.01,
+          "mode_3_heuristic_laundering": 0.1
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.81,
+        "probabilities": {
+          "finiteness_only": 0.86,
+          "proves_nonexistence": 0.03,
+          "bounded_only": 0.0,
+          "vacuous": 0.11
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "selmer_dimension_growth",
+        "confidence": 0.44,
+        "probabilities": {
+          "automorphic_cusp_abundance": 0.04,
+          "selmer_dimension_growth": 0.54,
+          "unobstructed": 0.07,
+          "computational_scale": 0.05,
+          "continuous_moduli_degeneration": 0.08,
+          "torsion_wild_ramification": 0.22
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.74,
+        "probabilities": {
+          "refute_and_archive": 0.09,
+          "salvage_proved_sublemmas": 0.09,
+          "advance_kraus_frontier": 0.02,
+          "synthesize_breakthrough": 0.02,
+          "audit_and_isolate_obstruction": 0.78
+        }
+      }
+    }
+  }
+]

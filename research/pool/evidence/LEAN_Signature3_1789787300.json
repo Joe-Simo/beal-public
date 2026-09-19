@@ -1,0 +1,82 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "LEAN_Signature3",
+  "timestamp": "2026-09-18T23:08:20-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "lean_file": "Signature3.lean",
+    "theorems": [
+      "theorem signature33p_solution_is_beal_counterexample (A B C p : \u2115)",
+      "theorem both_odd_of_even_c (A B C p : \u2115)",
+      "theorem genusX0_18_eq_zero : genusX0_18 = 0 := by",
+      "theorem dim_S2_Gamma0_18 : cuspFormsDimGamma0 18 2 = 0 := by",
+      "theorem dim_S2_Gamma0_18_matches_genus : (cuspFormsDimGamma0 18 2 : \u2124) = genusX0_18 := by",
+      "theorems below still typecheck; prefer `c_must_be_odd_of_kraus7`. -/",
+      "theorem c_must_be_odd_of_kraus7 (hK : KrausProp7) (A B C p : \u2115)",
+      "theorem three_dvd_C_of_kraus7 (hK : KrausProp7) (A B C p : \u2115)",
+      "theorem c_must_be_odd (hK : KrausEvenCLevel18Newform) (A B C p : \u2115)",
+      "theorem bases_one_even_one_odd (hK : KrausEvenCLevel18Newform) (A B C p : \u2115)",
+      "theorem kraus_curve_weierstrass_discriminant (A B : \u2124) :",
+      "theorem kraus_discriminant_spec (A B C : \u2124) (p : \u2115) :",
+      "theorem kraus_1998_discriminant_eq (A B : \u2124) :",
+      "theorem kraus_1998_discriminant_on_solution (A B C : \u2124) (p : \u2115)",
+      "theorem kraus_1998_discriminant_pow_two_p (A B C : \u2124) (p : \u2115)"
+    ],
+    "full_content_snippet": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.Taxonomy\nimport Mathlib.Algebra.Ring.Basic\nimport Mathlib.Data.Nat.Defs\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Algebra.Group.Even\nimport Mathlib.Tactic.Ring\nimport Mathlib.NumberTheory.FLT.Three\n\n/-!\n# Generalized Fermat Equation of Signature (3, 3, p) and the Kraus Frey Curve\n\nThis module formalizes the arithmetic, parity reductions, and modular infrastructure\nfor the Generalized Fermat Equation of signature $(3, 3, p)$:\n  $$A^3 + B^3 = C^p$$\nin strictly positive integers $A, B, C > 0$ with exponent $p \\ge 3$, following the\nfoundational framework established by Alain Kraus (1998), Henri Darmon, Lo\u00efc Merel,\nand Nuno Freitas (2016).\n\n## Mathematical Overview and Main Results\n\n1. **Signature $(3, 3, p)$ Diophantine Equation**:\n   - `Signature33pEquation A B C p`: the core equation $A^3 + B^3 = C^p$.\n   - `IsPrimitiveSignature33pSolution A B C p`: positive integer solution with $\\gcd(A, B) = 1$.\n   - Coprimality reduction: $\\gcd(A, B) = 1 \\implies \\gcd(A, B, C) = 1$.\n   - Relation to Beal counterexamples: any primitive solution induces a counterexample of signature $(3, 3, p)$.\n\n2. **Parity Reduction (Obstruction at Conductor 18)**:\n   - Modulo 2 parity properties of cubes: $n^3 \\equiv n \\pmod 2$.\n   - If $C$ were even in a coprime solution, both $A$ and $B$ must be odd.\n   - By Kraus's conductor determination and Ribet's level-lowering theorem, an even-$C$ solution\n     forces the associated mod-$p$ Galois representation $\\rho_{E, p}$ to arise from a weight-2\n     cuspidal newform of level $N = 18$:\n       $$f \\in S_2(\\Gamma_0(18)).$$\n   - However, the space of cusp forms on $\\Gamma_0(18)$ has dimension zero:\n       $$\\dim S_2(\\Gamma_0(18)) = 0.$$\n   - **Conclusion**: In every primitive positive solution, $C$ must be **odd**, and exactly\n     one",
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent."
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Do the theorem statements in this Lean 4 file encode the exact mathematical conjecture (or an exact partial case) without relaxing exponents, dropping coprimality, or assuming vacuous premises?",
+      "criteria": {
+        "true": "The formal theorem statements faithfully encode the mathematical problem.",
+        "false": "The statements suffer from proxy relaxation, exponent-2 leakage, or vacuous hypotheses."
+      }
+    },
+    "custom_axiom_risk": {
+      "type": "noul",
+      "instructions": "Does this formal file appear to introduce non-standard custom axioms or unverified 'sorry' placeholders?",
+      "criteria": {
+        "true": "Risk of custom axioms or incomplete proofs detected.",
+        "false": "Adheres to standard Lean 4 mathematical library axioms with complete proofs."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended verification action for this Lean file?",
+      "criteria": {
+        "lake_build_verify": "Proceed with Lake build and axiom audit [propext, Classical.choice, Quot.sound].",
+        "rewrite_statement": "Refactor formal theorem statements to ensure exact fidelity to Beal's conjecture.",
+        "reject_formalization": "Reject formalization due to severe statement drift or inconsistency."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "custom_axiom_risk": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "action": {
+        "type": "choice",
+        "choice": "lake_build_verify",
+        "confidence": 0.61,
+        "probabilities": {
+          "reject_formalization": 0.05,
+          "lake_build_verify": 0.74,
+          "rewrite_statement": 0.21
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1793,
+      "output_tokens": 87
+    }
+  }
+}

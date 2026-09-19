@@ -1,0 +1,83 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C394",
+  "timestamp": "2026-09-18T23:11:24-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C394",
+    "candidate": {
+      "id": "C394",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5201, 5300]",
+      "claim": "No non-trivial primitive solutions exist for signature (3, 3, p) for all prime exponents p in [5201, 5300].",
+      "method": "Modular method level lowering to conductor 72, Kraus sieve relations at auxiliary primes q = 2kp + 1 with a_q(f) = 0 mod 2.",
+      "status": "PARTIAL_RESULT",
+      "category": "dead_category_bounded_sieve",
+      "parents": [
+        "C390"
+      ],
+      "inspirations": [
+        "Kraus 1998"
+      ],
+      "evidence": [
+        "U443_kraus_sieve_p5201_p5300.py"
+      ],
+      "obligations": [
+        "Compute Kraus certificates for all primes in [5201, 5300]."
+      ],
+      "evaluations": {
+        "category": "dead_category_bounded_sieve"
+      },
+      "failure_reason": null,
+      "novelty_note": "Advances empirical verification frontier past exponent 5200.",
+      "extracted": [
+        "Kraus sieve eliminates primes p in [5201, 5300] with p = 1 mod 3; primes with p = 2 mod 3 eliminated by Darmon-Merel."
+      ]
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.41
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "modular_trace_congruence",
+        "confidence": 0.88,
+        "probabilities": {
+          "modular_trace_congruence": 0.91,
+          "galois_inertia_weight": 0.0,
+          "none": 0.09,
+          "height_positivity": 0.0,
+          "cohomology_dimension_bound": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 904,
+      "output_tokens": 98
+    }
+  }
+}

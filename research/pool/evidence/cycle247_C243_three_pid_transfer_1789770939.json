@@ -1,0 +1,73 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "cycle247_C243_three_pid_transfer",
+  "timestamp": "2026-09-18T18:35:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal conjecture: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no positive integer solutions. Descent on (3,3,3) in Lean 4 Euler.lean has 127 theorems. We evaluate the formalization of CubeFormParam via Z[omega] PID, an independent GP Kraus sieve check, and the Chabauty-Kim frontier.",
+    "candidate": {
+      "id": "C243_three_pid_transfer",
+      "claim": "Transfer from Mathlib three_pid to CubeFormParam: factoring p^2 + 3q^2 in Z[omega] and applying unique factorization to extract cube factors.",
+      "text": "Mathlib.NumberTheory.Cyclotomic.PID provides three_pid: IsPrincipalIdealRing (\ud835\udcde K) for K = CyclotomicField 3 \u211a. We prove that p + q sqrt(-3) and p - q sqrt(-3) are coprime in \ud835\udcde K when gcd(p,q)=1 and 3 does not divide p."
+    }
+  },
+  "questions": {
+    "soundness": {
+      "type": "score",
+      "instructions": "How mathematically sound and rigorous is this step within the verified scope of the repo?",
+      "criteria": [
+        "level 0: heuristic laundering or unverified assumption",
+        "level 1: speculative connection without immediate proof mechanism",
+        "level 2: concrete verifiable certificate or exact computation",
+        "level 3: fully formalizable theorem in Lean 4 or exact algebraic derivation"
+      ]
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate?",
+      "criteria": {
+        "formalize": "formalize in Lean 4 with mathlib",
+        "exact_computation": "implement exact computation in PARI/GP or Python",
+        "literature_check": "check primary literature for known obstructions",
+        "discard": "discard"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "soundness": {
+        "type": "score",
+        "score": 2.15,
+        "confidence": 0.15,
+        "legend": {
+          "0": "level 0: heuristic laundering or unverified assumption",
+          "1": "level 1: speculative connection without immediate proof mechanism",
+          "2": "level 2: concrete verifiable certificate or exact computation",
+          "3": "level 3: fully formalizable theorem in Lean 4 or exact algebraic derivation"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.28,
+          "2": 0.11,
+          "3": 0.55
+        }
+      },
+      "action": {
+        "type": "choice",
+        "choice": "formalize",
+        "confidence": 0.87,
+        "probabilities": {
+          "discard": 0.01,
+          "literature_check": 0.06,
+          "formalize": 0.91,
+          "exact_computation": 0.02
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 752,
+      "output_tokens": 69
+    }
+  }
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C408",
+    "title": "SYZYGIES OF FERMAT CURVES AND HIGHER KOSZUL COHOMOLOGY GROUPS",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.46,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.69
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.46,
+        "probabilities": {
+          "mode_1_residual_conflation": 0.01,
+          "mode_2_chabauty_unbounded_s": 0.11,
+          "sound_no_failure_mode": 0.6,
+          "mode_3_heuristic_laundering": 0.28
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.7,
+        "probabilities": {
+          "bounded_only": 0.0,
+          "finiteness_only": 0.78,
+          "vacuous": 0.22,
+          "proves_nonexistence": 0.0
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "continuous_moduli_degeneration",
+        "confidence": 0.44,
+        "probabilities": {
+          "continuous_moduli_degeneration": 0.53,
+          "unobstructed": 0.21,
+          "computational_scale": 0.21,
+          "torsion_wild_ramification": 0.01,
+          "automorphic_cusp_abundance": 0.01,
+          "selmer_dimension_growth": 0.03
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.71,
+        "probabilities": {
+          "refute_and_archive": 0.17,
+          "audit_and_isolate_obstruction": 0.76,
+          "salvage_proved_sublemmas": 0.05,
+          "synthesize_breakthrough": 0.01,
+          "advance_kraus_frontier": 0.01
+        }
+      }
+    }
+  }
+]

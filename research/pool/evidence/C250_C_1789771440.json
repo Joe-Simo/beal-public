@@ -1,0 +1,80 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C250_C",
+  "timestamp": "2026-09-18T18:44:00-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "C250_C",
+    "title": "Algorithmic Tate Engine for Kraus Frey Curve",
+    "desc": "Implement automated exact valuation and Kodaira type determination at 2, 3, and primes dividing C."
+  },
+  "questions": {
+    "verifiability": {
+      "type": "score",
+      "instructions": "Can this tactic be completely verified with exact arithmetic, Lean 4 proofs, or independent cross-language checks?",
+      "criteria": [
+        "level 0: relies on unverified conjectures or heuristic laundry",
+        "level 1: conditionally verifiable under standard modularity / Serre uniformity conjectures",
+        "level 2: algorithmically verifiable via exact symbolic algebra or modular forms point counting",
+        "level 3: fully machine-checkable with zero sorries and standard axioms only"
+      ]
+    },
+    "failure_mode_clean": {
+      "type": "noul",
+      "instructions": "Is this tactic free of the 3 recurring failure modes (residual/isogeny conflation, Chabauty on wrong field, heuristic laundering)?",
+      "criteria": {
+        "true": "Completely free of recurring failure modes",
+        "false": "Contains or risks one of the known failure modes"
+      }
+    },
+    "beal_impact": {
+      "type": "choice",
+      "instructions": "What is the structural contribution to the complete Beal resolution?",
+      "criteria": {
+        "modular_extension": "Extends the verified unconditional prime exponent boundary in signature (3, 3, p)",
+        "formal_conductor": "Formalizes the exact minimal discriminant and level lowering conductor in Lean 4",
+        "higher_genus_boundary": "Clarifies the motivic boundary for signatures with Frey Jacobians of genus >= 2"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "verifiability": {
+        "type": "score",
+        "score": 2.07,
+        "confidence": 0.81,
+        "legend": {
+          "0": "level 0: relies on unverified conjectures or heuristic laundry",
+          "1": "level 1: conditionally verifiable under standard modularity / Serre uniformity conjectures",
+          "2": "level 2: algorithmically verifiable via exact symbolic algebra or modular forms point counting",
+          "3": "level 3: fully machine-checkable with zero sorries and standard axioms only"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.01,
+          "2": 0.83,
+          "3": 0.13
+        }
+      },
+      "failure_mode_clean": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "beal_impact": {
+        "type": "choice",
+        "choice": "formal_conductor",
+        "confidence": 0.87,
+        "probabilities": {
+          "modular_extension": 0.04,
+          "higher_genus_boundary": 0.05,
+          "formal_conductor": 0.91
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 648,
+      "output_tokens": 88
+    }
+  }
+}

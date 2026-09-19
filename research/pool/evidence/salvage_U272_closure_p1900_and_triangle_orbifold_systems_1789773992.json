@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U272_closure_p1900_and_triangle_orbifold_systems",
+  "timestamp": "2026-09-18T19:26:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U272_closure_p1900_and_triangle_orbifold_systems.md",
+    "excerpt": "# U272: Exponent Closure Through $p = 1900$, Triangle Group Rigid Systems, and Quaternionic Obstruction Refutations\n\n**Status**: Verified & Machine-Checked  \n**Milestones Covered**: 104, 105 (Total Verified Milestones: 105/105)  \n**Candidates Addressed**: C269, C270 (REFUTED), C271 (REFUTED), C272  \n**Formal Artifacts**: `formal/Beal/Signature3.lean`, `formal/Beal/PostCentennial.lean`\n\n---\n\n## 1. Executive Summary\n\nThis research cycle accomplishes:\n1. **Extended Kraus Sieve Elimination Through $p = 1900$**:\n   All 6 primes $p \\in [1801, 1900]$ with $p \\equiv 1 \\pmod 3$ ($p \\in \\{1801, 1831, 1861, 1867, 1873, 1879\\}$) are unconditionally eliminated using exact multi-modulus auxiliary primes $q = 2kp + 1$ with $100\\%$ elimination rate (`code/U284_kraus_sieve_p1801_p1900.py`).\n2. **Independent PARI/GP Audit (Milestone 105)**:\n   Every Fourier trace $a_q(72a1)$ and quadratic twist relation $a_q(144a1) = \\chi_{-4}(q) a_q(72a1)$ is verified independently in PARI/GP (`code/U285_gp_kraus_audit.gp`).\n3. **Formal Verification in Lean 4**:\n   Machine-checked [`no_beal_counterexample_3_3_up_to_1900`](file://[LOCAL_HOME]/Downloads/beal/formal/Beal/Signature3.lean) and [`post_century_signature_3_3_p_elimination_1900`](file://[LOCAL_HOME]/Downloads/beal/formal/Beal/PostCentennial.lean) under standard axioms only (`[propext, Classical.choice, Quot.sound]`).\n4. **Rigorous Audit and Refutation of Heuristic Candidates**:\n   - **Candidate C270 (Shimura Curve Quaternionic Descent)**: REFUTED. Conflates the absence of real points on Shimura curves with the absence of residual mod-$p$ representations without proved modularity over non-totally real fields.\n   - **Candidate C271 (Unramified Abelian Quotient Obstruction)**: REFUTED. Fails to account for wild ramification at Serre conductor primes (2 and 3), which absorbs the inertia representation.\n   - Preserved with full failure reasons and extracted lemmas in `research/pool/candidates.json`.\n\n---\n\n## 2. Extended Modular Kraus Sieve for $p \\in [1801, 1900]$\n\n### Exact Auxiliary Prime Certificates\n\n| Prime $p$ | Auxiliary Prime $q = 2kp + 1$ | Multiplier $k$ | Trace $a_q(72a1)$ | Trace $a_q(144a1)$ | $\\dim \\mathcal{T}_{\\mathrm{adm}}$ | Elim Rate |\n|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **1801** | 21613 | 6 | $+94$ | $+94$ | 14 | $100.0\\%$ |\n| **1831** | 10987 | 3 | $+4$ | $-4$ | 8 | $100.0\\%$ |\n| **1861** | 74441 | 20 | $-394$ | $-394$ | 42 | $100.0\\%$ |\n| **1867** | 18671 | 5 | $+176$ | $-176$ | 12 | $100.0\\%$ |\n| **1873** | 11239 | 3 | $+80$ | $-80$ | 8 | $100.0\\%$ |\n| **1879** | 7517 | 2 | $-6$ | $-6$ | 6 | $100.0\\%$ |\n\n*Note on $p = 1861$*: For all $k < 20$, $2kp + 1$ is composite. The first auxiliary prime occurs at $k = 20$ ($q = 74,441$), which unconditionally eliminates the prime with $100\\%$ elimination rate across all tested auxiliary primes.\n\n---\n\n## 3. Audited Refutations of Dead-End Hypotheses\n\n### Refutation of Candidate C270 (Shimura Curve Descent)\n- **Claim**: Indefinite quaternion algebras $B / \\mathbb{Q}$ have Shimura curves $X_D$ with no real points ($X_D(\\mathbb{R}) = \\emptyset$), supposedly forcing the rational points of generalized Frey varieties to be empty.\n- **Flaw**: A Frey variety having an $\\ell$-adic representation matching a quaternionic modular form does not mean the Frey variety itself is a point on $X_D(\\mathbb{Q})$. The modularity of higher-dimensional abelian varieties over number fields not totally real is an open conjecture, and conflating the representation with the curve is Failure Mode 1.\n- **Status**: REFUTED.\n\n### Refutation of Candidate C271 (Unramified Abelian Quotient)\n- **Claim**: The inertia representation at $p$ forces an unramified abelian quotient of $\\operatorname{Gal}(\\overline{\\mathbb{Q}}/\\mathbb{Q}(\\zeta_p))$, contradicting class field theory.\n- **Flaw**: The Serre conductor primes 2 and 3 can absorb the inertia representation through wild ramification, so the resulting extension is not unramified at 2 and 3.\n- **Status**: REFUTED.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.44,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.19,
+          "1": 0.22,
+          "2": 0.55,
+          "3": 0.04
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.8
+      }
+    },
+    "usage": {
+      "input_tokens": 2093,
+      "output_tokens": 42
+    }
+  }
+}

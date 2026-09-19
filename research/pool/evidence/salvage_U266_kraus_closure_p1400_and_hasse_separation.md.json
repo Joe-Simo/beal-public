@@ -1,0 +1,41 @@
+{
+  "checkpoint": "U266_kraus_closure_p1400_and_hasse_separation.md",
+  "jev": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.63,
+        "confidence": 0.55,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it proves at least one concrete lemma or exact certificate that is true independently and reusable as an input elsewhere",
+          "3": "level 3: it proves a substantial structural theorem or closes a significant open case with self-contained exact arguments"
+        },
+        "probabilities": {
+          "0": 0.18,
+          "1": 0.06,
+          "2": 0.72,
+          "3": 0.04
+        }
+      },
+      "primary_asset": {
+        "type": "choice",
+        "choice": "exact_sieve_certificate",
+        "confidence": 0.69,
+        "probabilities": {
+          "algebraic_identity": 0.0,
+          "diophantine_bound": 0.0,
+          "none": 0.0,
+          "formal_proof": 0.24,
+          "exact_sieve_certificate": 0.76
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2045,
+      "output_tokens": 86
+    }
+  }
+}

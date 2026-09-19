@@ -1,0 +1,57 @@
+[
+  {
+    "hypothesis_id": "H_SYNTHETIC_SPECTRUM_TC",
+    "title": "RELATIVE TOPOLOGICAL CYCLIC HOMOLOGY TC(Z[1/6]) AND FROBENIUS MONODROMY",
+    "genius_index": 0.1,
+    "target_discipline": true,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.3,
+    "structural_obstruction": "torsion_wild_ramification",
+    "recommended_action": "audit_and_isolate_obstruction"
+  },
+  {
+    "hypothesis_id": "H_ORBIFOLD_HIGGS_SIMPSON",
+    "title": "NON-ABELIAN HODGE THEORY & STABLE HIGGS BUNDLES ON TRIANGLE ORBIFOLDS",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": false,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.41,
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction"
+  },
+  {
+    "hypothesis_id": "H_IWASAWA_PRYM_DESCENT",
+    "title": "ANTICYCLOTOMIC IWASAWA THEORY AND PRYM MONODROMY OF CYCLIC COVERS",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.22,
+    "structural_obstruction": "selmer_dimension_growth",
+    "recommended_action": "audit_and_isolate_obstruction"
+  },
+  {
+    "hypothesis_id": "H_DERIVED_INTERSECTION_ARAKELOV",
+    "title": "DERIVED INTERSECTION HEIGHTS & KODAIRA-SPENCER OVER SPEC Z",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.73,
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction"
+  },
+  {
+    "hypothesis_id": "H_RIGID_LOCAL_SYSTEMS_KATZ",
+    "title": "PHYSICAL RIGIDITY AND KATZ MIDDLE CONVOLUTION ON (P^1 \\ {0, 1, infty})",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.2,
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction"
+  }
+]

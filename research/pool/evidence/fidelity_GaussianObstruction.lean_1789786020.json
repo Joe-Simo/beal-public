@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_GaussianObstruction.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: GaussianObstruction.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Beal fails over the Gaussian integers \u2014 an obstruction to a whole class of proofs\n\nHelenius (2004): over `\u2124[i]` the Beal statement is **false**, witnessed by\n\n    (-2 + i)^3 + (-2 - i)^3 = (1 + i)^4.\n\nAll three exponents are `\u2265 3`, and the bases share no Gaussian prime \u2014 their norms are `5`, `5`\nand `2`, and `gcd(5, 2) = 1`.\n\n**Why this matters.** `\u2124[i]` is a principal ideal domain, hence a UFD. So Beal's conjecture\n**cannot** be a consequence of unique factorisation alone: any valid proof must use something\nspecial to `\u2124` \u2014 its total ordering, or the ramification behaviour of rational primes. Every\nargument resting purely on formal factorisation identities is refuted in advance by this example.\n\nNo `sorry`, no custom axioms.\n-/\nimport Mathlib.NumberTheory.Zsqrtd.GaussianInt\n\nnamespace Beal\n\nopen Zsqrtd\n\n/-- The three Gaussian bases of the Helenius identity. -/\ndef gU : GaussianInt := \u27e8-2, 1\u27e9\ndef gV : GaussianInt := \u27e8-2, -1\u27e9\ndef gW : GaussianInt := \u27e81, 1\u27e9\n\n/-- `(-2 + i)^3 = -2 + 11i`. -/\ntheorem gU_cube : gU ^ 3 = (\u27e8-2, 11\u27e9 : GaussianInt) := by decide\n\n/-- `(-2 - i)^3 = -2 - 11i`. -/\ntheorem gV_cube : gV ^ 3 = (\u27e8-2, -11\u27e9 : GaussianInt) := by decide\n\n/-- `(1 + i)^4 = -4`. -/\ntheorem gW_fourth : gW ^ 4 = (\u27e8-4, 0\u27e9 : GaussianInt) := by decide\n\n/-- **The Helenius identity.** -/\ntheorem helenius : gU ^ 3 + gV ^ 3 = gW ^ 4 := by decide\n\n/-- The norms are `5`, `5` and `2`. -/\ntheorem gauss_norms : gU.norm = 5 \u2227 gV.norm = 5 \u2227 gW.norm = 2 := by\n  refine \u27e8?_, ?_, ?_\u27e9 <;> simp [gU, gV, gW, Zsqrtd.norm_def]\n\n/-- **Beal's statement is false over `\u2124[i]`.**\nThere are Gaussian integers `u, v, w`, all non-zero, and exponents `x, y, z \u2265 3` with\n`u^x + v^y = w^z`, whose norms are pairwise coprime in pairs witnessing that the bases share no\ncommon Gaussian prime. -/\ntheorem beal_false_over_gaussianInt :\n    \u2203 (u v w : GaussianInt) (x y z : \u2115),\n      3 \u2264 x \u2227 3 \u2264 y \u2227 3 \u2264 z \u2227\n      u \u2260 0 \u2227 v \u2260 0 \u2227 w \u2260 0 \u2227\n      u ^ x + v ^ y = w ^ z \u2227\n      Nat.gcd u.norm.natAbs w.norm.natAbs = 1 \u2227\n      Nat.gcd v.norm.natAbs w.norm.natAbs = 1 := by\n  refine \u27e8gU, gV, gW, 3, 3, 4, by norm_num, by norm_num, by norm_num, ?_, ?_, ?_, helenius, ?_, ?_\u27e9\n  \u00b7 decide\n  \u00b7 decide\n  \u00b7 decide\n  \u00b7 decide\n  \u00b7 decide\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.34
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 1655,
+      "output_tokens": 94
+    }
+  }
+}

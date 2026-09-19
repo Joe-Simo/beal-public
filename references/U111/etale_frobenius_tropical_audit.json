@@ -1,0 +1,22 @@
+{
+  "C333": {
+    "status": "BLOCKED",
+    "reason": "Etale cohomology Frobenius eigenvalues satisfy Deligne-Weil purity |alpha| = sqrt(q) and govern geometric point counts #X(F_q) in P^2(F_q). Over finite fields F_q, all non-zero elements are units, making reduction mod q strictly blind to integer coprimality gcd(A, B, C) = 1. Deligne-Weil bounds hold identically for all smooth curves and cannot bound the exponent lattice.",
+    "a5": 2,
+    "deligne_bound_5": 4.472
+  },
+  "C334": {
+    "status": "BLOCKED",
+    "reason": "In tropical geometry and Berkovich spaces, rational points on projective curves factor through the tropical projective space TP^2 = R^3 / R(1, 1, 1). Coordinate homothety (A, B, C) -> (d*A, d*B, d*C) translates valuations by v(d)*(1, 1, 1), which is quotiented out in TP^2. Thus tropical curves and Berkovich skeletons are strictly scale-invariant and blind to integer coprimality gcd(A, B, C) = 1.",
+    "v_orig": [
+      1,
+      2,
+      3
+    ],
+    "v_scaled": [
+      2,
+      3,
+      4
+    ]
+  }
+}

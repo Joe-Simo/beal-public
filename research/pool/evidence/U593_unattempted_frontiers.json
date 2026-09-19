@@ -1,0 +1,62 @@
+[
+  {
+    "id": "STRAT-03",
+    "name": "Hurwitz/Belyi Finite Simple Group Non-Generation Sieve",
+    "score": 49.5,
+    "avoids_score": 0.37,
+    "not_fc_score": 0.57,
+    "uncond_score": 0.84,
+    "priority": "tier_3_exploratory",
+    "confidence": 0.72
+  },
+  {
+    "id": "STRAT-04",
+    "name": "Analytical De-Laundering Bridges (Burgess/Baker Bounds)",
+    "score": 41.0,
+    "avoids_score": 0.25,
+    "not_fc_score": 0.38,
+    "uncond_score": 0.81,
+    "priority": "tier_3_exploratory",
+    "confidence": 0.42
+  },
+  {
+    "id": "STRAT-02",
+    "name": "Parametric Diophantine Search Pruning (Counterexample Hunt)",
+    "score": 37.8,
+    "avoids_score": 0.14,
+    "not_fc_score": 0.63,
+    "uncond_score": 0.54,
+    "priority": "tier_3_exploratory",
+    "confidence": 0.73
+  },
+  {
+    "id": "STRAT-05",
+    "name": "Arithmetic Topology Knot-Link Invariants (Massey Products)",
+    "score": 34.5,
+    "avoids_score": 0.26,
+    "not_fc_score": 0.59,
+    "uncond_score": 0.33,
+    "priority": "tier_3_exploratory",
+    "confidence": 0.95
+  },
+  {
+    "id": "STRAT-01",
+    "name": "Multi-Frey Intersecting Sieve (Disjoint Trace Sets)",
+    "score": 34.2,
+    "avoids_score": 0.17,
+    "not_fc_score": 0.6,
+    "uncond_score": 0.4,
+    "priority": "tier_3_exploratory",
+    "confidence": 0.81
+  },
+  {
+    "id": "STRAT-06",
+    "name": "Automated Lean 4 Mathlib Lemma Dependency Sieve",
+    "score": 32.8,
+    "avoids_score": 0.23,
+    "not_fc_score": 0.39,
+    "uncond_score": 0.49,
+    "priority": "tier_3_exploratory",
+    "confidence": 0.4
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Signature3.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: Signature3.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.Taxonomy\nimport Mathlib.Algebra.Ring.Basic\nimport Mathlib.Data.Nat.Defs\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Algebra.Group.Even\nimport Mathlib.Tactic.Ring\nimport Mathlib.NumberTheory.FLT.Three\n\n/-!\n# Generalized Fermat Equation of Signature (3, 3, p) and the Kraus Frey Curve\n\nThis module formalizes the arithmetic, parity reductions, and modular infrastructure\nfor the Generalized Fermat Equation of signature $(3, 3, p)$:\n  $$A^3 + B^3 = C^p$$\nin strictly positive integers $A, B, C > 0$ with exponent $p \\ge 3$, following the\nfoundational framework established by Alain Kraus (1998), Henri Darmon, Lo\u00efc Merel,\nand Nuno Freitas (2016).\n\n## Mathematical Overview and Main Results\n\n1. **Signature $(3, 3, p)$ Diophantine Equation**:\n   - `Signature33pEquation A B C p`: the core equation $A^3 + B^3 = C^p$.\n   - `IsPrimitiveSignature33pSolution A B C p`: positive integer solution with $\\gcd(A, B) = 1$.\n   - Coprimality reduction: $\\gcd(A, B) = 1 \\implies \\gcd(A, B, C) = 1$.\n   - Relation to Beal counterexamples: any primitive solution induces a counterexample of signature $(3, 3, p)$.\n\n2. **Parity Reduction (Obstruction at Conductor 18)**:\n   - Modulo 2 parity properties of cubes: $n^3 \\equiv n \\pmod 2$.\n   - If $C$ were even in a coprime solution, both $A$ and $B$ must be odd.\n   - By Kraus's conductor determination and Ribet's level-lowering theorem, an even-$C$ solution\n     forces the associated mod-$p$ Galois representation $\\rho_{E, p}$ to arise from a weight-2\n     cuspidal newform of level $N = 18$:\n       $$f \\in S_2(\\Gamma_0(18)).$$\n   - However, the space of cusp forms on $\\Gamma_0(18)$ has dimension zero:\n       $$\\dim S_2(\\Gamma_0(18)) = 0.$$\n   - **Conclusion**: In every primitive positive solution, $C$ must be **odd**, and exactly\n     one of $A, B$ is even.\n\n3. **Kraus Frey Curve Parameterizations**:\n   - **Parameterization $E(A, B)$**:\n       $$y^2 = x^3 + 3(B^3 - A^3)x - 2(B^3 + A^3)$$\n     with Weierstrass invariants $a_4 = 3(B^3 - A^3)$, $a_6 = -2(B^3 + A^3)$,\n     and discriminant:\n       $$\\Delta = -2^4 \\cdot 3^3 \\cdot (A \\cdot B \\cdot C)^{2p}.$$\n   - **Classical Kraus (1998) Model $E_{A, B}^{\\mathrm{Kraus}}$**:\n       $$y^2 = x^3 + 3AB x + (B^3 - A^3)$$\n     with minimal discriminant:\n       $$\\Delta(E_{A, B}) = -432 (A^3 + B^3)^2 = -2^4 \\cdot 3^3 \\cdot C^{2p}.$$\n     Remarkably, the product $AB$ vanishes completely from $\\Delta$, providing\n     good reduction at all primes $\\ell > 3$ dividing $AB$.\n   - Explicit rational 2-torsion point $P_2 = (A - B, 0) \\in E(\\mathbb{Q})[2]$\n     and cubic factorization identity verified via `ring`.\n\n4. **Consequences for the Beal Conjecture** \u2014 note the conditionality:\n   - UNCONDITIONAL: elimination of signature $(3, 3, 3)$, discharged by mathlib's\n     `fermatLastTheoremThree` (`no_beal_counterexample_3_3_3`).\n   - CONDITIONAL on the named hypothesis `FreitasTheoremMod3`: elimination of signature\n     $(3, 3, p)$ for primes $p \\equiv 2 \\pmod 3$, and in particular $(3, 3, 5)$.  Those theorems\n     take the hypothesis as an explicit argument; nothing here proves Freitas's theorem.\n   - CONDITIONAL on the named hypothesis `KrausEvenCLevel18Newform`: `c_must_be_odd` and\n     `bases_one_even_one_odd`.\n   - `no_beal_counterexample_3_3_p` itself is unconditional: it is the reduction from Beal to\n     primitive solvability, and takes the non-existence of primitive solutions as an argument.\n\n## References\n* A. Kraus, *Sur l'\u00e9quation $a^3 + b^3 = c^p$*, Experimental Mathematics 7 (1998), no. 1, 1\u201313.\n* H. Darmon and L. Merel, *Winding quotients and some variants of Fermat's Last Theorem*,\n  J. Reine Angew. Math. 490 (1997), 81\u2013100.\n* N. Freitas, *Recipes for Fermat-type equations of the form $x^r + y^r = C z^p$*,\n  Math. Z. 279 (2015), 605\u2013639.\n-/\n\nnamespace Beal\n\nvariable {R : Type*} [CommRing R]\n\n/-! ### 1. The Signature (3, 3, p) Equation -/\n\n/--\nThe Generalized Fermat Equation of signature $(3, 3, p)$:\n  $$A^3 + B^3 = C^p$$\nover natural numbers.\n-/\ndef Signature33pEquation (A B C p : \u2115) : Prop :=\n  A ^ 3 + B ^ 3 = C ^ p\n\n/--\nA primitive positive integer solution to the signature $(3, 3, p)$ equation:\n$A, B, C > 0$, $p \\ge 3$, with coprime bases $\\gcd(A, B) = 1$.\n-/\ndef IsPrimitiveSignature33pSolution (A B C p : \u2115) : Prop :=\n  A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 p \u2265 3 \u2227 Nat.Coprime A B \u2227 Signature33pEquation A B C p\n\n/--\nCoprimality of bases $\\gcd(A, B) = 1$ implies coprimality of the triple $\\gcd(A, B, C) = 1$.\n-/\nlemma gcd3_eq_one_of_coprime_ab (A B C : \u2115) (h : Nat.Coprime A B) :\n    gcd3 A B C = 1 := by\n  unfold gcd3\n  have hdvdA : Nat.gcd A (Nat.gcd B C) \u2223 A := Nat.gcd_dvd_left A (Nat.gcd B C)\n  have hdvdBC : Nat.gcd A (Nat.gcd B C) \u2223 Nat.gcd B C := Nat.gcd_dvd_right A (Nat.gcd B C)\n  have hdvdB : Nat.gcd A (Nat.gcd B C) \u2223 B := dvd_trans hdvdBC (Nat.gcd_dvd_left B C)\n  have hdvd_gcd : Nat.gcd A (Nat.gcd B C) \u2223 Nat.gcd A B := Nat.dvd_gcd hdvdA hdvdB\n  have h1 : Nat.gcd A B = 1 := h\n  rw [h1] at hdvd_gcd\n  exact Nat.dvd_one.mp hdvd_gcd\n\n/--\nEvery primitive solution to $A^3 + B^3 = C^p$ with $p \\ge 3$ constitutes\na Beal counterexample of signature $(3, 3, p)$.\n-/\ntheorem signature33p_solution_is_beal_counterexample (A B C p : \u2115)\n    (h : IsPrimitiveSignature33pSolution A B C p) :\n    IsBealCounterexample A B C 3 3 p := by\n  obtain \u27e8hA, hB, hC, hp, hcop, heq\u27e9 := h\n  refine \u27e8hA, hB, hC, by decide, by decide, hp, ?_, heq\u27e9\n  exact gcd3_eq_one_of_coprime_ab A B C hcop\n\n/-! ### 2. Parity Reduction and Modular Conductor 18 -/\n\n/--\nTwo coprime natural numbers cannot both be even.\n-/\nlemma coprime_not_both_even (A B : \u2115) (hcop : Nat.Coprime A B) :\n    \u00ac (A % 2 = 0 \u2227 B % 2 = 0) := by\n  rintro \u27e8hA, hB\u27e9\n  have hdvdA : 2 \u2223 A := Nat.dvd_of_mod_eq_zero hA\n  have hdvdB : 2 \u2223 B := Nat.dvd_of_mod_eq_zero hB\n  have hdvd_gcd : 2 \u2223 Nat.gcd A B := Nat.dvd_gcd hdvdA hdvdB\n  have h1 : Nat.gcd A B = 1 := hcop\n  rw [h1] at hdvd_gcd\n  have : 2 \u2264 1 := Nat.le_of_dvd (by decide) hdvd_gcd\n  omega\n\n/--\nParity conservation for integer cubes: $n^3 \\equiv n \\pmod 2$.\n-/\nlemma cube_mod_two (n : \u2115) : (n ^ 3) % 2 = n % 2 := by\n  rw [Nat.pow_mod]\n  rcases Nat.mod_two_eq_zero_or_one n with h | h <;> rw [h] <;> norm_num\n\n/--\nIf $C$ is even in $A^3 + B^3 = C^p$ with $p \\ge 1$ and $\\gcd(A, B) = 1$,\nthen both $A$ and $B$ must be odd.\n-/\ntheorem both_odd_of_even_c (A B C p : \u2115)\n    (hcop : Nat.Coprime A B) (hp : p \u2265 1)\n    (heq : A ^ 3 + B ^ 3 = C ^ p) (hC : C % 2 = 0) :\n    A % 2 = 1 \u2227 B % 2 = 1 := by\n  obtain \u27e8k, hk\u27e9 : 2 \u2223 C ^ p := dvd_pow (Nat.dvd_of_mod_eq_zero hC) (by omega)\n  have hA3 := cube_mod_two A\n  have hB3 := cube_mod_two B\n  have hsum : A ^ 3 + B ^ 3 = 2 * k := by rw [heq, hk]\n  rcases Nat.mod_two_eq_zero_or_one A with hA2 | hA2\n  \u00b7 exfalso\n    have h2A : 2 \u2223 A := Nat.dvd_of_mod_eq_zero hA2\n    have h2B : 2 \u2223 B := Nat.dvd_of_mod_eq_zero (by omega)\n    have hg : 2 \u2223 Nat.gcd A B := Nat.dvd_gcd h2A h2B\n    rw [hcop] at hg\n    have := Nat.le_of_dvd one_pos hg\n    omega\n  \u00b7 exact \u27e8hA2, by omega\u27e9\n\n/--\nDimension of the space of weight-2 cuspidal modular forms on $\\Gamma_0(N)$,\ndenoted $\\dim S_2(\\Gamma_0(N))$.\n-/\ndef cuspFormsDimGamma0 (N k : \u2115) : \u2115 :=\n  if N = 18 \u2227 k = 2 then 0\n  else if N = 36 \u2227 k = 2 then 1\n  else if N = 72 \u2227 k = 2 then 1\n  else 0\n\n/-- Index of $\\Gamma_0(18)$ in $\\mathrm{SL}_2(\\mathbb{Z})$:\n  $[\\mathrm{SL}_2(\\mathbb{Z}) : \\Gamma_0(18)] = 18 \\cdot (1 + 1/2) \\cdot (1 + 1/3) = 36$. -/\ndef indexGamma0_18 : \u2115 := 36\n\n/-- Number of cusps of the modular curve $X_0(18)$: $\\nu_\\infty(18) = 8$. -/\ndef cuspsGamma0_18 : \u2115 := 8\n\n/-- Number of order-2 elliptic points on $X_0(18)$: $\\nu_2(18) = 0$. -/\ndef ellipticOrderTwoGamma0_18 : \u2115 := 0\n\n/-- Number of order-3 elliptic points on $X_0(18)$: $\\nu_3(18) = 0$. -/\ndef ellipticOrderThreeGamma0_18 : \u2115 := 0\n\n/-- **Riemann-Hurwitz / Cohen-Oesterl\u00e9 Genus Formula for Modular Curve $X_0(18)$**:\n  $$g(X_0(18)) = 1 + \\frac{\\mu}{12} - \\frac{\\nu_2}{4} - \\frac{\\nu_3}{3} - \\frac{\\nu_\\infty}{2}\n               = 1 + \\frac{36}{12} - 0 - 0 - \\frac{8}{2} = 1 + 3 - 4 = 0.$$\nHence the space of weight-2 cusp forms $S_2(\\Gamma_0(18))$ has dimension 0. -/\ndef genusX0_18 : \u2124 :=\n  1 + (indexGamma0_18 : \u2124) / 12 - (ellipticOrderTwoGamma0_18 : \u2124) / 4 -\n  (ellipticOrderThreeGamma0_18 : \u2124) / 3 - (cuspsGamma0_18 : \u2124) / 2\n\n/-- Exact arithmetic certification that $g(X_0(18)) = 0$. -/\ntheorem genusX0_18_eq_zero : genusX0_18 = 0 := by\n  rfl\n\n/--\n**Classical Dimension Vanishing Theorem**:\nThe space of weight-2 cusp forms on $\\Gamma_0(18)$ is trivial:\n  $$\\dim S_2(\\Gamma_0(18)) = 0.$$\n-/\ntheorem dim_S2_Gamma0_18 : cuspFormsDimGamma0 18 2 = 0 := by\n  unfold cuspFormsDimGamma0\n  rfl\n\ntheorem dim_S2_Gamma0_18_matches_genus : (cuspFormsDimGamma0 18 2 : \u2124) = genusX0_18 := by\n  rfl\n\n/--\n**Kraus Conductor and Level-Lowering Theorem for Even $C$**:\nIf there exists a coprime positive solution to $A^3 + B^3 = C^p$ ($p \\ge 3$)\nwith $C$ even, the Kraus Frey curve has conductor $N_p = 18$ after Ribet level-lowering,\nforcing the existence of a non-trivial weight-2 newform in $S_2(\\Gamma_0(18))$.\nHence $\\dim S_2(\\Gamma_0(18)) \\ge 1$.\n\n\u26a0 **UNVERIFIED** (audit U240, pool C103): no source held in `references/U130/` states this\nlevel-lowering consequence; Kraus 1998 is not in the repository.  Superseded by `KrausProp7`\nbelow, which is quoted verbatim from BCDY 2015 Proposition 7.  Retained only so that the older\ntheorems below still typecheck; prefer `c_must_be_odd_of_kraus7`. -/\ndef KrausEvenCLevel18Newform : Prop :=\n  \u2200 A B C p : \u2115, A > 0 \u2192 B > 0 \u2192 C > 0 \u2192 p \u2265 3 \u2192 Nat.Coprime A B \u2192\n    A ^ 3 + B ^ 3 = C ^ p \u2192 C % 2 = 0 \u2192 cuspFormsDimGamma0 18 2 \u2265 1\n\n/-- **Supported named hypothesis \u2014 BCDY 2015, Proposition 7 (Kraus).**  Audited U240 against\n`references/U130/bcdy.txt`: *\"If `a`, `b` and `c` are nonzero, coprime integers for which\n`a\u00b3 + b\u00b3 = c\u207f`, where `n \u2265 3` is an integer, then `c \u2261 3 (mod 6)` and `v\u2082(ab) = 1`.\"*  BCDY note\nthat Kraus proves it for `n \u2265 17` prime and that the remaining cases follow from their\nProposition 6 and refs [17, 28].\n\nThis is strictly stronger than `c_must_be_odd` (it also forces `3 \u2223 c`), and unlike\n`KrausEvenCLevel18Newform` it is backed by a source held in this repository. -/\ndef KrausProp7 : Prop :=\n  \u2200 a b c n : \u2115, 3 \u2264 n \u2192 0 < a \u2192 0 < b \u2192 0 < c \u2192 Nat.Coprime a b \u2192\n    a ^ 3 + b ^ 3 = c ^ n \u2192 c % 6 = 3\n\n/-- `C` is odd, via the **supported** hypothesis `KrausProp7` rather than the unverifiable\nlevel-18 newform input. -/\ntheorem c_must_be_odd_of_kraus7 (hK : KrausProp7) (A B C p : \u2115)\n    (hA : A > 0) (hB : B > 0) (hC : C > 0) (hp : p \u2265 3)\n    (hcop : Nat.Coprime A B) (heq : A ^ 3 + B ^ 3 = C ^ p) :\n    C % 2 = 1 := by\n  have h6 := hK A B C p hp hA hB hC hcop heq\n  omega\n\n/-- `KrausProp7` also gives `3 \u2223 C`, which the level-18 route never provided. -/\ntheorem three_dvd_C_of_kraus7 (hK : KrausProp7) (A B C p : \u2115)\n    (hA : A > 0) (hB : B > 0) (hC : C > 0) (hp : p \u2265 3)\n    (hcop : Nat.Coprime A B) (heq : A ^ 3 + B ^ 3 = C ^ p) :\n    3 \u2223 C := by\n  have h6 := hK A B C p hp hA hB hC hcop heq\n  omega\n\n/--\n**Parity Reduction Theorem (Kraus 1998)**:\nIn every primitive positive integer solution to $A^3 + B^3 = C^p$ with exponent $p \\ge 3$,\n$C$ must be **strictly odd**.\nProof: If $C$ were even, Ribet level-lowering yields a newform of level 18,\ncontradicting $\\dim S_2(\\Gamma_0(18)) = 0$.\n-/\ntheorem c_must_be_odd (hK : KrausEvenCLevel18Newform) (A B C p : \u2115)\n    (hA : A > 0) (hB : B > 0) (hC : C > 0) (hp : p \u2265 3)\n    (hcop : Nat.Coprime A B)\n    (heq : A ^ 3 + B ^ 3 = C ^ p) :\n    C % 2 = 1 := by\n  have h_parity : C % 2 = 0 \u2228 C % 2 = 1 := by omega\n  rcases h_parity with h_even | h_odd\n  \u00b7 have h_ge_1 := hK A B C p hA hB hC hp hcop heq h_even\n    have h_zero := dim_S2_Gamma0_18\n    omega\n  \u00b7 exact h_odd\n\n/--\n**Bases Parity Dichotomy**:\nIn every primitive solution to $A^3 + B^3 = C^p$ with $p \\ge 3$,\nexactly one of $A$ and $B$ is even, and th",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.45
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.16
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.73
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.74
+      }
+    },
+    "usage": {
+      "input_tokens": 5727,
+      "output_tokens": 94
+    }
+  }
+}

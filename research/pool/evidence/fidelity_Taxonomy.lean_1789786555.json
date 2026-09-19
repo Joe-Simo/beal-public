@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Taxonomy.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: Taxonomy.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Mathlib.Data.Rat.Defs\nimport Mathlib.Tactic.Ring\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Tactic.NormNum\n\n/-!\n# Signature Taxonomy and Curvature Classification for Generalized Fermat Equations\n\nThis module formalizes the **geometric and curvature taxonomy** of Generalized Fermat\nEquations of signature $(p, q, r)$:\n  $$A^p + B^q = C^r$$\nwith particular focus on the domain of the **Beal Conjecture** ($p, q, r \\ge 3$).\n\n## Background and Darmon\u2013Granville Theory\n\nThe arithmetic behavior of generalized Fermat equations is governed by the Euler characteristic\n(or orbifold Euler characteristic) of the associated stack / curve:\n  $$\\chi(p, q, r) = \\frac{1}{p} + \\frac{1}{q} + \\frac{1}{r} - 1.$$\n\nClearing denominators, we define the integer curvature invariant:\n  $$E(p, q, r) = q r + p r + p q - p q r.$$\n\nNotice that for $p, q, r > 0$:\n  $$\\chi(p, q, r) = \\frac{E(p, q, r)}{p q r}$$\nand hence $\\operatorname{sign}(\\chi) = \\operatorname{sign}(E)$.\n\nThree geometric regimes arise:\n1. **Spherical ($\\chi > 0, E > 0$)**: Finitely many exception signatures; can admit infinitely\n   many primitive integer solutions (e.g., $(2, 2, r)$ Pythagorean triples, $(2, 3, 3), (2, 3, 4), (2, 3, 5)$).\n2. **Parabolic / Euclidean ($\\chi = 0, E = 0$)**: Exactly three signature classes up to permutation:\n   $(3, 3, 3)$, $(2, 4, 4)$, and $(2, 3, 6)$, corresponding to curves of genus 1.\n3. **Hyperbolic ($\\chi < 0, E < 0$)**: The orbifold has negative curvature and genus $g > 1$.\n   By the landmark theorem of **Darmon and Granville (1995)**, any hyperbolic generalized\n   Fermat equation has at most **finitely many** primitive integer solutions.\n\n## Main Results Formalized Here:\n- Definition of the curvature invariant $E(p, q, r)$ and classification into `SignatureCurvature`.\n- **Classification of Parabolic Signatures**: $(3, 3, 3)$ is the *unique* parabolic signature in the Beal domain $p, q, r \\ge 3$.\n- **Universal Hyperbolicity of Non-Cubic Beal Signatures**: For all $p, q, r \\ge 3$ with $(p, q, r) \\ne (3, 3, 3)$,\n  $E(p, q, r) < 0$ and $\\chi(p, q, r) \\le -1/12$.\n- **Darmon\u2013Granville Finiteness Framing**: Connection between hyperbolicity and the Beal conjecture.\n-/\n\nnamespace Beal\n\n/--\nThe integer curvature invariant $E(p, q, r) = qr + pr + pq - pqr$,\ncorresponding to the numerator of $\\chi(p, q, r) = 1/p + 1/q + 1/r - 1$.\n-/\ndef curvatureNumerator (p q r : \u2115) : \u2124 :=\n  (q * r : \u2124) + (p * r : \u2124) + (p * q : \u2124) - (p * q * r : \u2124)\n\n/--\nGeometric curvature classification of a signature $(p, q, r)$.\n-/\ninductive SignatureCurvature where\n  | Spherical   -- \u03c7 > 0 (E > 0)\n  | Parabolic   -- \u03c7 = 0 (E = 0)\n  | Hyperbolic  -- \u03c7 < 0 (E < 0)\n  deriving DecidableEq, Repr\n\n/--\nCompute the curvature type of a signature $(p, q, r)$ from its integer invariant $E(p, q, r)$.\n-/\ndef signatureCurvature (p q r : \u2115) : SignatureCurvature :=\n  let E := curvatureNumerator p q r\n  if E > 0 then SignatureCurvature.Spherical\n  else if E = 0 then SignatureCurvature.Parabolic\n  else SignatureCurvature.Hyperbolic\n\n/--\nPredicate specifying that a signature $(p, q, r)$ is strictly hyperbolic ($E < 0$).\n-/\ndef IsHyperbolicSignature (p q r : \u2115) : Prop :=\n  curvatureNumerator p q r < 0\n\n/--\nPredicate specifying that a signature $(p, q, r)$ lies in the Beal conjecture domain ($p, q, r \\ge 3$).\n-/\ndef IsBealSignature (p q r : \u2115) : Prop :=\n  p \u2265 3 \u2227 q \u2265 3 \u2227 r \u2265 3\n\n/-! ### 1. Parabolic Signatures (\u03c7 = 0) -/\n\n/--\nThe cubic signature $(3, 3, 3)$ has zero curvature ($E = 0$): this is the classical Fermat cubic.\n-/\ntheorem curvature_3_3_3 : curvatureNumerator 3 3 3 = 0 := by\n  unfold curvatureNumerator\n  decide\n\n/--\nThe signature $(2, 4, 4)$ has zero curvature ($E = 0$).\n-/\ntheorem curvature_2_4_4 : curvatureNumerator 2 4 4 = 0 := by\n  unfold curvatureNumerator\n  decide\n\n/--\nThe signature $(2, 3, 6)$ has zero curvature ($E = 0$).\n-/\ntheorem curvature_2_3_6 : curvatureNumerator 2 3 6 = 0 := by\n  unfold curvatureNumerator\n  decide\n\n/--\nThe three canonical Euclidean signatures are recognized as parabolic by the computable classifier.\n-/\ntheorem classifier_parabolic_cases :\n    signatureCurvature 3 3 3 = SignatureCurvature.Parabolic \u2227\n    signatureCurvature 2 4 4 = SignatureCurvature.Parabolic \u2227\n    signatureCurvature 2 3 6 = SignatureCurvature.Parabolic := by\n  decide\n\n/-! ### 2. Classification in the Beal Domain ($p, q, r \\ge 3$) -/\n\n/--\nExplicit formula for $E(3, 3, r)$ showing linear dependence on $r$:\n$$E(3, 3, r) = 3(3 - r).$$\n-/\nlemma curvature_3_3_r (r : \u2115) :\n    curvatureNumerator 3 3 r = 3 * (3 - (r : \u2124)) := by\n  unfold curvatureNumerator\n  ring\n\n/--\nIf two exponents are 3, the curvature numerator is strictly negative for all $r \\ge 4$.\n-/\ntheorem curvature_3_3_r_neg (r : \u2115) (hr : r \u2265 4) :\n    curvatureNumerator 3 3 r < 0 := by\n  rw [curvature_3_3_r]\n  have : (r : \u2124) \u2265 4 := by omega\n  nlinarith\n\n/--\n**Uniqueness of Parabolic Signature in Beal Domain**:\nAmong all exponents $p, q, r \\ge 3$, the cubic signature $(3, 3, 3)$ is the\n**unique** signature with zero curvature ($E = 0$).\n-/\ntheorem beal_parabolic_unique (p q r : \u2115) (hp : p \u2265 3) (hq : q \u2265 3) (hr : r \u2265 3)\n    (h_ord : p \u2264 q \u2227 q \u2264 r) :\n    curvatureNumerator p q r = 0 \u2194 (p = 3 \u2227 q = 3 \u2227 r = 3) := by\n  obtain \u27e8hpq, hqr\u27e9 := h_ord\n  constructor\n  \u00b7 intro hE\n    unfold curvatureNumerator at hE\n    have hP : (3 : \u2124) \u2264 (p : \u2124) := by exact_mod_cast hp\n    have hQ : (3 : \u2124) \u2264 (q : \u2124) := by exact_mod_cast hq\n    have hR : (3 : \u2124) \u2264 (r : \u2124) := by exact_mod_cast hr\n    have hPQ : (p : \u2124) \u2264 (q : \u2124) := by exact_mod_cast hpq\n    have hQR : (q : \u2124) \u2264 (r : \u2124) := by exact_mod_cast hqr\n    -- pqr = qr + pr + pq <= 3qr, so p <= 3\n    have hp3 : (p : \u2124) = 3 := by nlinarith [mul_pos (by linarith : (0:\u2124) < q) (by linarith : (0:\u2124) < r)]\n    rw [hp3] at hE\n    -- now 2qr = 3q + 3r <= 6r, so q <= 3\n    have hq3 : (q : \u2124) = 3 := by nlinarith\n    rw [hq3] at hE\n    have hr3 : (r : \u2124) = 3 := by linarith\n    exact \u27e8by exact_mod_cast hp3, by exact_mod_cast hq3, by exact_mod_cast hr3\u27e9\n  \u00b7 rintro \u27e8rfl, rfl, rfl\u27e9\n    unfold curvatureNumerator\n    norm_num\n\n/--\n**Curvature Upper Bound in the Beal Domain**:\nThe maximal curvature in the Beal domain among non-cubic signatures occurs at $(3, 3, 4)$,\nwhere $E(3, 3, 4) = -3$.\nFor all sorted triples $3 \\le p \\le q \\le r$ not all 3, $E(p, q, r) \\le -3$.\n-/\ntheorem curvature_upper_bound_beal (p q r : \u2115)\n    (h_beal : IsBealSignature p q r)\n    (h_not_all_3 : \u00ac(p = 3 \u2227 q = 3 \u2227 r = 3))\n    (h_ord : p \u2264 q \u2227 q \u2264 r) :\n    curvatureNumerator p q r \u2264 -3 := by\n  obtain \u27e8hpq, hqr\u27e9 := h_ord\n  obtain \u27e8hp, hq, hr\u27e9 := h_beal\n  unfold curvatureNumerator\n  have hP : (3 : \u2124) \u2264 (p : \u2124) := by exact_mod_cast hp\n  have hQ : (3 : \u2124) \u2264 (q : \u2124) := by exact_mod_cast hq\n  have hR : (3 : \u2124) \u2264 (r : \u2124) := by exact_mod_cast hr\n  have hPQ : (p : \u2124) \u2264 (q : \u2124) := by exact_mod_cast hpq\n  have hQR : (q : \u2124) \u2264 (r : \u2124) := by exact_mod_cast hqr\n  have hQpos : (0 : \u2124) < (q : \u2124) := by linarith\n  have hRpos : (0 : \u2124) < (r : \u2124) := by linarith\n  rcases Nat.lt_or_ge 3 p with hp4 | hp3\n  \u00b7 -- p \u2265 4 :  E \u2264 3qr - pqr = qr(3-p) \u2264 -qr \u2264 -9\n    have h4 : (4 : \u2124) \u2264 (p : \u2124) := by exact_mod_cast hp4\n    have e1 : (p : \u2124) * r \u2264 (q : \u2124) * r := by nlinarith\n    have e2 : (p : \u2124) * q \u2264 (q : \u2124) * r := by nlinarith\n    have e3 : (4 : \u2124) * ((q : \u2124) * r) \u2264 (p : \u2124) * q * r := by\n      have hqr : (0 : \u2124) \u2264 (q : \u2124) * r := by positivity\n      calc (4 : \u2124) * ((q : \u2124) * r) \u2264 (p : \u2124) * ((q : \u2124) * r) :=\n            mul_le_mul_of_nonneg_right h4 hqr\n        _ = (p : \u2124) * q * r := by ring\n    have e4 : (9 : \u2124) \u2264 (q : \u2124) * r := by nlinarith\n    linarith\n  \u00b7 have hp3' : p = 3 := by omega\n    subst hp3'\n    rcases Nat.lt_or_ge 3 q with hq4 | hq3\n    \u00b7 -- p = 3, q \u2265 4 :  E = 3q + 3r - 2qr \u2264 3r + 3r - 8r = -2r \u2264 -8\n      have h4 : (4 : \u2124) \u2264 (q : \u2124) := by exact_mod_cast hq4\n      have e1 : (8 : \u2124) * r \u2264 2 * ((q : \u2124) * r) := by nlinarith\n      push_cast\n      linarith\n    \u00b7 have hq3' : q = 3 := by omega\n      subst hq3'\n      -- p = q = 3, r \u2265 4 :  E = 9 - 3r \u2264 -3\n      have hr4 : (4 : \u2124) \u2264 (r : \u2124) := by\n        rcases Nat.lt_or_ge 3 r with h | h\n        \u00b7 exact_mod_cast h\n        \u00b7 exact absurd \u27e8rfl, rfl, by omega\u27e9 h_not_all_3\n      push_cast\n      linarith\n\n/--\n**Strict Hyperbolicity of Non-Cubic Beal Signatures**:\nEvery signature $(p, q, r)$ with $p, q, r \\ge 3$ other than $(3, 3, 3)$\nis strictly hyperbolic ($E < 0$).\n-/\ntheorem beal_non_cubic_is_hyperbolic (p q r : \u2115)\n    (h_beal : IsBealSignature p q r)\n    (h_not_all_3 : \u00ac(p = 3 \u2227 q = 3 \u2227 r = 3))\n    (h_ord : p \u2264 q \u2227 q \u2264 r) :\n    IsHyperbolicSignature p q r := by\n  have h := curvature_upper_bound_beal p q r h_beal h_not_all_3 h_ord\n  unfold IsHyperbolicSignature\n  linarith\n\n/-! ### 3. Canonical Signature Classification Table -/\n\ntheorem classify_3_3_4 : signatureCurvature 3 3 4 = SignatureCurvature.Hyperbolic := by decide\ntheorem classify_3_4_5 : signatureCurvature 3 4 5 = SignatureCurvature.Hyperbolic := by decide\ntheorem classify_4_4_4 : signatureCurvature 4 4 4 = SignatureCurvature.Hyperbolic := by decide\ntheorem classify_5_5_5 : signatureCurvature 5 5 5 = SignatureCurvature.Hyperbolic := by decide\ntheorem classify_2_3_7 : signatureCurvature 2 3 7 = SignatureCurvature.Hyperbolic := by decide\ntheorem classify_2_3_5 : signatureCurvature 2 3 5 = SignatureCurvature.Spherical  := by decide\n\n\n\n/-! ## A sharp curvature bound: every Beal signature has `|\u03c7| \u2265 1/12` -/\n\n/-- **Sharp curvature bound.**  For `p, q, r \u2265 3` not all equal to 3,\n`11pqr \u2265 12(qr + pr + pq)`, which is exactly `|\u03c7| \u2265 1/12` for\n`\u03c7 = 1/p + 1/q + 1/r - 1`.\n\nEquality holds precisely at the permutations of `(3,3,4)`.  This strictly strengthens\n`curvature_upper_bound_beal`, whose bound `E \u2264 -3` is weak once `pqr` is large. -/\ntheorem curvature_sharp_bound (p q r : \u2115) (hp : p \u2265 3) (hq : q \u2265 3) (hr : r \u2265 3)\n    (h_not_all_3 : \u00ac(p = 3 \u2227 q = 3 \u2227 r = 3)) :\n    12 * (q * r + p * r + p * q) \u2264 11 * (p * q * r) := by\n  -- at least one exponent is \u2265 4; handle by symmetry\n  have key : \u2200 a b c : \u2115, 3 \u2264 a \u2192 3 \u2264 b \u2192 4 \u2264 c \u2192\n      12 * (b * c + a * c + a * b) \u2264 11 * (a * b * c) := by\n    intro a b c ha hb hc\n    nlinarith [Nat.mul_le_mul ha hb, Nat.mul_le_mul hb hc, Nat.mul_le_mul ha hc,\n               Nat.mul_le_mul (Nat.mul_le_mul ha hb) hc]\n  rcases Nat.lt_or_ge 3 r with h | h\n  \u00b7 exact key p q r hp hq h\n  \u00b7 rcases Nat.lt_or_ge 3 q with h2 | h2\n    \u00b7 have := key p r q hp hr h2; linarith [this]\n    \u00b7 rcases Nat.lt_or_ge 3 p with h3 | h3\n      \u00b7 have := key q r p hq hr h3; linarith [this]\n      \u00b7 exact absurd \u27e8by omega, by omega, by omega\u27e9 h_not_all_3\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.14
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.57
+      }
+    },
+    "usage": {
+      "input_tokens": 5022,
+      "output_tokens": 94
+    }
+  }
+}

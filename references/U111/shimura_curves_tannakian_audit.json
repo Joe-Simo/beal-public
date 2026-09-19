@@ -1,0 +1,18 @@
+{
+  "C336": {
+    "status": "BLOCKED",
+    "reason": "Kudla arithmetic special cycles and arithmetic intersection theory on Shimura curves factor through the moduli space X_0(N) and the isomorphism class of the Frey curve E_t. The affine parameter t = A/B is projective and scale-invariant, making arithmetic heights strictly blind to integer coprimality gcd(A, B, C) = 1. Special cycles do not bound exponents.",
+    "t_orig": "3/5",
+    "t_scaled": "3/5"
+  },
+  "C337": {
+    "status": "BLOCKED",
+    "reason": "The motivic Galois group Gal_mot(Q) and unipotent fundamental groups on P^1 \\ {0, 1, \\infty} operate on the scheme structure over Q and evaluate at rational cross-ratios z_0 in Q. Tannakian categories of mixed motives are projective scale-invariant and strictly blind to integer coprimality gcd(A, B, C) = 1 in Z. Motivic periods do not bound exponent triples.",
+    "odd_generators": [
+      -3,
+      -5,
+      -7,
+      -9
+    ]
+  }
+}

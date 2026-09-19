@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "id": "C283_abelian_variety_gl2_modularity",
+    "name": "Modularity of Higher-Genus Frey Jacobians over Totally Real Fields",
+    "text": "Candidate: Jacobian J(C_{A,B,C}) decomposes into abelian varieties of GL_2-type over totally real fields, modular by Boxer-Calegari-Gee-Newton-Thorne (2021)."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.42
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "rigor_and_provability": {
+        "type": "score",
+        "score": 1.49,
+        "confidence": 0.47,
+        "legend": {
+          "0": "level 0: mathematically obstructed or known false",
+          "1": "level 1: requires open grand conjectures (e.g. general Langlands, Fontaine-Mazur)",
+          "2": "level 2: provable by combining proved theorems (Baker, Darmon, Khare-Wintenberger)",
+          "3": "level 3: complete machine-checkable proof in Lean 4"
+        },
+        "probabilities": {
+          "0": 0.1,
+          "1": 0.31,
+          "2": 0.58,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.46,
+        "probabilities": {
+          "literature_check": 0.55,
+          "discard": 0.04,
+          "advance": 0.28,
+          "formalize": 0.04,
+          "park": 0.03,
+          "exact_computation": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 736,
+      "output_tokens": 129
+    }
+  }
+}

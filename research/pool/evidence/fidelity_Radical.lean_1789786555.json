@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Radical.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: Radical.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# An unconditional, exponent-2-sensitive necessary condition (U226, pool C092)\n\nEvery Beal counterexample satisfies\n\n    rad(A\u00b7B\u00b7C)\u00b3 \u2264 A^x \u00b7 B^y \u00b7 C^z ,\n\nwhere `rad n` is the product of the distinct primes dividing `n`.  The proof is three lines: the\nradical divides its argument, and `x, y, z \u2265 3` upgrades `(ABC)\u00b3` to `A^x B^y C^z`.\n\nThe **blindness test** (`code/U141_countersearch_fc.py`, `code/U222_radical_sharp.py`) puts it\nabove the fourteen blind kernel conditions of U141: the ten Fermat\u2013Catalan solutions all have an\nexponent equal to `2`, and the condition **fails** on four of them \u2014 the witness\n`2^7 + 17^3 = 71^2` is formalised below as\n`radical_cube_fails_on_fermat_catalan_2_7_17_3_71_2`.\n\nBut the countersearch in the last section of this file (U228, pool C092 addendum) corrects an\noverstatement: passing the blindness test does **not** make the condition independent arithmetic\ncontent.  Its proof uses only `rad n \u2223 n` and `A^3 \u2264 A^x`, never the equation, so it is a strictly\nweaker consequence of the exponent hypothesis \u2014 the same status as `|\u03c7| \u2265 1/12`.  The four\nfailures are a size accident: `2^5 + 7^2 = 3^4` has an exponent `2` and satisfies it anyway.\n\nIt is **not** a route to a proof.  Turning it into a contradiction requires a lower bound on\n`rad(abc)` relative to `c`, which is the abc conjecture; the bound available here,\n`rad(abc) \u2264 C^z / 4^(1/3)`, gives an abc-quality lower bound tending to `1` and is vacuous\n(pool candidate C088, `REFUTED`).\n\nNo `sorry`, no custom `axiom`s; mathlib only.\n-/\nimport Beal.Conjecture\nimport Mathlib.Data.Nat.Factorization.Basic\nimport Mathlib.Tactic.NormNum.Prime\nimport Mathlib.Tactic.Ring\n\nnamespace Beal\n\nopen Finset\n\n/-- `rad n` is the product of the distinct primes dividing `n` (the *radical*, or squarefree\nkernel).  `rad 0 = rad 1 = 1`. -/\ndef rad (n : \u2115) : \u2115 := \u220f p \u2208 n.primeFactors, p\n\n/-- The radical divides its argument. -/\ntheorem rad_dvd (n : \u2115) : rad n \u2223 n := Nat.prod_primeFactors_dvd n\n\n/-- The radical is at most its argument, for positive `n`. -/\ntheorem rad_le (n : \u2115) (hn : 0 < n) : rad n \u2264 n := Nat.le_of_dvd hn (rad_dvd n)\n\n/-- For `1 \u2264 A` and `3 \u2264 x`, `A ^ 3 \u2264 A ^ x`. -/\ntheorem pow_three_le_pow (A x : \u2115) (hA : 1 \u2264 A) (hx : 3 \u2264 x) : A ^ 3 \u2264 A ^ x :=\n  Nat.pow_le_pow_right hA hx\n\n/-- **Unconditional necessary condition.**  In every Beal counterexample,\n\n    rad(A\u00b7B\u00b7C)\u00b3 \u2264 A^x \u00b7 B^y \u00b7 C^z.\n\nOnly `A, B, C > 0` and `x, y, z \u2265 3` are used; the coprimality hypothesis is not needed. -/\ntheorem radical_cube_le {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    (rad (A * B * C)) ^ 3 \u2264 A ^ x * B ^ y * C ^ z := by\n  obtain \u27e8hA, hB, hC, hx, hy, hz, -, -\u27e9 := h\n  have hpos : 0 < A * B * C := by positivity\n  have h1 : rad (A * B * C) \u2264 A * B * C := rad_le _ hpos\n  calc (rad (A * B * C)) ^ 3 \u2264 (A * B * C) ^ 3 := Nat.pow_le_pow_left h1 3\n    _ = A ^ 3 * B ^ 3 * C ^ 3 := by rw [Nat.mul_pow, Nat.mul_pow]\n    _ \u2264 A ^ x * B ^ y * C ^ z := by\n        have ha : A ^ 3 \u2264 A ^ x := pow_three_le_pow A x hA hx\n        have hb : B ^ 3 \u2264 B ^ y := pow_three_le_pow B y hB hy\n        have hc : C ^ 3 \u2264 C ^ z := pow_three_le_pow C z hC hz\n        exact Nat.mul_le_mul (Nat.mul_le_mul ha hb) hc\n\n/-- **The condition is not exponent-2-blind.**  The Fermat\u2013Catalan solution\n`2^7 + 17^3 = 71^2` is coprime and has all the shape of a counterexample except that one exponent\nis `2`; it **violates** `radical_cube_le`.  Hence the condition above genuinely uses `x, y, z \u2265 3`\nand is not a restatement of a fact about arbitrary coprime triples `a + b = c`. -/\ntheorem radical_cube_fails_on_fermat_catalan_2_7_17_3_71_2 :\n    2 ^ 7 + 17 ^ 3 = 71 ^ 2 \u2227 \u00ac (rad (2 * 17 * 71)) ^ 3 \u2264 2 ^ 7 * 17 ^ 3 * 71 ^ 2 := by\n  constructor\n  \u00b7 norm_num\n  \u00b7 have h2 : Nat.Prime 2 := Nat.prime_two\n    have h17 : Nat.Prime 17 := by norm_num\n    have h71 : Nat.Prime 71 := by norm_num\n    have hrad : rad (2 * 17 * 71) = 2414 := by\n      have hsplit : (2 * 17 * 71 : \u2115) = 2 * (17 * 71) := by ring\n      unfold rad\n      rw [hsplit, Nat.primeFactors_mul (by norm_num) (by norm_num),\n          Nat.primeFactors_mul (by norm_num) (by norm_num),\n          h2.primeFactors, h17.primeFactors, h71.primeFactors]\n      decide\n    rw [hrad]\n    norm_num\n\n/-! ## The sharpened form, in terms of `C^z` alone\n\n`rad(ABC) \u2264 ABC` combines with `A^x \u2264 C^z`, `B^y \u2264 C^z` to give an inequality whose exponents are\nthe Beal exponents themselves.  Writing `c = C^z`, the real-analytic reading is\n`log c / log rad(abc) \u2265 1 / (1/x + 1/y + 1/z)`.\n\nUnlike `radical_cube_le`, the *raw inequality* below holds on all ten Fermat\u2013Catalan solutions, so\nit is blind on its own; the exponent-2 sensitivity lives in the derived quality floor\n`1/(1/x+1/y+1/z)`, which is `\u2265 1` exactly when `x, y, z \u2265 3` and `< 1` as soon as an exponent is\n`2` (verified numerically in `code/U227_sharp_radical.py`).  It is still not a proof route: no\nunconditional upper bound on abc-quality is known. -/\n\n/-- Each summand is at most `C^z`. -/\ntheorem pow_le_target {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    A ^ x \u2264 C ^ z \u2227 B ^ y \u2264 C ^ z := by\n  obtain \u27e8hA, hB, -, -, -, -, -, heq\u27e9 := h\n  have ha : 1 \u2264 A ^ x := Nat.one_le_pow _ _ hA\n  have hb : 1 \u2264 B ^ y := Nat.one_le_pow _ _ hB\n  omega\n\n/-- **Sharpened unconditional bound.**  In every Beal counterexample,\n\n    rad(A\u00b7B\u00b7C) ^ (x\u00b7y\u00b7z) \u2264 (C^z) ^ (y\u00b7z + x\u00b7z + x\u00b7y).\n\nDividing logarithms, this is `log C^z / log rad \u2265 1/(1/x + 1/y + 1/z)`. -/\ntheorem radical_pow_le {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    (rad (A * B * C)) ^ (x * y * z) \u2264 (C ^ z) ^ (y * z + x * z + x * y) := by\n  have hA := h.1\n  have hB := h.2.1\n  have hC := h.2.2.1\n  have hpos : 0 < A * B * C := by positivity\n  have h1 : rad (A * B * C) \u2264 A * B * C := rad_le _ hpos\n  obtain \u27e8hax, hby\u27e9 := pow_le_target h\n  have hsplit : (A * B * C) ^ (x * y * z)\n      = (A ^ x) ^ (y * z) * ((B ^ y) ^ (x * z) * (C ^ z) ^ (x * y)) := by\n    have e1 : (A ^ x) ^ (y * z) = A ^ (x * y * z) := by\n      rw [\u2190 Nat.pow_mul]; congr 1; ring\n    have e2 : (B ^ y) ^ (x * z) = B ^ (x * y * z) := by\n      rw [\u2190 Nat.pow_mul]; congr 1; ring\n    have e3 : (C ^ z) ^ (x * y) = C ^ (x * y * z) := by\n      rw [\u2190 Nat.pow_mul]; congr 1; ring\n    rw [Nat.mul_pow, Nat.mul_pow, e1, e2, e3, Nat.mul_assoc]\n  calc (rad (A * B * C)) ^ (x * y * z) \u2264 (A * B * C) ^ (x * y * z) :=\n        Nat.pow_le_pow_left h1 _\n    _ = (A ^ x) ^ (y * z) * ((B ^ y) ^ (x * z) * (C ^ z) ^ (x * y)) := hsplit\n    _ \u2264 (C ^ z) ^ (y * z) * ((C ^ z) ^ (x * z) * (C ^ z) ^ (x * y)) :=\n        Nat.mul_le_mul (Nat.pow_le_pow_left hax _)\n          (Nat.mul_le_mul (Nat.pow_le_pow_left hby _) le_rfl)\n    _ = (C ^ z) ^ (y * z + x * z + x * y) := by\n        rw [\u2190 Nat.pow_add, \u2190 Nat.pow_add]; ring_nf\n\n/-! ## Countersearch (U228): what the cube condition actually contains\n\n`radical_cube_le` is **not** independent arithmetic content.  Its proof uses only two facts \u2014\n`rad n \u2223 n` and `A ^ 3 \u2264 A ^ x` for `x \u2265 3` \u2014 so it is a strictly weaker *consequence* of the\nexponent hypothesis, not an extra constraint derived from the equation.  The lemma below makes\nthat explicit in the squarefree case, where `rad (A*B*C) = A*B*C` and the condition collapses to\n`A^3 B^3 C^3 \u2264 A^x B^y C^z`.\n\nIt fails on four of the ten Fermat\u2013Catalan solutions, but that is a size accident rather than\narithmetic: `2^5 + 7^2 = 3^4` has an exponent `2` and still satisfies it.  Compare `|\u03c7| \u2265 1/12`,\nwhich is likewise the exponent hypothesis restated. -/\n\n/-- For a squarefree product of bases the radical is the product itself, so the cube condition is\nequivalent to the plain inequality `A^3 B^3 C^3 \u2264 A^x B^y C^z`. -/\ntheorem radical_cube_iff_of_rad_eq {A B C x y z : \u2115} (hsf : rad (A * B * C) = A * B * C) :\n    (rad (A * B * C)) ^ 3 \u2264 A ^ x * B ^ y * C ^ z \u2194 A ^ 3 * B ^ 3 * C ^ 3 \u2264 A ^ x * B ^ y * C ^ z := by\n  rw [hsf, Nat.mul_pow, Nat.mul_pow]\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.16
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.46
+      }
+    },
+    "usage": {
+      "input_tokens": 3817,
+      "output_tokens": 94
+    }
+  }
+}

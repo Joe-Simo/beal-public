@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "EulerDescent_Three_Divides_Branch",
+  "timestamp": "2026-09-18T18:05:14-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "EulerDescent_Three_Divides_Branch",
+    "desc": "In the 3 | p branch, p = 3p_prime gives 9p_prime(3p_prime^2 + q^2) = c^3. 9 | c^3 forces 27 | c^3, c = 3c_prime. Then p_prime(3p_prime^2 + q^2) = 3c_prime^3 forces 3 | p_prime, p_prime = 3p_double_prime. Then q^2 + 3(3p_double_prime)^2 = c_prime^3 / p_double_prime, swapping roles with 3 nmid q.",
+    "target": "Complete closure of 3 | p branch in EulerDescentStep"
+  },
+  "questions": {
+    "formal_tractability": {
+      "type": "choice",
+      "instructions": "How tractable is this step to formalize cleanly in Lean 4?",
+      "criteria": {
+        "clean": "Can be completed in < 60 lines of Lean 4 using existing lemmas",
+        "medium": "Requires 60-150 lines of algebraic manipulation",
+        "blocked": "Requires unavailable external theories"
+      }
+    },
+    "mathematical_definitiveness": {
+      "type": "score",
+      "instructions": "How definitive is this mathematical step for the repository?",
+      "criteria": [
+        "level 0: auxiliary/heuristic",
+        "level 1: partial reduction",
+        "level 2: closes a major branch or sub-step",
+        "level 3: closes a named milestone Prop"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "formal_tractability": {
+        "type": "choice",
+        "choice": "medium",
+        "confidence": 0.61,
+        "probabilities": {
+          "clean": 0.23,
+          "blocked": 0.03,
+          "medium": 0.74
+        }
+      },
+      "mathematical_definitiveness": {
+        "type": "score",
+        "score": 1.68,
+        "confidence": 0.55,
+        "legend": {
+          "0": "level 0: auxiliary/heuristic",
+          "1": "level 1: partial reduction",
+          "2": "level 2: closes a major branch or sub-step",
+          "3": "level 3: closes a named milestone Prop"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.35,
+          "2": 0.57,
+          "3": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 615,
+      "output_tokens": 64
+    }
+  }
+}

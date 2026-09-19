@@ -1,0 +1,99 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_recent_C230_C235",
+  "timestamp": "2026-09-18T18:23:37-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C230",
+      "claim": "UNIFIED EULER DESCENT DISPATCHER: Combining the 3 nmid p branch (descent_step_smaller_natAbs) and 3 | p branch (three_dvd_p_branch_step3) into a single well-founded descent theorem on Nat for p(p^2 + 3q^2) = c^3.",
+      "method": "Lean 4 formalization using WellFounded.fix or Nat.find.",
+      "status": "PARTIAL_RESULT"
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C235",
+      "claim": "DARMON GENERALIZED FREY MOTIVIC EVALUATION ACROSS ARBITRARY EXPONENTS: Systematic audit of the obstructions to extending the modular method to general Beal triples (p, q, r).",
+      "method": "Representation-theoretic audit of Serre uniformity, Darmon Frey representations, and abelian variety modularity.",
+      "status": "PARTIAL_RESULT"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.63,
+        "confidence": 0.37,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.51,
+          "1": 0.39,
+          "2": 0.08,
+          "3": 0.02
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.22
+      }
+    },
+    "usage": {
+      "input_tokens": 1101,
+      "output_tokens": 53
+    }
+  }
+}

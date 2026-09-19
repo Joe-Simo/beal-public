@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C071",
+  "timestamp": "2026-09-18T22:46:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C071\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"Systematic instance-closure of the reduced residual (exponents in {3,4,5,7,11,13,17,19}, 288 signatures up to A<->B): 72 are instances of a literature row with no coprime integer solutions (sign moves allowed only across ODD row exponents; divisibility of exponents), 216 remain. The smallest genuinely open reduced signatures are (3,5,7) and its arrangements, (3,4,11)/(3,11,4)/(4,11,3), (4,5,7)/(4,7,5), (3,5,11), ... New closures found by this check: all arrangements of {3,4,7} (Poonen-Schaefer-Stoll full solution list of x^2+y^3=z^7 contains no solution with |x| a perfect square other than the trivial ones), (3,4,5) [Siksek-Stoll], (p,4,4) p>=5 as instances of (2,n,4), (3,4,4) [Cohen GTM 240 Prop 14.6.6; independently re-derived here: C^4-B^4=A^3 leads to y^2=x^6-1 or y^2=x^6-4 whose elliptic quotients y^2=x^3-1 and y^2=x^3+16 have rank 0 (PARI)].\",\n \"method\": \"Exact script code/U168_instance_closure.py over rows read from BCDY 2015 Tables 1-2 and survey arXiv:2412.11933 Table 1.1 (saved); PARI ranks code/U168_344.gp. Caveat recorded: (2,3,11) is GRH-conditional (survey footnote 3), so {3,4,11} is NOT counted closed. Footnote 5: Bartolome-Mihailescu claim on (p,p,r) is not peer reviewed \\u2014 not used.\",\n \"evidence\": [\n  \"research/pool/evidence/instance_closure_U168.json\",\n  \"references/U130/sig344_pari_output.txt\"\n ],\n \"obligations\": [\n  \"AUDITED (U170-U171) against primary sources saved in references/U130/: PSS Thm 1.1 (pss.txt lines 21-23); Siksek-Stoll Thm 1.1 (ss345.txt line 82: the only primitive integer solutions of x^3+y^4+z^5=0 are trivial, xyz=0) \\u2014 so every arrangement of {3,4,5} is closed unconditionally (3 and 5 odd absorb signs).\",\n  \"NOT yet audited against a primary source: Cohen GTM 240 Prop 14.6.6 for (3,4,4) (book not accessible; the independent rank-0 re-derivation of U168 stands in: y^2=x^3-1 and y^2=x^3+16 rank 0, PARI output saved), and the (2,n,4) row marked only as immediate-from-Bennett-Skinner in BCDY Table 1.\"\n ],\n \"failure_reason\": \"(none \\u2014 not a failure) U185 countersearch of the (3,4,4) re-derivation: gcd(C^2-B^2, C^2+B^2) = 1 for opposite parity and = 2 with v_2(C^2+B^2) = 1 for both odd: 0 violations over all coprime B<C<400; the identities leading to y^2=x^6-1 and y^2=x^6-4 verified. Quotient ranks: y^2=x^3-1 rank 0 (torsion Z/2: (1,0) -> r=+-s -> B=0), y^2=x^3+16 rank 0 (torsion Z/3: (0,+-4) -> s=0 -> C=B). PARI output saved references/U130/sig344_pari_output.txt.\"\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.87,
+        "confidence": 0.13,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.62,
+          "1": 0.07,
+          "2": 0.12,
+          "3": 0.19
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "conservative",
+        "confidence": 0.14,
+        "probabilities": {
+          "optimistic": 0.24,
+          "cannot_tell": 0.09,
+          "not_applicable": 0.31,
+          "conservative": 0.36
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.11,
+        "probabilities": {
+          "state_direction": 0.3,
+          "check_direction_now": 0.29,
+          "no_action": 0.41
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2021,
+      "output_tokens": 139
+    }
+  }
+}

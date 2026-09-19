@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C192",
+  "timestamp": "2026-09-18T22:46:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C192\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"SOURCE-COVERAGE AUDIT of the closure layer. Of the 17 rows in code/U168_instance_closure.py, 14 have their primary source held in references/U130/ and located by U332. Three do not: (2,6,n) Bennett-Chen, (2,n,6) and (13,13,5) arXiv:2510.12092. The first two NEVER FIRE on a reduced signature and are inert. The third FIRES and is the only load-bearing row without a held source: it closes exactly 2 of the 74 closed signatures, (13,13,5) and (5,13,13).\",\n \"method\": \"Mapped every row to the file in references/U130/ that would support it, then intersected with the closure output in research/pool/evidence/instance_closure_U168.json to separate inert rows from load-bearing ones. Exact counts, no estimation.\",\n \"evidence\": \"74 closures total; removing the three unsourced rows leaves 72, and exactly (13,13,5) and (5,13,13) revert to OPEN. BEN 2010 Theorem 1 was also read this cycle: 'There are no solutions in coprime integers A, B, C to A^4 + B^2 = C^n with (A,B,C) = 1 and n >= 4' -- note it does NOT exclude +-1, so like Dahmen-Siksek and unlike Darmon-Merel it needs no base-1 rider. That is the third distinct triviality convention among the sources.\",\n \"obligations\": \"The (13,13,5) row is now labelled [SOURCE NOT HELD] in the tool. It should either be dropped, or the arXiv:2510.12092 paper obtained and checked -- obtaining it is an external fetch and is not in scope at $0 without approval. Separately, the (3,4,4) row rests on the survey rather than on Cohen's book, which is also not held; that row is now superseded anyway by the machine-checked same-parity theorem plus the Euler gap. Bennett-Skinner and BCDY hypothesis reads remain outstanding.\",\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.08,
+        "confidence": 0.92,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.01
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.78,
+        "probabilities": {
+          "optimistic": 0.06,
+          "conservative": 0.09,
+          "cannot_tell": 0.02,
+          "not_applicable": 0.83
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.61,
+        "probabilities": {
+          "state_direction": 0.07,
+          "check_direction_now": 0.19,
+          "no_action": 0.74
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1563,
+      "output_tokens": 140
+    }
+  }
+}

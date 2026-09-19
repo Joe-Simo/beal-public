@@ -1,0 +1,40 @@
+{
+  "9511": {
+    "exponent_p": 9511,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 3,
+    "total_eliminating_primes": 3,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 5,
+      "q": 95111,
+      "aq_72": 216,
+      "aq_72_mod_p": 216,
+      "aq_144a": -216,
+      "aq_144a_mod_p": 9295,
+      "size_Up": 10,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "9547": {
+    "exponent_p": 9547,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 10,
+    "total_eliminating_primes": 10,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 2,
+      "q": 38189,
+      "aq_72": -38,
+      "aq_72_mod_p": 9509,
+      "aq_144a": -38,
+      "aq_144a_mod_p": 9509,
+      "size_Up": 4,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  }
+}

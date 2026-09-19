@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "id": "C265_q_curve_descent",
+    "name": "Ellenberg Frey Q-Curve Descent for Signature (2, 4, p)",
+    "text": "Candidate: Ellenberg Frey Q-curve descent for the generalized Fermat equation A^2 + B^4 = C^p. Associated to a primitive solution is a Q-curve E over K = Q(i) whose Galois representation arises from a Hilbert modular newform over Q(i). Elimination of residual representations via Kraus sieve over Q(i) and modular forms over imaginary quadratic fields."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exact_computability": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.68
+      },
+      "relevance_level": {
+        "type": "score",
+        "score": 1.9,
+        "confidence": 0.7,
+        "legend": {
+          "0": "level 0: peripheral or unrelated to Beal signatures",
+          "1": "level 1: general modular method context without resolving any signature",
+          "2": "level 2: settles a concrete range of exponents or a new specific signature family",
+          "3": "level 3: settles an entire infinite signature family for all exponents",
+          "4": "level 4: resolves the complete conjecture outright"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.12,
+          "2": 0.7,
+          "3": 0.12,
+          "4": 0.0
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.26,
+        "probabilities": {
+          "literature_check": 0.37,
+          "park": 0.08,
+          "discard": 0.03,
+          "advance": 0.29,
+          "formalize": 0.01,
+          "exact_computation": 0.22
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 839,
+      "output_tokens": 124
+    }
+  }
+}

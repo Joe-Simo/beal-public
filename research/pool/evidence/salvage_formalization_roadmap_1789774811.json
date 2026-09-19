@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_formalization_roadmap",
+  "timestamp": "2026-09-18T19:40:11-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "formalization_roadmap.md",
+    "excerpt": "# Formalization Roadmap: Lean 4 Blueprint and Mathlib Architecture for the Beal Conjecture Program\n\n**Date**: 2026-09-17  \n**Status**: Environment audited; formal verification package designed and implemented in `formal/`; kernel-verified test suite, algebraic identities, signature taxonomy, Fermat $n=4$ descent theorems, and catalogue of classical near-misses formalized; full multi-stage formalization roadmap established.  \n**Target Systems**: Lean 4 (toolchain `v4.14.0`), Mathlib 4, Lake package manager.  \n\n---\n\n## 1. System Environment Audit\n\nA comprehensive inspection of the local development environment was performed to assess the availability of Lean 4, Lake, and the Elan version manager.\n\n### 1.1 Command and Path Inspection\nThe following system probes were executed:\n```bash\nwhich lean lake elan\nlean --version\nlake --version\nls -la [LOCAL_HOME]/.elan/bin\nls -la /opt/homebrew/bin/lean /opt/homebrew/bin/lake /opt/homebrew/bin/elan\n```\n\n### 1.2 Inspection Findings\n| Component | Checked Location(s) | Status | Details |\n| :--- | :--- | :--- | :--- |\n| **`lean`** | `$PATH`, `/opt/homebrew/bin`, `~/.elan/bin` | **Not Installed** | Exit code 1; command not found |\n| **`lake`** | `$PATH`, `/opt/homebrew/bin`, `~/.elan/bin` | **Not Installed** | Exit code 1; command not found |\n| **`elan`** | `$PATH`, `/opt/homebrew/bin`, `~/.elan/bin` | **Not Installed** | Directory `~/.elan/bin` does not exist |\n\n### 1.3 Recommended Setup Instructions\nTo compile and interact with the formal Lean 4 codebase in `formal/`:\n```bash\n# 1. Install elan (Lean version manager)\ncurl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y\n\n# 2. Add elan to environment path\nsource $HOME/.elan/env\n\n# 3. Navigate to the formalization directory and fetch Mathlib cache\ncd [LOCAL_HOME]/Downloads/beal/formal\nlake exe cache get\nlake build\n```\n\n---\n\n## 2. Formalization Architecture and Blueprint\n\nA modular Lake package is structured in `formal/` targeting Lean 4 `v4.14.0` with `Mathlib4`.\n\n```\nformal/\n\u251c\u2500\u2500 lean-toolchain                     # Toolchain specification: leanprover/lean4:v4.14.0\n\u251c\u2500\u2500 lakefile.lean                      # Lake package definition and Mathlib dependency\n\u251c\u2500\u2500 Beal.lean                          # Umbrella library root importing all submodules\n\u2514\u2500\u2500 Beal/\n    \u251c\u2500\u2500 Conjecture.lean                # Formal statement, equivalent forms, and FLT corollary\n    \u251c\u2500\u2500 CounterexampleChecker.lean     # Section 8 algorithmic checker, proofs of soundness & completeness\n    \u251c\u2500\u2500 AlgebraicIdentities.lean       # Factorization over Q(phi) and Checkpoint U73 geometric reductions\n    \u251c\u2500\u2500 Taxonomy.lean                  # Signature curvature taxonomy & Beal domain hyperbolicity\n    \u251c\u2500\u2500 Signature4.lean                # FLT for n=4, signature (4, 4, 2), infinite descent, parity lemmas\n    \u2514\u2500\u2500 KnownSolutions.lean            # Catalogue of classical near-misses and exponent-2 exclusions\n```\n\n### Dependency Graph\n```mermaid\ngraph TD\n    Mathlib[\"Mathlib 4 (v4.14.0)\"] --> BealConjecture[\"Beal.Conjecture\"]\n    Mathlib --> BealIdentities[\"Beal.AlgebraicIdentities\"]\n    BealConjecture --> BealChecker[\"Beal.CounterexampleChecker\"]\n    BealConjecture --> BealTaxonomy[\"Beal.Taxonomy\"]\n    BealTaxonomy --> BealSignature4[\"Beal.Signature4\"]\n    BealConjecture --> BealSignature4\n    BealConjecture --> BealKnown[\"Beal.KnownSolutions\"]\n    BealChecker --> BealKnown\n    BealConjecture --> BealRoot[\"Beal (Umbrella Root)\"]\n    BealChecker --> BealRoot\n    BealIdentities --> BealRoot\n    BealTaxonomy --> BealRoot\n    BealSignature4 --> BealRoot\n    BealKnown --> BealRoot\n```\n\n---\n\n## 3. Formalization of the Beal Conjecture Statement\n\nThe formalization in `formal/Beal/Conjecture.lean` addresses the foundational mathematical definitions, both standard formulations, and key logical reductions.\n\n### 3.1 Mathematical Definitions\nLet $A, B, C, x, y, z \\in \\mathbb{N}$.\n1. **Primitive Triple**:\n   $$\\operatorname{gcd}_3(A, B, C) = \\gcd(A, \\gcd(B, C)) = 1$$\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.52,
+        "confidence": 0.48,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.5,
+          "1": 0.48,
+          "2": 0.02,
+          "3": 0.0
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.58
+      }
+    },
+    "usage": {
+      "input_tokens": 1784,
+      "output_tokens": 42
+    }
+  }
+}

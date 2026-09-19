@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Mihailescu.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: Mihailescu.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.KnownSolutions\nimport Mathlib.Data.Nat.Defs\nimport Mathlib.Tactic.Ring\nimport Mathlib.Tactic.IntervalCases\nimport Mathlib.Tactic.NormNum\nimport Mathlib.Tactic.Linarith\n\n/-!\n# Mih\u0103ilescu's Theorem (Catalan's Conjecture) and the Beal Base-One Exclusion\n\nThis module formalizes **Preda Mih\u0103ilescu's Theorem** (2002), which resolved the celebrated\n**Catalan Conjecture** (1844), and derives its fundamental structural consequence for the\n**Beal Conjecture**:\n\n> **Theorem (Base-One Exclusion for Beal Counterexamples)**:\n> In any hypothetical Beal counterexample $(A, B, C, x, y, z)$, none of the bases\n> can ever equal $1$:\n>   $$A \\ge 2, \\quad B \\ge 2, \\quad C \\ge 2.$$\n\n## Mathematical Background\n\n### 1. Catalan's Conjecture and Mih\u0103ilescu's Theorem (2002)\nEug\u00e8ne Charles Catalan conjectured in 1844 that the only consecutive powers of positive integers\nare $8$ and $9$:\n  $$x^p - y^q = 1 \\quad \\text{for integers } x, y > 1 \\text{ and } p, q > 1.$$\nAfter partial results by Euler ($p=2, q=3$), Lebesgue ($q=2$), Ko Chao ($p=2$), and Tijdeman\n(effective finiteness via Baker's theory of linear forms in logarithms), **Preda Mih\u0103ilescu (2002)**\nachieved the complete, unconditional resolution using the arithmetic of cyclotomic fields and\nStickelberger ideals:\n  $$(x, y, p, q) = (3, 2, 2, 3) \\implies 3^2 - 2^3 = 9 - 8 = 1.$$\n\n### 2. Reduction of Generalized Fermat Equations with a Base Equal to 1\nConsider the Generalized Fermat equation:\n  $$A^x + B^y = C^z \\quad \\text{with } x, y, z \\ge 3.$$\n\n- **Case $C = 1$**:\n  $$A^x + B^y = 1^z = 1.$$\n  Since $A, B \\ge 1$ and $x, y \\ge 1$, $A^x \\ge 1$ and $B^y \\ge 1$, so $A^x + B^y \\ge 2 > 1$.\n  Thus no positive integer solution exists.\n\n- **Case $A = 1$**:\n  $$1^x + B^y = C^z \\implies C^z - B^y = 1.$$\n  - If $B = 1$, then $1 + 1 = C^z \\implies C^z = 2$. For $z \\ge 3$, this has no integer solutions.\n  - If $B > 1$, then $C > 1$. Since $y \\ge 3 > 1$ and $z \\ge 3 > 1$, the equation $C^z - B^y = 1$\n    is precisely Catalan's equation!\n  - By Mih\u0103ilescu's theorem, the **unique** solution is:\n      $$(C, z, B, y) = (3, 2, 2, 3).$$\n  - In this unique solution, the exponent $z$ is strictly equal to $2$.\n  - But the Beal Conjecture strictly requires $z \\ge 3$!\n  - Thus, no solution with $A = 1$ can ever have $z \\ge 3$.\n\n- **Case $B = 1$**:\n  By symmetry with $A = 1$, $C^z - A^x = 1$ forces $(C, z, A, x) = (3, 2, 2, 3)$,\n  which again forces $z = 2 < 3$.\n\n### 3. Consequence for the Beal Conjecture\nEvery Beal counterexample satisfies $x \\ge 3, y \\ge 3, z \\ge 3$.\nConsequently, **no base can equal 1**, establishing a universal lower bound:\n  $$\\min(A, B, C) \\ge 2.$$\n\n## References\n* P. Mih\u0103ilescu, *Primary Cyclotomic Units and a Proof of Catalan's Conjecture*,\n  J. Reine Angew. Math. 572 (2004), 167\u2013195.\n* R. Daniel Mauldin, *A Generalization of Fermat's Last Theorem: The Beal Conjecture and Prize Problem*,\n  Notices of the AMS, December 1997, Vol. 44, No. 11, pp. 1436\u20131437.\n* E. Catalan, *Note extraite d'une lettre adress\u00e9e \u00e0 l'\u00e9diteur*,\n  J. Reine Angew. Math. 27 (1844), 192.\n-/\n\nnamespace Beal\n\n/-! ### 1. Catalan's Equation and Mih\u0103ilescu's Theorem -/\n\n/--\nCatalan's Diophantine equation $x^p = y^q + 1$ over natural numbers,\nequivalent to $x^p - y^q = 1$.\n-/\ndef CatalanEquation (x y p q : \u2115) : Prop :=\n  x ^ p = y ^ q + 1\n\n/--\nThe classical Catalan near-miss solution $(3, 2, 2, 3)$: $3^2 = 2^3 + 1$ ($9 = 8 + 1$).\n-/\ntheorem catalan_sol_valid : CatalanEquation 3 2 2 3 := by\n  unfold CatalanEquation\n  decide\n\n/--\n**Mih\u0103ilescu's Theorem (Catalan's Conjecture, 2002)**:\nThe Diophantine equation $x^p = y^q + 1$ for integers $x, y > 1$ and $p, q > 1$\nhas the unique positive integer solution $x = 3, p = 2, y = 2, q = 3$.\n\nStated as a NAMED HYPOTHESIS (`def ... : Prop`), never as a Lean `axiom`: every theorem\nbelow that needs it takes it as an explicit argument, so `#print axioms` on those theorems\nreports only the standard `[propext, Classical.choice, Quot.sound]`.\n-/\ndef MihailescuTheorem : Prop :=\n  \u2200 x y p q : \u2115, x > 1 \u2192 y > 1 \u2192 p > 1 \u2192 q > 1 \u2192 CatalanEquation x y p q \u2192\n    x = 3 \u2227 p = 2 \u2227 y = 2 \u2227 q = 3\n\n/-! ### 2. Impossibility of Generalized Fermat Equations with C = 1 -/\n\n/--\nA positive power of a positive integer is at least 1.\n-/\nlemma one_le_pow_of_pos (n k : \u2115) (hn : n > 0) : n ^ k \u2265 1 := by\n  have : n \u2265 1 := by omega\n  exact Nat.one_le_pow k n (by omega)\n\n/--\nNo Generalized Fermat equation $A^x + B^y = C^z$ can have $C = 1$ for positive bases.\nProof: $A^x \\ge 1$ and $B^y \\ge 1$ implies $A^x + B^y \\ge 2 > 1 = 1^z$.\n-/\ntheorem no_solution_c_eq_one (A B x y z : \u2115)\n    (hA : A > 0) (hB : B > 0) (hx : x \u2265 1) (hy : y \u2265 1)\n    (heq : A ^ x + B ^ y = 1 ^ z) : False := by\n  have hA_pow : A ^ x \u2265 1 := one_le_pow_of_pos A x hA\n  have hB_pow : B ^ y \u2265 1 := one_le_pow_of_pos B y hB\n  have h_sum : A ^ x + B ^ y \u2265 2 := by omega\n  have h_one : 1 ^ z = 1 := one_pow z\n  omega\n\n/-! ### 3. Impossibility of Pure Unit Sum 1^x + 1^y = C^z with z \u2265 2 -/\n\n/--\nNo power $C^z$ with $z \\ge 2$ can equal 2.\nProof: If $C \\le 1$, $C^z \\le 1 \\ne 2$. If $C \\ge 2$, $C^z \\ge 2^2 = 4 > 2$.\n-/\nlemma pow_ne_two_of_exponent_ge_two (C z : \u2115) (hz : z \u2265 2) : C ^ z \u2260 2 := by\n  intro h\n  have hcase : C = 0 \u2228 C = 1 \u2228 2 \u2264 C := by omega\n  rcases hcase with rfl | rfl | hge\n  \u00b7 rw [zero_pow (by omega : z \u2260 0)] at h; omega\n  \u00b7 rw [one_pow] at h; omega\n  \u00b7 have h4 : (4 : \u2115) \u2264 C ^ z := by\n      calc (4 : \u2115) = 2 ^ 2 := by norm_num\n        _ \u2264 2 ^ z := Nat.pow_le_pow_right (by omega) hz\n        _ \u2264 C ^ z := Nat.pow_le_pow_left hge z\n    omega\n\n/--\nThe equation $1^x + 1^y = C^z$ has no integer solution with $z \\ge 2$.\n-/\ntheorem no_solution_two_units (x y z C : \u2115) (hz : z \u2265 2)\n    (heq : 1 ^ x + 1 ^ y = C ^ z) : False := by\n  have h1 : 1 ^ x = 1 := one_pow x\n  have h2 : 1 ^ y = 1 := one_pow y\n  rw [h1, h2] at heq\n  have h_two : 2 = C ^ z := by omega\n  exact pow_ne_two_of_exponent_ge_two C z hz h_two.symm\n\n/-! ### 4. Reduction of 1^x + B^y = C^z and A^x + 1^y = C^z to Catalan's Equation -/\n\n/--\nIf $1^x + B^y = C^z$ with $B > 1$ and $y, z \\ge 2$, then $(C, z, B, y) = (3, 2, 2, 3)$.\nIn particular, the exponent $z$ must strictly equal 2.\n-/\ntheorem catalan_reduction_left (hM : MihailescuTheorem) (x B C y z : \u2115)\n    (hB : B > 1) (hy : y \u2265 2) (hz : z \u2265 2)\n    (heq : 1 ^ x + B ^ y = C ^ z) :\n    C = 3 \u2227 z = 2 \u2227 B = 2 \u2227 y = 3 := by\n  have h1 : 1 ^ x = 1 := one_pow x\n  rw [h1] at heq\n  have hcat : CatalanEquation C B z y := by\n    unfold CatalanEquation\n    omega\n  have hC : C > 1 := by\n    by_contra! hC_le\n    interval_cases C\n    \u00b7 have : (0 : \u2115) ^ z = 0 := zero_pow (by omega : z \u2260 0)\n      omega\n    \u00b7 have : (1 : \u2115) ^ z = 1 := one_pow z\n      have : B ^ y = 0 := by omega\n      have : B ^ y \u2265 1 := one_le_pow_of_pos B y (by omega)\n      omega\n  exact hM C B z y hC hB hz hy hcat\n\n/--\nIf $A^x + 1^y = C^z$ with $A > 1$ and $x, z \\ge 2$, then $(C, z, A, x) = (3, 2, 2, 3)$.\nIn particular, the exponent $z$ must strictly equal 2.\n-/\ntheorem catalan_reduction_right (hM : MihailescuTheorem) (A y C x z : \u2115)\n    (hA : A > 1) (hx : x \u2265 2) (hz : z \u2265 2)\n    (heq : A ^ x + 1 ^ y = C ^ z) :\n    C = 3 \u2227 z = 2 \u2227 A = 2 \u2227 x = 3 := by\n  have h1 : 1 ^ y = 1 := one_pow y\n  rw [h1] at heq\n  have hcat : CatalanEquation C A z x := by\n    unfold CatalanEquation\n    omega\n  have hC : C > 1 := by\n    by_contra! hC_le\n    interval_cases C\n    \u00b7 have : (0 : \u2115) ^ z = 0 := zero_pow (by omega : z \u2260 0)\n      omega\n    \u00b7 have : (1 : \u2115) ^ z = 1 := one_pow z\n      have : A ^ x = 0 := by omega\n      have : A ^ x \u2265 1 := one_le_pow_of_pos A x (by omega)\n      omega\n  exact hM C A z x hC hA hz hx hcat\n\n/-! ### 5. The Beal Base-One Exclusion Theorem -/\n\n/--\nNo Beal counterexample can have base $C = 1$.\n-/\ntheorem beal_base_c_ne_one (A B C x y z : \u2115)\n    (h : IsBealCounterexample A B C x y z) :\n    C \u2260 1 := by\n  rintro rfl\n  obtain \u27e8hA, hB, _, hx, hy, hz, _, heq\u27e9 := h\n  exact no_solution_c_eq_one A B x y z hA hB (by omega) (by omega) heq\n\n/--\nNo Beal counterexample can have base $A = 1$.\n-/\ntheorem beal_base_a_ne_one (hM : MihailescuTheorem) (A B C x y z : \u2115)\n    (h : IsBealCounterexample A B C x y z) :\n    A \u2260 1 := by\n  rintro rfl\n  obtain \u27e8_, hB, hC, hx, hy, hz, _, heq\u27e9 := h\n  rcases (show B \u2264 1 \u2228 B > 1 by omega) with (hB1 | hB_gt)\n  \u00b7 have hB_eq : B = 1 := by omega\n    subst hB_eq\n    exact no_solution_two_units x y z C (by omega) heq\n  \u00b7 have hcat := catalan_reduction_left hM x B C y z hB_gt (by omega) (by omega) heq\n    have hz2 : z = 2 := hcat.2.1\n    omega\n\n/--\nNo Beal counterexample can have base $B = 1$.\n-/\ntheorem beal_base_b_ne_one (hM : MihailescuTheorem) (A B C x y z : \u2115)\n    (h : IsBealCounterexample A B C x y z) :\n    B \u2260 1 := by\n  rintro rfl\n  obtain \u27e8hA, _, hC, hx, hy, hz, _, heq\u27e9 := h\n  rcases (show A \u2264 1 \u2228 A > 1 by omega) with (hA1 | hA_gt)\n  \u00b7 have hA_eq : A = 1 := by omega\n    subst hA_eq\n    have heq_comm : 1 ^ y + 1 ^ x = C ^ z := by\n      have : 1 ^ y + 1 ^ x = 1 ^ x + 1 ^ y := by omega\n      rw [this, heq]\n    exact no_solution_two_units y x z C (by omega) heq_comm\n  \u00b7 have hcat := catalan_reduction_right hM A y C x z hA_gt (by omega) (by omega) heq\n    have hz2 : z = 2 := hcat.2.1\n    omega\n\n/--\n**The Beal Base-One Exclusion Theorem**:\nNo Beal counterexample can ever have any base equal to 1.\n-/\ntheorem beal_counterexample_base_ne_one (hM : MihailescuTheorem) (A B C x y z : \u2115)\n    (h : IsBealCounterexample A B C x y z) :\n    A \u2260 1 \u2227 B \u2260 1 \u2227 C \u2260 1 :=\n  \u27e8beal_base_a_ne_one hM A B C x y z h,\n   beal_base_b_ne_one hM A B C x y z h,\n   beal_base_c_ne_one A B C x y z h\u27e9\n\n/--\n**Strict Base Lower Bound**:\nIn every hypothetical Beal counterexample $(A, B, C, x, y, z)$,\nall three bases must be strictly greater than or equal to 2:\n  $$A \\ge 2, \\quad B \\ge 2, \\quad C \\ge 2.$$\n-/\ntheorem beal_counterexample_bases_ge_two (hM : MihailescuTheorem) (A B C x y z : \u2115)\n    (h : IsBealCounterexample A B C x y z) :\n    A \u2265 2 \u2227 B \u2265 2 \u2227 C \u2265 2 := by\n  have \u27e8hA_ne, hB_ne, hC_ne\u27e9 := beal_counterexample_base_ne_one hM A B C x y z h\n  obtain \u27e8hA_pos, hB_pos, hC_pos, _\u27e9 := h\n  refine \u27e8by omega, by omega, by omega\u27e9\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.64
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.97
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.25
+      }
+    },
+    "usage": {
+      "input_tokens": 5075,
+      "output_tokens": 94
+    }
+  }
+}

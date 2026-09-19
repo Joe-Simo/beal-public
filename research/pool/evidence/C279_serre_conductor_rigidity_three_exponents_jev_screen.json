@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "id": "C279_serre_conductor_rigidity_three_exponents",
+    "name": "Serre Conductor Uniformity for Three Independent Exponents",
+    "text": "Candidate: Serre level lowering for generalized Frey representations shows the minimal conductor N(rho) is supported only on {2, 3}, bounded independently of (x, y, z)."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "resolves_unbounded_exponents": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.65
+      },
+      "rigor_and_provability": {
+        "type": "score",
+        "score": 1.36,
+        "confidence": 0.35,
+        "legend": {
+          "0": "level 0: mathematically obstructed or known false",
+          "1": "level 1: requires open grand conjectures (e.g. general Langlands, Fontaine-Mazur)",
+          "2": "level 2: provable by combining proved theorems (Baker, Darmon, Khare-Wintenberger)",
+          "3": "level 3: complete machine-checkable proof in Lean 4"
+        },
+        "probabilities": {
+          "0": 0.15,
+          "1": 0.35,
+          "2": 0.49,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.45,
+        "probabilities": {
+          "discard": 0.04,
+          "formalize": 0.05,
+          "literature_check": 0.53,
+          "exact_computation": 0.06,
+          "advance": 0.23,
+          "park": 0.09
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 726,
+      "output_tokens": 132
+    }
+  }
+}

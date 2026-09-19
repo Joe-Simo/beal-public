@@ -1,0 +1,355 @@
+{
+  "status": "HYPOTHESIS_ONLY",
+  "rows": [
+    {
+      "file": "AlgebraicIdentities.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "CenturySummary.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "ClosedFamilies.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Cohen344.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Conjecture.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "CounterexampleChecker.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Euler.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "EvenEvenThree.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "ExponentReduction.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "FermatCatalan.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "FidelityCheck.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "FixedBasesExample.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "FourTwoNFive.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "GaussianCube.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "GaussianObstruction.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "GaussianPow.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "KnownSolutions.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Mihailescu.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "MordellFixedBase.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Necessary.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "PostCentennial.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Radical.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Residual.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Rigidity.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "SameOddPrime.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Signature238.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Signature3.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Signature4.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "SixTwoNThree.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "SquarefreeCore.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Structure.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Taxonomy.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "TaxonomyExtensions.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "ThreeFourFour.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    },
+    {
+      "file": "Valuation.lean",
+      "scores": {
+        "exp_range": null,
+        "base_one": null,
+        "coprime_swap": null,
+        "axiom_used": null,
+        "docstring_gap": null
+      }
+    }
+  ]
+}

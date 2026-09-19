@@ -1,0 +1,86 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C400",
+  "timestamp": "2026-09-18T23:08:02-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C400",
+    "candidate": {
+      "id": "C400",
+      "title": "ALGEBRAIC & TRANSCENDENTAL BRAUER-MANIN OBSTRUCTIONS ON FERMAT HYPERSURFACES",
+      "claim": "The Brauer group Br(X) / Br(Q) of the generalized Fermat hypersurface X: A^x + B^y = C^z over Q creates an unramified Brauer-Manin obstruction to integral points.",
+      "method": "Brauer-Manin obstruction (Manin, Colliot-Thelene, Skorobogatov), unramified cohomology H^2_{nr}(X, G_m), quaternion algebras.",
+      "status": "BLOCKED",
+      "category": "effective_diophantine_geometry",
+      "parents": [
+        "C384",
+        "C396"
+      ],
+      "inspirations": [
+        "Manin 1970",
+        "Colliot-Thelene-Sansuc 1987",
+        "Skorobogatov 2001"
+      ],
+      "evidence": [
+        "U449_higgs_brauer_tc_audit.py"
+      ],
+      "obligations": [
+        "Audit whether Brauer-Manin obstructions can detect integer coprimality."
+      ],
+      "evaluations": {
+        "category": "effective_diophantine_geometry"
+      },
+      "failure_reason": "For smooth projective hypersurfaces X in P^n of dimension >= 2, the Picard group Pic(X_bar) = Z H by the Lefschetz hyperplane theorem, so the algebraic Brauer group Br_1(X) / Br(Q) = 0; transcendental Brauer classes are torsion and invariant under scaling gcd(A, B, C) > 1 (Failure Mode 1).",
+      "novelty_note": "Applies Brauer-Manin obstruction to generalized Fermat hypersurfaces.",
+      "extracted": [
+        "Lefschetz hyperplane theorem implies Pic(X_bar) = Z, forcing Br_1(X)/Br(Q) = 0; Brauer-Manin cannot distinguish coprime from non-coprime integer points."
+      ]
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "cohomology_dimension_bound",
+        "confidence": 0.61,
+        "probabilities": {
+          "modular_trace_congruence": 0.0,
+          "height_positivity": 0.0,
+          "cohomology_dimension_bound": 0.69,
+          "galois_inertia_weight": 0.0,
+          "none": 0.31
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1037,
+      "output_tokens": 97
+    }
+  }
+}

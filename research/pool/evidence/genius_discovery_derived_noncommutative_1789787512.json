@@ -1,0 +1,24 @@
+[
+  {
+    "hypothesis_id": "H_DERIVED_AZUMAYA_TWISTED",
+    "title": "DERIVED AZUMAYA ALGEBRAS & TWISTED SHEAF COHOMOLOGY ON CYCLIC COVERS",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.94,
+    "structural_obstruction": "unobstructed",
+    "recommended_action": "audit_and_isolate_obstruction"
+  },
+  {
+    "hypothesis_id": "H_DERIVED_INTERSECTION_ARAKELOV",
+    "title": "DERIVED INTERSECTION HEIGHTS & KODAIRA-SPENCER OVER SPEC Z",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.48,
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction"
+  }
+]

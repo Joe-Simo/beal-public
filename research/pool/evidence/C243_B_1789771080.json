@@ -1,0 +1,80 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C243_B",
+  "timestamp": "2026-09-18T18:38:00-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "C243_B",
+    "title": "Direct Integer Ring Extraction via Zsqrtd Norm",
+    "desc": "Formalize parameter extraction in Z[sqrt(-3)] directly using norm equations N(p + q*sqrt(-3)) = c^3 and unique factorization transferred from Z[omega]."
+  },
+  "questions": {
+    "mathlib_readiness": {
+      "type": "score",
+      "instructions": "How readily can this tactic be formalized in Lean 4 without introducing unproved dependencies or custom axioms?",
+      "criteria": [
+        "level 0: relies on unproved mathlib gaps or custom axioms",
+        "level 1: requires formalizing substantial missing ring theory lemmas",
+        "level 2: mostly relies on existing Mathlib results with straightforward translation",
+        "level 3: directly formalizable using Mathlib.NumberTheory.FLT.Three or pure integer ring arithmetic"
+      ]
+    },
+    "soundness_axioms": {
+      "type": "noul",
+      "instructions": "Does this tactic rely strictly on standard Lean 4 axioms [propext, Classical.choice, Quot.sound] with zero sorries?",
+      "criteria": {
+        "true": "Strictly standard axioms only with zero sorries",
+        "false": "Relies on non-standard axioms or unproved sorries"
+      }
+    },
+    "beal_impact": {
+      "type": "choice",
+      "instructions": "What is the structural value of this step for the complete Beal program?",
+      "criteria": {
+        "core_foundation": "Closes the critical algebraic parameterization gap for Euler cubic descent",
+        "modular_step": "Eliminates an entire conductor level in the modular Kraus sieve",
+        "redundant": "Duplicates existing work or fails Fermat-Catalan sensitivity"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "mathlib_readiness": {
+        "type": "score",
+        "score": 1.09,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: relies on unproved mathlib gaps or custom axioms",
+          "1": "level 1: requires formalizing substantial missing ring theory lemmas",
+          "2": "level 2: mostly relies on existing Mathlib results with straightforward translation",
+          "3": "level 3: directly formalizable using Mathlib.NumberTheory.FLT.Three or pure integer ring arithmetic"
+        },
+        "probabilities": {
+          "0": 0.18,
+          "1": 0.63,
+          "2": 0.1,
+          "3": 0.09
+        }
+      },
+      "soundness_axioms": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "beal_impact": {
+        "type": "choice",
+        "choice": "core_foundation",
+        "confidence": 0.69,
+        "probabilities": {
+          "modular_step": 0.03,
+          "core_foundation": 0.79,
+          "redundant": 0.18
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 648,
+      "output_tokens": 88
+    }
+  }
+}

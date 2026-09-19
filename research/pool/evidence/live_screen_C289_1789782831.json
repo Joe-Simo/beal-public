@@ -1,0 +1,72 @@
+{
+  "state": {
+    "id": "C289",
+    "claim": "MINHYONG KIM NON-ABELIAN CHABAUTY ON P1 MINUS THREE POINTS: Apply the arithmetic unipotent Albanese map to Selmer varieties of pi_1(P^1 \\ {0, 1, infty}) to obstruct coprime solutions with three exponents >= 3.",
+    "method": "Non-abelian Chabauty-Kim, unipotent Albanese map, p-adic iterated integrals, Selmer schemes",
+    "target": "Beal's Conjecture: If A^x + B^y = C^z with A, B, C, x, y, z positive integers and x, y, z >= 3, then gcd(gcd(A, B), C) > 1. Equivalently, no coprime positive integer solutions exist for min(x,y,z) >= 3. Dead categories: single-signature Kraus sieves, bounded exponent searches, Baker linear forms, elementary congruences. Live directions: a unifying modular/motivic object for three independent exponents, and effective Diophantine geometry."
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unifying_power": {
+        "type": "score",
+        "score": 1.91,
+        "confidence": 0.28,
+        "legend": {
+          "0": "level 0: fixes one or more exponents (e.g. signature (3, 3, p) or (2, 3, p)) or reduces to a single-signature sieve",
+          "1": "level 1: handles variable exponents only within a narrow parametrized algebraic family",
+          "2": "level 2: constructs a geometric or motivic object genuinely parametrized by arbitrary (x, y, z)",
+          "3": "level 3: constructs a universal modular or motivic obstruction that applies simultaneously to all triples (x, y, z) >= 3"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.16,
+          "2": 0.41000000000000003,
+          "3": 0.31
+        }
+      },
+      "fc_blindness_risk": {
+        "type": "noul",
+        "noul": 0.56
+      },
+      "unconditional_status": {
+        "type": "score",
+        "score": 1.59,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: explicitly or implicitly conditional on Vojta, ABC, or an unproved Diophantine conjecture",
+          "1": "level 1: depends on standard conjectures in the Langlands program (e.g. potential modularity or Fontaine-Mazur)",
+          "2": "level 2: depends only on proved modularity theorems and established p-adic Hodge theory",
+          "3": "level 3: completely unconditional and effective, relying solely on established theorems in Diophantine geometry"
+        },
+        "probabilities": {
+          "0": 0.29,
+          "1": 0.13,
+          "2": 0.27,
+          "3": 0.31
+        }
+      },
+      "routing_priority": {
+        "type": "score",
+        "score": 2.42,
+        "confidence": 0.42,
+        "legend": {
+          "0": "level 0: park or discard; blocked by known failure mode or exponent-2 blindness",
+          "1": "level 1: low priority; requires unproved conjectures or lacks effective Diophantine bounds",
+          "2": "level 2: medium priority; genuine unifying object with non-trivial open obligations",
+          "3": "level 3: highest priority; promising live direction on unifying motivic objects or effective Diophantine geometry"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.15,
+          "2": 0.19,
+          "3": 0.63
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1199,
+      "output_tokens": 72
+    }
+  }
+}

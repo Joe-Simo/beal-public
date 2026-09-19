@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C402",
+    "title": "RELATIVE ANABELIAN SECTION CONJECTURE ON TRIANGLE ORBIFOLDS",
+    "target_discipline": false,
+    "fc_blindness": false,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.33,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "selmer_dimension_growth",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.47
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.33,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.5,
+          "sound_no_failure_mode": 0.39,
+          "mode_2_chabauty_unbounded_s": 0.03,
+          "mode_1_residual_conflation": 0.08
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.4,
+        "probabilities": {
+          "bounded_only": 0.0,
+          "vacuous": 0.19,
+          "proves_nonexistence": 0.26,
+          "finiteness_only": 0.55
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "selmer_dimension_growth",
+        "confidence": 0.23,
+        "probabilities": {
+          "computational_scale": 0.06,
+          "unobstructed": 0.16,
+          "selmer_dimension_growth": 0.36,
+          "torsion_wild_ramification": 0.17,
+          "automorphic_cusp_abundance": 0.02,
+          "continuous_moduli_degeneration": 0.23
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.46,
+        "probabilities": {
+          "refute_and_archive": 0.22,
+          "salvage_proved_sublemmas": 0.04,
+          "audit_and_isolate_obstruction": 0.57,
+          "synthesize_breakthrough": 0.15,
+          "advance_kraus_frontier": 0.02
+        }
+      }
+    }
+  }
+]

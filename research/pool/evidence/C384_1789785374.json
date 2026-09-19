@@ -1,0 +1,90 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C384",
+  "timestamp": "2026-09-18T22:36:14-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C384 - RELATIVE DERIVED MODULI OF LOCAL SYSTEMS AND CHARACTER VARIETIES OVER SPEC Z\nClaim: Relative derived character varieties RMap(pi_1(P^1 \\ {0, 1, inf}), GL_n) over Spec Z impose non-trivial obstruction classes forbidding Beal solutions.\nMethod: Relative derived algebraic geometry, representation varieties, and schematization of homotopy types.\nCategory: unifying_modular_motivic_geometry\nContext: Beal conjecture requires x, y, z >= 3. Fermat-Catalan identities have exponent 2 and defect -chi <= 1/18, while Beal has -chi >= 1/12.",
+  "questions": {
+    "relevance": {
+      "type": "score",
+      "instructions": "How directly does this candidate address the general Beal conjecture across arbitrary triples (p, q, r) >= 3?",
+      "criteria": [
+        "level 0: Settle only bounded prime exponents or dead category computation with no general leverage.",
+        "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+        "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+        "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+      ]
+    },
+    "fc_blindness": {
+      "type": "noul",
+      "instructions": "Is this candidate's mathematical mechanism blind to exponent 2 (i.e. does it also hold for Fermat-Catalan identities with exponent 2)?",
+      "criteria": {
+        "true": "The mechanism holds on all Fermat-Catalan identities with exponent 2, hence cannot prove Beal on its own.",
+        "false": "The mechanism strictly exploits the Beal hyperbolic defect -chi >= 1/12 (which fails on Fermat-Catalan) or specific exponent >= 3 geometry."
+      }
+    },
+    "dead_category": {
+      "type": "noul",
+      "instructions": "Does this candidate fall into a known dead category (bounded sieves, modular method one signature at a time, elementary congruences, abc/Baker)?",
+      "criteria": {
+        "true": "Yes, it is in a known dead category incapable of proving the full conjecture.",
+        "false": "No, it explores live directions such as effective Diophantine geometry on orbifolds or unifying motivic objects."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate in the research loop?",
+      "criteria": {
+        "exploit_bounded": "Execute exact computation or Kraus sieve verification to advance empirical milestone bounds.",
+        "audit_obstruction": "Perform rigorous primary-source mathematical audit to expose fundamental structural obstruction.",
+        "refute": "Refute the candidate due to heuristic laundering or geometric impossibility.",
+        "pursue_frontier": "Actively develop as the leading mathematical frontier for unconditional Diophantine bounds."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "relevance": {
+        "type": "score",
+        "score": 0.96,
+        "confidence": 0.04,
+        "legend": {
+          "0": "level 0: Settle only bounded prime exponents or dead category computation with no general leverage.",
+          "1": "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+          "2": "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+          "3": "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+        },
+        "probabilities": {
+          "0": 0.5,
+          "1": 0.14,
+          "2": 0.24,
+          "3": 0.12
+        }
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.4
+      },
+      "dead_category": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "action": {
+        "type": "choice",
+        "choice": "audit_obstruction",
+        "confidence": 0.41,
+        "probabilities": {
+          "refute": 0.43,
+          "exploit_bounded": 0.01,
+          "audit_obstruction": 0.56,
+          "pursue_frontier": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 931,
+      "output_tokens": 114
+    }
+  }
+}

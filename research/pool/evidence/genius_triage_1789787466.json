@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C402",
+    "title": "C402",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.93,
+    "finiteness_profile": "vacuous",
+    "structural_obstruction": "unobstructed",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.93,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "sound_no_failure_mode": 0.95,
+          "mode_3_heuristic_laundering": 0.03,
+          "mode_1_residual_conflation": 0.02
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "vacuous",
+        "confidence": 0.5,
+        "probabilities": {
+          "finiteness_only": 0.27,
+          "proves_nonexistence": 0.1,
+          "bounded_only": 0.0,
+          "vacuous": 0.63
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "unobstructed",
+        "confidence": 0.67,
+        "probabilities": {
+          "torsion_wild_ramification": 0.02,
+          "selmer_dimension_growth": 0.11,
+          "automorphic_cusp_abundance": 0.0,
+          "unobstructed": 0.74,
+          "continuous_moduli_degeneration": 0.06,
+          "computational_scale": 0.07
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.6,
+        "probabilities": {
+          "synthesize_breakthrough": 0.02,
+          "audit_and_isolate_obstruction": 0.68,
+          "salvage_proved_sublemmas": 0.01,
+          "refute_and_archive": 0.1,
+          "advance_kraus_frontier": 0.19
+        }
+      }
+    }
+  }
+]

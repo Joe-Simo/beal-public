@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C214",
+  "timestamp": "2026-09-18T22:46:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C214\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"DIVISION OF THE QUADRATIC FORM: prime modulus quotient machine-checked, composite division obstruction identified. In Fermat descent P^2+3Q^2 = m*m', the quotient m' cannot be divided out directly via (Qu - Pv)(Qu + Pv) = m'(Q^2 - mv^2) when m' is composite, failing at m'=91=7*13 where prime factors distribute. For prime m', Euclid's lemma forces m' | Qu - Pv or m' | Qu + Pv, and formal/Beal/Euler.lean machine-checks that m = X^2 + 3Y^2 unconditionally.\",\n \"method\": \"Algebraic elimination identities (form_cross_prod_eq, form_elim1/2_minus/plus) and Bezout coprimality (form_div_minus/plus_dvd) prove that m' dividing Qu -+ Pv forces m' to divide Pu +- 3Qv. Prime.dvd_mul splits the cross-product factorisation into a disjunction, and mul_left_cancel0 discharges cancellation of (m')^2 in Z.\",\n \"evidence\": [\n  \"Lean 4 theorems form_cross_prod_eq, form_elim1_minus, form_elim2_minus, form_elim1_plus, form_elim2_plus, form_div_minus_dvd, form_div_plus_dvd, form_quotient_of_div_minus, form_quotient_of_div_plus, form_quotient_of_prime in formal/Beal/Euler.lean.\",\n  \"Axiom check: [propext, Classical.choice, Quot.sound]. Zero sorry, zero custom axioms.\",\n  \"Exact integer computation: fails for composite m'=91 (Qu-Pv=130 div by 13, Qu+Pv=238 div by 7, neither by 91); succeeds 100% on all prime m'.\"\n ],\n \"obligations\": [\n  \"Decompose odd divisor m into prime factors or reduce OddDivisorForm to prime divisors via strong induction.\",\n  \"Sub-step 1c (CubeFormParam) remains untouched.\"\n ],\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.19,
+        "confidence": 0.81,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.91,
+          "1": 0.03,
+          "2": 0.04,
+          "3": 0.02
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.42,
+        "probabilities": {
+          "conservative": 0.26,
+          "not_applicable": 0.57,
+          "cannot_tell": 0.09,
+          "optimistic": 0.08
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.61,
+        "probabilities": {
+          "state_direction": 0.15,
+          "check_direction_now": 0.11,
+          "no_action": 0.74
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1514,
+      "output_tokens": 140
+    }
+  }
+}

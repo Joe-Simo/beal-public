@@ -1,0 +1,122 @@
+[
+  {
+    "candidate_id": "C387",
+    "title": "ABSOLUTE PRISMATIC COHOMOLOGY AND F-CRYSTALS OVER Z_p",
+    "defect_score": 0.93,
+    "fc_blind": true,
+    "action": "refute_defect_insufficiency",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C388",
+    "title": "MOTIVIC COHOMOLOGY AND BEILINSON REGULATORS OVER SPEC Z",
+    "defect_score": 1.13,
+    "fc_blind": true,
+    "action": "refute_defect_insufficiency",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C389",
+    "title": "ARITHMETIC TOPOLOGY AND ARITHMETIC CHERN-SIMONS INVARIANTS",
+    "defect_score": 1.45,
+    "fc_blind": true,
+    "action": "audit_exponent_separation",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C391",
+    "title": "NON-COMMUTATIVE MOTIVES AND CATEGORICAL LOCALIZING INVARIANTS",
+    "defect_score": 0.67,
+    "fc_blind": true,
+    "action": "sound_independent",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C392",
+    "title": "PERFECTOID SHIMURA VARIETIES AND HODGE-TATE PERIOD MAPS",
+    "defect_score": 0.56,
+    "fc_blind": true,
+    "action": "sound_independent",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C393",
+    "title": "UNIFORM MODULI HEIGHTS OF QUATERNARY FORMS AND DEGREE-3 HYPERSURFACES",
+    "defect_score": 1.14,
+    "fc_blind": true,
+    "action": "audit_exponent_separation",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C395",
+    "title": "CYCLOTOMIC NON-ABELIAN CHABAUTY-KIM OVER K = Q(zeta_m)",
+    "defect_score": 0.81,
+    "fc_blind": true,
+    "action": "sound_independent",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C396",
+    "title": "RELATIVE ANABELIAN GEOMETRY OF P^1 \\ {0, 1, infty} OVER SPEC Z",
+    "defect_score": 0.88,
+    "fc_blind": true,
+    "action": "sound_independent",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C397",
+    "title": "HYPERK\u00c4HLER PERIOD MAPS AND ARITHMETIC CHOW GROUPS OF FERMAT HYPERSURFACES",
+    "defect_score": 0.91,
+    "fc_blind": true,
+    "action": "audit_exponent_separation",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C399",
+    "title": "NON-ABELIAN HODGE THEORY & PARABOLIC HIGGS BUNDLES ON TRIANGLE ORBIFOLDS",
+    "defect_score": 1.98,
+    "fc_blind": true,
+    "action": "audit_exponent_separation",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C400",
+    "title": "ALGEBRAIC & TRANSCENDENTAL BRAUER-MANIN OBSTRUCTIONS ON FERMAT HYPERSURFACES",
+    "defect_score": 0.77,
+    "fc_blind": true,
+    "action": "audit_exponent_separation",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C401",
+    "title": "TOPOLOGICAL HOCHSCHILD & CYCLOTOMIC TRACE MAPS OVER THE SPHERE SPECTRUM",
+    "defect_score": 1.2,
+    "fc_blind": true,
+    "action": "refute_defect_insufficiency",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C403",
+    "title": "DERIVED AZUMAYA ALGEBRAS & TWISTED SHEAVES ON CYCLIC COVERS",
+    "defect_score": 0.52,
+    "fc_blind": true,
+    "action": "sound_independent",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C404",
+    "title": "RELATIVE ANABELIAN SECTION CONJECTURE ON TRIANGLE ORBIFOLDS",
+    "defect_score": 0.85,
+    "fc_blind": true,
+    "action": "sound_independent",
+    "flagged": false
+  },
+  {
+    "candidate_id": "C405",
+    "title": "ORBIFOLD HYPERBOLIC DEFECT COUPLING WITHOUT MINIMAL CONDUCTORS",
+    "defect_score": 2.9,
+    "fc_blind": true,
+    "action": "refute_defect_insufficiency",
+    "flagged": true
+  }
+]

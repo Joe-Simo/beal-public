@@ -1,0 +1,552 @@
+[
+  {
+    "id": "SIG-3-3-P",
+    "signature": "(3, 3, p) with p >= 3",
+    "geometry": "elliptic_over_Q",
+    "status": "computationally_bounded",
+    "obstruction": "cusp_form_abundance",
+    "action": "extend_modular_sieve",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_Q",
+        "confidence": 1.0,
+        "probabilities": {
+          "higher_genus_abelian": 0.0,
+          "elliptic_over_Q": 1.0,
+          "elliptic_over_number_field": 0.0,
+          "no_known_frey_variety": 0.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "computationally_bounded",
+        "confidence": 0.85,
+        "probabilities": {
+          "conditionally_solved": 0.0,
+          "completely_solved": 0.04,
+          "computationally_bounded": 0.9,
+          "largely_open": 0.06
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "cusp_form_abundance",
+        "confidence": 0.36,
+        "probabilities": {
+          "modularity_lifting_missing": 0.01,
+          "completely_eliminated": 0.34,
+          "cusp_form_abundance": 0.5,
+          "scale_of_finite_primes": 0.14,
+          "class_number_growth": 0.01
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "extend_modular_sieve",
+        "confidence": 0.64,
+        "probabilities": {
+          "monitor_automorphic_developments": 0.01,
+          "formalize_solved_family": 0.26,
+          "develop_hilbert_frey_framework": 0.0,
+          "extend_modular_sieve": 0.73
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-3-4-P",
+    "signature": "(3, 4, p) with p >= 3",
+    "geometry": "elliptic_over_Q",
+    "status": "completely_solved",
+    "obstruction": "cusp_form_abundance",
+    "action": "formalize_solved_family",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_Q",
+        "confidence": 1.0,
+        "probabilities": {
+          "higher_genus_abelian": 0.0,
+          "elliptic_over_Q": 1.0,
+          "no_known_frey_variety": 0.0,
+          "elliptic_over_number_field": 0.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "completely_solved",
+        "confidence": 0.58,
+        "probabilities": {
+          "largely_open": 0.21,
+          "computationally_bounded": 0.04,
+          "conditionally_solved": 0.06,
+          "completely_solved": 0.69
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "cusp_form_abundance",
+        "confidence": 0.23,
+        "probabilities": {
+          "class_number_growth": 0.02,
+          "scale_of_finite_primes": 0.28,
+          "completely_eliminated": 0.29,
+          "modularity_lifting_missing": 0.03,
+          "cusp_form_abundance": 0.38
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "formalize_solved_family",
+        "confidence": 0.82,
+        "probabilities": {
+          "formalize_solved_family": 0.86,
+          "extend_modular_sieve": 0.12,
+          "develop_hilbert_frey_framework": 0.01,
+          "monitor_automorphic_developments": 0.01
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-3-5-P",
+    "signature": "(3, 5, p) with p >= 3",
+    "geometry": "higher_genus_abelian",
+    "status": "largely_open",
+    "obstruction": "modularity_lifting_missing",
+    "action": "develop_hilbert_frey_framework",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "higher_genus_abelian",
+        "confidence": 0.96,
+        "probabilities": {
+          "no_known_frey_variety": 0.0,
+          "elliptic_over_number_field": 0.03,
+          "elliptic_over_Q": 0.0,
+          "higher_genus_abelian": 0.97
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "largely_open",
+        "confidence": 0.6,
+        "probabilities": {
+          "completely_solved": 0.04,
+          "largely_open": 0.7,
+          "conditionally_solved": 0.24,
+          "computationally_bounded": 0.02
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "modularity_lifting_missing",
+        "confidence": 0.99,
+        "probabilities": {
+          "completely_eliminated": 0.0,
+          "scale_of_finite_primes": 0.0,
+          "modularity_lifting_missing": 1.0,
+          "class_number_growth": 0.0,
+          "cusp_form_abundance": 0.0
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "develop_hilbert_frey_framework",
+        "confidence": 0.95,
+        "probabilities": {
+          "extend_modular_sieve": 0.01,
+          "formalize_solved_family": 0.0,
+          "monitor_automorphic_developments": 0.02,
+          "develop_hilbert_frey_framework": 0.97
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-4-4-P",
+    "signature": "(4, 4, p) with p >= 3",
+    "geometry": "elliptic_over_number_field",
+    "status": "largely_open",
+    "obstruction": "modularity_lifting_missing",
+    "action": "monitor_automorphic_developments",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_number_field",
+        "confidence": 0.86,
+        "probabilities": {
+          "elliptic_over_number_field": 0.91,
+          "no_known_frey_variety": 0.0,
+          "higher_genus_abelian": 0.08,
+          "elliptic_over_Q": 0.01
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "largely_open",
+        "confidence": 0.24,
+        "probabilities": {
+          "conditionally_solved": 0.36,
+          "computationally_bounded": 0.04,
+          "largely_open": 0.43,
+          "completely_solved": 0.17
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "modularity_lifting_missing",
+        "confidence": 0.28,
+        "probabilities": {
+          "modularity_lifting_missing": 0.43,
+          "class_number_growth": 0.03,
+          "scale_of_finite_primes": 0.08,
+          "completely_eliminated": 0.14,
+          "cusp_form_abundance": 0.32
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "monitor_automorphic_developments",
+        "confidence": 0.17,
+        "probabilities": {
+          "formalize_solved_family": 0.21,
+          "extend_modular_sieve": 0.36,
+          "develop_hilbert_frey_framework": 0.05,
+          "monitor_automorphic_developments": 0.38
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-5-5-P",
+    "signature": "(5, 5, p) with p >= 3",
+    "geometry": "elliptic_over_number_field",
+    "status": "conditionally_solved",
+    "obstruction": "cusp_form_abundance",
+    "action": "develop_hilbert_frey_framework",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_number_field",
+        "confidence": 1.0,
+        "probabilities": {
+          "higher_genus_abelian": 0.0,
+          "elliptic_over_number_field": 1.0,
+          "elliptic_over_Q": 0.0,
+          "no_known_frey_variety": 0.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "conditionally_solved",
+        "confidence": 0.26,
+        "probabilities": {
+          "largely_open": 0.23,
+          "computationally_bounded": 0.04,
+          "conditionally_solved": 0.45,
+          "completely_solved": 0.28
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "cusp_form_abundance",
+        "confidence": 0.24,
+        "probabilities": {
+          "cusp_form_abundance": 0.4,
+          "completely_eliminated": 0.06,
+          "class_number_growth": 0.04,
+          "modularity_lifting_missing": 0.35,
+          "scale_of_finite_primes": 0.15
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "develop_hilbert_frey_framework",
+        "confidence": 0.85,
+        "probabilities": {
+          "extend_modular_sieve": 0.02,
+          "formalize_solved_family": 0.09,
+          "monitor_automorphic_developments": 0.01,
+          "develop_hilbert_frey_framework": 0.88
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-P-P-2",
+    "signature": "(p, p, 2) with p >= 4",
+    "geometry": "elliptic_over_Q",
+    "status": "completely_solved",
+    "obstruction": "completely_eliminated",
+    "action": "formalize_solved_family",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_Q",
+        "confidence": 1.0,
+        "probabilities": {
+          "no_known_frey_variety": 0.0,
+          "higher_genus_abelian": 0.0,
+          "elliptic_over_number_field": 0.0,
+          "elliptic_over_Q": 1.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "completely_solved",
+        "confidence": 1.0,
+        "probabilities": {
+          "completely_solved": 1.0,
+          "largely_open": 0.0,
+          "conditionally_solved": 0.0,
+          "computationally_bounded": 0.0
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "completely_eliminated",
+        "confidence": 1.0,
+        "probabilities": {
+          "modularity_lifting_missing": 0.0,
+          "completely_eliminated": 1.0,
+          "class_number_growth": 0.0,
+          "scale_of_finite_primes": 0.0,
+          "cusp_form_abundance": 0.0
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "formalize_solved_family",
+        "confidence": 1.0,
+        "probabilities": {
+          "extend_modular_sieve": 0.0,
+          "develop_hilbert_frey_framework": 0.0,
+          "monitor_automorphic_developments": 0.0,
+          "formalize_solved_family": 1.0
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-P-P-3",
+    "signature": "(p, p, 3) with p >= 3",
+    "geometry": "elliptic_over_number_field",
+    "status": "completely_solved",
+    "obstruction": "completely_eliminated",
+    "action": "formalize_solved_family",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_number_field",
+        "confidence": 1.0,
+        "probabilities": {
+          "no_known_frey_variety": 0.0,
+          "higher_genus_abelian": 0.0,
+          "elliptic_over_Q": 0.0,
+          "elliptic_over_number_field": 1.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "completely_solved",
+        "confidence": 0.99,
+        "probabilities": {
+          "largely_open": 0.0,
+          "conditionally_solved": 0.0,
+          "computationally_bounded": 0.0,
+          "completely_solved": 1.0
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "completely_eliminated",
+        "confidence": 0.93,
+        "probabilities": {
+          "class_number_growth": 0.01,
+          "scale_of_finite_primes": 0.02,
+          "modularity_lifting_missing": 0.02,
+          "cusp_form_abundance": 0.01,
+          "completely_eliminated": 0.94
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "formalize_solved_family",
+        "confidence": 1.0,
+        "probabilities": {
+          "monitor_automorphic_developments": 0.0,
+          "extend_modular_sieve": 0.0,
+          "formalize_solved_family": 1.0,
+          "develop_hilbert_frey_framework": 0.0
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-P-P-5",
+    "signature": "(p, p, 5) with p >= 5",
+    "geometry": "elliptic_over_number_field",
+    "status": "conditionally_solved",
+    "obstruction": "modularity_lifting_missing",
+    "action": "formalize_solved_family",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_number_field",
+        "confidence": 1.0,
+        "probabilities": {
+          "elliptic_over_number_field": 1.0,
+          "no_known_frey_variety": 0.0,
+          "elliptic_over_Q": 0.0,
+          "higher_genus_abelian": 0.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "conditionally_solved",
+        "confidence": 0.37,
+        "probabilities": {
+          "conditionally_solved": 0.54,
+          "completely_solved": 0.22,
+          "largely_open": 0.08,
+          "computationally_bounded": 0.16
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "modularity_lifting_missing",
+        "confidence": 0.14,
+        "probabilities": {
+          "scale_of_finite_primes": 0.27,
+          "completely_eliminated": 0.08,
+          "modularity_lifting_missing": 0.3,
+          "class_number_growth": 0.04,
+          "cusp_form_abundance": 0.31
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "formalize_solved_family",
+        "confidence": 0.59,
+        "probabilities": {
+          "extend_modular_sieve": 0.02,
+          "develop_hilbert_frey_framework": 0.28,
+          "formalize_solved_family": 0.69,
+          "monitor_automorphic_developments": 0.01
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-P-P-P",
+    "signature": "(p, p, p) with p >= 3",
+    "geometry": "elliptic_over_Q",
+    "status": "completely_solved",
+    "obstruction": "completely_eliminated",
+    "action": "formalize_solved_family",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "elliptic_over_Q",
+        "confidence": 1.0,
+        "probabilities": {
+          "no_known_frey_variety": 0.0,
+          "elliptic_over_number_field": 0.0,
+          "higher_genus_abelian": 0.0,
+          "elliptic_over_Q": 1.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "completely_solved",
+        "confidence": 1.0,
+        "probabilities": {
+          "conditionally_solved": 0.0,
+          "completely_solved": 1.0,
+          "computationally_bounded": 0.0,
+          "largely_open": 0.0
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "completely_eliminated",
+        "confidence": 0.94,
+        "probabilities": {
+          "modularity_lifting_missing": 0.01,
+          "class_number_growth": 0.01,
+          "scale_of_finite_primes": 0.01,
+          "cusp_form_abundance": 0.02,
+          "completely_eliminated": 0.95
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "formalize_solved_family",
+        "confidence": 1.0,
+        "probabilities": {
+          "extend_modular_sieve": 0.0,
+          "develop_hilbert_frey_framework": 0.0,
+          "formalize_solved_family": 1.0,
+          "monitor_automorphic_developments": 0.0
+        }
+      }
+    }
+  },
+  {
+    "id": "SIG-GENERAL",
+    "signature": "(p, q, r) general primes p, q, r >= 3",
+    "geometry": "higher_genus_abelian",
+    "status": "largely_open",
+    "obstruction": "modularity_lifting_missing",
+    "action": "monitor_automorphic_developments",
+    "raw_answers": {
+      "frey_variety_feasibility": {
+        "type": "choice",
+        "choice": "higher_genus_abelian",
+        "confidence": 0.95,
+        "probabilities": {
+          "no_known_frey_variety": 0.04,
+          "elliptic_over_number_field": 0.0,
+          "higher_genus_abelian": 0.96,
+          "elliptic_over_Q": 0.0
+        }
+      },
+      "elimination_status": {
+        "type": "choice",
+        "choice": "largely_open",
+        "confidence": 0.92,
+        "probabilities": {
+          "computationally_bounded": 0.0,
+          "conditionally_solved": 0.06,
+          "completely_solved": 0.0,
+          "largely_open": 0.94
+        }
+      },
+      "primary_obstruction": {
+        "type": "choice",
+        "choice": "modularity_lifting_missing",
+        "confidence": 1.0,
+        "probabilities": {
+          "completely_eliminated": 0.0,
+          "modularity_lifting_missing": 1.0,
+          "scale_of_finite_primes": 0.0,
+          "cusp_form_abundance": 0.0,
+          "class_number_growth": 0.0
+        }
+      },
+      "research_action": {
+        "type": "choice",
+        "choice": "monitor_automorphic_developments",
+        "confidence": 0.94,
+        "probabilities": {
+          "formalize_solved_family": 0.0,
+          "monitor_automorphic_developments": 0.96,
+          "develop_hilbert_frey_framework": 0.04,
+          "extend_modular_sieve": 0.0
+        }
+      }
+    }
+  }
+]

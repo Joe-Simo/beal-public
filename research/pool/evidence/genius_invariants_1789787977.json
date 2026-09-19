@@ -1,0 +1,34 @@
+[
+  {
+    "invariant_id": "INV_ORBIFOLD_EULER_DEFECT",
+    "title": "Orbifold Euler Characteristic Defect Invariant: -chi(P^1; x, y, z) = 1 - 1/x - 1/y - 1/z",
+    "fc_defect_discrimination": true,
+    "coprimality_coupling": false,
+    "consequence": "nonexistence_certificate",
+    "breakthrough_score": 0.9
+  },
+  {
+    "invariant_id": "INV_SERRE_CONDUCTOR_VALUATION",
+    "title": "Serre Level Wild Conductor Invariant N(rho_{E, p}) at Primes 2 and 3",
+    "fc_defect_discrimination": false,
+    "coprimality_coupling": true,
+    "consequence": "nonexistence_certificate",
+    "breakthrough_score": 1.19
+  },
+  {
+    "invariant_id": "INV_KRAUS_FROBENIUS_DEGENERACY",
+    "title": "Kraus Frobenius Trace Degeneracy Sieve: a_k(E_{A,B}) mod l vs a_k(f)",
+    "fc_defect_discrimination": false,
+    "coprimality_coupling": false,
+    "consequence": "nonexistence_certificate",
+    "breakthrough_score": 0.97
+  },
+  {
+    "invariant_id": "INV_DERIVED_BRAUER_AZUMAYA",
+    "title": "Derived Brauer Group Class: dBr(X) = H^2(X_et, G_m) / Br(Q)",
+    "fc_defect_discrimination": false,
+    "coprimality_coupling": false,
+    "consequence": "nonexistence_certificate",
+    "breakthrough_score": 0.52
+  }
+]

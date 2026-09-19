@@ -1,0 +1,83 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C237",
+  "timestamp": "2026-09-18T18:19:45-0400",
+  "model": "jev-latest",
+  "request_state": "C237: Coprime cube extraction in Z[omega] via UniqueFactorizationMonoid",
+  "questions": {
+    "flt_three_reuse": {
+      "type": "choice",
+      "instructions": "In Mathlib.NumberTheory.FLT.Three, does mathlib already have a formalized proof of FLT 3, and how is the Eisenstein/cyclotomic ring represented there?",
+      "criteria": {
+        "cyclotomic_field_rat": "Represented via CyclotomicField 3 Rat and its ringOfIntegers",
+        "zsqrtd_gaussian": "Represented via Zsqrtd or custom quadratic order",
+        "no_flt_three_yet": "FLT 3 is not yet fully formalized in Mathlib (only FLT Four is complete)"
+      }
+    },
+    "coprime_factor_extraction": {
+      "type": "choice",
+      "instructions": "To extract coprime factors p + q*sqrt(-3) = u * alpha^3 in Z[omega] in Lean 4, which mathlib lemma family is best suited?",
+      "criteria": {
+        "unique_factorization_monoid": "UniqueFactorizationMonoid.exists_associated_pow_of_mul_eq_pow",
+        "ideal_span_power": "Ideal.span factorization and prime ideal powers in DedekindDomain",
+        "valuation_theory": "Discrete valuation rings and padic valuations"
+      }
+    },
+    "algebraic_descent_feasibility": {
+      "type": "score",
+      "instructions": "How many lines of Lean 4 are estimated to completely bridge CubeFormParam to mathlib without sorry?",
+      "criteria": [
+        "level 0: less than 100 lines",
+        "level 1: 100 to 400 lines",
+        "level 2: 400 to 1200 lines",
+        "level 3: over 1200 lines"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "flt_three_reuse": {
+        "type": "choice",
+        "choice": "no_flt_three_yet",
+        "confidence": 0.32,
+        "probabilities": {
+          "zsqrtd_gaussian": 0.09,
+          "cyclotomic_field_rat": 0.36,
+          "no_flt_three_yet": 0.55
+        }
+      },
+      "coprime_factor_extraction": {
+        "type": "choice",
+        "choice": "unique_factorization_monoid",
+        "confidence": 1.0,
+        "probabilities": {
+          "ideal_span_power": 0.0,
+          "valuation_theory": 0.0,
+          "unique_factorization_monoid": 1.0
+        }
+      },
+      "algebraic_descent_feasibility": {
+        "type": "score",
+        "score": 1.93,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: less than 100 lines",
+          "1": "level 1: 100 to 400 lines",
+          "2": "level 2: 400 to 1200 lines",
+          "3": "level 3: over 1200 lines"
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.2,
+          "2": 0.5,
+          "3": 0.24
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 693,
+      "output_tokens": 142
+    }
+  }
+}

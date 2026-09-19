@@ -1,6 +1,7 @@
 \\ INDEPENDENT re-implementation of U194's criterion, written from the stated mathematics
 \\ rather than copied: rank 0 (UPPER bound, so sound), then map each torsion point back and
 \\ reject only if it gives a POSITIVE pair with a non-integral coordinate.
+default(nbthreads, 1);
 NMAX=150;
 ok1=0; ok2=0; flagged=List();
 {

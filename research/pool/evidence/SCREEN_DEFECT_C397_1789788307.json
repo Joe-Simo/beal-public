@@ -1,0 +1,90 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SCREEN_DEFECT_C397",
+  "timestamp": "2026-09-18T23:25:07-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C397",
+    "title": "HYPERK\u00c4HLER PERIOD MAPS AND ARITHMETIC CHOW GROUPS OF FERMAT HYPERSURFACES",
+    "claim": "The Beauville-Bogomolov quadratic form on the primitive cohomology of hyperk\u00e4hler varieties associated to Fermat covers bounds integer coordinates.",
+    "method": "Arithmetic Chow groups, Deligne-Beilinson cohomology, hyperk\u00e4hler period domains, Arakelov heights.",
+    "category": "effective_diophantine_geometry",
+    "fc_witnesses": [
+      "7^3 + 13^2 = 2^9 (signature (3, 2, 9), -chi = 1/18 > 0)",
+      "1^6 + 2^3 = 3^2 (signature (6, 3, 2), -chi = 1/6 > 0)",
+      "2^5 + 7^2 = 3^4 (signature (5, 2, 4), -chi = 1/20 > 0)",
+      "1414^3 + 2213459^2 = 65^7 (signature (3, 2, 7), -chi = 1/42 > 0)"
+    ]
+  },
+  "questions": {
+    "hyperbolic_defect_reliance": {
+      "type": "score",
+      "instructions": [
+        "Does this candidate argue that the positive hyperbolic defect -chi = 1 - 1/x - 1/y - 1/z > 0 (or negative Euler characteristic / hyperbolic area of the triangle curve) forces integer points to be empty?"
+      ],
+      "criteria": [
+        "level 0: Does not use hyperbolic defect, Euler characteristic, or triangle curvature at all.",
+        "level 1: Mentions hyperbolic defect only as background context, relying on modular forms or other tools.",
+        "level 2: Uses hyperbolic defect as a necessary condition for finiteness, but does not claim non-existence from it alone.",
+        "level 3: Directly claims that -chi > 0 forces non-existence of solutions, or derives contradiction from -chi > 0 alone."
+      ]
+    },
+    "fc_blindness_vulnerability": {
+      "type": "noul",
+      "instructions": "Would the mathematical mechanism of this candidate hold equally for the known Fermat-Catalan identities with exponent 2 (7^3 + 13^2 = 2^9 (signature (3, 2, 9), -chi = 1/18 > 0), 1^6 + 2^3 = 3^2 (signature (6, 3, 2), -chi = 1/6 > 0))? Specifically, does the argument fail to use the condition min(x, y, z) >= 3 in a way that breaks down on exponent 2?",
+      "criteria": {
+        "true": "The mechanism holds on exponent 2 identities; it is vulnerable to Fermat-Catalan blindness.",
+        "false": "The mechanism strictly breaks down or produces a contradiction when one exponent is 2."
+      }
+    },
+    "action_routing": {
+      "type": "choice",
+      "instructions": "What routing action should be taken on this candidate?",
+      "criteria": {
+        "refute_defect_insufficiency": "Candidate relies on defect insufficiency; mark BLOCKED with Fermat-Catalan counterexample.",
+        "audit_exponent_separation": "Candidate may separate exponent 2 from >= 3; audit whether min(x,y,z)>=3 is genuinely used.",
+        "sound_independent": "Candidate does not rely on hyperbolic defect; mechanism is independent."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "hyperbolic_defect_reliance": {
+        "type": "score",
+        "score": 0.91,
+        "confidence": 0.51,
+        "legend": {
+          "0": "level 0: Does not use hyperbolic defect, Euler characteristic, or triangle curvature at all.",
+          "1": "level 1: Mentions hyperbolic defect only as background context, relying on modular forms or other tools.",
+          "2": "level 2: Uses hyperbolic defect as a necessary condition for finiteness, but does not claim non-existence from it alone.",
+          "3": "level 3: Directly claims that -chi > 0 forces non-existence of solutions, or derives contradiction from -chi > 0 alone."
+        },
+        "probabilities": {
+          "0": 0.29,
+          "1": 0.53,
+          "2": 0.15,
+          "3": 0.03
+        }
+      },
+      "fc_blindness_vulnerability": {
+        "type": "noul",
+        "noul": 0.58
+      },
+      "action_routing": {
+        "type": "choice",
+        "choice": "audit_exponent_separation",
+        "confidence": 0.05,
+        "probabilities": {
+          "audit_exponent_separation": 0.37,
+          "sound_independent": 0.34,
+          "refute_defect_insufficiency": 0.29
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1096,
+      "output_tokens": 108
+    }
+  }
+}

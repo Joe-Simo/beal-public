@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "id": "C284_kraus_sieve_p2001_p2100",
+    "name": "Kraus Sieve for (3, 3, p) on [2001, 2100]",
+    "text": "Candidate: Extended exact modular Kraus multi-modulus sieve for signature (3, 3, p) on primes p in [2001, 2100] with p = 1 mod 3."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "rigor_and_provability": {
+        "type": "score",
+        "score": 1.22,
+        "confidence": 0.12,
+        "legend": {
+          "0": "level 0: mathematically obstructed or known false",
+          "1": "level 1: requires open grand conjectures (e.g. general Langlands, Fontaine-Mazur)",
+          "2": "level 2: provable by combining proved theorems (Baker, Darmon, Khare-Wintenberger)",
+          "3": "level 3: complete machine-checkable proof in Lean 4"
+        },
+        "probabilities": {
+          "0": 0.25,
+          "1": 0.34,
+          "2": 0.36,
+          "3": 0.05
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "exact_computation",
+        "confidence": 0.65,
+        "probabilities": {
+          "advance": 0.04,
+          "park": 0.02,
+          "literature_check": 0.19,
+          "formalize": 0.03,
+          "discard": 0.02,
+          "exact_computation": 0.7
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 734,
+      "output_tokens": 130
+    }
+  }
+}

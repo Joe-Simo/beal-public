@@ -1,0 +1,61 @@
+\\ U304: Independent PARI/GP Re-implementation of Kraus Sieve Modular Elimination for (3, 3, p)
+\\ Verifies Fourier traces of newforms 72a1 and 144a1 against eliminating auxiliary primes for p in [2301..2400].
+
+{
+print("================================================================================");
+print("   U304: PARI/GP INDEPENDENT AUDIT OF KRAUS SIEVE MODULAR TRACES [2301..2400]   ");
+print("                     *** MILESTONE 118 AUDIT ***                                ");
+print("================================================================================");
+
+E72 = ellinit([0, 0, 0, 6, -7]);
+E144a = ellinit([0, 0, 0, 6, 7]);
+
+\\ Positive control: LMFDB known traces for 72a1
+a5 = ellap(E72, 5);
+a13 = ellap(E72, 13);
+if(a5 != 2 || a13 != -2,
+  error("Positive control failed: LMFDB trace mismatch!")
+);
+print("[PASS] Positive control: a5(72a1) = 2, a13(72a1) = -2 match LMFDB exact values.");
+
+\\ Exponents p and eliminating auxiliary primes q from U303
+exponents_p = [2311, 2341, 2347, 2371, 2377, 2383, 2389];
+primes_q    = [27733, 42139, 14083, 52163, 42787, 9533, 28669];
+expected_72 = [-186, 164, -4, -28, -132, 138, 14];
+
+for(i = 1, #exponents_p,
+  p = exponents_p[i];
+  q = primes_q[i];
+  exp72 = expected_72[i];
+
+  \\ Verify primality
+  if(!isprime(p) || !isprime(q),
+    error("Primality check failed!")
+  );
+
+  \\ Verify q = 1 mod p
+  if((q - 1) % p != 0,
+    error("Auxiliary prime condition q = 2kp + 1 failed!")
+  );
+
+  \\ Verify trace of 72a1
+  aq72 = ellap(E72, q);
+  if(aq72 != exp72,
+    error("Trace mismatch for 72a1!")
+  );
+
+  \\ Verify quadratic twist relation for 144a1
+  aq144a = ellap(E144a, q);
+  chi = kronecker(-4, q);
+  if(aq144a != chi * aq72,
+    error("Quadratic twist relation failed for 144a1!")
+  );
+
+  print(Str("[PASS] p = ", p, " : q = ", q, " : aq(72a1) = ", aq72, " : aq(144a1) = ", aq144a, " [VERIFIED]"));
+);
+
+print("================================================================================");
+print("MILESTONE 118 ACHIEVED: ALL 7 PRIMES IN [2301..2400] AUDITED IN PARI/GP!");
+print("================================================================================");
+}
+quit;

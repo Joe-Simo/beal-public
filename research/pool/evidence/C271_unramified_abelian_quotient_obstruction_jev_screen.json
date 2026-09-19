@@ -1,0 +1,53 @@
+{
+  "candidate": {
+    "id": "C271_unramified_abelian_quotient_obstruction",
+    "name": "Unramified Abelian Quotient and Serre Image Obstruction",
+    "text": "Candidate: For primitive Beal solutions A^x + B^y = C^z, the inertia representations at primes dividing ABC have orders x, y, z. When x, y, z >= 3, the global Galois representation rho has image containing SL_2(F_p), but the conductor is bounded by the ramification outside ABC, forcing the existence of everywhere unramified extensions of Q(zeta_p) with Galois group (Z/pZ)^2, which contradicts class field theory."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.47
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "mathematical_feasibility": {
+        "type": "score",
+        "score": 1.18,
+        "confidence": 0.16,
+        "legend": {
+          "0": "level 0: known mathematical obstruction",
+          "1": "level 1: depends on open conjectures (e.g. general Shimura curve modularity over non-totally real fields)",
+          "2": "level 2: grounded in proved theorems (Darmon 2000, Khare-Wintenberger, Mazur) with concrete lemmas to formalize",
+          "3": "level 3: complete reduction to exact computable certificates"
+        },
+        "probabilities": {
+          "0": 0.25,
+          "1": 0.33,
+          "2": 0.41,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "discard",
+        "confidence": 0.62,
+        "probabilities": {
+          "discard": 0.7,
+          "literature_check": 0.24,
+          "advance": 0.02,
+          "park": 0.04,
+          "exact_computation": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 783,
+      "output_tokens": 118
+    }
+  }
+}

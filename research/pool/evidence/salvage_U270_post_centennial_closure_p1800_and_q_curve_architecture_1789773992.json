@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U270_post_centennial_closure_p1800_and_q_curve_architecture",
+  "timestamp": "2026-09-18T19:26:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U270_post_centennial_closure_p1800_and_q_curve_architecture.md",
+    "excerpt": "# U270: Post-Centennial Milestone Closure ($p \\le 1800$), Cusp Immersion Analysis, and Ellenberg $\\mathbb{Q}$-Curve Architecture\n\n**Status**: Verified & Machine-Checked  \n**Milestones Covered**: 101, 102 (Total Verified Milestones: 102/102)  \n**Candidates Addressed**: C264, C265, C266, C267  \n**Formal Artifacts**: `formal/Beal/Signature3.lean`, `formal/Beal/PostCentennial.lean`, `formal/Beal.lean`\n\n---\n\n## 1. Executive Summary\n\nIn this post-centennial research cycle, the Beal verification program expands beyond the Centennial Milestone 100 to **102 independently audited milestones**:\n1. **Extended Kraus Sieve Elimination ($p \\in [1701, 1800]$)**:\n   All 8 primes $p \\in [1701, 1800]$ with $p \\equiv 1 \\pmod 3$ are unconditionally eliminated using exact multi-modulus auxiliary primes $q = 2kp + 1$ with $100\\%$ elimination rate (`code/U275_kraus_sieve_p1701_p1800.py`).\n2. **Independent PARI/GP Audit (Milestone 102)**:\n   Every Fourier trace $a_q(72a1)$ and quadratic twist relation $a_q(144a1) = \\chi_{-4}(q) a_q(72a1)$ is verified independently in PARI/GP (`code/U276_gp_kraus_audit.gp`).\n3. **Momose\u2013Parent Formal Immersion Analysis (Candidate C264)**:\n   A deep audit of formal immersion of $X_0(72)$ and $X_0(144)$ at cusps $\\infty$ and $0$ reveals the exact boundary between rational points and residual representations. We prove that while the Frey curve $E_{A, B}$ has multiplicative reduction of Kodaira type $I_{2p v_\\ell(C)}$ at every prime $\\ell \\mid C$, formal immersion into $J_e(N)$ constrains rational points on modular curves but cannot eliminate residual representations $\\rho_{E, p} \\cong \\rho_{f, p}$ without the Kraus sieve, guarding rigorously against Failure Mode 1 (residual/isogeny conflation).\n4. **Ellenberg Frey $\\mathbb{Q}$-Curve Architecture for $(2, 4, p)$ (Candidate C265)**:\n   We evaluate the descent of $A^2 + B^4 = C^p$ over $K = \\mathbb{Q}(i)$ into $\\mathbb{Q}$-curves with 2-isogenies to their Galois conjugates.\n5. **Lean 4 Machine-Checked Formalization**:\n   Formalized in `formal/Beal/PostCentennial.lean` and `formal/Beal/Signature3.lean`:\n   - `no_beal_counterexample_3_3_up_to_1800`\n   - `ellenberg_q_curve_sum_of_squares`\n   - `ellenberg_conjugate_norm_identity`\n   - `kraus_discriminant_power_factor`\n   - `post_century_grand_synthesis`\n   All compile cleanly with **0 errors, 0 `sorry`, standard axioms only** (`[propext, Classical.choice, Quot.sound]`).\n\n---\n\n## 2. Extended Modular Kraus Sieve for $p \\in [1701, 1800]$\n\nFor the Generalized Fermat Equation $A^3 + B^3 = C^p$, the prime exponents $p \\in [1701, 1800]$ with $p \\equiv 1 \\pmod 3$ are:\n$$p \\in \\{1723, 1741, 1747, 1753, 1759, 1777, 1783, 1789\\}.$$\n\n### Exact Auxiliary Prime Certificates\n\n| Prime $p$ | Auxiliary Prime $q = 2kp + 1$ | Multiplier $k$ | Trace $a_q(72a1)$ | Trace $a_q(144a1)$ | $\\dim \\mathcal{T}_{\\mathrm{adm}}$ | Elim Rate |\n|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **1723** | 17231 | 5 | $-144$ | $+144$ | 12 | $100.0\\%$ |\n| **1741** | 38303 | 11 | $+64$ | $-64$ | 24 | $100.0\\%$ |\n| **1747** | 17471 | 5 | $+96$ | $-96$ | 12 | $100.0\\%$ |\n| **1753** | 7013 | 2 | $-126$ | $-126$ | 6 | $100.0\\%$ |\n| **1759** | 31663 | 9 | $-200$ | $+200$ | 20 | $100.0\\%$ |\n| **1777** | 7109 | 2 | $-30$ | $-30$ | 6 | $100.0\\%$ |\n| **1783** | 21397 | 6 | $-122$ | $-122$ | 14 | $100.0\\%$ |\n| **1789** | 17891 | 5 | $-108$ | $+108$ | 12 | $100.0\\%$ |\n\nAll 8 primes were eliminated unconditionally in $0.80$ seconds.\n\n---\n\n## 3. Formal Immersion and Multiplicative Cusp Specialization (Candidate C264)\n\n### The Valuation and Kodaira Type of the Kraus Frey Curve\nThe Kraus Frey curve is given by:\n$$E_{A, B}: y^2 = x^3 + 3AB x + (B^3 - A^3).$$\nIts invariants are:\n- $c_4 = -144 AB$\n- $\\Delta = -27 (A^3 + B^3)^2 = -27 C^{2p}$\n- $j(E_{A, B}) = \\frac{(-144 AB)^3}{-27 C^{2p}} = \\frac{110592 A^3 B^3}{C^{2p}}$\n\nFor any prime $\\ell \\mid C$ with $\\ell > 3$:\n- Since $\\gcd(A, B) = 1$ and $A^3 + B^3 = C^p$, we have $\\gcd(AB, C) = 1$, so $\\ell \\nmid AB$.\n- Therefore, $v_\\ell(c_4) = 0$ and $v_\\ell(\\Delta) = 2p \\cdot v_\\ell(C) \\ge 2p$.\n- By Tate's algorithm, the reduction of $E_{A, B}$ at $\\ell$ is **multiplicative of Kodaira type $I_{2p v_\\ell(C)}$**.\n\n### Formal Immersion vs. Residual Mod-$p$ Congruence\nMazur's formal immersion theorem (1977) proves that if an Eisenstein quotient $J_e(N)$ has rank 0, the modular curve $X_0(N)$ immerses formally into $J_e(N)$ at cusps, so rational points on $X_0(N)$ cannot reduce to the cusp modulo $p$ for $p$ large.\n\nHowever, in Serre level-lowering:\n- The Frey curve $E_{A, B}$ has conductor $N_E = 2^\\alpha 3^\\beta \\operatorname{rad}(C)$. It is **not** an elliptic curve of conductor 72 or 144.\n- Rather, its mod-$p$ representation $\\rho_{E, p}$ is isomorphic to the mod-$p$ representation $\\rho_{f, p}$ of a newform $f \\in S_2(\\Gamma_0(N))$ where $N \\in \\{72, 144\\}$.\n- Conflating $\\rho_{E, p} \\cong \\rho_{f, p}$ with an isogeny between $E$ and $E_f$ or with $E$ defining a rational point on $X_0(N)$ is **Failure Mode 1 (Residual/Isogeny"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.28,
+        "confidence": 0.58,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.02,
+          "2": 0.61,
+          "3": 0.35
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.83
+      }
+    },
+    "usage": {
+      "input_tokens": 2704,
+      "output_tokens": 42
+    }
+  }
+}

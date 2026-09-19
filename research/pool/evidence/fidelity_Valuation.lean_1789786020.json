@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Valuation.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: Valuation.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# The four `SquarefreeCore` axioms, proved\n\n`Beal/SquarefreeCore.lean` asserts four elementary p-adic valuation facts as custom `axiom`s,\nand shadows mathlib's `padicValNat` with its own definition.  All four are theorems of mathlib.\nThis file proves them, so no custom axiom is needed for any of them.\n\nNo `sorry`, no custom `axiom`s.\n-/\nimport Mathlib.Data.Nat.Factorization.Basic\nimport Mathlib.Data.Nat.Prime.Basic\nimport Mathlib.Tactic.Ring\n\nnamespace Beal\n\nopen Nat\n\n/-- Axiom 1 of `SquarefreeCore`, proved: `v_p(A^x) = x * v_p(A)`. -/\ntheorem factorization_pow_eq (p A x : \u2115) :\n    (A ^ x).factorization p = x * A.factorization p := by\n  rw [Nat.factorization_pow]\n  simp [mul_comm]\n\n/-- Axiom 2 of `SquarefreeCore`, proved: for `A > 0` and `p` prime, `v_p(A) \u2265 1 \u2194 p \u2223 A`. -/\ntheorem factorization_pos_iff_dvd {p A : \u2115} (hp : p.Prime) (hA : 0 < A) :\n    1 \u2264 A.factorization p \u2194 p \u2223 A := by\n  constructor\n  \u00b7 intro h\n    by_contra hnd\n    rw [Nat.factorization_eq_zero_of_not_dvd hnd] at h\n    omega\n  \u00b7 intro hd\n    have := (Nat.Prime.factorization_pos_of_dvd hp (by omega) hd)\n    omega\n\n/-- Axiom 3 of `SquarefreeCore`, proved: `\u00ac p \u2223 A \u2192 v_p(A) = 0`. -/\ntheorem factorization_eq_zero_of_not_dvd' {p A : \u2115} (h : \u00ac p \u2223 A) :\n    A.factorization p = 0 :=\n  Nat.factorization_eq_zero_of_not_dvd h\n\n/-- Axiom 4 of `SquarefreeCore`, proved, in its actually-used form:\nif `p \u2223 X` and `p \u2224 Y` then `p \u2224 X + Y`, hence `v_p(X + Y) = 0`. -/\ntheorem factorization_add_eq_zero {p X Y : \u2115}\n    (hX : p \u2223 X) (hY : \u00ac p \u2223 Y) : (X + Y).factorization p = 0 := by\n  refine Nat.factorization_eq_zero_of_not_dvd (fun hsum => hY ?_)\n  exact (Nat.dvd_add_right hX).mp hsum\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.16
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.28
+      }
+    },
+    "usage": {
+      "input_tokens": 1397,
+      "output_tokens": 94
+    }
+  }
+}

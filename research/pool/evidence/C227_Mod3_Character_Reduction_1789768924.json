@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C227_Mod3_Character_Reduction",
+  "timestamp": "2026-09-18T18:02:04-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "C227_Mod3_Character_Reduction",
+    "desc": "Primes p dividing x^2 + 3y^2 with gcd(x,y)=1 satisfy (-3/p) = 1, forcing p = 3 or p = 1 mod 3. Since the class group of Q(sqrt(-3)) has class number 1, every prime p = 1 mod 3 splits into principal ideals, hence p = u^2 + 3v^2.",
+    "claim": "Algebraic number theory bypasses Fermat residue descent by principal ideal split in Z[omega]."
+  },
+  "questions": {
+    "formal_path_directness": {
+      "type": "choice",
+      "instructions": "Which formalization path has fewer Lean 4 dependencies and proof obligations?",
+      "criteria": {
+        "direct_elementary": "Pure elementary integer descent (Fermat descent on residues and 4-division)",
+        "algebraic_class_group": "Algebraic number theory (Dedekind-Kummer, class number 1 of Z[omega], ideal splitting)",
+        "descent_well_founded": "Direct well-founded induction on natural magnitude"
+      }
+    },
+    "risk_of_gap": {
+      "type": "score",
+      "instructions": "Risk of an unfillable gap or missing prerequisite in mathlib:",
+      "criteria": [
+        "level 0: all prerequisites present in current file or mathlib",
+        "level 1: minor missing lemmas easily proved locally",
+        "level 2: needs substantial mathlib extension (e.g. general quadratic reciprocity for -3)",
+        "level 3: major gap requiring unavailable deep theory"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "formal_path_directness": {
+        "type": "choice",
+        "choice": "direct_elementary",
+        "confidence": 0.21,
+        "probabilities": {
+          "descent_well_founded": 0.12,
+          "algebraic_class_group": 0.41,
+          "direct_elementary": 0.47
+        }
+      },
+      "risk_of_gap": {
+        "type": "score",
+        "score": 2.11,
+        "confidence": 0.74,
+        "legend": {
+          "0": "level 0: all prerequisites present in current file or mathlib",
+          "1": "level 1: minor missing lemmas easily proved locally",
+          "2": "level 2: needs substantial mathlib extension (e.g. general quadratic reciprocity for -3)",
+          "3": "level 3: major gap requiring unavailable deep theory"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.04,
+          "2": 0.76,
+          "3": 0.18
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 636,
+      "output_tokens": 77
+    }
+  }
+}

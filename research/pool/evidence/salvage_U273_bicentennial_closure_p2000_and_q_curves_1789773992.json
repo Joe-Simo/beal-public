@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U273_bicentennial_closure_p2000_and_q_curves",
+  "timestamp": "2026-09-18T19:26:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U273_bicentennial_closure_p2000_and_q_curves.md",
+    "excerpt": "# U273: Bicentennial Exponent Closure ($p \\le 2000$), Statement Fidelity Certification, and Ellenberg $\\mathbb{Q}$-Curve Resolution\n\n**Status**: Verified & Machine-Checked  \n**Milestones Covered**: 106, 107 (Total Verified Milestones: 107/107)  \n**Candidates Addressed**: C273, C274, C275, C276  \n**Formal Artifacts**: `formal/Beal/Signature3.lean`, `formal/Beal/PostCentennial.lean`\n\n---\n\n## 1. Executive Summary\n\nIn this research cycle, the Beal verification program reaches the **Bicentennial Exponent Milestone**:\n1. **Unconditional Prime Exponent Closure Through $p = 2000$**:\n   All 5 primes $p \\in [1901, 2000]$ with $p \\equiv 1 \\pmod 3$ ($p \\in \\{1933, 1951, 1987, 1993, 1999\\}$) are unconditionally eliminated using exact multi-modulus auxiliary primes $q = 2kp + 1$ with $100\\%$ elimination rate (`code/U287_kraus_sieve_p1901_p2000.py`).\n2. **Independent PARI/GP Audit (Milestone 107)**:\n   Every Fourier trace $a_q(72a1)$ and quadratic twist relation $a_q(144a1) = \\chi_{-4}(q) a_q(72a1)$ is verified independently in PARI/GP (`code/U288_gp_kraus_audit.gp`).\n3. **Formal Verification in Lean 4**:\n   Machine-checked [`no_beal_counterexample_3_3_up_to_2000`](file://[LOCAL_HOME]/Downloads/beal/formal/Beal/Signature3.lean) and [`post_century_signature_3_3_p_elimination_2000`](file://[LOCAL_HOME]/Downloads/beal/formal/Beal/PostCentennial.lean) under standard axioms only (`[propext, Classical.choice, Quot.sound]`).\n4. **Statement Fidelity Audit (Candidate C275)**:\n   Audited all machine-checked theorems to ensure strict fidelity to the original Beal conjecture:\n   - Base variables $A, B, C$ are strictly positive integers ($> 0$).\n   - Exponents are strictly integers $\\ge 3$.\n   - The coprimality condition $\\gcd(\\gcd(A, B), C) = 1$ is rigorously preserved.\n   - Zero custom axioms; zero `sorry`.\n\n---\n\n## 2. Extended Modular Kraus Sieve for $p \\in [1901, 2000]$\n\n### Exact Auxiliary Prime Certificates\n\n| Prime $p$ | Auxiliary Prime $q = 2kp + 1$ | Multiplier $k$ | Trace $a_q(72a1)$ | Trace $a_q(144a1)$ | $\\dim \\mathcal{T}_{\\mathrm{adm}}$ | Elim Rate |\n|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **1933** | 23197 | 6 | $+94$ | $+94$ | 14 | $100.0\\%$ |\n| **1951** | 42923 | 11 | $+348$ | $-348$ | 24 | $100.0\\%$ |\n| **1987** | 7949 | 2 | $-150$ | $-150$ | 6 | $100.0\\%$ |\n| **1993** | 11959 | 3 | $-32$ | $+32$ | 8 | $100.0\\%$ |\n| **1999** | 19991 | 5 | $-248$ | $+248$ | 12 | $100.0\\%$ |\n\nAll 5 primes were eliminated unconditionally in $1.46$ seconds.\n\n---\n\n## 3. Grand Prime Exponent Summary: Every Prime $p \\le 2000$ for $(3, 3, p)$\n\nWith Milestone 107 complete, the status of every prime $p \\le 2000$ for $A^3 + B^3 = C^p$ is unconditionally resolved:\n- $p = 3$: Machine-checked via `fermatLastTheoremThree`.\n- $p \\equiv 2 \\pmod 3$: Unconditionally eliminated via Darmon\u2013Merel (1997) / Kraus (1998) obstruction at level 18.\n- $p \\equiv 1 \\pmod 3$:\n  - $p \\le 42$: Classical Darmon\u2013Merel.\n  - $p \\in [43, 600]$: Milestones 40, 51, 52, 56, 70, 72.\n  - $p \\in [601, 1700]$: Milestones 79\u2013100.\n  - $p \\in [1701, 1800]$: Milestones 101 & 102.\n  - $p \\in [1801, 1900]$: Milestones 104 & 105.\n  - $p \\in [1901, 2000]$: Milestones 106 & 107.\n\n**Total Verified Milestones in Master Test Suite**: 107/107.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.62,
+        "confidence": 0.38,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.59,
+          "1": 0.2,
+          "2": 0.2,
+          "3": 0.01
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.68
+      }
+    },
+    "usage": {
+      "input_tokens": 2015,
+      "output_tokens": 42
+    }
+  }
+}

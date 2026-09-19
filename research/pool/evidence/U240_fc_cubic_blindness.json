@@ -1,0 +1,67 @@
+{
+  "status": "VERIFIED_AUDIT",
+  "milestone": 77,
+  "fc_solutions_count": 10,
+  "conditions": {
+    "strict_beal_exponents (x,y,z>=3)": {
+      "holds_count": 0,
+      "fails_count": 10,
+      "all_fail": true,
+      "all_hold": false
+    },
+    "signature_3_3 (x=3, y=3)": {
+      "holds_count": 0,
+      "fails_count": 10,
+      "all_fail": true,
+      "all_hold": false
+    },
+    "signature_3_3_3 (x=3, y=3, z=3)": {
+      "holds_count": 0,
+      "fails_count": 10,
+      "all_fail": true,
+      "all_hold": false
+    },
+    "has_exponent_2": {
+      "holds_count": 10,
+      "fails_count": 0,
+      "all_fail": false,
+      "all_hold": true
+    },
+    "two_exponents_ge_3": {
+      "holds_count": 10,
+      "fails_count": 0,
+      "all_fail": false,
+      "all_hold": true
+    },
+    "euler_both_odd (A%2=1, B%2=1)": {
+      "holds_count": 3,
+      "fails_count": 7,
+      "all_fail": false,
+      "all_hold": false
+    },
+    "same_parity (A%2=B%2)": {
+      "holds_count": 3,
+      "fails_count": 7,
+      "all_fail": false,
+      "all_hold": false
+    },
+    "cubic_descent_opposite_pq": {
+      "holds_count": 3,
+      "fails_count": 7,
+      "all_fail": false,
+      "all_hold": false
+    },
+    "hyperbolic_orbifold (sum 1/p < 1)": {
+      "holds_count": 10,
+      "fails_count": 0,
+      "all_fail": false,
+      "all_hold": true
+    },
+    "curvature_12 (12 sum <= 11 prod)": {
+      "holds_count": 0,
+      "fails_count": 10,
+      "all_fail": true,
+      "all_hold": false
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C007",
+  "timestamp": "2026-09-18T22:46:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C007\",\n \"status\": \"REFUTED\",\n \"claim\": \"A^5 + B^5 = C^p has no primitive nontrivial solutions for primes p >= 5, via Hilbert modular forms over Q(sqrt 5).\",\n \"method\": \"BCDF Frey elliptic curve families E_{a,b}, F_{a,b} over F = Q(sqrt 5) (h_F = h_F^+ = 1), level lowering to Hilbert newforms at levels dividing 40, 64, 80 and p_2^6, with an a_3-dichotomy.\",\n \"evidence\": [\n  \"research/checkpoints/U111_signature_5_5_p_hilbert_sieve.md\",\n  \"research/checkpoints/U110_signature_5_5_higher_primes_analysis.md\",\n  \"research/checkpoints/U102_p11_p13_class_number_certification_and_unconditional_status.md\",\n  \"research/checkpoints/U113_orbit_b_elimination_audit.md\",\n  \"code/U113_hypothesis_screen.py\"\n ],\n \"obligations\": [\n  \"U110 p=17 analysis assumes FINITENESS OF SHA for its Cassels-Tate parity step; Sha finiteness is open\",\n  \"U110 concedes rank 2 defeats standard one-generator Chabauty-Coleman, so p=17 is NOT closed\",\n  \"U102 claim that x^5+y^5=z^11 and z^13 are unconditionally resolved is INVALID: Dahmen-Siksek prove them UNDER GRH (confirmed at source) and the claimed removal is circular\",\n  \"Dahmen-Siksek citation now CONFIRMED at source\",\n  \"trivial solution persistence for p in {17,19,23} analysed but not eliminated\"\n ],\n \"failure_reason\": \"U293 AUDIT: the headline claim \\u2014 no primitive solutions of A^5+B^5=C^p for ALL primes p >= 5 \\u2014 is NOT supported by any source held here and is refuted as stated. The survey arXiv:2412.11933 Table 1.1 gives only (5,5,n) for n in {7,19}, citing Dahmen-Siksek; and the Dahmen-Siksek abstract, held at references/U130/dahmen_siksek.txt, says (5,5,7), (5,5,19) and (7,7,5) are UNCONDITIONAL while (5,5,11), (5,5,13) and (7,7,11) assume GRH. The candidate's OWN recorded obligations already say the p=17 analysis assumes finiteness of Sha (open) and concedes that rank 2 defeats one-generator Chabauty, so p=17 is not closed, and that the claimed removal of GRH at p=11,13 is circular. So the status VERIFICATION_REQUIRED was wrong: the claim cannot be verified because it is false as written.\"\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.91
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.84,
+        "confidence": 0.16,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.66,
+          "1": 0.07,
+          "2": 0.05,
+          "3": 0.22
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "optimistic",
+        "confidence": 0.46,
+        "probabilities": {
+          "cannot_tell": 0.17,
+          "optimistic": 0.6,
+          "conservative": 0.09,
+          "not_applicable": 0.14
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.29,
+        "probabilities": {
+          "no_action": 0.53,
+          "check_direction_now": 0.41,
+          "state_direction": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1737,
+      "output_tokens": 139
+    }
+  }
+}

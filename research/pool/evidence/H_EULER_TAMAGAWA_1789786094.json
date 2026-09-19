@@ -1,0 +1,90 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "H_EULER_TAMAGAWA",
+  "timestamp": "2026-09-18T22:48:14-0400",
+  "model": "jev-latest",
+  "request_state": "Hypothesis: H_EULER_TAMAGAWA - Euler System on Thrice-Punctured Line with Tamagawa Cancellation\nDescription: Construct an auxiliary quadratic twist of Frey motives where Tamagawa factors prod_{v in S} c_v(T) cancel against regulator determinants, preventing exponential blowup over unbounded S = primes(ABC).\nContext: Beal conjecture x, y, z >= 3; Beal defect -chi >= 1/12; Fermat-Catalan defect -chi <= 1/18.",
+  "questions": {
+    "avoids_dead_category": {
+      "type": "noul",
+      "instructions": "Does this hypothesis avoid known dead categories (bounded sieves, one-signature modular method, elementary congruences, unproved ABC/Vojta laundering)?",
+      "criteria": {
+        "true": "Avoids all known dead categories and heuristic laundering",
+        "false": "Falls into a known dead category or heuristic laundering"
+      }
+    },
+    "avoids_failure_modes": {
+      "type": "noul",
+      "instructions": "Does this hypothesis structurally avoid the three recurring failure modes (residual/isogeny conflation, Chabauty wrong field, heuristic laundering)?",
+      "criteria": {
+        "true": "Structurally free from the three recorded failure modes",
+        "false": "Vulnerable to one of the recorded failure modes"
+      }
+    },
+    "breakthrough_potential": {
+      "type": "score",
+      "instructions": "What is the breakthrough potential of this mechanism for resolving the full Beal conjecture across all triples (p, q, r) >= 3?",
+      "criteria": [
+        "level 0: No leverage on general exponents",
+        "level 1: Minor theoretical interest, does not resolve open core",
+        "level 2: Provides structural constraints applicable to infinite families",
+        "level 3: Viable architecture for an unconditional resolution of the conjecture"
+      ]
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this hypothesis?",
+      "criteria": {
+        "deep_audit": "Conduct immediate deep adversarial audit and mathematical formalization",
+        "combine": "Pairwise combine with existing top candidates via Jev",
+        "countersearch": "Construct an exact counterexample search against its core premise",
+        "shelve": "Shelve as obstructed or dead category"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "avoids_dead_category": {
+        "type": "noul",
+        "noul": 0.22
+      },
+      "avoids_failure_modes": {
+        "type": "noul",
+        "noul": 0.24
+      },
+      "breakthrough_potential": {
+        "type": "score",
+        "score": 1.12,
+        "confidence": 0.44,
+        "legend": {
+          "0": "level 0: No leverage on general exponents",
+          "1": "level 1: Minor theoretical interest, does not resolve open core",
+          "2": "level 2: Provides structural constraints applicable to infinite families",
+          "3": "level 3: Viable architecture for an unconditional resolution of the conjecture"
+        },
+        "probabilities": {
+          "0": 0.22,
+          "1": 0.48,
+          "2": 0.26,
+          "3": 0.04
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "deep_audit",
+        "confidence": 0.66,
+        "probabilities": {
+          "deep_audit": 0.74,
+          "countersearch": 0.08,
+          "combine": 0.01,
+          "shelve": 0.17
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 776,
+      "output_tokens": 115
+    }
+  }
+}

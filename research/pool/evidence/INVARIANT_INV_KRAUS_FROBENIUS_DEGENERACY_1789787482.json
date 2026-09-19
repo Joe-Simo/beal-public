@@ -1,0 +1,96 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "INVARIANT_INV_KRAUS_FROBENIUS_DEGENERACY",
+  "timestamp": "2026-09-18T23:11:22-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent.",
+    "invariant_id": "INV_KRAUS_FROBENIUS_DEGENERACY",
+    "title": "Kraus Frobenius Trace Degeneracy Sieve: a_k(E_{A,B}) mod l vs a_k(f)",
+    "formula": "prod_{f in S_2(N)} (a_k(E) - a_k(f)) != 0 mod l",
+    "description": "Explicit local Frobenius trace differences at auxiliary primes k = 2mp + 1. Eliminates residual representations unconditionally."
+  },
+  "questions": {
+    "fc_defect_discrimination": {
+      "type": "noul",
+      "instructions": "Does this candidate mathematical invariant distinguish the 10 known Fermat-Catalan identities (1^m + 2^3 = 3^2, 2^5 + 7^2 = 3^4, 7^3 + 13^2 = 2^9...) with exponent 2 from genuine Beal configurations (x,y,z >= 3)? Specifically, does it exploit the strict hyperbolic defect 1 - 1/x - 1/y - 1/z >= 1/12 such that it vanishes or is blocked on exponent 2?",
+      "criteria": {
+        "true": "Strictly distinguishes exponent 2 from Beal; exploits the hyperbolic defect -chi >= 1/12.",
+        "false": "Fermat-Catalan blind: holds equally on exponent 2 identities."
+      }
+    },
+    "coprimality_coupling": {
+      "type": "noul",
+      "instructions": "Does the invariant couple directly to the coprimality condition gcd(A, B, C) = 1 (e.g. through tame/wild conductor, Serre level, or discriminant valuation), distinguishing coprime integer points from projectively scaled multiples?",
+      "criteria": {
+        "true": "Directly couples to coprimality; sensitive to common factors.",
+        "false": "Projectively invariant; insensitive to integer gcd scaling."
+      }
+    },
+    "finiteness_or_vanishing": {
+      "type": "choice",
+      "instructions": "What is the ultimate Diophantine consequence forced by this invariant?",
+      "criteria": {
+        "nonexistence_certificate": "Forces complete non-existence of primitive solutions when x, y, z >= 3.",
+        "finiteness_only": "Proves finiteness of solutions (Faltings/Chabauty), leaving unknown points uneliminated.",
+        "local_obstruction": "Provides local obstructions modulo specific prime powers.",
+        "vacuous": "Does not constrain integer coordinates on the hypersurface."
+      }
+    },
+    "breakthrough_score": {
+      "type": "score",
+      "instructions": "Evaluate the breakthrough potential of this invariant toward an unconditional resolution of Beal's conjecture.",
+      "criteria": [
+        "level 0: Blind or vacuous; provides no leverage.",
+        "level 1: Minor local constraint; does not close any signature.",
+        "level 2: Strong structural invariant; closes an infinite signature family or settles bounded prime range.",
+        "level 3: Unconditional resolution; overcomes both the exponent 2 defect and the coprimality obstacle."
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fc_defect_discrimination": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "coprimality_coupling": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "finiteness_or_vanishing": {
+        "type": "choice",
+        "choice": "nonexistence_certificate",
+        "confidence": 0.89,
+        "probabilities": {
+          "finiteness_only": 0.0,
+          "local_obstruction": 0.03,
+          "nonexistence_certificate": 0.92,
+          "vacuous": 0.05
+        }
+      },
+      "breakthrough_score": {
+        "type": "score",
+        "score": 0.83,
+        "confidence": 0.17,
+        "legend": {
+          "0": "level 0: Blind or vacuous; provides no leverage.",
+          "1": "level 1: Minor local constraint; does not close any signature.",
+          "2": "level 2: Strong structural invariant; closes an infinite signature family or settles bounded prime range.",
+          "3": "level 3: Unconditional resolution; overcomes both the exponent 2 defect and the coprimality obstacle."
+        },
+        "probabilities": {
+          "0": 0.43,
+          "1": 0.37,
+          "2": 0.16,
+          "3": 0.04
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1083,
+      "output_tokens": 131
+    }
+  }
+}

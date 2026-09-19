@@ -1,0 +1,54 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "flaw_C387",
+  "timestamp": "2026-09-18T22:46:19-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C387 - ABSOLUTE PRISMATIC COHOMOLOGY AND F-CRYSTALS OVER Z_p\nClaim: Absolute prismatic cohomology R\\Gamma_{\\Prism}(X) on the Breuil-Kisin-Fargues prism forces non-trivial Frobenius Frobenius-eigenvalue bounds on Beal solutions.\nMethod: Prismatic cohomology, Breuil-Kisin-Fargues modules, and p-adic Hodge theory.\nStatus: BLOCKED\nFailureReason: Prismatic cohomology is local to Z_p; Frobenius eigenvalues depend only on reduction mod p, remaining blind to global integer coprimality and degenerating under wild additive reduction (Failure Mode 1).",
+  "questions": {
+    "has_conflation": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 1 (residual/isogeny conflation, or confounding complex moduli deformation with arithmetic coordinates)?",
+      "criteria": {
+        "true": "Yes, conflates residual/geometric properties with Diophantine point exclusion.",
+        "false": "No, maintains strict distinction between arithmetic coordinates and geometric moduli."
+      }
+    },
+    "has_chabauty_field_slip": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 2 (Chabauty over wrong field, or ignoring unbounded bad reduction blowup)?",
+      "criteria": {
+        "true": "Yes, applies Chabauty rank bounds over base field to higher degree points or ignores Selmer dimension blowup.",
+        "false": "No, correctly accounts for field degrees and Selmer variety growth."
+      }
+    },
+    "has_heuristic_laundering": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 3 (heuristic laundering, treating GRH/ABC/Vojta bounds as unconditional)?",
+      "criteria": {
+        "true": "Yes, relabels conjectural height bounds or heuristics as unconditional results.",
+        "false": "No, strictly relies on exact unconditional arithmetic."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_conflation": {
+        "type": "noul",
+        "noul": 0.9
+      },
+      "has_chabauty_field_slip": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "has_heuristic_laundering": {
+        "type": "noul",
+        "noul": 0.1
+      }
+    },
+    "usage": {
+      "input_tokens": 669,
+      "output_tokens": 69
+    }
+  }
+}

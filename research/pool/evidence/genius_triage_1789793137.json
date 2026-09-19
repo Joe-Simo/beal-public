@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C471",
+    "title": "RELATIVE ANABELIAN SECTION CONJECTURE ON TRIANGLE ORBIFOLDS",
+    "target_discipline": false,
+    "fc_blindness": false,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.41,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "selmer_dimension_growth",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.41
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.41,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.02,
+          "mode_3_heuristic_laundering": 0.55,
+          "mode_1_residual_conflation": 0.08,
+          "sound_no_failure_mode": 0.34
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.42,
+        "probabilities": {
+          "vacuous": 0.18,
+          "proves_nonexistence": 0.25,
+          "finiteness_only": 0.5700000000000001,
+          "bounded_only": 0.0
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "selmer_dimension_growth",
+        "confidence": 0.28,
+        "probabilities": {
+          "computational_scale": 0.05,
+          "unobstructed": 0.17,
+          "selmer_dimension_growth": 0.4,
+          "automorphic_cusp_abundance": 0.03,
+          "torsion_wild_ramification": 0.14,
+          "continuous_moduli_degeneration": 0.2
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.39,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.51,
+          "salvage_proved_sublemmas": 0.05,
+          "synthesize_breakthrough": 0.16,
+          "refute_and_archive": 0.26,
+          "advance_kraus_frontier": 0.02
+        }
+      }
+    }
+  }
+]

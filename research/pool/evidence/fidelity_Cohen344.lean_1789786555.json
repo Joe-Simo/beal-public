@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Cohen344.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: Cohen344.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# `(3,4,4)` from Euler instead of from a citation (U316, pool C173)\n\n`ClosedFamilies.lean` carries the hypothesis `cohen344 : NoCoprimeSol 3 4 4`, sourced to\nCohen, *Number Theory Volume II* (GTM 240), Prop. 14.6.6.  That book is not held in\n`references/`, so the hypothesis was unauditable at $0 \u2014 the only such hypothesis of\n`final_residual`.\n\nThis file removes the citation.  `cohen344_of_euler` derives `NoCoprimeSol 3 4 4` from a single\nnamed classical theorem, **Euler's** `a\u00b3 + b\u00b3 = 2c\u00b3`, by splitting on the parity of `b` and `c`\n(they cannot both be even, being coprime):\n\n* `b, c` both odd \u2014 closed **outright**, no hypothesis: `three_four_four_same_parity`.\n* opposite parity \u2014 `opposite_parity_reduction` turns the branch into Euler's equation, and\n  `a = b` there forces `C \u2212 B = C + B`, hence `B = 0`, excluded.\n\n`EulerCubicTwo` is stated, **not proved**.  It is not in mathlib (`Mathlib/NumberTheory/FLT/`\ncontains only `Basic`, `Four`, `MasonStothers`, `Three`, and a grep for the statement finds\nnothing), and this project has not formalised it.  So this is an **audit improvement, not a new\ntheorem**: an unverifiable book reference becomes a named 1770 result plus a machine-checked\nderivation, with the one remaining gap explicit in the type.\n\nNo `sorry`, no custom `axiom`s; mathlib only.\n-/\nimport Beal.ThreeFourFour\nimport Beal.ClosedFamilies\nnamespace Beal\n\n/-- **Euler's theorem on `a\u00b3 + b\u00b3 = 2c\u00b3`** (Euler, *Vollst\u00e4ndige Anleitung zur Algebra*, 1770;\nsee also Dickson, *History of the Theory of Numbers* II, ch. XXI).  Stated, not proved: it is not\nin mathlib, and this project has not formalised it.  Every use is flagged. -/\ndef EulerCubicTwo : Prop :=\n  \u2200 a b c : \u2115, 0 < a \u2192 0 < b \u2192 0 < c \u2192 Nat.Coprime a b \u2192 a ^ 3 + b ^ 3 = 2 * c ^ 3 \u2192 a = b\n\n/-- `(3,4,4)` has no coprime solution, **given** Euler's theorem.  This replaces the unauditable\ncitation `cohen344` (Cohen, GTM 240, Prop. 14.6.6) by a named classical theorem plus a\nmachine-checked derivation: the same-parity branch is proved outright here, and the\nopposite-parity branch is reduced to Euler. -/\ntheorem cohen344_of_euler (hE : EulerCubicTwo) : NoCoprimeSol 3 4 4 := by\n  intro a b c ha hb hc hab heq\n  -- b and c are coprime\n  have hbc : Nat.Coprime b c := by\n    rw [Nat.coprime_iff_gcd_eq_one, Nat.eq_one_iff_not_exists_prime_dvd]\n    rintro p hp hdvd\n    have hpb : p \u2223 b := hdvd.trans (Nat.gcd_dvd_left b c)\n    have hpc : p \u2223 c := hdvd.trans (Nat.gcd_dvd_right b c)\n    have hpa : p \u2223 a := by\n      refine hp.dvd_of_dvd_pow (n := 3) ?_\n      have : a ^ 3 = c ^ 4 - b ^ 4 := by omega\n      rw [this]\n      exact Nat.dvd_sub' (dvd_pow hpc (by norm_num)) (dvd_pow hpb (by norm_num))\n    have : p \u2223 Nat.gcd a b := Nat.dvd_gcd hpa hpb\n    rw [hab] at this\n    exact hp.one_lt.ne' (Nat.dvd_one.mp this)\n  -- b < c\n  have hlt : b < c := by\n    by_contra hcon\n    have : c ^ 4 \u2264 b ^ 4 := Nat.pow_le_pow_left (by omega) 4\n    have : 0 < a ^ 3 := Nat.pos_pow_of_pos 3 ha\n    omega\n  rcases Nat.even_or_odd b with hbe | hbo\n  \u00b7 -- b even, so c is odd (coprime), opposite parity\n    have hco : Odd c := by\n      rcases Nat.even_or_odd c with hce | hco\n      \u00b7 exfalso\n        obtain \u27e8k, hk\u27e9 := hbe; obtain \u27e8l, hl\u27e9 := hce\n        have : 2 \u2223 Nat.gcd b c := Nat.dvd_gcd \u27e8k, by omega\u27e9 \u27e8l, by omega\u27e9\n        rw [hbc] at this; omega\n      \u00b7 exact hco\n    obtain \u27e8m, n, r, hm, hn, hr, hmn, hu, hv, hcube\u27e9 :=\n      opposite_parity_reduction ha hb hlt hbc (Or.inr \u27e8hbe, hco\u27e9) heq\n    have hmn2 : Nat.Coprime (m ^ 2) (n ^ 2) := Nat.Coprime.pow _ _ hmn\n    have := hE (m ^ 2) (n ^ 2) r (by positivity) (by positivity) hr hmn2 hcube\n    have hmn' : m = n := by nlinarith [this]\n    rw [hmn'] at hu\n    omega\n  \u00b7 rcases Nat.even_or_odd c with hce | hco\n    \u00b7 -- b odd, c even: opposite parity again\n      obtain \u27e8m, n, r, hm, hn, hr, hmn, hu, hv, hcube\u27e9 :=\n        opposite_parity_reduction ha hb hlt hbc (Or.inl \u27e8hbo, hce\u27e9) heq\n      have hmn2 : Nat.Coprime (m ^ 2) (n ^ 2) := Nat.Coprime.pow _ _ hmn\n      have := hE (m ^ 2) (n ^ 2) r (by positivity) (by positivity) hr hmn2 hcube\n      have hmn' : m = n := by nlinarith [this]\n      rw [hmn'] at hu\n      omega\n    \u00b7 -- both odd: closed unconditionally\n      exact three_four_four_same_parity ha hbo hco hlt hbc heq\n\n/-- Assembling `InstanceRows` with the `cohen344` field supplied by `cohen344_of_euler` instead of\nby Cohen's book.  The other three fields are unchanged and still cited; this records exactly which\none of the four the audit has improved. -/\ntheorem instanceRows_of_euler (hE : EulerCubicTwo)\n    (hpss : NoCoprimeSol 3 4 7 \u2227 NoCoprimeSol 3 7 4 \u2227 NoCoprimeSol 4 7 3)\n    (hss : NoCoprimeSol 3 4 5 \u2227 NoCoprimeSol 3 5 4 \u2227 NoCoprimeSol 4 5 3)\n    (hp44 : \u2200 p, 5 \u2264 p \u2192 NoCoprimeSol p 4 4) : InstanceRows :=\n  { pss347 := hpss, ss345 := hss, cohen344 := cohen344_of_euler hE, p44 := hp44 }\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.17
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.39
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.58
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.3
+      }
+    },
+    "usage": {
+      "input_tokens": 2614,
+      "output_tokens": 94
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C282_C283",
+  "timestamp": "2026-09-18T19:26:29-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C282",
+      "claim": "ARTIN CONDUCTOR BOUNDS FOR FREY JACOBIANS: For higher-genus Frey curves C_{A,B,C} associated to A^x + B^y = C^z, prove that the conductor N(J(C_{A,B,C})) is bounded by a constant depending solely on (x, y, z) and independent of A, B, C.",
+      "method": "Artin conductor bounds, wild ramification filtering, Serre-Tate theorem, N\u00e9ron models",
+      "status": "ACTIVE"
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C283",
+      "claim": "JACOBIAN GL_2 DECOMPOSITION AND POTENTIAL MODULARITY: Decompose J(C_{A,B,C}) into abelian varieties of GL_2-type over totally real subfields Q(zeta_x + zeta_x^{-1}) and apply potential modularity (Boxer-Calegari-Gee-Newton-Thorne 2021) to obtain modular representations.",
+      "method": "Endomorphism algebras, GL_2-type varieties, potential modularity theorems, automorphic representations",
+      "status": "ACTIVE"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.88
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 1.36,
+        "confidence": 0.39,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.47,
+          "2": 0.33,
+          "3": 0.08
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.36
+      }
+    },
+    "usage": {
+      "input_tokens": 1144,
+      "output_tokens": 53
+    }
+  }
+}

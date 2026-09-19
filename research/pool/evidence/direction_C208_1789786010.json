@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C208",
+  "timestamp": "2026-09-18T22:46:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C208\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"C079's flag criterion is verified to err in the SAFE direction. A Beal solution A^3+B^3 = n^r with r = 3j+e, j >= 1 and gcd(A,n) = 1 gives x = A/n^j with denominator exactly n^j > 1. The script flags a torsion point whenever denominator(x) > 1 -- a strict SUPERSET of the Beal-relevant points -- so it can over-flag but can never miss one.\",\n \"method\": \"Checked the inclusion directly rather than assuming it: verified over n < 40, j < 4, A < 120 with gcd(A,n) = 1 that the denominator is always exactly n^j > 1, so no Beal solution can hide behind an integral x.\",\n \"evidence\": \"Zero counterexamples. Over-flagging is demonstrably possible -- x = 7/4 on a base-3 curve has denominator 4, not a power of 3, and would be flagged though it cannot come from a base-3 Beal solution -- which is what makes the EMPTY flagged set informative rather than definitional. Asserted in code/U320_regression_checks.py.\",\n \"obligations\": \"This checks the criterion's DIRECTION, not the rank-0 inputs it is applied to. Those still rest on PARI's ellrank upper bound alone (C079), and C207 established that an integral-point search cannot cross-check them. Unchanged.\",\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.93
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 1.0,
+        "confidence": 0.99,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.0,
+          "3": 0.0
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "conservative",
+        "confidence": 1.0,
+        "probabilities": {
+          "optimistic": 0.0,
+          "not_applicable": 0.0,
+          "conservative": 1.0,
+          "cannot_tell": 0.0
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.96,
+        "probabilities": {
+          "check_direction_now": 0.02,
+          "no_action": 0.97,
+          "state_direction": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1382,
+      "output_tokens": 139
+    }
+  }
+}

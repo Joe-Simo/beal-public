@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Signature4.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: Signature4.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Mathlib.NumberTheory.FLT.Four\nimport Mathlib.Tactic.IntervalCases\nimport Mathlib.Tactic.Ring\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Tactic.NormNum\n\n/-!\n# Formalization of Fermat's Last Theorem for Exponent 4 and Signature (4, 4, 2)\n\nThis module formalizes Fermat's classical theorem on the nonexistence of non-trivial\npositive integer solutions to the Diophantine equations of signatures $(4, 4, 2)$ and $(4, 4, 4)$:\n  $$A^4 + B^4 = C^2 \\quad \\text{and} \\quad A^4 + B^4 = C^4.$$\n\n## Historical and Mathematical Context\n\nPierre de Fermat famously recorded the method of **infinite descent** (*descente infinie*)\nin the margin of Bachet's Diophantus to prove that the area of a right triangle with integer\nsides cannot be a square. Equivalently, this proves that:\n  $$A^4 + B^4 = C^2$$\nadmits no solution in strictly positive integers.\n\nBecause $C^4 = (C^2)^2$, any hypothetical solution to $A^4 + B^4 = C^4$ (Fermat's Last Theorem for $n = 4$)\nimmediately yields a solution $A^4 + B^4 = (C^2)^2$ to the $(4, 4, 2)$ equation. Thus the impossibility\nof $(4, 4, 2)$ is strictly stronger than and implies FLT for $n = 4$.\n\n## Main Results Formalized Here:\n1. **Fermat's Principle of Infinite Descent**:\n   A general, constructive meta-theorem over $\\mathbb{N}$ using `Nat.find`.\n2. **Mod-4 Parity Obstruction**:\n   Squares cannot be $2 \\pmod 4$, proving that $A$ and $B$ cannot both be odd in $A^4 + B^4 = C^2$.\n3. **Impossibility of Signature $(4, 4, 2)$**:\n   $$A^4 + B^4 = C^2 \\implies \\text{False for } A, B, C > 0.$$\n4. **Fermat's Last Theorem for Exponent 4**:\n   $$A^4 + B^4 = C^4 \\implies \\text{False for } A, B, C > 0.$$\n5. **Beal Counterexample Elimination for Signature $(4, 4, 4)$ and $(4, 4, 2k)$**:\n   No Beal counterexample exists for signatures $(4, 4, 4)$ or $(4, 4, 2k)$ with $k \\ge 2$.\n-/\n\nnamespace Beal\n\n/-! ### 1. Fermat's Principle of Infinite Descent -/\n\n/--\n**Fermat's Principle of Infinite Descent**:\nIf a property `P : \u2115 \u2192 Prop` has the property that every witness `c` admitting `P c`\nproduces a strictly smaller witness `c' < c` with `P c'`, then `P` has no witnesses.\n-/\ntheorem infinite_descent {P : \u2115 \u2192 Prop} (h_step : \u2200 c, P c \u2192 \u2203 c', c' < c \u2227 P c') :\n    \u2200 c, \u00ac P c := by\n  classical\n  intro c hc\n  have h_ex : \u2203 k, P k := \u27e8c, hc\u27e9\n  let m := Nat.find h_ex\n  have hm : P m := Nat.find_spec h_ex\n  obtain \u27e8c', hc'_lt, hc'_prop\u27e9 := h_step m hm\n  have h_min := Nat.find_min h_ex hc'_lt\n  exact h_min hc'_prop\n\n/-! ### 2. Mod-4 Quadratic Residue Obstructions -/\n\n/--\nEvery square in $\\mathbb{N}$ is congruent to $0$ or $1$ modulo $4$.\n-/\nlemma sq_mod_four (n : \u2115) : n ^ 2 % 4 = 0 \u2228 n ^ 2 % 4 = 1 := by\n  rw [Nat.pow_mod]\n  have h : n % 4 = 0 \u2228 n % 4 = 1 \u2228 n % 4 = 2 \u2228 n % 4 = 3 := by omega\n  rcases h with h | h | h | h <;> rw [h] <;> norm_num\n\n/--\nEvery fourth power in $\\mathbb{N}$ is congruent to $0$ or $1$ modulo $4$.\n-/\nlemma pow_four_mod_four (n : \u2115) : n ^ 4 % 4 = 0 \u2228 n ^ 4 % 4 = 1 := by\n  have hsq : n ^ 4 = (n ^ 2) ^ 2 := by ring\n  rw [hsq]\n  exact sq_mod_four (n ^ 2)\n\n/--\nAn odd integer has fourth power congruent to $1$ modulo $4$.\n-/\nlemma odd_pow_four_mod_four (n : \u2115) (hn : n % 2 = 1) : n ^ 4 % 4 = 1 := by\n  rw [Nat.pow_mod]\n  have hodd : n % 4 = 1 \u2228 n % 4 = 3 := by omega\n  rcases hodd with h | h <;> rw [h] <;> norm_num\n\n/--\nIf $A$ and $B$ are both odd, $A^4 + B^4 \\equiv 2 \\pmod 4$.\n-/\nlemma sum_odd_pow_four_mod_four (A B : \u2115) (hA : A % 2 = 1) (hB : B % 2 = 1) :\n    (A ^ 4 + B ^ 4) % 4 = 2 := by\n  have hA4 := odd_pow_four_mod_four A hA\n  have hB4 := odd_pow_four_mod_four B hB\n  omega\n\n/--\n**Parity Obstruction Lemma**:\nIn any solution to $A^4 + B^4 = C^2$, $A$ and $B$ cannot both be odd.\n-/\ntheorem fermat42_not_both_odd (A B C : \u2115) (heq : A ^ 4 + B ^ 4 = C ^ 2) :\n    \u00ac (A % 2 = 1 \u2227 B % 2 = 1) := by\n  rintro \u27e8hA, hB\u27e9\n  have h_lhs := sum_odd_pow_four_mod_four A B hA hB\n  rw [heq] at h_lhs\n  have h_rhs := sq_mod_four C\n  rcases h_rhs with h0 | h1\n  \u00b7 omega\n  \u00b7 omega\n\n/-! ### 3. Reduction from Exponent 4 to Exponent 2 -/\n\n/--\nAny solution to the signature $(4, 4, 4)$ equation $A^4 + B^4 = C^4$ in positive integers\ninduces a positive integer solution to the signature $(4, 4, 2)$ equation $A^4 + B^4 = (C^2)^2$.\n-/\ntheorem fermat42_of_fermat44 (A B C : \u2115) (hC : C > 0) (heq : A ^ 4 + B ^ 4 = C ^ 4) :\n    \u2203 C' : \u2115, C' > 0 \u2227 A ^ 4 + B ^ 4 = C' ^ 2 := by\n  use C ^ 2\n  constructor\n  \u00b7 positivity\n  \u00b7 rw [heq]\n    ring\n\n/--\n**FLT4 Reduction Theorem**:\nIf there is no positive integer solution to $A^4 + B^4 = C^2$,\nthen there is no positive integer solution to $A^4 + B^4 = C^4$.\n-/\ntheorem flt4_of_fermat42\n    (h_no42 : \u00ac \u2203 (A B C : \u2115), A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 A ^ 4 + B ^ 4 = C ^ 2) :\n    \u00ac \u2203 (A B C : \u2115), A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 A ^ 4 + B ^ 4 = C ^ 4 := by\n  rintro \u27e8A, B, C, hA, hB, hC, heq\u27e9\n  obtain \u27e8C', hC', heq'\u27e9 := fermat42_of_fermat44 A B C hC heq\n  exact h_no42 \u27e8A, B, C', hA, hB, hC', heq'\u27e9\n\n/-! ### 4. Nonexistence of Solutions (Fermat's Descent Theorem) -/\n\n/--\nPredicate that a positive integer `c` is the hypotenuse coordinate of a positive integer\nsolution to $A^4 + B^4 = c^2$.\n-/\ndef IsFermat42Hypotenuse (c : \u2115) : Prop :=\n  \u2203 A B : \u2115, A > 0 \u2227 B > 0 \u2227 A ^ 4 + B ^ 4 = c ^ 2\n\n/--\n**Fermat's Theorem for Signature $(4, 4, 2)$**:\nThe Diophantine equation $A^4 + B^4 = C^2$ has no solutions in strictly positive integers.\n-/\ntheorem fermat_4_2 :\n    \u00ac \u2203 (A B C : \u2115), A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 A ^ 4 + B ^ 4 = C ^ 2 := by\n  -- Discharged by mathlib's `not_fermat_42`, transferred from \u2124.  This replaces a `sorry`.\n  rintro \u27e8A, B, C, hA, hB, hC, heq\u27e9\n  have hA' : (A : \u2124) \u2260 0 := Int.natCast_ne_zero.mpr (by omega)\n  have hB' : (B : \u2124) \u2260 0 := Int.natCast_ne_zero.mpr (by omega)\n  refine not_fermat_42 (c := (C : \u2124)) hA' hB' ?_\n  exact_mod_cast heq\n\n/--\n**Fermat's Last Theorem for Exponent 4**:\nThe Diophantine equation $A^4 + B^4 = C^4$ has no solutions in strictly positive integers.\n-/\ntheorem fermat_4_4 :\n    \u00ac \u2203 (A B C : \u2115), A > 0 \u2227 B > 0 \u2227 C > 0 \u2227 A ^ 4 + B ^ 4 = C ^ 4 :=\n  flt4_of_fermat42 fermat_4_2\n\n/-! ### 5. Beal Conjecture Consequences for Signature (4, 4, 4) and (4, 4, 2k) -/\n\n/--\nNo Beal counterexample exists for signature $(4, 4, 4)$.\n-/\ntheorem no_beal_counterexample_4_4_4 :\n    \u00ac \u2203 (A B C : \u2115), IsBealCounterexample A B C 4 4 4 := by\n  rintro \u27e8A, B, C, hA, hB, hC, _, _, _, _, heq\u27e9\n  exact fermat_4_4 \u27e8A, B, C, hA, hB, hC, heq\u27e9\n\n/--\nNo Beal counterexample exists for any signature $(4, 4, 2k)$ with $k \\ge 2$.\n-/\ntheorem no_beal_counterexample_4_4_even (k : \u2115) (hk : k \u2265 2) :\n    \u00ac \u2203 (A B C : \u2115), IsBealCounterexample A B C 4 4 (2 * k) := by\n  rintro \u27e8A, B, C, hA, hB, hC, _, _, _, _, heq\u27e9\n  have heq2 : A ^ 4 + B ^ 4 = (C ^ k) ^ 2 := by\n    rw [heq]\n    ring\n  have hCk : C ^ k > 0 := by positivity\n  exact fermat_4_2 \u27e8A, B, C ^ k, hA, hB, hCk, heq2\u27e9\n\n/--\nIn particular, signature $(4, 4, 6)$ admits no Beal counterexample.\n-/\ntheorem no_beal_counterexample_4_4_6 :\n    \u00ac \u2203 (A B C : \u2115), IsBealCounterexample A B C 4 4 6 :=\n  no_beal_counterexample_4_4_even 3 (by decide)\n\n/--\nIn particular, signature $(4, 4, 8)$ admits no Beal counterexample.\n-/\ntheorem no_beal_counterexample_4_4_8 :\n    \u00ac \u2203 (A B C : \u2115), IsBealCounterexample A B C 4 4 8 :=\n  no_beal_counterexample_4_4_even 4 (by decide)\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.53
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.43
+      }
+    },
+    "usage": {
+      "input_tokens": 3957,
+      "output_tokens": 94
+    }
+  }
+}

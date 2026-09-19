@@ -1,0 +1,64 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_BealConjecture",
+  "timestamp": "2026-09-18T19:39:06-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "BealConjecture",
+    "file": "formal/Beal/Conjecture.lean",
+    "statement": "def BealConjecture : Prop := \u2200 (A B C x y z : \u2115), A > 0 \u2192 B > 0 \u2192 C > 0 \u2192 x \u2265 3 \u2192 y \u2265 3 \u2192 z \u2265 3 \u2192 A^x + B^y = C^z \u2192 Nat.gcd (Nat.gcd A B) C > 1"
+  },
+  "questions": {
+    "encodes_actual_conjecture": {
+      "type": "noul",
+      "instructions": "Does this formal statement faithfully encode the ACTUAL Beal conjecture conditions (A, B, C > 0, exponents >= 3, gcd = 1), without silent restrictions or loopholes?",
+      "criteria": {
+        "true": "faithful to the exact mathematical conjecture without loopholes or exponent-2 relaxations",
+        "false": "contains a hidden loophole, allows exponent 2, allows non-positive bases, or deviates from Beal"
+      }
+    },
+    "fidelity_level": {
+      "type": "score",
+      "instructions": "How complete and faithful is this statement to the primary mathematical definition?",
+      "criteria": [
+        "level 0: corrupt or encodes unrelated problem",
+        "level 1: encodes a toy model or unverified heuristic",
+        "level 2: encodes a bounded partial case faithful to the definitions",
+        "level 3: encodes an infinite signature family or exact geometric property faithful to the definitions",
+        "level 4: encodes the complete, unconstrained Beal conjecture definition with exact fidelity"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "encodes_actual_conjecture": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "fidelity_level": {
+        "type": "score",
+        "score": 3.86,
+        "confidence": 0.88,
+        "legend": {
+          "0": "level 0: corrupt or encodes unrelated problem",
+          "1": "level 1: encodes a toy model or unverified heuristic",
+          "2": "level 2: encodes a bounded partial case faithful to the definitions",
+          "3": "level 3: encodes an infinite signature family or exact geometric property faithful to the definitions",
+          "4": "level 4: encodes the complete, unconstrained Beal conjecture definition with exact fidelity"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.01,
+          "2": 0.02,
+          "3": 0.07,
+          "4": 0.9
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 614,
+      "output_tokens": 41
+    }
+  }
+}

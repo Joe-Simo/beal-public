@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_MordellFixedBase.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: MordellFixedBase.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Fixed-base closure of `{3, 4, r}` via rank-0 Mordell curves (U191/U192)\n\nNamed hypothesis `MordellXIntegral k`: every rational point of `y\u00b2 = x\u00b3 + k` has integral `x`.\nFor a rank-0 curve this is Nagell\u2013Lutz (all rational points are torsion, hence integral); the rank-0\nfacts are PARI 2-descent upper bounds saved in `references/U130/mordell_fixed_base_ranks.txt`.\n\nKernel content: the scaling `(X, Y) = (\u2212A / n^{2j}, B\u00b2 / n^{3j})` and the contradiction\n`n^{2j} \u2223 A` with `gcd(A, n) = 1`, `n \u2265 2`, `j \u2265 1` \u2014 valid for every `r = 6j + e` at once.\n-/\nimport Beal.Structure\nimport Mathlib.Tactic.FieldSimp\nimport Mathlib.Tactic.LinearCombination\n\nnamespace Beal\n\n/-- Every rational point of `y\u00b2 = x\u00b3 + k` has an integral `x`-coordinate. -/\ndef MordellXIntegral (k : \u2124) : Prop := \u2200 X Y : \u211a, Y ^ 2 = X ^ 3 + k \u2192 \u2203 a : \u2124, X = a\n\n/-- **Fixed-base step.** `A\u00b3 + Y\u00b2 = n^{6j+e}` with `gcd(A, n) = 1`, `n \u2265 2`, `j \u2265 1` is impossible\nwhen `y\u00b2 = x\u00b3 + n\u1d49` has only `x`-integral rational points.  (`Y` is any integer: take `Y = B\u00b2`.) -/\ntheorem fixed_base_cube_plus_square {A n j e : \u2115} {Y : \u2124} (hM : MordellXIntegral ((n : \u2124) ^ e))\n    (hn : 2 \u2264 n) (hj : 1 \u2264 j) (hcop : Nat.Coprime A n)\n    (h : (A : \u2124) ^ 3 + Y ^ 2 = (n : \u2124) ^ (6 * j + e)) : False := by\n  have hnq : (n : \u211a) \u2260 0 := by exact_mod_cast (by omega : n \u2260 0)\n  have hq : (A : \u211a) ^ 3 + (Y : \u211a) ^ 2 = (n : \u211a) ^ (6 * j + e) := by exact_mod_cast h\n  have hpoint : ((Y : \u211a) / (n : \u211a) ^ (3 * j)) ^ 2 =\n      (-(A : \u211a) / (n : \u211a) ^ (2 * j)) ^ 3 + (((n : \u2124) ^ e : \u2124) : \u211a) := by\n    have e1 : ((n : \u211a) ^ (3 * j)) ^ 2 = (n : \u211a) ^ (6 * j) := by rw [\u2190 pow_mul]; congr 1; ring\n    have e2 : ((n : \u211a) ^ (2 * j)) ^ 3 = (n : \u211a) ^ (6 * j) := by rw [\u2190 pow_mul]; congr 1; ring\n    have e3 : (n : \u211a) ^ (6 * j + e) = (n : \u211a) ^ (6 * j) * (n : \u211a) ^ e := pow_add _ _ _\n    have h6 : (n : \u211a) ^ (6 * j) \u2260 0 := pow_ne_zero _ hnq\n    rw [div_pow, div_pow, e1, e2]\n    push_cast\n    field_simp\n    rw [e3] at hq\n    linear_combination hq\n  obtain \u27e8a, ha\u27e9 := hM _ _ hpoint\n  -- `-A = a * n^{2j}` in \u2124, so `n \u2223 A`\n  have hdiv : (-(A : \u211a)) = (a : \u211a) * (n : \u211a) ^ (2 * j) := by\n    have h2 : (n : \u211a) ^ (2 * j) \u2260 0 := pow_ne_zero _ hnq\n    field_simp at ha; linarith\n  have hdivZ : (-(A : \u2124)) = a * (n : \u2124) ^ (2 * j) := by exact_mod_cast hdiv\n  have hnA : (n : \u2124) \u2223 (A : \u2124) := by\n    have : (n : \u2124) \u2223 (n : \u2124) ^ (2 * j) := dvd_pow_self _ (by omega)\n    have h1 : (n : \u2124) \u2223 -(A : \u2124) := hdivZ \u25b8 Dvd.dvd.mul_left this a\n    exact (dvd_neg).mp h1\n  have hnA' : n \u2223 A := by exact_mod_cast hnA\n  have := Nat.dvd_gcd hnA' (dvd_refl n)\n  rw [hcop] at this\n  have : n = 1 := Nat.dvd_one.mp this\n  omega\n\n/-- Beal form: no counterexample `A\u00b3 + B\u2074 = n^r` with `r = 6j + e`, `j \u2265 1`, under the hypothesis. -/\ntheorem no_counterexample_three_four_fixed_base {A B n j e : \u2115}\n    (hM : MordellXIntegral ((n : \u2124) ^ e)) (hj : 1 \u2264 j)\n    (h : IsBealCounterexample A B n 3 4 (6 * j + e)) : False := by\n  have hcop : Nat.Coprime A n := gcd_ac_eq_one h\n  obtain \u27e8hA, hB, hn, _, _, _, _, heq\u27e9 := h\n  have hn2 : 2 \u2264 n := by\n    rcases Nat.lt_or_ge n 2 with hlt | hge\n    \u00b7 exfalso\n      have h1 : n = 1 := by omega\n      rw [h1, one_pow] at heq\n      have hA3 : 1 \u2264 A ^ 3 := Nat.one_le_pow _ _ hA\n      have hB4 : 1 \u2264 B ^ 4 := Nat.one_le_pow _ _ hB\n      omega\n    \u00b7 exact hge\n  refine fixed_base_cube_plus_square (Y := (B : \u2124) ^ 2) hM hn2 hj hcop ?_\n  have : ((A : \u2124) ^ 3 + (B : \u2124) ^ 4) = (n : \u2124) ^ (6 * j + e) := by exact_mod_cast heq\n  linear_combination this\n\n/-- **General fixed-base step.** `Y\u00b2 = X\u00b3 + \u03c3\u00b7n^{6j+e}` with `\u03c3 = \u00b11`, `n \u2224 X`-coprimality in the form\n`n \u2223 X \u2192 False`, `n \u2265 2`, `j \u2265 1` is impossible when `y\u00b2 = x\u00b3 + \u03c3\u00b7n\u1d49` has only `x`-integral points. -/\ntheorem fixed_base_general {n j e : \u2115} {X Y \u03c3 : \u2124} (h\u03c3 : \u03c3 = 1 \u2228 \u03c3 = -1)\n    (hM : MordellXIntegral (\u03c3 * (n : \u2124) ^ e)) (hn : 2 \u2264 n) (hj : 1 \u2264 j)\n    (hndvd : \u00ac (n : \u2124) \u2223 X) (h : Y ^ 2 = X ^ 3 + \u03c3 * (n : \u2124) ^ (6 * j + e)) : False := by\n  have hnq : (n : \u211a) \u2260 0 := by exact_mod_cast (by omega : n \u2260 0)\n  have hq : (Y : \u211a) ^ 2 = (X : \u211a) ^ 3 + (\u03c3 : \u211a) * (n : \u211a) ^ (6 * j + e) := by exact_mod_cast h\n  have hpoint : ((Y : \u211a) / (n : \u211a) ^ (3 * j)) ^ 2 =\n      ((X : \u211a) / (n : \u211a) ^ (2 * j)) ^ 3 + ((\u03c3 * (n : \u2124) ^ e : \u2124) : \u211a) := by\n    have e1 : ((n : \u211a) ^ (3 * j)) ^ 2 = (n : \u211a) ^ (6 * j) := by rw [\u2190 pow_mul]; congr 1; ring\n    have e2 : ((n : \u211a) ^ (2 * j)) ^ 3 = (n : \u211a) ^ (6 * j) := by rw [\u2190 pow_mul]; congr 1; ring\n    have e3 : (n : \u211a) ^ (6 * j + e) = (n : \u211a) ^ (6 * j) * (n : \u211a) ^ e := pow_add _ _ _\n    have h6 : (n : \u211a) ^ (6 * j) \u2260 0 := pow_ne_zero _ hnq\n    rw [div_pow, div_pow, e1, e2]\n    push_cast\n    field_simp\n    rw [e3] at hq\n    linear_combination hq\n  obtain \u27e8a, ha\u27e9 := hM _ _ hpoint\n  have hdiv : (X : \u211a) = (a : \u211a) * (n : \u211a) ^ (2 * j) := by\n    have h2 : (n : \u211a) ^ (2 * j) \u2260 0 := pow_ne_zero _ hnq\n    field_simp at ha; linarith\n  have hdivZ : X = a * (n : \u2124) ^ (2 * j) := by exact_mod_cast hdiv\n  exact hndvd (hdivZ \u25b8 Dvd.dvd.mul_left (dvd_pow_self _ (by omega)) a)\n\n/-- A base coprime to `n \u2265 2` is not divisible by `n`. -/\nlemma not_dvd_of_coprime {A n : \u2115} (hn : 2 \u2264 n) (hcop : Nat.Coprime A n) : \u00ac (n : \u2124) \u2223 (A : \u2124) := by\n  intro hd\n  have hd' : n \u2223 A := by exact_mod_cast hd\n  have := Nat.dvd_gcd hd' (dvd_refl n)\n  rw [hcop] at this\n  have : n = 1 := Nat.dvd_one.mp this\n  omega\n\n/-- Sibling arrangement `A\u00b3 + n^r = C\u2074` (`r = 6j+e`, `j \u2265 1`): point `(A, C\u00b2)` on `y\u00b2 = x\u00b3 + n^r`. -/\ntheorem no_counterexample_three_r_four_fixed_base {A n C j e : \u2115}\n    (hM : MordellXIntegral ((1 : \u2124) * (n : \u2124) ^ e)) (hn : 2 \u2264 n) (hj : 1 \u2264 j)\n    (h : IsBealCounterexample A n C 3 (6 * j + e) 4) : False := by\n  have hcop : Nat.Coprime A n := gcd_ab_eq_one h\n  obtain \u27e8_, _, _, _, _, _, _, heq\u27e9 := h\n  refine fixed_base_general (X := (A : \u2124)) (Y := (C : \u2124) ^ 2) (Or.inl rfl) hM hn hj\n    (not_dvd_of_coprime hn hcop) ?_\n  have : ((A : \u2124) ^ 3 + (n : \u2124) ^ (6 * j + e)) = (C : \u2124) ^ 4 := by exact_mod_cast heq\n  linear_combination -this\n\n/-- Sibling arrangement `A\u2074 + n^r = C\u00b3` (`r = 6j+e`, `j \u2265 1`): point `(C, A\u00b2)` on `y\u00b2 = x\u00b3 \u2212 n^r`. -/\ntheorem no_counterexample_four_r_three_fixed_base {A n C j e : \u2115}\n    (hM : MordellXIntegral ((-1 : \u2124) * (n : \u2124) ^ e)) (hn : 2 \u2264 n) (hj : 1 \u2264 j)\n    (h : IsBealCounterexample A n C 4 (6 * j + e) 3) : False := by\n  have hcop : Nat.Coprime n C := gcd_bc_eq_one h\n  obtain \u27e8_, _, _, _, _, _, _, heq\u27e9 := h\n  refine fixed_base_general (X := (C : \u2124)) (Y := (A : \u2124) ^ 2) (Or.inr rfl) hM hn hj\n    (not_dvd_of_coprime hn hcop.symm) ?_\n  have : ((A : \u2124) ^ 4 + (n : \u2124) ^ (6 * j + e)) = (C : \u2124) ^ 3 := by exact_mod_cast heq\n  linear_combination this\n\nend Beal\n\nnamespace Beal\n\n/-- Every positive rational point of `x\u00b3 + y\u00b3 = k` has an integral `x`. (For a rank-0 curve: all\npoints are torsion and the PARI check in `references/U130/fixed_base_333.txt` finds no positive\ntorsion point with a non-trivial denominator.) -/\ndef CubicSumXIntegral (k : \u2124) : Prop :=\n  \u2200 x y : \u211a, 0 < x \u2192 0 < y \u2192 x ^ 3 + y ^ 3 = k \u2192 \u2203 a : \u2124, x = a\n\n/-- **Fixed-base `(3, 3, r)`, all `r = 3j + e` with `j \u2265 1` at once.** -/\ntheorem no_counterexample_three_three_fixed_base {A B n j e : \u2115}\n    (hM : CubicSumXIntegral ((n : \u2124) ^ e)) (hj : 1 \u2264 j)\n    (h : IsBealCounterexample A B n 3 3 (3 * j + e)) : False := by\n  have hcop : Nat.Coprime A n := gcd_ac_eq_one h\n  obtain \u27e8hA, hB, hn, _, _, _, _, heq\u27e9 := h\n  have hn2 : 2 \u2264 n := by\n    rcases Nat.lt_or_ge n 2 with hlt | hge\n    \u00b7 exfalso\n      have h1 : n = 1 := by omega\n      rw [h1, one_pow] at heq\n      have hA3 : 1 \u2264 A ^ 3 := Nat.one_le_pow _ _ hA\n      have hB3 : 1 \u2264 B ^ 3 := Nat.one_le_pow _ _ hB\n      omega\n    \u00b7 exact hge\n  have hnq : (n : \u211a) \u2260 0 := by exact_mod_cast (by omega : n \u2260 0)\n  have hnpos : (0 : \u211a) < (n : \u211a) ^ j := by positivity\n  have hq : (A : \u211a) ^ 3 + (B : \u211a) ^ 3 = (n : \u211a) ^ (3 * j + e) := by exact_mod_cast heq\n  have hpoint : ((A : \u211a) / (n : \u211a) ^ j) ^ 3 + ((B : \u211a) / (n : \u211a) ^ j) ^ 3 = (((n : \u2124) ^ e : \u2124) : \u211a) := by\n    have e1 : ((n : \u211a) ^ j) ^ 3 = (n : \u211a) ^ (3 * j) := by rw [\u2190 pow_mul]; congr 1; ring\n    have e3 : (n : \u211a) ^ (3 * j + e) = (n : \u211a) ^ (3 * j) * (n : \u211a) ^ e := pow_add _ _ _\n    have h3 : (n : \u211a) ^ (3 * j) \u2260 0 := pow_ne_zero _ hnq\n    rw [div_pow, div_pow, e1]\n    push_cast\n    field_simp\n    rw [e3] at hq\n    linear_combination hq\n  obtain \u27e8a, ha\u27e9 := hM _ _ (by positivity) (by positivity) hpoint\n  have hdiv : (A : \u211a) = (a : \u211a) * (n : \u211a) ^ j := by\n    have h2 : (n : \u211a) ^ j \u2260 0 := pow_ne_zero _ hnq\n    field_simp at ha; linarith\n  have hdivZ : (A : \u2124) = a * (n : \u2124) ^ j := by exact_mod_cast hdiv\n  exact not_dvd_of_coprime hn2 hcop (hdivZ \u25b8 Dvd.dvd.mul_left (dvd_pow_self _ (by omega)) a)\n\nend Beal\n\nnamespace Beal\n\n/-- Every rational point of `x\u00b3 + y\u00b3 = k` has an integral `x` (any signs). For the rank-0 bases of\n`references/U130/fixed_base_333.txt` and `fixed_base_333_diff.txt` both sign patterns were checked. -/\ndef CubicSumXIntegralAll (k : \u2124) : Prop := \u2200 x y : \u211a, x ^ 3 + y ^ 3 = k \u2192 \u2203 a : \u2124, x = a\n\n/-- **Fixed-base difference arrangement** `A\u00b3 + n^r = C\u00b3`, every `r = 3j + e`, `j \u2265 1`. -/\ntheorem no_counterexample_three_r_three_fixed_base {A n C j e : \u2115}\n    (hM : CubicSumXIntegralAll ((n : \u2124) ^ e)) (hn : 2 \u2264 n) (hj : 1 \u2264 j)\n    (h : IsBealCounterexample A n C 3 (3 * j + e) 3) : False := by\n  have hcop : Nat.Coprime n C := gcd_bc_eq_one h\n  obtain \u27e8_, _, _, _, _, _, _, heq\u27e9 := h\n  have hnq : (n : \u211a) \u2260 0 := by exact_mod_cast (by omega : n \u2260 0)\n  have hq : (A : \u211a) ^ 3 + (n : \u211a) ^ (3 * j + e) = (C : \u211a) ^ 3 := by exact_mod_cast heq\n  have hpoint : ((C : \u211a) / (n : \u211a) ^ j) ^ 3 + (-(A : \u211a) / (n : \u211a) ^ j) ^ 3 = (((n : \u2124) ^ e : \u2124) : \u211a) := by\n    have e1 : ((n : \u211a) ^ j) ^ 3 = (n : \u211a) ^ (3 * j) := by rw [\u2190 pow_mul]; congr 1; ring\n    have e3 : (n : \u211a) ^ (3 * j + e) = (n : \u211a) ^ (3 * j) * (n : \u211a) ^ e := pow_add _ _ _\n    have h3 : (n : \u211a) ^ (3 * j) \u2260 0 := pow_ne_zero _ hnq\n    rw [div_pow, div_pow, e1]\n    push_cast\n    field_simp\n    rw [e3] at hq\n    linear_combination -hq\n  obtain \u27e8a, ha\u27e9 := hM _ _ hpoint\n  have hdiv : (C : \u211a) = (a : \u211a) * (n : \u211a) ^ j := by\n    have h2 : (n : \u211a) ^ j \u2260 0 := pow_ne_zero _ hnq\n    field_simp at ha; linarith\n  have hdivZ : (C : \u2124) = a * (n : \u2124) ^ j := by exact_mod_cast hdiv\n  exact not_dvd_of_coprime hn hcop.symm (hdivZ \u25b8 Dvd.dvd.mul_left (dvd_pow_self _ (by omega)) a)\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.29
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.18
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.42
+      }
+    },
+    "usage": {
+      "input_tokens": 5458,
+      "output_tokens": 94
+    }
+  }
+}

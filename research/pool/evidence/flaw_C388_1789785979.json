@@ -1,0 +1,54 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "flaw_C388",
+  "timestamp": "2026-09-18T22:46:19-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C388 - MOTIVIC COHOMOLOGY AND BEILINSON REGULATORS OVER SPEC Z\nClaim: Higher Chow groups and Beilinson regulator maps r_D: H_M^2(X, Q(2)) -> H_D^2(X, R(2)) over Spec Z force vanishing of coprime integral points.\nMethod: Bloch higher Chow groups, motivic cohomology, and Deligne-Beilinson regulators.\nStatus: BLOCKED\nFailureReason: Higher Chow groups are Q-linear vector spaces; algebraic cycles cannot detect discrete coprimality, and regulator height bounds require unproved BSD/ABC conjectures (Heuristic Laundering, Failure Mode 3).",
+  "questions": {
+    "has_conflation": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 1 (residual/isogeny conflation, or confounding complex moduli deformation with arithmetic coordinates)?",
+      "criteria": {
+        "true": "Yes, conflates residual/geometric properties with Diophantine point exclusion.",
+        "false": "No, maintains strict distinction between arithmetic coordinates and geometric moduli."
+      }
+    },
+    "has_chabauty_field_slip": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 2 (Chabauty over wrong field, or ignoring unbounded bad reduction blowup)?",
+      "criteria": {
+        "true": "Yes, applies Chabauty rank bounds over base field to higher degree points or ignores Selmer dimension blowup.",
+        "false": "No, correctly accounts for field degrees and Selmer variety growth."
+      }
+    },
+    "has_heuristic_laundering": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 3 (heuristic laundering, treating GRH/ABC/Vojta bounds as unconditional)?",
+      "criteria": {
+        "true": "Yes, relabels conjectural height bounds or heuristics as unconditional results.",
+        "false": "No, strictly relies on exact unconditional arithmetic."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_conflation": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "has_chabauty_field_slip": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "has_heuristic_laundering": {
+        "type": "noul",
+        "noul": 0.71
+      }
+    },
+    "usage": {
+      "input_tokens": 665,
+      "output_tokens": 69
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "C321": {
+    "status": "BLOCKED",
+    "reason": "Arithmetic Chow groups CH^1(X) and Beilinson regulators factor through projective rational points X(Q) and motives over Q, making them projective scale-invariant and strictly blind to Diophantine coprimality gcd(A, B, C) = 1. Furthermore, bounding arithmetic heights would require unproved Vojta conjectures (Heuristic Laundering).",
+    "height_coprime": 3,
+    "height_scaled": 3
+  },
+  "C322": {
+    "status": "BLOCKED",
+    "reason": "Hodge-Tate weights of H^1_et(E, Q_p) are universally {0, 1} for all elliptic curves, independent of exponents (p, q, r). Fontaine's comparison isomorphism holds universally for all schemes of finite type over Q_p, and the filtered (phi, N)-module D_st(V) is invariant under common coordinate scaling, providing no Diophantine obstruction to Beal.",
+    "dim_h1": 2,
+    "ht_weights": [
+      0,
+      1
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C241",
+  "timestamp": "2026-09-18T18:22:59-0400",
+  "model": "jev-latest",
+  "request_state": "C241: Hyperbolic orbifold Euler characteristic kernel",
+  "questions": {
+    "pairwise_coprime_general": {
+      "type": "score",
+      "instructions": "In Lean 4, to prove pairwise coprimality of a, a-3b, and a+3b from IsCoprime a b and 3 nmid a, does classical linear combination suffice without any external ring theory?",
+      "criteria": [
+        "level 0: requires full ideal theory",
+        "level 1: requires prime factorization lemmas",
+        "level 2: solvable via Bezout identity and linear_combination / ring",
+        "level 3: already immediate from existing mathlib IsCoprime lemmas"
+      ]
+    },
+    "catalan_fc_blindness": {
+      "type": "noul",
+      "instructions": "Does the condition that coordinates in a cube parameterization have opposite parity rule out any of the 10 Fermat-Catalan identities?",
+      "criteria": {
+        "true": "It rules out some Fermat-Catalan identities (showing exponent-2 sensitivity)",
+        "false": "It holds on all ten identities (exponent-2 blind)"
+      }
+    },
+    "unified_beal_kernel": {
+      "type": "choice",
+      "instructions": "For attacking the general Beal conjecture A^x + B^y = C^z with x,y,z >= 3, which global geometric approach currently exhibits non-blindness to exponent 2?",
+      "criteria": {
+        "hyperbolic_orbifold_euler_char": "Orbifold Euler characteristic chi = 1/x + 1/y + 1/z - 1 < 0 and the bound |chi| >= 1/42",
+        "fuchsian_uniformization": "Uniformization by Fuchsian triangle groups Delta(x,y,z) with hyperbolic metric",
+        "darmon_orbifold_curves": "Hurwitz space of Galois covers of P1 ramified at 3 points"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "pairwise_coprime_general": {
+        "type": "score",
+        "score": 1.72,
+        "confidence": 0.62,
+        "legend": {
+          "0": "level 0: requires full ideal theory",
+          "1": "level 1: requires prime factorization lemmas",
+          "2": "level 2: solvable via Bezout identity and linear_combination / ring",
+          "3": "level 3: already immediate from existing mathlib IsCoprime lemmas"
+        },
+        "probabilities": {
+          "0": 0.15,
+          "1": 0.03,
+          "2": 0.77,
+          "3": 0.05
+        }
+      },
+      "catalan_fc_blindness": {
+        "type": "noul",
+        "noul": 0.52
+      },
+      "unified_beal_kernel": {
+        "type": "choice",
+        "choice": "hyperbolic_orbifold_euler_char",
+        "confidence": 0.8,
+        "probabilities": {
+          "fuchsian_uniformization": 0.02,
+          "hyperbolic_orbifold_euler_char": 0.87,
+          "darmon_orbifold_curves": 0.11
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 689,
+      "output_tokens": 117
+    }
+  }
+}

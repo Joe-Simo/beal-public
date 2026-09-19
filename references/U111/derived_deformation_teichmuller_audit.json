@@ -1,0 +1,13 @@
+{
+  "C339": {
+    "status": "BLOCKED",
+    "reason": "Derived deformation rings R^bullet and spectral moduli of Galois representations factor through the Galois representation rho_bar: G_Q -> GL_2(F_p) of the Frey curve over Q. Because non-zero scaling factors d in Z are units in the fraction field Q, the Galois representation and its derived deformation ring are projective invariants, strictly blind to integer coprimality gcd(A, B, C) = 1 in Z. Spectral Galois moduli cannot bound exponents or enforce coprimality.",
+    "tate_euler_char": -2,
+    "expected_tangent_minus_obstruction": 2
+  },
+  "C340": {
+    "status": "BLOCKED",
+    "reason": "Arithmetic Teichm\u00fcller theory and inter-universal Hodge theaters suffer from the Scholze-Stix gap at Corollary 3.12, preventing any unconditional Diophantine bound. Furthermore, any Arakelov or Faltings height bound derived from elliptic curves over Q depends projectively on j(E) = j(A/B), which is strictly blind to integer coprimality gcd(A, B, C) = 1 in Z.",
+    "dim_m12": 2
+  }
+}

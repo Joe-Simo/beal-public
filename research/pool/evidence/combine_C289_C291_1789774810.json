@@ -1,0 +1,99 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C289_C291",
+  "timestamp": "2026-09-18T19:40:10-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C289",
+      "claim": "MINHYONG KIM NON-ABELIAN CHABAUTY ON P1 MINUS THREE POINTS: Apply the arithmetic unipotent Albanese map to Selmer varieties of pi_1(P^1 \\ {0, 1, infty}) to obstruct coprime solutions with three exponents >= 3.",
+      "method": "Non-abelian Chabauty-Kim, unipotent Albanese map, p-adic iterated integrals, Selmer schemes",
+      "status": "ACTIVE"
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C291",
+      "claim": "DEPTH-2 SELMER SCHEME DIMENSION FOR P^1 \\ {0, 1, \\infty}: The global Selmer variety Sel(U_2) for pi_1(P^1 \\ {0, 1, \\infty}) with ramification at S = primes(ABC) has dimension strictly less than the local unipotent Albanese image, producing non-trivial p-adic iterated integral obstructions for all Beal triples.",
+      "method": "Non-abelian Chabauty-Kim, Selmer schemes, p-adic iterated integrals, dilogarithm relations",
+      "status": "ACTIVE"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.83
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.86,
+        "confidence": 0.14,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.4,
+          "1": 0.35,
+          "2": 0.24,
+          "3": 0.01
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.71
+      }
+    },
+    "usage": {
+      "input_tokens": 1163,
+      "output_tokens": 53
+    }
+  }
+}

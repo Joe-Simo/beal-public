@@ -1,0 +1,12 @@
+{
+  "C342": {
+    "status": "BLOCKED",
+    "reason": "Poitou-Tate arithmetic duality and global Selmer groups operate on the Galois module M = E[p] of the Frey curve over the fraction field Q. Because non-zero scaling factors d in Z are units in Q, the Frey curve isomorphism class over Q, its Galois cohomology groups H^i(G_S, E[p]), and its Selmer groups depend only on the projective parameter t = A/B in Q, strictly blind to integer coprimality gcd(A, B, C) = 1 in Z.",
+    "euler_ratio": "1/3823"
+  },
+  "C343": {
+    "status": "BLOCKED",
+    "reason": "Prismatic cohomology and Breuil-Kisin modules are local p-adic cohomology functors defined over Z_p. They parameterize local p-adic Hodge structures and cannot detect global integer coprimality gcd(A, B, C) = 1 across all primes simultaneously. Furthermore, for primes p not dividing d, the local prismatic crystal is completely invariant under scaling (A, B, C) -> (d*A, d*B, d*C), providing no bound on exponents.",
+    "bk_rank": 2
+  }
+}

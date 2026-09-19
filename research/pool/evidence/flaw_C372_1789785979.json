@@ -1,0 +1,54 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "flaw_C372",
+  "timestamp": "2026-09-18T22:46:19-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C372 - HIGHER ARITHMETIC CHOW GROUPS, SOUL\u00c9 REGULATORS AND BEILINSON CONJECTURES\nClaim: Higher arithmetic Chow groups CH^2(X, 1) and Soul\u00e9 regulators on generalized Fermat varieties provide an unconditional Diophantine obstruction to coprime integer points.\nMethod: Arakelov higher arithmetic Chow theory, Gillet-Soul\u00e9 arithmetic intersection products, and Soul\u00e9 higher regulators.\nStatus: BLOCKED\nFailureReason: Higher arithmetic Chow groups classify rational equivalence of higher cycles; extracting Diophantine point bounds requires conjectural arithmetic Bogomolov-Miyaoka-Yau / ABC (heuristic laundering, Failure Mode 3).",
+  "questions": {
+    "has_conflation": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 1 (residual/isogeny conflation, or confounding complex moduli deformation with arithmetic coordinates)?",
+      "criteria": {
+        "true": "Yes, conflates residual/geometric properties with Diophantine point exclusion.",
+        "false": "No, maintains strict distinction between arithmetic coordinates and geometric moduli."
+      }
+    },
+    "has_chabauty_field_slip": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 2 (Chabauty over wrong field, or ignoring unbounded bad reduction blowup)?",
+      "criteria": {
+        "true": "Yes, applies Chabauty rank bounds over base field to higher degree points or ignores Selmer dimension blowup.",
+        "false": "No, correctly accounts for field degrees and Selmer variety growth."
+      }
+    },
+    "has_heuristic_laundering": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 3 (heuristic laundering, treating GRH/ABC/Vojta bounds as unconditional)?",
+      "criteria": {
+        "true": "Yes, relabels conjectural height bounds or heuristics as unconditional results.",
+        "false": "No, strictly relies on exact unconditional arithmetic."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_conflation": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "has_chabauty_field_slip": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "has_heuristic_laundering": {
+        "type": "noul",
+        "noul": 0.91
+      }
+    },
+    "usage": {
+      "input_tokens": 664,
+      "output_tokens": 69
+    }
+  }
+}

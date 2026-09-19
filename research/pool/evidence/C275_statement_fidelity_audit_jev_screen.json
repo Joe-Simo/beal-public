@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "id": "C275_statement_fidelity_audit",
+    "name": "Lean 4 Formal Statement Fidelity Audit",
+    "text": "Audit of formal definitions in Beal.Signature3 and Beal.PostCentennial: ensuring strict adherence to positive integers, gcd(A, B)=1, and exponents >= 3 without relaxations."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fidelity_to_beal": {
+        "type": "noul",
+        "noul": 0.54
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.38
+      },
+      "relevance_score": {
+        "type": "score",
+        "score": 1.21,
+        "confidence": 0.36,
+        "legend": {
+          "0": "level 0: peripheral or unrelated",
+          "1": "level 1: general background context",
+          "2": "level 2: settles a concrete prime interval or specific signature family",
+          "3": "level 3: establishes a uniform structural result across an infinite family",
+          "4": "level 4: resolves the entire conjecture"
+        },
+        "probabilities": {
+          "0": 0.28,
+          "1": 0.36,
+          "2": 0.23,
+          "3": 0.13,
+          "4": 0.0
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.42,
+        "probabilities": {
+          "park": 0.01,
+          "exact_computation": 0.02,
+          "literature_check": 0.52,
+          "discard": 0.01,
+          "advance": 0.0,
+          "formalize": 0.44
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 709,
+      "output_tokens": 125
+    }
+  }
+}

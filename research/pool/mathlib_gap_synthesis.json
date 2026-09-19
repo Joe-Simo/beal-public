@@ -1,0 +1,237 @@
+[
+  {
+    "id": "BRIDGE-01-RIBET-LEVEL-LOWERING",
+    "name": "Formalization of Serre Conductor & Ribet Level Lowering in Mathlib",
+    "feasibility": "monumental_langlands",
+    "leverage": "eliminates_hypothesis",
+    "purity": 0.34,
+    "priority": "priority_4_ribet_longterm",
+    "raw_answers": {
+      "mathlib_feasibility": {
+        "type": "choice",
+        "choice": "monumental_langlands",
+        "confidence": 0.99,
+        "probabilities": {
+          "immediate_decidable": 0.0,
+          "already_available": 0.0,
+          "intermediate_algebraic": 0.0,
+          "monumental_langlands": 1.0
+        }
+      },
+      "leverage_on_beal_goal": {
+        "type": "choice",
+        "choice": "eliminates_hypothesis",
+        "confidence": 0.67,
+        "probabilities": {
+          "closes_infinite_family": 0.03,
+          "foundational_infrastructure": 0.21,
+          "eliminates_hypothesis": 0.76,
+          "computational_acceleration": 0.0
+        }
+      },
+      "axiomatic_purity_risk": {
+        "type": "noul",
+        "noul": 0.34
+      },
+      "recommended_formal_priority": {
+        "type": "choice",
+        "choice": "priority_4_ribet_longterm",
+        "confidence": 0.81,
+        "probabilities": {
+          "priority_4_ribet_longterm": 0.87,
+          "priority_3_mazur_torsion": 0.0,
+          "priority_2_darmon_merel": 0.06,
+          "priority_1_decide_certifier": 0.07
+        }
+      }
+    }
+  },
+  {
+    "id": "BRIDGE-02-DECIDE-KRAUS-CERTIFIER",
+    "name": "In-Kernel Computable Decidable Instance for Kraus Frobenius Certificates",
+    "feasibility": "intermediate_algebraic",
+    "leverage": "eliminates_hypothesis",
+    "purity": 0.67,
+    "priority": "priority_1_decide_certifier",
+    "raw_answers": {
+      "mathlib_feasibility": {
+        "type": "choice",
+        "choice": "intermediate_algebraic",
+        "confidence": 0.61,
+        "probabilities": {
+          "already_available": 0.01,
+          "intermediate_algebraic": 0.71,
+          "monumental_langlands": 0.04,
+          "immediate_decidable": 0.24
+        }
+      },
+      "leverage_on_beal_goal": {
+        "type": "choice",
+        "choice": "eliminates_hypothesis",
+        "confidence": 0.97,
+        "probabilities": {
+          "closes_infinite_family": 0.0,
+          "computational_acceleration": 0.0,
+          "eliminates_hypothesis": 0.98,
+          "foundational_infrastructure": 0.02
+        }
+      },
+      "axiomatic_purity_risk": {
+        "type": "noul",
+        "noul": 0.67
+      },
+      "recommended_formal_priority": {
+        "type": "choice",
+        "choice": "priority_1_decide_certifier",
+        "confidence": 1.0,
+        "probabilities": {
+          "priority_3_mazur_torsion": 0.0,
+          "priority_2_darmon_merel": 0.0,
+          "priority_4_ribet_longterm": 0.0,
+          "priority_1_decide_certifier": 1.0
+        }
+      }
+    }
+  },
+  {
+    "id": "BRIDGE-03-MAZUR-TORSION-ISOGENY",
+    "name": "Formalization of Mazur's Rational Torsion & Isogeny Bound (p > 13)",
+    "feasibility": "monumental_langlands",
+    "leverage": "foundational_infrastructure",
+    "purity": 0.51,
+    "priority": "priority_3_mazur_torsion",
+    "raw_answers": {
+      "mathlib_feasibility": {
+        "type": "choice",
+        "choice": "monumental_langlands",
+        "confidence": 0.94,
+        "probabilities": {
+          "monumental_langlands": 0.96,
+          "immediate_decidable": 0.0,
+          "intermediate_algebraic": 0.04,
+          "already_available": 0.0
+        }
+      },
+      "leverage_on_beal_goal": {
+        "type": "choice",
+        "choice": "foundational_infrastructure",
+        "confidence": 0.99,
+        "probabilities": {
+          "foundational_infrastructure": 1.0,
+          "eliminates_hypothesis": 0.0,
+          "computational_acceleration": 0.0,
+          "closes_infinite_family": 0.0
+        }
+      },
+      "axiomatic_purity_risk": {
+        "type": "noul",
+        "noul": 0.51
+      },
+      "recommended_formal_priority": {
+        "type": "choice",
+        "choice": "priority_3_mazur_torsion",
+        "confidence": 0.87,
+        "probabilities": {
+          "priority_2_darmon_merel": 0.04,
+          "priority_4_ribet_longterm": 0.01,
+          "priority_3_mazur_torsion": 0.89,
+          "priority_1_decide_certifier": 0.06
+        }
+      }
+    }
+  },
+  {
+    "id": "BRIDGE-04-DARMON-MEREL-LEAN",
+    "name": "Formalization of Darmon-Merel (p, p, 2) and (p, p, 3) Proofs in Lean 4",
+    "feasibility": "monumental_langlands",
+    "leverage": "closes_infinite_family",
+    "purity": 0.51,
+    "priority": "priority_2_darmon_merel",
+    "raw_answers": {
+      "mathlib_feasibility": {
+        "type": "choice",
+        "choice": "monumental_langlands",
+        "confidence": 0.94,
+        "probabilities": {
+          "immediate_decidable": 0.0,
+          "already_available": 0.0,
+          "intermediate_algebraic": 0.04,
+          "monumental_langlands": 0.96
+        }
+      },
+      "leverage_on_beal_goal": {
+        "type": "choice",
+        "choice": "closes_infinite_family",
+        "confidence": 1.0,
+        "probabilities": {
+          "closes_infinite_family": 1.0,
+          "eliminates_hypothesis": 0.0,
+          "foundational_infrastructure": 0.0,
+          "computational_acceleration": 0.0
+        }
+      },
+      "axiomatic_purity_risk": {
+        "type": "noul",
+        "noul": 0.51
+      },
+      "recommended_formal_priority": {
+        "type": "choice",
+        "choice": "priority_2_darmon_merel",
+        "confidence": 0.96,
+        "probabilities": {
+          "priority_4_ribet_longterm": 0.0,
+          "priority_3_mazur_torsion": 0.0,
+          "priority_2_darmon_merel": 0.97,
+          "priority_1_decide_certifier": 0.03
+        }
+      }
+    }
+  },
+  {
+    "id": "BRIDGE-05-MULTI-FREY-KERNEL",
+    "name": "Dual-Frey Joint Trace Conflict Decision Procedure",
+    "feasibility": "monumental_langlands",
+    "leverage": "computational_acceleration",
+    "purity": 0.24,
+    "priority": "priority_1_decide_certifier",
+    "raw_answers": {
+      "mathlib_feasibility": {
+        "type": "choice",
+        "choice": "monumental_langlands",
+        "confidence": 0.99,
+        "probabilities": {
+          "intermediate_algebraic": 0.01,
+          "already_available": 0.0,
+          "immediate_decidable": 0.0,
+          "monumental_langlands": 0.99
+        }
+      },
+      "leverage_on_beal_goal": {
+        "type": "choice",
+        "choice": "computational_acceleration",
+        "confidence": 0.93,
+        "probabilities": {
+          "foundational_infrastructure": 0.03,
+          "eliminates_hypothesis": 0.02,
+          "closes_infinite_family": 0.0,
+          "computational_acceleration": 0.95
+        }
+      },
+      "axiomatic_purity_risk": {
+        "type": "noul",
+        "noul": 0.24
+      },
+      "recommended_formal_priority": {
+        "type": "choice",
+        "choice": "priority_1_decide_certifier",
+        "confidence": 0.92,
+        "probabilities": {
+          "priority_2_darmon_merel": 0.03,
+          "priority_3_mazur_torsion": 0.0,
+          "priority_4_ribet_longterm": 0.03,
+          "priority_1_decide_certifier": 0.94
+        }
+      }
+    }
+  }
+]

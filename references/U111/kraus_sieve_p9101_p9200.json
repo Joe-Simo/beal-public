@@ -1,0 +1,173 @@
+{
+  "9103": {
+    "exponent_p": 9103,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 2,
+    "total_eliminating_primes": 2,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 17,
+      "q": 309503,
+      "aq_72": 672,
+      "aq_72_mod_p": 672,
+      "aq_144a": -672,
+      "aq_144a_mod_p": 8431,
+      "size_Up": 34,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "9109": {
+    "exponent_p": 9109,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 4,
+    "total_eliminating_primes": 4,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 14,
+      "q": 255053,
+      "aq_72": 74,
+      "aq_72_mod_p": 74,
+      "aq_144a": 74,
+      "aq_144a_mod_p": 74,
+      "size_Up": 28,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "9127": {
+    "exponent_p": 9127,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 1,
+    "total_eliminating_primes": 1,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 8,
+      "q": 146033,
+      "aq_72": 334,
+      "aq_72_mod_p": 334,
+      "aq_144a": 334,
+      "aq_144a_mod_p": 334,
+      "size_Up": 16,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "9133": {
+    "exponent_p": 9133,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 7,
+    "total_eliminating_primes": 7,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 3,
+      "q": 54799,
+      "aq_72": -280,
+      "aq_72_mod_p": 8853,
+      "aq_144a": 280,
+      "aq_144a_mod_p": 280,
+      "size_Up": 6,
+      "size_valid_t": 1,
+      "size_adm_canon": 2
+    }
+  },
+  "9151": {
+    "exponent_p": 9151,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 3,
+    "total_eliminating_primes": 3,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 3,
+      "q": 54907,
+      "aq_72": 132,
+      "aq_72_mod_p": 132,
+      "aq_144a": -132,
+      "aq_144a_mod_p": 9019,
+      "size_Up": 6,
+      "size_valid_t": 1,
+      "size_adm_canon": 2
+    }
+  },
+  "9157": {
+    "exponent_p": 9157,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 5,
+    "total_eliminating_primes": 5,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 2,
+      "q": 36629,
+      "aq_72": 114,
+      "aq_72_mod_p": 114,
+      "aq_144a": 114,
+      "aq_144a_mod_p": 114,
+      "size_Up": 4,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "9181": {
+    "exponent_p": 9181,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 3,
+    "total_eliminating_primes": 3,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 5,
+      "q": 91811,
+      "aq_72": 468,
+      "aq_72_mod_p": 468,
+      "aq_144a": -468,
+      "aq_144a_mod_p": 8713,
+      "size_Up": 10,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "9187": {
+    "exponent_p": 9187,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 3,
+    "total_eliminating_primes": 3,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 2,
+      "q": 36749,
+      "aq_72": 298,
+      "aq_72_mod_p": 298,
+      "aq_144a": 298,
+      "aq_144a_mod_p": 298,
+      "size_Up": 4,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "9199": {
+    "exponent_p": 9199,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 3,
+    "total_eliminating_primes": 3,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 27,
+      "q": 496747,
+      "aq_72": -268,
+      "aq_72_mod_p": 8931,
+      "aq_144a": 268,
+      "aq_144a_mod_p": 268,
+      "size_Up": 54,
+      "size_valid_t": 1,
+      "size_adm_canon": 2
+    }
+  }
+}

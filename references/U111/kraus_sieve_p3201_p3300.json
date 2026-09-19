@@ -1,0 +1,97 @@
+{
+  "3217": {
+    "exponent_p": 3217,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 1,
+    "total_eliminating_primes": 1,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 8,
+      "q": 51473,
+      "aq_72": -354,
+      "aq_72_mod_p": 2863,
+      "aq_144a": -354,
+      "aq_144a_mod_p": 2863,
+      "size_Up": 16,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "3229": {
+    "exponent_p": 3229,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 3,
+    "total_eliminating_primes": 3,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 2,
+      "q": 12917,
+      "aq_72": -46,
+      "aq_72_mod_p": 3183,
+      "aq_144a": -46,
+      "aq_144a_mod_p": 3183,
+      "size_Up": 4,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "3253": {
+    "exponent_p": 3253,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 1,
+    "total_eliminating_primes": 1,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 5,
+      "q": 32531,
+      "aq_72": 132,
+      "aq_72_mod_p": 132,
+      "aq_144a": -132,
+      "aq_144a_mod_p": 3121,
+      "size_Up": 10,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "3259": {
+    "exponent_p": 3259,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 4,
+    "total_eliminating_primes": 4,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 2,
+      "q": 13037,
+      "aq_72": 10,
+      "aq_72_mod_p": 10,
+      "aq_144a": 10,
+      "aq_144a_mod_p": 10,
+      "size_Up": 4,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  },
+  "3271": {
+    "exponent_p": 3271,
+    "congruence": "1 mod 3",
+    "unconditionally_eliminated": true,
+    "total_tested_primes": 1,
+    "total_eliminating_primes": 1,
+    "elimination_rate_pct": 100.0,
+    "first_certificate": {
+      "k": 11,
+      "q": 71963,
+      "aq_72": -36,
+      "aq_72_mod_p": 3235,
+      "aq_144a": 36,
+      "aq_144a_mod_p": 36,
+      "size_Up": 22,
+      "size_valid_t": 1,
+      "size_adm_canon": 1
+    }
+  }
+}

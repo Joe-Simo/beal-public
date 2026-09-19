@@ -85,4 +85,21 @@ example {A B C x y z : ℕ} (h : IsBealCounterexample A B C x y z) :
   have hb : 1 ≤ B ^ y := Nat.one_le_pow _ _ hB
   omega
 
+/-- **Trap: Fermat-Catalan identities with exponent 2.**
+`1⁷ + 2³ = 3²` is a valid coprime identity, but rejected by `z = 2 < 3`. -/
+example : ¬ IsBealCounterexample 1 2 3 7 3 2 := by
+  rintro ⟨-, -, -, -, -, hz, -, -⟩; omega
+
+/-- `2⁵ + 7² = 3⁴` is a valid coprime identity, but rejected by `y = 2 < 3`. -/
+example : ¬ IsBealCounterexample 2 7 3 5 2 4 := by
+  rintro ⟨-, -, -, -, hy, -, -, -⟩; omega
+
+/-- `7³ + 13² = 2⁹` is a valid coprime identity, but rejected by `y = 2 < 3`. -/
+example : ¬ IsBealCounterexample 7 13 2 3 2 9 := by
+  rintro ⟨-, -, -, -, hy, -, -, -⟩; omega
+
+/-- **Trap: Euler's auxiliary equation.**
+`1³ + 1³ = 2 · 1³` has factor 2 on the right-hand side, so it does not satisfy `A³ + B³ = C³`. -/
+example : (1 : ℕ) ^ 3 + 1 ^ 3 ≠ 1 ^ 3 := by decide
+
 end Beal

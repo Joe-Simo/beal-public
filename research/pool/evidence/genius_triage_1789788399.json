@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C407",
+    "title": "PRISMATIC NYGAARD FILTRATION AND DIEUDONN\u00c9 CRYSTALS FOR BEAL GENERALIZED FERMAT SURFACES",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.75,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "torsion_wild_ramification",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.75,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.12,
+          "mode_1_residual_conflation": 0.05,
+          "mode_2_chabauty_unbounded_s": 0.02,
+          "sound_no_failure_mode": 0.81
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.51,
+        "probabilities": {
+          "finiteness_only": 0.64,
+          "vacuous": 0.2,
+          "proves_nonexistence": 0.16,
+          "bounded_only": 0.0
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "torsion_wild_ramification",
+        "confidence": 0.38,
+        "probabilities": {
+          "computational_scale": 0.09,
+          "torsion_wild_ramification": 0.49,
+          "selmer_dimension_growth": 0.1,
+          "continuous_moduli_degeneration": 0.15,
+          "unobstructed": 0.17,
+          "automorphic_cusp_abundance": 0.0
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.78,
+        "probabilities": {
+          "refute_and_archive": 0.08,
+          "salvage_proved_sublemmas": 0.07,
+          "synthesize_breakthrough": 0.02,
+          "audit_and_isolate_obstruction": 0.82,
+          "advance_kraus_frontier": 0.01
+        }
+      }
+    }
+  }
+]

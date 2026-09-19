@@ -1,0 +1,73 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "cycle247_C247_gp_kraus_audit",
+  "timestamp": "2026-09-18T18:35:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal conjecture: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no positive integer solutions. Descent on (3,3,3) in Lean 4 Euler.lean has 127 theorems. We evaluate the formalization of CubeFormParam via Z[omega] PID, an independent GP Kraus sieve check, and the Chabauty-Kim frontier.",
+    "candidate": {
+      "id": "C247_gp_kraus_audit",
+      "claim": "Independent PARI/GP implementation of Kraus sieve for signature (3, 3, p) on primes p in [601..700] verifying zero surviving forms.",
+      "text": "Independent verification script in GP using ellinit, ellap, and fast F_q search to cross-validate the Python milestone 79 certificates."
+    }
+  },
+  "questions": {
+    "soundness": {
+      "type": "score",
+      "instructions": "How mathematically sound and rigorous is this step within the verified scope of the repo?",
+      "criteria": [
+        "level 0: heuristic laundering or unverified assumption",
+        "level 1: speculative connection without immediate proof mechanism",
+        "level 2: concrete verifiable certificate or exact computation",
+        "level 3: fully formalizable theorem in Lean 4 or exact algebraic derivation"
+      ]
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate?",
+      "criteria": {
+        "formalize": "formalize in Lean 4 with mathlib",
+        "exact_computation": "implement exact computation in PARI/GP or Python",
+        "literature_check": "check primary literature for known obstructions",
+        "discard": "discard"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "soundness": {
+        "type": "score",
+        "score": 1.79,
+        "confidence": 0.78,
+        "legend": {
+          "0": "level 0: heuristic laundering or unverified assumption",
+          "1": "level 1: speculative connection without immediate proof mechanism",
+          "2": "level 2: concrete verifiable certificate or exact computation",
+          "3": "level 3: fully formalizable theorem in Lean 4 or exact algebraic derivation"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.11,
+          "2": 0.83,
+          "3": 0.01
+        }
+      },
+      "action": {
+        "type": "choice",
+        "choice": "exact_computation",
+        "confidence": 0.75,
+        "probabilities": {
+          "formalize": 0.05,
+          "literature_check": 0.1,
+          "discard": 0.04,
+          "exact_computation": 0.81
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 696,
+      "output_tokens": 70
+    }
+  }
+}

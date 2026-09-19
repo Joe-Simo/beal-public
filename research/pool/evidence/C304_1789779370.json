@@ -1,0 +1,87 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C304",
+  "timestamp": "2026-09-18T20:56:10-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "cand": {
+      "id": "C304",
+      "question": "Can Arakelov height bounds h_F(J) >= c * log(max(p, q, r)) be established unconditionally for generalized Frey Jacobians without assuming unproved cases of the Frey-Szpiro or ABC conjectures?",
+      "context": "Faltings height of Jacobians of cyclic covers degenerates at bad reduction primes, but universal lower bounds across varying signatures are currently conditional on Szpiro or ABC."
+    }
+  },
+  "questions": {
+    "relevance": {
+      "type": "score",
+      "instructions": "Rate relevance to resolving Beal conjecture",
+      "criteria": [
+        "level 0: irrelevant or already solved",
+        "level 1: general Diophantine geometry, no direct signature resolution",
+        "level 2: settles bounded exponents or single signature range",
+        "level 3: settles infinite family of exponents",
+        "level 4: settles all remaining signatures or full conjecture"
+      ]
+    },
+    "failure_risk": {
+      "type": "noul",
+      "instructions": "Does this candidate risk suffering one of the three known failure modes (isogeny/residual conflation, Chabauty wrong field, heuristic laundering)?",
+      "criteria": {
+        "true": "high risk of recurring failure mode",
+        "false": "orthogonal to recorded failure modes"
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "Recommended next action",
+      "criteria": {
+        "advance": "proceed to verification or derivation",
+        "discard": "refuted or unviable",
+        "literature_check": "needs primary source audit",
+        "exact_computation": "run exact computation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "relevance": {
+        "type": "score",
+        "score": 1.55,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: irrelevant or already solved",
+          "1": "level 1: general Diophantine geometry, no direct signature resolution",
+          "2": "level 2: settles bounded exponents or single signature range",
+          "3": "level 3: settles infinite family of exponents",
+          "4": "level 4: settles all remaining signatures or full conjecture"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.65,
+          "2": 0.17,
+          "3": 0.13,
+          "4": 0.04
+        }
+      },
+      "failure_risk": {
+        "type": "noul",
+        "noul": 0.26
+      },
+      "action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.83,
+        "probabilities": {
+          "discard": 0.06,
+          "exact_computation": 0.0,
+          "literature_check": 0.88,
+          "advance": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 643,
+      "output_tokens": 85
+    }
+  }
+}

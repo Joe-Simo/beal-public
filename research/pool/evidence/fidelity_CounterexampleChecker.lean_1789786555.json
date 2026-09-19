@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_CounterexampleChecker.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: CounterexampleChecker.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\n\n/-!\n# Section 8: Beal Counterexample Checker Logic in Lean 4\n\nThis module formalizes the exact algorithmic verification logic specified in\nSection 8 and implemented in `code/section8_counterexample_checker.py` and\n`code/section8_counterexample_checker.ts`.\n\n## Requirements Verified:\n1. Validates all six inputs: bases (A, B, C) and exponents (x, y, z).\n2. Positivity: all bases and exponents must be strictly positive integers (> 0).\n3. Exponent restrictions: exponents must satisfy x \u2265 3, y \u2265 3, z \u2265 3.\n4. Exact equality: verifies A^x + B^y = C^z over arbitrary-precision integers.\n5. Greatest common divisor: calculates gcd(A, B, C) = gcd(gcd(A, B), C).\n   A counterexample requires gcd(A, B, C) = 1 (primitive).\n   If gcd(A, B, C) > 1, the equality satisfies the Beal conjecture and is NOT a counterexample.\n6. Rejects zero, negative, and out-of-bounds inputs.\n\n## Formal Properties:\n- **Soundness**: Any candidate accepted as a counterexample satisfies `IsBealCounterexample`.\n- **Completeness**: Any mathematical counterexample is classified as a counterexample by the checker.\n- **Decidable Test Suite**: All canonical boundary test cases are proven via `decide` / `rfl`.\n-/\n\nnamespace Beal\n\n/--\nDetailed structured result returned by the Section 8 Beal counterexample checker.\n-/\nstructure BealCheckResult where\n  admissible : Bool\n  equality : Bool\n  primitive : Bool\n  counterexample : Bool\n  reason : String\n  a : Option \u2124 := none\n  b : Option \u2124 := none\n  c : Option \u2124 := none\n  x : Option \u2124 := none\n  y : Option \u2124 := none\n  z : Option \u2124 := none\n  lhs : Option \u2124 := none\n  rhs : Option \u2124 := none\n  gcd : Option \u2115 := none\n  deriving Repr, DecidableEq\n\n/--\nComputable Section 8 counterexample checker taking natural number inputs.\n-/\ndef checkBealNat (A B C x y z : \u2115) : BealCheckResult :=\n  if A = 0 || B = 0 || C = 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: bases must be strictly positive (> 0)\",\n      a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n      x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124) }\n  else if x = 0 || y = 0 || z = 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: exponents must be strictly positive (> 0)\",\n      a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n      x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124) }\n  else\n    let g := gcd3 A B C\n    let isPrim := (g == 1)\n    let lhsVal := A ^ x + B ^ y\n    let rhsVal := C ^ z\n    let isEq := (lhsVal == rhsVal)\n    if x < 3 || y < 3 || z < 3 then\n      { admissible := false, equality := isEq, primitive := isPrim, counterexample := false,\n        reason := \"Exponent restriction violated (x, y, z must all be \u2265 3)\",\n        a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n        x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124),\n        lhs := some (lhsVal : \u2124), rhs := some (rhsVal : \u2124), gcd := some g }\n    else\n      let isCe := isEq && isPrim\n      let msg :=\n        if isCe then\n          \"Genuine Beal counterexample verified\"\n        else if isEq then\n          \"Valid equality, but fails common-factor requirement: gcd > 1 (satisfies Beal conjecture)\"\n        else\n          \"Arithmetic mismatch\"\n      { admissible := true, equality := isEq, primitive := isPrim, counterexample := isCe,\n        reason := msg,\n        a := some (A : \u2124), b := some (B : \u2124), c := some (C : \u2124),\n        x := some (x : \u2124), y := some (y : \u2124), z := some (z : \u2124),\n        lhs := some (lhsVal : \u2124), rhs := some (rhsVal : \u2124), gcd := some g }\n\n/--\nSection 8 counterexample checker taking general integer inputs (rejecting negatives and zeros).\n-/\ndef checkBealInt (A B C x y z : \u2124) : BealCheckResult :=\n  if A \u2264 0 || B \u2264 0 || C \u2264 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: bases must be strictly positive integers (> 0)\",\n      a := some A, b := some B, c := some C, x := some x, y := some y, z := some z }\n  else if x \u2264 0 || y \u2264 0 || z \u2264 0 then\n    { admissible := false, equality := false, primitive := false, counterexample := false,\n      reason := \"Positivity violation: exponents must be strictly positive integers (> 0)\",\n      a := some A, b := some B, c := some C, x := some x, y := some y, z := some z }\n  else\n    checkBealNat A.toNat B.toNat C.toNat x.toNat y.toNat z.toNat\n\n/-! ### Soundness and Completeness Theorems -/\n\n/--\n**Soundness**:\nIf `checkBealNat` accepts `(A, B, C, x, y, z)` as a counterexample,\nthen the tuple is mathematically a genuine `IsBealCounterexample`.\n-/\ntheorem checkBealNat_sound (A B C x y z : \u2115)\n    (hce : (checkBealNat A B C x y z).counterexample = true) :\n    IsBealCounterexample A B C x y z := by\n  unfold checkBealNat at hce\n  unfold IsBealCounterexample\n  split_ifs at hce with h_bases h_exps h_small <;> simp_all <;> omega\n\n/--\n**Completeness**:\nIf `(A, B, C, x, y, z)` is mathematically a genuine `IsBealCounterexample`,\nthen `checkBealNat` returns `counterexample = true`.\n-/\ntheorem checkBealNat_complete (A B C x y z : \u2115)\n    (h : IsBealCounterexample A B C x y z) :\n    (checkBealNat A B C x y z).counterexample = true := by\n  rcases h with \u27e8hA, hB, hC, hx, hy, hz, hprim, heq\u27e9\n  unfold checkBealNat\n  split_ifs with a b c\n  \u00b7 exfalso; simp at a; omega\n  \u00b7 exfalso; simp at b; omega\n  \u00b7 exfalso; simp at c; omega\n  \u00b7 simp [hprim, heq]\n\n/-! ### Verified Section 8 Test Suite (Proof-by-Reflection / Decision) -/\n\n/--\n**Test Case 1**:\nValid equality that fails common-factor requirement:\n$3^3 + 6^3 = 3^5$ ($27 + 216 = 243$, $\\gcd(3, 6, 3) = 3 > 1$).\nResult: equality holds, but counterexample is rejected.\n-/\ntheorem test_case_01_nonprimitive_3_6_3 :\n    (checkBealNat 3 6 3 3 3 5).admissible = true \u2227\n    (checkBealNat 3 6 3 3 3 5).equality = true \u2227\n    (checkBealNat 3 6 3 3 3 5).primitive = false \u2227\n    (checkBealNat 3 6 3 3 3 5).counterexample = false \u2227\n    (checkBealNat 3 6 3 3 3 5).gcd = some 3 := by\n  decide\n\n/--\n**Test Case 2**:\nValid equality excluded because an exponent is 2:\n$3^5 + 10^2 = 7^3$ ($243 + 100 = 343$, exponent $y = 2 < 3$).\nResult: admissible is false, counterexample is rejected.\n-/\ntheorem test_case_02_excluded_exponent_two :\n    (checkBealNat 3 10 7 5 2 3).admissible = false \u2227\n    (checkBealNat 3 10 7 5 2 3).equality = true \u2227\n    (checkBealNat 3 10 7 5 2 3).counterexample = false := by\n  decide\n\n/--\n**Test Case 3**:\nArithmetic mismatch:\n$3^3 + 4^3 = 27 + 64 = 91 \\ne 125 = 5^3$.\nResult: equality is false, counterexample is rejected.\n-/\ntheorem test_case_03_arithmetic_mismatch :\n    (checkBealNat 3 4 5 3 3 3).equality = false \u2227\n    (checkBealNat 3 4 5 3 3 3).counterexample = false := by\n  decide\n\n/--\n**Test Case 4**:\nValid higher-degree equality failing common-factor requirement:\n$7^3 + 7^4 = 343 + 2401 = 2744 = 14^3$, $\\gcd(7, 7, 14) = 7 > 1$.\nResult: equality holds, but counterexample is rejected.\n-/\ntheorem test_case_04_nonprimitive_7_7_14 :\n    (checkBealNat 7 7 14 3 4 3).admissible = true \u2227\n    (checkBealNat 7 7 14 3 4 3).equality = true \u2227\n    (checkBealNat 7 7 14 3 4 3).primitive = false \u2227\n    (checkBealNat 7 7 14 3 4 3).counterexample = false \u2227\n    (checkBealNat 7 7 14 3 4 3).gcd = some 7 := by\n  decide\n\n/--\n**Test Case 5**:\nNegative base input rejected immediately by `checkBealInt`.\n-/\ntheorem test_case_05_negative_input_rejected :\n    (checkBealInt (-3) 6 3 3 3 5).admissible = false \u2227\n    (checkBealInt (-3) 6 3 3 3 5).counterexample = false := by\n  decide\n\n/--\n**Test Case 6**:\nZero base input rejected immediately.\n-/\ntheorem test_case_06_zero_input_rejected :\n    (checkBealNat 0 6 3 3 3 5).admissible = false \u2227\n    (checkBealNat 0 6 3 3 3 5).counterexample = false := by\n  decide\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.44
+      }
+    },
+    "usage": {
+      "input_tokens": 3746,
+      "output_tokens": 94
+    }
+  }
+}

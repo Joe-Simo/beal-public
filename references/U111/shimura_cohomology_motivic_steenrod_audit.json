@@ -1,0 +1,17 @@
+{
+  "C345": {
+    "status": "BLOCKED",
+    "reason": "Arithmetic cohomology of Shimura varieties and Jacquet-Langlands transfer parameterize Galois representations rho_pi attached to modular forms over the fraction field Q. Because non-zero scaling factors d in Z are units in Q, the Frey curve isomorphism class over Q and its realization in Shimura cohomology depend only on the projective ratio t = A/B in Q, strictly blind to integer coprimality gcd(A, B, C) = 1 in Z. Jacquet-Langlands transfer cannot bound exponents.",
+    "discriminant_D": 6,
+    "prime_factors": [
+      2,
+      3
+    ]
+  },
+  "C346": {
+    "status": "BLOCKED",
+    "reason": "Motivic Steenrod operations Sq^i and motivic Adams spectral sequences are A^1-homotopy invariant functors on smooth schemes over the base field Q. Rational points induce morphisms Spec(Q) -> P^2 that depend solely on the projective point [A : B : C] in P^2(Q). Because non-zero scaling factors d are units in Q, motivic cohomology operations cannot distinguish coprime from non-coprime integer solutions, and cannot furnish an exponent bound across variable signatures.",
+    "coeff_sq1_sq1": 0,
+    "coeff_sq1_sq2_c0": 1
+  }
+}

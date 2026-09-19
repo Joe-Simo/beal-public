@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C198",
+  "timestamp": "2026-09-18T22:46:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C198\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"Statement-fidelity guard extended from IsBealCounterexample to the three NEW top-level Lean statements of this session: three_four_four_same_parity, opposite_parity_reduction, and the conditional Euler chain (EulerCubicTwo, EulerDescentStep, cohen344_of_euler). Their exact text is asserted, their hypotheses are checked satisfiable on concrete integers, and the p != 0 fix from U322 is asserted still present.\",\n \"method\": \"Source-text assertions plus concrete-witness checks, in code/U320_regression_checks.py::check_u342_new_theorem_statements_are_faithful. The satisfiability half matters because a theorem with unsatisfiable hypotheses is exactly the U322 vacuity failure: it compiles, it is a theorem, and it says nothing.\",\n \"evidence\": \"Asserted: three_four_four_same_parity still requires 0 < A, Odd B, Odd C, Nat.Coprime B C and A^3+B^4=C^4, with (B,C) = (3,5) a concrete witness of the hypothesis set; opposite_parity_reduction still LANDS ON Euler's equation (m^2)^3+(n^2)^3 = 2*r^3, so it remains a reduction and not a claimed closure; cohen344_of_euler is still stated as taking hE : EulerCubicTwo, so the gap stays visible in the type; and 'p != 0' is still in Euler.lean.\",\n \"obligations\": \"This guards the STATEMENTS, not the proofs -- the proofs are guarded by lake build, which is currently mid-rebuild after the mathlib package directory was lost. Nothing Lean-side is re-verified until that finishes. The drafted three_four_four_family from C186 is deliberately NOT included here, because it has never been built.\",\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.12,
+        "confidence": 0.88,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.94,
+          "1": 0.02,
+          "2": 0.02,
+          "3": 0.02
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.69,
+        "probabilities": {
+          "conservative": 0.1,
+          "optimistic": 0.04,
+          "not_applicable": 0.77,
+          "cannot_tell": 0.09
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.81,
+        "probabilities": {
+          "check_direction_now": 0.05,
+          "no_action": 0.88,
+          "state_direction": 0.07
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1466,
+      "output_tokens": 140
+    }
+  }
+}

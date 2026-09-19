@@ -1,0 +1,54 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "flaw_C374",
+  "timestamp": "2026-09-18T22:46:19-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C374 - KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [4701, 4800]\nClaim: No non-trivial primitive solutions exist for signature (3, 3, p) for all prime exponents p in [4701, 4800].\nMethod: Modular method level lowering to conductor 72, Kraus sieve relations at auxiliary primes q = 2kp + 1 with a_q(f) = 0 mod 2.\nStatus: PARTIAL_RESULT\nFailureReason: None",
+  "questions": {
+    "has_conflation": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 1 (residual/isogeny conflation, or confounding complex moduli deformation with arithmetic coordinates)?",
+      "criteria": {
+        "true": "Yes, conflates residual/geometric properties with Diophantine point exclusion.",
+        "false": "No, maintains strict distinction between arithmetic coordinates and geometric moduli."
+      }
+    },
+    "has_chabauty_field_slip": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 2 (Chabauty over wrong field, or ignoring unbounded bad reduction blowup)?",
+      "criteria": {
+        "true": "Yes, applies Chabauty rank bounds over base field to higher degree points or ignores Selmer dimension blowup.",
+        "false": "No, correctly accounts for field degrees and Selmer variety growth."
+      }
+    },
+    "has_heuristic_laundering": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 3 (heuristic laundering, treating GRH/ABC/Vojta bounds as unconditional)?",
+      "criteria": {
+        "true": "Yes, relabels conjectural height bounds or heuristics as unconditional results.",
+        "false": "No, strictly relies on exact unconditional arithmetic."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_conflation": {
+        "type": "noul",
+        "noul": 0.26
+      },
+      "has_chabauty_field_slip": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "has_heuristic_laundering": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 643,
+      "output_tokens": 69
+    }
+  }
+}

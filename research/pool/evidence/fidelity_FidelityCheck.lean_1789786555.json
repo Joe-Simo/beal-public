@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_FidelityCheck.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: FidelityCheck.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Statement-fidelity checks for `IsBealCounterexample`\n\nMachine-checked verification that the root definition encodes the ACTUAL Beal conjecture, against\nthe target-discipline traps: exponent 2 admitted, base 1 excluded, terms reordered, the\ncommon-prime condition swapped.  Produced in cycle U224 (pool candidate C090).\n-/\nimport Beal.Conjecture\nimport Mathlib.Tactic.NormNum\nimport Mathlib.Tactic.Ring\n\nnamespace Beal\n\n/-- Validation case 1: 3^3 + 6^3 = 3^5 holds but gcd3 = 3 > 1, so it is NOT a counterexample. -/\nexample : \u00ac IsBealCounterexample 3 6 3 3 3 5 := by\n  rintro \u27e8-, -, -, -, -, -, hg, -\u27e9; simp [gcd3] at hg\n/-- Validation case 2: 3^5 + 10^2 = 7^3 is excluded because an exponent equals 2. -/\nexample : \u00ac IsBealCounterexample 3 10 7 5 2 3 := by\n  rintro \u27e8-, -, -, -, hy, -, -, -\u27e9; omega\n/-- Validation case 3: exponents 1 and 2 are both excluded. -/\nexample : \u00ac IsBealCounterexample 1 2 3 1 3 2 := by\n  rintro \u27e8-, -, -, hx, -, -, -, -\u27e9; omega\n/-- Base 1 is ADMITTED by the definition: it is not silently excluded. -/\nexample (B C y z : \u2115) (h : IsBealCounterexample 1 B C 3 y z) : (1:\u2115) > 0 := h.1\n/-- `gcd3` is the project's `gcd(gcd(A,B),C)`. -/\nexample (A B C : \u2115) : gcd3 A B C = Nat.gcd (Nat.gcd A B) C := by\n  simp [gcd3, Nat.gcd_assoc]\n/-- The equation is used in the stated order; no term is moved. -/\nexample (A B C x y z : \u2115) (h : IsBealCounterexample A B C x y z) : A ^ x + B ^ y = C ^ z := h.2.2.2.2.2.2.2\n\n/-! ### Traps not covered before (U327, pool C182)\n\nC015's one surviving obligation is statement fidelity: \"a compiling file that proves the wrong\nstatement is worthless.\"  The checks above cover the gcd trap, the exponent-2 trap, the exponent-1\ntrap, keeping base `1`, and preserving the equation.  Four traps from the discipline list were not\ncovered, and are covered here. -/\n\n/-- **Trap: non-positive values.**  A zero base is rejected on both sides. -/\nexample : \u00ac IsBealCounterexample 0 1 1 3 3 3 := by rintro \u27e8h, -\u27e9; omega\n\nexample : \u00ac IsBealCounterexample 1 0 1 3 3 3 := by rintro \u27e8-, h, -\u27e9; omega\n\nexample : \u00ac IsBealCounterexample 1 1 0 3 3 3 := by rintro \u27e8-, -, h, -\u27e9; omega\n\n/-- **Trap: a zero exponent.**  All three exponents must be at least `3`, individually. -/\nexample : \u00ac IsBealCounterexample 2 2 2 0 3 4 := by rintro \u27e8-, -, -, h, -\u27e9; omega\n\nexample : \u00ac IsBealCounterexample 2 2 2 3 0 4 := by rintro \u27e8-, -, -, -, h, -\u27e9; omega\n\nexample : \u00ac IsBealCounterexample 2 2 2 3 3 0 := by rintro \u27e8-, -, -, -, -, h, -\u27e9; omega\n\n/-- **Trap: swapping the common-prime condition.**  The condition is on the TRIPLE gcd, not on a\npairwise one.  `gcd3 4 6 9 = 1` while `Nat.gcd 4 6 = 2`, so the two conditions are genuinely\ndifferent and a pairwise version would be a different conjecture. -/\nexample : gcd3 4 6 9 = 1 \u2227 Nat.gcd 4 6 = 2 := by\n  constructor\n  \u00b7 unfold gcd3; decide\n  \u00b7 decide\n\n/-- **Trap: a real Beal-shape identity that the triple-gcd condition correctly rejects.**\n`2\u00b3 + 2\u00b3 = 2\u2074` has all exponents `\u2265 3` and is a true identity; it is not a counterexample only\nbecause `gcd3 2 2 2 = 2 > 1`.  If the gcd condition were dropped or weakened, this would be one. -/\nexample : (2 : \u2115) ^ 3 + 2 ^ 3 = 2 ^ 4 \u2227 gcd3 2 2 2 = 2 \u2227 \u00ac IsBealCounterexample 2 2 2 3 3 4 := by\n  refine \u27e8by decide, by unfold gcd3; decide, ?_\u27e9\n  rintro \u27e8-, -, -, -, -, -, hg, -\u27e9\n  unfold gcd3 at hg\n  simp at hg\n\n/-- **Trap: restricting the exponents to a finite list.**  `BealConjecture` quantifies over every\n`x, y, z \u2265 3`, so it yields the statement at arbitrarily large exponents \u2014 here `1000` \u2014 which no\nbounded version could. -/\nexample (h : BealConjecture) (A B C : \u2115) (hA : A > 0) (hB : B > 0) (hC : C > 0)\n    (heq : A ^ 1000 + B ^ 1000 = C ^ 1000) : Nat.gcd (Nat.gcd A B) C > 1 := by\n  have := h A B C 1000 1000 1000 hA hB hC (by omega) (by omega) (by omega) heq\n  unfold gcd3 at this\n  rwa [Nat.gcd_assoc]\n\n/-- **Trap: moving a term.**  The statement is a SUM on the left equal to a power on the right, and\nthat asymmetry is real: in a counterexample `C^z` is strictly the largest of the three powers, so\nthe roles of `A^x`, `B^y` and `C^z` cannot be permuted freely. -/\nexample {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    A ^ x < C ^ z \u2227 B ^ y < C ^ z := by\n  obtain \u27e8hA, hB, -, -, -, -, -, heq\u27e9 := h\n  have ha : 1 \u2264 A ^ x := Nat.one_le_pow _ _ hA\n  have hb : 1 \u2264 B ^ y := Nat.one_le_pow _ _ hB\n  omega\n\n/-- **Trap: Fermat-Catalan identities with exponent 2.**\n`1\u2077 + 2\u00b3 = 3\u00b2` is a valid coprime identity, but rejected by `z = 2 < 3`. -/\nexample : \u00ac IsBealCounterexample 1 2 3 7 3 2 := by\n  rintro \u27e8-, -, -, -, -, hz, -, -\u27e9; omega\n\n/-- `2\u2075 + 7\u00b2 = 3\u2074` is a valid coprime identity, but rejected by `y = 2 < 3`. -/\nexample : \u00ac IsBealCounterexample 2 7 3 5 2 4 := by\n  rintro \u27e8-, -, -, -, hy, -, -, -\u27e9; omega\n\n/-- `7\u00b3 + 13\u00b2 = 2\u2079` is a valid coprime identity, but rejected by `y = 2 < 3`. -/\nexample : \u00ac IsBealCounterexample 7 13 2 3 2 9 := by\n  rintro \u27e8-, -, -, -, hy, -, -, -\u27e9; omega\n\n/-- **Trap: Euler's auxiliary equation.**\n`1\u00b3 + 1\u00b3 = 2 \u00b7 1\u00b3` has factor 2 on the right-hand side, so it does not satisfy `A\u00b3 + B\u00b3 = C\u00b3`. -/\nexample : (1 : \u2115) ^ 3 + 1 ^ 3 \u2260 1 ^ 3 := by decide\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.25
+      }
+    },
+    "usage": {
+      "input_tokens": 2879,
+      "output_tokens": 94
+    }
+  }
+}

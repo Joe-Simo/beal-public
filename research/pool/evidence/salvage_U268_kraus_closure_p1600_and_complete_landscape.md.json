@@ -1,0 +1,41 @@
+{
+  "checkpoint": "U268_kraus_closure_p1600_and_complete_landscape.md",
+  "jev": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.22,
+        "confidence": 0.13,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it proves at least one concrete lemma or exact certificate that is true independently and reusable as an input elsewhere",
+          "3": "level 3: it proves a substantial structural theorem or closes a significant open case with self-contained exact arguments"
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.07,
+          "2": 0.51,
+          "3": 0.04
+        }
+      },
+      "primary_asset": {
+        "type": "choice",
+        "choice": "exact_sieve_certificate",
+        "confidence": 0.79,
+        "probabilities": {
+          "none": 0.0,
+          "exact_sieve_certificate": 0.83,
+          "algebraic_identity": 0.0,
+          "diophantine_bound": 0.0,
+          "formal_proof": 0.17
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1962,
+      "output_tokens": 86
+    }
+  }
+}

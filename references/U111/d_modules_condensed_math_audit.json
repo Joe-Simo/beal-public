@@ -1,0 +1,13 @@
+{
+  "C348": {
+    "status": "BLOCKED",
+    "reason": "Arithmetic holonomic D-modules and Riemann-Hilbert perverse sheaves attached to the Frey curve depend solely on the Gauss-Manin connection parameterized by the rational ratio t = A/B in Q. Because non-zero scaling factors d cancel identically in t, the characteristic variety Ch(M) and the solution complex are projective invariants, strictly blind to integer coprimality gcd(A, B, C) = 1 in Z. Holonomic D-modules cannot bound exponent triples.",
+    "dim_characteristic_variety": 1,
+    "dim_cotangent": 2
+  },
+  "C349": {
+    "status": "BLOCKED",
+    "reason": "Condensed mathematics and solid abelian groups Z_solid provide a categorical foundation for analytic geometry over Z, but the functorial integer points X(Z_solid) coincide with classical Diophantine solutions X(Z). Solidification introduces no new arithmetic obstructions to integer divisibility, leaving coprime and non-coprime solutions on equal categorical footing, and cannot bound variable exponents.",
+    "ext_higher_vanishing": true
+  }
+}

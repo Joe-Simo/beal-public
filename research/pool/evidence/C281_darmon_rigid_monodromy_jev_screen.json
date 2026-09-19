@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "id": "C281_darmon_rigid_monodromy",
+    "name": "Darmon Rigid Local Systems and Uniform Monodromy",
+    "text": "Candidate: Monodromy representations of pi_1(P^1 \\ {0, 1, infty}) with conjugacy classes of orders x, y, z. When x, y, z >= 3, the rigid local system has no non-trivial parabolic degenerations, forcing the Galois representation to arise from an automorphic representation of bounded weight."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.23
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.71
+      },
+      "rigor_and_provability": {
+        "type": "score",
+        "score": 0.96,
+        "confidence": 0.76,
+        "legend": {
+          "0": "level 0: mathematically obstructed or known false",
+          "1": "level 1: requires open grand conjectures (e.g. general Langlands, Fontaine-Mazur)",
+          "2": "level 2: provable by combining proved theorems (Baker, Darmon, Khare-Wintenberger)",
+          "3": "level 3: complete machine-checkable proof in Lean 4"
+        },
+        "probabilities": {
+          "0": 0.14,
+          "1": 0.77,
+          "2": 0.09,
+          "3": 0.0
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.46,
+        "probabilities": {
+          "advance": 0.05,
+          "discard": 0.16,
+          "literature_check": 0.54,
+          "park": 0.21,
+          "exact_computation": 0.01,
+          "formalize": 0.03
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 766,
+      "output_tokens": 129
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "id": "C274_q_curve_small_primes_2_4_p",
+    "name": "Ellenberg Q-Curve Resolution for Small Primes p < 211",
+    "text": "Elimination of remaining open primes p in [5, 211] for A^2 + B^4 = C^p via Hilbert modular newforms over Q(i) at level dividing (1+i)^7."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fidelity_to_beal": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "relevance_score": {
+        "type": "score",
+        "score": 2.01,
+        "confidence": 0.97,
+        "legend": {
+          "0": "level 0: peripheral or unrelated",
+          "1": "level 1: general background context",
+          "2": "level 2: settles a concrete prime interval or specific signature family",
+          "3": "level 3: establishes a uniform structural result across an infinite family",
+          "4": "level 4: resolves the entire conjecture"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.0,
+          "2": 0.98,
+          "3": 0.01,
+          "4": 0.0
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "exact_computation",
+        "confidence": 0.49,
+        "probabilities": {
+          "literature_check": 0.19,
+          "formalize": 0.01,
+          "exact_computation": 0.58,
+          "discard": 0.03,
+          "advance": 0.18,
+          "park": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 710,
+      "output_tokens": 126
+    }
+  }
+}

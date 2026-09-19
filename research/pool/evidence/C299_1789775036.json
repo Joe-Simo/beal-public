@@ -1,0 +1,87 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C299",
+  "timestamp": "2026-09-18T19:43:56-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "cand": {
+      "id": "C299",
+      "question": "Does extending the Kraus sieve for signature (3, 3, p) to primes p in [2401, 2500] provide exact, unconditional elimination of counterexamples for those exponents without circular assumptions?",
+      "context": "Kraus sieve testing auxiliary primes q = 2kp + 1 against newforms 72a1 and 144a1 for signature (3,3,p)."
+    }
+  },
+  "questions": {
+    "relevance": {
+      "type": "score",
+      "instructions": "Rate relevance to resolving Beal conjecture",
+      "criteria": [
+        "level 0: irrelevant or already solved",
+        "level 1: general Diophantine geometry, no direct signature resolution",
+        "level 2: settles bounded exponents or single signature range",
+        "level 3: settles infinite family of exponents",
+        "level 4: settles all remaining signatures or full conjecture"
+      ]
+    },
+    "failure_risk": {
+      "type": "noul",
+      "instructions": "Does this candidate risk suffering one of the three known failure modes (isogeny/residual conflation, Chabauty wrong field, heuristic laundering)?",
+      "criteria": {
+        "true": "high risk of recurring failure mode",
+        "false": "orthogonal to recorded failure modes"
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "Recommended next action",
+      "criteria": {
+        "advance": "proceed to verification or derivation",
+        "discard": "refuted or unviable",
+        "literature_check": "needs primary source audit",
+        "exact_computation": "run exact computation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "relevance": {
+        "type": "score",
+        "score": 1.93,
+        "confidence": 0.91,
+        "legend": {
+          "0": "level 0: irrelevant or already solved",
+          "1": "level 1: general Diophantine geometry, no direct signature resolution",
+          "2": "level 2: settles bounded exponents or single signature range",
+          "3": "level 3: settles infinite family of exponents",
+          "4": "level 4: settles all remaining signatures or full conjecture"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.03,
+          "2": 0.92,
+          "3": 0.02,
+          "4": 0.0
+        }
+      },
+      "failure_risk": {
+        "type": "noul",
+        "noul": 0.56
+      },
+      "action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.47,
+        "probabilities": {
+          "advance": 0.07,
+          "exact_computation": 0.28,
+          "discard": 0.05,
+          "literature_check": 0.6
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 645,
+      "output_tokens": 85
+    }
+  }
+}

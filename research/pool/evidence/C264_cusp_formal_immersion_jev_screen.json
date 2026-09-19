@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "id": "C264_cusp_formal_immersion",
+    "name": "Formal Immersion at Cusps for Levels 72 and 144",
+    "text": "Candidate: Formal immersion of modular curves X_0(72) and X_0(144) into their Eisenstein quotients J_e(N) (which have rank 0) at cusps infinity and 0. Goal: Use Mazur's formal immersion criterion to bound the prime exponents p for which a Frey curve E_{A,B} can have residual representation rho_{E,p} congruent to a newform f at level 72 or 144, leveraging that j(E_{A,B}) cannot specialize to the cusp unless C=0."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exact_computability": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "relevance_level": {
+        "type": "score",
+        "score": 1.44,
+        "confidence": 0.58,
+        "legend": {
+          "0": "level 0: peripheral or unrelated to Beal signatures",
+          "1": "level 1: general modular method context without resolving any signature",
+          "2": "level 2: settles a concrete range of exponents or a new specific signature family",
+          "3": "level 3: settles an entire infinite signature family for all exponents",
+          "4": "level 4: resolves the complete conjecture outright"
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.53,
+          "2": 0.42,
+          "3": 0.02,
+          "4": 0.0
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.35,
+        "probabilities": {
+          "discard": 0.03,
+          "literature_check": 0.46,
+          "advance": 0.18,
+          "park": 0.07,
+          "formalize": 0.19,
+          "exact_computation": 0.07
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 875,
+      "output_tokens": 124
+    }
+  }
+}

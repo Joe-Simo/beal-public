@@ -1,0 +1,68 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "Signature_3_4_5_Siksek_Stoll_Audit",
+  "timestamp": "2026-09-18T18:07:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "Signature_3_4_5_Siksek_Stoll_Audit",
+    "desc": "Audit the Siksek-Stoll (3, 4, 5) theorem in literature: does their Frey curve over Q extend to (3, 4, p) for higher primes p?",
+    "target": "Feasibility of extending signature (3, 4, 5) to general (3, 4, p)"
+  },
+  "questions": {
+    "formal_tractability": {
+      "type": "choice",
+      "instructions": "How tractable is this investigation in Lean 4 / exact python computation?",
+      "criteria": {
+        "immediate": "Can be verified or implemented immediately with existing tools",
+        "medium": "Requires modest custom derivation or script",
+        "hard": "Requires substantial theoretical development"
+      }
+    },
+    "priority_score": {
+      "type": "score",
+      "instructions": "Priority for immediate execution in this cycle:",
+      "criteria": [
+        "level 0: defer",
+        "level 1: secondary",
+        "level 2: active milestone",
+        "level 3: highest primary focus"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "formal_tractability": {
+        "type": "choice",
+        "choice": "hard",
+        "confidence": 0.96,
+        "probabilities": {
+          "hard": 0.98,
+          "medium": 0.02,
+          "immediate": 0.0
+        }
+      },
+      "priority_score": {
+        "type": "score",
+        "score": 1.11,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: defer",
+          "1": "level 1: secondary",
+          "2": "level 2: active milestone",
+          "3": "level 3: highest primary focus"
+        },
+        "probabilities": {
+          "0": 0.37,
+          "1": 0.29,
+          "2": 0.21,
+          "3": 0.13
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 513,
+      "output_tokens": 60
+    }
+  }
+}

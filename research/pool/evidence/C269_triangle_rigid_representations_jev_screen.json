@@ -1,0 +1,53 @@
+{
+  "candidate": {
+    "id": "C269_triangle_rigid_representations",
+    "name": "Rigid Local Systems on Triangle Orbifolds Delta(x, y, z)",
+    "text": "Candidate: Representations of the triangle group Delta(x, y, z) into GL_2(F_ell) attached to Beal solutions. Darmon (2000) proved rigid local systems on P^1 \\ {0, 1, infty} with monodromy orders x, y, z force the Galois representation to arise from automorphic forms on Shimura curves."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.34
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.64
+      },
+      "mathematical_feasibility": {
+        "type": "score",
+        "score": 1.61,
+        "confidence": 0.6,
+        "legend": {
+          "0": "level 0: known mathematical obstruction",
+          "1": "level 1: depends on open conjectures (e.g. general Shimura curve modularity over non-totally real fields)",
+          "2": "level 2: grounded in proved theorems (Darmon 2000, Khare-Wintenberger, Mazur) with concrete lemmas to formalize",
+          "3": "level 3: complete reduction to exact computable certificates"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.3,
+          "2": 0.64,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.47,
+        "probabilities": {
+          "discard": 0.05,
+          "literature_check": 0.58,
+          "park": 0.22,
+          "advance": 0.14,
+          "exact_computation": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 761,
+      "output_tokens": 120
+    }
+  }
+}

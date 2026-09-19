@@ -1,0 +1,254 @@
+[
+  {
+    "pair": "C382 + C386",
+    "candidate_a": "C382",
+    "candidate_b": "C386",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.95,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C374 + C378",
+    "candidate_a": "C374",
+    "candidate_b": "C378",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.9,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C378 + C382",
+    "candidate_a": "C378",
+    "candidate_b": "C382",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.9,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C378 + C394",
+    "candidate_a": "C378",
+    "candidate_b": "C394",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.9,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C374 + C382",
+    "candidate_a": "C374",
+    "candidate_b": "C382",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.88,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C378 + C386",
+    "candidate_a": "C378",
+    "candidate_b": "C386",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.88,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C370 + C378",
+    "candidate_a": "C370",
+    "candidate_b": "C378",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.87,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C374 + C390",
+    "candidate_a": "C374",
+    "candidate_b": "C390",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C374 + C398",
+    "candidate_a": "C374",
+    "candidate_b": "C398",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C378 + C390",
+    "candidate_a": "C378",
+    "candidate_b": "C390",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C378 + C398",
+    "candidate_a": "C378",
+    "candidate_b": "C398",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C382 + C390",
+    "candidate_a": "C382",
+    "candidate_b": "C390",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C382 + C398",
+    "candidate_a": "C382",
+    "candidate_b": "C398",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C386 + C390",
+    "candidate_a": "C386",
+    "candidate_b": "C390",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C390 + C398",
+    "candidate_a": "C390",
+    "candidate_b": "C398",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.86,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C370 + C374",
+    "candidate_a": "C370",
+    "candidate_b": "C374",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.85,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C370 + C386",
+    "candidate_a": "C370",
+    "candidate_b": "C386",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.85,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C390 + C394",
+    "candidate_a": "C390",
+    "candidate_b": "C394",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.85,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C394 + C398",
+    "candidate_a": "C394",
+    "candidate_b": "C398",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.85,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C374 + C386",
+    "candidate_a": "C374",
+    "candidate_b": "C386",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.84,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C374 + C394",
+    "candidate_a": "C374",
+    "candidate_b": "C394",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.84,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C382 + C394",
+    "candidate_a": "C382",
+    "candidate_b": "C394",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.84,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C386 + C398",
+    "candidate_a": "C386",
+    "candidate_b": "C398",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.84,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C370 + C382",
+    "candidate_a": "C370",
+    "candidate_b": "C382",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.83,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C370 + C394",
+    "candidate_a": "C370",
+    "candidate_b": "C394",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.83,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C386 + C394",
+    "candidate_a": "C386",
+    "candidate_b": "C394",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.83,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C370 + C398",
+    "candidate_a": "C370",
+    "candidate_b": "C398",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.81,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C370 + C390",
+    "candidate_a": "C370",
+    "candidate_b": "C390",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.79,
+    "action": "discard_pair"
+  }
+]

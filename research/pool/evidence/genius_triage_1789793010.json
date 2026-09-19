@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C469",
+    "title": "RELATIVE ANABELIAN SECTION CONJECTURE ON TRIANGLE ORBIFOLDS",
+    "target_discipline": false,
+    "fc_blindness": false,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.32,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "selmer_dimension_growth",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.38
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.32,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.49,
+          "sound_no_failure_mode": 0.38,
+          "mode_1_residual_conflation": 0.1,
+          "mode_2_chabauty_unbounded_s": 0.03
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.35,
+        "probabilities": {
+          "vacuous": 0.18,
+          "bounded_only": 0.0,
+          "proves_nonexistence": 0.31,
+          "finiteness_only": 0.51
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "selmer_dimension_growth",
+        "confidence": 0.24,
+        "probabilities": {
+          "torsion_wild_ramification": 0.17,
+          "automorphic_cusp_abundance": 0.03,
+          "computational_scale": 0.06,
+          "unobstructed": 0.18,
+          "selmer_dimension_growth": 0.36,
+          "continuous_moduli_degeneration": 0.2
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.4,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.51,
+          "refute_and_archive": 0.31,
+          "synthesize_breakthrough": 0.12,
+          "advance_kraus_frontier": 0.02,
+          "salvage_proved_sublemmas": 0.04
+        }
+      }
+    }
+  }
+]

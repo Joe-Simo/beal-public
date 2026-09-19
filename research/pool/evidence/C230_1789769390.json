@@ -1,0 +1,100 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C230",
+  "timestamp": "2026-09-18T18:09:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "C230",
+    "name": "EulerDescentStep unified dispatch",
+    "statement": "Combine descent_step_smaller_natAbs (3 nmid p branch) and three_dvd_p_branch_step3 (3 | p branch) to prove that any non-trivial integer solution to p(p^2+3q^2)=c^3 with q != 0 produces a strictly smaller non-trivial solution on Nat, yielding a contradiction via Nat.find or WellFounded.fix.",
+    "context": "We have proved descent_step_smaller_natAbs (|e| < |c|) for 3 nmid p, and three_dvd_p_branch_step3 swaps (p, q) to (q, 3p'') with 3 nmid q, reducing 3 | p directly to the 3 nmid p branch."
+  },
+  "questions": {
+    "soundness": {
+      "type": "score",
+      "instructions": "Does the proposed mathematical mechanism hold without hidden gaps, circularity, or unproved external dependencies?",
+      "criteria": [
+        "level 0: flawed mechanism or known circularity",
+        "level 1: substantial unproved dependencies or heuristic assumptions",
+        "level 2: sound outline but non-trivial technical lemmas still unformalized",
+        "level 3: completely rigorous, sound, and fully supported by existing proved lemmas"
+      ]
+    },
+    "lean4_feasibility": {
+      "type": "score",
+      "instructions": "How feasible is complete formal verification in Lean 4 + mathlib with zero sorry and standard axioms only?",
+      "criteria": [
+        "level 0: impossible or requires major missing mathlib theories (e.g. modular forms over number fields)",
+        "level 1: very difficult, requires thousands of lines of new algebraic theory",
+        "level 2: moderately difficult, standard Diophantine/algebraic techniques, achievable in tens to hundreds of lines",
+        "level 3: immediate or nearly immediate from existing lemmas in the repo"
+      ]
+    },
+    "recommended_action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate in the research loop?",
+      "criteria": {
+        "formalize": "Candidate is fully ready to be formally coded and machine-checked in Lean 4",
+        "advance": "Candidate is theoretically sound; advance to detailed symbolic/exact derivation first",
+        "counterexample_search": "Candidate requires bounded adversarial countersearch to test robustness",
+        "park": "Candidate is low priority or blocked by external prerequisites",
+        "discard": "Candidate is flawed or redundant"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "soundness": {
+        "type": "score",
+        "score": 1.81,
+        "confidence": 0.75,
+        "legend": {
+          "0": "level 0: flawed mechanism or known circularity",
+          "1": "level 1: substantial unproved dependencies or heuristic assumptions",
+          "2": "level 2: sound outline but non-trivial technical lemmas still unformalized",
+          "3": "level 3: completely rigorous, sound, and fully supported by existing proved lemmas"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.19,
+          "2": 0.76,
+          "3": 0.03
+        }
+      },
+      "lean4_feasibility": {
+        "type": "score",
+        "score": 1.67,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: impossible or requires major missing mathlib theories (e.g. modular forms over number fields)",
+          "1": "level 1: very difficult, requires thousands of lines of new algebraic theory",
+          "2": "level 2: moderately difficult, standard Diophantine/algebraic techniques, achievable in tens to hundreds of lines",
+          "3": "level 3: immediate or nearly immediate from existing lemmas in the repo"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.3,
+          "2": 0.67,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "advance",
+        "confidence": 0.54,
+        "probabilities": {
+          "discard": 0.01,
+          "formalize": 0.35,
+          "counterexample_search": 0.0,
+          "advance": 0.64,
+          "park": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 826,
+      "output_tokens": 93
+    }
+  }
+}

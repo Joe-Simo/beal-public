@@ -1,0 +1,554 @@
+[
+  {
+    "candidate_id": "C390",
+    "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5101, 5200]",
+    "target_discipline": true,
+    "fc_blindness": false,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.42,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 1.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.42,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.05,
+          "mode_1_residual_conflation": 0.34,
+          "mode_3_heuristic_laundering": 0.05,
+          "sound_no_failure_mode": 0.56
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.69,
+        "probabilities": {
+          "vacuous": 0.0,
+          "proves_nonexistence": 0.17,
+          "finiteness_only": 0.06,
+          "bounded_only": 0.77
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.85,
+        "probabilities": {
+          "computational_scale": 0.87,
+          "selmer_dimension_growth": 0.06,
+          "torsion_wild_ramification": 0.03,
+          "continuous_moduli_degeneration": 0.01,
+          "automorphic_cusp_abundance": 0.02,
+          "unobstructed": 0.01
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.39,
+        "probabilities": {
+          "salvage_proved_sublemmas": 0.16,
+          "advance_kraus_frontier": 0.51,
+          "synthesize_breakthrough": 0.01,
+          "audit_and_isolate_obstruction": 0.29,
+          "refute_and_archive": 0.03
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C391",
+    "title": "NON-COMMUTATIVE MOTIVES AND CATEGORICAL LOCALIZING INVARIANTS",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.3,
+    "finiteness_profile": "vacuous",
+    "structural_obstruction": "unobstructed",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.21
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.67
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.3,
+        "probabilities": {
+          "mode_1_residual_conflation": 0.05,
+          "sound_no_failure_mode": 0.47,
+          "mode_3_heuristic_laundering": 0.47,
+          "mode_2_chabauty_unbounded_s": 0.01
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "vacuous",
+        "confidence": 0.75,
+        "probabilities": {
+          "finiteness_only": 0.03,
+          "vacuous": 0.8200000000000001,
+          "proves_nonexistence": 0.15,
+          "bounded_only": 0.0
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "unobstructed",
+        "confidence": 0.42,
+        "probabilities": {
+          "torsion_wild_ramification": 0.12,
+          "computational_scale": 0.11,
+          "continuous_moduli_degeneration": 0.16,
+          "automorphic_cusp_abundance": 0.05,
+          "selmer_dimension_growth": 0.05,
+          "unobstructed": 0.51
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.66,
+        "probabilities": {
+          "salvage_proved_sublemmas": 0.01,
+          "advance_kraus_frontier": 0.01,
+          "audit_and_isolate_obstruction": 0.73,
+          "synthesize_breakthrough": 0.0,
+          "refute_and_archive": 0.25
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C392",
+    "title": "PERFECTOID SHIMURA VARIETIES AND HODGE-TATE PERIOD MAPS",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.55,
+    "finiteness_profile": "vacuous",
+    "structural_obstruction": "torsion_wild_ramification",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.55,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.2,
+          "mode_1_residual_conflation": 0.06,
+          "mode_2_chabauty_unbounded_s": 0.07,
+          "sound_no_failure_mode": 0.67
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "vacuous",
+        "confidence": 0.58,
+        "probabilities": {
+          "proves_nonexistence": 0.01,
+          "vacuous": 0.6900000000000001,
+          "finiteness_only": 0.3,
+          "bounded_only": 0.0
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "torsion_wild_ramification",
+        "confidence": 0.15,
+        "probabilities": {
+          "automorphic_cusp_abundance": 0.02,
+          "torsion_wild_ramification": 0.3,
+          "computational_scale": 0.05,
+          "unobstructed": 0.23,
+          "continuous_moduli_degeneration": 0.27,
+          "selmer_dimension_growth": 0.13
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.66,
+        "probabilities": {
+          "synthesize_breakthrough": 0.02,
+          "refute_and_archive": 0.18,
+          "audit_and_isolate_obstruction": 0.73,
+          "advance_kraus_frontier": 0.01,
+          "salvage_proved_sublemmas": 0.06
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C393",
+    "title": "UNIFORM MODULI HEIGHTS OF QUATERNARY FORMS AND DEGREE-3 HYPERSURFACES",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.82,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.28
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.82,
+        "probabilities": {
+          "mode_1_residual_conflation": 0.01,
+          "mode_2_chabauty_unbounded_s": 0.01,
+          "mode_3_heuristic_laundering": 0.86,
+          "sound_no_failure_mode": 0.12
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.63,
+        "probabilities": {
+          "proves_nonexistence": 0.0,
+          "bounded_only": 0.24,
+          "vacuous": 0.03,
+          "finiteness_only": 0.73
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "continuous_moduli_degeneration",
+        "confidence": 0.82,
+        "probabilities": {
+          "torsion_wild_ramification": 0.03,
+          "continuous_moduli_degeneration": 0.86,
+          "unobstructed": 0.04,
+          "selmer_dimension_growth": 0.05,
+          "automorphic_cusp_abundance": 0.0,
+          "computational_scale": 0.02
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.75,
+        "probabilities": {
+          "synthesize_breakthrough": 0.01,
+          "refute_and_archive": 0.15,
+          "audit_and_isolate_obstruction": 0.8,
+          "advance_kraus_frontier": 0.0,
+          "salvage_proved_sublemmas": 0.04
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C394",
+    "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5201, 5300]",
+    "target_discipline": true,
+    "fc_blindness": false,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.39,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 1.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.39,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.05,
+          "mode_1_residual_conflation": 0.36,
+          "mode_3_heuristic_laundering": 0.05,
+          "sound_no_failure_mode": 0.54
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.63,
+        "probabilities": {
+          "proves_nonexistence": 0.21,
+          "vacuous": 0.0,
+          "bounded_only": 0.73,
+          "finiteness_only": 0.06
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.81,
+        "probabilities": {
+          "automorphic_cusp_abundance": 0.02,
+          "torsion_wild_ramification": 0.05,
+          "computational_scale": 0.84,
+          "selmer_dimension_growth": 0.06,
+          "continuous_moduli_degeneration": 0.01,
+          "unobstructed": 0.02
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.4,
+        "probabilities": {
+          "synthesize_breakthrough": 0.01,
+          "refute_and_archive": 0.02,
+          "audit_and_isolate_obstruction": 0.28,
+          "advance_kraus_frontier": 0.52,
+          "salvage_proved_sublemmas": 0.17
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C395",
+    "title": "CYCLOTOMIC NON-ABELIAN CHABAUTY-KIM OVER K = Q(zeta_m)",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_2_chabauty_unbounded_s",
+    "failure_mode_confidence": 0.98,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "selmer_dimension_growth",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_2_chabauty_unbounded_s",
+        "confidence": 0.98,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.0,
+          "sound_no_failure_mode": 0.01,
+          "mode_1_residual_conflation": 0.0,
+          "mode_2_chabauty_unbounded_s": 0.99
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.88,
+        "probabilities": {
+          "finiteness_only": 0.91,
+          "vacuous": 0.07,
+          "bounded_only": 0.0,
+          "proves_nonexistence": 0.02
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "selmer_dimension_growth",
+        "confidence": 0.96,
+        "probabilities": {
+          "unobstructed": 0.0,
+          "automorphic_cusp_abundance": 0.0,
+          "computational_scale": 0.02,
+          "continuous_moduli_degeneration": 0.0,
+          "torsion_wild_ramification": 0.0,
+          "selmer_dimension_growth": 0.98
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.78,
+        "probabilities": {
+          "advance_kraus_frontier": 0.01,
+          "salvage_proved_sublemmas": 0.06,
+          "refute_and_archive": 0.09,
+          "audit_and_isolate_obstruction": 0.82,
+          "synthesize_breakthrough": 0.02
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C396",
+    "title": "RELATIVE ANABELIAN GEOMETRY OF P^1 \\ {0, 1, infty} OVER SPEC Z",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.62,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.62,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.04,
+          "sound_no_failure_mode": 0.71,
+          "mode_3_heuristic_laundering": 0.22,
+          "mode_1_residual_conflation": 0.03
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.54,
+        "probabilities": {
+          "vacuous": 0.31,
+          "proves_nonexistence": 0.03,
+          "bounded_only": 0.0,
+          "finiteness_only": 0.66
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "continuous_moduli_degeneration",
+        "confidence": 0.22,
+        "probabilities": {
+          "selmer_dimension_growth": 0.12,
+          "torsion_wild_ramification": 0.2,
+          "unobstructed": 0.25,
+          "automorphic_cusp_abundance": 0.01,
+          "computational_scale": 0.06,
+          "continuous_moduli_degeneration": 0.36
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.68,
+        "probabilities": {
+          "advance_kraus_frontier": 0.02,
+          "salvage_proved_sublemmas": 0.03,
+          "refute_and_archive": 0.2,
+          "synthesize_breakthrough": 0.01,
+          "audit_and_isolate_obstruction": 0.74
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C397",
+    "title": "HYPERK\u00c4HLER PERIOD MAPS AND ARITHMETIC CHOW GROUPS OF FERMAT HYPERSURFACES",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.54,
+    "finiteness_profile": "vacuous",
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.71
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.54,
+        "probabilities": {
+          "mode_1_residual_conflation": 0.02,
+          "mode_2_chabauty_unbounded_s": 0.05,
+          "mode_3_heuristic_laundering": 0.28,
+          "sound_no_failure_mode": 0.65
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "vacuous",
+        "confidence": 0.23,
+        "probabilities": {
+          "proves_nonexistence": 0.0,
+          "bounded_only": 0.32,
+          "vacuous": 0.43,
+          "finiteness_only": 0.25
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "continuous_moduli_degeneration",
+        "confidence": 0.55,
+        "probabilities": {
+          "selmer_dimension_growth": 0.05,
+          "continuous_moduli_degeneration": 0.62,
+          "automorphic_cusp_abundance": 0.01,
+          "unobstructed": 0.13999999999999999,
+          "torsion_wild_ramification": 0.11,
+          "computational_scale": 0.07
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.67,
+        "probabilities": {
+          "salvage_proved_sublemmas": 0.05,
+          "refute_and_archive": 0.2,
+          "synthesize_breakthrough": 0.01,
+          "audit_and_isolate_obstruction": 0.73,
+          "advance_kraus_frontier": 0.01
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "flaw_C371",
+  "timestamp": "2026-09-18T22:46:19-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C371 - LOGARITHMIC SCHEMES, LOG-KATO PRISMATIC COHOMOLOGY AND DEGENERATION OF FREY CURVES\nClaim: Logarithmic structures (Fontaine-Illusie-Kato) on the compactified moduli stack M_{1,1} bound wild ramification and eliminate primitive solutions across independent exponents (p, q, r) >= 3.\nMethod: Logarithmic geometry, log-crystalline and log-prismatic cohomology of degenerate Frey elliptic schemes.\nStatus: BLOCKED\nFailureReason: Log structures require semistable reduction; Frey curves have wild additive reduction at 2 and 3 (Kodaira types II, III, IV, II*, III*, IV*). Log monodromy is scale-invariant and blind to unbounded bad reduction at S = primes(ABC).",
+  "questions": {
+    "has_conflation": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 1 (residual/isogeny conflation, or confounding complex moduli deformation with arithmetic coordinates)?",
+      "criteria": {
+        "true": "Yes, conflates residual/geometric properties with Diophantine point exclusion.",
+        "false": "No, maintains strict distinction between arithmetic coordinates and geometric moduli."
+      }
+    },
+    "has_chabauty_field_slip": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 2 (Chabauty over wrong field, or ignoring unbounded bad reduction blowup)?",
+      "criteria": {
+        "true": "Yes, applies Chabauty rank bounds over base field to higher degree points or ignores Selmer dimension blowup.",
+        "false": "No, correctly accounts for field degrees and Selmer variety growth."
+      }
+    },
+    "has_heuristic_laundering": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 3 (heuristic laundering, treating GRH/ABC/Vojta bounds as unconditional)?",
+      "criteria": {
+        "true": "Yes, relabels conjectural height bounds or heuristics as unconditional results.",
+        "false": "No, strictly relies on exact unconditional arithmetic."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_conflation": {
+        "type": "noul",
+        "noul": 0.52
+      },
+      "has_chabauty_field_slip": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "has_heuristic_laundering": {
+        "type": "noul",
+        "noul": 0.29
+      }
+    },
+    "usage": {
+      "input_tokens": 707,
+      "output_tokens": 69
+    }
+  }
+}

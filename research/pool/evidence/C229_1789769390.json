@@ -1,0 +1,100 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C229",
+  "timestamp": "2026-09-18T18:09:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "C229",
+    "name": "OddPrimeDivisorForm strong induction",
+    "statement": "In Lean 4, prove OddPrimeDivisorForm (every odd prime p dividing a^2+3b^2 with gcd(a,b)=1 is represented as x^2+3y^2) by strong induction on the quotient m = (a^2+3b^2)/p using already machine-checked lemmas descent_strict, descent_quotient_lt, and form_div_four_of_even.",
+    "context": "We have machine checked in Beal.Euler: descent_strict, descent_quotient_lt, descent_quotient_pos', form_div_four_of_even, form_four_dvd_of_even, form_quotient_of_prime, represents_of_natAbs_prime_factors. All that remains is chaining them via Nat.strong_induction_on."
+  },
+  "questions": {
+    "soundness": {
+      "type": "score",
+      "instructions": "Does the proposed mathematical mechanism hold without hidden gaps, circularity, or unproved external dependencies?",
+      "criteria": [
+        "level 0: flawed mechanism or known circularity",
+        "level 1: substantial unproved dependencies or heuristic assumptions",
+        "level 2: sound outline but non-trivial technical lemmas still unformalized",
+        "level 3: completely rigorous, sound, and fully supported by existing proved lemmas"
+      ]
+    },
+    "lean4_feasibility": {
+      "type": "score",
+      "instructions": "How feasible is complete formal verification in Lean 4 + mathlib with zero sorry and standard axioms only?",
+      "criteria": [
+        "level 0: impossible or requires major missing mathlib theories (e.g. modular forms over number fields)",
+        "level 1: very difficult, requires thousands of lines of new algebraic theory",
+        "level 2: moderately difficult, standard Diophantine/algebraic techniques, achievable in tens to hundreds of lines",
+        "level 3: immediate or nearly immediate from existing lemmas in the repo"
+      ]
+    },
+    "recommended_action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate in the research loop?",
+      "criteria": {
+        "formalize": "Candidate is fully ready to be formally coded and machine-checked in Lean 4",
+        "advance": "Candidate is theoretically sound; advance to detailed symbolic/exact derivation first",
+        "counterexample_search": "Candidate requires bounded adversarial countersearch to test robustness",
+        "park": "Candidate is low priority or blocked by external prerequisites",
+        "discard": "Candidate is flawed or redundant"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "soundness": {
+        "type": "score",
+        "score": 1.94,
+        "confidence": 0.46,
+        "legend": {
+          "0": "level 0: flawed mechanism or known circularity",
+          "1": "level 1: substantial unproved dependencies or heuristic assumptions",
+          "2": "level 2: sound outline but non-trivial technical lemmas still unformalized",
+          "3": "level 3: completely rigorous, sound, and fully supported by existing proved lemmas"
+        },
+        "probabilities": {
+          "0": 0.04,
+          "1": 0.22,
+          "2": 0.5,
+          "3": 0.24
+        }
+      },
+      "lean4_feasibility": {
+        "type": "score",
+        "score": 2.54,
+        "confidence": 0.54,
+        "legend": {
+          "0": "level 0: impossible or requires major missing mathlib theories (e.g. modular forms over number fields)",
+          "1": "level 1: very difficult, requires thousands of lines of new algebraic theory",
+          "2": "level 2: moderately difficult, standard Diophantine/algebraic techniques, achievable in tens to hundreds of lines",
+          "3": "level 3: immediate or nearly immediate from existing lemmas in the repo"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.41,
+          "3": 0.57
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "formalize",
+        "confidence": 0.87,
+        "probabilities": {
+          "counterexample_search": 0.0,
+          "discard": 0.0,
+          "advance": 0.09,
+          "formalize": 0.91,
+          "park": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 832,
+      "output_tokens": 95
+    }
+  }
+}

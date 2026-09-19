@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "id": "C278_effective_height_exponent_upper_bound",
+    "name": "Baker Effective Height Bound on Exponents for Fixed Bases",
+    "text": "Candidate: Baker linear forms in logarithms applied to covering curves forces an effective upper bound on exponents max(x, y, z) <= B(A, B, C) for any fixed coprime bases."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "resolves_unbounded_exponents": {
+        "type": "noul",
+        "noul": 0.52
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.51
+      },
+      "rigor_and_provability": {
+        "type": "score",
+        "score": 1.67,
+        "confidence": 0.66,
+        "legend": {
+          "0": "level 0: mathematically obstructed or known false",
+          "1": "level 1: requires open grand conjectures (e.g. general Langlands, Fontaine-Mazur)",
+          "2": "level 2: provable by combining proved theorems (Baker, Darmon, Khare-Wintenberger)",
+          "3": "level 3: complete machine-checkable proof in Lean 4"
+        },
+        "probabilities": {
+          "0": 0.13,
+          "1": 0.07,
+          "2": 0.79,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.55,
+        "probabilities": {
+          "discard": 0.05,
+          "advance": 0.22,
+          "exact_computation": 0.03,
+          "formalize": 0.05,
+          "park": 0.02,
+          "literature_check": 0.63
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 732,
+      "output_tokens": 132
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "candidate": {
+    "id": "C272_kraus_sieve_p1801_p1900",
+    "name": "Kraus Sieve for (3, 3, p) on [1801, 1900]",
+    "text": "Candidate: Extended exact modular Kraus multi-modulus sieve for signature (3, 3, p) on primes p in [1801, 1900] with p = 1 mod 3. Eliminates conductor levels 72 and 144 via auxiliary primes q = 2kp + 1."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "mathematical_feasibility": {
+        "type": "score",
+        "score": 1.76,
+        "confidence": 0.35,
+        "legend": {
+          "0": "level 0: known mathematical obstruction",
+          "1": "level 1: depends on open conjectures (e.g. general Shimura curve modularity over non-totally real fields)",
+          "2": "level 2: grounded in proved theorems (Darmon 2000, Khare-Wintenberger, Mazur) with concrete lemmas to formalize",
+          "3": "level 3: complete reduction to exact computable certificates"
+        },
+        "probabilities": {
+          "0": 0.11,
+          "1": 0.22,
+          "2": 0.47000000000000003,
+          "3": 0.2
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "exact_computation",
+        "confidence": 0.66,
+        "probabilities": {
+          "park": 0.03,
+          "advance": 0.11,
+          "discard": 0.05,
+          "literature_check": 0.07,
+          "exact_computation": 0.74
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 747,
+      "output_tokens": 121
+    }
+  }
+}

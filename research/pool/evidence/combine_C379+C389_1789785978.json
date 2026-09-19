@@ -1,0 +1,69 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C379+C389",
+  "timestamp": "2026-09-18T22:46:18-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate 1 (C379): DERIVED SYMPLECTIC GEOMETRY, SHIFTED SYMPLECTIC STRUCTURES AND MOTIVIC DT INVARIANTS\nClaim 1: PTVV (-1)-shifted symplectic structures on derived moduli stacks of Frey sheaves force vanishing of virtual fundamental classes for Beal solutions.\nMethod 1: Derived algebraic geometry, (-1)-shifted symplectic structures, and Behrend-Fantechi virtual fundamental classes.\n\nCandidate 2 (C389): ARITHMETIC TOPOLOGY AND ARITHMETIC CHERN-SIMONS INVARIANTS\nClaim 2: Arithmetic linking numbers and arithmetic Chern-Simons functionals on Spec Z for primes dividing ABC obstruct primitive Beal solutions.\nMethod 2: Arithmetic topology (Kapranov-Reznikov, Morishita), 3-manifold analogies, and Legendre linking numbers.\n",
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two candidates mathematically compatible, operating on complementary aspects of the conjecture?",
+      "criteria": {
+        "true": "Yes, one provides input to the other or they address complementary signatures/invariants.",
+        "false": "No, they operate in disjoint or contradictory frameworks."
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "What value would combining these two candidate approaches create?",
+      "criteria": [
+        "level 0: Zero value; combination fails or is identical to one candidate alone.",
+        "level 1: Minor bookkeeping convenience without resolving open obstacles.",
+        "level 2: Discharges a specific open obligation in one of the candidates.",
+        "level 3: Opens a genuine new attack route avoiding known dead ends."
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do both candidates fail due to the same fundamental obstruction (e.g. deformation invariance, Selmer blowup, or heuristic laundering)?",
+      "criteria": {
+        "true": "Yes, both share the same failure mode and combining them provides no new leverage.",
+        "false": "No, they hit independent failure modes, offering structural contrast."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.39
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 1.07,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: Zero value; combination fails or is identical to one candidate alone.",
+          "1": "level 1: Minor bookkeeping convenience without resolving open obstacles.",
+          "2": "level 2: Discharges a specific open obligation in one of the candidates.",
+          "3": "level 3: Opens a genuine new attack route avoiding known dead ends."
+        },
+        "probabilities": {
+          "0": 0.46,
+          "1": 0.26,
+          "2": 0.03,
+          "3": 0.25
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.41
+      }
+    },
+    "usage": {
+      "input_tokens": 729,
+      "output_tokens": 53
+    }
+  }
+}

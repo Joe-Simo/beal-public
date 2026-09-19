@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_ExponentReduction.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: ExponentReduction.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Exponent Reduction for the Beal Conjecture\n\nEvery signature-by-signature attack on Beal tacitly restricts the exponents to\n`{4} \u222a {odd primes}`.  The project's own discipline forbids restricting the exponent range\nwithout proving the restriction covers every case.  This file supplies that proof.\n\nNo `sorry`, no custom `axiom`s.  The only imports are mathlib.\n-/\nimport Beal.Conjecture\nimport Mathlib.Data.Nat.Factorization.Basic\nimport Mathlib.Data.Nat.Prime.Basic\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.NumberTheory.FLT.Four\nimport Mathlib.Tactic.PushNeg\nimport Mathlib.Tactic.NormNum.Basic\n\nnamespace Beal\n\n/-- The exponents that survive reduction: `4`, or an odd prime. -/\ndef Reduced (e : \u2115) : Prop := e = 4 \u2228 (Nat.Prime e \u2227 Odd e)\n\n/-- Every exponent `e \u2265 3` factors as `e' * m` with `e'` reduced and `m \u2265 1`. -/\ntheorem exists_reduced_factor {e : \u2115} (he : 3 \u2264 e) :\n    \u2203 e' m : \u2115, e = e' * m \u2227 0 < m \u2227 Reduced e' := by\n  by_cases hodd : \u2203 p : \u2115, p.Prime \u2227 Odd p \u2227 p \u2223 e\n  \u00b7 obtain \u27e8p, hp, hpodd, hpdvd\u27e9 := hodd\n    obtain \u27e8m, hm\u27e9 := hpdvd\n    refine \u27e8p, m, hm, ?_, Or.inr \u27e8hp, hpodd\u27e9\u27e9\n    rcases Nat.eq_zero_or_pos m with rfl | h\n    \u00b7 simp [hm] at he\n    \u00b7 exact h\n  \u00b7 -- no odd prime divides `e`, so `e` is a power of two; `e \u2265 3` forces `4 \u2223 e`\n    push_neg at hodd\n    have h2 : (4 : \u2115) \u2223 e := by\n      have he1 : e \u2260 1 := by omega\n      -- the least prime factor of `e` cannot be odd, so it is 2\n      have hmf : Nat.minFac e = 2 := by\n        by_contra hne\n        have hp : (Nat.minFac e).Prime := Nat.minFac_prime he1\n        exact hodd _ hp (hp.odd_of_ne_two hne) (Nat.minFac_dvd e)\n      have h2e : 2 \u2223 e := hmf \u25b8 Nat.minFac_dvd e\n      obtain \u27e8t, ht\u27e9 := h2e\n      have ht1 : t \u2260 1 := by omega\n      -- `t` cannot be odd either, else its least prime factor is an odd prime dividing `e`\n      have h2t : 2 \u2223 t := by\n        by_contra hnt\n        have hp : (Nat.minFac t).Prime := Nat.minFac_prime ht1\n        have hdvd : Nat.minFac t \u2223 t := Nat.minFac_dvd t\n        have hne2 : Nat.minFac t \u2260 2 := fun h => hnt (h \u25b8 hdvd)\n        exact hodd _ hp (hp.odd_of_ne_two hne2) (hdvd.trans \u27e82, by omega\u27e9)\n      obtain \u27e8u, hu\u27e9 := h2t\n      exact \u27e8u, by omega\u27e9\n    obtain \u27e8m, hm\u27e9 := h2\n    refine \u27e84, m, hm, ?_, Or.inl rfl\u27e9\n    rcases Nat.eq_zero_or_pos m with rfl | h\n    \u00b7 simp [hm] at he\n    \u00b7 exact h\n\n/-- **Primitivity is preserved by taking powers of the bases.**\nThis is the step that must not be waved through: a prime dividing `A ^ a` divides `A`. -/\ntheorem gcd_pow_eq_one {A B C a b c : \u2115}\n    (h : gcd3 A B C = 1) :\n    gcd3 (A ^ a) (B ^ b) (C ^ c) = 1 := by\n  unfold gcd3 at h \u22a2\n  rw [Nat.eq_one_iff_not_exists_prime_dvd]\n  rintro q hq hdvd\n  have hqA : q \u2223 A ^ a := hdvd.trans (Nat.gcd_dvd_left _ _)\n  have hBC : q \u2223 Nat.gcd (B ^ b) (C ^ c) := hdvd.trans (Nat.gcd_dvd_right _ _)\n  have h1 : q \u2223 A := hq.dvd_of_dvd_pow hqA\n  have h2 : q \u2223 B := hq.dvd_of_dvd_pow (hBC.trans (Nat.gcd_dvd_left _ _))\n  have h3 : q \u2223 C := hq.dvd_of_dvd_pow (hBC.trans (Nat.gcd_dvd_right _ _))\n  have hg : q \u2223 Nat.gcd A (Nat.gcd B C) := Nat.dvd_gcd h1 (Nat.dvd_gcd h2 h3)\n  rw [h] at hg\n  exact hq.one_lt.ne' (Nat.dvd_one.mp hg)\n\n/-- **Exponent Reduction Theorem.**\nIf a Beal counterexample exists at all, then one exists whose three exponents each lie in\n`{4} \u222a {odd primes}`.  Hence it suffices to refute those signatures. -/\ntheorem reduction {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    \u2203 A' B' C' x' y' z' : \u2115,\n      IsBealCounterexample A' B' C' x' y' z' \u2227 Reduced x' \u2227 Reduced y' \u2227 Reduced z' := by\n  obtain \u27e8hA, hB, hC, hx, hy, hz, hgcd, heq\u27e9 := h\n  obtain \u27e8x', mx, hxe, hmx, hxr\u27e9 := exists_reduced_factor hx\n  obtain \u27e8y', my, hye, hmy, hyr\u27e9 := exists_reduced_factor hy\n  obtain \u27e8z', mz, hze, hmz, hzr\u27e9 := exists_reduced_factor hz\n  refine \u27e8A ^ mx, B ^ my, C ^ mz, x', y', z', \u27e8?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_\u27e9,\n    hxr, hyr, hzr\u27e9\n  \u00b7 exact Nat.pos_pow_of_pos _ hA\n  \u00b7 exact Nat.pos_pow_of_pos _ hB\n  \u00b7 exact Nat.pos_pow_of_pos _ hC\n  \u00b7 rcases hxr with rfl | \u27e8hp, hodd\u27e9\n    \u00b7 norm_num\n    \u00b7 have h2 := hp.two_le\n      rw [Nat.odd_iff] at hodd\n      omega\n  \u00b7 rcases hyr with rfl | \u27e8hp, hodd\u27e9\n    \u00b7 norm_num\n    \u00b7 have h2 := hp.two_le\n      rw [Nat.odd_iff] at hodd\n      omega\n  \u00b7 rcases hzr with rfl | \u27e8hp, hodd\u27e9\n    \u00b7 norm_num\n    \u00b7 have h2 := hp.two_le\n      rw [Nat.odd_iff] at hodd\n      omega\n  \u00b7 exact gcd_pow_eq_one hgcd\n  \u00b7 rw [\u2190 pow_mul, \u2190 pow_mul, \u2190 pow_mul, mul_comm mx x', mul_comm my y', mul_comm mz z',\n      \u2190 hxe, \u2190 hye, \u2190 hze]\n    exact heq\n\n\n\n/-! ## Kernel-verified consequences of mathlib's Fermat's Last Theorem for exponent 4 -/\n\nsection DiagonalFour\n\n/-- **Beal holds for every diagonal signature `(n,n,n)` with `4 \u2223 n`.**\nAny such counterexample would give `(A^m)^4 + (B^m)^4 = (C^m)^4`, contradicting\nmathlib's `fermatLastTheoremFour`.  This closes an infinite family of signatures. -/\ntheorem no_counterexample_diagonal_of_four_dvd {n : \u2115} (hn : 4 \u2223 n)\n    {A B C : \u2115} (h : IsBealCounterexample A B C n n n) : False := by\n  obtain \u27e8hA, hB, hC, hx, _, _, _, heq\u27e9 := h\n  obtain \u27e8m, hm\u27e9 := hn\n  have hm0 : m \u2260 0 := by rintro rfl; omega\n  have hA' : A ^ m \u2260 0 := pow_ne_zero _ (by omega)\n  have hB' : B ^ m \u2260 0 := pow_ne_zero _ (by omega)\n  have hC' : C ^ m \u2260 0 := pow_ne_zero _ (by omega)\n  refine fermatLastTheoremFour (A ^ m) (B ^ m) (C ^ m) hA' hB' hC' ?_\n  rw [\u2190 pow_mul, \u2190 pow_mul, \u2190 pow_mul, mul_comm m 4, \u2190 hm]\n  exact heq\n\n/-- Concrete instance: no Beal counterexample of signature `(4,4,4)`. -/\ntheorem no_counterexample_4_4_4 {A B C : \u2115} (h : IsBealCounterexample A B C 4 4 4) : False :=\n  no_counterexample_diagonal_of_four_dvd \u27e81, by norm_num\u27e9 h\n\n/-- Concrete instance: no Beal counterexample of signature `(8,8,8)`. -/\ntheorem no_counterexample_8_8_8 {A B C : \u2115} (h : IsBealCounterexample A B C 8 8 8) : False :=\n  no_counterexample_diagonal_of_four_dvd \u27e82, by norm_num\u27e9 h\n\nend DiagonalFour\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.29
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.42
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.4
+      }
+    },
+    "usage": {
+      "input_tokens": 3129,
+      "output_tokens": 94
+    }
+  }
+}

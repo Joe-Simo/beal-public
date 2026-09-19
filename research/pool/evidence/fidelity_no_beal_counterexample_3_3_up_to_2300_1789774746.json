@@ -1,0 +1,64 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_no_beal_counterexample_3_3_up_to_2300",
+  "timestamp": "2026-09-18T19:39:06-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "no_beal_counterexample_3_3_up_to_2300",
+    "file": "formal/Beal/Signature3.lean",
+    "statement": "theorem no_beal_counterexample_3_3_up_to_2300 (h_no_sol : \u2200 p, 3 \u2264 p \u2192 p \u2264 2300 \u2192 \u00ac \u2203 (A B C : \u2115), IsPrimitiveSignature33pSolution A B C p) : \u2200 p, 3 \u2264 p \u2192 p \u2264 2300 \u2192 \u00ac \u2203 (A B C : \u2115), IsBealCounterexample A B C 3 3 p"
+  },
+  "questions": {
+    "encodes_actual_conjecture": {
+      "type": "noul",
+      "instructions": "Does this formal statement faithfully encode the ACTUAL Beal conjecture conditions (A, B, C > 0, exponents >= 3, gcd = 1), without silent restrictions or loopholes?",
+      "criteria": {
+        "true": "faithful to the exact mathematical conjecture without loopholes or exponent-2 relaxations",
+        "false": "contains a hidden loophole, allows exponent 2, allows non-positive bases, or deviates from Beal"
+      }
+    },
+    "fidelity_level": {
+      "type": "score",
+      "instructions": "How complete and faithful is this statement to the primary mathematical definition?",
+      "criteria": [
+        "level 0: corrupt or encodes unrelated problem",
+        "level 1: encodes a toy model or unverified heuristic",
+        "level 2: encodes a bounded partial case faithful to the definitions",
+        "level 3: encodes an infinite signature family or exact geometric property faithful to the definitions",
+        "level 4: encodes the complete, unconstrained Beal conjecture definition with exact fidelity"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "encodes_actual_conjecture": {
+        "type": "noul",
+        "noul": 0.33
+      },
+      "fidelity_level": {
+        "type": "score",
+        "score": 1.99,
+        "confidence": 0.99,
+        "legend": {
+          "0": "level 0: corrupt or encodes unrelated problem",
+          "1": "level 1: encodes a toy model or unverified heuristic",
+          "2": "level 2: encodes a bounded partial case faithful to the definitions",
+          "3": "level 3: encodes an infinite signature family or exact geometric property faithful to the definitions",
+          "4": "level 4: encodes the complete, unconstrained Beal conjecture definition with exact fidelity"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.01,
+          "2": 0.99,
+          "3": 0.0,
+          "4": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 668,
+      "output_tokens": 41
+    }
+  }
+}

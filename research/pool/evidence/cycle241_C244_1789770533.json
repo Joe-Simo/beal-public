@@ -1,0 +1,73 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "cycle241_C244",
+  "timestamp": "2026-09-18T18:28:53-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal conjecture: A^x + B^y = C^z with x,y,z >= 3 has no coprime solutions. Descent on (3,3,3) in Lean 4 Euler.lean has 123 machine-checked theorems. We investigate closing the descent termination induction on N and evaluating the Darmon motivic obstruction.",
+    "candidate": {
+      "id": "C244",
+      "claim": "KRAUS SIEVE EXTENSION FOR (3,3,p) TO p in [601..700]: Extending the verified modular Kraus sieve elimination for signature (3,3,p) from p=600 up to p=700.",
+      "text": "Kraus method tests auxiliary primes l = 2kp + 1 where the trace of Frobenius of Frey curve cannot match any weight 2 newform of level 72 or 144."
+    }
+  },
+  "questions": {
+    "priority": {
+      "type": "score",
+      "instructions": "Which candidate represents the most mathematically sound and impactful next step for the project?",
+      "criteria": [
+        "level 0: dead-end direction or blind heuristic",
+        "level 1: computational routine extension with no new theoretical insight",
+        "level 2: concrete lemma advancing the formalization or closing an open obligation",
+        "level 3: high-impact foundational structural theorem directly bearing on Beal"
+      ]
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate?",
+      "criteria": {
+        "formalize": "formalize in Lean 4 mathlib",
+        "exact_computation": "run exact integer audit or Python/GP computation",
+        "literature_check": "check primary sources and citations for obstructions",
+        "discard": "discard as exponent-2 blind or known dead-end"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "priority": {
+        "type": "score",
+        "score": 1.24,
+        "confidence": 0.74,
+        "legend": {
+          "0": "level 0: dead-end direction or blind heuristic",
+          "1": "level 1: computational routine extension with no new theoretical insight",
+          "2": "level 2: concrete lemma advancing the formalization or closing an open obligation",
+          "3": "level 3: high-impact foundational structural theorem directly bearing on Beal"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.76,
+          "2": 0.2,
+          "3": 0.03
+        }
+      },
+      "action": {
+        "type": "choice",
+        "choice": "exact_computation",
+        "confidence": 0.55,
+        "probabilities": {
+          "exact_computation": 0.67,
+          "literature_check": 0.23,
+          "discard": 0.05,
+          "formalize": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 705,
+      "output_tokens": 68
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "direction_C189",
+  "timestamp": "2026-09-18T22:46:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions.",
+    "failure_mode": "Unchecked approximation direction. C206: ellrank(E)[1] is PARI's LOWER rank bound; using it to conclude rank = 0 is unsound, the upper bound [2] is the sound index. C208: C079 flags denominator(x) > 1, a strict superset of the Beal-relevant denominator(x) = n^j, so it over-flags but never misses -- the safe direction for a closure claim, confirmed with an over-flagging witness.",
+    "rule": "For a CLOSURE claim the safe direction is to over-approximate the set of dangerous cases. For an EXISTENCE claim it is the opposite. A candidate that does not say which way its approximation errs cannot be relied on either way.",
+    "candidate": "{\n \"id\": \"C189\",\n \"status\": \"PARTIAL_RESULT\",\n \"claim\": \"UNSTATED DEPENDENCY FOUND in the instance-closure layer, by reading the held primary source rather than the repo's summary of it. Darmon-Merel define a solution to be TRIVIAL when xyz = 0 or +-1, so every row taken from them closes only the NON-TRIVIAL solutions. code/U168_instance_closure.py used those rows to mark signatures CLOSED without recording that a Beal case with a BASE OF 1 is not covered by them.\",\n \"method\": \"Extracted the hypothesis conventions from references/U130/darmon_merel.txt near the located theorem statements -- the step C188 said string matching could not do and that needed the source read. The triviality convention appears verbatim: 'a solution is called trivial if xyz = 0 or +-1'.\",\n \"evidence\": \"The gap is BOOKKEEPING, not mathematics: the base-1 case is 1 + B^y = C^z with y,z >= 3, which is Catalan's equation and is closed by Mihailescu. The repo already carries that in formal/Beal/Mihailescu.lean -- beal_base_a_ne_one, beal_base_b_ne_one, beal_counterexample_base_ne_one, beal_counterexample_bases_ge_two -- each taking the named hypothesis MihailescuTheorem. So no verdict changes; what was missing was the record that every 'closed' carries the rider 'for bases >= 2 by the cited row, and for a base of 1 by Mihailescu'.\",\n \"obligations\": \"Fixed in place: the tool now carries the dependency in a header comment, and code/U320_regression_checks.py asserts (a) the Darmon-Merel triviality convention is really in the held source, (b) the tool still records the dependency, (c) the three Mihailescu theorems still exist. STILL NOT DONE: the same hypothesis-level read for the other five sources -- BEN 2010, Bennett-Skinner, BCDY, Dahmen-Siksek, PSS. Darmon-Merel was read because it is the row that closes the most signatures (25 of the 74).\",\n \"failure_reason\": null\n}"
+  },
+  "questions": {
+    "uses_approximation": {
+      "type": "noul",
+      "instructions": "Does this candidate rely on a quantity that is an APPROXIMATION rather than an exact value -- a rank interval, an upper or lower bound, a sieve that removes some cases, a superset or subset of the objects of interest, or a finite range standing in for an infinite one?",
+      "criteria": {
+        "true": "its conclusion depends on a bound, an interval endpoint, a sieve, a superset or subset, or a truncated range",
+        "false": "every quantity it uses is exact, or it is a log or a ledger with no quantitative claim"
+      }
+    },
+    "direction_unstated": {
+      "type": "score",
+      "instructions": "If the candidate uses an approximation, does it SAY WHICH WAY the approximation errs and why that direction makes the conclusion safe? Judge only whether the direction is stated, not whether the mathematics is right.",
+      "criteria": [
+        "level 0: it uses no approximation, so the question does not arise",
+        "level 1: it uses one and explicitly states the direction and why that direction is safe",
+        "level 2: it uses one and the direction is implied but never stated",
+        "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+      ]
+    },
+    "conservative_or_optimistic": {
+      "type": "choice",
+      "instructions": "If the direction can be inferred at all, which way does the approximation err?",
+      "criteria": {
+        "conservative": "it over-approximates the danger -- it may flag or keep too much, so it cannot miss a case the conclusion needs excluded",
+        "optimistic": "it under-approximates -- it may exclude or discard a case that the conclusion needs, so a miss is possible",
+        "cannot_tell": "the text does not allow the direction to be determined",
+        "not_applicable": "no approximation is used"
+      }
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What should be done with this candidate next, given the failure mode?",
+      "criteria": {
+        "check_direction_now": "its conclusion plausibly depends on an unstated direction and something load-bearing rests on it",
+        "state_direction": "the direction is probably fine but is not written down, so it should be recorded",
+        "no_action": "it uses no approximation, or the direction is already stated"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "uses_approximation": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "direction_unstated": {
+        "type": "score",
+        "score": 0.17,
+        "confidence": 0.83,
+        "legend": {
+          "0": "level 0: it uses no approximation, so the question does not arise",
+          "1": "level 1: it uses one and explicitly states the direction and why that direction is safe",
+          "2": "level 2: it uses one and the direction is implied but never stated",
+          "3": "level 3: it uses one, the conclusion depends on the direction, and the direction is neither stated nor implied"
+        },
+        "probabilities": {
+          "0": 0.88,
+          "1": 0.07,
+          "2": 0.03,
+          "3": 0.02
+        }
+      },
+      "conservative_or_optimistic": {
+        "type": "choice",
+        "choice": "not_applicable",
+        "confidence": 0.31,
+        "probabilities": {
+          "conservative": 0.15,
+          "not_applicable": 0.48,
+          "cannot_tell": 0.04,
+          "optimistic": 0.33
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "no_action",
+        "confidence": 0.64,
+        "probabilities": {
+          "state_direction": 0.18,
+          "check_direction_now": 0.06,
+          "no_action": 0.76
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1535,
+      "output_tokens": 140
+    }
+  }
+}

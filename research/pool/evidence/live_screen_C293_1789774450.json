@@ -1,0 +1,108 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "live_screen_C293",
+  "timestamp": "2026-09-18T19:34:10-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "C293",
+    "title": "Effective Arakelov Height Bounds on Triangle Orbifolds",
+    "text": "Use Faltings-Arakelov intersection theory on arithmetic surfaces with orbifold divisor Delta = (1-1/p)D_0 + (1-1/q)D_1 + (1-1/r)D_infty to bound the Faltings height h_F(A, B, C) in terms of the hyperbolic defect -chi >= 1/12."
+  },
+  "questions": {
+    "relevance": {
+      "type": "score",
+      "instructions": "How directly does this candidate bear on resolving Beal conjecture for three independent exponents x, y, z >= 3?",
+      "criteria": [
+        "level 0: irrelevant or single-signature only",
+        "level 1: modular method on one signature with no new structural input",
+        "level 2: settles bounded exponents or requires fixing one exponent",
+        "level 3: provides a uniform mechanism across all three exponents x, y, z >= 3",
+        "level 4: completely proves or disproves Beal conjecture"
+      ]
+    },
+    "obstruction_risk": {
+      "type": "score",
+      "instructions": "What is the risk that this line of attack hits a known project obstruction (e.g. residual/isogeny conflation, unbounded Selmer rank, or ineffective height)?",
+      "criteria": [
+        "level 0: minimal risk; fully effective tools available",
+        "level 1: requires proving effectivity of known qualitative theorems",
+        "level 2: depends on deep open conjectures (e.g. Tate-Shafarevich finiteness or Vojta)",
+        "level 3: provably blocked by structural barriers"
+      ]
+    },
+    "recommended_action": {
+      "type": "choice",
+      "instructions": "What single next action should this candidate receive from the research loop right now?",
+      "criteria": {
+        "advance": "sound so far; proceed with mathematical development",
+        "combine": "has an ingredient that fits another candidate; merge them",
+        "counterexample_search": "makes a falsifiable claim testable by bounded search",
+        "exact_computation": "next discriminating test is a symbolic or exact arithmetic computation",
+        "formalize": "argument is believed complete and ready to check in Lean 4",
+        "literature_check": "verify a cited theorem against its primary source",
+        "park": "preserve untouched for later evaluation",
+        "discard": "refuted, duplicated, or blocked with no path forward"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "relevance": {
+        "type": "score",
+        "score": 1.44,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: irrelevant or single-signature only",
+          "1": "level 1: modular method on one signature with no new structural input",
+          "2": "level 2: settles bounded exponents or requires fixing one exponent",
+          "3": "level 3: provides a uniform mechanism across all three exponents x, y, z >= 3",
+          "4": "level 4: completely proves or disproves Beal conjecture"
+        },
+        "probabilities": {
+          "0": 0.36,
+          "1": 0.18,
+          "2": 0.15,
+          "3": 0.31,
+          "4": 0.0
+        }
+      },
+      "obstruction_risk": {
+        "type": "score",
+        "score": 1.17,
+        "confidence": 0.59,
+        "legend": {
+          "0": "level 0: minimal risk; fully effective tools available",
+          "1": "level 1: requires proving effectivity of known qualitative theorems",
+          "2": "level 2: depends on deep open conjectures (e.g. Tate-Shafarevich finiteness or Vojta)",
+          "3": "level 3: provably blocked by structural barriers"
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.64,
+          "2": 0.18,
+          "3": 0.06
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.39,
+        "probabilities": {
+          "counterexample_search": 0.02,
+          "formalize": 0.02,
+          "discard": 0.01,
+          "combine": 0.0,
+          "advance": 0.45,
+          "park": 0.0,
+          "literature_check": 0.47,
+          "exact_computation": 0.03
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 864,
+      "output_tokens": 122
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Rigidity.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: Rigidity.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Katz rigidity and the exponent budget (U253\u2013U256, pool C120/C121)\n\n**CORRECTED (U309).**  This file was headed \"why no rigid local system can carry three\nindependent Beal exponents\".  That headline is **withdrawn**: it is refuted by\n`code/U309_rigidity_countersearch.py`.  The theorems below are unaffected and stand; what was\nwrong was the reading of them.\n\nThe error was to identify \"local monodromy has **order** `x`\" (what an exponent forces) with\n\"local monodromy is **regular semisimple** with eigenvalues of order `x`\" (what the theorems\nassume).  A pseudoreflection with partition `(n-1, 1)` has order equal to the order of its single\nnon-trivial eigenvalue, which may be *any* `m`.  So the hypergeometric triple `((1\u207f),(1\u207f),(n-1,1))`\nis rigid at every rank and realises three **pairwise distinct** local orders \u2014 e.g. `(3,7,11)` at\n`n = 6`.  Rigidity therefore does **not** forbid three independent exponents.\n\nWhat survives is the narrower, correct statement below: rigidity forbids three *regular\nsemisimple* punctures beyond rank `2`.\n\nFor a local system of rank `n` on `P\u00b9 \u2216 {0,1,\u221e}` with semisimple local monodromies whose\neigenvalue multiplicities are the parts of three partitions of `n`, Katz's rigidity index is\n\n    rig = -n\u00b2 + (sum of squares of all the multiplicities),\n\nand the system is **rigid** exactly when `rig = 2`.\n\nTwo facts are formalised here.\n\n* `rigid_regular_semisimple_iff` \u2014 if all three local monodromies are *regular semisimple*\n  (`n` distinct eigenvalues at each puncture, which is what monodromy of order `x` acting with\n  distinct eigenvalues gives), then every multiplicity is `1`, the sum of squares is `3n`, and\n  rigidity forces `n = 1` or `n = 2`.  Rank `2` is the classical hypergeometric `\u2082F\u2081` /\n  elliptic-curve Frey situation, already exploited one signature at a time.\n\n* `rigid_max_budget_attained` \u2014 the triple `((n-1,1), (1\u207f), (1\u207f))` is rigid for **every** `n`,\n  by the identity `-n\u00b2 + ((n-1)\u00b2 + 1) + n + n = 2`.  Its total number of distinct eigenvalues is\n  `2n+2`, one puncture being reduced to just two.\n\nThe matching upper bound (no rigid triple exceeds `2n+2` distinct eigenvalues) is verified\nexhaustively for `2 \u2264 n \u2264 14` in `code/U254_rigid_eigenvalue_budget.py`; it is recorded in the\npool as C121 and is *not* claimed here.\n\nSince regular-semisimple monodromy at all three punctures needs `3n` distinct eigenvalues and\n`2n+2 \u2265 3n` only at `n = 2`, the deficit `n-2` is the exact cost of demanding *regular\nsemisimplicity* at all three punctures.  Per the U309 correction above, that is **not** the same\nas the cost of three independent exponents, which rigidity does not charge for at all.  This is a\nstatement about one *obstruction*, not a step toward a proof of Beal.\n\nNo `sorry`, no custom `axiom`s; mathlib only.\n-/\nimport Mathlib.Tactic.Ring\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Data.Nat.Totient\nimport Mathlib.Tactic.IntervalCases\nimport Mathlib.Algebra.Order.BigOperators.Group.Finset\n\nnamespace Beal\n\n/-- Katz rigidity index of a rank-`n` local system on `P\u00b9 \u2216 {0,1,\u221e}` whose local monodromies have\neigenvalue multiplicities summing (in squares) to `s`. -/\ndef rigidityIndex (n s : \u2124) : \u2124 := -n ^ 2 + s\n\n/-- **Regular semisimple at all three punctures.**  Every multiplicity is `1`, so the sum of\nsquares is `3n`, and rigidity `rig = 2` forces `n = 1` or `n = 2`. -/\ntheorem rigid_regular_semisimple_iff (n : \u2124) (hn : 0 < n) :\n    rigidityIndex n (3 * n) = 2 \u2194 n = 1 \u2228 n = 2 := by\n  unfold rigidityIndex\n  constructor\n  \u00b7 intro h\n    have hfac : (n - 1) * (n - 2) = 0 := by linarith [h]\n    rcases mul_eq_zero.mp hfac with h1 | h2\n    \u00b7 exact Or.inl (by linarith)\n    \u00b7 exact Or.inr (by linarith)\n  \u00b7 rintro (rfl | rfl) <;> norm_num\n\n/-- **The maximal budget is attained at every rank.**  The multiplicity triple\n`((n-1, 1), (1,\u2026,1), (1,\u2026,1))` has squares summing to `(n-1)^2 + 1 + n + n`, and that is rigid\nfor every `n`. -/\ntheorem rigid_max_budget_attained (n : \u2124) :\n    rigidityIndex n ((n - 1) ^ 2 + 1 + n + n) = 2 := by\n  unfold rigidityIndex; ring\n\n/-- Its distinct-eigenvalue total is `2 + n + n = 2n + 2`. -/\ntheorem max_budget_total (n : \u2124) : 2 + n + n = 2 * n + 2 := by ring\n\n/-- **The gap.**  Regular semisimple monodromy at all three punctures needs `3n` distinct\neigenvalues; the attained maximum is `2n+2`.  These agree only at `n = 2`, and for `n > 2` the\ndeficit is exactly `n - 2`. -/\ntheorem budget_deficit (n : \u2124) : 3 * n - (2 * n + 2) = n - 2 := by ring\n\n/-! ### The cost of dropping rigidity (U257, pool C123)\n\nIf rigidity is abandoned, local systems with three regular-semisimple monodromies of rank `n` do\nexist \u2014 but they come in a positive-dimensional family, so there is no *canonical* object to\nattach to a solution.  The number of accessory parameters is `2 - rig`, and here that is exactly\n`(n-1)(n-2)`: zero precisely at `n = 1, 2`, and growing quadratically afterwards.\n\nThis is the second half of the obstruction.  Rank `\u2264 2` gives a canonical object but cannot carry\nthree independent exponents (`rigid_regular_semisimple_iff`); rank `\u2265 3` can carry them but only\ninside a moduli of dimension `(n-1)(n-2) > 0`, with no distinguished member.  A Frey-type\nconstruction needs both at once. -/\n\n/-- The accessory-parameter count for a rank-`n` local system with three regular-semisimple local\nmonodromies is `(n-1)(n-2)`. -/\ntheorem moduli_dimension_regular_semisimple (n : \u2124) :\n    2 - rigidityIndex n (3 * n) = (n - 1) * (n - 2) := by\n  unfold rigidityIndex; ring\n\n/-- It vanishes exactly at `n = 1` and `n = 2`. -/\ntheorem moduli_dimension_eq_zero_iff (n : \u2124) :\n    (n - 1) * (n - 2) = 0 \u2194 n = 1 \u2228 n = 2 := by\n  constructor\n  \u00b7 intro h\n    rcases mul_eq_zero.mp h with h1 | h2\n    \u00b7 exact Or.inl (by linarith)\n    \u00b7 exact Or.inr (by linarith)\n  \u00b7 rintro (rfl | rfl) <;> norm_num\n\n/-! ### Rank 2 over `Q`: only the exponents `3, 4, 6` survive (U258, pool C124)\n\n`rigid_regular_semisimple_iff` leaves rank `2` as the only rigid possibility.  Ask what rank `2`\ncan carry **over `Q`**.  A local monodromy of order `x` acting with distinct eigenvalues has\neigenvalue ratio a primitive `x`-th root of unity; for the object to be defined over `Q` in\nrank `2`, that root must generate a field of degree at most `2`, i.e. `\u03c6(x) \u2264 2`.\n\nExactly: `\u03c6(x) \u2264 2` iff `x \u2208 {1, 2, 3, 4, 6}` (formalised below for `x \u2264 30`; checked for `x < 200` in `code/` this cycle), so the\nBeal-admissible exponents (`x \u2265 3`) that rank `2` can carry over `Q` are only\n\n    x \u2208 {3, 4, 6},\n\nand the hyperbolic triples available are the nine\n`(3,3,4), (3,3,6), (3,4,4), (3,4,6), (3,6,6), (4,4,4), (4,4,6), (4,6,6), (6,6,6)`.\nEvery exponent in the open core \u2014 `5, 7, 11, 13, \u2026` \u2014 has `\u03c6 \u2265 4` and is excluded.\n\nThat is the third face of the obstruction, and it explains the shape of the literature: the\nclassical rank-2 route reaches a new signature only after a *reduction* (to `(p,p,p)`, `(n,n,2)`,\n`(n,n,3)`, \u2026) that pushes the large exponent out of the monodromy data. -/\n\n/-- The totient bound behind the rank-2 restriction: a primitive `x`-th root of unity lies in a\nfield of degree `\u03c6(x)`, so rank `2` over `Q` needs `\u03c6(x) \u2264 2`. -/\ntheorem totient_le_two_of_rank_two (x : \u2115) (hx : x \u2264 30) (h : Nat.totient x \u2264 2) :\n    x = 0 \u2228 x = 1 \u2228 x = 2 \u2228 x = 3 \u2228 x = 4 \u2228 x = 6 := by\n  interval_cases x <;> revert h <;> decide\n\n/-! ### Enlarging the field: the degree grows linearly in the exponent (U259, pool C126)\n\nFace 3 restricted rank `2` **over \u211a** to exponents `3, 4, 6`.  Over a number field `F` of degree\n`d` the same argument gives `\u03c6(x) \u2264 2d`: the eigenvalue ratio is a primitive `x`-th root of unity,\n`\u211a(\u03b6_x) \u2286 F(\u03b6_x)`, and `[F(\u03b6_x) : \u211a] \u2264 2d`.  So\n\n    d \u2265 \u03c6(x)/2,\n\nand for `x = p` an odd prime, `d \u2265 (p-1)/2`.\n\nThat bound is **sharp**, and it is exactly the shape of the literature: `(p-1)/2` is the degree of\n`\u211a(\u03b6_p)\u207a = \u211a(\u03b6_p + \u03b6_p\u207b\u00b9)`, the field over which Darmon's Frey abelian varieties for signature\n`(p,p,r)` are built.  So the base field cannot stay bounded as the exponent grows: **no rank-2\nroute can be uniform in `p`**, and the objects one must control get harder at a linear rate.\nThis is the fourth face of the same obstruction. -/\n\n/-- Minimal base-field degree for a rank-2 object carrying a monodromy of order `x`: `2d \u2265 \u03c6(x)`. -/\ndef minBaseDegree (x : \u2115) : \u2115 := (Nat.totient x + 1) / 2\n\n/-- For an odd prime `p`, the bound is `(p-1)/2`, the degree of the maximal real subfield of the\n`p`-th cyclotomic field. -/\ntheorem minBaseDegree_prime {p : \u2115} (hp : p.Prime) (hodd : p % 2 = 1) :\n    minBaseDegree p = (p - 1) / 2 := by\n  unfold minBaseDegree\n  rw [Nat.totient_prime hp]\n  have h2 : 2 \u2264 p := hp.two_le\n  omega\n\n/-! ### Three exponents at once: the degree is multiplicative (U260, pool C127)\n\nFace 4 bounded the degree for ONE monodromy order.  A rank-2 object carrying **all three** orders\n`x, y, z` needs `\u211a(\u03b6_x), \u211a(\u03b6_y), \u211a(\u03b6_z)` simultaneously, hence `\u211a(\u03b6_L)` with `L = lcm(x,y,z)`,\ninside a field of degree `2d`.  So\n\n    d \u2265 \u03c6(lcm(x,y,z)) / 2 ,\n\nand for three **distinct** odd primes `p, q, r` that is `(p-1)(q-1)(r-1)/2` \u2014 *multiplicative* in\nthe exponents, not linear.\n\nConcretely: `(3,5,7)` needs `d \u2265 24`, `(4,5,7)` needs `24`, `(5,7,11)` needs `120`,\n`(7,11,13)` needs `360`.  Compare the single-exponent bound of Face 4, which for those same\nsignatures is only `3, 3, 5, 6`.\n\nThis is the quantitative core of the whole obstruction.  The equal-exponent case `(p,p,r)` costs\n`(p-1)(r-1)/2`, already multiplicative, which is why even Darmon's program is stated one signature\nat a time; three *independent* exponents multiply one factor more. -/\n\n/-- Minimal base-field degree for a rank-2 object carrying all three monodromy orders. -/\ndef minBaseDegreeTriple (x y z : \u2115) : \u2115 := (Nat.totient (Nat.lcm x (Nat.lcm y z)) + 1) / 2\n\n/-- The triple bound dominates each single-exponent bound, since `x \u2223 lcm x (lcm y z)`. -/\ntheorem minBaseDegree_le_triple (x y z : \u2115) (hx : 0 < x) (hy : 0 < y) (hz : 0 < z) :\n    Nat.totient x \u2264 Nat.totient (Nat.lcm x (Nat.lcm y z)) :=\n  Nat.le_of_dvd (Nat.totient_pos.mpr (Nat.lcm_pos hx (Nat.lcm_pos hy hz)))\n    (Nat.totient_dvd_of_dvd (Nat.dvd_lcm_left x (Nat.lcm y z)))\n\n/-! ### Sharpest form: a rigid object carries at most TWO exponents (U261, pool C128)\n\nCall a puncture *full* if its local monodromy is regular semisimple, i.e. has `n` distinct\neigenvalues \u2014 the state that can carry a whole exponent.  Then for `n \u2265 3`:\n\n* **at most two** punctures are full, and\n* when exactly two are, the third has **exactly 2** distinct eigenvalues.\n\nThe counting proof is immediate from Face 2: two full punctures already consume `2n` of the\n`2n+2` budget, leaving at most `2` for the third; three would need `3n`, and `3n > 2n+2` exactly\nwhen `n > 2`.  Verified by exhaustive enumeration for `3 \u2264 n \u2264 12`\n(`code/U261_two_of_three.py`), where the maximum number of full punctures is `2` in every rank\nand the third puncture always has exactly `2`.\n\nThis is the obstruction in its sharpest form: **two exponents fit, the third does not.**  It is\nexactly why the literature proceeds by reductions \u2014 `(p,p,r)`, `(n,n,2)`, `(n,n,3)`, `(2,3,n)` \u2014\neach of which has at most two independent exponents to carry. -/\n\n/-- `3n > 2n + 2` exactly when `n > 2`: three full punctures overflow the rigid budget. -/\ntheorem three_full_exceeds_budget (n : \u2124) : 2 < n \u2192 2 * n + 2 < 3 * n := by\n  intro h; linarith\n\n/-- Two full punctures leave at most `2` of the budget for the third. -/\ntheorem two_full_leaves_two (n : \u2124) : (2 * n + 2) - 2 * n = 2 := by ring\n\n/-! ### The two live directions cost the same number (U269, pool C137)\n\nFor two **distinct primes** `p, q` the minimal base-field degree of Face 5, `\u03c6(pq)/2`, equals the\ngenus `(p-1)(q-1)/2` of the Darmon\u2013Granville pair-curve `u^p + v^q = 1`.  The modular cost and the\ngeometric cost of a pair of exponents are the same integer, so the survey's two live directions\nmeet the same barrier at the same size: `(3,5,7)` gives `4, 12, 6` on both sides.\n\nThe identity is about `\u03c6`, not about `p-1`, so it holds **",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.26
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.2
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.42
+      }
+    },
+    "usage": {
+      "input_tokens": 5057,
+      "output_tokens": 94
+    }
+  }
+}

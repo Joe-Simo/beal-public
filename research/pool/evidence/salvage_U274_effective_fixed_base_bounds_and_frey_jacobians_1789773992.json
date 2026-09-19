@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U274_effective_fixed_base_bounds_and_frey_jacobians",
+  "timestamp": "2026-09-18T19:26:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U274_effective_fixed_base_bounds_and_frey_jacobians.md",
+    "excerpt": "# U274: Effective Fixed-Base Exponent Bounds via Linear Forms in Logarithms and Generalized Frey Jacobians\n\n**Status**: Verified & Machine-Checked  \n**Milestones Covered**: 108 (Total Verified Milestones: 108/108)  \n**Candidates Addressed**: C277, C278, C279, C280  \n**Formal Artifacts**: `formal/Beal/PostCentennial.lean` (`FixedBases`, `bakerExponentBound`, `baker_fixed_base_exponent_bound`)\n\n---\n\n## 1. Executive Summary\n\nThis checkpoint investigates the effective Diophantine geometry and unifying modular/motivic architecture for the generalized Fermat equation $A^x + B^y = C^z$:\n1. **Baker Effective Exponent Finiteness for Fixed Bases (Candidate C278, Milestone 108)**:\n   For any fixed positive coprime integers $A, B, C \\ge 2$, we implement and verify the Laurent\u2013Mignotte\u2013Nesterenko (1995) linear forms in two logarithms theorem:\n   $$\\max(x, y, z) \\le B(A, B, C)$$\n   where $B(A, B, C)$ is an effectively computable finite constant (`code/U290_fixed_base_exponent_bounds.py`).\n   This proves that for any fixed base triple, the Beal conjecture is algorithmically decidable by finite computation.\n2. **Formal Verification in Lean 4**:\n   Machine-checked in `formal/Beal/PostCentennial.lean`:\n   - `FixedBases`: Structure formalizing $A, B, C \\ge 2$.\n   - `bakerExponentBound`: Effective exponent bound function.\n   - `baker_fixed_base_exponent_bound`: Machine-checked theorem certified under standard axioms (`[propext]`).\n3. **Darmon Generalized Frey Hyperelliptic Varieties (Candidate C277)**:\n   Analyzed the decomposition of the Jacobian $J(C_{A, B, C})$ into abelian varieties with real multiplication of $\\mathrm{GL}_2$-type over totally real fields, establishing the theoretical framework connecting generalized Fermat curves with automorphic representations.\n4. **Master Verification Suite Benchmark**:\n   Expanded to **108/108 passing milestones** in `code/verify_all_milestones.py`.\n\n---\n\n## 2. Linear Forms in Logarithms: Effective Exponent Upper Bounds\n\nFor fixed coprime bases $A, B, C \\ge 2$, let $A^x + B^y = C^z$. Assuming without loss of generality that $A^x \\ge B^y$:\n$$\\left| z \\log C - x \\log A \\right| = \\left| \\log \\left( 1 + \\frac{B^y}{A^x} \\right) \\right| \\le \\frac{B^y}{A^x} \\le \\frac{C^z}{2}.$$\nBy the Baker\u2013Laurent\u2013Mignotte\u2013Nesterenko theorem (1995), if $\\Lambda = z \\log C - x \\log A \\ne 0$:\n$$\\log |\\Lambda| \\ge - 24.34 \\cdot (\\max\\{\\log b', 0.21\\})^2 \\log A \\log C.$$\nComparing the linear upper bound and logarithmic lower bound yields an effective upper bound on $\\max(x, y, z)$.\n\n### Computational Verification on Benchmark Triples (`code/U290_fixed_base_exponent_bounds.py`)\n\n| Bases $(A, B, C)$ | Context | LMN Constant $C_1$ | Exponent Upper Bound $x \\le$ |\n|:---:|:---:|:---:|:---:|\n| $(2, 3, 5)$ | Standard | $27.15$ | $2,378$ |\n| $(3, 5, 2)$ | Standard | $18.53$ | $750$ |\n| $(7, 13, 2)$ | Fermat\u2013Catalan $7^3 + 13^2 = 2^9$ | $32.83$ | $750$ |\n| $(2, 7, 3)$ | Fermat\u2013Catalan $2^5 + 7^2 = 3^4$ | $18.53$ | $1,419$ |\n| $(3, 11, 122)$ | Fermat\u2013Catalan $3^5 + 11^4 = 122^2$ | $128.46$ | $9,910$ |\n\nAll bounds are effectively computable, confirming that for any fixed base triple, only finitely many exponent triples can ever satisfy $A^x + B^y = C^z$.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 0.55,
+        "confidence": 0.45,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.63,
+          "1": 0.19,
+          "2": 0.17,
+          "3": 0.01
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.62
+      }
+    },
+    "usage": {
+      "input_tokens": 1730,
+      "output_tokens": 42
+    }
+  }
+}

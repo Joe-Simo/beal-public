@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Conjecture.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: Conjecture.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Data.Nat.Prime.Basic\n\n/-!\n# The Beal Conjecture in Lean 4\n\nThis module formalizes the mathematical statement of the **Beal Conjecture**,\nits primitive formulation, its prime-factor formulation, and the derivation of\nFermat's Last Theorem as an immediate corollary.\n\n## Statement\n\nThe Beal Conjecture asserts that if:\n  $$A^x + B^y = C^z$$\nwhere $A, B, C, x, y, z$ are positive integers and $x, y, z \\ge 3$,\nthen $A, B, C$ must share a common prime factor, or equivalently:\n  $$\\gcd(A, B, C) > 1.$$\n\n## References\n\n* R. Daniel Mauldin, *A Generalization of Fermat's Last Theorem: The Beal Conjecture and Prize Problem*,\n  Notices of the AMS, December 1997, Vol. 44, No. 11, pp. 1436\u20131437.\n-/\n\nnamespace Beal\n\n/--\nThe greatest common divisor of three natural numbers `A, B, C`,\ndefined associatively as `gcd(A, gcd(B, C))`.\n-/\ndef gcd3 (A B C : \u2115) : \u2115 :=\n  Nat.gcd A (Nat.gcd B C)\n\n/--\nA triple of natural numbers `(A, B, C)` is primitive if `gcd(A, B, C) = 1`.\n-/\ndef IsPrimitiveTriple (A B C : \u2115) : Prop :=\n  gcd3 A B C = 1\n\n/--\nA tuple `(A, B, C, x, y, z)` forms a **Beal counterexample** if:\n1. `A, B, C` are strictly positive integers (`> 0`).\n2. The exponents `x, y, z` satisfy `x \u2265 3`, `y \u2265 3`, `z \u2265 3`.\n3. The bases are mutually coprime: `gcd(A, B, C) = 1`.\n4. The Diophantine equation holds: `A^x + B^y = C^z`.\n-/\ndef IsBealCounterexample (A B C x y z : \u2115) : Prop :=\n  A > 0 \u2227 B > 0 \u2227 C > 0 \u2227\n  x \u2265 3 \u2227 y \u2265 3 \u2227 z \u2265 3 \u2227\n  gcd3 A B C = 1 \u2227\n  A ^ x + B ^ y = C ^ z\n\n/--\n**The Beal Conjecture (Primitive Formulation)**:\nFor any strictly positive integers `A, B, C` and exponents `x, y, z \u2265 3`,\nif `A^x + B^y = C^z`, then `gcd(A, B, C) > 1`.\n-/\ndef BealConjecture : Prop :=\n  \u2200 (A B C x y z : \u2115),\n    A > 0 \u2192 B > 0 \u2192 C > 0 \u2192\n    x \u2265 3 \u2192 y \u2265 3 \u2192 z \u2265 3 \u2192\n    A ^ x + B ^ y = C ^ z \u2192\n    gcd3 A B C > 1\n\n/--\n**The Beal Conjecture (Prime Divisor Formulation)**:\nEvery positive integer solution to `A^x + B^y = C^z` with `x, y, z \u2265 3`\nadmits a common prime divisor `p` dividing `A`, `B`, and `C`.\n-/\ndef BealConjecturePrimeForm : Prop :=\n  \u2200 (A B C x y z : \u2115),\n    A > 0 \u2192 B > 0 \u2192 C > 0 \u2192\n    x \u2265 3 \u2192 y \u2265 3 \u2192 z \u2265 3 \u2192\n    A ^ x + B ^ y = C ^ z \u2192\n    \u2203 p : \u2115, Nat.Prime p \u2227 p \u2223 A \u2227 p \u2223 B \u2227 p \u2223 C\n\n/--\nThe Beal Conjecture is logically equivalent to the nonexistence of any Beal counterexample.\n-/\ntheorem beal_iff_no_counterexample :\n    BealConjecture \u2194 \u00ac \u2203 (A B C x y z : \u2115), IsBealCounterexample A B C x y z := by\n  constructor\n  \u00b7 intro h \u27e8A, B, C, x, y, z, hA, hB, hC, hx, hy, hz, hprim, heq\u27e9\n    have hg := h A B C x y z hA hB hC hx hy hz heq\n    rw [hprim] at hg\n    exact Nat.lt_irrefl 1 hg\n  \u00b7 intro h A B C x y z hA hB hC hx hy hz heq\n    by_contra! hle\n    have hgcd_pos : gcd3 A B C > 0 := by\n      unfold gcd3\n      have hC_pos : Nat.gcd B C > 0 := Nat.gcd_pos_of_pos_right B hC\n      exact Nat.gcd_pos_of_pos_right A hC_pos\n    have hgcd1 : gcd3 A B C = 1 := by\n      omega\n    have hce : IsBealCounterexample A B C x y z :=\n      \u27e8hA, hB, hC, hx, hy, hz, hgcd1, heq\u27e9\n    exact h \u27e8A, B, C, x, y, z, hce\u27e9\n\n/--\nA common prime factor exists if and only if the greatest common divisor is strictly greater than 1.\n-/\nlemma gcd3_gt_one_iff_exists_prime (A B C : \u2115) (hA : A > 0) :\n    gcd3 A B C > 1 \u2194 \u2203 p : \u2115, Nat.Prime p \u2227 p \u2223 A \u2227 p \u2223 B \u2227 p \u2223 C := by\n  constructor\n  \u00b7 intro hg\n    obtain \u27e8p, hp, hdvd\u27e9 := Nat.exists_prime_and_dvd (by omega : gcd3 A B C \u2260 1)\n    have hdvdA : p \u2223 A := dvd_trans hdvd (Nat.gcd_dvd_left A (Nat.gcd B C))\n    have hdvdBC : p \u2223 Nat.gcd B C := dvd_trans hdvd (Nat.gcd_dvd_right A (Nat.gcd B C))\n    have hdvdB : p \u2223 B := dvd_trans hdvdBC (Nat.gcd_dvd_left B C)\n    have hdvdC : p \u2223 C := dvd_trans hdvdBC (Nat.gcd_dvd_right B C)\n    exact \u27e8p, hp, hdvdA, hdvdB, hdvdC\u27e9\n  \u00b7 intro \u27e8p, hp, hdA, hdB, hdC\u27e9\n    have hdBC : p \u2223 Nat.gcd B C := Nat.dvd_gcd hdB hdC\n    have hdABC : p \u2223 gcd3 A B C := Nat.dvd_gcd hdA hdBC\n    have hp_pos : p > 1 := Nat.Prime.one_lt hp\n    exact lt_of_lt_of_le hp_pos (Nat.le_of_dvd (by\n      unfold gcd3\n      -- positivity of the three-fold gcd follows from `0 < A` alone; the previous\n      -- argument destructed `hdC` with `rfl`, which substituted `C` away and then\n      -- referred to it, so the file never compiled.\n      exact Nat.gcd_pos_of_pos_left (Nat.gcd B C) hA) hdABC)\n\n/--\nEquivalence between the primitive Beal Conjecture and its prime-divisor formulation.\n-/\ntheorem beal_iff_prime_form :\n    BealConjecture \u2194 BealConjecturePrimeForm := by\n  constructor\n  \u00b7 intro h A B C x y z hA hB hC hx hy hz heq\n    have hg := h A B C x y z hA hB hC hx hy hz heq\n    exact (gcd3_gt_one_iff_exists_prime A B C hA).mp hg\n  \u00b7 intro h A B C x y z hA hB hC hx hy hz heq\n    have \u27e8p, hp, hdA, hdB, hdC\u27e9 := h A B C x y z hA hB hC hx hy hz heq\n    exact (gcd3_gt_one_iff_exists_prime A B C hA).mpr \u27e8p, hp, hdA, hdB, hdC\u27e9\n\n/--\n**Fermat's Last Theorem as a direct corollary of the Beal Conjecture**:\nIf the Beal Conjecture is true, then for any exponent `n \u2265 3`,\nthere are no positive integers `A, B, C` with `gcd(A, B, C) = 1` such that `A^n + B^n = C^n`.\n-/\ntheorem flt_of_beal (h : BealConjecture) (n : \u2115) (hn : n \u2265 3)\n    (A B C : \u2115) (hA : A > 0) (hB : B > 0) (hC : C > 0)\n    (h_prim : gcd3 A B C = 1) :\n    A ^ n + B ^ n \u2260 C ^ n := by\n  intro heq\n  have hg := h A B C n n n hA hB hC hn hn hn heq\n  rw [h_prim] at hg\n  exact Nat.lt_irrefl 1 hg\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.28
+      }
+    },
+    "usage": {
+      "input_tokens": 3007,
+      "output_tokens": 94
+    }
+  }
+}

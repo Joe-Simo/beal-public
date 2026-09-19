@@ -1,0 +1,28 @@
+{
+  "status": "VERIFIED_AUDIT",
+  "milestone": 78,
+  "max_b": 5000,
+  "pairs_tested": 7600457,
+  "non_trivial_solutions_count": 0,
+  "positive_controls": [
+    {
+      "a": 1,
+      "b": 1,
+      "c": 1,
+      "valid": true
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "c": 2,
+      "valid": true,
+      "coprime": false
+    }
+  ],
+  "well_founded_test_magnitudes": [
+    10,
+    100,
+    1000,
+    100000
+  ]
+}

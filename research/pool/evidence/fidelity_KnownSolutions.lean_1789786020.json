@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_KnownSolutions.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: KnownSolutions.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.CounterexampleChecker\n\n/-!\n# Catalogue of Classical Near-Misses and Small-Exponent Solutions\n\nThis module formalizes the classical primitive integer solutions to Generalized Fermat\nEquations $A^x + B^y = C^z$ with hyperbolic or spherical signatures, often termed\n\"near-misses\" to the Beal Conjecture.\n\n## Context\n\nIn the literature of Diophantine equations and the Darmon\u2013Granville program, exactly\n10 non-trivial primitive solutions to $A^x + B^y = C^z$ with $\\chi = 1/x + 1/y + 1/z < 1$\nare known (up to permutation and signs).\n\nA crucial mathematical fact is that **every known non-trivial primitive solution\nhas at least one exponent equal to 2**. Because the Beal Conjecture strictly requires\nall three exponents to satisfy:\n  $$x \\ge 3, \\quad y \\ge 3, \\quad z \\ge 3,$$\nnone of these classical solutions contradict the Beal Conjecture.\n\n## Solutions Formalized:\n1. Catalan family: $1^m + 2^3 = 3^2$ for any $m \\ge 1$ (signature $(m, 3, 2)$).\n2. $2^5 + 7^2 = 3^4$ ($32 + 49 = 81$, signature $(5, 2, 4)$).\n3. $13^2 + 7^3 = 2^9$ ($169 + 343 = 512$, signature $(2, 3, 9)$).\n4. $3^5 + 10^2 = 7^3$ ($243 + 100 = 343$, signature $(5, 2, 3)$).\n5. $43^8 + 96222^3 = 30042907^2$ ($902576261010649$, signature $(8, 3, 2)$).\n\nFor every solution, we prove:\n- The Diophantine equality holds exactly.\n- The bases are mutually coprime ($\\gcd(A, B, C) = 1$).\n- At least one exponent is equal to 2.\n- The tuple is **not** a Beal counterexample (`\u00ac IsBealCounterexample ...`).\n- The Section 8 checker rejects the candidate (`counterexample = false`, `admissible = false`).\n-/\n\nnamespace Beal\n\n/--\nA structure bundling a primitive positive integer solution to a Generalized Fermat Equation\n$A^x + B^y = C^z$.\n-/\nstructure GeneralizedFermatSolution where\n  A : \u2115\n  B : \u2115\n  C : \u2115\n  x : \u2115\n  y : \u2115\n  z : \u2115\n  posA : A > 0\n  posB : B > 0\n  posC : C > 0\n  posx : x > 0\n  posy : y > 0\n  posz : z > 0\n  prim : gcd3 A B C = 1\n  eq : A ^ x + B ^ y = C ^ z\n\n/--\nPredicate that at least one exponent in a Generalized Fermat solution is equal to 2.\n-/\ndef HasExponentTwo (s : GeneralizedFermatSolution) : Prop :=\n  s.x = 2 \u2228 s.y = 2 \u2228 s.z = 2\n\n/--\n**Main Exclusion Theorem**:\nAny Generalized Fermat solution having at least one exponent equal to 2\ncannot be a Beal counterexample.\n-/\ntheorem not_beal_counterexample_of_exponent_two (s : GeneralizedFermatSolution)\n    (h2 : HasExponentTwo s) :\n    \u00ac IsBealCounterexample s.A s.B s.C s.x s.y s.z := by\n  rintro \u27e8_, _, _, hx, hy, hz, _, _\u27e9\n  -- `s.x` is a projection, not a local variable, so it cannot be `subst`ed; name it instead.\n  rcases h2 with h | h | h <;> omega\n\n/-! ### 1. Solution 1: Catalan Family $1^m + 2^3 = 3^2$ -/\n\ntheorem catalan_eq (m : \u2115) (hm : m > 0) : 1 ^ m + 2 ^ 3 = 3 ^ 2 := by\n  have : 1 ^ m = 1 := one_pow m\n  rw [this]\n  decide\n\ntheorem catalan_prim : gcd3 1 2 3 = 1 := by\n  unfold gcd3\n  decide\n\n/--\nThe Catalan family $1^m + 2^3 = 3^2$ does not contradict the Beal Conjecture.\n-/\ntheorem catalan_not_beal (m : \u2115) (hm : m > 0) :\n    \u00ac IsBealCounterexample 1 2 3 m 3 2 := by\n  rintro \u27e8_, _, _, _, _, hz, _, _\u27e9\n  omega\n\n/-! ### 2. Solution 2: $2^5 + 7^2 = 3^4$ (32 + 49 = 81) -/\n\ntheorem sol_2_7_3_eq : 2 ^ 5 + 7 ^ 2 = 3 ^ 4 := by decide\ntheorem sol_2_7_3_prim : gcd3 2 7 3 = 1 := by decide\n\n/--\n$2^5 + 7^2 = 3^4$ bundled as a `GeneralizedFermatSolution`.\n-/\ndef sol_2_7_3 : GeneralizedFermatSolution where\n  A := 2; B := 7; C := 3\n  x := 5; y := 2; z := 4\n  posA := by decide\n  posB := by decide\n  posC := by decide\n  posx := by decide\n  posy := by decide\n  posz := by decide\n  prim := sol_2_7_3_prim\n  eq := sol_2_7_3_eq\n\ntheorem sol_2_7_3_not_beal : \u00ac IsBealCounterexample 2 7 3 5 2 4 := by\n  rintro \u27e8_, _, _, _, hy, _, _, _\u27e9\n  omega\n\ntheorem sol_2_7_3_checker :\n    (checkBealNat 2 7 3 5 2 4).admissible = false \u2227\n    (checkBealNat 2 7 3 5 2 4).equality = true \u2227\n    (checkBealNat 2 7 3 5 2 4).counterexample = false := by\n  decide\n\n/-! ### 3. Solution 3: $13^2 + 7^3 = 2^9$ (169 + 343 = 512) -/\n\ntheorem sol_13_7_2_eq : 13 ^ 2 + 7 ^ 3 = 2 ^ 9 := by decide\ntheorem sol_13_7_2_prim : gcd3 13 7 2 = 1 := by decide\n\n/--\n$13^2 + 7^3 = 2^9$ bundled as a `GeneralizedFermatSolution`.\n-/\ndef sol_13_7_2 : GeneralizedFermatSolution where\n  A := 13; B := 7; C := 2\n  x := 2; y := 3; z := 9\n  posA := by decide\n  posB := by decide\n  posC := by decide\n  posx := by decide\n  posy := by decide\n  posz := by decide\n  prim := sol_13_7_2_prim\n  eq := sol_13_7_2_eq\n\ntheorem sol_13_7_2_not_beal : \u00ac IsBealCounterexample 13 7 2 2 3 9 := by\n  rintro \u27e8_, _, _, hx, _, _, _, _\u27e9\n  omega\n\ntheorem sol_13_7_2_checker :\n    (checkBealNat 13 7 2 2 3 9).admissible = false \u2227\n    (checkBealNat 13 7 2 2 3 9).equality = true \u2227\n    (checkBealNat 13 7 2 2 3 9).counterexample = false := by\n  decide\n\n/-! ### 4. Solution 4: $3^5 + 10^2 = 7^3$ (243 + 100 = 343) -/\n\ntheorem sol_3_10_7_eq : 3 ^ 5 + 10 ^ 2 = 7 ^ 3 := by decide\ntheorem sol_3_10_7_prim : gcd3 3 10 7 = 1 := by decide\n\n/--\n$3^5 + 10^2 = 7^3$ bundled as a `GeneralizedFermatSolution`.\n-/\ndef sol_3_10_7 : GeneralizedFermatSolution where\n  A := 3; B := 10; C := 7\n  x := 5; y := 2; z := 3\n  posA := by decide\n  posB := by decide\n  posC := by decide\n  posx := by decide\n  posy := by decide\n  posz := by decide\n  prim := sol_3_10_7_prim\n  eq := sol_3_10_7_eq\n\ntheorem sol_3_10_7_not_beal : \u00ac IsBealCounterexample 3 10 7 5 2 3 := by\n  rintro \u27e8_, _, _, _, hy, _, _, _\u27e9\n  omega\n\ntheorem sol_3_10_7_checker :\n    (checkBealNat 3 10 7 5 2 3).admissible = false \u2227\n    (checkBealNat 3 10 7 5 2 3).equality = true \u2227\n    (checkBealNat 3 10 7 5 2 3).counterexample = false := by\n  decide\n\n/-! ### 5. Solution 5: $43^8 + 96222^3 = 30042907^2$ (902576261010649) -/\n\ntheorem sol_43_96222_30042907_eq : 43 ^ 8 + 96222 ^ 3 = 30042907 ^ 2 := by decide\ntheorem sol_43_96222_30042907_prim : gcd3 43 96222 30042907 = 1 := by decide\n\n/--\n$43^8 + 96222^3 = 30042907^2$ bundled as a `GeneralizedFermatSolution`.\n-/\ndef sol_43_96222_30042907 : GeneralizedFermatSolution where\n  A := 43; B := 96222; C := 30042907\n  x := 8; y := 3; z := 2\n  posA := by decide\n  posB := by decide\n  posC := by decide\n  posx := by decide\n  posy := by decide\n  posz := by decide\n  prim := sol_43_96222_30042907_prim\n  eq := sol_43_96222_30042907_eq\n\ntheorem sol_43_96222_30042907_not_beal :\n    \u00ac IsBealCounterexample 43 96222 30042907 8 3 2 := by\n  rintro \u27e8_, _, _, _, _, hz, _, _\u27e9\n  omega\n\ntheorem sol_43_96222_30042907_checker :\n    (checkBealNat 43 96222 30042907 8 3 2).admissible = false \u2227\n    (checkBealNat 43 96222 30042907 8 3 2).equality = true \u2227\n    (checkBealNat 43 96222 30042907 8 3 2).counterexample = false := by\n  decide\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.41
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.12
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.22
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.62
+      }
+    },
+    "usage": {
+      "input_tokens": 3921,
+      "output_tokens": 94
+    }
+  }
+}

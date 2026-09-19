@@ -1,0 +1,80 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C251_B",
+  "timestamp": "2026-09-18T18:46:11-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "id": "C251_B",
+    "title": "Lean 4 Unified Signature3 Bounded Solvability Reduction",
+    "desc": "Formalize in Beal.Signature3 the reduction from certified modular certificates to the elimination of counterexamples."
+  },
+  "questions": {
+    "verifiability": {
+      "type": "score",
+      "instructions": "Can this step be executed with 100% exact reproducible verification (Lean 4, exact symbolic arithmetic, or dual-language audit)?",
+      "criteria": [
+        "level 0: unproved or relies on non-rigorous heuristic laundering",
+        "level 1: conditional on unproved Serre / modularity conjectures",
+        "level 2: algorithmically verified with exact computer algebra and cross-language check",
+        "level 3: fully machine-checked theorem in Lean 4 with standard axioms only"
+      ]
+    },
+    "failure_mode_clean": {
+      "type": "noul",
+      "instructions": "Is this step free of residual/isogeny conflation, wrong-field Chabauty, and heuristic laundering?",
+      "criteria": {
+        "true": "Completely clean of the 3 recurring failure modes",
+        "false": "Risks one of the known failure modes"
+      }
+    },
+    "beal_impact": {
+      "type": "choice",
+      "instructions": "What is the primary contribution of this step?",
+      "criteria": {
+        "close_p1000": "Closes the unconditional verification of signature (3, 3, p) up to p = 1000",
+        "lean_synthesis": "Synthesizes all modular elimination results into a unified machine-checked theorem",
+        "asymptotic_boundary": "Addresses the asymptotic Serre bound or higher-genus motivic boundary"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "verifiability": {
+        "type": "score",
+        "score": 1.0,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: unproved or relies on non-rigorous heuristic laundering",
+          "1": "level 1: conditional on unproved Serre / modularity conjectures",
+          "2": "level 2: algorithmically verified with exact computer algebra and cross-language check",
+          "3": "level 3: fully machine-checked theorem in Lean 4 with standard axioms only"
+        },
+        "probabilities": {
+          "0": 0.58,
+          "1": 0.09,
+          "2": 0.07,
+          "3": 0.26
+        }
+      },
+      "failure_mode_clean": {
+        "type": "noul",
+        "noul": 0.37
+      },
+      "beal_impact": {
+        "type": "choice",
+        "choice": "lean_synthesis",
+        "confidence": 0.99,
+        "probabilities": {
+          "asymptotic_boundary": 0.0,
+          "lean_synthesis": 1.0,
+          "close_p1000": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 652,
+      "output_tokens": 90
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "candidate": {
+    "id": "C270_shimura_curve_uniform_descent",
+    "name": "Shimura Curve Uniform Quaternionic Descent",
+    "text": "Candidate: Shimura curves associated to indefinite quaternion algebras over totally real fields. Because Shimura curves have no real points (no cusps), rational points on twisted Shimura curves X_D are empty for all discriminants D > 1, providing a uniform topological obstruction for Beal solutions."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.83
+      },
+      "mathematical_feasibility": {
+        "type": "score",
+        "score": 0.74,
+        "confidence": 0.51,
+        "legend": {
+          "0": "level 0: known mathematical obstruction",
+          "1": "level 1: depends on open conjectures (e.g. general Shimura curve modularity over non-totally real fields)",
+          "2": "level 2: grounded in proved theorems (Darmon 2000, Khare-Wintenberger, Mazur) with concrete lemmas to formalize",
+          "3": "level 3: complete reduction to exact computable certificates"
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.52,
+          "2": 0.09,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "discard",
+        "confidence": 0.8,
+        "probabilities": {
+          "literature_check": 0.15,
+          "park": 0.0,
+          "discard": 0.85,
+          "exact_computation": 0.0,
+          "advance": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 741,
+      "output_tokens": 118
+    }
+  }
+}

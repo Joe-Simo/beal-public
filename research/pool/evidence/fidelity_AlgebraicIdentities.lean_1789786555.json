@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_AlgebraicIdentities.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: AlgebraicIdentities.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Mathlib.Algebra.Ring.Basic\nimport Mathlib.Tactic.Ring\nimport Mathlib.Tactic.LinearCombination\n\n/-!\n# Key Algebraic Lemmas for the Weighted Beal Equation\n\nThis module formalizes key algebraic identities and factorizations underlying\nthe analysis of the weighted Fermat-type equation:\n  $$X^{10} + 256Y^{10} = Z^{17}$$\nassociated with the Beal conjecture program.\n\n## Results Formalized:\n1. **Cyclotomic Splitting over the Golden Ratio Field $\\mathbb{Q}(\\phi)$**:\n   - The 10th cyclotomic polynomial $\\Phi_{10}(T) = T^4 - T^3 + T^2 - T + 1$ splits\n     into quadratic factors over $\\mathbb{Z}[\\phi]$ where $\\phi^2 = \\phi + 1$.\n   - The 5th cyclotomic polynomial $\\Phi_5(T) = T^4 + T^3 + T^2 + T + 1$ splits\n     into quadratic factors over $\\mathbb{Z}[\\phi]$.\n2. **Decic Factorization over $\\mathbb{Q}(\\phi, c)$**:\n   - Factorization of $X^{10} - c^{10}Y^{10}$ into two linear and four quadratic factors.\n   - When $c^{10} = -256$, this establishes the complete algebraic factorization of\n     $X^{10} + 256Y^{10}$ over the field $K = \\mathbb{Q}(\\phi, c)$.\n3. **The U73 Genus-Eight Algebraic Reduction Identity**:\n   - For 5th roots of unity $\\zeta$ satisfying $\\zeta + \\zeta^{-1} = \\phi - 1$,\n     $$4(X + c\\zeta Y)(X + c\\zeta^{-1}Y) = (\\phi + 1)(X + cY)^2 + (3 - \\phi)(X - cY)^2$$\n     which produces the genus-eight curve $(3-\\phi)V^2 = 4U^{17} - \\phi^2$.\n4. **The U73 Rational Coordinate Vanishing Identity**:\n   - Exact vanishing of the degree-10 polynomial $X^{10}(1-V)^{10} + 256Y^{10}(1+V)^{10}$\n     evaluated at $V = (X - cY)/(X + cY)$.\n-/\n\nnamespace Beal\n\nvariable {R : Type*} [CommRing R]\n\n/-! ### 1. Cyclotomic Factorizations over the Golden Ratio -/\n\n/--\nPolynomial identity showing that $\\Phi_{10}(T)$ is factored by\n$(T^2 - \\phi T + 1)(T^2 - \\bar\\phi T + 1)$ up to a multiple of $(\\phi^2 - \\phi - 1)$.\n-/\nlemma phi10_expansion (T phi : R) :\n    (T^2 - phi * T + 1) * (T^2 - (1 - phi) * T + 1) =\n    (T^4 - T^3 + T^2 - T + 1) - T^2 * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe 10th cyclotomic polynomial $\\Phi_{10}(T) = T^4 - T^3 + T^2 - T + 1$ factors\ninto quadratic factors over any ring containing a golden ratio $\\phi^2 = \\phi + 1$.\n-/\ntheorem phi10_factorization (T phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (T^2 - phi * T + 1) * (T^2 - phi_bar * T + 1) = T^4 - T^3 + T^2 - T + 1 := by\n  subst hbar\n  have h := phi10_expansion T phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\n/--\nPolynomial identity showing that $\\Phi_{5}(T)$ is factored by\n$(T^2 + \\phi T + 1)(T^2 + \\bar\\phi T + 1)$ up to a multiple of $(\\phi^2 - \\phi - 1)$.\n-/\nlemma phi5_expansion (T phi : R) :\n    (T^2 + phi * T + 1) * (T^2 + (1 - phi) * T + 1) =\n    (T^4 + T^3 + T^2 + T + 1) - T^2 * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe 5th cyclotomic polynomial $\\Phi_5(T) = T^4 + T^3 + T^2 + T + 1$ factors\ninto quadratic factors over any ring containing a golden ratio $\\phi^2 = \\phi + 1$.\n-/\ntheorem phi5_factorization (T phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (T^2 + phi * T + 1) * (T^2 + phi_bar * T + 1) = T^4 + T^3 + T^2 + T + 1 := by\n  subst hbar\n  have h := phi5_expansion T phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\n/-! ### 2. Quintic and Decic Factorization of $X^{10} + 256Y^{10}$ -/\n\nlemma quintic_split_plus_expansion (X Y c phi : R) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - (1 - phi) * c * X * Y + c^2 * Y^2) =\n    (X^5 + c^5 * Y^5) - X^2 * Y^2 * c^2 * (X + c * Y) * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe quintic factor $X^5 + c^5 Y^5$ splits into one linear and two quadratic factors\nover any commutative ring containing $\\phi$ with $\\phi^2 = \\phi + 1$.\n-/\ntheorem quintic_split_plus (X Y c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - phi_bar * c * X * Y + c^2 * Y^2) =\n    X^5 + c^5 * Y^5 := by\n  subst hbar\n  have h := quintic_split_plus_expansion X Y c phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\nlemma quintic_split_minus_expansion (X Y c phi : R) :\n    (X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + (1 - phi) * c * X * Y + c^2 * Y^2) =\n    (X^5 - c^5 * Y^5) + X^2 * Y^2 * c^2 * (-X + c * Y) * (phi^2 - phi - 1) := by\n  ring\n\n/--\nThe quintic factor $X^5 - c^5 Y^5$ splits into one linear and two quadratic factors\nover any commutative ring containing $\\phi$ with $\\phi^2 = \\phi + 1$.\n-/\ntheorem quintic_split_minus (X Y c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + phi_bar * c * X * Y + c^2 * Y^2) =\n    X^5 - c^5 * Y^5 := by\n  subst hbar\n  have h := quintic_split_minus_expansion X Y c phi\n  have hzero : phi^2 - phi - 1 = 0 := by\n    linear_combination hphi\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\n/--\nComplete decic factorization of $X^{10} - c^{10}Y^{10}$ over $\\mathbb{Q}(\\phi, c)$.\n-/\ntheorem decic_factorization (X Y c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - phi_bar * c * X * Y + c^2 * Y^2) *\n    ((X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + phi_bar * c * X * Y + c^2 * Y^2)) =\n    X^10 - c^10 * Y^10 := by\n  rw [quintic_split_plus X Y c phi phi_bar hphi hbar]\n  rw [quintic_split_minus X Y c phi phi_bar hphi hbar]\n  ring\n\n/--\nWhen $c^{10} = -256$, the weighted expression $X^{10} + 256Y^{10}$ factors into\nthe six exhibited linear and quadratic algebraic factors over $\\mathbb{Q}(\\phi, c)$.\n-/\ntheorem weighted_decic_identity (X Y c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) (hc : c^10 = -256) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - phi_bar * c * X * Y + c^2 * Y^2) *\n    ((X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + phi_bar * c * X * Y + c^2 * Y^2)) =\n    X^10 + 256 * Y^10 := by\n  have hdec := decic_factorization X Y c phi phi_bar hphi hbar\n  rw [hdec]\n  rw [hc]\n  ring\n\n/--\nThe weighted Fermat equation $X^{10} + 256 Y^{10} = Z^{17}$ factored into the algebraic product\nof six degree-1 and degree-2 factors over $\\mathbb{Q}(\\phi, c)$.\n-/\ntheorem weighted_beal_algebraic_factorization (X Y Z c phi phi_bar : R)\n    (hphi : phi^2 = phi + 1) (hbar : phi_bar = 1 - phi) (hc : c^10 = -256)\n    (h_beal : X^10 + 256 * Y^10 = Z^17) :\n    (X + c * Y) * (X^2 - phi * c * X * Y + c^2 * Y^2) * (X^2 - phi_bar * c * X * Y + c^2 * Y^2) *\n    ((X - c * Y) * (X^2 + phi * c * X * Y + c^2 * Y^2) * (X^2 + phi_bar * c * X * Y + c^2 * Y^2)) =\n    Z^17 := by\n  rw [weighted_decic_identity X Y c phi phi_bar hphi hbar hc]\n  exact h_beal\n\n/-! ### 3. The U73 Genus-Eight Reduction Identity -/\n\nlemma u73_genus_eight_expansion (X Y c phi z z_inv : R) :\n    4 * (X + c * z * Y) * (X + c * z_inv * Y) -\n      ((phi + 1) * (X + c * Y)^2 + (3 - phi) * (X - c * Y)^2) =\n    4 * c * X * Y * (z + z_inv - (phi - 1)) + 4 * c^2 * Y^2 * (z * z_inv - 1) := by\n  ring\n\n/--\n**Checkpoint U73 Algebraic Identity**:\nIn any commutative ring containing elements $X, Y, c, \\phi, \\zeta, \\zeta^{-1}$ satisfying:\n- $\\zeta + \\zeta^{-1} = \\phi - 1$\n- $\\zeta \\cdot \\zeta^{-1} = 1$\nThe identity holds:\n  $$4(X + c\\zeta Y)(X + c\\zeta^{-1} Y) = (\\phi + 1)(X + cY)^2 + (3 - \\phi)(X - cY)^2$$\nwhich, upon dividing by $(X+cY)^2$ and setting $V = (X-cY)/(X+cY)$,\nproduces the genus-eight curve equation $(3-\\phi)V^2 = 4U^{17} - \\phi^2$.\n-/\ntheorem u73_genus_eight_identity (X Y c phi zeta zeta_inv : R)\n    (h_sum : zeta + zeta_inv = phi - 1)\n    (h_prod : zeta * zeta_inv = 1) :\n    4 * (X + c * zeta * Y) * (X + c * zeta_inv * Y) =\n      (phi + 1) * (X + c * Y)^2 + (3 - phi) * (X - c * Y)^2 := by\n  -- LHS - RHS = 4cXY * (zeta + zeta_inv - (phi - 1)) + 4c^2Y^2 * (zeta * zeta_inv - 1)\n  linear_combination (4 * c * X * Y) * h_sum + (4 * c ^ 2 * Y ^ 2) * h_prod\n\n/-! ### 4. The U73 Rational Coordinate Vanishing Identity -/\n\nlemma u73_mobius_expansion (X Y c : R) :\n    X^10 * (2 * c * Y)^10 + 256 * Y^10 * (2 * X)^10 =\n    1024 * X^10 * Y^10 * (c^10 + 256) := by\n  ring\n\n/--\n**Checkpoint U73 Rational Coordinate Vanishing**:\nThe degree-10 polynomial $X^{10}(1-V)^{10} + 256 Y^{10}(1+V)^{10}$,\nwhen evaluated at $1 - V = 2cY / (X + cY)$ and $1 + V = 2X / (X + cY)$,\nhas its numerator identically divisible by $c^{10} + 256$, and therefore vanishes\nidentically when $c^{10} = -256$.\n-/\ntheorem u73_mobius_vanishing (X Y c : R) (hc : c^10 = -256) :\n    X^10 * (2 * c * Y)^10 + 256 * Y^10 * (2 * X)^10 = 0 := by\n  have h := u73_mobius_expansion X Y c\n  have hzero : c^10 + 256 = 0 := by\n    linear_combination hc\n  rw [hzero] at h\n  ring_nf at h \u22a2\n  exact h\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.36
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.06
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.67
+      }
+    },
+    "usage": {
+      "input_tokens": 4681,
+      "output_tokens": 94
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_Residual.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: Residual.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# What remains (U139): the residual shape of a Beal counterexample\n\nA kernel-checked account of what is proved and what is left. If any counterexample exists, one\nexists whose exponents lie in `{4} \u222a {odd primes}` and which avoids every family closed\nunconditionally in this repository. Nothing here depends on external hypotheses.\n-/\nimport Beal.Structure\nimport Beal.Necessary\n\nnamespace Beal\n\n/-- The residual shape: exponents reduced to `{4} \u222a {odd primes}`, and the two reduced signatures\nclosed unconditionally here excluded \u2014 `(4,4,4)` (mathlib `not_fermat_42`) and `(3,3,3)` (mathlib FLT\u2083) \u2014\ntogether with the elementary structural facts. Nothing else is claimed. -/\ndef ResidualShape (A B C x y z : \u2115) : Prop :=\n  IsBealCounterexample A B C x y z \u2227\n  Reduced x \u2227 Reduced y \u2227 Reduced z \u2227\n  -- `(4,4,4)` is closed by Fermat (mathlib `not_fermat_42`)\n  \u00ac (x = 4 \u2227 y = 4 \u2227 z = 4) \u2227\n  -- `(3,3,3)` is closed by mathlib's FLT\u2083\n  \u00ac (x = 3 \u2227 y = 3 \u2227 z = 3) \u2227\n  -- exactly one base is even\n  ((A % 2 = 0 \u2227 B % 2 = 1 \u2227 C % 2 = 1) \u2228 (A % 2 = 1 \u2227 B % 2 = 0 \u2227 C % 2 = 1) \u2228\n    (A % 2 = 1 \u2227 B % 2 = 1 \u2227 C % 2 = 0)) \u2227\n  -- if `C` is even then `x, y` are not both `4` (in fact not both even)\n  (C % 2 = 0 \u2192 \u00ac (x = 4 \u2227 y = 4)) \u2227\n  -- no cancellation: `C^z` lies strictly above each term and within a factor 2 of the larger\n  (A ^ x < C ^ z \u2227 B ^ y < C ^ z \u2227 C ^ z \u2264 2 * max (A ^ x) (B ^ y)) \u2227\n  -- the bases are pairwise coprime and distinct\n  Nat.gcd A B = 1 \u2227 Nat.gcd A C = 1 \u2227 Nat.gcd B C = 1 \u2227 A \u2260 B\n\n/-- **What remains.** Any Beal counterexample yields one of residual shape. -/\ntheorem residual_of_counterexample {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    \u2203 A' B' C' x' y' z' : \u2115, ResidualShape A' B' C' x' y' z' := by\n  obtain \u27e8A', B', C', x', y', z', h', hx, hy, hz\u27e9 := reduction h\n  refine \u27e8A', B', C', x', y', z', h', hx, hy, hz, ?_, ?_, exactly_one_even h', ?_,\n    no_cancellation h', gcd_ab_eq_one h', gcd_ac_eq_one h', gcd_bc_eq_one h', fun hAB => not_eq_bases (hAB \u25b8 h')\u27e9\n  \u00b7 rintro \u27e8rfl, rfl, rfl\u27e9\n    exact no_counterexample_of_four_four_even (by norm_num) (by norm_num) (by norm_num) h'\n  \u00b7 rintro \u27e8rfl, rfl, rfl\u27e9\n    exact no_counterexample_of_three_dvd_all (by norm_num) (by norm_num) (by norm_num) h'\n  \u00b7 rintro hC \u27e8rfl, rfl\u27e9\n    exact not_both_exponents_even_of_even_C h' hC \u27e8by norm_num, by norm_num\u27e9\n\n/-- Contrapositive form: to prove Beal it suffices to refute every residual shape. -/\ntheorem beal_of_no_residual (hres : \u2200 A B C x y z : \u2115, \u00ac ResidualShape A B C x y z) :\n    \u2200 A B C x y z : \u2115, \u00ac IsBealCounterexample A B C x y z := by\n  intro A B C x y z h\n  obtain \u27e8A', B', C', x', y', z', hr\u27e9 := residual_of_counterexample h\n  exact hres _ _ _ _ _ _ hr\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.34
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.42
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.3
+      }
+    },
+    "usage": {
+      "input_tokens": 1890,
+      "output_tokens": 94
+    }
+  }
+}

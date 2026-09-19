@@ -1,0 +1,278 @@
+[
+  {
+    "candidate_id": "C386",
+    "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5001, 5100]",
+    "target_discipline": true,
+    "fc_blindness": false,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.29,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 1.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.29,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.06,
+          "sound_no_failure_mode": 0.45999999999999996,
+          "mode_1_residual_conflation": 0.41,
+          "mode_3_heuristic_laundering": 0.07
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.6,
+        "probabilities": {
+          "vacuous": 0.0,
+          "bounded_only": 0.71,
+          "proves_nonexistence": 0.2,
+          "finiteness_only": 0.09
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.78,
+        "probabilities": {
+          "computational_scale": 0.82,
+          "torsion_wild_ramification": 0.05,
+          "unobstructed": 0.01,
+          "selmer_dimension_growth": 0.09,
+          "automorphic_cusp_abundance": 0.02,
+          "continuous_moduli_degeneration": 0.01
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.3,
+        "probabilities": {
+          "advance_kraus_frontier": 0.44,
+          "salvage_proved_sublemmas": 0.16,
+          "refute_and_archive": 0.04,
+          "synthesize_breakthrough": 0.01,
+          "audit_and_isolate_obstruction": 0.35
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C387",
+    "title": "ABSOLUTE PRISMATIC COHOMOLOGY AND F-CRYSTALS OVER Z_p",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.41,
+    "finiteness_profile": "vacuous",
+    "structural_obstruction": "torsion_wild_ramification",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.24
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.41,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.04,
+          "mode_3_heuristic_laundering": 0.55,
+          "mode_1_residual_conflation": 0.13,
+          "sound_no_failure_mode": 0.28
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "vacuous",
+        "confidence": 0.67,
+        "probabilities": {
+          "vacuous": 0.75,
+          "proves_nonexistence": 0.02,
+          "bounded_only": 0.02,
+          "finiteness_only": 0.21
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "torsion_wild_ramification",
+        "confidence": 0.44,
+        "probabilities": {
+          "computational_scale": 0.05,
+          "unobstructed": 0.15,
+          "selmer_dimension_growth": 0.13,
+          "automorphic_cusp_abundance": 0.01,
+          "torsion_wild_ramification": 0.53,
+          "continuous_moduli_degeneration": 0.13
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.62,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.7,
+          "salvage_proved_sublemmas": 0.03,
+          "synthesize_breakthrough": 0.0,
+          "refute_and_archive": 0.26,
+          "advance_kraus_frontier": 0.01
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C388",
+    "title": "MOTIVIC COHOMOLOGY AND BEILINSON REGULATORS OVER SPEC Z",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.52,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "torsion_wild_ramification",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.19
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.52,
+        "probabilities": {
+          "mode_2_chabauty_unbounded_s": 0.07,
+          "mode_1_residual_conflation": 0.03,
+          "sound_no_failure_mode": 0.27,
+          "mode_3_heuristic_laundering": 0.63
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.32,
+        "probabilities": {
+          "finiteness_only": 0.49,
+          "bounded_only": 0.0,
+          "vacuous": 0.38,
+          "proves_nonexistence": 0.13
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "torsion_wild_ramification",
+        "confidence": 0.27,
+        "probabilities": {
+          "computational_scale": 0.06,
+          "continuous_moduli_degeneration": 0.09,
+          "unobstructed": 0.24,
+          "selmer_dimension_growth": 0.21,
+          "automorphic_cusp_abundance": 0.01,
+          "torsion_wild_ramification": 0.39
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.76,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.8,
+          "synthesize_breakthrough": 0.0,
+          "salvage_proved_sublemmas": 0.02,
+          "refute_and_archive": 0.17,
+          "advance_kraus_frontier": 0.01
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C389",
+    "title": "ARITHMETIC TOPOLOGY AND ARITHMETIC CHERN-SIMONS INVARIANTS",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.38,
+    "finiteness_profile": "vacuous",
+    "structural_obstruction": "torsion_wild_ramification",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.38,
+        "probabilities": {
+          "sound_no_failure_mode": 0.24,
+          "mode_2_chabauty_unbounded_s": 0.13,
+          "mode_1_residual_conflation": 0.09,
+          "mode_3_heuristic_laundering": 0.54
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "vacuous",
+        "confidence": 0.3,
+        "probabilities": {
+          "vacuous": 0.47,
+          "finiteness_only": 0.35,
+          "proves_nonexistence": 0.18,
+          "bounded_only": 0.0
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "torsion_wild_ramification",
+        "confidence": 0.15,
+        "probabilities": {
+          "automorphic_cusp_abundance": 0.01,
+          "continuous_moduli_degeneration": 0.13,
+          "selmer_dimension_growth": 0.27,
+          "computational_scale": 0.09,
+          "unobstructed": 0.21,
+          "torsion_wild_ramification": 0.29
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.74,
+        "probabilities": {
+          "refute_and_archive": 0.16,
+          "salvage_proved_sublemmas": 0.04,
+          "synthesize_breakthrough": 0.01,
+          "advance_kraus_frontier": 0.01,
+          "audit_and_isolate_obstruction": 0.78
+        }
+      }
+    }
+  }
+]

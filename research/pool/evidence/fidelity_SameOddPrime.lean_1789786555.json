@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_SameOddPrime.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: SameOddPrime.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Signature `(p, p, r)`, `p` odd: the classical first factorisation step (U145)\n\n`A^p + B^p = (A + B) \u00b7 S` with `S = \u03a3 A^i (\u2212B)^{p\u22121\u2212i}`, and `gcd(A + B, S) \u2223 p`.\nConsequently, for a Beal counterexample of signature `(p, p, r)`, `(A + B) \u00b7 S = C^r` with the two\nfactors coprime unless `p` divides both. Unconditional, no external hypotheses.\n-/\nimport Beal.Structure\nimport Mathlib.Algebra.GeomSum\nimport Mathlib.NumberTheory.Multiplicity\n\nopen Finset\n\nnamespace Beal\n\n/-- The cofactor `S` in `A^p + B^p = (A + B) S`. -/\ndef cofactor (A B : \u2124) (p : \u2115) : \u2124 := \u2211 i \u2208 range p, A ^ i * (-B) ^ (p - 1 - i)\n\n/-- `A^p + B^p = (A + B) \u00b7 S` for odd `p`. -/\ntheorem add_pow_eq_mul_cofactor (A B : \u2124) {p : \u2115} (hp : Odd p) :\n    A ^ p + B ^ p = (A + B) * cofactor A B p := by\n  have h := geom_sum\u2082_mul A (-B) p\n  rw [hp.neg_pow] at h\n  unfold cofactor\n  rw [mul_comm]; linear_combination -h\n\n/-- `S \u2261 p \u00b7 A^{p\u22121}` modulo `A + B`. -/\ntheorem add_dvd_cofactor_sub (A B : \u2124) (p : \u2115) :\n    A + B \u2223 cofactor A B p - p * A ^ (p - 1) := by\n  unfold cofactor\n  have : (p : \u2124) * A ^ (p - 1) = \u2211 i \u2208 range p, A ^ i * A ^ (p - 1 - i) := by\n    rw [Finset.sum_congr rfl (fun i hi => by\n      rw [\u2190 pow_add, Nat.add_sub_cancel' (Nat.le_sub_one_of_lt (Finset.mem_range.mp hi))])]\n    simp\n  rw [this, \u2190 Finset.sum_sub_distrib]\n  refine Finset.dvd_sum fun i _ => ?_\n  rw [\u2190 mul_sub]\n  refine Dvd.dvd.mul_left ?_ _\n  have := sub_dvd_pow_sub_pow (-B) A (p - 1 - i)\n  have e : -B - A = -(A + B) := by ring\n  rw [e, neg_dvd] at this\n  exact this\n\n/-- **Key lemma.** For coprime `A, B` and any prime `p`, every common divisor of `A + B` and `S`\ndivides `p`. -/\ntheorem gcd_add_cofactor_dvd_prime {A B : \u2124} (hab : IsCoprime A B) {p : \u2115} (hp : p.Prime)\n    {g : \u2124} (h1 : g \u2223 A + B) (h2 : g \u2223 cofactor A B p) : g \u2223 (p : \u2124) := by\n  have h3 : g \u2223 (p : \u2124) * A ^ (p - 1) := by\n    have := dvd_sub h2 (h1.trans (add_dvd_cofactor_sub A B p))\n    simpa using this\n  -- `g` is coprime to `A`: a common prime would divide `B = (A + B) \u2212 A`\n  have hgA : IsCoprime g A := by\n    have hA : IsCoprime A (A + B) := by\n      have := hab.add_mul_left_right 1; rw [add_comm]; simpa using this\n    exact hA.symm.of_isCoprime_of_dvd_left h1\n  exact (hgA.pow_right).dvd_of_dvd_mul_right h3\n\n/-- **Signature `(p, p, r)` structure.** In a Beal counterexample with `x = y = p` prime and\n`z = r`, we have `(A + B) \u00b7 S = C^r` and every common divisor of the two factors divides `p`. -/\ntheorem ppr_factorisation {A B C p r : \u2115} (hp : p.Prime) (hodd : Odd p)\n    (h : IsBealCounterexample A B C p p r) :\n    ((A : \u2124) + B) * cofactor A B p = (C : \u2124) ^ r \u2227\n    \u2200 g : \u2124, g \u2223 (A : \u2124) + B \u2192 g \u2223 cofactor A B p \u2192 g \u2223 (p : \u2124) := by\n  have hab : Nat.Coprime A B := gcd_ab_eq_one h\n  obtain \u27e8_, _, _, _, _, _, _, heq\u27e9 := h\n  refine \u27e8?_, fun g h1 h2 => gcd_add_cofactor_dvd_prime (Nat.isCoprime_iff_coprime.mpr hab) hp h1 h2\u27e9\n  rw [\u2190 add_pow_eq_mul_cofactor _ _ hodd]\n  exact_mod_cast heq\n\nend Beal\n\nnamespace Beal\n\n/-- The cofactor over `\u2115`: `(A^p + B^p) / (A + B)`. -/\ndef cofactorNat (A B p : \u2115) : \u2115 := (A ^ p + B ^ p) / (A + B)\n\ntheorem cofactorNat_mul {A B p : \u2115} (hodd : Odd p) (hA : 0 < A) :\n    (A + B) * cofactorNat A B p = A ^ p + B ^ p := by\n  unfold cofactorNat\n  refine Nat.mul_div_cancel' ?_\n  have h := add_pow_eq_mul_cofactor (A : \u2124) (B : \u2124) hodd\n  have hd : ((A : \u2124) + B) \u2223 (A : \u2124) ^ p + B ^ p := \u27e8_, h\u27e9\n  exact_mod_cast hd\n\ntheorem cofactorNat_cast {A B p : \u2115} (hodd : Odd p) (hA : 0 < A) :\n    (cofactorNat A B p : \u2124) = cofactor A B p := by\n  have h1 := cofactorNat_mul (A := A) (B := B) hodd hA\n  have h2 := add_pow_eq_mul_cofactor (A : \u2124) (B : \u2124) hodd\n  have hpos : (0 : \u2124) < (A : \u2124) + B := by positivity\n  have : ((A : \u2124) + B) * (cofactorNat A B p : \u2124) = ((A : \u2124) + B) * cofactor A B p := by\n    rw [\u2190 h2]; exact_mod_cast h1\n  exact mul_left_cancel\u2080 hpos.ne' this\n\n/-- **Coprime branch of `(p, p, r)`.** If `p \u2224 A + B` then `A + B` and the cofactor are coprime and\nboth are `r`-th powers. -/\ntheorem ppr_coprime_branch {A B C p r : \u2115} (hp : p.Prime) (hodd : Odd p)\n    (h : IsBealCounterexample A B C p p r) (hnd : \u00ac p \u2223 A + B) :\n    \u2203 d e : \u2115, A + B = d ^ r \u2227 cofactorNat A B p = e ^ r := by\n  have hab : Nat.Coprime A B := gcd_ab_eq_one h\n  obtain \u27e8hA, hB, hC, _, _, _, _, heq\u27e9 := h\n  have hmul : (A + B) * cofactorNat A B p = C ^ r := by rw [cofactorNat_mul hodd hA]; exact heq\n  have hcop : Nat.Coprime (A + B) (cofactorNat A B p) := by\n    rw [Nat.coprime_iff_gcd_eq_one, Nat.eq_one_iff_not_exists_prime_dvd]\n    rintro q hq hdvd\n    have h1 : q \u2223 A + B := hdvd.trans (Nat.gcd_dvd_left _ _)\n    have h2 : q \u2223 cofactorNat A B p := hdvd.trans (Nat.gcd_dvd_right _ _)\n    have h1' : (q : \u2124) \u2223 (A : \u2124) + B := by exact_mod_cast h1\n    have h2' : (q : \u2124) \u2223 cofactor A B p := by\n      rw [\u2190 cofactorNat_cast hodd hA]; exact_mod_cast h2\n    have h3 : (q : \u2124) \u2223 (p : \u2124) :=\n      gcd_add_cofactor_dvd_prime (Nat.isCoprime_iff_coprime.mpr hab) hp h1' h2'\n    have h4 : q \u2223 p := by exact_mod_cast h3\n    have : q = p := (Nat.prime_dvd_prime_iff_eq hq hp).mp h4\n    subst this\n    exact hnd h1\n  have hu : IsUnit (gcd (A + B) (cofactorNat A B p)) := by\n    rw [Nat.isUnit_iff]; exact hcop\n  obtain \u27e8d, hd\u27e9 := exists_eq_pow_of_mul_eq_pow hu hmul\n  have hu' : IsUnit (gcd (cofactorNat A B p) (A + B)) := by\n    rw [Nat.isUnit_iff]; exact hcop.symm\n  have hmul' : cofactorNat A B p * (A + B) = C ^ r := by rw [mul_comm]; exact hmul\n  obtain \u27e8e, he\u27e9 := exists_eq_pow_of_mul_eq_pow hu' hmul'\n  exact \u27e8d, e, hd, he\u27e9\n\nend Beal\n\nnamespace Beal\n\n/-- **p-adic branch of `(p, p, r)` (Lifting the Exponent).** If `p \u2223 A + B` then\n`v_p(A + B) + 1 = r \u00b7 v_p(C)` and the cofactor has `v_p = 1` exactly. -/\ntheorem ppr_padic_branch {A B C p r : \u2115} (hp : p.Prime) (hodd : Odd p)\n    (h : IsBealCounterexample A B C p p r) (hd : p \u2223 A + B) :\n    padicValNat p (A + B) + 1 = r * padicValNat p C \u2227 padicValNat p (cofactorNat A B p) = 1 := by\n  haveI := Fact.mk hp\n  have hab : Nat.Coprime A B := gcd_ab_eq_one h\n  obtain \u27e8hA, hB, hC, _, _, _, _, heq\u27e9 := h\n  have hpA : \u00ac p \u2223 A := by\n    intro hpa\n    have hpb : p \u2223 B := (Nat.dvd_add_right hpa).mp hd\n    have := Nat.dvd_gcd hpa hpb\n    rw [hab] at this\n    exact hp.one_lt.ne' (Nat.dvd_one.mp this)\n  have hlte : padicValNat p (A ^ p + B ^ p) = padicValNat p (A + B) + padicValNat p p :=\n    padicValNat.pow_add_pow hodd hd hpA hodd\n  rw [padicValNat_self, heq, padicValNat.pow _ hC.ne'] at hlte\n  refine \u27e8hlte.symm, ?_\u27e9\n  have hmul := cofactorNat_mul (A := A) (B := B) hodd hA\n  have hS0 : cofactorNat A B p \u2260 0 := by\n    intro h0; rw [h0, mul_zero] at hmul\n    have : 0 < A ^ p + B ^ p := by positivity\n    omega\n  have hv : padicValNat p ((A + B) * cofactorNat A B p) =\n      padicValNat p (A + B) + padicValNat p (cofactorNat A B p) :=\n    padicValNat.mul (by omega) hS0\n  rw [hmul, heq, padicValNat.pow _ hC.ne'] at hv\n  omega\n\nend Beal\n\nnamespace Beal\n\n/-- **Dichotomy for `(p, p, r)`.** Either `p \u2224 A + B` and both `A + B`, `S` are `r`-th powers, or\n`p \u2223 A + B` with `v_p(A + B) + 1 = r \u00b7 v_p(C)` and `v_p(S) = 1`. -/\ntheorem ppr_dichotomy {A B C p r : \u2115} (hp : p.Prime) (hodd : Odd p)\n    (h : IsBealCounterexample A B C p p r) :\n    (\u00ac p \u2223 A + B \u2227 \u2203 d e : \u2115, A + B = d ^ r \u2227 cofactorNat A B p = e ^ r) \u2228\n    (p \u2223 A + B \u2227 padicValNat p (A + B) + 1 = r * padicValNat p C \u2227\n      padicValNat p (cofactorNat A B p) = 1) := by\n  by_cases hd : p \u2223 A + B\n  \u00b7 exact Or.inr \u27e8hd, ppr_padic_branch hp hodd h hd\u27e9\n  \u00b7 exact Or.inl \u27e8hd, ppr_coprime_branch hp hodd h hd\u27e9\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.6
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.31
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.74
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.38
+      }
+    },
+    "usage": {
+      "input_tokens": 3980,
+      "output_tokens": 94
+    }
+  }
+}

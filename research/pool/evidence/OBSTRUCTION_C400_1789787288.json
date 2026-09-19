@@ -1,0 +1,81 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "OBSTRUCTION_C400",
+  "timestamp": "2026-09-18T23:08:08-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent.",
+    "candidate_id": "C400",
+    "title": "ALGEBRAIC & TRANSCENDENTAL BRAUER-MANIN OBSTRUCTIONS ON FERMAT HYPERSURFACES",
+    "claim": "The Brauer group Br(X) / Br(Q) of the generalized Fermat hypersurface X: A^x + B^y = C^z over Q creates an unramified Brauer-Manin obstruction to integral points.",
+    "method": "Brauer-Manin obstruction (Manin, Colliot-Thelene, Skorobogatov), unramified cohomology H^2_{nr}(X, G_m), quaternion algebras.",
+    "failure_reason": "For smooth projective hypersurfaces X in P^n of dimension >= 2, the Picard group Pic(X_bar) = Z H by the Lefschetz hyperplane theorem, so the algebraic Brauer group Br_1(X) / Br(Q) = 0; transcendental Brauer classes are torsion and invariant under scaling gcd(A, B, C) > 1 (Failure Mode 1)."
+  },
+  "questions": {
+    "failure_level": {
+      "type": "choice",
+      "instructions": "At what mathematical level does this approach fundamentally fail?",
+      "criteria": {
+        "representation_theoretic": "Mod-p Galois representations cannot be distinguished from target modular forms.",
+        "geometric_moduli": "The moduli space has cusps or positive dimension where heights cannot be bounded.",
+        "cohomological_dimension": "Cohomology or Selmer dimension grows uncontrollably with ramification |S|.",
+        "topological_invariance": "The topological invariant is blind to integer coordinates and Fermat-Catalan solutions.",
+        "computational_exhaustion": "The theoretical approach is sound but infinite cases cannot be covered finitely."
+      }
+    },
+    "bypassable": {
+      "type": "noul",
+      "instructions": "Is there any plausible mathematical modification that bypasses this obstruction without changing the core framework?",
+      "criteria": {
+        "true": "Yes, a known variant or refined invariant can bypass this obstruction.",
+        "false": "No, the obstruction is intrinsic to the foundational category/machinery used."
+      }
+    },
+    "salvageable_core": {
+      "type": "choice",
+      "instructions": "What component of this candidate should be preserved in the research ledger?",
+      "criteria": {
+        "local_frobenius_traces": "Exact local traces, conductor calculations, and Hecke eigenvalues.",
+        "cohomological_vanishing": "Explicit vanishing theorems or rank bounds for specific auxiliary fields.",
+        "height_inequalities": "Bounded Arakelov or Faltings height estimates.",
+        "negative_certificate": "Rigorous proof that this entire mathematical category cannot resolve Beal."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "failure_level": {
+        "type": "choice",
+        "choice": "topological_invariance",
+        "confidence": 0.68,
+        "probabilities": {
+          "topological_invariance": 0.75,
+          "cohomological_dimension": 0.22,
+          "geometric_moduli": 0.03,
+          "representation_theoretic": 0.0,
+          "computational_exhaustion": 0.0
+        }
+      },
+      "bypassable": {
+        "type": "noul",
+        "noul": 0.45
+      },
+      "salvageable_core": {
+        "type": "choice",
+        "choice": "negative_certificate",
+        "confidence": 0.82,
+        "probabilities": {
+          "cohomological_vanishing": 0.13,
+          "local_frobenius_traces": 0.0,
+          "negative_certificate": 0.87,
+          "height_inequalities": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1039,
+      "output_tokens": 164
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C281_C285",
+  "timestamp": "2026-09-18T19:26:29-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no solutions. Audit has shown three recurring failure modes in this project: conflating a residual mod-p congruence with an isogeny or l-adic statement; using a Chabauty rank bound over a base field to conclude about points of higher degree; and relabelling a GRH-conditional or heuristic result as unconditional.",
+    "candidate_A": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C281",
+      "claim": "DARMON RIGID LOCAL SYSTEMS: Construct rigid local systems on P^1 \\ {0, 1, \\infty} with monodromy in triangle groups Delta(p, q, r) to attach compatible systems of l-adic representations across all three independent exponents.",
+      "method": "Rigid local systems, Katz algorithm, hypergeometric motives, triangle group representations",
+      "status": "ACTIVE"
+    },
+    "candidate_B": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C285",
+      "claim": "KRAUS SIEVE EXTENSION TO p IN [2101, 2200]: Algorithmic Kraus sieve with auxiliary primes q = 2kp + 1 eliminates all non-trivial primitive solutions to A^3 + B^3 = C^p for all primes p in [2101, 2200].",
+      "method": "Kraus sieve, Frey curve Frey-Hellegouarch, Serre level lowering to N=72, auxiliary prime quadratic twists",
+      "status": "ACTIVE"
+    }
+  },
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two research candidates mathematically COMPATIBLE, in the sense that the objects, fields, exponents and equations they concern are the same or are related by a reduction that the project has already proved?",
+      "criteria": {
+        "true": "they concern the same equation, signature, curve or field, or one supplies an input the other consumes",
+        "false": "they concern unrelated equations, signatures or methods, so no joint statement could be formed without inventing a new reduction"
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "If these two candidates were combined into a single line of attack, how much would the combination accomplish beyond what the better of the two accomplishes alone?",
+      "criteria": [
+        "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+        "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+        "level 2: one candidate discharges a specific open obligation recorded in the other",
+        "level 3: the combination closes a case or an infinite family that neither one closes alone"
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Would these two candidates FAIL FOR THE SAME REASON, so that combining them adds no diversity of failure mechanism and a single obstruction would defeat both?",
+      "criteria": {
+        "true": "both depend on the same blocked step, the same unverified citation, or the same one of the three recorded failure modes",
+        "false": "they would fail for different reasons, so each provides genuine independent information"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 0.52,
+        "confidence": 0.48,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.65,
+          "1": 0.22,
+          "2": 0.08,
+          "3": 0.05
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.23
+      }
+    },
+    "usage": {
+      "input_tokens": 1115,
+      "output_tokens": 53
+    }
+  }
+}

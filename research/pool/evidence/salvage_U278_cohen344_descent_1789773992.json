@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U278_cohen344_descent",
+  "timestamp": "2026-09-18T19:26:32-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U278_cohen344_descent.md",
+    "excerpt": "> **[U314/U315 UPDATE \u2014 2026-09-18]**\n>\n> 1. The **same-parity branch is now fully machine-checked** with no prose step:\n>    `Beal.three_four_four_same_parity` in `formal/Beal/ThreeFourFour.lean`, axioms\n>    `[propext, Classical.choice, Quot.sound]`, sole external input mathlib's `fermatLastTheoremThree`.\n>\n> 2. **The elliptic-Chabauty reduction below is SUPERSEDED.** The opposite-parity branch does not\n>    need it. When exactly one of `B, C` is even, all three factors of `A\u00b3 = (C\u2212B)(C+B)(C\u00b2+B\u00b2)` are\n>    **odd**, hence pairwise coprime and each a cube outright; the identity\n>    `(C\u2212B)\u00b2 + (C+B)\u00b2 = 2(C\u00b2+B\u00b2)` turns the branch into **Euler's equation** `a\u00b3 + b\u00b3 = 2c\u00b3`. The\n>    reduction is machine-checked as `Beal.opposite_parity_reduction`. The Mordell-curve work below\n>    (rank 1, generator `(13,35)`, the `120 \u2223 n` sieve) is correct and preserved \u2014 it is simply not\n>    needed. Recorded as pool C172.\n>\n> **Still open:** Euler's theorem is not in mathlib, so the opposite-parity branch is reduced, not\n> closed. And by C157 none of this reaches Beal's open core.\n\n# U271\u2013U278: the `(3,4,4)` input, reduced\n\n**Beal's conjecture is not solved, and nothing here closes `(3,4,4)`.** This records an explicit\nreduction of the one unauditable component of the open-core statement, together with everything\ncomputed about it.\n\n## Why this input\n\n`final_residual` (the theorem stating what remains open) takes thirteen named hypotheses. Twelve\nwere audited faithful against primary sources (C100, C104). The thirteenth, `InstanceRows`, has a\ncomponent `cohen344` \u2014 the claim that `A\u00b3 + B\u2074 = C\u2074` has no coprime positive solution \u2014 attributed\nto Cohen, *Number Theory II*, Prop. 14.6.6. That book is not available at zero budget, so the\nclaim was **unaudited** (C142). Rather than leave it, the input was attacked directly.\n\n## The descent (C143)\n\n`A\u00b3 = C\u2074 \u2212 B\u2074 = (C\u2212B)(C+B)(C\u00b2+B\u00b2)`. With `gcd(B,C)=1` and `B, C` of **opposite parity** the three\nfactors are pairwise coprime, so each is a cube:\n$$C-B=r^3,\\qquad C+B=s^3,\\qquad C^2+B^2=t^3,\\qquad rst=A .$$\nThen `2C = r\u00b3+s\u00b3`, `2B = s\u00b3\u2212r\u00b3`, and substituting into `C\u00b2+B\u00b2=t\u00b3`:\n$$\\frac{(r^3+s^3)^2+(s^3-r^3)^2}{4}=\\frac{r^6+s^6}{2}=t^3 \\quad\\Longrightarrow\\quad r^6+s^6=2t^3 ,$$\nverified symbolically. So this branch is signature `(6,6,3)` **with coefficient 2** \u2014 not covered\nby any row held in `references/U130/`.\n\n## Reduction to one form (C144)\n\n`r\u2076+s\u2076 = (r\u00b2+s\u00b2)(r\u2074\u2212r\u00b2s\u00b2+s\u2074)`, the second factor odd, gcd dividing 3. On the branch where 3 does\nnot divide: `r\u00b2+s\u00b2 = 2u\u00b3` and `r\u2074\u2212r\u00b2s\u00b2+s\u2074 = v\u00b3`. With `p=(r+s)/2`, `q=(r\u2212s)/2` this gives\n`p\u00b2+q\u00b2 = u\u00b3` \u2014 **exactly `GaussianCubeStep`, which is proved in `formal/Beal/GaussianCube.lean`**,\nnot assumed. Hence `p = a(a\u00b2\u22123b\u00b2)`, `q = b(3a\u00b2\u2212b\u00b2)`, so\n$$r=a^3+3a^2b-3ab^2-b^3,\\qquad s=a^3-3a^2b-3ab^2+b^3,$$\nand the branch reduces to: the degree-12 form\n$$W(a,b)=a^{12}+114a^{10}b^2-705a^8b^4+1436a^6b^6-705a^4b^8+114a^2b^{10}+b^{12}$$\nis never a non-trivial cube. Exact search `|a|,|b| \u2264 60`: four hits, all with `|r|=|s|=1`.\n\n## What does not work (C145)\n\nNo congruence closes it. At `m = 7, 9, 13, 19, 27, 31, 37, 43, 63, 133` the admissible values of\n`W` always meet the cube residues. `W = v\u00b3` is a genuine Thue-type equation and will not yield to\na residue obstruction.\n\n## The field (C146)\n\n`W` is **irreducible over \u211a**. Substituting `X = a\u00b2/b\u00b2` gives `p(X) = X\u2076+114X\u2075\u2212705X\u2074+1436X\u00b3\n\u2212705X\u00b2+114X+1`, irreducible, discriminant `2\u2076\u00b2\u00b73\u00b9\u00b9`. It is palindromic, so `Z = X+1/X` reduces it\nto `Z\u00b3+114Z\u00b2\u2212708Z+1208`, whose real root is exactly `\u221238 \u2212 28\u00b73^{1/3} \u2212 20\u00b73^{2/3}`. The natural\nfield is the pure cubic `\u211a(3^{1/3})`.\n\n## What does work (C147\u2013C149)\n\n* **PARI's Thue solver reaches this form.** `thue` is complete for each fixed right-hand side;\n  over all cubes `w\u00b3`, `w \u2264 60`, there are 32 solutions in total and **none** with `u, v` both\n  nonzero coprime squares.\n* **The branch is effectively finite.** Dehomogenised at `v=1` it is the superelliptic curve\n  `w\u00b3 = p(u)`, `p` squarefree of degree 6, genus 4. Integral points on `y\u00b3=f(x)` with `f`\n  squarefree of degree \u2265 3 are effectively bounded (Baker; LeVeque). Direct scan `|u| \u2264 20000`:\n  exactly two integral points, `(0,1)` and `(3,16)` with `p(3)=4096=16\u00b3`, and **neither is\n  admissible** since `3` is not a square.\n* **The descent obstruction is absent.** `\u211a(3^{1/3})`: discriminant `\u2212243`, class number 1, unit\n  rank 1. The sextic field: discriminant `2\u2076\u00b73\u00b9\u00b9`, **class number 1**, signature `[2,2]`, unit\n  rank 3, regulator `38.994\u2026`. Since `3 \u2224 h`, the ideal `(u \u2212 \u03b8v)` is a cube outright and\n  `u \u2212 \u03b8v = \u03b5\u00b7\u03b3\u00b3` with `\u03b5` in a finite set of cube cosets.\n\n## The other two branches, resolved (C151, C152)\n\n* **Same parity** (`B, C` both odd) \u2014 **closed unconditionally by FLT3**. `v\u2082(C\u00b2+B\u00b2)=1`; exactly\n  one of `C\u2213B` has `v\u2082=1`, the other `v\u2082=k\u22652`; `3 \u2223 k+2` forces `k \u2261 1 (mod 3)`, so `4^{k-1}` is a\n  cube; the three odd parts are pairwise coprime hence cubes; substituting gives\n  `(\u03bc\u00b2)\u00b3 + (\u03bb\u03bd\u00b2)\u00b3 = \u03c4\u00b3`, impossible. Closing step mach"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.27,
+        "confidence": 0.68,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.6799999999999999,
+          "3": 0.3
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.87
+      }
+    },
+    "usage": {
+      "input_tokens": 2590,
+      "output_tokens": 42
+    }
+  }
+}

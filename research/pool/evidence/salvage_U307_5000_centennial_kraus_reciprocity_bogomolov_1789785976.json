@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U307_5000_centennial_kraus_reciprocity_bogomolov",
+  "timestamp": "2026-09-18T22:46:16-0400",
+  "model": "jev-latest",
+  "request_state": "Checkpoint: U307_5000_centennial_kraus_reciprocity_bogomolov.md\n\nContent excerpt:\n# Checkpoint U307: The 5000 Centennial Milestone, Universal Reciprocity, Relative Character Varieties, and Mixed Characteristic Bogomolov\n\n# We have not solved Beal's conjecture yet.\nWe have achieved the **5000 Centennial Milestone**, completely eliminating all prime exponents up to $p = 5000$ for signature $(3, 3, p)$ across 198 verified audit milestones in Python, PARI/GP, and Lean 4. Rigorous mathematical audits establish that universal non-abelian reciprocity fails due to continuous moduli deformation and Arthur trace formula cusp form abundance, relative character varieties face Selmer dimension blowup, and mixed characteristic Bogomolov is mathematically equivalent to the unproved ABC conjecture (Heuristic Laundering, Failure Mode 3). Next, we will audit candidate mechanisms in higher algebraic K-theory, absolute prismatic cohomology, and initiate the post-5000 signature $(3, 3, p)$ program.\n\n---\n\n## 1. Executive Summary & Verification State\n\n- **Master Test Suite (`code/verify_all_milestones.py`)**: Expanded to **198 passing milestones**.\n  - **Milestone 196**: Extended Kraus Sieve Modular Elimination for Signature $(3, 3, p)$ across $p \\in [4901, 5000]$ (`code/U428_kraus_sieve_p4901_p5000.py`).\n  - **Milestone 197**: Independent PARI/GP Audit of Kraus Sieve Fourier Traces for $p \\in [4901, 5000]$ (`code/U429_gp_kraus_audit.gp`).\n  - **Milestone 198**: Mathematical Audit of Non-Abelian Reciprocity, Relative Character Varieties & Mixed Bogomolov (`code/U430_reciprocity_",
+  "questions": {
+    "has_proved_lemma": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain a genuinely proved, self-contained lemma (exact computation, algebraic identity, or certified sieve)?",
+      "criteria": [
+        "level 0: No self-contained proofs; entirely conditional on conjectures or citations.",
+        "level 1: Routine verification checks with no independent mathematical lemma.",
+        "level 2: Self-contained exact algebraic identity, certified modular traces, or defect bounds.",
+        "level 3: Deep self-contained mathematical classification or Lean 4 formalized theorem."
+      ]
+    },
+    "reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does the checkpoint contain an extracted lemma that remains valid and reusable even if Beal remains open?",
+      "criteria": {
+        "true": "Yes, contains reusable algebraic identities, sieve certificates, or obstruction classifications.",
+        "false": "No, entirely tied to speculative headline claims."
+      }
+    },
+    "salvage_action": {
+      "type": "choice",
+      "instructions": "What is the recommended salvage action for this checkpoint?",
+      "criteria": {
+        "extract_lemma": "Formally extract the proved lemma into the Lean 4 or Python core library.",
+        "maintain_cert": "Maintain as an exact empirical verification milestone certificate.",
+        "retire_unconditional": "Retire headline claims while preserving failure analysis.",
+        "none": "No substantive content to salvage."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_lemma": {
+        "type": "score",
+        "score": 0.6,
+        "confidence": 0.52,
+        "legend": {
+          "0": "level 0: No self-contained proofs; entirely conditional on conjectures or citations.",
+          "1": "level 1: Routine verification checks with no independent mathematical lemma.",
+          "2": "level 2: Self-contained exact algebraic identity, certified modular traces, or defect bounds.",
+          "3": "level 3: Deep self-contained mathematical classification or Lean 4 formalized theorem."
+        },
+        "probabilities": {
+          "0": 0.44,
+          "1": 0.52,
+          "2": 0.03,
+          "3": 0.01
+        }
+      },
+      "reusable_lemma": {
+        "type": "noul",
+        "noul": 0.44
+      },
+      "salvage_action": {
+        "type": "choice",
+        "choice": "retire_unconditional",
+        "confidence": 0.78,
+        "probabilities": {
+          "maintain_cert": 0.12,
+          "extract_lemma": 0.04,
+          "retire_unconditional": 0.83,
+          "none": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1074,
+      "output_tokens": 102
+    }
+  }
+}

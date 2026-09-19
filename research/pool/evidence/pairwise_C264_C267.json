@@ -1,0 +1,40 @@
+{
+  "pair": [
+    "C264",
+    "C267"
+  ],
+  "jev": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 1.46,
+        "confidence": 0.34,
+        "legend": {
+          "0": "level 0: nothing; the combination is just the stronger candidate restated, or they are incompatible",
+          "1": "level 1: the combination tidies bookkeeping but resolves no obligation that either one leaves open",
+          "2": "level 2: one candidate discharges a specific open obligation recorded in the other",
+          "3": "level 3: the combination closes a case or an infinite family that neither one closes alone"
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.25,
+          "2": 0.52,
+          "3": 0.06
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.25
+      }
+    },
+    "usage": {
+      "input_tokens": 752,
+      "output_tokens": 53
+    }
+  }
+}

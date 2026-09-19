@@ -125,12 +125,26 @@ def load_pool() -> list[dict]:
 
 
 def rank(candidates: list[dict], pool: list[dict]) -> list[dict]:
+    # Summarize failed and blocked routes compactly so Jev stays well within token limits
     summary = [
-        {"id": c["id"], "claim": c["claim"], "method": c.get("method"), "status": c.get("status"),
-         "failure_reason": c.get("failure_reason")}
-        for c in pool
+        {"id": c["id"], "claim": c["claim"][:100], "method": (c.get("method") or "")[:80],
+         "status": c.get("status"), "failure_reason": (c.get("failure_reason") or "")[:100]}
+        for c in pool if c.get("status") in ("REFUTED", "BLOCKED")
+    ][:35]
+    states = [
+        {
+            "conjecture": CONJECTURE,
+            "candidate": {
+                "id": c["id"],
+                "claim": c["claim"],
+                "method": c.get("method"),
+                "status": c.get("status"),
+                "obligations": c.get("obligations"),
+            },
+            "existing_pool": summary,
+        }
+        for c in candidates
     ]
-    states = [{"conjecture": CONJECTURE, "candidate": c, "existing_pool": summary} for c in candidates]
     responses = jev.ask_many(states, QUESTIONS)
     rows = []
     for cand, state, resp in zip(candidates, states, responses):

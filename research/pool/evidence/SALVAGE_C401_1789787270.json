@@ -1,0 +1,85 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C401",
+  "timestamp": "2026-09-18T23:07:50-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C401",
+    "candidate": {
+      "id": "C401",
+      "title": "TOPOLOGICAL HOCHSCHILD & CYCLOTOMIC TRACE MAPS OVER THE SPHERE SPECTRUM",
+      "claim": "The cyclotomic trace trc: K_1(Z[1/6]) -> TC_1(Z[1/6]) in spectral algebraic geometry kills primitive Beal solutions via Bott-inverted motivic homotopy.",
+      "method": "Topological Hochschild homology (THH), topological cyclic homology (TC), cyclotomic trace, and higher algebra over the sphere spectrum S.",
+      "status": "BLOCKED",
+      "category": "unifying_modular_motivic_geometry",
+      "parents": [
+        "C387",
+        "C391"
+      ],
+      "inspirations": [
+        "Bokstedt-Hsiang-Madsen 1993",
+        "Lurie Higher Algebra"
+      ],
+      "evidence": [
+        "U449_higgs_brauer_tc_audit.py"
+      ],
+      "obligations": [
+        "Audit whether topological cyclic homology can detect discrete naive integer heights."
+      ],
+      "evaluations": {
+        "category": "unifying_modular_motivic_geometry"
+      },
+      "failure_reason": "K-theory and TC of rings of integers are finitely generated abelian groups whose higher groups K_n(Z[1/6]) are finite torsion for n >= 1 (except K_0 = Z); discrete height growth and coprime integers cannot be detected by torsion homotopy groups (Failure Mode 3).",
+      "novelty_note": "Analyzes cyclotomic trace and TC(Z[1/6]) over the sphere spectrum.",
+      "extracted": [
+        "K_n(Z[1/6]) is finite torsion for n >= 1; topological cyclic homology computes algebraic K-theory but cannot detect coordinate heights."
+      ]
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.24
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "none",
+        "confidence": 0.82,
+        "probabilities": {
+          "modular_trace_congruence": 0.01,
+          "galois_inertia_weight": 0.0,
+          "none": 0.85,
+          "height_positivity": 0.01,
+          "cohomology_dimension_bound": 0.13
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 986,
+      "output_tokens": 93
+    }
+  }
+}

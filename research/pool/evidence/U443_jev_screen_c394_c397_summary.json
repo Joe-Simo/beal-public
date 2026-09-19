@@ -1,0 +1,262 @@
+[
+  {
+    "candidate": {
+      "candidate_id": "C394",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5201, 5300]",
+      "claim": "No non-trivial primitive solutions exist for signature (3, 3, p) for all prime exponents p in [5201, 5300].",
+      "method": "Modular method level lowering to conductor 72, Kraus sieve relations at auxiliary primes q = 2kp + 1 with a_q(f) = 0 mod 2.",
+      "category": "dead_category_bounded_sieve"
+    },
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "relevance": {
+          "type": "score",
+          "score": 0.12,
+          "confidence": 0.88,
+          "legend": {
+            "0": "level 0: Settles only bounded prime exponents or dead category computation with no general leverage.",
+            "1": "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+            "2": "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+            "3": "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+          },
+          "probabilities": {
+            "0": 0.88,
+            "1": 0.12,
+            "2": 0.0,
+            "3": 0.0
+          }
+        },
+        "fc_blindness": {
+          "type": "noul",
+          "noul": 0.31
+        },
+        "dead_category": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "action": {
+          "type": "choice",
+          "choice": "audit_obstruction",
+          "confidence": 0.32,
+          "probabilities": {
+            "refute": 0.16,
+            "pursue_frontier": 0.0,
+            "audit_obstruction": 0.49,
+            "exploit_bounded": 0.35
+          }
+        },
+        "failure_mode_risk": {
+          "type": "choice",
+          "choice": "failure_mode_1",
+          "confidence": 0.84,
+          "probabilities": {
+            "failure_mode_2": 0.02,
+            "none": 0.07,
+            "failure_mode_1": 0.88,
+            "failure_mode_3": 0.03
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 1100,
+        "output_tokens": 171
+      }
+    }
+  },
+  {
+    "candidate": {
+      "candidate_id": "C395",
+      "title": "CYCLOTOMIC NON-ABELIAN CHABAUTY-KIM OVER K = Q(zeta_m)",
+      "claim": "Descent of unipotent Selmer variety Sel(U_n)(K) under Gal(K/Q) forces dim Sel(U_n)(K)^{Gal} < dim U_n(K_p)^{Gal} even for unbounded S = primes(ABC).",
+      "method": "Non-abelian Chabauty-Kim, cyclotomic base change, Galois invariant Selmer varieties, Chabauty-Coleman integration.",
+      "category": "effective_diophantine_geometry"
+    },
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "relevance": {
+          "type": "score",
+          "score": 1.04,
+          "confidence": 0.01,
+          "legend": {
+            "0": "level 0: Settles only bounded prime exponents or dead category computation with no general leverage.",
+            "1": "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+            "2": "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+            "3": "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+          },
+          "probabilities": {
+            "0": 0.38,
+            "1": 0.21,
+            "2": 0.4,
+            "3": 0.01
+          }
+        },
+        "fc_blindness": {
+          "type": "noul",
+          "noul": 0.31
+        },
+        "dead_category": {
+          "type": "noul",
+          "noul": 0.19
+        },
+        "action": {
+          "type": "choice",
+          "choice": "audit_obstruction",
+          "confidence": 0.7,
+          "probabilities": {
+            "audit_obstruction": 0.78,
+            "exploit_bounded": 0.04,
+            "pursue_frontier": 0.11,
+            "refute": 0.07
+          }
+        },
+        "failure_mode_risk": {
+          "type": "choice",
+          "choice": "failure_mode_2",
+          "confidence": 0.94,
+          "probabilities": {
+            "failure_mode_3": 0.03,
+            "failure_mode_2": 0.97,
+            "none": 0.0,
+            "failure_mode_1": 0.0
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 1099,
+        "output_tokens": 171
+      }
+    }
+  },
+  {
+    "candidate": {
+      "candidate_id": "C396",
+      "title": "RELATIVE ANABELIAN GEOMETRY OF P^1 \\ {0, 1, infty} OVER SPEC Z",
+      "claim": "Section conjecture and outer Galois representation into Out(pi_1^{et}(P^1 \\ {0,1,infty})) isolate rational points with three-point ramification.",
+      "method": "Anabelian geometry (Grothendieck, Mochizuki, Stix), \u00e9tale fundamental groups, section conjecture.",
+      "category": "unifying_modular_motivic_geometry"
+    },
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "relevance": {
+          "type": "score",
+          "score": 0.58,
+          "confidence": 0.42,
+          "legend": {
+            "0": "level 0: Settles only bounded prime exponents or dead category computation with no general leverage.",
+            "1": "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+            "2": "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+            "3": "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+          },
+          "probabilities": {
+            "0": 0.65,
+            "1": 0.18,
+            "2": 0.12,
+            "3": 0.05
+          }
+        },
+        "fc_blindness": {
+          "type": "noul",
+          "noul": 0.39
+        },
+        "dead_category": {
+          "type": "noul",
+          "noul": 0.15
+        },
+        "action": {
+          "type": "choice",
+          "choice": "audit_obstruction",
+          "confidence": 0.57,
+          "probabilities": {
+            "audit_obstruction": 0.68,
+            "pursue_frontier": 0.25,
+            "refute": 0.06,
+            "exploit_bounded": 0.01
+          }
+        },
+        "failure_mode_risk": {
+          "type": "choice",
+          "choice": "none",
+          "confidence": 0.79,
+          "probabilities": {
+            "none": 0.84,
+            "failure_mode_2": 0.04,
+            "failure_mode_3": 0.09,
+            "failure_mode_1": 0.03
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 1084,
+        "output_tokens": 168
+      }
+    }
+  },
+  {
+    "candidate": {
+      "candidate_id": "C397",
+      "title": "HYPERK\u00c4HLER PERIOD MAPS AND ARITHMETIC CHOW GROUPS OF FERMAT HYPERSURFACES",
+      "claim": "The Beauville-Bogomolov quadratic form on the primitive cohomology of hyperk\u00e4hler varieties associated to Fermat covers bounds integer coordinates.",
+      "method": "Arithmetic Chow groups, Deligne-Beilinson cohomology, hyperk\u00e4hler period domains, Arakelov heights.",
+      "category": "effective_diophantine_geometry"
+    },
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "relevance": {
+          "type": "score",
+          "score": 0.15,
+          "confidence": 0.85,
+          "legend": {
+            "0": "level 0: Settles only bounded prime exponents or dead category computation with no general leverage.",
+            "1": "level 1: Relevant to a single signature family or requires bounded bad reduction.",
+            "2": "level 2: Provides structural constraints applicable to infinite families with unbounded exponents.",
+            "3": "level 3: Directly attacks the general Beal conjecture for all (p, q, r) >= 3 via uniform Diophantine geometry."
+          },
+          "probabilities": {
+            "0": 0.89,
+            "1": 0.08,
+            "2": 0.03,
+            "3": 0.0
+          }
+        },
+        "fc_blindness": {
+          "type": "noul",
+          "noul": 0.35
+        },
+        "dead_category": {
+          "type": "noul",
+          "noul": 0.15
+        },
+        "action": {
+          "type": "choice",
+          "choice": "audit_obstruction",
+          "confidence": 0.53,
+          "probabilities": {
+            "audit_obstruction": 0.66,
+            "refute": 0.06,
+            "exploit_bounded": 0.2,
+            "pursue_frontier": 0.08
+          }
+        },
+        "failure_mode_risk": {
+          "type": "choice",
+          "choice": "none",
+          "confidence": 0.74,
+          "probabilities": {
+            "failure_mode_2": 0.07,
+            "none": 0.8,
+            "failure_mode_3": 0.11,
+            "failure_mode_1": 0.02
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 1077,
+        "output_tokens": 168
+      }
+    }
+  }
+]

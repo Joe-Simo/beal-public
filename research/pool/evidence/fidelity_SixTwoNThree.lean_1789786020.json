@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_SixTwoNThree.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: SixTwoNThree.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Signature `(6, 2n, 3)` (U151): assembly relative to two named hypotheses\n\n* `BennettSkinnerThree` (as in `EvenEvenThree.lean`), used only when the `2n` side is `3`-free and `n \u2265 4`.\n* `Mordell27`: the rational points of `Y\u00b2 = X\u00b3 + 27` are `O` and `(\u22123, 0)`\n  (PARI/GP: conductor 144, torsion \u2124/2, 2-descent rank bound 0 \u2014 see `code/U151_mordell27.gp`).\n\nThe elliptic-curve step: if `s \u2260 0` and `3 v\u00b2 = s\u2076 \u2212 \u03b5 t\u00b3` then `(3T, 9V)` with `T = \u2212\u03b5 t/s\u00b2`,\n`V = v/s\u00b3` lies on the curve, so `V = 0`, so `v = 0`.\n-/\nimport Beal.GaussianPow\nimport Beal.EvenEvenThree\n\nopen Zsqrtd\n\nlocal notation \"\u2124[i]\" => GaussianInt\n\nnamespace Beal\n\n/-- Named hypothesis: `Y\u00b2 = X\u00b3 + 27` has only the rational points `O` and `(\u22123, 0)`. -/\ndef Mordell27 : Prop := \u2200 X Y : \u211a, Y ^ 2 = X ^ 3 + 27 \u2192 X = -3 \u2227 Y = 0\n\n/-- **Curve step.** `3 v\u00b2 = s\u2076 \u2212 \u03b5 t\u00b3` with `s \u2260 0`, `\u03b5 = \u00b11` forces `v = 0`. -/\nlemma curve_step (hM : Mordell27) {s t v : \u2124} (hs : s \u2260 0) {\u03b5 : \u2124} (h\u03b5 : \u03b5 = 1 \u2228 \u03b5 = -1)\n    (h : 3 * v ^ 2 = s ^ 6 - \u03b5 * t ^ 3) : v = 0 := by\n  have hsq : (s : \u211a) \u2260 0 := by exact_mod_cast hs\n  set T : \u211a := -\u03b5 * t / (s : \u211a) ^ 2 with hT\n  set V : \u211a := v / (s : \u211a) ^ 3 with hV\n  have h\u03b52 : (\u03b5 : \u211a) ^ 2 = 1 := by rcases h\u03b5 with rfl | rfl <;> norm_num\n  have h\u03b53 : (\u03b5 : \u211a) ^ 3 = \u03b5 := by rcases h\u03b5 with rfl | rfl <;> norm_num\n  have hq : (3 : \u211a) * (v : \u211a) ^ 2 = (s : \u211a) ^ 6 - \u03b5 * (t : \u211a) ^ 3 := by exact_mod_cast h\n  have hcurve : (9 * V) ^ 2 = (3 * T) ^ 3 + 27 := by\n    rw [hT, hV]\n    field_simp\n    have : (-(\u03b5 : \u211a) * t) ^ 3 = -\u03b5 * t ^ 3 := by\n      have : (-(\u03b5 : \u211a) * t) ^ 3 = -(\u03b5 ^ 3) * t ^ 3 := by ring\n      rw [this, h\u03b53]\n    nlinarith [hq, this]\n  obtain \u27e8_, hY\u27e9 := hM _ _ hcurve\n  have : (V : \u211a) = 0 := by linarith\n  rw [hV] at this\n  have hv : (v : \u211a) = 0 := by\n    rcases div_eq_zero_iff.mp this with h0 | h0\n    \u00b7 exact h0\n    \u00b7 exact absurd h0 (pow_ne_zero 3 hsq)\n  exact_mod_cast hv\n\n/-- Helper: on a `3`-free side with exponent `3`, the parameter splits as `u = s\u00b3`,\n`u\u00b2 \u2212 3v\u00b2 = \u03b5 t\u00b3` and the curve step kills `v`. -/\nlemma side_three (hM : Mordell27) {u v c : \u2124} (huv : IsCoprime u v) (h3 : \u00ac (3 : \u2124) \u2223 u)\n    (hv : v \u2260 0) (hc : c \u2260 0)\n    (h : u * (u ^ 2 - 3 * v ^ 2) = c ^ 3 \u2228 u * (u ^ 2 - 3 * v ^ 2) = -(c ^ 3)) : False := by\n  set w := u ^ 2 - 3 * v ^ 2 with hw\n  have hcop : IsCoprime u w := isCoprime_u_cofactor huv h3\n  have hodd : Odd 3 := by decide\n  obtain \u27e8c', hc', hprod\u27e9 : \u2203 c' : \u2124, c' \u2260 0 \u2227 u * w = c' ^ 3 := by\n    rcases h with h | h\n    \u00b7 exact \u27e8c, hc, h\u27e9\n    \u00b7 exact \u27e8-c, neg_ne_zero.mpr hc, by rw [hodd.neg_pow, h]\u27e9\n  have hu0 : u \u2260 0 := by\n    intro h0; apply hc'; rw [h0, zero_mul] at hprod; exact pow_eq_zero_iff (by omega) |>.mp hprod.symm\n  obtain \u27e8s, hs\u27e9 := int_factor_pow hcop hprod\n  obtain \u27e8t, ht\u27e9 := int_factor_pow hcop.symm (by rw [mul_comm]; exact hprod)\n  have hu2 : u ^ 2 = s ^ 6 := by rcases hs with hs | hs <;> rw [hs] <;> ring\n  have hs0 : s \u2260 0 := by\n    intro h0; apply hu0; rcases hs with hs | hs <;> rw [hs, h0] <;> simp\n  -- `3 v\u00b2 = s\u2076 \u2212 \u03b5 t\u00b3`\n  obtain \u27e8\u03b5, h\u03b5, heq\u27e9 : \u2203 \u03b5 : \u2124, (\u03b5 = 1 \u2228 \u03b5 = -1) \u2227 3 * v ^ 2 = s ^ 6 - \u03b5 * t ^ 3 := by\n    rcases ht with ht | ht\n    \u00b7 exact \u27e81, Or.inl rfl, by linear_combination hw + hu2 - ht\u27e9\n    \u00b7 exact \u27e8-1, Or.inr rfl, by linear_combination hw + hu2 - ht\u27e9\n  exact hv (curve_step hM hs0 h\u03b5 heq)\n\n/-- **Main theorem.** No Beal counterexample of signature `(6, 2n, 3)` with `n \u2265 3`, relative to\nBennett\u2013Skinner (odd `n \u2265 5`, `3`-free `Im` side), BCDY `(4, 2n, 3)` (even `n`) and `Mordell27`. -/\ntheorem no_counterexample_six_two_n_three (hBS : BennettSkinnerThree) (hBCDY : BCDYFourTwoNThree)\n    (hM : Mordell27) {A B C n : \u2115} (hn : 3 \u2264 n) (h : IsBealCounterexample A B C 6 (2 * n) 3) :\n    False := by\n  have h' : IsBealCounterexample A B C (2 * 3) (2 * n) 3 := h\n  obtain \u27e8w, hw, hcop\u27e9 := even_even_odd_reduction (by decide) h'\n  have hab : Nat.Coprime A B := gcd_ab_eq_one h\n  obtain \u27e8hA, hB, hC, _, _, _, _, heq\u27e9 := h\n  have hA0 : (A : \u2124) \u2260 0 := by exact_mod_cast hA.ne'\n  have hB0 : (B : \u2124) \u2260 0 := by exact_mod_cast hB.ne'\n  have hre : (A : \u2124) ^ 3 = w.re * (w.re ^ 2 - 3 * w.im ^ 2) := by\n    have := congrArg Zsqrtd.re hw\n    simp only [pow_succ, pow_zero, one_mul, Zsqrtd.mul_re, Zsqrtd.mul_im] at this\n    linear_combination -this\n  have him : (B : \u2124) ^ n = w.im * (3 * w.re ^ 2 - w.im ^ 2) := by\n    have := congrArg Zsqrtd.im hw\n    simp only [pow_succ, pow_zero, one_mul, Zsqrtd.mul_re, Zsqrtd.mul_im] at this\n    linear_combination -this\n  have hu0 : w.re \u2260 0 := by\n    intro h0; apply pow_ne_zero 3 hA0; rw [hre, h0]; ring\n  have hv0 : w.im \u2260 0 := by\n    intro h0; apply pow_ne_zero n hB0; rw [him, h0]; ring\n  by_cases h3u : (3 : \u2124) \u2223 w.re\n  \u00b7 -- `3 \u2224 v`: work on the `Im` side, exponent `n`\n    have h3v : \u00ac (3 : \u2124) \u2223 w.im := by\n      intro hd\n      have := Int.isCoprime_iff_gcd_eq_one.mp hcop\n      have hg := Int.dvd_gcd h3u hd\n      rw [this] at hg\n      exact absurd (Int.eq_one_of_dvd_one (by norm_num) hg) (by norm_num)\n    have himv : w.im * (w.im ^ 2 - 3 * w.re ^ 2) = -((B : \u2124) ^ n) := by rw [him]; ring\n    rcases Nat.even_or_odd n with \u27e8k, hk\u27e9 | hnodd\n    \u00b7 -- even `n = 2k`, `k \u2265 2`: signature `(4, 6, 3)` after `B^{2n} = (B^k)^4`; BCDY\n      refine hBCDY (B ^ k) A C 3 (by norm_num) (by positivity) hA hC (hab.symm.pow_left k) ?_\n      have e : (B ^ k) ^ 4 = B ^ (2 * n) := by rw [\u2190 pow_mul]; congr 1; omega\n      rw [e, add_comm]; exact heq\n    \u00b7 rcases Nat.lt_or_ge n 5 with hlt | hge\n      \u00b7 -- `n = 3`: the curve on the `Im` side\n        have hn3 : n = 3 := by obtain \u27e8j, hj\u27e9 := hnodd; omega\n        subst hn3\n        exact side_three hM hcop.symm h3v hu0 hB0 (Or.inr himv)\n      \u00b7 -- odd `n \u2265 5`: Bennett\u2013Skinner on the `Im` side\n        exact side_odd hBS hge hnodd hcop.symm h3v hu0 hB0 (Or.inr himv)\n  \u00b7 -- `3 \u2224 u`: the curve on the `Re` side (exponent 3)\n    exact side_three hM hcop h3u hv0 hA0 (Or.inl hre.symm)\n\nend Beal\n\nnamespace Beal\n\n/-- Swapping the two summands of a counterexample. -/\ntheorem swap_counterexample {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    IsBealCounterexample B A C y x z := by\n  obtain \u27e8hA, hB, hC, hx, hy, hz, hg, heq\u27e9 := h\n  refine \u27e8hB, hA, hC, hy, hx, hz, ?_, by rw [add_comm]; exact heq\u27e9\n  unfold gcd3 at hg \u22a2\n  rw [\u2190 Nat.gcd_assoc, Nat.gcd_comm B A, Nat.gcd_assoc]; exact hg\n\n/-- **All of `(2m, 2n, 3)`, `m, n \u2265 2`**, relative to the three named hypotheses. -/\ntheorem no_counterexample_even_even_three_all (hBS : BennettSkinnerThree)\n    (hBCDY : BCDYFourTwoNThree) (hM : Mordell27) {A B C m n : \u2115} (hm : 2 \u2264 m) (hn : 2 \u2264 n)\n    (h : IsBealCounterexample A B C (2 * m) (2 * n) 3) : False := by\n  have hab : Nat.Coprime A B := gcd_ab_eq_one h\n  rcases Nat.lt_or_ge m 4 with hm4 | hm4\n  \u00b7 rcases Nat.lt_or_ge n 4 with hn4 | hn4\n    \u00b7 -- both in {2, 3}\n      interval_cases m <;> interval_cases n\n      \u00b7 obtain \u27e8hA, hB, hC, _, _, _, _, heq\u27e9 := h\n        exact hBCDY A B C 2 le_rfl hA hB hC hab (by simpa using heq)\n      \u00b7 obtain \u27e8hA, hB, hC, _, _, _, _, heq\u27e9 := h\n        exact hBCDY A B C 3 (by norm_num) hA hB hC hab (by simpa using heq)\n      \u00b7 obtain \u27e8hA, hB, hC, _, _, _, _, heq\u27e9 := h\n        exact hBCDY B A C 3 (by norm_num) hB hA hC hab.symm (by rw [add_comm]; simpa using heq)\n      \u00b7 exact no_counterexample_six_two_n_three hBS hBCDY hM le_rfl h\n    \u00b7 -- m \u2208 {2,3}, n \u2265 4\n      interval_cases m\n      \u00b7 obtain \u27e8hA, hB, hC, _, _, _, _, heq\u27e9 := h\n        exact hBCDY A B C n (by omega) hA hB hC hab (by simpa using heq)\n      \u00b7 exact no_counterexample_six_two_n_three hBS hBCDY hM (by omega) h\n  \u00b7 rcases Nat.lt_or_ge n 4 with hn4 | hn4\n    \u00b7 -- m \u2265 4, n \u2208 {2,3}: swap\n      have h' := swap_counterexample h\n      interval_cases n\n      \u00b7 obtain \u27e8hB, hA, hC, _, _, _, _, heq\u27e9 := h'\n        exact hBCDY B A C m (by omega) hB hA hC hab.symm (by simpa using heq)\n      \u00b7 exact no_counterexample_six_two_n_three hBS hBCDY hM (by omega) h'\n    \u00b7 exact no_counterexample_even_even_three' hBS hBCDY hm4 hn4 h\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.69
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.74
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.53
+      }
+    },
+    "usage": {
+      "input_tokens": 4297,
+      "output_tokens": 94
+    }
+  }
+}

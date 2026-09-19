@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "id": "C282_serre_mod_p_conductor_bound",
+    "name": "Serre Conductor Bound Independent of Exponents",
+    "text": "Candidate: The Artin conductor of the mod-p Galois representation rho_{E, p} of a generalized Frey variety has prime-to-p part dividing 2^8 * 3^5, completely independent of the exponents x, y, z."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "unbounded_coverage": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "rigor_and_provability": {
+        "type": "score",
+        "score": 0.59,
+        "confidence": 0.41,
+        "legend": {
+          "0": "level 0: mathematically obstructed or known false",
+          "1": "level 1: requires open grand conjectures (e.g. general Langlands, Fontaine-Mazur)",
+          "2": "level 2: provable by combining proved theorems (Baker, Darmon, Khare-Wintenberger)",
+          "3": "level 3: complete machine-checkable proof in Lean 4"
+        },
+        "probabilities": {
+          "0": 0.6,
+          "1": 0.21,
+          "2": 0.18,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.45,
+        "probabilities": {
+          "discard": 0.15,
+          "literature_check": 0.54,
+          "formalize": 0.03,
+          "park": 0.02,
+          "advance": 0.08,
+          "exact_computation": 0.18
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 742,
+      "output_tokens": 129
+    }
+  }
+}

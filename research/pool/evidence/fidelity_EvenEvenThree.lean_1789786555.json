@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_EvenEvenThree.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: EvenEvenThree.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# Signature `(2m, 2n, 3)`, `m, n \u2265 4`: kernel-checked assembly (U131/U134)\n\nThree external inputs are stated as explicit **named hypotheses** (never `axiom`s), so that\n`#print axioms` shows only the standard axioms and the dependency is visible in the statement:\n\n* `GaussianCubeStep` \u2014 S2\u2013S3: `a\u00b2 + b\u00b2 = c\u00b3`, `c` odd, `a, b` coprime \u27f9 `a + bi = (u + vi)\u00b3`.\n* `BennettSkinnerThree` \u2014 Bennett\u2013Skinner, Canad. J. Math. 56 (2004), Thm 1.1 with `C = 3`.\n* `BCDYFourTwoNThree` \u2014 Bennett\u2013Chen\u2013Dahmen\u2013Yazdani, IJNT 11 (2015), Thm 1, row `(4, 2n, 3)`.\n\nEverything else \u2014 the odd-`C` step, coprimality bookkeeping, the sign analysis that was wrong in the\nfirst draft of S5, and the case split \u2014 is proved here.\n-/\nimport Beal.Structure\nimport Mathlib.Algebra.GCDMonoid.Basic\nimport Mathlib.RingTheory.Coprime.Lemmas\nimport Mathlib.RingTheory.Int.Basic\n\nnamespace Beal\n\n/-- **S2\u2013S3.** Coprime `a, b` with `a\u00b2 + b\u00b2 = c\u00b3` and `c` odd come from a Gaussian cube. -/\ndef GaussianCubeStep : Prop :=\n  \u2200 a b c : \u2124, IsCoprime a b \u2192 \u00ac (2 : \u2124) \u2223 c \u2192 a ^ 2 + b ^ 2 = c ^ 3 \u2192\n    \u2203 u v : \u2124, IsCoprime u v \u2227 a = u * (u ^ 2 - 3 * v ^ 2) \u2227 b = v * (3 * u ^ 2 - v ^ 2)\n\n/-- **Bennett\u2013Skinner Thm 1.1, `C = 3`.**  For `n \u2265 4` the equation `x\u207f + y\u207f = 3z\u00b2` has no solution\nin nonzero integers with `x, y, 3z` pairwise coprime. -/\ndef BennettSkinnerThree : Prop :=\n  \u2200 n : \u2115, 4 \u2264 n \u2192 \u2200 x y z : \u2124, x \u2260 0 \u2192 y \u2260 0 \u2192 z \u2260 0 \u2192\n    IsCoprime x y \u2192 IsCoprime x (3 * z) \u2192 IsCoprime y (3 * z) \u2192 x ^ n + y ^ n \u2260 3 * z ^ 2\n\n/-- **BCDY Thm 1, row `(4, 2n, 3)`.**  No coprime positive solution of `a\u2074 + b^{2n} = c\u00b3`, `n \u2265 2`. -/\ndef BCDYFourTwoNThree : Prop :=\n  \u2200 a b c n : \u2115, 2 \u2264 n \u2192 0 < a \u2192 0 < b \u2192 0 < c \u2192 Nat.Coprime a b \u2192 a ^ 4 + b ^ (2 * n) = c ^ 3 \u2192 False\n\n/-! ### Elementary lemmas -/\n\n/-- If `3 \u2224 u` and `gcd u v = 1` then `u` is coprime to `u\u00b2 - 3v\u00b2`. -/\nlemma isCoprime_u_cofactor {u v : \u2124} (huv : IsCoprime u v) (h3 : \u00ac (3 : \u2124) \u2223 u) :\n    IsCoprime u (u ^ 2 - 3 * v ^ 2) := by\n  have h3u : IsCoprime u 3 :=\n    ((Int.prime_three.irreducible.coprime_iff_not_dvd).mpr h3).symm\n  have h1 : IsCoprime u (3 * v ^ 2) := h3u.mul_right (huv.pow_right)\n  have h2 : IsCoprime u (-(3 * v ^ 2) + u * u) := h1.neg_right.add_mul_left_right u\n  have : -(3 * v ^ 2) + u * u = u ^ 2 - 3 * v ^ 2 := by ring\n  rwa [this] at h2\n\n/-- `v` is coprime to `u\u00b2 - 3v\u00b2` whenever `gcd u v = 1`. -/\nlemma isCoprime_v_cofactor {u v : \u2124} (huv : IsCoprime u v) :\n    IsCoprime (u ^ 2 - 3 * v ^ 2) v := by\n  have h1 : IsCoprime (u * u) v := huv.mul_left huv\n  have h2 : IsCoprime (u * u + v * (-3 * v)) v := h1.add_mul_left_left (-3 * v)\n  have : u * u + v * (-3 * v) = u ^ 2 - 3 * v ^ 2 := by ring\n  rwa [this] at h2\n\n/-- A coprime product in `\u2124` that is a `k`-th power has each factor `\u00b1 (k`-th power`)`. -/\nlemma int_factor_pow {u w c : \u2124} {k : \u2115} (h : IsCoprime u w) (hk : u * w = c ^ k) :\n    \u2203 s : \u2124, u = s ^ k \u2228 u = -(s ^ k) := by\n  have hu : IsUnit (gcd u w) := by\n    rw [\u2190 Int.coe_gcd, Int.gcd_eq_one_iff_coprime.mpr h]; exact isUnit_one\n  obtain \u27e8s, hs\u27e9 := exists_associated_pow_of_mul_eq_pow hu hk\n  exact \u27e8s, (Int.associated_iff.mp hs).elim (fun e => Or.inl e.symm) (fun e => Or.inr (by rw [e]; ring))\u27e9\n\n/-! ### The one-sided Bennett\u2013Skinner step (odd exponent) -/\n\n/-- **S5\u2013S6.** If `3 \u2224 u`, `gcd u v = 1`, `v \u2260 0`, `m \u2265 5` odd, and `u (u\u00b2 - 3v\u00b2) = \u00b1 c\u1d50` with\n`c \u2260 0`, then Bennett\u2013Skinner is violated. -/\nlemma side_odd (hBS : BennettSkinnerThree) {m : \u2115} (hm : 5 \u2264 m) (hodd : Odd m)\n    {u v c : \u2124} (huv : IsCoprime u v) (h3 : \u00ac (3 : \u2124) \u2223 u) (hv : v \u2260 0) (hc : c \u2260 0)\n    (h : u * (u ^ 2 - 3 * v ^ 2) = c ^ m \u2228 u * (u ^ 2 - 3 * v ^ 2) = -(c ^ m)) : False := by\n  set w := u ^ 2 - 3 * v ^ 2 with hw\n  have hcop : IsCoprime u w := isCoprime_u_cofactor huv h3\n  -- normalise the sign: `u * w = c'^m` with `c' = \u00b1 c`\n  obtain \u27e8c', hc', hprod\u27e9 : \u2203 c' : \u2124, c' \u2260 0 \u2227 u * w = c' ^ m := by\n    rcases h with h | h\n    \u00b7 exact \u27e8c, hc, h\u27e9\n    \u00b7 exact \u27e8-c, neg_ne_zero.mpr hc, by rw [hodd.neg_pow, h]\u27e9\n  have hu0 : u \u2260 0 := by\n    intro h0; apply hc'; rw [h0, zero_mul] at hprod; exact pow_eq_zero_iff (by omega) |>.mp hprod.symm\n  have hw0 : w \u2260 0 := by\n    intro h0; apply hc'; rw [h0, mul_zero] at hprod; exact pow_eq_zero_iff (by omega) |>.mp hprod.symm\n  obtain \u27e8s, hs\u27e9 := int_factor_pow hcop hprod\n  obtain \u27e8t, ht\u27e9 := int_factor_pow hcop.symm (by rw [mul_comm]; exact hprod)\n  -- `u\u00b2 = s^{2m}` regardless of the sign of `u`\n  have hu2 : u ^ 2 = (s ^ 2) ^ m := by\n    rcases hs with hs | hs <;> rw [hs] <;> ring\n  have hs0 : s \u2260 0 := by\n    intro h0; apply hu0; rcases hs with hs | hs <;> rw [hs, h0, zero_pow (by omega)]; simp\n  have ht0 : t \u2260 0 := by\n    intro h0; apply hw0; rcases ht with ht | ht <;> rw [ht, h0, zero_pow (by omega)]; simp\n  -- the Bennett\u2013Skinner equation `(s\u00b2)^m + y^m = 3 v\u00b2` with `y = -t` or `y = t`\n  obtain \u27e8y, hy0, hyt, heq\u27e9 : \u2203 y : \u2124, y \u2260 0 \u2227 (y = t \u2228 y = -t) \u2227 (s ^ 2) ^ m + y ^ m = 3 * v ^ 2 := by\n    rcases ht with ht | ht\n    \u00b7 refine \u27e8-t, neg_ne_zero.mpr ht0, Or.inr rfl, ?_\u27e9\n      rw [hodd.neg_pow, \u2190 ht, \u2190 hu2, hw]; ring\n    \u00b7 refine \u27e8t, ht0, Or.inl rfl, ?_\u27e9\n      have : t ^ m = -w := by rw [ht]; ring\n      rw [this, \u2190 hu2, hw]; ring\n  -- coprimality bookkeeping\n  have hst : IsCoprime s t := by\n    have e1 : IsCoprime (s ^ m) w := by\n      rcases hs with hs | hs\n      \u00b7 rw [\u2190 hs]; exact hcop\n      \u00b7 have := hcop.neg_left; rw [hs, neg_neg] at this; exact this\n    have e2 : IsCoprime (s ^ m) (t ^ m) := by\n      rcases ht with ht | ht\n      \u00b7 rw [\u2190 ht]; exact e1\n      \u00b7 have := e1.neg_right; rw [ht, neg_neg] at this; exact this\n    exact (IsCoprime.pow_iff (by omega) (by omega)).mp e2\n  have hsy : IsCoprime (s ^ 2) y := by\n    rcases hyt with rfl | rfl\n    \u00b7 exact hst.pow_left\n    \u00b7 exact hst.pow_left.neg_right\n  have h3s : \u00ac (3 : \u2124) \u2223 s := by\n    intro hd; apply h3\n    rcases hs with hs | hs <;> rw [hs]\n    \u00b7 exact dvd_pow hd (by omega)\n    \u00b7 exact (dvd_pow hd (by omega)).neg_right\n  have h3t : \u00ac (3 : \u2124) \u2223 t := by\n    intro hd\n    have h1 : (3 : \u2124) \u2223 w := by\n      rcases ht with ht | ht <;> rw [ht]\n      \u00b7 exact dvd_pow hd (by omega)\n      \u00b7 exact (dvd_pow hd (by omega)).neg_right\n    have h2 : (3 : \u2124) \u2223 u ^ 2 := by\n      have : u ^ 2 = w + 3 * v ^ 2 := by rw [hw]; ring\n      rw [this]; exact dvd_add h1 (dvd_mul_right 3 _)\n    exact h3 (Int.prime_three.dvd_of_dvd_pow h2)\n  have hsv : IsCoprime s v := by\n    have : IsCoprime (s ^ m) v := by\n      rcases hs with hs | hs\n      \u00b7 rw [\u2190 hs]; exact huv\n      \u00b7 have := huv.neg_left; rw [hs, neg_neg] at this; exact this\n    exact (IsCoprime.pow_left_iff (by omega)).mp this\n  have htv : IsCoprime t v := by\n    have hwv : IsCoprime w v := isCoprime_v_cofactor huv\n    have : IsCoprime (t ^ m) v := by\n      rcases ht with ht | ht\n      \u00b7 rw [\u2190 ht]; exact hwv\n      \u00b7 have := hwv.neg_left; rw [ht, neg_neg] at this; exact this\n    exact (IsCoprime.pow_left_iff (by omega)).mp this\n  have hs3 : IsCoprime s 3 := ((Int.prime_three.irreducible.coprime_iff_not_dvd).mpr h3s).symm\n  have ht3 : IsCoprime t 3 := ((Int.prime_three.irreducible.coprime_iff_not_dvd).mpr h3t).symm\n  have hx3z : IsCoprime (s ^ 2) (3 * v) := (hs3.mul_right hsv).pow_left\n  have hy3z : IsCoprime y (3 * v) := by\n    rcases hyt with rfl | rfl\n    \u00b7 exact ht3.mul_right htv\n    \u00b7 exact (ht3.mul_right htv).neg_left\n  exact hBS m (by omega) (s ^ 2) y v (pow_ne_zero 2 hs0) hy0 hv hsy hx3z hy3z heq\n\n/-! ### Assembly -/\n\n/-- **Main theorem (U131/U134).**  No Beal counterexample of signature `(2m, 2n, 3)` with `m, n \u2265 4`,\ngiven the three named external inputs. -/\ntheorem no_counterexample_even_even_three\n    (hZ : GaussianCubeStep) (hBS : BennettSkinnerThree) (hBCDY : BCDYFourTwoNThree)\n    {A B C m n : \u2115} (hm : 4 \u2264 m) (hn : 4 \u2264 n)\n    (h : IsBealCounterexample A B C (2 * m) (2 * n) 3) : False := by\n  have hab : Nat.Coprime A B := gcd_ab_eq_one h\n  have hCodd : C % 2 = 1 := by\n    have := not_both_exponents_even_of_even_C (h := h)\n    by_contra hc\n    exact this (by omega) \u27e8by omega, by omega\u27e9\n  obtain \u27e8hA, hB, hC, -, -, -, -, heq\u27e9 := h\n  -- even `m` \u27f9 signature `(4, 2n, 3)` \u27f9 BCDY\n  rcases Nat.even_or_odd m with \u27e8k, hk\u27e9 | hmodd\n  \u00b7 refine hBCDY (A ^ k) B C n (by omega) (by positivity) hB hC (hab.pow_left k) ?_\n    have e : (A ^ k) ^ 4 = A ^ (2 * m) := by rw [\u2190 pow_mul]; congr 1; omega\n    rw [e]; exact heq\n  rcases Nat.even_or_odd n with \u27e8l, hl\u27e9 | hnodd\n  \u00b7 refine hBCDY (B ^ l) A C m (by omega) (by positivity) hA hC (hab.symm.pow_left l) ?_\n    have e : (B ^ l) ^ 4 = B ^ (2 * n) := by rw [\u2190 pow_mul]; congr 1; omega\n    rw [e, add_comm]; exact heq\n  -- both odd, hence `\u2265 5`: the Gaussian route\n  have hm5 : 5 \u2264 m := by obtain \u27e8k, hk\u27e9 := hmodd; omega\n  have hn5 : 5 \u2264 n := by obtain \u27e8l, hl\u27e9 := hnodd; omega\n  have hsq : ((A : \u2124) ^ m) ^ 2 + ((B : \u2124) ^ n) ^ 2 = (C : \u2124) ^ 3 := by\n    have : A ^ (2 * m) + B ^ (2 * n) = C ^ 3 := heq\n    rw [\u2190 pow_mul, \u2190 pow_mul, mul_comm m 2, mul_comm n 2]\n    exact_mod_cast this\n  have hcop : IsCoprime ((A : \u2124) ^ m) ((B : \u2124) ^ n) :=\n    (Nat.isCoprime_iff_coprime.mpr hab).pow\n  have hC2 : \u00ac (2 : \u2124) \u2223 (C : \u2124) := by\n    intro hd; have := Int.natCast_dvd_natCast.mp hd; omega\n  obtain \u27e8u, v, huv, ha, hb\u27e9 := hZ _ _ _ hcop hC2 hsq\n  have hA0 : (A : \u2124) \u2260 0 := by exact_mod_cast hA.ne'\n  have hB0 : (B : \u2124) \u2260 0 := by exact_mod_cast hB.ne'\n  have hu0 : u \u2260 0 := by\n    intro h0; apply pow_ne_zero m hA0; rw [ha, h0]; ring\n  have hv0 : v \u2260 0 := by\n    intro h0; apply pow_ne_zero n hB0; rw [hb, h0]; ring\n  by_cases h3u : (3 : \u2124) \u2223 u\n  \u00b7 -- then `3 \u2224 v`; use the Im side, `v (v\u00b2 - 3u\u00b2) = -(B\u207f)`\n    have h3v : \u00ac (3 : \u2124) \u2223 v := by\n      intro hd\n      have := Int.isCoprime_iff_gcd_eq_one.mp huv\n      have h := Int.dvd_gcd h3u hd\n      rw [this] at h\n      exact absurd (Int.eq_one_of_dvd_one (by norm_num) h) (by norm_num)\n    refine side_odd hBS hn5 hnodd huv.symm h3v hu0 hB0 (Or.inr ?_)\n    rw [hb]; ring\n  \u00b7 exact side_odd hBS hm5 hmodd huv h3u hv0 hA0 (Or.inl ha.symm)\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.24
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.23
+      }
+    },
+    "usage": {
+      "input_tokens": 5105,
+      "output_tokens": 94
+    }
+  }
+}

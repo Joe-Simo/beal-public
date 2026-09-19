@@ -25,3 +25,6 @@ import Beal.Rigidity
 import Beal.ThreeFourFour
 import Beal.Cohen344
 import Beal.Euler
+import Beal.CenturySummary
+import Beal.PostCentennial
+

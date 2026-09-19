@@ -1,0 +1,197 @@
+[
+  {
+    "id": "PROF-01-PARITY-EVEN-C",
+    "name": "Even C Branch: A odd, B odd, C even (Signature 3, 3, p)",
+    "proved_score": 0.39,
+    "mechanism": "local_padic_valuation",
+    "leverage": "structural_foundation",
+    "raw_answers": {
+      "is_mathematically_proved": {
+        "type": "noul",
+        "noul": 0.39
+      },
+      "eliminates_small_search": {
+        "type": "noul",
+        "noul": 0.19
+      },
+      "algebraic_constraint_level": {
+        "type": "choice",
+        "choice": "local_padic_valuation",
+        "confidence": 0.98,
+        "probabilities": {
+          "transcendence_linear_forms": 0.0,
+          "local_padic_valuation": 0.99,
+          "complex_multiplication_rigidity": 0.0,
+          "global_galois_conductor": 0.01
+        }
+      },
+      "leverage_for_full_proof": {
+        "type": "choice",
+        "choice": "structural_foundation",
+        "confidence": 0.29,
+        "probabilities": {
+          "structural_foundation": 0.47,
+          "auxiliary_lemma": 0.35,
+          "crucial_reduction": 0.07,
+          "computational_pruning": 0.11
+        }
+      }
+    }
+  },
+  {
+    "id": "PROF-02-PARITY-EVEN-A",
+    "name": "Even A Branch: A even, B odd, C odd (Signature 3, 3, p)",
+    "proved_score": 0.39,
+    "mechanism": "local_padic_valuation",
+    "leverage": "structural_foundation",
+    "raw_answers": {
+      "is_mathematically_proved": {
+        "type": "noul",
+        "noul": 0.39
+      },
+      "eliminates_small_search": {
+        "type": "noul",
+        "noul": 0.15
+      },
+      "algebraic_constraint_level": {
+        "type": "choice",
+        "choice": "local_padic_valuation",
+        "confidence": 0.92,
+        "probabilities": {
+          "global_galois_conductor": 0.06,
+          "transcendence_linear_forms": 0.0,
+          "local_padic_valuation": 0.94,
+          "complex_multiplication_rigidity": 0.0
+        }
+      },
+      "leverage_for_full_proof": {
+        "type": "choice",
+        "choice": "structural_foundation",
+        "confidence": 0.4,
+        "probabilities": {
+          "crucial_reduction": 0.04,
+          "structural_foundation": 0.54,
+          "auxiliary_lemma": 0.29,
+          "computational_pruning": 0.13
+        }
+      }
+    }
+  },
+  {
+    "id": "PROF-03-MOD-3-MANDATORY",
+    "name": "Mandatory 3-Divisibility: 3 | C and 3 | A + B (Kraus Prop 7)",
+    "proved_score": 0.7,
+    "mechanism": "local_padic_valuation",
+    "leverage": "auxiliary_lemma",
+    "raw_answers": {
+      "is_mathematically_proved": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "eliminates_small_search": {
+        "type": "noul",
+        "noul": 0.18
+      },
+      "algebraic_constraint_level": {
+        "type": "choice",
+        "choice": "local_padic_valuation",
+        "confidence": 1.0,
+        "probabilities": {
+          "global_galois_conductor": 0.0,
+          "complex_multiplication_rigidity": 0.0,
+          "local_padic_valuation": 1.0,
+          "transcendence_linear_forms": 0.0
+        }
+      },
+      "leverage_for_full_proof": {
+        "type": "choice",
+        "choice": "auxiliary_lemma",
+        "confidence": 0.42,
+        "probabilities": {
+          "structural_foundation": 0.18,
+          "computational_pruning": 0.17,
+          "crucial_reduction": 0.09,
+          "auxiliary_lemma": 0.5599999999999999
+        }
+      }
+    }
+  },
+  {
+    "id": "PROF-04-NON-CM-ABSOLUTE",
+    "name": "Absolute Non-CM Theorem: j(E_{A,B}) never in CM j-invariants",
+    "proved_score": 0.47,
+    "mechanism": "complex_multiplication_rigidity",
+    "leverage": "structural_foundation",
+    "raw_answers": {
+      "is_mathematically_proved": {
+        "type": "noul",
+        "noul": 0.47
+      },
+      "eliminates_small_search": {
+        "type": "noul",
+        "noul": 0.57
+      },
+      "algebraic_constraint_level": {
+        "type": "choice",
+        "choice": "complex_multiplication_rigidity",
+        "confidence": 1.0,
+        "probabilities": {
+          "global_galois_conductor": 0.0,
+          "local_padic_valuation": 0.0,
+          "complex_multiplication_rigidity": 1.0,
+          "transcendence_linear_forms": 0.0
+        }
+      },
+      "leverage_for_full_proof": {
+        "type": "choice",
+        "choice": "structural_foundation",
+        "confidence": 0.37,
+        "probabilities": {
+          "structural_foundation": 0.53,
+          "computational_pruning": 0.01,
+          "crucial_reduction": 0.02,
+          "auxiliary_lemma": 0.44
+        }
+      }
+    }
+  },
+  {
+    "id": "PROF-05-HEIGHT-LOWER-BOUND",
+    "name": "Baker-Darmon-Granville Transcendental Height Lower Bound",
+    "proved_score": 0.4,
+    "mechanism": "transcendence_linear_forms",
+    "leverage": "computational_pruning",
+    "raw_answers": {
+      "is_mathematically_proved": {
+        "type": "noul",
+        "noul": 0.4
+      },
+      "eliminates_small_search": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "algebraic_constraint_level": {
+        "type": "choice",
+        "choice": "transcendence_linear_forms",
+        "confidence": 1.0,
+        "probabilities": {
+          "complex_multiplication_rigidity": 0.0,
+          "transcendence_linear_forms": 1.0,
+          "local_padic_valuation": 0.0,
+          "global_galois_conductor": 0.0
+        }
+      },
+      "leverage_for_full_proof": {
+        "type": "choice",
+        "choice": "computational_pruning",
+        "confidence": 0.98,
+        "probabilities": {
+          "crucial_reduction": 0.01,
+          "structural_foundation": 0.0,
+          "auxiliary_lemma": 0.01,
+          "computational_pruning": 0.98
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_U234_quotient_peeling_and_darmon_audit.md",
+  "timestamp": "2026-09-18T18:23:47-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "U234_quotient_peeling_and_darmon_audit.md",
+    "excerpt": "# U234: Quotient Peeling Descent in Lean 4, Milestone 75, and Darmon Program Obstruction Audit\n\n**Date**: 2026-09-18  \n**Scope**: Exponent-3 Fermat Descent, Lean 4 Verification, and Darmon Generalized Frey Obstructions  \n**Candidates**: C233, C234, C235  \n**Milestones**: Milestone 75 verified (75/75 passing)  \n**Lean 4 File**: [`formal/Beal/Euler.lean`](../../formal/Beal/Euler.lean) (expanded to **115 machine-checked theorems**)  \n\n---\n\n## 1. Executive Summary\n\nIn this cycle, we delivered three primary advances:\n\n1. **Constructive Quotient-Peeling Theorems in Lean 4 (Candidate C233)**:\n   We formalized four new theorems in [`formal/Beal/Euler.lean`](../../formal/Beal/Euler.lean):\n   - `represents_of_quotient_one`: Choice-free base case when quotient is 1.\n   - `represents_q_of_prime_quotient`: Transfers representation when quotient is prime.\n   - `descent_quotient_peel`: Strict quotient reduction peeling a prime factor that represents.\n   - `descent_quotient_peel_four`: Constructive 4-division peeling factor of 4.\n   These four theorems form the complete engine for the induction on `OddPrimeDivisorForm`. The file compiles with **115 machine-checked theorems**, 0 errors, and standard axioms only.\n\n2. **Milestone 75: Constructive Peeling Algorithm Verification**:\n   We authored and verified [`code/U233_quotient_peeling_audit.py`](../../code/U233_quotient_peeling_audit.py):\n   - Verified 10 positive control primes ($q \\in \\{3, 7, 13, 19, 31, 37, 43, 61, 67, 73\\}$).\n   - Tested all 148 primes $q \\equiv 1 \\pmod 3$ up to 2000.\n   - Executed 243 exact peeling operations using Brahmagupta division and 4-halving.\n   - Verified 100% exact integer landing on $q = u^2 + 3v^2$ at quotient 1.\n\n3. **Darmon Program Motivic Obstruction Audit (Candidate C235)**:\n   We conducted a rigorous audit of the arithmetic geometry literature (Darmon 1997, 2000; BCDF 2022/2025; Azon 2025) concerning the generalized Fermat equation $A^p + B^q = C^r$:\n   - For arbitrary exponent triples $(p, q, r)$, the attached Frey varieties are Jacobians of hyperelliptic curves $C$ with genus $g = (r - 1)/2$.\n   - When $g \\ge 2$, modularity of abelian varieties over number fields is **open** in general.\n   - Serre's uniformity conjecture over number fields is **open** for $g \\ge 2$.\n   - The Cartan case of Darmon's Big Image Conjecture remains unproved.\n   - **Conclusion**: Unconditional resolution of Beal's conjecture across all exponents cannot be achieved solely via current modular/Frey techniques without resolving these foundational open conjectures in arithmetic geometry.\n\n---\n\n## 2. Machine-Checked Theorems in `Beal.Euler` (115 Theorems)\n\n```lean\n/-- Base case of Fermat descent: if the descent quotient is 1, q is represented directly. -/\ntheorem represents_of_quotient_one {p0 q0 q : \u2124}\n    (h : p0 ^ 2 + 3 * q0 ^ 2 = q * 1) :\n    RepresentsForm q\n\n/-- When the descent quotient m' is a prime that represents, q represents. -/\ntheorem represents_q_of_prime_quotient {p0 q0 q m' : \u2124}\n    (hm'_prime : Prime m') (hm'_form : RepresentsForm m')\n    (hprod : p0 ^ 2 + 3 * q0 ^ 2 = q * m') :\n    RepresentsForm q\n\n/-- Strict descent on the quotient: peeling off a prime factor that represents yields\na new representation with strictly smaller quotient m1. -/\ntheorem descent_quotient_peel {p0 q0 q m1 p1 : \u2124}\n    (hp1_prime : Prime p1) (hp1_form : RepresentsForm p1)\n    (hprod : p0 ^ 2 + 3 * q0 ^ 2 = (q * m1) * p1) :\n    \u2203 X Y : \u2124, X ^ 2 + 3 * Y ^ 2 = q * m1\n\n/-- 4-peeling on the quotient: dividing out a factor of 4 yields a representation with\nquotient m1 = m'/4. -/\ntheorem descent_quotient_peel_four {p0 q0 q m1 : \u2124}\n    (hprod : p0 ^ 2 + 3 * q0 ^ 2 = q * (4 * m1)) :\n    \u2203 X Y : \u2124, X ^ 2 + 3 * Y ^ 2 = q * m1\n```\n\nAll four theorems depend strictly on standard Lean 4 axioms: `[propext, Classical.choice, Quot.sound]`.\n"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 1.78,
+        "confidence": 0.35,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.16,
+          "1": 0.12,
+          "2": 0.5,
+          "3": 0.22
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.8
+      }
+    },
+    "usage": {
+      "input_tokens": 1891,
+      "output_tokens": 42
+    }
+  }
+}

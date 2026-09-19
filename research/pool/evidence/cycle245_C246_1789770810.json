@@ -1,0 +1,85 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "cycle245_C246",
+  "timestamp": "2026-09-18T18:33:30-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal conjecture: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no positive integer solutions. Target discipline: strictly x,y,z >= 3; no exponent 2; no relabelling GRH or heuristics as unconditional.",
+    "candidate": {
+      "id": "C246",
+      "claim": "MOTIVIC OBSTRUCTION SYNTHESIS ACROSS ARBITRARY SIGNATURES: Formal taxonomy of arithmetic geometry obstructions preventing an unconditional proof of Beal for general (p, q, r).",
+      "text": "For general triples (p, q, r), Darmon Frey representations yield hyperelliptic curves of genus g = (r-1)/2. For g >= 2, modularity of abelian varieties of GL2-type is open, and Serre uniformity is unproved."
+    }
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Does this candidate faithfully respect the strict Beal conjecture formulation (all exponents >= 3, positive integers, gcd=1) without introducing exponent-2 blindness or relaxing hypotheses?",
+      "criteria": {
+        "true": "strictly faithful to the original conjecture formulation",
+        "false": "relaxes hypotheses or introduces exponent-2 vulnerability"
+      }
+    },
+    "flaw_risk": {
+      "type": "score",
+      "instructions": "What is the risk that this candidate commits one of the repo recurring failure modes (residual/isogeny conflation, Chabauty over wrong field, heuristic laundering)?",
+      "criteria": [
+        "level 0: zero risk, purely elementary or exact machine-checked arithmetic",
+        "level 1: low risk, standard algebraic number theory with verifiable bounds",
+        "level 2: moderate risk, relies on modular representation or level lowering literature",
+        "level 3: high risk, risks invoking unproved conjectures or conflating representations"
+      ]
+    },
+    "recommended_action": {
+      "type": "choice",
+      "instructions": "What is the highest-value action for this candidate in the exploration loop?",
+      "criteria": {
+        "formalize": "formalize in Lean 4 with mathlib",
+        "exact_computation": "implement exact integer verification script and add to milestones",
+        "literature_check": "audit literature dependencies against primary sources",
+        "discard": "discard as known dead-end"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.33
+      },
+      "flaw_risk": {
+        "type": "score",
+        "score": 2.75,
+        "confidence": 0.75,
+        "legend": {
+          "0": "level 0: zero risk, purely elementary or exact machine-checked arithmetic",
+          "1": "level 1: low risk, standard algebraic number theory with verifiable bounds",
+          "2": "level 2: moderate risk, relies on modular representation or level lowering literature",
+          "3": "level 3: high risk, risks invoking unproved conjectures or conflating representations"
+        },
+        "probabilities": {
+          "0": 0.0,
+          "1": 0.01,
+          "2": 0.22,
+          "3": 0.77
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.57,
+        "probabilities": {
+          "formalize": 0.03,
+          "discard": 0.29,
+          "exact_computation": 0.01,
+          "literature_check": 0.67
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 813,
+      "output_tokens": 90
+    }
+  }
+}

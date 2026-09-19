@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "id": "C280_orbifold_fundamental_group_rigidity",
+    "name": "Triangle Group Delta(x, y, z) Finite Representation Rigidity",
+    "text": "Candidate: Triangle orbifolds H/Delta(x, y, z) have rigid fundamental groups with finite representation varieties into PGL_2(F_q), bounding possible residual mod-ell representations."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "resolves_unbounded_exponents": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.65
+      },
+      "rigor_and_provability": {
+        "type": "score",
+        "score": 1.1,
+        "confidence": 0.37,
+        "legend": {
+          "0": "level 0: mathematically obstructed or known false",
+          "1": "level 1: requires open grand conjectures (e.g. general Langlands, Fontaine-Mazur)",
+          "2": "level 2: provable by combining proved theorems (Baker, Darmon, Khare-Wintenberger)",
+          "3": "level 3: complete machine-checkable proof in Lean 4"
+        },
+        "probabilities": {
+          "0": 0.27,
+          "1": 0.38,
+          "2": 0.34,
+          "3": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.63,
+        "probabilities": {
+          "formalize": 0.03,
+          "advance": 0.11,
+          "exact_computation": 0.13,
+          "discard": 0.02,
+          "literature_check": 0.6799999999999999,
+          "park": 0.03
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 727,
+      "output_tokens": 132
+    }
+  }
+}

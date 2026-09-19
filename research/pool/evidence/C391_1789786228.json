@@ -1,0 +1,140 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C391",
+  "timestamp": "2026-09-18T22:50:28-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent.",
+    "candidate_id": "C391",
+    "title": "C391",
+    "claim": "Frontier candidate C391",
+    "method": "Unspecified",
+    "category": "",
+    "status": "ACTIVE"
+  },
+  "questions": {
+    "target_discipline": {
+      "type": "noul",
+      "instructions": "Does this candidate strictly enforce Beal target discipline (exponents x, y, z >= 3, coprimality gcd(A, B, C) = 1, positive non-zero integers) without silently allowing exponent 2, negative terms, or non-integral coordinates?",
+      "criteria": {
+        "true": "Strictly adheres to target discipline with exponents strictly at least 3.",
+        "false": "Violates target discipline, allows exponent 2, or restricts exponents without general proof."
+      }
+    },
+    "fc_blindness": {
+      "type": "noul",
+      "instructions": "Is this candidate blind to the 10 known Fermat-Catalan solutions (1^m + 2^3 = 3^2, 2^5 + 7^2 = 3^4, 7^3 + 13^2 = 2^9...)? Specifically, does its core mathematical mechanism hold equally well for identities with exponent 2, meaning it cannot prove Beal on its own without additional exponent >= 3 input?",
+      "criteria": {
+        "true": "The mechanism is Fermat-Catalan blind: it holds on identities with exponent 2.",
+        "false": "The mechanism strictly exploits the Beal hyperbolic defect (-chi >= 1/12) which fails on exponent 2."
+      }
+    },
+    "canonical_failure_mode": {
+      "type": "choice",
+      "instructions": "Evaluate the candidate against the three canonical repository failure modes. Which failure mode does this candidate trigger?",
+      "criteria": {
+        "mode_1_residual_conflation": "Failure Mode 1: Residual/isogeny/conductor conflation. Confuses mod-p Galois representation irreducibility or non-isogeny with non-existence of residual mod-p congruence.",
+        "mode_2_chabauty_unbounded_s": "Failure Mode 2: Chabauty over wrong field or Selmer dimension blowup. Selmer variety dimension dim Sel(U_n) grows linearly with |S| = primes(ABC), exceeding local dimension dim U_n(Q_p).",
+        "mode_3_heuristic_laundering": "Failure Mode 3: Heuristic laundering. Assumes ABC conjecture, Vojta conjecture, Cohen-Lenstra, or GRH bounds and labels the result unconditional.",
+        "sound_no_failure_mode": "None: The candidate avoids all three failure modes through exact structural invariants."
+      }
+    },
+    "finiteness_to_nonexistence": {
+      "type": "choice",
+      "instructions": "Does the mathematical mechanism bridge the critical gap between finiteness (|X(Q)| < \\infty) and complete non-existence of primitive integer points (|X(Z)_{prim}| = 0)?",
+      "criteria": {
+        "proves_nonexistence": "Provides an exact obstruction that forces the solution set to be completely empty.",
+        "finiteness_only": "Only proves finiteness (like Faltings/Chabauty/Vojta), leaving unknown points uneliminated.",
+        "bounded_only": "Only eliminates bounded prime exponents (e.g. Kraus sieve up to a computational bound).",
+        "vacuous": "The invariant does not constrain integer points on the hypersurface."
+      }
+    },
+    "structural_obstruction": {
+      "type": "choice",
+      "instructions": "Identify the exact primary mathematical obstruction that blocks this candidate from unconditional completion.",
+      "criteria": {
+        "selmer_dimension_growth": "Selmer variety dimension grows linearly with the unknown ramification set S = primes(ABC).",
+        "continuous_moduli_degeneration": "Moduli parameter lambda = A^x / C^z approaches cusps (0, 1, \\infty) degenerating heights.",
+        "automorphic_cusp_abundance": "Arthur trace formula / cusp form abundance dim S_k(N) >> 0 prevents representation vanishing.",
+        "torsion_wild_ramification": "Wild additive reduction at primes 2 and 3 obstructs p-adic period maps and torsion vanishing.",
+        "computational_scale": "Method is sound in principle for bounded exponents but computationally restricted to finite primes.",
+        "unobstructed": "No known mathematical obstruction prevents this candidate from completing an unconditional proof."
+      }
+    },
+    "genius_recommendation": {
+      "type": "choice",
+      "instructions": "What is the high-precision action recommended by the Mathematical Genius Engine?",
+      "criteria": {
+        "advance_kraus_frontier": "Execute exact modular sieve / PARI-GP computation to push empirical exponent bounds.",
+        "audit_and_isolate_obstruction": "Conduct deep mathematical audit to prove why this mechanism hits a structural dead-end.",
+        "salvage_proved_sublemmas": "Extract valid sub-lemmas, modular traces, or local bounds into the salvaged lemma pool.",
+        "refute_and_archive": "Refute candidate due to fundamental geometric flaw, heuristic laundering, or inconsistency.",
+        "synthesize_breakthrough": "Candidate contains a live ingredient suitable for cross-pollination in a breakthrough hypothesis."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.6
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.76,
+        "probabilities": {
+          "mode_1_residual_conflation": 0.01,
+          "sound_no_failure_mode": 0.83,
+          "mode_2_chabauty_unbounded_s": 0.01,
+          "mode_3_heuristic_laundering": 0.15
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "vacuous",
+        "confidence": 0.54,
+        "probabilities": {
+          "bounded_only": 0.0,
+          "vacuous": 0.65,
+          "finiteness_only": 0.25,
+          "proves_nonexistence": 0.1
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "unobstructed",
+        "confidence": 0.68,
+        "probabilities": {
+          "selmer_dimension_growth": 0.11,
+          "continuous_moduli_degeneration": 0.06,
+          "computational_scale": 0.07,
+          "unobstructed": 0.74,
+          "torsion_wild_ramification": 0.02,
+          "automorphic_cusp_abundance": 0.0
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.49,
+        "probabilities": {
+          "synthesize_breakthrough": 0.01,
+          "refute_and_archive": 0.12,
+          "salvage_proved_sublemmas": 0.01,
+          "audit_and_isolate_obstruction": 0.6,
+          "advance_kraus_frontier": 0.26
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1647,
+      "output_tokens": 368
+    }
+  }
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C416",
+    "title": "UNIVERSAL INVARIANT SYNTHESIS: ORBIFOLD HYPERBOLIC DEFECT COUPLED WITH SERRE MINIMAL CONDUCTOR",
+    "target_discipline": true,
+    "fc_blindness": false,
+    "failure_mode": "mode_3_heuristic_laundering",
+    "failure_mode_confidence": 0.57,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.15,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.37
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_3_heuristic_laundering",
+        "confidence": 0.57,
+        "probabilities": {
+          "sound_no_failure_mode": 0.15,
+          "mode_1_residual_conflation": 0.15,
+          "mode_3_heuristic_laundering": 0.68,
+          "mode_2_chabauty_unbounded_s": 0.02
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.56,
+        "probabilities": {
+          "proves_nonexistence": 0.13,
+          "vacuous": 0.2,
+          "finiteness_only": 0.67,
+          "bounded_only": 0.0
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "continuous_moduli_degeneration",
+        "confidence": 0.3,
+        "probabilities": {
+          "computational_scale": 0.13,
+          "selmer_dimension_growth": 0.27,
+          "torsion_wild_ramification": 0.04,
+          "unobstructed": 0.12,
+          "continuous_moduli_degeneration": 0.42,
+          "automorphic_cusp_abundance": 0.02
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.71,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.77,
+          "synthesize_breakthrough": 0.01,
+          "salvage_proved_sublemmas": 0.02,
+          "refute_and_archive": 0.19,
+          "advance_kraus_frontier": 0.01
+        }
+      }
+    }
+  }
+]

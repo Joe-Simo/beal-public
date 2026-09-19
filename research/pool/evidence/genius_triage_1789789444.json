@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C414",
+    "title": "GALOIS DEFORMATION CONDITIONS AT WILD PRIMES AND RIGID INNER FORMS",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.51,
+    "finiteness_profile": "proves_nonexistence",
+    "structural_obstruction": "torsion_wild_ramification",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.2
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.65
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.51,
+        "probabilities": {
+          "sound_no_failure_mode": 0.64,
+          "mode_1_residual_conflation": 0.31,
+          "mode_2_chabauty_unbounded_s": 0.04,
+          "mode_3_heuristic_laundering": 0.01
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "proves_nonexistence",
+        "confidence": 0.32,
+        "probabilities": {
+          "bounded_only": 0.0,
+          "finiteness_only": 0.24,
+          "vacuous": 0.27,
+          "proves_nonexistence": 0.49
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "torsion_wild_ramification",
+        "confidence": 0.9,
+        "probabilities": {
+          "torsion_wild_ramification": 0.92,
+          "continuous_moduli_degeneration": 0.0,
+          "selmer_dimension_growth": 0.07,
+          "computational_scale": 0.0,
+          "automorphic_cusp_abundance": 0.0,
+          "unobstructed": 0.01
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.78,
+        "probabilities": {
+          "synthesize_breakthrough": 0.01,
+          "advance_kraus_frontier": 0.01,
+          "audit_and_isolate_obstruction": 0.8099999999999999,
+          "refute_and_archive": 0.12,
+          "salvage_proved_sublemmas": 0.05
+        }
+      }
+    }
+  }
+]

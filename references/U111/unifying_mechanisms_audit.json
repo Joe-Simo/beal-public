@@ -1,0 +1,30 @@
+{
+  "fermat_catalan_defect": {
+    "min_positive_fc_defect": "1/42",
+    "beal_min_defect": "1/12",
+    "defect_gap": "5/84",
+    "is_fc_blind": false,
+    "fc_defects": {
+      "(2,3,6)": "0",
+      "(2,4,5)": "1/20",
+      "(2,3,9)": "1/18",
+      "(2,3,7)": "1/42",
+      "(2,3,8)": "1/24"
+    }
+  },
+  "C289_C291_chabauty_kim": {
+    "status": "BLOCKED_WITHOUT_S_BOUND",
+    "reason": "Chabauty-Kim on P^1 \\ {0, 1, \\infty} requires bounding the bad reduction set S = primes(ABC). Because global Selmer variety dimensions dim Sel(U_n) grow with |S|, the Chabauty-Kim condition dim Sel(U_n) < dim U_n(Q_p) fails when |S| is unbounded. Without a prior bound on the conductor or radical of ABC, non-abelian Chabauty on P^1 \\ {0, 1, \\infty} cannot bound solutions.",
+    "dim_u1": 1,
+    "dim_u2": 3
+  },
+  "C287_corvaja_zannier": {
+    "status": "BLOCKED_HEURISTIC_LAUNDERING_RISK",
+    "reason": "Unconditional Corvaja-Zannier defect bounds apply only to specific algebraic curves or product varieties over fixed number fields. Extending arithmetic defect bounds to general triangle orbifolds with variable (p, q, r) relies on Vojta's general conjecture for surfaces with boundary. Claiming an unconditional bound via this route constitutes heuristic laundering (Failure Mode 3)."
+  },
+  "C293_arakelov_orbifold": {
+    "status": "ACTIVE_THEORETICAL_FRONTIER",
+    "reason": "Candidate C293 is genuinely NOT Fermat-Catalan blind: the orbifold canonical degree deg(K_O) = -chi satisfies -chi >= 1/12 for all Beal signatures, strictly exceeding the Fermat-Catalan minimum 1/42. The key open obligation is making the Arakelov-Mumford height bound effective for triangle orbifolds without conditional dependencies.",
+    "min_deg_K": "1/12"
+  }
+}

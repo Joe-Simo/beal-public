@@ -1,0 +1,83 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C235",
+  "timestamp": "2026-09-18T18:16:17-0400",
+  "model": "jev-latest",
+  "request_state": "C235: Darmon generalized Frey program across arbitrary Beal exponents",
+  "questions": {
+    "formal_path": {
+      "type": "choice",
+      "instructions": "For completing the formalization of CubeFormParam in Beal.Euler in Lean 4, which route has the lowest formal friction with Mathlib?",
+      "criteria": {
+        "cyclotomic_pid": "Use Mathlib.NumberTheory.Cyclotomic.PID (three_pid) to extract coprime cubes in Z[omega] and quotient by unit group of order 6",
+        "direct_binary_form": "Use direct descent on the binary cubic form without passing through cyclotomic integers",
+        "eisenstein_int": "Develop dedicated Eisenstein integer UFD theory in Beal rather than cyclotomic extension"
+      }
+    },
+    "induction_tactic": {
+      "type": "choice",
+      "instructions": "For proving OddPrimeDivisorForm by strong induction in Lean 4, which induction principle is most robust?",
+      "criteria": {
+        "nat_strong_induction": "Nat.strong_induction_on over prime modulus q",
+        "well_founded_lt": "WellFounded.fix using Nat.lt_wfRel on q.natAbs",
+        "measure_quotient": "Induction on quotient m = (P^2+3Q^2)/q"
+      }
+    },
+    "darmon_feasibility": {
+      "type": "score",
+      "instructions": "How close is the general Darmon program on generalized Frey hyperelliptic curves / abelian varieties to an unconditional resolution of all Beal exponents (p, q, r)?",
+      "criteria": [
+        "level 0: blocked by Serre uniformity, lack of modularity of abelian varieties over totally real fields, and higher-dimensional Frey Jacobians",
+        "level 1: resolved for bounded prime exponents up to ~100 but open asymptotically",
+        "level 2: conditionally resolved under modularity of all abelian surfaces and Serre conjecture",
+        "level 3: unconditional complete resolution already available"
+      ]
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "formal_path": {
+        "type": "choice",
+        "choice": "cyclotomic_pid",
+        "confidence": 0.55,
+        "probabilities": {
+          "eisenstein_int": 0.02,
+          "direct_binary_form": 0.28,
+          "cyclotomic_pid": 0.7
+        }
+      },
+      "induction_tactic": {
+        "type": "choice",
+        "choice": "nat_strong_induction",
+        "confidence": 0.6,
+        "probabilities": {
+          "well_founded_lt": 0.22,
+          "measure_quotient": 0.04,
+          "nat_strong_induction": 0.74
+        }
+      },
+      "darmon_feasibility": {
+        "type": "score",
+        "score": 0.54,
+        "confidence": 0.46,
+        "legend": {
+          "0": "level 0: blocked by Serre uniformity, lack of modularity of abelian varieties over totally real fields, and higher-dimensional Frey Jacobians",
+          "1": "level 1: resolved for bounded prime exponents up to ~100 but open asymptotically",
+          "2": "level 2: conditionally resolved under modularity of all abelian surfaces and Serre conjecture",
+          "3": "level 3: unconditional complete resolution already available"
+        },
+        "probabilities": {
+          "0": 0.69,
+          "1": 0.08,
+          "2": 0.22,
+          "3": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 740,
+      "output_tokens": 130
+    }
+  }
+}

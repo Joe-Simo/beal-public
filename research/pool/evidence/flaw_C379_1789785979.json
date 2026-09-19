@@ -1,0 +1,54 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "flaw_C379",
+  "timestamp": "2026-09-18T22:46:19-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate: C379 - DERIVED SYMPLECTIC GEOMETRY, SHIFTED SYMPLECTIC STRUCTURES AND MOTIVIC DT INVARIANTS\nClaim: PTVV (-1)-shifted symplectic structures on derived moduli stacks of Frey sheaves force vanishing of virtual fundamental classes for Beal solutions.\nMethod: Derived algebraic geometry, (-1)-shifted symplectic structures, and Behrend-Fantechi virtual fundamental classes.\nStatus: BLOCKED\nFailureReason: Motivic DT invariants are deformation-invariant over C; blind to arithmetic coordinates t = A/B and scale invariant under (A, B, C) -> (dA, dB, dC), incapable of Diophantine point exclusion.",
+  "questions": {
+    "has_conflation": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 1 (residual/isogeny conflation, or confounding complex moduli deformation with arithmetic coordinates)?",
+      "criteria": {
+        "true": "Yes, conflates residual/geometric properties with Diophantine point exclusion.",
+        "false": "No, maintains strict distinction between arithmetic coordinates and geometric moduli."
+      }
+    },
+    "has_chabauty_field_slip": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 2 (Chabauty over wrong field, or ignoring unbounded bad reduction blowup)?",
+      "criteria": {
+        "true": "Yes, applies Chabauty rank bounds over base field to higher degree points or ignores Selmer dimension blowup.",
+        "false": "No, correctly accounts for field degrees and Selmer variety growth."
+      }
+    },
+    "has_heuristic_laundering": {
+      "type": "noul",
+      "instructions": "Does this candidate commit Failure Mode 3 (heuristic laundering, treating GRH/ABC/Vojta bounds as unconditional)?",
+      "criteria": {
+        "true": "Yes, relabels conjectural height bounds or heuristics as unconditional results.",
+        "false": "No, strictly relies on exact unconditional arithmetic."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_conflation": {
+        "type": "noul",
+        "noul": 0.75
+      },
+      "has_chabauty_field_slip": {
+        "type": "noul",
+        "noul": 0.16
+      },
+      "has_heuristic_laundering": {
+        "type": "noul",
+        "noul": 0.13
+      }
+    },
+    "usage": {
+      "input_tokens": 681,
+      "output_tokens": 69
+    }
+  }
+}

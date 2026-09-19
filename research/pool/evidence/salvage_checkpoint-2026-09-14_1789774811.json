@@ -1,0 +1,60 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "salvage_checkpoint-2026-09-14",
+  "timestamp": "2026-09-18T19:40:11-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "checkpoint": "checkpoint-2026-09-14.md",
+    "excerpt": "# Beal research checkpoint \u2014 2026-09-14\n\n## Status\n\nNo complete proof or counterexample. This checkpoint concerns only the primitive even-leg exponent-5 generalized-Fermat subcase arising from the Beal program; closing it would not resolve Beal by itself.\n\n## Exact target subproblem\n\nMichaud-Jacobs (Mathematika 68 (2022), 344\u2013361, DOI 10.1112/mtk.12127) proves that primitive nonzero solutions of\n\nx^(2l) + y^(2m) = z^17\n\nare impossible for primes l,m != 5. His remaining l=5 obstruction includes four Case-2 Hilbert newforms over the cyclic quartic field F of conductor 17, LMFDB base-field label 4.4.4913.1, level 272.1. The paper explicitly says the author expects their residual representations at primes lambda|5 to be reducible; proving this would eliminate them because the Frey residual representation is irreducible for l>=5 (Lemma 7.2).\n\nRelevant public code:\n- https://github.com/michaud-jacobs/thesis/blob/main/gen-fermat/cuspforms_17.m\n- https://github.com/michaud-jacobs/thesis/blob/main/gen-fermat/irreducibility_17.m\n\n## Four obstructing Case-2 forms\n\nLMFDB labels:\n- 4.4.4913.1-272.1-r, coefficient degree 2\n- 4.4.4913.1-272.1-s, coefficient degree 2\n- 4.4.4913.1-272.1-v, coefficient degree 6\n- 4.4.4913.1-272.1-w, coefficient degree 6\n\nFor r,s the Hecke coefficient polynomial is\n\nP2(X) = X^2 + 2X - 4.\n\nFor v,w it is\n\nP6(X) = X^6 + 3X^5 - 42X^4 - 104X^3 + 364X^2 + 428X + 104.\n\n## Degree-6 coefficient-field involution and the prime over 5\n\nLet e be a root of P6. Exact computation found the nontrivial field automorphism\n\ntau(e) = e^5/4 - e^4/4 - 17e^3/2 + 5e^2 + 41e + 17.\n\nIndependent Wolfram Language checks returned:\n\n- P6 mod 5 = (X+1)^2 (X^4 + X^3 - 1)\n- remainder P6(tau(X)) modulo P6(X) = 0\n- remainder tau(tau(X)) - X modulo P6(X) = 0\n- tau(-1) mod 5 = 4 = -1 mod 5\n- disc(P6) = 2^20 * 5^3 * 13 * 449^2\n\nWolfram also computed the maximal-field discriminant as\n\nDisc(K6) = 3354640640 = 2^8 * 5 * 13 * 449^2,\n\nso [O_K6 : Z[e]] = 320 = 2^6*5. Because the power basis has 5-index, the naive factorization of P6 mod 5 alone is not a valid Dedekind factorization.\n\nTo repair this, an integral generator beta from a computed integral basis was found with index prime to 5. Its minimal polynomial is\n\nX^6 - 394X^5 + 9946X^4 + 133088X^3 + 296618X^2 - 355700X + 87440,\n\nand its polynomial discriminant divided by Disc(K6) has 5-adic valuation 0. Modulo 5 this minimal polynomial factors as\n\nX^2 (X^4 + X^3 + 3X^2 + 3X + 3).\n\nThe quartic factor is irreducible over F5. Hence 5 has exactly one ramified residue-degree-1 prime lambda in K6, with e(lambda/5)=2, plus one unramified residue-degree-4 prime. Since P6 has only the linear residue root e=-1 modulo 5, the ramified lambda satisfies e == -1 (mod lambda). It is unique of this ramification/residue type, so tau fixes lambda; the induced map on O_K6/lambda = F5 is the identity.\n\nThis is precisely the coefficient-field ramification feature used in Billerey\u2013Chen\u2013Demb\u00e9l\u00e9\u2013Dieulefait\u2013Freitas, Proposition 3.2, for a reducibility argument.\n\n## Exact certificate that the ramified lambda is a genuine surviving sieve prime\n\nThe original Case-2 elimination code uses the rational-prime sieve S=[3,67,101]. For all four obstructing forms r,s,v,w, exact reduction at the ramified degree-1 prime lambda|5 gives\n\n- q=3, the unique prime Q has Norm(Q)=81 and a_Q == 2 == 1+81 (mod lambda),\n- q=67, every Q|67 has a_Q == 3 == 1+67 (mod lambda),\n- q=101, every Q|101 has a_Q == 2 == 1+101 (mod lambda).\n\nFor the degree-6 fields the exact reduction was done in an integral basis of O_K6 rather than by naively substituting e=-1 into expressions with denominators divisible by 5. If c1,...,c6 are coordinates in the computed integral basis, reduction at lambda is c1+4*c2+c3 mod 5.\n\nThe link to the actual B_S sieve is direct. In the author's Case-2 definitions, choosing (eta,mu)=(0,1) gives u=1, v=-1, w=0, hence the singular branch. Then c4=16, c6=-64, gamma=-c4/c6=1/4 is a square in every odd residue field, so\n\nB_Q(f,0,1)=Norm(Q)+1-"
+  },
+  "questions": {
+    "has_proved_result": {
+      "type": "score",
+      "instructions": "Does this checkpoint contain at least one result that is genuinely and unconditionally PROVED within it - an exact computation, an explicit algebraic identity, or a complete derivation - as opposed to a result that depends on an external citation, on another checkpoint, on GRH, on finiteness of Sha, or on a probabilistic heuristic?",
+      "criteria": [
+        "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+        "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+        "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+        "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+      ]
+    },
+    "reusable_elsewhere": {
+      "type": "noul",
+      "instructions": "Would the self-contained part of this checkpoint remain valid and useful even if the checkpoint's headline conclusion were withdrawn?",
+      "criteria": {
+        "true": "it establishes an identity, a valuation profile, a conductor computation, a class-group fact or a point count that stands on its own",
+        "false": "everything in it is downstream of the headline claim and falls with it"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_proved_result": {
+        "type": "score",
+        "score": 2.18,
+        "confidence": 0.77,
+        "legend": {
+          "0": "level 0: every substantive claim depends on an external citation, another checkpoint, or an unproved hypothesis",
+          "1": "level 1: it contains only routine computations whose correctness is clear but which carry no mathematical content on their own",
+          "2": "level 2: it contains a self-contained exact computation or algebraic identity that would be reusable if verified",
+          "3": "level 3: it contains a complete self-contained derivation of a non-trivial statement, proved within the checkpoint itself"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.01,
+          "2": 0.78,
+          "3": 0.2
+        }
+      },
+      "reusable_elsewhere": {
+        "type": "noul",
+        "noul": 0.88
+      }
+    },
+    "usage": {
+      "input_tokens": 2012,
+      "output_tokens": 42
+    }
+  }
+}

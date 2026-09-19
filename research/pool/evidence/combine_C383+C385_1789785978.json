@@ -1,0 +1,69 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "combine_C383+C385",
+  "timestamp": "2026-09-18T22:46:18-0400",
+  "model": "jev-latest",
+  "request_state": "Candidate 1 (C383): NON-ABELIAN RECIPROCITY ON UNIVERSAL MODULI STACKS AND AUTOMORPHIC REPRESENTATIONS\nClaim 1: Automorphic representations on higher-rank unitary groups associated to universal moduli stacks over P^1 \\ {0, 1, inf} eliminate Beal solutions across varying triple exponents (p, q, r).\nMethod 1: Non-abelian class field theory, automorphic Galois representations, and Arthur-Clozel-Fontaine-Mazur compatibility.\n\nCandidate 2 (C385): UNIFORM BOGOMOLOV-PARSHIN ON MODULI OF CURVES OVER MIXED CHARACTERISTIC BASES\nClaim 2: Uniform arithmetic Bogomolov inequality for stable curves over mixed characteristic bases provides explicit unconditional height bounds on Beal solutions.\nMethod 2: Arithmetic surface geometry, relative dualizing sheaves, Bogomolov-Parshin-Moriwaki inequalities, and Faltings heights.\n",
+  "questions": {
+    "compatible": {
+      "type": "noul",
+      "instructions": "Are these two candidates mathematically compatible, operating on complementary aspects of the conjecture?",
+      "criteria": {
+        "true": "Yes, one provides input to the other or they address complementary signatures/invariants.",
+        "false": "No, they operate in disjoint or contradictory frameworks."
+      }
+    },
+    "combination_value": {
+      "type": "score",
+      "instructions": "What value would combining these two candidate approaches create?",
+      "criteria": [
+        "level 0: Zero value; combination fails or is identical to one candidate alone.",
+        "level 1: Minor bookkeeping convenience without resolving open obstacles.",
+        "level 2: Discharges a specific open obligation in one of the candidates.",
+        "level 3: Opens a genuine new attack route avoiding known dead ends."
+      ]
+    },
+    "shared_failure": {
+      "type": "noul",
+      "instructions": "Do both candidates fail due to the same fundamental obstruction (e.g. deformation invariance, Selmer blowup, or heuristic laundering)?",
+      "criteria": {
+        "true": "Yes, both share the same failure mode and combining them provides no new leverage.",
+        "false": "No, they hit independent failure modes, offering structural contrast."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "compatible": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "combination_value": {
+        "type": "score",
+        "score": 1.15,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: Zero value; combination fails or is identical to one candidate alone.",
+          "1": "level 1: Minor bookkeeping convenience without resolving open obstacles.",
+          "2": "level 2: Discharges a specific open obligation in one of the candidates.",
+          "3": "level 3: Opens a genuine new attack route avoiding known dead ends."
+        },
+        "probabilities": {
+          "0": 0.44,
+          "1": 0.24,
+          "2": 0.05,
+          "3": 0.27
+        }
+      },
+      "shared_failure": {
+        "type": "noul",
+        "noul": 0.4
+      }
+    },
+    "usage": {
+      "input_tokens": 742,
+      "output_tokens": 53
+    }
+  }
+}

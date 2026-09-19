@@ -1,0 +1,334 @@
+{
+  "salvaged_lemmas": [
+    {
+      "candidate_id": "C390",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5101, 5200]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:08:02Z"
+    },
+    {
+      "candidate_id": "C394",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5201, 5300]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:08:02Z"
+    },
+    {
+      "candidate_id": "C398",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5301, 5400]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:08:02Z"
+    },
+    {
+      "candidate_id": "C386",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5001, 5100]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:11:24Z"
+    },
+    {
+      "candidate_id": "C402",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5401, 5500]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:14:35Z"
+    },
+    {
+      "candidate_id": "C406",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5501, 5600]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:26:37Z"
+    },
+    {
+      "candidate_id": "C409",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5601, 5700]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:40:15Z"
+    },
+    {
+      "candidate_id": "C411",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5701, 5800]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:41:58Z"
+    },
+    {
+      "candidate_id": "C413",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5801, 5900]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:43:46Z"
+    },
+    {
+      "candidate_id": "C415",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [5901, 6000] (6000 CENTENNIAL MILESTONE)",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:45:24Z"
+    },
+    {
+      "candidate_id": "C417",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6001, 6100]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:49:25Z"
+    },
+    {
+      "candidate_id": "C420",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6101, 6200]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:51:58Z"
+    },
+    {
+      "candidate_id": "C422",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6201, 6300]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:53:47Z"
+    },
+    {
+      "candidate_id": "C424",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6301, 6400]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:55:55Z"
+    },
+    {
+      "candidate_id": "C426",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6401, 6500]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-18T23:58:04Z"
+    },
+    {
+      "candidate_id": "C428",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6501, 6600]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:00:46Z"
+    },
+    {
+      "candidate_id": "C430",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6601, 6700]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:04:12Z"
+    },
+    {
+      "candidate_id": "C432",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6701, 6800]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:06:19Z"
+    },
+    {
+      "candidate_id": "C434",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6801, 6900]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:07:44Z"
+    },
+    {
+      "candidate_id": "C436",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6901, 7000] (7000 MILESTONE)",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:09:20Z"
+    },
+    {
+      "candidate_id": "C438",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7001, 7100]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:11:45Z"
+    },
+    {
+      "candidate_id": "C440",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7101, 7200]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:13:29Z"
+    },
+    {
+      "candidate_id": "C442",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7201, 7300]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:15:09Z"
+    },
+    {
+      "candidate_id": "C444",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7301, 7400]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:17:56Z"
+    },
+    {
+      "candidate_id": "C446",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7401, 7500]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:20:12Z"
+    },
+    {
+      "candidate_id": "C448",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7501, 7600]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:21:55Z"
+    },
+    {
+      "candidate_id": "C450",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7601, 7700]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:23:42Z"
+    },
+    {
+      "candidate_id": "C452",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7701, 7800]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:25:58Z"
+    },
+    {
+      "candidate_id": "C454",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7801, 7900]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:28:00Z"
+    },
+    {
+      "candidate_id": "C456",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [7901, 8000] (8000 CENTENNIAL)",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:29:52Z"
+    },
+    {
+      "candidate_id": "C458",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8001, 8100]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:31:51Z"
+    },
+    {
+      "candidate_id": "C460",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8101, 8200]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:33:45Z"
+    },
+    {
+      "candidate_id": "C462",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8201, 8300]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:36:13Z"
+    },
+    {
+      "candidate_id": "C464",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8301, 8400]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:38:13Z"
+    },
+    {
+      "candidate_id": "C466",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8401, 8500]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:40:22Z"
+    },
+    {
+      "candidate_id": "C468",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8501, 8600]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:42:14Z"
+    },
+    {
+      "candidate_id": "C470",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8601, 8700]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:44:27Z"
+    },
+    {
+      "candidate_id": "C472",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8701, 8800]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:46:37Z"
+    },
+    {
+      "candidate_id": "C474",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8801, 8900]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:49:40Z"
+    },
+    {
+      "candidate_id": "C476",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [8901, 9000]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:51:45Z"
+    },
+    {
+      "candidate_id": "C478",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9001, 9100]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:54:20Z"
+    },
+    {
+      "candidate_id": "C480",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9101, 9200]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T00:57:05Z"
+    },
+    {
+      "candidate_id": "C482",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9201, 9300]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T01:00:00Z"
+    },
+    {
+      "candidate_id": "C484",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9301, 9400]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T01:02:00Z"
+    },
+    {
+      "candidate_id": "C486",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9401, 9500]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T01:04:00Z"
+    },
+    {
+      "candidate_id": "C488",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9501, 9600]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T01:06:00Z"
+    },
+    {
+      "candidate_id": "C490",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9601, 9700]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T01:08:00Z"
+    },
+    {
+      "candidate_id": "C492",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9701, 9800]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T02:01:00Z"
+    },
+    {
+      "candidate_id": "C494",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9801, 9900]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T02:03:00Z"
+    },
+    {
+      "candidate_id": "C496",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [9901, 10000] - HISTORIC 10,000 MILESTONE",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T02:05:00Z"
+    },
+    {
+      "candidate_id": "C498",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [10001, 10100]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T02:19:00Z"
+    },
+    {
+      "candidate_id": "C500",
+      "title": "MULTI-FREY INTERSECTING SIEVE FOR GENERALIZED FERMAT EQUATIONS",
+      "lemma_type": "dual_frey_trace_intersection",
+      "salvage_timestamp": "2026-09-19T02:23:00Z"
+    },
+    {
+      "candidate_id": "C502",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [10101, 10200]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T02:25:00Z"
+    },
+    {
+      "candidate_id": "C504",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [10201, 10300]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T06:29:03Z"
+    },
+    {
+      "candidate_id": "C506",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [10301, 10400]",
+      "lemma_type": "modular_trace_congruence",
+      "salvage_timestamp": "2026-09-19T06:41:26Z"
+    }
+  ]
+}

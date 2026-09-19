@@ -1,0 +1,24 @@
+[
+  {
+    "hypothesis_id": "H_BAKER_WUSTHOLZ_HEIGHT_GAP",
+    "title": "LINEAR FORMS IN LOGARITHMS & SEMI-STABLE BAKER-WUSTHOLZ BOUNDS",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.51,
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "audit_and_isolate_obstruction"
+  },
+  {
+    "hypothesis_id": "H_O_MINIMAL_PILA_ZANNIER",
+    "title": "O-MINIMALITY AND PILA-ZANNIER COUNTING ON MODULI OF FREY CURVES",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.43,
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction"
+  }
+]

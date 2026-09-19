@@ -1,0 +1,73 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "cycle247_C248_chabauty_kim_bounds",
+  "timestamp": "2026-09-18T18:35:39-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture": "Beal conjecture: A^x + B^y = C^z with x,y,z >= 3 and gcd(gcd(A,B),C) = 1 has no positive integer solutions. Descent on (3,3,3) in Lean 4 Euler.lean has 127 theorems. We evaluate the formalization of CubeFormParam via Z[omega] PID, an independent GP Kraus sieve check, and the Chabauty-Kim frontier.",
+    "candidate": {
+      "id": "C248_chabauty_kim_bounds",
+      "claim": "Non-abelian Chabauty-Kim depth 2 evaluation on X_0(13) and twisted curves: assessing bounds on p-adic points.",
+      "text": "Investigating whether unipotent fundamental group quotients provide effective bounds on integral points for Frey curves associated with Beal signatures."
+    }
+  },
+  "questions": {
+    "soundness": {
+      "type": "score",
+      "instructions": "How mathematically sound and rigorous is this step within the verified scope of the repo?",
+      "criteria": [
+        "level 0: heuristic laundering or unverified assumption",
+        "level 1: speculative connection without immediate proof mechanism",
+        "level 2: concrete verifiable certificate or exact computation",
+        "level 3: fully formalizable theorem in Lean 4 or exact algebraic derivation"
+      ]
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this candidate?",
+      "criteria": {
+        "formalize": "formalize in Lean 4 with mathlib",
+        "exact_computation": "implement exact computation in PARI/GP or Python",
+        "literature_check": "check primary literature for known obstructions",
+        "discard": "discard"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "soundness": {
+        "type": "score",
+        "score": 0.94,
+        "confidence": 0.84,
+        "legend": {
+          "0": "level 0: heuristic laundering or unverified assumption",
+          "1": "level 1: speculative connection without immediate proof mechanism",
+          "2": "level 2: concrete verifiable certificate or exact computation",
+          "3": "level 3: fully formalizable theorem in Lean 4 or exact algebraic derivation"
+        },
+        "probabilities": {
+          "0": 0.11,
+          "1": 0.85,
+          "2": 0.03,
+          "3": 0.01
+        }
+      },
+      "action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.68,
+        "probabilities": {
+          "discard": 0.06,
+          "literature_check": 0.76,
+          "exact_computation": 0.12,
+          "formalize": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 690,
+      "output_tokens": 69
+    }
+  }
+}

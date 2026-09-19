@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C412",
+    "title": "LOGARITHMIC FROBENIUS AND HYPERBOLIC AREA COMPARISON ON ORBIFOLD CURVES",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.53,
+    "finiteness_profile": "finiteness_only",
+    "structural_obstruction": "continuous_moduli_degeneration",
+    "recommended_action": "audit_and_isolate_obstruction",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.55
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.53,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.28,
+          "mode_1_residual_conflation": 0.03,
+          "mode_2_chabauty_unbounded_s": 0.04,
+          "sound_no_failure_mode": 0.65
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.84,
+        "probabilities": {
+          "bounded_only": 0.03,
+          "vacuous": 0.07,
+          "finiteness_only": 0.89,
+          "proves_nonexistence": 0.01
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "continuous_moduli_degeneration",
+        "confidence": 0.49,
+        "probabilities": {
+          "torsion_wild_ramification": 0.2,
+          "automorphic_cusp_abundance": 0.0,
+          "continuous_moduli_degeneration": 0.58,
+          "selmer_dimension_growth": 0.12,
+          "unobstructed": 0.06,
+          "computational_scale": 0.04
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.76,
+        "probabilities": {
+          "advance_kraus_frontier": 0.01,
+          "audit_and_isolate_obstruction": 0.8,
+          "refute_and_archive": 0.09,
+          "salvage_proved_sublemmas": 0.08,
+          "synthesize_breakthrough": 0.02
+        }
+      }
+    }
+  }
+]

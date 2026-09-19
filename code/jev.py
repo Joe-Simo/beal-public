@@ -8,6 +8,7 @@ Stdlib only (urllib). Key is read from $TYPESAFE_API_KEY or .env.local; never lo
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import random
@@ -22,6 +23,7 @@ ENDPOINT = "https://api.typesafe.ai/v1/systemone"
 MODEL = "jev-latest"
 REPO = Path(__file__).resolve().parent.parent
 EVIDENCE_DIR = REPO / "research" / "pool" / "evidence"
+CACHE_DIR = REPO / ".cache" / "jev"
 
 
 class JevUnavailable(RuntimeError):
@@ -39,6 +41,65 @@ def _api_key() -> str:
             if line.startswith("TYPESAFE_API_KEY="):
                 return line.split("=", 1)[1].strip().strip("'\"")
     raise JevUnavailable("TYPESAFE_API_KEY not set (env or .env.local)")
+
+
+# ---------------------------------------------------------------- caching helpers
+
+def _cache_key(state: Any, questions: dict[str, Any]) -> str:
+    payload = json.dumps({"model": MODEL, "state": state, "questions": questions}, sort_keys=True, default=str)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def get_cached(state: Any, questions: dict[str, Any]) -> dict[str, Any] | None:
+    """Retrieve cached response if available."""
+    if os.environ.get("JEV_NO_CACHE") == "1":
+        return None
+    ckey = _cache_key(state, questions)
+    cpath = CACHE_DIR / f"{ckey}.json"
+    if cpath.exists():
+        try:
+            data = json.loads(cpath.read_text(encoding="utf-8"))
+            if isinstance(data, dict) and "answers" in data:
+                return data
+        except Exception:
+            pass
+    return None
+
+
+def store_cached(state: Any, questions: dict[str, Any], data: dict[str, Any]) -> None:
+    """Store successful response into persistent query cache."""
+    if os.environ.get("JEV_NO_CACHE") == "1":
+        return
+    try:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        ckey = _cache_key(state, questions)
+        cpath = CACHE_DIR / f"{ckey}.json"
+        cpath.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    except Exception:
+        pass
+
+
+def cache_stats() -> dict[str, Any]:
+    """Return count and disk usage of Jev query cache."""
+    if not CACHE_DIR.exists():
+        return {"count": 0, "size_bytes": 0}
+    files = list(CACHE_DIR.glob("*.json"))
+    total_size = sum(f.stat().st_size for f in files)
+    return {"count": len(files), "size_bytes": total_size}
+
+
+def clear_cache() -> int:
+    """Clear all cached Jev responses."""
+    if not CACHE_DIR.exists():
+        return 0
+    count = 0
+    for f in CACHE_DIR.glob("*.json"):
+        try:
+            f.unlink()
+            count += 1
+        except Exception:
+            pass
+    return count
 
 
 # ---------------------------------------------------------------- question types
@@ -59,8 +120,13 @@ def score(instructions: str, criteria: list[str]) -> dict[str, Any]:
 # ---------------------------------------------------------------- transport
 
 def ask(state: Any, questions: dict[str, dict[str, Any]], *,
-        timeout: float = 90.0, tries: int = 5) -> dict[str, Any]:
+        timeout: float = 90.0, tries: int = 5, use_cache: bool = True) -> dict[str, Any]:
     """One request, one state. Returns {"answers": ..., "usage": ...}."""
+    if use_cache:
+        cached = get_cached(state, questions)
+        if cached is not None:
+            return cached
+
     body = json.dumps({"model": MODEL, "state": state, "questions": questions}).encode()
     headers = {"Authorization": f"Bearer {_api_key()}", "Content-Type": "application/json"}
     delay = 1.0
@@ -68,9 +134,13 @@ def ask(state: Any, questions: dict[str, dict[str, Any]], *,
         req = urllib.request.Request(ENDPOINT, data=body, headers=headers, method="POST")
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
-                return json.loads(resp.read().decode())
+                res = json.loads(resp.read().decode())
+                if use_cache and "answers" in res:
+                    store_cached(state, questions, res)
+                return res
         except urllib.error.HTTPError as e:
-            if e.code in (429, 529) and attempt < tries - 1:
+            # Retry transient errors: rate limits (429, 529) and server drops (500, 502, 503, 504)
+            if e.code in (429, 500, 502, 503, 504, 529) and attempt < tries - 1:
                 time.sleep(delay + random.random() * 0.5)
                 delay *= 2
                 continue
@@ -86,15 +156,25 @@ def ask(state: Any, questions: dict[str, dict[str, Any]], *,
 
 
 def ask_many(states: list[Any], questions: dict[str, dict[str, Any]], *,
-             concurrency: int = 12) -> list[dict[str, Any]]:
+             concurrency: int = 12, use_cache: bool = True,
+             batch_size: int = 24) -> list[dict[str, Any]]:
     """Same questions over many states, concurrently. Failures come back as {'error': ...}."""
     def one(s: Any) -> dict[str, Any]:
         try:
-            return ask(s, questions)
+            return ask(s, questions, use_cache=use_cache)
         except JevUnavailable as e:
             return {"error": str(e)}
-    with ThreadPoolExecutor(max_workers=concurrency) as pool:
-        return list(pool.map(one, states))
+
+    results: list[dict[str, Any]] = []
+    # Process in adaptive batches to preserve endpoint headroom and avoid burst 429s
+    for i in range(0, len(states), batch_size):
+        batch = states[i:i + batch_size]
+        with ThreadPoolExecutor(max_workers=min(concurrency, len(batch))) as pool:
+            batch_results = list(pool.map(one, batch))
+            results.extend(batch_results)
+        if i + batch_size < len(states):
+            time.sleep(0.05)  # slight spacing between bursts
+    return results
 
 
 # ---------------------------------------------------------------- persistence

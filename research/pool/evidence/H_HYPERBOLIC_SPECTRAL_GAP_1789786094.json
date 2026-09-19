@@ -1,0 +1,90 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "H_HYPERBOLIC_SPECTRAL_GAP",
+  "timestamp": "2026-09-18T22:48:14-0400",
+  "model": "jev-latest",
+  "request_state": "Hypothesis: H_HYPERBOLIC_SPECTRAL_GAP - Minimal Hyperbolic Defect -chi >= 1/12 as an Automorphic Spectral Gap\nDescription: Exploit the non-zero defect gap Delta(-chi) = 5/84 between Beal (-chi >= 1/12) and Fermat-Catalan (-chi <= 1/18) as a uniform Selberg eigenvalue lambda_1 >= 1/4 spectral lower bound.\nContext: Beal conjecture x, y, z >= 3; Beal defect -chi >= 1/12; Fermat-Catalan defect -chi <= 1/18.",
+  "questions": {
+    "avoids_dead_category": {
+      "type": "noul",
+      "instructions": "Does this hypothesis avoid known dead categories (bounded sieves, one-signature modular method, elementary congruences, unproved ABC/Vojta laundering)?",
+      "criteria": {
+        "true": "Avoids all known dead categories and heuristic laundering",
+        "false": "Falls into a known dead category or heuristic laundering"
+      }
+    },
+    "avoids_failure_modes": {
+      "type": "noul",
+      "instructions": "Does this hypothesis structurally avoid the three recurring failure modes (residual/isogeny conflation, Chabauty wrong field, heuristic laundering)?",
+      "criteria": {
+        "true": "Structurally free from the three recorded failure modes",
+        "false": "Vulnerable to one of the recorded failure modes"
+      }
+    },
+    "breakthrough_potential": {
+      "type": "score",
+      "instructions": "What is the breakthrough potential of this mechanism for resolving the full Beal conjecture across all triples (p, q, r) >= 3?",
+      "criteria": [
+        "level 0: No leverage on general exponents",
+        "level 1: Minor theoretical interest, does not resolve open core",
+        "level 2: Provides structural constraints applicable to infinite families",
+        "level 3: Viable architecture for an unconditional resolution of the conjecture"
+      ]
+    },
+    "next_action": {
+      "type": "choice",
+      "instructions": "What is the recommended next action for this hypothesis?",
+      "criteria": {
+        "deep_audit": "Conduct immediate deep adversarial audit and mathematical formalization",
+        "combine": "Pairwise combine with existing top candidates via Jev",
+        "countersearch": "Construct an exact counterexample search against its core premise",
+        "shelve": "Shelve as obstructed or dead category"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "avoids_dead_category": {
+        "type": "noul",
+        "noul": 0.19
+      },
+      "avoids_failure_modes": {
+        "type": "noul",
+        "noul": 0.22
+      },
+      "breakthrough_potential": {
+        "type": "score",
+        "score": 0.51,
+        "confidence": 0.49,
+        "legend": {
+          "0": "level 0: No leverage on general exponents",
+          "1": "level 1: Minor theoretical interest, does not resolve open core",
+          "2": "level 2: Provides structural constraints applicable to infinite families",
+          "3": "level 3: Viable architecture for an unconditional resolution of the conjecture"
+        },
+        "probabilities": {
+          "0": 0.57,
+          "1": 0.36,
+          "2": 0.06,
+          "3": 0.01
+        }
+      },
+      "next_action": {
+        "type": "choice",
+        "choice": "deep_audit",
+        "confidence": 0.41,
+        "probabilities": {
+          "deep_audit": 0.55,
+          "shelve": 0.27,
+          "countersearch": 0.17,
+          "combine": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 804,
+      "output_tokens": 115
+    }
+  }
+}

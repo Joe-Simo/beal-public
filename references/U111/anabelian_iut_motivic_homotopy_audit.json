@@ -1,0 +1,21 @@
+{
+  "C324": {
+    "status": "BLOCKED",
+    "reason": "Mochizuki's IUT height bounds (Corollary 3.12) are not unconditionally established (Scholze-Stix 2018), and treating ABC-type consequences as unconditional constitutes Heuristic Laundering. Furthermore, etale fundamental groups pi_1^{et}(X) and anabelian reconstruction operate on schemes over Q, which are projective scale-invariant and strictly blind to Diophantine coprimality gcd(A, B, C) = 1.",
+    "point_orig": [
+      3,
+      4,
+      5
+    ],
+    "point_scaled": [
+      3,
+      4,
+      5
+    ]
+  },
+  "C325": {
+    "status": "BLOCKED",
+    "reason": "Motivic stable homotopy categories SH(Q) and the motivic Adams-Novikov spectral sequence are A^1-homotopy invariant and factor through the scheme structure of C/Q. Rational points induce morphisms S^0 -> Sigma^infty_+ C that depend solely on the projective point in C(Q), making them projective scale-invariant and blind to integer coprimality gcd(A, B, C) = 1. Homotopy groups do not bound the exponent lattice (x, y, z).",
+    "dim_sphere": 0
+  }
+}

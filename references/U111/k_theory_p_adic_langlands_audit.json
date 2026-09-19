@@ -1,0 +1,17 @@
+{
+  "C327": {
+    "status": "BLOCKED",
+    "reason": "Quillen higher K-theory groups K_n(X) and motivic Steenrod operations factor through the scheme structure of the projective curve C/Q. Rational points induce pushforward classes [P] in K_0(C) that depend strictly on the projective point in P^2(Q), completely blind to whether integer coordinates are coprime gcd(A, B, C) = 1 or share a common factor. K-theory torsion does not bound exponents.",
+    "k_orders": {
+      "K_0_rank": 1,
+      "K_1_order": 2,
+      "K_2_order": 2,
+      "K_3_order": 48
+    }
+  },
+  "C328": {
+    "status": "BLOCKED",
+    "reason": "The p-adic Langlands correspondence and Breuil-Mezard cycle multiplicities in crystalline deformation rings R^{cris, [0, 1]} are determined by the fixed Hodge-Tate weights {0, 1} and residual representations rho_bar, independent of exponents (p, q, r). Local Banach space representations Pi_p(E) are invariant under common coordinate scaling, providing no Diophantine filter for integer coprimality.",
+    "bm_weight_count": 1
+  }
+}

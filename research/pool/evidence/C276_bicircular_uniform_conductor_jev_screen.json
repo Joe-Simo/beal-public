@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "id": "C276_bicircular_uniform_conductor",
+    "name": "Uniform Conductor Bound for Generalized Frey Varieties",
+    "text": "Bounding the conductor of the minimal abelian variety quotient of J(C_{A, B, C}) uniformly in the exponents (x, y, z)."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "fidelity_to_beal": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "relevance_score": {
+        "type": "score",
+        "score": 2.76,
+        "confidence": 0.79,
+        "legend": {
+          "0": "level 0: peripheral or unrelated",
+          "1": "level 1: general background context",
+          "2": "level 2: settles a concrete prime interval or specific signature family",
+          "3": "level 3: establishes a uniform structural result across an infinite family",
+          "4": "level 4: resolves the entire conjecture"
+        },
+        "probabilities": {
+          "0": 0.05,
+          "1": 0.05,
+          "2": 0.02,
+          "3": 0.88,
+          "4": 0.0
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.51,
+        "probabilities": {
+          "formalize": 0.0,
+          "park": 0.01,
+          "advance": 0.37,
+          "discard": 0.01,
+          "literature_check": 0.6,
+          "exact_computation": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 695,
+      "output_tokens": 125
+    }
+  }
+}

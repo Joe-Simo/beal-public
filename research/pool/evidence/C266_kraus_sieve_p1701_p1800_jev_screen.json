@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "id": "C266_kraus_sieve_p1701_p1800",
+    "name": "Extended Kraus Sieve for (3, 3, p) on p in [1701, 1800]",
+    "text": "Candidate: Extended exact modular Kraus sieve for Beal signature (3, 3, p) across prime exponents p in [1701, 1800]. Uses multi-modulus auxiliary primes l = 2*k*p + 1 to eliminate potential mod-p isomorphisms between Frey elliptic curves E_{A,B} and weight-2 newforms at conductor levels 72 and 144. Provides unconditional exact integer certificate verified independently in PARI/GP."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exact_computability": {
+        "type": "noul",
+        "noul": 0.34
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "relevance_level": {
+        "type": "score",
+        "score": 1.95,
+        "confidence": 0.95,
+        "legend": {
+          "0": "level 0: peripheral or unrelated to Beal signatures",
+          "1": "level 1: general modular method context without resolving any signature",
+          "2": "level 2: settles a concrete range of exponents or a new specific signature family",
+          "3": "level 3: settles an entire infinite signature family for all exponents",
+          "4": "level 4: resolves the complete conjecture outright"
+        },
+        "probabilities": {
+          "0": 0.02,
+          "1": 0.03,
+          "2": 0.95,
+          "3": 0.0,
+          "4": 0.0
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "exact_computation",
+        "confidence": 0.2,
+        "probabilities": {
+          "exact_computation": 0.32,
+          "literature_check": 0.25,
+          "discard": 0.25,
+          "park": 0.02,
+          "advance": 0.06,
+          "formalize": 0.1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 859,
+      "output_tokens": 125
+    }
+  }
+}

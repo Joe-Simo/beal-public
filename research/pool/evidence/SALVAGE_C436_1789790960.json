@@ -1,0 +1,85 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C436",
+  "timestamp": "2026-09-19T00:09:20-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C436",
+    "candidate": {
+      "parents": [
+        "C434"
+      ],
+      "inspirations": [
+        "Kraus 1998",
+        "Darmon-Merel 1997"
+      ],
+      "evidence": [
+        "U497_kraus_sieve_p6901_p7000.py",
+        "U498_gp_kraus_audit.gp"
+      ],
+      "obligations": [
+        "Eliminate primes p in [6901, 7000] with p = 1 mod 3."
+      ],
+      "evaluations": {
+        "category": "classical_modular_frey"
+      },
+      "failure_reason": null,
+      "novelty_note": "Extends empirical Kraus sieve frontier from p = 6900 to the milestone p = 7000.",
+      "extracted": [
+        "All 6 primes in [6901, 7000] with p = 1 mod 3 unconditionally eliminated by auxiliary primes q = 2kp + 1."
+      ],
+      "id": "C436",
+      "title": "KRAUS SIEVE MODULAR METHOD EXTENSION FOR SIGNATURE (3, 3, p) ON [6901, 7000] (7000 MILESTONE)",
+      "claim": "The generalized Fermat equation A^3 + B^3 = C^p has no non-trivial primitive integer solutions for all prime exponents p in [6901, 7000].",
+      "method": "Kraus sieve modular method using weight-2 newforms of levels 72 and 144, Frey curve traces, and PARI/GP independent verification.",
+      "status": "PARTIAL_RESULT",
+      "category": "classical_modular_frey"
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "modular_trace_congruence",
+        "confidence": 0.95,
+        "probabilities": {
+          "cohomology_dimension_bound": 0.0,
+          "galois_inertia_weight": 0.0,
+          "modular_trace_congruence": 0.96,
+          "height_positivity": 0.0,
+          "none": 0.04
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 963,
+      "output_tokens": 98
+    }
+  }
+}

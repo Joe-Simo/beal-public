@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_GaussianCube.lean",
+  "timestamp": "2026-09-18T22:55:55-0400",
+  "model": "jev-latest",
+  "request_state": "File: GaussianCube.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# The Gaussian cube step (U136): discharging `GaussianCubeStep`\n\n`a\u00b2 + b\u00b2 = c\u00b3` with `a, b` coprime and `c` odd forces `a + bi = (u + vi)\u00b3` in `\u2124[i]`.\nProof: `\u03b1 = a + bi` and `star \u03b1` are coprime (a common divisor divides `2` and the odd `c\u00b3`, so its\nnorm divides `gcd(4, c\u2076) = 1`), their product is the cube `c\u00b3`, so `\u03b1` is a unit times a cube in the\nUFD `\u2124[i]`; every unit of `\u2124[i]` is itself a cube (`\u03b5\u2074 = 1`), so `\u03b1` is a cube.\n-/\nimport Beal.EvenEvenThree\nimport Mathlib.NumberTheory.Zsqrtd.GaussianInt\nimport Mathlib.RingTheory.UniqueFactorizationDomain.GCDMonoid\nimport Mathlib.Algebra.EuclideanDomain.Basic\n\nopen Zsqrtd\n\nlocal notation \"\u2124[i]\" => GaussianInt\n\nnamespace Beal\n\nnoncomputable local instance : GCDMonoid \u2124[i] := UniqueFactorizationMonoid.toGCDMonoid \u2124[i]\n\n/-- Norm divisibility follows from divisibility. -/\nlemma norm_dvd_of_dvd {x y : \u2124[i]} (h : x \u2223 y) : Zsqrtd.norm x \u2223 Zsqrtd.norm y := by\n  obtain \u27e8k, rfl\u27e9 := h; rw [Zsqrtd.norm_mul]; exact dvd_mul_right _ _\n\n/-- Every unit of `\u2124[i]` satisfies `\u03b5 ^ 4 = 1`. -/\nlemma unit_pow_four {\u03b5 : \u2124[i]} (h : IsUnit \u03b5) : \u03b5 ^ 4 = 1 := by\n  have hn : \u03b5.norm = 1 := (Zsqrtd.norm_eq_one_iff' (by norm_num) \u03b5).mpr h\n  rw [Zsqrtd.norm_def] at hn\n  have hn' : \u03b5.re * \u03b5.re + \u03b5.im * \u03b5.im = 1 := by linarith\n  have h1 : \u03b5.re = 0 \u2228 \u03b5.re = 1 \u2228 \u03b5.re = -1 := by\n    have hl : -1 \u2264 \u03b5.re := by\n      by_contra hc; push_neg at hc\n      have : \u03b5.re \u2264 -2 := by omega\n      nlinarith [sq_nonneg \u03b5.im]\n    have hr : \u03b5.re \u2264 1 := by\n      by_contra hc; push_neg at hc\n      have : 2 \u2264 \u03b5.re := by omega\n      nlinarith [sq_nonneg \u03b5.im]\n    omega\n  have h2 : \u03b5.im = 0 \u2228 \u03b5.im = 1 \u2228 \u03b5.im = -1 := by\n    have hl : -1 \u2264 \u03b5.im := by\n      by_contra hc; push_neg at hc\n      have : \u03b5.im \u2264 -2 := by omega\n      nlinarith [sq_nonneg \u03b5.re]\n    have hr : \u03b5.im \u2264 1 := by\n      by_contra hc; push_neg at hc\n      have : 2 \u2264 \u03b5.im := by omega\n      nlinarith [sq_nonneg \u03b5.re]\n    omega\n  have e4 : \u03b5 ^ 4 = \u03b5 * \u03b5 * \u03b5 * \u03b5 := by ring\n  rw [e4]\n  ext\n  \u00b7 simp only [Zsqrtd.mul_re, Zsqrtd.mul_im, Zsqrtd.one_re]\n    rcases h1 with h1 | h1 | h1 <;> rcases h2 with h2 | h2 | h2 <;> simp [h1, h2] at hn' \u22a2\n  \u00b7 simp only [Zsqrtd.mul_re, Zsqrtd.mul_im, Zsqrtd.one_im]\n    rcases h1 with h1 | h1 | h1 <;> rcases h2 with h2 | h2 | h2 <;> simp [h1, h2] at hn' \u22a2\n\n/-- **`GaussianCubeStep` holds.** -/\ntheorem gaussianCubeStep : GaussianCubeStep := by\n  intro a b c hab hc h\n  set \u03b1 : \u2124[i] := \u27e8a, b\u27e9 with h\u03b1\n  have hc3 : ((c : \u2124[i])) ^ 3 = ((c ^ 3 : \u2124) : \u2124[i]) := by push_cast; rfl\n  -- the product with the conjugate is `c ^ 3`\n  have hprod : \u03b1 * star \u03b1 = (c : \u2124[i]) ^ 3 := by\n    rw [hc3]; ext\n    \u00b7 simp only [h\u03b1, Zsqrtd.add_re, Zsqrtd.add_im, Zsqrtd.sub_re, Zsqrtd.sub_im, Zsqrtd.mul_re, Zsqrtd.mul_im, Zsqrtd.star_re, Zsqrtd.star_im, Zsqrtd.intCast_re, Zsqrtd.intCast_im]\n      nlinarith [h]\n    \u00b7 simp only [h\u03b1, Zsqrtd.add_re, Zsqrtd.add_im, Zsqrtd.sub_re, Zsqrtd.sub_im, Zsqrtd.mul_re, Zsqrtd.mul_im, Zsqrtd.star_re, Zsqrtd.star_im, Zsqrtd.intCast_re, Zsqrtd.intCast_im]\n      ring\n  -- any common divisor of `\u03b1` and `star \u03b1` is a unit\n  have hunit : \u2200 g : \u2124[i], g \u2223 \u03b1 \u2192 g \u2223 star \u03b1 \u2192 IsUnit g := by\n    intro g h1 h2\n    have h2a : g \u2223 ((2 * a : \u2124) : \u2124[i]) := by\n      have : \u03b1 + star \u03b1 = ((2 * a : \u2124) : \u2124[i]) := by\n        ext <;> simp only [h\u03b1, Zsqrtd.add_re, Zsqrtd.add_im, Zsqrtd.sub_re, Zsqrtd.sub_im, Zsqrtd.mul_re, Zsqrtd.mul_im, Zsqrtd.star_re, Zsqrtd.star_im, Zsqrtd.intCast_re, Zsqrtd.intCast_im] <;> ring\n      rw [\u2190 this]; exact dvd_add h1 h2\n    have h2b : g \u2223 ((2 * b : \u2124) : \u2124[i]) := by\n      have : (\u03b1 - star \u03b1) * \u27e80, -1\u27e9 = ((2 * b : \u2124) : \u2124[i]) := by\n        ext <;> simp only [h\u03b1, Zsqrtd.add_re, Zsqrtd.add_im, Zsqrtd.sub_re, Zsqrtd.sub_im, Zsqrtd.mul_re, Zsqrtd.mul_im, Zsqrtd.star_re, Zsqrtd.star_im, Zsqrtd.intCast_re, Zsqrtd.intCast_im] <;> ring\n      rw [\u2190 this]; exact (dvd_sub h1 h2).mul_right _\n    have h2' : g \u2223 ((2 : \u2124) : \u2124[i]) := by\n      obtain \u27e8m, n, hmn\u27e9 := hab\n      have : ((2 : \u2124) : \u2124[i]) = (m : \u2124[i]) * ((2 * a : \u2124) : \u2124[i]) + (n : \u2124[i]) * ((2 * b : \u2124) : \u2124[i]) := by\n        have := congrArg (fun t : \u2124 => ((2 * t : \u2124) : \u2124[i])) hmn\n        push_cast at this \u22a2; linear_combination -this\n      rw [this]; exact dvd_add (h2a.mul_left _) (h2b.mul_left _)\n    have hgc : g \u2223 ((c ^ 3 : \u2124) : \u2124[i]) := by rw [\u2190 hc3, \u2190 hprod]; exact h1.mul_right _\n    have n2 : g.norm \u2223 4 := by\n      have := norm_dvd_of_dvd h2'\n      have h4 : ((2 : \u2124) : \u2124[i]).norm = 4 := by\n        rw [Zsqrtd.norm_def, Zsqrtd.intCast_re, Zsqrtd.intCast_im]; norm_num\n      rwa [h4] at this\n    have nc : g.norm \u2223 c ^ 6 := by\n      have := norm_dvd_of_dvd hgc\n      have h6 : ((c ^ 3 : \u2124) : \u2124[i]).norm = c ^ 6 := by\n        rw [Zsqrtd.norm_def, Zsqrtd.intCast_re, Zsqrtd.intCast_im]; ring\n      rwa [h6] at this\n    -- `gcd (4, c^6) = 1` since `c` is odd\n    have hodd : \u00ac (2 : \u2124) \u2223 c ^ 6 := fun hd => hc (Int.prime_two.dvd_of_dvd_pow hd)\n    have hcop : IsCoprime (4 : \u2124) (c ^ 6) := by\n      have h2c : IsCoprime (2 : \u2124) (c ^ 6) := (Int.prime_two.irreducible.coprime_iff_not_dvd).mpr hodd\n      have := h2c.mul_left h2c\n      norm_num at this; exact this\n    have hu : IsUnit g.norm := hcop.isUnit_of_dvd' n2 nc\n    have hnorm : g.norm = 1 := by\n      have h0 := GaussianInt.norm_nonneg g\n      rcases Int.isUnit_iff.mp hu with h | h <;> omega\n    exact (Zsqrtd.norm_eq_one_iff' (by norm_num) g).mp hnorm\n  -- hence `gcd \u03b1 (star \u03b1)` is a unit and `\u03b1` is associated to a cube\n  have hgcd : IsUnit (gcd \u03b1 (star \u03b1)) := hunit _ (gcd_dvd_left _ _) (gcd_dvd_right _ _)\n  obtain \u27e8\u03b4, h\u03b4\u27e9 := exists_associated_pow_of_mul_eq_pow hgcd hprod\n  obtain \u27e8\u03b5, h\u03b5\u27e9 := h\u03b4            -- \u03b4 ^ 3 * \u03b5 = \u03b1\n  -- absorb the unit: `\u03b5 = (\u03b5\u207b\u00b9) ^ 3` because `\u03b5 ^ 4 = 1`\n  have h\u03b54 : (\u03b5 : \u2124[i]) ^ 4 = 1 := unit_pow_four \u03b5.isUnit\n  set w : \u2124[i] := \u03b4 * (\u03b5\u207b\u00b9 : \u2124[i]\u02e3) with hw\n  have hcube : w ^ 3 = \u03b1 := by\n    rw [\u2190 h\u03b5, hw, mul_pow]\n    have hinv : ((\u03b5\u207b\u00b9 : \u2124[i]\u02e3) : \u2124[i]) ^ 3 = (\u03b5 : \u2124[i]) := by\n      calc ((\u03b5\u207b\u00b9 : \u2124[i]\u02e3) : \u2124[i]) ^ 3 = ((\u03b5\u207b\u00b9 : \u2124[i]\u02e3) : \u2124[i]) ^ 3 * (\u03b5 : \u2124[i]) ^ 4 := by rw [h\u03b54, mul_one]\n        _ = (((\u03b5\u207b\u00b9 : \u2124[i]\u02e3) : \u2124[i]) * (\u03b5 : \u2124[i])) ^ 3 * (\u03b5 : \u2124[i]) := by ring\n        _ = (\u03b5 : \u2124[i]) := by rw [Units.inv_mul]; ring\n    rw [hinv]\n  have hre : a = w.re * (w.re ^ 2 - 3 * w.im ^ 2) := by\n    have := congrArg Zsqrtd.re hcube\n    simp only [h\u03b1, pow_succ, pow_zero, one_mul, Zsqrtd.mul_re, Zsqrtd.mul_im] at this\n    linear_combination -this\n  have him : b = w.im * (3 * w.re ^ 2 - w.im ^ 2) := by\n    have := congrArg Zsqrtd.im hcube\n    simp only [h\u03b1, pow_succ, pow_zero, one_mul, Zsqrtd.mul_re, Zsqrtd.mul_im] at this\n    linear_combination -this\n  refine \u27e8w.re, w.im, ?_, hre, him\u27e9\n  rw [hre, him] at hab\n  exact hab.of_mul_left_left.of_mul_right_left\n\n/-- **Corollary.** `(2m, 2n, 3)`, `m, n \u2265 4`, needs only the two published theorems. -/\ntheorem no_counterexample_even_even_three' (hBS : BennettSkinnerThree) (hBCDY : BCDYFourTwoNThree)\n    {A B C m n : \u2115} (hm : 4 \u2264 m) (hn : 4 \u2264 n)\n    (h : IsBealCounterexample A B C (2 * m) (2 * n) 3) : False :=\n  no_counterexample_even_even_three gaussianCubeStep hBS hBCDY hm hn h\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.23
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.51
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.41
+      }
+    },
+    "usage": {
+      "input_tokens": 3781,
+      "output_tokens": 94
+    }
+  }
+}

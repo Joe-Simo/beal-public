@@ -1,0 +1,87 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C300",
+  "timestamp": "2026-09-18T19:43:56-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "cand": {
+      "id": "C300",
+      "question": "Does the Lawrence-Venkatesh method on variations of Hodge structures attached to covers branched at orders (p, q, r) apply across varying exponent families or is it restricted to fixed algebraic families?",
+      "context": "Lawrence-Venkatesh (Annals 2020) uses p-adic period maps and Galois representations to prove Mordell / Faltings for families of varieties over a fixed base. Does varying the branch orders (p, q, r) break the constancy of the Hodge structure family?"
+    }
+  },
+  "questions": {
+    "relevance": {
+      "type": "score",
+      "instructions": "Rate relevance to resolving Beal conjecture",
+      "criteria": [
+        "level 0: irrelevant or already solved",
+        "level 1: general Diophantine geometry, no direct signature resolution",
+        "level 2: settles bounded exponents or single signature range",
+        "level 3: settles infinite family of exponents",
+        "level 4: settles all remaining signatures or full conjecture"
+      ]
+    },
+    "failure_risk": {
+      "type": "noul",
+      "instructions": "Does this candidate risk suffering one of the three known failure modes (isogeny/residual conflation, Chabauty wrong field, heuristic laundering)?",
+      "criteria": {
+        "true": "high risk of recurring failure mode",
+        "false": "orthogonal to recorded failure modes"
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "Recommended next action",
+      "criteria": {
+        "advance": "proceed to verification or derivation",
+        "discard": "refuted or unviable",
+        "literature_check": "needs primary source audit",
+        "exact_computation": "run exact computation"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "relevance": {
+        "type": "score",
+        "score": 1.1,
+        "confidence": 0.8,
+        "legend": {
+          "0": "level 0: irrelevant or already solved",
+          "1": "level 1: general Diophantine geometry, no direct signature resolution",
+          "2": "level 2: settles bounded exponents or single signature range",
+          "3": "level 3: settles infinite family of exponents",
+          "4": "level 4: settles all remaining signatures or full conjecture"
+        },
+        "probabilities": {
+          "0": 0.07,
+          "1": 0.81,
+          "2": 0.07,
+          "3": 0.04,
+          "4": 0.0
+        }
+      },
+      "failure_risk": {
+        "type": "noul",
+        "noul": 0.36
+      },
+      "action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.95,
+        "probabilities": {
+          "discard": 0.0,
+          "literature_check": 0.97,
+          "advance": 0.03,
+          "exact_computation": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 666,
+      "output_tokens": 85
+    }
+  }
+}

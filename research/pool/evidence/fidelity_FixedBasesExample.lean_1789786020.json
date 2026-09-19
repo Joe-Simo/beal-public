@@ -1,0 +1,78 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "fidelity_FixedBasesExample.lean",
+  "timestamp": "2026-09-18T22:47:00-0400",
+  "model": "jev-latest",
+  "request_state": "File: FixedBasesExample.lean\nContext: Beal's conjecture: for POSITIVE integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, gcd(gcd(A, B), C) > 1. Known fidelity traps in this repo: silently requiring exponent >= 2 instead of >= 3; excluding base 1; assuming A, B, C pairwise coprime when only gcd(gcd(A, B), C) = 1 is given; proving a statement about a DIFFERENT equation (generalized Fermat a x^p + b y^q = c z^r) and calling it Beal; stating a hypothesis as an `axiom` rather than a `def ... : Prop` named hypothesis; a theorem whose conclusion is weaker than its docstring claims.\nLean Source Code Excerpt:\n/-\n# A machine-checked instance of the fixed-three-bases sieve (C080)\n\n`3^x + 5^y = 7^z` has no solution in natural exponents at all: modulo 8 the left side is in\n`{0, 2, 4, 6}` and the right side in `{1, 7}`. This is the single-modulus case of the covering sieve,\nproved in the kernel as an exemplar of the certificates in `research/pool/evidence/`.\n-/\nimport Beal.Conjecture\nimport Mathlib.Tactic.NormNum.Basic\n\nnamespace Beal\n\nlemma three_pow_mod8 (k : \u2115) : 3 ^ k % 8 = 1 \u2228 3 ^ k % 8 = 3 := by\n  induction k with\n  | zero => left; norm_num\n  | succ n ih => rw [pow_succ, Nat.mul_mod]; rcases ih with h | h <;> rw [h] <;> norm_num\n\nlemma five_pow_mod8 (k : \u2115) : 5 ^ k % 8 = 1 \u2228 5 ^ k % 8 = 5 := by\n  induction k with\n  | zero => left; norm_num\n  | succ n ih => rw [pow_succ, Nat.mul_mod]; rcases ih with h | h <;> rw [h] <;> norm_num\n\nlemma seven_pow_mod8 (k : \u2115) : 7 ^ k % 8 = 1 \u2228 7 ^ k % 8 = 7 := by\n  induction k with\n  | zero => left; norm_num\n  | succ n ih => rw [pow_succ, Nat.mul_mod]; rcases ih with h | h <;> rw [h] <;> norm_num\n\n/-- No exponents at all satisfy `3^x + 5^y = 7^z`. -/\ntheorem no_solution_bases_3_5_7 (x y z : \u2115) : 3 ^ x + 5 ^ y \u2260 7 ^ z := by\n  intro h\n  have h8 : (3 ^ x + 5 ^ y) % 8 = 7 ^ z % 8 := by rw [h]\n  rcases three_pow_mod8 x with a | a <;> rcases five_pow_mod8 y with b | b <;>\n    rcases seven_pow_mod8 z with c | c <;> omega\n\n/-- In particular there is no Beal counterexample with bases `(3, 5, 7)`, whatever the signature. -/\ntheorem no_counterexample_bases_3_5_7 (x y z : \u2115) : \u00ac IsBealCounterexample 3 5 7 x y z := by\n  rintro \u27e8_, _, _, _, _, _, _, heq\u27e9\n  exact no_solution_bases_3_5_7 x y z heq\n\nend Beal\n",
+  "questions": {
+    "exp_range": {
+      "type": "noul",
+      "instructions": "Does any theorem or definition in this file admit an exponent equal to 2 (or fail to require x,y,z>=3) where the docstring claims a Beal statement?",
+      "criteria": {
+        "true": "exponent range wrong or unstated",
+        "false": "exponent range correct"
+      }
+    },
+    "base_one": {
+      "type": "noul",
+      "instructions": "Does any statement exclude the base value 1, or assume bases >1 without saying so?",
+      "criteria": {
+        "true": "excludes base 1",
+        "false": "base 1 allowed"
+      }
+    },
+    "coprime_swap": {
+      "type": "noul",
+      "instructions": "Does any statement assume A,B,C pairwise coprime, or assume gcd(A,B)=1, where the conjecture only gives gcd(gcd(A,B),C)=1?",
+      "criteria": {
+        "true": "coprimity assumption stronger than Beal",
+        "false": "coprimity matches"
+      }
+    },
+    "axiom_used": {
+      "type": "noul",
+      "instructions": "Does the file declare a Lean `axiom` (as opposed to a `def ... : Prop` named hypothesis)?",
+      "criteria": {
+        "true": "declares an axiom",
+        "false": "no axiom"
+      }
+    },
+    "docstring_gap": {
+      "type": "noul",
+      "instructions": "Does a docstring or comment claim MORE than the theorem statement below it actually proves?",
+      "criteria": {
+        "true": "docstring overclaims",
+        "false": "docstring matches"
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exp_range": {
+        "type": "noul",
+        "noul": 0.67
+      },
+      "base_one": {
+        "type": "noul",
+        "noul": 0.22
+      },
+      "coprime_swap": {
+        "type": "noul",
+        "noul": 0.08
+      },
+      "axiom_used": {
+        "type": "noul",
+        "noul": 0.09
+      },
+      "docstring_gap": {
+        "type": "noul",
+        "noul": 0.32
+      }
+    },
+    "usage": {
+      "input_tokens": 1436,
+      "output_tokens": 94
+    }
+  }
+}

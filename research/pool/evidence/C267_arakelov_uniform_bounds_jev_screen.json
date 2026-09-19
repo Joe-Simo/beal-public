@@ -1,0 +1,56 @@
+{
+  "candidate": {
+    "id": "C267_arakelov_uniform_bounds",
+    "name": "Arakelov Intersection and Modular Uniformity",
+    "text": "Candidate: Arakelov arithmetic intersection theory on modular curves X_0(N) and height bounds. Attempt to deduce uniform bounds on prime exponents p appearing in Beal solutions by bounding the Faltings height of Frey curves in terms of conductor N and Serre level lowering bounds."
+  },
+  "jev_response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "exact_computability": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "failure_mode_risk": {
+        "type": "noul",
+        "noul": 0.75
+      },
+      "relevance_level": {
+        "type": "score",
+        "score": 1.27,
+        "confidence": 0.75,
+        "legend": {
+          "0": "level 0: peripheral or unrelated to Beal signatures",
+          "1": "level 1: general modular method context without resolving any signature",
+          "2": "level 2: settles a concrete range of exponents or a new specific signature family",
+          "3": "level 3: settles an entire infinite signature family for all exponents",
+          "4": "level 4: resolves the complete conjecture outright"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.79,
+          "2": 0.13,
+          "3": 0.06,
+          "4": 0.01
+        }
+      },
+      "recommended_action": {
+        "type": "choice",
+        "choice": "literature_check",
+        "confidence": 0.54,
+        "probabilities": {
+          "discard": 0.14,
+          "exact_computation": 0.01,
+          "formalize": 0.02,
+          "literature_check": 0.61,
+          "park": 0.1,
+          "advance": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 812,
+      "output_tokens": 124
+    }
+  }
+}
