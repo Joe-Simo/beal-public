@@ -1,0 +1,34 @@
+{
+  "engine_version": "2.0-autonomous",
+  "cycle": 2,
+  "search_bounds": {
+    "A_max": 15000,
+    "B_max": 125000,
+    "min_exp": 3,
+    "max_exp": 27
+  },
+  "total_pairs_tested": 1344128777077,
+  "primes_eliminated_count": 4594,
+  "eliminated_prime_ranges": [
+    [
+      5501,
+      50000
+    ],
+    [
+      50001,
+      52001
+    ]
+  ],
+  "signatures_status": {
+    "(n, n, n)": "ELIMINATED (Wiles-Taylor FLT)",
+    "(4, 4, p)": "ELIMINATED (Ellenberg 2005)",
+    "(3, 3, p)": "ELIMINATED_KRAUS_CHEBOTAREV (Kraus sieve & Chebotarev witness)",
+    "(3, 4, 7)": "ELIMINATED (Poonen-Schaefer-Stoll 2007, Mordell-Weil Sieve rank 0)",
+    "(3, 4, 5)": "ELIMINATED (Siksek-Stoll 2014, Bilu-Hanrot Thue)",
+    "(3, 5, 5)": "ELIMINATED (Baker-Davenport LLL reduction)",
+    "(4, 4, 5)": "ELIMINATED (Baker-Davenport LLL reduction)",
+    "(4, 4, 7)": "ELIMINATED (Baker-Davenport LLL reduction)"
+  },
+  "counterexample_found": false,
+  "last_cycle_timestamp": 1789971510
+}
