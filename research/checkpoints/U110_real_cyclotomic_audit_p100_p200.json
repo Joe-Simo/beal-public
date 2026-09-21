@@ -45,7 +45,7 @@
       "pari_factors": [
         50
       ],
-      "t_pari": 0.07340431213378906,
+      "t_pari": 0.015714645385742188,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -65,7 +65,7 @@
       "pari_factors": [
         51
       ],
-      "t_pari": 0.059343814849853516,
+      "t_pari": 0.015837907791137695,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -85,7 +85,7 @@
       "pari_factors": [
         53
       ],
-      "t_pari": 0.04946613311767578,
+      "t_pari": 0.015401124954223633,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -107,7 +107,7 @@
         18,
         18
       ],
-      "t_pari": 0.05115199089050293,
+      "t_pari": 0.01577925682067871,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -130,7 +130,7 @@
         14,
         14
       ],
-      "t_pari": 0.04787588119506836,
+      "t_pari": 0.015954971313476562,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -158,7 +158,7 @@
         7,
         7
       ],
-      "t_pari": 0.050974369049072266,
+      "t_pari": 0.015601158142089844,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -178,7 +178,7 @@
       "pari_factors": [
         65
       ],
-      "t_pari": 0.05566596984863281,
+      "t_pari": 0.015033721923828125,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -199,7 +199,7 @@
         34,
         34
       ],
-      "t_pari": 0.04533219337463379,
+      "t_pari": 0.015742063522338867,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -219,7 +219,7 @@
       "pari_factors": [
         69
       ],
-      "t_pari": 0.05420327186584473,
+      "t_pari": 0.01592707633972168,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -239,7 +239,7 @@
       "pari_factors": [
         74
       ],
-      "t_pari": 0.05684518814086914,
+      "t_pari": 0.016090869903564453,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -263,7 +263,7 @@
         15,
         15
       ],
-      "t_pari": 0.050978899002075195,
+      "t_pari": 0.015496969223022461,
       "h_plus": 1,
       "h_status": "Unconditional",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -285,7 +285,7 @@
         26,
         26
       ],
-      "t_pari": 0.04256606101989746,
+      "t_pari": 0.01568889617919922,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "van der Linden 1982 / Miller 2014",
@@ -305,7 +305,7 @@
       "pari_factors": [
         81
       ],
-      "t_pari": 0.04822707176208496,
+      "t_pari": 0.015468120574951172,
       "h_plus": 4,
       "h_status": "Under GRH",
       "h_source": "van der Linden 1982 / Miller 2014 (Thm 1.1)",
@@ -325,7 +325,7 @@
       "pari_factors": [
         83
       ],
-      "t_pari": 0.045552968978881836,
+      "t_pari": 0.015977144241333008,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 / Miller 2014 (Thm 1.1)",
@@ -345,7 +345,7 @@
       "pari_factors": [
         86
       ],
-      "t_pari": 0.050482988357543945,
+      "t_pari": 0.015639066696166992,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -365,7 +365,7 @@
       "pari_factors": [
         89
       ],
-      "t_pari": 0.046868085861206055,
+      "t_pari": 0.01532602310180664,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -385,7 +385,7 @@
       "pari_factors": [
         90
       ],
-      "t_pari": 0.0499420166015625,
+      "t_pari": 0.015913963317871094,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -405,7 +405,7 @@
       "pari_factors": [
         95
       ],
-      "t_pari": 0.04755687713623047,
+      "t_pari": 0.016025781631469727,
       "h_plus": 11,
       "h_status": "Under GRH",
       "h_source": "Schoof 2003 / Miller 2014 (Thm 1.1)",
@@ -426,7 +426,7 @@
         48,
         48
       ],
-      "t_pari": 0.04555773735046387,
+      "t_pari": 0.016307830810546875,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -446,7 +446,7 @@
       "pari_factors": [
         98
       ],
-      "t_pari": 0.06489396095275879,
+      "t_pari": 0.016305208206176758,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1)",
@@ -466,7 +466,7 @@
       "pari_factors": [
         99
       ],
-      "t_pari": 0.052883148193359375,
+      "t_pari": 0.0158841609954834,
       "h_plus": 1,
       "h_status": "Under GRH",
       "h_source": "Miller 2014 (Thm 1.1)",
