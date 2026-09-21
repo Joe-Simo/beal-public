@@ -385,8 +385,13 @@ class JevMathematicalGenius:
                 return c
         return None
 
-    def triage_candidates(self, candidate_ids: list[str]) -> list[dict[str, Any]]:
+    def triage_candidates(self, candidate_ids: list[str] | None = None) -> list[dict[str, Any]]:
         """Run the 5-Stage Adversarial Sieve across specified candidate IDs."""
+        if not candidate_ids:
+            candidate_ids = [c.get("id") for c in self.pool if c.get("status") == "ACTIVE"][:10]
+            if not candidate_ids:
+                candidate_ids = [c.get("id") for c in self.pool][:10]
+            print(f"[JevGenius] No candidate IDs supplied. Triaging top active pool candidates: {candidate_ids}")
         states = []
         c_map = {}
         for cid in candidate_ids:
@@ -1487,7 +1492,7 @@ def main():
 
     # Triage command
     p_triage = subparsers.add_parser("triage", help="Run 5-stage adversarial sieve on candidates")
-    p_triage.add_argument("candidates", nargs="+", help="Candidate IDs (e.g. C390 C391 ...)")
+    p_triage.add_argument("candidates", nargs="*", default=None, help="Candidate IDs (e.g. C390 C391 ...); defaults to active pool")
 
     # Synthesize command
     p_syn = subparsers.add_parser("synthesize", help="Evaluate pairwise synthesis between two candidates")

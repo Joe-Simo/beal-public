@@ -3,6 +3,7 @@ __pycache__/
 .DS_Store
 code/beal_search_gmp
 code/check_counterexample_gmp
+code/fc_perturb_fast
 *.pdf
 *.tar.gz
 *.o

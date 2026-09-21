@@ -118,13 +118,13 @@ static uint64_t find_primitive_root(uint64_t q) {
 /* Fast trace computation for y^2 = x^3 + a4*x + a6 mod q using precomputed Legendre table */
 static inline int32_t trace_weierstrass_c(int64_t a4, int64_t a6, uint64_t q, const int8_t *leg) {
     int32_t sum = 0;
-    a4 = (a4 % (int64_t)q + q) % q;
-    a6 = (a6 % (int64_t)q + q) % q;
+    uint64_t u_a4 = (uint64_t)((a4 % (int64_t)q + q) % q);
+    uint64_t u_a6 = (uint64_t)((a6 % (int64_t)q + q) % q);
 
     for (uint64_t x = 0; x < q; x++) {
-        uint64_t x2 = (unsigned __int128)x * x % q;
-        uint64_t x3 = (unsigned __int128)x2 * x % q;
-        uint64_t rhs = (x3 + (unsigned __int128)a4 * x + a6) % q;
+        uint64_t x2 = (x * x) % q;
+        uint64_t x3 = (x2 * x) % q;
+        uint64_t rhs = (x3 + u_a4 * x + u_a6) % q;
         sum += leg[rhs];
     }
     return -sum;
@@ -253,10 +253,14 @@ static PrimeCert sieve_prime(uint32_t p, uint32_t max_k) {
             int32_t aq = trace_weierstrass_c(a4, a6, q, leg);
             adm[num_adm++] = aq;
 
-            if (aq == aq_72) aq_72_matched = true;
-            if (aq == aq_144) aq_144_matched = true;
-
-            if (aq_72_matched && aq_144_matched) break;
+            if (aq == aq_72) {
+                aq_72_matched = true;
+                break;
+            }
+            if (aq == aq_144) {
+                aq_144_matched = true;
+                break;
+            }
         }
 
         if (Up != Up_stack) free(Up);
