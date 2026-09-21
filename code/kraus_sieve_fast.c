@@ -130,6 +130,9 @@ static inline int32_t trace_weierstrass_c(int64_t a4, int64_t a6, uint64_t q, co
     return -sum;
 }
 
+static __thread int8_t *t_leg = NULL;
+static __thread size_t t_leg_cap = 0;
+
 /* Sieve a single prime exponent p */
 static PrimeCert sieve_prime(uint32_t p, uint32_t max_k) {
     PrimeCert cert;
@@ -150,9 +153,16 @@ static PrimeCert sieve_prime(uint32_t p, uint32_t max_k) {
         /* Integer rigidity condition */
         if (16ULL * q >= p_sq) continue;
 
-        /* Build Legendre table in O(q) via squaring */
-        int8_t *leg = (int8_t *)calloc(q, sizeof(int8_t));
-        if (!leg) continue;
+        /* Ensure thread-local Legendre table buffer is large enough */
+        if (q > t_leg_cap) {
+            size_t new_cap = q + 65536;
+            int8_t *new_ptr = (int8_t *)realloc(t_leg, new_cap * sizeof(int8_t));
+            if (!new_ptr) continue;
+            t_leg = new_ptr;
+            t_leg_cap = new_cap;
+        }
+        int8_t *leg = t_leg;
+        memset(leg, 0, q * sizeof(int8_t));
 
         leg[0] = 0;
         uint64_t half_q = (q - 1) / 2;
@@ -172,7 +182,9 @@ static PrimeCert sieve_prime(uint32_t p, uint32_t max_k) {
         uint64_t g = find_primitive_root(q);
         uint64_t gen_Up = pow_mod64(g, p, q);
         size_t size_up = 2 * k;
-        uint64_t *Up = (uint64_t *)malloc(size_up * sizeof(uint64_t));
+
+        uint64_t Up_stack[1024];
+        uint64_t *Up = (size_up <= 1024) ? Up_stack : (uint64_t *)malloc(size_up * sizeof(uint64_t));
         uint64_t cur = 1;
         for (size_t i = 0; i < size_up; i++) {
             Up[i] = cur;
@@ -187,7 +199,8 @@ static PrimeCert sieve_prime(uint32_t p, uint32_t max_k) {
 
         /* Hash set for valid t */
         size_t max_t = size_up * 3;
-        uint64_t *valid_t = (uint64_t *)malloc(max_t * sizeof(uint64_t));
+        uint64_t valid_t_stack[1024];
+        uint64_t *valid_t = (max_t <= 1024) ? valid_t_stack : (uint64_t *)malloc(max_t * sizeof(uint64_t));
         size_t num_t = 0;
 
         for (size_t i = 0; i < size_up; i++) {
@@ -223,7 +236,8 @@ static PrimeCert sieve_prime(uint32_t p, uint32_t max_k) {
         }
 
         /* Compute admissible traces */
-        int32_t *adm = (int32_t *)malloc(unique_t * sizeof(int32_t));
+        int32_t adm_stack[1024];
+        int32_t *adm = (unique_t <= 1024) ? adm_stack : (int32_t *)malloc(unique_t * sizeof(int32_t));
         size_t num_adm = 0;
         bool aq_72_matched = false;
         bool aq_144_matched = false;
@@ -245,10 +259,9 @@ static PrimeCert sieve_prime(uint32_t p, uint32_t max_k) {
             if (aq_72_matched && aq_144_matched) break;
         }
 
-        free(Up);
-        free(valid_t);
-        free(adm);
-        free(leg);
+        if (Up != Up_stack) free(Up);
+        if (valid_t != valid_t_stack) free(valid_t);
+        if (adm != adm_stack) free(adm);
 
         if (!aq_72_matched && !aq_144_matched) {
             cert.q = q;

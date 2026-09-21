@@ -1,8 +1,8 @@
 {
   "title": "Candidate C623 AMS Submission Dossier",
   "description": "Cryptographic manifest of Lean 4 formal proofs, C/GMP engines, and verified search logs",
-  "timestamp": "2026-09-21T13:57:24-0400",
-  "total_assets_certified": 14152,
+  "timestamp": "2026-09-21T14:17:29-0400",
+  "total_assets_certified": 14196,
   "verification_commands": {
     "lean4_build": "cd formal && lake build Beal",
     "c_gmp_section8_test": "./code/beal_search_gmp --test-near-misses",
@@ -289,8 +289,8 @@
     "c_gmp_search_engine": [
       {
         "file": "code/beal_search_gmp.c",
-        "sha256": "f9eca245209584a6ef0a552611f2648615a98065931850307dca7d7b7614f2be",
-        "size_bytes": 120114
+        "sha256": "534c4cdb5fdf1a1956c013ec3a696b76d263a7d3dc748fb471564d712977c794",
+        "size_bytes": 120917
       },
       {
         "file": "code/check_counterexample_gmp.c",
@@ -43609,6 +43609,26 @@
         "size_bytes": 12337
       },
       {
+        "file": "research/pool/evidence/H_IWASAWA_PRYM_DESCENT_1790013622.json",
+        "sha256": "cd2290a2b1b936d5e022e41ef2b2cdda8d1c69e3a1d747b519f2540db73fd404",
+        "size_bytes": 12337
+      },
+      {
+        "file": "research/pool/evidence/H_IWASAWA_PRYM_DESCENT_1790013653.json",
+        "sha256": "ed95b2b45905d3c1b554340b4eef9597ab9272a696dbd73944a1c63f524c0e38",
+        "size_bytes": 12337
+      },
+      {
+        "file": "research/pool/evidence/H_IWASAWA_PRYM_DESCENT_1790013718.json",
+        "sha256": "98e6b7d4cb691a2a72d330705168a0b9a852de6985484ceb2e2a4dc94167e09c",
+        "size_bytes": 12337
+      },
+      {
+        "file": "research/pool/evidence/H_IWASAWA_PRYM_DESCENT_1790014578.json",
+        "sha256": "213150747f3d8172b0df93e52939722914638e62c5f1c3bd29d92df401dcb843",
+        "size_bytes": 12337
+      },
+      {
         "file": "research/pool/evidence/H_ORBIFOLD_HIGGS_SIMPSON_1789786222.json",
         "sha256": "fa6704e3b248ec8181ebda166fb2b544598b4f4cf98151b7c57ff78750c8556a",
         "size_bytes": 7582
@@ -43631,6 +43651,26 @@
       {
         "file": "research/pool/evidence/H_ORBIFOLD_HIGGS_SIMPSON_1789954852.json",
         "sha256": "d6e14c7ec8cd5e511aa28d780eec738e2d870fcf89f43107149f253a7b6de7d5",
+        "size_bytes": 12367
+      },
+      {
+        "file": "research/pool/evidence/H_ORBIFOLD_HIGGS_SIMPSON_1790013622.json",
+        "sha256": "e7f3879f9649258ac63ccacf26ed74516597f66a5433e945b9a3c60df268a77b",
+        "size_bytes": 12367
+      },
+      {
+        "file": "research/pool/evidence/H_ORBIFOLD_HIGGS_SIMPSON_1790013653.json",
+        "sha256": "1784a911ae999423147abf5ea358165b7966f68f0412596c2b02f23502fa0078",
+        "size_bytes": 12367
+      },
+      {
+        "file": "research/pool/evidence/H_ORBIFOLD_HIGGS_SIMPSON_1790013718.json",
+        "sha256": "f2525079251f8b6b598f8b279c5b8c722ec159c306f482e8a32571d987d276c4",
+        "size_bytes": 12367
+      },
+      {
+        "file": "research/pool/evidence/H_ORBIFOLD_HIGGS_SIMPSON_1790014578.json",
+        "sha256": "64004e58313cade55632b659c2758911f02fdb441247e201555b9bf350a7416a",
         "size_bytes": 12367
       },
       {
@@ -43861,6 +43901,11 @@
       {
         "file": "research/pool/evidence/LEAN_MasterSynthesis_1790013359.json",
         "sha256": "8dcacbe2010b5d3c3e0eb21a727a54161c8a86529f29c2f05ae04f2aae849c50",
+        "size_bytes": 4547
+      },
+      {
+        "file": "research/pool/evidence/LEAN_MasterSynthesis_1790014647.json",
+        "sha256": "a5ae7036aa2c99c94ee18ac2f27ae1704bfc6778c01562b22c7c014433ed7d11",
         "size_bytes": 4547
       },
       {
@@ -44274,8 +44319,18 @@
         "size_bytes": 4693
       },
       {
+        "file": "research/pool/evidence/MATRIX_C608_C610_1790014641.json",
+        "sha256": "bd9fd16c271ce938216cd7c2aa02053d288083d2beb022eb50a5ec24cbacb885",
+        "size_bytes": 4693
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C608_C612_1790013367.json",
         "sha256": "e289d53ab0f83d2fa259bc9ec706f960f2caff1a12c0bc725ad530f4ab9c47ed",
+        "size_bytes": 4693
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C608_C612_1790014641.json",
+        "sha256": "84684a03fe36402550281c47bcf7d466113ac90d949ec4c2327c344fb682f20d",
         "size_bytes": 4693
       },
       {
@@ -44284,8 +44339,18 @@
         "size_bytes": 4692
       },
       {
+        "file": "research/pool/evidence/MATRIX_C608_C614_1790014641.json",
+        "sha256": "58608dbb14372293ce5edce6e4c141175a7271e4569ee555c69c833db92b64a3",
+        "size_bytes": 4692
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C608_C616_1790013367.json",
         "sha256": "1a5087dba6677a7033f82789f3ef01bb79355941f99ecc55c0d8921869dae6be",
+        "size_bytes": 4692
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C608_C616_1790014641.json",
+        "sha256": "74e1d7790f265ae362732219f4c7ce42cb624dff6070f8564a02a896b17f1dbb",
         "size_bytes": 4692
       },
       {
@@ -44294,8 +44359,18 @@
         "size_bytes": 4721
       },
       {
+        "file": "research/pool/evidence/MATRIX_C608_C618_1790014641.json",
+        "sha256": "591297cf0290b72217f4843ec9e794403a5d5bdccfd526197ad061dc7325a837",
+        "size_bytes": 4721
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C608_C620_1790013367.json",
         "sha256": "36e812eb88775d71cc7c6a6a56ed1d58348b4d34fcb9159ecc39ff46c18b9d94",
+        "size_bytes": 4692
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C608_C620_1790014641.json",
+        "sha256": "0dfb8a205ae73a77b4b63b3a4fc8a65f0a173fd2dc976a06b7aa9c922b83e1da",
         "size_bytes": 4692
       },
       {
@@ -44304,8 +44379,18 @@
         "size_bytes": 4692
       },
       {
+        "file": "research/pool/evidence/MATRIX_C608_C622_1790014641.json",
+        "sha256": "cc9755fd217ae489ea11018b109336db9c6dd800d430ed4b6290d4cfde3be23e",
+        "size_bytes": 4692
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C610_C612_1790013367.json",
         "sha256": "267f3f291e026ac93b684634bc7e2e29ad036a577f657721c936dfa4919602e1",
+        "size_bytes": 4664
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C610_C612_1790014641.json",
+        "sha256": "b873e7faa117bb3f70c4fffe241e0a9b5b13ee4fe272840a8494832cebcaaf85",
         "size_bytes": 4664
       },
       {
@@ -44314,8 +44399,18 @@
         "size_bytes": 4664
       },
       {
+        "file": "research/pool/evidence/MATRIX_C610_C614_1790014641.json",
+        "sha256": "52f6aefac6623c61267e08590e5b0768c7ef9854a705da82ac73b6c80e353aea",
+        "size_bytes": 4664
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C610_C616_1790013367.json",
         "sha256": "d0ef54e59218c7c3c14868b6b9cf9ba911239efa248df37423b62b009ff2db04",
+        "size_bytes": 4664
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C610_C616_1790014641.json",
+        "sha256": "969f9227a2aaeacac55e227a83c6dd2e320770ede00bc457c30fec021199e087",
         "size_bytes": 4664
       },
       {
@@ -44324,8 +44419,18 @@
         "size_bytes": 4691
       },
       {
+        "file": "research/pool/evidence/MATRIX_C610_C618_1790014641.json",
+        "sha256": "9a6af9a948e31741c17ec3910fa0bda368ccdf88f3508b51325e3f40020110d5",
+        "size_bytes": 4691
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C610_C620_1790013367.json",
         "sha256": "dac4595db3d5e9bf44a245ce6351932c76675c259a8217a927de239effb5f6b2",
+        "size_bytes": 4664
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C610_C620_1790014641.json",
+        "sha256": "5bed102c355592b37cf0d9278e9a350d74be18b912338a4cb7d70da12e65fa7f",
         "size_bytes": 4664
       },
       {
@@ -44334,8 +44439,18 @@
         "size_bytes": 4663
       },
       {
+        "file": "research/pool/evidence/MATRIX_C610_C622_1790014641.json",
+        "sha256": "0bb3b0c47338528ca058299047ab5547a79ffb8e7cb200eafa7302b39565e763",
+        "size_bytes": 4663
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C612_C614_1790013367.json",
         "sha256": "f8fab1195990ad03bf0e876edcfecb0f0e8cb12abe1ecfeb7a50c09afa213648",
+        "size_bytes": 4663
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C612_C614_1790014641.json",
+        "sha256": "a3e6c54e601edf1f36b8e2a820902e6c4ee349ce85039aaadc1acc2c2aa57e57",
         "size_bytes": 4663
       },
       {
@@ -44344,8 +44459,18 @@
         "size_bytes": 4665
       },
       {
+        "file": "research/pool/evidence/MATRIX_C612_C616_1790014641.json",
+        "sha256": "8fe47dccc452cd93e98e5ed8a88ed1529dd2fbbd8c1670d2460f6ede0edc4216",
+        "size_bytes": 4665
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C612_C618_1790013367.json",
         "sha256": "b1009fec2fa11e9ab2fd924dd0db2bf7c3f3545ac820de1f5974903723be9c3d",
+        "size_bytes": 4707
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C612_C618_1790014641.json",
+        "sha256": "7442443b4d9b0718a13c64d40563aa3d6bc3e56f040e19e2b7eada3397120641",
         "size_bytes": 4707
       },
       {
@@ -44354,8 +44479,18 @@
         "size_bytes": 4664
       },
       {
+        "file": "research/pool/evidence/MATRIX_C612_C620_1790014641.json",
+        "sha256": "1c984dc7901a05cc448cf4ecfc79b03249d4d2c02fc6d002e1db73bf621f1b4b",
+        "size_bytes": 4664
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C612_C622_1790013367.json",
         "sha256": "cca030a9eee67e137f8262c7b4f6f0d7ceba1ee54d3e784dd1d2209a0339d6ea",
+        "size_bytes": 4663
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C612_C622_1790014641.json",
+        "sha256": "7bea4465fbbbb56b37b8f5e6ac994f7f0e4b424aaaeecd0b47fbbeab22577157",
         "size_bytes": 4663
       },
       {
@@ -44364,8 +44499,18 @@
         "size_bytes": 4665
       },
       {
+        "file": "research/pool/evidence/MATRIX_C614_C616_1790014641.json",
+        "sha256": "445265c08a721a90f62256a361a62011e1b85d07ac2bfb1b14a3a051e0910fa1",
+        "size_bytes": 4665
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C614_C618_1790013367.json",
         "sha256": "caee8c27eda6aa7893feac11ad1f7c0882fdd6ff8fea3c94160c0199b3266a25",
+        "size_bytes": 4694
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C614_C618_1790014641.json",
+        "sha256": "075b3914e344f642189ac87ff2c4fd746b4d21061e6c10237ffcbb51b2ae77c3",
         "size_bytes": 4694
       },
       {
@@ -44374,8 +44519,18 @@
         "size_bytes": 4664
       },
       {
+        "file": "research/pool/evidence/MATRIX_C614_C620_1790014641.json",
+        "sha256": "c5ad9ddf7bb60659e539bed59cdabcd2d03ee33cdff9dd4d0dddb0f586b15e79",
+        "size_bytes": 4664
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C614_C622_1790013367.json",
         "sha256": "7aaa76b3f17c8684efbafb2f1d59394d4bedf215c8634569cb9394e58a3ead9c",
+        "size_bytes": 4664
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C614_C622_1790014641.json",
+        "sha256": "6494d732406bbf6e35e0337e39a3eb7fcaa3cfdad075d944f4669ea646299ddc",
         "size_bytes": 4664
       },
       {
@@ -44384,8 +44539,18 @@
         "size_bytes": 4694
       },
       {
+        "file": "research/pool/evidence/MATRIX_C616_C618_1790014641.json",
+        "sha256": "86c21c3eca78c17ac7f7b3cd43d2e0bed73b78f05eec129c9dd4653345bc60dc",
+        "size_bytes": 4694
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C616_C620_1790013367.json",
         "sha256": "ce1a9668b61e9b29ce7cb28475ae2d4a9a0dcad4ed7ef4a16fe8b804066d5b85",
+        "size_bytes": 4665
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C616_C620_1790014641.json",
+        "sha256": "36e7aef0b2ec75de7a69db6cdf00baf47749f46ad7a9c91899150d0a1f69b5e6",
         "size_bytes": 4665
       },
       {
@@ -44394,8 +44559,18 @@
         "size_bytes": 4662
       },
       {
+        "file": "research/pool/evidence/MATRIX_C616_C622_1790014641.json",
+        "sha256": "262e301879ffd793cf02f8958efc4bdc41df6e0695f879b503b97aed8ffcdf59",
+        "size_bytes": 4662
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C618_C620_1790013367.json",
         "sha256": "018b3022ae114eddc5b3ea6a7293dde765076f5707e7546b0f2efcbb96bb6669",
+        "size_bytes": 4694
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C618_C620_1790014641.json",
+        "sha256": "0d57d096edc23e678e578e11087152019964a54d9bb3122de3dfb23f1c614b40",
         "size_bytes": 4694
       },
       {
@@ -44404,8 +44579,18 @@
         "size_bytes": 4693
       },
       {
+        "file": "research/pool/evidence/MATRIX_C618_C622_1790014641.json",
+        "sha256": "fe978f1451eff65e9f7465973f8c72466c7908530351d00dca93de4301c6ff85",
+        "size_bytes": 4693
+      },
+      {
         "file": "research/pool/evidence/MATRIX_C620_C622_1790013367.json",
         "sha256": "37e2f92eb87fbaff7a77772b1c8855627f4d32e866eb11174b1a937c9957560d",
+        "size_bytes": 4663
+      },
+      {
+        "file": "research/pool/evidence/MATRIX_C620_C622_1790014641.json",
+        "sha256": "9bb3eebe5a9aa75dfd37e2de10ab7eb3f267af2d53ed358d8fccad6d1a6fc4a2",
         "size_bytes": 4663
       },
       {
@@ -47557,6 +47742,11 @@
         "file": "research/pool/evidence/deep_search_cycle_9_highexp.json",
         "sha256": "633c4bb73e9e28948bf120da39536ca4e2287b8b14689faf109581b3f5223822",
         "size_bytes": 408
+      },
+      {
+        "file": "research/pool/evidence/deep_search_frontier_open_signatures.json",
+        "sha256": "6a94c0eee0a2c2d7ac30535c8c357854eeb2a7d01c5c6b697dd248aa6cc46edf",
+        "size_bytes": 669
       },
       {
         "file": "research/pool/evidence/deep_search_high_exponents_10k.json",
@@ -51394,6 +51584,26 @@
         "size_bytes": 4423
       },
       {
+        "file": "research/pool/evidence/genius_discovery_arithmetic_geometry_1790013622.json",
+        "sha256": "71bb0d6740bc48c07cc0ccfa992b56eb6f7d5ce0313779ca1cfe420b55695816",
+        "size_bytes": 893
+      },
+      {
+        "file": "research/pool/evidence/genius_discovery_arithmetic_geometry_1790013653.json",
+        "sha256": "71bb0d6740bc48c07cc0ccfa992b56eb6f7d5ce0313779ca1cfe420b55695816",
+        "size_bytes": 893
+      },
+      {
+        "file": "research/pool/evidence/genius_discovery_arithmetic_geometry_1790013718.json",
+        "sha256": "71bb0d6740bc48c07cc0ccfa992b56eb6f7d5ce0313779ca1cfe420b55695816",
+        "size_bytes": 893
+      },
+      {
+        "file": "research/pool/evidence/genius_discovery_arithmetic_geometry_1790014578.json",
+        "sha256": "71bb0d6740bc48c07cc0ccfa992b56eb6f7d5ce0313779ca1cfe420b55695816",
+        "size_bytes": 893
+      },
+      {
         "file": "research/pool/evidence/genius_discovery_derived_noncommutative_1789787292.json",
         "sha256": "ab69333d34f5e76ddb45aa0d0385e4b030be1ddde6d39f43e763c867198a71bc",
         "size_bytes": 837
@@ -51450,6 +51660,11 @@
       },
       {
         "file": "research/pool/evidence/genius_synthesis_matrix_1790013367.json",
+        "sha256": "dfe35d3264990a9de8313a5f714ac113abb1f6122ec867a7c9a99f60e16679ca",
+        "size_bytes": 5768
+      },
+      {
+        "file": "research/pool/evidence/genius_synthesis_matrix_1790014641.json",
         "sha256": "dfe35d3264990a9de8313a5f714ac113abb1f6122ec867a7c9a99f60e16679ca",
         "size_bytes": 5768
       },
@@ -52507,6 +52722,11 @@
         "file": "research/pool/evidence/kraus_sieve_p88001_p90001.json",
         "sha256": "77d43f470322dad9843106ea7570fc72f79dc07a555e575a9f28ea9c99134264",
         "size_bytes": 23810
+      },
+      {
+        "file": "research/pool/evidence/kraus_sieve_p90001_p92001.json",
+        "sha256": "aa67dda08c0c477d844dbddc8a9e5bcda57f7d512ea73fbb8168259f43236a2f",
+        "size_bytes": 24195
       },
       {
         "file": "research/pool/evidence/lean_AlgebraicIdentities_1789690799.json",
@@ -66095,7 +66315,7 @@
       },
       {
         "file": "research/pool/evidence/pari_signature_elimination_report.json",
-        "sha256": "b11512a708e1a863693c29fa79b51850de967f5734483ce9a179ec2ced47a14e",
+        "sha256": "c73f56f4c669547ef136687b203704e7d6e2af802f2e6f7f67cf71456ac192bc",
         "size_bytes": 350
       },
       {

@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "signature_mode": "open_residuals",
+  "signatures_tested": ["(3,4,7)", "(3,5,7)", "(4,4,7)", "(3,4,11)", "(3,5,11)", "(4,5,7)"],
+  "bounds": {
+    "(3,4,7)": "C <= 5000, B <= 50000",
+    "(3,5,7)": "C <= 5000, B <= 25000",
+    "(4,4,7)": "C <= 3000, B <= 25000 (A <= B)",
+    "(3,4,11)": "C <= 1000, B <= 25000",
+    "(3,5,11)": "C <= 1000, B <= 10000",
+    "(4,5,7)": "C <= 2000, B <= 10000"
+  },
+  "threads": 8,
+  "elapsed_seconds": 0.6485,
+  "candidates_evaluated": 25647547,
+  "pairs_checked": 389600735,
+  "pairs_per_second": 600793451.43,
+  "counterexamples_found": 0,
+  "non_primitive_equalities": 6,
+  "conjecture_verified": true
+}

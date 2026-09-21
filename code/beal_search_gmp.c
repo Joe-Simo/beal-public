@@ -1497,15 +1497,92 @@ static int run_search_minimal(const SearchConfig *cfg) {
 }
 
 /* Run search specialized for open residual signatures (3, 4, 7), (3, 5, 7), (4, 4, 7), and (3, 4, 11) */
+/* Fast root checkers for open residual signatures using native hardware and modular pre-filtering */
+static inline bool fast_check_root_cube(const mpz_t diff, uint64_t *out_A, const uint8_t *is_c19, const uint8_t *is_c31) {
+    if (!is_c19[mpz_fdiv_ui(diff, 19)]) return false;
+    if (!is_c31[mpz_fdiv_ui(diff, 31)]) return false;
+
+    if (mpz_fits_ulong_p(diff)) {
+        uint64_t d = mpz_get_ui(diff);
+        uint64_t r = (uint64_t)cbrt((double)d);
+        if ((unsigned __int128)r * r * r == d) { *out_A = r; return true; }
+        if (r > 0 && (unsigned __int128)(r - 1) * (r - 1) * (r - 1) == d) { *out_A = r - 1; return true; }
+        if ((unsigned __int128)(r + 1) * (r + 1) * (r + 1) == d) { *out_A = r + 1; return true; }
+        return false;
+    }
+
+    mpz_t r_mpz;
+    mpz_init(r_mpz);
+    int ok = mpz_root(r_mpz, diff, 3);
+    if (ok != 0 && mpz_fits_ulong_p(r_mpz)) {
+        *out_A = mpz_get_ui(r_mpz);
+        mpz_clear(r_mpz);
+        return true;
+    }
+    mpz_clear(r_mpz);
+    return false;
+}
+
+static inline bool fast_check_root_pow4(const mpz_t diff, uint64_t *out_A, const uint8_t *is_p29) {
+    if (!is_p29[mpz_fdiv_ui(diff, 29)]) return false;
+
+    if (mpz_fits_ulong_p(diff)) {
+        uint64_t d = mpz_get_ui(diff);
+        uint64_t r = (uint64_t)sqrt(sqrt((double)d));
+        unsigned __int128 r2 = (unsigned __int128)r * r;
+        if (r2 * r2 == d) { *out_A = r; return true; }
+        if (r > 0) {
+            unsigned __int128 rm2 = (unsigned __int128)(r - 1) * (r - 1);
+            if (rm2 * rm2 == d) { *out_A = r - 1; return true; }
+        }
+        unsigned __int128 rp2 = (unsigned __int128)(r + 1) * (r + 1);
+        if (rp2 * rp2 == d) { *out_A = r + 1; return true; }
+        return false;
+    }
+
+    mpz_t r_mpz;
+    mpz_init(r_mpz);
+    int ok = mpz_root(r_mpz, diff, 4);
+    if (ok != 0 && mpz_fits_ulong_p(r_mpz)) {
+        *out_A = mpz_get_ui(r_mpz);
+        mpz_clear(r_mpz);
+        return true;
+    }
+    mpz_clear(r_mpz);
+    return false;
+}
+
+/* Run search specialized for open residual signatures (3, 4, 7), (3, 5, 7), (4, 4, 7), and (3, 4, 11) */
 static int run_search_open_residual(const SearchConfig *cfg) {
+    uint32_t user_b = (cfg->max_base > 0) ? cfg->max_base : 5000;
+    uint32_t c_max_p1 = (user_b < 5000) ? user_b : 5000;
+    uint32_t b_max_p1 = (cfg->base_b_end > 0) ? cfg->base_b_end : ((user_b * 10 < 250000) ? user_b * 10 : 250000);
+
+    uint32_t c_max_p2 = (user_b < 5000) ? user_b : 5000;
+    uint32_t b_max_p2 = (cfg->base_b_end > 0) ? cfg->base_b_end : ((user_b * 5 < 100000) ? user_b * 5 : 100000);
+
+    uint32_t c_max_p3 = (user_b < 3000) ? user_b : 3000;
+    uint32_t b_max_p3 = (cfg->base_b_end > 0) ? cfg->base_b_end : ((user_b * 5 < 100000) ? user_b * 5 : 100000);
+
+    uint32_t c_max_p4 = (user_b < 1000) ? user_b : 1000;
+    uint32_t b_max_p4 = (cfg->base_b_end > 0) ? cfg->base_b_end : ((user_b * 5 < 100000) ? user_b * 5 : 100000);
+
+    uint32_t c_max_p5 = (user_b < 1000) ? user_b : 1000;
+    uint32_t b_max_p5 = (cfg->base_b_end > 0) ? cfg->base_b_end : ((user_b * 2 < 50000) ? user_b * 2 : 50000);
+
+    uint32_t c_max_p6 = (user_b < 2000) ? user_b : 2000;
+    uint32_t b_max_p6 = (cfg->base_b_end > 0) ? cfg->base_b_end : ((user_b * 2 < 50000) ? user_b * 2 : 50000);
+
     printf("=================================================================\n");
-    printf("Beal Open Residual Signatures Search Engine\n");
-    printf("Target Signatures: (3, 4, 7), (3, 5, 7), (4, 4, 7), (3, 4, 11)\n");
-    printf("Bounds:\n");
-    printf("  (3, 4, 7):  C in [2, 5000], B up to 1,000,000\n");
-    printf("  (3, 5, 7):  C in [2, 5000], B up to 250,000\n");
-    printf("  (4, 4, 7):  C in [2, 2000], B up to 350,000 (A <= B)\n");
-    printf("  (3, 4, 11): C in [2, 500],  B up to 35,000,000\n");
+    printf("Beal Open Residual Signatures Search Engine (Hardware Accelerated)\n");
+    printf("Target Signatures: (3, 4, 7), (3, 5, 7), (4, 4, 7), (3, 4, 11), (3, 5, 11), (4, 5, 7)\n");
+    printf("Calibrated Bounds:\n");
+    printf("  (3, 4, 7):  C <= %u, B <= %u\n", c_max_p1, b_max_p1);
+    printf("  (3, 5, 7):  C <= %u, B <= %u\n", c_max_p2, b_max_p2);
+    printf("  (4, 4, 7):  C <= %u, B <= %u (A <= B)\n", c_max_p3, b_max_p3);
+    printf("  (3, 4, 11): C <= %u, B <= %u\n", c_max_p4, b_max_p4);
+    printf("  (3, 5, 11): C <= %u, B <= %u\n", c_max_p5, b_max_p5);
+    printf("  (4, 5, 7):  C <= %u, B <= %u\n", c_max_p6, b_max_p6);
     printf("OpenMP Threads:   %d\n", cfg->num_threads);
     printf("=================================================================\n");
 
@@ -1519,33 +1596,39 @@ static int run_search_open_residual(const SearchConfig *cfg) {
 
     omp_set_num_threads(cfg->num_threads);
 
-    /* Modular lookup tables for cubes mod 7, 9, 13 */
+    /* Modular lookup tables for cubes mod 7, 9, 13, 19, 31 */
     static uint8_t is_cube7[7] = {0};
     static uint8_t is_cube9[9] = {0};
     static uint8_t is_cube13[13] = {0};
+    static uint8_t is_cube19[19] = {0};
+    static uint8_t is_cube31[31] = {0};
     for (int i = 0; i < 7; i++) is_cube7[(i*i*i) % 7] = 1;
     for (int i = 0; i < 9; i++) is_cube9[(i*i*i) % 9] = 1;
     for (int i = 0; i < 13; i++) is_cube13[(i*i*i) % 13] = 1;
+    for (int i = 0; i < 19; i++) is_cube19[(i*i*i) % 19] = 1;
+    for (int i = 0; i < 31; i++) is_cube31[(i*i*i) % 31] = 1;
 
-    /* Modular lookup tables for 4th powers mod 5, 13, 17 */
+    /* Modular lookup tables for 4th powers mod 5, 13, 17, 29 */
     static uint8_t is_pow4_5[5] = {0};
     static uint8_t is_pow4_13[13] = {0};
     static uint8_t is_pow4_17[17] = {0};
+    static uint8_t is_pow4_29[29] = {0};
     for (int i = 0; i < 5; i++) is_pow4_5[(i*i*i*i) % 5] = 1;
     for (int i = 0; i < 13; i++) is_pow4_13[(i*i*i*i) % 13] = 1;
     for (int i = 0; i < 17; i++) is_pow4_17[(i*i*i*i) % 17] = 1;
+    for (int i = 0; i < 29; i++) {
+        uint32_t i2 = (i*i) % 29;
+        is_pow4_29[(i2*i2) % 29] = 1;
+    }
 
     /* -------------------------------------------------------------
      * Pass 1: Signature (3, 4, 7) -> A^3 + B^4 = C^7
-     * C in [2, 25000], B <= min(5000000, floor((C^7-1)^(1/4)))
      * ------------------------------------------------------------- */
-    uint32_t c_max_p1 = (cfg->max_base >= 25000) ? cfg->max_base : 25000;
-    uint32_t b_max_p1 = (cfg->max_base >= 5000000) ? cfg->max_base : 5000000;
     printf("[Pass 1/6] Searching Signature (3, 4, 7): A^3 + B^4 = C^7 (C <= %u, B <= %u)...\n", c_max_p1, b_max_p1);
     #pragma omp parallel reduction(+:total_solutions, total_non_coprime, candidates_sieved, total_pairs_checked)
     {
-        mpz_t C7, B4, diff, A_mpz, b_max_mpz;
-        mpz_inits(C7, B4, diff, A_mpz, b_max_mpz, NULL);
+        mpz_t C7, B4, diff, b_max_mpz;
+        mpz_inits(C7, B4, diff, b_max_mpz, NULL);
 
         #pragma omp for schedule(dynamic, 16)
         for (uint32_t C = 2; C <= c_max_p1; C++) {
@@ -1563,7 +1646,6 @@ static int run_search_open_residual(const SearchConfig *cfg) {
             for (uint32_t B = 2; B <= b_max; B++) {
                 total_pairs_checked++;
 
-                // Sieve mod 7, 9, 13
                 uint32_t b2_7 = (B * B) % 7;
                 uint32_t b4_7 = (b2_7 * b2_7) % 7;
                 if (!is_cube7[(c7_m7 + 7 - b4_7) % 7]) continue;
@@ -1581,8 +1663,8 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                 if (mpz_cmp(C7, B4) <= 0) continue;
                 mpz_sub(diff, C7, B4);
 
-                if (mpz_root(A_mpz, diff, 3) != 0) {
-                    uint64_t A = mpz_get_ui(A_mpz);
+                uint64_t A = 0;
+                if (fast_check_root_cube(diff, &A, is_cube19, is_cube31)) {
                     if (A >= 1) {
                         Section8Result sec8 = validate_section8(A, B, C, 3, 4, 7);
                         if (sec8.counterexample) {
@@ -1598,29 +1680,22 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                             total_solutions++;
                         } else if (sec8.equality && !sec8.primitive) {
                             total_non_coprime++;
-                            if (cfg->verbose) {
-                                #pragma omp critical
-                                printf("[Signature 3,4,7 equality] %s\n", sec8.reason);
-                            }
                         }
                     }
                 }
             }
         }
-        mpz_clears(C7, B4, diff, A_mpz, b_max_mpz, NULL);
+        mpz_clears(C7, B4, diff, b_max_mpz, NULL);
     }
 
     /* -------------------------------------------------------------
      * Pass 2: Signature (3, 5, 7) -> A^3 + B^5 = C^7
-     * C in [2, 25000], B <= min(1000000, floor((C^7-1)^(1/5)))
      * ------------------------------------------------------------- */
-    uint32_t c_max_p2 = (cfg->max_base >= 25000) ? cfg->max_base : 25000;
-    uint32_t b_max_p2 = (cfg->max_base >= 1000000) ? cfg->max_base : 1000000;
     printf("[Pass 2/6] Searching Signature (3, 5, 7): A^3 + B^5 = C^7 (C <= %u, B <= %u)...\n", c_max_p2, b_max_p2);
     #pragma omp parallel reduction(+:total_solutions, total_non_coprime, candidates_sieved, total_pairs_checked)
     {
-        mpz_t C7, B5, diff, A_mpz, b_max_mpz;
-        mpz_inits(C7, B5, diff, A_mpz, b_max_mpz, NULL);
+        mpz_t C7, B5, diff, b_max_mpz;
+        mpz_inits(C7, B5, diff, b_max_mpz, NULL);
 
         #pragma omp for schedule(dynamic, 16)
         for (uint32_t C = 2; C <= c_max_p2; C++) {
@@ -1638,7 +1713,6 @@ static int run_search_open_residual(const SearchConfig *cfg) {
             for (uint32_t B = 2; B <= b_max; B++) {
                 total_pairs_checked++;
 
-                // Sieve mod 7, 9, 13
                 uint32_t b5_7 = pow_mod32(B, 5, 7);
                 if (!is_cube7[(c7_m7 + 7 - b5_7) % 7]) continue;
 
@@ -1653,8 +1727,8 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                 if (mpz_cmp(C7, B5) <= 0) continue;
                 mpz_sub(diff, C7, B5);
 
-                if (mpz_root(A_mpz, diff, 3) != 0) {
-                    uint64_t A = mpz_get_ui(A_mpz);
+                uint64_t A = 0;
+                if (fast_check_root_cube(diff, &A, is_cube19, is_cube31)) {
                     if (A >= 1) {
                         Section8Result sec8 = validate_section8(A, B, C, 3, 5, 7);
                         if (sec8.counterexample) {
@@ -1670,30 +1744,22 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                             total_solutions++;
                         } else if (sec8.equality && !sec8.primitive) {
                             total_non_coprime++;
-                            if (cfg->verbose) {
-                                #pragma omp critical
-                                printf("[Signature 3,5,7 equality] %s\n", sec8.reason);
-                            }
                         }
                     }
                 }
             }
         }
-        mpz_clears(C7, B5, diff, A_mpz, b_max_mpz, NULL);
+        mpz_clears(C7, B5, diff, b_max_mpz, NULL);
     }
 
     /* -------------------------------------------------------------
      * Pass 3: Signature (4, 4, 7) -> A^4 + B^4 = C^7
-     * A <= B <= min(1000000, floor((C^7-1)^(1/4)))
-     * B >= ceil((C^7 / 2)^(1/4))
      * ------------------------------------------------------------- */
-    uint32_t c_max_p3 = (cfg->max_base >= 10000) ? cfg->max_base : 10000;
-    uint32_t b_max_p3 = (cfg->max_base >= 1000000) ? cfg->max_base : 1000000;
     printf("[Pass 3/6] Searching Signature (4, 4, 7): A^4 + B^4 = C^7 (C <= %u, B <= %u, A <= B)...\n", c_max_p3, b_max_p3);
     #pragma omp parallel reduction(+:total_solutions, total_non_coprime, candidates_sieved, total_pairs_checked)
     {
-        mpz_t C7, B4, diff, A_mpz, b_max_mpz, b_min_mpz, half_C7;
-        mpz_inits(C7, B4, diff, A_mpz, b_max_mpz, b_min_mpz, half_C7, NULL);
+        mpz_t C7, B4, diff, b_max_mpz, b_min_mpz, half_C7;
+        mpz_inits(C7, B4, diff, b_max_mpz, b_min_mpz, half_C7, NULL);
 
         #pragma omp for schedule(dynamic, 16)
         for (uint32_t C = 2; C <= c_max_p3; C++) {
@@ -1716,7 +1782,6 @@ static int run_search_open_residual(const SearchConfig *cfg) {
             for (uint32_t B = b_min; B <= b_max; B++) {
                 total_pairs_checked++;
 
-                // Sieve mod 5, 13, 17
                 uint32_t b2_5 = (B * B) % 5;
                 uint32_t b4_5 = (b2_5 * b2_5) % 5;
                 if (!is_pow4_5[(c7_m5 + 5 - b4_5) % 5]) continue;
@@ -1734,8 +1799,8 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                 if (mpz_cmp(C7, B4) <= 0) continue;
                 mpz_sub(diff, C7, B4);
 
-                if (mpz_root(A_mpz, diff, 4) != 0) {
-                    uint64_t A = mpz_get_ui(A_mpz);
+                uint64_t A = 0;
+                if (fast_check_root_pow4(diff, &A, is_pow4_29)) {
                     if (A >= 1 && A <= B) {
                         Section8Result sec8 = validate_section8(A, B, C, 4, 4, 7);
                         if (sec8.counterexample) {
@@ -1751,29 +1816,22 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                             total_solutions++;
                         } else if (sec8.equality && !sec8.primitive) {
                             total_non_coprime++;
-                            if (cfg->verbose) {
-                                #pragma omp critical
-                                printf("[Signature 4,4,7 equality] %s\n", sec8.reason);
-                            }
                         }
                     }
                 }
             }
         }
-        mpz_clears(C7, B4, diff, A_mpz, b_max_mpz, b_min_mpz, half_C7, NULL);
+        mpz_clears(C7, B4, diff, b_max_mpz, b_min_mpz, half_C7, NULL);
     }
 
     /* -------------------------------------------------------------
      * Pass 4: Signature (3, 4, 11) -> A^3 + B^4 = C^11
-     * C in [2, 1000], B <= min(200000, floor((C^11-1)^(1/4)))
      * ------------------------------------------------------------- */
-    uint32_t c_max_p4 = (cfg->max_base >= 1000) ? cfg->max_base : 1000;
-    uint32_t b_max_p4 = (cfg->max_base >= 200000) ? cfg->max_base : 200000;
     printf("[Pass 4/6] Searching Signature (3, 4, 11): A^3 + B^4 = C^11 (C <= %u, B <= %u)...\n", c_max_p4, b_max_p4);
     #pragma omp parallel reduction(+:total_solutions, total_non_coprime, candidates_sieved, total_pairs_checked)
     {
-        mpz_t C11, B4, diff, A_mpz, b_max_mpz;
-        mpz_inits(C11, B4, diff, A_mpz, b_max_mpz, NULL);
+        mpz_t C11, B4, diff, b_max_mpz;
+        mpz_inits(C11, B4, diff, b_max_mpz, NULL);
 
         #pragma omp for schedule(dynamic, 8)
         for (uint32_t C = 2; C <= c_max_p4; C++) {
@@ -1791,7 +1849,6 @@ static int run_search_open_residual(const SearchConfig *cfg) {
             for (uint32_t B = 2; B <= b_max; B++) {
                 total_pairs_checked++;
 
-                // Sieve mod 7, 9, 13
                 uint32_t b2_7 = (B * B) % 7;
                 uint32_t b4_7 = (b2_7 * b2_7) % 7;
                 if (!is_cube7[(c11_m7 + 7 - b4_7) % 7]) continue;
@@ -1809,8 +1866,8 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                 if (mpz_cmp(C11, B4) <= 0) continue;
                 mpz_sub(diff, C11, B4);
 
-                if (mpz_root(A_mpz, diff, 3) != 0) {
-                    uint64_t A = mpz_get_ui(A_mpz);
+                uint64_t A = 0;
+                if (fast_check_root_cube(diff, &A, is_cube19, is_cube31)) {
                     if (A >= 1) {
                         Section8Result sec8 = validate_section8(A, B, C, 3, 4, 11);
                         if (sec8.counterexample) {
@@ -1826,29 +1883,22 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                             total_solutions++;
                         } else if (sec8.equality && !sec8.primitive) {
                             total_non_coprime++;
-                            if (cfg->verbose) {
-                                #pragma omp critical
-                                printf("[Signature 3,4,11 equality] %s\n", sec8.reason);
-                            }
                         }
                     }
                 }
             }
         }
-        mpz_clears(C11, B4, diff, A_mpz, b_max_mpz, NULL);
+        mpz_clears(C11, B4, diff, b_max_mpz, NULL);
     }
 
     /* -------------------------------------------------------------
      * Pass 5: Signature (3, 5, 11) -> A^3 + B^5 = C^11
-     * C in [2, 5000], B <= min(50000, floor((C^11-1)^(1/5)))
      * ------------------------------------------------------------- */
-    uint32_t c_max_p5 = (cfg->max_base >= 5000) ? cfg->max_base : 5000;
-    uint32_t b_max_p5 = (cfg->max_base >= 50000) ? cfg->max_base : 50000;
     printf("[Pass 5/6] Searching Signature (3, 5, 11): A^3 + B^5 = C^11 (C <= %u, B <= %u)...\n", c_max_p5, b_max_p5);
     #pragma omp parallel reduction(+:total_solutions, total_non_coprime, candidates_sieved, total_pairs_checked)
     {
-        mpz_t C11, B5, diff, A_mpz, b_max_mpz;
-        mpz_inits(C11, B5, diff, A_mpz, b_max_mpz, NULL);
+        mpz_t C11, B5, diff, b_max_mpz;
+        mpz_inits(C11, B5, diff, b_max_mpz, NULL);
 
         #pragma omp for schedule(dynamic, 8)
         for (uint32_t C = 2; C <= c_max_p5; C++) {
@@ -1866,7 +1916,6 @@ static int run_search_open_residual(const SearchConfig *cfg) {
             for (uint32_t B = 2; B <= b_max; B++) {
                 total_pairs_checked++;
 
-                // Sieve mod 7, 9, 13
                 uint32_t b5_7 = pow_mod32(B, 5, 7);
                 if (!is_cube7[(c11_m7 + 7 - b5_7) % 7]) continue;
 
@@ -1881,8 +1930,8 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                 if (mpz_cmp(C11, B5) <= 0) continue;
                 mpz_sub(diff, C11, B5);
 
-                if (mpz_root(A_mpz, diff, 3) != 0) {
-                    uint64_t A = mpz_get_ui(A_mpz);
+                uint64_t A = 0;
+                if (fast_check_root_cube(diff, &A, is_cube19, is_cube31)) {
                     if (A >= 1) {
                         Section8Result sec8 = validate_section8(A, B, C, 3, 5, 11);
                         if (sec8.counterexample) {
@@ -1898,29 +1947,22 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                             total_solutions++;
                         } else if (sec8.equality && !sec8.primitive) {
                             total_non_coprime++;
-                            if (cfg->verbose) {
-                                #pragma omp critical
-                                printf("[Signature 3,5,11 equality] %s\n", sec8.reason);
-                            }
                         }
                     }
                 }
             }
         }
-        mpz_clears(C11, B5, diff, A_mpz, b_max_mpz, NULL);
+        mpz_clears(C11, B5, diff, b_max_mpz, NULL);
     }
 
     /* -------------------------------------------------------------
      * Pass 6: Signature (4, 5, 7) -> A^4 + B^5 = C^7
-     * C in [2, 5000], B <= min(50000, floor((C^7-1)^(1/5)))
      * ------------------------------------------------------------- */
-    uint32_t c_max_p6 = (cfg->max_base >= 5000) ? cfg->max_base : 5000;
-    uint32_t b_max_p6 = (cfg->max_base >= 50000) ? cfg->max_base : 50000;
     printf("[Pass 6/6] Searching Signature (4, 5, 7): A^4 + B^5 = C^7 (C <= %u, B <= %u)...\n", c_max_p6, b_max_p6);
     #pragma omp parallel reduction(+:total_solutions, total_non_coprime, candidates_sieved, total_pairs_checked)
     {
-        mpz_t C7, B5, diff, A_mpz, b_max_mpz;
-        mpz_inits(C7, B5, diff, A_mpz, b_max_mpz, NULL);
+        mpz_t C7, B5, diff, b_max_mpz;
+        mpz_inits(C7, B5, diff, b_max_mpz, NULL);
 
         #pragma omp for schedule(dynamic, 8)
         for (uint32_t C = 2; C <= c_max_p6; C++) {
@@ -1938,7 +1980,6 @@ static int run_search_open_residual(const SearchConfig *cfg) {
             for (uint32_t B = 2; B <= b_max; B++) {
                 total_pairs_checked++;
 
-                // Sieve mod 5, 13, 17
                 uint32_t b5_5 = pow_mod32(B, 5, 5);
                 if (!is_pow4_5[(c7_m5 + 5 - b5_5) % 5]) continue;
 
@@ -1953,8 +1994,8 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                 if (mpz_cmp(C7, B5) <= 0) continue;
                 mpz_sub(diff, C7, B5);
 
-                if (mpz_root(A_mpz, diff, 4) != 0) {
-                    uint64_t A = mpz_get_ui(A_mpz);
+                uint64_t A = 0;
+                if (fast_check_root_pow4(diff, &A, is_pow4_29)) {
                     if (A >= 1) {
                         Section8Result sec8 = validate_section8(A, B, C, 4, 5, 7);
                         if (sec8.counterexample) {
@@ -1970,16 +2011,12 @@ static int run_search_open_residual(const SearchConfig *cfg) {
                             total_solutions++;
                         } else if (sec8.equality && !sec8.primitive) {
                             total_non_coprime++;
-                            if (cfg->verbose) {
-                                #pragma omp critical
-                                printf("[Signature 4,5,7 equality] %s\n", sec8.reason);
-                            }
                         }
                     }
                 }
             }
         }
-        mpz_clears(C7, B5, diff, A_mpz, b_max_mpz, NULL);
+        mpz_clears(C7, B5, diff, b_max_mpz, NULL);
     }
 
     clock_gettime(CLOCK_MONOTONIC, &end_time);

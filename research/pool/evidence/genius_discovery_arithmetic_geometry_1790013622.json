@@ -1,0 +1,24 @@
+[
+  {
+    "hypothesis_id": "H_ORBIFOLD_HIGGS_SIMPSON",
+    "title": "NON-ABELIAN HODGE THEORY & STABLE HIGGS BUNDLES ON TRIANGLE ORBIFOLDS",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": false,
+    "failure_mode": "mode_5_moduli_coprimality_conflation",
+    "failure_mode_confidence": 0.92,
+    "structural_obstruction": "projective_coprimality_blindness",
+    "recommended_action": "audit_and_isolate_obstruction"
+  },
+  {
+    "hypothesis_id": "H_IWASAWA_PRYM_DESCENT",
+    "title": "ANTICYCLOTOMIC IWASAWA THEORY AND PRYM MONODROMY OF CYCLIC COVERS",
+    "genius_index": 0.0,
+    "target_discipline": false,
+    "fc_blindness": true,
+    "failure_mode": "mode_5_moduli_coprimality_conflation",
+    "failure_mode_confidence": 0.29,
+    "structural_obstruction": "projective_coprimality_blindness",
+    "recommended_action": "audit_and_isolate_obstruction"
+  }
+]

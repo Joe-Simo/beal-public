@@ -1,0 +1,254 @@
+[
+  {
+    "pair": "C614 + C616",
+    "candidate_a": "C614",
+    "candidate_b": "C616",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.85,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C608 + C610",
+    "candidate_a": "C608",
+    "candidate_b": "C610",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.84,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C612 + C614",
+    "candidate_a": "C612",
+    "candidate_b": "C614",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.83,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C620 + C622",
+    "candidate_a": "C620",
+    "candidate_b": "C622",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.83,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C610 + C612",
+    "candidate_a": "C610",
+    "candidate_b": "C612",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.82,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C608 + C620",
+    "candidate_a": "C608",
+    "candidate_b": "C620",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.8,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C616 + C622",
+    "candidate_a": "C616",
+    "candidate_b": "C622",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.8,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C608 + C614",
+    "candidate_a": "C608",
+    "candidate_b": "C614",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.79,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C608 + C616",
+    "candidate_a": "C608",
+    "candidate_b": "C616",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.79,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C612 + C616",
+    "candidate_a": "C612",
+    "candidate_b": "C616",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.79,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C614 + C622",
+    "candidate_a": "C614",
+    "candidate_b": "C622",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.79,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C618 + C620",
+    "candidate_a": "C618",
+    "candidate_b": "C620",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.79,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C608 + C618",
+    "candidate_a": "C608",
+    "candidate_b": "C618",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.78,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C612 + C622",
+    "candidate_a": "C612",
+    "candidate_b": "C622",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.78,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C616 + C618",
+    "candidate_a": "C616",
+    "candidate_b": "C618",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.78,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C610 + C622",
+    "candidate_a": "C610",
+    "candidate_b": "C622",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.77,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C612 + C620",
+    "candidate_a": "C612",
+    "candidate_b": "C620",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.77,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C608 + C612",
+    "candidate_a": "C608",
+    "candidate_b": "C612",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.76,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C610 + C614",
+    "candidate_a": "C610",
+    "candidate_b": "C614",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.76,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C610 + C620",
+    "candidate_a": "C610",
+    "candidate_b": "C620",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.76,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C610 + C616",
+    "candidate_a": "C610",
+    "candidate_b": "C616",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.75,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C614 + C620",
+    "candidate_a": "C614",
+    "candidate_b": "C620",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.75,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C616 + C620",
+    "candidate_a": "C616",
+    "candidate_b": "C620",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.75,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C608 + C622",
+    "candidate_a": "C608",
+    "candidate_b": "C622",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.74,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C612 + C618",
+    "candidate_a": "C612",
+    "candidate_b": "C618",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.74,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C618 + C622",
+    "candidate_a": "C618",
+    "candidate_b": "C622",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.73,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C610 + C618",
+    "candidate_a": "C610",
+    "candidate_b": "C618",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.72,
+    "action": "discard_pair"
+  },
+  {
+    "pair": "C614 + C618",
+    "candidate_a": "C614",
+    "candidate_b": "C618",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 0.69,
+    "action": "discard_pair"
+  }
+]

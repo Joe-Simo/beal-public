@@ -1,14 +1,14 @@
 {
   "engine_version": "2.0-autonomous",
-  "cycle": 21,
+  "cycle": 22,
   "search_bounds": {
     "A_max": 110000,
     "B_max": 600000,
     "min_exp": 3,
     "max_exp": 60
   },
-  "total_pairs_tested": 10302268023198,
-  "primes_eliminated_count": 7993,
+  "total_pairs_tested": 10302657623933,
+  "primes_eliminated_count": 8167,
   "eliminated_prime_ranges": [
     [
       5501,
@@ -93,6 +93,10 @@
     [
       88001,
       90001
+    ],
+    [
+      90001,
+      92001
     ]
   ],
   "signatures_status": {
