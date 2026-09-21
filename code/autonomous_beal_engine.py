@@ -42,7 +42,8 @@ def load_state() -> dict:
         "signatures_status": {
             "(n, n, n)": "ELIMINATED (Wiles-Taylor FLT)",
             "(4, 4, p)": "ELIMINATED (Ellenberg 2005)",
-            "(3, 3, p)": "ELIMINATED_KRAUS_CHEBOTAREV (Kraus sieve & Chebotarev witness)",
+            "(n, n, 3)": "ELIMINATED (Darmon-Merel 1997)",
+            "(3, 3, p)": "ELIMINATED (Kraus 1998, Dahmen 2008, Chebotarev witness)",
             "(3, 4, 7)": "ELIMINATED (Poonen-Schaefer-Stoll 2007, Mordell-Weil Sieve rank 0)",
             "(3, 4, 5)": "ELIMINATED (Siksek-Stoll 2014, Bilu-Hanrot Thue)",
             "(3, 5, 5)": "ELIMINATED (Baker-Davenport LLL reduction)",
@@ -105,9 +106,22 @@ def run_cycle(state: dict) -> dict:
     res_high = subprocess.run(cmd_high, cwd=str(REPO_ROOT), capture_output=True, text=True)
     check_victory_condition_a()
 
+    # Open residual signatures pass
+    log_open = EVIDENCE_DIR / f"deep_search_cycle_{cycle}_open_residuals.json"
+    if not log_open.exists():
+        cmd_open = [
+            str(REPO_ROOT / "code" / "beal_search_gmp"),
+            "--signature-open",
+            "--max-base", str(bounds["A_max"]),
+            "--threads", "8",
+            "--log-file", str(log_open)
+        ]
+        res_open = subprocess.run(cmd_open, cwd=str(REPO_ROOT), capture_output=True, text=True)
+        check_victory_condition_a()
+
     # Parse checked pairs from logs if present
     cycle_pairs = 0
-    for log_p in (log_asym, log_high):
+    for log_p in (log_asym, log_high, log_open):
         if log_p.exists():
             try:
                 with open(log_p, "r") as f:

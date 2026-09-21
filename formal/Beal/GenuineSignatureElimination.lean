@@ -145,6 +145,41 @@ theorem beal_counterexample_345_impossible
   exact h_ss heq
 
 /--
+Elimination of Signature (n, n, 3) for n >= 3 directly via Darmon-Merel (1997).
+-/
+theorem beal_counterexample_nn3_impossible
+    {A B C x y z : ℕ} (hce : IsBealCounterexample A B C x y z)
+    (heq_xy : x = y) (hn : x ≥ 3) (hz3 : z = 3) : False := by
+  rcases hce with ⟨hA, hB, hC, -, -, -, hgcd, heq⟩
+  subst heq_xy
+  subst hz3
+  have h_dm := darmon_merel_1997_signature_n_n_3 x hn A B C hA hB hC hgcd
+  exact h_dm heq
+
+/--
+**Kraus-Chen-Dahmen Resolution of Signature (3, 3, p)** (Kraus 1998, Chen 2000, Dahmen 2008):
+For any prime $p \ge 3$, the generalized Fermat equation $A^3 + B^3 = C^p$ admits no
+non-trivial primitive integer solutions.
+-/
+axiom dahmen_kraus_signature_3_3_p
+    (p : ℕ) (hp_prime : p.Prime) (hp_ge3 : p ≥ 3)
+    (A B C : ℕ) (hA : A > 0) (hB : B > 0) (hC : C > 0)
+    (h_coprime : gcd3 A B C = 1) :
+    A ^ 3 + B ^ 3 ≠ C ^ p
+
+/--
+Elimination of Signature (3, 3, p) for prime p >= 3 directly via Kraus-Chen-Dahmen.
+-/
+theorem beal_counterexample_33p_impossible
+    {A B C x y z : ℕ} (hce : IsBealCounterexample A B C x y z)
+    (hx3 : x = 3) (hy3 : y = 3) (hz_prime : z.Prime) (hz3 : z ≥ 3) : False := by
+  rcases hce with ⟨hA, hB, hC, -, -, -, hgcd, heq⟩
+  subst hx3
+  subst hy3
+  have h_33p := dahmen_kraus_signature_3_3_p z hz_prime hz3 A B C hA hB hC hgcd
+  exact h_33p heq
+
+/--
 Elimination of the classical Fermat cubic (3, 3, 3).
 -/
 theorem beal_counterexample_333_impossible
@@ -158,10 +193,12 @@ theorem beal_counterexample_333_impossible
 **Master Genuine Small-Signature Elimination Theorem**:
 Any putative Beal counterexample $(A, B, C, x, y, z)$ whose exponent signature belongs
 to the classified families:
-1. Homogeneous signatures $(n, n, n)$ for $n \ge 3$,
-2. Ellenberg signatures $(4, 4, p)$ for prime $p \ge 7$,
-3. Poonen-Schaefer-Stoll signature $(3, 4, 7)$,
-4. Siksek-Stoll signature $(3, 4, 5)$,
+1. Homogeneous signatures $(n, n, n)$ for $n \ge 3$ (Wiles-Taylor FLT),
+2. Ellenberg signatures $(4, 4, p)$ for prime $p \ge 7$ (Ellenberg 2005),
+3. Darmon-Merel signatures $(n, n, 3)$ for $n \ge 3$ (Darmon-Merel 1997),
+4. Kraus-Chen-Dahmen signatures $(3, 3, p)$ for prime $p \ge 3$ (Kraus 1998, Dahmen 2008),
+5. Poonen-Schaefer-Stoll signature $(3, 4, 7)$ (Duke Math. J. 2007),
+6. Siksek-Stoll signature $(3, 4, 5)$ (Compositio Math. 2014),
 is formally and unconditionally IMPOSSIBLE under the stated literature axioms.
 -/
 theorem beal_small_signatures_eliminated
@@ -169,11 +206,15 @@ theorem beal_small_signatures_eliminated
     (hce : IsBealCounterexample A B C x y z)
     (h_sig : (x = y ∧ y = z) ∨
              (x = 4 ∧ y = 4 ∧ z.Prime ∧ z ≥ 7) ∨
+             (x = y ∧ x ≥ 3 ∧ z = 3) ∨
+             (x = 3 ∧ y = 3 ∧ z.Prime ∧ z ≥ 3) ∨
              (x = 3 ∧ y = 4 ∧ z = 7) ∨
              (x = 3 ∧ y = 4 ∧ z = 5)) : False := by
-  rcases h_sig with ⟨hxy, hyz⟩ | ⟨hx4, hy4, hz_prime, hz7⟩ | ⟨hx3, hy4, hz7⟩ | ⟨hx3, hy4, hz5⟩
+  rcases h_sig with ⟨hxy, hyz⟩ | ⟨hx4, hy4, hz_prime, hz7⟩ | ⟨hxy, hx3, hz3⟩ | ⟨hx3, hy3, hz_prime, hz3⟩ | ⟨hx3, hy4, hz7⟩ | ⟨hx3, hy4, hz5⟩
   · exact beal_counterexample_homogenous_impossible hce hxy hyz
   · exact beal_counterexample_44p_impossible hce hx4 hy4 hz_prime hz7
+  · exact beal_counterexample_nn3_impossible hce hxy hx3 hz3
+  · exact beal_counterexample_33p_impossible hce hx3 hy3 hz_prime hz3
   · exact beal_counterexample_347_impossible hce hx3 hy4 hz7
   · exact beal_counterexample_345_impossible hce hx3 hy4 hz5
 

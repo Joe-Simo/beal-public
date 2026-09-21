@@ -76,6 +76,8 @@ import Beal.GenuineSignatureElimination
 #print axioms Beal.beal_counterexample_44p_impossible
 #print axioms Beal.beal_counterexample_347_impossible
 #print axioms Beal.beal_counterexample_345_impossible
+#print axioms Beal.beal_counterexample_nn3_impossible
+#print axioms Beal.beal_counterexample_33p_impossible
 """
 with open("/tmp/referee_axioms.lean", "w") as f:
     f.write(script)

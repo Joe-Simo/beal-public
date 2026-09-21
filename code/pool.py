@@ -17,7 +17,7 @@ from pathlib import Path
 POOL = Path(__file__).resolve().parent.parent / "research" / "pool" / "candidates.json"
 TERMINAL = {"REFUTED", "DUPLICATE"}
 STATUSES = {"ACTIVE", "PROMISING", "PARTIAL_RESULT", "BLOCKED", "REFUTED", "DUPLICATE",
-            "VERIFICATION_REQUIRED"}
+            "VERIFICATION_REQUIRED", "SUBMISSION_READY"}
 TEMPLATE = {"parents": [], "inspirations": [], "evidence": [], "obligations": [],
             "evaluations": {}, "failure_reason": None, "novelty_note": None, "extracted": []}
 
