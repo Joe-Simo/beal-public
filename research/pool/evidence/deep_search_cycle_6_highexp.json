@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "search_mode": "high_exponent_grid",
+  "bounds": {
+    "max_base": 35000,
+    "min_exp": 3,
+    "max_exp": 60,
+    "max_sum": "10^36"
+  },
+  "threads": 8,
+  "elapsed_seconds": 741.3924,
+  "powers_indexed": 225661,
+  "pairs_checked": 25436864689,
+  "pairs_per_second": 34309585.25,
+  "counterexamples_found": 0,
+  "non_primitive_equalities": 1580,
+  "conjecture_verified": true
+}

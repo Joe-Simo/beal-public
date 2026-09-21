@@ -40,12 +40,30 @@ def gcd3(a: int, b: int, c: int) -> int:
     return math.gcd(a, math.gcd(b, c))
 
 def exact_root(val: int, exp: int) -> int | None:
-    """Exact integer exp-th root using integer bisection / Newton's method."""
+    """Exact integer exp-th root with fast hardware float screening."""
     if val <= 0 or exp < 1:
         return None
     if exp == 1:
         return val
-    # Initial floating point guess if within double range, else bit length
+    if exp == 2:
+        r = math.isqrt(val)
+        return r if r * r == val else None
+    try:
+        if val.bit_length() <= 1020:
+            approx = int(round(val ** (1.0 / exp)))
+        else:
+            log2_v = math.log2(val)
+            approx = int(round(2.0 ** (log2_v / exp)))
+        if approx > 0 and approx ** exp == val:
+            return approx
+        for r in (approx - 1, approx + 1):
+            if r > 0 and r ** exp == val:
+                return r
+        return None
+    except Exception:
+        pass
+
+    # Fallback integer Newton method
     bit_len = val.bit_length()
     guess_bits = (bit_len + exp - 1) // exp
     x = 1 << guess_bits
@@ -119,6 +137,11 @@ def search_fc_perturbations(radius: int = 500, max_exp_scan: int = 15) -> dict:
     print(f"Exponent Search Range: [3, {max_exp_scan}]")
     print("=================================================================")
 
+    # Precomputed power residue sets mod 7, 9, 13
+    res_mod7 = {z: {pow(i, z, 7) for i in range(7)} for z in range(3, max_exp_scan + 1)}
+    res_mod9 = {z: {pow(i, z, 9) for i in range(9)} for z in range(3, max_exp_scan + 1)}
+    res_mod13 = {z: {pow(i, z, 13) for i in range(13)} for z in range(3, max_exp_scan + 1)}
+
     t0 = time.time()
     pairs_tested = 0
     non_primitive_count = 0
@@ -128,8 +151,8 @@ def search_fc_perturbations(radius: int = 500, max_exp_scan: int = 15) -> dict:
         x_min = max(3, x0 if x0 > 2 else 3)
         y_min = max(3, y0 if y0 > 2 else 3)
 
-        # Scale radius based on base size
-        eff_radius = min(radius, max(50, A0 // 2, B0 // 2))
+        # Scale radius based on base size, capped at 250 for fast iteration
+        eff_radius = min(radius, 250)
 
         for da in range(-eff_radius, eff_radius + 1):
             A = A0 + da
@@ -148,16 +171,16 @@ def search_fc_perturbations(radius: int = 500, max_exp_scan: int = 15) -> dict:
                         val = Ax + By
                         pairs_tested += 1
 
-                        # Quick modular filters for val = C^z:
-                        # For z >= 3, val must be a cubic residue mod 7 (residues {0, 1, 6})
                         m7 = val % 7
-                        # For z in [3, max_exp_scan]
+                        m9 = val % 9
+                        m13 = val % 13
+
                         for z in range(3, max_exp_scan + 1):
-                            # Sieve mod 7
-                            if z % 3 == 0 and m7 not in (0, 1, 6):
+                            if m7 not in res_mod7[z]:
                                 continue
-                            # Sieve mod 9
-                            if z % 3 == 0 and (val % 9) not in (0, 1, 8):
+                            if m9 not in res_mod9[z]:
+                                continue
+                            if m13 not in res_mod13[z]:
                                 continue
 
                             C = exact_root(val, z)
