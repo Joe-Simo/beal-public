@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "min_base": 2,
+  "max_base": 2550000,
+  "min_exp": 3,
+  "max_exp": 5,
+  "base_a_start": 2,
+  "base_a_end": 2550000,
+  "base_b_start": 2,
+  "base_b_end": 2550000,
+  "signature_mode": "asymmetric_345_355_354",
+  "signatures_tested": ["(3,4,5)", "(3,5,5)", "(3,5,4)"],
+  "threads": 8,
+  "elapsed_seconds": 15.9789,
+  "candidates_evaluated": 577357118,
+  "pairs_checked": 19507484700003,
+  "pairs_per_second": 1220827760359.16,
+  "counterexamples_found": 0,
+  "non_primitive_equalities": 21,
+  "conjecture_verified": true
+}

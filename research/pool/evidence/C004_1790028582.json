@@ -1,0 +1,183 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C004",
+  "timestamp": "2026-09-21T18:09:42-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent.",
+    "candidate_id": "C004",
+    "title": "C004",
+    "claim": "Mixed-weight cubic Pade approximation forces max(X, Y) > 10^25993 for any solution of the weighted equation.",
+    "method": "Pade/Thue-Siegel style height obstruction on the weighted binary form.",
+    "category": "",
+    "status": "PARTIAL_RESULT"
+  },
+  "questions": {
+    "target_discipline": {
+      "type": "noul",
+      "instructions": "Does this candidate strictly enforce Beal target discipline (exponents x, y, z >= 3, coprimality gcd(A, B, C) = 1, positive non-zero integers) without silently allowing exponent 2, negative terms, or non-integral coordinates?",
+      "criteria": {
+        "true": "Strictly adheres to target discipline with exponents strictly at least 3.",
+        "false": "Violates target discipline, allows exponent 2, or restricts exponents without general proof."
+      }
+    },
+    "fc_blindness": {
+      "type": "noul",
+      "instructions": "Is this candidate blind to the 10 known Fermat-Catalan solutions (1^m + 2^3 = 3^2, 2^5 + 7^2 = 3^4, 7^3 + 13^2 = 2^9...)? Specifically, does its core mathematical mechanism hold equally well for identities with exponent 2, meaning it cannot prove Beal on its own without additional exponent >= 3 input?",
+      "criteria": {
+        "true": "The mechanism is Fermat-Catalan blind: it holds on identities with exponent 2.",
+        "false": "The mechanism strictly exploits the Beal hyperbolic defect (-chi >= 1/12) which fails on exponent 2."
+      }
+    },
+    "canonical_failure_mode": {
+      "type": "choice",
+      "instructions": "Evaluate the candidate against the four canonical repository failure modes (from CLAUDE.md).\nWhich failure mode does this candidate trigger?\nCRITICAL BOUNDARY DISTINCTIONS:\n- Failure Mode 1 (Residual conflation): Concluding a mod-p congruence is impossible purely from non-isogeny, l-adic isomorphism refutation, or endomorphism algebra inequality. (FALLACY)\n- Sound Modular Sieve (Kraus criterion): Explicitly computing local Frobenius traces a_k(E) mod l and proving a_k(E) != a_k(f) mod l for all newforms f at auxiliary prime k = 2mp+1. This directly eliminates the residual mod-p congruence itself and is COMPLETELY SOUND (sound_no_failure_mode).\n- Failure Mode 2 (Chabauty wrong field / Selmer blowup): Applying rank bounds across field extensions without bounding the ramification set S = primes(ABC).\n- Failure Mode 3 (Heuristic laundering): Relabelling GRH, ABC, or Cohen-Lenstra bounds as unconditional.\n- Failure Mode 4 (Unchecked approximation direction): A bound, interval, sieve, or truncated range is used, and the conclusion is valid only if the approximation errs one particular way (e.g. ellrank(E)[1] lower bound used as rank upper bound).\n- Failure Mode 5 (Local-Global Moduli Conflation): Invariant depends only on the projective cross-ratio t = A/B in P^1(Q) or P^1(C), completely blind to integer coprimality gcd(gcd(A,B),C) > 1.\n- sound_no_failure_mode: Avoids all failure modes via exact structural or modular computation.",
+      "criteria": {
+        "mode_1_residual_conflation": "Failure Mode 1: Residual/isogeny/conductor conflation. Confuses mod-p Galois representation irreducibility or non-isogeny with non-existence of residual mod-p congruence.",
+        "mode_2_chabauty_unbounded_s": "Failure Mode 2: Chabauty over wrong field or Selmer dimension blowup. Selmer variety dimension dim Sel(U_n) grows linearly with |S| = primes(ABC), exceeding local dimension dim U_n(Q_p).",
+        "mode_3_heuristic_laundering": "Failure Mode 3: Heuristic laundering. Assumes ABC conjecture, Vojta conjecture, Cohen-Lenstra, or GRH bounds and labels the result unconditional.",
+        "mode_4_unchecked_approximation_direction": "Failure Mode 4: Unchecked approximation direction. Bound/interval used in the wrong direction for the claim (e.g. lower rank bound used to claim rank 0, or over-approximating the safe set).",
+        "mode_5_moduli_coprimality_conflation": "Failure Mode 5: Local-global / moduli conflation. Invariant depends only on projective geometry over Q or C (cross-ratio t = A/B), completely blind to integer coprimality gcd(A, B, C) > 1.",
+        "sound_no_failure_mode": "None: The candidate avoids all failure modes through exact structural invariants or explicit modular trace computation."
+      }
+    },
+    "uses_equation_gate": {
+      "type": "noul",
+      "instructions": "Second Gate (U228): Does the proof/mechanism of this candidate genuinely use the Diophantine equation A^x + B^y = C^z? Or is it an exponent-only inequality (such as rad(ABC)^3 <= A^x B^y C^z, or |chi| >= 1/12) that merely restates the exponent hypothesis without using the equation?",
+      "criteria": {
+        "true": "Genuinely uses the equation A^x + B^y = C^z (e.g. via Frey curves, factoring, modular traces, or covers).",
+        "false": "Does NOT use the equation; it is the exponent hypothesis in disguise, proving only a generic inequality."
+      }
+    },
+    "survey_category": {
+      "type": "choice",
+      "instructions": "Classify the mathematical mechanism according to the repository Survey-of-Failures gate (U211):\n- fatal_bounded_sieve: Bounded / fixed-input computation, congruence or covering sieves (can never resolve Beal).\n- fatal_modular_single_sig: Modular method one signature at a time (stalls: no Frey object for 3 independent exponents).\n- fatal_elementary: Elementary methods (LTE, p-adic valuations, difference-of-powers, residues - invalid or FC-blind).\n- fatal_abc_baker: ABC or Baker linear forms in logarithms (ineffective or too weak with unknown bases).\n- live_unifying_modular_motivic: Unifying modular/motivic object for three exponents (LIVE direction).\n- live_effective_diophantine_geometry: Effective Diophantine geometry bounding coordinates (LIVE direction).",
+      "criteria": {
+        "fatal_bounded_sieve": "Bounded / fixed-input computation, congruence or covering sieves.",
+        "fatal_modular_single_sig": "Modular method one signature at a time (stalls on 3 exponents).",
+        "fatal_elementary": "Elementary methods (LTE, valuations, residues).",
+        "fatal_abc_baker": "ABC / Baker linear forms in logarithms.",
+        "live_unifying_modular_motivic": "Unifying modular/motivic object for three exponents.",
+        "live_effective_diophantine_geometry": "Effective Diophantine geometry bounding coordinates."
+      }
+    },
+    "finiteness_to_nonexistence": {
+      "type": "choice",
+      "instructions": "Does the mathematical mechanism bridge the critical gap between finiteness (|X(Q)| < \\infty) and complete non-existence of primitive integer points (|X(Z)_{prim}| = 0)?",
+      "criteria": {
+        "proves_nonexistence": "Provides an exact obstruction that forces the solution set to be completely empty.",
+        "finiteness_only": "Only proves finiteness (like Faltings/Chabauty/Vojta), leaving unknown points uneliminated.",
+        "bounded_only": "Only eliminates bounded prime exponents (e.g. Kraus sieve up to a computational bound).",
+        "vacuous": "The invariant does not constrain integer points on the hypersurface."
+      }
+    },
+    "structural_obstruction": {
+      "type": "choice",
+      "instructions": "Identify the exact primary mathematical obstruction that blocks this candidate from unconditional completion.",
+      "criteria": {
+        "projective_coprimality_blindness": "The invariant depends only on the projective cross-ratio A/B in P^1 and cannot detect integer coprimality gcd(A, B, C) = 1.",
+        "selmer_dimension_growth": "Selmer variety dimension grows linearly with the unknown ramification set S = primes(ABC).",
+        "continuous_moduli_degeneration": "Moduli parameter lambda = A^x / C^z approaches cusps (0, 1, \\infty) degenerating heights.",
+        "automorphic_cusp_abundance": "Arthur trace formula / cusp form abundance dim S_k(N) >> 0 prevents representation vanishing.",
+        "torsion_wild_ramification": "Wild additive reduction at primes 2 and 3 obstructs p-adic period maps and torsion vanishing.",
+        "computational_scale": "Method is sound in principle for bounded exponents but computationally restricted to finite primes.",
+        "unobstructed": "No known mathematical obstruction prevents this candidate from completing an unconditional proof."
+      }
+    },
+    "genius_recommendation": {
+      "type": "choice",
+      "instructions": "What is the high-precision action recommended by the Mathematical Genius Engine?",
+      "criteria": {
+        "advance_kraus_frontier": "Execute exact modular sieve / PARI-GP computation to push empirical exponent bounds.",
+        "audit_and_isolate_obstruction": "Conduct deep mathematical audit to prove why this mechanism hits a structural dead-end.",
+        "salvage_proved_sublemmas": "Extract valid sub-lemmas, modular traces, or local bounds into the salvaged lemma pool.",
+        "refute_and_archive": "Refute candidate due to fundamental geometric flaw, heuristic laundering, or inconsistency.",
+        "synthesize_breakthrough": "Candidate contains a live ingredient suitable for cross-pollination in a breakthrough hypothesis."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.27
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.5
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "mode_4_unchecked_approximation_direction",
+        "confidence": 0.66,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.02,
+          "mode_1_residual_conflation": 0.0,
+          "mode_4_unchecked_approximation_direction": 0.72,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "sound_no_failure_mode": 0.07,
+          "mode_5_moduli_coprimality_conflation": 0.19
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "live_effective_diophantine_geometry",
+        "confidence": 0.96,
+        "probabilities": {
+          "live_effective_diophantine_geometry": 0.97,
+          "fatal_modular_single_sig": 0.0,
+          "live_unifying_modular_motivic": 0.0,
+          "fatal_elementary": 0.01,
+          "fatal_bounded_sieve": 0.0,
+          "fatal_abc_baker": 0.02
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "finiteness_only",
+        "confidence": 0.5,
+        "probabilities": {
+          "vacuous": 0.01,
+          "finiteness_only": 0.62,
+          "proves_nonexistence": 0.05,
+          "bounded_only": 0.32
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "projective_coprimality_blindness",
+        "confidence": 0.41,
+        "probabilities": {
+          "torsion_wild_ramification": 0.01,
+          "computational_scale": 0.34,
+          "unobstructed": 0.04,
+          "automorphic_cusp_abundance": 0.0,
+          "projective_coprimality_blindness": 0.5,
+          "continuous_moduli_degeneration": 0.07,
+          "selmer_dimension_growth": 0.04
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "audit_and_isolate_obstruction",
+        "confidence": 0.41,
+        "probabilities": {
+          "advance_kraus_frontier": 0.09,
+          "salvage_proved_sublemmas": 0.27,
+          "audit_and_isolate_obstruction": 0.52,
+          "synthesize_breakthrough": 0.07,
+          "refute_and_archive": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2800,
+      "output_tokens": 550
+    }
+  }
+}
