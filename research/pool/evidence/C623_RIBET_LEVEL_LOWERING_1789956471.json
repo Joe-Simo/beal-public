@@ -1,0 +1,93 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C623_RIBET_LEVEL_LOWERING",
+  "timestamp": "2026-09-20T22:07:51-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture_spec": "Beal Conjecture: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1",
+    "candidate_id": "C623_RIBET_LEVEL_LOWERING",
+    "title": "RIBET LEVEL-LOWERING AND CUSP FORM VANISHING ON C623",
+    "claim": "By pairwise disjointness of prime factors of ABC in primitive Beal triples, every odd prime p >= 5 dividing ABC has multiplicative reduction with valuation nu_p(Delta) = 2 * e_p * nu_p(base). Under Ribet level-lowering at exponent l | e_p, all prime-to-(2,3) factors divide out of the Serre conductor, reducing the target space to cusp forms S_2(N) with N dividing 144.",
+    "method": "Frey curve y^2 = x(x - A^x)(x + B^y), Tate algorithm minimal conductor, Ribet level lowering, Modular form dimensional vanishing."
+  },
+  "questions": {
+    "ribet_level_lowering_soundness": {
+      "type": "noul",
+      "instructions": "Is the application of Ribet level-lowering to eliminate prime-to-(2,3) factors from the Serre conductor unconditionally sound when the discriminant valuation nu_p(Delta) is a multiple of exponent l >= 3?",
+      "criteria": {
+        "true": "Unconditionally sound; standard Serre-Ribet level lowering theorem removes primes with l | nu_p(Delta).",
+        "false": "Flawed or requires unverified local hypotheses."
+      }
+    },
+    "minimal_conductor_support": {
+      "type": "choice",
+      "instructions": "What is the prime support of the minimal Serre level N_l after Ribet level-lowering on Frey curves for Beal triples?",
+      "criteria": {
+        "purely_primes_2_and_3": "Prime support is strictly contained in {2, 3}, so N_l in {2, 6, 18, 32, 64, 72, 144}.",
+        "unbounded_bad_primes": "Support depends on unbounded prime set primes(ABC).",
+        "wild_ramification_at_all_p": "Wild ramification introduces additional prime factors."
+      }
+    },
+    "cusp_form_vanishing": {
+      "type": "choice",
+      "instructions": "Which modular form spaces have dimension zero (dim S_2(N) = 0), immediately precluding non-trivial representations?",
+      "criteria": {
+        "levels_2_6_18_zero": "Levels 2, 6, and 18 all have dim S_2(N) = 0 (completely empty newform spaces).",
+        "only_level_2_zero": "Only level 2 has dim S_2(2) = 0.",
+        "all_levels_positive": "All levels have dim S_2(N) > 0."
+      }
+    },
+    "target_signature_elimination": {
+      "type": "choice",
+      "instructions": "Which signature classes are completely eliminated by dimensional vanishing when N_l divides 18?",
+      "criteria": {
+        "signature_nn2_and_nn3": "Signatures (n, n, 2) and (n, n, 3) (and subcases of (3, 3, p)) are completely eliminated.",
+        "no_signatures_eliminated": "No signatures are eliminated; all require Kraus sieve.",
+        "all_signatures_eliminated": "All Beal signatures are eliminated simultaneously."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "ribet_level_lowering_soundness": {
+        "type": "noul",
+        "noul": 0.38
+      },
+      "minimal_conductor_support": {
+        "type": "choice",
+        "choice": "purely_primes_2_and_3",
+        "confidence": 0.95,
+        "probabilities": {
+          "wild_ramification_at_all_p": 0.0,
+          "purely_primes_2_and_3": 0.97,
+          "unbounded_bad_primes": 0.03
+        }
+      },
+      "cusp_form_vanishing": {
+        "type": "choice",
+        "choice": "levels_2_6_18_zero",
+        "confidence": 0.8,
+        "probabilities": {
+          "all_levels_positive": 0.02,
+          "only_level_2_zero": 0.12,
+          "levels_2_6_18_zero": 0.86
+        }
+      },
+      "target_signature_elimination": {
+        "type": "choice",
+        "choice": "signature_nn2_and_nn3",
+        "confidence": 0.32,
+        "probabilities": {
+          "signature_nn2_and_nn3": 0.54,
+          "all_signatures_eliminated": 0.06,
+          "no_signatures_eliminated": 0.4
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1065,
+      "output_tokens": 215
+    }
+  }
+}

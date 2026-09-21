@@ -1,0 +1,123 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "NEWFORMS_72_144_KRAUS_SCREEN",
+  "timestamp": "2026-09-20T22:17:13-0400",
+  "model": "jev-latest",
+  "request_state": [
+    {
+      "candidate": "NEWFORM_72a1",
+      "level": 72,
+      "label": "72a1",
+      "weierstrass": "y^2 = x^3 + 6x - 7",
+      "signature": "(3, 3, p)",
+      "description": "Unique weight 2 newform of level 72 associated to Kraus Frey curve y^2 = x^3 + 3AB x + B^3 - A^3."
+    },
+    {
+      "candidate": "NEWFORM_144a1",
+      "level": 144,
+      "label": "144a1",
+      "signature": "(3, 3, p)",
+      "description": "Weight 2 newform of level 144 associated to Kraus Frey curve when 2 divides AB."
+    },
+    {
+      "candidate": "KRAUS_SIEVE_BOUNDS",
+      "p_range": [
+        5501,
+        6500
+      ],
+      "multiplier_range": "k in [1, 50]",
+      "auxiliary_prime": "q = 2kp + 1",
+      "description": "Kraus modular elimination sieve testing Frobenius trace differences for p in [5501, 6500]."
+    }
+  ],
+  "questions": {
+    "trace_collision_density": {
+      "type": "choice",
+      "instructions": "For newforms 72a1 and 144a1 and prime exponent p >= 5501, what is the expected density of auxiliary primes q = 2kp + 1 that successfully avoid trace collisions a_q(E) = a_q(f)?",
+      "criteria": {
+        "high_success_rate": "High success rate (>95%): almost every prime p is eliminated with small multiplier k <= 20.",
+        "moderate_success_rate": "Moderate success rate: requires larger multipliers k up to 50 due to occasional trace collisions.",
+        "persistent_obstruction": "Persistent obstruction: infinite family of trace collisions precluding modular elimination."
+      }
+    },
+    "kraus_rigor_soundness": {
+      "type": "noul",
+      "instructions": "Does the existence of an auxiliary prime q = 2kp + 1 with prod_{f in S_2(N)} (a_q(E_{A,B}) - a_q(f)) != 0 mod p unconditionally prove that no non-trivial solution to A^3 + B^3 = C^p can have residual representation isomorphic to rho_{f, p}?",
+      "criteria": {
+        "true": "Yes, Kraus local Frobenius trace difference strictly refutes the mod-p Galois isomorphism.",
+        "false": "No, residual representation may still match even if Frobenius traces differ at q."
+      }
+    }
+  },
+  "response": [
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "trace_collision_density": {
+          "type": "choice",
+          "choice": "high_success_rate",
+          "confidence": 0.5,
+          "probabilities": {
+            "persistent_obstruction": 0.11,
+            "high_success_rate": 0.66,
+            "moderate_success_rate": 0.23
+          }
+        },
+        "kraus_rigor_soundness": {
+          "type": "noul",
+          "noul": 0.7
+        }
+      },
+      "usage": {
+        "input_tokens": 695,
+        "output_tokens": 74
+      }
+    },
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "trace_collision_density": {
+          "type": "choice",
+          "choice": "high_success_rate",
+          "confidence": 0.45,
+          "probabilities": {
+            "persistent_obstruction": 0.11,
+            "high_success_rate": 0.63,
+            "moderate_success_rate": 0.26
+          }
+        },
+        "kraus_rigor_soundness": {
+          "type": "noul",
+          "noul": 0.66
+        }
+      },
+      "usage": {
+        "input_tokens": 659,
+        "output_tokens": 74
+      }
+    },
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "trace_collision_density": {
+          "type": "choice",
+          "choice": "moderate_success_rate",
+          "confidence": 0.62,
+          "probabilities": {
+            "high_success_rate": 0.22,
+            "moderate_success_rate": 0.75,
+            "persistent_obstruction": 0.03
+          }
+        },
+        "kraus_rigor_soundness": {
+          "type": "noul",
+          "noul": 0.62
+        }
+      },
+      "usage": {
+        "input_tokens": 681,
+        "output_tokens": 75
+      }
+    }
+  ]
+}

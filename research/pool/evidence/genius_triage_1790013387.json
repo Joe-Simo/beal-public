@@ -1,0 +1,730 @@
+[
+  {
+    "candidate_id": "C608",
+    "title": "C608",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.51,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.26
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.51,
+        "probabilities": {
+          "mode_1_residual_conflation": 0.08,
+          "mode_3_heuristic_laundering": 0.01,
+          "sound_no_failure_mode": 0.6,
+          "mode_4_unchecked_approximation_direction": 0.27,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "mode_5_moduli_coprimality_conflation": 0.04
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.7,
+        "probabilities": {
+          "fatal_elementary": 0.0,
+          "fatal_modular_single_sig": 0.24,
+          "fatal_abc_baker": 0.0,
+          "live_unifying_modular_motivic": 0.01,
+          "fatal_bounded_sieve": 0.75,
+          "live_effective_diophantine_geometry": 0.0
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.85,
+        "probabilities": {
+          "vacuous": 0.02,
+          "bounded_only": 0.89,
+          "finiteness_only": 0.07,
+          "proves_nonexistence": 0.02
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.71,
+        "probabilities": {
+          "torsion_wild_ramification": 0.05,
+          "automorphic_cusp_abundance": 0.03,
+          "continuous_moduli_degeneration": 0.0,
+          "selmer_dimension_growth": 0.09,
+          "computational_scale": 0.76,
+          "projective_coprimality_blindness": 0.07,
+          "unobstructed": 0.0
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.24,
+        "probabilities": {
+          "salvage_proved_sublemmas": 0.13,
+          "synthesize_breakthrough": 0.01,
+          "advance_kraus_frontier": 0.39,
+          "refute_and_archive": 0.13,
+          "audit_and_isolate_obstruction": 0.34
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C610",
+    "title": "C610",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.63,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.34
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.57
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.63,
+        "probabilities": {
+          "mode_4_unchecked_approximation_direction": 0.23,
+          "mode_5_moduli_coprimality_conflation": 0.03,
+          "mode_1_residual_conflation": 0.04,
+          "sound_no_failure_mode": 0.7,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "mode_3_heuristic_laundering": 0.0
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.82
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.6,
+        "probabilities": {
+          "fatal_modular_single_sig": 0.33,
+          "fatal_elementary": 0.0,
+          "fatal_abc_baker": 0.0,
+          "live_unifying_modular_motivic": 0.01,
+          "fatal_bounded_sieve": 0.66,
+          "live_effective_diophantine_geometry": 0.0
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.81,
+        "probabilities": {
+          "proves_nonexistence": 0.03,
+          "vacuous": 0.02,
+          "finiteness_only": 0.09,
+          "bounded_only": 0.86
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.73,
+        "probabilities": {
+          "selmer_dimension_growth": 0.06,
+          "computational_scale": 0.77,
+          "unobstructed": 0.0,
+          "projective_coprimality_blindness": 0.09,
+          "automorphic_cusp_abundance": 0.02,
+          "continuous_moduli_degeneration": 0.01,
+          "torsion_wild_ramification": 0.05
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.33,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.3,
+          "refute_and_archive": 0.06,
+          "synthesize_breakthrough": 0.01,
+          "salvage_proved_sublemmas": 0.16,
+          "advance_kraus_frontier": 0.47
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C612",
+    "title": "C612",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.58,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.3
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.58,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.0,
+          "sound_no_failure_mode": 0.65,
+          "mode_5_moduli_coprimality_conflation": 0.03,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "mode_4_unchecked_approximation_direction": 0.27,
+          "mode_1_residual_conflation": 0.05
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.62,
+        "probabilities": {
+          "fatal_abc_baker": 0.0,
+          "live_unifying_modular_motivic": 0.0,
+          "fatal_bounded_sieve": 0.6900000000000001,
+          "fatal_modular_single_sig": 0.31,
+          "live_effective_diophantine_geometry": 0.0,
+          "fatal_elementary": 0.0
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.85,
+        "probabilities": {
+          "vacuous": 0.01,
+          "proves_nonexistence": 0.02,
+          "bounded_only": 0.9,
+          "finiteness_only": 0.07
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.77,
+        "probabilities": {
+          "automorphic_cusp_abundance": 0.02,
+          "torsion_wild_ramification": 0.05,
+          "computational_scale": 0.8,
+          "unobstructed": 0.0,
+          "continuous_moduli_degeneration": 0.01,
+          "selmer_dimension_growth": 0.05,
+          "projective_coprimality_blindness": 0.07
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.3,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.29,
+          "refute_and_archive": 0.06,
+          "synthesize_breakthrough": 0.01,
+          "salvage_proved_sublemmas": 0.2,
+          "advance_kraus_frontier": 0.44
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C614",
+    "title": "C614",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.63,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.31
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.6
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.63,
+        "probabilities": {
+          "mode_3_heuristic_laundering": 0.0,
+          "mode_5_moduli_coprimality_conflation": 0.02,
+          "mode_4_unchecked_approximation_direction": 0.24,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "sound_no_failure_mode": 0.7,
+          "mode_1_residual_conflation": 0.04
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.64,
+        "probabilities": {
+          "fatal_modular_single_sig": 0.29,
+          "live_effective_diophantine_geometry": 0.0,
+          "fatal_elementary": 0.0,
+          "fatal_bounded_sieve": 0.71,
+          "fatal_abc_baker": 0.0,
+          "live_unifying_modular_motivic": 0.0
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.82,
+        "probabilities": {
+          "proves_nonexistence": 0.03,
+          "finiteness_only": 0.08,
+          "bounded_only": 0.87,
+          "vacuous": 0.02
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.73,
+        "probabilities": {
+          "selmer_dimension_growth": 0.06,
+          "projective_coprimality_blindness": 0.07,
+          "automorphic_cusp_abundance": 0.02,
+          "computational_scale": 0.78,
+          "continuous_moduli_degeneration": 0.01,
+          "torsion_wild_ramification": 0.06,
+          "unobstructed": 0.0
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.27,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.3,
+          "synthesize_breakthrough": 0.01,
+          "salvage_proved_sublemmas": 0.2,
+          "refute_and_archive": 0.07,
+          "advance_kraus_frontier": 0.42
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C616",
+    "title": "C616",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.56,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.31
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.58
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.56,
+        "probabilities": {
+          "mode_5_moduli_coprimality_conflation": 0.02,
+          "mode_4_unchecked_approximation_direction": 0.29,
+          "mode_3_heuristic_laundering": 0.0,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "mode_1_residual_conflation": 0.05,
+          "sound_no_failure_mode": 0.64
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.67,
+        "probabilities": {
+          "fatal_bounded_sieve": 0.73,
+          "live_effective_diophantine_geometry": 0.0,
+          "fatal_abc_baker": 0.0,
+          "fatal_modular_single_sig": 0.27,
+          "fatal_elementary": 0.0,
+          "live_unifying_modular_motivic": 0.0
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.84,
+        "probabilities": {
+          "proves_nonexistence": 0.03,
+          "finiteness_only": 0.08,
+          "bounded_only": 0.87,
+          "vacuous": 0.02
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.68,
+        "probabilities": {
+          "selmer_dimension_growth": 0.07,
+          "projective_coprimality_blindness": 0.09,
+          "computational_scale": 0.73,
+          "automorphic_cusp_abundance": 0.02,
+          "continuous_moduli_degeneration": 0.01,
+          "torsion_wild_ramification": 0.08,
+          "unobstructed": 0.0
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.26,
+        "probabilities": {
+          "audit_and_isolate_obstruction": 0.34,
+          "synthesize_breakthrough": 0.01,
+          "salvage_proved_sublemmas": 0.16,
+          "refute_and_archive": 0.08,
+          "advance_kraus_frontier": 0.41
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C618",
+    "title": "C618",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.42,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.25
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.42,
+        "probabilities": {
+          "mode_5_moduli_coprimality_conflation": 0.04,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "sound_no_failure_mode": 0.52,
+          "mode_3_heuristic_laundering": 0.01,
+          "mode_4_unchecked_approximation_direction": 0.32,
+          "mode_1_residual_conflation": 0.11
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.73
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.75,
+        "probabilities": {
+          "live_unifying_modular_motivic": 0.0,
+          "fatal_bounded_sieve": 0.8,
+          "fatal_modular_single_sig": 0.2,
+          "fatal_elementary": 0.0,
+          "live_effective_diophantine_geometry": 0.0,
+          "fatal_abc_baker": 0.0
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.84,
+        "probabilities": {
+          "proves_nonexistence": 0.02,
+          "vacuous": 0.02,
+          "bounded_only": 0.88,
+          "finiteness_only": 0.08
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.66,
+        "probabilities": {
+          "selmer_dimension_growth": 0.11,
+          "torsion_wild_ramification": 0.06,
+          "continuous_moduli_degeneration": 0.01,
+          "computational_scale": 0.71,
+          "unobstructed": 0.0,
+          "projective_coprimality_blindness": 0.08,
+          "automorphic_cusp_abundance": 0.03
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.23,
+        "probabilities": {
+          "refute_and_archive": 0.14,
+          "synthesize_breakthrough": 0.01,
+          "salvage_proved_sublemmas": 0.14,
+          "advance_kraus_frontier": 0.38,
+          "audit_and_isolate_obstruction": 0.33
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C620",
+    "title": "C620",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.59,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.59,
+        "probabilities": {
+          "mode_4_unchecked_approximation_direction": 0.27,
+          "mode_1_residual_conflation": 0.04,
+          "mode_5_moduli_coprimality_conflation": 0.03,
+          "mode_3_heuristic_laundering": 0.0,
+          "sound_no_failure_mode": 0.66,
+          "mode_2_chabauty_unbounded_s": 0.0
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.6,
+        "probabilities": {
+          "fatal_abc_baker": 0.0,
+          "live_effective_diophantine_geometry": 0.0,
+          "live_unifying_modular_motivic": 0.01,
+          "fatal_modular_single_sig": 0.32,
+          "fatal_elementary": 0.0,
+          "fatal_bounded_sieve": 0.67
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.88,
+        "probabilities": {
+          "proves_nonexistence": 0.03,
+          "vacuous": 0.01,
+          "bounded_only": 0.91,
+          "finiteness_only": 0.05
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.7,
+        "probabilities": {
+          "torsion_wild_ramification": 0.06,
+          "selmer_dimension_growth": 0.08,
+          "continuous_moduli_degeneration": 0.01,
+          "computational_scale": 0.74,
+          "automorphic_cusp_abundance": 0.02,
+          "projective_coprimality_blindness": 0.09,
+          "unobstructed": 0.0
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.33,
+        "probabilities": {
+          "refute_and_archive": 0.06,
+          "synthesize_breakthrough": 0.01,
+          "audit_and_isolate_obstruction": 0.31,
+          "salvage_proved_sublemmas": 0.16,
+          "advance_kraus_frontier": 0.46
+        }
+      }
+    }
+  },
+  {
+    "candidate_id": "C622",
+    "title": "C622",
+    "target_discipline": false,
+    "fc_blindness": true,
+    "uses_equation": true,
+    "survey_category": "fatal_bounded_sieve",
+    "failure_mode": "sound_no_failure_mode",
+    "failure_mode_confidence": 0.63,
+    "finiteness_profile": "bounded_only",
+    "structural_obstruction": "computational_scale",
+    "recommended_action": "advance_kraus_frontier",
+    "genius_index": 0.0,
+    "raw_answers": {
+      "target_discipline": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "fc_blindness": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "canonical_failure_mode": {
+        "type": "choice",
+        "choice": "sound_no_failure_mode",
+        "confidence": 0.63,
+        "probabilities": {
+          "mode_1_residual_conflation": 0.04,
+          "mode_2_chabauty_unbounded_s": 0.0,
+          "mode_4_unchecked_approximation_direction": 0.22,
+          "sound_no_failure_mode": 0.7,
+          "mode_3_heuristic_laundering": 0.0,
+          "mode_5_moduli_coprimality_conflation": 0.04
+        }
+      },
+      "uses_equation_gate": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "survey_category": {
+        "type": "choice",
+        "choice": "fatal_bounded_sieve",
+        "confidence": 0.62,
+        "probabilities": {
+          "fatal_bounded_sieve": 0.6900000000000001,
+          "fatal_elementary": 0.0,
+          "live_unifying_modular_motivic": 0.0,
+          "live_effective_diophantine_geometry": 0.0,
+          "fatal_modular_single_sig": 0.31,
+          "fatal_abc_baker": 0.0
+        }
+      },
+      "finiteness_to_nonexistence": {
+        "type": "choice",
+        "choice": "bounded_only",
+        "confidence": 0.8,
+        "probabilities": {
+          "proves_nonexistence": 0.03,
+          "finiteness_only": 0.1,
+          "vacuous": 0.02,
+          "bounded_only": 0.85
+        }
+      },
+      "structural_obstruction": {
+        "type": "choice",
+        "choice": "computational_scale",
+        "confidence": 0.73,
+        "probabilities": {
+          "torsion_wild_ramification": 0.06,
+          "projective_coprimality_blindness": 0.09,
+          "unobstructed": 0.0,
+          "continuous_moduli_degeneration": 0.01,
+          "selmer_dimension_growth": 0.05,
+          "computational_scale": 0.77,
+          "automorphic_cusp_abundance": 0.02
+        }
+      },
+      "genius_recommendation": {
+        "type": "choice",
+        "choice": "advance_kraus_frontier",
+        "confidence": 0.33,
+        "probabilities": {
+          "synthesize_breakthrough": 0.01,
+          "refute_and_archive": 0.06,
+          "audit_and_isolate_obstruction": 0.32,
+          "salvage_proved_sublemmas": 0.15,
+          "advance_kraus_frontier": 0.45999999999999996
+        }
+      }
+    }
+  }
+]

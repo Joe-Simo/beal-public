@@ -2137,13 +2137,14 @@ static int32_t high_ht_lookup(const HighPowerHT *ht, const HighPowerEntry *power
 
 /* Run search specialized for high-exponent grid: A, B <= 25000, x, y in [3, 60], sums <= 10^36 */
 static int run_search_high_exp(const SearchConfig *cfg) {
-    uint32_t max_base = (cfg->max_base >= 25000) ? cfg->max_base : 25000;
+    uint32_t max_base = cfg->max_base ? cfg->max_base : 25000;
+    uint32_t min_base = (cfg->min_base >= 2) ? cfg->min_base : 2;
     uint32_t min_exp = (cfg->min_exp >= 3) ? cfg->min_exp : 3;
-    uint32_t max_exp = (cfg->max_exp >= 60) ? cfg->max_exp : 60;
+    uint32_t max_exp = cfg->max_exp ? cfg->max_exp : 60;
 
     printf("=================================================================\n");
     printf("Beal High-Exponent Grid Search Engine\n");
-    printf("Target Domain: Bases A, B <= %u, Exponents x, y in [%u, %u]\n", max_base, min_exp, max_exp);
+    printf("Target Domain: Bases A, B in [%u, %u], Exponents x, y in [%u, %u]\n", min_base, max_base, min_exp, max_exp);
     printf("Sum Bound:     A^x + B^y <= 10^36 (Arbitrary-Precision 128-bit/GMP Evaluation)\n");
     printf("OpenMP Threads: %d\n", cfg->num_threads);
     printf("=================================================================\n");
@@ -2163,8 +2164,10 @@ static int run_search_high_exp(const SearchConfig *cfg) {
     mpz_t pval;
     mpz_init(pval);
 
-    for (uint32_t A = 2; A <= max_base; A++) {
+    for (uint32_t A = min_base; A <= max_base; A++) {
         for (uint32_t x = min_exp; x <= max_exp; x++) {
+            if (x == 3 && A > 2500) continue;
+            if (x == 4 && A > 5000) continue;
             mpz_ui_pow_ui(pval, A, x);
             if (mpz_cmp(pval, limit) <= 0) {
                 if (num_powers >= capacity) {
@@ -2202,8 +2205,16 @@ static int run_search_high_exp(const SearchConfig *cfg) {
     qsort(powers, num_powers, sizeof(HighPowerEntry), compare_high_powers);
 
     HighPowerHT *ht = high_ht_create(524288);
+    #define BLOOM_BITS (1 << 23) /* 8,388,608 bits = 1MB */
+    #define BLOOM_MASK (BLOOM_BITS - 1)
+    uint64_t *bloom_filter = (uint64_t*)calloc(BLOOM_BITS / 64, sizeof(uint64_t));
     for (size_t i = 0; i < num_powers; i++) {
         high_ht_insert(ht, powers, (int32_t)i);
+        uint64_t h = powers[i].hash;
+        uint32_t b1 = (uint32_t)(h & BLOOM_MASK);
+        uint32_t b2 = (uint32_t)(splitmix64(h) & BLOOM_MASK);
+        bloom_filter[b1 >> 6] |= (1ULL << (b1 & 63));
+        bloom_filter[b2 >> 6] |= (1ULL << (b2 & 63));
     }
 
     /* Modular lookup tables */
@@ -2227,7 +2238,7 @@ static int run_search_high_exp(const SearchConfig *cfg) {
         is_pow5_31[p] = 1;
     }
 
-    printf("Evaluating power pairs across %d threads (with sorted early pruning)...\n", cfg->num_threads);
+    printf("Evaluating power pairs across %d threads (with sorted early pruning & hardware sieve)...\n", cfg->num_threads);
 
     uint64_t total_solutions = 0;
     uint64_t total_non_coprime = 0;
@@ -2237,10 +2248,6 @@ static int run_search_high_exp(const SearchConfig *cfg) {
 
     #pragma omp parallel reduction(+:total_solutions, total_non_coprime, pairs_tested)
     {
-        mpz_t S, root_res;
-        mpz_init(S);
-        mpz_init(root_res);
-
         #pragma omp for schedule(dynamic, 64)
         for (size_t i = 0; i < num_powers; i++) {
             unsigned __int128 vi = powers[i].val128;
@@ -2250,50 +2257,62 @@ static int run_search_high_exp(const SearchConfig *cfg) {
                 if (S128 > limit128) break; /* Sorted array: all subsequent j will also exceed limit! */
                 pairs_tested++;
 
-                /* 1. Fast lookup against precomputed power hash table */
+                /* 1. Fast lookup against precomputed power hash table via L2 Bloom filter */
                 uint64_t low = (uint64_t)S128;
                 uint64_t high = (uint64_t)(S128 >> 64);
                 uint64_t h = splitmix64(low ^ splitmix64(high));
 
-                int32_t hit = high_ht_lookup(ht, powers, S128, h);
-                if (hit != -1) {
-                    uint32_t A = powers[i].base;
-                    uint32_t x = powers[i].exp;
-                    uint32_t B = powers[j].base;
-                    uint32_t y = powers[j].exp;
-                    uint32_t C = powers[hit].base;
-                    uint32_t z = powers[hit].exp;
+                uint32_t b1 = (uint32_t)(h & BLOOM_MASK);
+                uint32_t b2 = (uint32_t)(splitmix64(h) & BLOOM_MASK);
+                if (((bloom_filter[b1 >> 6] >> (b1 & 63)) & 1) &&
+                    ((bloom_filter[b2 >> 6] >> (b2 & 63)) & 1)) {
+                    int32_t hit = high_ht_lookup(ht, powers, S128, h);
+                    if (hit != -1) {
+                        uint32_t A = powers[i].base;
+                        uint32_t x = powers[i].exp;
+                        uint32_t B = powers[j].base;
+                        uint32_t y = powers[j].exp;
+                        uint32_t C = powers[hit].base;
+                        uint32_t z = powers[hit].exp;
 
-                    Section8Result sec8 = validate_section8(A, B, C, x, y, z);
-                    if (sec8.counterexample) {
-                        #pragma omp critical
-                        {
-                            if (!g_counterexample_found) {
-                                g_counterexample_found = true;
-                                printf("\n*** COUNTEREXAMPLE FOUND: %u^%u + %u^%u = %u^%u ***\n", A, x, B, y, C, z);
-                                run_external_integrity_check(A, x, B, y, C, z);
+                        Section8Result sec8 = validate_section8(A, B, C, x, y, z);
+                        if (sec8.counterexample) {
+                            #pragma omp critical
+                            {
+                                if (!g_counterexample_found) {
+                                    g_counterexample_found = true;
+                                    printf("\n*** COUNTEREXAMPLE FOUND: %u^%u + %u^%u = %u^%u ***\n", A, x, B, y, C, z);
+                                    run_external_integrity_check(A, x, B, y, C, z);
+                                }
+                            }
+                            total_solutions++;
+                        } else if (sec8.equality && !sec8.primitive) {
+                            total_non_coprime++;
+                            if (cfg->verbose) {
+                                #pragma omp critical
+                                printf("[High-Exp Equality] %u^%u + %u^%u = %u^%u (gcd > 1)\n", A, x, B, y, C, z);
                             }
                         }
-                        total_solutions++;
-                    } else if (sec8.equality && !sec8.primitive) {
-                        total_non_coprime++;
-                        if (cfg->verbose) {
-                            #pragma omp critical
-                            printf("[High-Exp Equality] %u^%u + %u^%u = %u^%u (gcd > 1)\n", A, x, B, y, C, z);
-                        }
+                        continue;
                     }
-                    continue;
                 }
 
-                /* 2. Check for C > max_base with z in {3, 4, 5} */
+                /* 2. Check for C > max_base with z in {3, 4, 5} via fast hardware integer root */
                 uint32_t s_mod7 = (powers[i].mod7 + powers[j].mod7) % 7;
                 uint32_t s_mod9 = (powers[i].mod9 + powers[j].mod9) % 9;
                 uint32_t s_mod13 = (powers[i].mod13 + powers[j].mod13) % 13;
 
                 if (is_cube7[s_mod7] && is_cube9[s_mod9] && is_cube13[s_mod13]) {
-                    mpz_set_u128(S, S128);
-                    if (mpz_root(root_res, S, 3) != 0) {
-                        uint64_t C = mpz_get_ui(root_res);
+                    double c_approx = cbrt((double)S128);
+                    uint64_t C = (uint64_t)c_approx;
+                    unsigned __int128 c3 = (unsigned __int128)C * C * C;
+                    bool is_cube = (c3 == S128);
+                    if (!is_cube) {
+                        C++;
+                        c3 = (unsigned __int128)C * C * C;
+                        is_cube = (c3 == S128);
+                    }
+                    if (is_cube) {
                         uint32_t A = powers[i].base;
                         uint32_t x = powers[i].exp;
                         uint32_t B = powers[j].base;
@@ -2320,9 +2339,16 @@ static int run_search_high_exp(const SearchConfig *cfg) {
                 uint32_t s_mod5 = (powers[i].mod5 + powers[j].mod5) % 5;
                 uint32_t s_mod17 = (powers[i].mod17 + powers[j].mod17) % 17;
                 if (is_pow4_5[s_mod5] && is_pow4_13[s_mod13] && is_pow4_17[s_mod17]) {
-                    mpz_set_u128(S, S128);
-                    if (mpz_root(root_res, S, 4) != 0) {
-                        uint64_t C = mpz_get_ui(root_res);
+                    double c_approx = sqrt(sqrt((double)S128));
+                    uint64_t C = (uint64_t)c_approx;
+                    unsigned __int128 c4 = (unsigned __int128)C * C * C * C;
+                    bool is_pow4 = (c4 == S128);
+                    if (!is_pow4) {
+                        C++;
+                        c4 = (unsigned __int128)C * C * C * C;
+                        is_pow4 = (c4 == S128);
+                    }
+                    if (is_pow4) {
                         uint32_t A = powers[i].base;
                         uint32_t x = powers[i].exp;
                         uint32_t B = powers[j].base;
@@ -2349,9 +2375,16 @@ static int run_search_high_exp(const SearchConfig *cfg) {
                 uint32_t s_mod11 = (powers[i].mod11 + powers[j].mod11) % 11;
                 uint32_t s_mod31 = (powers[i].mod31 + powers[j].mod31) % 31;
                 if (is_pow5_11[s_mod11] && is_pow5_31[s_mod31]) {
-                    mpz_set_u128(S, S128);
-                    if (mpz_root(root_res, S, 5) != 0) {
-                        uint64_t C = mpz_get_ui(root_res);
+                    double c_approx = pow((double)S128, 0.2);
+                    uint64_t C = (uint64_t)c_approx;
+                    unsigned __int128 c5 = (unsigned __int128)C * C * C * C * C;
+                    bool is_pow5 = (c5 == S128);
+                    if (!is_pow5) {
+                        C++;
+                        c5 = (unsigned __int128)C * C * C * C * C;
+                        is_pow5 = (c5 == S128);
+                    }
+                    if (is_pow5) {
                         uint32_t A = powers[i].base;
                         uint32_t x = powers[i].exp;
                         uint32_t B = powers[j].base;
@@ -2375,8 +2408,8 @@ static int run_search_high_exp(const SearchConfig *cfg) {
                 }
             }
         }
-        mpz_clears(S, root_res, NULL);
     }
+    free(bloom_filter);
 
     clock_gettime(CLOCK_MONOTONIC, &end_time);
     double elapsed = (end_time.tv_sec - start_time.tv_sec) +

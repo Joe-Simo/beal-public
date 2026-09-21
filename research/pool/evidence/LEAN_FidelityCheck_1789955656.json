@@ -1,0 +1,61 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "LEAN_FidelityCheck",
+  "timestamp": "2026-09-20T21:54:16-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "lean_file": "FidelityCheck.lean",
+    "theorems": [],
+    "full_content_snippet": "/-\n# Statement-fidelity checks for `IsBealCounterexample`\n\nMachine-checked verification that the root definition encodes the ACTUAL Beal conjecture, against\nthe target-discipline traps: exponent 2 admitted, base 1 excluded, terms reordered, the\ncommon-prime condition swapped.  Produced in cycle U224 (pool candidate C090).\n-/\nimport Beal.Conjecture\nimport Mathlib.Tactic.NormNum\nimport Mathlib.Tactic.Ring\n\nnamespace Beal\n\n/-- Validation case 1: 3^3 + 6^3 = 3^5 holds but gcd3 = 3 > 1, so it is NOT a counterexample. -/\nexample : \u00ac IsBealCounterexample 3 6 3 3 3 5 := by\n  rintro \u27e8-, -, -, -, -, -, hg, -\u27e9; simp [gcd3] at hg\n/-- Validation case 2: 3^5 + 10^2 = 7^3 is excluded because an exponent equals 2. -/\nexample : \u00ac IsBealCounterexample 3 10 7 5 2 3 := by\n  rintro \u27e8-, -, -, -, hy, -, -, -\u27e9; omega\n/-- Validation case 3: exponents 1 and 2 are both excluded. -/\nexample : \u00ac IsBealCounterexample 1 2 3 1 3 2 := by\n  rintro \u27e8-, -, -, hx, -, -, -, -\u27e9; omega\n/-- Base 1 is ADMITTED by the definition: it is not silently excluded. -/\nexample (B C y z : \u2115) (h : IsBealCounterexample 1 B C 3 y z) : (1:\u2115) > 0 := h.1\n/-- `gcd3` is the project's `gcd(gcd(A,B),C)`. -/\nexample (A B C : \u2115) : gcd3 A B C = Nat.gcd (Nat.gcd A B) C := by\n  simp [gcd3, Nat.gcd_assoc]\n/-- The equation is used in the stated order; no term is moved. -/\nexample (A B C x y z : \u2115) (h : IsBealCounterexample A B C x y z) : A ^ x + B ^ y = C ^ z := h.2.2.2.2.2.2.2\n\n/-! ### Traps not covered before (U327, pool C182)\n\nC015's one surviving obligation is statement fidelity: \"a compiling file that proves the wrong\nstatement is worthless.\"  The checks above cover the gcd trap, the exponent-2 trap, the exponent-1\ntrap, keeping base `1`, and preserving the equation.  Four traps from the discipline list were not\ncovered, and are covered here. -/\n\n/-- **Trap: non-positive values.**  A zero base is rejected on both sides. -/\nexample : \u00ac IsBealCounterexample 0 1 1 3 3 3 := by rintro \u27e8h, -\u27e9; omega\n\nexample : \u00ac IsBealCounterexample 1",
+    "deterministic_flags": {
+      "has_sorry": false,
+      "has_admit": false,
+      "custom_axioms": [],
+      "theorem_count": 0
+    },
+    "lake_compilation_success": true,
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent."
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Do the theorem statements in this Lean 4 file encode the exact mathematical conjecture (or an exact partial case) without relaxing exponents, dropping coprimality, or assuming vacuous premises?",
+      "criteria": {
+        "true": "The formal theorem statements faithfully encode the mathematical problem.",
+        "false": "The statements suffer from proxy relaxation, exponent-2 leakage, or vacuous hypotheses."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended verification action for this Lean file?",
+      "criteria": {
+        "lake_build_verify": "Proceed with Lake build and axiom audit [propext, Classical.choice, Quot.sound].",
+        "rewrite_statement": "Refactor formal theorem statements to ensure exact fidelity to Beal's conjecture.",
+        "reject_formalization": "Reject formalization due to severe statement drift, sorry placeholders, or custom axioms."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.56
+      },
+      "action": {
+        "type": "choice",
+        "choice": "lake_build_verify",
+        "confidence": 0.4,
+        "probabilities": {
+          "reject_formalization": 0.13,
+          "rewrite_statement": 0.27,
+          "lake_build_verify": 0.6
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1440,
+      "output_tokens": 67
+    }
+  }
+}

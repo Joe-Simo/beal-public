@@ -1,0 +1,64 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "LEAN_CoprimalityConductor",
+  "timestamp": "2026-09-20T22:02:21-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "lean_file": "CoprimalityConductor.lean",
+    "theorems": [
+      "theorem noncoprime_discriminant_valuation_ge_18",
+      "theorem primitive_beal_no_common_prime_factor"
+    ],
+    "full_content_snippet": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Data.Nat.Prime.Basic\nimport Beal.Conjecture\nimport Beal.Structure\n\n/-!\n# Conductor-Coupled Discriminant Valuation Lemma for Beal Triples\n\nThis module formalizes the exact algebraic mechanism that resolves Failure Mode 5\n(Moduli-Coprimality Conflation) on the Lawrence-Venkatesh / Arakelov hybrid (C293 + C300).\n\n## Mathematical Mechanism\n\nThe geometric cross-ratio $\\lambda = A^x / C^z \\in \\mathbb{P}^1(\\mathbb{Q})$ is projectively\ninvariant and blind to integer scaling. However, the Frey curve discriminant:\n  $$\\Delta = 16 A^{2x} B^{2y} C^{2z}$$\nand its prime factor valuations $\\nu_p(\\Delta)$ couple directly to the coprimality condition:\n\n1. **Non-Coprime Defect**: If $p \\mid \\gcd(A, B, C)$, then $p \\mid A$, $p \\mid B$, and $p \\mid C$.\n   Since $x, y, z \\ge 3$, the discriminant valuation satisfies:\n     $$\\nu_p(A^{2x} B^{2y} C^{2z}) \\ge 2x + 2y + 2z \\ge 18.$$\n   Thus $p^{18} \\mid A^{2x} B^{2y} C^{2z}$, forcing additive reduction and shifting the conductor.\n\n2. **Primitive Pairwise Disjointness**: If $(A, B, C, x, y, z)$ is a primitive Beal solution\n   with $\\gcd_3(A, B, C) = 1$, then $A, B, C$ are pairwise coprime. For any prime $p$, $p$\n   divides at most one of $\\{A, B, C\\}$, preventing additive conductor shift at odd primes.\n-/\n\nnamespace Beal\n\n/--\nThe core algebraic discriminant power product associated to a Beal triple.\n-/\ndef FreyDiscriminantCore (A B C x y z : \u2115) : \u2115 :=\n  A ^ (2 * x) * B ^ (2 * y) * C ^ (2 * z)\n\n/--\nIf a prime `p` divides all three bases `A, B, C`, and the exponents satisfy `x, y, z \u2265 3`,\nthen `p^18` divides the Frey discriminant core `A^(2x) * B^(2y) * C^(2z)`.\n-/\ntheorem noncoprime_discriminant_valuation_ge_18\n    {A B C x y z p : \u2115}\n    (hx : x \u2265 3) (hy : y \u2265 3) (hz : z \u2265 3)\n    (hpA : p \u2223 A) (hpB : p \u2223 B) (hpC : p \u2223",
+    "deterministic_flags": {
+      "has_sorry": false,
+      "has_admit": false,
+      "custom_axioms": [],
+      "theorem_count": 2
+    },
+    "lake_compilation_success": true,
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent."
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Do the theorem statements in this Lean 4 file encode the exact mathematical conjecture (or an exact partial case) without relaxing exponents, dropping coprimality, or assuming vacuous premises?",
+      "criteria": {
+        "true": "The formal theorem statements faithfully encode the mathematical problem.",
+        "false": "The statements suffer from proxy relaxation, exponent-2 leakage, or vacuous hypotheses."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended verification action for this Lean file?",
+      "criteria": {
+        "lake_build_verify": "Proceed with Lake build and axiom audit [propext, Classical.choice, Quot.sound].",
+        "rewrite_statement": "Refactor formal theorem statements to ensure exact fidelity to Beal's conjecture.",
+        "reject_formalization": "Reject formalization due to severe statement drift, sorry placeholders, or custom axioms."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "action": {
+        "type": "choice",
+        "choice": "rewrite_statement",
+        "confidence": 0.16,
+        "probabilities": {
+          "reject_formalization": 0.28,
+          "lake_build_verify": 0.28,
+          "rewrite_statement": 0.44
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1451,
+      "output_tokens": 66
+    }
+  }
+}

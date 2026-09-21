@@ -1,0 +1,92 @@
+[
+  {
+    "pair": "C293 + C300",
+    "candidate_a": "C293",
+    "candidate_b": "C300",
+    "orthogonality": true,
+    "compensation": false,
+    "breakthrough_score": 1.78,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C254 + C300",
+    "candidate_a": "C254",
+    "candidate_b": "C300",
+    "orthogonality": true,
+    "compensation": false,
+    "breakthrough_score": 1.7,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C254 + C293",
+    "candidate_a": "C254",
+    "candidate_b": "C293",
+    "orthogonality": true,
+    "compensation": false,
+    "breakthrough_score": 1.69,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C300 + C500",
+    "candidate_a": "C300",
+    "candidate_b": "C500",
+    "orthogonality": true,
+    "compensation": false,
+    "breakthrough_score": 1.58,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C254 + C500",
+    "candidate_a": "C254",
+    "candidate_b": "C500",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 1.55,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C293 + C500",
+    "candidate_a": "C293",
+    "candidate_b": "C500",
+    "orthogonality": true,
+    "compensation": false,
+    "breakthrough_score": 1.51,
+    "action": "formulate_hybrid_candidate"
+  },
+  {
+    "pair": "C254 + C508",
+    "candidate_a": "C254",
+    "candidate_b": "C508",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 1.39,
+    "action": "keep_independent"
+  },
+  {
+    "pair": "C300 + C508",
+    "candidate_a": "C300",
+    "candidate_b": "C508",
+    "orthogonality": true,
+    "compensation": false,
+    "breakthrough_score": 1.37,
+    "action": "keep_independent"
+  },
+  {
+    "pair": "C293 + C508",
+    "candidate_a": "C293",
+    "candidate_b": "C508",
+    "orthogonality": true,
+    "compensation": false,
+    "breakthrough_score": 1.36,
+    "action": "keep_independent"
+  },
+  {
+    "pair": "C500 + C508",
+    "candidate_a": "C500",
+    "candidate_b": "C508",
+    "orthogonality": false,
+    "compensation": false,
+    "breakthrough_score": 1.21,
+    "action": "formulate_hybrid_candidate"
+  }
+]

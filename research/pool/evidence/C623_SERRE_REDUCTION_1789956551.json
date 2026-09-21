@@ -1,0 +1,102 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C623_SERRE_REDUCTION",
+  "timestamp": "2026-09-20T22:09:11-0400",
+  "model": "jev-latest",
+  "request_state": [
+    {
+      "candidate": "C623_Ribet_Low_Conductors",
+      "signature": "(3, 3, p)",
+      "target_levels": [
+        2,
+        6,
+        18
+      ]
+    },
+    {
+      "candidate": "C623_Ribet_Low_Conductors",
+      "signature": "(3, 4, 5)",
+      "target_levels": [
+        32,
+        64,
+        72,
+        144
+      ]
+    },
+    {
+      "candidate": "C623_Frey_Valuation",
+      "property": "gcd(A,B,C)=1 implies nu_p(Delta)=2*z*nu_p(C) for p >= 5"
+    }
+  ],
+  "questions": {
+    "modular_dim_zero": {
+      "type": "noul",
+      "instructions": "For target Serre levels N in {2, 6, 18}, is the dimension of the space of weight 2 cusp forms S_2(Gamma_0(N)) strictly zero, unconditionally precluding irreducible weight 2 modular representations?",
+      "criteria": {
+        "true": "Yes, dim S_2(Gamma_0(N)) = 0 for all N in {2, 6, 18}, so no such modular forms exist.",
+        "false": "No, at least one of N in {2, 6, 18} has dim S_2(Gamma_0(N)) > 0."
+      }
+    },
+    "conductor_reduction_soundness": {
+      "type": "noul",
+      "instructions": "Does the coprimality condition gcd(A, B, C) = 1 strictly guarantee that every odd prime p >= 5 dividing ABC has multiplicative reduction with nu_p(N) = 1, so that Ribet level-lowering removes all p >= 5 from the Serre level?",
+      "criteria": {
+        "true": "Yes, coprimality ensures multiplicative reduction at all p >= 5, so p does not divide the Serre level.",
+        "false": "No, additive or non-minimal reduction can occur at p >= 5 even when gcd(A, B, C) = 1."
+      }
+    }
+  },
+  "response": [
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "modular_dim_zero": {
+          "type": "noul",
+          "noul": 0.61
+        },
+        "conductor_reduction_soundness": {
+          "type": "noul",
+          "noul": 0.12
+        }
+      },
+      "usage": {
+        "input_tokens": 601,
+        "output_tokens": 47
+      }
+    },
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "modular_dim_zero": {
+          "type": "noul",
+          "noul": 0.72
+        },
+        "conductor_reduction_soundness": {
+          "type": "noul",
+          "noul": 0.13
+        }
+      },
+      "usage": {
+        "input_tokens": 608,
+        "output_tokens": 47
+      }
+    },
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "modular_dim_zero": {
+          "type": "noul",
+          "noul": 0.74
+        },
+        "conductor_reduction_soundness": {
+          "type": "noul",
+          "noul": 0.14
+        }
+      },
+      "usage": {
+        "input_tokens": 603,
+        "output_tokens": 47
+      }
+    }
+  ]
+}

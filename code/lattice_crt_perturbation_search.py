@@ -123,73 +123,76 @@ def verify_and_claim_counterexample(A: int, x: int, B: int, y: int, C: int, z: i
         print(">>> Candidate failed triple-check independent verification. Continuing search...")
         return False
 
+def _process_seed(args):
+    s_idx, (A0, B0, C0, x0, y0, z0), radius, max_exp_scan = args
+    res_mod7 = {z: {pow(i, z, 7) for i in range(7)} for z in range(3, max_exp_scan + 1)}
+    res_mod9 = {z: {pow(i, z, 9) for i in range(9)} for z in range(3, max_exp_scan + 1)}
+    res_mod13 = {z: {pow(i, z, 13) for i in range(13)} for z in range(3, max_exp_scan + 1)}
+
+    x_min = max(3, x0 if x0 > 2 else 3)
+    y_min = max(3, y0 if y0 > 2 else 3)
+    eff_radius = min(radius, 600)
+
+    pairs = 0
+    non_prim = 0
+
+    for da in range(-eff_radius, eff_radius + 1):
+        A = A0 + da
+        if A < 2:
+            continue
+        for db in range(-eff_radius, eff_radius + 1):
+            B = B0 + db
+            if B < 2:
+                continue
+            for x in range(3, min(max_exp_scan + 1, x_min + 3)):
+                Ax = A ** x
+                for y in range(3, min(max_exp_scan + 1, y_min + 3)):
+                    By = B ** y
+                    val = Ax + By
+                    pairs += 1
+
+                    m7 = val % 7
+                    m9 = val % 9
+                    m13 = val % 13
+
+                    for z in range(3, max_exp_scan + 1):
+                        if m7 not in res_mod7[z]:
+                            continue
+                        if m9 not in res_mod9[z]:
+                            continue
+                        if m13 not in res_mod13[z]:
+                            continue
+
+                        C = exact_root(val, z)
+                        if C is not None and C >= 2:
+                            g = gcd3(A, B, C)
+                            if g == 1:
+                                verify_and_claim_counterexample(A, x, B, y, C, z)
+                            else:
+                                non_prim += 1
+    return pairs, non_prim
+
 def search_fc_perturbations(radius: int = 500, max_exp_scan: int = 15) -> dict:
     """
-    Search around Fermat-Catalan seeds by:
-    1. Perturbing bases A' = A + delta_A, B' = B + delta_B.
-    2. Elevating exponent 2 to exponents >= 3.
-    3. Testing modular CRT shifts.
+    Search around Fermat-Catalan seeds using 8 parallel worker processes.
     """
     print("=================================================================")
-    print("Lattice & CRT Near-Miss Perturbation Search")
+    print("Lattice & CRT Near-Miss Perturbation Search (Parallel 8-Worker)")
     print(f"Fermat-Catalan Seeds: {len(FERMAT_CATALAN_SEEDS)}")
     print(f"Base Perturbation Radius: [-{radius}, +{radius}]")
     print(f"Exponent Search Range: [3, {max_exp_scan}]")
     print("=================================================================")
 
-    # Precomputed power residue sets mod 7, 9, 13
-    res_mod7 = {z: {pow(i, z, 7) for i in range(7)} for z in range(3, max_exp_scan + 1)}
-    res_mod9 = {z: {pow(i, z, 9) for i in range(9)} for z in range(3, max_exp_scan + 1)}
-    res_mod13 = {z: {pow(i, z, 13) for i in range(13)} for z in range(3, max_exp_scan + 1)}
-
     t0 = time.time()
     pairs_tested = 0
     non_primitive_count = 0
 
-    for s_idx, (A0, B0, C0, x0, y0, z0) in enumerate(FERMAT_CATALAN_SEEDS):
-        # We enforce all exponents >= 3
-        x_min = max(3, x0 if x0 > 2 else 3)
-        y_min = max(3, y0 if y0 > 2 else 3)
-
-        # Scale radius based on base size, capped at 500 for deep exploration
-        eff_radius = min(radius, 500)
-
-        for da in range(-eff_radius, eff_radius + 1):
-            A = A0 + da
-            if A < 2:
-                continue
-
-            for db in range(-eff_radius, eff_radius + 1):
-                B = B0 + db
-                if B < 2:
-                    continue
-
-                for x in range(3, min(max_exp_scan + 1, x_min + 3)):
-                    Ax = A ** x
-                    for y in range(3, min(max_exp_scan + 1, y_min + 3)):
-                        By = B ** y
-                        val = Ax + By
-                        pairs_tested += 1
-
-                        m7 = val % 7
-                        m9 = val % 9
-                        m13 = val % 13
-
-                        for z in range(3, max_exp_scan + 1):
-                            if m7 not in res_mod7[z]:
-                                continue
-                            if m9 not in res_mod9[z]:
-                                continue
-                            if m13 not in res_mod13[z]:
-                                continue
-
-                            C = exact_root(val, z)
-                            if C is not None and C >= 2:
-                                g = gcd3(A, B, C)
-                                if g == 1:
-                                    verify_and_claim_counterexample(A, x, B, y, C, z)
-                                else:
-                                    non_primitive_count += 1
+    import concurrent.futures
+    tasks = [(s_idx, seed, radius, max_exp_scan) for s_idx, seed in enumerate(FERMAT_CATALAN_SEEDS)]
+    with concurrent.futures.ProcessPoolExecutor(max_workers=8) as executor:
+        for p, np in executor.map(_process_seed, tasks):
+            pairs_tested += p
+            non_primitive_count += np
 
     elapsed = time.time() - t0
     rate = pairs_tested / elapsed if elapsed > 0 else 0

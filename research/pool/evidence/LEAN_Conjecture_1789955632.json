@@ -1,0 +1,65 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "LEAN_Conjecture",
+  "timestamp": "2026-09-20T21:53:52-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "lean_file": "Conjecture.lean",
+    "theorems": [
+      "theorem beal_iff_no_counterexample :",
+      "theorem beal_iff_prime_form :",
+      "theorem flt_of_beal (h : BealConjecture) (n : \u2115) (hn : n \u2265 3)"
+    ],
+    "full_content_snippet": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Data.Nat.Prime.Basic\n\n/-!\n# The Beal Conjecture in Lean 4\n\nThis module formalizes the mathematical statement of the **Beal Conjecture**,\nits primitive formulation, its prime-factor formulation, and the derivation of\nFermat's Last Theorem as an immediate corollary.\n\n## Statement\n\nThe Beal Conjecture asserts that if:\n  $$A^x + B^y = C^z$$\nwhere $A, B, C, x, y, z$ are positive integers and $x, y, z \\ge 3$,\nthen $A, B, C$ must share a common prime factor, or equivalently:\n  $$\\gcd(A, B, C) > 1.$$\n\n## References\n\n* R. Daniel Mauldin, *A Generalization of Fermat's Last Theorem: The Beal Conjecture and Prize Problem*,\n  Notices of the AMS, December 1997, Vol. 44, No. 11, pp. 1436\u20131437.\n-/\n\nnamespace Beal\n\n/--\nThe greatest common divisor of three natural numbers `A, B, C`,\ndefined associatively as `gcd(A, gcd(B, C))`.\n-/\ndef gcd3 (A B C : \u2115) : \u2115 :=\n  Nat.gcd A (Nat.gcd B C)\n\n/--\nA triple of natural numbers `(A, B, C)` is primitive if `gcd(A, B, C) = 1`.\n-/\ndef IsPrimitiveTriple (A B C : \u2115) : Prop :=\n  gcd3 A B C = 1\n\n/--\nA tuple `(A, B, C, x, y, z)` forms a **Beal counterexample** if:\n1. `A, B, C` are strictly positive integers (`> 0`).\n2. The exponents `x, y, z` satisfy `x \u2265 3`, `y \u2265 3`, `z \u2265 3`.\n3. The bases are mutually coprime: `gcd(A, B, C) = 1`.\n4. The Diophantine equation holds: `A^x + B^y = C^z`.\n-/\ndef IsBealCounterexample (A B C x y z : \u2115) : Prop :=\n  A > 0 \u2227 B > 0 \u2227 C > 0 \u2227\n  x \u2265 3 \u2227 y \u2265 3 \u2227 z \u2265 3 \u2227\n  gcd3 A B C = 1 \u2227\n  A ^ x + B ^ y = C ^ z\n\n/--\n**The Beal Conjecture (Primitive Formulation)**:\nFor any strictly positive integers `A, B, C` and exponents `x, y, z \u2265 3`,\nif `A^x + B^y = C^z`, then `gcd(A, B, C) > 1`.\n-/\ndef BealConjecture : Prop :=\n  \u2200 (A B C x y z : \u2115),\n    A > 0 \u2192 B > 0 \u2192 C > 0 \u2192\n    x \u2265 3 \u2192 y \u2265 3 \u2192 z \u2265 3 \u2192\n    A ^ x + B ^",
+    "deterministic_flags": {
+      "has_sorry": false,
+      "has_admit": false,
+      "custom_axioms": [],
+      "theorem_count": 3
+    },
+    "lake_compilation_success": false,
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent."
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Do the theorem statements in this Lean 4 file encode the exact mathematical conjecture (or an exact partial case) without relaxing exponents, dropping coprimality, or assuming vacuous premises?",
+      "criteria": {
+        "true": "The formal theorem statements faithfully encode the mathematical problem.",
+        "false": "The statements suffer from proxy relaxation, exponent-2 leakage, or vacuous hypotheses."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended verification action for this Lean file?",
+      "criteria": {
+        "lake_build_verify": "Proceed with Lake build and axiom audit [propext, Classical.choice, Quot.sound].",
+        "rewrite_statement": "Refactor formal theorem statements to ensure exact fidelity to Beal's conjecture.",
+        "reject_formalization": "Reject formalization due to severe statement drift, sorry placeholders, or custom axioms."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "action": {
+        "type": "choice",
+        "choice": "rewrite_statement",
+        "confidence": 0.31,
+        "probabilities": {
+          "rewrite_statement": 0.53,
+          "lake_build_verify": 0.3,
+          "reject_formalization": 0.17
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1519,
+      "output_tokens": 66
+    }
+  }
+}

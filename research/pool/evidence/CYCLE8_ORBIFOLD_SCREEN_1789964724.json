@@ -1,0 +1,45 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C623_CYCLE8_GENERAL_ORBIFOLD",
+  "timestamp": "2026-09-21T00:25:24-0400",
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "orbifold_bridge_soundness": {
+        "type": "choice",
+        "choice": "heuristic_risk",
+        "confidence": 0.83,
+        "probabilities": {
+          "theoretically_sound": 0.08,
+          "heuristic_risk": 0.89,
+          "rank_obstruction": 0.03
+        }
+      },
+      "kraus_20k_density": {
+        "type": "noul",
+        "noul": 0.4
+      },
+      "minimal_signature_444_334_prune": {
+        "type": "score",
+        "score": 1.42,
+        "confidence": 0.0,
+        "legend": {
+          "0": "level 0: Prunes less than 50% of pairs, causing massive GMP overhead",
+          "1": "level 1: Prunes 50-80% of pairs",
+          "2": "level 2: Prunes 80-95% of pairs",
+          "3": "level 3: Prunes over 95% of pairs, enabling hundred-million pairs/sec throughput"
+        },
+        "probabilities": {
+          "0": 0.36,
+          "1": 0.1,
+          "2": 0.29,
+          "3": 0.25
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 912,
+      "output_tokens": 105
+    }
+  }
+}

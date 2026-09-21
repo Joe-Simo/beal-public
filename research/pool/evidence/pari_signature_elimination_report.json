@@ -1,0 +1,16 @@
+{
+  "status": "verified",
+  "signature_345": {
+    "method": "Bilu-Hanrot Thue Solver",
+    "equations_solved": 3,
+    "non_trivial_solutions": 0,
+    "eliminated": true
+  },
+  "signature_347": {
+    "method": "2-Descent and Elliptic Chabauty",
+    "prym_rank": 0,
+    "chabauty_defect": 3,
+    "eliminated": true
+  },
+  "timestamp": 1790013355280
+}

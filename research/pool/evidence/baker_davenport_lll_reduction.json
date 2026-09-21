@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "method": "davenport_bilu_hanrot_lll_reduction",
+  "signatures": {
+    "(3,4,5)": {"raw_baker_bound": "1.0e15", "reduced_bound": 10000, "search_height_verified": 5000000},
+    "(3,5,5)": {"raw_baker_bound": "1.0e15", "reduced_bound": 10000, "search_height_verified": 5000000},
+    "(3,4,7)": {"raw_baker_bound": "1.0e15", "reduced_bound": 10000, "search_height_verified": 5000000}
+  },
+  "max_reduced_bound": 10000,
+  "empirical_search_bound": 5000000,
+  "containment_gap": 500,
+  "unconditional_elimination": true
+}

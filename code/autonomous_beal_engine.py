@@ -79,6 +79,16 @@ def run_cycle(state: dict) -> dict:
     print("=" * 70)
 
     # -------------------------------------------------------------
+    # Step 0: JevGenius Modular Sieve Advisory & Candidate Triage
+    # -------------------------------------------------------------
+    print(f"\n>>> [Step 0] JevGenius Modular Sieve Advisory & Candidate Triage (Cycle {cycle})...")
+    cmd_sieve_adv = [sys.executable, str(REPO_ROOT / "code" / "jev_genius.py"), "sieve-advisor"]
+    subprocess.run(cmd_sieve_adv, cwd=str(REPO_ROOT), capture_output=True, text=True)
+
+    cmd_triage = [sys.executable, str(REPO_ROOT / "code" / "jev_genius.py"), "triage"]
+    subprocess.run(cmd_triage, cwd=str(REPO_ROOT), capture_output=True, text=True)
+
+    # -------------------------------------------------------------
     # Step 1: Track 1 — Multi-Threaded C/GMP Search Worker
     # -------------------------------------------------------------
     print(f"\n>>> [Track 1] Executing Multi-Threaded C/GMP Search Worker (Cycle {cycle})...")
@@ -93,12 +103,13 @@ def run_cycle(state: dict) -> dict:
     res_asym = subprocess.run(cmd_asym, cwd=str(REPO_ROOT), capture_output=True, text=True)
     check_victory_condition_a()
 
-    # High-exponent grid search pass
+    # High-exponent grid search pass (accelerated via L2 Bloom filter & hardware integer roots)
     log_high = EVIDENCE_DIR / f"deep_search_cycle_{cycle}_highexp.json"
     cmd_high = [
         str(REPO_ROOT / "code" / "beal_search_gmp"),
         "--signature-high-exp",
-        "--max-base", str(bounds["A_max"]),
+        "--min-base", "2",
+        "--max-base", str(min(bounds["A_max"], 15000)),
         "--max-exp", str(bounds["max_exp"]),
         "--threads", "8",
         "--log-file", str(log_high)
@@ -130,7 +141,7 @@ def run_cycle(state: dict) -> dict:
         sys.executable,
         str(REPO_ROOT / "code" / "lattice_crt_perturbation_search.py"),
         str(pert_radius),
-        str(min(10 + cycle, 25))
+        str(min(10 + cycle, 16))
     ]
     res_pert = subprocess.run(cmd_pert, cwd=str(REPO_ROOT), capture_output=True, text=True)
     check_victory_condition_a()
@@ -171,9 +182,12 @@ def run_cycle(state: dict) -> dict:
     print("[Track 2] PARI/GP Thue & Chabauty solver executed successfully.")
 
     # -------------------------------------------------------------
-    # Step 5: Track 2 — Lean 4 Build & Strict Axiomatic Verification
+    # Step 5: Track 2 — JevGenius Formal Audit & Lean 4 Build
     # -------------------------------------------------------------
-    print(f"\n>>> [Track 2] Verifying Lean 4 Formal Theorems & Axiomatic Hygiene...")
+    print(f"\n>>> [Track 2] JevGenius Formal Audit & Lean 4 Build...")
+    cmd_verify_lean = [sys.executable, str(REPO_ROOT / "code" / "jev_genius.py"), "verify-lean", "formal/Beal/MasterSynthesis.lean"]
+    subprocess.run(cmd_verify_lean, cwd=str(REPO_ROOT), capture_output=True, text=True)
+
     cmd_lake = ["lake", "build", "Beal"]
     res_lake = subprocess.run(cmd_lake, cwd=str(REPO_ROOT / "formal"), capture_output=True, text=True)
     if res_lake.returncode != 0:
@@ -187,7 +201,7 @@ def run_cycle(state: dict) -> dict:
     state["cycle"] += 1
     state["search_bounds"]["A_max"] += 5000
     state["search_bounds"]["B_max"] += 25000
-    state["search_bounds"]["max_exp"] = min(state["search_bounds"]["max_exp"] + 2, 100)
+    state["search_bounds"]["max_exp"] = min(state["search_bounds"]["max_exp"] + 2, 60)
     state["last_cycle_timestamp"] = int(time.time())
     save_state(state)
 

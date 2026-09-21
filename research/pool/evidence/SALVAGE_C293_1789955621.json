@@ -1,0 +1,71 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C293",
+  "timestamp": "2026-09-20T21:53:41-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C293",
+    "candidate": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": "Dead category (Arakelov / Bogomolov height inequality). Using Faltings-Arakelov intersection theory to bound the Faltings height h_F(A, B, C) via the hyperbolic defect -chi >= 1/12 requires an effective arithmetic Bogomolov-Miyaoka-Yau inequality on the arithmetic surface, which is known to be equivalent to the effective Szpiro / ABC conjecture and remains completely unproved unconditionally.",
+      "novelty_note": null,
+      "extracted": [
+        "Arakelov intersection bounds on triangle orbifolds depend on the unproved arithmetic Bogomolov-Miyaoka-Yau inequality."
+      ],
+      "id": "C293",
+      "claim": "EFFECTIVE ARAKELOV HEIGHT BOUNDS ON TRIANGLE ORBIFOLDS: Use Faltings-Arakelov intersection theory on arithmetic surfaces with orbifold divisor Delta = (1-1/p)D_0 + (1-1/q)D_1 + (1-1/r)D_infty to bound the Faltings height h_F(A, B, C) via hyperbolic defect -chi >= 1/12.",
+      "method": "Arakelov geometry, Faltings height, arithmetic intersection theory, orbifold canonical bundle",
+      "status": "BLOCKED"
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.07
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "height_positivity",
+        "confidence": 0.67,
+        "probabilities": {
+          "none": 0.26,
+          "cohomology_dimension_bound": 0.0,
+          "modular_trace_congruence": 0.0,
+          "galois_inertia_weight": 0.0,
+          "height_positivity": 0.74
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 883,
+      "output_tokens": 96
+    }
+  }
+}

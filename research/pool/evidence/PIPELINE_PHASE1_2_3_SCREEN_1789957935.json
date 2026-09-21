@@ -1,0 +1,126 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "PIPELINE_PHASE1_2_3_SCREEN",
+  "timestamp": "2026-09-20T22:32:15-0400",
+  "model": "jev-latest",
+  "request_state": [
+    {
+      "phase": "PHASE_1_KRAUS_FRONTIER",
+      "p_range": [
+        6501,
+        10000
+      ],
+      "target_levels": [
+        72,
+        144
+      ],
+      "description": "Kraus modular elimination of newforms 72a1 and 144a1 across 430 primes up to 10000."
+    },
+    {
+      "phase": "PHASE_2_CHABAUTY_KIM_S23",
+      "bad_reduction_set": "S = {2, 3}",
+      "orbifold": "P^1 \\ {0, 1, infty}",
+      "unipotent_depth": 2,
+      "description": "Depth-2 Chabauty-Kim unipotent Albanese period map for S = {2, 3} constraining S-integral points."
+    },
+    {
+      "phase": "PHASE_3_SEARCH_500K",
+      "base_range": [
+        2,
+        500000
+      ],
+      "signature": "(3, 3, p)",
+      "description": "Arbitrary-precision search for A^3 + B^3 = C^p across bases up to 500,000."
+    }
+  ],
+  "questions": {
+    "chabauty_kim_dimension_bound": {
+      "type": "choice",
+      "instructions": "For the affine hyperbolic curve P^1 \\ {0, 1, infty} with bad reduction set S = {2, 3}, does the depth-2 unipotent Albanese variety Selmer dimension satisfy dim H^1_f(G_{Q, S}, U_2) < dim(U_2), providing non-trivial Chabauty-Kim p-adic analytic functions cutting out finite S-integral points?",
+      "criteria": {
+        "effective_finiteness": "Yes, for S = {2, 3}, the depth-2 Selmer variety has strictly smaller dimension than the unipotent group, yielding effective non-trivial analytic obstructions.",
+        "dimension_tie": "Dimension tie: depth-2 is critical and requires depth-3 or higher unipotent quotients.",
+        "uncontrolled_growth": "No, Selmer dimension grows too rapidly even for S = {2, 3}."
+      }
+    },
+    "kraus_10k_frontier_density": {
+      "type": "noul",
+      "instructions": "For prime exponents p in [6501, 10000], is the auxiliary prime density q = 2kp + 1 with k <= 50 sufficient to guarantee 100% elimination rate against both 72a1 and 144a1 without encountering unresolvable trace collisions?",
+      "criteria": {
+        "true": "Yes, empirical and Chebotarev density guarantees full elimination for all primes in this range.",
+        "false": "No, trace collisions or lack of primes q = 2kp + 1 with k <= 50 obstructs full elimination."
+      }
+    }
+  },
+  "response": [
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "chabauty_kim_dimension_bound": {
+          "type": "choice",
+          "choice": "effective_finiteness",
+          "confidence": 0.57,
+          "probabilities": {
+            "effective_finiteness": 0.72,
+            "dimension_tie": 0.17,
+            "uncontrolled_growth": 0.11
+          }
+        },
+        "kraus_10k_frontier_density": {
+          "type": "noul",
+          "noul": 0.11
+        }
+      },
+      "usage": {
+        "input_tokens": 724,
+        "output_tokens": 83
+      }
+    },
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "chabauty_kim_dimension_bound": {
+          "type": "choice",
+          "choice": "effective_finiteness",
+          "confidence": 0.61,
+          "probabilities": {
+            "effective_finiteness": 0.74,
+            "dimension_tie": 0.17,
+            "uncontrolled_growth": 0.09
+          }
+        },
+        "kraus_10k_frontier_density": {
+          "type": "noul",
+          "noul": 0.07
+        }
+      },
+      "usage": {
+        "input_tokens": 746,
+        "output_tokens": 83
+      }
+    },
+    {
+      "model": "jev-1.13.0",
+      "answers": {
+        "chabauty_kim_dimension_bound": {
+          "type": "choice",
+          "choice": "effective_finiteness",
+          "confidence": 0.47,
+          "probabilities": {
+            "uncontrolled_growth": 0.13,
+            "effective_finiteness": 0.65,
+            "dimension_tie": 0.22
+          }
+        },
+        "kraus_10k_frontier_density": {
+          "type": "noul",
+          "noul": 0.1
+        }
+      },
+      "usage": {
+        "input_tokens": 721,
+        "output_tokens": 83
+      }
+    }
+  ]
+}

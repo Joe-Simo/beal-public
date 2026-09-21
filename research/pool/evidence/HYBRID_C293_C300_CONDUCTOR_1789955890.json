@@ -1,0 +1,86 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "HYBRID_C293_C300_CONDUCTOR",
+  "timestamp": "2026-09-20T21:58:10-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture_spec": "Beal Conjecture: A^x + B^y = C^z with x,y,z >= 3 and gcd(A,B,C)=1",
+    "hybrid_id": "HYBRID_C293_C300_CONDUCTOR",
+    "title": "CONDUCTOR-COUPLED ARAKELOV-HODGE HYBRID (C293 + C300 + CONDUCTOR)",
+    "claim": "Coupling the Lawrence-Venkatesh p-adic period map and Arakelov height bounds with the Frey curve Serre conductor N(rho_{E, p}) and minimal discriminant Delta = 2^(-8)*(A^x B^y C^z)^2 breaks projective invariance and resolves Failure Mode 5.",
+    "method": "Minimal discriminant valuation val_q(Delta) and Serre wild conductor at 2, 3 and prime factors of gcd(A, B, C)."
+  },
+  "questions": {
+    "breaks_projective_invariance": {
+      "type": "noul",
+      "instructions": "Does the minimal discriminant Delta = 2^(-8)*(A^x B^y C^z)^2 and Serre level N(rho_{E,p}) break projective cross-ratio invariance, distinguishing coprime points gcd(A,B,C)=1 from projectively scaled triples?",
+      "criteria": {
+        "true": "Strictly breaks projective invariance; conductor depends on integer valuations, not projective cross-ratio.",
+        "false": "Remains projectively invariant; cannot distinguish common factors."
+      }
+    },
+    "resolves_failure_mode_5": {
+      "type": "noul",
+      "instructions": "Does this conductor-coupled invariant successfully resolve Failure Mode 5 (Moduli-Coprimality Conflation) identified in previous triage?",
+      "criteria": {
+        "true": "Resolves Failure Mode 5 by coupling geometric heights to arithmetic conductors.",
+        "false": "Fails to resolve Failure Mode 5; still suffers from coprimality blindness."
+      }
+    },
+    "mathematical_soundness": {
+      "type": "choice",
+      "instructions": "What is the mathematical validity of using conductor shift to separate primitive solutions?",
+      "criteria": {
+        "unconditionally_sound": "Unconditionally sound: minimal conductor and tame/wild Serre levels are integer invariants sensitive to common factors.",
+        "heuristic_dependent": "Depends on unproved heuristics or conjectures.",
+        "conflation_error": "Confuses geometric isogeny with Galois representation conductor."
+      }
+    },
+    "formalizability_in_lean4": {
+      "type": "choice",
+      "instructions": "How feasible is formalizing the coprimality-to-discriminant valuation lemma in Lean 4 without sorry or custom axioms?",
+      "criteria": {
+        "directly_formalizable": "Directly formalizable via elementary algebra, valuation inequalities, and standard Mathlib.",
+        "requires_heavy_flt_machinery": "Requires deep modularity or Galois representation machinery not in Mathlib.",
+        "unformalizable": "Statement contains conceptual gaps that prevent formalization."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "breaks_projective_invariance": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "resolves_failure_mode_5": {
+        "type": "noul",
+        "noul": 0.17
+      },
+      "mathematical_soundness": {
+        "type": "choice",
+        "choice": "conflation_error",
+        "confidence": 0.46,
+        "probabilities": {
+          "conflation_error": 0.64,
+          "heuristic_dependent": 0.25,
+          "unconditionally_sound": 0.11
+        }
+      },
+      "formalizability_in_lean4": {
+        "type": "choice",
+        "choice": "requires_heavy_flt_machinery",
+        "confidence": 0.64,
+        "probabilities": {
+          "directly_formalizable": 0.08,
+          "unformalizable": 0.16,
+          "requires_heavy_flt_machinery": 0.76
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 972,
+      "output_tokens": 173
+    }
+  }
+}

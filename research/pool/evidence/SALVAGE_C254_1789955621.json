@@ -1,0 +1,79 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C254",
+  "timestamp": "2026-09-20T21:53:41-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C254",
+    "candidate": {
+      "parents": [
+        "C246"
+      ],
+      "inspirations": [],
+      "evidence": [
+        "formal/Beal/TaxonomyExtensions.lean"
+      ],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [
+        "orbifoldDefect",
+        "orbifold_defect_ge_three",
+        "HasNoPrimitiveSolutions",
+        "primitive_solution_of_counterexample",
+        "beal_implies_no_counterexample"
+      ],
+      "id": "C254",
+      "claim": "UNIFYING MOTIVIC FRAMEWORK AND HIGHER-GENUS FREY VARIETIES FOR 3-INDEPENDENT-EXPONENT GENERALIZED FERMAT EQUATIONS: Rigorous structural formulation of abelian varieties attached to A^p + B^q = C^r and taxonomy of the obstruction to modularity lifting in dimension g >= 2.",
+      "method": "Lean 4 Beal.TaxonomyExtensions Section 8 formal verification of orbifold defect and Darmon-Granville finiteness framing.",
+      "status": "PARTIAL_RESULT"
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.35
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "none",
+        "confidence": 0.8,
+        "probabilities": {
+          "modular_trace_congruence": 0.01,
+          "galois_inertia_weight": 0.02,
+          "height_positivity": 0.01,
+          "cohomology_dimension_bound": 0.12,
+          "none": 0.84
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 825,
+      "output_tokens": 93
+    }
+  }
+}

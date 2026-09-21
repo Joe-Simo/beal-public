@@ -1,0 +1,69 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C300",
+  "timestamp": "2026-09-20T21:53:41-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C300",
+    "candidate": {
+      "parents": [],
+      "inspirations": [],
+      "evidence": [],
+      "obligations": [],
+      "evaluations": {},
+      "failure_reason": null,
+      "novelty_note": null,
+      "extracted": [],
+      "id": "C300",
+      "claim": "LAWRENCE-VENKATESH METHOD ON HYPERBOLIC TRIANGLE COVERS: Investigation of whether p-adic period maps and variations of Hodge structures attached to covers branched at orders (p, q, r) can control points across varying exponents (p, q, r).",
+      "method": "Lawrence-Venkatesh method, p-adic period maps, variation of Hodge structures, Kodaira-Spencer maps",
+      "status": "PARTIAL_RESULT"
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.13
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "none",
+        "confidence": 0.88,
+        "probabilities": {
+          "cohomology_dimension_bound": 0.08,
+          "height_positivity": 0.01,
+          "modular_trace_congruence": 0.0,
+          "none": 0.9,
+          "galois_inertia_weight": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 727,
+      "output_tokens": 93
+    }
+  }
+}

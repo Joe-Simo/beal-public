@@ -1,0 +1,35 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C623_CYCLE6_COLEMAN",
+  "timestamp": "2026-09-20T23:00:54-0400",
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "coleman_zeros_p5": {
+        "type": "noul",
+        "noul": 0.39
+      },
+      "coleman_zeros_p7": {
+        "type": "noul",
+        "noul": 0.44
+      },
+      "primitive_beal_boundary_obstruction": {
+        "type": "choice",
+        "choice": "strictly_interior",
+        "confidence": 0.91,
+        "probabilities": {
+          "boundary_collision": 0.04,
+          "strictly_interior": 0.96
+        }
+      },
+      "base_1M_sieve_efficiency": {
+        "type": "noul",
+        "noul": 0.56
+      }
+    },
+    "usage": {
+      "input_tokens": 912,
+      "output_tokens": 116
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "min_base": 2,
+  "max_base": 5000,
+  "min_exp": 3,
+  "max_exp": 17,
+  "base_a_start": 2,
+  "base_a_end": 5000,
+  "base_b_start": 0,
+  "base_b_end": 0,
+  "prime_exponents_only": false,
+  "pure_primes_only": true,
+  "allow_non_coprime": false,
+  "threads": 8,
+  "elapsed_seconds": 5.5309,
+  "pairs_checked": 273436488,
+  "pairs_sieved_out": 0,
+  "sieve_prune_percentage": 0.00,
+  "pairs_per_second": 49437624.97,
+  "counterexamples_found": 0,
+  "non_primitive_equalities": 0,
+  "conjecture_verified": true
+}

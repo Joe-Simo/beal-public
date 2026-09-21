@@ -1,0 +1,103 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "MATRIX_C500_C508",
+  "timestamp": "2026-09-20T21:53:35-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent.",
+    "pair_id": "C500_C508",
+    "candidate_a": {
+      "id": "C500",
+      "title": "MULTI-FREY INTERSECTING SIEVE FOR GENERALIZED FERMAT EQUATIONS",
+      "claim": "Simultaneous evaluation of non-isogenous Frey representations (Kraus curve E1 and Legendre curve E2) shrinks the admissible parameter space S(q) = S1(q) cap S2(q), accelerating Diophantine modular elimination.",
+      "method": "Dual Frey curve modular sieve, simultaneous mod-q trace constraints, and level-lowering."
+    },
+    "candidate_b": {
+      "id": "C508",
+      "title": "C508",
+      "claim": "Kraus Sieve Modular Method Extension for Signature (3, 3, p) on [10501, 10600]",
+      "method": "Modular Frey curve Kraus sieve level 72/144 trace congruence elimination"
+    }
+  },
+  "questions": {
+    "orthogonality": {
+      "type": "noul",
+      "instructions": "Are the mathematical mechanisms of Candidate A and Candidate B mathematically orthogonal (e.g. local Galois deformation vs. global Arakelov heights, or bounded modular sieve vs. cyclotomic Selmer descent)?",
+      "criteria": {
+        "true": "The two mechanisms operate on independent mathematical structures and can be combined.",
+        "false": "The two mechanisms are redundant, parallel, or share the exact same mathematical foundation."
+      }
+    },
+    "obstruction_compensation": {
+      "type": "noul",
+      "instructions": "Does the strength of Candidate A compensate for the primary obstruction of Candidate B? (For example, does Candidate A's local congruence bound the bad reduction set S that obstructs Candidate B?)",
+      "criteria": {
+        "true": "Candidate A provides information that strictly removes or weakens Candidate B's obstruction.",
+        "false": "Neither candidate resolves the obstruction of the other; the obstructions are compounding."
+      }
+    },
+    "breakthrough_potential": {
+      "type": "score",
+      "instructions": "Estimate the breakthrough potential of a synthesized hybrid method combining Candidate A and Candidate B.",
+      "criteria": [
+        "level 0: No synergy; synthesis yields no new leverage beyond the individual candidates.",
+        "level 1: Minor synergy; provides slightly improved computational bounds or local certificates.",
+        "level 2: Strong synergy; closes a major gap for an infinite signature family.",
+        "level 3: Definitive breakthrough; creates a viable, unconditional path toward full Beal."
+      ]
+    },
+    "synthesis_action": {
+      "type": "choice",
+      "instructions": "What action should be taken on this candidate pair?",
+      "criteria": {
+        "formulate_hybrid_candidate": "Formulate a new hybrid candidate combining the two complementary invariants.",
+        "discard_pair": "Discard pair; shared failure modes or redundant mechanisms.",
+        "keep_independent": "Keep independent; both are valuable but do not synthesize into a unified proof."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "orthogonality": {
+        "type": "noul",
+        "noul": 0.11
+      },
+      "obstruction_compensation": {
+        "type": "noul",
+        "noul": 0.38
+      },
+      "breakthrough_potential": {
+        "type": "score",
+        "score": 1.21,
+        "confidence": 0.73,
+        "legend": {
+          "0": "level 0: No synergy; synthesis yields no new leverage beyond the individual candidates.",
+          "1": "level 1: Minor synergy; provides slightly improved computational bounds or local certificates.",
+          "2": "level 2: Strong synergy; closes a major gap for an infinite signature family.",
+          "3": "level 3: Definitive breakthrough; creates a viable, unconditional path toward full Beal."
+        },
+        "probabilities": {
+          "0": 0.03,
+          "1": 0.74,
+          "2": 0.23,
+          "3": 0.0
+        }
+      },
+      "synthesis_action": {
+        "type": "choice",
+        "choice": "formulate_hybrid_candidate",
+        "confidence": 0.39,
+        "probabilities": {
+          "discard_pair": 0.37,
+          "formulate_hybrid_candidate": 0.59,
+          "keep_independent": 0.04
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1064,
+      "output_tokens": 118
+    }
+  }
+}

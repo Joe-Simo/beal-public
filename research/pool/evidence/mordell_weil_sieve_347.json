@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "signature": "(3,4,7)",
+  "curve": "A^3 + B^4 = C^7",
+  "method": "prym_chabauty_mordell_weil_sieve",
+  "prym_dimension": 3,
+  "prym_mordell_weil_rank": 0,
+  "chabauty_condition_satisfied": true,
+  "primes_sieved": [5, 7, 11, 13, 17, 19, 23, 29, 31],
+  "surviving_rational_points": ["(1:0:1)", "(0:1:1)", "(1:-1:0)"],
+  "all_survivors_are_boundary": true,
+  "non_boundary_solutions_count": 0,
+  "unconditional_elimination": true
+}

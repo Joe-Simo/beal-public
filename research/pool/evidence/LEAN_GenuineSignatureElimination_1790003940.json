@@ -1,0 +1,77 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "LEAN_GenuineSignatureElimination",
+  "timestamp": "2026-09-21T11:19:00-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "lean_file": "GenuineSignatureElimination.lean",
+    "theorems": [
+      "theorem beal_counterexample_homogenous_impossible",
+      "theorem beal_counterexample_44p_impossible",
+      "theorem beal_counterexample_347_impossible",
+      "theorem beal_counterexample_345_impossible",
+      "theorem beal_counterexample_nn3_impossible",
+      "theorem beal_counterexample_33p_impossible",
+      "theorem beal_counterexample_333_impossible",
+      "theorem beal_small_signatures_eliminated"
+    ],
+    "full_content_snippet": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Mathlib.Data.Nat.GCD.Basic\nimport Mathlib.Data.Nat.Prime.Basic\nimport Beal.Conjecture\n\nset_option linter.unusedVariables false\n\n/-!\n# Genuine Signature Elimination with Strict Axiomatic Hygiene\n\nThis module formalizes the reduction and elimination of specific small hyperbolic\nDarmon-Granville exponent signatures for the Beal Conjecture.\n\n## Strict Axiomatic Hygiene Principle\nIn accordance with rigorous formal verification standards:\n1. **No Pseudo-Structures**: We strictly DO NOT package unproven mathematical claims\n   as fields within structures to masquerade as unconditional theorems.\n2. **Transparent Axiomatic Listing**: External landmark theorems established in the\n   mathematical literature (Wiles-Taylor, Ellenberg, Darmon-Merel, Poonen-Schaefer-Stoll,\n   Siksek-Stoll) are declared explicitly as `axiom`s.\n3. **Genuine Reductions**: Reductions from Beal counterexamples to these landmark\n   results are fully formalized with zero `sorry` and zero `admit`.\n\n## References\n* A. Wiles, *Modular elliptic curves and Fermat's Last Theorem*, Ann. of Math. 141 (1995), 443\u2013551.\n* R. Taylor, A. Wiles, *Ring-theoretic properties of certain Hecke algebras*, Ann. of Math. 141 (1995), 553\u2013572.\n* J. S. Ellenberg, *Galois representations attached to Q-curves and the Diophantine equation A^4 + B^4 = C^p*,\n  Ann. of Math. 161 (2005), 1355\u20131396.\n* H. Darmon, L. Merel, *Winding quotients and some variants of Fermat's Last Theorem*,\n  J. Reine Angew. Math. 490 (1997), 81\u2013100.\n* B. Poonen, E. F. Schaefer, M. Stoll, *Twists of X(7) and primitive solutions to x^2 + y^3 = z^7*,\n  Duke Math. J. 137 (2007), 103\u2013158.\n* S. Siksek, M. Stoll, *Partial descent on hyperelliptic curves and the generalized Fermat equation x^3 + y^4 = z^5*,\n  Compositio Math. 150 (2014), 1136\u20131156.\n-/\n\nnamespace Beal\n\n/-! ### 1. Ext",
+    "deterministic_flags": {
+      "has_sorry": true,
+      "has_admit": true,
+      "custom_axioms": [
+        "wiles_taylor_fermat_last_theorem",
+        "ellenberg_2005_signature_44p",
+        "darmon_merel_1997_signature_n_n_3",
+        "poonen_schaefer_stoll_2007_signature_347",
+        "siksek_stoll_2014_signature_345",
+        "dahmen_kraus_signature_3_3_p"
+      ],
+      "theorem_count": 8
+    },
+    "lake_compilation_success": true,
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent."
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Do the theorem statements in this Lean 4 file encode the exact mathematical conjecture (or an exact partial case) without relaxing exponents, dropping coprimality, or assuming vacuous premises?",
+      "criteria": {
+        "true": "The formal theorem statements faithfully encode the mathematical problem.",
+        "false": "The statements suffer from proxy relaxation, exponent-2 leakage, or vacuous hypotheses."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended verification action for this Lean file?",
+      "criteria": {
+        "lake_build_verify": "Proceed with Lake build and axiom audit [propext, Classical.choice, Quot.sound].",
+        "rewrite_statement": "Refactor formal theorem statements to ensure exact fidelity to Beal's conjecture.",
+        "reject_formalization": "Reject formalization due to severe statement drift, sorry placeholders, or custom axioms."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.31
+      },
+      "action": {
+        "type": "choice",
+        "choice": "reject_formalization",
+        "confidence": 0.94,
+        "probabilities": {
+          "lake_build_verify": 0.04,
+          "reject_formalization": 0.96,
+          "rewrite_statement": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1602,
+      "output_tokens": 70
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "C623_CYCLE7_MASTER_SYNTHESIS",
+  "timestamp": "2026-09-21T00:17:05-0400",
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "kraus_15k_density": {
+        "type": "noul",
+        "noul": 0.1
+      },
+      "asymmetric_signature_sieve": {
+        "type": "noul",
+        "noul": 0.32
+      },
+      "master_synthesis_coherence": {
+        "type": "choice",
+        "choice": "gap_remains",
+        "confidence": 0.7,
+        "probabilities": {
+          "unconditionally_closed": 0.15,
+          "gap_remains": 0.85
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 828,
+      "output_tokens": 90
+    }
+  }
+}

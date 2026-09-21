@@ -1,0 +1,67 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "LEAN_CenturySummary",
+  "timestamp": "2026-09-20T21:54:56-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "lean_file": "CenturySummary.lean",
+    "theorems": [
+      "theorem century_signature_3_3_p_elimination",
+      "theorem century_j_invariant_boundary_isolation (C p : \u2115) (hp : p \u2265 3) :",
+      "theorem century_orbifold_defect_general_type (p q r : \u2115)",
+      "theorem century_thue_degree_ge_three (p q r : \u2115)",
+      "theorem century_grand_synthesis"
+    ],
+    "full_content_snippet": "/-\nCopyright (c) 2026 Formal Verification Group. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Formal Verification Specialist\n-/\nimport Beal.Conjecture\nimport Beal.Taxonomy\nimport Beal.Signature3\nimport Beal.TaxonomyExtensions\nimport Beal.FidelityCheck\n\n/-!\n# Century Milestone Formal Synthesis: Centennial Summary of the Beal Program\n\nThis module formalizes the Centennial Grand Synthesis of the Beal Conjecture\nresearch loop, uniting the verified milestones across 100 computational suites,\nalgebraic descent proofs, modular Frey curve sieves, and effective Diophantine geometry.\n\n## Centennial Verified Theorems\n1. **Signature (3, 3, p) Exponent Closure up to 1700**:\n   Conditional on the machine-checked Kraus sieves across Milestones 32-100,\n   no Beal counterexample of signature $(3, 3, p)$ exists for any $3 \\le p \\le 1700$.\n2. **Decoupling from Exponent-2 Boundary Identity**:\n   The unique target modular newforms $72a1$ and $144a1$ have $j = 2048/3$.\n   By algebraic factorization, $j(E_{A, B}) = 2048/3$ forces $C^p = 9$, which has no\n   integer solutions for $p \\ge 3$. Thus the boundary identity $2^3 + 1^3 = 9 = 3^2$\n   is mathematically decoupled from all Beal exponents.\n3. **General-Type Motivic Defect**:\n   Every Beal signature other than $(3, 3, 3)$ has integer curvature $E(p, q, r) \\le -3$\n   and orbifold defect $-E(p, q, r) \\ge 3$.\n4. **Effective Diophantine Decidability**:\n   Every individual Beal signature reduces to finitely many Thue equations of degree $d \\ge 3$,\n   which are effectively bounded by Baker's linear forms in logarithms.\n-/\n\nnamespace Beal\n\n/--\n**Centennial Theorem 1: Modular Elimination of Signature (3, 3, p) up to p = 1700**.\n-/\ntheorem century_signature_3_3_p_elimination\n    (h_no_sol : \u2200 p, 3 \u2264 p \u2192 p \u2264 1700 \u2192 \u00ac \u2203 (A B C : \u2115), IsPrimitiveSignature33pSolution A B C p) :\n    \u2200 p, 3 \u2264 p \u2192 p \u2264 1700 \u2192 \u00ac \u2203 (A B C : \u2115), IsBealCounterexample A B C 3 3 p :=\n  no_beal_counterexample_3_3_up_to_1700 h_",
+    "deterministic_flags": {
+      "has_sorry": false,
+      "has_admit": false,
+      "custom_axioms": [],
+      "theorem_count": 5
+    },
+    "lake_compilation_success": true,
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent."
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Do the theorem statements in this Lean 4 file encode the exact mathematical conjecture (or an exact partial case) without relaxing exponents, dropping coprimality, or assuming vacuous premises?",
+      "criteria": {
+        "true": "The formal theorem statements faithfully encode the mathematical problem.",
+        "false": "The statements suffer from proxy relaxation, exponent-2 leakage, or vacuous hypotheses."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended verification action for this Lean file?",
+      "criteria": {
+        "lake_build_verify": "Proceed with Lake build and axiom audit [propext, Classical.choice, Quot.sound].",
+        "rewrite_statement": "Refactor formal theorem statements to ensure exact fidelity to Beal's conjecture.",
+        "reject_formalization": "Reject formalization due to severe statement drift, sorry placeholders, or custom axioms."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.31
+      },
+      "action": {
+        "type": "choice",
+        "choice": "lake_build_verify",
+        "confidence": 0.19,
+        "probabilities": {
+          "lake_build_verify": 0.46,
+          "reject_formalization": 0.22,
+          "rewrite_statement": 0.32
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1480,
+      "output_tokens": 67
+    }
+  }
+}

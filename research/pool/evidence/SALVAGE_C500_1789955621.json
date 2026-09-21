@@ -1,0 +1,86 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "SALVAGE_C500",
+  "timestamp": "2026-09-20T21:53:41-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "candidate_id": "C500",
+    "candidate": {
+      "parents": [
+        "C498"
+      ],
+      "inspirations": [
+        "Kraus 1998",
+        "Darmon-Merel 1997",
+        "Bennett-Skinner 2004"
+      ],
+      "evidence": [
+        "U595_multi_frey_intersecting_sieve_test.py",
+        "U596_untried_frontiers_synthesis_audit.py"
+      ],
+      "obligations": [
+        "Evaluate simultaneous trace constraints between Kraus (levels 72/144) and Legendre (level 32) curves."
+      ],
+      "evaluations": {
+        "category": "classical_modular_frey"
+      },
+      "failure_reason": null,
+      "novelty_note": "Combines two non-isogenous Frey curves simultaneously to accelerate modular trace sieve elimination.",
+      "extracted": [
+        "Surviving descent parameter set S(q) shrinks under simultaneous dual-Frey trace filtering."
+      ],
+      "id": "C500",
+      "title": "MULTI-FREY INTERSECTING SIEVE FOR GENERALIZED FERMAT EQUATIONS",
+      "claim": "Simultaneous evaluation of non-isogenous Frey representations (Kraus curve E1 and Legendre curve E2) shrinks the admissible parameter space S(q) = S1(q) cap S2(q), accelerating Diophantine modular elimination.",
+      "method": "Dual Frey curve modular sieve, simultaneous mod-q trace constraints, and level-lowering.",
+      "status": "PARTIAL_RESULT",
+      "category": "classical_modular_frey"
+    }
+  },
+  "questions": {
+    "has_reusable_lemma": {
+      "type": "noul",
+      "instructions": "Does this candidate contain an unconditionally proved lemma, modular trace identity, or arithmetic bound that remains valid even if the headline claim is blocked/refuted?",
+      "criteria": {
+        "true": "Yes, contains genuinely proved, mathematically reusable lemmas.",
+        "false": "No, the entire content is conditional, flawed, or trivial."
+      }
+    },
+    "lemma_description": {
+      "type": "choice",
+      "instructions": "What is the primary category of salvaged mathematical content?",
+      "criteria": {
+        "modular_trace_congruence": "Exact Fourier coefficients and Hecke eigenvalues eliminating local signatures.",
+        "galois_inertia_weight": "Bounds on inertia action or Fontaine-Laffaille Serre weights.",
+        "cohomology_dimension_bound": "Exact dimensions or vanishing of low-degree cohomology / Selmer groups.",
+        "height_positivity": "Positivity bounds on Arakelov or Faltings heights on degenerating curves.",
+        "none": "Nothing mathematically reusable."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "has_reusable_lemma": {
+        "type": "noul",
+        "noul": 0.22
+      },
+      "lemma_description": {
+        "type": "choice",
+        "choice": "modular_trace_congruence",
+        "confidence": 0.99,
+        "probabilities": {
+          "modular_trace_congruence": 0.99,
+          "none": 0.01,
+          "height_positivity": 0.0,
+          "galois_inertia_weight": 0.0,
+          "cohomology_dimension_bound": 0.0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 920,
+      "output_tokens": 98
+    }
+  }
+}

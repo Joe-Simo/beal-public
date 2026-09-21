@@ -1,0 +1,106 @@
+{
+  "status": "completed",
+  "timestamp": "2026-09-20T23:02:52-0400",
+  "candidate_id": "C623",
+  "curve": "P^1 \\ {0, 1, infty}",
+  "function": "F(z) = Li_2(z) + 1/2 * log_p(z) * log_p(1 - z)",
+  "primes_tested": [
+    5,
+    7
+  ],
+  "results": {
+    "5": {
+      "boundary_discs": {
+        "D_0": {
+          "valuation_linear": 1,
+          "min_val_higher": 2,
+          "roots_count": 1,
+          "point": "0"
+        },
+        "D_1": {
+          "symmetry": "z -> 1-z",
+          "roots_count": 1,
+          "point": "1"
+        },
+        "D_infty": {
+          "symmetry": "z -> 1/z",
+          "roots_count": 1,
+          "point": "infty"
+        }
+      },
+      "interior_discs": {
+        "r_2": {
+          "v_log": 1,
+          "v_a1": 2,
+          "v_a2": 2,
+          "roots_count": 0,
+          "beal_points": 0
+        },
+        "r_3": {
+          "v_log": 1,
+          "v_a1": 2,
+          "v_a2": 2,
+          "roots_count": 0,
+          "beal_points": 0
+        }
+      },
+      "total_boundary_zeros": 3,
+      "total_affine_zeros": 0,
+      "primitive_beal_zeros": 0
+    },
+    "7": {
+      "boundary_discs": {
+        "D_0": {
+          "valuation_linear": 1,
+          "min_val_higher": 2,
+          "roots_count": 1,
+          "point": "0"
+        },
+        "D_1": {
+          "symmetry": "z -> 1-z",
+          "roots_count": 1,
+          "point": "1"
+        },
+        "D_infty": {
+          "symmetry": "z -> 1/z",
+          "roots_count": 1,
+          "point": "infty"
+        }
+      },
+      "interior_discs": {
+        "r_2": {
+          "v_log": 1,
+          "v_a1": 2,
+          "v_a2": 2,
+          "roots_count": 0,
+          "beal_points": 0
+        },
+        "r_3": {
+          "v_log": 1,
+          "v_a1": 2,
+          "v_a2": 2,
+          "roots_count": 0,
+          "beal_points": 0
+        },
+        "r_4": {
+          "v_log": 1,
+          "v_a1": 2,
+          "v_a2": 2,
+          "roots_count": 0,
+          "beal_points": 0
+        },
+        "r_5": {
+          "v_log": 1,
+          "v_a1": 2,
+          "v_a2": 2,
+          "roots_count": 0,
+          "beal_points": 0
+        }
+      },
+      "total_boundary_zeros": 3,
+      "total_affine_zeros": 0,
+      "primitive_beal_zeros": 0
+    }
+  },
+  "conclusion": "The vanishing locus of the depth-2 Coleman analytic function is strictly confined to {0, 1, infty}. Since every primitive Beal solution has cross-ratio lambda in (0, 1) with lambda != 0, 1, infty, the primitive Beal locus has EMPTY intersection with the Coleman vanishing locus."
+}

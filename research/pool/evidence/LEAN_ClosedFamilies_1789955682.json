@@ -1,0 +1,77 @@
+{
+  "state": "HYPOTHESIS_ONLY",
+  "candidate_id": "LEAN_ClosedFamilies",
+  "timestamp": "2026-09-20T21:54:42-0400",
+  "model": "jev-latest",
+  "request_state": {
+    "lean_file": "ClosedFamilies.lean",
+    "theorems": [
+      "theorem closed_unconditional {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :",
+      "theorem closed_conditional (hBS : BennettSkinnerThree) (hBCDY : BCDYFourTwoNThree)",
+      "theorem counterexample_of_dvd {A B C x y z a b c : \u2115} (h : IsBealCounterexample A B C x y z)",
+      "theorem closed_conditional_dvd (hBS : BennettSkinnerThree) (hBCDY : BCDYFourTwoNThree)",
+      "theorem no_counterexample_nn_even (hDM : DarmonMerelNN2) {A B C n z : \u2115} (hn : 4 \u2264 n) (hz : 2 \u2223 z)",
+      "theorem no_counterexample_four_pp (hDM : DarmonMerelNN2Int) {A B C p : \u2115} (hp : 5 \u2264 p)",
+      "theorem no_counterexample_p_four_p (hDM : DarmonMerelNN2Int) {A B C p : \u2115} (hp : 5 \u2264 p)",
+      "theorem conditional_residual_of_counterexample (hBS : BennettSkinnerThree)",
+      "theorem no_counterexample_three_three_even (hT : BCDYThreeThreeTwoN) {A B C z : \u2115} (hz : 2 \u2223 z)",
+      "theorem conditional_residual_of_counterexample' (hBS : BennettSkinnerThree)",
+      "theorem published_residual (hBS : BennettSkinnerThree) (hBCDY : BCDYFourTwoNThree)",
+      "theorem no_counterexample_four_even_any (hBEN : BEN24n) {A B C x y z : \u2115} (hx : 4 \u2223 x) (hy : 2 \u2223 y)",
+      "theorem no_counterexample_of_noCoprimeSol {x y z : \u2115} (hN : NoCoprimeSol x y z) {A B C : \u2115}",
+      "theorem closed_instance_rows (hI : InstanceRows) {A B C x y z : \u2115}",
+      "theorem closed_p_four_four (hI : InstanceRows) {A B C p : \u2115} (hp : 5 \u2264 p) :"
+    ],
+    "full_content_snippet": "/-\n# Ledger of closed signature families (U156)\n\nOne statement collecting every family closed in this repository, with its exact dependencies.\nUnconditional families come from mathlib (FLT\u2084 via `not_fermat_42`, FLT\u2083); conditional families\ncarry their named hypotheses in the statement. Nothing here is an `axiom`.\n-/\nimport Beal.Residual\nimport Beal.SixTwoNThree\nimport Beal.FourTwoNFive\n\nnamespace Beal\n\n/-- **Unconditional (mathlib only).** `(4k, 4l, 2j)` and `(3k, 3l, 3j)` carry no counterexample. -/\ntheorem closed_unconditional {A B C x y z : \u2115} (h : IsBealCounterexample A B C x y z) :\n    \u00ac (4 \u2223 x \u2227 4 \u2223 y \u2227 2 \u2223 z) \u2227 \u00ac (3 \u2223 x \u2227 3 \u2223 y \u2227 3 \u2223 z) :=\n  \u27e8fun \u27e8hx, hy, hz\u27e9 => no_counterexample_of_four_four_even hx hy hz h,\n   fun \u27e8hx, hy, hz\u27e9 => no_counterexample_of_three_dvd_all hx hy hz h\u27e9\n\n/-- **Conditional ledger.** Under the five named hypotheses, no counterexample has signature\n`(2m, 2n, 3)` with `m, n \u2265 2`, nor `(4, 2n, 5)` / `(2m, 4, 5)` with `m, n \u2265 2`. -/\ntheorem closed_conditional (hBS : BennettSkinnerThree) (hBCDY : BCDYFourTwoNThree)\n    (hM : Mordell27) (h1 : Quartic400g2) (h3 : Quartic400b2) {A B C : \u2115} :\n    (\u2200 m n, 2 \u2264 m \u2192 2 \u2264 n \u2192 \u00ac IsBealCounterexample A B C (2 * m) (2 * n) 3) \u2227\n    (\u2200 n, 2 \u2264 n \u2192 \u00ac IsBealCounterexample A B C 4 (2 * n) 5) \u2227\n    (\u2200 m, 2 \u2264 m \u2192 \u00ac IsBealCounterexample A B C (2 * m) 4 5) :=\n  \u27e8fun m n hm hn h => no_counterexample_even_even_three_all hBS hBCDY hM hm hn h,\n   fun n hn h => no_counterexample_four_two_n_five h1 h3 hn h,\n   fun m hm h => no_counterexample_two_m_four_five h1 h3 hm h\u27e9\n\nend Beal\n\nnamespace Beal\n\n/-- Pulling a counterexample back along exponent divisibility: if `a \u2223 x`, `b \u2223 y`, `c \u2223 z` then\n`(A^{x/a}, B^{y/b}, C^{z/c})` is a counterexample of signature `(a, b, c)` provided `a, b, c \u2265 3`. -/\ntheorem counterexample_of_dvd {A B C x y z a b c : \u2115} (h : IsBealCounterexample A B C x y z)\n    (ha : a \u2223 x) (hb : b \u2223 y) (hc : c \u2223 z) (ha3 : 3 \u2264 a) (hb3 : 3 \u2264 b) (hc3 : 3 \u2264 c) :\n    IsBealCounterexample (A ^ (x / a)) (B ^ (y / b)) ",
+    "deterministic_flags": {
+      "has_sorry": false,
+      "has_admit": false,
+      "custom_axioms": [],
+      "theorem_count": 16
+    },
+    "lake_compilation_success": true,
+    "conjecture_spec": "Beal Conjecture: For positive integers A, B, C, x, y, z with A^x + B^y = C^z and x, y, z >= 3, then gcd(A, B, C) > 1. Strictly requires x,y,z >= 3 (strictly hyperbolic defect 1/x + 1/y + 1/z - 1 <= -1/12). Primitive solutions (gcd(A,B,C)=1) must be non-existent."
+  },
+  "questions": {
+    "statement_fidelity": {
+      "type": "noul",
+      "instructions": "Do the theorem statements in this Lean 4 file encode the exact mathematical conjecture (or an exact partial case) without relaxing exponents, dropping coprimality, or assuming vacuous premises?",
+      "criteria": {
+        "true": "The formal theorem statements faithfully encode the mathematical problem.",
+        "false": "The statements suffer from proxy relaxation, exponent-2 leakage, or vacuous hypotheses."
+      }
+    },
+    "action": {
+      "type": "choice",
+      "instructions": "What is the recommended verification action for this Lean file?",
+      "criteria": {
+        "lake_build_verify": "Proceed with Lake build and axiom audit [propext, Classical.choice, Quot.sound].",
+        "rewrite_statement": "Refactor formal theorem statements to ensure exact fidelity to Beal's conjecture.",
+        "reject_formalization": "Reject formalization due to severe statement drift, sorry placeholders, or custom axioms."
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "statement_fidelity": {
+        "type": "noul",
+        "noul": 0.38
+      },
+      "action": {
+        "type": "choice",
+        "choice": "lake_build_verify",
+        "confidence": 0.71,
+        "probabilities": {
+          "rewrite_statement": 0.14,
+          "lake_build_verify": 0.8,
+          "reject_formalization": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2164,
+      "output_tokens": 67
+    }
+  }
+}
