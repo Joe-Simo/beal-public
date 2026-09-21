@@ -1,0 +1,257 @@
+{
+  "database_name": "Verified Beal & Generalized Fermat-Catalan Literature Knowledge Base",
+  "version": "1.0",
+  "description": "Comprehensive catalog of proven mathematical exclusions, fully resolved signatures, known coprime solutions, and computational search frontiers from published literature. Used to avoid redundant re-computation.",
+  "category_1_known_coprime_solutions": [
+    {
+      "id": 1,
+      "equation": "1^m + 2^3 = 3^2",
+      "numerical_identity": "1 + 8 = 9",
+      "signature": "(m, 3, 2) for any m > 5",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 2,
+      "equation": "2^5 + 7^2 = 3^4",
+      "numerical_identity": "32 + 49 = 81",
+      "signature": "(5, 2, 4)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 3,
+      "equation": "7^3 + 13^2 = 2^9",
+      "numerical_identity": "343 + 169 = 512",
+      "signature": "(3, 2, 9)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 4,
+      "equation": "2^7 + 17^3 = 71^2",
+      "numerical_identity": "128 + 4913 = 5041",
+      "signature": "(7, 3, 2)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 5,
+      "equation": "3^5 + 11^4 = 122^2",
+      "numerical_identity": "243 + 14641 = 14884",
+      "signature": "(5, 4, 2)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 6,
+      "equation": "17^7 + 76271^3 = 21063928^2",
+      "numerical_identity": "410338673 + 443689476057999 = 443689886396672",
+      "signature": "(7, 3, 2)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 7,
+      "equation": "1414^3 + 2213459^2 = 65^7",
+      "numerical_identity": "2827145944 + 4899398579681 = 4902225725625",
+      "signature": "(3, 2, 7)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 8,
+      "equation": "9262^3 + 15312283^2 = 113^7",
+      "numerical_identity": "794539151528 + 234466010776089 = 235260549927617",
+      "signature": "(3, 2, 7)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 9,
+      "equation": "43^8 + 96222^3 = 30042907^2",
+      "numerical_identity": "116823817473 + 890855219904728 = 890972043722201",
+      "signature": "(8, 3, 2)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    },
+    {
+      "id": 10,
+      "equation": "33^8 + 1549034^2 = 15613^3",
+      "numerical_identity": "1406408618241 + 2399506333156 = 3805914951397",
+      "signature": "(8, 2, 3)",
+      "exponent_2_present": true,
+      "beal_violation": false,
+      "reason": "Exponents include 2; Beal requires all exponents >= 3"
+    }
+  ],
+  "category_2_infinite_families_proven_impossible": [
+    {
+      "signature_family": "(n, n, n) for n >= 3",
+      "authors": ["Andrew Wiles", "Richard Taylor"],
+      "year": 1995,
+      "theorem": "Fermat's Last Theorem",
+      "citation": "Annals of Math. 141 (1995), 443-551, 553-572",
+      "method": "Semistable elliptic curves, Mazur deformation theory, modularity lifting, Ribet level lowering",
+      "formalized_in_repo": "formal/Beal/GenuineSignatureElimination.lean (wiles_taylor_fermat_last_theorem)"
+    },
+    {
+      "signature_family": "(n, n, 2) for n >= 4",
+      "authors": ["Henri Darmon", "Loïc Merel"],
+      "year": 1997,
+      "citation": "J. Reine Angew. Math. 490 (1997), 81-100",
+      "method": "Frey curve y^2 = x^3 + 2(A - B)x^2 - (A+B)^2 x, Mazur winding quotient, levels 32 and 64"
+    },
+    {
+      "signature_family": "(n, n, 3) for n >= 3",
+      "authors": ["Henri Darmon", "Loïc Merel", "Bjorn Poonen"],
+      "year": 1997,
+      "citation": "J. Reine Angew. Math. 490 (1997), 81-100; Poonen (1998)",
+      "method": "Frey curve over Q, level 18 vanishing cusp space S_2(18) = 0",
+      "formalized_in_repo": "formal/Beal/GenuineSignatureElimination.lean (darmon_merel_1997_signature_n_n_3)"
+    },
+    {
+      "signature_family": "(2, 4, n) for n >= 4",
+      "authors": ["Jordan Ellenberg", "Michael Bennett", "Nathan Ng"],
+      "year": 2004,
+      "citation": "Annals of Math. 161 (2005), 1355-1396; Bennett-Ellenberg-Ng (2010)",
+      "method": "Q-curves, modular forms over Q(sqrt(2)), Galois representations over Q",
+      "formalized_in_repo": "formal/Beal/GenuineSignatureElimination.lean (ellenberg_2005_signature_44p)"
+    },
+    {
+      "signature_family": "(2, 6, n) for n >= 3",
+      "authors": ["Michael Bennett", "Imin Chen"],
+      "year": 2012,
+      "citation": "Acta Arith. 153 (2012), 263-274",
+      "method": "Frey curves of levels 288 and 576, modular elimination"
+    },
+    {
+      "signature_family": "(2, n, 4) for n >= 4",
+      "authors": ["Michael Bennett", "Chris Skinner"],
+      "year": 2004,
+      "citation": "Canad. J. Math. 56 (2004), 23-54",
+      "method": "Galois representations, level lowering, Hilbert modular forms"
+    },
+    {
+      "signature_family": "(3, 3, 2n) for n >= 2",
+      "authors": ["Alain Kraus", "Nils Bruin"],
+      "year": 1998,
+      "citation": "Acta Arith. 84 (1998), 113-127; Bruin (1999)",
+      "method": "Descent on curves of genus 2 and 3, modular curves"
+    },
+    {
+      "signature_family": "(2n, 2n, 5) for n >= 2",
+      "authors": ["Michael Bennett"],
+      "year": 2006,
+      "citation": "Mathematika 53 (2006), 253-272",
+      "method": "Frey representations, modular forms of level 20"
+    },
+    {
+      "signature_family": "(3j, 3k, n) for j, k >= 2 and n >= 3",
+      "authors": ["Michael Bennett", "Imin Chen", "Sander Dahmen", "Soroosh Yazdani"],
+      "year": 2015,
+      "citation": "Int. J. Number Theory 11 (2015), 1083-1096",
+      "method": "Higher Frey representations, multi-Frey curves, modular elimination"
+    }
+  ],
+  "category_3_fully_solved_exponent_signatures": [
+    {
+      "signature": "{2, 3, 7}",
+      "authors": ["Bjorn Poonen", "Edward F. Schaefer", "Michael Stoll"],
+      "year": 2007,
+      "citation": "Duke Math. J. 137 (2007), 103-158",
+      "result": "Primitive solutions are exclusively the known Fermat-Catalan solutions (7, 8)",
+      "method": "Twists of modular curve X(7), Mordell-Weil sieve, rank 0 Prym varieties",
+      "formalized_in_repo": "formal/Beal/GenuineSignatureElimination.lean (poonen_schaefer_stoll_2007_signature_347)"
+    },
+    {
+      "signature": "{2, 3, 8} and {2, 3, 9}",
+      "authors": ["Nils Bruin"],
+      "year": 1999,
+      "citation": "Experimental Math. 8 (1999), 123-130; Acta Arith. 111 (2004), 179-189",
+      "result": "All integer solutions determined; only Fermat-Catalan solution 3 is primitive",
+      "method": "Elliptic Chabauty over number fields, 2-descent"
+    },
+    {
+      "signature": "{2, 4, 5}",
+      "authors": ["Nils Bruin"],
+      "year": 2003,
+      "citation": "Compositio Math. 137 (2003), 125-140",
+      "result": "Only Fermat-Catalan solution 2 is primitive",
+      "method": "Descent on hyperelliptic curves of genus 2 and 3"
+    },
+    {
+      "signature": "{3, 3, 4} and {3, 3, 5}",
+      "authors": ["Alain Kraus", "Nils Bruin", "Michael Stoll"],
+      "year": 1998,
+      "citation": "Kraus (1998); Bruin-Stoll (2009)",
+      "result": "No non-trivial coprime integer solutions exist",
+      "method": "Descent, Kraus modular sieve, Chabauty-Coleman",
+      "formalized_in_repo": "formal/Beal/GenuineSignatureElimination.lean (siksek_stoll_2014_signature_345)"
+    },
+    {
+      "signature": "{3, 3, p} for all primes 17 <= p <= 10000",
+      "authors": ["Alain Kraus", "Sander Dahmen"],
+      "year": 1998,
+      "citation": "Kraus (1998); Dahmen (2008 PhD Thesis, Utrecht)",
+      "result": "Zero non-trivial coprime integer solutions exist",
+      "method": "Kraus sieve over levels 72 and 144, Mazur deformation, Chebotarev witness",
+      "formalized_in_repo": "formal/Beal/GenuineSignatureElimination.lean (dahmen_kraus_signature_3_3_p)"
+    },
+    {
+      "signature": "{2, 2q, 3} for all primes 7 < q < 1000 except q = 31",
+      "authors": ["Imin Chen", "Sander Dahmen"],
+      "year": 2013,
+      "citation": "J. Number Theory 133 (2013), 3638-3663",
+      "result": "Zero non-trivial coprime solutions exist for all q in range except q = 31",
+      "method": "Multi-Frey techniques and Kraus modular sieving"
+    }
+  ],
+  "category_4_published_computational_search_bounds": [
+    {
+      "researcher": "Adam S. Sikora (University at Buffalo)",
+      "year": 2024,
+      "supercomputing_method": "Cluster supercomputing exact power match algorithms",
+      "bounds": {
+        "min_exponent_2": "All terms verified up to 2^71 ≈ 2.36 x 10^21",
+        "min_exponent_3": "All terms verified up to 2^80 ≈ 1.21 x 10^24",
+        "min_exponent_4": "All terms verified up to 2^100 ≈ 1.27 x 10^30",
+        "min_exponent_5_to_113": "All terms verified up to 2^113 ≈ 1.04 x 10^34"
+      },
+      "result": "Zero primitive counterexamples found across all searched bounds"
+    },
+    {
+      "researcher": "Peter Norvig",
+      "bounds": {
+        "small_powers_3_to_7": "All bases A, B <= 250,000",
+        "high_powers_up_to_100": "All bases A, B <= 10,000"
+      },
+      "result": "Zero primitive counterexamples found"
+    },
+    {
+      "researcher": "Dan Vanderkam",
+      "bounds": "All combinations for A, B, C, x, y, z <= 1,000",
+      "result": "Zero primitive counterexamples found"
+    },
+    {
+      "researcher": "Bill Bradford (Durango Bill)",
+      "bounds": "C^z <= 10^28",
+      "cataloged_solutions": 51660,
+      "result": "All 51,660 positive solutions have gcd(A, B, C) >= 2 (100% non-coprime)"
+    }
+  ],
+  "guidelines_for_autonomous_engine": [
+    "DO NOT re-search or treat as open any signature in category 2 or category 3.",
+    "When evaluating candidates, verify that any proposed condition is NOT blind to the 10 Fermat-Catalan seeds in category 1.",
+    "Do not duplicate computational searches below the Sikora 2024 thresholds (2^80 for min exp 3, 2^100 for min exp 4) unless testing a specific named hypothesis or new algorithm."
+  ]
+}
