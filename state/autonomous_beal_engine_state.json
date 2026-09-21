@@ -1,14 +1,14 @@
 {
   "engine_version": "2.0-autonomous",
-  "cycle": 9,
+  "cycle": 15,
   "search_bounds": {
-    "A_max": 50000,
-    "B_max": 300000,
+    "A_max": 80000,
+    "B_max": 450000,
     "min_exp": 3,
-    "max_exp": 41
+    "max_exp": 53
   },
-  "total_pairs_tested": 2512988758702,
-  "primes_eliminated_count": 5867,
+  "total_pairs_tested": 5312075363956,
+  "primes_eliminated_count": 6940,
   "eliminated_prime_ranges": [
     [
       5501,
@@ -45,6 +45,30 @@
     [
       64001,
       66001
+    ],
+    [
+      66001,
+      68001
+    ],
+    [
+      68001,
+      70001
+    ],
+    [
+      70001,
+      72001
+    ],
+    [
+      72001,
+      74001
+    ],
+    [
+      74001,
+      76001
+    ],
+    [
+      76001,
+      78001
     ]
   ],
   "signatures_status": {
@@ -59,5 +83,5 @@
     "(4, 4, 7)": "ELIMINATED (Baker-Davenport LLL reduction)"
   },
   "counterexample_found": false,
-  "last_cycle_timestamp": 1789994983
+  "last_cycle_timestamp": 1790004015
 }

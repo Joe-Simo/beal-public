@@ -151,8 +151,8 @@ def search_fc_perturbations(radius: int = 500, max_exp_scan: int = 15) -> dict:
         x_min = max(3, x0 if x0 > 2 else 3)
         y_min = max(3, y0 if y0 > 2 else 3)
 
-        # Scale radius based on base size, capped at 250 for fast iteration
-        eff_radius = min(radius, 250)
+        # Scale radius based on base size, capped at 500 for deep exploration
+        eff_radius = min(radius, 500)
 
         for da in range(-eff_radius, eff_radius + 1):
             A = A0 + da
