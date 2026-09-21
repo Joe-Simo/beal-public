@@ -1,7 +1,7 @@
 {
   "title": "Candidate C623 AMS Submission Dossier",
   "description": "Cryptographic manifest of Lean 4 formal proofs, C/GMP engines, and verified search logs",
-  "timestamp": "2026-09-21T13:56:30-0400",
+  "timestamp": "2026-09-21T13:57:24-0400",
   "total_assets_certified": 14152,
   "verification_commands": {
     "lean4_build": "cd formal && lake build Beal",
